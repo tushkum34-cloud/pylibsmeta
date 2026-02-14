@@ -1,0 +1,936 @@
+{
+  "RateLimiterP": [],
+  "BaseThrottledMixin": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "key",
+      "timeout",
+      "using",
+      "quota",
+      "store",
+      "cost"
+    ],
+    "_get_lock": [
+      "cls"
+    ],
+    "limiter": [
+      "self"
+    ],
+    "_validate_cost": [
+      "cls",
+      "cost"
+    ],
+    "_validate_timeout": [
+      "cls",
+      "timeout"
+    ],
+    "_get_key": [
+      "self",
+      "key"
+    ],
+    "_get_timeout": [
+      "self",
+      "timeout"
+    ],
+    "_get_wait_time": [
+      "self",
+      "retry_after"
+    ],
+    "_is_exit_waiting": [
+      "cls",
+      "start_time",
+      "retry_after",
+      "timeout"
+    ]
+  },
+  "BaseThrottled": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ],
+    "_wait": [
+      "self",
+      "timeout",
+      "retry_after"
+    ],
+    "limit": [
+      "self",
+      "key",
+      "cost",
+      "timeout"
+    ],
+    "peek": [
+      "self",
+      "key"
+    ]
+  },
+  "Throttled": {
+    "__enter__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ],
+    "_wait": [
+      "self",
+      "timeout",
+      "retry_after"
+    ],
+    "limit": [
+      "self",
+      "key",
+      "cost",
+      "timeout"
+    ],
+    "peek": [
+      "self",
+      "key"
+    ]
+  },
+  "format_value": [
+    "value"
+  ],
+  "format_key": [
+    "key"
+  ],
+  "format_kv": [
+    "kv"
+  ],
+  "now_sec": [],
+  "now_mono_f": [],
+  "now_ms": [],
+  "to_bool": [
+    "value"
+  ],
+  "Timer": {
+    "__init__": [
+      "self",
+      "clock",
+      "callback"
+    ],
+    "_new_timer": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ],
+    "_handle_callback": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ]
+  },
+  "Benchmark": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "stats": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "_checked_environment": [
+      "self"
+    ],
+    "_timer": [
+      "self",
+      "task"
+    ],
+    "concurrent": [
+      "self",
+      "task",
+      "batch",
+      "workers"
+    ],
+    "_atimer": [
+      "self",
+      "task"
+    ],
+    "async_concurrent": [
+      "self",
+      "task",
+      "batch",
+      "workers"
+    ],
+    "async_serial": [
+      "self",
+      "task",
+      "batch"
+    ],
+    "serial": [
+      "self",
+      "task",
+      "batch"
+    ]
+  },
+  "import_string": [
+    "dotted_path"
+  ],
+  "__version__": [],
+  "VERSION": [],
+  "__all__": [],
+  "BaseThrottledError": {},
+  "SetUpError": {},
+  "DataError": {},
+  "StoreUnavailableError": {},
+  "LimitedError": {
+    "__init__": [
+      "self",
+      "rate_limit_result"
+    ]
+  },
+  "_StringLikeT": [],
+  "_NumberLikeT": [],
+  "KeyT": [],
+  "StoreValueT": [],
+  "StoreDictValueT": [],
+  "StoreBucketValueT": [],
+  "AtomicActionTypeT": [],
+  "RateLimiterTypeT": [],
+  "TimeLikeValueT": [],
+  "_SyncLockP": {
+    "acquire": [
+      "self"
+    ],
+    "release": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "__enter__": []
+  },
+  "_AsyncLockP": {
+    "acquire": [
+      "self"
+    ],
+    "release": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "LockP": [],
+  "StoreBackendP": {
+    "get_client": [
+      "self"
+    ]
+  },
+  "_SyncAtomicActionP": {
+    "__init__": [
+      "self",
+      "backend"
+    ],
+    "do": [
+      "self",
+      "keys",
+      "args"
+    ]
+  },
+  "_AsyncAtomicActionP": {
+    "__init__": [
+      "self",
+      "backend"
+    ],
+    "do": [
+      "self",
+      "keys",
+      "args"
+    ]
+  },
+  "AtomicActionP": [],
+  "_SyncStoreP": {
+    "exists": [
+      "self",
+      "key"
+    ],
+    "ttl": [
+      "self",
+      "key"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "hgetall": [
+      "self",
+      "name"
+    ],
+    "make_atomic": [
+      "self",
+      "action"
+    ],
+    "hset": [
+      "self",
+      "name",
+      "key",
+      "value",
+      "mapping"
+    ]
+  },
+  "_AsyncStoreP": {
+    "exists": [
+      "self",
+      "key"
+    ],
+    "ttl": [
+      "self",
+      "key"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "hgetall": [
+      "self",
+      "name"
+    ],
+    "make_atomic": [
+      "self",
+      "action"
+    ],
+    "hset": [
+      "self",
+      "name",
+      "key",
+      "value",
+      "mapping"
+    ]
+  },
+  "StoreP": [],
+  "StoreType": {
+    "REDIS": [],
+    "MEMORY": [],
+    "choice": [
+      "cls"
+    ]
+  },
+  "RateLimiterType": {
+    "FIXED_WINDOW": [],
+    "SLIDING_WINDOW": [],
+    "LEAKING_BUCKET": [],
+    "TOKEN_BUCKET": [],
+    "GCRA": [],
+    "choice": [
+      "cls"
+    ]
+  },
+  "RedisStoreBackend": {
+    "_set_options": [
+      "cls",
+      "options"
+    ],
+    "_set_sentinel_options": [
+      "cls",
+      "options"
+    ],
+    "_set_standalone_options": [
+      "cls",
+      "options"
+    ],
+    "_set_cluster_options": [
+      "cls",
+      "options"
+    ]
+  },
+  "RedisStore": {
+    "__init__": [
+      "self",
+      "server",
+      "options"
+    ],
+    "exists": [
+      "self",
+      "key"
+    ],
+    "ttl": [
+      "self",
+      "key"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "hset": [
+      "self",
+      "name",
+      "key",
+      "value",
+      "mapping"
+    ],
+    "hgetall": [
+      "self",
+      "name"
+    ],
+    "make_atomic": [
+      "self",
+      "action_cls"
+    ]
+  },
+  "BaseAtomicAction": {
+    "do": [
+      "self",
+      "keys",
+      "args"
+    ]
+  },
+  "BaseStore": {
+    "exists": [
+      "self",
+      "key"
+    ],
+    "ttl": [
+      "self",
+      "key"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "hset": [
+      "self",
+      "name",
+      "key",
+      "value",
+      "mapping"
+    ],
+    "hgetall": [
+      "self",
+      "name"
+    ],
+    "make_atomic": [
+      "self",
+      "action_cls"
+    ]
+  },
+  "MemoryStoreBackend": {
+    "_get_lock": [
+      "self"
+    ]
+  },
+  "MemoryStore": {
+    "__init__": [
+      "self",
+      "server",
+      "options"
+    ],
+    "exists": [
+      "self",
+      "key"
+    ],
+    "ttl": [
+      "self",
+      "key"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "hset": [
+      "self",
+      "name",
+      "key",
+      "value",
+      "mapping"
+    ],
+    "hgetall": [
+      "self",
+      "name"
+    ],
+    "make_atomic": [
+      "self",
+      "action_cls"
+    ]
+  },
+  "RateLimiterRegistry": {},
+  "RateLimiterMeta": {},
+  "BaseRateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ],
+    "limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "peek": [
+      "self",
+      "key"
+    ]
+  },
+  "RedisLimitAtomicAction": {
+    "do": [
+      "self",
+      "keys",
+      "args"
+    ]
+  },
+  "MemoryLimitAtomicAction": {
+    "do": [
+      "self",
+      "keys",
+      "args"
+    ]
+  },
+  "SlidingWindowRateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ]
+  },
+  "FixedWindowRateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ]
+  },
+  "RedisPeekAtomicAction": {},
+  "MemoryPeekAtomicAction": {},
+  "GCRARateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ]
+  },
+  "LeakingBucketRateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ]
+  },
+  "TokenBucketRateLimiter": {
+    "_limit": [
+      "self",
+      "key",
+      "cost"
+    ],
+    "_peek": [
+      "self",
+      "key"
+    ]
+  },
+  "BaseStoreBackend": {
+    "__init__": [
+      "self",
+      "server",
+      "options"
+    ],
+    "get_client": [
+      "self"
+    ]
+  },
+  "BaseAtomicActionMixin": {
+    "__init__": [
+      "self",
+      "backend"
+    ]
+  },
+  "BaseStoreMixin": {
+    "_validate_timeout": [
+      "cls",
+      "timeout"
+    ],
+    "__init__": [
+      "self",
+      "server",
+      "options"
+    ]
+  },
+  "BaseConnectionFactory": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "make_connection_params": [
+      "self",
+      "url"
+    ],
+    "connect": [
+      "self",
+      "url"
+    ],
+    "get_connection": [
+      "self",
+      "params"
+    ],
+    "get_or_create_connection_pool": [
+      "self",
+      "params"
+    ],
+    "get_connection_pool": [
+      "self",
+      "params"
+    ]
+  },
+  "ConnectionFactory": {
+    "make_connection_params": [
+      "self",
+      "url"
+    ],
+    "connect": [
+      "self",
+      "url"
+    ],
+    "get_connection": [
+      "self",
+      "params"
+    ],
+    "_get_pool_key": [
+      "self",
+      "params"
+    ],
+    "get_or_create_connection_pool": [
+      "self",
+      "params"
+    ],
+    "get_connection_pool": [
+      "self",
+      "params"
+    ]
+  },
+  "SentinelConnectionFactory": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "_get_pool_key": [
+      "self",
+      "params"
+    ],
+    "get_connection_pool": [
+      "self",
+      "params"
+    ]
+  },
+  "ClusterConnectionFactory": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "get_connection": [
+      "self",
+      "params"
+    ]
+  },
+  "get_connection_factory": [
+    "path",
+    "options"
+  ],
+  "Rate": {},
+  "Quota": {
+    "__post_init__": [
+      "self"
+    ],
+    "get_period_sec": [
+      "self"
+    ],
+    "get_limit": [
+      "self"
+    ]
+  },
+  "per_duration": [
+    "duration",
+    "limit",
+    "burst"
+  ],
+  "per_sec": [
+    "limit",
+    "burst"
+  ],
+  "per_min": [
+    "limit",
+    "burst"
+  ],
+  "per_hour": [
+    "limit",
+    "burst"
+  ],
+  "per_day": [
+    "limit",
+    "burst"
+  ],
+  "per_week": [
+    "limit",
+    "burst"
+  ],
+  "RateLimitState": {},
+  "RateLimitResult": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "limited",
+      "state_values"
+    ],
+    "state": [
+      "self"
+    ]
+  },
+  "BaseRateLimiterMixin": {
+    "__init__": [
+      "self",
+      "quota",
+      "store",
+      "additional_atomic_actions"
+    ],
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_validate_registered_atomic_actions": [
+      "self"
+    ],
+    "_register_atomic_actions": [
+      "self",
+      "classes"
+    ],
+    "_prepare_key": [
+      "self",
+      "key"
+    ]
+  },
+  "RedisLimitAtomicActionCoreMixin": {
+    "__init__": [
+      "self",
+      "backend"
+    ]
+  },
+  "MemoryLimitAtomicActionCoreMixin": {
+    "__init__": [
+      "self",
+      "backend"
+    ],
+    "_do": [
+      "cls",
+      "backend",
+      "keys",
+      "args"
+    ]
+  },
+  "SlidingWindowRateLimiterCoreMixin": {
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_prepare": [
+      "self",
+      "key"
+    ]
+  },
+  "FixedWindowRateLimiterCoreMixin": {
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_prepare": [
+      "self",
+      "key"
+    ]
+  },
+  "RedisPeekAtomicActionCoreMixin": {},
+  "MemoryPeekAtomicActionCoreMixin": {
+    "_do": [
+      "cls",
+      "backend",
+      "keys",
+      "args"
+    ]
+  },
+  "GCRARateLimiterCoreMixin": {
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_prepare": [
+      "self",
+      "key"
+    ]
+  },
+  "LeakingBucketRateLimiterCoreMixin": {
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_prepare": [
+      "self",
+      "key"
+    ],
+    "_refill_sec": [
+      "self",
+      "upper",
+      "remaining"
+    ],
+    "_to_result": [
+      "self",
+      "limited",
+      "cost",
+      "tokens",
+      "capacity"
+    ]
+  },
+  "TokenBucketRateLimiterCoreMixin": {
+    "_default_atomic_action_classes": [
+      "cls"
+    ],
+    "_supported_atomic_action_types": [
+      "cls"
+    ],
+    "_prepare": [
+      "self",
+      "key"
+    ],
+    "_refill_sec": [
+      "self",
+      "upper",
+      "remaining"
+    ],
+    "_to_result": [
+      "self",
+      "limited",
+      "cost",
+      "tokens",
+      "capacity"
+    ]
+  }
+}

@@ -1,0 +1,794 @@
+{
+  "pack_one": [
+    "t",
+    "pattern"
+  ],
+  "unpack_one": [
+    "t",
+    "ps",
+    "pattern"
+  ],
+  "LatentQuantize": {
+    "__init__": [
+      "self",
+      "levels",
+      "dim",
+      "commitment_loss_weight",
+      "quantization_loss_weight",
+      "num_codebooks",
+      "codebook_dim",
+      "keep_num_codebooks_dim",
+      "optimize_values",
+      "in_place_codebook_optimizer"
+    ],
+    "quantization_loss": [
+      "self",
+      "z",
+      "zhat",
+      "reduce"
+    ],
+    "commitment_loss": [
+      "self",
+      "z",
+      "zhat",
+      "reduce"
+    ],
+    "quantize": [
+      "self",
+      "z"
+    ],
+    "_scale_and_shift": [
+      "self",
+      "zhat_normalized"
+    ],
+    "_scale_and_shift_inverse": [
+      "self",
+      "zhat"
+    ],
+    "codes_to_indices": [
+      "self",
+      "zhat"
+    ],
+    "indices_to_codes": [
+      "self",
+      "indices",
+      "project_out"
+    ],
+    "quantize_and_project": [
+      "self",
+      "z",
+      "is_img_or_video",
+      "ps"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ]
+  },
+  "exists": [
+    "v"
+  ],
+  "identity": [
+    "t"
+  ],
+  "default": [
+    "v",
+    "d"
+  ],
+  "SimVQ": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size",
+      "codebook_transform",
+      "init_fn",
+      "channel_first",
+      "rotation_trick",
+      "input_to_quantize_commit_loss_weight",
+      "commitment_weight",
+      "frozen_codebook_dim"
+    ],
+    "codebook": [
+      "self"
+    ],
+    "indices_to_codes": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "first": [
+    "it"
+  ],
+  "cast_tuple": [
+    "t",
+    "length"
+  ],
+  "unique": [
+    "arr"
+  ],
+  "round_up_multiple": [
+    "num",
+    "mult"
+  ],
+  "frac_gradient": [
+    "t",
+    "frac"
+  ],
+  "pad_at_dim": [
+    "t",
+    "pad",
+    "dim",
+    "value"
+  ],
+  "batch_select": [
+    "t",
+    "indices",
+    "pattern"
+  ],
+  "is_distributed": [],
+  "get_maybe_sync_seed": [
+    "device",
+    "max_size"
+  ],
+  "MLP": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_hidden",
+      "depth",
+      "l2norm_output"
+    ],
+    "forward": [
+      "self",
+      "codes"
+    ]
+  },
+  "ResidualVQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebook_size": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "indices",
+      "return_all_codes",
+      "sample_codebook_temp",
+      "freeze_codebook",
+      "beam_size",
+      "rand_quantize_dropout_fixed_seed"
+    ]
+  },
+  "GroupedResidualVQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "split_dim": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "indices",
+      "return_all_codes",
+      "sample_codebook_temp",
+      "freeze_codebook",
+      "mask"
+    ]
+  },
+  "QUANTIZE_KLASSES": [],
+  "Sequential": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NAT": [],
+  "binary_entropy": [
+    "logits"
+  ],
+  "pack_with_inverse": [
+    "t",
+    "pattern"
+  ],
+  "BinaryMapper": {
+    "__init__": [
+      "self",
+      "bits",
+      "kl_loss_threshold",
+      "deterministic_on_eval"
+    ],
+    "forward": [
+      "self",
+      "logits",
+      "temperature",
+      "straight_through",
+      "calc_aux_loss",
+      "deterministic",
+      "return_indices",
+      "reduce_aux_kl_loss"
+    ]
+  },
+  "RandomProjectionQuantizer": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "indices"
+    ]
+  },
+  "noop": [],
+  "at_most_one_of": [],
+  "l2norm": [
+    "t",
+    "dim",
+    "eps"
+  ],
+  "safe_div": [
+    "num",
+    "den",
+    "eps"
+  ],
+  "append_dims_to": [
+    "t",
+    "ndims"
+  ],
+  "cdist": [
+    "x",
+    "y",
+    "eps"
+  ],
+  "log": [
+    "t",
+    "eps"
+  ],
+  "entropy": [
+    "prob",
+    "eps"
+  ],
+  "accum_grad_": [
+    "t",
+    "grad"
+  ],
+  "ema_inplace": [
+    "old",
+    "new",
+    "decay",
+    "weight"
+  ],
+  "lens_to_mask": [
+    "lens",
+    "max_length"
+  ],
+  "uniform_init": [],
+  "gumbel_noise": [
+    "t"
+  ],
+  "gumbel_sample": [
+    "logits",
+    "temperature",
+    "stochastic",
+    "straight_through",
+    "dim",
+    "training",
+    "topk"
+  ],
+  "laplace_smoothing": [
+    "x",
+    "n_categories",
+    "eps",
+    "dim"
+  ],
+  "sample_vectors": [
+    "samples",
+    "num"
+  ],
+  "batched_sample_vectors": [
+    "samples",
+    "num"
+  ],
+  "pad_shape": [
+    "shape",
+    "size",
+    "dim"
+  ],
+  "sample_multinomial": [
+    "total_count",
+    "probs"
+  ],
+  "all_gather_sizes": [
+    "x",
+    "dim"
+  ],
+  "all_gather_variably_sized": [
+    "x",
+    "sizes",
+    "dim"
+  ],
+  "sample_vectors_distributed": [
+    "local_samples",
+    "num"
+  ],
+  "batched_bincount": [
+    "x"
+  ],
+  "kmeans": [
+    "samples",
+    "num_clusters",
+    "num_iters",
+    "use_cosine_sim",
+    "sample_fn",
+    "all_reduce_fn"
+  ],
+  "straight_through": [
+    "src",
+    "tgt"
+  ],
+  "efficient_rotation_trick_transform": [
+    "u",
+    "q",
+    "e"
+  ],
+  "rotate_to": [
+    "src",
+    "tgt"
+  ],
+  "directional_reparam": [
+    "src",
+    "tgt",
+    "noise_variance"
+  ],
+  "orthogonal_loss_fn": [
+    "t"
+  ],
+  "Codebook": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size",
+      "num_codebooks",
+      "kmeans_init",
+      "kmeans_iters",
+      "sync_kmeans",
+      "decay",
+      "eps",
+      "threshold_ema_dead_code",
+      "reset_cluster_size",
+      "use_ddp",
+      "learnable_codebook",
+      "gumbel_sample",
+      "sample_codebook_temp",
+      "ema_update",
+      "manual_ema_update",
+      "affine_param",
+      "sync_affine_param",
+      "affine_param_batch_decay",
+      "affine_param_codebook_decay",
+      "use_cosine_sim",
+      "vq_bridge"
+    ],
+    "init_embed_": [
+      "self",
+      "data",
+      "mask"
+    ],
+    "update_with_decay": [
+      "self",
+      "buffer_name",
+      "new_value",
+      "decay"
+    ],
+    "update_affine": [
+      "self",
+      "data",
+      "embed",
+      "mask"
+    ],
+    "replace": [
+      "self",
+      "batch_samples",
+      "batch_mask"
+    ],
+    "expire_codes_": [
+      "self",
+      "batch_samples"
+    ],
+    "update_ema": [
+      "self"
+    ],
+    "update_ema_part": [
+      "self",
+      "flatten",
+      "embed_onehot",
+      "mask",
+      "ema_update_weight",
+      "accum_ema_update"
+    ],
+    "update_ema_indices": [
+      "self",
+      "x",
+      "embed_ind",
+      "mask",
+      "ema_update_weight",
+      "accum_ema_update"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "sample_codebook_temp",
+      "mask",
+      "freeze_codebook",
+      "codebook_transform_fn",
+      "ema_update_weight",
+      "accum_ema_update",
+      "ema_update",
+      "topk"
+    ]
+  },
+  "LossBreakdown": [],
+  "VectorQuantize": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size",
+      "codebook_dim",
+      "heads",
+      "separate_codebook_per_head",
+      "decay",
+      "eps",
+      "freeze_codebook",
+      "kmeans_init",
+      "kmeans_iters",
+      "sync_kmeans",
+      "use_cosine_sim",
+      "layernorm_after_project_in",
+      "threshold_ema_dead_code",
+      "channel_last",
+      "accept_image_fmap",
+      "accept_3d_fmap",
+      "commitment_weight",
+      "commitment_use_cross_entropy_loss",
+      "orthogonal_reg_weight",
+      "orthogonal_reg_active_codes_only",
+      "orthogonal_reg_max_codes",
+      "codebook_diversity_loss_weight",
+      "codebook_diversity_temperature",
+      "stochastic_sample_codes",
+      "sample_codebook_temp",
+      "straight_through",
+      "rotation_trick",
+      "directional_reparam",
+      "directional_reparam_variance",
+      "sync_codebook",
+      "sync_affine_param",
+      "ema_update",
+      "vq_bridge",
+      "manual_ema_update",
+      "learnable_codebook",
+      "in_place_codebook_optimizer",
+      "manual_in_place_optimizer_update",
+      "affine_param",
+      "affine_param_batch_decay",
+      "affine_param_codebook_decay",
+      "sync_update_v",
+      "return_zeros_for_masked_padding"
+    ],
+    "ema_update": [
+      "self"
+    ],
+    "codebook": [
+      "self",
+      "codes"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "update_in_place_optimizer": [
+      "self"
+    ],
+    "maybe_split_heads_from_input": [
+      "self",
+      "x"
+    ],
+    "expire_codes_": [
+      "self",
+      "x"
+    ],
+    "update_ema_indices": [
+      "self",
+      "x",
+      "indices",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "indices",
+      "mask",
+      "lens",
+      "topk",
+      "sample_codebook_temp",
+      "freeze_codebook",
+      "return_loss_breakdown",
+      "codebook_transform_fn",
+      "ema_update_weight",
+      "accum_ema_update",
+      "ema_update"
+    ]
+  },
+  "ResidualFSQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_all_codes",
+      "rand_quantize_dropout_fixed_seed"
+    ]
+  },
+  "GroupedResidualFSQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "split_dim": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_all_codes"
+    ]
+  },
+  "ResidualSimVQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebook_size": [
+      "self"
+    ],
+    "codebook_dim": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_all_codes",
+      "rand_quantize_dropout_fixed_seed"
+    ]
+  },
+  "Return": [],
+  "maybe_distributed_mean": [
+    "t"
+  ],
+  "CosineSimLinear": {
+    "__init__": [
+      "self",
+      "dim_in",
+      "dim_out",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LFQ": {
+    "__init__": [
+      "self"
+    ],
+    "bits_to_codes": [
+      "self",
+      "bits"
+    ],
+    "dtype": [
+      "self"
+    ],
+    "indices_to_codes": [
+      "self",
+      "indices",
+      "project_out"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "inv_temperature",
+      "return_loss_breakdown",
+      "mask"
+    ]
+  },
+  "maybe": [
+    "fn"
+  ],
+  "round_ste": [
+    "z"
+  ],
+  "floor_ste": [
+    "z"
+  ],
+  "FSQ": {
+    "__init__": [
+      "self",
+      "levels",
+      "dim",
+      "num_codebooks",
+      "keep_num_codebooks_dim",
+      "scale",
+      "allowed_dtypes",
+      "channel_first",
+      "projection_has_bias",
+      "return_indices",
+      "force_quantization_f32",
+      "preserve_symmetry",
+      "noise_dropout",
+      "bound_hard_clamp"
+    ],
+    "bound": [
+      "self",
+      "z",
+      "eps",
+      "hard_clamp"
+    ],
+    "symmetry_preserving_bound": [
+      "self",
+      "z",
+      "hard_clamp"
+    ],
+    "quantize": [
+      "self",
+      "z"
+    ],
+    "maybe_apply_noise": [
+      "self",
+      "bounded_z"
+    ],
+    "_scale_and_shift": [
+      "self",
+      "zhat_normalized"
+    ],
+    "_scale_and_shift_inverse": [
+      "self",
+      "zhat"
+    ],
+    "_indices_to_codes": [
+      "self",
+      "indices"
+    ],
+    "indices_to_level_indices": [
+      "self",
+      "indices"
+    ],
+    "codes_to_indices": [
+      "self",
+      "zhat"
+    ],
+    "indices_to_codes": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ]
+  },
+  "ResidualLFQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "return_all_codes",
+      "rand_quantize_dropout_fixed_seed"
+    ]
+  },
+  "GroupedResidualLFQ": {
+    "__init__": [
+      "self"
+    ],
+    "codebooks": [
+      "self"
+    ],
+    "split_dim": [
+      "self"
+    ],
+    "get_codes_from_indices": [
+      "self",
+      "indices"
+    ],
+    "get_output_from_indices": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "return_all_codes"
+    ]
+  }
+}

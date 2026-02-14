@@ -1,0 +1,2467 @@
+{
+  "root_dir": [],
+  "DEFAULT_CFG_PATH": [],
+  "RapidOCR": {
+    "__init__": [
+      "self",
+      "config_path",
+      "params"
+    ],
+    "_load_config": [
+      "self",
+      "config_path",
+      "params"
+    ],
+    "_initialize": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "img_content",
+      "use_det",
+      "use_cls",
+      "use_rec",
+      "return_word_box",
+      "return_single_char_box",
+      "text_score",
+      "box_thresh",
+      "unclip_ratio"
+    ],
+    "run_ocr_steps": [
+      "self",
+      "img",
+      "op_record"
+    ],
+    "build_final_output": [
+      "self",
+      "ori_img",
+      "det_res",
+      "cls_res",
+      "rec_res",
+      "cropped_img_list",
+      "op_record"
+    ],
+    "calc_word_boxes": [
+      "self",
+      "img",
+      "dt_boxes",
+      "rec_res"
+    ],
+    "update_params": [
+      "self"
+    ],
+    "preprocess_img": [
+      "self",
+      "ori_img"
+    ],
+    "detect_and_crop": [
+      "self",
+      "img",
+      "op_record"
+    ],
+    "crop_text_regions": [
+      "self",
+      "img",
+      "det_boxes"
+    ],
+    "cls_and_rotate": [
+      "self",
+      "img"
+    ],
+    "recognize_txt": [
+      "self",
+      "img"
+    ],
+    "filter_by_text_score": [
+      "self",
+      "ocr_res"
+    ]
+  },
+  "RapidOCRError": {},
+  "parse_args": [
+    "arg_list"
+  ],
+  "main": [
+    "arg_list"
+  ],
+  "generate_cfg": [
+    "args"
+  ],
+  "check_install": [
+    "ocr_engine"
+  ],
+  "DEFAULT_DICT_PATH": [],
+  "DEFAULT_DICT_URL": [],
+  "DEFAULT_MODEL_PATH": [],
+  "TextRecognizer": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "get_character_dict": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "args"
+    ],
+    "resize_norm_img": [
+      "self",
+      "img",
+      "max_wh_ratio"
+    ]
+  },
+  "CTCLabelDecode": {
+    "__init__": [
+      "self",
+      "character",
+      "character_path"
+    ],
+    "__call__": [
+      "self",
+      "preds",
+      "return_word_box"
+    ],
+    "get_character": [
+      "self",
+      "character",
+      "character_path"
+    ],
+    "read_character_file": [
+      "character_path"
+    ],
+    "insert_special_char": [
+      "character_list",
+      "special_char",
+      "loc"
+    ],
+    "decode": [
+      "self",
+      "text_index",
+      "text_prob",
+      "return_word_box",
+      "wh_ratio_list",
+      "max_wh_ratio",
+      "remove_duplicate"
+    ],
+    "get_word_info": [
+      "text",
+      "selection"
+    ],
+    "get_ignored_tokens": []
+  },
+  "TextRecConfig": {},
+  "TextRecInput": {},
+  "TextRecOutput": {
+    "__len__": [
+      "self"
+    ],
+    "vis": [
+      "self",
+      "save_path"
+    ]
+  },
+  "WordType": {
+    "CN": [],
+    "EN": [],
+    "NUM": [],
+    "EN_NUM": []
+  },
+  "WordInfo": {},
+  "_BOX_SORT_Y_THRESHOLD": [],
+  "TextDetector": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "get_preprocess": [
+      "self",
+      "max_wh"
+    ],
+    "sorted_boxes": [
+      "dt_boxes"
+    ]
+  },
+  "TextDetOutput": {
+    "__len__": [
+      "self"
+    ],
+    "vis": [
+      "self",
+      "save_path"
+    ]
+  },
+  "DetPreProcess": {
+    "__init__": [
+      "self",
+      "limit_side_len",
+      "limit_type",
+      "mean",
+      "std"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "normalize": [
+      "self",
+      "img"
+    ],
+    "permute": [
+      "self",
+      "img"
+    ],
+    "resize": [
+      "self",
+      "img"
+    ]
+  },
+  "ResizeImgError": {},
+  "DBPostProcess": {
+    "__init__": [
+      "self",
+      "thresh",
+      "box_thresh",
+      "max_candidates",
+      "unclip_ratio",
+      "score_mode",
+      "use_dilation"
+    ],
+    "__call__": [
+      "self",
+      "pred",
+      "ori_shape"
+    ],
+    "boxes_from_bitmap": [
+      "self",
+      "pred",
+      "bitmap",
+      "dest_width",
+      "dest_height"
+    ],
+    "get_mini_boxes": [
+      "self",
+      "contour"
+    ],
+    "box_score_fast": [
+      "bitmap",
+      "_box"
+    ],
+    "box_score_slow": [
+      "self",
+      "bitmap",
+      "contour"
+    ],
+    "unclip": [
+      "self",
+      "box"
+    ],
+    "filter_det_res": [
+      "self",
+      "dt_boxes",
+      "scores",
+      "img_height",
+      "img_width"
+    ],
+    "order_points_clockwise": [
+      "self",
+      "pts"
+    ],
+    "clip_det_res": [
+      "self",
+      "points",
+      "img_height",
+      "img_width"
+    ]
+  },
+  "cur_dir": [],
+  "MODEL_URL_PATH": [],
+  "get_engine": [
+    "engine_type"
+  ],
+  "FileInfo": {},
+  "InferSession": {
+    "model_info": [],
+    "DEFAULT_MODEL_PATH": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "__call__": [
+      "self",
+      "input_content"
+    ],
+    "_verify_model": [
+      "model_path"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ],
+    "get_model_url": [
+      "cls",
+      "file_info"
+    ],
+    "get_dict_key_url": [
+      "cls",
+      "file_info"
+    ]
+  },
+  "OrtInferSession": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_init_sess_opts": [
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "input_content"
+    ],
+    "get_input_names": [
+      "self"
+    ],
+    "get_output_names": [
+      "self"
+    ],
+    "get_character_list": [
+      "self",
+      "key"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ]
+  },
+  "ONNXRuntimeError": {},
+  "EP": {
+    "CPU_EP": [],
+    "CUDA_EP": [],
+    "DIRECTML_EP": [],
+    "CANN_EP": []
+  },
+  "ProviderConfig": {
+    "__init__": [
+      "self",
+      "engine_cfg"
+    ],
+    "get_ep_list": [
+      "self"
+    ],
+    "cpu_ep_cfg": [
+      "self"
+    ],
+    "cuda_ep_cfg": [
+      "self"
+    ],
+    "dml_ep_cfg": [
+      "self"
+    ],
+    "cann_ep_cfg": [
+      "self"
+    ],
+    "verify_providers": [
+      "self",
+      "session_providers"
+    ],
+    "is_cuda_available": [
+      "self"
+    ],
+    "is_dml_available": [
+      "self"
+    ],
+    "is_cann_available": [
+      "self"
+    ],
+    "print_log": [
+      "self",
+      "log_list"
+    ]
+  },
+  "TorchInferSession": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ]
+  },
+  "TorchInferError": {},
+  "model_dir": [],
+  "DeviceConfig": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "setup_device": [
+      "self"
+    ],
+    "get_device": [
+      "self",
+      "device_type",
+      "device_id"
+    ],
+    "config_cpu": [
+      "self"
+    ],
+    "config_cuda": [
+      "self",
+      "device_id"
+    ],
+    "config_npu": [
+      "self",
+      "device_id"
+    ]
+  },
+  "DeviceConfigError": {},
+  "Hswish": {
+    "__init__": [
+      "self",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Hsigmoid": {
+    "__init__": [
+      "self",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GELU": {
+    "__init__": [
+      "self",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Swish": {
+    "__init__": [
+      "self",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Activation": {
+    "__init__": [
+      "self",
+      "act_type",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ModelLoader": {
+    "root_dir": [],
+    "DEFAULT_CFG_PATH": [],
+    "__init__": [
+      "self",
+      "cfg",
+      "device"
+    ],
+    "_init_model_path": [
+      "self",
+      "cfg"
+    ],
+    "_load_arch_config": [
+      "self",
+      "model_path"
+    ],
+    "_build_and_load_model": [
+      "self",
+      "arch_config",
+      "model_path"
+    ]
+  },
+  "make_divisible": [
+    "v",
+    "divisor",
+    "min_value"
+  ],
+  "ConvBNLayer": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "groups",
+      "if_act",
+      "act",
+      "name"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SEModule": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "reduction",
+      "name"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ResidualUnit": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "use_se",
+      "act",
+      "name"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "MobileNetV3": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "model_name",
+      "scale",
+      "disable_se"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_CONFIG_FOR_DOC": [],
+  "_CHECKPOINT_FOR_DOC": [],
+  "_EXPECTED_OUTPUT_SHAPE": [],
+  "DonutSwinConfig": {
+    "model_type": [],
+    "attribute_map": [],
+    "__init__": [
+      "self",
+      "image_size",
+      "patch_size",
+      "num_channels",
+      "embed_dim",
+      "depths",
+      "num_heads",
+      "window_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "hidden_dropout_prob",
+      "attention_probs_dropout_prob",
+      "drop_path_rate",
+      "hidden_act",
+      "use_absolute_embeddings",
+      "initializer_range",
+      "layer_norm_eps"
+    ]
+  },
+  "DonutSwinEncoderOutput": {
+    "last_hidden_state": [],
+    "hidden_states": [],
+    "attentions": [],
+    "reshaped_hidden_states": [],
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "k"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "to_tuple": [
+      "self"
+    ]
+  },
+  "DonutSwinModelOutput": {
+    "last_hidden_state": [],
+    "pooler_output": [],
+    "hidden_states": [],
+    "attentions": [],
+    "reshaped_hidden_states": [],
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "k"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "to_tuple": [
+      "self"
+    ]
+  },
+  "window_partition": [
+    "input_feature",
+    "window_size"
+  ],
+  "window_reverse": [
+    "windows",
+    "window_size",
+    "height",
+    "width"
+  ],
+  "DonutSwinEmbeddings": {
+    "__init__": [
+      "self",
+      "config",
+      "use_mask_token"
+    ],
+    "forward": [
+      "self",
+      "pixel_values",
+      "bool_masked_pos"
+    ]
+  },
+  "MyConv2d": {
+    "__init__": [
+      "self",
+      "in_channel",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "groups",
+      "bias_attr",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DonutSwinPatchEmbeddings": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "maybe_pad": [
+      "self",
+      "pixel_values",
+      "height",
+      "width"
+    ],
+    "forward": [
+      "self",
+      "pixel_values"
+    ]
+  },
+  "DonutSwinPatchMerging": {
+    "__init__": [
+      "self",
+      "input_resolution",
+      "dim",
+      "norm_layer",
+      "is_export"
+    ],
+    "maybe_pad": [
+      "self",
+      "input_feature",
+      "height",
+      "width"
+    ],
+    "forward": [
+      "self",
+      "input_feature",
+      "input_dimensions"
+    ]
+  },
+  "drop_path": [
+    "input",
+    "drop_prob",
+    "training"
+  ],
+  "DonutSwinDropPath": {
+    "__init__": [
+      "self",
+      "drop_prob"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "DonutSwinSelfAttention": {
+    "__init__": [
+      "self",
+      "config",
+      "dim",
+      "num_heads",
+      "window_size"
+    ],
+    "transpose_for_scores": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "DonutSwinSelfOutput": {
+    "__init__": [
+      "self",
+      "config",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "DonutSwinAttention": {
+    "__init__": [
+      "self",
+      "config",
+      "dim",
+      "num_heads",
+      "window_size"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "DonutSwinIntermediate": {
+    "__init__": [
+      "self",
+      "config",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "DonutSwinOutput": {
+    "__init__": [
+      "self",
+      "config",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "DonutSwinLayer": {
+    "__init__": [
+      "self",
+      "config",
+      "dim",
+      "input_resolution",
+      "num_heads",
+      "shift_size"
+    ],
+    "set_shift_and_window_size": [
+      "self",
+      "input_resolution"
+    ],
+    "get_attn_mask_export": [
+      "self",
+      "height",
+      "width",
+      "dtype"
+    ],
+    "get_attn_mask": [
+      "self",
+      "height",
+      "width",
+      "dtype"
+    ],
+    "maybe_pad": [
+      "self",
+      "hidden_states",
+      "height",
+      "width"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_dimensions",
+      "head_mask",
+      "output_attentions",
+      "always_partition"
+    ]
+  },
+  "DonutSwinStage": {
+    "__init__": [
+      "self",
+      "config",
+      "dim",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "drop_path",
+      "downsample"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_dimensions",
+      "head_mask",
+      "output_attentions",
+      "always_partition"
+    ]
+  },
+  "DonutSwinEncoder": {
+    "__init__": [
+      "self",
+      "config",
+      "grid_size"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_dimensions",
+      "head_mask",
+      "output_attentions",
+      "output_hidden_states",
+      "output_hidden_states_before_downsampling",
+      "always_partition",
+      "return_dict"
+    ]
+  },
+  "DonutSwinPreTrainedModel": {
+    "config_class": [],
+    "base_model_prefix": [],
+    "main_input_name": [],
+    "supports_gradient_checkpointing": [],
+    "_init_weights": [
+      "self",
+      "module"
+    ],
+    "_initialize_weights": [
+      "self",
+      "module"
+    ],
+    "post_init": [
+      "self"
+    ],
+    "get_head_mask": [
+      "self",
+      "head_mask",
+      "num_hidden_layers",
+      "is_attention_chunked"
+    ]
+  },
+  "DonutSwinModel": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "hidden_size",
+      "num_layers",
+      "num_heads",
+      "add_pooling_layer",
+      "use_mask_token",
+      "is_export"
+    ],
+    "get_input_embeddings": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_data",
+      "bool_masked_pos",
+      "head_mask",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "__all__": [],
+  "build_backbone": [
+    "config",
+    "model_type"
+  ],
+  "NET_CONFIG_det": [],
+  "NET_CONFIG_rec": [],
+  "LearnableAffineBlock": {
+    "__init__": [
+      "self",
+      "scale_value",
+      "bias_value",
+      "lr_mult",
+      "lab_lr"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Act": {
+    "__init__": [
+      "self",
+      "act",
+      "lr_mult",
+      "lab_lr"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LearnableRepLayer": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "groups",
+      "num_conv_branches",
+      "lr_mult",
+      "lab_lr"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "rep": [
+      "self"
+    ],
+    "_pad_kernel_1x1_to_kxk": [
+      "self",
+      "kernel1x1",
+      "pad"
+    ],
+    "_get_kernel_bias": [
+      "self"
+    ],
+    "_fuse_bn_tensor": [
+      "self",
+      "branch"
+    ]
+  },
+  "SELayer": {
+    "__init__": [
+      "self",
+      "channel",
+      "reduction",
+      "lr_mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LCNetV3Block": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "stride",
+      "dw_size",
+      "use_se",
+      "conv_kxk_num",
+      "lr_mult",
+      "lab_lr"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PPLCNetV3": {
+    "__init__": [
+      "self",
+      "scale",
+      "conv_kxk_num",
+      "lr_mult_list",
+      "lab_lr",
+      "det"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DropPath": {
+    "__init__": [
+      "self",
+      "drop_prob"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Identity": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "Mlp": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "act_layer",
+      "drop"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvMixer": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "HW",
+      "local_k"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "mixer",
+      "HW",
+      "local_k",
+      "qkv_bias",
+      "qk_scale",
+      "attn_drop",
+      "proj_drop"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Block": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "mixer",
+      "local_mixer",
+      "HW",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer",
+      "epsilon",
+      "prenorm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PatchEmbed": {
+    "__init__": [
+      "self",
+      "img_size",
+      "in_channels",
+      "embed_dim",
+      "sub_num",
+      "patch_size",
+      "mode"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SubSample": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "types",
+      "stride",
+      "sub_norm",
+      "act"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SVTRNet": {
+    "__init__": [
+      "self",
+      "img_size",
+      "in_channels",
+      "embed_dim",
+      "depth",
+      "num_heads",
+      "mixer",
+      "local_mixer",
+      "patch_merging",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop_rate",
+      "last_drop",
+      "attn_drop_rate",
+      "drop_path_rate",
+      "norm_layer",
+      "sub_norm",
+      "epsilon",
+      "out_channels",
+      "out_char_num",
+      "block_unit",
+      "act",
+      "last_stage",
+      "sub_num",
+      "prenorm",
+      "use_lenhead"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IdentityBasedConv1x1": {
+    "__init__": [
+      "self",
+      "channels",
+      "groups"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "get_actual_kernel": [
+      "self"
+    ]
+  },
+  "BNAndPad": {
+    "__init__": [
+      "self",
+      "pad_pixels",
+      "num_features",
+      "epsilon",
+      "momentum",
+      "last_conv_bias",
+      "bn"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "weight": [
+      "self"
+    ],
+    "bias": [
+      "self"
+    ],
+    "_mean": [
+      "self"
+    ],
+    "_variance": [
+      "self"
+    ],
+    "_epsilon": [
+      "self"
+    ]
+  },
+  "conv_bn": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "dilation",
+    "groups",
+    "padding_mode"
+  ],
+  "transI_fusebn": [
+    "kernel",
+    "bn"
+  ],
+  "transII_addbranch": [
+    "kernels",
+    "biases"
+  ],
+  "transIII_1x1_kxk": [
+    "k1",
+    "b1",
+    "k2",
+    "b2",
+    "groups"
+  ],
+  "transIV_depthconcat": [
+    "kernels",
+    "biases"
+  ],
+  "transV_avg": [
+    "channels",
+    "kernel_size",
+    "groups"
+  ],
+  "transVI_multiscale": [
+    "kernel",
+    "target_kernel_size"
+  ],
+  "DiverseBranchBlock": {
+    "__init__": [
+      "self",
+      "num_channels",
+      "num_filters",
+      "filter_size",
+      "stride",
+      "groups",
+      "act",
+      "is_repped",
+      "single_init"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ],
+    "init_gamma": [
+      "self",
+      "gamma_value"
+    ],
+    "single_init": [
+      "self"
+    ],
+    "get_equivalent_kernel_bias": [
+      "self"
+    ],
+    "re_parameterize": [
+      "self"
+    ]
+  },
+  "TheseusLayer": {
+    "__init__": [
+      "self"
+    ],
+    "_return_dict_hook": [
+      "self",
+      "layer",
+      "input",
+      "output"
+    ],
+    "init_net": [
+      "self",
+      "stages_pattern",
+      "return_patterns",
+      "return_stages",
+      "freeze_befor",
+      "stop_after"
+    ],
+    "init_res": [
+      "self",
+      "stages_pattern",
+      "return_patterns",
+      "return_stages"
+    ],
+    "replace_sub": [
+      "self"
+    ],
+    "upgrade_sublayer": [
+      "self",
+      "layer_name_pattern",
+      "handle_func"
+    ],
+    "stop_after": [
+      "self",
+      "stop_layer_name"
+    ],
+    "freeze_befor": [
+      "self",
+      "layer_name"
+    ],
+    "update_res": [
+      "self",
+      "return_patterns"
+    ]
+  },
+  "save_sub_res_hook": [
+    "layer",
+    "input",
+    "output"
+  ],
+  "set_identity": [
+    "parent_layer",
+    "layer_name",
+    "layer_index_list"
+  ],
+  "parse_pattern_str": [
+    "pattern",
+    "parent_layer"
+  ],
+  "MODEL_URLS": [],
+  "ConvBNAct": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "groups",
+      "use_act",
+      "use_lab",
+      "lr_mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LightConvBNAct": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "use_lab",
+      "lr_mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PaddingSameAsPaddleMaxPool2d": {
+    "__init__": [
+      "self",
+      "kernel_size",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "StemBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "use_lab",
+      "lr_mult",
+      "text_rec"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HGV2_Block": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "kernel_size",
+      "layer_num",
+      "identity",
+      "light_block",
+      "use_lab",
+      "lr_mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HGV2_Stage": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "block_num",
+      "layer_num",
+      "is_downsample",
+      "light_block",
+      "kernel_size",
+      "use_lab",
+      "stride",
+      "lr_mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PPHGNetV2": {
+    "__init__": [
+      "self",
+      "stage_config",
+      "stem_channels",
+      "use_lab",
+      "use_last_conv",
+      "class_expand",
+      "dropout_prob",
+      "class_num",
+      "lr_mult_list",
+      "det",
+      "text_rec",
+      "out_indices"
+    ],
+    "_init_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PPHGNetV2_B0": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B1": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B2": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B3": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B4": [
+    "pretrained",
+    "use_ssld",
+    "det",
+    "text_rec"
+  ],
+  "PPHGNetV2_B5": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B6": [
+    "pretrained",
+    "use_ssld"
+  ],
+  "PPHGNetV2_B4_Formula": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "class_num"
+    ],
+    "forward": [
+      "self",
+      "input_data"
+    ]
+  },
+  "PPHGNetV2_B6_Formula": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "class_num"
+    ],
+    "forward": [
+      "self",
+      "input_data"
+    ]
+  },
+  "ESEModule": {
+    "__init__": [
+      "self",
+      "channels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HG_Block": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "layer_num",
+      "identity"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HG_Stage": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "block_num",
+      "layer_num",
+      "downsample",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PPHGNet": {
+    "__init__": [
+      "self",
+      "stem_channels",
+      "stage_config",
+      "layer_num",
+      "in_channels",
+      "det",
+      "out_indices"
+    ],
+    "_init_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PPHGNet_small": [
+    "pretrained",
+    "use_ssld",
+    "det"
+  ],
+  "DepthwiseSeparable": {
+    "__init__": [
+      "self",
+      "num_channels",
+      "num_filters1",
+      "num_filters2",
+      "num_groups",
+      "stride",
+      "scale",
+      "dw_size",
+      "padding",
+      "use_se"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "MobileNetV1Enhance": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "scale",
+      "last_conv_stride",
+      "last_pool_type"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "hardsigmoid": [
+    "x"
+  ],
+  "BaseModel": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_initialize_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "build_model": [
+    "config"
+  ],
+  "hard_swish": [
+    "x",
+    "inplace"
+  ],
+  "DSConv": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "padding",
+      "stride",
+      "groups",
+      "if_act",
+      "act"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "DBFPN": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "use_asf"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RSELayer": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "shortcut"
+    ],
+    "forward": [
+      "self",
+      "ins"
+    ]
+  },
+  "RSEFPN": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "shortcut"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LKPAN": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "mode"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ASFBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "inter_channels",
+      "out_features_num"
+    ],
+    "forward": [
+      "self",
+      "fuse_features",
+      "features_list"
+    ]
+  },
+  "IntraCLBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "reduce_factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "build_intraclblock_list": [
+    "num_block"
+  ],
+  "build_neck": [
+    "config"
+  ],
+  "Im2Seq": {
+    "__init__": [
+      "self",
+      "in_channels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EncoderWithRNN_": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "hidden_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EncoderWithRNN": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "hidden_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EncoderWithFC": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "hidden_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EncoderWithSVTR": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "dims",
+      "depth",
+      "hidden_dims",
+      "use_guide",
+      "num_heads",
+      "qkv_bias",
+      "mlp_ratio",
+      "drop_rate",
+      "kernel_size",
+      "attn_drop_rate",
+      "drop_path",
+      "qk_scale"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SequenceEncoder": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "encoder_type",
+      "hidden_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ClsHead": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "class_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "build_head": [
+    "config"
+  ],
+  "CTCHead": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "fc_decay",
+      "mid_channels",
+      "return_feats"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "labels"
+    ]
+  },
+  "FCTranspose": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "only_transpose"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiHead": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels_list"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "data"
+    ]
+  },
+  "Head": {
+    "__init__": [
+      "self",
+      "in_channels"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_f"
+    ]
+  },
+  "DBHead": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "k"
+    ],
+    "step_function": [
+      "self",
+      "x",
+      "y"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LocalModule": {
+    "__init__": [
+      "self",
+      "in_c",
+      "mid_c",
+      "use_distance"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "init_map",
+      "distance_map"
+    ]
+  },
+  "PFHeadLocal": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "k",
+      "mode"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "targets"
+    ]
+  },
+  "OpenVINOInferSession": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "input_content"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ]
+  },
+  "OpenVINOError": {},
+  "CPUConfig": {
+    "__init__": [
+      "self",
+      "engine_cfg"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "PaddleInferSession": {
+    "__init__": [
+      "self",
+      "cfg",
+      "mode"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "get_input_tensors": [
+      "self"
+    ],
+    "get_output_tensors": [
+      "self"
+    ],
+    "setup_model": [
+      "self",
+      "cfg"
+    ],
+    "download_model": [
+      "self",
+      "model_info",
+      "default_model_dir",
+      "model_file_name"
+    ],
+    "init_predictor": [
+      "self",
+      "infer_opts",
+      "ocr_version"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ]
+  },
+  "PaddleInferError": {},
+  "MNNInferSession": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ]
+  },
+  "MNNError": {},
+  "Logger": {
+    "__init__": [
+      "self",
+      "log_level",
+      "logger_name"
+    ],
+    "get_log": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "ParseParams": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "file_path"
+    ],
+    "update_batch": [
+      "cls",
+      "cfg",
+      "params"
+    ],
+    "_convert_value_to_enum": [
+      "cls",
+      "cfg"
+    ],
+    "LangType": [
+      "task_type",
+      "lang_type"
+    ]
+  },
+  "reorder_bidi_for_display": [
+    "texts"
+  ],
+  "filter_by_indices": [
+    "data",
+    "indices"
+  ],
+  "mkdir": [
+    "dir_path"
+  ],
+  "quads_to_rect_bbox": [
+    "bbox"
+  ],
+  "is_chinese_char": [
+    "ch"
+  ],
+  "has_chinese_char": [
+    "text"
+  ],
+  "get_file_sha256": [
+    "file_path",
+    "chunk_size"
+  ],
+  "save_img": [
+    "save_path",
+    "img"
+  ],
+  "is_url": [
+    "url"
+  ],
+  "import_package": [
+    "name",
+    "package"
+  ],
+  "map_img_to_original": [
+    "imgs",
+    "ratio_h",
+    "ratio_w"
+  ],
+  "map_boxes_to_original": [
+    "dt_boxes",
+    "op_record",
+    "ori_h",
+    "ori_w"
+  ],
+  "apply_vertical_padding": [
+    "img",
+    "op_record",
+    "width_height_ratio",
+    "min_height"
+  ],
+  "get_padding_h": [
+    "h",
+    "w",
+    "width_height_ratio",
+    "min_height"
+  ],
+  "get_rotate_crop_image": [
+    "img",
+    "points"
+  ],
+  "resize_image_within_bounds": [
+    "img",
+    "min_side_len",
+    "max_side_len"
+  ],
+  "reduce_max_side": [
+    "img",
+    "max_side_len"
+  ],
+  "increase_min_side": [
+    "img",
+    "min_side_len"
+  ],
+  "add_round_letterbox": [
+    "img",
+    "padding_tuple"
+  ],
+  "InputType": [],
+  "DEFAULT_FONT_DIR": [],
+  "DEFAULT_FONT_PATH": [],
+  "FONT_YAML_PATH": [],
+  "font_cfg": [],
+  "get_font_path": [
+    "font_path",
+    "lang_type"
+  ],
+  "VisRes": {
+    "load_img": [],
+    "__init__": [
+      "self",
+      "text_score",
+      "lang_type",
+      "font_path"
+    ],
+    "font_path": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "img_content",
+      "dt_boxes",
+      "txts",
+      "scores"
+    ],
+    "draw_dt_boxes": [
+      "self",
+      "img_content",
+      "dt_boxes",
+      "scores"
+    ],
+    "draw_rec_res": [
+      "self",
+      "imgs",
+      "txts",
+      "scores"
+    ],
+    "draw_one_rec_res": [
+      "self",
+      "img_content",
+      "txt",
+      "score"
+    ],
+    "draw_ocr_box_txt": [
+      "self",
+      "img_content",
+      "dt_boxes",
+      "txts",
+      "scores"
+    ],
+    "get_random_color": [],
+    "get_box_height": [
+      "box"
+    ],
+    "get_box_width": [
+      "box"
+    ],
+    "get_char_size": [
+      "font",
+      "char_str"
+    ],
+    "concat_imgs": [
+      "imgs",
+      "direction"
+    ]
+  },
+  "DownloadFileInput": {},
+  "DownloadFile": {
+    "BLOCK_SIZE": [],
+    "REQUEST_TIMEOUT": [],
+    "run": [
+      "cls",
+      "input_params"
+    ],
+    "_ensure_parent_dir_exists": [
+      "path"
+    ],
+    "_should_skip_download": [
+      "cls",
+      "path",
+      "expected_sha256",
+      "logger"
+    ],
+    "_make_http_request": [
+      "cls",
+      "url",
+      "logger"
+    ],
+    "_save_response_with_progress": [
+      "cls",
+      "response",
+      "save_path",
+      "logger"
+    ],
+    "check_file_sha256": [
+      "file_path",
+      "gt_sha256"
+    ],
+    "check_is_atty": []
+  },
+  "DownloadFileException": {},
+  "ToJSON": {
+    "to": [
+      "cls",
+      "boxes",
+      "txts",
+      "scores"
+    ]
+  },
+  "DeviceType": {
+    "CPU": [],
+    "CUDA": [],
+    "NPU": [],
+    "XPU": [],
+    "MLU": [],
+    "DCU": [],
+    "GCU": []
+  },
+  "LangDet": {
+    "CH": [],
+    "EN": [],
+    "MULTI": []
+  },
+  "LangCls": {
+    "CH": []
+  },
+  "LangRec": {
+    "CH": [],
+    "CH_DOC": [],
+    "EN": [],
+    "ARABIC": [],
+    "CHINESE_CHT": [],
+    "CYRILLIC": [],
+    "DEVANAGARI": [],
+    "JAPAN": [],
+    "KOREAN": [],
+    "KA": [],
+    "LATIN": [],
+    "TA": [],
+    "TE": [],
+    "ESLAV": [],
+    "TH": [],
+    "EL": []
+  },
+  "OCRVersion": {
+    "PPOCRV4": [],
+    "PPOCRV5": []
+  },
+  "EngineType": {
+    "ONNXRUNTIME": [],
+    "OPENVINO": [],
+    "PADDLE": [],
+    "TORCH": [],
+    "MNN": []
+  },
+  "ModelType": {
+    "MOBILE": [],
+    "SERVER": []
+  },
+  "TaskType": {
+    "DET": [],
+    "CLS": [],
+    "REC": []
+  },
+  "ToMarkdown": {
+    "to": [
+      "cls",
+      "boxes",
+      "txts"
+    ],
+    "get_box_properties": [
+      "box"
+    ]
+  },
+  "RapidOCROutput": {
+    "__post_init__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "to_markdown": [
+      "self"
+    ],
+    "vis": [
+      "self",
+      "save_path"
+    ]
+  },
+  "LoadImage": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "load_img": [
+      "self",
+      "img"
+    ],
+    "verify_exist": [
+      "file_path"
+    ],
+    "exif_transpose": [
+      "img"
+    ],
+    "img_to_ndarray": [
+      "self",
+      "img"
+    ],
+    "convert_img": [
+      "self",
+      "img",
+      "origin_img_type"
+    ],
+    "cvt_two_to_three": [
+      "img"
+    ],
+    "cvt_four_to_three": [
+      "img"
+    ]
+  },
+  "LoadImageError": {},
+  "Direction": {
+    "HORIZONTAL": [],
+    "VERTICAL": []
+  },
+  "CalRecBoxes": {
+    "__call__": [
+      "self",
+      "imgs",
+      "dt_boxes",
+      "rec_res",
+      "return_single_char_box"
+    ],
+    "get_box_direction": [
+      "box"
+    ],
+    "cal_ocr_word_box": [
+      "self",
+      "rec_txt",
+      "bbox",
+      "word_info",
+      "return_single_char_box"
+    ],
+    "calc_en_num_box": [
+      "self",
+      "line_cols",
+      "avg_char_width",
+      "avg_col_width",
+      "bbox_points"
+    ],
+    "calc_box": [
+      "line_cols",
+      "avg_char_width",
+      "avg_col_width",
+      "bbox_points"
+    ],
+    "calc_avg_char_width": [
+      "word_col",
+      "each_col_width"
+    ],
+    "calc_all_char_avg_width": [
+      "width_list",
+      "bbox_x0",
+      "bbox_x1",
+      "txt_len"
+    ],
+    "adjust_box_overlap": [
+      "word_box_list"
+    ],
+    "reverse_rotate_crop_image": [
+      "self",
+      "bbox_points",
+      "word_points_list",
+      "direction"
+    ],
+    "s_rotate": [
+      "angle",
+      "valuex",
+      "valuey",
+      "pointx",
+      "pointy"
+    ],
+    "order_points": [
+      "ori_box"
+    ]
+  },
+  "TextClassifier": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "__call__": [
+      "self",
+      "img_list"
+    ],
+    "resize_norm_img": [
+      "self",
+      "img"
+    ]
+  },
+  "TextClsOutput": {
+    "__len__": [
+      "self"
+    ],
+    "vis": [
+      "self",
+      "save_path"
+    ],
+    "restore_image_orientation": [
+      "self",
+      "img_list",
+      "img_degrees"
+    ]
+  },
+  "ClsPostProcess": {
+    "__init__": [
+      "self",
+      "label_list"
+    ],
+    "__call__": [
+      "self",
+      "preds"
+    ]
+  }
+}

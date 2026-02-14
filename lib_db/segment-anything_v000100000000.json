@@ -1,0 +1,573 @@
+{
+  "build_sam_vit_h": [
+    "checkpoint"
+  ],
+  "build_sam": [],
+  "build_sam_vit_l": [
+    "checkpoint"
+  ],
+  "build_sam_vit_b": [
+    "checkpoint"
+  ],
+  "sam_model_registry": [],
+  "_build_sam": [
+    "encoder_embed_dim",
+    "encoder_depth",
+    "encoder_num_heads",
+    "encoder_global_attn_indexes",
+    "checkpoint"
+  ],
+  "SamAutomaticMaskGenerator": {
+    "__init__": [
+      "self",
+      "model",
+      "points_per_side",
+      "points_per_batch",
+      "pred_iou_thresh",
+      "stability_score_thresh",
+      "stability_score_offset",
+      "box_nms_thresh",
+      "crop_n_layers",
+      "crop_nms_thresh",
+      "crop_overlap_ratio",
+      "crop_n_points_downscale_factor",
+      "point_grids",
+      "min_mask_region_area",
+      "output_mode"
+    ],
+    "generate": [
+      "self",
+      "image"
+    ],
+    "_generate_masks": [
+      "self",
+      "image"
+    ],
+    "_process_crop": [
+      "self",
+      "image",
+      "crop_box",
+      "crop_layer_idx",
+      "orig_size"
+    ],
+    "_process_batch": [
+      "self",
+      "points",
+      "im_size",
+      "crop_box",
+      "orig_size"
+    ],
+    "postprocess_small_regions": [
+      "mask_data",
+      "min_area",
+      "nms_thresh"
+    ]
+  },
+  "SamPredictor": {
+    "__init__": [
+      "self",
+      "sam_model"
+    ],
+    "set_image": [
+      "self",
+      "image",
+      "image_format"
+    ],
+    "set_torch_image": [
+      "self",
+      "transformed_image",
+      "original_image_size"
+    ],
+    "predict": [
+      "self",
+      "point_coords",
+      "point_labels",
+      "box",
+      "mask_input",
+      "multimask_output",
+      "return_logits"
+    ],
+    "predict_torch": [
+      "self",
+      "point_coords",
+      "point_labels",
+      "boxes",
+      "mask_input",
+      "multimask_output",
+      "return_logits"
+    ],
+    "get_image_embedding": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "reset_image": [
+      "self"
+    ]
+  },
+  "MLPBlock": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "mlp_dim",
+      "act"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm2d": {
+    "__init__": [
+      "self",
+      "num_channels",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PromptEncoder": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "image_embedding_size",
+      "input_image_size",
+      "mask_in_chans",
+      "activation"
+    ],
+    "get_dense_pe": [
+      "self"
+    ],
+    "_embed_points": [
+      "self",
+      "points",
+      "labels",
+      "pad"
+    ],
+    "_embed_boxes": [
+      "self",
+      "boxes"
+    ],
+    "_embed_masks": [
+      "self",
+      "masks"
+    ],
+    "_get_batch_size": [
+      "self",
+      "points",
+      "boxes",
+      "masks"
+    ],
+    "_get_device": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "points",
+      "boxes",
+      "masks"
+    ]
+  },
+  "PositionEmbeddingRandom": {
+    "__init__": [
+      "self",
+      "num_pos_feats",
+      "scale"
+    ],
+    "_pe_encoding": [
+      "self",
+      "coords"
+    ],
+    "forward": [
+      "self",
+      "size"
+    ],
+    "forward_with_coords": [
+      "self",
+      "coords_input",
+      "image_size"
+    ]
+  },
+  "Sam": {
+    "__init__": [
+      "self",
+      "image_encoder",
+      "prompt_encoder",
+      "mask_decoder",
+      "pixel_mean",
+      "pixel_std"
+    ],
+    "device": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "batched_input",
+      "multimask_output"
+    ],
+    "postprocess_masks": [
+      "self",
+      "masks",
+      "input_size",
+      "original_size"
+    ],
+    "preprocess": [
+      "self",
+      "x"
+    ]
+  },
+  "MaskDecoder": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "image_embeddings",
+      "image_pe",
+      "sparse_prompt_embeddings",
+      "dense_prompt_embeddings",
+      "multimask_output"
+    ],
+    "predict_masks": [
+      "self",
+      "image_embeddings",
+      "image_pe",
+      "sparse_prompt_embeddings",
+      "dense_prompt_embeddings"
+    ]
+  },
+  "MLP": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "hidden_dim",
+      "output_dim",
+      "num_layers",
+      "sigmoid_output"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TwoWayTransformer": {
+    "__init__": [
+      "self",
+      "depth",
+      "embedding_dim",
+      "num_heads",
+      "mlp_dim",
+      "activation",
+      "attention_downsample_rate"
+    ],
+    "forward": [
+      "self",
+      "image_embedding",
+      "image_pe",
+      "point_embedding"
+    ]
+  },
+  "TwoWayAttentionBlock": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "num_heads",
+      "mlp_dim",
+      "activation",
+      "attention_downsample_rate",
+      "skip_first_layer_pe"
+    ],
+    "forward": [
+      "self",
+      "queries",
+      "keys",
+      "query_pe",
+      "key_pe"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "num_heads",
+      "downsample_rate"
+    ],
+    "_separate_heads": [
+      "self",
+      "x",
+      "num_heads"
+    ],
+    "_recombine_heads": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k",
+      "v"
+    ]
+  },
+  "ImageEncoderViT": {
+    "__init__": [
+      "self",
+      "img_size",
+      "patch_size",
+      "in_chans",
+      "embed_dim",
+      "depth",
+      "num_heads",
+      "mlp_ratio",
+      "out_chans",
+      "qkv_bias",
+      "norm_layer",
+      "act_layer",
+      "use_abs_pos",
+      "use_rel_pos",
+      "rel_pos_zero_init",
+      "window_size",
+      "global_attn_indexes"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Block": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "mlp_ratio",
+      "qkv_bias",
+      "norm_layer",
+      "act_layer",
+      "use_rel_pos",
+      "rel_pos_zero_init",
+      "window_size",
+      "input_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "window_partition": [
+    "x",
+    "window_size"
+  ],
+  "window_unpartition": [
+    "windows",
+    "window_size",
+    "pad_hw",
+    "hw"
+  ],
+  "get_rel_pos": [
+    "q_size",
+    "k_size",
+    "rel_pos"
+  ],
+  "add_decomposed_rel_pos": [
+    "attn",
+    "q",
+    "rel_pos_h",
+    "rel_pos_w",
+    "q_size",
+    "k_size"
+  ],
+  "PatchEmbed": {
+    "__init__": [
+      "self",
+      "kernel_size",
+      "stride",
+      "padding",
+      "in_chans",
+      "embed_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResizeLongestSide": {
+    "__init__": [
+      "self",
+      "target_length"
+    ],
+    "apply_image": [
+      "self",
+      "image"
+    ],
+    "apply_coords": [
+      "self",
+      "coords",
+      "original_size"
+    ],
+    "apply_boxes": [
+      "self",
+      "boxes",
+      "original_size"
+    ],
+    "apply_image_torch": [
+      "self",
+      "image"
+    ],
+    "apply_coords_torch": [
+      "self",
+      "coords",
+      "original_size"
+    ],
+    "apply_boxes_torch": [
+      "self",
+      "boxes",
+      "original_size"
+    ],
+    "get_preprocess_shape": [
+      "oldh",
+      "oldw",
+      "long_side_length"
+    ]
+  },
+  "SamOnnxModel": {
+    "__init__": [
+      "self",
+      "model",
+      "return_single_mask",
+      "use_stability_score",
+      "return_extra_metrics"
+    ],
+    "resize_longest_image_size": [
+      "input_image_size",
+      "longest_side"
+    ],
+    "_embed_points": [
+      "self",
+      "point_coords",
+      "point_labels"
+    ],
+    "_embed_masks": [
+      "self",
+      "input_mask",
+      "has_mask_input"
+    ],
+    "mask_postprocessing": [
+      "self",
+      "masks",
+      "orig_im_size"
+    ],
+    "select_masks": [
+      "self",
+      "masks",
+      "iou_preds",
+      "num_points"
+    ],
+    "forward": [
+      "self",
+      "image_embeddings",
+      "point_coords",
+      "point_labels",
+      "mask_input",
+      "has_mask_input",
+      "orig_im_size"
+    ]
+  },
+  "MaskData": {
+    "__init__": [
+      "self"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "item"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ],
+    "filter": [
+      "self",
+      "keep"
+    ],
+    "cat": [
+      "self",
+      "new_stats"
+    ],
+    "to_numpy": [
+      "self"
+    ]
+  },
+  "is_box_near_crop_edge": [
+    "boxes",
+    "crop_box",
+    "orig_box",
+    "atol"
+  ],
+  "box_xyxy_to_xywh": [
+    "box_xyxy"
+  ],
+  "batch_iterator": [
+    "batch_size"
+  ],
+  "mask_to_rle_pytorch": [
+    "tensor"
+  ],
+  "rle_to_mask": [
+    "rle"
+  ],
+  "area_from_rle": [
+    "rle"
+  ],
+  "calculate_stability_score": [
+    "masks",
+    "mask_threshold",
+    "threshold_offset"
+  ],
+  "build_point_grid": [
+    "n_per_side"
+  ],
+  "build_all_layer_point_grids": [
+    "n_per_side",
+    "n_layers",
+    "scale_per_layer"
+  ],
+  "generate_crop_boxes": [
+    "im_size",
+    "n_layers",
+    "overlap_ratio"
+  ],
+  "uncrop_boxes_xyxy": [
+    "boxes",
+    "crop_box"
+  ],
+  "uncrop_points": [
+    "points",
+    "crop_box"
+  ],
+  "uncrop_masks": [
+    "masks",
+    "crop_box",
+    "orig_h",
+    "orig_w"
+  ],
+  "remove_small_regions": [
+    "mask",
+    "area_thresh",
+    "mode"
+  ],
+  "coco_encode_rle": [
+    "uncompressed_rle"
+  ],
+  "batched_mask_to_box": [
+    "masks"
+  ]
+}
