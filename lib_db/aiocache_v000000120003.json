@@ -1,0 +1,909 @@
+{
+  "logger": [],
+  "_class_from_string": [
+    "class_path"
+  ],
+  "_create_cache": [
+    "cache",
+    "serializer",
+    "plugins"
+  ],
+  "Cache": {
+    "MEMORY": [],
+    "REDIS": [],
+    "MEMCACHED": [],
+    "__new__": [
+      "cls",
+      "cache_class"
+    ],
+    "_get_cache_class": [
+      "cls",
+      "scheme"
+    ],
+    "get_scheme_class": [
+      "cls",
+      "scheme"
+    ],
+    "from_url": [
+      "cls",
+      "url"
+    ]
+  },
+  "CacheHandler": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "alias",
+      "config"
+    ],
+    "get": [
+      "self",
+      "alias"
+    ],
+    "create": [
+      "self",
+      "alias"
+    ],
+    "get_alias_config": [
+      "self",
+      "alias"
+    ],
+    "get_config": [
+      "self"
+    ],
+    "set_config": [
+      "self",
+      "config"
+    ]
+  },
+  "caches": [],
+  "SENTINEL": [],
+  "API": {
+    "register": [
+      "cls",
+      "func"
+    ],
+    "unregister": [
+      "cls",
+      "func"
+    ],
+    "timeout": [
+      "cls",
+      "func"
+    ],
+    "aiocache_enabled": [
+      "cls",
+      "fake_return"
+    ],
+    "plugins": [
+      "cls",
+      "func"
+    ]
+  },
+  "BaseCache": {
+    "__init__": [
+      "self",
+      "serializer",
+      "plugins",
+      "namespace",
+      "key_builder",
+      "timeout",
+      "ttl"
+    ],
+    "serializer": [
+      "self",
+      "value"
+    ],
+    "plugins": [
+      "self",
+      "value"
+    ],
+    "add": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "dumps_fn",
+      "namespace",
+      "_conn"
+    ],
+    "_add": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_conn"
+    ],
+    "get": [
+      "self",
+      "key",
+      "default",
+      "loads_fn",
+      "namespace",
+      "_conn"
+    ],
+    "_get": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_gets": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "multi_get": [
+      "self",
+      "keys",
+      "loads_fn",
+      "namespace",
+      "_conn"
+    ],
+    "_multi_get": [
+      "self",
+      "keys",
+      "encoding",
+      "_conn"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "dumps_fn",
+      "namespace",
+      "_cas_token",
+      "_conn"
+    ],
+    "_set": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_cas_token",
+      "_conn"
+    ],
+    "multi_set": [
+      "self",
+      "pairs",
+      "ttl",
+      "dumps_fn",
+      "namespace",
+      "_conn"
+    ],
+    "_multi_set": [
+      "self",
+      "pairs",
+      "ttl",
+      "_conn"
+    ],
+    "delete": [
+      "self",
+      "key",
+      "namespace",
+      "_conn"
+    ],
+    "_delete": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "exists": [
+      "self",
+      "key",
+      "namespace",
+      "_conn"
+    ],
+    "_exists": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "increment": [
+      "self",
+      "key",
+      "delta",
+      "namespace",
+      "_conn"
+    ],
+    "_increment": [
+      "self",
+      "key",
+      "delta",
+      "_conn"
+    ],
+    "expire": [
+      "self",
+      "key",
+      "ttl",
+      "namespace",
+      "_conn"
+    ],
+    "_expire": [
+      "self",
+      "key",
+      "ttl",
+      "_conn"
+    ],
+    "clear": [
+      "self",
+      "namespace",
+      "_conn"
+    ],
+    "_clear": [
+      "self",
+      "namespace",
+      "_conn"
+    ],
+    "raw": [
+      "self",
+      "command"
+    ],
+    "_raw": [
+      "self",
+      "command"
+    ],
+    "_redlock_release": [
+      "self",
+      "key",
+      "value"
+    ],
+    "close": [
+      "self"
+    ],
+    "_close": [
+      "self"
+    ],
+    "_build_key": [
+      "self",
+      "key",
+      "namespace"
+    ],
+    "_get_ttl": [
+      "self",
+      "ttl"
+    ],
+    "get_connection": [
+      "self"
+    ],
+    "acquire_conn": [
+      "self"
+    ],
+    "release_conn": [
+      "self",
+      "conn"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "_Conn": {
+    "__init__": [
+      "self",
+      "cache"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "_inject_conn": [
+      "cls",
+      "cmd_name"
+    ]
+  },
+  "_ensure_key": [
+    "key"
+  ],
+  "BasePlugin": {
+    "add_hook": [
+      "cls",
+      "func",
+      "hooks"
+    ],
+    "do_nothing": [
+      "self"
+    ]
+  },
+  "TimingPlugin": {
+    "save_time": [
+      "cls",
+      "method"
+    ]
+  },
+  "HitMissRatioPlugin": {
+    "post_get": [
+      "self",
+      "client",
+      "key",
+      "took",
+      "ret"
+    ],
+    "post_multi_get": [
+      "self",
+      "client",
+      "keys",
+      "took",
+      "ret"
+    ]
+  },
+  "__version__": [],
+  "__all__": [],
+  "InvalidCacheType": {},
+  "cached": {
+    "__init__": [
+      "self",
+      "ttl",
+      "key",
+      "namespace",
+      "key_builder",
+      "skip_cache_func",
+      "cache",
+      "serializer",
+      "plugins",
+      "alias",
+      "noself"
+    ],
+    "__call__": [
+      "self",
+      "f"
+    ],
+    "decorator": [
+      "self",
+      "f"
+    ],
+    "get_cache_key": [
+      "self",
+      "f",
+      "args",
+      "kwargs"
+    ],
+    "_key_from_args": [
+      "self",
+      "func",
+      "args",
+      "kwargs"
+    ],
+    "get_from_cache": [
+      "self",
+      "key"
+    ],
+    "set_in_cache": [
+      "self",
+      "key",
+      "value"
+    ]
+  },
+  "cached_stampede": {
+    "__init__": [
+      "self",
+      "lease"
+    ],
+    "decorator": [
+      "self",
+      "f"
+    ]
+  },
+  "_get_cache": [
+    "cache",
+    "serializer",
+    "plugins"
+  ],
+  "_get_args_dict": [
+    "func",
+    "args",
+    "kwargs"
+  ],
+  "multi_cached": {
+    "__init__": [
+      "self",
+      "keys_from_attr",
+      "namespace",
+      "key_builder",
+      "skip_cache_func",
+      "ttl",
+      "cache",
+      "serializer",
+      "plugins",
+      "alias"
+    ],
+    "__call__": [
+      "self",
+      "f"
+    ],
+    "decorator": [
+      "self",
+      "f"
+    ],
+    "get_cache_keys": [
+      "self",
+      "f",
+      "args",
+      "kwargs"
+    ],
+    "get_from_cache": [
+      "self"
+    ],
+    "set_in_cache": [
+      "self",
+      "result",
+      "fn",
+      "fn_args",
+      "fn_kwargs"
+    ]
+  },
+  "RedLock": {
+    "__init__": [
+      "self",
+      "client",
+      "key",
+      "lease"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "_acquire": [
+      "self"
+    ],
+    "_wait_for_release": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "_release": [
+      "self"
+    ]
+  },
+  "OptimisticLock": {
+    "__init__": [
+      "self",
+      "client",
+      "key"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "_acquire": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "cas": [
+      "self",
+      "value"
+    ]
+  },
+  "OptimisticLockError": {},
+  "_NOT_SET": [],
+  "RedisBackend": {
+    "RELEASE_SCRIPT": [],
+    "CAS_SCRIPT": [],
+    "__init__": [
+      "self",
+      "endpoint",
+      "port",
+      "db",
+      "password",
+      "pool_min_size",
+      "pool_max_size",
+      "create_connection_timeout",
+      "ssl",
+      "connection_pool_class",
+      "connection_pool_kwargs"
+    ],
+    "_get": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_gets": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_multi_get": [
+      "self",
+      "keys",
+      "encoding",
+      "_conn"
+    ],
+    "_set": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_cas_token",
+      "_conn"
+    ],
+    "_cas": [
+      "self",
+      "key",
+      "value",
+      "token",
+      "ttl",
+      "_conn"
+    ],
+    "_multi_set": [
+      "self",
+      "pairs",
+      "ttl",
+      "_conn"
+    ],
+    "__multi_set_ttl": [
+      "self",
+      "flattened",
+      "ttl"
+    ],
+    "_add": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_conn"
+    ],
+    "_exists": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_increment": [
+      "self",
+      "key",
+      "delta",
+      "_conn"
+    ],
+    "_expire": [
+      "self",
+      "key",
+      "ttl",
+      "_conn"
+    ],
+    "_delete": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_clear": [
+      "self",
+      "namespace",
+      "_conn"
+    ],
+    "_raw": [
+      "self",
+      "command"
+    ],
+    "_redlock_release": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_close": [
+      "self"
+    ]
+  },
+  "RedisCache": {
+    "NAME": [],
+    "__init__": [
+      "self",
+      "serializer"
+    ],
+    "parse_uri_path": [
+      "cls",
+      "path"
+    ],
+    "_build_key": [
+      "self",
+      "key",
+      "namespace"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SimpleMemoryBackend": {
+    "__init__": [
+      "self"
+    ],
+    "_get": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_gets": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_multi_get": [
+      "self",
+      "keys",
+      "encoding",
+      "_conn"
+    ],
+    "_set": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_cas_token",
+      "_conn"
+    ],
+    "_multi_set": [
+      "self",
+      "pairs",
+      "ttl",
+      "_conn"
+    ],
+    "_add": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_conn"
+    ],
+    "_exists": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_increment": [
+      "self",
+      "key",
+      "delta",
+      "_conn"
+    ],
+    "_expire": [
+      "self",
+      "key",
+      "ttl",
+      "_conn"
+    ],
+    "_delete": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_clear": [
+      "self",
+      "namespace",
+      "_conn"
+    ],
+    "_raw": [
+      "self",
+      "command"
+    ],
+    "_redlock_release": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__delete": [
+      "self",
+      "key"
+    ]
+  },
+  "SimpleMemoryCache": {
+    "NAME": [],
+    "__init__": [
+      "self",
+      "serializer"
+    ],
+    "parse_uri_path": [
+      "cls",
+      "path"
+    ]
+  },
+  "MemcachedBackend": {
+    "__init__": [
+      "self",
+      "endpoint",
+      "port",
+      "pool_size"
+    ],
+    "_get": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_gets": [
+      "self",
+      "key",
+      "encoding",
+      "_conn"
+    ],
+    "_multi_get": [
+      "self",
+      "keys",
+      "encoding",
+      "_conn"
+    ],
+    "_set": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_cas_token",
+      "_conn"
+    ],
+    "_cas": [
+      "self",
+      "key",
+      "value",
+      "token",
+      "ttl",
+      "_conn"
+    ],
+    "_multi_set": [
+      "self",
+      "pairs",
+      "ttl",
+      "_conn"
+    ],
+    "_add": [
+      "self",
+      "key",
+      "value",
+      "ttl",
+      "_conn"
+    ],
+    "_exists": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_increment": [
+      "self",
+      "key",
+      "delta",
+      "_conn"
+    ],
+    "_expire": [
+      "self",
+      "key",
+      "ttl",
+      "_conn"
+    ],
+    "_delete": [
+      "self",
+      "key",
+      "_conn"
+    ],
+    "_clear": [
+      "self",
+      "namespace",
+      "_conn"
+    ],
+    "_raw": [
+      "self",
+      "command"
+    ],
+    "_redlock_release": [
+      "self",
+      "key",
+      "_"
+    ],
+    "_close": [
+      "self"
+    ]
+  },
+  "MemcachedCache": {
+    "NAME": [],
+    "__init__": [
+      "self",
+      "serializer"
+    ],
+    "parse_uri_path": [
+      "cls",
+      "path"
+    ],
+    "_build_key": [
+      "self",
+      "key",
+      "namespace"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "BaseSerializer": {
+    "__init__": [
+      "self"
+    ],
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  },
+  "NullSerializer": {
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  },
+  "StringSerializer": {
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  },
+  "PickleSerializer": {
+    "DEFAULT_ENCODING": [],
+    "__init__": [
+      "self"
+    ],
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  },
+  "JsonSerializer": {
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  },
+  "MsgPackSerializer": {
+    "__init__": [
+      "self"
+    ],
+    "dumps": [
+      "self",
+      "value"
+    ],
+    "loads": [
+      "self",
+      "value"
+    ]
+  }
+}

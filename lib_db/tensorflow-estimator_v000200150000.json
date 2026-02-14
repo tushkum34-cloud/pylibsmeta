@@ -1,0 +1,6383 @@
+{
+  "Path": [],
+  "_largest_export_versions": [
+    "n"
+  ],
+  "_one_of_every_n_export_versions": [
+    "n"
+  ],
+  "_mod_export_version": [
+    "n"
+  ],
+  "_union": [
+    "lf",
+    "rf"
+  ],
+  "_negation": [
+    "f"
+  ],
+  "_get_paths": [
+    "base_dir",
+    "parser"
+  ],
+  "_MAX_DELAY_SECS": [],
+  "_DELAY_SECS_PER_WORKER": [],
+  "_TF_CONFIG_ENV": [],
+  "_ENVIRONMENT_KEY": [],
+  "_ENVIRONMENT_GOOGLE_VALUE": [],
+  "_TRAINER_JOBS": [],
+  "_validate_input_fn": [
+    "input_fn"
+  ],
+  "_validate_hooks": [
+    "hooks"
+  ],
+  "_validate_saving_listeners": [
+    "saving_listeners"
+  ],
+  "_validate_exporters": [
+    "exporters"
+  ],
+  "_is_google_env": [],
+  "TrainSpec": {
+    "__new__": [
+      "cls",
+      "input_fn",
+      "max_steps",
+      "hooks",
+      "saving_listeners"
+    ]
+  },
+  "EvalSpec": {
+    "__new__": [
+      "cls",
+      "input_fn",
+      "steps",
+      "name",
+      "hooks",
+      "exporters",
+      "start_delay_secs",
+      "throttle_secs"
+    ]
+  },
+  "train_and_evaluate": [
+    "estimator",
+    "train_spec",
+    "eval_spec"
+  ],
+  "_StopAtSecsHook": {
+    "__init__": [
+      "self",
+      "stop_after_secs"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_NewCheckpointListenerForEvaluate": {
+    "__init__": [
+      "self",
+      "evaluator",
+      "eval_throttle_secs",
+      "continuous_eval_listener"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_save": [
+      "self",
+      "session",
+      "global_step_value"
+    ],
+    "end": [
+      "self",
+      "session",
+      "global_step_value"
+    ],
+    "_evaluate": [
+      "self",
+      "global_step_value"
+    ]
+  },
+  "_TrainingExecutor": {
+    "__init__": [
+      "self",
+      "estimator",
+      "train_spec",
+      "eval_spec",
+      "train_hooks",
+      "continuous_eval_listener"
+    ],
+    "estimator": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_chief": [
+      "self"
+    ],
+    "run_worker": [
+      "self"
+    ],
+    "run_master": [
+      "self"
+    ],
+    "run_evaluator": [
+      "self"
+    ],
+    "run_ps": [
+      "self"
+    ],
+    "run_local": [
+      "self"
+    ],
+    "_start_std_server": [
+      "self",
+      "config"
+    ],
+    "_start_distributed_training": [
+      "self",
+      "saving_listeners"
+    ],
+    "_start_continuous_evaluation": [
+      "self"
+    ],
+    "_execute_evaluator_once": [
+      "self",
+      "evaluator",
+      "continuous_eval_listener",
+      "throttle_secs"
+    ]
+  },
+  "_EvalStatus": {
+    "EVALUATED": [],
+    "MISSING_CHECKPOINT": [],
+    "NO_NEW_CHECKPOINT": []
+  },
+  "_EvalResult": {
+    "__new__": [
+      "cls",
+      "status",
+      "metrics",
+      "checkpoint_path"
+    ]
+  },
+  "_ContinuousEvalListener": {
+    "before_eval": [
+      "self"
+    ],
+    "after_eval": [
+      "self",
+      "eval_result"
+    ]
+  },
+  "_assert_eval_spec": [
+    "eval_spec"
+  ],
+  "_VALID_METRIC_FN_ARGS": [],
+  "add_metrics": [
+    "estimator",
+    "metric_fn"
+  ],
+  "_verify_metric_fn_args": [
+    "metric_fn"
+  ],
+  "_call_metric_fn": [
+    "metric_fn",
+    "features",
+    "labels",
+    "predictions",
+    "config"
+  ],
+  "_USE_DEFAULT": [],
+  "_VALID_DEVICE_FN_ARGS": [],
+  "_DEFAULT_REPLACEABLE_LIST": [],
+  "_SAVE_CKPT_ERR": [],
+  "_TASK_ENV_KEY": [],
+  "_TASK_TYPE_KEY": [],
+  "_TASK_ID_KEY": [],
+  "_CLUSTER_KEY": [],
+  "_SERVICE_KEY": [],
+  "_SESSION_MASTER_KEY": [],
+  "_EVAL_SESSION_MASTER_KEY": [],
+  "_MODEL_DIR_KEY": [],
+  "_LOCAL_MASTER": [],
+  "_GRPC_SCHEME": [],
+  "_get_session_master": [
+    "cluster_spec",
+    "task_type",
+    "task_id",
+    "tf_config"
+  ],
+  "_get_eval_session_master": [
+    "task_type",
+    "tf_config"
+  ],
+  "_count_ps": [
+    "cluster_spec"
+  ],
+  "_count_worker": [
+    "cluster_spec",
+    "chief_task_type"
+  ],
+  "_validate_service": [
+    "service"
+  ],
+  "_validate_task_type_and_task_id": [
+    "cluster_spec",
+    "task_env",
+    "chief_task_type"
+  ],
+  "_get_global_id_in_cluster": [
+    "cluster_spec",
+    "task_type",
+    "task_id",
+    "chief_task_type"
+  ],
+  "_validate_save_ckpt_with_replaced_keys": [
+    "new_copy",
+    "replaced_keys"
+  ],
+  "_validate_properties": [
+    "run_config"
+  ],
+  "get_default_session_config": [],
+  "TaskType": {
+    "MASTER": [],
+    "PS": [],
+    "WORKER": [],
+    "CHIEF": [],
+    "EVALUATOR": []
+  },
+  "RunConfig": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "tf_random_seed",
+      "save_summary_steps",
+      "save_checkpoints_steps",
+      "save_checkpoints_secs",
+      "session_config",
+      "keep_checkpoint_max",
+      "keep_checkpoint_every_n_hours",
+      "log_step_count_steps",
+      "train_distribute",
+      "device_fn",
+      "protocol",
+      "eval_distribute",
+      "experimental_distribute",
+      "experimental_max_worker_delay_secs",
+      "session_creation_timeout_secs",
+      "checkpoint_save_graph_def"
+    ],
+    "_verify_strategy_compatibility": [
+      "self",
+      "train_distribute",
+      "eval_distribute"
+    ],
+    "_maybe_overwrite_session_config_for_distributed_training": [
+      "self"
+    ],
+    "_get_default_session_config_distributed": [
+      "self"
+    ],
+    "_init_distributed_setting_from_environment_var": [
+      "self",
+      "tf_config"
+    ],
+    "_init_distributed_setting_from_environment_var_with_master": [
+      "self",
+      "tf_config"
+    ],
+    "cluster_spec": [
+      "self"
+    ],
+    "device_fn": [
+      "self"
+    ],
+    "evaluation_master": [
+      "self"
+    ],
+    "is_chief": [
+      "self"
+    ],
+    "master": [
+      "self"
+    ],
+    "num_ps_replicas": [
+      "self"
+    ],
+    "num_worker_replicas": [
+      "self"
+    ],
+    "task_id": [
+      "self"
+    ],
+    "global_id_in_cluster": [
+      "self"
+    ],
+    "experimental_max_worker_delay_secs": [
+      "self"
+    ],
+    "task_type": [
+      "self"
+    ],
+    "tf_random_seed": [
+      "self"
+    ],
+    "save_summary_steps": [
+      "self"
+    ],
+    "save_checkpoints_secs": [
+      "self"
+    ],
+    "session_config": [
+      "self"
+    ],
+    "save_checkpoints_steps": [
+      "self"
+    ],
+    "checkpoint_save_graph_def": [
+      "self"
+    ],
+    "keep_checkpoint_max": [
+      "self"
+    ],
+    "session_creation_timeout_secs": [
+      "self"
+    ],
+    "keep_checkpoint_every_n_hours": [
+      "self"
+    ],
+    "log_step_count_steps": [
+      "self"
+    ],
+    "model_dir": [
+      "self"
+    ],
+    "service": [
+      "self"
+    ],
+    "train_distribute": [
+      "self"
+    ],
+    "eval_distribute": [
+      "self"
+    ],
+    "protocol": [
+      "self"
+    ],
+    "replace": [
+      "self"
+    ],
+    "_replace": [
+      "config",
+      "allowed_properties_list"
+    ]
+  },
+  "_get_model_dir": [
+    "tf_config",
+    "model_dir"
+  ],
+  "path_to_str": [
+    "path"
+  ],
+  "Exporter": {
+    "name": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "estimator",
+      "export_path",
+      "checkpoint_path",
+      "eval_result",
+      "is_the_final_export"
+    ]
+  },
+  "_SavedModelExporter": {
+    "__init__": [
+      "self",
+      "name",
+      "serving_input_receiver_fn",
+      "assets_extra",
+      "as_text"
+    ],
+    "name": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "estimator",
+      "export_path",
+      "checkpoint_path",
+      "eval_result",
+      "is_the_final_export"
+    ]
+  },
+  "_loss_smaller": [
+    "best_eval_result",
+    "current_eval_result"
+  ],
+  "_verify_compare_fn_args": [
+    "compare_fn"
+  ],
+  "BestExporter": {
+    "__init__": [
+      "self",
+      "name",
+      "serving_input_receiver_fn",
+      "event_file_pattern",
+      "compare_fn",
+      "assets_extra",
+      "as_text",
+      "exports_to_keep"
+    ],
+    "name": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "estimator",
+      "export_path",
+      "checkpoint_path",
+      "eval_result",
+      "is_the_final_export"
+    ],
+    "_garbage_collect_exports": [
+      "self",
+      "export_dir_base"
+    ],
+    "_get_best_eval_result": [
+      "self",
+      "event_files"
+    ]
+  },
+  "FinalExporter": {
+    "__init__": [
+      "self",
+      "name",
+      "serving_input_receiver_fn",
+      "assets_extra",
+      "as_text"
+    ],
+    "name": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "estimator",
+      "export_path",
+      "checkpoint_path",
+      "eval_result",
+      "is_the_final_export"
+    ]
+  },
+  "LatestExporter": {
+    "__init__": [
+      "self",
+      "name",
+      "serving_input_receiver_fn",
+      "assets_extra",
+      "as_text",
+      "exports_to_keep"
+    ],
+    "name": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "estimator",
+      "export_path",
+      "checkpoint_path",
+      "eval_result",
+      "is_the_final_export"
+    ],
+    "_garbage_collect_exports": [
+      "self",
+      "export_dir_base"
+    ]
+  },
+  "LOSS_METRIC_KEY": [],
+  "AVERAGE_LOSS_METRIC_KEY": [],
+  "EstimatorSpec": {
+    "__new__": [
+      "cls",
+      "mode",
+      "predictions",
+      "loss",
+      "train_op",
+      "eval_metric_ops",
+      "export_outputs",
+      "training_chief_hooks",
+      "training_hooks",
+      "scaffold",
+      "evaluation_hooks",
+      "prediction_hooks"
+    ],
+    "_replace": [
+      "self"
+    ]
+  },
+  "_TPUEstimatorSpec": {
+    "__new__": [
+      "cls",
+      "mode",
+      "predictions",
+      "loss",
+      "train_op",
+      "eval_metrics",
+      "export_outputs",
+      "scaffold_fn",
+      "host_call",
+      "training_hooks",
+      "evaluation_hooks",
+      "prediction_hooks"
+    ],
+    "as_estimator_spec": [
+      "self"
+    ]
+  },
+  "_default_graph_error_message_template": [],
+  "_validate_estimator_spec_train_op": [
+    "train_op",
+    "mode"
+  ],
+  "_validate_estimator_spec_loss": [
+    "loss",
+    "mode"
+  ],
+  "_validate_estimator_spec_predictions": [
+    "predictions",
+    "mode"
+  ],
+  "_validate_estimator_spec_export_outputs": [
+    "export_outputs",
+    "predictions",
+    "mode"
+  ],
+  "_validate_estimator_spec_hooks": [
+    "hooks"
+  ],
+  "_validate_eval_metric_ops": [
+    "eval_metric_ops"
+  ],
+  "_update_variable_collection": [
+    "collection_name",
+    "vars_to_add"
+  ],
+  "_validate_scaffold": [
+    "scaffold"
+  ],
+  "_check_is_tensor_or_operation": [
+    "x",
+    "name"
+  ],
+  "_check_is_tensor": [
+    "x",
+    "tensor_name"
+  ],
+  "call_logit_fn": [
+    "logit_fn",
+    "features",
+    "mode",
+    "params",
+    "config"
+  ],
+  "_VALID_MODEL_FN_ARGS": [],
+  "verify_model_fn_args": [
+    "model_fn",
+    "params"
+  ],
+  "T": [],
+  "estimator_export": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ]
+  },
+  "fn_args": [],
+  "MAX_DIRECTORY_CREATION_ATTEMPTS": [],
+  "parse_input_fn_result": [
+    "result"
+  ],
+  "parse_iterator_result": [
+    "result"
+  ],
+  "_DatasetInitializerHook": {
+    "__init__": [
+      "self",
+      "iterator"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ]
+  },
+  "DistributedIteratorInitializerHook": {
+    "__init__": [
+      "self",
+      "iterator"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ]
+  },
+  "MultiHostDatasetInitializerHook": {
+    "__init__": [
+      "self",
+      "dataset_initializers"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ]
+  },
+  "_estimator_api_gauge": [],
+  "_canned_estimator_api_gauge": [],
+  "Estimator": {
+    "__init__": [
+      "self",
+      "model_fn",
+      "model_dir",
+      "config",
+      "params",
+      "warm_start_from"
+    ],
+    "model_dir": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "model_fn": [
+      "self"
+    ],
+    "get_variable_value": [
+      "self",
+      "name"
+    ],
+    "get_variable_names": [
+      "self"
+    ],
+    "latest_checkpoint": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "input_fn",
+      "hooks",
+      "steps",
+      "max_steps",
+      "saving_listeners"
+    ],
+    "_convert_train_steps_to_hooks": [
+      "self",
+      "steps",
+      "max_steps"
+    ],
+    "eval_dir": [
+      "self",
+      "name"
+    ],
+    "evaluate": [
+      "self",
+      "input_fn",
+      "steps",
+      "hooks",
+      "checkpoint_path",
+      "name"
+    ],
+    "_actual_eval": [
+      "self",
+      "input_fn",
+      "strategy",
+      "steps",
+      "hooks",
+      "checkpoint_path",
+      "name"
+    ],
+    "_convert_eval_steps_to_hooks": [
+      "self",
+      "steps"
+    ],
+    "predict": [
+      "self",
+      "input_fn",
+      "predict_keys",
+      "hooks",
+      "checkpoint_path",
+      "yield_single_examples"
+    ],
+    "_assert_members_are_not_overridden": [
+      "self"
+    ],
+    "export_saved_model": [
+      "self",
+      "export_dir_base",
+      "serving_input_receiver_fn",
+      "assets_extra",
+      "as_text",
+      "checkpoint_path",
+      "experimental_mode"
+    ],
+    "experimental_export_all_saved_models": [
+      "self",
+      "export_dir_base",
+      "input_receiver_fn_map",
+      "assets_extra",
+      "as_text",
+      "checkpoint_path"
+    ],
+    "_export_all_saved_models": [
+      "self",
+      "export_dir_base",
+      "input_receiver_fn_map",
+      "assets_extra",
+      "as_text",
+      "checkpoint_path",
+      "strip_default_attrs"
+    ],
+    "_add_meta_graph_for_mode": [
+      "self",
+      "builder",
+      "input_receiver_fn_map",
+      "checkpoint_path",
+      "save_variables",
+      "mode",
+      "export_tags",
+      "check_variables",
+      "strip_default_attrs"
+    ],
+    "_get_features_from_input_fn": [
+      "self",
+      "input_fn",
+      "mode"
+    ],
+    "_validate_features_in_predict_input": [
+      "self",
+      "result"
+    ],
+    "_get_iterator_from_input_fn": [
+      "self",
+      "input_fn",
+      "mode",
+      "distribution"
+    ],
+    "_get_features_and_labels_from_input_fn": [
+      "self",
+      "input_fn",
+      "mode"
+    ],
+    "_extract_batch_length": [
+      "self",
+      "preds_evaluated"
+    ],
+    "_extract_keys": [
+      "self",
+      "predictions",
+      "predict_keys"
+    ],
+    "_create_global_step": [
+      "self",
+      "graph"
+    ],
+    "_create_and_assert_global_step": [
+      "self",
+      "graph"
+    ],
+    "_call_input_fn": [
+      "self",
+      "input_fn",
+      "mode",
+      "input_context"
+    ],
+    "_call_model_fn": [
+      "self",
+      "features",
+      "labels",
+      "mode",
+      "config"
+    ],
+    "_train_model": [
+      "self",
+      "input_fn",
+      "hooks",
+      "saving_listeners"
+    ],
+    "_train_model_default": [
+      "self",
+      "input_fn",
+      "hooks",
+      "saving_listeners"
+    ],
+    "_train_model_distributed": [
+      "self",
+      "input_fn",
+      "hooks",
+      "saving_listeners"
+    ],
+    "_actual_train_model_distributed": [
+      "self",
+      "strategy",
+      "input_fn",
+      "hooks",
+      "saving_listeners"
+    ],
+    "_train_with_estimator_spec_distributed": [
+      "self",
+      "estimator_spec",
+      "worker_hooks",
+      "saving_listener"
+    ],
+    "_train_with_estimator_spec": [
+      "self",
+      "estimator_spec",
+      "worker_hooks",
+      "hooks",
+      "global_step_tensor",
+      "saving_listeners"
+    ],
+    "_evaluate_build_graph": [
+      "self",
+      "input_fn",
+      "hooks",
+      "checkpoint_path"
+    ],
+    "_call_model_fn_eval": [
+      "self",
+      "input_fn",
+      "config"
+    ],
+    "_call_model_fn_eval_distributed": [
+      "self",
+      "input_fn",
+      "config"
+    ],
+    "_evaluate_run": [
+      "self",
+      "checkpoint_path",
+      "scaffold",
+      "update_op",
+      "eval_dict",
+      "all_hooks",
+      "output_dir"
+    ],
+    "_maybe_warm_start": [
+      "self",
+      "checkpoint_path"
+    ],
+    "export_savedmodel": [
+      "self",
+      "export_dir_base",
+      "serving_input_receiver_fn",
+      "assets_extra",
+      "as_text",
+      "checkpoint_path",
+      "strip_default_attrs"
+    ]
+  },
+  "EstimatorV2": {
+    "__doc__": [],
+    "export_savedmodel": [],
+    "_assert_members_are_not_overridden": [
+      "self"
+    ]
+  },
+  "_get_loss_reduce_op_for_reporting": [],
+  "_assert_members_are_not_overridden": [
+    "cls",
+    "obj"
+  ],
+  "_verify_and_create_loss_metric": [
+    "eval_metric_ops",
+    "loss",
+    "distribution"
+  ],
+  "maybe_overwrite_model_dir_and_session_config": [
+    "config",
+    "model_dir"
+  ],
+  "create_per_replica_ready_for_local_init_op": [
+    "scaffold"
+  ],
+  "_combine_distributed_scaffold": [
+    "grouped_scaffold",
+    "distribution"
+  ],
+  "_check_checkpoint_available": [
+    "model_dir"
+  ],
+  "_check_hooks_type": [
+    "hooks"
+  ],
+  "_check_listeners_type": [
+    "saving_listeners"
+  ],
+  "_get_replica_device_setter": [
+    "config"
+  ],
+  "_verify_model_fn_args": [
+    "model_fn",
+    "params"
+  ],
+  "_load_global_step_from_checkpoint_dir": [
+    "checkpoint_dir"
+  ],
+  "_extract_metric_update_ops": [
+    "eval_dict",
+    "distribution"
+  ],
+  "_dict_to_str": [
+    "dictionary"
+  ],
+  "_write_dict_to_summary": [
+    "output_dir",
+    "dictionary",
+    "current_global_step"
+  ],
+  "_write_checkpoint_path_to_summary": [
+    "output_dir",
+    "checkpoint_path",
+    "current_global_step"
+  ],
+  "_has_dataset_or_queue_runner": [
+    "maybe_tensor"
+  ],
+  "VocabInfo": [],
+  "WarmStartSettings": {
+    "__new__": [
+      "cls",
+      "ckpt_to_initialize_from",
+      "vars_to_warm_start",
+      "var_name_to_vocab_info",
+      "var_name_to_prev_var_name"
+    ]
+  },
+  "_get_default_warm_start_settings": [
+    "warm_start_from"
+  ],
+  "_DEFAULT_SERVING_KEY": [],
+  "FormattedKeyError": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_cast_tensor_to_floatx": [
+    "x"
+  ],
+  "_convert_tensor": [
+    "x"
+  ],
+  "_any_weight_initialized": [
+    "keras_model"
+  ],
+  "_convert_estimator_io_to_keras": [
+    "keras_model",
+    "features",
+    "labels"
+  ],
+  "_extract_sample_weight_tensors": [
+    "features"
+  ],
+  "_clone_and_build_model": [
+    "mode",
+    "keras_model",
+    "custom_objects",
+    "features",
+    "labels",
+    "optimizer_config"
+  ],
+  "_convert_keras_metrics_to_estimator": [
+    "model",
+    "metric_names_map"
+  ],
+  "_create_keras_model_fn": [
+    "keras_model",
+    "custom_objects",
+    "save_object_ckpt",
+    "metric_names_map",
+    "export_outputs"
+  ],
+  "_save_first_checkpoint": [
+    "keras_model",
+    "custom_objects",
+    "config",
+    "save_object_ckpt"
+  ],
+  "_get_file_from_google_storage": [
+    "keras_model_path",
+    "model_dir"
+  ],
+  "model_to_estimator": [
+    "keras_model",
+    "keras_model_path",
+    "custom_objects",
+    "model_dir",
+    "config",
+    "checkpoint_format",
+    "use_v2_estimator",
+    "metric_names_map",
+    "export_outputs"
+  ],
+  "_assert_valid_model": [
+    "model",
+    "custom_objects"
+  ],
+  "standardize_sample_weights": [
+    "x_weight",
+    "output_names"
+  ],
+  "_EVENT_FILE_GLOB_PATTERN": [],
+  "make_early_stopping_hook": [
+    "estimator",
+    "should_stop_fn",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "stop_if_higher_hook": [
+    "estimator",
+    "metric_name",
+    "threshold",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "stop_if_lower_hook": [
+    "estimator",
+    "metric_name",
+    "threshold",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "stop_if_no_increase_hook": [
+    "estimator",
+    "metric_name",
+    "max_steps_without_increase",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "stop_if_no_decrease_hook": [
+    "estimator",
+    "metric_name",
+    "max_steps_without_decrease",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "read_eval_metrics": [
+    "eval_dir"
+  ],
+  "_stop_if_threshold_crossed_hook": [
+    "estimator",
+    "metric_name",
+    "threshold",
+    "higher_is_better",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "_stop_if_no_metric_improvement_hook": [
+    "estimator",
+    "metric_name",
+    "max_steps_without_improvement",
+    "higher_is_better",
+    "eval_dir",
+    "min_steps",
+    "run_every_secs",
+    "run_every_steps"
+  ],
+  "_summaries": [
+    "eval_dir"
+  ],
+  "_get_or_create_stop_var": [],
+  "_StopOnPredicateHook": {
+    "__init__": [
+      "self",
+      "should_stop_fn",
+      "run_every_secs",
+      "run_every_steps"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_CheckForStoppingHook": {
+    "__init__": [
+      "self"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_MultiWorkerEarlyStoppingHook": {
+    "_get_or_create_stop_var_with_aggregation": [
+      "self"
+    ],
+    "__init__": [
+      "self",
+      "should_stop_fn",
+      "run_every_steps"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_DEFAULT_JOB_NAME": [],
+  "_DEFAULT_COORDINATOR_JOB_NAME": [],
+  "_LOCAL_MASTERS": [],
+  "_NUM_CORES_TO_COMPUTATION_SHAPE": [],
+  "TPUContext": {
+    "__init__": [
+      "self",
+      "internal_ctx",
+      "input_device",
+      "invocation_index",
+      "call_from_input_fn",
+      "host_id"
+    ],
+    "current_input_fn_deployment": [
+      "self"
+    ],
+    "num_replicas": [
+      "self"
+    ],
+    "num_hosts": [
+      "self"
+    ],
+    "current_host": [
+      "self"
+    ],
+    "num_of_replicas_per_host": [
+      "self"
+    ],
+    "device_assignment": [
+      "self"
+    ],
+    "device_for_replica": [
+      "self",
+      "replica_id"
+    ],
+    "tpu_host_placement_function": [
+      "self"
+    ]
+  },
+  "_InternalTPUContext": {
+    "__init__": [
+      "self",
+      "config",
+      "train_batch_size",
+      "eval_batch_size",
+      "predict_batch_size",
+      "use_tpu",
+      "eval_on_tpu",
+      "embedding_config_spec"
+    ],
+    "_assert_mode": [
+      "self"
+    ],
+    "with_mode": [
+      "self",
+      "mode"
+    ],
+    "mode": [
+      "self"
+    ],
+    "_get_master_address": [
+      "self"
+    ],
+    "_get_tpu_system_metadata": [
+      "self"
+    ],
+    "_get_device_assignment": [
+      "self"
+    ],
+    "tensor_core_embedding_columns": [
+      "self"
+    ],
+    "embedding_config": [
+      "self"
+    ],
+    "allow_per_host_v2_parallel_get_next": [
+      "self"
+    ],
+    "feed_hook": [
+      "self"
+    ],
+    "model_parallelism_enabled": [
+      "self"
+    ],
+    "input_partition_dims": [
+      "self"
+    ],
+    "device_assignment": [
+      "self"
+    ],
+    "num_of_cores_per_host": [
+      "self"
+    ],
+    "num_cores": [
+      "self"
+    ],
+    "num_of_replicas_per_host": [
+      "self"
+    ],
+    "num_replicas": [
+      "self"
+    ],
+    "num_hosts": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "is_input_sharded_per_core": [
+      "self"
+    ],
+    "is_input_per_host_with_iterators": [
+      "self"
+    ],
+    "is_input_broadcast_with_iterators": [
+      "self"
+    ],
+    "is_input_slice_broadcast_to_all_cores": [
+      "self"
+    ],
+    "is_replica_across_hosts": [
+      "self"
+    ],
+    "is_running_on_cpu": [
+      "self",
+      "is_export_mode"
+    ],
+    "_is_running_on_cpu": [
+      "self",
+      "is_export_mode"
+    ],
+    "global_batch_size": [
+      "self"
+    ],
+    "batch_size_for_input_fn": [
+      "self"
+    ],
+    "batch_size_for_model_fn": [
+      "self"
+    ],
+    "master_job": [
+      "self"
+    ],
+    "tpu_host_placement_function": [
+      "self"
+    ],
+    "tpu_device_placement_function": [
+      "self"
+    ],
+    "tpu_ordinal_function": [
+      "self",
+      "host_id"
+    ],
+    "_validate_tpu_configuration": [
+      "self"
+    ],
+    "device_for_replica": [
+      "self",
+      "replica_id"
+    ]
+  },
+  "_OneCoreTPUContext": {
+    "__init__": [
+      "self",
+      "config",
+      "train_batch_size",
+      "eval_batch_size",
+      "predict_batch_size",
+      "use_tpu"
+    ],
+    "_get_tpu_system_metadata": [
+      "self"
+    ]
+  },
+  "_TPUEstimatorReplicaContext": {
+    "__init__": [
+      "self",
+      "replica_id_in_sync"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exception_type",
+      "exception_value",
+      "traceback"
+    ]
+  },
+  "_get_tpu_context": [
+    "config",
+    "train_batch_size",
+    "eval_batch_size",
+    "predict_batch_size",
+    "use_tpu",
+    "eval_on_tpu",
+    "embedding_config_spec"
+  ],
+  "RuntimeCounter": [],
+  "IterationCountEstimator": {
+    "__init__": [
+      "self",
+      "capacity"
+    ],
+    "_reset": [
+      "self",
+      "capacity"
+    ],
+    "_mean_runtime_secs": [
+      "self"
+    ],
+    "_mean_step_time_secs": [
+      "self"
+    ],
+    "_std_step_time_secs": [
+      "self"
+    ],
+    "_diff_less_than_percentage": [
+      "self",
+      "actual",
+      "target",
+      "percentage"
+    ],
+    "_is_step_time_stable": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "runtime_secs",
+      "count"
+    ],
+    "get": [
+      "self",
+      "total_secs"
+    ]
+  },
+  "_UNINTERESTING_ERRORS": [],
+  "_IGNORED_ERRORS": [],
+  "_CHECK_NUMERIC_OP_NAME": [],
+  "ErrorRendezvous": {
+    "__init__": [
+      "self",
+      "num_sources"
+    ],
+    "record_error": [
+      "self",
+      "source",
+      "exc_info",
+      "session"
+    ],
+    "record_done": [
+      "self",
+      "source"
+    ],
+    "catch_errors": [
+      "self",
+      "source",
+      "session"
+    ],
+    "raise_errors": [
+      "self",
+      "timeout_sec"
+    ]
+  },
+  "_TPU_EMBEDDING_COLUMN_CLASSES": [],
+  "_TPU_DEVICE_SPECIFIC_EMBEDDING_COLUMNS": [],
+  "_EMBEDDING_COLUMN_CLASSES": [],
+  "_SUPPORTED_FEATURE_COLUMNS": [],
+  "_SUPPORTED_OPTIMIZERS": [],
+  "_TABLE_NAME_PREFIX": [],
+  "_LEN_TABLE_NAME_PREFIX": [],
+  "_get_table_name_from_embedding_var_name": [
+    "embedding_var_name"
+  ],
+  "_get_embedding_var_name_from_table_name": [
+    "table_name"
+  ],
+  "_get_embedding_variable_name": [
+    "scope_name",
+    "var_name"
+  ],
+  "_get_slot_variable_names": [
+    "scope_name",
+    "var_name",
+    "optimization_parameters"
+  ],
+  "get_full_variable_names": [
+    "graph",
+    "table_to_config_dict",
+    "optimization_parameters"
+  ],
+  "get_configs_from_feature_columns": [
+    "feature_columns"
+  ],
+  "EmbeddingConfigSpec": {
+    "__new__": [
+      "cls",
+      "feature_columns",
+      "optimization_parameters",
+      "clipping_limit",
+      "pipeline_execution_with_tensor_core",
+      "experimental_gradient_multiplier_fn",
+      "feature_to_config_dict",
+      "table_to_config_dict",
+      "partition_strategy",
+      "profile_data_directory"
+    ]
+  },
+  "EmbeddingConfig": {
+    "__init__": [
+      "self",
+      "embedding_config_spec",
+      "train_batch_size",
+      "eval_batch_size",
+      "num_hosts",
+      "num_cores",
+      "run_config"
+    ],
+    "get_grad_multiplier": [
+      "self"
+    ],
+    "has_embedding_tables": [
+      "self"
+    ],
+    "_create_tpu_embedding": [
+      "self",
+      "mode"
+    ],
+    "get_tpu_embedding": [
+      "self",
+      "mode"
+    ]
+  },
+  "_maybe_dense_to_sparse": [
+    "tensor"
+  ],
+  "split_inputs": [
+    "ctx",
+    "features",
+    "labels",
+    "num_cores_per_batch"
+  ],
+  "_split_tensor": [
+    "tensor",
+    "num_splits"
+  ],
+  "_get_sparse_feature_from_feature": [
+    "feature_key",
+    "features"
+  ],
+  "_get_weights_from_features": [
+    "weight_key_name",
+    "features"
+  ],
+  "get_tpu_embedding_columns": [
+    "feature_columns"
+  ],
+  "_TPU_WORKER_JOB_NAME": [],
+  "InputPipelineConfig": {
+    "PER_SHARD_V1": [],
+    "PER_HOST_V1": [],
+    "PER_HOST_V2": [],
+    "BROADCAST": [],
+    "SLICED": []
+  },
+  "TPUConfig": {
+    "__new__": [
+      "cls",
+      "iterations_per_loop",
+      "num_shards",
+      "num_cores_per_replica",
+      "per_host_input_for_training",
+      "tpu_job_name",
+      "initial_infeed_sleep_secs",
+      "input_partition_dims",
+      "eval_training_input_configuration",
+      "experimental_host_call_every_n_steps",
+      "experimental_allow_per_host_v2_parallel_get_next",
+      "experimental_feed_hook"
+    ]
+  },
+  "_get_tpu_job_name_from_tf_config": [],
+  "_ITERATIONS_PER_LOOP_VALUE_REGEX": [],
+  "IterationsPerLoopCounter": [],
+  "check_positive_integer": [
+    "value",
+    "name"
+  ],
+  "parse_iterations_per_loop": [
+    "iterations_per_loop"
+  ],
+  "_INITIAL_LOSS": [],
+  "_ZERO_LOSS": [],
+  "_TPU_ESTIMATOR": [],
+  "_ITERATIONS_PER_LOOP_VAR": [],
+  "_BATCH_SIZE_KEY": [],
+  "_CTX_KEY": [],
+  "_USE_TPU_KEY": [],
+  "_CROSS_REPLICA_SUM_OP": [],
+  "_ONE_GIGABYTE": [],
+  "_TPU_ENQUEUE_OPS": [],
+  "_TPU_TRAIN_OP": [],
+  "_INFERENCE_ON_TPU_MODE": [],
+  "_KEY_WHEN_PREDICTIONS_IS_A_TENSOR": [],
+  "_TENSOR_PACKER_SMALL_FEATURE_DIM_SIZE": [],
+  "_TENSOR_PACKER_MINIMUM_NUM_SMALL_FEATURES_TO_GROUP": [],
+  "_TENSOR_PACKER_CONCATENATED_SMALL_FEATURES_KEY": [],
+  "_RESERVED_PARAMS_KEYS": [],
+  "_WRAP_INPUT_FN_INTO_WHILE_LOOP": [],
+  "_tpu_estimator_gauge": [],
+  "_is_iterable": [
+    "obj"
+  ],
+  "CatchInvalidHostcallFunctions": {
+    "AddOp": [
+      "self",
+      "op"
+    ]
+  },
+  "_create_global_step": [
+    "graph"
+  ],
+  "_create_or_get_iterations_per_loop": [],
+  "_sync_variables_ops": [
+    "ctx"
+  ],
+  "_increase_eval_step_op": [
+    "iterations_per_loop"
+  ],
+  "_extract_key_names": [
+    "tensor_or_dict"
+  ],
+  "PeriodicLogger": {
+    "__init__": [
+      "self",
+      "seconds"
+    ],
+    "log": [
+      "self",
+      "msg"
+    ]
+  },
+  "_SIGNAL": {
+    "NEXT_BATCH": [],
+    "STOP": []
+  },
+  "TPUEstimatorSpec": {
+    "__new__": [
+      "cls",
+      "mode",
+      "predictions",
+      "loss",
+      "train_op",
+      "eval_metrics",
+      "export_outputs",
+      "scaffold_fn",
+      "host_call",
+      "training_hooks",
+      "evaluation_hooks",
+      "prediction_hooks"
+    ],
+    "as_estimator_spec": [
+      "self"
+    ]
+  },
+  "_OpQueueContext": {
+    "__init__": [
+      "self",
+      "name",
+      "target",
+      "args"
+    ],
+    "stop": [
+      "self"
+    ],
+    "send_next_batch_signal": [
+      "self",
+      "iterations"
+    ],
+    "read_iteration_counts": [
+      "self"
+    ],
+    "join": [
+      "self"
+    ]
+  },
+  "_OpSignalOnceQueueContext": {
+    "__init__": [
+      "self",
+      "name",
+      "target",
+      "args"
+    ],
+    "send_next_batch_signal": [
+      "self",
+      "iterations"
+    ]
+  },
+  "TPUInfeedOutfeedSessionHook": {
+    "__init__": [
+      "self",
+      "ctx",
+      "enqueue_ops",
+      "dequeue_ops",
+      "tpu_compile_op",
+      "run_infeed_loop_on_coordinator",
+      "rendezvous",
+      "master",
+      "session_config",
+      "tpu_init_ops",
+      "outfeed_every_n_steps"
+    ],
+    "begin": [
+      "self"
+    ],
+    "_run_infeed": [
+      "self",
+      "queue_ctx",
+      "session"
+    ],
+    "_run_outfeed": [
+      "self",
+      "queue_ctx",
+      "session"
+    ],
+    "_create_infeed_controller": [
+      "self",
+      "name",
+      "target",
+      "args"
+    ],
+    "_assertCompilationSucceeded": [
+      "self",
+      "result",
+      "coord"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "end": [
+      "self",
+      "session"
+    ]
+  },
+  "TPUInfeedOutfeedSessionHookForPrediction": {
+    "__init__": [
+      "self",
+      "ctx",
+      "enqueue_ops",
+      "dequeue_ops",
+      "tpu_compile_op",
+      "rendezvous",
+      "master",
+      "session_config"
+    ],
+    "_create_infeed_controller": [
+      "self",
+      "name",
+      "target",
+      "args"
+    ]
+  },
+  "_TPUStopAtStepHook": {
+    "__init__": [
+      "self",
+      "iterations_per_loop_counter",
+      "num_steps",
+      "final_step"
+    ],
+    "_next_iterations": [
+      "self",
+      "global_step",
+      "final_step"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_SetEvalIterationsHook": {
+    "__init__": [
+      "self",
+      "num_steps"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ]
+  },
+  "_StoppingPredictHook": {
+    "__init__": [
+      "self",
+      "scalar_stopping_signal"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "generate_per_core_enqueue_ops_fn_for_host": [
+    "ctx",
+    "input_fn",
+    "inputs_structure_recorder",
+    "host_device",
+    "host_id"
+  ],
+  "generate_per_host_enqueue_ops_fn_for_host": [
+    "ctx",
+    "input_fn",
+    "inputs_structure_recorder",
+    "batch_axis",
+    "device",
+    "host_id"
+  ],
+  "generate_per_host_v2_enqueue_ops_fn_for_host": [
+    "ctx",
+    "input_fn",
+    "inputs_structure_recorder",
+    "device",
+    "host_id",
+    "invocation_index"
+  ],
+  "generate_broadcast_enqueue_ops_fn": [
+    "ctx",
+    "input_fn",
+    "inputs_structure_recorder",
+    "num_hosts"
+  ],
+  "TensorPacker": {
+    "__init__": [
+      "self",
+      "small_feature_dim_size",
+      "minimum_num_small_features_to_group"
+    ],
+    "maybe_concatenate_features": [
+      "self",
+      "features"
+    ],
+    "maybe_split_features": [
+      "self",
+      "maybe_concatenated_features"
+    ],
+    "_get_small_feature_key": [
+      "self",
+      "dtype"
+    ]
+  },
+  "_InputPipeline": {
+    "__init__": [
+      "self",
+      "input_fn",
+      "batch_axis",
+      "ctx"
+    ],
+    "generate_infeed_enqueue_ops_and_dequeue_fn": [
+      "self"
+    ],
+    "_invoke_input_fn_and_record_structure": [
+      "self"
+    ],
+    "_validate_input_pipeline": [
+      "self"
+    ]
+  },
+  "call_computation": [
+    "computation_inputs",
+    "computation",
+    "batch_config"
+  ],
+  "_ModelFnWrapper": {
+    "__init__": [
+      "self",
+      "model_fn",
+      "config",
+      "params",
+      "ctx"
+    ],
+    "call_without_tpu": [
+      "self",
+      "features",
+      "labels",
+      "is_export_mode"
+    ],
+    "_add_embedding_features": [
+      "self",
+      "features",
+      "hook_dummy_table_variables"
+    ],
+    "convert_to_single_tpu_train_step": [
+      "self",
+      "dequeue_fn"
+    ],
+    "convert_to_single_tpu_eval_step": [
+      "self",
+      "dequeue_fn"
+    ],
+    "convert_to_single_tpu_predict_step": [
+      "self",
+      "dequeue_fn"
+    ],
+    "_verify_tpu_spec_predictions": [
+      "self",
+      "predictions"
+    ],
+    "_validate_model_features_and_labels": [
+      "self",
+      "features",
+      "labels",
+      "is_export_mode"
+    ],
+    "_call_model_fn": [
+      "self",
+      "features",
+      "labels",
+      "is_export_mode"
+    ],
+    "_verify_estimator_spec": [
+      "self",
+      "estimator_spec"
+    ]
+  },
+  "_OutfeedHostCall": {
+    "__init__": [
+      "self",
+      "ctx",
+      "outfeed_every_n_steps"
+    ],
+    "validate": [
+      "host_calls"
+    ],
+    "create_cpu_hostcall": [
+      "host_calls"
+    ],
+    "record": [
+      "self",
+      "host_calls"
+    ],
+    "create_enqueue_op": [
+      "self",
+      "step"
+    ],
+    "create_tpu_hostcall": [
+      "self"
+    ]
+  },
+  "_OutfeedHostCallHook": {
+    "__init__": [
+      "self",
+      "tensors"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "end": [
+      "self",
+      "session"
+    ]
+  },
+  "_NotSaver": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "save": [
+      "self"
+    ]
+  },
+  "ExamplesPerSecondHook": {
+    "__init__": [
+      "self",
+      "batch_size",
+      "every_n_steps",
+      "every_n_secs",
+      "output_dir",
+      "summary_writer"
+    ],
+    "_log_and_record": [
+      "self",
+      "elapsed_steps",
+      "elapsed_time",
+      "global_step"
+    ]
+  },
+  "InstallSignalHandlerHook": {
+    "__init__": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "end": [
+      "self",
+      "session"
+    ]
+  },
+  "ExportSavedModelApiVersion": {
+    "V1": [],
+    "V2": []
+  },
+  "BatchConfig": {
+    "__new__": [
+      "cls",
+      "num_batch_threads",
+      "max_batch_size",
+      "batch_timeout_micros",
+      "allowed_batch_sizes",
+      "max_enqueued_batches"
+    ]
+  },
+  "TPUEstimator": {
+    "__init__": [
+      "self",
+      "model_fn",
+      "model_dir",
+      "config",
+      "params",
+      "use_tpu",
+      "train_batch_size",
+      "eval_batch_size",
+      "predict_batch_size",
+      "batch_axis",
+      "eval_on_tpu",
+      "export_to_tpu",
+      "export_to_cpu",
+      "warm_start_from",
+      "embedding_config_spec",
+      "export_saved_model_api_version"
+    ],
+    "_add_meta_graph_for_mode": [
+      "self",
+      "builder",
+      "input_receiver_fn_map",
+      "checkpoint_path",
+      "save_variables",
+      "mode",
+      "export_tags",
+      "check_variables",
+      "strip_default_attrs"
+    ],
+    "_call_model_fn": [
+      "self",
+      "features",
+      "labels",
+      "mode",
+      "config"
+    ],
+    "_call_model_fn_for_inference": [
+      "self",
+      "features",
+      "labels",
+      "mode",
+      "config"
+    ],
+    "_create_global_step": [
+      "self",
+      "graph"
+    ],
+    "_convert_train_steps_to_hooks": [
+      "self",
+      "steps",
+      "max_steps"
+    ],
+    "_convert_eval_steps_to_hooks": [
+      "self",
+      "steps"
+    ],
+    "_call_input_fn": [
+      "self",
+      "input_fn",
+      "mode",
+      "input_context"
+    ],
+    "_validate_features_in_predict_input": [
+      "self",
+      "result"
+    ],
+    "train": [
+      "self",
+      "input_fn",
+      "hooks",
+      "steps",
+      "max_steps",
+      "saving_listeners"
+    ],
+    "evaluate": [
+      "self",
+      "input_fn",
+      "steps",
+      "hooks",
+      "checkpoint_path",
+      "name"
+    ],
+    "predict": [
+      "self",
+      "input_fn",
+      "predict_keys",
+      "hooks",
+      "checkpoint_path",
+      "yield_single_examples"
+    ],
+    "_augment_model_fn": [
+      "self",
+      "model_fn",
+      "batch_axis"
+    ]
+  },
+  "_check_add_preemption_hook": [
+    "cluster"
+  ],
+  "_export_output_to_tensors": [
+    "export_output"
+  ],
+  "_clone_export_output_with_tensors": [
+    "export_output",
+    "tensors"
+  ],
+  "_eval_on_tpu_system": [
+    "ctx",
+    "model_fn_wrapper",
+    "dequeue_fn"
+  ],
+  "_train_on_tpu_system": [
+    "ctx",
+    "model_fn_wrapper",
+    "dequeue_fn"
+  ],
+  "_predict_on_tpu_system": [
+    "ctx",
+    "model_fn_wrapper",
+    "dequeue_fn"
+  ],
+  "_wrap_computation_in_while_loop": [
+    "device",
+    "op_fn"
+  ],
+  "_wrap_computation_in_while_loop_with_stopping_signals": [
+    "device",
+    "op_fn"
+  ],
+  "_validate_tpu_training_graph": [
+    "ctx"
+  ],
+  "_CapturedObject": {
+    "__init__": [
+      "self"
+    ],
+    "capture": [
+      "self",
+      "o"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "_get_scaffold": [
+    "captured_scaffold_fn"
+  ],
+  "_CapturingContext": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "to_control_flow_context_def": [
+      "self",
+      "context_def",
+      "export_scope"
+    ],
+    "AddOp": [
+      "self",
+      "op"
+    ],
+    "AddValue": [
+      "self",
+      "value"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "_",
+      "__",
+      "___"
+    ]
+  },
+  "_Inputs": {
+    "__init__": [
+      "self",
+      "features",
+      "labels",
+      "dataset",
+      "signals"
+    ],
+    "from_input_fn": [
+      "return_values"
+    ],
+    "_parse_inputs": [
+      "return_values"
+    ],
+    "is_dataset": [
+      "self"
+    ],
+    "dataset_initializer": [
+      "self"
+    ],
+    "features_and_labels": [
+      "self"
+    ],
+    "signals": [
+      "self"
+    ],
+    "dataset": [
+      "self"
+    ]
+  },
+  "_InputsWithStoppingSignals": {
+    "__init__": [
+      "self",
+      "dataset",
+      "batch_size",
+      "add_padding",
+      "num_invocations_per_step"
+    ],
+    "features_and_labels": [
+      "self"
+    ],
+    "signals": [
+      "self"
+    ],
+    "insert_stopping_signal": [
+      "stop",
+      "batch_size",
+      "add_padding"
+    ]
+  },
+  "_StopSignals": {
+    "NON_STOPPING_SIGNAL": [],
+    "STOPPING_SIGNAL": [],
+    "__init__": [
+      "self",
+      "stop",
+      "batch_size",
+      "padding_mask"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "as_scalar_stopping_signal": [
+      "signals"
+    ],
+    "should_stop": [
+      "scalar_stopping_signal"
+    ]
+  },
+  "_PaddingSignals": {
+    "pad_features_and_labels": [
+      "features",
+      "labels",
+      "batch_size"
+    ],
+    "slice_tensor_or_dict": [
+      "tensor_or_dict",
+      "signals"
+    ],
+    "_find_any_tensor": [
+      "batch_features"
+    ],
+    "_padding_mask": [
+      "real_batch_size",
+      "missing_count",
+      "batch_size"
+    ]
+  },
+  "_verify_cross_hosts_transfer_size": [
+    "tensor_dict",
+    "message"
+  ],
+  "_add_item_to_params": [
+    "params",
+    "key",
+    "value"
+  ],
+  "export_estimator_savedmodel": [
+    "estimator",
+    "export_dir_base",
+    "serving_input_receiver_fn",
+    "assets_extra",
+    "as_text",
+    "checkpoint_path"
+  ],
+  "model_fn_inference_on_tpu": [
+    "model_fn",
+    "features",
+    "labels",
+    "config",
+    "params",
+    "batch_config"
+  ],
+  "_build_computation_for_inference": [
+    "model_fn",
+    "labels",
+    "config",
+    "params"
+  ],
+  "_build_tpu_computation_for_inference": [
+    "model_fn",
+    "features",
+    "labels",
+    "config",
+    "params"
+  ],
+  "inference_on_tpu": [
+    "computation",
+    "inputs_to_tpu",
+    "num_batch_threads",
+    "max_batch_size",
+    "batch_timeout_micros",
+    "allowed_batch_sizes",
+    "max_enqueued_batches"
+  ],
+  "_SINGLE_TENSOR_DEFAULT_NAMES": [],
+  "wrap_and_check_input_tensors": [
+    "tensors",
+    "field_name",
+    "allow_int_keys"
+  ],
+  "_check_tensor": [
+    "tensor",
+    "name",
+    "error_label"
+  ],
+  "_check_tensor_key": [
+    "name",
+    "error_label",
+    "allow_ints"
+  ],
+  "ServingInputReceiver": {
+    "__new__": [
+      "cls",
+      "features",
+      "receiver_tensors",
+      "receiver_tensors_alternatives"
+    ]
+  },
+  "TensorServingInputReceiver": {
+    "__new__": [
+      "cls",
+      "features",
+      "receiver_tensors",
+      "receiver_tensors_alternatives"
+    ]
+  },
+  "UnsupervisedInputReceiver": {
+    "__new__": [
+      "cls",
+      "features",
+      "receiver_tensors"
+    ]
+  },
+  "SupervisedInputReceiver": {
+    "__new__": [
+      "cls",
+      "features",
+      "labels",
+      "receiver_tensors"
+    ]
+  },
+  "build_parsing_serving_input_receiver_fn": [
+    "feature_spec",
+    "default_batch_size"
+  ],
+  "_placeholder_from_tensor": [
+    "t",
+    "default_batch_size"
+  ],
+  "_placeholders_from_receiver_tensors_dict": [
+    "input_vals",
+    "default_batch_size"
+  ],
+  "build_raw_serving_input_receiver_fn": [
+    "features",
+    "default_batch_size"
+  ],
+  "build_raw_supervised_input_receiver_fn": [
+    "features",
+    "labels",
+    "default_batch_size"
+  ],
+  "build_supervised_input_receiver_fn_from_input_fn": [
+    "input_fn"
+  ],
+  "build_all_signature_defs": [],
+  "get_temp_export_dir": [],
+  "get_timestamped_export_dir": [],
+  "ModelFunction": {
+    "__init__": [
+      "self",
+      "config",
+      "params"
+    ],
+    "from_function": [
+      "model_fn",
+      "all_modes",
+      "config",
+      "params"
+    ],
+    "variables": [
+      "self"
+    ],
+    "add_mode": [
+      "self",
+      "fn",
+      "mode",
+      "input_signature"
+    ],
+    "train": [
+      "self",
+      "features",
+      "labels"
+    ],
+    "evaluate": [
+      "self",
+      "features",
+      "labels"
+    ],
+    "predict": [
+      "self",
+      "features"
+    ],
+    "call": [
+      "self",
+      "mode",
+      "features",
+      "labels"
+    ]
+  },
+  "_wrap_and_verify_model_fn": [
+    "model_fn",
+    "mode",
+    "config",
+    "params",
+    "input_signature"
+  ],
+  "EstimatorSpecFunction": {
+    "__init__": [
+      "self",
+      "fn",
+      "mode",
+      "config",
+      "params",
+      "variable_holder"
+    ],
+    "_defun": [
+      "self",
+      "fn"
+    ]
+  },
+  "_EstimatorSpecFunction": {
+    "__init__": [
+      "self",
+      "python_function",
+      "name",
+      "variable_holder"
+    ],
+    "_create_graph_function": [
+      "self",
+      "args",
+      "kwargs"
+    ]
+  },
+  "_EstimatorWrappedGraph": {
+    "__init__": [
+      "self"
+    ],
+    "_global_step": [
+      "self"
+    ],
+    "global_step": [
+      "self"
+    ],
+    "model_fn": [
+      "self"
+    ],
+    "estimator_spec": [
+      "self"
+    ],
+    "wrap_model_fn": [
+      "self",
+      "model_fn",
+      "mode",
+      "args",
+      "kwargs",
+      "signature"
+    ],
+    "wrap_input_receiver_fn": [
+      "self",
+      "input_receiver_fn"
+    ]
+  },
+  "_filter_estimator_spec_outputs": [
+    "spec"
+  ],
+  "_RECEIVER_FN_NAME": [],
+  "_canonicalize_receiver_tensors": [
+    "receiver_tensors"
+  ],
+  "_input_receiver_fn_name": [
+    "name"
+  ],
+  "_prune_receiver_tensors": [
+    "wrapped_function",
+    "receiver_tensors",
+    "outputs",
+    "name"
+  ],
+  "MultiLabelHead": {
+    "__init__": [
+      "self",
+      "n_classes",
+      "weight_column",
+      "thresholds",
+      "label_vocabulary",
+      "loss_reduction",
+      "loss_fn",
+      "classes_for_class_based_metrics",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "_cached_class_id_table": [],
+    "_class_id_table": [
+      "self"
+    ],
+    "_processed_labels": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "_unweighted_loss_and_weights": [
+      "self",
+      "logits",
+      "processed_labels",
+      "features"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ]
+  },
+  "DEFAULT_SERVING_KEY": [],
+  "CLASSIFY_SERVING_KEY": [],
+  "REGRESS_SERVING_KEY": [],
+  "PREDICT_SERVING_KEY": [],
+  "Head": {
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "mode",
+      "regularization_losses"
+    ],
+    "_summary_key": [
+      "self",
+      "key"
+    ],
+    "create_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ]
+  },
+  "_LABEL_NONE_ERR_MSG": [],
+  "_SPARSE_LABEL_ERR_MSG": [],
+  "_MISMATCHED_LABEL_DIM_ERR_MSG": [],
+  "_LABEL_SHAPE_ERR_MSG": [],
+  "_VALIDATION_ERROR_MSG": [],
+  "check_dense_labels_match_logits_and_reshape": [
+    "labels",
+    "logits",
+    "expected_labels_dimension"
+  ],
+  "get_weights_and_check_match_logits": [
+    "features",
+    "weight_column",
+    "logits",
+    "allow_per_logit_weights"
+  ],
+  "check_logits_final_dim": [
+    "logits",
+    "expected_logits_dimension"
+  ],
+  "validate_loss_fn_args": [
+    "loss_fn"
+  ],
+  "validate_loss_reduction": [
+    "loss_reduction"
+  ],
+  "validate_update_ops": [
+    "update_ops"
+  ],
+  "validate_v2_optimizer": [
+    "optimizer"
+  ],
+  "validate_trainable_variables": [
+    "trainable_variables"
+  ],
+  "validate_n_classes": [
+    "n_classes"
+  ],
+  "call_loss_fn": [
+    "loss_fn",
+    "labels",
+    "logits",
+    "features",
+    "expected_loss_dim"
+  ],
+  "check_prediction_keys": [
+    "pred_keys",
+    "valid_keys"
+  ],
+  "all_class_ids": [
+    "logits",
+    "n_classes"
+  ],
+  "all_classes": [
+    "logits",
+    "n_classes",
+    "label_vocabulary"
+  ],
+  "classification_output": [
+    "scores",
+    "n_classes",
+    "label_vocabulary"
+  ],
+  "check_label_range": [
+    "labels",
+    "n_classes",
+    "message"
+  ],
+  "update_metric_with_broadcast_weights": [
+    "eval_metric",
+    "values",
+    "weights"
+  ],
+  "create_eval_metrics_tuple": [
+    "fn",
+    "kwargs"
+  ],
+  "create_estimator_spec_train_op": [
+    "head_name",
+    "optimizer",
+    "trainable_variables",
+    "train_op_fn",
+    "update_ops",
+    "regularized_training_loss",
+    "loss_reduction"
+  ],
+  "create_estimator_spec_summary": [
+    "regularized_training_loss",
+    "regularization_losses",
+    "summary_key_fn"
+  ],
+  "_no_op_train_fn": [
+    "loss"
+  ],
+  "_default_export_output": [
+    "export_outputs",
+    "head_name"
+  ],
+  "MultiHead": {
+    "__init__": [
+      "self",
+      "heads",
+      "head_weights"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "_split_logits": [
+      "self",
+      "logits"
+    ],
+    "_check_logits_and_labels": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "create_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ],
+    "_merge_predict_export_outputs": [
+      "self",
+      "all_estimator_spec"
+    ]
+  },
+  "RegressionHead": {
+    "__init__": [
+      "self",
+      "label_dimension",
+      "weight_column",
+      "loss_reduction",
+      "loss_fn",
+      "inverse_link_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "_processed_labels": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "_unweighted_loss_and_weights": [
+      "self",
+      "logits",
+      "labels",
+      "features"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ]
+  },
+  "PoissonRegressionHead": {
+    "__init__": [
+      "self",
+      "label_dimension",
+      "weight_column",
+      "loss_reduction",
+      "compute_full_loss",
+      "name"
+    ],
+    "_poisson_loss": [
+      "self",
+      "labels",
+      "logits"
+    ]
+  },
+  "LogisticRegressionHead": {
+    "_logistic_loss": [
+      "self",
+      "labels",
+      "logits"
+    ],
+    "__init__": [
+      "self",
+      "weight_column",
+      "loss_reduction",
+      "name"
+    ]
+  },
+  "BinaryClassHead": {
+    "__init__": [
+      "self",
+      "weight_column",
+      "thresholds",
+      "label_vocabulary",
+      "loss_reduction",
+      "loss_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "_cached_class_id_table": [],
+    "_cached_class_string_table": [],
+    "_class_id_table": [
+      "self"
+    ],
+    "_class_string_table": [
+      "self"
+    ],
+    "_processed_labels": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "_unweighted_loss_and_weights": [
+      "self",
+      "logits",
+      "labels",
+      "features"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "_update_accuracy_baseline": [
+      "self",
+      "eval_metrics"
+    ],
+    "_update_auc": [
+      "self",
+      "auc_metric",
+      "labels",
+      "predictions",
+      "weights"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ]
+  },
+  "_SequentialHead": {
+    "__metaclass__": [],
+    "input_sequence_mask_key": [
+      "self"
+    ]
+  },
+  "SequentialHeadWrapper": {
+    "__init__": [
+      "self",
+      "static_head",
+      "sequence_length_mask",
+      "feature_columns"
+    ],
+    "_flatten": [
+      "self",
+      "labels",
+      "logits",
+      "features"
+    ],
+    "loss": [
+      "self",
+      "logits",
+      "labels",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "create_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "input_sequence_mask_key": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "static_head": [
+      "self"
+    ]
+  },
+  "_flatten_tensor": [
+    "tensor",
+    "sequence_mask",
+    "expected_length"
+  ],
+  "binary_or_multi_class_head": [
+    "n_classes",
+    "weight_column",
+    "label_vocabulary",
+    "loss_reduction"
+  ],
+  "_initialize_variables": [
+    "test_case",
+    "scaffold"
+  ],
+  "_assert_simple_summaries": [
+    "test_case",
+    "expected_summaries",
+    "summary_str",
+    "tol"
+  ],
+  "_assert_no_hooks": [
+    "test_case",
+    "spec"
+  ],
+  "MultiClassHead": {
+    "__init__": [
+      "self",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "loss_reduction",
+      "loss_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "loss_reduction": [
+      "self"
+    ],
+    "_cached_class_id_table": [],
+    "_cached_class_string_table": [],
+    "_class_id_table": [
+      "self"
+    ],
+    "_class_string_table": [
+      "self"
+    ],
+    "_processed_labels": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "_unweighted_loss_and_weights": [
+      "self",
+      "logits",
+      "label_ids",
+      "features"
+    ],
+    "loss": [
+      "self",
+      "labels",
+      "logits",
+      "features",
+      "mode",
+      "regularization_losses"
+    ],
+    "predictions": [
+      "self",
+      "logits",
+      "keys"
+    ],
+    "metrics": [
+      "self",
+      "regularization_losses"
+    ],
+    "update_metrics": [
+      "self",
+      "eval_metrics",
+      "features",
+      "logits",
+      "labels",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "trainable_variables",
+      "train_op_fn",
+      "update_ops",
+      "regularization_losses"
+    ]
+  },
+  "_LEARNING_RATE": [],
+  "_get_weight_column_key": [
+    "weight_column"
+  ],
+  "_get_weight_column_key_v2": [
+    "weight_column"
+  ],
+  "_get_batch_size_and_size_checks": [
+    "features",
+    "weight_column_key"
+  ],
+  "_baseline_logit_fn_builder": [
+    "num_outputs",
+    "weight_column"
+  ],
+  "_baseline_model_fn": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "optimizer",
+    "weight_column",
+    "config"
+  ],
+  "_baseline_model_fn_builder_v2": [
+    "features",
+    "num_outputs",
+    "weight_column"
+  ],
+  "_baseline_model_fn_v2": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "optimizer",
+    "weight_column",
+    "config",
+    "loss_reduction"
+  ],
+  "BaselineClassifierV2": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "config",
+      "loss_reduction"
+    ]
+  },
+  "BaselineClassifier": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "config",
+      "loss_reduction"
+    ]
+  },
+  "BaselineEstimatorV2": {
+    "__init__": [
+      "self",
+      "head",
+      "model_dir",
+      "optimizer",
+      "config"
+    ]
+  },
+  "BaselineEstimator": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "head",
+      "model_dir",
+      "optimizer",
+      "config"
+    ]
+  },
+  "BaselineRegressorV2": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "config",
+      "loss_reduction"
+    ]
+  },
+  "BaselineRegressor": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "config",
+      "loss_reduction"
+    ]
+  },
+  "SavedModelEstimator": {
+    "__init__": [
+      "self",
+      "saved_model_dir",
+      "model_dir"
+    ],
+    "_extract_available_modes": [
+      "self"
+    ],
+    "_validate_mode": [
+      "self",
+      "mode"
+    ],
+    "_get_meta_graph_def_for_mode": [
+      "self",
+      "mode"
+    ],
+    "_get_signature_def_for_mode": [
+      "self",
+      "mode"
+    ],
+    "_get_saver_def_from_mode": [
+      "self",
+      "mode"
+    ],
+    "_create_and_assert_global_step": [
+      "self",
+      "graph"
+    ],
+    "_model_fn_from_saved_model": [
+      "self",
+      "features",
+      "labels",
+      "mode"
+    ],
+    "_restore_from_saver": [
+      "self",
+      "scaffold",
+      "session"
+    ],
+    "latest_checkpoint": [
+      "self"
+    ]
+  },
+  "_get_saved_model_ckpt": [
+    "saved_model_dir"
+  ],
+  "_clear_saved_model_collections": [],
+  "_generate_input_map": [
+    "signature_def",
+    "features",
+    "labels"
+  ],
+  "_check_same_dtype_and_shape": [
+    "tensor",
+    "tensor_info",
+    "name"
+  ],
+  "_extract_eval_metrics": [
+    "output_dict"
+  ],
+  "_validate_and_extract_outputs": [
+    "mode",
+    "output_dict",
+    "method_name"
+  ],
+  "LEARNING_RATE_NAME": [],
+  "HIDDEN_WEIGHTS_NAME_PATTERN": [],
+  "HIDDEN_BIASES_NAME_PATTERN": [],
+  "BATCH_NORM_BETA_NAME_PATTERN": [],
+  "BATCH_NORM_GAMMA_NAME_PATTERN": [],
+  "BATCH_NORM_MEAN_NAME_PATTERN": [],
+  "BATCH_NORM_VARIANCE_NAME_PATTERN": [],
+  "LOGITS_WEIGHTS_NAME": [],
+  "LOGITS_BIASES_NAME": [],
+  "OCCUPATION_EMBEDDING_NAME": [],
+  "CITY_EMBEDDING_NAME": [],
+  "assert_close": [
+    "expected",
+    "actual",
+    "rtol",
+    "message",
+    "name"
+  ],
+  "create_checkpoint": [
+    "weights_and_biases",
+    "global_step",
+    "model_dir",
+    "batch_norm_vars"
+  ],
+  "mock_head": [
+    "testcase",
+    "hidden_units",
+    "logits_dimension",
+    "expected_logits"
+  ],
+  "mock_optimizer": [
+    "testcase",
+    "hidden_units",
+    "expected_loss"
+  ],
+  "BaseDNNModelFnTest": {
+    "__init__": [
+      "self",
+      "dnn_model_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_logits": [
+      "self",
+      "mode",
+      "hidden_units",
+      "logits_dimension",
+      "inputs",
+      "expected_logits"
+    ],
+    "test_one_dim_logits": [
+      "self"
+    ],
+    "test_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_example_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_dim_input_one_dim_logits": [
+      "self"
+    ],
+    "test_multi_dim_input_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_feature_column_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_feature_column_mix_multi_dim_logits": [
+      "self"
+    ],
+    "test_features_tensor_raises_value_error": [
+      "self"
+    ]
+  },
+  "BaseDNNLogitFnTest": {
+    "__init__": [
+      "self",
+      "dnn_logit_fn_builder",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_logits": [
+      "self",
+      "mode",
+      "hidden_units",
+      "logits_dimension",
+      "inputs",
+      "expected_logits",
+      "batch_norm"
+    ],
+    "test_one_dim_logits": [
+      "self"
+    ],
+    "test_one_dim_logits_with_batch_norm": [
+      "self"
+    ],
+    "test_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_example_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_dim_input_one_dim_logits": [
+      "self"
+    ],
+    "test_multi_dim_input_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_feature_column_multi_dim_logits": [
+      "self"
+    ],
+    "test_multi_feature_column_mix_multi_dim_logits": [
+      "self"
+    ]
+  },
+  "BaseDNNWarmStartingTest": {
+    "__init__": [
+      "self",
+      "_dnn_classifier_fn",
+      "_dnn_regressor_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "assertAllNotClose": [
+      "self",
+      "t1",
+      "t2"
+    ],
+    "test_classifier_basic_warm_starting": [
+      "self"
+    ],
+    "test_regressor_basic_warm_starting": [
+      "self"
+    ],
+    "test_warm_starting_selective_variables": [
+      "self"
+    ],
+    "test_warm_starting_with_vocab_remapping": [
+      "self"
+    ],
+    "test_warm_starting_with_naming_change": [
+      "self"
+    ]
+  },
+  "BaseDNNClassifierEvaluateTest": {
+    "__init__": [
+      "self",
+      "dnn_classifier_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_one_dim": [
+      "self"
+    ],
+    "test_multi_dim": [
+      "self"
+    ],
+    "test_float_labels": [
+      "self"
+    ],
+    "test_multi_dim_weights": [
+      "self"
+    ]
+  },
+  "BaseDNNRegressorEvaluateTest": {
+    "__init__": [
+      "self",
+      "dnn_regressor_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_one_dim": [
+      "self"
+    ],
+    "test_multi_dim": [
+      "self"
+    ],
+    "test_multi_dim_weights": [
+      "self"
+    ]
+  },
+  "BaseDNNClassifierPredictTest": {
+    "__init__": [
+      "self",
+      "dnn_classifier_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_one_dim": [
+      "self",
+      "label_vocabulary",
+      "label_output_fn"
+    ],
+    "test_one_dim_without_label_vocabulary": [
+      "self"
+    ],
+    "test_one_dim_with_label_vocabulary": [
+      "self"
+    ],
+    "_test_multi_dim_with_3_classes": [
+      "self",
+      "label_vocabulary",
+      "label_output_fn"
+    ],
+    "test_multi_dim_with_3_classes_but_no_label_vocab": [
+      "self"
+    ],
+    "test_multi_dim_with_3_classes_and_label_vocab": [
+      "self"
+    ]
+  },
+  "BaseDNNRegressorPredictTest": {
+    "__init__": [
+      "self",
+      "dnn_regressor_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_one_dim": [
+      "self"
+    ],
+    "test_multi_dim": [
+      "self"
+    ]
+  },
+  "_SummaryHook": {
+    "__init__": [
+      "self"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ],
+    "summaries": [
+      "self"
+    ]
+  },
+  "_assert_checkpoint": [
+    "testcase",
+    "global_step",
+    "input_units",
+    "hidden_units",
+    "output_units",
+    "model_dir"
+  ],
+  "_assert_simple_summary": [
+    "testcase",
+    "expected_values",
+    "actual_summary"
+  ],
+  "BaseDNNClassifierTrainTest": {
+    "__init__": [
+      "self",
+      "dnn_classifier_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_from_scratch_with_default_optimizer_binary": [
+      "self"
+    ],
+    "test_from_scratch_with_default_optimizer_multi_class": [
+      "self"
+    ],
+    "test_from_scratch_validate_summary": [
+      "self"
+    ],
+    "test_binary_classification": [
+      "self"
+    ],
+    "test_binary_classification_float_labels": [
+      "self"
+    ],
+    "test_multi_class": [
+      "self"
+    ]
+  },
+  "BaseDNNRegressorTrainTest": {
+    "__init__": [
+      "self",
+      "dnn_regressor_fn",
+      "fc_impl"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_from_scratch_with_default_optimizer": [
+      "self"
+    ],
+    "test_from_scratch": [
+      "self"
+    ],
+    "test_one_dim": [
+      "self"
+    ],
+    "test_multi_dim": [
+      "self"
+    ]
+  },
+  "_OPTIMIZER_CLS_NAMES": [],
+  "_OPTIMIZER_CLS_NAMES_V2": [],
+  "get_optimizer_instance": [
+    "opt",
+    "learning_rate"
+  ],
+  "_optimizer_has_default_learning_rate": [
+    "opt"
+  ],
+  "get_optimizer_instance_v2": [
+    "opt",
+    "learning_rate"
+  ],
+  "_DNN_LEARNING_RATE": [],
+  "_LINEAR_LEARNING_RATE": [],
+  "_check_no_sync_replicas_optimizer": [
+    "optimizer"
+  ],
+  "_linear_learning_rate": [
+    "num_linear_feature_columns"
+  ],
+  "_add_layer_summary": [
+    "value",
+    "tag"
+  ],
+  "_validate_feature_columns": [
+    "linear_feature_columns",
+    "dnn_feature_columns"
+  ],
+  "_dnn_linear_combined_model_fn_v2": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "linear_feature_columns",
+    "linear_optimizer",
+    "dnn_feature_columns",
+    "dnn_optimizer",
+    "dnn_hidden_units",
+    "dnn_activation_fn",
+    "dnn_dropout",
+    "config",
+    "batch_norm",
+    "linear_sparse_combiner",
+    "loss_reduction"
+  ],
+  "_dnn_linear_combined_model_fn": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "linear_feature_columns",
+    "linear_optimizer",
+    "dnn_feature_columns",
+    "dnn_optimizer",
+    "dnn_hidden_units",
+    "dnn_activation_fn",
+    "dnn_dropout",
+    "input_layer_partitioner",
+    "config",
+    "batch_norm",
+    "linear_sparse_combiner"
+  ],
+  "DNNLinearCombinedClassifierV2": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "DNNLinearCombinedClassifier": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "input_layer_partitioner",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "_init_dnn_linear_combined_estimator": [
+    "head",
+    "linear_feature_columns",
+    "linear_optimizer",
+    "dnn_feature_columns",
+    "dnn_optimizer",
+    "dnn_hidden_units",
+    "dnn_activation_fn",
+    "dnn_dropout",
+    "input_layer_partitioner",
+    "linear_sparse_combiner"
+  ],
+  "DNNLinearCombinedEstimatorV2": {
+    "__init__": [
+      "self",
+      "head",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "config",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "DNNLinearCombinedEstimator": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "head",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "input_layer_partitioner",
+      "config",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "DNNLinearCombinedRegressorV2": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "label_dimension",
+      "weight_column",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "DNNLinearCombinedRegressor": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "model_dir",
+      "linear_feature_columns",
+      "linear_optimizer",
+      "dnn_feature_columns",
+      "dnn_optimizer",
+      "dnn_hidden_units",
+      "dnn_activation_fn",
+      "dnn_dropout",
+      "label_dimension",
+      "weight_column",
+      "input_layer_partitioner",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm",
+      "linear_sparse_combiner"
+    ]
+  },
+  "MetricKeys": {
+    "LOSS": [],
+    "LOSS_MEAN": [],
+    "LOSS_REGULARIZATION": [],
+    "ACCURACY": [],
+    "PRECISION": [],
+    "RECALL": [],
+    "ACCURACY_BASELINE": [],
+    "AUC": [],
+    "AUC_PR": [],
+    "LABEL_MEAN": [],
+    "PREDICTION_MEAN": [],
+    "ACCURACY_AT_THRESHOLD": [],
+    "PRECISION_AT_THRESHOLD": [],
+    "RECALL_AT_THRESHOLD": [],
+    "PRECISION_AT_RECALL": [],
+    "RECALL_AT_PRECISION": [],
+    "SENSITIVITY_AT_SPECIFICITY": [],
+    "SPECIFICITY_AT_SENSITIVITY": [],
+    "PROBABILITY_MEAN_AT_CLASS": [],
+    "AUC_AT_CLASS": [],
+    "AUC_PR_AT_CLASS": [],
+    "PROBABILITY_MEAN_AT_NAME": [],
+    "AUC_AT_NAME": [],
+    "AUC_PR_AT_NAME": []
+  },
+  "_DEFAULT_LEARNING_RATE": [],
+  "_DEFAULT_CLIP_NORM": [],
+  "_SIMPLE_RNN_KEY": [],
+  "_LSTM_KEY": [],
+  "_GRU_KEY": [],
+  "_CELL_TYPE_TO_LAYER_MAPPING": [],
+  "_CELL_TYPES": [],
+  "USE_DEFAULT": [],
+  "_single_rnn_cell": [
+    "units",
+    "cell_type"
+  ],
+  "_make_rnn_cell_fn": [
+    "units",
+    "cell_type"
+  ],
+  "RNNModel": {
+    "__init__": [
+      "self",
+      "rnn_layer",
+      "units",
+      "sequence_feature_columns",
+      "context_feature_columns",
+      "activation",
+      "return_sequences"
+    ],
+    "call": [
+      "self",
+      "inputs",
+      "training"
+    ],
+    "get_config": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "custom_objects"
+    ]
+  },
+  "_get_rnn_estimator_spec": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "rnn_model",
+    "optimizer",
+    "return_sequences"
+  ],
+  "_verify_rnn_cell_input": [
+    "rnn_cell_fn",
+    "units",
+    "cell_type"
+  ],
+  "_make_rnn_layer": [
+    "rnn_cell_fn",
+    "units",
+    "cell_type",
+    "return_sequences"
+  ],
+  "RNNEstimator": {
+    "__init__": [
+      "self",
+      "head",
+      "sequence_feature_columns",
+      "context_feature_columns",
+      "units",
+      "cell_type",
+      "rnn_cell_fn",
+      "return_sequences",
+      "model_dir",
+      "optimizer",
+      "config"
+    ]
+  },
+  "RNNClassifier": {
+    "__init__": [
+      "self",
+      "sequence_feature_columns",
+      "context_feature_columns",
+      "units",
+      "cell_type",
+      "rnn_cell_fn",
+      "return_sequences",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "loss_reduction",
+      "sequence_mask",
+      "config"
+    ]
+  },
+  "AGE_WEIGHT_NAME": [],
+  "HEIGHT_WEIGHT_NAME": [],
+  "OCCUPATION_WEIGHT_NAME": [],
+  "BIAS_NAME": [],
+  "LANGUAGE_WEIGHT_NAME": [],
+  "save_variables_to_ckpt": [
+    "model_dir"
+  ],
+  "queue_parsed_features": [
+    "feature_map"
+  ],
+  "sorted_key_dict": [
+    "unsorted_dict"
+  ],
+  "sigmoid": [
+    "x"
+  ],
+  "BaseLinearRegressorEvaluationTest": {
+    "__init__": [
+      "self",
+      "linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_evaluation_for_simple_data": [
+      "self"
+    ],
+    "test_evaluation_batch": [
+      "self"
+    ],
+    "test_evaluation_weights": [
+      "self"
+    ],
+    "test_evaluation_for_multi_dimensions": [
+      "self"
+    ],
+    "test_evaluation_for_multiple_feature_columns": [
+      "self"
+    ],
+    "test_evaluation_for_multiple_feature_columns_mix": [
+      "self"
+    ]
+  },
+  "BaseLinearRegressorPredictTest": {
+    "__init__": [
+      "self",
+      "linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_1d": [
+      "self"
+    ],
+    "testMultiDim": [
+      "self"
+    ],
+    "testTwoFeatureColumns": [
+      "self"
+    ],
+    "testTwoFeatureColumnsMix": [
+      "self"
+    ],
+    "testSparseCombiner": [
+      "self"
+    ]
+  },
+  "BaseLinearRegressorIntegrationTest": {
+    "__init__": [
+      "self",
+      "linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_complete_flow": [
+      "self",
+      "train_input_fn",
+      "eval_input_fn",
+      "predict_input_fn",
+      "input_dimension",
+      "label_dimension",
+      "prediction_length"
+    ],
+    "test_numpy_input_fn": [
+      "self"
+    ],
+    "test_pandas_input_fn": [
+      "self"
+    ],
+    "test_input_fn_from_parse_example": [
+      "self"
+    ]
+  },
+  "BaseLinearRegressorTrainingTest": {
+    "__init__": [
+      "self",
+      "linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_assert_checkpoint": [
+      "self",
+      "expected_global_step",
+      "expected_age_weight",
+      "expected_bias"
+    ],
+    "testFromScratchWithDefaultOptimizer": [
+      "self"
+    ],
+    "testTrainWithOneDimLabel": [
+      "self"
+    ],
+    "testTrainWithOneDimWeight": [
+      "self"
+    ],
+    "testFromScratch": [
+      "self"
+    ],
+    "testFromCheckpoint": [
+      "self"
+    ],
+    "testFromCheckpointMultiBatch": [
+      "self"
+    ]
+  },
+  "BaseLinearClassifierTrainingTest": {
+    "__init__": [
+      "self",
+      "linear_classifier_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_assert_checkpoint": [
+      "self",
+      "n_classes",
+      "expected_global_step",
+      "expected_age_weight",
+      "expected_bias"
+    ],
+    "_testFromScratchWithDefaultOptimizer": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesFromScratchWithDefaultOptimizer": [
+      "self"
+    ],
+    "testMultiClassesFromScratchWithDefaultOptimizer": [
+      "self"
+    ],
+    "_testTrainWithTwoDimsLabel": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesTrainWithTwoDimsLabel": [
+      "self"
+    ],
+    "testMultiClassesTrainWithTwoDimsLabel": [
+      "self"
+    ],
+    "_testTrainWithOneDimLabel": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesTrainWithOneDimLabel": [
+      "self"
+    ],
+    "testMultiClassesTrainWithOneDimLabel": [
+      "self"
+    ],
+    "_testTrainWithTwoDimsWeight": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesTrainWithTwoDimsWeight": [
+      "self"
+    ],
+    "testMultiClassesTrainWithTwoDimsWeight": [
+      "self"
+    ],
+    "_testTrainWithOneDimWeight": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesTrainWithOneDimWeight": [
+      "self"
+    ],
+    "testMultiClassesTrainWithOneDimWeight": [
+      "self"
+    ],
+    "_testFromScratch": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesFromScratch": [
+      "self"
+    ],
+    "testMultiClassesFromScratch": [
+      "self"
+    ],
+    "_testFromCheckpoint": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesFromCheckpoint": [
+      "self"
+    ],
+    "testMultiClassesFromCheckpoint": [
+      "self"
+    ],
+    "_testFromCheckpointFloatLabels": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesFromCheckpointFloatLabels": [
+      "self"
+    ],
+    "testMultiClassesFromCheckpointFloatLabels": [
+      "self"
+    ],
+    "_testFromCheckpointMultiBatch": [
+      "self",
+      "n_classes"
+    ],
+    "testBinaryClassesFromCheckpointMultiBatch": [
+      "self"
+    ],
+    "testMultiClassesFromCheckpointMultiBatch": [
+      "self"
+    ]
+  },
+  "BaseLinearClassifierEvaluationTest": {
+    "__init__": [
+      "self",
+      "linear_classifier_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_evaluation_for_simple_data": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_evaluation_for_simple_data": [
+      "self"
+    ],
+    "test_multi_classes_evaluation_for_simple_data": [
+      "self"
+    ],
+    "_test_evaluation_batch": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_evaluation_batch": [
+      "self"
+    ],
+    "test_multi_classes_evaluation_batch": [
+      "self"
+    ],
+    "_test_evaluation_weights": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_evaluation_weights": [
+      "self"
+    ],
+    "test_multi_classes_evaluation_weights": [
+      "self"
+    ]
+  },
+  "BaseLinearClassifierPredictTest": {
+    "__init__": [
+      "self",
+      "linear_classifier_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_testPredictions": [
+      "self",
+      "n_classes",
+      "label_vocabulary",
+      "label_output_fn"
+    ],
+    "testBinaryClassesWithoutLabelVocabulary": [
+      "self"
+    ],
+    "testBinaryClassesWithLabelVocabulary": [
+      "self"
+    ],
+    "testMultiClassesWithoutLabelVocabulary": [
+      "self"
+    ],
+    "testMultiClassesWithLabelVocabulary": [
+      "self"
+    ],
+    "testSparseCombiner": [
+      "self"
+    ]
+  },
+  "BaseLinearClassifierIntegrationTest": {
+    "__init__": [
+      "self",
+      "linear_classifier_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_test_complete_flow": [
+      "self",
+      "n_classes",
+      "train_input_fn",
+      "eval_input_fn",
+      "predict_input_fn",
+      "input_dimension",
+      "prediction_length"
+    ],
+    "_test_numpy_input_fn": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_numpy_input_fn": [
+      "self"
+    ],
+    "test_multi_classes_numpy_input_fn": [
+      "self"
+    ],
+    "_test_pandas_input_fn": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_pandas_input_fn": [
+      "self"
+    ],
+    "test_multi_classes_pandas_input_fn": [
+      "self"
+    ],
+    "_test_input_fn_from_parse_example": [
+      "self",
+      "n_classes"
+    ],
+    "test_binary_classes_input_fn_from_parse_example": [
+      "self"
+    ],
+    "test_multi_classes_input_fn_from_parse_example": [
+      "self"
+    ]
+  },
+  "BaseLinearLogitFnTest": {
+    "__init__": [
+      "self",
+      "fc_lib"
+    ],
+    "test_basic_logit_correctness": [
+      "self"
+    ],
+    "test_compute_fraction_of_zero_v2": [
+      "self"
+    ]
+  },
+  "BaseLinearWarmStartingTest": {
+    "__init__": [
+      "self",
+      "_linear_classifier_fn",
+      "_linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_classifier_basic_warm_starting": [
+      "self"
+    ],
+    "test_regressor_basic_warm_starting": [
+      "self"
+    ],
+    "test_warm_starting_selective_variables": [
+      "self"
+    ],
+    "test_warm_starting_with_vocab_remapping_and_partitioning": [
+      "self"
+    ],
+    "test_warm_starting_with_naming_change": [
+      "self"
+    ]
+  },
+  "PredictionKeys": {
+    "CLASSES": [],
+    "CLASS_IDS": [],
+    "ALL_CLASSES": [],
+    "ALL_CLASS_IDS": [],
+    "LOGISTIC": [],
+    "LOGITS": [],
+    "PREDICTIONS": [],
+    "PROBABILITIES": [],
+    "TOP_K": []
+  },
+  "classifier_parse_example_spec_v2": [
+    "feature_columns",
+    "label_key",
+    "label_dtype",
+    "label_default",
+    "weight_column"
+  ],
+  "regressor_parse_example_spec_v2": [
+    "feature_columns",
+    "label_key",
+    "label_dtype",
+    "label_default",
+    "label_dimension",
+    "weight_column"
+  ],
+  "_add_label_and_weight_to_parsing_spec": [
+    "parsing_spec",
+    "label_key",
+    "label_spec",
+    "weight_column"
+  ],
+  "classifier_parse_example_spec": [
+    "feature_columns",
+    "label_key",
+    "label_dtype",
+    "label_default",
+    "weight_column"
+  ],
+  "regressor_parse_example_spec": [
+    "feature_columns",
+    "label_key",
+    "label_dtype",
+    "label_default",
+    "label_dimension",
+    "weight_column"
+  ],
+  "LinearSDCA": {
+    "__init__": [
+      "self",
+      "example_id_column",
+      "num_loss_partitions",
+      "num_table_shards",
+      "symmetric_l1_regularization",
+      "symmetric_l2_regularization",
+      "adaptive"
+    ],
+    "_prune_and_unique_sparse_ids": [
+      "self",
+      "id_weight_pair"
+    ],
+    "get_train_step": [
+      "self",
+      "state_manager",
+      "weight_column_name",
+      "loss_type",
+      "feature_columns",
+      "features",
+      "targets",
+      "bias_var",
+      "global_step"
+    ]
+  },
+  "_get_default_optimizer_v2": [
+    "feature_columns"
+  ],
+  "_get_default_optimizer": [
+    "feature_columns"
+  ],
+  "_get_expanded_variable_list": [
+    "var_list"
+  ],
+  "_compute_fraction_of_zero": [
+    "variables"
+  ],
+  "linear_logit_fn_builder_v2": [
+    "units",
+    "feature_columns",
+    "sparse_combiner"
+  ],
+  "linear_logit_fn_builder": [
+    "units",
+    "feature_columns",
+    "sparse_combiner"
+  ],
+  "_sdca_model_fn": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "feature_columns",
+    "optimizer"
+  ],
+  "_SDCAUpdateWeightsHook": {
+    "__init__": [
+      "self",
+      "sdca_model",
+      "train_op"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ]
+  },
+  "_linear_model_fn_builder_v2": [
+    "units",
+    "feature_columns",
+    "sparse_combiner",
+    "features"
+  ],
+  "_linear_model_fn_v2": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "feature_columns",
+    "optimizer",
+    "config",
+    "sparse_combiner"
+  ],
+  "_linear_model_fn": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "feature_columns",
+    "optimizer",
+    "partitioner",
+    "config",
+    "sparse_combiner"
+  ],
+  "_validate_linear_sdca_optimizer_for_linear_classifier": [
+    "feature_columns",
+    "n_classes",
+    "optimizer",
+    "sparse_combiner"
+  ],
+  "LinearClassifierV2": {
+    "__init__": [
+      "self",
+      "feature_columns",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "sparse_combiner"
+    ]
+  },
+  "LinearClassifier": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "feature_columns",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "config",
+      "partitioner",
+      "warm_start_from",
+      "loss_reduction",
+      "sparse_combiner"
+    ]
+  },
+  "LinearEstimatorV2": {
+    "__init__": [
+      "self",
+      "head",
+      "feature_columns",
+      "model_dir",
+      "optimizer",
+      "config",
+      "sparse_combiner",
+      "warm_start_from"
+    ]
+  },
+  "LinearEstimator": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "head",
+      "feature_columns",
+      "model_dir",
+      "optimizer",
+      "config",
+      "partitioner",
+      "sparse_combiner",
+      "warm_start_from"
+    ]
+  },
+  "_validate_linear_sdca_optimizer_for_linear_regressor": [
+    "feature_columns",
+    "label_dimension",
+    "optimizer",
+    "sparse_combiner"
+  ],
+  "LinearRegressorV2": {
+    "__init__": [
+      "self",
+      "feature_columns",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "sparse_combiner"
+    ]
+  },
+  "LinearRegressor": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "feature_columns",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "config",
+      "partitioner",
+      "warm_start_from",
+      "loss_reduction",
+      "sparse_combiner"
+    ]
+  },
+  "_LinearModelLayer": {
+    "__init__": [
+      "self",
+      "feature_columns",
+      "units",
+      "sparse_combiner",
+      "trainable",
+      "name"
+    ],
+    "build": [
+      "self",
+      "_"
+    ],
+    "call": [
+      "self",
+      "features"
+    ],
+    "get_config": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "custom_objects"
+    ]
+  },
+  "LinearModel": {
+    "__init__": [
+      "self",
+      "feature_columns",
+      "units",
+      "sparse_combiner",
+      "trainable",
+      "name"
+    ],
+    "call": [
+      "self",
+      "features"
+    ],
+    "bias": [
+      "self"
+    ]
+  },
+  "_add_hidden_layer_summary": [
+    "value",
+    "tag"
+  ],
+  "dnn_logit_fn_builder": [
+    "units",
+    "hidden_units",
+    "feature_columns",
+    "activation_fn",
+    "dropout",
+    "input_layer_partitioner",
+    "batch_norm"
+  ],
+  "dnn_logit_fn_builder_v2": [
+    "units",
+    "hidden_units",
+    "feature_columns",
+    "activation_fn",
+    "dropout",
+    "batch_norm"
+  ],
+  "_get_previous_name_scope": [],
+  "_DNNModel": {
+    "__init__": [
+      "self",
+      "units",
+      "hidden_units",
+      "feature_columns",
+      "activation_fn",
+      "dropout",
+      "input_layer_partitioner",
+      "batch_norm",
+      "name"
+    ],
+    "call": [
+      "self",
+      "features",
+      "mode"
+    ],
+    "_add_layer": [
+      "self",
+      "layer",
+      "layer_name"
+    ]
+  },
+  "_name_from_scope_name": [
+    "name"
+  ],
+  "_DNNModelV2": {
+    "__init__": [
+      "self",
+      "units",
+      "hidden_units",
+      "feature_columns",
+      "activation_fn",
+      "dropout",
+      "batch_norm",
+      "name"
+    ],
+    "call": [
+      "self",
+      "features",
+      "mode"
+    ]
+  },
+  "_validate_features": [
+    "features"
+  ],
+  "_get_dnn_estimator_spec": [
+    "use_tpu",
+    "head",
+    "features",
+    "labels",
+    "mode",
+    "logits",
+    "optimizer"
+  ],
+  "_dnn_model_fn": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "hidden_units",
+    "feature_columns",
+    "optimizer",
+    "activation_fn",
+    "dropout",
+    "input_layer_partitioner",
+    "config",
+    "use_tpu",
+    "batch_norm"
+  ],
+  "_dnn_model_fn_builder_v2": [
+    "units",
+    "hidden_units",
+    "feature_columns",
+    "activation_fn",
+    "dropout",
+    "batch_norm",
+    "features",
+    "mode"
+  ],
+  "dnn_model_fn_v2": [
+    "features",
+    "labels",
+    "mode",
+    "head",
+    "hidden_units",
+    "feature_columns",
+    "optimizer",
+    "activation_fn",
+    "dropout",
+    "config",
+    "use_tpu",
+    "batch_norm"
+  ],
+  "DNNClassifierV2": {
+    "__init__": [
+      "self",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm"
+    ]
+  },
+  "DNNClassifier": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "input_layer_partitioner",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm"
+    ]
+  },
+  "DNNEstimatorV2": {
+    "__init__": [
+      "self",
+      "head",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "config",
+      "warm_start_from",
+      "batch_norm"
+    ]
+  },
+  "DNNEstimator": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "head",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "input_layer_partitioner",
+      "config",
+      "warm_start_from",
+      "batch_norm"
+    ]
+  },
+  "DNNRegressorV2": {
+    "__init__": [
+      "self",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm"
+    ]
+  },
+  "DNNRegressor": {
+    "__doc__": [],
+    "__init__": [
+      "self",
+      "hidden_units",
+      "feature_columns",
+      "model_dir",
+      "label_dimension",
+      "weight_column",
+      "optimizer",
+      "activation_fn",
+      "dropout",
+      "input_layer_partitioner",
+      "config",
+      "warm_start_from",
+      "loss_reduction",
+      "batch_norm"
+    ]
+  },
+  "_CLASSIFY_SERVING_KEY": [],
+  "_REGRESS_SERVING_KEY": [],
+  "_PREDICT_SERVING_KEY": [],
+  "LossSpec": [],
+  "_summary_key": [
+    "head_name",
+    "val"
+  ],
+  "_create_eval_metrics_tuple": [
+    "fn",
+    "kwargs"
+  ],
+  "_Head": {
+    "__metaclass__": [],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "create_loss": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels"
+    ],
+    "create_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "train_op_fn",
+      "regularization_losses"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "train_op_fn",
+      "regularization_losses"
+    ]
+  },
+  "_check_dense_labels_match_logits_and_reshape": [
+    "labels",
+    "logits",
+    "expected_labels_dimension"
+  ],
+  "_get_weights_and_check_match_logits": [
+    "features",
+    "weight_column",
+    "logits",
+    "allow_per_logit_weights"
+  ],
+  "_check_logits_final_dim": [
+    "logits",
+    "expected_logits_dimension"
+  ],
+  "_validate_loss_fn_args": [
+    "loss_fn"
+  ],
+  "_validate_n_classes": [
+    "n_classes"
+  ],
+  "_call_loss_fn": [
+    "loss_fn",
+    "labels",
+    "logits",
+    "features",
+    "expected_loss_dim"
+  ],
+  "_indicator_labels_mean": [
+    "labels",
+    "weights",
+    "name"
+  ],
+  "_all_class_ids": [
+    "logits",
+    "n_classes"
+  ],
+  "_all_classes": [
+    "logits",
+    "n_classes",
+    "label_vocabulary"
+  ],
+  "_classification_output": [
+    "scores",
+    "n_classes",
+    "label_vocabulary"
+  ],
+  "_accuracy_baseline": [
+    "labels_mean"
+  ],
+  "_predictions_mean": [
+    "predictions",
+    "weights",
+    "name"
+  ],
+  "_auc": [
+    "labels",
+    "predictions",
+    "weights",
+    "curve",
+    "name"
+  ],
+  "_accuracy_at_threshold": [
+    "labels",
+    "predictions",
+    "weights",
+    "threshold",
+    "name"
+  ],
+  "_precision_at_threshold": [
+    "labels",
+    "predictions",
+    "weights",
+    "threshold",
+    "name"
+  ],
+  "_recall_at_threshold": [
+    "labels",
+    "predictions",
+    "weights",
+    "threshold",
+    "name"
+  ],
+  "_multi_class_head_with_softmax_cross_entropy_loss": [
+    "n_classes",
+    "weight_column",
+    "label_vocabulary",
+    "loss_reduction",
+    "loss_fn",
+    "name"
+  ],
+  "_MultiClassHeadWithSoftmaxCrossEntropyLoss": {
+    "__init__": [
+      "self",
+      "n_classes",
+      "weight_column",
+      "label_vocabulary",
+      "loss_reduction",
+      "loss_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "_eval_metric_ops": [
+      "self",
+      "labels",
+      "class_ids",
+      "weights",
+      "unreduced_loss",
+      "regularization_loss"
+    ],
+    "_label_ids": [
+      "self",
+      "labels"
+    ],
+    "create_loss": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "train_op_fn",
+      "regularization_losses"
+    ]
+  },
+  "_binary_logistic_head_with_sigmoid_cross_entropy_loss": [
+    "weight_column",
+    "thresholds",
+    "label_vocabulary",
+    "loss_reduction",
+    "loss_fn",
+    "name"
+  ],
+  "_BinaryLogisticHeadWithSigmoidCrossEntropyLoss": {
+    "__init__": [
+      "self",
+      "weight_column",
+      "thresholds",
+      "label_vocabulary",
+      "loss_reduction",
+      "loss_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "_eval_metric_ops": [
+      "self",
+      "labels",
+      "logits",
+      "logistic",
+      "class_ids",
+      "weights",
+      "unreduced_loss",
+      "regularization_loss"
+    ],
+    "create_loss": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "train_op_fn",
+      "regularization_losses"
+    ]
+  },
+  "_regression_head": [
+    "weight_column",
+    "label_dimension",
+    "loss_reduction",
+    "loss_fn",
+    "inverse_link_fn",
+    "name"
+  ],
+  "_RegressionHeadWithMeanSquaredErrorLoss": {
+    "__init__": [
+      "self",
+      "label_dimension",
+      "weight_column",
+      "loss_reduction",
+      "loss_fn",
+      "inverse_link_fn",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "create_loss": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels"
+    ],
+    "_eval_metric_ops": [
+      "self",
+      "predicted_value",
+      "labels",
+      "weights",
+      "unreduced_loss",
+      "regularization_loss"
+    ],
+    "_create_tpu_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels",
+      "optimizer",
+      "train_op_fn",
+      "regularization_losses"
+    ]
+  },
+  "_append_update_ops": [
+    "train_op"
+  ],
+  "_assert_range": [
+    "labels",
+    "n_classes",
+    "message"
+  ],
+  "_binary_logistic_or_multi_class_head": [
+    "n_classes",
+    "weight_column",
+    "label_vocabulary",
+    "loss_reduction"
+  ],
+  "_LossRelativeChangeHook": {
+    "__init__": [
+      "self",
+      "loss_tensor",
+      "tolerance"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "_InitializeClustersHook": {
+    "__init__": [
+      "self",
+      "init_op",
+      "is_initialized_var",
+      "is_chief"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ]
+  },
+  "_parse_features_if_necessary": [
+    "features",
+    "feature_columns"
+  ],
+  "_ModelFn": {
+    "__init__": [
+      "self",
+      "num_clusters",
+      "initial_clusters",
+      "distance_metric",
+      "seed",
+      "use_mini_batch",
+      "mini_batch_steps_per_iteration",
+      "kmeans_plus_plus_num_retries",
+      "relative_tolerance",
+      "feature_columns"
+    ],
+    "model_fn": [
+      "self",
+      "features",
+      "mode",
+      "config"
+    ]
+  },
+  "KMeansClustering": {
+    "SQUARED_EUCLIDEAN_DISTANCE": [],
+    "COSINE_DISTANCE": [],
+    "RANDOM_INIT": [],
+    "KMEANS_PLUS_PLUS_INIT": [],
+    "SCORE": [],
+    "CLUSTER_INDEX": [],
+    "ALL_DISTANCES": [],
+    "CLUSTER_CENTERS_VAR_NAME": [],
+    "__init__": [
+      "self",
+      "num_clusters",
+      "model_dir",
+      "initial_clusters",
+      "distance_metric",
+      "seed",
+      "use_mini_batch",
+      "mini_batch_steps_per_iteration",
+      "kmeans_plus_plus_num_retries",
+      "relative_tolerance",
+      "config",
+      "feature_columns"
+    ],
+    "_predict_one_key": [
+      "self",
+      "input_fn",
+      "predict_key"
+    ],
+    "predict_cluster_index": [
+      "self",
+      "input_fn"
+    ],
+    "score": [
+      "self",
+      "input_fn"
+    ],
+    "transform": [
+      "self",
+      "input_fn"
+    ],
+    "cluster_centers": [
+      "self"
+    ]
+  },
+  "_SparseFeatureColumn": {
+    "__init__": [
+      "self",
+      "example_indices",
+      "feature_indices",
+      "feature_values"
+    ],
+    "example_indices": [
+      "self"
+    ],
+    "feature_indices": [
+      "self"
+    ],
+    "feature_values": [
+      "self"
+    ]
+  },
+  "_SDCAModel": {
+    "__init__": [
+      "self",
+      "examples",
+      "variables",
+      "options"
+    ],
+    "_symmetric_l1_regularization": [
+      "self"
+    ],
+    "_symmetric_l2_regularization": [
+      "self"
+    ],
+    "_num_loss_partitions": [
+      "self"
+    ],
+    "_adaptive": [
+      "self"
+    ],
+    "_num_table_shards": [
+      "self"
+    ],
+    "_create_slots": [
+      "self"
+    ],
+    "_assert_specified": [
+      "self",
+      "items",
+      "check_in"
+    ],
+    "_assert_list": [
+      "self",
+      "items",
+      "check_in"
+    ],
+    "_var_to_list": [
+      "self",
+      "var"
+    ],
+    "_l1_loss": [
+      "self"
+    ],
+    "_l2_loss": [
+      "self"
+    ],
+    "_convert_n_to_tensor": [
+      "self",
+      "input_list",
+      "as_ref"
+    ],
+    "_get_first_dimension_size_statically": [
+      "self",
+      "w",
+      "num_partitions"
+    ],
+    "_linear_predictions": [
+      "self",
+      "examples"
+    ],
+    "predictions": [
+      "self",
+      "examples"
+    ],
+    "_get_partitioned_update_ops": [
+      "self",
+      "v_num",
+      "num_partitions_by_var",
+      "p_assignments_by_var",
+      "gather_ids_by_var",
+      "weights",
+      "full_update",
+      "p_assignments",
+      "num_partitions"
+    ],
+    "minimize": [
+      "self",
+      "global_step",
+      "name"
+    ],
+    "update_weights": [
+      "self",
+      "train_op"
+    ],
+    "approximate_duality_gap": [
+      "self"
+    ],
+    "unregularized_loss": [
+      "self",
+      "examples"
+    ],
+    "regularized_loss": [
+      "self",
+      "examples"
+    ]
+  },
+  "_MutableDenseHashTable": {
+    "__init__": [
+      "self",
+      "key_dtype",
+      "value_dtype",
+      "default_value",
+      "empty_key",
+      "deleted_key",
+      "initial_num_buckets",
+      "shared_name",
+      "name",
+      "checkpoint"
+    ],
+    "_create_resource": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "size": [
+      "self",
+      "name"
+    ],
+    "lookup": [
+      "self",
+      "keys",
+      "name"
+    ],
+    "insert": [
+      "self",
+      "keys",
+      "values",
+      "name"
+    ],
+    "export": [
+      "self",
+      "name"
+    ],
+    "_serialize_to_tensors": [
+      "self"
+    ],
+    "_restore_from_tensors": [
+      "self",
+      "restored_tensors"
+    ]
+  },
+  "_ShardedMutableDenseHashTable": {
+    "__init__": [
+      "self",
+      "key_dtype",
+      "value_dtype",
+      "default_value",
+      "empty_key",
+      "deleted_key",
+      "num_shards",
+      "checkpoint",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "_num_shards": [
+      "self"
+    ],
+    "table_shards": [
+      "self"
+    ],
+    "size": [
+      "self",
+      "name"
+    ],
+    "_shard_indices": [
+      "self",
+      "keys"
+    ],
+    "_check_keys": [
+      "self",
+      "keys"
+    ],
+    "lookup": [
+      "self",
+      "keys",
+      "name"
+    ],
+    "insert": [
+      "self",
+      "keys",
+      "values",
+      "name"
+    ],
+    "export_sharded": [
+      "self",
+      "name"
+    ]
+  },
+  "State": {
+    "STATE_TUPLE": [],
+    "STATE_PREFIX": []
+  },
+  "Times": {
+    "TIMES": []
+  },
+  "Values": {
+    "VALUES": []
+  },
+  "TrainEvalFeatures": {},
+  "PredictionFeatures": {},
+  "FilteringFeatures": {},
+  "PredictionResults": {},
+  "FilteringResults": {},
+  "SavedModelLabels": {
+    "PREDICT": [],
+    "FILTER": [],
+    "COLD_START_FILTER": []
+  },
+  "PassthroughStateManager": {
+    "__init__": [
+      "self"
+    ],
+    "initialize_graph": [
+      "self",
+      "model",
+      "input_statistics"
+    ],
+    "define_loss": [
+      "self",
+      "model",
+      "features",
+      "mode"
+    ]
+  },
+  "_OverridableStateManager": {
+    "_define_loss_with_saved_state": [
+      "self",
+      "model",
+      "features",
+      "mode"
+    ],
+    "define_loss": [
+      "self",
+      "model",
+      "features",
+      "mode"
+    ]
+  },
+  "FilteringOnlyStateManager": {
+    "_define_loss_with_saved_state": [
+      "self",
+      "model",
+      "features",
+      "mode"
+    ]
+  },
+  "fully_connected": [
+    "inp",
+    "inp_size",
+    "layer_size",
+    "name",
+    "activation",
+    "dtype"
+  ],
+  "canonicalize_times_or_steps_from_output": [
+    "times",
+    "steps",
+    "previous_model_output"
+  ],
+  "_canonicalize_numpy_data": [
+    "data",
+    "require_single_batch"
+  ],
+  "_colate_features_to_feeds_and_fetches": [
+    "signature",
+    "features",
+    "graph",
+    "continue_from"
+  ],
+  "predict_continuation": [
+    "continue_from",
+    "signatures",
+    "session",
+    "steps",
+    "times",
+    "exogenous_features"
+  ],
+  "cold_start_filter": [
+    "signatures",
+    "session",
+    "features"
+  ],
+  "filter_continuation": [
+    "continue_from",
+    "signatures",
+    "session",
+    "features"
+  ],
+  "LSTMPredictionModel": {
+    "__init__": [
+      "self",
+      "num_features",
+      "input_window_size",
+      "output_window_size",
+      "num_units"
+    ],
+    "call": [
+      "self",
+      "input_window_features",
+      "output_window_features"
+    ]
+  },
+  "ARModel": {
+    "SQUARED_LOSS": [],
+    "NORMAL_LIKELIHOOD_LOSS": [],
+    "__init__": [
+      "self",
+      "periodicities",
+      "input_window_size",
+      "output_window_size",
+      "num_features",
+      "prediction_model_factory",
+      "num_time_buckets",
+      "loss",
+      "exogenous_feature_columns"
+    ],
+    "initialize_graph": [
+      "self",
+      "input_statistics"
+    ],
+    "get_start_state": [
+      "self"
+    ],
+    "random_model_parameters": [
+      "self",
+      "seed"
+    ],
+    "generate": [
+      "self",
+      "number_of_series",
+      "series_length",
+      "model_parameters",
+      "seed"
+    ],
+    "_predicted_covariance_op": [
+      "self",
+      "activations",
+      "num_values"
+    ],
+    "_predicted_mean_op": [
+      "self",
+      "activations"
+    ],
+    "prediction_ops": [
+      "self",
+      "times",
+      "values",
+      "exogenous_regressors"
+    ],
+    "_output_window_predictions": [
+      "self",
+      "input_window_features",
+      "output_window_features"
+    ],
+    "loss_op": [
+      "self",
+      "targets",
+      "prediction_ops"
+    ],
+    "_process_exogenous_features": [
+      "self",
+      "times",
+      "features"
+    ],
+    "predict": [
+      "self",
+      "features"
+    ],
+    "_process_window": [
+      "self",
+      "features",
+      "mode",
+      "exogenous_regressors"
+    ],
+    "get_batch_loss": [
+      "self",
+      "features",
+      "mode",
+      "state"
+    ],
+    "_compute_time_features": [
+      "self",
+      "time"
+    ]
+  },
+  "ModelOutputs": [],
+  "TimeSeriesModel": {
+    "__init__": [
+      "self",
+      "num_features",
+      "exogenous_feature_columns",
+      "dtype"
+    ],
+    "exogenous_feature_columns": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "number_of_series",
+      "series_length",
+      "model_parameters",
+      "seed"
+    ],
+    "initialize_graph": [
+      "self",
+      "input_statistics"
+    ],
+    "_scale_data": [
+      "self",
+      "data"
+    ],
+    "_scale_variance": [
+      "self",
+      "variance"
+    ],
+    "_scale_back_data": [
+      "self",
+      "data"
+    ],
+    "_scale_back_variance": [
+      "self",
+      "variance"
+    ],
+    "_check_graph_initialized": [
+      "self"
+    ],
+    "define_loss": [
+      "self",
+      "features",
+      "mode"
+    ],
+    "get_start_state": [
+      "self"
+    ],
+    "get_batch_loss": [
+      "self",
+      "features",
+      "mode",
+      "state"
+    ],
+    "predict": [
+      "self",
+      "features"
+    ],
+    "_get_exogenous_embedding_shape": [
+      "self"
+    ],
+    "_process_exogenous_features": [
+      "self",
+      "times",
+      "features"
+    ]
+  },
+  "replicate_state": [
+    "start_state",
+    "batch_size"
+  ],
+  "Moments": [],
+  "InputStatistics": [],
+  "InputStatisticsFromMiniBatch": {
+    "__init__": [
+      "self",
+      "num_features",
+      "dtype",
+      "starting_variance_window_size"
+    ],
+    "initialize_graph": [
+      "self",
+      "features",
+      "update_statistics"
+    ],
+    "_update_statistics_from_mini_batch": [
+      "self",
+      "statistics",
+      "auxiliary_variables",
+      "times",
+      "values"
+    ],
+    "_create_variable_statistics_object": [
+      "self"
+    ]
+  },
+  "TimeSeriesRegressor": {
+    "__init__": [
+      "self",
+      "model",
+      "state_manager",
+      "optimizer",
+      "model_dir",
+      "config",
+      "head_type"
+    ],
+    "_model_start_state_placeholders": [
+      "self",
+      "batch_size_tensor",
+      "static_batch_size"
+    ],
+    "build_one_shot_parsing_serving_input_receiver_fn": [
+      "self",
+      "filtering_length",
+      "prediction_length",
+      "default_batch_size",
+      "values_input_dtype",
+      "truncate_values"
+    ],
+    "build_raw_serving_input_receiver_fn": [
+      "self",
+      "default_batch_size",
+      "default_series_length"
+    ]
+  },
+  "LSTMAutoRegressor": {
+    "__init__": [
+      "self",
+      "periodicities",
+      "input_window_size",
+      "output_window_size",
+      "model_dir",
+      "num_features",
+      "extra_feature_columns",
+      "num_timesteps",
+      "loss",
+      "num_units",
+      "optimizer",
+      "config"
+    ]
+  },
+  "_NoStatePredictOutput": {
+    "as_signature_def": [
+      "self",
+      "receiver_tensors"
+    ]
+  },
+  "TimeSeriesRegressionHead": {
+    "__init__": [
+      "self",
+      "model",
+      "state_manager",
+      "optimizer",
+      "input_statistics_generator",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "create_loss": [
+      "self",
+      "features",
+      "mode",
+      "logits",
+      "labels"
+    ],
+    "logits_dimension": [
+      "self"
+    ],
+    "_train_ops": [
+      "self",
+      "features"
+    ],
+    "_evaluate_ops": [
+      "self",
+      "features"
+    ],
+    "_predict_ops": [
+      "self",
+      "features"
+    ],
+    "_serving_ops": [
+      "self",
+      "features"
+    ],
+    "_convert_feature_to_tensor": [
+      "self",
+      "name",
+      "value"
+    ],
+    "_gather_state": [
+      "self",
+      "features"
+    ],
+    "_check_predict_features": [
+      "self",
+      "features"
+    ],
+    "create_estimator_spec": [
+      "self",
+      "features",
+      "mode",
+      "labels"
+    ]
+  },
+  "OneShotPredictionHead": {
+    "_check_predict_features": [
+      "self",
+      "features"
+    ],
+    "_evaluate_ops": [
+      "self",
+      "features"
+    ],
+    "_serving_ops": [
+      "self",
+      "features"
+    ]
+  },
+  "_check_feature_shapes_compatible_with": [
+    "features",
+    "compatible_with_name",
+    "compatible_with_value",
+    "ignore"
+  ],
+  "_check_train_eval_features": [
+    "features",
+    "model"
+  ],
+  "_identity_metric_single": [
+    "name",
+    "input_tensor"
+  ],
+  "_identity_metric_nested": [
+    "name",
+    "input_tensors"
+  ],
+  "state_to_dictionary": [
+    "state_tuple"
+  ],
+  "CheckPartitionerVarHook": {
+    "__init__": [
+      "self",
+      "test_case",
+      "var_name",
+      "var_dim",
+      "partitions"
+    ],
+    "begin": [
+      "self"
+    ]
+  },
+  "BaseLinearRegressorPartitionerTest": {
+    "__init__": [
+      "self",
+      "linear_regressor_fn",
+      "fc_lib"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "testPartitioner": [
+      "self"
+    ],
+    "testDefaultPartitionerWithMultiplePsReplicas": [
+      "self"
+    ]
+  },
+  "_get_unique_target_key": [
+    "features",
+    "target_column_name"
+  ],
+  "pandas_input_fn": [
+    "x",
+    "y",
+    "batch_size",
+    "num_epochs",
+    "shuffle",
+    "queue_capacity",
+    "num_threads",
+    "target_column"
+  ],
+  "_TARGET_KEY": [],
+  "_validate_and_convert_features": [
+    "x"
+  ],
+  "numpy_input_fn": [
+    "x",
+    "y",
+    "batch_size",
+    "num_epochs",
+    "shuffle",
+    "queue_capacity",
+    "num_threads"
+  ],
+  "_fill_array": [
+    "arr",
+    "seq",
+    "fillvalue"
+  ],
+  "_pad_if_needed": [
+    "batch_key_item",
+    "fillvalue"
+  ],
+  "_get_integer_indices_for_next_batch": [
+    "batch_indices_start",
+    "batch_size",
+    "epoch_end",
+    "array_length",
+    "current_epoch",
+    "total_epochs"
+  ],
+  "_ArrayFeedFn": {
+    "__init__": [
+      "self",
+      "placeholders",
+      "array",
+      "batch_size",
+      "random_start",
+      "seed",
+      "num_epochs"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "_OrderedDictNumpyFeedFn": {
+    "__init__": [
+      "self",
+      "placeholders",
+      "ordered_dict_of_arrays",
+      "batch_size",
+      "random_start",
+      "seed",
+      "num_epochs"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "_PandasFeedFn": {
+    "__init__": [
+      "self",
+      "placeholders",
+      "dataframe",
+      "batch_size",
+      "random_start",
+      "seed",
+      "num_epochs"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "_GeneratorFeedFn": {
+    "__init__": [
+      "self",
+      "placeholders",
+      "generator",
+      "batch_size",
+      "random_start",
+      "seed",
+      "num_epochs",
+      "pad_value"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "_enqueue_data": [
+    "data",
+    "capacity",
+    "shuffle",
+    "min_after_dequeue",
+    "num_threads",
+    "seed",
+    "name",
+    "enqueue_size",
+    "num_epochs",
+    "pad_value"
+  ],
+  "_FeedingQueueRunner": {
+    "__init__": [
+      "self",
+      "queue",
+      "enqueue_ops",
+      "close_op",
+      "cancel_op",
+      "feed_fns",
+      "queue_closed_exception_types"
+    ],
+    "_run": [
+      "self",
+      "sess",
+      "enqueue_op",
+      "feed_fn",
+      "coord"
+    ],
+    "create_threads": [
+      "self",
+      "sess",
+      "coord",
+      "daemon",
+      "start"
+    ],
+    "_init_from_proto": [
+      "self",
+      "queue_runner_def"
+    ],
+    "to_proto": [
+      "self"
+    ]
+  },
+  "InMemoryEvaluatorHook": {
+    "__init__": [
+      "self",
+      "estimator",
+      "input_fn",
+      "steps",
+      "hooks",
+      "name",
+      "every_n_iter"
+    ],
+    "begin": [
+      "self"
+    ],
+    "after_create_session": [
+      "self",
+      "session",
+      "coord"
+    ],
+    "_evaluate": [
+      "self",
+      "train_session"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ],
+    "end": [
+      "self",
+      "session"
+    ]
+  },
+  "_StopAtCheckpointStepHook": {
+    "__init__": [
+      "self",
+      "model_dir",
+      "last_step",
+      "wait_after_file_check_secs"
+    ],
+    "begin": [
+      "self"
+    ],
+    "before_run": [
+      "self",
+      "run_context"
+    ],
+    "after_run": [
+      "self",
+      "run_context",
+      "run_values"
+    ]
+  },
+  "make_stop_at_checkpoint_step_hook": [
+    "estimator",
+    "last_step",
+    "wait_after_file_check_secs"
+  ],
+  "FakeSummaryWriter": {
+    "_replaced_summary_writer": [],
+    "install": [
+      "cls"
+    ],
+    "uninstall": [
+      "cls"
+    ],
+    "__init__": [
+      "self",
+      "logdir",
+      "graph"
+    ],
+    "summaries": [
+      "self"
+    ],
+    "assert_summaries": [
+      "self",
+      "test_case",
+      "expected_logdir",
+      "expected_graph",
+      "expected_summaries",
+      "expected_added_graphs",
+      "expected_added_meta_graphs",
+      "expected_session_logs"
+    ],
+    "add_summary": [
+      "self",
+      "summ",
+      "current_global_step"
+    ],
+    "add_graph": [
+      "self",
+      "graph",
+      "global_step",
+      "graph_def"
+    ],
+    "add_meta_graph": [
+      "self",
+      "meta_graph_def",
+      "global_step"
+    ],
+    "add_session_log": [
+      "self",
+      "session_log",
+      "global_step"
+    ],
+    "add_run_metadata": [
+      "self",
+      "run_metadata",
+      "tag",
+      "global_step"
+    ],
+    "flush": [
+      "self"
+    ],
+    "reopen": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "track_usage": [
+    "tool_id",
+    "tags"
+  ],
+  "track_numerical_issues": [
+    "exc_info"
+  ],
+  "OPT_NAME_V1_TO_V2": [],
+  "HP_IN_CKPT": [],
+  "OPT_VAR_NAME_V1_TO_V2": [],
+  "HP_IN_GRAPH": [],
+  "OPT_V2_INSTANCE": [],
+  "_add_new_variable": [
+    "initial_value",
+    "var_name_v2",
+    "var_name_v1",
+    "var_map",
+    "var_names_map"
+  ],
+  "_add_opt_variable": [
+    "opt_name_v2",
+    "var_name_v1",
+    "idx",
+    "suffix_v2",
+    "reader",
+    "var_map",
+    "var_names_map"
+  ],
+  "_convert_variables_in_ckpt": [
+    "opt_name_v1",
+    "reader",
+    "variable_names",
+    "var_map",
+    "var_names_map",
+    "est_type"
+  ],
+  "_convert_hyper_params_in_graph": [
+    "graph_from_path",
+    "opt_name_v1",
+    "var_map",
+    "var_names_map"
+  ],
+  "convert_checkpoint": [
+    "estimator_type",
+    "source_checkpoint",
+    "source_graph",
+    "target_checkpoint"
+  ],
+  "main": [
+    "_"
+  ]
+}

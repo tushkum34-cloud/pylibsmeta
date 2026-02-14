@@ -1,0 +1,554 @@
+{
+  "Agents": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_all": [
+      "self",
+      "organization",
+      "name",
+      "hostname",
+      "version",
+      "page",
+      "with_pagination"
+    ],
+    "get_agent": [
+      "self",
+      "organization",
+      "agent_id"
+    ],
+    "stop_agent": [
+      "self",
+      "organization",
+      "agent_id",
+      "force"
+    ]
+  },
+  "BuildState": {
+    "RUNNING": [],
+    "SCHEDULED": [],
+    "PASSED": [],
+    "FAILING": [],
+    "FAILED": [],
+    "BLOCKED": [],
+    "CANCELED": [],
+    "CANCELING": [],
+    "SKIPPED": [],
+    "NOT_RUN": [],
+    "FINISHED": []
+  },
+  "BuildQueryParams": {
+    "CREATOR": [],
+    "CREATED_FROM": [],
+    "CREATED_TO": [],
+    "FINISHED_FROM": [],
+    "STATE": [],
+    "META_DATA": [],
+    "BRANCH": [],
+    "COMMIT": []
+  },
+  "Builds": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_all": [
+      "self",
+      "creator",
+      "created_from",
+      "created_to",
+      "finished_from",
+      "states",
+      "meta_data",
+      "branch",
+      "commit",
+      "include_retried_jobs",
+      "page",
+      "with_pagination"
+    ],
+    "list_all_for_org": [
+      "self",
+      "organization",
+      "creator",
+      "created_from",
+      "created_to",
+      "finished_from",
+      "states",
+      "meta_data",
+      "branch",
+      "commit",
+      "include_retried_jobs",
+      "page",
+      "with_pagination"
+    ],
+    "list_all_for_pipeline": [
+      "self",
+      "organization",
+      "pipeline",
+      "creator",
+      "created_from",
+      "created_to",
+      "finished_from",
+      "states",
+      "meta_data",
+      "branch",
+      "commit",
+      "include_retried_jobs",
+      "page",
+      "with_pagination"
+    ],
+    "get_build_by_number": [
+      "self",
+      "organization",
+      "pipeline",
+      "build_number",
+      "include_retried_jobs"
+    ],
+    "create_build": [
+      "self",
+      "organization",
+      "pipeline",
+      "commit",
+      "branch",
+      "author",
+      "clean_checkout",
+      "env",
+      "ignore_pipeline_branch_filters",
+      "message",
+      "meta_data",
+      "pull_request_base_branch",
+      "pull_request_id",
+      "pull_request_repository",
+      "pull_request_labels"
+    ],
+    "cancel_build": [
+      "self",
+      "organization",
+      "pipeline",
+      "build_number"
+    ],
+    "rebuild_build": [
+      "self",
+      "organization",
+      "pipeline",
+      "build_number"
+    ],
+    "__process_meta_data": [
+      "meta_data"
+    ],
+    "__validate_dates": [
+      "datetimes"
+    ],
+    "__api_date_format": [
+      "datetime"
+    ],
+    "__are_valid_states": [
+      "states"
+    ],
+    "__get_build_states_query_param": [
+      "states"
+    ],
+    "__get_branches_query_param": [
+      "branches"
+    ]
+  },
+  "Annotations": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_annotations": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "page",
+      "with_pagination"
+    ]
+  },
+  "Pipelines": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_pipelines": [
+      "self",
+      "organization",
+      "page",
+      "with_pagination"
+    ],
+    "get_pipeline": [
+      "self",
+      "organization",
+      "pipeline_name"
+    ],
+    "create_pipeline": [
+      "self",
+      "organization",
+      "pipeline_name",
+      "git_repository",
+      "build_steps",
+      "team_uuids",
+      "branch_configuration",
+      "default_branch",
+      "provider_settings"
+    ],
+    "create_yaml_pipeline": [
+      "self",
+      "organization",
+      "pipeline_name",
+      "git_repository",
+      "configuration",
+      "team_uuids",
+      "branch_configuration",
+      "default_branch",
+      "provider_settings"
+    ],
+    "delete_pipeline": [
+      "self",
+      "organization",
+      "pipeline"
+    ],
+    "update_pipeline": [
+      "self",
+      "organization",
+      "pipeline",
+      "branch_configuration",
+      "cancel_running_branch_builds",
+      "cancel_running_branch_builds_filter",
+      "default_branch",
+      "description",
+      "env",
+      "name",
+      "provider_settings",
+      "repository",
+      "configuration",
+      "steps",
+      "skip_queued_branch_builds",
+      "skip_queued_branch_builds_filter",
+      "visibility"
+    ],
+    "archive_pipeline": [
+      "self",
+      "organization",
+      "pipeline"
+    ],
+    "unarchive_pipeline": [
+      "self",
+      "organization",
+      "pipeline"
+    ]
+  },
+  "PipelineException": {},
+  "Organizations": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_all": [
+      "self",
+      "page",
+      "with_pagination"
+    ],
+    "get_org": [
+      "self",
+      "org_name"
+    ]
+  },
+  "Emojis": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_emojis": [
+      "self",
+      "organization",
+      "page",
+      "with_pagination"
+    ]
+  },
+  "Client": {
+    "__init__": [
+      "self",
+      "per_page"
+    ],
+    "is_access_token_set": [
+      "self"
+    ],
+    "set_client_access_token": [
+      "self",
+      "access_token"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "query_params",
+      "body",
+      "headers",
+      "with_pagination",
+      "as_stream"
+    ],
+    "_get_paginated_response": [
+      "self",
+      "response"
+    ],
+    "get": [
+      "self",
+      "url",
+      "query_params",
+      "headers",
+      "with_pagination",
+      "as_stream"
+    ],
+    "post": [
+      "self",
+      "url",
+      "body",
+      "headers",
+      "query_params"
+    ],
+    "put": [
+      "self",
+      "url",
+      "body",
+      "headers",
+      "query_params"
+    ],
+    "delete": [
+      "self",
+      "url",
+      "body",
+      "headers",
+      "query_params"
+    ],
+    "patch": [
+      "self",
+      "url",
+      "body",
+      "headers",
+      "query_params"
+    ],
+    "_clean_query_params": [
+      "query_params"
+    ],
+    "_convert_query_params_to_string_for_bytes": [
+      "query_params"
+    ]
+  },
+  "Response": {
+    "__init__": [
+      "self",
+      "body"
+    ],
+    "append_pagination_data": [
+      "self",
+      "response_headers"
+    ],
+    "_get_page_number_from_url": [
+      "self",
+      "url"
+    ]
+  },
+  "NoAcccessTokenException": {},
+  "NotValidDateTime": {},
+  "NotValidBuildState": {},
+  "BuildStateNotAList": {},
+  "Buildkite": {
+    "__init__": [
+      "self",
+      "per_page"
+    ],
+    "set_access_token": [
+      "self",
+      "access_token"
+    ],
+    "organizations": [
+      "self"
+    ],
+    "pipelines": [
+      "self"
+    ],
+    "builds": [
+      "self"
+    ],
+    "jobs": [
+      "self"
+    ],
+    "agents": [
+      "self"
+    ],
+    "emojis": [
+      "self"
+    ],
+    "annotations": [
+      "self"
+    ],
+    "artifacts": [
+      "self"
+    ],
+    "teams": [
+      "self"
+    ],
+    "users": [
+      "self"
+    ],
+    "access_tokens": [
+      "self"
+    ],
+    "meta": [
+      "self"
+    ]
+  },
+  "requires_token": [
+    "func"
+  ],
+  "Teams": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_teams": [
+      "self",
+      "organization",
+      "user_id",
+      "page",
+      "with_pagination"
+    ]
+  },
+  "AccessTokens": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "get_token": [
+      "self"
+    ],
+    "revoke_token": [
+      "self"
+    ]
+  },
+  "Artifacts": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "list_artifacts_for_build": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "page",
+      "with_pagination"
+    ],
+    "list_artifacts_for_job": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job",
+      "page",
+      "with_pagination"
+    ],
+    "get_artifact": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job",
+      "artifact"
+    ],
+    "download_artifact": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job",
+      "artifact",
+      "as_stream"
+    ]
+  },
+  "Meta": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "get_meta_information": [
+      "self"
+    ]
+  },
+  "LogFormat": {
+    "TEXT": [],
+    "HTML": [],
+    "JSON": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Jobs": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "get_job_log": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job",
+      "log_format"
+    ],
+    "get_job_environment_variables": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job"
+    ],
+    "retry_job": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job"
+    ],
+    "unblock_job": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job",
+      "fields",
+      "unblocker"
+    ],
+    "delete_job_log": [
+      "self",
+      "organization",
+      "pipeline",
+      "build",
+      "job"
+    ]
+  },
+  "Users": {
+    "__init__": [
+      "self",
+      "client",
+      "base_url"
+    ],
+    "get_current_user": [
+      "self"
+    ]
+  }
+}

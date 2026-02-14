@@ -1,0 +1,2116 @@
+{
+  "__version__": [],
+  "HF_HUB_PREFIX": [],
+  "_MODEL_CONFIG_PATHS": [],
+  "_MODEL_CONFIGS": [],
+  "_natural_key": [
+    "string_"
+  ],
+  "_rescan_model_configs": [],
+  "list_models": [],
+  "add_model_config": [
+    "path"
+  ],
+  "LOCAL_DIR_PREFIX": [],
+  "parse_model_name": [
+    "model_name"
+  ],
+  "_get_hf_config": [
+    "model_id",
+    "cache_dir"
+  ],
+  "get_model_config": [
+    "model_name"
+  ],
+  "load_state_dict": [
+    "checkpoint_path",
+    "device",
+    "weights_only"
+  ],
+  "load_checkpoint": [
+    "model",
+    "checkpoint_path",
+    "strict",
+    "weights_only",
+    "device"
+  ],
+  "_find_checkpoint_in_dir": [
+    "dir_path"
+  ],
+  "create_model": [
+    "model_name",
+    "pretrained",
+    "load_weights",
+    "precision",
+    "device",
+    "jit",
+    "force_quick_gelu",
+    "force_custom_text",
+    "force_patch_dropout",
+    "force_image_size",
+    "force_preprocess_cfg",
+    "force_context_length",
+    "pretrained_image",
+    "pretrained_text",
+    "pretrained_image_path",
+    "pretrained_text_path",
+    "cache_dir",
+    "output_dict",
+    "require_pretrained",
+    "weights_only"
+  ],
+  "get_tokenizer": [
+    "model_name",
+    "context_length",
+    "cache_dir"
+  ],
+  "_set_model_device_and_precision": [
+    "model",
+    "device",
+    "precision",
+    "is_timm_model"
+  ],
+  "create_loss": [
+    "args"
+  ],
+  "create_model_and_transforms": [
+    "model_name",
+    "pretrained",
+    "load_weights",
+    "precision",
+    "device",
+    "jit",
+    "force_quick_gelu",
+    "force_custom_text",
+    "force_patch_dropout",
+    "force_image_size",
+    "force_context_length",
+    "image_mean",
+    "image_std",
+    "image_interpolation",
+    "image_resize_mode",
+    "aug_cfg",
+    "pretrained_image",
+    "pretrained_text",
+    "pretrained_image_path",
+    "pretrained_text_path",
+    "cache_dir",
+    "output_dict",
+    "weights_only"
+  ],
+  "create_model_from_pretrained": [
+    "model_name",
+    "pretrained",
+    "precision",
+    "device",
+    "jit",
+    "force_quick_gelu",
+    "force_custom_text",
+    "force_image_size",
+    "force_context_length",
+    "image_mean",
+    "image_std",
+    "image_interpolation",
+    "image_resize_mode",
+    "return_transform",
+    "cache_dir",
+    "weights_only"
+  ],
+  "gather_features": [
+    "image_features",
+    "text_features",
+    "local_loss",
+    "gather_with_grad",
+    "rank",
+    "world_size",
+    "use_horovod"
+  ],
+  "ClipLoss": {
+    "__init__": [
+      "self",
+      "local_loss",
+      "gather_with_grad",
+      "cache_labels",
+      "rank",
+      "world_size",
+      "use_horovod"
+    ],
+    "get_ground_truth": [
+      "self",
+      "device",
+      "num_logits"
+    ],
+    "get_logits": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "logit_bias"
+    ],
+    "forward": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "logit_bias",
+      "output_dict"
+    ]
+  },
+  "CoCaLoss": {
+    "__init__": [
+      "self",
+      "caption_loss_weight",
+      "clip_loss_weight",
+      "pad_id",
+      "local_loss",
+      "gather_with_grad",
+      "cache_labels",
+      "rank",
+      "world_size",
+      "use_horovod"
+    ],
+    "forward": [
+      "self",
+      "image_features",
+      "text_features",
+      "logits",
+      "labels",
+      "logit_scale",
+      "output_dict"
+    ]
+  },
+  "DistillClipLoss": {
+    "dist_loss": [
+      "self",
+      "teacher_logits",
+      "student_logits"
+    ],
+    "forward": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "dist_image_features",
+      "dist_text_features",
+      "dist_logit_scale",
+      "output_dict"
+    ]
+  },
+  "neighbour_exchange": [
+    "from_rank",
+    "to_rank",
+    "tensor",
+    "group"
+  ],
+  "neighbour_exchange_bidir": [
+    "left_rank",
+    "right_rank",
+    "tensor_to_left",
+    "tensor_to_right",
+    "group"
+  ],
+  "NeighbourExchange": {
+    "forward": [
+      "ctx",
+      "from_rank",
+      "to_rank",
+      "group",
+      "tensor"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "neighbour_exchange_with_grad": [
+    "from_rank",
+    "to_rank",
+    "tensor",
+    "group"
+  ],
+  "NeighbourExchangeBidir": {
+    "forward": [
+      "ctx",
+      "left_rank",
+      "right_rank",
+      "group",
+      "tensor_to_left",
+      "tensor_to_right"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "neighbour_exchange_bidir_with_grad": [
+    "left_rank",
+    "right_rank",
+    "tensor_to_left",
+    "tensor_to_right",
+    "group"
+  ],
+  "SigLipLoss": {
+    "__init__": [
+      "self",
+      "cache_labels",
+      "rank",
+      "world_size",
+      "dist_impl"
+    ],
+    "get_ground_truth": [
+      "self",
+      "device",
+      "dtype",
+      "num_logits",
+      "negative_only"
+    ],
+    "get_logits": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "logit_bias"
+    ],
+    "_loss": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "logit_bias",
+      "negative_only"
+    ],
+    "forward": [
+      "self",
+      "image_features",
+      "text_features",
+      "logit_scale",
+      "logit_bias",
+      "output_dict"
+    ]
+  },
+  "TimmModel": {
+    "__init__": [
+      "self",
+      "model_name",
+      "embed_dim",
+      "image_size",
+      "pool",
+      "proj",
+      "proj_bias",
+      "drop",
+      "drop_path",
+      "patch_drop",
+      "pretrained"
+    ],
+    "lock": [
+      "self",
+      "unlocked_groups",
+      "freeze_bn_stats"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "indices",
+      "stop_early",
+      "normalize_intermediates",
+      "intermediates_only",
+      "output_fmt",
+      "output_extra_tokens"
+    ],
+    "set_input_size": [
+      "self",
+      "image_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Bottleneck": {
+    "expansion": [],
+    "__init__": [
+      "self",
+      "inplanes",
+      "planes",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AttentionPool2d": {
+    "__init__": [
+      "self",
+      "spacial_dim",
+      "embed_dim",
+      "num_heads",
+      "output_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ModifiedResNet": {
+    "__init__": [
+      "self",
+      "layers",
+      "output_dim",
+      "heads",
+      "image_size",
+      "width"
+    ],
+    "_make_layer": [
+      "self",
+      "planes",
+      "blocks",
+      "stride"
+    ],
+    "init_parameters": [
+      "self"
+    ],
+    "lock": [
+      "self",
+      "unlocked_groups",
+      "freeze_bn_stats"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "stem": [
+      "self",
+      "x"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "indices",
+      "stop_early",
+      "normalize_intermediates",
+      "intermediates_only",
+      "output_fmt",
+      "output_extra_tokens"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultimodalCfg": {},
+  "_build_text_decoder_tower": [
+    "embed_dim",
+    "multimodal_cfg",
+    "quick_gelu",
+    "cast_dtype"
+  ],
+  "_token_to_tensor": [
+    "token_id",
+    "device"
+  ],
+  "CoCa": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "multimodal_cfg",
+      "text_cfg",
+      "vision_cfg",
+      "quick_gelu",
+      "init_logit_scale",
+      "init_logit_bias",
+      "nonscalar_logit_scale",
+      "cast_dtype",
+      "pad_id"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "_encode_image": [
+      "self",
+      "images",
+      "normalize"
+    ],
+    "_encode_text": [
+      "self",
+      "text",
+      "normalize"
+    ],
+    "encode_image": [
+      "self",
+      "images",
+      "normalize"
+    ],
+    "encode_text": [
+      "self",
+      "text",
+      "normalize"
+    ],
+    "forward_intermediates": [
+      "self",
+      "image",
+      "text",
+      "image_indices",
+      "text_indices",
+      "stop_early",
+      "normalize",
+      "normalize_intermediates",
+      "intermediates_only",
+      "image_output_fmt",
+      "image_output_extra_tokens",
+      "text_output_fmt",
+      "text_output_extra_tokens",
+      "output_logits",
+      "output_logit_scale_bias"
+    ],
+    "forward": [
+      "self",
+      "image",
+      "text",
+      "image_latent",
+      "image_embs",
+      "output_labels"
+    ],
+    "generate": [
+      "self",
+      "image",
+      "text",
+      "seq_len",
+      "max_seq_len",
+      "temperature",
+      "generation_type",
+      "top_p",
+      "top_k",
+      "pad_token_id",
+      "eos_token_id",
+      "sot_token_id",
+      "num_beams",
+      "num_beam_groups",
+      "min_seq_len",
+      "stopping_criteria",
+      "repetition_penalty",
+      "fixed_output_length"
+    ],
+    "_generate_beamsearch": [
+      "self",
+      "image_inputs",
+      "pad_token_id",
+      "eos_token_id",
+      "sot_token_id",
+      "num_beams",
+      "num_beam_groups",
+      "min_seq_len",
+      "stopping_criteria",
+      "logit_processor",
+      "logit_warper"
+    ]
+  },
+  "prepare_inputs_for_generation": [
+    "input_ids",
+    "image_inputs",
+    "past"
+  ],
+  "freeze_batch_norm_2d": [
+    "module",
+    "module_match",
+    "name"
+  ],
+  "_ntuple": [
+    "n"
+  ],
+  "to_1tuple": [],
+  "to_2tuple": [],
+  "to_3tuple": [],
+  "to_4tuple": [],
+  "to_ntuple": [],
+  "replace_linear": [
+    "model",
+    "linear_replacement",
+    "include_modules",
+    "copy_weights"
+  ],
+  "convert_int8_model_to_inference_mode": [
+    "model"
+  ],
+  "feature_take_indices": [
+    "num_features",
+    "indices",
+    "as_set"
+  ],
+  "_out_indices_as_tuple": [
+    "x"
+  ],
+  "get_2d_sincos_pos_embed": [
+    "embed_dim",
+    "grid_size",
+    "cls_token"
+  ],
+  "get_2d_sincos_pos_embed_from_grid": [
+    "embed_dim",
+    "grid"
+  ],
+  "get_1d_sincos_pos_embed_from_grid": [
+    "embed_dim",
+    "pos"
+  ],
+  "interpolate_pos_embed": [
+    "model",
+    "checkpoint_model"
+  ],
+  "_nltk_init": [],
+  "DEFAULT_CONTEXT_LENGTH": [],
+  "default_bpe": [],
+  "bytes_to_unicode": [],
+  "get_pairs": [
+    "word"
+  ],
+  "basic_clean": [
+    "text"
+  ],
+  "whitespace_clean": [
+    "text"
+  ],
+  "_clean_canonicalize": [
+    "x"
+  ],
+  "_clean_lower": [
+    "x"
+  ],
+  "_clean_whitespace": [
+    "x"
+  ],
+  "get_clean_fn": [
+    "type"
+  ],
+  "canonicalize_text": [
+    "text"
+  ],
+  "SimpleTokenizer": {
+    "__init__": [
+      "self",
+      "bpe_path",
+      "additional_special_tokens",
+      "context_length",
+      "clean",
+      "reduction_mask"
+    ],
+    "bpe": [
+      "self",
+      "token"
+    ],
+    "encode": [
+      "self",
+      "text"
+    ],
+    "decode": [
+      "self",
+      "tokens"
+    ],
+    "__call__": [
+      "self",
+      "texts",
+      "context_length"
+    ]
+  },
+  "_tokenizer": [],
+  "decode": [
+    "output_ids"
+  ],
+  "tokenize": [
+    "texts",
+    "context_length"
+  ],
+  "random_mask_tokenize": [
+    "texts",
+    "context_length",
+    "sot_token_id",
+    "eot_token_id",
+    "encode_fn",
+    "shuffle"
+  ],
+  "simple_mask_tokenize": [
+    "texts",
+    "context_length",
+    "sot_token_id",
+    "eot_token_id",
+    "encode_fn"
+  ],
+  "syntax_mask_tokenize": [
+    "texts",
+    "context_length",
+    "sot_token_id",
+    "eot_token_id",
+    "encode_fn"
+  ],
+  "get_reduction_mask_fn": [
+    "type"
+  ],
+  "HFTokenizer": {
+    "__init__": [
+      "self",
+      "tokenizer_name",
+      "context_length",
+      "clean",
+      "strip_sep_token",
+      "language",
+      "cache_dir",
+      "tokenizer_mode"
+    ],
+    "save_pretrained": [
+      "self",
+      "dest"
+    ],
+    "__call__": [
+      "self",
+      "texts",
+      "context_length"
+    ],
+    "set_language": [
+      "self",
+      "src_lang"
+    ],
+    "_clips_tokenize": [
+      "self",
+      "texts",
+      "context_length"
+    ],
+    "_pad_and_add_class_token": [
+      "self",
+      "tokens",
+      "max_length",
+      "pad_token_id",
+      "cls_token_id"
+    ]
+  },
+  "SigLipTokenizer": {
+    "VOCAB_FILES": [],
+    "__init__": [
+      "self",
+      "tokenizer_name",
+      "context_length"
+    ],
+    "save_pretrained": [
+      "self",
+      "dest"
+    ],
+    "__call__": [
+      "self",
+      "texts",
+      "context_length"
+    ]
+  },
+  "LayerNormFp32": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "QuickGELU": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerScale": {
+    "__init__": [
+      "self",
+      "dim",
+      "init_values",
+      "inplace"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PatchDropout": {
+    "__init__": [
+      "self",
+      "prob",
+      "exclude_first_token"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "qkv_bias",
+      "qk_norm",
+      "scaled_cosine",
+      "scale_heads",
+      "inner_norm",
+      "logit_scale_max",
+      "norm_layer",
+      "attn_drop",
+      "proj_drop"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_mask"
+    ]
+  },
+  "AttentionalPooler": {
+    "__init__": [
+      "self",
+      "d_model",
+      "context_dim",
+      "n_head",
+      "n_queries",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResidualAttentionBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "n_head",
+      "mlp_ratio",
+      "ls_init_value",
+      "act_layer",
+      "norm_layer",
+      "is_cross_attention",
+      "batch_first"
+    ],
+    "get_weight_dtype": [
+      "self"
+    ],
+    "attention": [
+      "self",
+      "q_x",
+      "k_x",
+      "v_x",
+      "attn_mask"
+    ],
+    "forward": [
+      "self",
+      "q_x",
+      "k_x",
+      "v_x",
+      "attn_mask"
+    ]
+  },
+  "CustomResidualAttentionBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "n_head",
+      "mlp_ratio",
+      "ls_init_value",
+      "act_layer",
+      "norm_layer",
+      "qk_norm",
+      "scale_cosine_attn",
+      "scale_heads",
+      "scale_attn_inner",
+      "scale_attn",
+      "scale_fc",
+      "batch_first"
+    ],
+    "get_weight_dtype": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_mask"
+    ]
+  },
+  "CustomTransformer": {
+    "__init__": [
+      "self",
+      "width",
+      "layers",
+      "heads",
+      "mlp_ratio",
+      "ls_init_value",
+      "act_layer",
+      "norm_layer",
+      "batch_first",
+      "block_types"
+    ],
+    "get_cast_dtype": [
+      "self"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "attn_mask",
+      "indices",
+      "stop_early"
+    ],
+    "prune_intermediate_layers": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_mask"
+    ]
+  },
+  "Transformer": {
+    "__init__": [
+      "self",
+      "width",
+      "layers",
+      "heads",
+      "mlp_ratio",
+      "ls_init_value",
+      "act_layer",
+      "norm_layer",
+      "batch_first",
+      "block_type",
+      "qk_norm",
+      "scaled_cosine_attn",
+      "scale_heads",
+      "scale_attn_inner",
+      "scale_attn",
+      "scale_fc"
+    ],
+    "get_cast_dtype": [
+      "self"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "attn_mask",
+      "indices",
+      "stop_early"
+    ],
+    "prune_intermediate_layers": [
+      "self",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_mask"
+    ]
+  },
+  "_expand_token": [
+    "token",
+    "batch_size"
+  ],
+  "VisionTransformer": {
+    "__init__": [
+      "self",
+      "image_size",
+      "patch_size",
+      "width",
+      "layers",
+      "heads",
+      "mlp_ratio",
+      "ls_init_value",
+      "attentional_pool",
+      "attn_pooler_queries",
+      "attn_pooler_heads",
+      "output_dim",
+      "patch_dropout",
+      "no_ln_pre",
+      "pos_embed_type",
+      "pool_type",
+      "final_ln_after_pool",
+      "act_layer",
+      "norm_layer",
+      "output_tokens",
+      "block_type",
+      "qk_norm",
+      "scaled_cosine_attn",
+      "scale_heads",
+      "scale_attn_inner",
+      "scale_attn",
+      "scale_fc"
+    ],
+    "lock": [
+      "self",
+      "unlocked_groups",
+      "freeze_bn_stats"
+    ],
+    "init_parameters": [
+      "self"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "_global_pool": [
+      "self",
+      "x"
+    ],
+    "_embeds": [
+      "self",
+      "x"
+    ],
+    "_pool": [
+      "self",
+      "x"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "indices",
+      "stop_early",
+      "normalize_intermediates",
+      "intermediates_only",
+      "output_fmt",
+      "output_extra_tokens"
+    ],
+    "prune_intermediate_layers": [
+      "self",
+      "indices",
+      "prune_norm",
+      "prune_head"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "text_global_pool": [
+    "x",
+    "text",
+    "pool_type",
+    "eos_token_id"
+  ],
+  "TextTransformer": {
+    "__init__": [
+      "self",
+      "context_length",
+      "vocab_size",
+      "width",
+      "heads",
+      "layers",
+      "mlp_ratio",
+      "ls_init_value",
+      "output_dim",
+      "embed_cls",
+      "no_causal_mask",
+      "use_pad_mask",
+      "correct_cls_mask",
+      "pad_id",
+      "eos_id",
+      "pool_type",
+      "proj_type",
+      "proj_bias",
+      "act_layer",
+      "norm_layer",
+      "output_tokens",
+      "block_type",
+      "qk_norm",
+      "scaled_cosine_attn",
+      "scale_heads",
+      "scale_attn_inner",
+      "scale_attn",
+      "scale_fc"
+    ],
+    "init_parameters": [
+      "self"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "lock": [
+      "self",
+      "unlocked_layers",
+      "freeze_layer_norm"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "build_causal_mask": [
+      "self"
+    ],
+    "_build_additive_mask": [
+      "self",
+      "text",
+      "seq_len",
+      "dtype"
+    ],
+    "_embeds": [
+      "self",
+      "text"
+    ],
+    "forward_intermediates": [
+      "self",
+      "text",
+      "indices",
+      "stop_early",
+      "normalize_intermediates",
+      "intermediates_only",
+      "output_fmt",
+      "output_extra_tokens"
+    ],
+    "prune_intermediate_layers": [
+      "self",
+      "indices",
+      "prune_norm",
+      "prune_head"
+    ],
+    "forward": [
+      "self",
+      "text"
+    ]
+  },
+  "MultimodalTransformer": {
+    "__init__": [
+      "self",
+      "width",
+      "layers",
+      "heads",
+      "context_length",
+      "mlp_ratio",
+      "ls_init_value",
+      "act_layer",
+      "norm_layer",
+      "output_dim",
+      "batch_first"
+    ],
+    "init_parameters": [
+      "self"
+    ],
+    "build_attention_mask": [
+      "self"
+    ],
+    "forward_intermediates": [
+      "self",
+      "x",
+      "attn_mask",
+      "indices",
+      "stop_early"
+    ],
+    "forward": [
+      "self",
+      "image_embs",
+      "text_embs"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ]
+  },
+  "lock_text_tower": [
+    "model",
+    "unlocked_layers"
+  ],
+  "OPENAI_IMAGENET_TEMPLATES": [],
+  "SIMPLE_IMAGENET_TEMPLATES": [],
+  "IMAGENET_CLASSNAMES": [],
+  "load_big_vision_weights": [
+    "model",
+    "checkpoint_path"
+  ],
+  "convert_mobile_clip_state_dict": [
+    "model",
+    "state_dict",
+    "fastvit"
+  ],
+  "convert_state_dict": [
+    "model",
+    "state_dict"
+  ],
+  "CLIPVisionCfg": {},
+  "CLIPTextCfg": {},
+  "get_cast_dtype": [
+    "precision"
+  ],
+  "get_input_dtype": [
+    "precision"
+  ],
+  "_build_vision_tower": [
+    "embed_dim",
+    "vision_cfg",
+    "quick_gelu",
+    "cast_dtype"
+  ],
+  "_build_text_tower": [
+    "embed_dim",
+    "text_cfg",
+    "quick_gelu",
+    "cast_dtype"
+  ],
+  "CLIP": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "vision_cfg",
+      "text_cfg",
+      "quick_gelu",
+      "init_logit_scale",
+      "init_logit_bias",
+      "nonscalar_logit_scale",
+      "cast_dtype",
+      "output_dict"
+    ],
+    "lock_image_tower": [
+      "self",
+      "unlocked_groups",
+      "freeze_bn_stats"
+    ],
+    "lock_text_tower": [
+      "self",
+      "unlocked_layers",
+      "freeze_layer_norm"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "encode_image": [
+      "self",
+      "image",
+      "normalize"
+    ],
+    "encode_text": [
+      "self",
+      "text",
+      "normalize"
+    ],
+    "get_logits": [
+      "self",
+      "image",
+      "text"
+    ],
+    "forward_intermediates": [
+      "self",
+      "image",
+      "text",
+      "image_indices",
+      "text_indices",
+      "stop_early",
+      "normalize",
+      "normalize_intermediates",
+      "intermediates_only",
+      "image_output_fmt",
+      "image_output_extra_tokens",
+      "text_output_fmt",
+      "text_output_extra_tokens",
+      "output_logits",
+      "output_logit_scale_bias"
+    ],
+    "forward": [
+      "self",
+      "image",
+      "text"
+    ]
+  },
+  "CustomTextCLIP": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "vision_cfg",
+      "text_cfg",
+      "quick_gelu",
+      "init_logit_scale",
+      "init_logit_bias",
+      "nonscalar_logit_scale",
+      "cast_dtype",
+      "output_dict"
+    ],
+    "lock_image_tower": [
+      "self",
+      "unlocked_groups",
+      "freeze_bn_stats"
+    ],
+    "lock_text_tower": [
+      "self",
+      "unlocked_layers",
+      "freeze_layer_norm"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "encode_image": [
+      "self",
+      "image",
+      "normalize"
+    ],
+    "encode_text": [
+      "self",
+      "text",
+      "normalize"
+    ],
+    "get_logits": [
+      "self",
+      "image",
+      "text"
+    ],
+    "forward_intermediates": [
+      "self",
+      "image",
+      "text",
+      "image_indices",
+      "text_indices",
+      "stop_early",
+      "normalize",
+      "normalize_intermediates",
+      "intermediates_only",
+      "image_output_fmt",
+      "image_output_extra_tokens",
+      "text_output_fmt",
+      "text_output_extra_tokens",
+      "output_logits",
+      "output_logit_scale_bias"
+    ],
+    "forward": [
+      "self",
+      "image",
+      "text"
+    ]
+  },
+  "convert_weights_to_lp": [
+    "model",
+    "dtype"
+  ],
+  "convert_weights_to_fp16": [],
+  "convert_to_custom_text_state_dict": [
+    "state_dict"
+  ],
+  "build_model_from_openai_state_dict": [
+    "state_dict",
+    "quick_gelu",
+    "cast_dtype"
+  ],
+  "trace_model": [
+    "model",
+    "batch_size",
+    "device"
+  ],
+  "resize_pos_embed": [
+    "state_dict",
+    "model",
+    "interpolation",
+    "antialias"
+  ],
+  "resize_text_pos_embed": [
+    "state_dict",
+    "model",
+    "interpolation",
+    "antialias"
+  ],
+  "get_model_preprocess_cfg": [
+    "model"
+  ],
+  "set_model_preprocess_cfg": [
+    "model",
+    "preprocess_cfg"
+  ],
+  "get_model_tokenize_cfg": [
+    "model"
+  ],
+  "_camel2snake": [
+    "s"
+  ],
+  "_POOLERS": [],
+  "register_pooler": [
+    "cls"
+  ],
+  "MeanPooler": {
+    "forward": [
+      "self",
+      "x",
+      "attention_mask"
+    ]
+  },
+  "MaxPooler": {
+    "forward": [
+      "self",
+      "x",
+      "attention_mask"
+    ]
+  },
+  "ClsPooler": {
+    "__init__": [
+      "self",
+      "use_pooler_output"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attention_mask"
+    ]
+  },
+  "ClsLastHiddenStatePooler": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attention_mask"
+    ]
+  },
+  "HFTextEncoder": {
+    "__init__": [
+      "self",
+      "model_name_or_path",
+      "output_dim",
+      "config",
+      "pooler_type",
+      "proj_type",
+      "pretrained",
+      "output_tokens"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "lock": [
+      "self",
+      "unlocked_layers",
+      "freeze_layer_norm"
+    ],
+    "set_grad_checkpointing": [
+      "self",
+      "enable"
+    ],
+    "init_parameters": [
+      "self"
+    ]
+  },
+  "batched": [
+    "iterable",
+    "n"
+  ],
+  "build_zero_shot_classifier": [
+    "model",
+    "tokenizer",
+    "classnames",
+    "templates",
+    "num_classes_per_batch",
+    "device",
+    "use_tqdm"
+  ],
+  "build_zero_shot_classifier_legacy": [
+    "model",
+    "tokenizer",
+    "classnames",
+    "templates",
+    "device",
+    "use_tqdm"
+  ],
+  "__all__": [],
+  "list_openai_models": [],
+  "load_openai_model": [
+    "name",
+    "precision",
+    "device",
+    "cache_dir"
+  ],
+  "_pcfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_slpcfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_apcfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_mccfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_mc2cfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_pecfg": [
+    "url",
+    "hf_hub"
+  ],
+  "_RN50": [],
+  "_RN101": [],
+  "_RN50x4": [],
+  "_RN50x16": [],
+  "_RN50x64": [],
+  "_VITB32": [],
+  "_VITB32_256": [],
+  "_VITB16": [],
+  "_VITB16_PLUS_240": [],
+  "_VITL14": [],
+  "_VITL14_336": [],
+  "_VITH14": [],
+  "_VITH14_378": [],
+  "_VITg14": [],
+  "_VITbigG14": [],
+  "_robertaViTB32": [],
+  "_xlmRobertaBaseViTB32": [],
+  "_xlmRobertaLargeFrozenViTH14": [],
+  "_convnext_base": [],
+  "_convnext_base_w": [],
+  "_convnext_base_w_320": [],
+  "_convnext_large_d": [],
+  "_convnext_large_d_320": [],
+  "_convnext_xxlarge": [],
+  "_coca_VITB32": [],
+  "_coca_VITL14": [],
+  "_PRETRAINED": [],
+  "_PRETRAINED_quickgelu": [],
+  "_clean_tag": [
+    "tag"
+  ],
+  "list_pretrained": [
+    "as_str"
+  ],
+  "list_pretrained_models_by_tag": [
+    "tag"
+  ],
+  "list_pretrained_tags_by_model": [
+    "model"
+  ],
+  "is_pretrained_cfg": [
+    "model",
+    "tag"
+  ],
+  "get_pretrained_cfg": [
+    "model",
+    "tag"
+  ],
+  "get_pretrained_url": [
+    "model",
+    "tag"
+  ],
+  "download_pretrained_from_url": [
+    "url",
+    "cache_dir"
+  ],
+  "has_hf_hub": [
+    "necessary"
+  ],
+  "_get_safe_alternatives": [
+    "filename"
+  ],
+  "download_pretrained_from_hf": [
+    "model_id",
+    "filename",
+    "revision",
+    "cache_dir"
+  ],
+  "download_pretrained": [
+    "cfg",
+    "prefer_hf_hub",
+    "cache_dir"
+  ],
+  "OPENAI_DATASET_MEAN": [],
+  "OPENAI_DATASET_STD": [],
+  "IMAGENET_MEAN": [],
+  "IMAGENET_STD": [],
+  "INCEPTION_MEAN": [],
+  "INCEPTION_STD": [],
+  "HF_WEIGHTS_NAME": [],
+  "HF_SAFE_WEIGHTS_NAME": [],
+  "HF_CONFIG_NAME": [],
+  "PreprocessCfg": {
+    "__post_init__": [
+      "self"
+    ],
+    "num_channels": [
+      "self"
+    ],
+    "input_size": [
+      "self"
+    ]
+  },
+  "_PREPROCESS_KEYS": [],
+  "merge_preprocess_dict": [
+    "base",
+    "overlay"
+  ],
+  "merge_preprocess_kwargs": [
+    "base"
+  ],
+  "AugmentationCfg": {},
+  "_setup_size": [
+    "size",
+    "error_msg"
+  ],
+  "ResizeKeepRatio": {
+    "__init__": [
+      "self",
+      "size",
+      "longest",
+      "interpolation",
+      "random_scale_prob",
+      "random_scale_range",
+      "random_aspect_prob",
+      "random_aspect_range"
+    ],
+    "get_params": [
+      "img",
+      "target_size",
+      "longest",
+      "random_scale_prob",
+      "random_scale_range",
+      "random_aspect_prob",
+      "random_aspect_range"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "center_crop_or_pad": [
+    "img",
+    "output_size",
+    "fill"
+  ],
+  "CenterCropOrPad": {
+    "__init__": [
+      "self",
+      "size",
+      "fill"
+    ],
+    "forward": [
+      "self",
+      "img"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_convert_to_rgb": [
+    "image"
+  ],
+  "color_jitter": {
+    "__init__": [
+      "self",
+      "brightness",
+      "contrast",
+      "saturation",
+      "hue",
+      "p"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ]
+  },
+  "gray_scale": {
+    "__init__": [
+      "self",
+      "p"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ]
+  },
+  "image_transform": [
+    "image_size",
+    "is_train",
+    "mean",
+    "std",
+    "resize_mode",
+    "interpolation",
+    "fill_color",
+    "aug_cfg"
+  ],
+  "image_transform_v2": [
+    "cfg",
+    "is_train",
+    "aug_cfg"
+  ],
+  "save_config_for_hf": [
+    "model",
+    "config_path",
+    "model_config"
+  ],
+  "save_for_hf": [
+    "model",
+    "tokenizer",
+    "model_config",
+    "save_directory",
+    "safe_serialization",
+    "skip_weights"
+  ],
+  "push_to_hf_hub": [
+    "model",
+    "tokenizer",
+    "model_config",
+    "repo_id",
+    "commit_message",
+    "token",
+    "revision",
+    "private",
+    "create_pr",
+    "model_card",
+    "safe_serialization"
+  ],
+  "push_pretrained_to_hf_hub": [
+    "model_name",
+    "pretrained",
+    "repo_id",
+    "precision",
+    "image_mean",
+    "image_std",
+    "image_interpolation",
+    "image_resize_mode",
+    "commit_message",
+    "token",
+    "revision",
+    "private",
+    "create_pr",
+    "model_card",
+    "hf_tokenizer_self"
+  ],
+  "generate_readme": [
+    "model_card",
+    "model_name"
+  ],
+  "arch_dict": [],
+  "remote_sync_s3": [
+    "local_dir",
+    "remote_dir"
+  ],
+  "remote_sync_fsspec": [
+    "local_dir",
+    "remote_dir"
+  ],
+  "remote_sync": [
+    "local_dir",
+    "remote_dir",
+    "protocol"
+  ],
+  "keep_running_remote_sync": [
+    "sync_every",
+    "local_dir",
+    "remote_dir",
+    "protocol"
+  ],
+  "start_sync_process": [
+    "sync_every",
+    "local_dir",
+    "remote_dir",
+    "protocol"
+  ],
+  "pt_save": [
+    "pt_obj",
+    "file_path"
+  ],
+  "pt_load": [
+    "file_path",
+    "map_location"
+  ],
+  "check_exists": [
+    "file_path"
+  ],
+  "setup_logging": [
+    "log_file",
+    "level",
+    "include_host"
+  ],
+  "is_global_master": [
+    "args"
+  ],
+  "is_local_master": [
+    "args"
+  ],
+  "is_master": [
+    "args",
+    "local"
+  ],
+  "is_device_available": [
+    "device"
+  ],
+  "set_device": [
+    "device"
+  ],
+  "is_using_horovod": [],
+  "is_using_distributed": [],
+  "world_info_from_env": [],
+  "init_distributed_device": [
+    "args"
+  ],
+  "init_distributed_device_so": [
+    "device",
+    "dist_backend",
+    "dist_url",
+    "horovod",
+    "no_set_device_rank"
+  ],
+  "broadcast_object": [
+    "args",
+    "obj",
+    "src"
+  ],
+  "all_gather_object": [
+    "args",
+    "obj",
+    "dst"
+  ],
+  "get_autocast": [
+    "precision",
+    "device_type"
+  ],
+  "LATEST_CHECKPOINT_NAME": [],
+  "random_seed": [
+    "seed",
+    "rank"
+  ],
+  "natural_key": [
+    "string_"
+  ],
+  "get_latest_checkpoint": [
+    "path",
+    "remote"
+  ],
+  "main": [
+    "args"
+  ],
+  "copy_codebase": [
+    "args"
+  ],
+  "assign_learning_rate": [
+    "optimizer",
+    "new_lr"
+  ],
+  "_warmup_lr": [
+    "base_lr",
+    "warmup_length",
+    "step"
+  ],
+  "const_lr": [
+    "optimizer",
+    "base_lr",
+    "warmup_length",
+    "steps"
+  ],
+  "const_lr_cooldown": [
+    "optimizer",
+    "base_lr",
+    "warmup_length",
+    "steps",
+    "cooldown_steps",
+    "cooldown_power",
+    "cooldown_end_lr"
+  ],
+  "cosine_lr": [
+    "optimizer",
+    "base_lr",
+    "warmup_length",
+    "steps"
+  ],
+  "get_default_params": [
+    "model_name"
+  ],
+  "ParseKwargs": {
+    "__call__": [
+      "self",
+      "parser",
+      "namespace",
+      "values",
+      "option_string"
+    ]
+  },
+  "parse_args": [
+    "args"
+  ],
+  "accuracy": [
+    "output",
+    "target",
+    "topk"
+  ],
+  "run": [
+    "model",
+    "classifier",
+    "dataloader",
+    "args"
+  ],
+  "zero_shot_eval": [
+    "model",
+    "data",
+    "epoch",
+    "args",
+    "tokenizer"
+  ],
+  "AverageMeter": {
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "val",
+      "n"
+    ]
+  },
+  "postprocess_clip_output": [
+    "model_out"
+  ],
+  "unwrap_model": [
+    "model"
+  ],
+  "backward": [
+    "total_loss",
+    "scaler"
+  ],
+  "train_one_epoch": [
+    "model",
+    "data",
+    "loss",
+    "epoch",
+    "optimizer",
+    "scaler",
+    "scheduler",
+    "dist_model",
+    "args",
+    "tb_writer"
+  ],
+  "evaluate": [
+    "model",
+    "data",
+    "epoch",
+    "args",
+    "tb_writer",
+    "tokenizer"
+  ],
+  "get_clip_metrics": [
+    "image_features",
+    "text_features",
+    "logit_scale"
+  ],
+  "maybe_compute_generative_loss": [
+    "model_out"
+  ],
+  "CsvDataset": {
+    "__init__": [
+      "self",
+      "input_filename",
+      "transforms",
+      "img_key",
+      "caption_key",
+      "sep",
+      "tokenizer"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "SharedEpoch": {
+    "__init__": [
+      "self",
+      "epoch"
+    ],
+    "set_value": [
+      "self",
+      "epoch"
+    ],
+    "get_value": [
+      "self"
+    ]
+  },
+  "DataInfo": {
+    "set_epoch": [
+      "self",
+      "epoch"
+    ]
+  },
+  "expand_urls": [
+    "urls",
+    "weights"
+  ],
+  "get_dataset_size": [
+    "shards"
+  ],
+  "get_imagenet": [
+    "args",
+    "preprocess_fns",
+    "split"
+  ],
+  "count_samples": [
+    "dataloader"
+  ],
+  "filter_no_caption_or_no_image": [
+    "sample"
+  ],
+  "log_and_continue": [
+    "exn"
+  ],
+  "group_by_keys_nothrow": [
+    "data",
+    "keys",
+    "lcase",
+    "suffixes",
+    "handler"
+  ],
+  "tarfile_to_samples_nothrow": [
+    "src",
+    "handler"
+  ],
+  "pytorch_worker_seed": [
+    "increment"
+  ],
+  "_SHARD_SHUFFLE_SIZE": [],
+  "_SHARD_SHUFFLE_INITIAL": [],
+  "_SAMPLE_SHUFFLE_SIZE": [],
+  "_SAMPLE_SHUFFLE_INITIAL": [],
+  "detshuffle2": {
+    "__init__": [
+      "self",
+      "bufsize",
+      "initial",
+      "seed",
+      "epoch"
+    ],
+    "run": [
+      "self",
+      "src"
+    ]
+  },
+  "ResampledShards2": {
+    "__init__": [
+      "self",
+      "urls",
+      "weights",
+      "nshards",
+      "worker_seed",
+      "deterministic",
+      "epoch"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "get_wds_dataset": [
+    "args",
+    "preprocess_img",
+    "is_train",
+    "epoch",
+    "floor",
+    "tokenizer"
+  ],
+  "get_csv_dataset": [
+    "args",
+    "preprocess_fn",
+    "is_train",
+    "epoch",
+    "tokenizer"
+  ],
+  "SyntheticDataset": {
+    "__init__": [
+      "self",
+      "transform",
+      "image_size",
+      "caption",
+      "dataset_size",
+      "tokenizer"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "get_synthetic_dataset": [
+    "args",
+    "preprocess_fn",
+    "is_train",
+    "epoch",
+    "tokenizer"
+  ],
+  "get_dataset_fn": [
+    "data_path",
+    "dataset_type"
+  ],
+  "get_data": [
+    "args",
+    "preprocess_fns",
+    "epoch",
+    "tokenizer"
+  ],
+  "parser": [],
+  "profile_fvcore": [
+    "model",
+    "image_input_size",
+    "text_input_size",
+    "batch_size",
+    "detailed",
+    "force_cpu"
+  ],
+  "profile_fvcore_text": [
+    "model",
+    "text_input_size",
+    "batch_size",
+    "detailed",
+    "force_cpu"
+  ],
+  "profile_fvcore_image": [
+    "model",
+    "image_input_size",
+    "batch_size",
+    "detailed",
+    "force_cpu"
+  ],
+  "profile_torch_image": [
+    "model",
+    "image_input_size",
+    "batch_size",
+    "force_cpu"
+  ],
+  "profile_torch_text": [
+    "model",
+    "text_input_size",
+    "batch_size",
+    "force_cpu"
+  ],
+  "profile_torch": [
+    "model",
+    "text_input_size",
+    "image_input_size",
+    "batch_size",
+    "force_cpu"
+  ],
+  "count_params": [
+    "model"
+  ],
+  "profile_model": [
+    "model_name",
+    "batch_size",
+    "profiler",
+    "device"
+  ]
+}

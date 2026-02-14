@@ -1,0 +1,5951 @@
+{
+  "__version__": [],
+  "__all__": [],
+  "__docformat__": [],
+  "_get_split_size": [
+    "state_dict"
+  ],
+  "RGTArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "img2windows": [
+    "img",
+    "H_sp",
+    "W_sp"
+  ],
+  "windows2img": [
+    "img_splits_hw",
+    "H_sp",
+    "W_sp",
+    "H",
+    "W"
+  ],
+  "Gate": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "MLP": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "act_layer",
+      "drop"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "DynamicPosBias": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "biases"
+    ]
+  },
+  "WindowAttention": {
+    "__init__": [
+      "self",
+      "dim",
+      "idx",
+      "split_size",
+      "dim_out",
+      "num_heads",
+      "attn_drop",
+      "proj_drop",
+      "qk_scale",
+      "position_bias"
+    ],
+    "im2win": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ],
+    "forward": [
+      "self",
+      "qkv",
+      "H",
+      "W",
+      "mask"
+    ]
+  },
+  "L_SA": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "split_size",
+      "shift_size",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "idx",
+      "reso",
+      "rs_id"
+    ],
+    "calculate_mask": [
+      "self",
+      "H",
+      "W"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "RG_SA": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "qkv_bias",
+      "qk_scale",
+      "attn_drop",
+      "proj_drop",
+      "c_ratio"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "Block": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer",
+      "idx",
+      "rs_id",
+      "split_size",
+      "shift_size",
+      "reso",
+      "c_ratio",
+      "layerscale_value"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "ResidualGroup": {
+    "__init__": [
+      "self",
+      "dim",
+      "reso",
+      "num_heads",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_paths",
+      "act_layer",
+      "norm_layer",
+      "depth",
+      "use_chk",
+      "resi_connection",
+      "rs_id",
+      "split_size",
+      "c_ratio"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "Upsample": {
+    "__init__": [
+      "self",
+      "scale",
+      "num_feat"
+    ]
+  },
+  "RGT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FBCNNArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "sequential": [],
+  "conv": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "ResBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "bias",
+      "mode",
+      "negative_slope"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "upsample_pixelshuffle": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "upsample_upconv": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "upsample_convtranspose": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "downsample_strideconv": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "downsample_maxpool": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "downsample_avgpool": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "padding",
+    "bias",
+    "mode",
+    "negative_slope"
+  ],
+  "QFAttention": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "bias",
+      "mode",
+      "negative_slope"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "gamma",
+      "beta"
+    ]
+  },
+  "FBCNN": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "qf_input"
+    ]
+  },
+  "FFTformerArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "to_3d": [
+    "x"
+  ],
+  "to_4d": [
+    "x",
+    "h",
+    "w"
+  ],
+  "BiasFree_LayerNorm": {
+    "__init__": [
+      "self",
+      "normalized_shape"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "WithBias_LayerNorm": {
+    "__init__": [
+      "self",
+      "normalized_shape"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "LayerNorm_type"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DFFN": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_expansion_factor",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FSAS": {
+    "__init__": [
+      "self",
+      "dim",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TransformerBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_expansion_factor",
+      "bias",
+      "LayerNorm_type",
+      "att"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Fuse": {
+    "__init__": [
+      "self",
+      "n_feat"
+    ],
+    "forward": [
+      "self",
+      "enc",
+      "dnc"
+    ]
+  },
+  "OverlapPatchEmbed": {
+    "__init__": [
+      "self",
+      "in_c",
+      "embed_dim",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Downsample": {
+    "__init__": [
+      "self",
+      "n_feat"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FFTformer": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inp_img"
+    ]
+  },
+  "MixDehazeNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "MixStructureBlock": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "BasicLayer": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PatchEmbed": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "in_chans",
+      "embed_dim",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PatchUnEmbed": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "out_chans",
+      "embed_dim",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SKFusion": {
+    "__init__": [
+      "self",
+      "dim",
+      "height",
+      "reduction"
+    ],
+    "forward": [
+      "self",
+      "in_feats"
+    ]
+  },
+  "MixDehazeNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAFMNBCIEArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "CCM": {
+    "__init__": [
+      "self",
+      "dim",
+      "growth_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAFM": {
+    "__init__": [
+      "self",
+      "dim",
+      "n_levels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AttBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAFMN_BCIE": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CompactArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SRVGGNetCompact": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAFMNArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SqueezeExcitation": {
+    "__init__": [
+      "self",
+      "dim",
+      "shrinkage_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ChannelMLP": {
+    "__init__": [
+      "self",
+      "dim",
+      "growth_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MBConv": {
+    "__init__": [
+      "self",
+      "dim",
+      "growth_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAFMN": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SwiftSRGANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SeperableConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "use_act",
+      "use_bn",
+      "discriminator"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "UpsampleBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "scale_factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResidualBlock": {
+    "__init__": [
+      "self",
+      "in_channels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Generator": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DnCNNArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "DnCNN": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_new_to_old_arch": [
+    "state",
+    "state_map",
+    "num_blocks"
+  ],
+  "_get_scale": [
+    "state"
+  ],
+  "_get_num_blocks": [
+    "state",
+    "state_map"
+  ],
+  "_to_old_arch": [
+    "state"
+  ],
+  "ESRGANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "RRDBNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DRCTArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "ChannelAttention": {
+    "__init__": [
+      "self",
+      "num_feat",
+      "squeeze_factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CAB": {
+    "__init__": [
+      "self",
+      "num_feat",
+      "compress_ratio",
+      "squeeze_factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Mlp": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "act_layer",
+      "drop"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "window_partition": [
+    "x",
+    "window_size"
+  ],
+  "window_reverse": [
+    "windows",
+    "window_size",
+    "H",
+    "W"
+  ],
+  "RDG": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads",
+      "window_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "gc",
+      "patch_size",
+      "img_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "xsize"
+    ]
+  },
+  "SwinTransformerBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads",
+      "window_size",
+      "shift_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer"
+    ],
+    "calculate_mask": [
+      "self",
+      "x_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "PatchMerging": {
+    "__init__": [
+      "self",
+      "input_resolution",
+      "dim",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DRCT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MoESRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SampleMods": [],
+  "UniUpsample": {
+    "__init__": [
+      "self",
+      "upsample",
+      "scale",
+      "in_dim",
+      "out_dim",
+      "mid_dim",
+      "group"
+    ]
+  },
+  "InceptionDWConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "square_kernel_size",
+      "band_kernel_size",
+      "branch_ratio"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GatedCNNBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "expansion_ratio",
+      "conv_ratio"
+    ],
+    "_init_weights": [
+      "m"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MSG": {
+    "__init__": [
+      "self",
+      "dim",
+      "expansion_msg"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Blocks": {
+    "__init__": [
+      "self",
+      "dim",
+      "blocks",
+      "expansion_factor",
+      "expansion_msg"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MoESR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_img_size": [
+      "self",
+      "x",
+      "resolution"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ATDArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "index_reverse": [
+    "index"
+  ],
+  "feature_shuffle": [
+    "x",
+    "index"
+  ],
+  "dwconv": {
+    "__init__": [
+      "self",
+      "hidden_features",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "ConvFFN": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "kernel_size",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "ATD_CA": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_tokens",
+      "reducted_dim",
+      "qkv_bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "td",
+      "x_size"
+    ]
+  },
+  "AC_MSA": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_tokens",
+      "num_heads",
+      "category_size",
+      "qkv_bias"
+    ],
+    "forward": [
+      "self",
+      "qkv",
+      "sim",
+      "x_size"
+    ]
+  },
+  "ATDTransformerLayer": {
+    "__init__": [
+      "self",
+      "dim",
+      "idx",
+      "input_resolution",
+      "num_heads",
+      "window_size",
+      "shift_size",
+      "category_size",
+      "num_tokens",
+      "reducted_dim",
+      "convffn_kernel_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "act_layer",
+      "norm_layer",
+      "is_last"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "td",
+      "x_size",
+      "params"
+    ]
+  },
+  "BasicBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "idx",
+      "depth",
+      "num_heads",
+      "window_size",
+      "category_size",
+      "num_tokens",
+      "convffn_kernel_size",
+      "reducted_dim",
+      "mlp_ratio",
+      "qkv_bias",
+      "norm_layer",
+      "downsample"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "ATDB": {
+    "__init__": [
+      "self",
+      "dim",
+      "idx",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "window_size",
+      "category_size",
+      "num_tokens",
+      "reducted_dim",
+      "convffn_kernel_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "norm_layer",
+      "downsample",
+      "img_size",
+      "patch_size",
+      "resi_connection"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ]
+  },
+  "UpsampleOneStep": {
+    "__init__": [
+      "self",
+      "scale",
+      "num_feat",
+      "num_out_ch",
+      "input_resolution"
+    ]
+  },
+  "ATD": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "forward_features": [
+      "self",
+      "x",
+      "params"
+    ],
+    "calculate_rpi_sa": [
+      "self"
+    ],
+    "calculate_mask": [
+      "self",
+      "x_size"
+    ],
+    "is_norm": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_get_overlap_ratio": [
+    "window_size",
+    "with_overlap"
+  ],
+  "_inv_int_div": [
+    "a",
+    "c"
+  ],
+  "HATArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "drop_path": [
+    "x",
+    "drop_prob",
+    "training"
+  ],
+  "DropPath": {
+    "__init__": [
+      "self",
+      "drop_prob"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HAB": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads",
+      "window_size",
+      "shift_size",
+      "compress_ratio",
+      "squeeze_factor",
+      "conv_scale",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "rpi_sa",
+      "attn_mask"
+    ]
+  },
+  "OCAB": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "window_size",
+      "overlap_ratio",
+      "num_heads",
+      "qkv_bias",
+      "qk_scale",
+      "mlp_ratio",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "rpi"
+    ]
+  },
+  "AttenBlocks": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "window_size",
+      "compress_ratio",
+      "squeeze_factor",
+      "conv_scale",
+      "overlap_ratio",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "downsample",
+      "use_checkpoint"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ]
+  },
+  "RHAG": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "window_size",
+      "compress_ratio",
+      "squeeze_factor",
+      "conv_scale",
+      "overlap_ratio",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "downsample",
+      "use_checkpoint",
+      "img_size",
+      "patch_size",
+      "resi_connection"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ]
+  },
+  "HAT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "calculate_rpi_sa": [
+      "self"
+    ],
+    "calculate_rpi_oca": [
+      "self"
+    ],
+    "calculate_mask": [
+      "self",
+      "x_size"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_NON_PERSISTENT_BUFFERS": [],
+  "_clean_up_checkpoint": [
+    "state_dict"
+  ],
+  "_get_output_params": [
+    "state_dict",
+    "in_channels"
+  ],
+  "_get_anchor_params": [
+    "state_dict",
+    "default_down_factor"
+  ],
+  "_inv_div_add": [
+    "a",
+    "d"
+  ],
+  "GRLArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "TransformerStage": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "depth",
+      "num_heads_window",
+      "num_heads_stripe",
+      "window_size",
+      "stripe_size",
+      "stripe_groups",
+      "stripe_shift",
+      "mlp_ratio",
+      "qkv_bias",
+      "qkv_proj_type",
+      "anchor_proj_type",
+      "anchor_one_stage",
+      "anchor_window_down_factor",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "pretrained_window_size",
+      "pretrained_stripe_size",
+      "conv_type",
+      "init_method",
+      "fairscale_checkpoint",
+      "offload_to_cpu",
+      "args"
+    ],
+    "_init_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "table_index_mask"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "GRL": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "set_table_index_mask": [
+      "self",
+      "x_size"
+    ],
+    "get_table_index_mask": [
+      "self",
+      "device",
+      "input_resolution"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CPB_MLP": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "channels"
+    ]
+  },
+  "SeparableConv": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "bias",
+      "args"
+    ]
+  },
+  "QKVProjection": {
+    "__init__": [
+      "self",
+      "dim",
+      "qkv_bias",
+      "proj_type",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "AnchorLinear": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "down_factor",
+      "pooling_mode",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "AnchorProjection": {
+    "__init__": [
+      "self",
+      "dim",
+      "proj_type",
+      "one_stage",
+      "anchor_window_down_factor",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "GRLConfig": {},
+  "bchw_to_bhwc": [
+    "x"
+  ],
+  "bchw_to_blc": [
+    "x"
+  ],
+  "blc_to_bchw": [
+    "x",
+    "x_size"
+  ],
+  "blc_to_bhwc": [
+    "x",
+    "x_size"
+  ],
+  "_fill_window": [
+    "input_resolution",
+    "window_size",
+    "shift_size"
+  ],
+  "calculate_mask": [
+    "input_resolution",
+    "window_size",
+    "shift_size"
+  ],
+  "calculate_mask_all": [
+    "input_resolution",
+    "window_size",
+    "shift_size",
+    "anchor_window_down_factor",
+    "window_to_anchor"
+  ],
+  "_get_meshgrid_coords": [
+    "start_coords",
+    "end_coords"
+  ],
+  "get_relative_coords_table_all": [
+    "window_size",
+    "pretrained_window_size",
+    "anchor_window_down_factor"
+  ],
+  "coords_diff_odd": [
+    "coords1",
+    "coords2",
+    "start_coord",
+    "max_diff"
+  ],
+  "get_relative_position_index_simple": [
+    "window_size",
+    "anchor_window_down_factor",
+    "window_to_anchor"
+  ],
+  "Linear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "build_last_conv": [
+    "conv_type",
+    "dim"
+  ],
+  "AffineTransform": {
+    "__init__": [
+      "self",
+      "num_heads"
+    ],
+    "forward": [
+      "self",
+      "attn",
+      "relative_coords_table",
+      "relative_position_index",
+      "mask"
+    ]
+  },
+  "get_stripe_info": [
+    "stripe_size_in",
+    "stripe_groups_in",
+    "stripe_shift",
+    "input_resolution"
+  ],
+  "Attention": {
+    "__init__": [
+      "self"
+    ],
+    "attn": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "attn_transform",
+      "table",
+      "index",
+      "mask",
+      "reshape"
+    ]
+  },
+  "AnchorStripeAttention": {
+    "__init__": [
+      "self",
+      "input_resolution",
+      "stripe_size",
+      "stripe_groups",
+      "stripe_shift",
+      "num_heads",
+      "attn_drop",
+      "pretrained_stripe_size",
+      "anchor_window_down_factor",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "qkv",
+      "anchor",
+      "x_size",
+      "table",
+      "index_a2w",
+      "index_w2a",
+      "mask_a2w",
+      "mask_w2a"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "flops": [
+      "self",
+      "N"
+    ]
+  },
+  "MixedAttention": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads_w",
+      "num_heads_s",
+      "window_size",
+      "window_shift",
+      "stripe_size",
+      "stripe_groups",
+      "stripe_shift",
+      "qkv_bias",
+      "qkv_proj_type",
+      "anchor_proj_type",
+      "anchor_one_stage",
+      "anchor_window_down_factor",
+      "attn_drop",
+      "proj_drop",
+      "pretrained_window_size",
+      "pretrained_stripe_size",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "table_index_mask"
+    ],
+    "_get_table_index_mask": [
+      "self",
+      "table_index_mask",
+      "window_attn"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "flops": [
+      "self",
+      "N"
+    ]
+  },
+  "EfficientMixAttnTransformerBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads_w",
+      "num_heads_s",
+      "window_size",
+      "window_shift",
+      "stripe_size",
+      "stripe_groups",
+      "stripe_shift",
+      "stripe_type",
+      "mlp_ratio",
+      "qkv_bias",
+      "qkv_proj_type",
+      "anchor_proj_type",
+      "anchor_one_stage",
+      "anchor_window_down_factor",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer",
+      "pretrained_window_size",
+      "pretrained_stripe_size",
+      "res_scale",
+      "args"
+    ],
+    "_get_table_index_mask": [
+      "self",
+      "all_table_index_mask"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "all_table_index_mask"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "_RealCUGAN": [],
+  "RealCUGANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "q": [
+    "inp",
+    "cache_mode"
+  ],
+  "dq": [
+    "inp",
+    "if_half",
+    "cache_mode",
+    "delta",
+    "minn",
+    "device"
+  ],
+  "SEBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "reduction",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "forward_mean": [
+      "self",
+      "x",
+      "x0"
+    ]
+  },
+  "UNetConv": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "se"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "UNet1": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "deconv"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "forward_a": [
+      "self",
+      "x"
+    ],
+    "forward_b": [
+      "self",
+      "x1",
+      "x2"
+    ]
+  },
+  "UNet1x3": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "deconv"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "forward_a": [
+      "self",
+      "x"
+    ],
+    "forward_b": [
+      "self",
+      "x1",
+      "x2"
+    ]
+  },
+  "UNet2": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "deconv"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "alpha"
+    ],
+    "forward_a": [
+      "self",
+      "x"
+    ],
+    "forward_b": [
+      "self",
+      "x2"
+    ],
+    "forward_c": [
+      "self",
+      "x2",
+      "x3"
+    ],
+    "forward_d": [
+      "self",
+      "x1",
+      "x4"
+    ]
+  },
+  "UpCunet2x": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "is_pro": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "alpha"
+    ]
+  },
+  "UpCunet3x": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "is_pro": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "alpha"
+    ]
+  },
+  "UpCunet4x": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "is_pro": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "alpha"
+    ]
+  },
+  "UpCunet2x_fast": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DATArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SpatialGate": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "SGFN": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "act_layer",
+      "drop"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "Spatial_Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "idx",
+      "split_size",
+      "dim_out",
+      "num_heads",
+      "attn_drop",
+      "proj_drop",
+      "qk_scale",
+      "position_bias"
+    ],
+    "im2win": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ],
+    "forward": [
+      "self",
+      "qkv",
+      "H",
+      "W",
+      "mask"
+    ]
+  },
+  "Adaptive_Spatial_Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "reso",
+      "split_size",
+      "shift_size",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "rg_idx",
+      "b_idx"
+    ],
+    "calculate_mask": [
+      "self",
+      "H",
+      "W"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "Adaptive_Channel_Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "qkv_bias",
+      "qk_scale",
+      "attn_drop",
+      "proj_drop"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ]
+  },
+  "DATB": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "reso",
+      "split_size",
+      "shift_size",
+      "expansion_factor",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer",
+      "rg_idx",
+      "b_idx"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ]
+  },
+  "DAT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_call_fn": [
+    "model",
+    "t"
+  ],
+  "RetinexFormerArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "PreNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GELU": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Illumination_Estimator": {
+    "__init__": [
+      "self",
+      "n_fea_middle",
+      "n_fea_in",
+      "n_fea_out"
+    ],
+    "forward": [
+      "self",
+      "img"
+    ]
+  },
+  "IG_MSA": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "heads"
+    ],
+    "forward": [
+      "self",
+      "x_in",
+      "illu_fea_trans"
+    ]
+  },
+  "FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "mult"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IGAB": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "heads",
+      "num_blocks"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "illu_fea"
+    ]
+  },
+  "Denoiser": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "dim",
+      "level",
+      "num_blocks"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "illu_fea"
+    ]
+  },
+  "RetinexFormer_Single_Stage": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "n_feat",
+      "level",
+      "num_blocks"
+    ],
+    "forward": [
+      "self",
+      "img"
+    ]
+  },
+  "RetinexFormer": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RestoreFormerArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "VectorQuantizer": {
+    "__init__": [
+      "self",
+      "n_e",
+      "e_dim",
+      "beta"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ],
+    "get_codebook_entry": [
+      "self",
+      "indices",
+      "shape"
+    ]
+  },
+  "nonlinearity": [
+    "x"
+  ],
+  "Normalize": [
+    "in_channels"
+  ],
+  "ResnetBlock": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "temb"
+    ]
+  },
+  "MultiHeadAttnBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "head_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "MultiHeadEncoder": {
+    "__init__": [
+      "self",
+      "ch",
+      "out_ch",
+      "ch_mult",
+      "num_res_blocks",
+      "attn_resolutions",
+      "dropout",
+      "resamp_with_conv",
+      "in_channels",
+      "resolution",
+      "z_channels",
+      "double_z",
+      "enable_mid",
+      "head_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiHeadDecoder": {
+    "__init__": [
+      "self",
+      "ch",
+      "out_ch",
+      "ch_mult",
+      "num_res_blocks",
+      "attn_resolutions",
+      "dropout",
+      "resamp_with_conv",
+      "in_channels",
+      "resolution",
+      "z_channels",
+      "give_pre_end",
+      "enable_mid",
+      "head_size"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ]
+  },
+  "MultiHeadDecoderTransformer": {
+    "__init__": [
+      "self",
+      "ch",
+      "out_ch",
+      "ch_mult",
+      "num_res_blocks",
+      "attn_resolutions",
+      "dropout",
+      "resamp_with_conv",
+      "in_channels",
+      "resolution",
+      "z_channels",
+      "give_pre_end",
+      "enable_mid",
+      "head_size"
+    ],
+    "forward": [
+      "self",
+      "z",
+      "hs"
+    ]
+  },
+  "RestoreFormer": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "quant",
+      "hs"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "DCTLSAArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "LSAB": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "num_head"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "conv_layer": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "stride",
+    "dilation",
+    "groups"
+  ],
+  "pixelshuffle_block": [
+    "in_channels",
+    "out_channels",
+    "upscale_factor",
+    "kernel_size",
+    "stride"
+  ],
+  "get_valid_padding": [
+    "kernel_size",
+    "dilation"
+  ],
+  "pad": [
+    "pad_type",
+    "padding"
+  ],
+  "activation": [
+    "act_type",
+    "inplace",
+    "neg_slope",
+    "n_prelu"
+  ],
+  "norm": [
+    "norm_type",
+    "nc"
+  ],
+  "conv_block": [
+    "in_nc",
+    "out_nc",
+    "kernel_size",
+    "stride",
+    "dilation",
+    "groups",
+    "bias",
+    "pad_type",
+    "norm_type",
+    "act_type"
+  ],
+  "SwinT": {
+    "__init__": [
+      "self",
+      "num_head",
+      "n_feats"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LocalModule": {
+    "__init__": [
+      "self",
+      "channels"
+    ]
+  },
+  "DCTLSA": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "_get_lr_space": [
+    "state_dict"
+  ],
+  "SeemoReArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "SeemoRe": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResGroup": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "num_experts",
+      "global_kernel_size",
+      "lr_space",
+      "topk",
+      "recursive",
+      "use_shuffle"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SME": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "StripedConvFormer": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RME": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "num_experts",
+      "topk",
+      "lr_space",
+      "recursive",
+      "use_shuffle"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LRSpace": [],
+  "MoEBlock": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "num_experts",
+      "topk",
+      "use_shuffle",
+      "lr_space",
+      "recursive"
+    ],
+    "calibrate": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MoELayer": {
+    "__init__": [
+      "self",
+      "experts",
+      "gate",
+      "num_expert"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "k"
+    ]
+  },
+  "Expert": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "low_dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "k"
+    ]
+  },
+  "Router": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "num_experts"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "StripedConv2d": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "kernel_size",
+      "depthwise"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "channel_shuffle": [
+    "x",
+    "groups"
+  ],
+  "GatedFFN": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "mlp_ratio",
+      "kernel_size",
+      "act_layer"
+    ],
+    "feat_decompose": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HVICIDNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "CIDNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "HVIT": [
+      "self",
+      "x"
+    ]
+  },
+  "RGB_HVI": {
+    "__init__": [
+      "self"
+    ],
+    "HVIT": [
+      "self",
+      "img"
+    ],
+    "PHVIT": [
+      "self",
+      "img"
+    ]
+  },
+  "NormDownsample": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "out_ch",
+      "scale",
+      "use_norm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NormUpsample": {
+    "__init__": [
+      "self",
+      "in_ch",
+      "out_ch",
+      "scale",
+      "use_norm"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "IEL": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_expansion_factor",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HV_LCA": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "I_LCA": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "SwinIRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "RSTB": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "window_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "downsample",
+      "use_checkpoint",
+      "img_size",
+      "patch_size",
+      "resi_connection"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "SwinIR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "DRUNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "DRUNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x0"
+    ]
+  },
+  "IPTArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "default_conv": [
+    "in_channels",
+    "out_channels",
+    "kernel_size",
+    "bias"
+  ],
+  "MeanShift": {
+    "__init__": [
+      "self",
+      "rgb_range",
+      "rgb_mean",
+      "rgb_std",
+      "sign"
+    ]
+  },
+  "Upsampler": {
+    "__init__": [
+      "self",
+      "conv",
+      "scale",
+      "n_feats",
+      "bn",
+      "act",
+      "bias"
+    ]
+  },
+  "IPT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "set_scale": [
+      "self",
+      "scale_idx"
+    ]
+  },
+  "VisionTransformer": {
+    "__init__": [
+      "self",
+      "img_dim",
+      "patch_dim",
+      "num_channels",
+      "embedding_dim",
+      "num_heads",
+      "num_layers",
+      "hidden_dim",
+      "num_queries",
+      "dropout_rate",
+      "no_norm",
+      "mlp",
+      "pos_every",
+      "no_pos"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "query_idx",
+      "con"
+    ]
+  },
+  "LearnedPositionalEncoding": {
+    "__init__": [
+      "self",
+      "max_position_embeddings",
+      "embedding_dim",
+      "seq_length"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "position_ids"
+    ]
+  },
+  "TransformerEncoder": {
+    "__init__": [
+      "self",
+      "encoder_layer",
+      "num_layers"
+    ],
+    "forward": [
+      "self",
+      "src",
+      "pos"
+    ]
+  },
+  "TransformerEncoderLayer": {
+    "__init__": [
+      "self",
+      "d_model",
+      "nhead",
+      "dim_feedforward",
+      "dropout",
+      "no_norm",
+      "activation"
+    ],
+    "with_pos_embed": [
+      "self",
+      "tensor",
+      "pos"
+    ],
+    "forward": [
+      "self",
+      "src",
+      "pos"
+    ]
+  },
+  "TransformerDecoder": {
+    "__init__": [
+      "self",
+      "decoder_layer",
+      "num_layers"
+    ],
+    "forward": [
+      "self",
+      "tgt",
+      "memory",
+      "pos",
+      "query_pos"
+    ]
+  },
+  "TransformerDecoderLayer": {
+    "__init__": [
+      "self",
+      "d_model",
+      "nhead",
+      "dim_feedforward",
+      "dropout",
+      "no_norm",
+      "activation"
+    ],
+    "with_pos_embed": [
+      "self",
+      "tensor",
+      "pos"
+    ],
+    "forward": [
+      "self",
+      "tgt",
+      "memory",
+      "pos",
+      "query_pos"
+    ]
+  },
+  "_get_clones": [
+    "module",
+    "N"
+  ],
+  "_get_activation_fn": [
+    "activation"
+  ],
+  "Model": {
+    "__init__": [
+      "self",
+      "model",
+      "crop_batch_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "scale_idx"
+    ],
+    "forward_chop": [
+      "self",
+      "x",
+      "shave"
+    ],
+    "cut_h": [
+      "self",
+      "x_h_cut",
+      "h",
+      "w",
+      "h_cut",
+      "w_cut",
+      "padsize",
+      "shave",
+      "scale",
+      "batchsize"
+    ],
+    "cut_w": [
+      "self",
+      "x_w_cut",
+      "h",
+      "w",
+      "h_cut",
+      "w_cut",
+      "padsize",
+      "shave",
+      "scale",
+      "batchsize"
+    ]
+  },
+  "_KBNet": [],
+  "KBNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "_load_l": [
+      "self",
+      "state_dict"
+    ],
+    "_load_s": [
+      "self",
+      "state_dict"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "KBBlock_s": {
+    "__init__": [
+      "self",
+      "c",
+      "DW_Expand",
+      "FFN_Expand",
+      "nset",
+      "k",
+      "gc",
+      "lightweight"
+    ],
+    "init_p": [
+      "self",
+      "weight",
+      "bias"
+    ],
+    "KBA": [
+      "self",
+      "x",
+      "att",
+      "selfk",
+      "selfg",
+      "selfb",
+      "selfw"
+    ],
+    "forward": [
+      "self",
+      "inp"
+    ]
+  },
+  "KBNet_s": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inp"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNormFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "weight",
+      "bias",
+      "eps"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "LayerNorm2d": {
+    "__init__": [
+      "self",
+      "channels",
+      "eps",
+      "requires_grad"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SimpleGate": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "KBAFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "att",
+      "selfk",
+      "selfg",
+      "selfb",
+      "selfw"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "TransAttention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MFF": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_expansion_factor",
+      "bias",
+      "act",
+      "gc",
+      "nset",
+      "k"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "init_p": [
+      "self",
+      "weight",
+      "bias"
+    ],
+    "KBA": [
+      "self",
+      "x",
+      "att",
+      "selfk",
+      "selfg",
+      "selfb",
+      "selfw"
+    ]
+  },
+  "KBBlock_l": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "ffn_expansion_factor",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "KBNet_l": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inp_img"
+    ]
+  },
+  "SCUNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "WMSA": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "output_dim",
+      "head_dim",
+      "window_size",
+      "type"
+    ],
+    "generate_mask": [
+      "self",
+      "h",
+      "w",
+      "p",
+      "shift"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "relative_embedding": [
+      "self"
+    ]
+  },
+  "ConvTransBlock": {
+    "__init__": [
+      "self",
+      "conv_dim",
+      "trans_dim",
+      "head_dim",
+      "window_size",
+      "drop_path",
+      "type",
+      "input_resolution"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SCUNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x0"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ]
+  },
+  "LaMaArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "LearnableSpatialTransformWrapper": {
+    "__init__": [
+      "self",
+      "impl",
+      "pad_coef",
+      "angle_init_range",
+      "train_angle"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "transform": [
+      "self",
+      "x"
+    ],
+    "inverse_transform": [
+      "self",
+      "y_padded_rotated",
+      "orig_x"
+    ]
+  },
+  "SELayer": {
+    "__init__": [
+      "self",
+      "channel",
+      "reduction"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FourierUnit": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "groups",
+      "spatial_scale_factor",
+      "spatial_scale_mode",
+      "spectral_pos_encoding",
+      "use_se",
+      "se_kwargs",
+      "ffc3d",
+      "fft_norm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SpectralTransform": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "stride",
+      "groups",
+      "enable_lfu",
+      "separable_fu"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FFC": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "ratio_gin",
+      "ratio_gout",
+      "stride",
+      "padding",
+      "dilation",
+      "groups",
+      "bias",
+      "enable_lfu",
+      "padding_type",
+      "gated"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FFC_BN_ACT": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "ratio_gin",
+      "ratio_gout",
+      "stride",
+      "padding",
+      "dilation",
+      "groups",
+      "bias",
+      "norm_layer",
+      "activation_layer",
+      "padding_type",
+      "enable_lfu"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FFCResnetBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "padding_type",
+      "norm_layer",
+      "activation_layer",
+      "dilation",
+      "spatial_transform_kwargs",
+      "inline"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConcatTupleLayer": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FFCResNetGenerator": {
+    "__init__": [
+      "self",
+      "input_nc",
+      "output_nc",
+      "ngf",
+      "n_downsampling",
+      "n_blocks",
+      "norm_layer",
+      "padding_type",
+      "activation_layer",
+      "up_norm_layer",
+      "up_activation",
+      "init_conv_kwargs",
+      "downsample_conv_kwargs",
+      "resnet_conv_kwargs",
+      "spatial_transform_layers",
+      "spatial_transform_kwargs",
+      "max_features",
+      "out_ffc",
+      "out_ffc_kwargs"
+    ],
+    "forward": [
+      "self",
+      "image",
+      "mask"
+    ]
+  },
+  "LaMa": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "img",
+      "mask"
+    ]
+  },
+  "RCANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "get_activation": [
+    "activation"
+  ],
+  "CALayer": {
+    "__init__": [
+      "self",
+      "channel",
+      "reduction"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RCAB": {
+    "__init__": [
+      "self",
+      "conv",
+      "n_feat",
+      "kernel_size",
+      "reduction",
+      "bias",
+      "bn",
+      "act_mode",
+      "res_scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RCAN": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_img_size": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GFPGANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "StyleGAN2GeneratorBilinearSFT": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "lr_mlp",
+      "narrow",
+      "sft_half"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "conditions",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "GFPGANBilinear": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "channel_multiplier",
+      "decoder_load_path",
+      "fix_decoder",
+      "num_mlp",
+      "lr_mlp",
+      "input_is_latent",
+      "different_w",
+      "narrow",
+      "sft_half"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_latents",
+      "return_rgb",
+      "randomize_noise"
+    ]
+  },
+  "StyleGAN2GeneratorSFT": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "resample_kernel",
+      "lr_mlp",
+      "narrow",
+      "sft_half"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "conditions",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "ConvUpLayer": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "bias",
+      "bias_init_val",
+      "activate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResUpBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GFPGANv1": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "channel_multiplier",
+      "resample_kernel",
+      "decoder_load_path",
+      "fix_decoder",
+      "num_mlp",
+      "lr_mlp",
+      "input_is_latent",
+      "different_w",
+      "narrow",
+      "sft_half"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_latents",
+      "return_rgb",
+      "randomize_noise"
+    ]
+  },
+  "FacialComponentDiscriminator": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_feats"
+    ]
+  },
+  "default_init_weights": [
+    "module_list",
+    "scale",
+    "bias_fill"
+  ],
+  "NormStyleCode": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ModulatedConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "num_style_feat",
+      "demodulate",
+      "sample_mode",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "style"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "StyleConv": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "num_style_feat",
+      "demodulate",
+      "sample_mode"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "style",
+      "noise"
+    ]
+  },
+  "ToRGB": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "num_style_feat",
+      "upsample"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "style",
+      "skip"
+    ]
+  },
+  "ConstantInput": {
+    "__init__": [
+      "self",
+      "num_channel",
+      "size"
+    ],
+    "forward": [
+      "self",
+      "batch"
+    ]
+  },
+  "StyleGAN2GeneratorClean": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "narrow"
+    ],
+    "make_noise": [
+      "self"
+    ],
+    "get_latent": [
+      "self",
+      "x"
+    ],
+    "mean_latent": [
+      "self",
+      "num_latent"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "make_resample_kernel": [
+    "k"
+  ],
+  "UpFirDnUpsample": {
+    "__init__": [
+      "self",
+      "resample_kernel",
+      "factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "UpFirDnDownsample": {
+    "__init__": [
+      "self",
+      "resample_kernel",
+      "factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "UpFirDnSmooth": {
+    "__init__": [
+      "self",
+      "resample_kernel",
+      "upsample_factor",
+      "downsample_factor",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "EqualLinear": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "bias",
+      "bias_init_val",
+      "lr_mul",
+      "activation"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "StyleGAN2Generator": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "resample_kernel",
+      "lr_mlp",
+      "narrow"
+    ],
+    "make_noise": [
+      "self"
+    ],
+    "get_latent": [
+      "self",
+      "x"
+    ],
+    "mean_latent": [
+      "self",
+      "num_latent"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "ScaledLeakyReLU": {
+    "__init__": [
+      "self",
+      "negative_slope"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EqualConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "bias",
+      "bias_init_val"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ConvLayer": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "downsample",
+      "resample_kernel",
+      "bias",
+      "activate"
+    ]
+  },
+  "StyleGAN2GeneratorCSFT": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "narrow",
+      "sft_half"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "conditions",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "GFPGANv1Clean": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_latents",
+      "return_rgb",
+      "randomize_noise"
+    ]
+  },
+  "fused_act_ext": [],
+  "FusedLeakyReLUFunctionBackward": {
+    "forward": [
+      "ctx",
+      "grad_output",
+      "out",
+      "negative_slope",
+      "scale"
+    ],
+    "backward": [
+      "ctx",
+      "gradgrad_input",
+      "gradgrad_bias"
+    ]
+  },
+  "FusedLeakyReLUFunction": {
+    "forward": [
+      "ctx",
+      "input",
+      "bias",
+      "negative_slope",
+      "scale"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "FusedLeakyReLU": {
+    "__init__": [
+      "self",
+      "channel",
+      "negative_slope",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "fused_leaky_relu": [
+    "input",
+    "bias",
+    "negative_slope",
+    "scale"
+  ],
+  "StyleGAN2GeneratorBilinear": {
+    "__init__": [
+      "self",
+      "out_size",
+      "num_style_feat",
+      "num_mlp",
+      "channel_multiplier",
+      "lr_mlp",
+      "narrow",
+      "interpolation_mode"
+    ],
+    "make_noise": [
+      "self"
+    ],
+    "get_latent": [
+      "self",
+      "x"
+    ],
+    "mean_latent": [
+      "self",
+      "num_latent"
+    ],
+    "forward": [
+      "self",
+      "styles",
+      "input_is_latent",
+      "noise",
+      "randomize_noise",
+      "truncation",
+      "truncation_latent",
+      "inject_index",
+      "return_latents"
+    ]
+  },
+  "conv3x3": [
+    "inplanes",
+    "outplanes",
+    "stride"
+  ],
+  "IRBlock": {
+    "expansion": [],
+    "__init__": [
+      "self",
+      "inplanes",
+      "planes",
+      "stride",
+      "downsample",
+      "use_se"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Bottleneck": {
+    "expansion": [],
+    "__init__": [
+      "self",
+      "inplanes",
+      "planes",
+      "stride",
+      "downsample"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResNetArcFace": {
+    "__init__": [
+      "self",
+      "block",
+      "layers",
+      "use_se"
+    ],
+    "_make_layer": [
+      "self",
+      "block",
+      "planes",
+      "num_blocks",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "upfirdn2d_ext": [],
+  "UpFirDn2dBackward": {
+    "forward": [
+      "ctx",
+      "grad_output",
+      "kernel",
+      "grad_kernel",
+      "up",
+      "down",
+      "pad",
+      "g_pad",
+      "in_size",
+      "out_size"
+    ],
+    "backward": [
+      "ctx",
+      "gradgrad_input"
+    ]
+  },
+  "UpFirDn2d": {
+    "forward": [
+      "ctx",
+      "input",
+      "kernel",
+      "up",
+      "down",
+      "pad"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "upfirdn2d": [
+    "input",
+    "kernel",
+    "up",
+    "down",
+    "pad"
+  ],
+  "upfirdn2d_native": [
+    "input",
+    "kernel",
+    "up_x",
+    "up_y",
+    "down_x",
+    "down_y",
+    "pad_x0",
+    "pad_x1",
+    "pad_y0",
+    "pad_y1"
+  ],
+  "NAFNetArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "NAFBlock": {
+    "__init__": [
+      "self",
+      "c",
+      "DW_Expand",
+      "FFN_Expand",
+      "drop_out_rate"
+    ],
+    "forward": [
+      "self",
+      "inp"
+    ]
+  },
+  "NAFNet": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inp"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ]
+  },
+  "_PLKSR": [],
+  "PLKSRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "DCCM": {
+    "__init__": [
+      "self",
+      "dim"
+    ]
+  },
+  "PLKConv2d": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EA": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PLKBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size",
+      "split_ratio",
+      "use_ea",
+      "norm_groups",
+      "use_layer_norm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RealPLKSR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "repeat_interleave": [
+    "x",
+    "n"
+  ],
+  "ICCM": {
+    "__init__": [
+      "self",
+      "dim"
+    ]
+  },
+  "RectSparsePLKConv2d": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SparsePLKConv2d": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_kernel_size",
+      "sub_kernel_sizes",
+      "dilations",
+      "use_max_kernel",
+      "with_idt"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "_calc_rep_kernel_size": [
+      "ks",
+      "dilation"
+    ],
+    "_get_origin_kernel": [
+      "kernel",
+      "dilation",
+      "p"
+    ],
+    "_dwc_to_dense": [
+      "kernel"
+    ]
+  },
+  "PLKSR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MoSRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "GPS": {
+    "__init__": [
+      "self",
+      "dim",
+      "scale",
+      "out_ch",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "_geo_ensemble": [
+      "self",
+      "x"
+    ]
+  },
+  "MoSR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "OmniSRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "CA_layer": {
+    "__init__": [
+      "self",
+      "channel",
+      "reduction"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Simple_CA_layer": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ECA_layer": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ECA_MaxPool_layer": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "moment": [
+    "x",
+    "dim",
+    "k"
+  ],
+  "ESA": {
+    "__init__": [
+      "self",
+      "esa_channels",
+      "n_feats",
+      "conv"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LK_ESA": {
+    "__init__": [
+      "self",
+      "esa_channels",
+      "n_feats",
+      "conv",
+      "kernel_expand",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LK_ESA_LN": {
+    "__init__": [
+      "self",
+      "esa_channels",
+      "n_feats",
+      "conv",
+      "kernel_expand",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaGuidedFilter": {
+    "__init__": [
+      "self",
+      "esa_channels",
+      "n_feats",
+      "conv",
+      "kernel_expand",
+      "bias"
+    ],
+    "box_filter": [
+      "self",
+      "x",
+      "r"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaConvGuidedFilter": {
+    "__init__": [
+      "self",
+      "esa_channels",
+      "n_feats",
+      "conv",
+      "kernel_expand",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "OmniSR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "OSAG": {
+    "__init__": [
+      "self",
+      "channel_num",
+      "bias",
+      "block_num",
+      "window_size",
+      "pe"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "exists": [
+    "val"
+  ],
+  "default": [
+    "val",
+    "d"
+  ],
+  "cast_tuple": [
+    "val",
+    "length"
+  ],
+  "PreNormResidual": {
+    "__init__": [
+      "self",
+      "dim",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Conv_PreNormResidual": {
+    "__init__": [
+      "self",
+      "dim",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Conv_FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "mult",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Gated_Conv_FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "mult",
+      "bias",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MBConvResidual": {
+    "__init__": [
+      "self",
+      "fn",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Dropsample": {
+    "__init__": [
+      "self",
+      "prob"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Block_Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "bias",
+      "dropout",
+      "window_size",
+      "with_pe"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Channel_Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "bias",
+      "dropout",
+      "window_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Channel_Attention_grid": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "bias",
+      "dropout",
+      "window_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "OSA_Block": {
+    "__init__": [
+      "self",
+      "channel_num",
+      "window_size",
+      "with_pe",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GRN": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SPANArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "_make_pair": [
+    "value"
+  ],
+  "Conv3XC": {
+    "__init__": [
+      "self",
+      "c_in",
+      "c_out",
+      "gain1",
+      "gain2",
+      "s",
+      "bias",
+      "relu"
+    ],
+    "update_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SPAB": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "mid_channels",
+      "out_channels",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SPAN": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "is_norm": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "UformerArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "FastLeFF": {
+    "__init__": [
+      "self",
+      "dim",
+      "hidden_dim",
+      "act_layer",
+      "drop"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "SAM": {
+    "__init__": [
+      "self",
+      "n_feat",
+      "kernel_size",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_img"
+    ]
+  },
+  "UNet": {
+    "__init__": [
+      "self",
+      "block",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "LPU": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "PosCNN": {
+    "__init__": [
+      "self",
+      "in_chans",
+      "embed_dim",
+      "s"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ],
+    "no_weight_decay": [
+      "self"
+    ]
+  },
+  "eca_layer": {
+    "__init__": [
+      "self",
+      "channel",
+      "k_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "eca_layer_1d": {
+    "__init__": [
+      "self",
+      "channel",
+      "k_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "SepConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "HW"
+    ]
+  },
+  "ConvProjection": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "dim_head",
+      "kernel_size",
+      "q_stride",
+      "k_stride",
+      "v_stride",
+      "dropout",
+      "last_stage",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_kv"
+    ],
+    "flops": [
+      "self",
+      "q_L",
+      "kv_L"
+    ]
+  },
+  "LinearProjection": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "dim_head",
+      "dropout",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "attn_kv"
+    ],
+    "flops": [
+      "self",
+      "q_L",
+      "kv_L"
+    ]
+  },
+  "LeFF": {
+    "__init__": [
+      "self",
+      "dim",
+      "hidden_dim",
+      "act_layer",
+      "drop",
+      "use_eca"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "InputProj": {
+    "__init__": [
+      "self",
+      "in_channel",
+      "out_channel",
+      "kernel_size",
+      "stride",
+      "norm_layer",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "OutputProj": {
+    "__init__": [
+      "self",
+      "in_channel",
+      "out_channel",
+      "kernel_size",
+      "stride",
+      "norm_layer",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self",
+      "H",
+      "W"
+    ]
+  },
+  "LeWinTransformerBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "input_resolution",
+      "num_heads",
+      "win_size",
+      "shift_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "act_layer",
+      "norm_layer",
+      "token_projection",
+      "token_mlp",
+      "modulator",
+      "cross_modulator"
+    ],
+    "with_pos_embed": [
+      "self",
+      "tensor",
+      "pos"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "BasicUformerLayer": {
+    "__init__": [
+      "self",
+      "dim",
+      "output_dim",
+      "input_resolution",
+      "depth",
+      "num_heads",
+      "win_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "drop",
+      "attn_drop",
+      "drop_path",
+      "norm_layer",
+      "use_checkpoint",
+      "token_projection",
+      "token_mlp",
+      "shift_flag",
+      "modulator",
+      "cross_modulator"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "Uformer": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "DITNArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "ISA": {
+    "__init__": [
+      "self",
+      "dim",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SDA": {
+    "__init__": [
+      "self",
+      "n_feats",
+      "LayerNorm_type"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ITL": {
+    "__init__": [
+      "self",
+      "n_feats",
+      "ffn_expansion_factor",
+      "bias",
+      "LayerNorm_type"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SAL": {
+    "__init__": [
+      "self",
+      "n_feats",
+      "ffn_expansion_factor",
+      "bias",
+      "LayerNorm_type"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "UFONE": {
+    "__init__": [
+      "self",
+      "dim",
+      "ffn_expansion_factor",
+      "bias",
+      "LayerNorm_type",
+      "ITL_blocks",
+      "SAL_blocks",
+      "patch_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DITN_Real": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "inp_img"
+    ]
+  },
+  "pixel_unshuffle": [
+    "input",
+    "upscale_factor"
+  ],
+  "DySample": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_ch",
+      "scale",
+      "groups",
+      "end_convolution"
+    ],
+    "_init_pos": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "pad_to_multiple": [
+    "tensor",
+    "multiple"
+  ],
+  "act": [
+    "act_type",
+    "inplace",
+    "neg_slope",
+    "n_prelu"
+  ],
+  "ConcatBlock": {
+    "__init__": [
+      "self",
+      "submodule"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ShortcutBlock": {
+    "__init__": [
+      "self",
+      "submodule"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ShortcutBlockSPSR": {
+    "__init__": [
+      "self",
+      "submodule"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ConvMode": [],
+  "conv_block_2c2": [
+    "in_nc",
+    "out_nc",
+    "act_type"
+  ],
+  "ResNetBlock": {
+    "__init__": [
+      "self",
+      "in_nc",
+      "mid_nc",
+      "out_nc",
+      "kernel_size",
+      "stride",
+      "dilation",
+      "groups",
+      "bias",
+      "pad_type",
+      "norm_type",
+      "act_type",
+      "mode",
+      "res_scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RRDB": {
+    "__init__": [
+      "self",
+      "nf",
+      "kernel_size",
+      "gc",
+      "stride",
+      "bias",
+      "pad_type",
+      "norm_type",
+      "act_type",
+      "mode",
+      "_convtype",
+      "_spectral_norm",
+      "plus"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResidualDenseBlock_5C": {
+    "__init__": [
+      "self",
+      "nf",
+      "kernel_size",
+      "gc",
+      "stride",
+      "bias",
+      "pad_type",
+      "norm_type",
+      "act_type",
+      "mode",
+      "plus"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "conv1x1": [
+    "in_planes",
+    "out_planes",
+    "stride"
+  ],
+  "upconv_block": [
+    "in_nc",
+    "out_nc",
+    "upscale_factor",
+    "kernel_size",
+    "stride",
+    "bias",
+    "pad_type",
+    "norm_type",
+    "act_type",
+    "mode"
+  ],
+  "_get_in_ch_and_scale": [
+    "combined",
+    "num_out_ch"
+  ],
+  "_get_num_feats_blocks_and_downscales": [
+    "state_dict"
+  ],
+  "MMRealSRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "ResidualDenseBlock": {
+    "__init__": [
+      "self",
+      "num_feat",
+      "num_grow_ch"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AffineModulate": {
+    "__init__": [
+      "self",
+      "degradation_dim",
+      "num_feat"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "d"
+    ]
+  },
+  "ResidualBlockNoBN": {
+    "__init__": [
+      "self",
+      "num_feat",
+      "res_scale",
+      "pytorch_init"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DEResNet": {
+    "__init__": [
+      "self",
+      "num_in_ch",
+      "num_degradation",
+      "degradation_degree_actv",
+      "num_feats",
+      "num_blocks",
+      "downscales"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MMRRDBNet": {
+    "__init__": [
+      "self",
+      "num_in_ch",
+      "num_out_ch",
+      "scale",
+      "num_feat",
+      "num_block",
+      "num_grow_ch",
+      "de_net_type",
+      "num_degradation",
+      "degradation_degree_actv",
+      "num_feats",
+      "num_blocks",
+      "downscales"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "custom_degrees",
+      "anchor"
+    ]
+  },
+  "MMRRDBNet_decouple": {
+    "__init__": [
+      "self",
+      "num_in_ch",
+      "num_out_ch",
+      "scale",
+      "num_feat",
+      "num_block",
+      "num_grow_ch",
+      "de_net_type",
+      "num_degradation",
+      "degradation_degree_actv",
+      "num_feats",
+      "num_blocks",
+      "downscales"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "custom_degrees",
+      "anchor"
+    ]
+  },
+  "MMRRDBNet_test": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "custom_degrees"
+    ]
+  },
+  "Swin2SRArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "Upsample_hf": {
+    "__init__": [
+      "self",
+      "scale",
+      "num_feat"
+    ]
+  },
+  "Swin2SR": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "check_image_size": [
+      "self",
+      "x"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward_features_hf": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "flops": [
+      "self"
+    ]
+  },
+  "CRAFTArch": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "Attention_regular": {
+    "__init__": [
+      "self",
+      "dim",
+      "idx",
+      "split_size",
+      "dim_out",
+      "num_heads",
+      "qk_scale",
+      "position_bias"
+    ],
+    "im2win": [
+      "self",
+      "x",
+      "H",
+      "W"
+    ],
+    "forward": [
+      "self",
+      "qkv",
+      "H",
+      "W",
+      "mask",
+      "rpi",
+      "rpe_biases"
+    ]
+  },
+  "SRWAB": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "split_size",
+      "shift_size",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "act_layer",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params",
+      "attn_mask"
+    ]
+  },
+  "HFERB": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HFB": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "ffn_expansion_factor",
+      "bias",
+      "LayerNorm_type"
+    ],
+    "forward": [
+      "self",
+      "low",
+      "high"
+    ]
+  },
+  "CRFB": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth",
+      "num_heads",
+      "split_size_0",
+      "split_size_1",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ]
+  },
+  "RCRFG": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth",
+      "num_heads",
+      "mlp_ratio",
+      "qkv_bias",
+      "qk_scale",
+      "split_size_0",
+      "split_size_1",
+      "norm_layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_size",
+      "params"
+    ]
+  },
+  "CRAFT": {
+    "hyperparameters": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "calculate_rpi_v_sa": [
+      "self"
+    ],
+    "no_weight_decay": [
+      "self"
+    ],
+    "no_weight_decay_keywords": [
+      "self"
+    ],
+    "forward_features": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MAIN_REGISTRY": [],
+  "SizeRequirements": {
+    "__post_init__": [
+      "self"
+    ],
+    "none": [
+      "self"
+    ],
+    "check": [
+      "self",
+      "width",
+      "height"
+    ],
+    "get_padding": [
+      "self",
+      "width",
+      "height"
+    ]
+  },
+  "pad_tensor": [
+    "t",
+    "req"
+  ],
+  "T": [],
+  "StateDict": [],
+  "ArchId": [],
+  "Architecture": {
+    "__init__": [
+      "self"
+    ],
+    "id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "detect": [
+      "self",
+      "state_dict"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "Purpose": [],
+  "ModelTiling": {
+    "SUPPORTED": [],
+    "DISCOURAGED": [],
+    "INTERNAL": []
+  },
+  "UnsupportedDtypeError": {},
+  "ModelBase": {
+    "__init__": [
+      "self",
+      "model",
+      "state_dict",
+      "architecture",
+      "tags",
+      "supports_half",
+      "supports_bfloat16",
+      "scale",
+      "input_channels",
+      "output_channels",
+      "size_requirements",
+      "tiling"
+    ],
+    "model": [
+      "self"
+    ],
+    "architecture": [
+      "self"
+    ],
+    "purpose": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "dtype": [
+      "self"
+    ],
+    "to": [
+      "self"
+    ],
+    "half": [
+      "self"
+    ],
+    "bfloat16": [
+      "self"
+    ],
+    "float": [
+      "self"
+    ],
+    "cpu": [
+      "self"
+    ],
+    "cuda": [
+      "self",
+      "device"
+    ],
+    "eval": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "mode"
+    ]
+  },
+  "ImageModelDescriptor": {
+    "__init__": [
+      "self",
+      "model",
+      "state_dict",
+      "architecture",
+      "purpose",
+      "tags",
+      "supports_half",
+      "supports_bfloat16",
+      "scale",
+      "input_channels",
+      "output_channels",
+      "size_requirements",
+      "tiling",
+      "call_fn"
+    ],
+    "purpose": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "image"
+    ]
+  },
+  "MaskedImageModelDescriptor": {
+    "__init__": [
+      "self",
+      "model",
+      "state_dict",
+      "architecture",
+      "purpose",
+      "tags",
+      "supports_half",
+      "supports_bfloat16",
+      "input_channels",
+      "output_channels",
+      "size_requirements",
+      "tiling",
+      "call_fn"
+    ],
+    "purpose": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "image",
+      "mask"
+    ]
+  },
+  "ModelDescriptor": [],
+  "ModelLoader": {
+    "__init__": [
+      "self",
+      "device",
+      "registry"
+    ],
+    "load_from_file": [
+      "self",
+      "path"
+    ],
+    "load_state_dict_from_file": [
+      "self",
+      "path"
+    ],
+    "load_from_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "_load_pth": [
+      "self",
+      "path"
+    ],
+    "_load_torchscript": [
+      "self",
+      "path"
+    ],
+    "_load_safetensors": [
+      "self",
+      "path"
+    ]
+  },
+  "safe_list": [],
+  "RestrictedUnpickler": {
+    "find_class": [
+      "self",
+      "module",
+      "name"
+    ]
+  },
+  "RestrictedUnpickle": [],
+  "UnsupportedModelError": {},
+  "DuplicateArchitectureError": {},
+  "ArchSupport": {
+    "from_architecture": [
+      "arch",
+      "before"
+    ]
+  },
+  "ArchRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "id"
+    ],
+    "__getitem__": [
+      "self",
+      "id"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "id"
+    ],
+    "architectures": [
+      "self",
+      "order"
+    ],
+    "add": [
+      "self"
+    ],
+    "_get_ordered": [
+      "architectures"
+    ],
+    "load": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "remove_common_prefix": [
+    "state_dict",
+    "prefixes"
+  ],
+  "canonicalize_state_dict": [
+    "state_dict"
+  ],
+  "KeyCondition": {
+    "__init__": [
+      "self",
+      "kind",
+      "keys"
+    ],
+    "has_all": [],
+    "has_any": [],
+    "__call__": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "get_first_seq_index": [
+    "state_dict",
+    "key_pattern"
+  ],
+  "get_seq_len": [
+    "state_dict",
+    "seq_key"
+  ],
+  "get_scale_and_output_channels": [
+    "x",
+    "input_channels"
+  ],
+  "get_pixelshuffle_params": [
+    "state_dict",
+    "upsample_key",
+    "default_nf"
+  ],
+  "store_hyperparameters": [],
+  "_no_grad_trunc_normal_": [
+    "tensor",
+    "mean",
+    "std",
+    "a",
+    "b"
+  ],
+  "trunc_normal_": [
+    "tensor",
+    "mean",
+    "std",
+    "a",
+    "b"
+  ],
+  "trunc_normal_tf_": [
+    "tensor",
+    "mean",
+    "std",
+    "a",
+    "b"
+  ],
+  "variance_scaling_": [
+    "tensor",
+    "scale",
+    "mode",
+    "distribution"
+  ],
+  "lecun_normal_": [
+    "tensor"
+  ],
+  "_to_n": [
+    "x",
+    "n"
+  ],
+  "to_1tuple": [
+    "x"
+  ],
+  "to_2tuple": [
+    "x"
+  ],
+  "to_3tuple": [
+    "x"
+  ],
+  "to_4tuple": [
+    "x"
+  ],
+  "drop_block_2d": [
+    "x",
+    "drop_prob",
+    "block_size",
+    "gamma_scale",
+    "with_noise",
+    "inplace",
+    "batchwise"
+  ],
+  "drop_block_fast_2d": [
+    "x",
+    "drop_prob",
+    "block_size",
+    "gamma_scale",
+    "with_noise",
+    "inplace"
+  ],
+  "DropBlock2d": {
+    "__init__": [
+      "self",
+      "drop_prob",
+      "block_size",
+      "gamma_scale",
+      "with_noise",
+      "inplace",
+      "batchwise",
+      "fast"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  }
+}

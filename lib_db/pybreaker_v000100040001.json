@@ -1,0 +1,336 @@
+{
+  "__all__": [],
+  "STATE_OPEN": [],
+  "STATE_CLOSED": [],
+  "STATE_HALF_OPEN": [],
+  "T": [],
+  "ExceptionType": [],
+  "CBListenerType": [],
+  "CBStateType": [],
+  "CircuitBreaker": {
+    "__init__": [
+      "self",
+      "fail_max",
+      "reset_timeout",
+      "success_threshold",
+      "exclude",
+      "listeners",
+      "state_storage",
+      "name",
+      "throw_new_error_on_trip"
+    ],
+    "fail_counter": [
+      "self"
+    ],
+    "success_counter": [
+      "self"
+    ],
+    "fail_max": [
+      "self",
+      "number"
+    ],
+    "reset_timeout": [
+      "self",
+      "timeout"
+    ],
+    "success_threshold": [
+      "self",
+      "threshold"
+    ],
+    "_create_new_state": [
+      "self",
+      "new_state",
+      "prev_state",
+      "notify"
+    ],
+    "state": [
+      "self",
+      "state_str"
+    ],
+    "current_state": [
+      "self"
+    ],
+    "excluded_exceptions": [
+      "self"
+    ],
+    "add_excluded_exception": [
+      "self",
+      "exception"
+    ],
+    "add_excluded_exceptions": [
+      "self"
+    ],
+    "remove_excluded_exception": [
+      "self",
+      "exception"
+    ],
+    "_inc_counter": [
+      "self"
+    ],
+    "is_system_error": [
+      "self",
+      "exception"
+    ],
+    "call": [
+      "self",
+      "func"
+    ],
+    "calling": [
+      "self"
+    ],
+    "call_async": [
+      "self",
+      "func"
+    ],
+    "open": [
+      "self"
+    ],
+    "half_open": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "listeners": [
+      "self"
+    ],
+    "add_listener": [
+      "self",
+      "listener"
+    ],
+    "add_listeners": [
+      "self"
+    ],
+    "remove_listener": [
+      "self",
+      "listener"
+    ],
+    "name": [
+      "self",
+      "name"
+    ]
+  },
+  "CircuitBreakerStorage": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "state": [
+      "self",
+      "state"
+    ],
+    "increment_counter": [
+      "self"
+    ],
+    "reset_counter": [
+      "self"
+    ],
+    "increment_success_counter": [
+      "self"
+    ],
+    "reset_success_counter": [
+      "self"
+    ],
+    "counter": [
+      "self"
+    ],
+    "success_counter": [
+      "self"
+    ],
+    "opened_at": [
+      "self",
+      "datetime"
+    ]
+  },
+  "CircuitMemoryStorage": {
+    "__init__": [
+      "self",
+      "state"
+    ],
+    "state": [
+      "self",
+      "state"
+    ],
+    "increment_counter": [
+      "self"
+    ],
+    "reset_counter": [
+      "self"
+    ],
+    "increment_success_counter": [
+      "self"
+    ],
+    "reset_success_counter": [
+      "self"
+    ],
+    "counter": [
+      "self"
+    ],
+    "success_counter": [
+      "self"
+    ],
+    "opened_at": [
+      "self",
+      "datetime"
+    ]
+  },
+  "CircuitRedisStorage": {
+    "BASE_NAMESPACE": [],
+    "logger": [],
+    "__init__": [
+      "self",
+      "state",
+      "redis_object",
+      "namespace",
+      "fallback_circuit_state",
+      "cluster_mode"
+    ],
+    "_initialize_redis_state": [
+      "self",
+      "state"
+    ],
+    "state": [
+      "self",
+      "state"
+    ],
+    "increment_counter": [
+      "self"
+    ],
+    "reset_counter": [
+      "self"
+    ],
+    "increment_success_counter": [
+      "self"
+    ],
+    "reset_success_counter": [
+      "self"
+    ],
+    "counter": [
+      "self"
+    ],
+    "success_counter": [
+      "self"
+    ],
+    "opened_at": [
+      "self",
+      "now"
+    ],
+    "_namespace": [
+      "self",
+      "key"
+    ]
+  },
+  "CircuitBreakerListener": {
+    "before_call": [
+      "self",
+      "cb",
+      "func"
+    ],
+    "failure": [
+      "self",
+      "cb",
+      "exc"
+    ],
+    "success": [
+      "self",
+      "cb"
+    ],
+    "state_change": [
+      "self",
+      "cb",
+      "old_state",
+      "new_state"
+    ]
+  },
+  "CircuitBreakerState": {
+    "__init__": [
+      "self",
+      "cb",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "_handle_error": [
+      "self",
+      "exc",
+      "reraise"
+    ],
+    "_handle_success": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "func"
+    ],
+    "call_async": [
+      "self",
+      "func"
+    ],
+    "generator_call": [
+      "self",
+      "wrapped_generator"
+    ],
+    "before_call": [
+      "self",
+      "func"
+    ],
+    "on_success": [
+      "self"
+    ],
+    "on_failure": [
+      "self",
+      "exc"
+    ]
+  },
+  "CircuitClosedState": {
+    "__init__": [
+      "self",
+      "cb",
+      "prev_state",
+      "notify"
+    ],
+    "on_failure": [
+      "self",
+      "exc"
+    ]
+  },
+  "CircuitOpenState": {
+    "__init__": [
+      "self",
+      "cb",
+      "prev_state",
+      "notify"
+    ],
+    "before_call": [
+      "self",
+      "func"
+    ],
+    "call": [
+      "self",
+      "func"
+    ]
+  },
+  "CircuitHalfOpenState": {
+    "__init__": [
+      "self",
+      "cb",
+      "prev_state",
+      "notify"
+    ],
+    "on_failure": [
+      "self",
+      "exc"
+    ],
+    "on_success": [
+      "self"
+    ]
+  },
+  "CircuitBreakerError": {}
+}
