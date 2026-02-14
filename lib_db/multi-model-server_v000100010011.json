@@ -1,0 +1,608 @@
+{
+  "__version__": [],
+  "ArgParser": {
+    "mms_parser": [],
+    "str2bool": [
+      "v"
+    ],
+    "model_service_worker_args": [],
+    "extract_args": [
+      "args"
+    ]
+  },
+  "MAX_FAILURE_THRESHOLD": [],
+  "SOCKET_ACCEPT_TIMEOUT": [],
+  "DEBUG": [],
+  "MXNetModelServiceWorker": {
+    "__init__": [
+      "self",
+      "s_type",
+      "s_name",
+      "host_addr",
+      "port_num",
+      "model_request",
+      "preload_model",
+      "tmp_dir"
+    ],
+    "load_model": [
+      "self",
+      "load_model_request"
+    ],
+    "_create_io_files": [
+      "self",
+      "tmp_dir",
+      "io_fd"
+    ],
+    "_remap_io": [
+      "self"
+    ],
+    "handle_connection": [
+      "self",
+      "cl_socket"
+    ],
+    "sigterm_handler": [
+      "self"
+    ],
+    "start_worker": [
+      "self",
+      "cl_socket"
+    ],
+    "run_server": [
+      "self"
+    ]
+  },
+  "PREDICTION_METRIC": [],
+  "logger": [],
+  "Service": {
+    "__init__": [
+      "self",
+      "model_name",
+      "model_dir",
+      "manifest",
+      "entry_point",
+      "gpu",
+      "batch_size"
+    ],
+    "context": [
+      "self"
+    ],
+    "retrieve_data_for_inference": [
+      "batch"
+    ],
+    "predict": [
+      "self",
+      "batch"
+    ]
+  },
+  "PredictionException": {
+    "__init__": [
+      "self",
+      "message",
+      "error_code"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "emit_metrics": [
+    "metrics"
+  ],
+  "old_start": [],
+  "start": [],
+  "load_properties": [
+    "file_path"
+  ],
+  "Context": {
+    "__init__": [
+      "self",
+      "model_name",
+      "model_dir",
+      "manifest",
+      "batch_size",
+      "gpu",
+      "mms_version"
+    ],
+    "system_properties": [
+      "self"
+    ],
+    "request_processor": [
+      "self",
+      "request_processor"
+    ],
+    "metrics": [
+      "self",
+      "metrics"
+    ],
+    "get_request_id": [
+      "self",
+      "idx"
+    ],
+    "get_request_header": [
+      "self",
+      "idx",
+      "key"
+    ],
+    "get_all_request_header": [
+      "self",
+      "idx"
+    ],
+    "set_response_content_type": [
+      "self",
+      "idx",
+      "value"
+    ],
+    "get_response_content_type": [
+      "self",
+      "idx"
+    ],
+    "get_response_status": [
+      "self",
+      "idx"
+    ],
+    "set_response_status": [
+      "self",
+      "code",
+      "phrase",
+      "idx"
+    ],
+    "set_all_response_status": [
+      "self",
+      "code",
+      "phrase"
+    ],
+    "get_response_headers": [
+      "self",
+      "idx"
+    ],
+    "set_response_header": [
+      "self",
+      "idx",
+      "key",
+      "value"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "RequestProcessor": {
+    "__init__": [
+      "self",
+      "request_header"
+    ],
+    "get_request_property": [
+      "self",
+      "key"
+    ],
+    "report_status": [
+      "self",
+      "code",
+      "reason_phrase"
+    ],
+    "get_response_status_code": [
+      "self"
+    ],
+    "get_response_status_phrase": [
+      "self"
+    ],
+    "add_response_property": [
+      "self",
+      "key",
+      "value"
+    ],
+    "get_response_headers": [
+      "self"
+    ],
+    "get_response_header": [
+      "self",
+      "key"
+    ],
+    "get_request_properties": [
+      "self"
+    ]
+  },
+  "ModelLoaderFactory": {
+    "get_model_loader": [
+      "model_dir"
+    ]
+  },
+  "ModelLoader": {
+    "__metaclass__": [],
+    "load": [
+      "self",
+      "model_name",
+      "model_dir",
+      "handler",
+      "gpu_id",
+      "batch_size"
+    ],
+    "list_model_services": [
+      "module",
+      "parent_class"
+    ]
+  },
+  "MmsModelLoader": {
+    "load": [
+      "self",
+      "model_name",
+      "model_dir",
+      "handler",
+      "gpu_id",
+      "batch_size"
+    ],
+    "unload": [
+      "self"
+    ]
+  },
+  "LegacyModelLoader": {
+    "load": [
+      "self",
+      "model_name",
+      "model_dir",
+      "handler",
+      "gpu_id",
+      "batch_size"
+    ]
+  },
+  "main": [],
+  "MetricsStore": {
+    "__init__": [
+      "self",
+      "request_ids",
+      "model_name"
+    ],
+    "_add_or_update": [
+      "self",
+      "name",
+      "value",
+      "req_id",
+      "unit",
+      "metrics_method",
+      "dimensions"
+    ],
+    "_get_req": [
+      "self",
+      "idx"
+    ],
+    "add_counter": [
+      "self",
+      "name",
+      "value",
+      "idx",
+      "dimensions"
+    ],
+    "add_time": [
+      "self",
+      "name",
+      "value",
+      "idx",
+      "unit",
+      "dimensions"
+    ],
+    "add_size": [
+      "self",
+      "name",
+      "value",
+      "idx",
+      "unit",
+      "dimensions"
+    ],
+    "add_percent": [
+      "self",
+      "name",
+      "value",
+      "idx",
+      "dimensions"
+    ],
+    "add_error": [
+      "self",
+      "name",
+      "value",
+      "dimensions"
+    ],
+    "add_metric": [
+      "self",
+      "name",
+      "value",
+      "idx",
+      "unit",
+      "dimensions"
+    ]
+  },
+  "Units": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "get_cpu_usage": [
+    "pid"
+  ],
+  "check_process_mem_usage": [
+    "stdin"
+  ],
+  "Dimension": {
+    "__init__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "MetricUnit": [],
+  "Metric": {
+    "__init__": [
+      "self",
+      "name",
+      "value",
+      "unit",
+      "dimensions",
+      "request_id",
+      "metric_method"
+    ],
+    "update": [
+      "self",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "MetricEncoder": {
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "system_metrics": [],
+  "dimension": [],
+  "cpu_utilization": [],
+  "memory_used": [],
+  "memory_available": [],
+  "memory_utilization": [],
+  "disk_used": [],
+  "disk_utilization": [],
+  "disk_available": [],
+  "collect_all": [
+    "mod"
+  ],
+  "int_size": [],
+  "END_OF_LIST": [],
+  "LOAD_MSG": [],
+  "PREDICT_MSG": [],
+  "RESPONSE": [],
+  "retrieve_msg": [
+    "conn"
+  ],
+  "encode_response_headers": [
+    "resp_hdr_map"
+  ],
+  "create_predict_response": [
+    "ret",
+    "req_id_map",
+    "message",
+    "code",
+    "context"
+  ],
+  "create_load_model_response": [
+    "code",
+    "message"
+  ],
+  "_retrieve_buffer": [
+    "conn",
+    "length"
+  ],
+  "_retrieve_int": [
+    "conn"
+  ],
+  "_retrieve_load_msg": [
+    "conn"
+  ],
+  "_retrieve_inference_msg": [
+    "conn"
+  ],
+  "_retrieve_request": [
+    "conn"
+  ],
+  "_retrieve_reqest_header": [
+    "conn"
+  ],
+  "_retrieve_input_data": [
+    "conn"
+  ],
+  "timeit": [
+    "func"
+  ],
+  "encode_sentences": [
+    "sentences",
+    "vocab",
+    "invalid_label",
+    "invalid_key",
+    "start_label"
+  ],
+  "pad_sentence": [
+    "sentence",
+    "buckets",
+    "invalid_label",
+    "data_name",
+    "layout"
+  ],
+  "transform_shape": [
+    "img_arr",
+    "dim_order"
+  ],
+  "read": [
+    "buf",
+    "flag",
+    "to_rgb",
+    "out"
+  ],
+  "write": [
+    "img_arr",
+    "flag",
+    "format",
+    "dim_order"
+  ],
+  "resize": [
+    "src",
+    "new_width",
+    "new_height",
+    "interp"
+  ],
+  "fixed_crop": [
+    "src",
+    "x0",
+    "y0",
+    "w",
+    "h",
+    "size",
+    "interp"
+  ],
+  "color_normalize": [
+    "src",
+    "mean",
+    "std"
+  ],
+  "top_probability": [
+    "data",
+    "labels",
+    "top"
+  ],
+  "check_input_shape": [
+    "inputs",
+    "signature"
+  ],
+  "MXNetBaseService": {
+    "__init__": [
+      "self",
+      "model_name",
+      "model_dir",
+      "manifest",
+      "gpu"
+    ],
+    "_preprocess": [
+      "self",
+      "data"
+    ],
+    "_postprocess": [
+      "self",
+      "data"
+    ],
+    "_inference": [
+      "self",
+      "data"
+    ],
+    "ping": [
+      "self"
+    ],
+    "signature": [
+      "self"
+    ]
+  },
+  "GluonImperativeBaseService": {
+    "__init__": [
+      "self",
+      "model_name",
+      "model_dir",
+      "manifest",
+      "net",
+      "gpu"
+    ],
+    "_preprocess": [
+      "self",
+      "data"
+    ],
+    "_postprocess": [
+      "self",
+      "data"
+    ],
+    "_inference": [
+      "self",
+      "data"
+    ],
+    "ping": [
+      "self"
+    ],
+    "signature": [
+      "self"
+    ]
+  },
+  "ModelService": {
+    "__metaclass__": [],
+    "__init__": [
+      "self",
+      "model_name",
+      "model_dir",
+      "manifest",
+      "gpu"
+    ],
+    "initialize": [
+      "self",
+      "context"
+    ],
+    "inference": [
+      "self",
+      "data"
+    ],
+    "ping": [
+      "self"
+    ],
+    "signature": [
+      "self"
+    ],
+    "handle": [
+      "self",
+      "data",
+      "context"
+    ]
+  },
+  "SingleNodeService": {
+    "inference": [
+      "self",
+      "data"
+    ],
+    "_inference": [
+      "self",
+      "data"
+    ],
+    "_preprocess": [
+      "self",
+      "data"
+    ],
+    "_postprocess": [
+      "self",
+      "data"
+    ]
+  },
+  "MXNetVisionService": {
+    "_preprocess": [
+      "self",
+      "data"
+    ],
+    "_postprocess": [
+      "self",
+      "data"
+    ]
+  },
+  "GluonVisionService": {
+    "_preprocess": [
+      "self",
+      "data"
+    ],
+    "_inference": [
+      "self",
+      "data"
+    ],
+    "_postprocess": [
+      "self",
+      "data"
+    ]
+  }
+}

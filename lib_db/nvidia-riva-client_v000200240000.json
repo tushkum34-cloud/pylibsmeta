@@ -1,0 +1,936 @@
+{
+  "MAJOR": [],
+  "MINOR": [],
+  "PATCH": [],
+  "PRE_RELEASE": [],
+  "VERSION": [],
+  "__shortversion__": [],
+  "__version__": [],
+  "__package_name__": [],
+  "__contact_names__": [],
+  "__contact_emails__": [],
+  "__homepage__": [],
+  "__repository_url__": [],
+  "__download_url__": [],
+  "__description__": [],
+  "__license__": [],
+  "__keywords__": [],
+  "__riva_version__": [],
+  "__riva_release__": [],
+  "__riva_models_version__": [],
+  "validate_grpc_message_size": [
+    "value"
+  ],
+  "add_asr_config_argparse_parameters": [
+    "parser",
+    "max_alternatives",
+    "profanity_filter",
+    "word_time_offsets"
+  ],
+  "add_connection_argparse_parameters": [
+    "parser"
+  ],
+  "add_realtime_config_argparse_parameters": [
+    "parser"
+  ],
+  "add_custom_dictionary_to_config": [
+    "req",
+    "custom_dictionary"
+  ],
+  "SpeechSynthesisService": {
+    "__init__": [
+      "self",
+      "auth"
+    ],
+    "synthesize": [
+      "self",
+      "text",
+      "voice_name",
+      "language_code",
+      "encoding",
+      "sample_rate_hz",
+      "zero_shot_audio_prompt_file",
+      "audio_prompt_encoding",
+      "zero_shot_quality",
+      "future",
+      "custom_dictionary",
+      "zero_shot_transcript"
+    ],
+    "synthesize_online": [
+      "self",
+      "text",
+      "voice_name",
+      "language_code",
+      "encoding",
+      "sample_rate_hz",
+      "zero_shot_audio_prompt_file",
+      "audio_prompt_encoding",
+      "zero_shot_quality",
+      "custom_dictionary"
+    ]
+  },
+  "streaming_s2s_request_generator": [
+    "audio_chunks",
+    "streaming_config"
+  ],
+  "streaming_s2t_request_generator": [
+    "audio_chunks",
+    "streaming_config"
+  ],
+  "add_dnt_phrases_dict": [
+    "req",
+    "dnt_phrases_dict"
+  ],
+  "NeuralMachineTranslationClient": {
+    "__init__": [
+      "self",
+      "auth"
+    ],
+    "streaming_s2s_response_generator": [
+      "self",
+      "audio_chunks",
+      "streaming_config"
+    ],
+    "streaming_s2t_response_generator": [
+      "self",
+      "audio_chunks",
+      "streaming_config"
+    ],
+    "translate": [
+      "self",
+      "texts",
+      "model",
+      "source_language",
+      "target_language",
+      "future",
+      "dnt_phrases_dict",
+      "max_len_variation"
+    ],
+    "get_config": [
+      "self",
+      "model",
+      "future"
+    ]
+  },
+  "logger": [],
+  "RealtimeClientASR": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "connect": [
+      "self"
+    ],
+    "_initialize_http_session": [
+      "self"
+    ],
+    "_connect_websocket": [
+      "self"
+    ],
+    "_initialize_session": [
+      "self"
+    ],
+    "_safe_update_config": [
+      "self",
+      "config",
+      "key",
+      "value",
+      "section"
+    ],
+    "_update_session": [
+      "self"
+    ],
+    "_has_endpointing_config": [
+      "self"
+    ],
+    "_build_endpointing_config": [
+      "self"
+    ],
+    "_parse_custom_configuration": [
+      "self",
+      "custom_configuration"
+    ],
+    "_handle_session_update_response": [
+      "self"
+    ],
+    "_send_message": [
+      "self",
+      "message"
+    ],
+    "send_audio_chunks": [
+      "self",
+      "audio_chunks"
+    ],
+    "receive_responses": [
+      "self"
+    ],
+    "save_responses": [
+      "self",
+      "output_text_file"
+    ],
+    "disconnect": [
+      "self"
+    ]
+  },
+  "RealtimeClientTTS": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "list_voices": [
+      "self"
+    ],
+    "connect": [
+      "self"
+    ],
+    "_initialize_http_session": [
+      "self"
+    ],
+    "_connect_websocket": [
+      "self"
+    ],
+    "_initialize_session": [
+      "self"
+    ],
+    "_safe_update_config": [
+      "self",
+      "config",
+      "key",
+      "value",
+      "section"
+    ],
+    "_update_session": [
+      "self",
+      "timeout"
+    ],
+    "_send_message": [
+      "self",
+      "message"
+    ],
+    "send_text": [
+      "self",
+      "text_generator"
+    ],
+    "receive_audio": [
+      "self",
+      "audio_chunks",
+      "timeout"
+    ],
+    "disconnect": [
+      "self"
+    ]
+  },
+  "extract_all_text_classes_and_confidences": [
+    "response"
+  ],
+  "extract_most_probable_text_class_and_confidence": [
+    "response"
+  ],
+  "extract_all_token_classification_predictions": [
+    "response"
+  ],
+  "extract_most_probable_token_classification_predictions": [
+    "response"
+  ],
+  "extract_all_transformed_texts": [
+    "response"
+  ],
+  "extract_most_probable_transformed_text": [
+    "response"
+  ],
+  "prepare_transform_text_request": [
+    "input_strings",
+    "model_name",
+    "language_code"
+  ],
+  "NLPService": {
+    "__init__": [
+      "self",
+      "auth"
+    ],
+    "classify_text": [
+      "self",
+      "input_strings",
+      "model_name",
+      "language_code",
+      "future"
+    ],
+    "classify_tokens": [
+      "self",
+      "input_strings",
+      "model_name",
+      "language_code",
+      "future"
+    ],
+    "transform_text": [
+      "self",
+      "input_strings",
+      "model_name",
+      "language_code",
+      "future"
+    ],
+    "analyze_entities": [
+      "self",
+      "input_string",
+      "language_code",
+      "future"
+    ],
+    "analyze_intent": [
+      "self",
+      "input_string",
+      "options",
+      "future"
+    ],
+    "punctuate_text": [
+      "self",
+      "input_strings",
+      "model_name",
+      "language_code",
+      "future"
+    ],
+    "natural_query": [
+      "self",
+      "query",
+      "context",
+      "top_n",
+      "future"
+    ]
+  },
+  "batch_generator": [
+    "examples",
+    "batch_size"
+  ],
+  "process_batches_async": [
+    "b_gen",
+    "process_func",
+    "kwargs_except_future_and_input",
+    "max_async_requests_to_queue"
+  ],
+  "check_max_async_requests_to_queue": [
+    "max_async_requests_to_queue"
+  ],
+  "classify_text_batch": [
+    "nlp_service",
+    "input_strings",
+    "model_name",
+    "batch_size",
+    "language_code",
+    "max_async_requests_to_queue"
+  ],
+  "classify_tokens_batch": [
+    "nlp_service",
+    "input_strings",
+    "model_name",
+    "batch_size",
+    "language_code",
+    "max_async_requests_to_queue"
+  ],
+  "get_wav_file_parameters": [
+    "input_file"
+  ],
+  "sleep_audio_length": [
+    "audio_chunk",
+    "time_to_sleep"
+  ],
+  "AudioChunkFileIterator": {
+    "__init__": [
+      "self",
+      "input_file",
+      "chunk_n_frames",
+      "delay_callback"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type_",
+      "value",
+      "traceback"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "add_word_boosting_to_config": [
+    "config",
+    "boosted_lm_words",
+    "boosted_lm_score"
+  ],
+  "add_audio_file_specs_to_config": [
+    "config",
+    "audio_file"
+  ],
+  "add_speaker_diarization_to_config": [
+    "config",
+    "diarization_enable",
+    "diarization_max_speakers"
+  ],
+  "add_endpoint_parameters_to_config": [
+    "config",
+    "start_history",
+    "start_threshold",
+    "stop_history",
+    "stop_history_eou",
+    "stop_threshold",
+    "stop_threshold_eou"
+  ],
+  "add_custom_configuration_to_config": [
+    "config",
+    "custom_configuration"
+  ],
+  "PRINT_STREAMING_ADDITIONAL_INFO_MODES": [],
+  "print_streaming": [
+    "responses",
+    "output_file",
+    "additional_info",
+    "word_time_offsets",
+    "show_intermediate",
+    "file_mode",
+    "speaker_diarization",
+    "seglst_output_file"
+  ],
+  "write_seglst": [
+    "words",
+    "seglst_output_file"
+  ],
+  "print_offline": [
+    "response",
+    "speaker_diarization",
+    "seglst_output_file"
+  ],
+  "streaming_request_generator": [
+    "audio_chunks",
+    "streaming_config"
+  ],
+  "ASRService": {
+    "__init__": [
+      "self",
+      "auth"
+    ],
+    "streaming_response_generator": [
+      "self",
+      "audio_chunks",
+      "streaming_config"
+    ],
+    "offline_recognize": [
+      "self",
+      "audio_bytes",
+      "config",
+      "future"
+    ]
+  },
+  "MicrophoneStream": {
+    "__init__": [
+      "self",
+      "rate",
+      "chunk",
+      "device"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "_fill_buffer": [
+      "self",
+      "in_data",
+      "frame_count",
+      "time_info",
+      "status_flags"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "get_audio_device_info": [
+    "device_id"
+  ],
+  "get_default_input_device_info": [],
+  "list_output_devices": [],
+  "list_input_devices": [],
+  "SoundCallBack": {
+    "__init__": [
+      "self",
+      "output_device_index",
+      "sampwidth",
+      "nchannels",
+      "framerate"
+    ],
+    "__call__": [
+      "self",
+      "audio_data",
+      "audio_length"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type_",
+      "value",
+      "traceback"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "create_channel": [
+    "ssl_root_cert",
+    "ssl_client_cert",
+    "ssl_client_key",
+    "use_ssl",
+    "uri",
+    "metadata",
+    "options",
+    "use_aio"
+  ],
+  "Auth": {
+    "__init__": [
+      "self",
+      "ssl_root_cert",
+      "use_ssl",
+      "uri",
+      "metadata_args",
+      "ssl_client_cert",
+      "ssl_client_key",
+      "options",
+      "use_aio"
+    ],
+    "get_auth_metadata": [
+      "self"
+    ]
+  },
+  "_sym_db": [],
+  "DESCRIPTOR": [],
+  "_globals": [],
+  "GRPC_GENERATED_VERSION": [],
+  "GRPC_VERSION": [],
+  "_version_not_supported": [],
+  "RivaLanguageUnderstandingStub": {
+    "__init__": [
+      "self",
+      "channel"
+    ]
+  },
+  "RivaLanguageUnderstandingServicer": {
+    "ClassifyText": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ClassifyTokens": [
+      "self",
+      "request",
+      "context"
+    ],
+    "TransformText": [
+      "self",
+      "request",
+      "context"
+    ],
+    "AnalyzeEntities": [
+      "self",
+      "request",
+      "context"
+    ],
+    "AnalyzeIntent": [
+      "self",
+      "request",
+      "context"
+    ],
+    "PunctuateText": [
+      "self",
+      "request",
+      "context"
+    ],
+    "NaturalQuery": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetRivaNLPConfig": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "add_RivaLanguageUnderstandingServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "RivaLanguageUnderstanding": {
+    "ClassifyText": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ClassifyTokens": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "TransformText": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "AnalyzeEntities": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "AnalyzeIntent": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "PunctuateText": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "NaturalQuery": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetRivaNLPConfig": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "RivaTranslationStub": {
+    "__init__": [
+      "self",
+      "channel"
+    ]
+  },
+  "RivaTranslationServicer": {
+    "TranslateText": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListSupportedLanguagePairs": [
+      "self",
+      "request",
+      "context"
+    ],
+    "StreamingTranslateSpeechToText": [
+      "self",
+      "request_iterator",
+      "context"
+    ],
+    "StreamingTranslateSpeechToSpeech": [
+      "self",
+      "request_iterator",
+      "context"
+    ]
+  },
+  "add_RivaTranslationServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "RivaTranslation": {
+    "TranslateText": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListSupportedLanguagePairs": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "StreamingTranslateSpeechToText": [
+      "request_iterator",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "StreamingTranslateSpeechToSpeech": [
+      "request_iterator",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "HealthStub": {
+    "__init__": [
+      "self",
+      "channel"
+    ]
+  },
+  "HealthServicer": {
+    "Check": [
+      "self",
+      "request",
+      "context"
+    ],
+    "Watch": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "add_HealthServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "Health": {
+    "Check": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "Watch": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "RivaSpeechRecognitionStub": {
+    "__init__": [
+      "self",
+      "channel"
+    ]
+  },
+  "RivaSpeechRecognitionServicer": {
+    "Recognize": [
+      "self",
+      "request",
+      "context"
+    ],
+    "StreamingRecognize": [
+      "self",
+      "request_iterator",
+      "context"
+    ],
+    "GetRivaSpeechRecognitionConfig": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "add_RivaSpeechRecognitionServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "RivaSpeechRecognition": {
+    "Recognize": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "StreamingRecognize": [
+      "request_iterator",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetRivaSpeechRecognitionConfig": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "RivaSpeechSynthesisStub": {
+    "__init__": [
+      "self",
+      "channel"
+    ]
+  },
+  "RivaSpeechSynthesisServicer": {
+    "Synthesize": [
+      "self",
+      "request",
+      "context"
+    ],
+    "SynthesizeOnline": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetRivaSynthesisConfig": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "add_RivaSpeechSynthesisServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "RivaSpeechSynthesis": {
+    "Synthesize": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "SynthesizeOnline": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetRivaSynthesisConfig": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  }
+}

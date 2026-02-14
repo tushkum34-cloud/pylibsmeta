@@ -1,0 +1,318 @@
+{
+  "__version__": [],
+  "get_provider_info": [],
+  "log": [],
+  "LAKEFS_COMMIT_LINK": [],
+  "LakeFSLink": {
+    "key": [],
+    "format_str": [],
+    "name": [],
+    "get_link": [
+      "self",
+      "operator"
+    ],
+    "persist": [
+      "context",
+      "task_instance",
+      "lakefs_base_url",
+      "repo",
+      "commit_digest"
+    ]
+  },
+  "default_args": [],
+  "CONTENT_PREFIX": [],
+  "COMMIT_MESSAGE_1": [],
+  "MERGE_MESSAGE_1": [],
+  "IdAndMessage": [],
+  "check_expected_prefix": [
+    "task_instance",
+    "actual",
+    "expected"
+  ],
+  "check_logs": [
+    "task_instance",
+    "repo",
+    "ref",
+    "commits",
+    "messages",
+    "amount"
+  ],
+  "check_branch_object": [
+    "task_instance",
+    "repo",
+    "branch",
+    "path"
+  ],
+  "lakeFS_workflow": [],
+  "sample_workflow_dag": [],
+  "LakeFSCreateBranchOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "source_branch"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "WithLakeFSMetadataOperator": {
+    "__metadata_prefix": [],
+    "__metadata_templates": [],
+    "__required_keys": [],
+    "_get_current_dag_dict": [
+      "self",
+      "context"
+    ],
+    "enrich_metadata": [
+      "self",
+      "context"
+    ],
+    "_metadata_key": [
+      "cls",
+      "key"
+    ]
+  },
+  "LakeFSDeleteBranchOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSGetCommitOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "ref"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSCreateSymlinkOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "location"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSMergeOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "operator_extra_links": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "source_ref",
+      "destination_branch",
+      "msg",
+      "metadata"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSCommitOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "operator_extra_links": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "msg",
+      "metadata"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSGetObjectOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "ref",
+      "path"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSUploadOperator": {
+    "template_fields": [],
+    "template_ext": [],
+    "ui_color": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "path",
+      "content"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSCommitSensor": {
+    "template_fields": [],
+    "current_commit_id_key": [],
+    "branch_not_found_error": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "prev_commit_id"
+    ],
+    "poke": [
+      "self",
+      "context"
+    ],
+    "get_commit": [
+      "self"
+    ]
+  },
+  "LakeFSFileSensor": {
+    "template_fields": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id",
+      "repo",
+      "branch",
+      "path"
+    ],
+    "poke": [
+      "self",
+      "context"
+    ]
+  },
+  "LakeFSHook": {
+    "conn_name_attr": [],
+    "client_id": [],
+    "default_conn_name": [],
+    "conn_type": [],
+    "hook_name": [],
+    "__init__": [
+      "self",
+      "lakefs_conn_id"
+    ],
+    "get_base_url": [
+      "self"
+    ],
+    "get_conn": [
+      "self"
+    ],
+    "get_ui_field_behaviour": [],
+    "create_branch": [
+      "self",
+      "repository",
+      "name",
+      "source_branch"
+    ],
+    "commit": [
+      "self",
+      "repo",
+      "branch",
+      "msg",
+      "metadata"
+    ],
+    "upload": [
+      "self",
+      "repo",
+      "branch",
+      "path",
+      "content"
+    ],
+    "merge": [
+      "self",
+      "repo",
+      "source_ref",
+      "destination_branch",
+      "msg",
+      "metadata"
+    ],
+    "get_branch_commit_id": [
+      "self",
+      "repo",
+      "name"
+    ],
+    "get_commit": [
+      "self",
+      "repo",
+      "ref"
+    ],
+    "log_commits": [
+      "self",
+      "repo",
+      "ref",
+      "size"
+    ],
+    "stat_object": [
+      "self",
+      "repo",
+      "ref",
+      "path"
+    ],
+    "get_object": [
+      "self",
+      "repo",
+      "ref",
+      "path"
+    ],
+    "create_symlink_file": [
+      "self",
+      "repo",
+      "branch",
+      "location"
+    ],
+    "delete_branch": [
+      "self",
+      "repo",
+      "branch"
+    ],
+    "test_connection": [
+      "self"
+    ]
+  }
+}

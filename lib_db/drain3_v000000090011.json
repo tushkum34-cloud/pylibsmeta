@@ -1,0 +1,350 @@
+{
+  "this_directory": [],
+  "FilePersistence": {
+    "__init__": [
+      "self",
+      "file_path"
+    ],
+    "save_state": [
+      "self",
+      "state"
+    ],
+    "load_state": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "config_filename": [],
+  "ExtractedParameter": [],
+  "TemplateMiner": {
+    "__init__": [
+      "self",
+      "persistence_handler",
+      "config"
+    ],
+    "load_state": [
+      "self"
+    ],
+    "save_state": [
+      "self",
+      "snapshot_reason"
+    ],
+    "get_snapshot_reason": [
+      "self",
+      "change_type",
+      "cluster_id"
+    ],
+    "add_log_message": [
+      "self",
+      "log_message"
+    ],
+    "match": [
+      "self",
+      "log_message",
+      "full_search_strategy"
+    ],
+    "get_parameter_list": [
+      "self",
+      "log_template",
+      "log_message"
+    ],
+    "extract_parameters": [
+      "self",
+      "log_template",
+      "log_message",
+      "exact_matching"
+    ],
+    "_get_template_parameter_extraction_regex": [
+      "self",
+      "log_template",
+      "exact_matching"
+    ]
+  },
+  "Profiler": {
+    "start_section": [
+      "self",
+      "section_name"
+    ],
+    "end_section": [
+      "self",
+      "section_name"
+    ],
+    "report": [
+      "self",
+      "period_sec"
+    ]
+  },
+  "NullProfiler": {
+    "start_section": [
+      "self",
+      "section_name"
+    ],
+    "end_section": [
+      "self",
+      "section_name"
+    ],
+    "report": [
+      "self",
+      "period_sec"
+    ]
+  },
+  "SimpleProfiler": {
+    "__init__": [
+      "self",
+      "reset_after_sample_count",
+      "enclosing_section_name",
+      "printer",
+      "report_sec"
+    ],
+    "start_section": [
+      "self",
+      "section_name"
+    ],
+    "end_section": [
+      "self",
+      "name"
+    ],
+    "report": [
+      "self",
+      "period_sec"
+    ]
+  },
+  "ProfiledSectionStats": {
+    "__init__": [
+      "self",
+      "section_name",
+      "start_time_sec",
+      "sample_count",
+      "total_time_sec",
+      "sample_count_batch",
+      "total_time_sec_batch"
+    ],
+    "to_string": [
+      "self",
+      "enclosing_time_sec",
+      "include_batch_rates"
+    ]
+  },
+  "RedisPersistence": {
+    "__init__": [
+      "self",
+      "redis_host",
+      "redis_port",
+      "redis_db",
+      "redis_pass",
+      "is_ssl",
+      "redis_key"
+    ],
+    "save_state": [
+      "self",
+      "state"
+    ],
+    "load_state": [
+      "self"
+    ]
+  },
+  "AbstractMaskingInstruction": {
+    "__init__": [
+      "self",
+      "mask_with"
+    ],
+    "mask": [
+      "self",
+      "content",
+      "mask_prefix",
+      "mask_suffix"
+    ]
+  },
+  "MaskingInstruction": {
+    "__init__": [
+      "self",
+      "pattern",
+      "mask_with"
+    ],
+    "pattern": [
+      "self"
+    ],
+    "mask": [
+      "self",
+      "content",
+      "mask_prefix",
+      "mask_suffix"
+    ]
+  },
+  "RegexMaskingInstruction": [],
+  "LogMasker": {
+    "__init__": [
+      "self",
+      "masking_instructions",
+      "mask_prefix",
+      "mask_suffix"
+    ],
+    "mask": [
+      "self",
+      "content"
+    ],
+    "mask_names": [
+      "self"
+    ],
+    "instructions_by_mask_name": [
+      "self",
+      "mask_name"
+    ]
+  },
+  "LogCluster": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "log_template_tokens",
+      "cluster_id"
+    ],
+    "get_template": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "LogClusterCache": {
+    "__missing__": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "Node": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "Drain": {
+    "__init__": [
+      "self",
+      "depth",
+      "sim_th",
+      "max_children",
+      "max_clusters",
+      "extra_delimiters",
+      "profiler",
+      "param_str",
+      "parametrize_numeric_tokens"
+    ],
+    "clusters": [
+      "self"
+    ],
+    "has_numbers": [
+      "s"
+    ],
+    "tree_search": [
+      "self",
+      "root_node",
+      "tokens",
+      "sim_th",
+      "include_params"
+    ],
+    "add_seq_to_prefix_tree": [
+      "self",
+      "root_node",
+      "cluster"
+    ],
+    "get_seq_distance": [
+      "self",
+      "seq1",
+      "seq2",
+      "include_params"
+    ],
+    "fast_match": [
+      "self",
+      "cluster_ids",
+      "tokens",
+      "sim_th",
+      "include_params"
+    ],
+    "create_template": [
+      "self",
+      "seq1",
+      "seq2"
+    ],
+    "print_tree": [
+      "self",
+      "file",
+      "max_clusters"
+    ],
+    "print_node": [
+      "self",
+      "token",
+      "node",
+      "depth",
+      "file",
+      "max_clusters"
+    ],
+    "get_content_as_tokens": [
+      "self",
+      "content"
+    ],
+    "add_log_message": [
+      "self",
+      "content"
+    ],
+    "get_clusters_ids_for_seq_len": [
+      "self",
+      "seq_len"
+    ],
+    "match": [
+      "self",
+      "content",
+      "full_search_strategy"
+    ],
+    "get_total_cluster_size": [
+      "self"
+    ]
+  },
+  "KafkaPersistence": {
+    "__init__": [
+      "self",
+      "topic",
+      "snapshot_poll_timeout_sec"
+    ],
+    "save_state": [
+      "self",
+      "state"
+    ],
+    "load_state": [
+      "self"
+    ]
+  },
+  "TemplateMinerConfig": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "config_filename"
+    ]
+  },
+  "PersistenceHandler": {
+    "save_state": [
+      "self",
+      "state"
+    ],
+    "load_state": [
+      "self"
+    ]
+  },
+  "MemoryBufferPersistence": {
+    "__init__": [
+      "self"
+    ],
+    "save_state": [
+      "self",
+      "state"
+    ],
+    "load_state": [
+      "self"
+    ]
+  }
+}

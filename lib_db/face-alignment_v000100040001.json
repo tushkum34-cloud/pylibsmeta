@@ -1,0 +1,457 @@
+{
+  "gauss_kernel": [],
+  "_gaussian": [
+    "size",
+    "sigma",
+    "amplitude",
+    "normalize",
+    "width",
+    "height",
+    "sigma_horz",
+    "sigma_vert",
+    "mean_horz",
+    "mean_vert"
+  ],
+  "draw_gaussian": [
+    "image",
+    "point",
+    "sigma"
+  ],
+  "transform": [
+    "point",
+    "center",
+    "scale",
+    "resolution",
+    "invert"
+  ],
+  "crop": [
+    "image",
+    "center",
+    "scale",
+    "resolution"
+  ],
+  "transform_np": [
+    "point",
+    "center",
+    "scale",
+    "resolution",
+    "invert"
+  ],
+  "get_preds_fromhm": [
+    "hm",
+    "center",
+    "scale"
+  ],
+  "_get_preds_fromhm": [
+    "hm",
+    "idx",
+    "center",
+    "scale"
+  ],
+  "create_target_heatmap": [
+    "target_landmarks",
+    "centers",
+    "scales"
+  ],
+  "create_bounding_box": [
+    "target_landmarks",
+    "expansion_factor"
+  ],
+  "shuffle_lr": [
+    "parts",
+    "pairs"
+  ],
+  "flip": [
+    "tensor",
+    "is_label"
+  ],
+  "get_image": [
+    "image_or_path"
+  ],
+  "load_file_from_url": [
+    "url",
+    "model_dir",
+    "progress",
+    "check_hash",
+    "file_name"
+  ],
+  "LandmarksType": {
+    "TWO_D": [],
+    "TWO_HALF_D": [],
+    "THREE_D": []
+  },
+  "NetworkSize": {
+    "LARGE": []
+  },
+  "default_model_urls": [],
+  "models_urls": [],
+  "FaceAlignment": {
+    "__init__": [
+      "self",
+      "landmarks_type",
+      "network_size",
+      "device",
+      "dtype",
+      "flip_input",
+      "face_detector",
+      "face_detector_kwargs",
+      "verbose"
+    ],
+    "get_landmarks": [
+      "self",
+      "image_or_path",
+      "detected_faces",
+      "return_bboxes",
+      "return_landmark_score"
+    ],
+    "get_landmarks_from_image": [
+      "self",
+      "image_or_path",
+      "detected_faces",
+      "return_bboxes",
+      "return_landmark_score"
+    ],
+    "get_landmarks_from_batch": [
+      "self",
+      "image_batch",
+      "detected_faces",
+      "return_bboxes",
+      "return_landmark_score"
+    ],
+    "get_landmarks_from_directory": [
+      "self",
+      "path",
+      "extensions",
+      "recursive",
+      "show_progress_bar",
+      "return_bboxes",
+      "return_landmark_score"
+    ]
+  },
+  "__author__": [],
+  "__email__": [],
+  "__version__": [],
+  "FolderData": {
+    "__init__": [
+      "self",
+      "path",
+      "transforms",
+      "extensions",
+      "recursive",
+      "verbose"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "FaceDetector": {
+    "__init__": [
+      "self",
+      "device",
+      "verbose"
+    ],
+    "detect_from_image": [
+      "self",
+      "tensor_or_path"
+    ],
+    "detect_from_batch": [
+      "self",
+      "tensor"
+    ],
+    "detect_from_directory": [
+      "self",
+      "path",
+      "extensions",
+      "recursive",
+      "show_progress_bar"
+    ],
+    "reference_scale": [
+      "self"
+    ],
+    "reference_x_shift": [
+      "self"
+    ],
+    "reference_y_shift": [
+      "self"
+    ],
+    "tensor_or_path_to_ndarray": [
+      "tensor_or_path"
+    ]
+  },
+  "FolderDetector": {
+    "__init__": [
+      "self",
+      "device",
+      "path_to_detector",
+      "verbose"
+    ],
+    "detect_from_image": [
+      "self",
+      "tensor_or_path"
+    ],
+    "reference_scale": [
+      "self"
+    ],
+    "reference_x_shift": [
+      "self"
+    ],
+    "reference_y_shift": [
+      "self"
+    ]
+  },
+  "BlazeBlock": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FinalBlazeBlock": {
+    "__init__": [
+      "self",
+      "channels",
+      "kernel_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "BlazeFace": {
+    "__init__": [
+      "self",
+      "back_model"
+    ],
+    "_define_back_model_layers": [
+      "self"
+    ],
+    "_define_front_model_layers": [
+      "self"
+    ],
+    "_define_layers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "_device": [
+      "self"
+    ],
+    "load_weights": [
+      "self",
+      "path"
+    ],
+    "load_anchors": [
+      "self",
+      "path",
+      "device"
+    ],
+    "load_anchors_from_npy": [
+      "self",
+      "arr",
+      "device"
+    ],
+    "_preprocess": [
+      "self",
+      "x"
+    ],
+    "predict_on_image": [
+      "self",
+      "img"
+    ],
+    "predict_on_batch": [
+      "self",
+      "x"
+    ],
+    "_tensors_to_detections": [
+      "self",
+      "raw_box_tensor",
+      "raw_score_tensor",
+      "anchors"
+    ],
+    "_decode_boxes": [
+      "self",
+      "raw_boxes",
+      "anchors"
+    ],
+    "_weighted_non_max_suppression": [
+      "self",
+      "detections"
+    ]
+  },
+  "intersect": [
+    "box_a",
+    "box_b"
+  ],
+  "jaccard": [
+    "box_a",
+    "box_b"
+  ],
+  "overlap_similarity": [
+    "box",
+    "other_boxes"
+  ],
+  "image_resize": [
+    "image",
+    "width",
+    "height",
+    "inter"
+  ],
+  "resize_and_crop_image": [
+    "image",
+    "dim"
+  ],
+  "resize_and_crop_batch": [
+    "frames",
+    "dim"
+  ],
+  "BlazeFaceDetector": {
+    "__init__": [
+      "self",
+      "device",
+      "back_model",
+      "path_to_detector",
+      "path_to_anchor",
+      "verbose",
+      "min_score_thresh",
+      "min_suppression_threshold"
+    ],
+    "detect_from_image": [
+      "self",
+      "tensor_or_path"
+    ],
+    "detect_from_batch": [
+      "self",
+      "tensor"
+    ],
+    "reference_scale": [
+      "self"
+    ],
+    "reference_x_shift": [
+      "self"
+    ],
+    "reference_y_shift": [
+      "self"
+    ]
+  },
+  "detect": [
+    "net",
+    "img",
+    "target_size",
+    "device"
+  ],
+  "batch_detect": [
+    "net",
+    "img_batch",
+    "target_size",
+    "device"
+  ],
+  "flip_detect": [
+    "net",
+    "img",
+    "device"
+  ],
+  "pts_to_bb": [
+    "pts"
+  ],
+  "SFDDetector": {
+    "__init__": [
+      "self",
+      "device",
+      "path_to_detector",
+      "verbose",
+      "filter_threshold"
+    ],
+    "_filter_bboxes": [
+      "self",
+      "bboxlist"
+    ],
+    "detect_from_image": [
+      "self",
+      "tensor_or_path"
+    ],
+    "detect_from_batch": [
+      "self",
+      "tensor"
+    ],
+    "reference_scale": [
+      "self"
+    ],
+    "reference_x_shift": [
+      "self"
+    ],
+    "reference_y_shift": [
+      "self"
+    ]
+  },
+  "nms": [
+    "dets",
+    "thresh"
+  ],
+  "encode": [
+    "matched",
+    "priors",
+    "variances"
+  ],
+  "decode": [
+    "loc",
+    "priors",
+    "variances"
+  ],
+  "L2Norm": {
+    "__init__": [
+      "self",
+      "n_channels",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "s3fd": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "get_predictions": [
+    "olist",
+    "batch_size"
+  ],
+  "DlibDetector": {
+    "__init__": [
+      "self",
+      "device",
+      "path_to_detector",
+      "verbose"
+    ],
+    "detect_from_image": [
+      "self",
+      "tensor_or_path"
+    ],
+    "reference_scale": [
+      "self"
+    ],
+    "reference_x_shift": [
+      "self"
+    ],
+    "reference_y_shift": [
+      "self"
+    ]
+  }
+}

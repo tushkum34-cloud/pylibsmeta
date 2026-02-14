@@ -1,0 +1,119 @@
+{
+  "LEVELS": [],
+  "SKIP_LIST": [],
+  "make": [
+    "record",
+    "domain",
+    "debug",
+    "version",
+    "additional_fields",
+    "additional_env_fields",
+    "include_extra_fields"
+  ],
+  "add_extra_fields": [
+    "gelf",
+    "record"
+  ],
+  "object_to_json": [
+    "obj"
+  ],
+  "pack": [
+    "gelf",
+    "compress",
+    "default"
+  ],
+  "split": [
+    "gelf",
+    "chunk_size"
+  ],
+  "BaseHandler": {
+    "__init__": [
+      "self",
+      "debug",
+      "version",
+      "include_extra_fields",
+      "compress",
+      "static_fields",
+      "json_default",
+      "additional_env_fields"
+    ],
+    "convert_record_to_gelf": [
+      "self",
+      "record"
+    ]
+  },
+  "GelfTcpHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port"
+    ],
+    "makePickle": [
+      "self",
+      "record"
+    ]
+  },
+  "GelfUdpHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "compress",
+      "chunk_size"
+    ],
+    "send": [
+      "self",
+      "s"
+    ],
+    "makePickle": [
+      "self",
+      "record"
+    ]
+  },
+  "GelfTlsHandler": {
+    "__init__": [
+      "self",
+      "validate",
+      "ca_certs",
+      "certfile",
+      "keyfile"
+    ],
+    "makeSocket": [
+      "self",
+      "timeout"
+    ]
+  },
+  "GelfHttpHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "compress",
+      "path",
+      "timeout"
+    ],
+    "emit": [
+      "self",
+      "record"
+    ]
+  },
+  "GelfHttpsHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "compress",
+      "path",
+      "timeout",
+      "validate",
+      "ca_certs",
+      "certfile",
+      "keyfile",
+      "keyfile_password"
+    ],
+    "emit": [
+      "self",
+      "record"
+    ]
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "__all__": [],
+  "IsoTpError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "BlockingSendFailure": {},
+  "BadGeneratorError": {},
+  "BlockingSendTimeout": {},
+  "FlowControlTimeoutError": {},
+  "ConsecutiveFrameTimeoutError": {},
+  "InvalidCanDataError": {},
+  "UnexpectedFlowControlError": {},
+  "UnexpectedConsecutiveFrameError": {},
+  "ReceptionInterruptedWithSingleFrameError": {},
+  "ReceptionInterruptedWithFirstFrameError": {},
+  "WrongSequenceNumberError": {},
+  "UnsupportedWaitFrameError": {},
+  "MaximumWaitFrameReachedError": {},
+  "FrameTooLongError": {},
+  "ChangingInvalidRXDLError": {},
+  "MissingEscapeSequenceError": {},
+  "InvalidCanFdFirstFrameRXDL": {},
+  "OverflowError": {},
+  "is_documented_by": [
+    "original"
+  ],
+  "PDU": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "msg",
+      "start_of_data"
+    ],
+    "craft_flow_control_data": [
+      "cls",
+      "flow_status",
+      "blocksize",
+      "stmin"
+    ],
+    "name": [
+      "self"
+    ]
+  },
+  "RateLimiter": {
+    "TIME_SLOT_LENGTH": [],
+    "__init__": [
+      "self",
+      "mean_bitrate",
+      "window_size_sec"
+    ],
+    "can_be_enabled": [
+      "self"
+    ],
+    "set_bitrate": [
+      "self",
+      "mean_bitrate"
+    ],
+    "enable": [
+      "self"
+    ],
+    "disable": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ],
+    "allowed_bytes": [
+      "self"
+    ],
+    "inform_byte_sent": [
+      "self",
+      "datalen"
+    ]
+  },
+  "TransportLayerLogic": {
+    "LOGGER_NAME": [],
+    "SendGenerator": [],
+    "RxFn": [],
+    "TxFn": [],
+    "PostSendCallback": [],
+    "ErrorHandler": [],
+    "__init__": [
+      "self",
+      "rxfn",
+      "txfn",
+      "address",
+      "error_handler",
+      "params",
+      "post_send_callback"
+    ],
+    "load_params": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "data",
+      "target_address_type",
+      "send_timeout"
+    ],
+    "recv": [
+      "self",
+      "block",
+      "timeout"
+    ],
+    "available": [
+      "self"
+    ],
+    "transmitting": [
+      "self"
+    ],
+    "process": [
+      "self",
+      "rx_timeout",
+      "do_rx",
+      "do_tx"
+    ],
+    "_set_rxfn": [
+      "self",
+      "rxfn"
+    ],
+    "_check_timeouts_rx": [
+      "self"
+    ],
+    "_process_rx": [
+      "self",
+      "msg"
+    ],
+    "_process_tx": [
+      "self"
+    ],
+    "set_sleep_timing": [
+      "self",
+      "idle",
+      "wait_fc"
+    ],
+    "set_address": [
+      "self",
+      "address"
+    ],
+    "_pad_message_data": [
+      "self",
+      "msg_data"
+    ],
+    "_empty_rx_buffer": [
+      "self"
+    ],
+    "_start_rx_fc_timer": [
+      "self"
+    ],
+    "_start_rx_cf_timer": [
+      "self"
+    ],
+    "_append_rx_data": [
+      "self",
+      "data"
+    ],
+    "_request_tx_flowcontrol": [
+      "self",
+      "status"
+    ],
+    "_stop_sending_flow_control": [
+      "self"
+    ],
+    "_make_tx_msg": [
+      "self",
+      "arbitration_id",
+      "data"
+    ],
+    "_get_dlc": [
+      "self",
+      "data",
+      "validate_tx"
+    ],
+    "_get_nearest_can_fd_size": [
+      "self",
+      "size"
+    ],
+    "_make_flow_control": [
+      "self",
+      "flow_status",
+      "blocksize",
+      "stmin"
+    ],
+    "stop_sending": [
+      "self"
+    ],
+    "_stop_sending": [
+      "self",
+      "success"
+    ],
+    "stop_receiving": [
+      "self"
+    ],
+    "_stop_receiving": [
+      "self"
+    ],
+    "clear_rx_queue": [
+      "self"
+    ],
+    "clear_tx_queue": [
+      "self"
+    ],
+    "_start_reception_after_first_frame_if_valid": [
+      "self",
+      "pdu"
+    ],
+    "_trigger_error": [
+      "self",
+      "error",
+      "inhibit_in_listen_mode"
+    ],
+    "reset": [
+      "self"
+    ],
+    "sleep_time": [
+      "self"
+    ],
+    "is_tx_throttled": [
+      "self"
+    ],
+    "is_rx_active": [
+      "self"
+    ],
+    "is_tx_transmitting_cf": [
+      "self"
+    ],
+    "next_cf_delay": [
+      "self"
+    ]
+  },
+  "TransportLayer": {
+    "__init__": [
+      "self",
+      "rxfn",
+      "txfn",
+      "address",
+      "error_handler",
+      "params",
+      "read_timeout"
+    ],
+    "_read_relay_queue": [
+      "self",
+      "timeout"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_relay_thread_fn": [
+      "self"
+    ],
+    "_main_thread_fn": [
+      "self"
+    ],
+    "stop_sending": [
+      "self"
+    ],
+    "stop_receiving": [
+      "self"
+    ],
+    "process": [
+      "self",
+      "rx_timeout",
+      "do_rx",
+      "do_tx"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "BusOwner": {},
+  "python_can_tx_canbus_3plus": [
+    "owner",
+    "msg"
+  ],
+  "python_can_tx_canbus_3minus": [
+    "owner",
+    "msg"
+  ],
+  "_make_python_can_tx_func": [
+    "owner"
+  ],
+  "_python_can_to_isotp_message": [
+    "msg"
+  ],
+  "CanStack": {
+    "_rx_canbus": [
+      "self",
+      "timeout"
+    ],
+    "__init__": [
+      "self",
+      "bus"
+    ],
+    "set_bus": [
+      "self",
+      "bus"
+    ]
+  },
+  "NotifierBasedCanStack": {
+    "_rx_canbus": [
+      "self",
+      "timeout"
+    ],
+    "__init__": [
+      "self",
+      "bus",
+      "notifier"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_on_message_received": [
+      "self",
+      "msg"
+    ]
+  },
+  "_major_version_": [],
+  "__version__": [],
+  "__license__": [],
+  "__author__": [],
+  "CanMessage": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "arbitration_id",
+      "dlc",
+      "data",
+      "extended_id",
+      "is_fd",
+      "bitrate_switch"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Timer": {
+    "__init__": [
+      "self",
+      "timeout"
+    ],
+    "set_timeout": [
+      "self",
+      "timeout"
+    ],
+    "start": [
+      "self",
+      "timeout"
+    ],
+    "stop": [
+      "self"
+    ],
+    "elapsed": [
+      "self"
+    ],
+    "elapsed_ns": [
+      "self"
+    ],
+    "remaining_ns": [
+      "self"
+    ],
+    "remaining": [
+      "self"
+    ],
+    "is_timed_out": [
+      "self"
+    ],
+    "is_stopped": [
+      "self"
+    ]
+  },
+  "FiniteByteGenerator": {
+    "__init__": [
+      "self",
+      "gen",
+      "size"
+    ],
+    "total_length": [
+      "self"
+    ],
+    "remaining_size": [
+      "self"
+    ],
+    "depleted": [
+      "self"
+    ],
+    "consume": [
+      "self",
+      "size",
+      "enforce_exact"
+    ]
+  },
+  "AddressingMode": {
+    "Normal_11bits": [],
+    "Normal_29bits": [],
+    "NormalFixed_29bits": [],
+    "Extended_11bits": [],
+    "Extended_29bits": [],
+    "Mixed_11bits": [],
+    "Mixed_29bits": [],
+    "get_name": [
+      "cls",
+      "num"
+    ]
+  },
+  "TargetAddressType": {
+    "Physical": [],
+    "Functional": []
+  },
+  "AbstractAddress": {
+    "get_tx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "get_rx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "requires_tx_extension_byte": [
+      "self"
+    ],
+    "requires_rx_extension_byte": [
+      "self"
+    ],
+    "get_tx_extension_byte": [
+      "self"
+    ],
+    "get_rx_extension_byte": [
+      "self"
+    ],
+    "is_tx_29bits": [
+      "self"
+    ],
+    "is_rx_29bits": [
+      "self"
+    ],
+    "is_for_me": [
+      "self",
+      "msg"
+    ],
+    "get_rx_prefix_size": [
+      "self"
+    ],
+    "get_tx_payload_prefix": [
+      "self"
+    ],
+    "is_partial_address": [
+      "self"
+    ],
+    "get_content_str": [
+      "self"
+    ]
+  },
+  "Address": {
+    "__init__": [
+      "self",
+      "addressing_mode",
+      "txid",
+      "rxid",
+      "target_address",
+      "source_address",
+      "physical_id",
+      "functional_id",
+      "address_extension",
+      "rx_only",
+      "tx_only"
+    ],
+    "validate": [
+      "self"
+    ],
+    "is_partial_address": [
+      "self"
+    ],
+    "is_tx_only": [
+      "self"
+    ],
+    "is_rx_only": [
+      "self"
+    ],
+    "get_rx_prefix_size": [
+      "self"
+    ],
+    "get_tx_payload_prefix": [
+      "self"
+    ],
+    "is_for_me": [
+      "self",
+      "msg"
+    ],
+    "get_tx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "get_rx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "_get_tx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "_get_rx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "_is_for_me_normal": [
+      "self",
+      "msg"
+    ],
+    "_is_for_me_extended": [
+      "self",
+      "msg"
+    ],
+    "_is_for_me_normal_fixed": [
+      "self",
+      "msg"
+    ],
+    "_is_for_me_mixed_11bits": [
+      "self",
+      "msg"
+    ],
+    "_is_for_me_mixed_29bits": [
+      "self",
+      "msg"
+    ],
+    "_requires_extension_byte": [
+      "self"
+    ],
+    "requires_rx_extension_byte": [
+      "self"
+    ],
+    "requires_tx_extension_byte": [
+      "self"
+    ],
+    "get_tx_extension_byte": [
+      "self"
+    ],
+    "get_rx_extension_byte": [
+      "self"
+    ],
+    "is_tx_29bits": [
+      "self"
+    ],
+    "is_rx_29bits": [
+      "self"
+    ],
+    "get_content_str": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AsymmetricAddress": {
+    "__init__": [
+      "self",
+      "tx_addr",
+      "rx_addr"
+    ],
+    "get_tx_extension_byte": [
+      "self"
+    ],
+    "get_rx_extension_byte": [
+      "self"
+    ],
+    "is_for_me": [
+      "self",
+      "msg"
+    ],
+    "get_tx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "get_rx_arbitration_id": [
+      "self",
+      "address_type"
+    ],
+    "is_tx_29bits": [
+      "self"
+    ],
+    "is_rx_29bits": [
+      "self"
+    ],
+    "requires_tx_extension_byte": [
+      "self"
+    ],
+    "requires_rx_extension_byte": [
+      "self"
+    ],
+    "get_rx_prefix_size": [
+      "self"
+    ],
+    "get_tx_payload_prefix": [
+      "self"
+    ],
+    "is_partial_address": [
+      "self"
+    ],
+    "get_content_str": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "mtu": [],
+  "check_support": [],
+  "flags": {
+    "LISTEN_MODE": [],
+    "EXTEND_ADDR": [],
+    "TX_PADDING": [],
+    "RX_PADDING": [],
+    "CHK_PAD_LEN": [],
+    "CHK_PAD_DATA": [],
+    "HALF_DUPLEX": [],
+    "FORCE_TXSTMIN": [],
+    "FORCE_RXSTMIN": [],
+    "RX_EXT_ADDR": [],
+    "WAIT_TX_DONE": []
+  },
+  "LinkLayerProtocol": {
+    "CAN": [],
+    "CAN_FD": []
+  },
+  "socket": {
+    "flags": [],
+    "LinkLayerProtocol": [],
+    "__init__": [
+      "self",
+      "timeout"
+    ],
+    "settimeout": [
+      "self",
+      "value"
+    ],
+    "gettimeout": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "data",
+      "flags"
+    ],
+    "recv": [
+      "self",
+      "bufsize",
+      "flags"
+    ],
+    "set_ll_opts": [
+      "self",
+      "mtu",
+      "tx_dl",
+      "tx_flags"
+    ],
+    "set_opts": [
+      "self",
+      "optflag",
+      "frame_txtime",
+      "ext_address",
+      "txpad",
+      "rxpad",
+      "rx_ext_address",
+      "tx_stmin"
+    ],
+    "set_fc_opts": [
+      "self",
+      "bs",
+      "stmin",
+      "wftmax"
+    ],
+    "get_ll_opts": [
+      "self"
+    ],
+    "get_opts": [
+      "self"
+    ],
+    "get_fc_opts": [
+      "self"
+    ],
+    "bind": [
+      "self",
+      "interface",
+      "address"
+    ],
+    "fileno": [
+      "self"
+    ],
+    "real_socket": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__delete__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "assert_is_socket": [
+    "s"
+  ],
+  "SOL_CAN_BASE": [],
+  "SOL_CAN_ISOTP": [],
+  "CAN_ISOTP_OPTS": [],
+  "CAN_ISOTP_RECV_FC": [],
+  "CAN_ISOTP_TX_STMIN": [],
+  "CAN_ISOTP_RX_STMIN": [],
+  "CAN_ISOTP_LL_OPTS": [],
+  "GeneralOpts": {
+    "struct_size": [],
+    "__init__": [
+      "self"
+    ],
+    "read": [
+      "cls",
+      "s"
+    ],
+    "write": [
+      "cls",
+      "s",
+      "optflag",
+      "frame_txtime",
+      "ext_address",
+      "txpad",
+      "rxpad",
+      "rx_ext_address",
+      "tx_stmin"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "FlowControlOpts": {
+    "struct_size": [],
+    "__init__": [
+      "self"
+    ],
+    "read": [
+      "cls",
+      "s"
+    ],
+    "write": [
+      "cls",
+      "s",
+      "bs",
+      "stmin",
+      "wftmax"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "LinkLayerOpts": {
+    "struct_size": [],
+    "__init__": [
+      "self"
+    ],
+    "read": [
+      "cls",
+      "s"
+    ],
+    "write": [
+      "cls",
+      "s",
+      "mtu",
+      "tx_dl",
+      "tx_flags"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "general": [],
+  "flowcontrol": [],
+  "linklayer": []
+}

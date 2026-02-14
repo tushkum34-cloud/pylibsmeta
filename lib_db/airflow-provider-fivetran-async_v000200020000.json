@@ -1,0 +1,356 @@
+{
+  "FivetranHook": {
+    "conn_name_attr": [],
+    "default_conn_name": [],
+    "conn_type": [],
+    "hook_name": [],
+    "api_user_agent": [],
+    "api_protocol": [],
+    "api_host": [],
+    "api_path_connectors": [],
+    "api_metadata_path_connectors": [],
+    "api_path_destinations": [],
+    "api_path_groups": [],
+    "get_ui_field_behaviour": [
+      "cls"
+    ],
+    "_get_airflow_version": [],
+    "__init__": [
+      "self",
+      "fivetran_conn_id",
+      "fivetran_conn",
+      "timeout_seconds",
+      "retry_limit",
+      "retry_delay"
+    ],
+    "_prepare_api_call_kwargs": [
+      "self",
+      "method",
+      "endpoint"
+    ],
+    "_do_api_call": [
+      "self",
+      "method",
+      "endpoint"
+    ],
+    "_log_request_error": [
+      "self",
+      "attempt_num",
+      "error"
+    ],
+    "_connector_ui_url": [
+      "self",
+      "service_name",
+      "schema_name"
+    ],
+    "_connector_ui_url_logs": [
+      "self",
+      "service_name",
+      "schema_name"
+    ],
+    "_connector_ui_url_setup": [
+      "self",
+      "service_name",
+      "schema_name"
+    ],
+    "get_connector": [
+      "self",
+      "connector_id"
+    ],
+    "get_connector_schemas": [
+      "self",
+      "connector_id"
+    ],
+    "get_metadata": [
+      "self",
+      "connector_id",
+      "metadata"
+    ],
+    "get_destinations": [
+      "self",
+      "group_id"
+    ],
+    "get_groups": [
+      "self",
+      "group_id"
+    ],
+    "_get_groups": [
+      "self"
+    ],
+    "get_connectors": [
+      "self",
+      "group_id"
+    ],
+    "get_connector_id": [
+      "self",
+      "connector_name",
+      "destination_name"
+    ],
+    "check_connector": [
+      "self",
+      "connector_id"
+    ],
+    "set_schedule_type": [
+      "self",
+      "connector_id",
+      "schedule_type"
+    ],
+    "prep_connector": [
+      "self",
+      "connector_id",
+      "schedule_type"
+    ],
+    "start_fivetran_sync": [
+      "self",
+      "connector_id",
+      "mode",
+      "payload"
+    ],
+    "get_last_sync": [
+      "self",
+      "connector_id",
+      "xcom"
+    ],
+    "get_sync_status": [
+      "self",
+      "connector_id",
+      "previous_completed_at",
+      "reschedule_time"
+    ],
+    "is_synced_after_target_time": [
+      "self",
+      "connector_id",
+      "completed_after_time",
+      "reschedule_wait_time",
+      "always_wait_when_syncing",
+      "propagate_failures_forward"
+    ],
+    "_determine_if_synced_from_connector_details": [
+      "self",
+      "connector_id",
+      "connector_details",
+      "completed_after_time",
+      "reschedule_wait_time",
+      "always_wait_when_syncing",
+      "propagate_failures_forward"
+    ],
+    "pause_and_restart": [
+      "self",
+      "connector_id",
+      "reschedule_for",
+      "reschedule_wait_time"
+    ],
+    "_parse_timestamp": [
+      "self",
+      "api_time"
+    ],
+    "test_connection": [
+      "self"
+    ]
+  },
+  "FivetranHookAsync": {
+    "api_user_agent": [],
+    "__init__": [
+      "self"
+    ],
+    "_prepare_api_call_kwargs_async": [
+      "self",
+      "method",
+      "endpoint"
+    ],
+    "_do_api_call_async": [
+      "self",
+      "method",
+      "endpoint"
+    ],
+    "get_connector_async": [
+      "self",
+      "connector_id"
+    ],
+    "get_sync_status_async": [
+      "self",
+      "connector_id",
+      "previous_completed_at",
+      "reschedule_wait_time"
+    ],
+    "is_synced_after_target_time_async": [
+      "self",
+      "connector_id",
+      "completed_after_time",
+      "reschedule_wait_time",
+      "always_wait_when_syncing",
+      "propagate_failures_forward"
+    ],
+    "get_last_sync_async": [
+      "self",
+      "connector_id",
+      "xcom"
+    ]
+  },
+  "_retryable_error_async": [
+    "exception"
+  ],
+  "_retryable_error": [
+    "exception"
+  ],
+  "FivetranSensor": {
+    "template_fields": [],
+    "__init__": [
+      "self",
+      "connector_id",
+      "connector_name",
+      "destination_name",
+      "fivetran_conn_id",
+      "poke_interval",
+      "fivetran_retry_limit",
+      "fivetran_retry_delay",
+      "completed_after_time",
+      "reschedule_wait_time",
+      "always_wait_when_syncing",
+      "propagate_failures_forward",
+      "deferrable"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ],
+    "hook": [
+      "self"
+    ],
+    "connector_id": [
+      "self"
+    ],
+    "xcom": [
+      "self",
+      "value"
+    ],
+    "poke": [
+      "self",
+      "context"
+    ],
+    "execute_complete": [
+      "self",
+      "context",
+      "event"
+    ]
+  },
+  "RegistryLink": {
+    "name": [],
+    "get_link": [
+      "self",
+      "operator",
+      "dttm"
+    ]
+  },
+  "FivetranOperator": {
+    "operator_extra_links": [],
+    "template_fields": [],
+    "__init__": [
+      "self",
+      "connector_id",
+      "connector_name",
+      "destination_name",
+      "run_name",
+      "fivetran_conn_id",
+      "fivetran_retry_limit",
+      "fivetran_retry_delay",
+      "poll_frequency",
+      "schedule_type",
+      "reschedule_wait_time",
+      "deferrable",
+      "wait_for_completion"
+    ],
+    "execute": [
+      "self",
+      "context"
+    ],
+    "_wait_synchronously": [
+      "self",
+      "last_sync"
+    ],
+    "hook": [
+      "self"
+    ],
+    "_connector_id": [
+      "self"
+    ],
+    "execute_complete": [
+      "self",
+      "context",
+      "event"
+    ],
+    "get_openlineage_facets_on_start": [
+      "self"
+    ],
+    "get_openlineage_facets_on_complete": [
+      "self",
+      "task_instance"
+    ],
+    "_sync": [
+      "self",
+      "hook"
+    ]
+  },
+  "FivetranResyncOperator": {
+    "__init__": [
+      "self",
+      "scope"
+    ],
+    "_sync": [
+      "self",
+      "hook"
+    ]
+  },
+  "__version__": [],
+  "log": [],
+  "get_provider_info": [],
+  "FivetranTrigger": {
+    "__init__": [
+      "self",
+      "task_id",
+      "connector_id",
+      "fivetran_conn_id",
+      "previous_completed_at",
+      "xcom",
+      "poke_interval",
+      "reschedule_wait_time"
+    ],
+    "serialize": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "_get_table_id": [
+    "schemas_api_table_name",
+    "schemas_api_table",
+    "tables_api_tables",
+    "loc"
+  ],
+  "_get_fields": [
+    "table_id",
+    "columns",
+    "loc"
+  ],
+  "_get_openlineage_name": [
+    "config",
+    "service",
+    "schema",
+    "table"
+  ],
+  "_get_openlineage_namespace": [
+    "config",
+    "service",
+    "connector_id"
+  ],
+  "datasets": [
+    "config",
+    "service",
+    "table_response",
+    "column_response",
+    "schema",
+    "connector_id",
+    "loc"
+  ]
+}

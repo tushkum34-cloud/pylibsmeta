@@ -1,0 +1,309 @@
+{
+  "__version__": [],
+  "__all__": [],
+  "COMMON_STAGES": [],
+  "MTCNN": {
+    "__init__": [
+      "self",
+      "stages",
+      "device"
+    ],
+    "device": [
+      "self"
+    ],
+    "stages": [
+      "self"
+    ],
+    "get_stage": [
+      "self",
+      "stage_id",
+      "stage_name"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "fit_to_image",
+      "limit_boundaries_landmarks",
+      "box_format",
+      "output_type",
+      "postprocess"
+    ],
+    "detect_faces": [
+      "self",
+      "image",
+      "fit_to_image",
+      "limit_boundaries_landmarks",
+      "box_format",
+      "output_type",
+      "postprocess",
+      "batch_stack_justification"
+    ]
+  },
+  "StageBase": {
+    "__init__": [
+      "self",
+      "stage_name",
+      "stage_id",
+      "model"
+    ],
+    "model": [
+      "self"
+    ],
+    "id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "StageRNet": {
+    "__init__": [
+      "self",
+      "stage_name",
+      "stage_id",
+      "weights"
+    ],
+    "__call__": [
+      "self",
+      "images_normalized",
+      "bboxes_batch",
+      "threshold_rnet",
+      "nms_rnet"
+    ]
+  },
+  "StagePNet": {
+    "__init__": [
+      "self",
+      "stage_name",
+      "stage_id",
+      "weights"
+    ],
+    "__call__": [
+      "self",
+      "images_normalized",
+      "images_oshapes",
+      "min_face_size",
+      "min_size",
+      "scale_factor",
+      "threshold_pnet",
+      "nms_pnet1",
+      "nms_pnet2"
+    ]
+  },
+  "StageONet": {
+    "__init__": [
+      "self",
+      "stage_name",
+      "stage_id",
+      "weights"
+    ],
+    "__call__": [
+      "self",
+      "images_normalized",
+      "bboxes_batch",
+      "threshold_onet",
+      "nms_onet"
+    ]
+  },
+  "generate_bounding_box": [
+    "bbox_reg",
+    "bbox_class",
+    "threshold_face",
+    "strides",
+    "cell_size"
+  ],
+  "upscale_bboxes": [
+    "bboxes_result",
+    "scales"
+  ],
+  "iou": [
+    "bboxes",
+    "method"
+  ],
+  "sort_by_scores": [
+    "tensor",
+    "scores",
+    "ascending"
+  ],
+  "nms": [
+    "target_iou",
+    "threshold"
+  ],
+  "smart_nms_from_bboxes": [
+    "bboxes",
+    "threshold",
+    "column_image_id",
+    "columns_bbox",
+    "column_confidence",
+    "method",
+    "initial_sort"
+  ],
+  "resize_to_square": [
+    "bboxes"
+  ],
+  "replace_confidence": [
+    "bboxes_batch",
+    "new_scores"
+  ],
+  "adjust_bboxes": [
+    "bboxes_batch",
+    "bboxes_offsets"
+  ],
+  "pick_matches": [
+    "bboxes_batch",
+    "scores_column",
+    "score_threshold"
+  ],
+  "to_json": [
+    "bboxes_batch",
+    "images_count",
+    "input_as_width_height",
+    "output_as_width_height"
+  ],
+  "limit_bboxes": [
+    "bboxes_batch",
+    "images_shapes",
+    "limit_landmarks"
+  ],
+  "parse_bbox": [
+    "bbox",
+    "output_as_width_height",
+    "input_as_width_height"
+  ],
+  "fix_bboxes_offsets": [
+    "bboxes_batch",
+    "pad_param"
+  ],
+  "adjust_landmarks": [
+    "face_landmarks",
+    "bboxes_batch"
+  ],
+  "parse_landmarks": [
+    "landmarks"
+  ],
+  "plot_bbox": [
+    "image",
+    "bbox",
+    "color",
+    "normalize_color",
+    "input_as_width_height"
+  ],
+  "plot_landmarks": [
+    "image",
+    "landmarks",
+    "color",
+    "keypoints",
+    "brush_size",
+    "normalize_color"
+  ],
+  "plot": [
+    "image",
+    "detection",
+    "input_as_width_height"
+  ],
+  "plot_all": [
+    "image",
+    "detections",
+    "input_as_width_height"
+  ],
+  "parse_color": [
+    "color"
+  ],
+  "load_weights": [
+    "weights_name"
+  ],
+  "set_gpu_memory_growth": [],
+  "build_scale_pyramid": [
+    "width",
+    "height",
+    "min_face_size",
+    "scale_factor",
+    "min_size"
+  ],
+  "scale_images": [
+    "images",
+    "scale",
+    "new_shape"
+  ],
+  "normalize_images": [
+    "images"
+  ],
+  "pad_stack_np": [
+    "images",
+    "justification"
+  ],
+  "pad_stack_tf": [
+    "images",
+    "justification"
+  ],
+  "ensure_stack": [
+    "images"
+  ],
+  "load_image": [
+    "image",
+    "dtype",
+    "device"
+  ],
+  "load_images_batch": [
+    "images",
+    "dtype",
+    "device"
+  ],
+  "standarize_batch": [
+    "images_raw",
+    "normalize",
+    "justification"
+  ],
+  "apply_scales": [
+    "images_normalized",
+    "scales_groups"
+  ],
+  "extract_patches": [
+    "images_normalized",
+    "bboxes_batch",
+    "expected_size"
+  ],
+  "L": [],
+  "ONet": {
+    "__init__": [
+      "self"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "RNet": {
+    "__init__": [
+      "self"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "PNet": {
+    "__init__": [
+      "self"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "pytest_addhooks": [
+    "pluginmanager"
+  ],
+  "_late_addoptions": [
+    "parser",
+    "logcfg"
+  ],
+  "pytest_load_initial_conftests": [
+    "early_config",
+    "parser",
+    "args"
+  ],
+  "pytest_configure": [
+    "config"
+  ],
+  "EarlyLoggerPlugin": {
+    "__init__": [
+      "self",
+      "logcfg"
+    ]
+  },
+  "LoggerPlugin": {
+    "__init__": [
+      "self",
+      "config",
+      "logcfg"
+    ],
+    "logsdir": [
+      "self"
+    ],
+    "pytest_runtest_setup": [
+      "self",
+      "item"
+    ],
+    "pytest_runtest_teardown": [
+      "self",
+      "item",
+      "nextitem"
+    ],
+    "pytest_runtest_makereport": [
+      "self",
+      "item",
+      "call"
+    ]
+  },
+  "LoggerState": {
+    "__init__": [
+      "self",
+      "item",
+      "stdoutloggers",
+      "fileloggers",
+      "formatter"
+    ],
+    "put_newline": [
+      "self"
+    ],
+    "on_setup": [
+      "self"
+    ],
+    "on_teardown": [
+      "self"
+    ],
+    "on_makereport": [
+      "self"
+    ]
+  },
+  "RootEnabler": {
+    "__init__": [
+      "self",
+      "enabled"
+    ],
+    "enable": [
+      "self"
+    ],
+    "disable": [
+      "self"
+    ]
+  },
+  "Loggers": {
+    "__init__": [
+      "self",
+      "stdout",
+      "file_"
+    ],
+    "__bool__": [
+      "self"
+    ]
+  },
+  "LoggerConfig": {
+    "__init__": [
+      "self"
+    ],
+    "add_loggers": [
+      "self",
+      "loggers",
+      "stdout_level",
+      "file_level"
+    ],
+    "set_formatter_class": [
+      "self",
+      "formatter_class"
+    ],
+    "set_log_option_default": [
+      "self",
+      "value"
+    ],
+    "split_by_outcome": [
+      "self",
+      "outcomes",
+      "subdir"
+    ]
+  },
+  "LoggerHookspec": {
+    "pytest_logger_config": [
+      "self",
+      "logger_config"
+    ],
+    "pytest_logger_stdoutloggers": [
+      "self",
+      "item"
+    ],
+    "pytest_logger_fileloggers": [
+      "self",
+      "item"
+    ],
+    "pytest_logger_logdirlink": [
+      "self",
+      "config"
+    ],
+    "pytest_logger_logsdir": [
+      "self",
+      "config"
+    ]
+  },
+  "DefaultFormatter": {
+    "short_level_names": [],
+    "format_string": [],
+    "__init__": [
+      "self"
+    ],
+    "formatTime": [
+      "self",
+      "record",
+      "datefmt"
+    ],
+    "format": [
+      "self",
+      "record"
+    ]
+  },
+  "logdir": [
+    "request"
+  ],
+  "_sanitize_nodeid": [
+    "node_id"
+  ],
+  "_sanitize_level": [
+    "level",
+    "raises"
+  ],
+  "_refresh_link": [
+    "source",
+    "link_name"
+  ],
+  "_make_logsdir_tmpdir": [
+    "tmpdirhandler"
+  ],
+  "_make_logsdir_dir": [
+    "dstname"
+  ],
+  "_make_logdir": [
+    "item"
+  ],
+  "_enable": [
+    "handlers"
+  ],
+  "_disable": [
+    "handlers"
+  ],
+  "_log_option_parser": [
+    "loggers"
+  ],
+  "_loggers_from_logcfg": [
+    "logcfg",
+    "logopt"
+  ],
+  "_loggers_from_hooks": [
+    "item"
+  ],
+  "_choose_loggers": [
+    "config_loggers",
+    "hook_loggers"
+  ],
+  "_make_handlers": [
+    "stdoutloggers",
+    "fileloggers",
+    "item",
+    "formatter"
+  ],
+  "_make_stdout_handlers": [
+    "loggers",
+    "fmt"
+  ],
+  "_make_file_handlers": [
+    "loggers",
+    "fmt",
+    "logdir"
+  ],
+  "__version__": []
+}

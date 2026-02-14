@@ -1,0 +1,365 @@
+{
+  "WAN_CHUNK": [],
+  "LAN_CHUNK": [],
+  "SYSLOG_LEVELS": [],
+  "GELF_MAX_CHUNK_NUMBER": [],
+  "BaseGELFHandler": {
+    "__init__": [
+      "self",
+      "debugging_fields",
+      "extra_fields",
+      "fqdn",
+      "localname",
+      "facility",
+      "level_names",
+      "compress"
+    ],
+    "makePickle": [
+      "self",
+      "record"
+    ],
+    "_make_gelf_dict": [
+      "self",
+      "record"
+    ],
+    "_add_level_names": [
+      "gelf_dict",
+      "record"
+    ],
+    "_set_custom_facility": [
+      "gelf_dict",
+      "facility_value",
+      "record"
+    ],
+    "_add_full_message": [
+      "gelf_dict",
+      "record"
+    ],
+    "_resolve_host": [
+      "fqdn",
+      "localname"
+    ],
+    "_add_debugging_fields": [
+      "gelf_dict",
+      "record"
+    ],
+    "_add_extra_fields": [
+      "gelf_dict",
+      "record"
+    ],
+    "_pack_gelf_dict": [
+      "cls",
+      "gelf_dict"
+    ],
+    "_sanitize_to_unicode": [
+      "cls",
+      "obj"
+    ],
+    "_object_to_json": [
+      "obj"
+    ]
+  },
+  "BaseGELFChunker": {
+    "__init__": [
+      "self",
+      "chunk_size"
+    ],
+    "_message_chunk_number": [
+      "self",
+      "message"
+    ],
+    "_encode": [
+      "message_id",
+      "chunk_seq",
+      "total_chunks",
+      "chunk"
+    ],
+    "_gen_gelf_chunks": [
+      "self",
+      "message"
+    ],
+    "chunk_message": [
+      "self",
+      "message"
+    ]
+  },
+  "GELFChunkOverflowWarning": {},
+  "GELFWarningChunker": {
+    "chunk_message": [
+      "self",
+      "message"
+    ]
+  },
+  "GELFTruncationFailureWarning": {},
+  "GELFTruncatingChunker": {
+    "__init__": [
+      "self",
+      "chunk_size",
+      "compress",
+      "gelf_packer"
+    ],
+    "gen_chunk_overflow_gelf_log": [
+      "self",
+      "raw_message"
+    ],
+    "chunk_message": [
+      "self",
+      "message"
+    ]
+  },
+  "GELFUDPHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "gelf_chunker"
+    ],
+    "send": [
+      "self",
+      "s"
+    ]
+  },
+  "GELFTCPHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port"
+    ],
+    "makePickle": [
+      "self",
+      "record"
+    ]
+  },
+  "GELFTLSHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "validate",
+      "ca_certs",
+      "certfile",
+      "keyfile"
+    ],
+    "makeSocket": [
+      "self",
+      "timeout"
+    ]
+  },
+  "GELFHTTPHandler": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "compress",
+      "path",
+      "timeout"
+    ],
+    "emit": [
+      "self",
+      "record"
+    ]
+  },
+  "__version__": [],
+  "_ifnone": [],
+  "GELFRabbitHandler": {
+    "__init__": [
+      "self",
+      "url",
+      "exchange",
+      "exchange_type",
+      "virtual_host",
+      "routing_key"
+    ],
+    "makeSocket": [
+      "self",
+      "timeout"
+    ],
+    "makePickle": [
+      "self",
+      "record"
+    ]
+  },
+  "RabbitSocket": {
+    "__init__": [
+      "self",
+      "cn_args",
+      "timeout",
+      "exchange",
+      "exchange_type",
+      "routing_key"
+    ],
+    "sendall": [
+      "self",
+      "data"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ExcludeFilter": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "TEST_CERT": [],
+  "KEY_PASS": [],
+  "TEST_TCP_PORT": [],
+  "TEST_UDP_PORT": [],
+  "TEST_HTTP_PORT": [],
+  "TEST_TLS_PORT": [],
+  "handler": [
+    "request"
+  ],
+  "logger": [
+    "handler"
+  ],
+  "formatted_logger": [
+    "handler"
+  ],
+  "test_gelf_chunking": [
+    "gelf_chunker"
+  ],
+  "rebuild_gelf_bytes_from_udp_chunks": [
+    "chunks"
+  ],
+  "test_gelf_chunkers": [
+    "gelf_chunker"
+  ],
+  "test_gelf_chunkers_overflow": [
+    "gelf_chunker"
+  ],
+  "test_chunk_overflow_truncate_uncompressed": [],
+  "test_chunk_overflow_truncate_compressed": [],
+  "test_chunk_overflow_truncate_fail": [],
+  "test_chunk_overflow_truncate_fail_large_inherited_field": [],
+  "test_invalid_name": [
+    "name"
+  ],
+  "test_valid_name": [
+    "name"
+  ],
+  "test_non_filtering_record": [],
+  "test_filtering_record": [],
+  "test_invalid_url": [],
+  "test_valid_url": [],
+  "test_socket_creation_failure": [],
+  "test_make_pickle": [],
+  "UNICODE_REPLACEMENT": [],
+  "TestClass": {
+    "__repr__": [
+      "self"
+    ]
+  },
+  "mock_send": [
+    "handler"
+  ],
+  "get_mock_send_arg": [
+    "mock_send"
+  ],
+  "test_pack": [
+    "message",
+    "expected"
+  ],
+  "test_manual_exc_info_handler": [
+    "logger",
+    "mock_send"
+  ],
+  "test_normal_exception_handler": [
+    "logger",
+    "mock_send"
+  ],
+  "test_unicode": [
+    "logger",
+    "mock_send"
+  ],
+  "test_broken_unicode_python2": [
+    "logger",
+    "mock_send"
+  ],
+  "test_broken_unicode_python3": [
+    "logger",
+    "mock_send"
+  ],
+  "test_extra_field": [
+    "logger",
+    "mock_send"
+  ],
+  "test_list": [
+    "logger",
+    "mock_send"
+  ],
+  "test_arbitrary_object": [
+    "logger",
+    "mock_send"
+  ],
+  "test_message_to_pickle_serializes_datetime_objects_instead_of_blindly_repring_them": [
+    "logger",
+    "mock_send"
+  ],
+  "test_status_field_issue": [
+    "logger",
+    "mock_send"
+  ],
+  "test_add_level_name": [],
+  "test_resolve_host": [],
+  "test_set_custom_facility": [],
+  "test_formatted_logger": [
+    "formatted_logger",
+    "mock_send"
+  ],
+  "test_invalid_fqdn_localhost": [],
+  "test_invalid_ca_certs": [],
+  "test_invalid_client_certs": [],
+  "MOCK_LOG_RECORD_NAME": [],
+  "MOCK_LOG_RECORD": [],
+  "test_chunked_logging": [
+    "gelf_chunker"
+  ],
+  "validate_local_graylog_up": [],
+  "LOCAL_GRAYLOG_UP": [],
+  "DummyFilter": {
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "test_dynamic_fields": [
+    "logger"
+  ],
+  "test_common_logging": [
+    "logger"
+  ],
+  "get_unique_message": [],
+  "DEFAULT_FIELDS": [],
+  "BASE_API_URL": [],
+  "get_graylog_response": [
+    "message",
+    "fields"
+  ],
+  "_build_api_string": [
+    "message",
+    "fields"
+  ],
+  "_get_api_response": [
+    "message",
+    "fields"
+  ],
+  "_parse_api_response": [
+    "api_response",
+    "wanted_message"
+  ],
+  "test_non_status_field_log": [
+    "logger"
+  ],
+  "test_status_field_issue_multi": [
+    "logger"
+  ],
+  "test_debug_mode": [
+    "logger"
+  ]
+}

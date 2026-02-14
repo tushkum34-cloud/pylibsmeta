@@ -1,0 +1,834 @@
+{
+  "_validate_df_types_and_cast": [
+    "df",
+    "future_df",
+    "target_columns",
+    "id_column",
+    "timestamp_column"
+  ],
+  "validate_df_inputs": [
+    "df",
+    "future_df",
+    "target_columns",
+    "prediction_length",
+    "id_column",
+    "timestamp_column"
+  ],
+  "convert_df_input_to_list_of_dicts_input": [
+    "df",
+    "future_df",
+    "target_columns",
+    "prediction_length",
+    "id_column",
+    "timestamp_column",
+    "validate_inputs"
+  ],
+  "ForecastType": {
+    "SAMPLES": [],
+    "QUANTILES": []
+  },
+  "PipelineRegistry": {
+    "__new__": [
+      "cls",
+      "name",
+      "bases",
+      "attrs"
+    ]
+  },
+  "BaseChronosPipeline": {
+    "dtypes": [],
+    "__init__": [
+      "self",
+      "inner_model"
+    ],
+    "model_context_length": [
+      "self"
+    ],
+    "model_prediction_length": [
+      "self"
+    ],
+    "_prepare_and_validate_context": [
+      "self",
+      "context"
+    ],
+    "predict": [
+      "self",
+      "inputs",
+      "prediction_length"
+    ],
+    "predict_quantiles": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "quantile_levels"
+    ],
+    "predict_df": [
+      "self",
+      "df"
+    ],
+    "predict_fev": [
+      "self",
+      "task",
+      "batch_size"
+    ],
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ]
+  },
+  "logger": [],
+  "MODEL_FILENAMES": [],
+  "CLOUDFRONT_MAPPING": [],
+  "CHUNK_SIZE": [],
+  "download_model_files_from_cloudfront": [
+    "cloudfront_url",
+    "bucket",
+    "prefix",
+    "local_path",
+    "force_download"
+  ],
+  "download_model_files_from_s3": [
+    "bucket",
+    "prefix",
+    "local_path",
+    "force_download",
+    "boto3_session"
+  ],
+  "cache_model_from_s3": [
+    "s3_uri",
+    "force_download",
+    "boto3_session"
+  ],
+  "left_pad_and_stack_1D": [
+    "tensors"
+  ],
+  "interpolate_quantiles": [
+    "query_quantile_levels",
+    "original_quantile_levels",
+    "original_values"
+  ],
+  "weighted_quantile": [
+    "query_quantile_levels",
+    "sample_weights",
+    "samples"
+  ],
+  "__version__": [],
+  "ChronosConfig": {
+    "__post_init__": [
+      "self"
+    ],
+    "create_tokenizer": [
+      "self"
+    ]
+  },
+  "ChronosTokenizer": {
+    "context_input_transform": [
+      "self",
+      "context"
+    ],
+    "label_input_transform": [
+      "self",
+      "label",
+      "tokenizer_state"
+    ],
+    "output_transform": [
+      "self",
+      "samples",
+      "tokenizer_state"
+    ]
+  },
+  "MeanScaleUniformBins": {
+    "__init__": [
+      "self",
+      "low_limit",
+      "high_limit",
+      "config"
+    ],
+    "_input_transform": [
+      "self",
+      "context",
+      "scale"
+    ],
+    "_append_eos_token": [
+      "self",
+      "token_ids",
+      "attention_mask"
+    ],
+    "context_input_transform": [
+      "self",
+      "context"
+    ],
+    "label_input_transform": [
+      "self",
+      "label",
+      "scale"
+    ],
+    "output_transform": [
+      "self",
+      "samples",
+      "scale"
+    ]
+  },
+  "ChronosModel": {
+    "__init__": [
+      "self",
+      "config",
+      "model"
+    ],
+    "device": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "input_ids",
+      "attention_mask"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "prediction_length",
+      "num_samples",
+      "temperature",
+      "top_k",
+      "top_p"
+    ]
+  },
+  "ChronosPipeline": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "model"
+    ],
+    "model_context_length": [
+      "self"
+    ],
+    "model_prediction_length": [
+      "self"
+    ],
+    "_prepare_and_validate_context": [
+      "self",
+      "context"
+    ],
+    "embed": [
+      "self",
+      "context"
+    ],
+    "predict": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "num_samples",
+      "temperature",
+      "top_k",
+      "top_p",
+      "limit_prediction_length"
+    ],
+    "predict_quantiles": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "quantile_levels"
+    ],
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ]
+  },
+  "__all__": [],
+  "ChronosBoltConfig": {},
+  "ChronosBoltOutput": {},
+  "Patch": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "patch_stride"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "InstanceNorm": {
+    "__init__": [
+      "self",
+      "eps",
+      "use_arcsinh"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "loc_scale"
+    ],
+    "inverse": [
+      "self",
+      "x",
+      "loc_scale"
+    ]
+  },
+  "ResidualBlock": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "h_dim",
+      "out_dim",
+      "act_fn_name",
+      "dropout_p",
+      "use_layer_norm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ChronosBoltModelForForecasting": {
+    "_keys_to_ignore_on_load_missing": [],
+    "_keys_to_ignore_on_load_unexpected": [],
+    "_tied_weights_keys": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_init_weights": [
+      "self",
+      "module"
+    ],
+    "encode": [
+      "self",
+      "context",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "context",
+      "mask",
+      "target",
+      "target_mask"
+    ],
+    "_init_decoder": [
+      "self",
+      "config"
+    ],
+    "decode": [
+      "self",
+      "input_embeds",
+      "attention_mask",
+      "hidden_states",
+      "output_attentions"
+    ]
+  },
+  "ChronosBoltPipeline": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "model_context_length": [
+      "self"
+    ],
+    "model_prediction_length": [
+      "self"
+    ],
+    "quantiles": [
+      "self"
+    ],
+    "embed": [
+      "self",
+      "context"
+    ],
+    "predict": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "limit_prediction_length"
+    ],
+    "predict_quantiles": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "quantile_levels"
+    ],
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ]
+  },
+  "seed_worker": [
+    "worker_id"
+  ],
+  "EvaluateAndSaveFinalStepCallback": {
+    "on_step_end": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ]
+  },
+  "Chronos2Trainer": {
+    "get_train_dataloader": [
+      "self"
+    ],
+    "get_eval_dataloader": [
+      "self",
+      "eval_dataset"
+    ]
+  },
+  "Chronos2Pipeline": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "_get_prob_mass_per_quantile_level": [
+      "quantile_levels"
+    ],
+    "model_context_length": [
+      "self"
+    ],
+    "model_output_patch_size": [
+      "self"
+    ],
+    "model_prediction_length": [
+      "self"
+    ],
+    "quantiles": [
+      "self"
+    ],
+    "max_output_patches": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "validation_inputs",
+      "finetune_mode",
+      "lora_config",
+      "context_length",
+      "learning_rate",
+      "num_steps",
+      "batch_size",
+      "output_dir",
+      "min_past",
+      "finetuned_ckpt_name",
+      "callbacks",
+      "remove_printer_callback",
+      "disable_data_parallel"
+    ],
+    "_prepare_inputs_for_long_horizon_unrolling": [
+      "self",
+      "context",
+      "group_ids",
+      "future_covariates",
+      "unrolled_quantiles"
+    ],
+    "_autoregressive_unroll_for_long_horizon": [
+      "self",
+      "context",
+      "group_ids",
+      "future_covariates",
+      "prediction",
+      "unrolled_quantiles",
+      "unrolled_sample_weights",
+      "num_output_patches"
+    ],
+    "predict": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "batch_size",
+      "context_length",
+      "cross_learning",
+      "limit_prediction_length"
+    ],
+    "_predict_batch": [
+      "self",
+      "context",
+      "group_ids",
+      "future_covariates",
+      "unrolled_quantiles_tensor",
+      "prediction_length",
+      "max_output_patches",
+      "target_idx_ranges"
+    ],
+    "_predict_step": [
+      "self",
+      "context",
+      "group_ids",
+      "future_covariates",
+      "num_output_patches"
+    ],
+    "_slide_context_and_future_covariates": [
+      "context",
+      "future_covariates",
+      "slide_by"
+    ],
+    "predict_quantiles": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "quantile_levels"
+    ],
+    "predict_df": [
+      "self",
+      "df",
+      "future_df",
+      "id_column",
+      "timestamp_column",
+      "target",
+      "prediction_length",
+      "quantile_levels",
+      "batch_size",
+      "context_length",
+      "cross_learning",
+      "validate_inputs"
+    ],
+    "_predict_fev_window": [
+      "self",
+      "window",
+      "quantile_levels",
+      "batch_size",
+      "as_univariate"
+    ],
+    "predict_fev": [
+      "self",
+      "task",
+      "batch_size",
+      "as_univariate",
+      "finetune_kwargs"
+    ],
+    "embed": [
+      "self",
+      "inputs",
+      "batch_size",
+      "context_length"
+    ],
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ],
+    "save_pretrained": [
+      "self",
+      "save_directory"
+    ]
+  },
+  "left_pad_and_cat_2D": [
+    "tensors"
+  ],
+  "validate_and_prepare_single_dict_task": [
+    "task",
+    "idx",
+    "prediction_length"
+  ],
+  "convert_list_of_tensors_input_to_list_of_dicts_input": [
+    "list_of_tensors"
+  ],
+  "convert_tensor_input_to_list_of_dicts_input": [
+    "tensor"
+  ],
+  "_cast_fev_features": [
+    "past_data",
+    "future_data",
+    "target_columns",
+    "past_dynamic_columns",
+    "known_dynamic_columns"
+  ],
+  "convert_fev_window_to_list_of_dicts_input": [
+    "window",
+    "as_univariate"
+  ],
+  "DatasetMode": {
+    "TRAIN": [],
+    "VALIDATION": [],
+    "TEST": []
+  },
+  "Chronos2Dataset": {
+    "__init__": [
+      "self",
+      "inputs",
+      "context_length",
+      "prediction_length",
+      "batch_size",
+      "output_patch_size",
+      "min_past",
+      "mode"
+    ],
+    "_prepare_tasks": [
+      "inputs",
+      "prediction_length",
+      "min_past",
+      "mode"
+    ],
+    "_construct_slice": [
+      "self",
+      "task_idx"
+    ],
+    "_build_batch": [
+      "self",
+      "task_indices"
+    ],
+    "_generate_train_batches": [
+      "self"
+    ],
+    "_generate_sequential_batches": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "convert_inputs": [
+      "cls",
+      "inputs",
+      "context_length",
+      "prediction_length",
+      "batch_size",
+      "output_patch_size",
+      "min_past",
+      "mode"
+    ]
+  },
+  "Chronos2CoreConfig": {
+    "model_type": [],
+    "attribute_map": [],
+    "__init__": [
+      "self",
+      "d_model",
+      "d_kv",
+      "d_ff",
+      "num_layers",
+      "num_heads",
+      "dropout_rate",
+      "layer_norm_epsilon",
+      "initializer_factor",
+      "feed_forward_proj",
+      "vocab_size",
+      "pad_token_id",
+      "rope_theta",
+      "attn_implementation"
+    ]
+  },
+  "Chronos2ForecastingConfig": {
+    "editable_fields": [
+      "cls"
+    ]
+  },
+  "Chronos2EncoderBlockOutput": {},
+  "Chronos2EncoderBlock": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "Chronos2EncoderOutput": {},
+  "Chronos2Encoder": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_expand_and_invert_time_attention_mask": [
+      "attention_mask",
+      "floating_type"
+    ],
+    "_construct_and_invert_group_time_mask": [
+      "group_ids",
+      "attention_mask",
+      "floating_type"
+    ],
+    "forward": [
+      "self",
+      "inputs_embeds"
+    ]
+  },
+  "Chronos2Output": {},
+  "Chronos2Model": {
+    "config_class": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_init_weights": [
+      "self",
+      "module"
+    ],
+    "_validate_input": [
+      "self",
+      "context",
+      "context_mask",
+      "group_ids",
+      "future_covariates",
+      "future_covariates_mask",
+      "num_output_patches",
+      "future_target",
+      "future_target_mask"
+    ],
+    "_prepare_patched_context": [
+      "self",
+      "context",
+      "context_mask"
+    ],
+    "_prepare_patched_future": [
+      "self",
+      "future_covariates",
+      "future_covariates_mask",
+      "loc_scale",
+      "num_output_patches",
+      "batch_size"
+    ],
+    "_compute_loss": [
+      "self",
+      "quantile_preds",
+      "future_target",
+      "future_target_mask",
+      "patched_future_covariates_mask",
+      "loc_scale",
+      "num_output_patches"
+    ],
+    "encode": [
+      "self",
+      "context",
+      "context_mask",
+      "group_ids",
+      "future_covariates",
+      "future_covariates_mask",
+      "num_output_patches",
+      "future_target",
+      "future_target_mask",
+      "output_attentions"
+    ],
+    "forward": [
+      "self",
+      "context",
+      "context_mask",
+      "group_ids",
+      "future_covariates",
+      "future_covariates_mask",
+      "num_output_patches",
+      "future_target",
+      "future_target_mask",
+      "output_attentions"
+    ]
+  },
+  "RoPE": {
+    "__init__": [
+      "self",
+      "dim",
+      "base"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "position_ids"
+    ],
+    "rotate_half": [
+      "x"
+    ],
+    "apply_rotary_pos_emb": [
+      "q",
+      "k",
+      "cos",
+      "sin",
+      "unsqueeze_dim"
+    ]
+  },
+  "Chronos2LayerNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "MLP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "FeedForward": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "AttentionOutput": {},
+  "MHA": {
+    "__init__": [
+      "self",
+      "config",
+      "use_rope"
+    ],
+    "_eager_attention": [
+      "self",
+      "query_states",
+      "key_states",
+      "value_states",
+      "mask"
+    ],
+    "_sdpa_attention": [
+      "self",
+      "query_states",
+      "key_states",
+      "value_states",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "mask",
+      "encoder_states",
+      "position_ids",
+      "output_attentions"
+    ]
+  },
+  "TimeSelfAttention": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "position_ids",
+      "output_attentions"
+    ]
+  },
+  "TimeCrossAttention": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "encoder_states",
+      "output_attentions"
+    ]
+  },
+  "GroupSelfAttention": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "output_attentions"
+    ]
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "install_requires": [],
+  "_SetSELinuxContext": [
+    "path"
+  ],
+  "SetPermissions": [
+    "path",
+    "mode",
+    "uid",
+    "gid",
+    "mkdir"
+  ],
+  "Lock": [
+    "fd",
+    "path",
+    "blocking"
+  ],
+  "Unlock": [
+    "fd",
+    "path"
+  ],
+  "LockFile": [
+    "path",
+    "blocking"
+  ],
+  "Logger": [
+    "name",
+    "debug",
+    "facility"
+  ],
+  "distro_name": [],
+  "distro_version": [],
+  "distro_utils": [],
+  "RETRY_LIMIT": [],
+  "TIMEOUT": [],
+  "CONFIG": [],
+  "ConfigManager": {
+    "__init__": [
+      "self",
+      "config_file",
+      "config_header"
+    ],
+    "_AddHeader": [
+      "self",
+      "fp"
+    ],
+    "GetOptionString": [
+      "self",
+      "section",
+      "option"
+    ],
+    "GetOptionBool": [
+      "self",
+      "section",
+      "option"
+    ],
+    "SetOption": [
+      "self",
+      "section",
+      "option",
+      "value",
+      "overwrite"
+    ],
+    "WriteConfig": [
+      "self",
+      "config_file"
+    ]
+  },
+  "builtin": [],
+  "MAC_REGEX": [],
+  "NetworkUtils": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "_CreateInterfaceMap": [
+      "self"
+    ],
+    "_CreateInterfaceMapSysfs": [
+      "self"
+    ],
+    "_CreateInterfaceMapNetifaces": [
+      "self"
+    ],
+    "GetNetworkInterface": [
+      "self",
+      "mac_address"
+    ]
+  },
+  "OSLOGIN_CONTROL_SCRIPT": [],
+  "OSLOGIN_NSS_CACHE_SCRIPT": [],
+  "METADATA_SERVER": [],
+  "StatusException": {
+    "__init__": [
+      "self",
+      "response"
+    ]
+  },
+  "RetryOnUnavailable": [
+    "func"
+  ],
+  "MetadataWatcher": {
+    "__init__": [
+      "self",
+      "logger",
+      "timeout"
+    ],
+    "_GetMetadataRequest": [
+      "self",
+      "metadata_url",
+      "params",
+      "timeout"
+    ],
+    "_UpdateEtag": [
+      "self",
+      "response"
+    ],
+    "_GetMetadataUpdate": [
+      "self",
+      "metadata_key",
+      "recursive",
+      "wait",
+      "timeout"
+    ],
+    "_HandleMetadataUpdate": [
+      "self",
+      "metadata_key",
+      "recursive",
+      "wait",
+      "timeout",
+      "retry"
+    ],
+    "WatchMetadata": [
+      "self",
+      "handler",
+      "metadata_key",
+      "recursive",
+      "timeout"
+    ],
+    "GetMetadata": [
+      "self",
+      "metadata_key",
+      "recursive",
+      "timeout",
+      "retry"
+    ]
+  },
+  "BotoConfig": {
+    "boto_config": [],
+    "boto_config_template": [],
+    "boto_config_script": [],
+    "boto_config_header": [],
+    "__init__": [
+      "self",
+      "project_id",
+      "debug"
+    ],
+    "_GetNumericProjectId": [
+      "self"
+    ],
+    "_CreateConfig": [
+      "self",
+      "project_id"
+    ]
+  },
+  "GS_SCOPES": [],
+  "ComputeAuth": {
+    "capability": [],
+    "metadata_key": [],
+    "__init__": [
+      "self",
+      "path",
+      "config",
+      "provider"
+    ],
+    "_GetGsScopes": [
+      "self"
+    ],
+    "_GetAccessToken": [
+      "self"
+    ],
+    "add_auth": [
+      "self",
+      "http_request"
+    ]
+  },
+  "Utils": {
+    "__init__": [
+      "self",
+      "debug"
+    ],
+    "EnableNetworkInterfaces": [
+      "self",
+      "interfaces",
+      "logger",
+      "dhclient_script"
+    ],
+    "HandleClockSync": [
+      "self",
+      "logger"
+    ],
+    "IpForwardingUtils": [
+      "self",
+      "logger",
+      "proto_id"
+    ]
+  },
+  "CallDhclient": [
+    "interfaces",
+    "logger",
+    "dhclient_script"
+  ],
+  "CallHwclock": [
+    "logger"
+  ],
+  "CallNtpdate": [
+    "logger"
+  ],
+  "IP_REGEX": [],
+  "IP_ALIAS_REGEX": [],
+  "IpForwardingUtilsBase": {
+    "ParseForwardedIps": [
+      "self",
+      "forwarded_ips"
+    ],
+    "GetForwardedIps": [
+      "self",
+      "interface",
+      "interface_ip"
+    ],
+    "AddForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ],
+    "RemoveForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ]
+  },
+  "IpForwardingUtilsIproute": {
+    "__init__": [
+      "self",
+      "logger",
+      "proto_id"
+    ],
+    "_CreateRouteOptions": [
+      "self"
+    ],
+    "_RunIpRoute": [
+      "self",
+      "args",
+      "options"
+    ],
+    "ParseForwardedIps": [
+      "self",
+      "forwarded_ips"
+    ],
+    "GetForwardedIps": [
+      "self",
+      "interface",
+      "interface_ip"
+    ],
+    "AddForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ],
+    "RemoveForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ]
+  },
+  "IpForwardingUtilsIfconfig": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "_RunIfconfig": [
+      "self",
+      "args",
+      "options"
+    ],
+    "ParseForwardedIps": [
+      "self",
+      "forwarded_ips"
+    ],
+    "GetForwardedIps": [
+      "self",
+      "interface",
+      "interface_ip"
+    ],
+    "AddForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ],
+    "RemoveForwardedIp": [
+      "self",
+      "address",
+      "interface"
+    ]
+  },
+  "UtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "testEnableNetworkInterfacesWithSingleNic": [
+      "self"
+    ],
+    "testEnableNetworkInterfacesWithMultipleNics": [
+      "self"
+    ],
+    "testWriteIfcfg": [
+      "self"
+    ],
+    "testIfup": [
+      "self",
+      "mock_call"
+    ],
+    "testHandleClockSync": [
+      "self",
+      "mock_call"
+    ],
+    "testIpForwardingUtils": [
+      "self",
+      "mock_call"
+    ]
+  },
+  "ScriptExecutor": {
+    "__init__": [
+      "self",
+      "logger",
+      "script_type",
+      "default_shell"
+    ],
+    "_MakeExecutable": [
+      "self",
+      "metadata_script"
+    ],
+    "_RunScript": [
+      "self",
+      "metadata_key",
+      "metadata_script"
+    ],
+    "RunScripts": [
+      "self",
+      "script_dict"
+    ]
+  },
+  "ScriptRetriever": {
+    "token_metadata_key": [],
+    "token": [],
+    "__init__": [
+      "self",
+      "logger",
+      "script_type"
+    ],
+    "_DownloadAuthUrl": [
+      "self",
+      "url",
+      "dest_dir"
+    ],
+    "_DownloadUrl": [
+      "self",
+      "url",
+      "dest_dir"
+    ],
+    "_DownloadScript": [
+      "self",
+      "url",
+      "dest_dir"
+    ],
+    "_GetAttributeScripts": [
+      "self",
+      "attribute_data",
+      "dest_dir"
+    ],
+    "GetScripts": [
+      "self",
+      "dest_dir"
+    ]
+  },
+  "_CreateTempDir": [
+    "prefix",
+    "run_dir"
+  ],
+  "ScriptManager": {
+    "__init__": [
+      "self",
+      "script_type",
+      "default_shell",
+      "run_dir",
+      "debug"
+    ],
+    "_RunScripts": [
+      "self",
+      "run_dir"
+    ]
+  },
+  "main": [],
+  "LOCKFILE": [],
+  "NetworkDaemon": {
+    "network_interface_metadata_key": [],
+    "__init__": [
+      "self",
+      "ip_forwarding_enabled",
+      "proto_id",
+      "ip_aliases",
+      "target_instance_ips",
+      "dhclient_script",
+      "dhcp_command",
+      "network_setup_enabled",
+      "debug"
+    ],
+    "HandleNetworkInterfaces": [
+      "self",
+      "result"
+    ],
+    "_ExtractInterfaceMetadata": [
+      "self",
+      "metadata"
+    ]
+  },
+  "NetworkSetup": {
+    "interfaces": [],
+    "network_interfaces": [],
+    "__init__": [
+      "self",
+      "dhclient_script",
+      "dhcp_command",
+      "debug"
+    ],
+    "EnableNetworkInterfaces": [
+      "self",
+      "interfaces"
+    ]
+  },
+  "NetworkSetupTest": {
+    "setUp": [
+      "self"
+    ],
+    "testNetworkSetup": [
+      "self",
+      "mock_logger"
+    ],
+    "testEnableNetworkInterfaces": [
+      "self",
+      "mock_call"
+    ]
+  },
+  "NetworkDaemonTest": {
+    "setUp": [
+      "self"
+    ],
+    "testNetworkDaemon": [
+      "self",
+      "mock_lock",
+      "mock_logger",
+      "mock_watcher",
+      "mock_network_utils",
+      "mock_network_setup",
+      "mock_ip_forwarding"
+    ],
+    "testNetworkDaemonError": [
+      "self",
+      "mock_lock",
+      "mock_logger",
+      "mock_watcher",
+      "mock_network_utils",
+      "mock_network_setup",
+      "mock_ip_forwarding"
+    ],
+    "testHandleNetworkInterfaces": [
+      "self"
+    ],
+    "testHandleNetworkInterfacesDisabled": [
+      "self"
+    ],
+    "testExtractInterfaceMetadata": [
+      "self"
+    ],
+    "testExtractInterfaceMetadataWithoutOptions": [
+      "self"
+    ]
+  },
+  "IpForwarding": {
+    "__init__": [
+      "self",
+      "proto_id",
+      "debug"
+    ],
+    "_LogForwardedIpChanges": [
+      "self",
+      "configured",
+      "desired",
+      "to_add",
+      "to_remove",
+      "interface"
+    ],
+    "_AddForwardedIps": [
+      "self",
+      "forwarded_ips",
+      "interface"
+    ],
+    "_RemoveForwardedIps": [
+      "self",
+      "forwarded_ips",
+      "interface"
+    ],
+    "HandleForwardedIps": [
+      "self",
+      "interface",
+      "forwarded_ips",
+      "interface_ip"
+    ]
+  },
+  "IpForwardingUtils": {
+    "__new__": [
+      "self",
+      "logger",
+      "proto_id"
+    ]
+  },
+  "IpForwardingTest": {
+    "setUp": [
+      "self"
+    ],
+    "testIpForwarding": [
+      "self",
+      "mock_logger",
+      "mock_ip_forwarding_utils"
+    ],
+    "testLogForwardedIpChanges": [
+      "self"
+    ],
+    "testAddForwardedIp": [
+      "self"
+    ],
+    "testRemoveForwardedIp": [
+      "self"
+    ],
+    "testHandleForwardedIps": [
+      "self"
+    ]
+  },
+  "NSS_CACHE_DURATION_SEC": [],
+  "OsLoginUtils": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "_RunOsLoginControl": [
+      "self",
+      "params"
+    ],
+    "_GetStatus": [
+      "self",
+      "two_factor"
+    ],
+    "_RunOsLoginNssCache": [
+      "self"
+    ],
+    "_RemoveOsLoginNssCache": [
+      "self"
+    ],
+    "UpdateOsLogin": [
+      "self",
+      "oslogin_desired",
+      "two_factor_desired"
+    ]
+  },
+  "AccountsDaemon": {
+    "invalid_users": [],
+    "user_ssh_keys": [],
+    "__init__": [
+      "self",
+      "groups",
+      "remove",
+      "gpasswd_add_cmd",
+      "gpasswd_remove_cmd",
+      "groupadd_cmd",
+      "useradd_cmd",
+      "userdel_cmd",
+      "usermod_cmd",
+      "debug"
+    ],
+    "_HasExpired": [
+      "self",
+      "key"
+    ],
+    "_ParseAccountsData": [
+      "self",
+      "account_data"
+    ],
+    "_GetInstanceAndProjectAttributes": [
+      "self",
+      "metadata_dict"
+    ],
+    "_GetAccountsData": [
+      "self",
+      "metadata_dict"
+    ],
+    "_UpdateUsers": [
+      "self",
+      "update_users"
+    ],
+    "_RemoveUsers": [
+      "self",
+      "remove_users"
+    ],
+    "_GetEnableOsLoginValue": [
+      "self",
+      "metadata_dict"
+    ],
+    "_GetEnableTwoFactorValue": [
+      "self",
+      "metadata_dict"
+    ],
+    "HandleAccounts": [
+      "self",
+      "result"
+    ]
+  },
+  "USER_REGEX": [],
+  "DEFAULT_GPASSWD_ADD_CMD": [],
+  "DEFAULT_GPASSWD_REMOVE_CMD": [],
+  "DEFAULT_GROUPADD_CMD": [],
+  "DEFAULT_USERADD_CMD": [],
+  "DEFAULT_USERDEL_CMD": [],
+  "DEFAULT_USERMOD_CMD": [],
+  "AccountsUtils": {
+    "google_comment": [],
+    "__init__": [
+      "self",
+      "logger",
+      "groups",
+      "remove",
+      "gpasswd_add_cmd",
+      "gpasswd_remove_cmd",
+      "groupadd_cmd",
+      "useradd_cmd",
+      "userdel_cmd",
+      "usermod_cmd"
+    ],
+    "_GetGroup": [
+      "self",
+      "group"
+    ],
+    "_CreateSudoersGroup": [
+      "self"
+    ],
+    "_GetUser": [
+      "self",
+      "user"
+    ],
+    "_AddUser": [
+      "self",
+      "user"
+    ],
+    "_UpdateUserGroups": [
+      "self",
+      "user",
+      "groups"
+    ],
+    "_UpdateAuthorizedKeys": [
+      "self",
+      "user",
+      "ssh_keys"
+    ],
+    "_UpdateSudoer": [
+      "self",
+      "user",
+      "sudoer"
+    ],
+    "_RemoveAuthorizedKeys": [
+      "self",
+      "user"
+    ],
+    "GetConfiguredUsers": [
+      "self"
+    ],
+    "SetConfiguredUsers": [
+      "self",
+      "users"
+    ],
+    "UpdateUser": [
+      "self",
+      "user",
+      "ssh_keys"
+    ],
+    "RemoveUser": [
+      "self",
+      "user"
+    ]
+  },
+  "ClockSkewDaemon": {
+    "drift_token": [],
+    "__init__": [
+      "self",
+      "debug"
+    ],
+    "HandleClockSync": [
+      "self",
+      "response"
+    ]
+  },
+  "InstanceSetup": {
+    "__init__": [
+      "self",
+      "debug"
+    ],
+    "_GetInstanceConfig": [
+      "self"
+    ],
+    "_RunScript": [
+      "self",
+      "script"
+    ],
+    "_GetInstanceId": [
+      "self"
+    ],
+    "_GenerateSshKey": [
+      "self",
+      "key_type",
+      "key_dest"
+    ],
+    "_StartSshd": [
+      "self"
+    ],
+    "_SetSshHostKeys": [
+      "self",
+      "host_key_types"
+    ],
+    "_GetNumericProjectId": [
+      "self"
+    ],
+    "_SetupBotoConfig": [
+      "self"
+    ]
+  },
+  "InstanceConfig": {
+    "instance_config": [],
+    "instance_config_distro": [],
+    "instance_config_template": [],
+    "instance_config_script": [],
+    "instance_config_header": [],
+    "instance_config_options": [],
+    "__init__": [
+      "self",
+      "logger",
+      "instance_config_metadata"
+    ],
+    "WriteConfig": [
+      "self"
+    ]
+  }
+}

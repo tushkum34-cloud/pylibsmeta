@@ -1,0 +1,1180 @@
+{
+  "PEM_FILE_TYPE": [],
+  "KeyIdentifier": {
+    "__init__": [
+      "self",
+      "identifier"
+    ],
+    "key_id": [
+      "self"
+    ]
+  },
+  "validate_key_identifier": [
+    "identifier"
+  ],
+  "_get_key_id_from_jwt_header": [
+    "a_jwt"
+  ],
+  "BasePublicKeyRetriever": {
+    "retrieve": [
+      "self",
+      "key_identifier"
+    ]
+  },
+  "HTTPSPublicKeyRetriever": {
+    "_class_session": [],
+    "__init__": [
+      "self",
+      "base_url"
+    ],
+    "_get_session": [
+      "self"
+    ],
+    "retrieve": [
+      "self",
+      "key_identifier"
+    ],
+    "_retrieve": [
+      "self",
+      "url",
+      "requests_kwargs"
+    ],
+    "_check_content_type": [
+      "self",
+      "url",
+      "content_type"
+    ]
+  },
+  "HTTPSMultiRepositoryPublicKeyRetriever": {
+    "__init__": [
+      "self",
+      "key_repository_urls"
+    ],
+    "_create_retrievers": [
+      "self",
+      "key_repository_urls"
+    ],
+    "handle_retrieval_exception": [
+      "self",
+      "retriever",
+      "exception"
+    ],
+    "retrieve": [
+      "self",
+      "key_identifier"
+    ]
+  },
+  "BasePrivateKeyRetriever": {
+    "load": [
+      "self",
+      "issuer"
+    ]
+  },
+  "DataUriPrivateKeyRetriever": {
+    "__init__": [
+      "self",
+      "data_uri"
+    ],
+    "load": [
+      "self",
+      "issuer"
+    ]
+  },
+  "StaticPrivateKeyRetriever": {
+    "__init__": [
+      "self",
+      "key_identifier",
+      "private_key_pem"
+    ],
+    "load": [
+      "self",
+      "issuer"
+    ]
+  },
+  "FilePrivateKeyRetriever": {
+    "__init__": [
+      "self",
+      "private_key_repository_path"
+    ],
+    "load": [
+      "self",
+      "issuer"
+    ],
+    "_find_last_key_id": [
+      "self",
+      "issuer"
+    ]
+  },
+  "FilePrivateKeyRepository": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "find_valid_key_ids": [
+      "self",
+      "issuer"
+    ],
+    "load_key": [
+      "self",
+      "key_identifier"
+    ]
+  },
+  "get_permitted_algorithm_names": [],
+  "JWTAuthSigner": {
+    "__init__": [
+      "self",
+      "issuer",
+      "private_key_retriever"
+    ],
+    "_obtain_private_key": [
+      "self",
+      "key_identifier",
+      "private_key_pem"
+    ],
+    "_generate_claims": [
+      "self",
+      "audience"
+    ],
+    "_now": [
+      "self"
+    ],
+    "generate_jwt": [
+      "self",
+      "audience"
+    ]
+  },
+  "TokenReusingJWTAuthSigner": {
+    "__init__": [
+      "self",
+      "issuer",
+      "private_key_retriever"
+    ],
+    "get_cached_token": [
+      "self",
+      "audience"
+    ],
+    "set_cached_token": [
+      "self",
+      "value"
+    ],
+    "can_reuse_token": [
+      "self",
+      "existing_token",
+      "claims"
+    ],
+    "generate_jwt": [
+      "self",
+      "audience"
+    ]
+  },
+  "_create_signer": [
+    "issuer",
+    "private_key_retriever"
+  ],
+  "create_signer": [
+    "issuer",
+    "key_identifier",
+    "private_key_pem"
+  ],
+  "create_signer_from_file_private_key_repository": [
+    "issuer",
+    "private_key_repository"
+  ],
+  "__all__": [],
+  "_WrappedException": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_WithStatus": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "ASAPAuthenticationException": {},
+  "PublicKeyRetrieverException": {},
+  "PrivateKeyRetrieverException": {},
+  "KeyIdentifierException": {},
+  "JtiUniquenessException": {},
+  "SubjectDoesNotMatchIssuerException": {},
+  "NoTokenProvidedError": {},
+  "BaseJWTAuth": {
+    "__init__": [
+      "self",
+      "signer",
+      "audience"
+    ],
+    "create": [
+      "cls",
+      "issuer",
+      "key_identifier",
+      "private_key_pem",
+      "audience"
+    ],
+    "_get_header_value": [
+      "self"
+    ]
+  },
+  "AllowedPublicKeys": [],
+  "_load_public_key": [
+    "algorithms",
+    "public_key",
+    "algorithm"
+  ],
+  "JWTAuthVerifier": {
+    "__init__": [
+      "self",
+      "public_key_retriever"
+    ],
+    "verify_jwt": [
+      "self",
+      "a_jwt",
+      "audience",
+      "leeway"
+    ],
+    "_retrieve_pub_key": [
+      "self",
+      "key_identifier",
+      "requests_kwargs"
+    ],
+    "_load_public_key": [
+      "self",
+      "public_key",
+      "algorithm"
+    ],
+    "_decode_jwt": [
+      "self",
+      "a_jwt",
+      "key_identifier",
+      "jwt_key",
+      "audience",
+      "leeway"
+    ],
+    "_check_jti": [
+      "self",
+      "jti"
+    ]
+  },
+  "WSGIBackend": {
+    "__init__": [
+      "self",
+      "settings"
+    ],
+    "get_authorization_header": [
+      "self",
+      "request"
+    ],
+    "get_401_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "get_403_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "set_asap_claims_for_request": [
+      "self",
+      "request",
+      "claims"
+    ],
+    "settings": [
+      "self"
+    ]
+  },
+  "Request": [],
+  "ASAPMiddleware": {
+    "__init__": [
+      "self",
+      "handler",
+      "settings"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "app": [
+    "environ",
+    "start_response"
+  ],
+  "WsgiTests": {
+    "setUp": [
+      "self"
+    ],
+    "get_app_with_middleware": [
+      "self",
+      "config"
+    ],
+    "send_request": [
+      "self",
+      "url",
+      "config",
+      "token",
+      "application"
+    ],
+    "test_request_with_valid_token_is_allowed": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_rejected_as_per_setting": [
+      "self"
+    ],
+    "_assert_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted_as_per_setting": [
+      "self"
+    ],
+    "test_request_with_invalid_audience_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_token_is_rejected": [
+      "self"
+    ],
+    "test_request_subject_and_issue_not_matching": [
+      "self"
+    ],
+    "test_request_subject_does_not_need_to_match_issuer_from_settings": [
+      "self"
+    ]
+  },
+  "_get_verifier": [
+    "settings"
+  ],
+  "Backend": {
+    "__metaclass__": [],
+    "default_headers_401": [],
+    "default_settings": [],
+    "get_authorization_header": [
+      "self",
+      "request"
+    ],
+    "get_401_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "get_403_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "set_asap_claims_for_request": [
+      "self",
+      "request",
+      "claims"
+    ],
+    "settings": [
+      "self"
+    ],
+    "get_asap_token": [
+      "self",
+      "request"
+    ],
+    "get_verifier": [
+      "self",
+      "settings"
+    ],
+    "_get_verifier": [
+      "self",
+      "settings"
+    ],
+    "_process_settings": [
+      "self",
+      "settings"
+    ]
+  },
+  "SettingsDict": {
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_hash_key": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "_process_asap_token": [
+    "request",
+    "backend",
+    "settings",
+    "verifier"
+  ],
+  "_verify_issuers": [
+    "asap_claims",
+    "issuers"
+  ],
+  "_with_asap": [
+    "func",
+    "backend",
+    "issuers",
+    "required",
+    "subject_should_match_issuer"
+  ],
+  "_restrict_asap": [
+    "func",
+    "backend",
+    "issuers",
+    "required",
+    "subject_should_match_issuer"
+  ],
+  "_update_settings_from_kwargs": [
+    "settings",
+    "issuers",
+    "required",
+    "subject_should_match_issuer"
+  ],
+  "SettingsDictTest": {
+    "test_hash": [
+      "self"
+    ]
+  },
+  "DjangoBackend": {
+    "get_authorization_header": [
+      "self",
+      "request"
+    ],
+    "get_401_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "get_403_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "set_asap_claims_for_request": [
+      "self",
+      "request",
+      "claims"
+    ],
+    "settings": [
+      "self"
+    ]
+  },
+  "with_asap": [
+    "func",
+    "issuers",
+    "required",
+    "subject_should_match_issuer"
+  ],
+  "restrict_asap": [
+    "func",
+    "backend",
+    "issuers",
+    "required",
+    "subject_should_match_issuer"
+  ],
+  "asap_middleware": [
+    "get_response"
+  ],
+  "OldStyleASAPMiddleware": {
+    "__init__": [
+      "self"
+    ],
+    "process_request": [
+      "self",
+      "request"
+    ]
+  },
+  "BASE_DIR": [],
+  "SECRET_KEY": [],
+  "DEBUG": [],
+  "ALLOWED_HOSTS": [],
+  "INSTALLED_APPS": [],
+  "MIDDLEWARE": [],
+  "ROOT_URLCONF": [],
+  "TEMPLATES": [],
+  "DATABASES": [],
+  "AUTH_PASSWORD_VALIDATORS": [],
+  "LANGUAGE_CODE": [],
+  "TIME_ZONE": [],
+  "USE_I18N": [],
+  "USE_L10N": [],
+  "USE_TZ": [],
+  "STATIC_URL": [],
+  "ASAP_VALID_AUDIENCE": [],
+  "ASAP_VALID_ISSUERS": [],
+  "ASAP_PUBLICKEY_REPOSITORY": [],
+  "DEFAULT_AUTO_FIELD": [],
+  "urlpatterns": [],
+  "DjangoAsapMixin": {
+    "setUpClass": [
+      "cls"
+    ],
+    "tearDownClass": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ]
+  },
+  "TestAsapMiddleware": {
+    "check_response": [
+      "self",
+      "view_name",
+      "response_content",
+      "status_code",
+      "issuer",
+      "audience",
+      "key_id",
+      "subject",
+      "private_key",
+      "token",
+      "authorization",
+      "retriever_key"
+    ],
+    "test_request_with_valid_token_is_allowed": [
+      "self"
+    ],
+    "test_request_with_valid_token_multiple_allowed_auds": [
+      "self"
+    ],
+    "test_request_with_valid_token_multiple_allowed_auds_invalid_aud": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_rejected_as_per_setting": [
+      "self"
+    ],
+    "_assert_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted_as_per_setting": [
+      "self"
+    ],
+    "test_request_with_string_headers_is_allowed": [
+      "self"
+    ],
+    "test_request_with_invalid_audience_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_token_is_rejected": [
+      "self"
+    ],
+    "test_request_without_token_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_non_whitelisted_decorated_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_non_decorated_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_decorated_issuer_is_allowed": [
+      "self"
+    ],
+    "test_request_non_decorated_subject_is_rejected": [
+      "self"
+    ],
+    "test_request_using_settings_only_is_allowed": [
+      "self"
+    ],
+    "test_request_subject_does_not_need_to_match_issuer_from_settings": [
+      "self"
+    ],
+    "test_request_subject_and_issue_not_matching": [
+      "self"
+    ]
+  },
+  "TestAsapDecorator": {
+    "test_request_with_valid_token_is_allowed": [
+      "self"
+    ],
+    "test_request_with_string_headers_is_allowed": [
+      "self"
+    ],
+    "test_request_with_invalid_audience_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_token_is_rejected": [
+      "self"
+    ],
+    "test_request_without_token_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_non_decorated_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_decorated_issuer_is_allowed": [
+      "self"
+    ],
+    "test_request_using_settings_only_is_allowed": [
+      "self"
+    ],
+    "test_request_subject_does_not_need_to_match_issuer": [
+      "self"
+    ],
+    "test_request_subject_does_need_to_match_issuer_override_settings": [
+      "self"
+    ],
+    "test_request_subject_does_not_need_to_match_issuer_from_settings": [
+      "self"
+    ]
+  },
+  "expected_view": [
+    "request"
+  ],
+  "unexpected_view": [
+    "request"
+  ],
+  "decorated_view": [
+    "request"
+  ],
+  "settings_view": [
+    "request"
+  ],
+  "subject_does_not_need_to_match_issuer_view": [
+    "request"
+  ],
+  "subject_does_need_to_match_issuer_view": [
+    "request"
+  ],
+  "subject_does_not_need_to_match_issuer_from_settings_view": [
+    "request"
+  ],
+  "needed_view": [
+    "request"
+  ],
+  "unneeded_view": [
+    "request"
+  ],
+  "restricted_issuer_view": [
+    "request"
+  ],
+  "restricted_subject_view": [
+    "request"
+  ],
+  "FlaskBackend": {
+    "get_authorization_header": [
+      "self",
+      "request"
+    ],
+    "get_401_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "get_403_response": [
+      "self",
+      "data",
+      "headers",
+      "request"
+    ],
+    "set_asap_claims_for_request": [
+      "self",
+      "request",
+      "claims"
+    ],
+    "settings": [
+      "self"
+    ]
+  },
+  "get_app": [],
+  "FlaskTests": {
+    "setUp": [
+      "self"
+    ],
+    "send_request": [
+      "self",
+      "token",
+      "url"
+    ],
+    "test_request_with_valid_token_is_allowed": [
+      "self"
+    ],
+    "test_request_with_valid_token_multiple_allowed_auds": [
+      "self"
+    ],
+    "test_request_with_valid_token_multiple_allowed_auds_invalid_aud": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_rejected_as_per_setting": [
+      "self"
+    ],
+    "_assert_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted": [
+      "self"
+    ],
+    "test_request_with_duplicate_jti_is_accepted_as_per_setting": [
+      "self"
+    ],
+    "test_request_with_invalid_audience_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_token_is_rejected": [
+      "self"
+    ],
+    "test_request_with_invalid_issuer_is_rejected": [
+      "self"
+    ],
+    "test_decorated_request_with_invalid_issuer_is_rejected": [
+      "self"
+    ],
+    "test_request_subject_and_issue_not_matching": [
+      "self"
+    ],
+    "test_request_subject_does_not_need_to_match_issuer_from_settings": [
+      "self"
+    ]
+  },
+  "convert_key_pem_format_to_der_format": [
+    "private_key_pem"
+  ],
+  "BaseDataUriPrivateKeyRetrieverTest": {
+    "setUp": [
+      "self"
+    ],
+    "get_example_data_uri": [
+      "self",
+      "private_key_der"
+    ],
+    "test_load_data_uri": [
+      "self"
+    ],
+    "test_load_data_uri_can_be_used_with_a_signer": [
+      "self"
+    ]
+  },
+  "DataUriPrivateKeyRetrieverRS256Test": {},
+  "DataUriPrivateKeyRetrieverES256Test": {},
+  "get_new_rsa_private_key_in_pem_format": [],
+  "get_public_key_pem_for_private_key_pem": [
+    "private_key_pem"
+  ],
+  "get_example_jwt_auth_signer": [],
+  "create_token": [
+    "issuer",
+    "audience",
+    "key_id",
+    "private_key",
+    "subject"
+  ],
+  "BaseJWTAlgorithmTestMixin": {
+    "get_new_private_key_in_pem_format": [
+      "self"
+    ]
+  },
+  "KeyMixInProtocol": {
+    "algorithm": [
+      "self"
+    ],
+    "get_new_private_key_in_pem_format": [
+      "self"
+    ]
+  },
+  "RS256KeyTestMixin": {
+    "algorithm": [
+      "self"
+    ],
+    "get_new_private_key_in_pem_format": [
+      "self"
+    ]
+  },
+  "ES256KeyTestMixin": {
+    "algorithm": [
+      "self"
+    ],
+    "get_new_private_key_in_pem_format": [
+      "self"
+    ]
+  },
+  "NoneAlgorithmJwtAuthSigner": {
+    "generate_jwt": [
+      "self",
+      "audience"
+    ]
+  },
+  "BaseJWTAuthVerifierTest": {
+    "setUp": [
+      "self"
+    ],
+    "_setup_mock_public_key_retriever": [
+      "self",
+      "pub_key_pem"
+    ],
+    "_setup_jwt_auth_verifier": [
+      "self",
+      "pub_key_pem"
+    ],
+    "test_verify_jwt_with_valid_jwt": [
+      "self"
+    ],
+    "test_verify_jwt_with_none_algorithm": [
+      "self"
+    ],
+    "test_verify_jwt_with_key_identifier_not_starting_with_issuer": [
+      "self"
+    ],
+    "test_verify_jwt_with_non_matching_sub_and_iss": [
+      "self",
+      "m_j_decode"
+    ],
+    "test_verify_jwt_with_jwt_lasting_gt_max_time": [
+      "self",
+      "m_j_decode"
+    ],
+    "test_verify_jwt_with_jwt_with_already_seen_jti": [
+      "self"
+    ],
+    "assert_jwt_accepted_more_than_once": [
+      "self",
+      "verifier",
+      "a_jwt"
+    ],
+    "test_verify_jwt_with_already_seen_jti_with_uniqueness_disabled": [
+      "self"
+    ],
+    "test_verify_jwt_with_already_seen_jti_default": [
+      "self"
+    ],
+    "test_verify_jwt_subject_should_match_issuer": [
+      "self"
+    ],
+    "test_verify_jwt_subject_does_not_need_to_match_issuer": [
+      "self"
+    ],
+    "test_verify_jwt_with_missing_aud_claim": [
+      "self",
+      "m_j_decode"
+    ],
+    "test_verify_jwt_with_none_aud": [
+      "self"
+    ],
+    "test_verify_jwt_with_non_matching_aud": [
+      "self"
+    ]
+  },
+  "JWTAuthVerifierRS256Test": {},
+  "JWTAuthVerifierES256Test": {},
+  "BaseJWTAuthSignerTest": {
+    "setUp": [
+      "self"
+    ],
+    "test__generate_claims": [
+      "self"
+    ],
+    "test_jti_changes": [
+      "self"
+    ],
+    "test_generate_jwt": [
+      "self",
+      "m_jwt_encode"
+    ]
+  },
+  "JWTAuthSignerRS256Test": {},
+  "JWTAuthSignerES256Test": {},
+  "TestKeyModule": {
+    "test_key_identifier_with_invalid_keys": [
+      "self"
+    ],
+    "test_key_identifier_with_valid_keys": [
+      "self"
+    ]
+  },
+  "get_expected_and_os_proxies_dict": [
+    "proxy_location"
+  ],
+  "BaseHTTPSPublicKeyRetrieverTest": {
+    "create_retriever": [
+      "self",
+      "url"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_https_public_key_retriever_does_not_support_http_url": [
+      "self"
+    ],
+    "test_https_public_key_retriever_does_not_support_none_url": [
+      "self"
+    ],
+    "test_https_public_key_retriever_session_uses_env_proxy": [
+      "self"
+    ],
+    "test_https_public_key_retriever_supports_https_url": [
+      "self"
+    ],
+    "test_retrieve": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_with_proxy": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_with_proxy_explicitly_set": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_with_charset_in_content_type_h": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_fails_with_different_content_type": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_fails_with_forbidden_error": [
+      "self",
+      "mock_get_method"
+    ]
+  },
+  "CachedHTTPPublicKeyRetrieverTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_http_caching": [
+      "self"
+    ]
+  },
+  "BaseHTTPSMultiRepositoryPublicKeyRetrieverTest": {
+    "create_retriever": [
+      "self",
+      "url"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_https_multi_public_key_retriever_does_not_support_strings": [
+      "self"
+    ],
+    "test_retrieve": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_with_500_error": [
+      "self",
+      "mock_get_method"
+    ],
+    "test_retrieve_with_connection_error": [
+      "self",
+      "mock_get_method"
+    ]
+  },
+  "_setup_mock_response_for_retriever": [
+    "mock_method",
+    "public_key_pem",
+    "headers"
+  ],
+  "HTTPSPublicKeyRetrieverRS256Test": {},
+  "HTTPSPublicKeyRetrieverES256Test": {},
+  "HTTPSMultiRepositoryPublicKeyRetrieverRS256Test": {},
+  "HTTPSMultiRepositoryPublicKeyRetrieverES256Test": {},
+  "BaseJWTAuthSignerWithFilePrivateKeyRetrieverTest": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "create_signer_for_issuer": [
+      "self",
+      "issuer"
+    ],
+    "test_succeeds_if_issuer_has_one_valid_key": [
+      "self"
+    ],
+    "test_picks_last_valid_key_id": [
+      "self"
+    ],
+    "test_fails_if_issuer_has_no_valid_keys": [
+      "self"
+    ],
+    "test_fails_if_issuer_does_not_exist": [
+      "self"
+    ]
+  },
+  "JWTAuthSignerWithFilePrivateKeyRetrieverRS256Test": {},
+  "JWTAuthSignerWithFilePrivateKeyRetrieverES256Test": {},
+  "JWTAuth": {
+    "__call__": [
+      "self",
+      "r"
+    ]
+  },
+  "create_jwt_auth": [
+    "issuer",
+    "key_identifier",
+    "private_key_pem",
+    "audience"
+  ],
+  "get_static_retriever_class": [
+    "keys"
+  ],
+  "static_verifier": [
+    "keys"
+  ],
+  "BaseRequestsTest": {
+    "setUp": [
+      "self"
+    ],
+    "assert_authorization_header_is_valid": [
+      "self",
+      "auth"
+    ],
+    "_get_auth_header": [
+      "self",
+      "auth"
+    ],
+    "create_jwt_auth": [
+      "self"
+    ],
+    "test_JWTAuth_make_authenticated_request": [
+      "self"
+    ],
+    "test_create_jwt_auth": [
+      "self"
+    ],
+    "test_create_jwt_auth_with_additional_claims": [
+      "self"
+    ],
+    "test_do_not_reuse_jwts": [
+      "self"
+    ],
+    "test_reuse_jwts": [
+      "self"
+    ],
+    "test_do_not_reuse_jwt_if_audience_changes": [
+      "self"
+    ],
+    "test_do_not_reuse_jwt_if_issuer_changes": [
+      "self"
+    ],
+    "test_do_not_reuse_jwt_if_lifetime_changes": [
+      "self"
+    ],
+    "test_do_not_reuse_jwt_if_subject_changes": [
+      "self"
+    ],
+    "test_do_not_reuse_jwt_if_additional_claims_change": [
+      "self"
+    ],
+    "test_reuse_jwt_with_additional_claims": [
+      "self"
+    ]
+  },
+  "RequestsRS256Test": {},
+  "RequestsES256Test": {},
+  "BaseAuthTest": {
+    "_get_auth_header": [
+      "self",
+      "auth"
+    ],
+    "create_jwt_auth": [
+      "self"
+    ]
+  },
+  "SyncJWTAuthVerifier": {
+    "__init__": [
+      "self"
+    ],
+    "verify_jwt": [
+      "self"
+    ]
+  },
+  "JWTAuthVerifierTestMixin": {
+    "loop": [],
+    "_setup_mock_public_key_retriever": [
+      "self",
+      "pub_key_pem"
+    ],
+    "_setup_jwt_auth_verifier": [
+      "self",
+      "pub_key_pem"
+    ]
+  },
+  "DummyHTTPSPublicKeyRetriever": {
+    "set_headers": [
+      "self",
+      "headers"
+    ],
+    "set_text": [
+      "self",
+      "text"
+    ],
+    "_get_session": [
+      "self"
+    ]
+  },
+  "BaseHTTPSPublicKeyRetrieverTestMixin": {
+    "setUp": [
+      "self"
+    ],
+    "test_retrieve": [
+      "self"
+    ],
+    "test_retrieve_with_charset_in_content_type_h": [
+      "self"
+    ],
+    "test_retrieve_fails_with_different_content_type": [
+      "self"
+    ],
+    "test_retrieve_session_uses_env_proxy": [
+      "self"
+    ]
+  },
+  "RS256HTTPSPublicKeyRetrieverTest": {},
+  "ES256HTTPSPublicKeyRetrieverTest": {},
+  "validate_asap": [
+    "issuers",
+    "subjects",
+    "required"
+  ],
+  "requires_asap": [
+    "issuers",
+    "subject_should_match_issuer",
+    "func"
+  ],
+  "ProxiedAsapMiddleware": {
+    "__init__": [
+      "self",
+      "get_response"
+    ],
+    "process_request": [
+      "self",
+      "request"
+    ],
+    "process_view": [
+      "self",
+      "request",
+      "view_func",
+      "view_args",
+      "view_kwargs"
+    ]
+  }
+}

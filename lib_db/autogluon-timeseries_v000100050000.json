@@ -1,0 +1,4306 @@
+{
+  "__version__": [],
+  "__lite__": [],
+  "logger": [],
+  "TimeSeriesLearner": {
+    "__init__": [
+      "self",
+      "path_context",
+      "target",
+      "known_covariates_names",
+      "trainer_type",
+      "eval_metric",
+      "prediction_length",
+      "cache_predictions",
+      "ensemble_model_type"
+    ],
+    "load_trainer": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "train_data",
+      "hyperparameters",
+      "val_data",
+      "hyperparameter_tune_kwargs",
+      "ensemble_hyperparameters",
+      "time_limit",
+      "num_val_windows",
+      "val_step_size",
+      "refit_every_n_windows",
+      "random_seed"
+    ],
+    "_align_covariates_with_forecast_index": [
+      "self",
+      "known_covariates",
+      "data"
+    ],
+    "predict": [
+      "self",
+      "data",
+      "known_covariates",
+      "model",
+      "use_cache",
+      "random_seed"
+    ],
+    "score": [
+      "self",
+      "data",
+      "model",
+      "metric",
+      "use_cache"
+    ],
+    "evaluate": [
+      "self",
+      "data",
+      "model",
+      "metrics",
+      "use_cache"
+    ],
+    "get_feature_importance": [
+      "self",
+      "data",
+      "model",
+      "metric",
+      "features",
+      "time_limit",
+      "method",
+      "subsample_size",
+      "num_iterations",
+      "random_seed",
+      "relative_scores",
+      "include_confidence_band",
+      "confidence_level"
+    ],
+    "leaderboard": [
+      "self",
+      "data",
+      "extra_info",
+      "extra_metrics",
+      "use_cache"
+    ],
+    "get_info": [
+      "self",
+      "include_model_info"
+    ],
+    "persist_trainer": [
+      "self",
+      "models",
+      "with_ancestors"
+    ],
+    "unpersist_trainer": [
+      "self"
+    ],
+    "refit_full": [
+      "self",
+      "model"
+    ],
+    "backtest_predictions": [
+      "self",
+      "data",
+      "model_names",
+      "num_val_windows",
+      "val_step_size",
+      "use_cache"
+    ],
+    "backtest_targets": [
+      "self",
+      "data",
+      "num_val_windows",
+      "val_step_size"
+    ]
+  },
+  "__all__": [],
+  "AbstractWindowSplitter": {
+    "__init__": [
+      "self",
+      "prediction_length",
+      "num_val_windows"
+    ],
+    "split": [
+      "self",
+      "data"
+    ]
+  },
+  "ExpandingWindowSplitter": {
+    "__init__": [
+      "self",
+      "prediction_length",
+      "num_val_windows",
+      "val_step_size"
+    ],
+    "split": [
+      "self",
+      "data"
+    ]
+  },
+  "TimeSeriesPredictor": {
+    "_learner_type": [],
+    "predictor_file_name": [],
+    "_predictor_version_file_name": [],
+    "_predictor_log_file_name": [],
+    "__init__": [
+      "self",
+      "target",
+      "known_covariates_names",
+      "prediction_length",
+      "freq",
+      "eval_metric",
+      "eval_metric_seasonal_period",
+      "horizon_weight",
+      "path",
+      "verbosity",
+      "log_to_file",
+      "log_file_path",
+      "quantile_levels",
+      "cache_predictions",
+      "label"
+    ],
+    "_trainer": [
+      "self"
+    ],
+    "is_fit": [
+      "self"
+    ],
+    "_assert_is_fit": [
+      "self",
+      "method_name"
+    ],
+    "_setup_log_to_file": [
+      "self",
+      "log_to_file",
+      "log_file_path"
+    ],
+    "_to_data_frame": [
+      "self",
+      "data",
+      "name"
+    ],
+    "_check_and_prepare_data_frame": [
+      "self",
+      "data",
+      "name"
+    ],
+    "_check_and_prepare_data_frame_for_evaluation": [
+      "self",
+      "data",
+      "cutoff",
+      "name"
+    ],
+    "_get_dataset_stats": [
+      "self",
+      "data"
+    ],
+    "_filter_useless_train_data": [
+      "self",
+      "train_data",
+      "num_val_windows",
+      "val_step_size"
+    ],
+    "fit": [
+      "self",
+      "train_data",
+      "tuning_data",
+      "time_limit",
+      "presets",
+      "hyperparameters",
+      "hyperparameter_tune_kwargs",
+      "excluded_model_types",
+      "ensemble_hyperparameters",
+      "num_val_windows",
+      "val_step_size",
+      "refit_every_n_windows",
+      "refit_full",
+      "enable_ensemble",
+      "skip_model_selection",
+      "random_seed",
+      "verbosity"
+    ],
+    "_recommend_num_val_windows_auto": [
+      "self",
+      "num_items",
+      "median_timeseries_length",
+      "val_step_size",
+      "ensemble_hyperparameters"
+    ],
+    "_recommend_refit_every_n_windows_auto": [
+      "self",
+      "num_val_windows"
+    ],
+    "_validate_and_normalize_validation_and_ensemble_inputs": [
+      "self",
+      "num_val_windows",
+      "ensemble_hyperparameters",
+      "val_step_size",
+      "median_timeseries_length",
+      "tuning_data_provided"
+    ],
+    "_normalize_num_val_windows_input": [
+      "self",
+      "num_val_windows",
+      "tuning_data_provided"
+    ],
+    "_reduce_num_val_windows_if_necessary": [
+      "self",
+      "num_val_windows",
+      "val_step_size",
+      "median_time_series_length",
+      "tuning_data_provided"
+    ],
+    "model_names": [
+      "self"
+    ],
+    "predict": [
+      "self",
+      "data",
+      "known_covariates",
+      "model",
+      "use_cache",
+      "random_seed"
+    ],
+    "backtest_predictions": [
+      "self",
+      "data"
+    ],
+    "backtest_targets": [
+      "self",
+      "data"
+    ],
+    "evaluate": [
+      "self",
+      "data",
+      "model",
+      "metrics",
+      "cutoff",
+      "display",
+      "use_cache"
+    ],
+    "feature_importance": [
+      "self",
+      "data",
+      "model",
+      "metric",
+      "features",
+      "time_limit",
+      "method",
+      "subsample_size",
+      "num_iterations",
+      "random_seed",
+      "relative_scores",
+      "include_confidence_band",
+      "confidence_level"
+    ],
+    "_load_version_file": [
+      "cls",
+      "path"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "require_version_match"
+    ],
+    "_save_version_file": [
+      "self"
+    ],
+    "save": [
+      "self"
+    ],
+    "info": [
+      "self"
+    ],
+    "model_best": [
+      "self"
+    ],
+    "persist": [
+      "self",
+      "models",
+      "with_ancestors"
+    ],
+    "unpersist": [
+      "self"
+    ],
+    "leaderboard": [
+      "self",
+      "data",
+      "cutoff",
+      "extra_info",
+      "extra_metrics",
+      "display",
+      "use_cache"
+    ],
+    "make_future_data_frame": [
+      "self",
+      "data"
+    ],
+    "fit_summary": [
+      "self",
+      "verbosity"
+    ],
+    "refit_full": [
+      "self",
+      "model",
+      "set_best_to_refit_full"
+    ],
+    "_simulation_artifact": [
+      "self",
+      "test_data"
+    ],
+    "plot": [
+      "self",
+      "data",
+      "predictions",
+      "quantile_levels",
+      "item_ids",
+      "max_num_item_ids",
+      "max_history_length",
+      "point_forecast_column",
+      "matplotlib_rc_params"
+    ]
+  },
+  "CovariateRegressor": {
+    "is_fit": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "data",
+      "time_limit"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "fit_transform": [
+      "self",
+      "data",
+      "time_limit"
+    ],
+    "inverse_transform": [
+      "self",
+      "predictions",
+      "known_covariates",
+      "static_features"
+    ]
+  },
+  "GlobalCovariateRegressor": {
+    "__init__": [
+      "self",
+      "model_name",
+      "model_hyperparameters",
+      "eval_metric",
+      "refit_during_predict",
+      "max_num_samples",
+      "covariate_metadata",
+      "target",
+      "validation_fraction",
+      "fit_time_fraction",
+      "include_static_features",
+      "include_item_id"
+    ],
+    "is_fit": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "data",
+      "time_limit"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "fit_transform": [
+      "self",
+      "data",
+      "time_limit"
+    ],
+    "inverse_transform": [
+      "self",
+      "predictions",
+      "known_covariates",
+      "static_features"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "static_features"
+    ],
+    "_get_tabular_df": [
+      "self",
+      "data",
+      "static_features",
+      "include_target"
+    ],
+    "_subsample_df": [
+      "self",
+      "df"
+    ]
+  },
+  "get_covariate_regressor": [
+    "covariate_regressor",
+    "target",
+    "covariate_metadata"
+  ],
+  "TimeSeriesDataFrame": {
+    "_metadata": [],
+    "__init__": [
+      "self",
+      "data",
+      "static_features",
+      "id_column",
+      "timestamp_column",
+      "num_cpus"
+    ],
+    "_constructor": [
+      "self"
+    ],
+    "_constructor_from_mgr": [
+      "self",
+      "mgr",
+      "axes"
+    ],
+    "_construct_tsdf_from_data_frame": [
+      "cls",
+      "df",
+      "id_column",
+      "timestamp_column"
+    ],
+    "_construct_tsdf_from_iterable_dataset": [
+      "cls",
+      "iterable_dataset",
+      "num_cpus"
+    ],
+    "_validate_multi_index_data_frame": [
+      "cls",
+      "data"
+    ],
+    "_validate_data_frame": [
+      "cls",
+      "df"
+    ],
+    "_validate_iterable": [
+      "cls",
+      "data"
+    ],
+    "from_data_frame": [
+      "cls",
+      "df",
+      "id_column",
+      "timestamp_column",
+      "static_features_df"
+    ],
+    "from_path": [
+      "cls",
+      "path",
+      "id_column",
+      "timestamp_column",
+      "static_features_path"
+    ],
+    "from_iterable_dataset": [
+      "cls",
+      "iterable_dataset",
+      "num_cpus"
+    ],
+    "item_ids": [
+      "self"
+    ],
+    "_construct_static_features": [
+      "cls",
+      "static_features",
+      "id_column"
+    ],
+    "static_features": [
+      "self",
+      "value"
+    ],
+    "infer_frequency": [
+      "self",
+      "num_items",
+      "raise_if_irregular"
+    ],
+    "freq": [
+      "self"
+    ],
+    "num_items": [
+      "self"
+    ],
+    "num_timesteps_per_item": [
+      "self"
+    ],
+    "copy": [
+      "self",
+      "deep"
+    ],
+    "__finalize__": [
+      "self",
+      "other",
+      "method"
+    ],
+    "split_by_time": [
+      "self",
+      "cutoff_time"
+    ],
+    "slice_by_timestep": [
+      "self",
+      "start_index",
+      "end_index"
+    ],
+    "slice_by_time": [
+      "self",
+      "start_time",
+      "end_time"
+    ],
+    "from_pickle": [
+      "cls",
+      "filepath_or_buffer"
+    ],
+    "fill_missing_values": [
+      "self",
+      "method",
+      "value"
+    ],
+    "dropna": [
+      "self",
+      "how"
+    ],
+    "assign": [
+      "self"
+    ],
+    "sort_index": [
+      "self"
+    ],
+    "get_model_inputs_for_scoring": [
+      "self",
+      "prediction_length",
+      "known_covariates_names"
+    ],
+    "train_test_split": [
+      "self",
+      "prediction_length",
+      "end_index",
+      "suffix"
+    ],
+    "convert_frequency": [
+      "self",
+      "freq",
+      "agg_numeric",
+      "agg_categorical",
+      "num_cpus",
+      "chunk_size"
+    ],
+    "to_data_frame": [
+      "self"
+    ],
+    "get_indptr": [
+      "self"
+    ]
+  },
+  "ITEMID": [],
+  "TIMESTAMP": [],
+  "WQL": {
+    "needs_quantile": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "SQL": {
+    "needs_quantile": [],
+    "__init__": [
+      "self",
+      "prediction_length",
+      "seasonal_period",
+      "horizon_weight"
+    ],
+    "save_past_metrics": [
+      "self",
+      "data_past",
+      "target",
+      "seasonal_period"
+    ],
+    "clear_past_metrics": [
+      "self"
+    ],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "_get_seasonal_diffs": [],
+  "in_sample_abs_seasonal_error": [],
+  "in_sample_squared_seasonal_error": [],
+  "RMSE": {
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "MSE": {
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "MAE": {
+    "optimized_by_median": [],
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "WAPE": {
+    "optimized_by_median": [],
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "SMAPE": {
+    "optimized_by_median": [],
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "MAPE": {
+    "optimized_by_median": [],
+    "equivalent_tabular_regression_metric": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "MASE": {
+    "optimized_by_median": [],
+    "equivalent_tabular_regression_metric": [],
+    "__init__": [
+      "self",
+      "prediction_length",
+      "seasonal_period",
+      "horizon_weight"
+    ],
+    "save_past_metrics": [
+      "self",
+      "data_past",
+      "target",
+      "seasonal_period"
+    ],
+    "clear_past_metrics": [
+      "self"
+    ],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "RMSSE": {
+    "equivalent_tabular_regression_metric": [],
+    "__init__": [
+      "self",
+      "prediction_length",
+      "seasonal_period",
+      "horizon_weight"
+    ],
+    "save_past_metrics": [
+      "self",
+      "data_past",
+      "target",
+      "seasonal_period"
+    ],
+    "clear_past_metrics": [
+      "self"
+    ],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "RMSLE": {
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ],
+    "__call__": [
+      "self",
+      "data",
+      "predictions",
+      "target"
+    ]
+  },
+  "WCD": {
+    "__init__": [
+      "self",
+      "alpha",
+      "prediction_length",
+      "seasonal_period",
+      "horizon_weight"
+    ],
+    "_fast_cumsum": [
+      "self",
+      "y"
+    ],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ]
+  },
+  "DEFAULT_METRIC_NAME": [],
+  "DEPRECATED_METRICS": [],
+  "check_get_evaluation_metric": [
+    "eval_metric",
+    "prediction_length",
+    "seasonal_period",
+    "horizon_weight"
+  ],
+  "TimeSeriesScorer": {
+    "__init__": [
+      "self",
+      "prediction_length",
+      "seasonal_period",
+      "horizon_weight"
+    ],
+    "sign": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "name_with_sign": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "data",
+      "predictions",
+      "target"
+    ],
+    "score": [],
+    "compute_metric": [
+      "self",
+      "data_future",
+      "predictions",
+      "target"
+    ],
+    "save_past_metrics": [
+      "self",
+      "data_past",
+      "target",
+      "seasonal_period"
+    ],
+    "clear_past_metrics": [
+      "self"
+    ],
+    "error": [
+      "self"
+    ],
+    "_safemean": [
+      "array"
+    ],
+    "_get_point_forecast_score_inputs": [
+      "data_future",
+      "predictions",
+      "target"
+    ],
+    "_get_quantile_forecast_score_inputs": [
+      "data_future",
+      "predictions",
+      "target"
+    ],
+    "check_get_horizon_weight": [
+      "horizon_weight",
+      "prediction_length"
+    ]
+  },
+  "TimeSeriesTrainer": {
+    "__init__": [
+      "self",
+      "path",
+      "prediction_length",
+      "eval_metric",
+      "save_data",
+      "skip_model_selection",
+      "enable_ensemble",
+      "verbosity",
+      "num_val_windows",
+      "val_step_size",
+      "refit_every_n_windows",
+      "cache_predictions"
+    ],
+    "path_pkl": [
+      "self"
+    ],
+    "save_train_data": [
+      "self",
+      "data",
+      "verbose"
+    ],
+    "save_val_data": [
+      "self",
+      "data",
+      "verbose"
+    ],
+    "load_train_data": [
+      "self"
+    ],
+    "load_val_data": [
+      "self"
+    ],
+    "load_data": [
+      "self"
+    ],
+    "save": [
+      "self"
+    ],
+    "_get_model_oof_predictions": [
+      "self",
+      "model_name"
+    ],
+    "_add_model": [
+      "self",
+      "model",
+      "base_models"
+    ],
+    "_get_model_layers": [
+      "self"
+    ],
+    "get_models_attribute_dict": [
+      "self",
+      "attribute",
+      "models"
+    ],
+    "get_model_best": [
+      "self"
+    ],
+    "get_model_names": [
+      "self",
+      "layer"
+    ],
+    "get_info": [
+      "self",
+      "include_model_info"
+    ],
+    "tune_model_hyperparameters": [
+      "self",
+      "model",
+      "train_data",
+      "time_limit",
+      "val_data",
+      "hyperparameter_tune_kwargs"
+    ],
+    "_train_and_save": [
+      "self",
+      "train_data",
+      "model",
+      "val_data",
+      "time_limit"
+    ],
+    "fit": [
+      "self",
+      "train_data",
+      "hyperparameters",
+      "val_data",
+      "ensemble_hyperparameters",
+      "hyperparameter_tune_kwargs",
+      "excluded_model_types",
+      "time_limit",
+      "random_seed"
+    ],
+    "_fit_ensembles": [
+      "self"
+    ],
+    "_get_validation_windows": [
+      "self",
+      "train_data",
+      "val_data"
+    ],
+    "_get_val_splitter": [
+      "self",
+      "use_val_data"
+    ],
+    "_get_base_model_predictions": [
+      "self",
+      "model_names"
+    ],
+    "leaderboard": [
+      "self",
+      "data",
+      "extra_info",
+      "extra_metrics",
+      "use_cache"
+    ],
+    "persist": [
+      "self",
+      "model_names",
+      "with_ancestors"
+    ],
+    "unpersist": [
+      "self",
+      "model_names"
+    ],
+    "_get_model_for_prediction": [
+      "self",
+      "model",
+      "verbose"
+    ],
+    "predict": [
+      "self",
+      "data",
+      "known_covariates",
+      "model",
+      "use_cache",
+      "random_seed"
+    ],
+    "_get_eval_metric": [
+      "self",
+      "metric"
+    ],
+    "_score_with_predictions": [
+      "self",
+      "data",
+      "predictions",
+      "metric"
+    ],
+    "score": [
+      "self",
+      "data",
+      "model",
+      "metric",
+      "use_cache"
+    ],
+    "evaluate": [
+      "self",
+      "data",
+      "model",
+      "metrics",
+      "use_cache"
+    ],
+    "get_feature_importance": [
+      "self",
+      "data",
+      "features",
+      "model",
+      "metric",
+      "time_limit",
+      "method",
+      "subsample_size",
+      "num_iterations",
+      "random_seed",
+      "relative_scores",
+      "include_confidence_band",
+      "confidence_level"
+    ],
+    "_model_uses_feature": [
+      "self",
+      "model",
+      "feature"
+    ],
+    "backtest_predictions": [
+      "self",
+      "data",
+      "model_names",
+      "num_val_windows",
+      "val_step_size",
+      "use_cache"
+    ],
+    "backtest_targets": [
+      "self",
+      "data",
+      "num_val_windows",
+      "val_step_size"
+    ],
+    "_add_ci_to_feature_importance": [
+      "self",
+      "importance_df",
+      "confidence_level"
+    ],
+    "_predict_model": [
+      "self",
+      "model",
+      "data",
+      "model_pred_dict",
+      "known_covariates"
+    ],
+    "_get_inputs_to_model": [
+      "self",
+      "model",
+      "data",
+      "model_pred_dict"
+    ],
+    "get_model_pred_dict": [
+      "self",
+      "model_names",
+      "data",
+      "known_covariates",
+      "raise_exception_if_failed",
+      "use_cache",
+      "random_seed"
+    ],
+    "_get_total_pred_time_from_marginal": [
+      "self",
+      "pred_time_dict_marginal"
+    ],
+    "_merge_refit_full_data": [
+      "self",
+      "train_data",
+      "val_data"
+    ],
+    "refit_single_full": [
+      "self",
+      "train_data",
+      "val_data",
+      "models"
+    ],
+    "refit_full": [
+      "self",
+      "model"
+    ],
+    "get_trainable_base_models": [
+      "self",
+      "hyperparameters"
+    ]
+  },
+  "PredictionCache": {
+    "__init__": [
+      "self",
+      "root_path"
+    ],
+    "get": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "put": [
+      "self",
+      "data",
+      "known_covariates",
+      "model_pred_dict",
+      "pred_time_dict"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "get_prediction_cache": [
+    "use_cache",
+    "root_path"
+  ],
+  "compute_dataset_hash": [
+    "data",
+    "known_covariates"
+  ],
+  "NoOpPredictionCache": {
+    "get": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "put": [
+      "self",
+      "data",
+      "known_covariates",
+      "model_pred_dict",
+      "pred_time_dict"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "FileBasedPredictionCache": {
+    "_cached_predictions_filename": [],
+    "path": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "put": [
+      "self",
+      "data",
+      "known_covariates",
+      "model_pred_dict",
+      "pred_time_dict"
+    ],
+    "clear": [
+      "self"
+    ],
+    "_load_cached_predictions": [
+      "self"
+    ],
+    "_get_cached_pred_dicts": [
+      "self",
+      "dataset_hash"
+    ],
+    "_save_cached_pred_dicts": [
+      "self",
+      "dataset_hash",
+      "model_pred_dict",
+      "pred_time_dict"
+    ]
+  },
+  "log_scores_and_times": [
+    "val_score",
+    "fit_time",
+    "predict_time",
+    "eval_metric_name"
+  ],
+  "EnsembleComposer": {
+    "__init__": [
+      "self",
+      "path",
+      "prediction_length",
+      "eval_metric",
+      "target",
+      "num_windows_per_layer",
+      "ensemble_hyperparameters",
+      "quantile_levels",
+      "model_graph"
+    ],
+    "_get_base_model_graph": [
+      "source_graph"
+    ],
+    "_get_rootset": [
+      "graph"
+    ],
+    "_load_model": [
+      "self",
+      "model_name"
+    ],
+    "_iter_models": [
+      "self",
+      "layer"
+    ],
+    "iter_ensembles": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "data_per_window",
+      "predictions_per_window",
+      "time_limit"
+    ],
+    "iter_layer_models_and_hps": [
+      "self",
+      "layer_idx"
+    ],
+    "_fit_single_ensemble": [
+      "self",
+      "model_name",
+      "hyperparameters",
+      "predictions_per_window",
+      "data_per_window",
+      "base_model_scores",
+      "layer_idx",
+      "time_limit"
+    ],
+    "_get_model_oof_predictions": [
+      "self",
+      "model_name"
+    ],
+    "_add_model": [
+      "self",
+      "model",
+      "base_models"
+    ],
+    "_can_fit_ensemble": [
+      "self",
+      "time_limit",
+      "num_models_available_for_ensemble"
+    ],
+    "_get_ensemble_model_name": [
+      "self",
+      "name",
+      "layer_idx"
+    ],
+    "_calculate_predict_time": [
+      "self",
+      "model"
+    ]
+  },
+  "validate_ensemble_hyperparameters": [
+    "hyperparameters"
+  ],
+  "ModelKey": [],
+  "ModelHyperparameters": [],
+  "TrainerHyperparameterSpec": [],
+  "TrainableModelSetBuilder": {
+    "VALID_AG_ARGS_KEYS": [],
+    "__init__": [
+      "self",
+      "path",
+      "freq",
+      "prediction_length",
+      "eval_metric",
+      "target",
+      "quantile_levels",
+      "covariate_metadata",
+      "multi_window"
+    ],
+    "get_model_set": [
+      "self",
+      "hyperparameters",
+      "hyperparameter_tune",
+      "excluded_model_types",
+      "banned_model_names"
+    ],
+    "_get_model_type": [
+      "self",
+      "model"
+    ],
+    "_get_default_model_init_kwargs": [
+      "self"
+    ],
+    "_get_model_name": [
+      "self",
+      "ag_args",
+      "model_type"
+    ]
+  },
+  "HyperparameterBuilder": {
+    "__init__": [
+      "self",
+      "hyperparameters",
+      "hyperparameter_tune",
+      "excluded_model_types"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_check_and_clean_hyperparameters": [
+      "self",
+      "hyperparameters"
+    ],
+    "_get_excluded_models": [
+      "self"
+    ],
+    "_normalize_model_type_name": [
+      "model_name"
+    ],
+    "_verify_searchspaces": [
+      "self",
+      "hyperparameters"
+    ]
+  },
+  "contains_searchspace": [
+    "model_hyperparameters"
+  ],
+  "get_forecast_horizon_index_single_time_series": [
+    "past_timestamps",
+    "freq",
+    "prediction_length"
+  ],
+  "get_forecast_horizon_index_ts_dataframe": [],
+  "make_future_data_frame": [
+    "ts_dataframe",
+    "prediction_length",
+    "freq"
+  ],
+  "CovariateMetadata": {
+    "__post_init__": [
+      "self"
+    ],
+    "static_features": [
+      "self"
+    ],
+    "known_covariates": [
+      "self"
+    ],
+    "past_covariates": [
+      "self"
+    ],
+    "covariates": [
+      "self"
+    ],
+    "covariates_real": [
+      "self"
+    ],
+    "covariates_cat": [
+      "self"
+    ],
+    "real_features": [
+      "self"
+    ],
+    "cat_features": [
+      "self"
+    ],
+    "all_features": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ContinuousAndCategoricalFeatureGenerator": {
+    "__init__": [
+      "self",
+      "verbosity",
+      "minimum_cat_count"
+    ],
+    "transform": [
+      "self",
+      "X"
+    ],
+    "fit_transform": [
+      "self",
+      "X"
+    ]
+  },
+  "TimeSeriesFeatureGenerator": {
+    "__init__": [
+      "self",
+      "target",
+      "known_covariates_names",
+      "float_dtype",
+      "num_samples"
+    ],
+    "required_column_names": [
+      "self"
+    ],
+    "covariate_metadata": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "data"
+    ],
+    "fit_transform": [
+      "self",
+      "data"
+    ],
+    "_concat_dfs": [
+      "dfs_to_concat"
+    ],
+    "_impute_covariates": [
+      "self",
+      "ts_df",
+      "column_names"
+    ],
+    "_impute_static_features": [
+      "self",
+      "static_df"
+    ],
+    "transform": [
+      "self",
+      "data",
+      "data_frame_name"
+    ],
+    "transform_future_known_covariates": [
+      "self",
+      "known_covariates"
+    ],
+    "_detect_and_log_column_types": [
+      "transformed_df"
+    ],
+    "_check_required_columns_are_present": [
+      "data",
+      "required_column_names",
+      "data_frame_name"
+    ],
+    "_convert_numeric_to_float_dtype": [
+      "self",
+      "df"
+    ]
+  },
+  "AbstractFeatureImportanceTransform": {
+    "__init__": [
+      "self",
+      "covariate_metadata",
+      "prediction_length"
+    ],
+    "_transform_static_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ],
+    "_transform_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ],
+    "transform": [
+      "self",
+      "data",
+      "feature_name"
+    ]
+  },
+  "PermutationFeatureImportanceTransform": {
+    "__init__": [
+      "self",
+      "covariate_metadata",
+      "prediction_length",
+      "random_seed",
+      "shuffle_type"
+    ],
+    "_transform_static_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ],
+    "_transform_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ]
+  },
+  "ConstantReplacementFeatureImportanceTransform": {
+    "__init__": [
+      "self",
+      "covariate_metadata",
+      "prediction_length",
+      "real_value_aggregation"
+    ],
+    "_transform_static_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ],
+    "_transform_series": [
+      "self",
+      "feature_data",
+      "is_categorical"
+    ]
+  },
+  "AG_DEFAULT_N_JOBS": [],
+  "Timer": {
+    "__init__": [
+      "self",
+      "time_limit"
+    ],
+    "start": [
+      "self"
+    ],
+    "time_elapsed": [
+      "self"
+    ],
+    "time_remaining": [
+      "self"
+    ],
+    "timed_out": [
+      "self"
+    ]
+  },
+  "SplitTimer": {
+    "__init__": [
+      "self",
+      "time_limit",
+      "rounds"
+    ],
+    "start": [
+      "self"
+    ],
+    "round_time_remaining": [
+      "self"
+    ],
+    "round_time_elapsed": [
+      "self"
+    ],
+    "next_round": [
+      "self"
+    ]
+  },
+  "warning_filter": [
+    "all_warnings"
+  ],
+  "disable_root_logger": [
+    "root_log_level"
+  ],
+  "set_loggers_level": [
+    "regex",
+    "level"
+  ],
+  "disable_tqdm": [],
+  "disable_stdout": [],
+  "DuplicateLogFilter": {
+    "__init__": [
+      "self",
+      "max_count"
+    ],
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "disable_duplicate_logs": [
+    "logger",
+    "max_count"
+  ],
+  "_normalize": [
+    "values",
+    "num"
+  ],
+  "quarter_of_year": [
+    "index"
+  ],
+  "month_of_year": [
+    "index"
+  ],
+  "week_of_year": [
+    "index"
+  ],
+  "day_of_month": [
+    "index"
+  ],
+  "day_of_year": [
+    "index"
+  ],
+  "day_of_week": [
+    "index"
+  ],
+  "hour_of_day": [
+    "index"
+  ],
+  "minute_of_hour": [
+    "index"
+  ],
+  "second_of_minute": [
+    "index"
+  ],
+  "get_time_features_for_frequency": [
+    "freq"
+  ],
+  "TO_MAJOR_FREQ": [],
+  "norm_freq_str": [
+    "offset"
+  ],
+  "_make_lags": [
+    "middle",
+    "delta"
+  ],
+  "_make_lags_for_second": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_minute": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_hour": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_business_hour": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_day": [
+    "multiple",
+    "num_cycles",
+    "days_in_week",
+    "days_in_month"
+  ],
+  "_make_lags_for_week": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_month": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_quarter": [
+    "multiple",
+    "num_cycles"
+  ],
+  "_make_lags_for_semi_month": [
+    "multiple",
+    "num_cycles"
+  ],
+  "get_lags_for_frequency": [
+    "freq",
+    "lag_ub",
+    "num_lags",
+    "num_default_lags"
+  ],
+  "DEFAULT_SEASONALITIES": [],
+  "get_seasonality": [
+    "freq"
+  ],
+  "get_hyperparameter_presets": [],
+  "TIMESERIES_PRESETS_ALIASES": [],
+  "get_predictor_presets": [],
+  "CovariateScaler": {
+    "fit_transform": [
+      "self",
+      "data"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "transform_known_covariates": [
+      "self",
+      "known_covariates"
+    ]
+  },
+  "GlobalCovariateScaler": {
+    "__init__": [
+      "self",
+      "covariate_metadata",
+      "use_known_covariates",
+      "use_past_covariates",
+      "use_static_features",
+      "skew_threshold"
+    ],
+    "is_fit": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "data"
+    ],
+    "fit_transform": [
+      "self",
+      "data"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "transform_known_covariates": [
+      "self",
+      "known_covariates"
+    ],
+    "_get_transformer_for_columns": [
+      "self",
+      "df",
+      "columns"
+    ]
+  },
+  "AVAILABLE_COVARIATE_SCALERS": [],
+  "get_covariate_scaler": [
+    "name"
+  ],
+  "TargetScaler": {
+    "fit_transform": [
+      "self",
+      "data"
+    ],
+    "fit": [
+      "self",
+      "data"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "inverse_transform": [
+      "self",
+      "predictions"
+    ]
+  },
+  "LocalTargetScaler": {
+    "__init__": [
+      "self",
+      "target",
+      "min_scale"
+    ],
+    "_compute_loc_scale": [
+      "self",
+      "target_series"
+    ],
+    "fit_transform": [
+      "self",
+      "data"
+    ],
+    "fit": [
+      "self",
+      "data"
+    ],
+    "_reindex_loc_scale": [
+      "self",
+      "item_index"
+    ],
+    "transform": [
+      "self",
+      "data"
+    ],
+    "inverse_transform": [
+      "self",
+      "predictions"
+    ]
+  },
+  "LocalStandardScaler": {
+    "_compute_loc_scale": [
+      "self",
+      "target_series"
+    ]
+  },
+  "LocalMeanAbsScaler": {
+    "_compute_loc_scale": [
+      "self",
+      "target_series"
+    ]
+  },
+  "LocalMinMaxScaler": {
+    "_compute_loc_scale": [
+      "self",
+      "target_series"
+    ]
+  },
+  "LocalRobustScaler": {
+    "__init__": [
+      "self",
+      "target",
+      "min_scale"
+    ],
+    "_compute_loc_scale": [
+      "self",
+      "target_series"
+    ]
+  },
+  "AVAILABLE_TARGET_SCALERS": [],
+  "get_target_scaler": [
+    "name"
+  ],
+  "ModelRecord": {},
+  "ModelRegistry": {
+    "__new__": [
+      "cls",
+      "name",
+      "bases",
+      "attrs"
+    ],
+    "_add": [
+      "cls",
+      "alias",
+      "record"
+    ],
+    "_get_model_record": [
+      "cls",
+      "alias"
+    ],
+    "get_model_class": [
+      "cls",
+      "alias"
+    ],
+    "get_model_priority": [
+      "cls",
+      "alias"
+    ],
+    "available_aliases": [
+      "cls"
+    ]
+  },
+  "MLForecastScaler": {
+    "__init__": [
+      "self",
+      "scaler_type"
+    ],
+    "_df_to_tsdf": [
+      "self",
+      "df"
+    ],
+    "_tsdf_to_df": [
+      "self",
+      "ts_df"
+    ],
+    "fit_transform": [
+      "self",
+      "df"
+    ],
+    "inverse_transform": [
+      "self",
+      "df"
+    ]
+  },
+  "apply_inverse_transform": [
+    "df",
+    "transform"
+  ],
+  "MLF_TARGET": [],
+  "MLF_ITEMID": [],
+  "MLF_TIMESTAMP": [],
+  "TabularModel": {
+    "__init__": [
+      "self",
+      "model_class",
+      "model_kwargs"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "X_val",
+      "y_val"
+    ],
+    "predict": [
+      "self",
+      "X"
+    ],
+    "get_params": [
+      "self",
+      "deep"
+    ]
+  },
+  "AbstractMLForecastModel": {
+    "_supports_known_covariates": [],
+    "_supports_static_features": [],
+    "__init__": [
+      "self",
+      "freq",
+      "prediction_length",
+      "path",
+      "name",
+      "eval_metric",
+      "hyperparameters"
+    ],
+    "_initialize_transforms_and_regressor": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "preprocess": [
+      "self",
+      "data",
+      "known_covariates",
+      "is_train"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_create_tabular_model": [
+      "self",
+      "model_name",
+      "model_hyperparameters"
+    ],
+    "_get_mlforecast_init_args": [
+      "self",
+      "train_data",
+      "model_params"
+    ],
+    "_mask_df": [
+      "self",
+      "df"
+    ],
+    "_shorten_all_series": [
+      "mlforecast_df",
+      "max_length"
+    ],
+    "_generate_train_val_dfs": [
+      "self",
+      "data",
+      "max_num_items",
+      "max_num_samples"
+    ],
+    "_to_mlforecast_df": [
+      "self",
+      "data",
+      "static_features",
+      "include_target"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "get_tabular_model": [
+      "self"
+    ],
+    "_save_residuals_std": [
+      "self",
+      "val_df"
+    ],
+    "_remove_short_ts_and_generate_fallback_forecast": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_add_gaussian_quantiles": [
+      "self",
+      "predictions",
+      "repeated_item_ids",
+      "past_target"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "DirectTabularModel": {
+    "ag_priority": [],
+    "is_quantile_model": [
+      "self"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_mask_df": [
+      "self",
+      "df"
+    ],
+    "_save_residuals_std": [
+      "self",
+      "val_df"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_postprocess_predictions": [
+      "self",
+      "predictions",
+      "repeated_item_ids"
+    ],
+    "_create_tabular_model": [
+      "self",
+      "model_name",
+      "model_hyperparameters"
+    ]
+  },
+  "RecursiveTabularModel": {
+    "ag_priority": [],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_create_tabular_model": [
+      "self",
+      "model_name",
+      "model_hyperparameters"
+    ]
+  },
+  "PerStepTabularModel": {
+    "ag_priority": [],
+    "_dummy_freq": [],
+    "__init__": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "_ag_to_nixtla": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_fit_single_model": [
+      "cls",
+      "train_df",
+      "path_root",
+      "step",
+      "model_cls",
+      "model_hyperparameters",
+      "problem_type",
+      "eval_metric",
+      "validation_fraction",
+      "quantile_levels",
+      "lags",
+      "date_features",
+      "time_limit",
+      "num_cpus",
+      "verbosity"
+    ],
+    "_get_n_jobs": [
+      "train_df",
+      "num_extra_dynamic_features",
+      "model_cls",
+      "model_hyperparameters",
+      "overhead_factor"
+    ],
+    "preprocess": [
+      "self",
+      "data",
+      "known_covariates",
+      "is_train"
+    ],
+    "_get_train_df": [
+      "self",
+      "train_data",
+      "max_num_items",
+      "max_num_samples"
+    ],
+    "_get_lags_for_step": [
+      "trailing_lags",
+      "seasonal_lags",
+      "step"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "_get_residuals_std_path": [
+      "cls",
+      "model_path"
+    ],
+    "_predict_with_single_model": [
+      "cls",
+      "full_df",
+      "path_to_model",
+      "model_cls",
+      "step",
+      "quantile_levels",
+      "prediction_length",
+      "lags",
+      "date_features"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "PseudoShuffledIterableDataset": {
+    "__init__": [
+      "self",
+      "base_dataset",
+      "shuffle_buffer_size"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "ChronosFineTuningDataset": {
+    "__init__": [
+      "self",
+      "target_df",
+      "target_column",
+      "context_length",
+      "prediction_length",
+      "tokenizer",
+      "mode"
+    ],
+    "_create_instance_splitter": [
+      "self",
+      "mode"
+    ],
+    "_create_training_data": [
+      "self",
+      "data"
+    ],
+    "_create_validation_data": [
+      "self",
+      "data"
+    ],
+    "to_chronos_format": [
+      "self",
+      "entry"
+    ],
+    "to_chronos_bolt_format": [
+      "self",
+      "entry"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "shuffle": [
+      "self",
+      "shuffle_buffer_size"
+    ]
+  },
+  "left_pad_and_stack_1D": [
+    "tensors"
+  ],
+  "ChronosInferenceDataset": {
+    "__init__": [
+      "self",
+      "target_df",
+      "context_length",
+      "target_column"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_get_context": [
+      "self",
+      "a",
+      "pad_value"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "ChronosInferenceDataLoader": {
+    "__init__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "EvaluateAndSaveFinalStepCallback": {
+    "on_step_end": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ]
+  },
+  "TimeLimitCallback": {
+    "__init__": [
+      "self",
+      "time_limit"
+    ],
+    "on_train_begin": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ],
+    "on_step_end": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ]
+  },
+  "LoggerCallback": {
+    "on_log": [
+      "self",
+      "args",
+      "state",
+      "control",
+      "logs"
+    ]
+  },
+  "timeout_callback": [
+    "seconds"
+  ],
+  "update_output_quantiles": [
+    "model",
+    "new_quantiles"
+  ],
+  "MODEL_CONFIGS": [],
+  "MODEL_ALIASES": [],
+  "ChronosModel": {
+    "ag_priority": [],
+    "default_model_path": [],
+    "default_max_time_limit_ratio": [],
+    "maximum_context_length": [],
+    "__init__": [
+      "self",
+      "freq",
+      "prediction_length",
+      "path",
+      "name",
+      "eval_metric",
+      "hyperparameters"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "reset_paths",
+      "load_oof",
+      "verbose"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "model_pipeline": [
+      "self"
+    ],
+    "ag_default_config": [
+      "self"
+    ],
+    "min_num_gpus": [
+      "self"
+    ],
+    "default_batch_size": [
+      "self"
+    ],
+    "default_torch_dtype": [
+      "self"
+    ],
+    "get_minimum_resources": [
+      "self",
+      "is_gpu_available"
+    ],
+    "load_model_pipeline": [
+      "self",
+      "is_training"
+    ],
+    "persist": [
+      "self"
+    ],
+    "_has_tf32": [
+      "self"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "_get_fine_tune_trainer_kwargs": [
+      "self",
+      "init_args",
+      "eval_during_fine_tune"
+    ],
+    "_validate_and_assign_attributes": [
+      "self",
+      "model_params"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "_get_inference_data_loader": [
+      "self",
+      "data",
+      "context_length",
+      "batch_size",
+      "num_workers",
+      "time_limit"
+    ],
+    "_get_context_length": [
+      "self",
+      "data"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "Chronos2Model": {
+    "ag_model_aliases": [],
+    "ag_priority": [],
+    "_supports_known_covariates": [],
+    "_supports_past_covariates": [],
+    "__init__": [
+      "self",
+      "freq",
+      "prediction_length",
+      "path",
+      "name",
+      "eval_metric",
+      "hyperparameters"
+    ],
+    "model_path": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "_remove_disabled_covariates": [
+      "self",
+      "past_df",
+      "future_df"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "load_model_pipeline": [
+      "self"
+    ],
+    "persist": [
+      "self"
+    ],
+    "_update_transformers_loggers": [
+      "self",
+      "log_level"
+    ],
+    "_fine_tune": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "verbosity"
+    ],
+    "_more_tags": [
+      "self"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ]
+  },
+  "NaiveModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "SeasonalNaiveModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "AverageModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "default_max_ts_length": [],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "SeasonalAverageModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "default_max_ts_length": [],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "AbstractStatsForecastModel": {
+    "init_time_in_seconds": [],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ],
+    "_get_local_model": [
+      "self",
+      "local_model_args"
+    ],
+    "_get_point_forecast": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "AbstractProbabilisticStatsForecastModel": {
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_get_confidence_levels": [
+      "self"
+    ]
+  },
+  "AutoARIMAModel": {
+    "ag_priority": [],
+    "init_time_in_seconds": [],
+    "allowed_local_model_args": [],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "ARIMAModel": {
+    "ag_priority": [],
+    "init_time_in_seconds": [],
+    "allowed_local_model_args": [],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "AutoETSModel": {
+    "ag_priority": [],
+    "init_time_in_seconds": [],
+    "allowed_local_model_args": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "ETSModel": {
+    "ag_priority": [],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ]
+  },
+  "DynamicOptimizedThetaModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "ThetaModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "AbstractConformalizedStatsForecastModel": {
+    "max_num_conformalization_windows": [],
+    "_get_nonconformity_scores": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "AutoCESModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_get_point_forecast": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "AbstractStatsForecastIntermittentDemandModel": {
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "ADIDAModel": {
+    "ag_priority": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "CrostonModel": {
+    "ag_model_aliases": [],
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ]
+  },
+  "IMAPAModel": {
+    "ag_priority": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ]
+  },
+  "ZeroModel": {
+    "ag_priority": [],
+    "_get_model_type": [
+      "self",
+      "variant"
+    ],
+    "_get_point_forecast": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "NPTSModel": {
+    "ag_priority": [],
+    "allowed_local_model_args": [],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "AbstractLocalModel": {
+    "default_max_time_limit_ratio": [],
+    "__init__": [
+      "self",
+      "freq",
+      "prediction_length",
+      "path",
+      "name",
+      "eval_metric",
+      "hyperparameters"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "preprocess": [
+      "self",
+      "data",
+      "known_covariates",
+      "is_train"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_compute_n_jobs": [
+      "n_jobs"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "time_limit"
+    ],
+    "_get_dummy_forecast": [
+      "self",
+      "train_data",
+      "max_num_rows"
+    ],
+    "_update_local_model_args": [
+      "self",
+      "local_model_args"
+    ],
+    "_predict": [
+      "self",
+      "data"
+    ],
+    "_predict_wrapper": [
+      "self",
+      "time_series",
+      "use_fallback_model",
+      "end_time"
+    ],
+    "_predict_with_local_model": [
+      "self",
+      "time_series",
+      "local_model_args"
+    ]
+  },
+  "seasonal_naive_forecast": [
+    "target",
+    "prediction_length",
+    "quantile_levels",
+    "seasonal_period"
+  ],
+  "get_quantile_function": [
+    "q"
+  ],
+  "TotoModel": {
+    "__init__": [
+      "self",
+      "path",
+      "name",
+      "hyperparameters",
+      "freq",
+      "prediction_length",
+      "covariate_metadata",
+      "target",
+      "quantile_levels",
+      "eval_metric"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "reset_paths",
+      "load_oof",
+      "verbose"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "get_minimum_resources": [
+      "self",
+      "is_gpu_available"
+    ],
+    "load_forecaster": [
+      "self"
+    ],
+    "persist": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_sample_batch_size": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "_more_tags": [
+      "self"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ]
+  },
+  "TotoConfig": {
+    "model_type": [],
+    "__init__": [
+      "self",
+      "dropout",
+      "embed_dim",
+      "num_heads",
+      "num_layers",
+      "output_distribution_classes",
+      "output_distribution_kwargs",
+      "patch_size",
+      "scale_factor_exponent",
+      "spacewise_every_n_layers",
+      "spacewise_first",
+      "stabilize_with_global",
+      "stride",
+      "transformers_version",
+      "use_memory_efficient_attention"
+    ]
+  },
+  "TotoPretrainedModel": {
+    "config_class": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_remap_state_dict_keys": [
+      "state_dict"
+    ],
+    "load_from_checkpoint": [
+      "cls",
+      "checkpoint_path",
+      "device_map",
+      "strict"
+    ],
+    "from_pretrained": [
+      "cls"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "TotoInferenceDataset": {
+    "__init__": [
+      "self",
+      "target_df",
+      "max_context_length",
+      "target_column"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "TotoDataLoader": {
+    "__init__": [
+      "self",
+      "dataset",
+      "freq",
+      "batch_size",
+      "time_limit",
+      "device"
+    ],
+    "_get_timeout_callback": [
+      "seconds"
+    ],
+    "_collate": [
+      "time_series",
+      "device"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "Forecast": {
+    "quantile": [
+      "self",
+      "q"
+    ],
+    "median": [
+      "self"
+    ],
+    "std": [
+      "self"
+    ]
+  },
+  "TotoForecaster": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forecast": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "num_samples",
+      "samples_per_batch",
+      "use_kv_cache"
+    ],
+    "generate_mean": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "timestamp_seconds",
+      "time_interval_seconds",
+      "input_padding_mask",
+      "id_mask",
+      "use_kv_cache"
+    ],
+    "generate_samples": [
+      "self",
+      "inputs",
+      "prediction_length",
+      "num_samples",
+      "timestamp_seconds",
+      "time_interval_seconds",
+      "input_padding_mask",
+      "id_mask",
+      "sampling_batch_size",
+      "use_kv_cache"
+    ],
+    "create_affine_transformed": [
+      "base_distr",
+      "loc",
+      "scale"
+    ]
+  },
+  "pad_array": [
+    "values",
+    "patch_stride"
+  ],
+  "pad_id_mask": [
+    "id_mask",
+    "patch_stride"
+  ],
+  "MaskedTimeseries": {
+    "to": [
+      "self",
+      "device"
+    ]
+  },
+  "is_extreme_value": [
+    "t"
+  ],
+  "replace_extreme_values": [
+    "t",
+    "replacement"
+  ],
+  "freq_to_seconds": [
+    "freq"
+  ],
+  "exists": [
+    "val"
+  ],
+  "default": [
+    "val",
+    "d"
+  ],
+  "slice_at_dim": [
+    "t",
+    "dim_slice"
+  ],
+  "rotate_half": [
+    "x"
+  ],
+  "apply_rotary_emb": [
+    "freqs",
+    "t",
+    "start_index",
+    "scale",
+    "seq_dim",
+    "freqs_seq_dim"
+  ],
+  "apply_learned_rotations": [
+    "rotations",
+    "t",
+    "start_index",
+    "freq_ranges"
+  ],
+  "RotaryEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "custom_freqs",
+      "freqs_for",
+      "theta",
+      "max_freq",
+      "num_freqs",
+      "learned_freq",
+      "use_xpos",
+      "xpos_scale_base",
+      "interpolate_factor",
+      "theta_rescale_factor",
+      "seq_before_head_dim",
+      "cache_if_possible",
+      "cache_max_seq_len"
+    ],
+    "device": [
+      "self"
+    ],
+    "get_seq_pos": [
+      "self",
+      "seq_len",
+      "device",
+      "dtype",
+      "offset"
+    ],
+    "rotate_queries_or_keys": [
+      "self",
+      "t",
+      "seq_dim",
+      "offset",
+      "scale"
+    ],
+    "rotate_queries_with_cached_keys": [
+      "self",
+      "q",
+      "k",
+      "seq_dim",
+      "offset"
+    ],
+    "rotate_queries_and_keys": [
+      "self",
+      "q",
+      "k",
+      "seq_dim"
+    ],
+    "get_scale": [
+      "self",
+      "t",
+      "seq_len",
+      "offset"
+    ],
+    "get_axial_freqs": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "t",
+      "seq_len",
+      "offset"
+    ]
+  },
+  "log": [],
+  "AttentionAxis": {
+    "TIME": [],
+    "SPACE": []
+  },
+  "BaseMultiheadAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "dropout",
+      "rotary_emb",
+      "use_memory_efficient_attention"
+    ],
+    "rearrange_inputs": [
+      "self",
+      "inputs"
+    ],
+    "get_qkv": [
+      "self",
+      "inputs"
+    ],
+    "positional_embedding": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "kv_cache",
+      "layer_idx"
+    ],
+    "rearrange_output": [
+      "self",
+      "output",
+      "batch",
+      "variate",
+      "seq_len"
+    ],
+    "run_attention": [
+      "self",
+      "attention_mask",
+      "q",
+      "k",
+      "v",
+      "seq_pos_offset",
+      "dropout",
+      "seq_len",
+      "variate"
+    ],
+    "forward": [
+      "self",
+      "layer_idx",
+      "inputs",
+      "attention_mask",
+      "kv_cache"
+    ]
+  },
+  "TimeWiseMultiheadAttention": {
+    "attention_axis": []
+  },
+  "SpaceWiseMultiheadAttention": {
+    "attention_axis": []
+  },
+  "MultiHeadAttention": [],
+  "SwiGLU": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "include_weight",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "increment_and_forward_": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "make_batched_block_mask": [
+    "t"
+  ],
+  "TransformerLayer": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "mlp_hidden_dim",
+      "dropout",
+      "rotary_emb",
+      "attention_axis",
+      "RMS_norm",
+      "use_memory_efficient_attention"
+    ],
+    "forward": [
+      "self",
+      "layer_idx",
+      "inputs",
+      "attention_mask",
+      "kv_cache"
+    ]
+  },
+  "Transformer": {
+    "__init__": [
+      "self",
+      "num_layers",
+      "embed_dim",
+      "num_heads",
+      "mlp_hidden_dim",
+      "dropout",
+      "spacewise_every_n_layers",
+      "spacewise_first",
+      "use_memory_efficient_attention"
+    ],
+    "_get_mask": [
+      "self",
+      "num_heads",
+      "dtype",
+      "id_mask"
+    ],
+    "_pad_to_multiple": [
+      "self",
+      "tensor",
+      "multiple",
+      "causal"
+    ],
+    "_get_layer_types": [
+      "self",
+      "num_layers",
+      "spacewise_every_n_layers",
+      "spacewise_first"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "id_mask",
+      "kv_cache"
+    ]
+  },
+  "K": [],
+  "V": [],
+  "KV": [],
+  "KVCache": {
+    "__post_init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "layer_idx"
+    ],
+    "current_len": [
+      "self",
+      "cache_idx"
+    ],
+    "seq_len": [
+      "self",
+      "layer_idx"
+    ],
+    "append": [
+      "self",
+      "layer_idx",
+      "kv"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "TotoOutput": {},
+  "patchify_id_mask": [
+    "id_mask",
+    "patch_size"
+  ],
+  "PatchEmbedding": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "stride",
+      "embed_dim"
+    ],
+    "_patchify": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "id_mask"
+    ]
+  },
+  "TotoBackbone": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "stride",
+      "embed_dim",
+      "num_layers",
+      "num_heads",
+      "mlp_hidden_dim",
+      "dropout",
+      "spacewise_every_n_layers",
+      "scaler_cls",
+      "output_distribution_classes",
+      "spacewise_first",
+      "output_distribution_kwargs",
+      "use_memory_efficient_attention",
+      "stabilize_with_global",
+      "scale_factor_exponent"
+    ],
+    "allocate_kv_cache": [
+      "self",
+      "batch_size",
+      "num_variates",
+      "max_time_steps",
+      "device",
+      "dtype"
+    ],
+    "backbone": [
+      "self",
+      "inputs",
+      "input_padding_mask",
+      "id_mask",
+      "kv_cache",
+      "scaling_prefix_length"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "input_padding_mask",
+      "id_mask",
+      "kv_cache",
+      "scaling_prefix_length"
+    ],
+    "device": [
+      "self"
+    ]
+  },
+  "DistributionOutput": {},
+  "StudentTOutput": {
+    "__init__": [
+      "self",
+      "embed_dim"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "loc",
+      "scale"
+    ]
+  },
+  "MixtureOfStudentTsOutput": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "k_components"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "loc",
+      "scale"
+    ]
+  },
+  "TimeAwareRotaryEmbedding": {
+    "__init__": [
+      "self"
+    ],
+    "rotate_queries_and_keys": [
+      "self",
+      "q",
+      "k",
+      "seq_dim",
+      "seq_pos",
+      "seq_pos_offset"
+    ],
+    "get_scale": [
+      "self",
+      "t",
+      "seq_len",
+      "offset"
+    ]
+  },
+  "compute_causal_statistics": [
+    "data",
+    "weights",
+    "padding_mask",
+    "dim",
+    "minimum_scale",
+    "use_bessel_correction",
+    "stabilize_with_global",
+    "scale_factor_exponent",
+    "prefix_length"
+  ],
+  "CausalPatchStdMeanScaler": {
+    "__init__": [
+      "self",
+      "dim",
+      "patch_size",
+      "minimum_scale",
+      "use_bessel_correction",
+      "stabilize_with_global",
+      "scale_factor_exponent"
+    ],
+    "__call__": [
+      "self",
+      "data",
+      "padding_mask",
+      "weights",
+      "prefix_length"
+    ]
+  },
+  "TimeSeriesEnsembleSelection": {
+    "__init__": [
+      "self",
+      "ensemble_size",
+      "metric",
+      "problem_type",
+      "sorted_initialization",
+      "bagging",
+      "tie_breaker",
+      "random_state",
+      "prediction_length",
+      "target"
+    ],
+    "fit": [
+      "self",
+      "predictions",
+      "labels",
+      "time_limit"
+    ],
+    "_fit": [
+      "self",
+      "predictions",
+      "labels",
+      "time_limit",
+      "sample_weight"
+    ],
+    "_calculate_regret": [
+      "self",
+      "y_true",
+      "y_pred_proba",
+      "metric",
+      "sample_weight"
+    ]
+  },
+  "fit_time_series_ensemble_selection": [
+    "data_per_window",
+    "predictions_per_window",
+    "ensemble_size",
+    "eval_metric",
+    "prediction_length",
+    "target",
+    "time_limit"
+  ],
+  "get_ensemble_class": [
+    "name"
+  ],
+  "PerItemGreedyEnsemble": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "model_names": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ],
+    "_split_predictions_per_item": [
+      "self",
+      "predictions_per_window"
+    ],
+    "_split_data_per_item": [
+      "self",
+      "data_per_window"
+    ],
+    "_fit_item_ensemble": [
+      "data_per_window",
+      "predictions_per_window",
+      "time_limit_per_item",
+      "end_time"
+    ],
+    "_predict": [
+      "self",
+      "data"
+    ],
+    "remap_base_models": [
+      "self",
+      "model_refit_map"
+    ]
+  },
+  "AbstractTimeSeriesEnsembleModel": {
+    "model_names": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ],
+    "predict": [
+      "self",
+      "data"
+    ],
+    "_predict": [
+      "self",
+      "data"
+    ],
+    "remap_base_models": [
+      "self",
+      "model_refit_map"
+    ]
+  },
+  "SimpleAverageEnsemble": {
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ]
+  },
+  "PerformanceWeightedEnsemble": {
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ]
+  },
+  "AbstractWeightedTimeSeriesEnsembleModel": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "model_names": [
+      "self"
+    ],
+    "model_weights": [
+      "self"
+    ],
+    "_predict": [
+      "self",
+      "data"
+    ],
+    "get_info": [
+      "self"
+    ],
+    "remap_base_models": [
+      "self",
+      "model_refit_map"
+    ]
+  },
+  "GreedyEnsemble": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ]
+  },
+  "MedianEnsemble": {
+    "_get_ensemble_regressor": [
+      "self"
+    ]
+  },
+  "BaseTabularEnsemble": {
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_ensemble_regressor": [
+      "self"
+    ]
+  },
+  "TabularEnsemble": {
+    "ensemble_regressor_type": []
+  },
+  "PerQuantileTabularEnsemble": {
+    "ensemble_regressor_type": []
+  },
+  "LinearStackerEnsemble": {
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_ensemble_regressor": [
+      "self"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ]
+  },
+  "ArrayBasedTimeSeriesEnsembleModel": {
+    "__init__": [
+      "self",
+      "path",
+      "name",
+      "hyperparameters",
+      "freq",
+      "prediction_length",
+      "covariate_metadata",
+      "target",
+      "quantile_levels",
+      "eval_metric"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "to_array": [
+      "df"
+    ],
+    "_get_base_model_predictions": [
+      "self",
+      "predictions_per_window"
+    ],
+    "_isotonize": [
+      "self",
+      "prediction_array"
+    ],
+    "_fit": [
+      "self",
+      "predictions_per_window",
+      "data_per_window",
+      "model_scores",
+      "time_limit"
+    ],
+    "_get_ensemble_regressor": [
+      "self"
+    ],
+    "_predict": [
+      "self",
+      "data"
+    ],
+    "model_names": [
+      "self"
+    ],
+    "remap_base_models": [
+      "self",
+      "model_refit_map"
+    ],
+    "_filter_failed_models": [
+      "self",
+      "predictions_per_window",
+      "model_scores"
+    ]
+  },
+  "LinearStackerEnsembleRegressor": {
+    "__init__": [
+      "self",
+      "quantile_levels",
+      "weights_per",
+      "lr",
+      "max_epochs",
+      "relative_tolerance",
+      "prune_below"
+    ],
+    "_compute_weight_shape": [
+      "self",
+      "base_model_predictions_shape"
+    ],
+    "make_weighted_average_module": [
+      "self",
+      "base_model_predictions_shape"
+    ],
+    "fit": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions",
+      "labels",
+      "time_limit"
+    ],
+    "predict": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ]
+  },
+  "EnsembleRegressor": {
+    "__init__": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions",
+      "labels",
+      "time_limit"
+    ],
+    "predict": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ]
+  },
+  "MedianEnsembleRegressor": {
+    "fit": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions",
+      "labels",
+      "time_limit"
+    ],
+    "predict": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ]
+  },
+  "PerQuantileTabularEnsembleRegressor": {
+    "__init__": [
+      "self",
+      "quantile_levels",
+      "model_name",
+      "model_hyperparameters"
+    ],
+    "fit": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions",
+      "labels",
+      "time_limit"
+    ],
+    "_get_feature_df": [
+      "self",
+      "predictions",
+      "index"
+    ],
+    "predict": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ]
+  },
+  "TabularEnsembleRegressor": {
+    "__init__": [
+      "self",
+      "quantile_levels",
+      "model_name",
+      "model_hyperparameters"
+    ],
+    "fit": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions",
+      "labels",
+      "time_limit"
+    ],
+    "predict": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ],
+    "_get_feature_df": [
+      "self",
+      "base_model_mean_predictions",
+      "base_model_quantile_predictions"
+    ],
+    "_get_feature_names": [
+      "self",
+      "num_models"
+    ],
+    "_get_median_quantile_index": [
+      "self"
+    ]
+  },
+  "MultiWindowBacktestingModel": {
+    "default_max_time_limit_ratio": [],
+    "__init__": [
+      "self",
+      "model_base",
+      "model_base_kwargs"
+    ],
+    "supports_static_features": [
+      "self"
+    ],
+    "supports_known_covariates": [
+      "self"
+    ],
+    "supports_past_covariates": [
+      "self"
+    ],
+    "_get_model_base": [
+      "self"
+    ],
+    "_get_hpo_backend": [
+      "self"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "get_minimum_resources": [
+      "self",
+      "is_gpu_available"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity",
+      "val_splitter",
+      "refit_every_n_windows"
+    ],
+    "get_info": [
+      "self"
+    ],
+    "get_child_model": [
+      "self",
+      "window_index"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "score_and_cache_oof": [
+      "self",
+      "val_data",
+      "store_val_score",
+      "store_predict_time"
+    ],
+    "_get_search_space": [
+      "self"
+    ],
+    "_initialize_transforms_and_regressor": [
+      "self"
+    ],
+    "_get_hpo_train_fn_kwargs": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "persist": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "reset_paths",
+      "load_oof",
+      "verbose"
+    ],
+    "convert_to_refit_full_template": [
+      "self"
+    ],
+    "convert_to_refit_full_via_copy": [
+      "self"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "DeepARModel": {
+    "ag_priority": [],
+    "_supports_known_covariates": [],
+    "_supports_static_features": [],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ]
+  },
+  "SimpleFeedForwardModel": {
+    "ag_priority": [],
+    "_get_estimator_class": [
+      "self"
+    ]
+  },
+  "TemporalFusionTransformerModel": {
+    "ag_priority": [],
+    "ag_model_aliases": [],
+    "_supports_known_covariates": [],
+    "_supports_past_covariates": [],
+    "_supports_cat_covariates": [],
+    "_supports_static_features": [],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ]
+  },
+  "DLinearModel": {
+    "ag_priority": [],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_estimator_class": [
+      "self"
+    ]
+  },
+  "PatchTSTModel": {
+    "ag_priority": [],
+    "_supports_known_covariates": [],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ]
+  },
+  "WaveNetModel": {
+    "ag_priority": [],
+    "_supports_known_covariates": [],
+    "_supports_static_features": [],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ]
+  },
+  "TiDEModel": {
+    "ag_priority": [],
+    "_supports_known_covariates": [],
+    "_supports_static_features": [],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ]
+  },
+  "SimpleGluonTSDataset": {
+    "__init__": [
+      "self",
+      "target_df",
+      "freq",
+      "target_column",
+      "feat_static_cat",
+      "feat_static_real",
+      "feat_dynamic_cat",
+      "feat_dynamic_real",
+      "past_feat_dynamic_cat",
+      "past_feat_dynamic_real",
+      "includes_future",
+      "prediction_length"
+    ],
+    "_astype": [
+      "array",
+      "dtype"
+    ],
+    "_get_freq_for_period": [
+      "freq"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "gts_logger": [],
+  "AbstractGluonTSModel": {
+    "gluonts_model_path": [],
+    "_dummy_gluonts_freq": [],
+    "__init__": [
+      "self",
+      "freq",
+      "prediction_length",
+      "path",
+      "name",
+      "eval_metric",
+      "hyperparameters"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "reset_paths",
+      "load_oof",
+      "verbose"
+    ],
+    "supports_cat_covariates": [
+      "self"
+    ],
+    "_get_hpo_backend": [
+      "self"
+    ],
+    "_deferred_init_hyperparameters": [
+      "self",
+      "dataset"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "_get_estimator_init_args": [
+      "self"
+    ],
+    "_get_estimator_class": [
+      "self"
+    ],
+    "_get_estimator": [
+      "self"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "get_minimum_resources": [
+      "self",
+      "is_gpu_available"
+    ],
+    "_to_gluonts_dataset": [
+      "self",
+      "time_series_df",
+      "known_covariates"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "_get_callbacks": [
+      "self",
+      "time_limit",
+      "early_stopping_patience"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_predict_gluonts_forecasts": [
+      "self",
+      "data",
+      "known_covariates",
+      "num_samples"
+    ],
+    "_stack_quantile_forecasts": [
+      "self",
+      "forecasts",
+      "item_ids"
+    ],
+    "_stack_sample_forecasts": [
+      "self",
+      "forecasts",
+      "item_ids"
+    ],
+    "_stack_distribution_forecasts": [
+      "self",
+      "forecasts",
+      "item_ids"
+    ],
+    "_gluonts_forecasts_to_data_frame": [
+      "self",
+      "forecasts",
+      "forecast_index"
+    ],
+    "_more_tags": [
+      "self"
+    ]
+  },
+  "model_trial": [
+    "args",
+    "model_cls",
+    "init_params",
+    "train_path",
+    "val_path",
+    "time_start",
+    "hpo_executor",
+    "is_bagged_model",
+    "reporter",
+    "time_limit",
+    "fit_kwargs"
+  ],
+  "fit_and_save_model": [
+    "model",
+    "fit_kwargs",
+    "train_data",
+    "val_data",
+    "eval_metric",
+    "time_start",
+    "time_limit"
+  ],
+  "skip_hpo": [
+    "model",
+    "train_data",
+    "val_data",
+    "time_limit"
+  ],
+  "TimeSeriesModelBase": {
+    "model_file_name": [],
+    "model_info_name": [],
+    "_oof_filename": [],
+    "__init__": [
+      "self",
+      "path",
+      "name",
+      "hyperparameters",
+      "freq",
+      "prediction_length",
+      "covariate_metadata",
+      "target",
+      "quantile_levels",
+      "eval_metric"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "rename": [
+      "self",
+      "name"
+    ],
+    "set_contexts": [
+      "self",
+      "path_context"
+    ],
+    "cache_oof_predictions": [
+      "self",
+      "predictions"
+    ],
+    "_check_and_split_hyperparameters": [
+      "cls",
+      "hyperparameters"
+    ],
+    "save": [
+      "self",
+      "path",
+      "verbose"
+    ],
+    "load": [
+      "cls",
+      "path",
+      "reset_paths",
+      "load_oof",
+      "verbose"
+    ],
+    "load_oof_predictions": [
+      "cls",
+      "path",
+      "verbose"
+    ],
+    "supports_known_covariates": [
+      "self"
+    ],
+    "supports_past_covariates": [
+      "self"
+    ],
+    "supports_static_features": [
+      "self"
+    ],
+    "get_oof_predictions": [
+      "self"
+    ],
+    "_get_default_hyperparameters": [
+      "self"
+    ],
+    "get_hyperparameters": [
+      "self"
+    ],
+    "get_hyperparameter": [
+      "self",
+      "key"
+    ],
+    "get_info": [
+      "self"
+    ],
+    "load_info": [
+      "cls",
+      "path",
+      "load_model_if_required"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "_get_system_resources": [],
+    "_get_model_base": [
+      "self"
+    ],
+    "persist": [
+      "self"
+    ],
+    "_more_tags": [
+      "self"
+    ],
+    "get_params": [
+      "self"
+    ],
+    "convert_to_refit_full_via_copy": [
+      "self"
+    ],
+    "convert_to_refit_full_template": [
+      "self"
+    ]
+  },
+  "AbstractTimeSeriesModel": {
+    "__init__": [
+      "self",
+      "path",
+      "name",
+      "hyperparameters",
+      "freq",
+      "prediction_length",
+      "covariate_metadata",
+      "target",
+      "quantile_levels",
+      "eval_metric"
+    ],
+    "_initialize_transforms_and_regressor": [
+      "self"
+    ],
+    "allowed_hyperparameters": [
+      "self"
+    ],
+    "fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "verbosity"
+    ],
+    "_fit": [
+      "self",
+      "train_data",
+      "val_data",
+      "time_limit",
+      "num_cpus",
+      "num_gpus",
+      "verbosity"
+    ],
+    "_check_fit_params": [
+      "self"
+    ],
+    "_log_unused_hyperparameters": [
+      "self",
+      "extra_allowed_hyperparameters"
+    ],
+    "predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "get_forecast_horizon_index": [
+      "self",
+      "data"
+    ],
+    "_predict": [
+      "self",
+      "data",
+      "known_covariates"
+    ],
+    "_preprocess_time_limit": [
+      "self",
+      "time_limit"
+    ],
+    "_get_search_space": [
+      "self"
+    ],
+    "_score_with_predictions": [
+      "self",
+      "data",
+      "predictions"
+    ],
+    "score": [
+      "self",
+      "data"
+    ],
+    "score_and_cache_oof": [
+      "self",
+      "val_data",
+      "store_val_score",
+      "store_predict_time"
+    ],
+    "preprocess": [
+      "self",
+      "data",
+      "known_covariates",
+      "is_train"
+    ]
+  },
+  "dup_filter": [],
+  "TimeSeriesTunable": {
+    "__init__": [
+      "self"
+    ],
+    "hyperparameter_tune": [
+      "self",
+      "train_data",
+      "val_data",
+      "val_splitter",
+      "default_num_trials",
+      "refit_every_n_windows",
+      "hyperparameter_tune_kwargs",
+      "time_limit"
+    ],
+    "_get_default_hpo_executor": [
+      "self"
+    ],
+    "_get_hpo_backend": [
+      "self"
+    ],
+    "_get_hpo_train_fn_kwargs": [
+      "self"
+    ],
+    "estimate_memory_usage": [
+      "self"
+    ],
+    "get_minimum_resources": [
+      "self",
+      "is_gpu_available"
+    ],
+    "_save_with_data": [
+      "self",
+      "train_data",
+      "val_data"
+    ],
+    "_get_model_base": [
+      "self"
+    ],
+    "_is_gpu_available": [
+      "self"
+    ],
+    "_get_search_space": [
+      "self"
+    ],
+    "get_params": [
+      "self"
+    ],
+    "_get_system_resources": []
+  }
+}

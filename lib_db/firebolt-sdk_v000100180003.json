@@ -1,0 +1,2153 @@
+{
+  "__version__": [],
+  "logger": [],
+  "SETTINGS_DEPRECATION_MESSAGE": [],
+  "ResourceManager": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "settings",
+      "auth",
+      "account_name",
+      "api_endpoint",
+      "default_region"
+    ],
+    "_init_services_v2": [
+      "self"
+    ],
+    "_init_services_v1": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "BaseService": {
+    "__init__": [
+      "self",
+      "resource_manager"
+    ],
+    "_connection": [
+      "self"
+    ]
+  },
+  "DatabaseService": {
+    "DB_FIELDS": [],
+    "GET_SQL": [],
+    "GET_BY_NAME_SQL": [],
+    "GET_WHERE_SQL": [],
+    "CREATE_PREFIX_SQL": [],
+    "IF_NOT_EXISTS_SQL": [],
+    "DISALLOWED_ACCOUNT_V2_PARAMETERS": [],
+    "_get_dict": [
+      "self",
+      "name"
+    ],
+    "get": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_many": [
+      "self",
+      "name_contains",
+      "attached_engine_name_eq",
+      "attached_engine_name_contains",
+      "region_eq"
+    ],
+    "create": [
+      "self",
+      "name",
+      "region",
+      "attached_engines",
+      "description",
+      "fail_if_exists"
+    ]
+  },
+  "InstanceTypeService": {
+    "instance_types": [],
+    "cheapest_instance": [],
+    "get": [
+      "name"
+    ]
+  },
+  "EngineService": {
+    "DB_FIELDS": [],
+    "GET_SQL": [],
+    "GET_BY_NAME_SQL": [],
+    "GET_WHERE_SQL": [],
+    "CREATE_PREFIX_SQL": [],
+    "IF_NOT_EXISTS_SQL": [],
+    "CREATE_WITH_SQL": [],
+    "CREATE_PARAMETER_NAMES": [],
+    "ATTACH_TO_DB_SQL": [],
+    "DISALLOWED_ACCOUNT_V2_PARAMETERS": [],
+    "_get_dict": [
+      "self",
+      "name"
+    ],
+    "get": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_many": [
+      "self",
+      "name_contains",
+      "current_status_eq",
+      "current_status_not_eq",
+      "region_eq",
+      "database_name"
+    ],
+    "_format_engine_parameter": [
+      "value"
+    ],
+    "_format_engine_attribute_sql": [
+      "self",
+      "param",
+      "value"
+    ],
+    "create": [
+      "self",
+      "name",
+      "region",
+      "engine_type",
+      "spec",
+      "scale",
+      "auto_stop",
+      "warmup",
+      "fail_if_exists"
+    ],
+    "attach_to_database": [
+      "self",
+      "engine",
+      "database"
+    ]
+  },
+  "EngineStatus": {
+    "STARTING": [],
+    "STARTED": [],
+    "RUNNING": [],
+    "STOPPING": [],
+    "STOPPED": [],
+    "DROPPING": [],
+    "REPAIRING": [],
+    "FAILED": [],
+    "DELETING": [],
+    "RESIZING": [],
+    "DRAINING": [],
+    "UNKNOWN": [],
+    "_missing_": [
+      "cls",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "BindingService": {
+    "get_by_key": [
+      "self",
+      "binding_key"
+    ],
+    "get_many": [
+      "self",
+      "database_id",
+      "engine_id",
+      "is_system_database"
+    ],
+    "get_database_bound_to_engine": [
+      "self",
+      "engine"
+    ],
+    "get_engines_bound_to_database": [
+      "self",
+      "database"
+    ],
+    "create": [
+      "self",
+      "engine",
+      "database",
+      "is_default_engine"
+    ]
+  },
+  "RegionService": {
+    "__init__": [
+      "self",
+      "resource_manager"
+    ],
+    "regions": [
+      "self"
+    ],
+    "regions_by_name": [
+      "self"
+    ],
+    "regions_by_key": [
+      "self"
+    ],
+    "default_region": [
+      "self"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_by_key": [
+      "self",
+      "key"
+    ],
+    "get_by_id": [
+      "self",
+      "id_"
+    ]
+  },
+  "EngineType": {
+    "GENERAL_PURPOSE": [],
+    "DATA_ANALYTICS": [],
+    "api_settings_preset_name": [
+      "self"
+    ]
+  },
+  "WarmupMethod": {
+    "MINIMAL": [],
+    "PRELOAD_INDEXES": [],
+    "PRELOAD_ALL_DATA": [],
+    "api_name": [
+      "self"
+    ]
+  },
+  "EngineStatusSummary": {
+    "ENGINE_STATUS_SUMMARY_UNSPECIFIED": [],
+    "ENGINE_STATUS_SUMMARY_STOPPED": [],
+    "ENGINE_STATUS_SUMMARY_STARTING": [],
+    "ENGINE_STATUS_SUMMARY_STARTING_INITIALIZING": [],
+    "ENGINE_STATUS_SUMMARY_RUNNING": [],
+    "ENGINE_STATUS_SUMMARY_UPGRADING": [],
+    "ENGINE_STATUS_SUMMARY_RESTARTING": [],
+    "ENGINE_STATUS_SUMMARY_RESTARTING_INITIALIZING": [],
+    "ENGINE_STATUS_SUMMARY_REPAIRING": [],
+    "ENGINE_STATUS_SUMMARY_STOPPING": [],
+    "ENGINE_STATUS_SUMMARY_DELETING": [],
+    "ENGINE_STATUS_SUMMARY_DELETED": [],
+    "ENGINE_STATUS_SUMMARY_FAILED": []
+  },
+  "EngineOrder": {
+    "ENGINE_ORDER_UNSPECIFIED": [],
+    "ENGINE_ORDER_NAME_ASC": [],
+    "ENGINE_ORDER_NAME_DESC": [],
+    "ENGINE_ORDER_COMPUTE_REGION_ID_ASC": [],
+    "ENGINE_ORDER_COMPUTE_REGION_ID_DESC": [],
+    "ENGINE_ORDER_CURRENT_STATUS_ASC": [],
+    "ENGINE_ORDER_CURRENT_STATUS_DESC": [],
+    "ENGINE_ORDER_CREATE_TIME_ASC": [],
+    "ENGINE_ORDER_CREATE_TIME_DESC": [],
+    "ENGINE_ORDER_CREATE_ACTOR_ASC": [],
+    "ENGINE_ORDER_CREATE_ACTOR_DESC": [],
+    "ENGINE_ORDER_LAST_UPDATE_TIME_ASC": [],
+    "ENGINE_ORDER_LAST_UPDATE_TIME_DESC": [],
+    "ENGINE_ORDER_LAST_UPDATE_ACTOR_ASC": [],
+    "ENGINE_ORDER_LAST_UPDATE_ACTOR_DESC": [],
+    "ENGINE_ORDER_LATEST_REVISION_CURRENT_STATUS_ASC": [],
+    "ENGINE_ORDER_LATEST_REVISION_CURRENT_STATUS_DESC": [],
+    "ENGINE_ORDER_LATEST_REVISION_SPECIFICATION_DB_COMPUTE_INSTANCES_COUNT_ASC": [],
+    "ENGINE_ORDER_LATEST_REVISION_SPECIFICATION_DB_COMPUTE_INSTANCES_COUNT_DESC": [],
+    "ENGINE_ORDER_LATEST_REVISION_SPECIFICATION_DB_COMPUTE_INSTANCES_TYPE_ID_ASC": [],
+    "ENGINE_ORDER_LATEST_REVISION_SPECIFICATION_DB_COMPUTE_INSTANCES_TYPE_ID_DESC": []
+  },
+  "DatabaseOrder": {
+    "DATABASE_ORDER_UNSPECIFIED": [],
+    "DATABASE_ORDER_NAME_ASC": [],
+    "DATABASE_ORDER_NAME_DESC": [],
+    "DATABASE_ORDER_COMPUTE_REGION_ID_ASC": [],
+    "DATABASE_ORDER_COMPUTE_REGION_ID_DESC": [],
+    "DATABASE_ORDER_DATA_SIZE_FULL_ASC": [],
+    "DATABASE_ORDER_DATA_SIZE_FULL_DESC": [],
+    "DATABASE_ORDER_DATA_SIZE_COMPRESSED_ASC": [],
+    "DATABASE_ORDER_DATA_SIZE_COMPRESSED_DESC": [],
+    "DATABASE_ORDER_CREATE_TIME_ASC": [],
+    "DATABASE_ORDER_CREATE_TIME_DESC": [],
+    "DATABASE_ORDER_CREATE_ACTOR_ASC": [],
+    "DATABASE_ORDER_CREATE_ACTOR_DESC": [],
+    "DATABASE_ORDER_LAST_UPDATE_TIME_ASC": [],
+    "DATABASE_ORDER_LAST_UPDATE_TIME_DESC": [],
+    "DATABASE_ORDER_LAST_UPDATE_ACTOR_ASC": [],
+    "DATABASE_ORDER_LAST_UPDATE_ACTOR_DESC": []
+  },
+  "get_provider_id": [
+    "client"
+  ],
+  "CLIENT_ID_ENV": [],
+  "CLIENT_SECRET_ENV": [],
+  "ACCOUNT_ENV": [],
+  "SERVER_ENV": [],
+  "DEFAULT_REGION_ENV": [],
+  "from_env": [
+    "var_name",
+    "default"
+  ],
+  "auth_from_env": [],
+  "Settings": {},
+  "escape_chars_v2": [],
+  "escape_chars_v1": [],
+  "StatementFormatter": {
+    "__init__": [
+      "self",
+      "escape_chars"
+    ],
+    "format_value": [
+      "self",
+      "value"
+    ],
+    "convert_parameter_for_serialization": [
+      "self",
+      "value"
+    ],
+    "format_statement": [
+      "self",
+      "statement",
+      "parameters"
+    ],
+    "statement_to_set": [
+      "self",
+      "statement"
+    ],
+    "_clean_sql_string": [
+      "self",
+      "token"
+    ],
+    "split_format_sql": [
+      "self",
+      "query",
+      "parameters"
+    ],
+    "format_bulk_insert": [
+      "self",
+      "query",
+      "parameters_seq"
+    ]
+  },
+  "create_statement_formatter": [
+    "version"
+  ],
+  "_NoneType": [],
+  "_col_types": [],
+  "ColType": [],
+  "RawColType": [],
+  "ParameterType": [],
+  "Date": [],
+  "DateFromTicks": [
+    "t"
+  ],
+  "Time": [
+    "hour",
+    "minute",
+    "second"
+  ],
+  "TimeFromTicks": [
+    "t"
+  ],
+  "Timestamp": [],
+  "TimestampFromTicks": [],
+  "Binary": [
+    "value"
+  ],
+  "STRING": [],
+  "BINARY": [],
+  "NUMBER": [],
+  "DATETIME": [],
+  "ROWID": [],
+  "ExtendedType": {
+    "__name__": [],
+    "is_valid_type": [
+      "type_"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "ARRAY": {
+    "__name__": [],
+    "_prefix": [],
+    "__init__": [
+      "self",
+      "subtype"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": []
+  },
+  "DECIMAL": {
+    "__name__": [],
+    "_prefixes": [],
+    "__init__": [
+      "self",
+      "precision",
+      "scale"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": []
+  },
+  "STRUCT": {
+    "__name__": [],
+    "_prefix": [],
+    "__init__": [
+      "self",
+      "fields"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": []
+  },
+  "NULLABLE_SUFFIX": [],
+  "_InternalType": {
+    "Int": [],
+    "Integer": [],
+    "Long": [],
+    "BigInt": [],
+    "Float": [],
+    "Double": [],
+    "DoublePrecision": [],
+    "Text": [],
+    "Date": [],
+    "DateExt": [],
+    "PGDate": [],
+    "Timestamp": [],
+    "TimestampExt": [],
+    "TimestampNtz": [],
+    "TimestampTz": [],
+    "Boolean": [],
+    "Bytea": [],
+    "Geography": [],
+    "Nothing": [],
+    "python_type": [
+      "self"
+    ]
+  },
+  "split_struct_fields": [
+    "raw_struct"
+  ],
+  "split_struct_field": [
+    "raw_field"
+  ],
+  "parse_type": [
+    "raw_type"
+  ],
+  "BYTEA_PREFIX": [],
+  "_parse_bytea": [
+    "str_value"
+  ],
+  "parse_value": [
+    "value",
+    "ctype"
+  ],
+  "SetParameter": [],
+  "ASYNC_QUERY_STATUS_RUNNING": [],
+  "ASYNC_QUERY_STATUS_SUCCESSFUL": [],
+  "ASYNC_QUERY_STATUS_REQUEST": [],
+  "ASYNC_QUERY_CANCEL": [],
+  "AsyncQueryInfo": [],
+  "_parse_async_query_info_results": [
+    "result",
+    "columns_names"
+  ],
+  "BaseConnection": {
+    "__init__": [
+      "self",
+      "cursor_type"
+    ],
+    "_remove_cursor": [
+      "self",
+      "cursor"
+    ],
+    "in_transaction": [
+      "self"
+    ],
+    "_parse_response_headers_transaction": [
+      "self",
+      "headers"
+    ],
+    "_parse_remove_headers_transaction": [
+      "self",
+      "headers"
+    ],
+    "_reset_transaction_state": [
+      "self"
+    ],
+    "create_transaction_params": [
+      "self"
+    ],
+    "_add_transaction_params": [
+      "self",
+      "request"
+    ],
+    "_handle_transaction_updates": [
+      "self",
+      "headers"
+    ],
+    "autocommit": [
+      "self"
+    ],
+    "closed": [
+      "self"
+    ]
+  },
+  "get_cached_system_engine_info": [
+    "auth",
+    "account_name",
+    "disable_cache"
+  ],
+  "set_cached_system_engine_info": [
+    "cache_key",
+    "connection_id",
+    "url",
+    "params",
+    "disable_cache"
+  ],
+  "get_user_agent_for_connection": [
+    "auth",
+    "connection_id",
+    "account_name",
+    "additional_parameters",
+    "disable_cache"
+  ],
+  "ENGINE_STATUS_RUNNING_LIST": [],
+  "JSON_OUTPUT_FORMAT": [],
+  "JSON_LINES_OUTPUT_FORMAT": [],
+  "CursorState": {
+    "NONE": [],
+    "ERROR": [],
+    "DONE": [],
+    "CLOSED": []
+  },
+  "ParameterStyle": {
+    "QMARK": [],
+    "NATIVE": [],
+    "FB_NUMERIC": []
+  },
+  "TRANSACTION_ID_SETTING": [],
+  "TRANSACTION_SEQUENCE_ID_SETTING": [],
+  "USE_PARAMETER_LIST": [],
+  "DISALLOWED_PARAMETER_LIST": [],
+  "TRANSACTION_PARAMETER_LIST": [],
+  "IMMUTABLE_PARAMETER_LIST": [],
+  "UPDATE_ENDPOINT_HEADER": [],
+  "UPDATE_PARAMETERS_HEADER": [],
+  "RESET_SESSION_HEADER": [],
+  "REMOVE_PARAMETERS_HEADER": [],
+  "ExecutionPlan": {},
+  "BaseStatementPlanner": {
+    "__init__": [
+      "self",
+      "formatter"
+    ],
+    "create_execution_plan": [
+      "self",
+      "raw_query",
+      "parameters",
+      "skip_parsing",
+      "async_execution",
+      "streaming",
+      "bulk_insert"
+    ],
+    "_validate_bulk_insert_query": [
+      "self",
+      "query"
+    ],
+    "_create_bulk_execution_plan": [
+      "self",
+      "raw_query",
+      "parameters",
+      "async_execution"
+    ],
+    "_create_standard_execution_plan": [
+      "self",
+      "raw_query",
+      "parameters",
+      "skip_parsing",
+      "async_execution",
+      "streaming"
+    ],
+    "_create_bulk_plan_impl": [
+      "self",
+      "raw_query",
+      "parameters",
+      "async_execution"
+    ],
+    "_get_output_format": [
+      "streaming"
+    ]
+  },
+  "FbNumericStatementPlanner": {
+    "_create_standard_execution_plan": [
+      "self",
+      "raw_query",
+      "parameters",
+      "skip_parsing",
+      "async_execution",
+      "streaming"
+    ],
+    "_create_bulk_plan_impl": [
+      "self",
+      "raw_query",
+      "parameters",
+      "async_execution"
+    ],
+    "_build_fb_numeric_query_params": [
+      "self",
+      "parameters",
+      "streaming",
+      "async_execution",
+      "extra_params"
+    ],
+    "_prepare_fb_numeric_bulk_insert": [
+      "self",
+      "query",
+      "parameters_seq"
+    ]
+  },
+  "QmarkStatementPlanner": {
+    "_create_standard_execution_plan": [
+      "self",
+      "raw_query",
+      "parameters",
+      "skip_parsing",
+      "async_execution",
+      "streaming"
+    ],
+    "_create_bulk_plan_impl": [
+      "self",
+      "raw_query",
+      "parameters",
+      "async_execution"
+    ]
+  },
+  "StatementPlannerFactory": {
+    "_PLANNER_CLASSES": [],
+    "create_planner": [
+      "cls",
+      "paramstyle",
+      "formatter"
+    ]
+  },
+  "check_not_closed": [
+    "func"
+  ],
+  "check_query_executed": [
+    "func"
+  ],
+  "async_not_allowed": [
+    "func"
+  ],
+  "_parse_update_endpoint": [
+    "new_engine_endpoint_header"
+  ],
+  "_raise_if_internal_set_parameter": [
+    "parameter"
+  ],
+  "RowSet": [],
+  "BaseCursor": {
+    "__slots__": [],
+    "default_arraysize": [],
+    "__init__": [
+      "self"
+    ],
+    "database": [
+      "self",
+      "database"
+    ],
+    "description": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "rowcount": [
+      "self"
+    ],
+    "query_id": [
+      "self"
+    ],
+    "async_query_token": [
+      "self"
+    ],
+    "arraysize": [
+      "self",
+      "value"
+    ],
+    "closed": [
+      "self"
+    ],
+    "flush_parameters": [
+      "self"
+    ],
+    "_reset": [
+      "self"
+    ],
+    "_update_set_parameters": [
+      "self",
+      "parameters"
+    ],
+    "_remove_set_parameters": [
+      "self",
+      "parameter_names"
+    ],
+    "_update_server_parameters": [
+      "self",
+      "parameters"
+    ],
+    "_parse_response_headers": [
+      "self",
+      "headers"
+    ],
+    "_log_query": [
+      "query"
+    ],
+    "engine_name": [
+      "self"
+    ],
+    "_parse_async_response": [
+      "self",
+      "response"
+    ],
+    "setinputsizes": [
+      "self",
+      "sizes"
+    ],
+    "setoutputsize": [
+      "self",
+      "size",
+      "column"
+    ],
+    "close": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_get_output_format": [
+      "is_streaming"
+    ],
+    "get_cache_record": [
+      "self"
+    ],
+    "set_cache_record": [
+      "self",
+      "record"
+    ]
+  },
+  "BaseRowSet": {
+    "row_count": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "columns": [
+      "self"
+    ],
+    "append_empty_response": [
+      "self"
+    ],
+    "_parse_row": [
+      "self",
+      "row"
+    ]
+  },
+  "MessageType": {
+    "start": [],
+    "data": [],
+    "success": [],
+    "error": []
+  },
+  "Column": {},
+  "StartRecord": {},
+  "DataRecord": {},
+  "ErrorRecord": {},
+  "SuccessRecord": {},
+  "JSONLinesRecord": [],
+  "parse_json_lines_record": [
+    "record"
+  ],
+  "AsyncResponse": {},
+  "Statistics": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "RowsResponse": {},
+  "ByteStream": {
+    "__iter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "AsyncByteStream": {
+    "__aiter__": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ]
+  },
+  "StreamingRowSetCommonBase": {
+    "__init__": [
+      "self"
+    ],
+    "_reset": [
+      "self"
+    ],
+    "_current_response": [
+      "self"
+    ],
+    "_next_json_lines_record_from_line": [
+      "self",
+      "next_line"
+    ],
+    "_handle_error_record": [
+      "self",
+      "record"
+    ],
+    "_fetch_columns_from_record": [
+      "self",
+      "record"
+    ],
+    "_pop_data_record_from_record": [
+      "self",
+      "record"
+    ],
+    "_parse_row": [
+      "self",
+      "row_data"
+    ],
+    "_get_next_data_row_from_current_record": [
+      "self",
+      "stop_iteration_err_cls"
+    ]
+  },
+  "InMemoryRowSet": {
+    "__init__": [
+      "self"
+    ],
+    "append_empty_response": [
+      "self"
+    ],
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "append_response_stream": [
+      "self",
+      "stream"
+    ],
+    "_row_set": [
+      "self"
+    ],
+    "row_count": [
+      "self"
+    ],
+    "columns": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BaseSyncRowSet": {
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ]
+  },
+  "close_on_op_error": [
+    "func"
+  ],
+  "StreamingRowSet": {
+    "__init__": [
+      "self"
+    ],
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "append_empty_response": [
+      "self"
+    ],
+    "_next_json_lines_record": [
+      "self"
+    ],
+    "row_count": [
+      "self"
+    ],
+    "_fetch_columns": [
+      "self"
+    ],
+    "columns": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "_pop_data_record": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "InMemoryAsyncRowSet": {
+    "__init__": [
+      "self"
+    ],
+    "append_empty_response": [
+      "self"
+    ],
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "row_count": [
+      "self"
+    ],
+    "columns": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "__anext__": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ]
+  },
+  "BaseAsyncRowSet": {
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__anext__": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ]
+  },
+  "StreamingAsyncRowSet": {
+    "__init__": [
+      "self"
+    ],
+    "append_response": [
+      "self",
+      "response"
+    ],
+    "append_empty_response": [
+      "self"
+    ],
+    "_next_json_lines_record": [
+      "self"
+    ],
+    "row_count": [
+      "self"
+    ],
+    "_fetch_columns": [
+      "self"
+    ],
+    "columns": [
+      "self"
+    ],
+    "statistics": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "_pop_data_record": [
+      "self"
+    ],
+    "__anext__": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ]
+  },
+  "APPNAME": [],
+  "generate_salt": [],
+  "generate_file_name": [
+    "username",
+    "password"
+  ],
+  "TokenSecureStorage": {
+    "__init__": [
+      "self",
+      "username",
+      "password"
+    ],
+    "_get_salt": [
+      "self"
+    ],
+    "_read_data_json": [
+      "self"
+    ],
+    "get_cached_token": [
+      "self"
+    ],
+    "cache_token": [
+      "self",
+      "token",
+      "expiration_ts"
+    ]
+  },
+  "FernetEncrypter": {
+    "__init__": [
+      "self",
+      "salt",
+      "username",
+      "password"
+    ],
+    "encrypt": [
+      "self",
+      "data"
+    ],
+    "decrypt": [
+      "self",
+      "data"
+    ]
+  },
+  "ConnectorVersions": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "CLIENT_MAP": [],
+  "DRIVER_MAP": [],
+  "_os_compare": [
+    "file",
+    "expected"
+  ],
+  "get_sdk_properties": [],
+  "detect_connectors": [
+    "connector_map"
+  ],
+  "format_as_user_agent": [
+    "drivers",
+    "clients",
+    "additional_properties"
+  ],
+  "get_user_agent_header": [
+    "user_drivers",
+    "user_clients",
+    "additional_properties"
+  ],
+  "get_cache_tracking_params": [
+    "cache_key",
+    "conn_id"
+  ],
+  "TIter": [],
+  "async_islice": [
+    "async_iterator",
+    "n"
+  ],
+  "_anext": [
+    "iterator",
+    "default"
+  ],
+  "anext": [],
+  "TimeoutController": {
+    "timeout_error_cls": [],
+    "__init__": [
+      "self",
+      "timeout"
+    ],
+    "raise_if_timeout": [
+      "self"
+    ],
+    "remaining": [
+      "self"
+    ]
+  },
+  "T": [],
+  "CACHE_EXPIRY_SECONDS": [],
+  "ReprCacheable": {
+    "__repr__": [
+      "self"
+    ]
+  },
+  "EngineInfo": {},
+  "DatabaseInfo": {},
+  "ConnectionInfo": {},
+  "noop_if_disabled": [
+    "func"
+  ],
+  "UtilCache": {
+    "__init__": [
+      "self",
+      "cache_name"
+    ],
+    "disable": [
+      "self"
+    ],
+    "enable": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "_is_expired": [
+      "self",
+      "value"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ],
+    "delete": [
+      "self",
+      "key"
+    ],
+    "clear": [
+      "self"
+    ],
+    "create_key": [
+      "self",
+      "obj"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ]
+  },
+  "SecureCacheKey": {
+    "__init__": [
+      "self",
+      "key_elements",
+      "encryption_key"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "_firebolt_cache": [],
+  "FireboltError": {},
+  "FireboltEngineError": {},
+  "EngineNotRunningError": {
+    "__init__": [
+      "self",
+      "engine_name"
+    ]
+  },
+  "EngineNotFoundError": {
+    "__init__": [
+      "self",
+      "engine_name"
+    ]
+  },
+  "DatabaseNotFoundError": {
+    "__init__": [
+      "self",
+      "database_name"
+    ]
+  },
+  "InstanceTypeNotFoundError": {
+    "__init__": [
+      "self",
+      "instance_type_name"
+    ]
+  },
+  "NoAttachedDatabaseError": {
+    "__init__": [
+      "self",
+      "method_name"
+    ]
+  },
+  "AlreadyBoundError": {},
+  "FireboltDatabaseError": {},
+  "AccountNotFoundError": {
+    "__init__": [
+      "self",
+      "account_name"
+    ]
+  },
+  "AccountNotFoundOrNoAccessError": {
+    "__init__": [
+      "self",
+      "account_name"
+    ]
+  },
+  "AttachedEngineInUseError": {
+    "__init__": [
+      "self",
+      "method_name"
+    ]
+  },
+  "ConnectionError": {},
+  "ConnectionClosedError": {},
+  "CursorError": {},
+  "CursorClosedError": {
+    "__init__": [
+      "self",
+      "method_name"
+    ]
+  },
+  "QueryNotRunError": {
+    "__init__": [
+      "self",
+      "method_name"
+    ]
+  },
+  "AuthenticationError": {
+    "__init__": [
+      "self",
+      "cause"
+    ]
+  },
+  "AuthorizationError": {
+    "_default_error_message": [],
+    "__init__": [
+      "self",
+      "cause"
+    ]
+  },
+  "Warning": {},
+  "Error": [],
+  "InterfaceError": {},
+  "DatabaseError": {},
+  "DataError": {},
+  "OperationalError": {},
+  "IntegrityError": {},
+  "InternalError": {},
+  "ProgrammingError": {},
+  "NotSupportedError": {},
+  "V1NotSupportedError": {
+    "msg": [],
+    "__init__": [
+      "self",
+      "operation"
+    ]
+  },
+  "ConfigurationError": {},
+  "FireboltStructuredError": {
+    "message_template": [],
+    "__init__": [
+      "self",
+      "json"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "QueryTimeoutError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "MethodNotAllowedInAsyncError": {
+    "__init__": [
+      "self",
+      "method_name"
+    ]
+  },
+  "AUTH_SERVICE_ACCOUNT_URL": [],
+  "DATABASES_URL": [],
+  "ENGINES_URL": [],
+  "ENGINES_BY_IDS_URL": [],
+  "ACCOUNT_DATABASES_URL": [],
+  "ACCOUNT_DATABASE_URL": [],
+  "ACCOUNT_DATABASE_BINDING_URL": [],
+  "ACCOUNT_DATABASE_BY_NAME_URL": [],
+  "ACCOUNT_INSTANCE_TYPES_URL": [],
+  "PROVIDERS_URL": [],
+  "REGIONS_URL": [],
+  "GATEWAY_HOST_BY_ACCOUNT_NAME": [],
+  "ACCOUNT_ENGINE_URL": [],
+  "ACCOUNT_ENGINE_START_URL": [],
+  "ACCOUNT_ENGINE_RESTART_URL": [],
+  "ACCOUNT_ENGINE_STOP_URL": [],
+  "ACCOUNT_LIST_ENGINES_URL": [],
+  "ACCOUNT_ENGINE_ID_BY_NAME_URL": [],
+  "ACCOUNT_ENGINE_REVISION_URL": [],
+  "AUTH_URL": [],
+  "ACCOUNT_ENGINE_URL_BY_DATABASE_NAME_V1": [],
+  "ACCOUNT_URL": [],
+  "ACCOUNT_BY_NAME_URL_V1": [],
+  "ACCOUNT_BINDINGS_URL": [],
+  "cached_property": [
+    "func"
+  ],
+  "prune_dict": [
+    "d"
+  ],
+  "TMix": [],
+  "mixin_for": [
+    "baseclass"
+  ],
+  "fix_url_schema": [
+    "url"
+  ],
+  "get_auth_endpoint": [
+    "api_endpoint"
+  ],
+  "get_internal_error_code": [
+    "response"
+  ],
+  "merge_urls": [
+    "base",
+    "merge"
+  ],
+  "validate_engine_name_and_url_v1": [
+    "engine_name",
+    "engine_url"
+  ],
+  "raise_error_from_response": [
+    "resp"
+  ],
+  "_parse_update_parameters": [
+    "parameter_header"
+  ],
+  "_parse_remove_parameters": [
+    "parameter_header"
+  ],
+  "Timer": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "parse_url_and_params": [
+    "url"
+  ],
+  "_ExceptionGroup": {
+    "__init__": [
+      "self",
+      "message",
+      "exceptions"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ExceptionGroup": [],
+  "get_core_certificate_context": [],
+  "validate_firebolt_core_parameters": [
+    "account_name",
+    "engine_name",
+    "engine_url"
+  ],
+  "parse_firebolt_core_url": [
+    "url"
+  ],
+  "Connection": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "engine_url",
+      "database",
+      "client",
+      "cursor_type",
+      "api_endpoint",
+      "init_parameters",
+      "id",
+      "autocommit"
+    ],
+    "cursor": [
+      "self"
+    ],
+    "get_async_query_info": [
+      "self",
+      "token"
+    ],
+    "_raise_if_multiple_async_results": [
+      "self",
+      "async_query_info"
+    ],
+    "is_async_query_running": [
+      "self",
+      "token"
+    ],
+    "is_async_query_successful": [
+      "self",
+      "token"
+    ],
+    "cancel_async_query": [
+      "self",
+      "token"
+    ],
+    "_execute_query_impl": [
+      "self",
+      "request"
+    ],
+    "_begin_nolock": [
+      "self",
+      "request"
+    ],
+    "_execute_query": [
+      "self",
+      "request"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "connect": [
+    "auth",
+    "account_name",
+    "database",
+    "engine_name",
+    "engine_url",
+    "api_endpoint",
+    "disable_cache",
+    "url",
+    "autocommit",
+    "additional_parameters"
+  ],
+  "connect_v2": [
+    "auth",
+    "user_agent_header",
+    "connection_id",
+    "account_name",
+    "database",
+    "engine_name",
+    "api_endpoint",
+    "disable_cache",
+    "autocommit"
+  ],
+  "connect_v1": [
+    "auth",
+    "user_agent_header",
+    "connection_id",
+    "database",
+    "account_name",
+    "engine_name",
+    "engine_url",
+    "api_endpoint"
+  ],
+  "connect_core": [
+    "auth",
+    "user_agent_header",
+    "database",
+    "connection_url",
+    "autocommit"
+  ],
+  "_get_system_engine_url_and_params": [
+    "auth",
+    "account_name",
+    "api_endpoint",
+    "connection_id",
+    "disable_cache"
+  ],
+  "apilevel": [],
+  "threadsafety": [],
+  "paramstyle": [],
+  "Cursor": {
+    "__init__": [
+      "self"
+    ],
+    "_api_request": [
+      "self",
+      "query",
+      "parameters",
+      "path",
+      "use_set_parameters",
+      "timeout"
+    ],
+    "_raise_if_error": [
+      "self",
+      "resp"
+    ],
+    "_validate_set_parameter": [
+      "self",
+      "parameter",
+      "timeout"
+    ],
+    "_close_rowset_and_reset": [
+      "self"
+    ],
+    "execute_async": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing"
+    ],
+    "_do_execute": [
+      "self",
+      "raw_query",
+      "parameters",
+      "skip_parsing",
+      "timeout",
+      "async_execution",
+      "streaming",
+      "bulk_insert"
+    ],
+    "_execute_plan": [
+      "self",
+      "plan",
+      "timeout"
+    ],
+    "_execute_single_query": [
+      "self",
+      "query",
+      "query_params",
+      "timeout_controller",
+      "async_execution",
+      "streaming"
+    ],
+    "use_database": [
+      "self",
+      "database",
+      "cache"
+    ],
+    "use_engine": [
+      "self",
+      "engine",
+      "cache"
+    ],
+    "execute": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing",
+      "timeout_seconds"
+    ],
+    "executemany": [
+      "self",
+      "query",
+      "parameters_seq",
+      "timeout_seconds",
+      "bulk_insert"
+    ],
+    "execute_stream": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing"
+    ],
+    "_append_row_set_from_response": [
+      "self",
+      "response"
+    ],
+    "_performance_log_message": [],
+    "fetchone": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "is_db_available": [
+      "self",
+      "database"
+    ],
+    "is_engine_running": [
+      "self",
+      "engine_url"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__anext__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "CursorV2": {
+    "__init__": [
+      "self"
+    ],
+    "execute_async": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing"
+    ],
+    "is_db_available": [
+      "self",
+      "database_name"
+    ],
+    "is_engine_running": [
+      "self",
+      "engine_url"
+    ]
+  },
+  "CursorV1": {
+    "__init__": [
+      "self"
+    ],
+    "is_db_available": [
+      "self",
+      "database_name"
+    ],
+    "is_engine_running": [
+      "self",
+      "engine_url"
+    ],
+    "_filter_request": [
+      "self",
+      "endpoint",
+      "filters"
+    ],
+    "execute_async": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing"
+    ],
+    "execute_stream": [
+      "self",
+      "query",
+      "parameters",
+      "skip_parsing"
+    ],
+    "_get_output_format": [
+      "is_streaming"
+    ]
+  },
+  "override_stream": [
+    "stream"
+  ],
+  "AsyncOverriddenHttpBackend": {
+    "connect_tcp": [
+      "self"
+    ],
+    "open_tcp_stream": [
+      "self"
+    ]
+  },
+  "OverriddenHttpBackend": {
+    "connect_tcp": [
+      "self"
+    ],
+    "open_tcp_stream": [
+      "self"
+    ]
+  },
+  "AsyncKeepaliveTransport": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "KeepaliveTransport": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "FireboltClientMixinBase": [],
+  "FireboltClientMixin": {
+    "__init__": [
+      "self"
+    ],
+    "_set_default_header": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_build_auth": [
+      "self",
+      "auth"
+    ],
+    "_merge_auth_request": [
+      "self",
+      "request"
+    ],
+    "_enforce_trailing_slash": [
+      "self",
+      "url"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "Client": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ],
+    "_send_handling_redirects": [
+      "self",
+      "request"
+    ]
+  },
+  "ClientV2": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ]
+  },
+  "ClientV1": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ],
+    "_get_database_default_engine_url": [
+      "self",
+      "database"
+    ],
+    "_resolve_engine_url": [
+      "self",
+      "engine_name"
+    ]
+  },
+  "AsyncClient": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ],
+    "_send_handling_redirects": [
+      "self",
+      "request"
+    ]
+  },
+  "AsyncClientV2": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ]
+  },
+  "AsyncClientV1": {
+    "__init__": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ],
+    "_get_database_default_engine_url": [
+      "self",
+      "database"
+    ],
+    "_resolve_engine_url": [
+      "self",
+      "engine_name"
+    ]
+  },
+  "log_request": [
+    "request"
+  ],
+  "log_response": [
+    "response"
+  ],
+  "raise_on_4xx_5xx": [
+    "response"
+  ],
+  "PROTOCOL_VERSION_HEADER_NAME": [],
+  "_RequestBasedAuth": {
+    "__init__": [
+      "self",
+      "use_token_cache"
+    ],
+    "_make_auth_request": [
+      "self"
+    ],
+    "_check_response_error": [
+      "response"
+    ],
+    "get_new_token_generator": [
+      "self"
+    ]
+  },
+  "ClientCredentials": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "use_token_cache"
+    ],
+    "copy": [
+      "self"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "_token_storage": [
+      "self"
+    ],
+    "_make_auth_request": [
+      "self"
+    ]
+  },
+  "FireboltAuthVersion": {
+    "V1": [],
+    "V2": [],
+    "CORE": []
+  },
+  "AuthRequest": {},
+  "Auth": {
+    "__slots__": [],
+    "requires_response_body": [],
+    "request_class": [],
+    "__init__": [
+      "self",
+      "use_token_cache"
+    ],
+    "copy": [
+      "self"
+    ],
+    "token": [
+      "self"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "expired": [
+      "self"
+    ],
+    "_token_storage": [
+      "self"
+    ],
+    "_get_cached_token": [
+      "self"
+    ],
+    "_cache_token": [
+      "self"
+    ],
+    "get_new_token_generator": [
+      "self"
+    ],
+    "auth_flow": [
+      "self",
+      "request"
+    ],
+    "async_auth_flow": [
+      "self",
+      "request"
+    ],
+    "_release_lock": [
+      "self"
+    ],
+    "sync_auth_flow": [
+      "self",
+      "request"
+    ]
+  },
+  "UsernamePassword": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "username",
+      "password",
+      "use_token_cache"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "_token_storage": [
+      "self"
+    ],
+    "_make_auth_request": [
+      "self"
+    ]
+  },
+  "Token": {
+    "__init__": [
+      "self",
+      "token"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "get_new_token_generator": [
+      "self"
+    ]
+  },
+  "FireboltCore": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "get_new_token_generator": [
+      "self"
+    ],
+    "token": [
+      "self"
+    ],
+    "auth_flow": [
+      "self",
+      "request"
+    ],
+    "async_auth_flow": [
+      "self",
+      "request"
+    ]
+  },
+  "ServiceAccount": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "use_token_cache"
+    ],
+    "principal": [
+      "self"
+    ],
+    "secret": [
+      "self"
+    ],
+    "get_firebolt_version": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "_token_storage": [
+      "self"
+    ],
+    "_make_auth_request": [
+      "self"
+    ]
+  },
+  "Engine": {},
+  "Database": {
+    "get_attached_engines": [
+      "self"
+    ],
+    "attach_engine": [
+      "self",
+      "engine"
+    ],
+    "update": [
+      "self",
+      "description"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "InstanceType": {
+    "S": [],
+    "M": [],
+    "L": [],
+    "XL": [],
+    "UNKNOWN": [],
+    "_missing_": [
+      "cls",
+      "value"
+    ]
+  },
+  "Model": [],
+  "FireboltBaseModel": {
+    "_get_field_overrides": [
+      "cls"
+    ],
+    "_from_dict": [
+      "cls",
+      "data",
+      "service"
+    ]
+  },
+  "BindingKey": {},
+  "Binding": {
+    "database_id": [
+      "self"
+    ],
+    "engine_id": [
+      "self"
+    ]
+  },
+  "RegionKey": {},
+  "Region": {},
+  "DatabaseKey": {},
+  "FieldMask": {},
+  "use_if_version_ge": [
+    "version_ge",
+    "obj",
+    "previous_method",
+    "latest_method"
+  ],
+  "EngineKey": {},
+  "wait": [
+    "seconds",
+    "timeout_time",
+    "error_message",
+    "verbose"
+  ],
+  "EngineSettings": {
+    "default": [
+      "cls",
+      "engine_type",
+      "auto_stop_delay_duration",
+      "warm_up",
+      "minimum_logging_level"
+    ]
+  },
+  "Provider": {},
+  "EngineRevisionKey": {}
+}

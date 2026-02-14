@@ -1,0 +1,274 @@
+{
+  "exists": [
+    "v"
+  ],
+  "default": [
+    "v",
+    "d"
+  ],
+  "divisible_by": [
+    "num",
+    "den"
+  ],
+  "identity": [
+    "t"
+  ],
+  "get_expand_reduce_stream_functions": [
+    "cls",
+    "num_streams",
+    "disable"
+  ],
+  "get_init_and_expand_reduce_stream_functions": [
+    "cls",
+    "num_streams",
+    "disable"
+  ],
+  "HyperConnections": {
+    "__init__": [
+      "self",
+      "num_residual_streams"
+    ],
+    "width_connection": [
+      "self",
+      "residuals"
+    ],
+    "depth_connection": [
+      "self",
+      "branch_output",
+      "residuals"
+    ],
+    "decorate_branch": [
+      "self",
+      "branch"
+    ],
+    "forward": [
+      "self",
+      "residuals"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ProjActScale": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_out",
+      "activation",
+      "scale_init",
+      "squeeze_output"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Residual": {
+    "__init__": [
+      "self"
+    ],
+    "width_connection": [
+      "self",
+      "residuals"
+    ],
+    "depth_connection": [
+      "self",
+      "branch_output",
+      "residuals"
+    ],
+    "decorate_branch": [
+      "self",
+      "branch"
+    ],
+    "forward": [
+      "self",
+      "residuals"
+    ]
+  },
+  "InputPathType": [],
+  "add": [
+    "x",
+    "y"
+  ],
+  "l1norm": [
+    "t",
+    "dim"
+  ],
+  "sinkhorn_knopps": [
+    "log_alpha",
+    "iters"
+  ],
+  "log_domain_sinkhorn_knopps": [
+    "log_alpha",
+    "iters"
+  ],
+  "ManifoldConstrainedHyperConnections": {
+    "__init__": [
+      "self",
+      "num_residual_streams"
+    ],
+    "width_connection": [
+      "self",
+      "residuals"
+    ],
+    "depth_connection": [
+      "self",
+      "branch_output",
+      "residuals"
+    ],
+    "decorate_branch": [
+      "self",
+      "branch"
+    ],
+    "forward": [
+      "self",
+      "residuals"
+    ]
+  },
+  "mHC": [],
+  "StreamEmbed": {
+    "__init__": [
+      "self",
+      "num_streams",
+      "dim",
+      "expand_to_streams"
+    ],
+    "forward": [
+      "self",
+      "residuals"
+    ]
+  },
+  "AttentionPoolReduceStream": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "residuals"
+    ]
+  },
+  "sinkhorn_kernel_forward_log": [
+    "input_ptr",
+    "output_ptr",
+    "M",
+    "N",
+    "stride_b",
+    "stride_m",
+    "stride_n",
+    "iters",
+    "BLOCK_SIZE"
+  ],
+  "sinkhorn_kernel_backward_log": [
+    "grad_output_ptr",
+    "output_ptr",
+    "grad_input_ptr",
+    "M",
+    "N",
+    "stride_b",
+    "stride_m",
+    "stride_n",
+    "iters",
+    "BLOCK_SIZE"
+  ],
+  "TritonSinkhornFunction": {
+    "forward": [
+      "ctx",
+      "log_alpha",
+      "iters"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "triton_sinkhorn": [
+    "log_alpha",
+    "iters"
+  ],
+  "is_triton_available": [],
+  "GRUGatedResidual": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual"
+    ]
+  },
+  "GatedResidual": {
+    "__init__": [
+      "self",
+      "dim",
+      "fine_gate"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual"
+    ]
+  },
+  "pair": [
+    "t"
+  ],
+  "FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "hidden_dim",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "dim_head",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Transformer": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth",
+      "heads",
+      "dim_head",
+      "mlp_dim",
+      "dropout",
+      "num_residual_streams",
+      "mhc_kwargs"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ViT": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "img"
+    ]
+  }
+}

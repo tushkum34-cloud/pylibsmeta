@@ -1,0 +1,474 @@
+{
+  "MelSpecReconstructionLoss": {
+    "__init__": [
+      "self",
+      "sample_rate",
+      "n_fft",
+      "hop_length",
+      "n_mels"
+    ],
+    "forward": [
+      "self",
+      "y_hat",
+      "y"
+    ]
+  },
+  "GeneratorLoss": {
+    "forward": [
+      "self",
+      "disc_outputs"
+    ]
+  },
+  "DiscriminatorLoss": {
+    "forward": [
+      "self",
+      "disc_real_outputs",
+      "disc_generated_outputs"
+    ]
+  },
+  "FeatureMatchingLoss": {
+    "forward": [
+      "self",
+      "fmap_r",
+      "fmap_g"
+    ]
+  },
+  "Backbone": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VocosBackbone": {
+    "__init__": [
+      "self",
+      "input_channels",
+      "dim",
+      "intermediate_dim",
+      "num_layers",
+      "layer_scale_init_value",
+      "adanorm_num_embeddings"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VocosResNetBackbone": {
+    "__init__": [
+      "self",
+      "input_channels",
+      "dim",
+      "num_blocks",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeatureExtractor": {
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "MelSpectrogramFeatures": {
+    "__init__": [
+      "self",
+      "sample_rate",
+      "n_fft",
+      "hop_length",
+      "n_mels",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "EncodecFeatures": {
+    "__init__": [
+      "self",
+      "encodec_model",
+      "bandwidths",
+      "train_codebooks"
+    ],
+    "get_encodec_codes": [
+      "self",
+      "audio"
+    ],
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "save_figure_to_numpy": [
+    "fig"
+  ],
+  "plot_spectrogram_to_numpy": [
+    "spectrogram"
+  ],
+  "GradNormCallback": {
+    "on_after_backward": [
+      "self",
+      "trainer",
+      "model"
+    ]
+  },
+  "gradient_norm": [
+    "model",
+    "norm_type"
+  ],
+  "__version__": [],
+  "DataConfig": {},
+  "VocosDataModule": {
+    "__init__": [
+      "self",
+      "train_params",
+      "val_params"
+    ],
+    "_get_dataloder": [
+      "self",
+      "cfg",
+      "train"
+    ],
+    "train_dataloader": [
+      "self"
+    ],
+    "val_dataloader": [
+      "self"
+    ]
+  },
+  "VocosDataset": {
+    "__init__": [
+      "self",
+      "cfg",
+      "train"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "MultiPeriodDiscriminator": {
+    "__init__": [
+      "self",
+      "periods",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "y",
+      "y_hat",
+      "bandwidth_id"
+    ]
+  },
+  "DiscriminatorP": {
+    "__init__": [
+      "self",
+      "period",
+      "in_channels",
+      "kernel_size",
+      "stride",
+      "lrelu_slope",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "MultiResolutionDiscriminator": {
+    "__init__": [
+      "self",
+      "fft_sizes",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "y",
+      "y_hat",
+      "bandwidth_id"
+    ]
+  },
+  "DiscriminatorR": {
+    "__init__": [
+      "self",
+      "window_length",
+      "num_embeddings",
+      "channels",
+      "hop_factor",
+      "bands"
+    ],
+    "spectrogram": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "ISTFT": {
+    "__init__": [
+      "self",
+      "n_fft",
+      "hop_length",
+      "win_length",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "spec"
+    ]
+  },
+  "MDCT": {
+    "__init__": [
+      "self",
+      "frame_len",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "IMDCT": {
+    "__init__": [
+      "self",
+      "frame_len",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "X"
+    ]
+  },
+  "instantiate_class": [
+    "args",
+    "init"
+  ],
+  "Vocos": {
+    "__init__": [
+      "self",
+      "feature_extractor",
+      "backbone",
+      "head"
+    ],
+    "from_hparams": [
+      "cls",
+      "config_path"
+    ],
+    "from_pretrained": [
+      "cls",
+      "repo_id",
+      "revision"
+    ],
+    "forward": [
+      "self",
+      "audio_input"
+    ],
+    "decode": [
+      "self",
+      "features_input"
+    ],
+    "codes_to_features": [
+      "self",
+      "codes"
+    ]
+  },
+  "VocosExp": {
+    "__init__": [
+      "self",
+      "feature_extractor",
+      "backbone",
+      "head",
+      "sample_rate",
+      "initial_learning_rate",
+      "num_warmup_steps",
+      "mel_loss_coeff",
+      "mrd_loss_coeff",
+      "pretrain_mel_steps",
+      "decay_mel_coeff",
+      "evaluate_utmos",
+      "evaluate_pesq",
+      "evaluate_periodicty"
+    ],
+    "configure_optimizers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "audio_input"
+    ],
+    "training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "optimizer_idx"
+    ],
+    "on_validation_epoch_start": [
+      "self"
+    ],
+    "validation_step": [
+      "self",
+      "batch",
+      "batch_idx"
+    ],
+    "validation_epoch_end": [
+      "self",
+      "outputs"
+    ],
+    "global_step": [
+      "self"
+    ],
+    "on_train_batch_start": [
+      "self"
+    ],
+    "on_train_batch_end": [
+      "self"
+    ]
+  },
+  "VocosEncodecExp": {
+    "__init__": [
+      "self",
+      "feature_extractor",
+      "backbone",
+      "head",
+      "sample_rate",
+      "initial_learning_rate",
+      "num_warmup_steps",
+      "mel_loss_coeff",
+      "mrd_loss_coeff",
+      "pretrain_mel_steps",
+      "decay_mel_coeff",
+      "evaluate_utmos",
+      "evaluate_pesq",
+      "evaluate_periodicty"
+    ],
+    "training_step": [
+      "self"
+    ],
+    "validation_step": [
+      "self"
+    ],
+    "validation_epoch_end": [
+      "self",
+      "outputs"
+    ]
+  },
+  "FourierHead": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ISTFTHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "n_fft",
+      "hop_length",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IMDCTSymExpHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "mdct_frame_len",
+      "padding",
+      "sample_rate",
+      "clip_audio"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IMDCTCosHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "mdct_frame_len",
+      "padding",
+      "clip_audio"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvNeXtBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "intermediate_dim",
+      "layer_scale_init_value",
+      "adanorm_num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "AdaLayerNorm": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "ResBlock1": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size",
+      "dilation",
+      "lrelu_slope",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "remove_weight_norm": [
+      "self"
+    ],
+    "get_padding": [
+      "kernel_size",
+      "dilation"
+    ]
+  },
+  "safe_log": [
+    "x",
+    "clip_val"
+  ],
+  "symlog": [
+    "x"
+  ],
+  "symexp": [
+    "x"
+  ]
+}

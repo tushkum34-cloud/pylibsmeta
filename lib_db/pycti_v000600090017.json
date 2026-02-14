@@ -1,0 +1,3059 @@
+{
+  "__version__": [],
+  "__all__": [],
+  "ConnectorType": {
+    "EXTERNAL_IMPORT": [],
+    "INTERNAL_IMPORT_FILE": [],
+    "INTERNAL_ENRICHMENT": [],
+    "INTERNAL_ANALYSIS": [],
+    "INTERNAL_EXPORT_FILE": [],
+    "STREAM": []
+  },
+  "OpenCTIConnector": {
+    "__init__": [
+      "self",
+      "connector_id",
+      "connector_name",
+      "connector_type",
+      "scope",
+      "auto",
+      "only_contextual",
+      "playbook_compatible",
+      "auto_update",
+      "enrichment_resolution",
+      "listen_callback_uri"
+    ],
+    "to_input": [
+      "self"
+    ]
+  },
+  "app": [],
+  "killProgramHook": [
+    "etype",
+    "value",
+    "tb"
+  ],
+  "start_loop": [
+    "loop"
+  ],
+  "get_config_variable": [
+    "env_var",
+    "yaml_path",
+    "config",
+    "isNumber",
+    "default",
+    "required"
+  ],
+  "normalize_email_prefix": [
+    "email"
+  ],
+  "is_memory_certificate": [
+    "certificate"
+  ],
+  "ssl_verify_locations": [
+    "ssl_context",
+    "certdata"
+  ],
+  "data_to_temp_file": [
+    "data"
+  ],
+  "ssl_cert_chain": [
+    "ssl_context",
+    "cert_data",
+    "key_data",
+    "passphrase"
+  ],
+  "create_callback_ssl_context": [
+    "config"
+  ],
+  "create_mq_ssl_context": [
+    "config"
+  ],
+  "ListenQueue": {
+    "__init__": [
+      "self",
+      "helper",
+      "opencti_token",
+      "config",
+      "connector_config",
+      "applicant_id",
+      "listen_protocol",
+      "listen_protocol_api_ssl",
+      "listen_protocol_api_path",
+      "listen_protocol_api_port",
+      "callback"
+    ],
+    "_process_message": [
+      "self",
+      "channel",
+      "method",
+      "properties",
+      "body"
+    ],
+    "_set_draft_id": [
+      "self",
+      "draft_id"
+    ],
+    "_data_handler": [
+      "self",
+      "json_data"
+    ],
+    "_http_process_callback": [
+      "self",
+      "request"
+    ],
+    "run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "PingAlive": {
+    "__init__": [
+      "self",
+      "connector_logger",
+      "connector_id",
+      "api",
+      "get_state",
+      "set_state",
+      "metric",
+      "connector_info"
+    ],
+    "ping": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "StreamAlive": {
+    "__init__": [
+      "self",
+      "helper",
+      "q"
+    ],
+    "run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "RateLimiter": {
+    "__init__": [
+      "self",
+      "helper",
+      "max_per_minute"
+    ],
+    "set_heartbeat_queue": [
+      "self",
+      "q"
+    ],
+    "stop": [
+      "self"
+    ],
+    "wait_if_needed": [
+      "self"
+    ],
+    "wrap": [
+      "self",
+      "callback"
+    ]
+  },
+  "RateLimitedCallback": {
+    "__init__": [
+      "self",
+      "rate_limiter",
+      "callback"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "set_heartbeat_queue": [
+      "self",
+      "q"
+    ],
+    "manages_state": [
+      "self"
+    ]
+  },
+  "BatchCallbackWrapper": {
+    "_TIMER_CHECK_INTERVAL": [],
+    "manages_state": [],
+    "__init__": [
+      "self",
+      "helper",
+      "batch_callback",
+      "batch_size",
+      "batch_timeout"
+    ],
+    "_timer_loop": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "msg"
+    ],
+    "_extract_batch_data": [
+      "self",
+      "trigger_reason"
+    ],
+    "_execute_batch_callback": [
+      "self",
+      "batch_data"
+    ],
+    "stop": [
+      "self"
+    ],
+    "set_heartbeat_queue": [
+      "self",
+      "q"
+    ]
+  },
+  "ListenStream": {
+    "__init__": [
+      "self",
+      "helper",
+      "callback",
+      "url",
+      "token",
+      "verify_ssl",
+      "start_timestamp",
+      "live_stream_id",
+      "listen_delete",
+      "no_dependencies",
+      "recover_iso_date",
+      "with_inferences"
+    ],
+    "run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "ConnectorInfo": {
+    "__init__": [
+      "self",
+      "run_and_terminate",
+      "buffering",
+      "queue_threshold",
+      "queue_messages_size",
+      "next_run_datetime",
+      "last_run_datetime"
+    ],
+    "all_details": [
+      "self"
+    ],
+    "run_and_terminate": [
+      "self",
+      "value"
+    ],
+    "buffering": [
+      "self",
+      "value"
+    ],
+    "queue_threshold": [
+      "self",
+      "value"
+    ],
+    "queue_messages_size": [
+      "self",
+      "value"
+    ],
+    "next_run_datetime": [
+      "self",
+      "value"
+    ],
+    "last_run_datetime": [
+      "self",
+      "value"
+    ]
+  },
+  "OpenCTIConnectorHelper": {
+    "__init__": [
+      "self",
+      "config",
+      "playbook_compatible"
+    ],
+    "_init_s3_config": [
+      "self",
+      "backend_s3_config"
+    ],
+    "_get_s3_client": [
+      "self"
+    ],
+    "_generate_bundle_filename": [
+      "self"
+    ],
+    "_create_message_bundle": [
+      "self",
+      "bundle_type",
+      "bundle",
+      "entities_types",
+      "update"
+    ],
+    "_send_bundle_to_s3": [
+      "self",
+      "bundle_content",
+      "bundle_file"
+    ],
+    "_cleanup_old_s3_bundles": [
+      "self",
+      "s3_client"
+    ],
+    "stop": [
+      "self"
+    ],
+    "get_name": [
+      "self"
+    ],
+    "get_stream_collection": [
+      "self"
+    ],
+    "get_only_contextual": [
+      "self"
+    ],
+    "get_run_and_terminate": [
+      "self"
+    ],
+    "get_validate_before_import": [
+      "self"
+    ],
+    "set_state": [
+      "self",
+      "state"
+    ],
+    "get_state": [
+      "self"
+    ],
+    "force_ping": [
+      "self"
+    ],
+    "next_run_datetime": [
+      "self",
+      "duration_period_in_seconds"
+    ],
+    "last_run_datetime": [
+      "self"
+    ],
+    "check_connector_buffering": [
+      "self"
+    ],
+    "schedule_unit": [
+      "self",
+      "message_callback",
+      "duration_period",
+      "time_unit"
+    ],
+    "schedule_iso": [
+      "self",
+      "message_callback",
+      "duration_period"
+    ],
+    "_schedule_process": [
+      "self",
+      "scheduler",
+      "message_callback",
+      "duration_period"
+    ],
+    "schedule_process": [
+      "self",
+      "message_callback",
+      "duration_period"
+    ],
+    "listen": [
+      "self",
+      "message_callback"
+    ],
+    "listen_stream": [
+      "self",
+      "message_callback",
+      "url",
+      "token",
+      "verify_ssl",
+      "start_timestamp",
+      "live_stream_id",
+      "listen_delete",
+      "no_dependencies",
+      "recover_iso_date",
+      "with_inferences"
+    ],
+    "create_batch_callback": [
+      "self",
+      "batch_callback",
+      "batch_size",
+      "batch_timeout",
+      "max_per_minute"
+    ],
+    "create_rate_limiter": [
+      "self",
+      "max_per_minute"
+    ],
+    "get_opencti_url": [
+      "self"
+    ],
+    "get_opencti_token": [
+      "self"
+    ],
+    "get_connector": [
+      "self"
+    ],
+    "date_now": [
+      "self"
+    ],
+    "date_now_z": [
+      "self"
+    ],
+    "send_stix2_bundle": [
+      "self",
+      "bundle"
+    ],
+    "_send_bundle": [
+      "self",
+      "channel",
+      "bundle"
+    ],
+    "stix2_deduplicate_objects": [
+      "items"
+    ],
+    "stix2_create_bundle": [
+      "items"
+    ],
+    "check_max_tlp": [
+      "tlp",
+      "max_tlp"
+    ],
+    "get_attribute_in_extension": [
+      "key",
+      "stix_object"
+    ],
+    "get_attribute_in_mitre_extension": [
+      "key",
+      "stix_object"
+    ],
+    "get_data_from_enrichment": [
+      "self",
+      "data",
+      "standard_id",
+      "opencti_entity"
+    ]
+  },
+  "OpenCTIMetricHandler": {
+    "__init__": [
+      "self",
+      "connector_logger",
+      "activated",
+      "namespace",
+      "subsystem",
+      "port"
+    ],
+    "_metric_exists": [
+      "self",
+      "name",
+      "expected_type"
+    ],
+    "inc": [
+      "self",
+      "name",
+      "n"
+    ],
+    "state": [
+      "self",
+      "state",
+      "name"
+    ]
+  },
+  "OpenCTIStix2Update": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "add_object_marking_refs": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "object_marking_refs",
+      "version"
+    ],
+    "remove_object_marking_refs": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "object_marking_refs",
+      "version"
+    ],
+    "add_external_references": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "external_references",
+      "version"
+    ],
+    "remove_external_references": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "external_references"
+    ],
+    "add_kill_chain_phases": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "kill_chain_phases",
+      "version"
+    ],
+    "remove_kill_chain_phases": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "kill_chain_phases"
+    ],
+    "add_object_refs": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "object_refs",
+      "version"
+    ],
+    "remove_object_refs": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "object_refs",
+      "version"
+    ],
+    "add_labels": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "labels",
+      "version"
+    ],
+    "remove_labels": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "labels",
+      "version"
+    ],
+    "replace_created_by_ref": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "created_by_ref",
+      "version"
+    ],
+    "update_attribute": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "field_input"
+    ],
+    "process_update": [
+      "self",
+      "data"
+    ]
+  },
+  "ALIASES_FIELD": [],
+  "X_OPENCTI_ALIASES_FIELD": [],
+  "SUPPORTED_INTERNAL_OBJECTS": [],
+  "STIX_META_OBJECTS": [],
+  "STIX_CORE_OBJECTS": [],
+  "SUPPORTED_STIX_ENTITY_OBJECTS": [],
+  "STIX_CYBER_OBSERVABLE_MAPPING": [],
+  "STIX_OBJECTS": [],
+  "PATTERN_MAPPING": [],
+  "OBSERVABLES_VALUE_INT": [],
+  "OpenCTIStix2Utils": {
+    "stix_observable_opencti_type": [
+      "observable_type"
+    ],
+    "create_stix_pattern": [
+      "observable_type",
+      "observable_value"
+    ],
+    "generate_random_stix_id": [
+      "stix_type"
+    ],
+    "retrieve_class_for_method": [
+      "opencti_api_client",
+      "entity",
+      "type_path",
+      "method"
+    ],
+    "retrieveClassForMethod": [
+      "openCTIApiClient",
+      "entity",
+      "type_path",
+      "method"
+    ],
+    "compute_object_refs_number": [
+      "entity"
+    ]
+  },
+  "_X_OPENCTI_ALIASES_TYPES": [],
+  "_STIX_ALIASED_TYPES": [],
+  "resolve_aliases_field": [
+    "stix_type"
+  ],
+  "is_stix_object_aliased": [
+    "stix_type"
+  ],
+  "CustomJsonFormatter": {
+    "add_fields": [
+      "self",
+      "log_record",
+      "record",
+      "message_dict"
+    ]
+  },
+  "logger": [
+    "level",
+    "json_logging"
+  ],
+  "utc": [],
+  "UTC": [],
+  "SPEC_VERSION": [],
+  "ERROR_TYPE_LOCK": [],
+  "ERROR_TYPE_MISSING_REFERENCE": [],
+  "ERROR_TYPE_BAD_GATEWAY": [],
+  "ERROR_TYPE_DRAFT_LOCK": [],
+  "ERROR_TYPE_TIMEOUT": [],
+  "meter": [],
+  "bundles_timeout_error_counter": [],
+  "bundles_lock_error_counter": [],
+  "bundles_missing_reference_error_counter": [],
+  "bundles_bad_gateway_error_counter": [],
+  "bundles_timed_out_error_counter": [],
+  "bundles_technical_error_counter": [],
+  "bundles_success_counter": [],
+  "OpenCTIStix2": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "get_in_cache": [
+      "self",
+      "data_id"
+    ],
+    "set_in_cache": [
+      "self",
+      "data_id",
+      "data"
+    ],
+    "unknown_type": [
+      "self",
+      "stix_object"
+    ],
+    "convert_markdown": [
+      "self",
+      "text"
+    ],
+    "format_date": [
+      "self",
+      "date"
+    ],
+    "filter_objects": [
+      "self",
+      "uuids",
+      "objects"
+    ],
+    "pick_aliases": [
+      "self",
+      "stix_object"
+    ],
+    "import_bundle_from_file": [
+      "self",
+      "file_path",
+      "update",
+      "types"
+    ],
+    "import_bundle_from_json": [
+      "self",
+      "json_data",
+      "update",
+      "types",
+      "work_id",
+      "objects_max_refs"
+    ],
+    "resolve_author": [
+      "self",
+      "title"
+    ],
+    "get_author": [
+      "self",
+      "name"
+    ],
+    "extract_embedded_relationships": [
+      "self",
+      "stix_object",
+      "types"
+    ],
+    "get_readers": [
+      "self"
+    ],
+    "get_reader": [
+      "self",
+      "entity_type"
+    ],
+    "get_stix_helper": [
+      "self"
+    ],
+    "get_internal_helper": [
+      "self"
+    ],
+    "generate_standard_id_from_stix": [
+      "self",
+      "data"
+    ],
+    "import_object": [
+      "self",
+      "stix_object",
+      "update",
+      "types"
+    ],
+    "import_observable": [
+      "self",
+      "stix_object",
+      "update",
+      "types"
+    ],
+    "import_relationship": [
+      "self",
+      "stix_relation",
+      "update",
+      "types"
+    ],
+    "import_sighting": [
+      "self",
+      "stix_sighting",
+      "from_id",
+      "to_id",
+      "update",
+      "types"
+    ],
+    "generate_export": [
+      "self",
+      "entity",
+      "no_custom_attributes"
+    ],
+    "prepare_id_filters_export": [
+      "entity_id",
+      "access_filter"
+    ],
+    "prepare_export": [
+      "self",
+      "entity",
+      "mode",
+      "access_filter",
+      "no_custom_attributes"
+    ],
+    "get_stix_bundle_or_object_from_entity_id": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "mode",
+      "access_filter",
+      "no_custom_attributes",
+      "only_entity"
+    ],
+    "export_entity": [
+      "self",
+      "entity_type",
+      "entity_id",
+      "mode",
+      "access_filter",
+      "no_custom_attributes",
+      "only_entity"
+    ],
+    "export_entities_list": [
+      "self",
+      "entity_type",
+      "search",
+      "filters",
+      "orderBy",
+      "orderMode",
+      "getAll",
+      "withFiles"
+    ],
+    "export_list": [
+      "self",
+      "entity_type",
+      "search",
+      "filters",
+      "order_by",
+      "order_mode",
+      "mode",
+      "access_filter"
+    ],
+    "export_selected": [
+      "self",
+      "entities_list",
+      "mode",
+      "access_filter"
+    ],
+    "apply_patch_files": [
+      "self",
+      "item"
+    ],
+    "apply_patch": [
+      "self",
+      "item"
+    ],
+    "rule_apply": [
+      "self",
+      "item"
+    ],
+    "rule_clear": [
+      "self",
+      "item"
+    ],
+    "rules_rescan": [
+      "self",
+      "item"
+    ],
+    "organization_share": [
+      "self",
+      "item"
+    ],
+    "organization_unshare": [
+      "self",
+      "item"
+    ],
+    "element_add_organizations": [
+      "self",
+      "item"
+    ],
+    "element_remove_organizations": [
+      "self",
+      "item"
+    ],
+    "element_add_groups": [
+      "self",
+      "item"
+    ],
+    "element_remove_groups": [
+      "self",
+      "item"
+    ],
+    "send_email": [
+      "self",
+      "item"
+    ],
+    "element_operation_delete": [
+      "self",
+      "item",
+      "operation"
+    ],
+    "element_remove_from_draft": [
+      "self",
+      "item"
+    ],
+    "apply_opencti_operation": [
+      "self",
+      "item",
+      "operation"
+    ],
+    "import_item": [
+      "self",
+      "item",
+      "update",
+      "types",
+      "work_id"
+    ],
+    "import_item_with_retries": [
+      "self",
+      "item",
+      "update",
+      "types",
+      "work_id"
+    ],
+    "import_bundle": [
+      "self",
+      "stix_bundle",
+      "update",
+      "types",
+      "work_id",
+      "objects_max_refs"
+    ],
+    "put_attribute_in_extension": [
+      "stix_object",
+      "extension_id",
+      "key",
+      "value",
+      "multiple"
+    ]
+  },
+  "external_reference_generate_id": [
+    "url",
+    "source_name",
+    "external_id"
+  ],
+  "kill_chain_phase_generate_id": [
+    "phase_name",
+    "kill_chain_name"
+  ],
+  "OPENCTI_EXTENSION": [],
+  "supported_types": [],
+  "is_id_supported": [
+    "key"
+  ],
+  "OpenCTIStix2Splitter": {
+    "__init__": [
+      "self"
+    ],
+    "get_internal_ids_in_extension": [
+      "self",
+      "item"
+    ],
+    "enlist_element": [
+      "self",
+      "item_id",
+      "raw_data",
+      "cleanup_inconsistent_bundle",
+      "parent_acc"
+    ],
+    "split_bundle_with_expectations": [
+      "self",
+      "bundle",
+      "use_json",
+      "event_version",
+      "cleanup_inconsistent_bundle"
+    ],
+    "split_bundle": [
+      "self",
+      "bundle",
+      "use_json",
+      "event_version"
+    ],
+    "stix2_create_bundle": [
+      "bundle_id",
+      "bundle_seq",
+      "items",
+      "use_json",
+      "event_version"
+    ]
+  },
+  "CaseInsensitiveEnum": {
+    "has_value": [
+      "cls",
+      "value"
+    ]
+  },
+  "StixCyberObservableTypes": {
+    "AUTONOMOUS_SYSTEM": [],
+    "DIRECTORY": [],
+    "DOMAIN_NAME": [],
+    "EMAIL_ADDR": [],
+    "EMAIL_MESSAGE": [],
+    "EMAIL_MIME_PART_TYPE": [],
+    "ARTIFACT": [],
+    "FILE": [],
+    "X509_CERTIFICATE": [],
+    "IPV4_ADDR": [],
+    "IPV6_ADDR": [],
+    "MAC_ADDR": [],
+    "MUTEX": [],
+    "NETWORK_TRAFFIC": [],
+    "PROCESS": [],
+    "SOFTWARE": [],
+    "URL": [],
+    "USER_ACCOUNT": [],
+    "WINDOWS_REGISTRY_KEY": [],
+    "WINDOWS_REGISTRY_VALUE_TYPE": [],
+    "HOSTNAME": [],
+    "CRYPTOGRAPHIC_KEY": [],
+    "CRYPTOCURRENCY_WALLET": [],
+    "TEXT": [],
+    "USER_AGENT": [],
+    "BANK_ACCOUNT": [],
+    "PHONE_NUMBER": [],
+    "CREDENTIAL": [],
+    "TRACKING_NUMBER": [],
+    "PAYMENT_CARD": [],
+    "MEDIA_CONTENT": [],
+    "SIMPLE_OBSERVABLE": [],
+    "PERSONA": [],
+    "SSH_KEY": []
+  },
+  "IdentityTypes": {
+    "SECTOR": [],
+    "ORGANIZATION": [],
+    "INDIVIDUAL": [],
+    "SYSTEM": [],
+    "SECURITYPLATFORM": []
+  },
+  "ThreatActorTypes": {
+    "THREAT_ACTOR_GROUP": [],
+    "THREAT_ACTOR_INDIVIDUAL": []
+  },
+  "LocationTypes": {
+    "REGION": [],
+    "COUNTRY": [],
+    "ADMINISTRATIVE_AREA": [],
+    "CITY": [],
+    "POSITION": []
+  },
+  "ContainerTypes": {
+    "NOTE": [],
+    "OBSERVED_DATA": [],
+    "OPINION": [],
+    "REPORT": [],
+    "GROUPING": [],
+    "CASE": []
+  },
+  "StixMetaTypes": {
+    "MARKING_DEFINITION": [],
+    "LABEL": [],
+    "EXTERNAL_REFERENCE": [],
+    "KILL_CHAIN_PHASE": []
+  },
+  "MultipleRefRelationship": {
+    "OPERATING_SYSTEM": [],
+    "SAMPLE": [],
+    "CONTAINS": [],
+    "RESOLVES_TO": [],
+    "BELONGS_TO": [],
+    "TO": [],
+    "CC": [],
+    "BCC": [],
+    "ENCAPSULATES": [],
+    "OPENED_CONNECTION": [],
+    "CHILD": [],
+    "BODY_MULTIPART": [],
+    "VALUES": [],
+    "SERVICE_DLL": [],
+    "INSTALLED_SOFTWARE": [],
+    "RELATION_ANALYSIS_SCO": []
+  },
+  "CustomObjectCaseIncident": {},
+  "CustomObjectCaseRfi": {},
+  "CustomObjectTask": {},
+  "CustomObjectChannel": {},
+  "CustomObservableHostname": {},
+  "CustomObservableText": {},
+  "CustomObservablePaymentCard": {},
+  "CustomObservableBankAccount": {},
+  "CustomObservableCredential": {},
+  "CustomObservableCryptocurrencyWallet": {},
+  "CustomObservablePhoneNumber": {},
+  "CustomObservableTrackingNumber": {},
+  "CustomObservableUserAgent": {},
+  "CustomObservableMediaContent": {},
+  "CustomObservablePersona": {},
+  "CustomObservableCryptographicKey": {},
+  "CustomObservableSshKey": {},
+  "OpenCTIApiPir": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "pir_flag_element": [
+      "self"
+    ],
+    "pir_unflag_element": [
+      "self"
+    ]
+  },
+  "_PROXY_CERT_BUNDLE": [],
+  "_PROXY_CERT_DIR": [],
+  "_PROXY_CERT_LOCK": [],
+  "_PROXY_SIGNAL_HANDLERS_REGISTERED": [],
+  "build_request_headers": [
+    "token",
+    "custom_headers",
+    "app_logger",
+    "provider"
+  ],
+  "File": {
+    "__init__": [
+      "self",
+      "name",
+      "data",
+      "mime"
+    ]
+  },
+  "OpenCTIApiClient": {
+    "__init__": [
+      "self",
+      "url",
+      "token",
+      "log_level",
+      "ssl_verify",
+      "proxies",
+      "json_logging",
+      "bundle_send_to_queue",
+      "cert",
+      "custom_headers",
+      "perform_health_check",
+      "requests_timeout",
+      "provider"
+    ],
+    "_setup_proxy_certificates": [
+      "self"
+    ],
+    "_get_certificate_content": [
+      "self",
+      "https_ca_certificates"
+    ],
+    "set_applicant_id_header": [
+      "self",
+      "applicant_id"
+    ],
+    "set_playbook_id_header": [
+      "self",
+      "playbook_id"
+    ],
+    "set_event_id": [
+      "self",
+      "event_id"
+    ],
+    "get_draft_id": [
+      "self"
+    ],
+    "set_draft_id": [
+      "self",
+      "draft_id"
+    ],
+    "set_synchronized_upsert_header": [
+      "self",
+      "synchronized"
+    ],
+    "set_previous_standard_header": [
+      "self",
+      "previous_standard"
+    ],
+    "get_request_headers": [
+      "self",
+      "hide_token"
+    ],
+    "set_retry_number": [
+      "self",
+      "retry_number"
+    ],
+    "_extract_files": [
+      "self",
+      "obj",
+      "path_prefix"
+    ],
+    "query": [
+      "self",
+      "query",
+      "variables",
+      "disable_impersonate"
+    ],
+    "fetch_opencti_file": [
+      "self",
+      "fetch_uri",
+      "binary",
+      "serialize"
+    ],
+    "health_check": [
+      "self"
+    ],
+    "get_logs_worker_config": [
+      "self"
+    ],
+    "not_empty": [
+      "self",
+      "value"
+    ],
+    "process_multiple": [
+      "self",
+      "data",
+      "with_pagination"
+    ],
+    "process_multiple_ids": [
+      "self",
+      "data"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ],
+    "upload_file": [
+      "self"
+    ],
+    "create_draft": [
+      "self"
+    ],
+    "upload_pending_file": [
+      "self"
+    ],
+    "send_bundle_to_api": [
+      "self"
+    ],
+    "get_stix_content": [
+      "self",
+      "id"
+    ],
+    "get_attribute_in_extension": [
+      "key",
+      "stix_object"
+    ],
+    "get_attribute_in_mitre_extension": [
+      "key",
+      "stix_object"
+    ]
+  },
+  "_cleanup_proxy_certificates": [],
+  "_signal_handler_proxy_cleanup": [
+    "signum",
+    "frame"
+  ],
+  "OpenCTIApiPlaybook": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "playbook_step_execution": [
+      "self",
+      "playbook",
+      "bundle"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "OpenCTIApiInternalFile": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "OpenCTIApiWorkspace": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "OpenCTIApiConnector": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "read": [
+      "self",
+      "connector_id"
+    ],
+    "list": [
+      "self"
+    ],
+    "ping": [
+      "self",
+      "connector_id",
+      "connector_state",
+      "connector_info"
+    ],
+    "register": [
+      "self",
+      "connector"
+    ],
+    "unregister": [
+      "self",
+      "_id"
+    ]
+  },
+  "OpenCTIApiTrash": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "restore": [
+      "self",
+      "operation_id"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "OpenCTIApiNotification": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "delete": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "mark_as_read": [
+      "self",
+      "notification_id",
+      "read"
+    ]
+  },
+  "OpenCTIApiPublicDashboard": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "OpenCTIApiWork": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "to_received": [
+      "self",
+      "work_id",
+      "message"
+    ],
+    "to_processed": [
+      "self",
+      "work_id",
+      "message",
+      "in_error"
+    ],
+    "ping": [
+      "self",
+      "work_id"
+    ],
+    "report_expectation": [
+      "self",
+      "work_id",
+      "error"
+    ],
+    "add_expectations": [
+      "self",
+      "work_id",
+      "expectations"
+    ],
+    "add_draft_context": [
+      "self",
+      "work_id",
+      "draft_context"
+    ],
+    "initiate_work": [
+      "self",
+      "connector_id",
+      "friendly_name"
+    ],
+    "delete_work": [
+      "self",
+      "work_id"
+    ],
+    "delete": [
+      "self"
+    ],
+    "wait_for_work_to_finish": [
+      "self",
+      "work_id"
+    ],
+    "get_work": [
+      "self",
+      "work_id"
+    ],
+    "get_is_work_alive": [
+      "self",
+      "work_id"
+    ],
+    "get_connector_works": [
+      "self",
+      "connector_id"
+    ]
+  },
+  "OpenCTIApiDraft": {
+    "__init__": [
+      "self",
+      "api"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "ExternalReference": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "url",
+      "source_name",
+      "external_id"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_file": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "delete": [
+      "self",
+      "id"
+    ],
+    "list_files": [
+      "self"
+    ]
+  },
+  "Capability": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ]
+  },
+  "Channel": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "User": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "me": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_membership": [
+      "self"
+    ],
+    "delete_membership": [
+      "self"
+    ],
+    "add_organization": [
+      "self"
+    ],
+    "delete_organization": [
+      "self"
+    ],
+    "token_renew": [
+      "self"
+    ],
+    "send_mail": [
+      "self"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ]
+  },
+  "DataComponent": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ]
+  },
+  "Location": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "x_opencti_location_type",
+      "latitude",
+      "longitude"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "StixNestedRefRelationship": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ]
+  },
+  "Group": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_member": [
+      "self"
+    ],
+    "delete_member": [
+      "self"
+    ],
+    "add_role": [
+      "self"
+    ],
+    "delete_role": [
+      "self"
+    ],
+    "edit_default_marking": [
+      "self"
+    ],
+    "add_allowed_marking": [
+      "self"
+    ],
+    "delete_allowed_marking": [
+      "self"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ]
+  },
+  "StixDomainObject": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "add_file": [
+      "self"
+    ],
+    "push_list_export": [
+      "self",
+      "entity_id",
+      "entity_type",
+      "file_name",
+      "file_markings",
+      "data",
+      "list_filters",
+      "mime_type"
+    ],
+    "push_entity_export": [
+      "self",
+      "entity_id",
+      "file_name",
+      "data",
+      "file_markings",
+      "mime_type"
+    ],
+    "update_created_by": [
+      "self"
+    ],
+    "add_marking_definition": [
+      "self"
+    ],
+    "remove_marking_definition": [
+      "self"
+    ],
+    "add_label": [
+      "self"
+    ],
+    "remove_label": [
+      "self"
+    ],
+    "add_external_reference": [
+      "self"
+    ],
+    "remove_external_reference": [
+      "self"
+    ],
+    "add_kill_chain_phase": [
+      "self"
+    ],
+    "remove_kill_chain_phase": [
+      "self"
+    ],
+    "reports": [
+      "self"
+    ],
+    "notes": [
+      "self"
+    ],
+    "observed_data": [
+      "self"
+    ]
+  },
+  "ThreatActor": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "opencti_type"
+    ],
+    "generate_id_from_data": [
+      "self",
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Vocabulary": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "category"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "read_or_create_unchecked_with_cache": [
+      "self",
+      "vocab",
+      "cache",
+      "field"
+    ],
+    "create": [
+      "self"
+    ],
+    "read_or_create_unchecked": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ]
+  },
+  "Infrastructure": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Grouping": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "context",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "KillChainPhase": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "phase_name",
+      "kill_chain_name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "ObservedData": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "object_ids"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Incident": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Narrative": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Event": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "StixObjectOrStixRelationship": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "read": [
+      "self"
+    ],
+    "list": [
+      "self"
+    ]
+  },
+  "Identity": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "identity_class"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "StixSightingRelationship": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "sighting_of_ref",
+      "where_sighted_refs",
+      "first_seen",
+      "last_seen"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_marking_definition": [
+      "self"
+    ],
+    "remove_marking_definition": [
+      "self"
+    ],
+    "update_created_by": [
+      "self"
+    ],
+    "organization_share": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "organization_unshare": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "remove_from_draft": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "StixCoreRelationship": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "relationship_type",
+      "source_ref",
+      "target_ref",
+      "start_time",
+      "stop_time"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "add_marking_definition": [
+      "self"
+    ],
+    "remove_marking_definition": [
+      "self"
+    ],
+    "add_label": [
+      "self"
+    ],
+    "remove_label": [
+      "self"
+    ],
+    "add_external_reference": [
+      "self"
+    ],
+    "remove_external_reference": [
+      "self"
+    ],
+    "add_kill_chain_phase": [
+      "self"
+    ],
+    "remove_kill_chain_phase": [
+      "self"
+    ],
+    "update_created_by": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "organization_share": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "organization_unshare": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "remove_from_draft": [
+      "self"
+    ]
+  },
+  "IntrusionSet": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Vulnerability": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Campaign": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Role": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_capability": [
+      "self"
+    ],
+    "delete_capability": [
+      "self"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ]
+  },
+  "CaseRft": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "CaseIncident": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "Label": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "value"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "read_or_create_unchecked": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "Note": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "created",
+      "content"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "MarkingDefinition": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "definition_type",
+      "definition"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "ThreatActorIndividual": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Tool": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "DataSource": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "CaseRfi": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "CourseOfAction": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "x_mitre_id"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Opinion": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "created",
+      "opinion"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Settings": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "read": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "edit_message": [
+      "self"
+    ],
+    "delete_message": [
+      "self"
+    ],
+    "process_multiple_fields": [
+      "self",
+      "data"
+    ]
+  },
+  "StixCoreObject": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "list_files": [
+      "self"
+    ],
+    "push_list_export": [
+      "self",
+      "entity_id",
+      "entity_type",
+      "file_name",
+      "file_markings",
+      "data",
+      "list_filters",
+      "mime_type"
+    ],
+    "push_analysis": [
+      "self",
+      "entity_id",
+      "file_name",
+      "data",
+      "content_source",
+      "content_type",
+      "analysis_type"
+    ],
+    "reports": [
+      "self"
+    ],
+    "rule_apply": [
+      "self"
+    ],
+    "rule_clear": [
+      "self"
+    ],
+    "rules_rescan": [
+      "self"
+    ],
+    "clear_access_restriction": [
+      "self"
+    ],
+    "ask_enrichment": [
+      "self"
+    ],
+    "ask_enrichments": [
+      "self"
+    ],
+    "organization_share": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "organization_unshare": [
+      "self",
+      "entity_id",
+      "organization_ids",
+      "sharing_direct_container"
+    ],
+    "delete": [
+      "self"
+    ],
+    "remove_from_draft": [
+      "self"
+    ]
+  },
+  "ThreatActorGroup": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "MalwareAnalysis": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "result_name",
+      "product",
+      "submitted"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "AttackPattern": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "x_mitre_id"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "Indicator": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "pattern"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_stix_cyber_observable": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Stix": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "delete": [
+      "self"
+    ],
+    "merge": [
+      "self"
+    ]
+  },
+  "SecurityCoverage": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "covered_ref"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Task": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "created"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "Language": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Malware": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "Feedback": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "Report": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "generate_id": [
+      "name",
+      "published"
+    ],
+    "generate_fixed_fake_id": [
+      "name",
+      "published"
+    ],
+    "generate_id_from_data": [
+      "data"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_by_stix_id_or_name": [
+      "self"
+    ],
+    "contains_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "add_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "remove_stix_object_or_stix_relationship": [
+      "self"
+    ],
+    "import_from_stix2": [
+      "self"
+    ]
+  },
+  "StixCyberObservable": {
+    "__init__": [
+      "self",
+      "opencti"
+    ],
+    "list": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "add_file": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "upload_artifact": [
+      "self"
+    ],
+    "update_field": [
+      "self"
+    ],
+    "promote_to_indicator_v2": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "update_created_by": [
+      "self"
+    ],
+    "add_marking_definition": [
+      "self"
+    ],
+    "remove_marking_definition": [
+      "self"
+    ],
+    "add_label": [
+      "self"
+    ],
+    "remove_label": [
+      "self"
+    ],
+    "add_external_reference": [
+      "self"
+    ],
+    "remove_external_reference": [
+      "self"
+    ],
+    "push_list_export": [
+      "self",
+      "entity_id",
+      "entity_type",
+      "file_name",
+      "file_markings",
+      "data",
+      "list_filters",
+      "mime_type"
+    ],
+    "ask_for_enrichment": [
+      "self"
+    ],
+    "reports": [
+      "self"
+    ],
+    "notes": [
+      "self"
+    ],
+    "observed_data": [
+      "self"
+    ]
+  },
+  "StixCyberObservableDeprecatedMixin": {
+    "promote_to_indicator": [
+      "self"
+    ]
+  },
+  "SCO_PROPERTIES": [],
+  "SCO_PROPERTIES_WITH_FILES": [],
+  "INDICATOR_PROPERTIES": [],
+  "INDICATOR_PROPERTIES_WITH_FILES": []
+}
