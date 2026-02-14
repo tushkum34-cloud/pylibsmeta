@@ -3,7 +3,7 @@ name: Build Library Database
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 * * * *"   # Har hour run
 
 concurrency:
   group: lib-builder
@@ -12,12 +12,15 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # IMPORTANT for rebase
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -32,10 +35,13 @@ jobs:
       - name: Run generator
         run: python gen_libs.py
 
-      - name: Commit changes
+      - name: Commit and Push
         run: |
           git config --global user.name "lib-bot"
           git config --global user.email "bot@users.noreply.github.com"
-          git add .
-          git commit -m "Auto update lib database" || echo "No changes"
-          git push
+
+          git add lib_db || true
+          git commit -m "Auto update lib database" || echo "No changes to commit"
+
+          git pull --rebase origin main || true
+          git push origin main
