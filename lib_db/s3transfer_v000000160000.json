@@ -1,0 +1,2558 @@
+{
+  "BaseSubscriber": {
+    "VALID_SUBSCRIBER_TYPES": [],
+    "__new__": [
+      "cls"
+    ],
+    "_validate_subscriber_methods": [
+      "cls"
+    ],
+    "on_queued": [
+      "self",
+      "future"
+    ],
+    "on_progress": [
+      "self",
+      "future",
+      "bytes_transferred"
+    ],
+    "on_done": [
+      "self",
+      "future"
+    ]
+  },
+  "logger": [],
+  "Task": {
+    "__init__": [
+      "self",
+      "transfer_coordinator",
+      "main_kwargs",
+      "pending_main_kwargs",
+      "done_callbacks",
+      "is_final"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "transfer_id": [
+      "self"
+    ],
+    "_get_kwargs_with_params_to_include": [
+      "self",
+      "kwargs",
+      "include"
+    ],
+    "_get_kwargs_with_params_to_exclude": [
+      "self",
+      "kwargs",
+      "exclude"
+    ],
+    "__call__": [
+      "self",
+      "ctx"
+    ],
+    "_execute_main": [
+      "self",
+      "kwargs"
+    ],
+    "_log_and_set_exception": [
+      "self",
+      "exception"
+    ],
+    "_main": [
+      "self"
+    ],
+    "_wait_on_dependent_futures": [
+      "self"
+    ],
+    "_wait_until_all_complete": [
+      "self",
+      "futures"
+    ],
+    "_get_all_main_kwargs": [
+      "self"
+    ]
+  },
+  "SubmissionTask": {
+    "_main": [
+      "self",
+      "transfer_future"
+    ],
+    "_submit": [
+      "self",
+      "transfer_future"
+    ],
+    "_wait_for_all_submitted_futures_to_complete": [
+      "self"
+    ]
+  },
+  "CreateMultipartUploadTask": {
+    "_main": [
+      "self",
+      "client",
+      "bucket",
+      "key",
+      "extra_args"
+    ]
+  },
+  "CompleteMultipartUploadTask": {
+    "_main": [
+      "self",
+      "client",
+      "bucket",
+      "key",
+      "upload_id",
+      "parts",
+      "extra_args"
+    ]
+  },
+  "BaseTransferFuture": {
+    "meta": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "result": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ]
+  },
+  "BaseTransferMeta": {
+    "call_args": [
+      "self"
+    ],
+    "transfer_id": [
+      "self"
+    ],
+    "user_context": [
+      "self"
+    ]
+  },
+  "TransferFuture": {
+    "__init__": [
+      "self",
+      "meta",
+      "coordinator"
+    ],
+    "meta": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "result": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "set_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "TransferMeta": {
+    "__init__": [
+      "self",
+      "call_args",
+      "transfer_id"
+    ],
+    "call_args": [
+      "self"
+    ],
+    "transfer_id": [
+      "self"
+    ],
+    "size": [
+      "self"
+    ],
+    "user_context": [
+      "self"
+    ],
+    "etag": [
+      "self"
+    ],
+    "provide_transfer_size": [
+      "self",
+      "size"
+    ],
+    "provide_object_etag": [
+      "self",
+      "etag"
+    ]
+  },
+  "TransferCoordinator": {
+    "__init__": [
+      "self",
+      "transfer_id"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "exception": [
+      "self"
+    ],
+    "associated_futures": [
+      "self"
+    ],
+    "failure_cleanups": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "set_result": [
+      "self",
+      "result"
+    ],
+    "set_exception": [
+      "self",
+      "exception",
+      "override"
+    ],
+    "result": [
+      "self"
+    ],
+    "cancel": [
+      "self",
+      "msg",
+      "exc_type"
+    ],
+    "set_status_to_queued": [
+      "self"
+    ],
+    "set_status_to_running": [
+      "self"
+    ],
+    "_transition_to_non_done_state": [
+      "self",
+      "desired_state"
+    ],
+    "submit": [
+      "self",
+      "executor",
+      "task",
+      "tag"
+    ],
+    "done": [
+      "self"
+    ],
+    "add_associated_future": [
+      "self",
+      "future"
+    ],
+    "remove_associated_future": [
+      "self",
+      "future"
+    ],
+    "add_done_callback": [
+      "self",
+      "function"
+    ],
+    "add_failure_cleanup": [
+      "self",
+      "function"
+    ],
+    "announce_done": [
+      "self"
+    ],
+    "_run_done_callbacks": [
+      "self"
+    ],
+    "_run_failure_cleanups": [
+      "self"
+    ],
+    "_run_callbacks": [
+      "self",
+      "callbacks"
+    ],
+    "_run_callback": [
+      "self",
+      "callback"
+    ]
+  },
+  "BoundedExecutor": {
+    "EXECUTOR_CLS": [],
+    "__init__": [
+      "self",
+      "max_size",
+      "max_num_threads",
+      "tag_semaphores",
+      "executor_cls"
+    ],
+    "submit": [
+      "self",
+      "task",
+      "tag",
+      "block"
+    ],
+    "shutdown": [
+      "self",
+      "wait"
+    ]
+  },
+  "ExecutorFuture": {
+    "__init__": [
+      "self",
+      "future"
+    ],
+    "result": [
+      "self"
+    ],
+    "add_done_callback": [
+      "self",
+      "fn"
+    ],
+    "done": [
+      "self"
+    ]
+  },
+  "BaseExecutor": {
+    "__init__": [
+      "self",
+      "max_workers"
+    ],
+    "submit": [
+      "self",
+      "fn"
+    ],
+    "shutdown": [
+      "self",
+      "wait"
+    ]
+  },
+  "NonThreadedExecutor": {
+    "submit": [
+      "self",
+      "fn"
+    ],
+    "shutdown": [
+      "self",
+      "wait"
+    ]
+  },
+  "NonThreadedExecutorFuture": {
+    "__init__": [
+      "self"
+    ],
+    "set_result": [
+      "self",
+      "result"
+    ],
+    "set_exception_info": [
+      "self",
+      "exception",
+      "traceback"
+    ],
+    "result": [
+      "self",
+      "timeout"
+    ],
+    "_set_done": [
+      "self"
+    ],
+    "_invoke_done_callback": [
+      "self",
+      "done_callback"
+    ],
+    "done": [
+      "self"
+    ],
+    "add_done_callback": [
+      "self",
+      "fn"
+    ]
+  },
+  "TaskTag": [],
+  "IN_MEMORY_UPLOAD_TAG": [],
+  "IN_MEMORY_DOWNLOAD_TAG": [],
+  "DeleteSubmissionTask": {
+    "_submit": [
+      "self",
+      "client",
+      "request_executor",
+      "transfer_future"
+    ]
+  },
+  "DeleteObjectTask": {
+    "_main": [
+      "self",
+      "client",
+      "bucket",
+      "key",
+      "extra_args"
+    ]
+  },
+  "CopySubmissionTask": {
+    "EXTRA_ARGS_TO_HEAD_ARGS_MAPPING": [],
+    "UPLOAD_PART_COPY_ARGS": [],
+    "CREATE_MULTIPART_ARGS_BLACKLIST": [],
+    "COMPLETE_MULTIPART_ARGS": [],
+    "_submit": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future"
+    ],
+    "_submit_copy_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future"
+    ],
+    "_submit_multipart_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future"
+    ],
+    "_get_head_object_request_from_copy_source": [
+      "self",
+      "copy_source"
+    ],
+    "_extra_upload_part_args": [
+      "self",
+      "extra_args"
+    ],
+    "_extra_complete_multipart_args": [
+      "self",
+      "extra_args"
+    ],
+    "_get_transfer_size": [
+      "self",
+      "part_size",
+      "part_index",
+      "num_parts",
+      "total_transfer_size"
+    ]
+  },
+  "CopyObjectTask": {
+    "_main": [
+      "self",
+      "client",
+      "copy_source",
+      "bucket",
+      "key",
+      "extra_args",
+      "callbacks",
+      "size"
+    ]
+  },
+  "CopyPartTask": {
+    "_main": [
+      "self",
+      "client",
+      "copy_source",
+      "bucket",
+      "key",
+      "upload_id",
+      "part_number",
+      "extra_args",
+      "callbacks",
+      "size",
+      "checksum_algorithm"
+    ]
+  },
+  "accepts_kwargs": [
+    "func"
+  ],
+  "SOCKET_ERROR": [],
+  "MAXINT": [],
+  "seekable": [
+    "fileobj"
+  ],
+  "readable": [
+    "fileobj"
+  ],
+  "fallocate": [
+    "fileobj",
+    "size"
+  ],
+  "CRT_S3_PROCESS_LOCK": [],
+  "acquire_crt_s3_process_lock": [
+    "name"
+  ],
+  "create_s3_crt_client": [
+    "region",
+    "crt_credentials_provider",
+    "num_threads",
+    "target_throughput",
+    "part_size",
+    "use_ssl",
+    "verify"
+  ],
+  "_get_crt_throughput_target_gbps": [
+    "provided_throughput_target_bytes"
+  ],
+  "_has_minimum_crt_version": [
+    "minimum_version"
+  ],
+  "CRTTransferManager": {
+    "ALLOWED_DOWNLOAD_ARGS": [],
+    "ALLOWED_UPLOAD_ARGS": [],
+    "ALLOWED_DELETE_ARGS": [],
+    "VALIDATE_SUPPORTED_BUCKET_VALUES": [],
+    "_UNSUPPORTED_BUCKET_PATTERNS": [],
+    "__init__": [
+      "self",
+      "crt_s3_client",
+      "crt_request_serializer",
+      "osutil",
+      "config"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value"
+    ],
+    "download": [
+      "self",
+      "bucket",
+      "key",
+      "fileobj",
+      "extra_args",
+      "subscribers"
+    ],
+    "upload": [
+      "self",
+      "fileobj",
+      "bucket",
+      "key",
+      "extra_args",
+      "subscribers"
+    ],
+    "delete": [
+      "self",
+      "bucket",
+      "key",
+      "extra_args",
+      "subscribers"
+    ],
+    "shutdown": [
+      "self",
+      "cancel"
+    ],
+    "_validate_if_bucket_supported": [
+      "self",
+      "bucket"
+    ],
+    "_validate_all_known_args": [
+      "self",
+      "actual",
+      "allowed"
+    ],
+    "_validate_checksum_algorithm_supported": [
+      "self",
+      "extra_args"
+    ],
+    "_cancel_transfers": [
+      "self"
+    ],
+    "_finish_transfers": [
+      "self"
+    ],
+    "_wait_transfers_done": [
+      "self"
+    ],
+    "_shutdown": [
+      "self",
+      "cancel"
+    ],
+    "_release_semaphore": [
+      "self"
+    ],
+    "_submit_transfer": [
+      "self",
+      "request_type",
+      "call_args"
+    ]
+  },
+  "CRTTransferMeta": {
+    "__init__": [
+      "self",
+      "transfer_id",
+      "call_args"
+    ],
+    "call_args": [
+      "self"
+    ],
+    "transfer_id": [
+      "self"
+    ],
+    "user_context": [
+      "self"
+    ]
+  },
+  "CRTTransferFuture": {
+    "__init__": [
+      "self",
+      "meta",
+      "coordinator"
+    ],
+    "meta": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "result": [
+      "self",
+      "timeout"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "set_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "BaseCRTRequestSerializer": {
+    "serialize_http_request": [
+      "self",
+      "transfer_type",
+      "future"
+    ],
+    "translate_crt_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "BotocoreCRTRequestSerializer": {
+    "__init__": [
+      "self",
+      "session",
+      "client_kwargs"
+    ],
+    "_resolve_client_config": [
+      "self",
+      "session",
+      "client_kwargs"
+    ],
+    "_crt_request_from_aws_request": [
+      "self",
+      "aws_request"
+    ],
+    "_convert_to_crt_http_request": [
+      "self",
+      "botocore_http_request"
+    ],
+    "_capture_http_request": [
+      "self",
+      "request"
+    ],
+    "_change_response_to_serialized_http_request": [
+      "self",
+      "context",
+      "parsed"
+    ],
+    "_make_fake_http_response": [
+      "self",
+      "request"
+    ],
+    "_get_botocore_http_request": [
+      "self",
+      "client_method",
+      "call_args"
+    ],
+    "serialize_http_request": [
+      "self",
+      "transfer_type",
+      "future"
+    ],
+    "translate_crt_exception": [
+      "self",
+      "exception"
+    ],
+    "_translate_crt_s3_response_error": [
+      "self",
+      "s3_response_error"
+    ],
+    "_remove_checksum_context": [
+      "self",
+      "params"
+    ]
+  },
+  "FakeRawResponse": {
+    "stream": [
+      "self",
+      "amt",
+      "decode_content"
+    ]
+  },
+  "BotocoreCRTCredentialsWrapper": {
+    "__init__": [
+      "self",
+      "resolved_botocore_credentials"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "to_crt_credentials_provider": [
+      "self"
+    ],
+    "_get_credentials": [
+      "self"
+    ]
+  },
+  "CRTTransferCoordinator": {
+    "__init__": [
+      "self",
+      "transfer_id",
+      "s3_request",
+      "exception_translator"
+    ],
+    "s3_request": [
+      "self"
+    ],
+    "set_done_callbacks_complete": [
+      "self"
+    ],
+    "wait_until_on_done_callbacks_complete": [
+      "self",
+      "timeout"
+    ],
+    "set_exception": [
+      "self",
+      "exception",
+      "override"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "result": [
+      "self",
+      "timeout"
+    ],
+    "handle_exception": [
+      "self",
+      "exc"
+    ],
+    "done": [
+      "self"
+    ],
+    "set_s3_request": [
+      "self",
+      "s3_request"
+    ]
+  },
+  "CRTConfigParameter": [],
+  "S3ClientArgsCreator": {
+    "_CRT_ARG_TO_CONFIG_PARAM": [],
+    "__init__": [
+      "self",
+      "crt_request_serializer",
+      "os_utils",
+      "config"
+    ],
+    "_get_crt_transfer_config_options": [
+      "self",
+      "request_type"
+    ],
+    "_get_crt_options_put_object": [
+      "self"
+    ],
+    "_remove_param_if_not_min_crt_version": [
+      "self",
+      "crt_config"
+    ],
+    "get_make_request_args": [
+      "self",
+      "request_type",
+      "call_args",
+      "coordinator",
+      "future",
+      "on_done_after_calls"
+    ],
+    "get_crt_callback": [
+      "self",
+      "future",
+      "callback_type",
+      "before_subscribers",
+      "after_subscribers"
+    ],
+    "_get_make_request_args_put_object": [
+      "self",
+      "request_type",
+      "call_args",
+      "coordinator",
+      "future",
+      "on_done_before_calls",
+      "on_done_after_calls"
+    ],
+    "_get_make_request_args_get_object": [
+      "self",
+      "request_type",
+      "call_args",
+      "coordinator",
+      "future",
+      "on_done_before_calls",
+      "on_done_after_calls"
+    ],
+    "_default_get_make_request_args": [
+      "self",
+      "request_type",
+      "call_args",
+      "coordinator",
+      "future",
+      "on_done_before_calls",
+      "on_done_after_calls"
+    ]
+  },
+  "RenameTempFileHandler": {
+    "__init__": [
+      "self",
+      "coordinator",
+      "final_filename",
+      "temp_filename",
+      "osutil"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "AfterDoneHandler": {
+    "__init__": [
+      "self",
+      "coordinator"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "OnBodyFileObjWriter": {
+    "__init__": [
+      "self",
+      "fileobj"
+    ],
+    "__call__": [
+      "self",
+      "chunk"
+    ]
+  },
+  "_S3ArnParamHandler": {
+    "_RESOURCE_REGEX": [],
+    "__init__": [
+      "self"
+    ],
+    "handle_arn": [
+      "self",
+      "bucket"
+    ],
+    "_get_arn_details_from_bucket": [
+      "self",
+      "bucket"
+    ],
+    "_add_resource_type_and_name": [
+      "self",
+      "arn_details"
+    ]
+  },
+  "MAX_PARTS": [],
+  "MAX_SINGLE_UPLOAD_SIZE": [],
+  "MIN_UPLOAD_CHUNKSIZE": [],
+  "S3_RETRYABLE_DOWNLOAD_ERRORS": [],
+  "random_file_extension": [
+    "num_digits"
+  ],
+  "signal_not_transferring": [
+    "request",
+    "operation_name"
+  ],
+  "signal_transferring": [
+    "request",
+    "operation_name"
+  ],
+  "calculate_num_parts": [
+    "size",
+    "part_size"
+  ],
+  "calculate_range_parameter": [
+    "part_size",
+    "part_index",
+    "num_parts",
+    "total_size"
+  ],
+  "get_callbacks": [
+    "transfer_future",
+    "callback_type"
+  ],
+  "invoke_progress_callbacks": [
+    "callbacks",
+    "bytes_transferred"
+  ],
+  "get_filtered_dict": [
+    "original_dict",
+    "whitelisted_keys",
+    "blocklisted_keys"
+  ],
+  "CallArgs": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "FunctionContainer": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "CountCallbackInvoker": {
+    "__init__": [
+      "self",
+      "callback"
+    ],
+    "current_count": [
+      "self"
+    ],
+    "increment": [
+      "self"
+    ],
+    "decrement": [
+      "self"
+    ],
+    "finalize": [
+      "self"
+    ]
+  },
+  "OSUtils": {
+    "_MAX_FILENAME_LEN": [],
+    "get_file_size": [
+      "self",
+      "filename"
+    ],
+    "open_file_chunk_reader": [
+      "self",
+      "filename",
+      "start_byte",
+      "size",
+      "callbacks"
+    ],
+    "open_file_chunk_reader_from_fileobj": [
+      "self",
+      "fileobj",
+      "chunk_size",
+      "full_file_size",
+      "callbacks",
+      "close_callbacks"
+    ],
+    "open": [
+      "self",
+      "filename",
+      "mode"
+    ],
+    "remove_file": [
+      "self",
+      "filename"
+    ],
+    "rename_file": [
+      "self",
+      "current_filename",
+      "new_filename"
+    ],
+    "is_special_file": [
+      "cls",
+      "filename"
+    ],
+    "get_temp_filename": [
+      "self",
+      "filename"
+    ],
+    "allocate": [
+      "self",
+      "filename",
+      "size"
+    ]
+  },
+  "DeferredOpenFile": {
+    "__init__": [
+      "self",
+      "filename",
+      "start_byte",
+      "mode",
+      "open_function"
+    ],
+    "_open_if_needed": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "amount"
+    ],
+    "write": [
+      "self",
+      "data"
+    ],
+    "seek": [
+      "self",
+      "where",
+      "whence"
+    ],
+    "tell": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "ReadFileChunk": {
+    "__init__": [
+      "self",
+      "fileobj",
+      "chunk_size",
+      "full_file_size",
+      "callbacks",
+      "enable_callbacks",
+      "close_callbacks"
+    ],
+    "from_filename": [
+      "cls",
+      "filename",
+      "start_byte",
+      "chunk_size",
+      "callbacks",
+      "enable_callbacks"
+    ],
+    "_calculate_file_size": [
+      "self",
+      "fileobj",
+      "requested_size",
+      "start_byte",
+      "actual_file_size"
+    ],
+    "read": [
+      "self",
+      "amount"
+    ],
+    "signal_transferring": [
+      "self"
+    ],
+    "signal_not_transferring": [
+      "self"
+    ],
+    "enable_callback": [
+      "self"
+    ],
+    "disable_callback": [
+      "self"
+    ],
+    "seek": [
+      "self",
+      "where",
+      "whence"
+    ],
+    "close": [
+      "self"
+    ],
+    "tell": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "StreamReaderProgress": {
+    "__init__": [
+      "self",
+      "stream",
+      "callbacks"
+    ],
+    "read": [
+      "self"
+    ]
+  },
+  "NoResourcesAvailable": {},
+  "TaskSemaphore": {
+    "__init__": [
+      "self",
+      "count"
+    ],
+    "acquire": [
+      "self",
+      "tag",
+      "blocking"
+    ],
+    "release": [
+      "self",
+      "tag",
+      "acquire_token"
+    ]
+  },
+  "SlidingWindowSemaphore": {
+    "__init__": [
+      "self",
+      "count"
+    ],
+    "current_count": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "tag",
+      "blocking"
+    ],
+    "release": [
+      "self",
+      "tag",
+      "acquire_token"
+    ]
+  },
+  "ChunksizeAdjuster": {
+    "__init__": [
+      "self",
+      "max_size",
+      "min_size",
+      "max_parts"
+    ],
+    "adjust_chunksize": [
+      "self",
+      "current_chunksize",
+      "file_size"
+    ],
+    "_adjust_for_chunksize_limits": [
+      "self",
+      "current_chunksize"
+    ],
+    "_adjust_for_max_parts": [
+      "self",
+      "current_chunksize",
+      "file_size"
+    ]
+  },
+  "add_s3express_defaults": [
+    "bucket",
+    "extra_args"
+  ],
+  "set_default_checksum_algorithm": [
+    "extra_args"
+  ],
+  "create_nested_client": [
+    "session",
+    "service_name"
+  ],
+  "SHUTDOWN_SIGNAL": [],
+  "DownloadFileRequest": [],
+  "GetObjectJob": [],
+  "ignore_ctrl_c": [],
+  "_add_ignore_handler_for_interrupts": [],
+  "ProcessTransferConfig": {
+    "__init__": [
+      "self",
+      "multipart_threshold",
+      "multipart_chunksize",
+      "max_request_processes"
+    ]
+  },
+  "ProcessPoolDownloader": {
+    "__init__": [
+      "self",
+      "client_kwargs",
+      "config"
+    ],
+    "download_file": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "extra_args",
+      "expected_size"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value"
+    ],
+    "_start_if_needed": [
+      "self"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_validate_all_known_args": [
+      "self",
+      "provided"
+    ],
+    "_get_transfer_future": [
+      "self",
+      "transfer_id",
+      "call_args"
+    ],
+    "_start_transfer_monitor_manager": [
+      "self"
+    ],
+    "_start_submitter": [
+      "self"
+    ],
+    "_start_get_object_workers": [
+      "self"
+    ],
+    "_shutdown_if_needed": [
+      "self"
+    ],
+    "_shutdown": [
+      "self"
+    ],
+    "_shutdown_transfer_monitor_manager": [
+      "self"
+    ],
+    "_shutdown_submitter": [
+      "self"
+    ],
+    "_shutdown_get_object_workers": [
+      "self"
+    ]
+  },
+  "ProcessPoolTransferFuture": {
+    "__init__": [
+      "self",
+      "monitor",
+      "meta"
+    ],
+    "meta": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "result": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ]
+  },
+  "ProcessPoolTransferMeta": {
+    "__init__": [
+      "self",
+      "transfer_id",
+      "call_args"
+    ],
+    "call_args": [
+      "self"
+    ],
+    "transfer_id": [
+      "self"
+    ],
+    "user_context": [
+      "self"
+    ]
+  },
+  "ClientFactory": {
+    "__init__": [
+      "self",
+      "client_kwargs"
+    ],
+    "create_client": [
+      "self"
+    ]
+  },
+  "TransferMonitor": {
+    "__init__": [
+      "self"
+    ],
+    "notify_new_transfer": [
+      "self"
+    ],
+    "is_done": [
+      "self",
+      "transfer_id"
+    ],
+    "notify_done": [
+      "self",
+      "transfer_id"
+    ],
+    "poll_for_result": [
+      "self",
+      "transfer_id"
+    ],
+    "notify_exception": [
+      "self",
+      "transfer_id",
+      "exception"
+    ],
+    "notify_cancel_all_in_progress": [
+      "self"
+    ],
+    "get_exception": [
+      "self",
+      "transfer_id"
+    ],
+    "notify_expected_jobs_to_complete": [
+      "self",
+      "transfer_id",
+      "num_jobs"
+    ],
+    "notify_job_complete": [
+      "self",
+      "transfer_id"
+    ]
+  },
+  "TransferState": {
+    "__init__": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "set_done": [
+      "self"
+    ],
+    "wait_till_done": [
+      "self"
+    ],
+    "exception": [
+      "self",
+      "val"
+    ],
+    "jobs_to_complete": [
+      "self",
+      "val"
+    ],
+    "decrement_jobs_to_complete": [
+      "self"
+    ]
+  },
+  "TransferMonitorManager": {},
+  "BaseS3TransferProcess": {
+    "__init__": [
+      "self",
+      "client_factory"
+    ],
+    "run": [
+      "self"
+    ],
+    "_do_run": [
+      "self"
+    ]
+  },
+  "GetObjectSubmitter": {
+    "__init__": [
+      "self",
+      "transfer_config",
+      "client_factory",
+      "transfer_monitor",
+      "osutil",
+      "download_request_queue",
+      "worker_queue"
+    ],
+    "_do_run": [
+      "self"
+    ],
+    "_submit_get_object_jobs": [
+      "self",
+      "download_file_request"
+    ],
+    "_get_size": [
+      "self",
+      "download_file_request"
+    ],
+    "_allocate_temp_file": [
+      "self",
+      "download_file_request",
+      "size"
+    ],
+    "_submit_single_get_object_job": [
+      "self",
+      "download_file_request",
+      "temp_filename"
+    ],
+    "_submit_ranged_get_object_jobs": [
+      "self",
+      "download_file_request",
+      "temp_filename",
+      "size"
+    ],
+    "_submit_get_object_job": [
+      "self"
+    ],
+    "_notify_jobs_to_complete": [
+      "self",
+      "transfer_id",
+      "jobs_to_complete"
+    ]
+  },
+  "GetObjectWorker": {
+    "_MAX_ATTEMPTS": [],
+    "_IO_CHUNKSIZE": [],
+    "__init__": [
+      "self",
+      "queue",
+      "client_factory",
+      "transfer_monitor",
+      "osutil"
+    ],
+    "_do_run": [
+      "self"
+    ],
+    "_run_get_object_job": [
+      "self",
+      "job"
+    ],
+    "_do_get_object": [
+      "self",
+      "bucket",
+      "key",
+      "extra_args",
+      "temp_filename",
+      "offset"
+    ],
+    "_write_to_file": [
+      "self",
+      "filename",
+      "offset",
+      "body"
+    ],
+    "_finalize_download": [
+      "self",
+      "transfer_id",
+      "temp_filename",
+      "filename"
+    ],
+    "_do_file_rename": [
+      "self",
+      "transfer_id",
+      "temp_filename",
+      "filename"
+    ]
+  },
+  "__author__": [],
+  "__version__": [],
+  "MB": [],
+  "SHUTDOWN_SENTINEL": [],
+  "disable_upload_callbacks": [
+    "request",
+    "operation_name"
+  ],
+  "enable_upload_callbacks": [
+    "request",
+    "operation_name"
+  ],
+  "QueueShutdownError": {},
+  "MultipartUploader": {
+    "UPLOAD_PART_ARGS": [],
+    "__init__": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "executor_cls"
+    ],
+    "_extra_upload_part_args": [
+      "self",
+      "extra_args"
+    ],
+    "upload_file": [
+      "self",
+      "filename",
+      "bucket",
+      "key",
+      "callback",
+      "extra_args"
+    ],
+    "_upload_parts": [
+      "self",
+      "upload_id",
+      "filename",
+      "bucket",
+      "key",
+      "callback",
+      "extra_args"
+    ],
+    "_upload_one_part": [
+      "self",
+      "filename",
+      "bucket",
+      "key",
+      "upload_id",
+      "part_size",
+      "extra_args",
+      "callback",
+      "part_number"
+    ]
+  },
+  "ShutdownQueue": {
+    "_init": [
+      "self",
+      "maxsize"
+    ],
+    "trigger_shutdown": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "item"
+    ]
+  },
+  "MultipartDownloader": {
+    "__init__": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "executor_cls"
+    ],
+    "download_file": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "object_size",
+      "extra_args",
+      "callback"
+    ],
+    "_process_future_results": [
+      "self",
+      "futures"
+    ],
+    "_download_file_as_future": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "object_size",
+      "callback"
+    ],
+    "_calculate_range_param": [
+      "self",
+      "part_size",
+      "part_index",
+      "num_parts"
+    ],
+    "_download_range": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "part_size",
+      "num_parts",
+      "callback",
+      "part_index"
+    ],
+    "_perform_io_writes": [
+      "self",
+      "filename"
+    ]
+  },
+  "TransferConfig": {
+    "__init__": [
+      "self",
+      "multipart_threshold",
+      "max_concurrency",
+      "multipart_chunksize",
+      "num_download_attempts",
+      "max_io_queue"
+    ]
+  },
+  "S3Transfer": {
+    "ALLOWED_DOWNLOAD_ARGS": [],
+    "ALLOWED_UPLOAD_ARGS": [],
+    "__init__": [
+      "self",
+      "client",
+      "config",
+      "osutil"
+    ],
+    "_update_checksum_context": [
+      "self",
+      "params"
+    ],
+    "upload_file": [
+      "self",
+      "filename",
+      "bucket",
+      "key",
+      "callback",
+      "extra_args"
+    ],
+    "_put_object": [
+      "self",
+      "filename",
+      "bucket",
+      "key",
+      "callback",
+      "extra_args"
+    ],
+    "download_file": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "extra_args",
+      "callback"
+    ],
+    "_download_file": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "object_size",
+      "extra_args",
+      "callback"
+    ],
+    "_validate_all_known_args": [
+      "self",
+      "actual",
+      "allowed"
+    ],
+    "_ranged_download": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "object_size",
+      "extra_args",
+      "callback"
+    ],
+    "_get_object": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "extra_args",
+      "callback"
+    ],
+    "_do_get_object": [
+      "self",
+      "bucket",
+      "key",
+      "filename",
+      "extra_args",
+      "callback"
+    ],
+    "_object_size": [
+      "self",
+      "bucket",
+      "key",
+      "extra_args"
+    ],
+    "_multipart_upload": [
+      "self",
+      "filename",
+      "bucket",
+      "key",
+      "callback",
+      "extra_args"
+    ]
+  },
+  "AggregatedProgressCallback": {
+    "__init__": [
+      "self",
+      "callbacks",
+      "threshold"
+    ],
+    "__call__": [
+      "self",
+      "bytes_transferred"
+    ],
+    "flush": [
+      "self"
+    ],
+    "_trigger_callbacks": [
+      "self"
+    ]
+  },
+  "InterruptReader": {
+    "__init__": [
+      "self",
+      "fileobj",
+      "transfer_coordinator"
+    ],
+    "read": [
+      "self",
+      "amount"
+    ],
+    "seek": [
+      "self",
+      "where",
+      "whence"
+    ],
+    "tell": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "UploadInputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "bandwidth_limiter"
+    ],
+    "is_compatible": [
+      "cls",
+      "upload_source"
+    ],
+    "stores_body_in_memory": [
+      "self",
+      "operation_name"
+    ],
+    "provide_transfer_size": [
+      "self",
+      "transfer_future"
+    ],
+    "requires_multipart_upload": [
+      "self",
+      "transfer_future",
+      "config"
+    ],
+    "get_put_object_body": [
+      "self",
+      "transfer_future"
+    ],
+    "yield_upload_part_bodies": [
+      "self",
+      "transfer_future",
+      "chunksize"
+    ],
+    "_wrap_fileobj": [
+      "self",
+      "fileobj"
+    ],
+    "_get_progress_callbacks": [
+      "self",
+      "transfer_future"
+    ],
+    "_get_close_callbacks": [
+      "self",
+      "aggregated_progress_callbacks"
+    ]
+  },
+  "UploadFilenameInputManager": {
+    "is_compatible": [
+      "cls",
+      "upload_source"
+    ],
+    "stores_body_in_memory": [
+      "self",
+      "operation_name"
+    ],
+    "provide_transfer_size": [
+      "self",
+      "transfer_future"
+    ],
+    "requires_multipart_upload": [
+      "self",
+      "transfer_future",
+      "config"
+    ],
+    "get_put_object_body": [
+      "self",
+      "transfer_future"
+    ],
+    "yield_upload_part_bodies": [
+      "self",
+      "transfer_future",
+      "chunksize"
+    ],
+    "_get_deferred_open_file": [
+      "self",
+      "fileobj",
+      "start_byte"
+    ],
+    "_get_put_object_fileobj_with_full_size": [
+      "self",
+      "transfer_future"
+    ],
+    "_get_upload_part_fileobj_with_full_size": [
+      "self",
+      "fileobj"
+    ],
+    "_get_num_parts": [
+      "self",
+      "transfer_future",
+      "part_size"
+    ]
+  },
+  "UploadSeekableInputManager": {
+    "is_compatible": [
+      "cls",
+      "upload_source"
+    ],
+    "stores_body_in_memory": [
+      "self",
+      "operation_name"
+    ],
+    "provide_transfer_size": [
+      "self",
+      "transfer_future"
+    ],
+    "_get_upload_part_fileobj_with_full_size": [
+      "self",
+      "fileobj"
+    ],
+    "_get_put_object_fileobj_with_full_size": [
+      "self",
+      "transfer_future"
+    ]
+  },
+  "UploadNonSeekableInputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "bandwidth_limiter"
+    ],
+    "is_compatible": [
+      "cls",
+      "upload_source"
+    ],
+    "stores_body_in_memory": [
+      "self",
+      "operation_name"
+    ],
+    "provide_transfer_size": [
+      "self",
+      "transfer_future"
+    ],
+    "requires_multipart_upload": [
+      "self",
+      "transfer_future",
+      "config"
+    ],
+    "get_put_object_body": [
+      "self",
+      "transfer_future"
+    ],
+    "yield_upload_part_bodies": [
+      "self",
+      "transfer_future",
+      "chunksize"
+    ],
+    "_read": [
+      "self",
+      "fileobj",
+      "amount",
+      "truncate"
+    ],
+    "_wrap_data": [
+      "self",
+      "data",
+      "callbacks",
+      "close_callbacks"
+    ]
+  },
+  "UploadSubmissionTask": {
+    "PUT_OBJECT_BLOCKLIST": [],
+    "CREATE_MULTIPART_BLOCKLIST": [],
+    "UPLOAD_PART_ARGS": [],
+    "COMPLETE_MULTIPART_ARGS": [],
+    "_get_upload_input_manager_cls": [
+      "self",
+      "transfer_future"
+    ],
+    "_submit": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future",
+      "bandwidth_limiter"
+    ],
+    "_submit_upload_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future",
+      "upload_input_manager"
+    ],
+    "_submit_multipart_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "transfer_future",
+      "upload_input_manager"
+    ],
+    "_extra_upload_part_args": [
+      "self",
+      "extra_args"
+    ],
+    "_extra_complete_multipart_args": [
+      "self",
+      "extra_args"
+    ],
+    "_extra_create_multipart_args": [
+      "self",
+      "extra_args"
+    ],
+    "_extra_put_object_args": [
+      "self",
+      "extra_args"
+    ],
+    "_get_upload_task_tag": [
+      "self",
+      "upload_input_manager",
+      "operation_name"
+    ]
+  },
+  "PutObjectTask": {
+    "_main": [
+      "self",
+      "client",
+      "fileobj",
+      "bucket",
+      "key",
+      "extra_args"
+    ]
+  },
+  "UploadPartTask": {
+    "_main": [
+      "self",
+      "client",
+      "fileobj",
+      "bucket",
+      "key",
+      "upload_id",
+      "part_number",
+      "extra_args"
+    ]
+  },
+  "RequestExceededException": {
+    "__init__": [
+      "self",
+      "requested_amt",
+      "retry_time"
+    ]
+  },
+  "RequestToken": {},
+  "TimeUtils": {
+    "time": [
+      "self"
+    ],
+    "sleep": [
+      "self",
+      "value"
+    ]
+  },
+  "BandwidthLimiter": {
+    "__init__": [
+      "self",
+      "leaky_bucket",
+      "time_utils"
+    ],
+    "get_bandwith_limited_stream": [
+      "self",
+      "fileobj",
+      "transfer_coordinator",
+      "enabled"
+    ]
+  },
+  "BandwidthLimitedStream": {
+    "__init__": [
+      "self",
+      "fileobj",
+      "leaky_bucket",
+      "transfer_coordinator",
+      "time_utils",
+      "bytes_threshold"
+    ],
+    "enable_bandwidth_limiting": [
+      "self"
+    ],
+    "disable_bandwidth_limiting": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "amount"
+    ],
+    "_consume_through_leaky_bucket": [
+      "self"
+    ],
+    "signal_transferring": [
+      "self"
+    ],
+    "signal_not_transferring": [
+      "self"
+    ],
+    "seek": [
+      "self",
+      "where",
+      "whence"
+    ],
+    "tell": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "LeakyBucket": {
+    "__init__": [
+      "self",
+      "max_rate",
+      "time_utils",
+      "rate_tracker",
+      "consumption_scheduler"
+    ],
+    "consume": [
+      "self",
+      "amt",
+      "request_token"
+    ],
+    "_projected_to_exceed_max_rate": [
+      "self",
+      "amt",
+      "time_now"
+    ],
+    "_release_requested_amt_for_scheduled_request": [
+      "self",
+      "amt",
+      "request_token",
+      "time_now"
+    ],
+    "_raise_request_exceeded_exception": [
+      "self",
+      "amt",
+      "request_token",
+      "time_now"
+    ],
+    "_release_requested_amt": [
+      "self",
+      "amt",
+      "time_now"
+    ]
+  },
+  "ConsumptionScheduler": {
+    "__init__": [
+      "self"
+    ],
+    "is_scheduled": [
+      "self",
+      "token"
+    ],
+    "schedule_consumption": [
+      "self",
+      "amt",
+      "token",
+      "time_to_consume"
+    ],
+    "process_scheduled_consumption": [
+      "self",
+      "token"
+    ]
+  },
+  "BandwidthRateTracker": {
+    "__init__": [
+      "self",
+      "alpha"
+    ],
+    "current_rate": [
+      "self"
+    ],
+    "get_projected_rate": [
+      "self",
+      "amt",
+      "time_at_consumption"
+    ],
+    "record_consumption_rate": [
+      "self",
+      "amt",
+      "time_at_consumption"
+    ],
+    "_calculate_rate": [
+      "self",
+      "amt",
+      "time_at_consumption"
+    ],
+    "_calculate_exponential_moving_average_rate": [
+      "self",
+      "amt",
+      "time_at_consumption"
+    ]
+  },
+  "RetriesExceededError": {
+    "__init__": [
+      "self",
+      "last_exception",
+      "msg"
+    ]
+  },
+  "S3UploadFailedError": {},
+  "S3DownloadFailedError": {},
+  "S3CopyFailedError": {},
+  "InvalidSubscriberMethodError": {},
+  "TransferNotDoneError": {},
+  "FatalError": {},
+  "S3ValidationError": {},
+  "DownloadOutputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "io_executor"
+    ],
+    "is_compatible": [
+      "cls",
+      "download_target",
+      "osutil"
+    ],
+    "get_download_task_tag": [
+      "self"
+    ],
+    "get_fileobj_for_io_writes": [
+      "self",
+      "transfer_future"
+    ],
+    "queue_file_io_task": [
+      "self",
+      "fileobj",
+      "data",
+      "offset"
+    ],
+    "get_io_write_task": [
+      "self",
+      "fileobj",
+      "data",
+      "offset"
+    ],
+    "get_final_io_task": [
+      "self"
+    ],
+    "_get_fileobj_from_filename": [
+      "self",
+      "filename"
+    ]
+  },
+  "DownloadFilenameOutputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "io_executor"
+    ],
+    "is_compatible": [
+      "cls",
+      "download_target",
+      "osutil"
+    ],
+    "get_fileobj_for_io_writes": [
+      "self",
+      "transfer_future"
+    ],
+    "get_final_io_task": [
+      "self"
+    ],
+    "_get_temp_fileobj": [
+      "self"
+    ]
+  },
+  "DownloadSeekableOutputManager": {
+    "is_compatible": [
+      "cls",
+      "download_target",
+      "osutil"
+    ],
+    "get_fileobj_for_io_writes": [
+      "self",
+      "transfer_future"
+    ],
+    "get_final_io_task": [
+      "self"
+    ]
+  },
+  "DownloadNonSeekableOutputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "io_executor",
+      "defer_queue"
+    ],
+    "is_compatible": [
+      "cls",
+      "download_target",
+      "osutil"
+    ],
+    "get_download_task_tag": [
+      "self"
+    ],
+    "get_fileobj_for_io_writes": [
+      "self",
+      "transfer_future"
+    ],
+    "get_final_io_task": [
+      "self"
+    ],
+    "queue_file_io_task": [
+      "self",
+      "fileobj",
+      "data",
+      "offset"
+    ],
+    "get_io_write_task": [
+      "self",
+      "fileobj",
+      "data",
+      "offset"
+    ]
+  },
+  "DownloadSpecialFilenameOutputManager": {
+    "__init__": [
+      "self",
+      "osutil",
+      "transfer_coordinator",
+      "io_executor",
+      "defer_queue"
+    ],
+    "is_compatible": [
+      "cls",
+      "download_target",
+      "osutil"
+    ],
+    "get_fileobj_for_io_writes": [
+      "self",
+      "transfer_future"
+    ],
+    "get_final_io_task": [
+      "self"
+    ]
+  },
+  "DownloadSubmissionTask": {
+    "_get_download_output_manager_cls": [
+      "self",
+      "transfer_future",
+      "osutil"
+    ],
+    "_submit": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "io_executor",
+      "transfer_future",
+      "bandwidth_limiter"
+    ],
+    "_submit_download_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "io_executor",
+      "download_output_manager",
+      "transfer_future",
+      "bandwidth_limiter"
+    ],
+    "_submit_ranged_download_request": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "request_executor",
+      "io_executor",
+      "download_output_manager",
+      "transfer_future",
+      "bandwidth_limiter"
+    ],
+    "_get_final_io_task_submission_callback": [
+      "self",
+      "download_manager",
+      "io_executor"
+    ],
+    "_calculate_range_param": [
+      "self",
+      "part_size",
+      "part_index",
+      "num_parts"
+    ]
+  },
+  "GetObjectTask": {
+    "_main": [
+      "self",
+      "client",
+      "bucket",
+      "key",
+      "fileobj",
+      "extra_args",
+      "callbacks",
+      "max_attempts",
+      "download_output_manager",
+      "io_chunksize",
+      "start_index",
+      "bandwidth_limiter"
+    ],
+    "_handle_io": [
+      "self",
+      "download_output_manager",
+      "fileobj",
+      "chunk",
+      "index"
+    ],
+    "_validate_content_range": [
+      "self",
+      "requested_range",
+      "content_range"
+    ]
+  },
+  "ImmediatelyWriteIOGetObjectTask": {
+    "_handle_io": [
+      "self",
+      "download_output_manager",
+      "fileobj",
+      "chunk",
+      "index"
+    ]
+  },
+  "IOWriteTask": {
+    "_main": [
+      "self",
+      "fileobj",
+      "data",
+      "offset"
+    ]
+  },
+  "IOStreamingWriteTask": {
+    "_main": [
+      "self",
+      "fileobj",
+      "data"
+    ]
+  },
+  "IORenameFileTask": {
+    "_main": [
+      "self",
+      "fileobj",
+      "final_filename",
+      "osutil"
+    ]
+  },
+  "IOCloseTask": {
+    "_main": [
+      "self",
+      "fileobj"
+    ]
+  },
+  "CompleteDownloadNOOPTask": {
+    "__init__": [
+      "self",
+      "transfer_coordinator",
+      "main_kwargs",
+      "pending_main_kwargs",
+      "done_callbacks",
+      "is_final"
+    ],
+    "_main": [
+      "self"
+    ]
+  },
+  "DownloadChunkIterator": {
+    "__init__": [
+      "self",
+      "body",
+      "chunksize"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "DeferQueue": {
+    "__init__": [
+      "self"
+    ],
+    "request_writes": [
+      "self",
+      "offset",
+      "data"
+    ]
+  },
+  "KB": [],
+  "GB": [],
+  "ALLOWED_DOWNLOAD_ARGS": [],
+  "FULL_OBJECT_CHECKSUM_ARGS": [],
+  "USER_AGENT": [],
+  "PROCESS_USER_AGENT": [],
+  "TransferManager": {
+    "ALLOWED_DOWNLOAD_ARGS": [],
+    "_ALLOWED_SHARED_ARGS": [],
+    "ALLOWED_UPLOAD_ARGS": [],
+    "ALLOWED_COPY_ARGS": [],
+    "ALLOWED_DELETE_ARGS": [],
+    "VALIDATE_SUPPORTED_BUCKET_VALUES": [],
+    "_UNSUPPORTED_BUCKET_PATTERNS": [],
+    "__init__": [
+      "self",
+      "client",
+      "config",
+      "osutil",
+      "executor_cls"
+    ],
+    "client": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "upload": [
+      "self",
+      "fileobj",
+      "bucket",
+      "key",
+      "extra_args",
+      "subscribers"
+    ],
+    "download": [
+      "self",
+      "bucket",
+      "key",
+      "fileobj",
+      "extra_args",
+      "subscribers"
+    ],
+    "copy": [
+      "self",
+      "copy_source",
+      "bucket",
+      "key",
+      "extra_args",
+      "subscribers",
+      "source_client"
+    ],
+    "delete": [
+      "self",
+      "bucket",
+      "key",
+      "extra_args",
+      "subscribers"
+    ],
+    "_validate_if_bucket_supported": [
+      "self",
+      "bucket"
+    ],
+    "_validate_all_known_args": [
+      "self",
+      "actual",
+      "allowed"
+    ],
+    "_add_operation_defaults": [
+      "self",
+      "extra_args"
+    ],
+    "_submit_transfer": [
+      "self",
+      "call_args",
+      "submission_task_cls",
+      "extra_main_kwargs"
+    ],
+    "_get_future_with_components": [
+      "self",
+      "call_args"
+    ],
+    "_get_submission_task_main_kwargs": [
+      "self",
+      "transfer_future",
+      "extra_main_kwargs"
+    ],
+    "_register_handlers": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value"
+    ],
+    "shutdown": [
+      "self",
+      "cancel",
+      "cancel_msg"
+    ],
+    "_shutdown": [
+      "self",
+      "cancel",
+      "cancel_msg",
+      "exc_type"
+    ]
+  },
+  "TransferCoordinatorController": {
+    "__init__": [
+      "self"
+    ],
+    "tracked_transfer_coordinators": [
+      "self"
+    ],
+    "add_transfer_coordinator": [
+      "self",
+      "transfer_coordinator"
+    ],
+    "remove_transfer_coordinator": [
+      "self",
+      "transfer_coordinator"
+    ],
+    "cancel": [
+      "self",
+      "msg",
+      "exc_type"
+    ],
+    "wait": [
+      "self"
+    ]
+  }
+}
