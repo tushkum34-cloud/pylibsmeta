@@ -1,0 +1,1611 @@
+{
+  "exists": [
+    "v"
+  ],
+  "default": [
+    "v",
+    "d"
+  ],
+  "log": [
+    "t",
+    "eps"
+  ],
+  "calc_entropy_from_logits": [
+    "logits"
+  ],
+  "EntropyBasedTokenizer": {
+    "__init__": [
+      "self",
+      "decoder",
+      "entropy_threshold",
+      "max_token_size"
+    ],
+    "forward": [
+      "self",
+      "seq",
+      "lens",
+      "return_segmented_seq",
+      "decoder_forward_kwargs"
+    ]
+  },
+  "identity": [
+    "t"
+  ],
+  "join": [
+    "arr",
+    "delimiter"
+  ],
+  "cast_tuple": [
+    "t",
+    "length"
+  ],
+  "eval_decorator": [
+    "fn"
+  ],
+  "gumbel_noise": [
+    "t"
+  ],
+  "gumbel_sample": [
+    "logits",
+    "temperature",
+    "eps"
+  ],
+  "modify_cached_kv": [
+    "cache",
+    "fn"
+  ],
+  "pad_at_dim": [
+    "t",
+    "pad",
+    "dim",
+    "value"
+  ],
+  "align_right": [
+    "t",
+    "lens",
+    "pad_id"
+  ],
+  "top_p": [
+    "logits",
+    "thres"
+  ],
+  "top_k": [
+    "logits",
+    "frac_num_tokens",
+    "k"
+  ],
+  "top_a": [
+    "logits",
+    "min_p_pow",
+    "min_p_ratio"
+  ],
+  "min_p": [
+    "logits",
+    "min_p"
+  ],
+  "FILTER_LOGITS_FN": [],
+  "contrastive_decode_fn": [
+    "expert_logits",
+    "amateur_logits",
+    "alpha",
+    "beta"
+  ],
+  "AutoregressiveWrapper": {
+    "__init__": [
+      "self",
+      "net",
+      "ignore_index",
+      "pad_value",
+      "mask_prob",
+      "add_attn_z_loss",
+      "next_embed_loss_weight"
+    ],
+    "beam_search": [
+      "self",
+      "prompts",
+      "seq_len",
+      "beams",
+      "return_beams_and_scores",
+      "eos_token",
+      "temperature",
+      "stochastic",
+      "prompt_lens",
+      "filter_logits_fn",
+      "restrict_to_max_seq_len",
+      "filter_kwargs",
+      "cache_kv"
+    ],
+    "generate": [
+      "self",
+      "prompts",
+      "seq_len",
+      "eos_token",
+      "temperature",
+      "prompt_lens",
+      "filter_logits_fn",
+      "restrict_to_max_seq_len",
+      "amateur_model",
+      "filter_kwargs",
+      "contrastive_decode_kwargs",
+      "cache_kv"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_outputs",
+      "prepend_embeds"
+    ]
+  },
+  "sample_from_mean_variance": [
+    "mean",
+    "variance",
+    "eps",
+    "temperature"
+  ],
+  "masked_mean": [
+    "t",
+    "mask"
+  ],
+  "GaussianNLL": {
+    "forward": [
+      "self",
+      "pred",
+      "target"
+    ]
+  },
+  "ContinuousTransformerWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_embeddings",
+      "return_intermediates",
+      "return_mems",
+      "mask",
+      "lens",
+      "return_attn",
+      "mems",
+      "mem_masks",
+      "pos",
+      "sum_embeds",
+      "prepend_embeds",
+      "prepend_mask",
+      "cache",
+      "input_not_include_cache",
+      "seq_start_pos"
+    ]
+  },
+  "ContinuousAutoregressiveWrapper": {
+    "__init__": [
+      "self",
+      "net",
+      "loss_fn",
+      "use_l1_loss",
+      "equal_loss_weight_batch"
+    ],
+    "generate": [
+      "self",
+      "start_tokens",
+      "seq_len",
+      "temperature",
+      "cache_kv"
+    ],
+    "forward_rollout": [
+      "self",
+      "x",
+      "rollout_steps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "rollout_steps"
+    ]
+  },
+  "Losses": [],
+  "sample_prob": [
+    "prob"
+  ],
+  "coin_flip": [],
+  "get_mask_subset_prob": [
+    "mask",
+    "prob",
+    "min_mask"
+  ],
+  "linear_schedule": [
+    "t"
+  ],
+  "cosine_schedule": [
+    "t"
+  ],
+  "SelfCritic": {
+    "__init__": [
+      "self",
+      "net"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NonAutoregressiveWrapper": {
+    "__init__": [
+      "self",
+      "net"
+    ],
+    "generate": [
+      "self",
+      "batch_size",
+      "start_temperature",
+      "filter_thres",
+      "noise_level_scale"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "only_train_generator",
+      "only_train_critic",
+      "generator_sample_temperature"
+    ]
+  },
+  "freeze_all_layers_": [
+    "module"
+  ],
+  "log_prob_from_model_and_seq": [
+    "model",
+    "seq"
+  ],
+  "maybe_and_mask": [],
+  "DPO": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "preferred_seq",
+      "unpreferred_seq"
+    ]
+  },
+  "flip": [
+    "x",
+    "dim",
+    "lens"
+  ],
+  "DetachMultiple": {
+    "forward": [
+      "self",
+      "ctx"
+    ],
+    "backward": [
+      "self",
+      "ctx"
+    ]
+  },
+  "detach_multiple": [],
+  "BeliefStateWrapper": {
+    "__init__": [
+      "self",
+      "forward_decoder",
+      "backward_decoder",
+      "train_frac_forward_backward_pairs",
+      "text_head",
+      "backward_ar_loss_weight",
+      "pred_distance",
+      "pred_distance_loss_weight",
+      "cond_on_distance",
+      "cond_on_distance_prob",
+      "max_pred_distance"
+    ],
+    "generate_with_suffix_cond": [
+      "self",
+      "prompts",
+      "seq_len",
+      "temperature",
+      "cache_kv",
+      "suffix",
+      "filter_logits_fn",
+      "filter_kwargs",
+      "decode_backwards"
+    ],
+    "forward": [
+      "self",
+      "seq",
+      "lens",
+      "loss_weight_by_fb_indices"
+    ]
+  },
+  "MultiInputTransformerWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_embeddings",
+      "return_logits_and_embeddings",
+      "return_intermediates",
+      "mask",
+      "return_mems",
+      "return_attn",
+      "mems",
+      "mem_masks",
+      "pos",
+      "prepend_embeds",
+      "prepend_mask",
+      "sum_embeds",
+      "return_attn_z_loss",
+      "attn_z_loss_weight",
+      "seq_start_pos",
+      "cache"
+    ]
+  },
+  "RandomFourierEmbed": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "times"
+    ]
+  },
+  "NeoMLP": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_embeds"
+    ]
+  },
+  "pack_with_inverse": [
+    "t",
+    "pattern"
+  ],
+  "NAT": [],
+  "binary_entropy": [
+    "logits"
+  ],
+  "BinaryMapper": {
+    "__init__": [
+      "self",
+      "bits",
+      "kl_loss_threshold"
+    ],
+    "forward": [
+      "self",
+      "logits",
+      "temperature",
+      "straight_through",
+      "calc_aux_loss"
+    ]
+  },
+  "FreeTransformer": {
+    "__init__": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "encode_to_latents": [
+      "self",
+      "decoder_head_embeds",
+      "mask",
+      "return_kl_loss",
+      "per_token_latents"
+    ],
+    "generate": [
+      "self",
+      "prompts",
+      "seq_len",
+      "latents",
+      "filter_logits_fn",
+      "logit_filter_kwargs",
+      "use_kv_cache"
+    ],
+    "forward": [
+      "self",
+      "seq",
+      "seq_for_latents",
+      "return_all_losses"
+    ]
+  },
+  "Intermediates": {
+    "to_tuple": [
+      "self"
+    ]
+  },
+  "at_most_one_of": [],
+  "compact": [
+    "arr"
+  ],
+  "softclamp": [
+    "t",
+    "value"
+  ],
+  "pack_one": [
+    "t",
+    "pattern"
+  ],
+  "unpack_one": [
+    "t",
+    "ps",
+    "pattern"
+  ],
+  "once": [
+    "fn"
+  ],
+  "print_once": [],
+  "log_prob_from_hard_attend": [
+    "intermeds"
+  ],
+  "selective_attn": [
+    "sim",
+    "sim_head_gate",
+    "no_mask_sos"
+  ],
+  "qk_l2_dist_squared": [
+    "q",
+    "k"
+  ],
+  "one_hot_straight_through": [
+    "logits",
+    "temperature"
+  ],
+  "sparse_topk_attn": [
+    "logits",
+    "sparse_topk",
+    "temperature",
+    "straight_through"
+  ],
+  "create_causal_mask": [
+    "i",
+    "j",
+    "device"
+  ],
+  "onnx_create_causal_mask": [
+    "i",
+    "j",
+    "device"
+  ],
+  "Attend": {
+    "__init__": [
+      "self"
+    ],
+    "flash_attn": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask",
+      "attn_bias",
+      "flash_pack_seq_kwargs"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask",
+      "attn_bias",
+      "prev_attn",
+      "flash_pack_seq_kwargs"
+    ]
+  },
+  "divisible_by": [
+    "numer",
+    "denom"
+  ],
+  "XLAutoregressiveWrapper": {
+    "__init__": [
+      "self",
+      "net",
+      "ignore_index",
+      "pad_value"
+    ],
+    "generate": [
+      "self",
+      "start_tokens",
+      "seq_len",
+      "eos_token",
+      "temperature",
+      "filter_logits_fn",
+      "filter_kwargs",
+      "mems"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mems"
+    ]
+  },
+  "random_sequences": [
+    "num_tokens",
+    "seq_len",
+    "num_samples_random",
+    "num_samples_constant",
+    "shuffle",
+    "device"
+  ],
+  "SyntheticDataGenerator": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_tokens",
+      "max_seq_len",
+      "hidden_size",
+      "use_gru",
+      "network_klass"
+    ],
+    "reset_": [
+      "self"
+    ],
+    "init_": [
+      "self",
+      "m"
+    ],
+    "generate": [
+      "self",
+      "length",
+      "seed",
+      "condition",
+      "temperature"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "hiddens"
+    ]
+  },
+  "UniversalPretrainWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "data_generator",
+      "buffer_size",
+      "num_reset",
+      "batch_size",
+      "seq_len",
+      "seed_length",
+      "reset_turing_machine_every",
+      "keep_buffer_on_cpu"
+    ],
+    "device": [
+      "self"
+    ],
+    "get_rand_sequences_from_buffer": [
+      "self",
+      "size"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "DEFAULT_DIM_HEAD": [],
+  "LayerIntermediates": {},
+  "LinearNoBias": [],
+  "first": [
+    "it",
+    "default"
+  ],
+  "is_empty": [
+    "x"
+  ],
+  "detach_all": [
+    "obj"
+  ],
+  "maybe": [
+    "fn"
+  ],
+  "always": {
+    "__init__": [
+      "self",
+      "val"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "not_equals": {
+    "__init__": [
+      "self",
+      "val"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "equals": {
+    "__init__": [
+      "self",
+      "val"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "Sequential": [],
+  "Identity": {
+    "forward": [
+      "self",
+      "t"
+    ]
+  },
+  "max_neg_value": [
+    "tensor"
+  ],
+  "l2norm": [
+    "t",
+    "groups"
+  ],
+  "or_reduce": [
+    "masks"
+  ],
+  "orthog_project": [
+    "x",
+    "y"
+  ],
+  "get_cached_kvs": [
+    "cache"
+  ],
+  "calc_entropy": [
+    "t",
+    "is_prob"
+  ],
+  "calc_z_loss": [
+    "pre_softmax_attns",
+    "mask",
+    "weight"
+  ],
+  "init_zero_": [
+    "layer"
+  ],
+  "pick_and_pop": [
+    "keys",
+    "d"
+  ],
+  "group_dict_by_key": [
+    "cond",
+    "d"
+  ],
+  "string_begins_with": [
+    "prefix",
+    "str"
+  ],
+  "group_by_key_prefix": [
+    "prefix",
+    "d"
+  ],
+  "groupby_prefix_and_trim": [
+    "prefix",
+    "d"
+  ],
+  "dropout_seq": [
+    "seq",
+    "mask",
+    "dropout"
+  ],
+  "ReluSquared": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SoLU": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TokenEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_tokens",
+      "l2norm_embed"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "init_": [
+      "self"
+    ]
+  },
+  "AbsolutePositionalEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_seq_len",
+      "l2norm_embed"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pos",
+      "seq_start_pos",
+      "offset"
+    ]
+  },
+  "ScaledSinusoidalEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "theta"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pos",
+      "seq_start_pos",
+      "offset"
+    ]
+  },
+  "RelativePositionBias": {
+    "__init__": [
+      "self",
+      "scale",
+      "causal",
+      "num_buckets",
+      "max_distance",
+      "heads"
+    ],
+    "_relative_position_bucket": [
+      "relative_position",
+      "causal",
+      "num_buckets",
+      "max_distance"
+    ],
+    "device": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "i",
+      "j"
+    ]
+  },
+  "CoPE": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "max_pos",
+      "soft_onehot",
+      "talking_heads",
+      "soft_onehot_temp"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "attn_logits"
+    ]
+  },
+  "DynamicPositionBias": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "device": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "i",
+      "j"
+    ]
+  },
+  "AlibiPositionalBias": {
+    "__init__": [
+      "self",
+      "heads",
+      "total_heads",
+      "slopes"
+    ],
+    "device": [
+      "self"
+    ],
+    "_get_slopes": [
+      "heads"
+    ],
+    "forward_custom_pos": [
+      "self",
+      "pos_i",
+      "pos_j"
+    ],
+    "forward": [
+      "self",
+      "i",
+      "j"
+    ]
+  },
+  "DataDependentAlibi": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "causal",
+      "bias_init",
+      "post_log_scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "PerRowDataDependentAlibi": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "causal",
+      "dim_head",
+      "post_log_scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RotaryEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "use_xpos",
+      "scale_base",
+      "interpolation_factor",
+      "base",
+      "base_rescale_factor"
+    ],
+    "forward_from_seq_len": [
+      "self",
+      "seq_len"
+    ],
+    "forward": [
+      "self",
+      "t",
+      "offset"
+    ]
+  },
+  "rotate_half": [
+    "x"
+  ],
+  "apply_rotary_pos_emb": [
+    "t",
+    "freqs",
+    "scale"
+  ],
+  "PolarEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "bias_uniform_init",
+      "base"
+    ],
+    "forward": [
+      "self",
+      "t",
+      "offset"
+    ]
+  },
+  "apply_polar_pos_emb": [
+    "t",
+    "freqs"
+  ],
+  "Scale": {
+    "__init__": [
+      "self",
+      "value",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaptiveLayerNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_condition"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ScaleNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaptiveRMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_condition"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SimpleRMSNorm": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiheadRMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DynamicTanh": {
+    "__init__": [
+      "self",
+      "dim",
+      "init_alpha",
+      "gamma",
+      "beta",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Derf": {
+    "__init__": [
+      "self",
+      "dim",
+      "init_alpha",
+      "init_bias",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Residual": {
+    "__init__": [
+      "self",
+      "dim",
+      "scale_residual",
+      "scale_residual_constant"
+    ],
+    "prepare": [
+      "self",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual"
+    ]
+  },
+  "GRUGating": {
+    "__init__": [
+      "self",
+      "dim",
+      "scale_residual"
+    ],
+    "prepare": [
+      "self",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual"
+    ]
+  },
+  "sinkhorn": [
+    "t",
+    "iters"
+  ],
+  "HyperConnection": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "prepare": [
+      "self",
+      "residuals"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residuals"
+    ]
+  },
+  "DynamicLIMe": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_layers",
+      "num_views",
+      "norm",
+      "use_softmax"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "hiddens"
+    ]
+  },
+  "shift": [
+    "t",
+    "amount",
+    "mask"
+  ],
+  "ShiftTokens": {
+    "__init__": [
+      "self",
+      "shifts",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FoldAxially": {
+    "__init__": [
+      "self",
+      "axial_dim",
+      "fn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerScale": {
+    "__init__": [
+      "self",
+      "fn",
+      "dim",
+      "init_value",
+      "unit_offset"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaptiveLayerScale": {
+    "__init__": [
+      "self",
+      "fn",
+      "dim",
+      "dim_condition",
+      "init_bias_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConcatCombine": {
+    "__init__": [
+      "self",
+      "dim",
+      "prev_layer_ind"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "prev_layers"
+    ]
+  },
+  "GLU": {
+    "__init__": [
+      "self",
+      "dim_in",
+      "dim_out",
+      "activation",
+      "mult_bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_out",
+      "mult",
+      "glu",
+      "glu_mult_bias",
+      "swish",
+      "relu_squared",
+      "solu",
+      "custom_activation",
+      "post_act_ln",
+      "dropout",
+      "sublayer_dropout",
+      "no_bias",
+      "zero_init_output"
+    ],
+    "muon_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "deep_embed"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "dim_context",
+      "heads",
+      "causal",
+      "flash",
+      "pre_talking_heads",
+      "post_talking_heads",
+      "pre_scale_post_talking_heads",
+      "head_scale",
+      "sparse_topk",
+      "sparse_topk_straight_through",
+      "num_mem_kv",
+      "dropout",
+      "sublayer_dropout",
+      "on_attn",
+      "gate_value_heads",
+      "swiglu_values",
+      "gate_values",
+      "zero_init_output",
+      "hard",
+      "max_attend_past",
+      "qk_norm",
+      "qk_norm_groups",
+      "qk_norm_scale",
+      "qk_norm_dim_scale",
+      "value_rmsnorm",
+      "l2_distance",
+      "sigmoid",
+      "gumbel_softmax",
+      "gumbel_softmax_temp",
+      "gumbel_softmax_hard",
+      "selective",
+      "cog_signed",
+      "custom_attn_fn",
+      "hybrid_module",
+      "hybrid_mask_kwarg",
+      "hybrid_fold_axial_dim",
+      "hybrid_learned_mix",
+      "one_kv_head",
+      "kv_heads",
+      "value_dim_head",
+      "dim_out",
+      "add_zero_kv",
+      "head_learned_sink",
+      "rotate_num_heads",
+      "data_dependent_alibi",
+      "data_dependent_alibi_per_row",
+      "data_dependent_alibi_per_row_dim_head",
+      "data_dependent_alibi_kwargs",
+      "use_cope",
+      "cope_max_pos",
+      "cope_soft_onehot_pos",
+      "cope_talking_heads",
+      "softclamp_logits",
+      "logit_softclamp_value",
+      "learned_value_residual_mix",
+      "orthog_projected_values",
+      "orthog_projected_values_per_head",
+      "laser",
+      "laser_softclamp_value",
+      "qkv_receive_diff_residuals",
+      "use_latent_q",
+      "dim_latent_q",
+      "use_latent_kv",
+      "dim_latent_kv",
+      "latent_rope_subheads",
+      "onnxable",
+      "attend_sdp_kwargs",
+      "flash_pack_seq"
+    ],
+    "qk_clip_": [
+      "self",
+      "pre_softmax_attn",
+      "tau"
+    ],
+    "muon_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "context",
+      "mask",
+      "context_mask",
+      "attn_mask",
+      "rel_pos",
+      "attn_bias",
+      "rotary_pos_emb",
+      "context_rotary_pos_emb",
+      "polar_pos_emb",
+      "pos",
+      "prev_attn",
+      "mem",
+      "mem_mask",
+      "return_intermediates",
+      "cache",
+      "value_residual",
+      "additional_key_values",
+      "additional_key_value_mask",
+      "kv_input_residual",
+      "flash_pack_seq_kwargs"
+    ]
+  },
+  "AttentionLayers": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth",
+      "heads",
+      "causal",
+      "cross_attend",
+      "only_cross",
+      "use_scalenorm",
+      "use_rmsnorm",
+      "use_dynamic_tanh",
+      "use_derf",
+      "dynamic_tanh_init_alpha",
+      "use_simple_rmsnorm",
+      "use_adaptive_layernorm",
+      "use_adaptive_rmsnorm",
+      "use_adaptive_layerscale",
+      "norm_add_unit_offset",
+      "dim_condition",
+      "adaptive_condition_mlp",
+      "adaptive_condition_mlp_expansion",
+      "alibi_pos_bias",
+      "alibi_num_heads",
+      "rel_pos_bias",
+      "rel_pos_num_buckets",
+      "rel_pos_max_distance",
+      "dynamic_pos_bias",
+      "dynamic_pos_bias_log_distance",
+      "dynamic_pos_bias_mlp_depth",
+      "dynamic_pos_bias_norm",
+      "rotary_pos_emb",
+      "rotary_emb_dim",
+      "rotary_xpos",
+      "rotary_interpolation_factor",
+      "rotary_xpos_scale_base",
+      "rotary_base_rescale_factor",
+      "rotate_num_heads",
+      "polar_pos_emb",
+      "polar_bias_uniform_init",
+      "weight_tie_layers",
+      "custom_layers",
+      "layers_execute_order",
+      "sandwich_coef",
+      "par_ratio",
+      "residual_attn",
+      "cross_residual_attn",
+      "macaron",
+      "pre_norm",
+      "pre_norm_has_final_norm",
+      "gate_residual",
+      "scale_residual",
+      "scale_residual_constant",
+      "shift_tokens",
+      "sandwich_norm",
+      "softclamp_output",
+      "softclamp_output_value",
+      "zero_init_branch_output",
+      "layer_dropout",
+      "cross_attn_tokens_dropout",
+      "disable_abs_pos_emb",
+      "use_layerscale",
+      "layerscale_init_value",
+      "unet_skips",
+      "integrate_layers",
+      "layer_integrate_use_softmax",
+      "num_residual_streams",
+      "qkv_receive_diff_residuals",
+      "reinject_input",
+      "learned_reinject_input_gate",
+      "add_value_residual",
+      "learned_value_residual_mix",
+      "rel_pos_kwargs",
+      "residual_fn_kwargs",
+      "hyper_conn_sinkhorn_iters",
+      "verbose"
+    ],
+    "attn_qk_clip_": [
+      "self",
+      "intermediates",
+      "tau"
+    ],
+    "muon_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "context",
+      "mask",
+      "context_mask",
+      "attn_mask",
+      "self_attn_kv_mask",
+      "mems",
+      "mem_masks",
+      "seq_start_pos",
+      "seq_pos_offset",
+      "cache",
+      "input_not_include_cache",
+      "cache_age",
+      "return_hiddens",
+      "rotary_pos_emb",
+      "polar_pos_emb",
+      "pos",
+      "context_pos",
+      "attn_bias",
+      "deep_embeds_and_ids",
+      "self_attn_additional_kv",
+      "additional_kv_mask",
+      "detach_additional_kv",
+      "route_additional_kv_to_top",
+      "condition",
+      "in_attn_cond",
+      "layers_execute_order",
+      "self_attn_kv_residuals",
+      "cross_attn_kv_residuals",
+      "flash_pack_seq_kwargs",
+      "flash_pack_seq_context_kwargs"
+    ]
+  },
+  "Encoder": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "Decoder": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "PrefixDecoder": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CrossAttender": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "AttentionPool": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_pooled_tokens",
+      "dim_context",
+      "add_residual",
+      "depth",
+      "heads",
+      "dim_head",
+      "use_transformer_blocks",
+      "squeeze_output",
+      "attn_kwargs"
+    ],
+    "forward": [
+      "self",
+      "context",
+      "mask"
+    ]
+  },
+  "ViTransformerWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "img",
+      "return_embeddings",
+      "return_logits_and_embeddings"
+    ]
+  },
+  "TransformerWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "init_": [
+      "self"
+    ],
+    "attn_qk_clip_": [
+      "self",
+      "intermediates",
+      "tau"
+    ],
+    "muon_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "return_embeddings",
+      "return_logits_and_embeddings",
+      "return_intermediates",
+      "return_embeddings_and_intermediates",
+      "return_logit_entropies",
+      "return_next_embed_pred",
+      "mask",
+      "return_mems",
+      "return_attn",
+      "mems",
+      "mem_masks",
+      "recycle_steps",
+      "pos",
+      "prepend_embeds",
+      "prepend_mask",
+      "embed_ids",
+      "sum_embeds",
+      "return_attn_z_loss",
+      "attn_z_loss_weight",
+      "seq_start_pos",
+      "cache",
+      "input_not_include_cache",
+      "token_emb_kwargs",
+      "to_logits_kwargs"
+    ]
+  },
+  "XTransformer": {
+    "__init__": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "seq_in",
+      "seq_out_start",
+      "seq_len",
+      "mask",
+      "attn_mask"
+    ],
+    "forward": [
+      "self",
+      "src",
+      "tgt",
+      "mask",
+      "attn_mask",
+      "src_prepend_embeds"
+    ]
+  },
+  "LossBreakdown": [],
+  "GenerateReturn": [],
+  "XValTransformerWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_num",
+      "return_embeddings",
+      "return_intermediates",
+      "return_mems",
+      "mask",
+      "return_attn",
+      "mems",
+      "pos",
+      "prepend_embeds"
+    ]
+  },
+  "XValAutoregressiveWrapper": {
+    "__init__": [
+      "self",
+      "net",
+      "ignore_index",
+      "pad_value",
+      "numerical_loss_weight"
+    ],
+    "generate": [
+      "self",
+      "start_tokens",
+      "start_numbers",
+      "seq_len",
+      "filter_logits_fn",
+      "filter_kwargs",
+      "temperature"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_num",
+      "return_loss_breakdown"
+    ]
+  },
+  "GPTVAE": {
+    "__init__": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "encode_to_latents": [
+      "self",
+      "seq",
+      "return_mean_log_var"
+    ],
+    "generate": [
+      "self",
+      "prompts",
+      "seq_len",
+      "latents",
+      "seq_for_latents"
+    ],
+    "forward": [
+      "self",
+      "seq",
+      "seq_for_latents",
+      "return_all_losses"
+    ]
+  }
+}

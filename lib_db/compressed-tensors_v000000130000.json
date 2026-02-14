@@ -1,0 +1,1557 @@
+{
+  "__all__": [],
+  "TYPE_CHECKING": [],
+  "__version__": [],
+  "version": [],
+  "__version_tuple__": [],
+  "version_tuple": [],
+  "_logged_once": [],
+  "LoggerConfig": {},
+  "configure_logger": [
+    "config"
+  ],
+  "support_log_once": [
+    "record"
+  ],
+  "QUANTIZATION_CONFIG_NAME": [],
+  "SPARSITY_CONFIG_NAME": [],
+  "TRANSFORM_CONFIG_NAME": [],
+  "COMPRESSION_VERSION_NAME": [],
+  "QUANTIZATION_METHOD_NAME": [],
+  "BaseCompressor": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "compression_param_info": [
+      "self",
+      "weight_shape",
+      "quantization_args"
+    ],
+    "compression_param_names": [
+      "self"
+    ],
+    "compress": [
+      "self",
+      "model_state"
+    ],
+    "decompress": [
+      "self",
+      "path_to_model_or_tensors",
+      "device"
+    ],
+    "compress_module": [
+      "self",
+      "module"
+    ],
+    "compress_weight": [
+      "self",
+      "weight"
+    ],
+    "decompress_module": [
+      "self",
+      "module"
+    ],
+    "decompress_weight": [
+      "self",
+      "compressed_data"
+    ]
+  },
+  "save_compressed": [
+    "tensors",
+    "save_path",
+    "compression_format"
+  ],
+  "load_compressed": [
+    "compressed_tensors",
+    "compression_config",
+    "device"
+  ],
+  "save_compressed_model": [
+    "model",
+    "filename",
+    "compression_format",
+    "force_contiguous"
+  ],
+  "ModelCompressor": {
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ],
+    "from_compression_config": [
+      "cls",
+      "compression_config"
+    ],
+    "from_pretrained_model": [
+      "cls",
+      "model",
+      "sparsity_config_or_format",
+      "quantization_format",
+      "sparsity_config"
+    ],
+    "parse_sparsity_config": [
+      "compression_config"
+    ],
+    "parse_quantization_config": [
+      "compression_config"
+    ],
+    "_fetch_unique_quantization_formats": [
+      "self"
+    ],
+    "__init__": [
+      "self",
+      "sparsity_config",
+      "quantization_config",
+      "transform_config",
+      "compression_formats"
+    ],
+    "get_missing_module_keys": [
+      "self",
+      "model"
+    ],
+    "get_unexpected_file_keys": [
+      "self",
+      "model"
+    ],
+    "compress_model": [
+      "self",
+      "model"
+    ],
+    "decompress_model": [
+      "self",
+      "model"
+    ],
+    "compress": [
+      "self",
+      "model",
+      "state_dict",
+      "show_progress"
+    ],
+    "decompress": [
+      "self",
+      "model_path",
+      "model"
+    ],
+    "update_config": [
+      "self",
+      "save_directory"
+    ],
+    "_replace_sparsity_weights": [
+      "self",
+      "dense_weight_generator",
+      "model"
+    ],
+    "_replace_weights": [
+      "self",
+      "dense_weight_generator",
+      "model",
+      "load_weight_qparams"
+    ]
+  },
+  "map_module_to_scheme": [
+    "model"
+  ],
+  "new_dtype_byte_size": [
+    "dtype"
+  ],
+  "BaseQuantizationCompressor": {
+    "compress": [
+      "self",
+      "model_state",
+      "names_to_scheme",
+      "show_progress",
+      "compression_device"
+    ],
+    "_skip_scale": [
+      "self"
+    ],
+    "_skip_zp": [
+      "self",
+      "name",
+      "names_to_scheme"
+    ],
+    "decompress": [
+      "self",
+      "path_to_model_or_tensors",
+      "names_to_scheme",
+      "device"
+    ],
+    "_decompress_from_path": [
+      "self",
+      "path_to_model",
+      "names_to_scheme",
+      "device"
+    ],
+    "decompress_from_state_dict": [
+      "self",
+      "state_dict",
+      "names_to_scheme"
+    ],
+    "decompress_module_from_state_dict": [
+      "self",
+      "prefix",
+      "state_dict",
+      "scheme"
+    ]
+  },
+  "PackedQuantizationCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compression_param_info": [
+      "self",
+      "weight_shape",
+      "quantization_args"
+    ],
+    "compress_weight": [
+      "self",
+      "weight",
+      "scale",
+      "quantization_args",
+      "zero_point",
+      "g_idx",
+      "device",
+      "global_scale"
+    ],
+    "decompress_weight": [
+      "self",
+      "compressed_data",
+      "quantization_args"
+    ]
+  },
+  "pack_to_int32": [
+    "value",
+    "num_bits",
+    "packed_dim"
+  ],
+  "unpack_from_int32": [
+    "value",
+    "num_bits",
+    "shape",
+    "packed_dim"
+  ],
+  "FLOAT_TO_E2M1": [],
+  "NVFP4PackedCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compression_param_info": [
+      "self",
+      "weight_shape",
+      "quantization_args"
+    ],
+    "compress_scale": [
+      "self",
+      "scale",
+      "quantization_args"
+    ],
+    "compress_weight": [
+      "self",
+      "weight",
+      "scale",
+      "global_scale",
+      "quantization_args",
+      "device",
+      "zero_point",
+      "g_idx"
+    ],
+    "decompress_weight": [
+      "self",
+      "compressed_data",
+      "quantization_args"
+    ]
+  },
+  "MXFP4PackedCompressor": {
+    "compress_scale": [
+      "self",
+      "scale",
+      "quantization_args"
+    ],
+    "decompress_weight": [
+      "self",
+      "compressed_data",
+      "quantization_args"
+    ]
+  },
+  "pack_fp4_to_uint8": [
+    "x"
+  ],
+  "kE2M1ToFloat": [],
+  "unpack_fp4_from_uint8": [
+    "a",
+    "m",
+    "n",
+    "dtype"
+  ],
+  "NaiveQuantizationCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compression_param_info": [
+      "self",
+      "weight_shape",
+      "quantization_args"
+    ],
+    "compress_weight": [
+      "self",
+      "weight",
+      "scale",
+      "quantization_args",
+      "zero_point",
+      "g_idx",
+      "device",
+      "global_scale"
+    ],
+    "decompress_weight": [
+      "self",
+      "compressed_data",
+      "quantization_args"
+    ]
+  },
+  "IntQuantizationCompressor": {},
+  "FloatQuantizationCompressor": {},
+  "Sparse24BitMaskCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compress_weight": [
+      "self",
+      "name",
+      "value"
+    ],
+    "decompress_weight": [
+      "self",
+      "weight_data"
+    ]
+  },
+  "Sparse24BitMaskTensor": {
+    "from_dense": [
+      "tensor",
+      "sparsity_structure"
+    ],
+    "from_compressed_data": [
+      "shape",
+      "compressed",
+      "bitmask"
+    ],
+    "decompress": [
+      "self"
+    ],
+    "curr_memory_size_bytes": [
+      "self"
+    ],
+    "dict": [
+      "self",
+      "name_prefix",
+      "device"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "sparse24_bitmask_compress": [
+    "tensor",
+    "sparsity_structure"
+  ],
+  "sparse24_bitmask_decompress": [
+    "values",
+    "bitmasks",
+    "original_shape"
+  ],
+  "get_24_bytemasks": [
+    "tensor"
+  ],
+  "BaseSparseCompressor": {
+    "compress": [
+      "self",
+      "model_state",
+      "compression_targets",
+      "show_progress"
+    ],
+    "decompress": [
+      "self",
+      "path_to_model_or_tensors",
+      "device",
+      "params_to_skip_load"
+    ],
+    "decompress_from_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "should_compress": [
+      "name",
+      "expanded_targets"
+    ]
+  },
+  "DenseCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compress": [
+      "self",
+      "model_state"
+    ],
+    "decompress": [
+      "self",
+      "path_to_model_or_tensors",
+      "device"
+    ],
+    "decompress_from_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "decompress_module_from_state_dict": [
+      "self",
+      "prefix",
+      "state_dict",
+      "scheme"
+    ]
+  },
+  "BitmaskCompressor": {
+    "compression_param_names": [
+      "self"
+    ],
+    "compress_weight": [
+      "self",
+      "name",
+      "value"
+    ],
+    "decompress_weight": [
+      "self",
+      "weight_data"
+    ]
+  },
+  "BitmaskTensor": {
+    "__init__": [
+      "self",
+      "shape",
+      "compressed",
+      "bitmask",
+      "row_offsets"
+    ],
+    "from_dense": [
+      "tensor"
+    ],
+    "decompress": [
+      "self"
+    ],
+    "curr_memory_size_bytes": [
+      "self"
+    ],
+    "dict": [
+      "self",
+      "name_prefix",
+      "device"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "bitmask_compress": [
+    "tensor"
+  ],
+  "bitmask_decompress": [
+    "values",
+    "bitmasks",
+    "original_shape"
+  ],
+  "Marlin24Compressor": {
+    "validate_quant_compatability": [
+      "names_to_scheme"
+    ],
+    "validate_sparsity_structure": [
+      "name",
+      "weight"
+    ],
+    "compression_param_names": [
+      "self"
+    ],
+    "compress": [
+      "self",
+      "model_state",
+      "names_to_scheme",
+      "show_progress"
+    ],
+    "decompress": [
+      "self",
+      "path_to_model_or_tensors",
+      "device"
+    ]
+  },
+  "compress_weight_24": [
+    "weight"
+  ],
+  "marlin_permute_weights": [
+    "q_w",
+    "size_k",
+    "size_n",
+    "perm",
+    "tile"
+  ],
+  "pack_weight_24": [
+    "weight",
+    "quantization_args",
+    "tile"
+  ],
+  "pack_scales_24": [
+    "scales",
+    "quantization_args",
+    "w_shape"
+  ],
+  "IMPL_ATTR": [],
+  "HOOKED_ATTENTION_NAME": [],
+  "QuantizedAttentionImpl": {
+    "_original_impl": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "module",
+      "query",
+      "key",
+      "value"
+    ]
+  },
+  "_hooked_attention": [
+    "module"
+  ],
+  "initialize_hooked_attention": [
+    "model",
+    "module"
+  ],
+  "register_query_hook": [
+    "module",
+    "hook"
+  ],
+  "KV_CACHE_ATTR": [],
+  "QuantizedKVCache": {
+    "__init__": [
+      "self",
+      "config",
+      "attn_module"
+    ],
+    "update": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "key_states",
+      "value_states"
+    ],
+    "add_past_key_values": [
+      "self",
+      "past_key_values"
+    ]
+  },
+  "_kv_cache_attention_hook": [
+    "module",
+    "args",
+    "kwargs"
+  ],
+  "initialize_hooked_kv_cache": [
+    "model",
+    "module"
+  ],
+  "register_key_hook": [
+    "module",
+    "hook"
+  ],
+  "register_value_hook": [
+    "module",
+    "hook"
+  ],
+  "Sparse24BitMaskConfig": {},
+  "CompressionFormat": {
+    "dense": [],
+    "sparse_bitmask": [],
+    "sparse_24_bitmask": [],
+    "int_quantized": [],
+    "float_quantized": [],
+    "naive_quantized": [],
+    "pack_quantized": [],
+    "marlin_24": [],
+    "mixed_precision": [],
+    "nvfp4_pack_quantized": [],
+    "mxfp4_pack_quantized": []
+  },
+  "SparsityStructure": {
+    "TWO_FOUR": [],
+    "UNSTRUCTURED": [],
+    "ZERO_ZERO": [],
+    "__new__": [
+      "cls",
+      "value"
+    ],
+    "_missing_": [
+      "cls",
+      "value"
+    ]
+  },
+  "SparsityCompressionConfig": {},
+  "DenseSparsityConfig": {},
+  "BitmaskConfig": {},
+  "_get_quant_compression_format": [
+    "input_args",
+    "weight_args",
+    "sparsity_structure"
+  ],
+  "set_per_module_format": [
+    "module",
+    "sparsity_structure",
+    "quantization_format"
+  ],
+  "infer_and_set_per_module_quantization_format": [
+    "model",
+    "sparsity_structure",
+    "quantization_format"
+  ],
+  "_TorchDtypeAnnotation": {
+    "__get_pydantic_core_schema__": [
+      "cls",
+      "_source_type",
+      "_handler"
+    ],
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "_core_schema",
+      "handler"
+    ]
+  },
+  "TorchDtype": [],
+  "InternalModule": {},
+  "T": [],
+  "FSDP_WRAPPER_NAME": [],
+  "infer_compressor_from_model_config": [
+    "pretrained_model_name_or_path"
+  ],
+  "fix_fsdp_module_name": [
+    "name"
+  ],
+  "tensor_follows_mask_structure": [
+    "tensor",
+    "mask"
+  ],
+  "replace_module": [
+    "model",
+    "name",
+    "new_module"
+  ],
+  "is_compressed_tensors_config": [
+    "compression_config"
+  ],
+  "getattr_chain": [
+    "obj",
+    "chain_str"
+  ],
+  "deprecated": [
+    "future_name",
+    "message"
+  ],
+  "Aliasable": {
+    "get_aliases": [],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "shard_tensor": [
+    "tensor",
+    "shard_sizes",
+    "dim"
+  ],
+  "combine_shards": [
+    "shards",
+    "dim"
+  ],
+  "pack_bitmasks": [
+    "bytemasks"
+  ],
+  "unpack_bitmasks": [
+    "packed_bitmasks",
+    "original_shape"
+  ],
+  "patch_attr": [
+    "base",
+    "attr",
+    "value"
+  ],
+  "patch_attrs": [
+    "bases",
+    "attr",
+    "values"
+  ],
+  "ParameterizedDefaultDict": {
+    "__init__": [
+      "self",
+      "default_factory"
+    ],
+    "__missing__": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "get_num_attn_heads": [
+    "config"
+  ],
+  "get_num_kv_heads": [
+    "config"
+  ],
+  "get_head_dim": [
+    "config"
+  ],
+  "FusedMappping": [],
+  "match_named_modules": [
+    "model",
+    "targets",
+    "ignore",
+    "fused",
+    "warn_on_fail"
+  ],
+  "match_named_parameters": [
+    "model",
+    "targets",
+    "ignore",
+    "fused",
+    "warn_on_fail"
+  ],
+  "match_targets": [
+    "name",
+    "module",
+    "targets"
+  ],
+  "get_lowest_common_ancestor_name": [
+    "names"
+  ],
+  "match_modules_set": [
+    "model",
+    "targets",
+    "ignore",
+    "error_on_module_rematch"
+  ],
+  "is_match": [
+    "name",
+    "module",
+    "targets",
+    "ignore",
+    "fused"
+  ],
+  "is_narrow_match": [
+    "model",
+    "targets",
+    "name",
+    "module"
+  ],
+  "_match_name": [
+    "name",
+    "target",
+    "fused"
+  ],
+  "_match_class": [
+    "module",
+    "target"
+  ],
+  "check_accelerate": [
+    "fallback"
+  ],
+  "get_offloaded_device": [
+    "module"
+  ],
+  "update_parameter_data": [
+    "module",
+    "new_param_data",
+    "param_name"
+  ],
+  "cast_to_device": [
+    "device_spec"
+  ],
+  "get_execution_device": [
+    "module"
+  ],
+  "register_offload_parameter": [
+    "module",
+    "name",
+    "parameter",
+    "offload_device"
+  ],
+  "update_offload_parameter": [
+    "module",
+    "name",
+    "data",
+    "offload_device"
+  ],
+  "delete_offload_parameter": [
+    "module",
+    "name"
+  ],
+  "disable_hf_hook": [
+    "module"
+  ],
+  "offload_to_weights_map": [
+    "weights_map",
+    "key",
+    "value",
+    "offload_device"
+  ],
+  "delete_from_weights_map": [
+    "weights_map",
+    "key"
+  ],
+  "disable_offload": [
+    "module"
+  ],
+  "align_modules": [
+    "modules",
+    "execution_device"
+  ],
+  "register_offload_module": [
+    "base",
+    "name",
+    "module"
+  ],
+  "delete_offload_module": [
+    "base",
+    "name"
+  ],
+  "offloaded_dispatch": [
+    "module",
+    "execution_device",
+    "offload_device"
+  ],
+  "remove_dispatch": [
+    "module"
+  ],
+  "disable_offloading": [],
+  "has_offloaded_params": [
+    "module"
+  ],
+  "align_module_device": [
+    "module",
+    "execution_device"
+  ],
+  "NestedStateDictType": [],
+  "WeightMappingType": [],
+  "NestedWeightMappingType": [],
+  "get_safetensors_folder": [
+    "pretrained_model_name_or_path",
+    "cache_dir"
+  ],
+  "get_safetensors_header": [
+    "safetensors_path"
+  ],
+  "match_param_name": [
+    "full_name",
+    "param_name"
+  ],
+  "merge_names": [
+    "parent_name",
+    "child_name"
+  ],
+  "get_weight_mappings": [
+    "path_to_model_or_tensors"
+  ],
+  "get_nested_weight_mappings": [
+    "model_path",
+    "params_to_nest",
+    "return_unmatched_params"
+  ],
+  "get_nested_mappings_from_state_dict": [
+    "state_dict",
+    "params_to_nest",
+    "return_unmatched_params"
+  ],
+  "get_quantization_parameter_to_path_mapping": [
+    "model_path"
+  ],
+  "is_quantization_param": [
+    "name"
+  ],
+  "_calculate_meta_reordering_scatter_offsets": [
+    "m",
+    "meta_ncols",
+    "meta_dtype",
+    "device"
+  ],
+  "sparse_semi_structured_from_dense_cutlass": [
+    "dense"
+  ],
+  "sparse_semi_structured_to_dense_cutlass": [
+    "sparse",
+    "meta_reordered"
+  ],
+  "mask_creator": [
+    "tensor"
+  ],
+  "get_permutations_24": [
+    "num_bits"
+  ],
+  "standardize_lookup_name": [
+    "name"
+  ],
+  "standardize_alias_name": [
+    "name"
+  ],
+  "RegistryMixin": {
+    "register": [
+      "cls",
+      "name",
+      "alias"
+    ],
+    "register_value": [
+      "cls",
+      "value",
+      "name",
+      "alias"
+    ],
+    "load_from_registry": [
+      "cls",
+      "name"
+    ],
+    "get_value_from_registry": [
+      "cls",
+      "name"
+    ],
+    "registered_names": [
+      "cls"
+    ],
+    "registered_aliases": [
+      "cls"
+    ]
+  },
+  "register": [
+    "parent_class",
+    "value",
+    "name",
+    "alias",
+    "require_subclass"
+  ],
+  "get_from_registry": [
+    "parent_class",
+    "name",
+    "require_subclass"
+  ],
+  "registered_names": [
+    "parent_class"
+  ],
+  "registered_aliases": [
+    "parent_class"
+  ],
+  "register_alias": [
+    "name",
+    "parent_class",
+    "alias"
+  ],
+  "_import_and_get_value_from_module": [
+    "module_path",
+    "value_name"
+  ],
+  "_validate_subclass": [
+    "parent_class",
+    "child_class"
+  ],
+  "TransformScheme": {
+    "model_config": []
+  },
+  "TransformLocation": {
+    "INPUT": [],
+    "WEIGHT_INPUT": [],
+    "WEIGHT_OUTPUT": [],
+    "OUTPUT": [],
+    "K_CACHE": [],
+    "Q_ATTN": [],
+    "is_online": [
+      "self"
+    ]
+  },
+  "TransformArgs": {
+    "wrap_singleton": [
+      "cls",
+      "value"
+    ],
+    "is_online": [
+      "self"
+    ],
+    "model_config": []
+  },
+  "TransformConfig": {
+    "model_config": []
+  },
+  "apply_transform_config": [
+    "model",
+    "config"
+  ],
+  "_tie_offloaded_tensors": [
+    "model"
+  ],
+  "get_transform_size": [
+    "module",
+    "location",
+    "head_dim"
+  ],
+  "apply_transform_weight": [
+    "transform_weight",
+    "value",
+    "location",
+    "module_type"
+  ],
+  "_multihead_matmul": [
+    "A",
+    "B"
+  ],
+  "REPO_PATH": [],
+  "deterministic_hadamard_matrix": [
+    "size",
+    "dtype",
+    "device"
+  ],
+  "random_hadamard_matrix": [
+    "size",
+    "dtype",
+    "device",
+    "gen"
+  ],
+  "is_pow2": [
+    "n"
+  ],
+  "_fetch_hadamard_divisor": [
+    "n",
+    "dtype",
+    "device",
+    "file_path"
+  ],
+  "_matmul_hadU": [
+    "X"
+  ],
+  "TransformFactory": {
+    "__init__": [
+      "self",
+      "name",
+      "scheme",
+      "seed"
+    ],
+    "from_scheme": [
+      "cls",
+      "scheme"
+    ],
+    "create_transform": [
+      "self",
+      "module",
+      "args"
+    ],
+    "apply_to_model": [
+      "self",
+      "model",
+      "use_tqdm"
+    ],
+    "_apply_to_module": [
+      "self",
+      "model",
+      "module",
+      "args"
+    ]
+  },
+  "TransformBase": {
+    "forward": [
+      "self",
+      "value"
+    ],
+    "right_inverse": [
+      "self",
+      "value"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "HadamardFactory": {
+    "__init__": [
+      "self",
+      "name",
+      "scheme",
+      "seed"
+    ],
+    "create_transform": [
+      "self",
+      "module",
+      "args"
+    ],
+    "_create_weight": [
+      "self",
+      "size",
+      "device",
+      "construct_device",
+      "precision"
+    ],
+    "_create_permutation": [
+      "self",
+      "weight"
+    ]
+  },
+  "HadamardTransform": {
+    "__init__": [
+      "self",
+      "weight",
+      "perm",
+      "scheme",
+      "args",
+      "module_type"
+    ],
+    "forward": [
+      "self",
+      "value"
+    ]
+  },
+  "RandomHadamardFactory": {
+    "_create_weight": [
+      "self",
+      "size",
+      "device",
+      "construct_device",
+      "precision"
+    ]
+  },
+  "RandomMatrixFactory": {
+    "__init__": [
+      "self",
+      "name",
+      "scheme",
+      "seed"
+    ],
+    "create_transform": [
+      "self",
+      "module",
+      "args"
+    ],
+    "_create_weight": [
+      "self",
+      "size",
+      "device",
+      "precision"
+    ],
+    "_create_inverse": [
+      "self",
+      "weight"
+    ]
+  },
+  "RandomMatrixTransform": {
+    "__init__": [
+      "self",
+      "weight",
+      "scheme",
+      "args",
+      "module_type"
+    ],
+    "forward": [
+      "self",
+      "value"
+    ],
+    "right_inverse": [
+      "self",
+      "value"
+    ]
+  },
+  "high_precision_invert": [
+    "weight"
+  ],
+  "KVCacheScaleType": {
+    "KEY": [],
+    "VALUE": []
+  },
+  "QuantizationMetadata": {
+    "all_qparam_names": [],
+    "clear_all_qparams": [
+      "cls",
+      "module"
+    ]
+  },
+  "FloatArgs": {},
+  "FP4_E2M1_DATA": {
+    "exponent": [],
+    "mantissa": [],
+    "bits": [],
+    "max": [],
+    "min": [],
+    "cast_to_fp4": [
+      "x"
+    ]
+  },
+  "FP8_E4M3_DATA": {
+    "exponent": [],
+    "mantissa": [],
+    "bits": [],
+    "max": [],
+    "min": [],
+    "dtype": []
+  },
+  "BFLOAT16_DATA": {
+    "exponent": [],
+    "mantissa": []
+  },
+  "QuantizationType": {
+    "INT": [],
+    "FLOAT": []
+  },
+  "QuantizationStrategy": {
+    "TENSOR": [],
+    "CHANNEL": [],
+    "GROUP": [],
+    "BLOCK": [],
+    "TOKEN": [],
+    "TENSOR_GROUP": [],
+    "ATTN_HEAD": []
+  },
+  "DynamicType": {
+    "LOCAL": []
+  },
+  "ActivationOrdering": {
+    "GROUP": [],
+    "WEIGHT": [],
+    "DYNAMIC": [],
+    "STATIC": [],
+    "get_aliases": []
+  },
+  "QuantizationArgs": {
+    "serialize_dtype": [
+      "self",
+      "dtype"
+    ],
+    "validate_type": [
+      "cls",
+      "value"
+    ],
+    "validate_group": [
+      "cls",
+      "value"
+    ],
+    "validate_block_structure": [
+      "cls",
+      "value"
+    ],
+    "validate_strategy": [
+      "cls",
+      "value"
+    ],
+    "validate_actorder": [
+      "cls",
+      "value"
+    ],
+    "validate_dynamic": [
+      "cls",
+      "value"
+    ],
+    "validate_model_after": [
+      "model"
+    ],
+    "pytorch_dtype": [
+      "self"
+    ],
+    "get_observer": [
+      "self"
+    ],
+    "model_config": []
+  },
+  "round_to_quantized_type_dtype": [
+    "tensor",
+    "dtype",
+    "cast_to_original_dtype"
+  ],
+  "round_to_quantized_type_args": [
+    "tensor",
+    "args",
+    "min",
+    "max",
+    "cast_to_original_dtype"
+  ],
+  "QuantizationStatus": {
+    "INITIALIZED": [],
+    "CALIBRATION": [],
+    "FROZEN": [],
+    "COMPRESSED": [],
+    "lifecycle_order": [
+      "cls"
+    ],
+    "__ge__": [
+      "self",
+      "other"
+    ],
+    "__gt__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__le__": [
+      "self",
+      "other"
+    ]
+  },
+  "LIFECYCLE_ORDER": [],
+  "DEFAULT_QUANTIZATION_METHOD": [],
+  "DEFAULT_QUANTIZATION_FORMAT": [],
+  "QuantizationConfig": {
+    "model_post_init": [
+      "self",
+      "__context"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_pretrained": [
+      "model",
+      "format"
+    ],
+    "requires_calibration_data": [
+      "self"
+    ],
+    "model_config": []
+  },
+  "QuantizationScheme": {
+    "validate_model_after": [
+      "model"
+    ],
+    "model_config": []
+  },
+  "preset_name_to_scheme": [
+    "name",
+    "targets"
+  ],
+  "is_preset_scheme": [
+    "name"
+  ],
+  "UNQUANTIZED": [],
+  "NVFP4A16": [],
+  "NVFP4": [],
+  "MXFP4A16": [],
+  "MXFP4": [],
+  "INT8_W8A8": [],
+  "W8A16": [],
+  "W4A16": [],
+  "W4A16_ASYM": [],
+  "INT8_W4A8": [],
+  "FP8": [],
+  "FP8_DYNAMIC": [],
+  "FP8_BLOCK": [],
+  "PRESET_SCHEMES": [],
+  "enable_quantization": [
+    "module"
+  ],
+  "disable_quantization": [
+    "module"
+  ],
+  "_LOGGER": [],
+  "initialize_module_for_quantization": [
+    "module",
+    "scheme",
+    "force_zero_point"
+  ],
+  "is_attention_module": [
+    "module"
+  ],
+  "initialize_qparams": [
+    "module",
+    "base_name",
+    "quantization_args",
+    "observed_shape",
+    "observed_dtype",
+    "force_zero_point"
+  ],
+  "initialize_attn_qparams": [
+    "module",
+    "scheme",
+    "force_zero_point"
+  ],
+  "_validate_attention_scheme": [
+    "scheme"
+  ],
+  "load_pretrained_quantization_parameters": [
+    "model",
+    "model_name_or_path",
+    "load_weight_qparams"
+  ],
+  "apply_quantization_config": [
+    "model",
+    "config",
+    "run_compressed"
+  ],
+  "_apply_kv_cache_scheme": [
+    "model",
+    "kv_cache_scheme",
+    "status"
+  ],
+  "_load_quant_args_from_mapping": [
+    "base_name",
+    "module_name",
+    "module",
+    "mapping"
+  ],
+  "_scheme_from_targets": [
+    "target_to_scheme",
+    "targets",
+    "name"
+  ],
+  "compress_quantized_weights": [
+    "module"
+  ],
+  "quantize": [
+    "x",
+    "scale",
+    "zero_point",
+    "args",
+    "dtype",
+    "g_idx",
+    "global_scale"
+  ],
+  "dequantize": [
+    "x_q",
+    "scale",
+    "zero_point",
+    "args",
+    "dtype",
+    "g_idx",
+    "global_scale"
+  ],
+  "fake_quantize": [
+    "x",
+    "scale",
+    "zero_point",
+    "args",
+    "g_idx",
+    "global_scale"
+  ],
+  "_process_quantization": [
+    "x",
+    "scale",
+    "zero_point",
+    "args",
+    "g_idx",
+    "dtype",
+    "do_quantize",
+    "do_dequantize",
+    "global_scale"
+  ],
+  "wrap_module_forward_quantized": [
+    "module",
+    "scheme"
+  ],
+  "forward_quantize": [
+    "module",
+    "value",
+    "base_name",
+    "args"
+  ],
+  "_quantize": [
+    "x",
+    "scale",
+    "zero_point",
+    "q_min",
+    "q_max",
+    "args",
+    "dtype",
+    "global_scale"
+  ],
+  "_dequantize": [
+    "x_q",
+    "scale",
+    "zero_point",
+    "dtype",
+    "global_scale"
+  ],
+  "KV_CACHE_TARGETS": [],
+  "calculate_qparams": [
+    "min_vals",
+    "max_vals",
+    "quantization_args",
+    "global_scale"
+  ],
+  "compute_dynamic_scales_and_zp": [
+    "value",
+    "args",
+    "module",
+    "global_scale"
+  ],
+  "calculate_range": [
+    "quantization_args",
+    "device"
+  ],
+  "is_module_quantized": [
+    "module"
+  ],
+  "is_model_quantized": [
+    "model"
+  ],
+  "module_type": [
+    "module"
+  ],
+  "iter_named_leaf_modules": [
+    "model"
+  ],
+  "iter_named_quantizable_modules": [
+    "model",
+    "include_children",
+    "include_attn",
+    "include_mlp"
+  ],
+  "get_torch_bit_depth": [
+    "value"
+  ],
+  "can_quantize": [
+    "value",
+    "quant_args"
+  ],
+  "is_kv_cache_quant_scheme": [
+    "scheme"
+  ],
+  "generate_gparam": [
+    "updated_min_val",
+    "updated_max_val",
+    "scale_data",
+    "quant_data",
+    "dtype"
+  ],
+  "strategy_cdiv": [
+    "value",
+    "divisor",
+    "strategy",
+    "strict"
+  ],
+  "_get_dtype_eps": [
+    "dtype"
+  ],
+  "should_generatre_mxfp4_scales": [
+    "args"
+  ],
+  "maybe_convert_from_mxfp4_exp": [
+    "args",
+    "scale"
+  ],
+  "round_to_power_2": [
+    "x"
+  ],
+  "generate_mxfp4_scales": [
+    "x"
+  ],
+  "CompressedLinear": {
+    "__init__": [
+      "self"
+    ],
+    "from_linear": [
+      "cls",
+      "module",
+      "quantization_scheme",
+      "quantization_format"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  }
+}

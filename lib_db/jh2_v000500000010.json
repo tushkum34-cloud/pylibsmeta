@@ -1,0 +1,1682 @@
+{
+  "ErrorCodes": {
+    "NO_ERROR": [],
+    "PROTOCOL_ERROR": [],
+    "INTERNAL_ERROR": [],
+    "FLOW_CONTROL_ERROR": [],
+    "SETTINGS_TIMEOUT": [],
+    "STREAM_CLOSED": [],
+    "FRAME_SIZE_ERROR": [],
+    "REFUSED_STREAM": [],
+    "CANCEL": [],
+    "COMPRESSION_ERROR": [],
+    "CONNECT_ERROR": [],
+    "ENHANCE_YOUR_CALM": [],
+    "INADEQUATE_SECURITY": [],
+    "HTTP_1_1_REQUIRED": []
+  },
+  "_error_code_from_int": [
+    "code"
+  ],
+  "__all__": [],
+  "CONTINUATION_BACKLOG": [],
+  "FrameBuffer": {
+    "__init__": [
+      "self",
+      "server"
+    ],
+    "add_data": [
+      "self",
+      "data"
+    ],
+    "_validate_frame_length": [
+      "self",
+      "length"
+    ],
+    "_update_header_buffer": [
+      "self",
+      "f"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "ConnectionState": {
+    "IDLE": [],
+    "CLIENT_OPEN": [],
+    "SERVER_OPEN": [],
+    "CLOSED": []
+  },
+  "ConnectionInputs": {
+    "SEND_HEADERS": [],
+    "SEND_PUSH_PROMISE": [],
+    "SEND_DATA": [],
+    "SEND_GOAWAY": [],
+    "SEND_WINDOW_UPDATE": [],
+    "SEND_PING": [],
+    "SEND_SETTINGS": [],
+    "SEND_RST_STREAM": [],
+    "SEND_PRIORITY": [],
+    "RECV_HEADERS": [],
+    "RECV_PUSH_PROMISE": [],
+    "RECV_DATA": [],
+    "RECV_GOAWAY": [],
+    "RECV_WINDOW_UPDATE": [],
+    "RECV_PING": [],
+    "RECV_SETTINGS": [],
+    "RECV_RST_STREAM": [],
+    "RECV_PRIORITY": [],
+    "SEND_ALTERNATIVE_SERVICE": [],
+    "RECV_ALTERNATIVE_SERVICE": []
+  },
+  "AllowedStreamIDs": {
+    "EVEN": [],
+    "ODD": []
+  },
+  "H2ConnectionStateMachine": {
+    "_transitions": [],
+    "__init__": [
+      "self"
+    ],
+    "process_input": [
+      "self",
+      "input_"
+    ]
+  },
+  "H2Connection": {
+    "DEFAULT_MAX_OUTBOUND_FRAME_SIZE": [],
+    "DEFAULT_MAX_INBOUND_FRAME_SIZE": [],
+    "HIGHEST_ALLOWED_STREAM_ID": [],
+    "MAX_WINDOW_INCREMENT": [],
+    "DEFAULT_MAX_HEADER_LIST_SIZE": [],
+    "MAX_CLOSED_STREAMS": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_prepare_for_sending": [
+      "self",
+      "frames"
+    ],
+    "_open_streams": [
+      "self",
+      "remainder"
+    ],
+    "open_outbound_streams": [
+      "self"
+    ],
+    "open_inbound_streams": [
+      "self"
+    ],
+    "inbound_flow_control_window": [
+      "self"
+    ],
+    "_begin_new_stream": [
+      "self",
+      "stream_id",
+      "allowed_ids"
+    ],
+    "initiate_connection": [
+      "self"
+    ],
+    "initiate_upgrade_connection": [
+      "self",
+      "settings_header"
+    ],
+    "_get_or_create_stream": [
+      "self",
+      "stream_id",
+      "allowed_ids"
+    ],
+    "_get_stream_by_id": [
+      "self",
+      "stream_id"
+    ],
+    "get_next_available_stream_id": [
+      "self"
+    ],
+    "send_headers": [
+      "self",
+      "stream_id",
+      "headers",
+      "end_stream",
+      "priority_weight",
+      "priority_depends_on",
+      "priority_exclusive"
+    ],
+    "send_data": [
+      "self",
+      "stream_id",
+      "data",
+      "end_stream",
+      "pad_length"
+    ],
+    "end_stream": [
+      "self",
+      "stream_id"
+    ],
+    "increment_flow_control_window": [
+      "self",
+      "increment",
+      "stream_id"
+    ],
+    "push_stream": [
+      "self",
+      "stream_id",
+      "promised_stream_id",
+      "request_headers"
+    ],
+    "ping": [
+      "self",
+      "opaque_data"
+    ],
+    "reset_stream": [
+      "self",
+      "stream_id",
+      "error_code"
+    ],
+    "close_connection": [
+      "self",
+      "error_code",
+      "additional_data",
+      "last_stream_id"
+    ],
+    "update_settings": [
+      "self",
+      "new_settings"
+    ],
+    "advertise_alternative_service": [
+      "self",
+      "field_value",
+      "origin",
+      "stream_id"
+    ],
+    "prioritize": [
+      "self",
+      "stream_id",
+      "weight",
+      "depends_on",
+      "exclusive"
+    ],
+    "local_flow_control_window": [
+      "self",
+      "stream_id"
+    ],
+    "remote_flow_control_window": [
+      "self",
+      "stream_id"
+    ],
+    "acknowledge_received_data": [
+      "self",
+      "acknowledged_size",
+      "stream_id"
+    ],
+    "data_to_send": [
+      "self",
+      "amount"
+    ],
+    "clear_outbound_data_buffer": [
+      "self"
+    ],
+    "_acknowledge_settings": [
+      "self"
+    ],
+    "_flow_control_change_from_settings": [
+      "self",
+      "old_value",
+      "new_value"
+    ],
+    "_inbound_flow_control_change_from_settings": [
+      "self",
+      "old_value",
+      "new_value"
+    ],
+    "receive_data": [
+      "self",
+      "data"
+    ],
+    "_receive_frame": [
+      "self",
+      "frame"
+    ],
+    "_terminate_connection": [
+      "self",
+      "error_code"
+    ],
+    "_receive_headers_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_push_promise_frame": [
+      "self",
+      "frame"
+    ],
+    "_handle_data_on_closed_stream": [
+      "self",
+      "events",
+      "exc",
+      "frame"
+    ],
+    "_receive_data_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_settings_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_window_update_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_ping_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_rst_stream_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_priority_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_goaway_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_naked_continuation": [
+      "self",
+      "frame"
+    ],
+    "_receive_alt_svc_frame": [
+      "self",
+      "frame"
+    ],
+    "_receive_unknown_frame": [
+      "self",
+      "frame"
+    ],
+    "_local_settings_acked": [
+      "self"
+    ],
+    "_stream_id_is_outbound": [
+      "self",
+      "stream_id"
+    ],
+    "_stream_closed_by": [
+      "self",
+      "stream_id"
+    ],
+    "_stream_is_closed_by_reset": [
+      "self",
+      "stream_id"
+    ],
+    "_stream_is_closed_by_end": [
+      "self",
+      "stream_id"
+    ]
+  },
+  "_add_frame_priority": [
+    "frame",
+    "weight",
+    "depends_on",
+    "exclusive"
+  ],
+  "_decode_headers": [
+    "decoder",
+    "encoded_header_block"
+  ],
+  "UPPER_RE": [],
+  "CONNECTION_HEADERS": [],
+  "_ALLOWED_PSEUDO_HEADER_FIELDS": [],
+  "_SECURE_HEADERS": [],
+  "_REQUEST_ONLY_HEADERS": [],
+  "_RESPONSE_ONLY_HEADERS": [],
+  "_CONNECT_REQUEST_ONLY_HEADERS": [],
+  "_WHITESPACE": [],
+  "_secure_headers": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "extract_method_header": [
+    "headers"
+  ],
+  "is_informational_response": [
+    "headers"
+  ],
+  "guard_increment_window": [
+    "current",
+    "increment"
+  ],
+  "authority_from_headers": [
+    "headers"
+  ],
+  "HeaderValidationFlags": [],
+  "validate_headers": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_reject_empty_header_names": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_reject_uppercase_header_fields": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_reject_surrounding_whitespace": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_reject_te": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_reject_connection_header": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_custom_startswith": [
+    "test_string",
+    "bytes_prefix",
+    "unicode_prefix"
+  ],
+  "_assert_header_in_set": [
+    "string_header",
+    "bytes_header",
+    "header_set"
+  ],
+  "_reject_pseudo_header_fields": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_check_pseudo_header_field_acceptability": [
+    "pseudo_headers",
+    "method",
+    "hdr_validation_flags"
+  ],
+  "_validate_host_authority_header": [
+    "headers"
+  ],
+  "_check_host_authority_header": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_check_path_header": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_lowercase_header_names": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_strip_surrounding_whitespace": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_strip_connection_headers": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_check_sent_host_authority_header": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_combine_cookie_fields": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "_split_outbound_cookie_fields": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "normalize_outbound_headers": [
+    "headers",
+    "hdr_validation_flags",
+    "should_split_outbound_cookies"
+  ],
+  "normalize_inbound_headers": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "validate_outbound_headers": [
+    "headers",
+    "hdr_validation_flags"
+  ],
+  "SizeLimitDict": {
+    "__init__": [
+      "self"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_check_size_limit": [
+      "self"
+    ]
+  },
+  "SettingCodes": {
+    "HEADER_TABLE_SIZE": [],
+    "ENABLE_PUSH": [],
+    "MAX_CONCURRENT_STREAMS": [],
+    "INITIAL_WINDOW_SIZE": [],
+    "MAX_FRAME_SIZE": [],
+    "MAX_HEADER_LIST_SIZE": [],
+    "ENABLE_CONNECT_PROTOCOL": []
+  },
+  "_setting_code_from_int": [
+    "code"
+  ],
+  "ChangedSetting": {
+    "__init__": [
+      "self",
+      "setting",
+      "original_value",
+      "new_value"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Settings": {
+    "__init__": [
+      "self",
+      "client",
+      "initial_values"
+    ],
+    "has_update": [
+      "self"
+    ],
+    "acknowledge": [
+      "self"
+    ],
+    "header_table_size": [
+      "self",
+      "value"
+    ],
+    "enable_push": [
+      "self",
+      "value"
+    ],
+    "initial_window_size": [
+      "self",
+      "value"
+    ],
+    "max_frame_size": [
+      "self",
+      "value"
+    ],
+    "max_concurrent_streams": [
+      "self",
+      "value"
+    ],
+    "max_header_list_size": [
+      "self",
+      "value"
+    ],
+    "enable_connect_protocol": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "_validate_setting": [
+    "setting",
+    "value"
+  ],
+  "Event": {},
+  "RequestReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ResponseReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "TrailersReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_HeadersSent": {},
+  "_ResponseSent": {},
+  "_RequestSent": {},
+  "_TrailersSent": {},
+  "_PushedRequestSent": {},
+  "InformationalResponseReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DataReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "WindowUpdated": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "RemoteSettingsChanged": {
+    "__init__": [
+      "self"
+    ],
+    "from_settings": [
+      "cls",
+      "old_settings",
+      "new_settings"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PingReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PingAckReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "StreamEnded": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "StreamReset": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PushedStreamReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SettingsAcknowledged": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PriorityUpdated": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ConnectionTerminated": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AlternativeServiceAvailable": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "UnknownFrameReceived": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_bytes_representation": [
+    "data"
+  ],
+  "__version__": [],
+  "LARGEST_FLOW_CONTROL_WINDOW": [],
+  "WindowManager": {
+    "__init__": [
+      "self",
+      "max_window_size"
+    ],
+    "window_consumed": [
+      "self",
+      "size"
+    ],
+    "window_opened": [
+      "self",
+      "size"
+    ],
+    "process_bytes": [
+      "self",
+      "size"
+    ],
+    "_maybe_update_window": [
+      "self"
+    ]
+  },
+  "_BooleanConfigOption": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "__get__": [
+      "self",
+      "instance",
+      "owner"
+    ],
+    "__set__": [
+      "self",
+      "instance",
+      "value"
+    ]
+  },
+  "DummyLogger": {
+    "__init__": [
+      "self"
+    ],
+    "debug": [
+      "self"
+    ],
+    "trace": [
+      "self"
+    ]
+  },
+  "OutputLogger": {
+    "__init__": [
+      "self",
+      "file",
+      "trace_level"
+    ],
+    "debug": [
+      "self",
+      "fmtstr"
+    ],
+    "trace": [
+      "self",
+      "fmtstr"
+    ]
+  },
+  "H2Configuration": {
+    "client_side": [],
+    "validate_outbound_headers": [],
+    "normalize_outbound_headers": [],
+    "split_outbound_cookies": [],
+    "validate_inbound_headers": [],
+    "normalize_inbound_headers": [],
+    "__init__": [
+      "self",
+      "client_side",
+      "header_encoding",
+      "validate_outbound_headers",
+      "normalize_outbound_headers",
+      "split_outbound_cookies",
+      "validate_inbound_headers",
+      "normalize_inbound_headers",
+      "logger"
+    ],
+    "header_encoding": [
+      "self",
+      "value"
+    ]
+  },
+  "H2Error": {},
+  "ProtocolError": {
+    "error_code": []
+  },
+  "FrameTooLargeError": {
+    "error_code": []
+  },
+  "FrameDataMissingError": {
+    "error_code": []
+  },
+  "TooManyStreamsError": {},
+  "FlowControlError": {
+    "error_code": []
+  },
+  "StreamIDTooLowError": {
+    "__init__": [
+      "self",
+      "stream_id",
+      "max_stream_id"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "NoAvailableStreamIDError": {},
+  "NoSuchStreamError": {
+    "__init__": [
+      "self",
+      "stream_id"
+    ]
+  },
+  "StreamClosedError": {
+    "__init__": [
+      "self",
+      "stream_id"
+    ]
+  },
+  "InvalidSettingsValueError": {
+    "__init__": [
+      "self",
+      "msg",
+      "error_code"
+    ]
+  },
+  "InvalidBodyLengthError": {
+    "__init__": [
+      "self",
+      "expected",
+      "actual"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "UnsupportedFrameError": {},
+  "RFC1122Error": {},
+  "DenialOfServiceError": {
+    "error_code": []
+  },
+  "StreamState": {
+    "IDLE": [],
+    "RESERVED_REMOTE": [],
+    "RESERVED_LOCAL": [],
+    "OPEN": [],
+    "HALF_CLOSED_REMOTE": [],
+    "HALF_CLOSED_LOCAL": [],
+    "CLOSED": []
+  },
+  "StreamInputs": {
+    "SEND_HEADERS": [],
+    "SEND_PUSH_PROMISE": [],
+    "SEND_RST_STREAM": [],
+    "SEND_DATA": [],
+    "SEND_WINDOW_UPDATE": [],
+    "SEND_END_STREAM": [],
+    "RECV_HEADERS": [],
+    "RECV_PUSH_PROMISE": [],
+    "RECV_RST_STREAM": [],
+    "RECV_DATA": [],
+    "RECV_WINDOW_UPDATE": [],
+    "RECV_END_STREAM": [],
+    "RECV_CONTINUATION": [],
+    "SEND_INFORMATIONAL_HEADERS": [],
+    "RECV_INFORMATIONAL_HEADERS": [],
+    "SEND_ALTERNATIVE_SERVICE": [],
+    "RECV_ALTERNATIVE_SERVICE": [],
+    "UPGRADE_CLIENT": [],
+    "UPGRADE_SERVER": []
+  },
+  "StreamClosedBy": {
+    "SEND_END_STREAM": [],
+    "RECV_END_STREAM": [],
+    "SEND_RST_STREAM": [],
+    "RECV_RST_STREAM": []
+  },
+  "STREAM_OPEN": [],
+  "H2StreamStateMachine": {
+    "__init__": [
+      "self",
+      "stream_id"
+    ],
+    "process_input": [
+      "self",
+      "input_"
+    ],
+    "request_sent": [
+      "self",
+      "previous_state"
+    ],
+    "response_sent": [
+      "self",
+      "previous_state"
+    ],
+    "request_received": [
+      "self",
+      "previous_state"
+    ],
+    "response_received": [
+      "self",
+      "previous_state"
+    ],
+    "data_received": [
+      "self",
+      "previous_state"
+    ],
+    "window_updated": [
+      "self",
+      "previous_state"
+    ],
+    "stream_half_closed": [
+      "self",
+      "previous_state"
+    ],
+    "stream_ended": [
+      "self",
+      "previous_state"
+    ],
+    "stream_reset": [
+      "self",
+      "previous_state"
+    ],
+    "send_new_pushed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "recv_new_pushed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "send_push_promise": [
+      "self",
+      "previous_state"
+    ],
+    "recv_push_promise": [
+      "self",
+      "previous_state"
+    ],
+    "send_end_stream": [
+      "self",
+      "previous_state"
+    ],
+    "send_reset_stream": [
+      "self",
+      "previous_state"
+    ],
+    "reset_stream_on_error": [
+      "self",
+      "previous_state"
+    ],
+    "recv_on_closed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "send_on_closed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "recv_push_on_closed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "send_push_on_closed_stream": [
+      "self",
+      "previous_state"
+    ],
+    "send_informational_response": [
+      "self",
+      "previous_state"
+    ],
+    "recv_informational_response": [
+      "self",
+      "previous_state"
+    ],
+    "recv_alt_svc": [
+      "self",
+      "previous_state"
+    ],
+    "send_alt_svc": [
+      "self",
+      "previous_state"
+    ]
+  },
+  "_transitions": [],
+  "H2Stream": {
+    "__init__": [
+      "self",
+      "stream_id",
+      "config",
+      "inbound_window_size",
+      "outbound_window_size"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "inbound_flow_control_window": [
+      "self"
+    ],
+    "open": [
+      "self"
+    ],
+    "closed": [
+      "self"
+    ],
+    "closed_by": [
+      "self"
+    ],
+    "upgrade": [
+      "self",
+      "client_side"
+    ],
+    "send_headers": [
+      "self",
+      "headers",
+      "encoder",
+      "end_stream"
+    ],
+    "push_stream_in_band": [
+      "self",
+      "related_stream_id",
+      "headers",
+      "encoder"
+    ],
+    "locally_pushed": [
+      "self"
+    ],
+    "send_data": [
+      "self",
+      "data",
+      "end_stream",
+      "pad_length"
+    ],
+    "end_stream": [
+      "self"
+    ],
+    "advertise_alternative_service": [
+      "self",
+      "field_value"
+    ],
+    "increase_flow_control_window": [
+      "self",
+      "increment"
+    ],
+    "receive_push_promise_in_band": [
+      "self",
+      "promised_stream_id",
+      "headers",
+      "header_encoding"
+    ],
+    "remotely_pushed": [
+      "self",
+      "pushed_headers"
+    ],
+    "receive_headers": [
+      "self",
+      "headers",
+      "end_stream",
+      "header_encoding"
+    ],
+    "receive_data": [
+      "self",
+      "data",
+      "end_stream",
+      "flow_control_len"
+    ],
+    "receive_window_update": [
+      "self",
+      "increment"
+    ],
+    "receive_continuation": [
+      "self"
+    ],
+    "receive_alt_svc": [
+      "self",
+      "frame"
+    ],
+    "reset_stream": [
+      "self",
+      "error_code"
+    ],
+    "stream_reset": [
+      "self",
+      "frame"
+    ],
+    "acknowledge_received_data": [
+      "self",
+      "acknowledged_size"
+    ],
+    "_build_hdr_validation_flags": [
+      "self",
+      "events"
+    ],
+    "_build_headers_frames": [
+      "self",
+      "headers",
+      "encoder",
+      "first_frame",
+      "hdr_validation_flags"
+    ],
+    "_process_received_headers": [
+      "self",
+      "headers",
+      "header_validation_flags",
+      "header_encoding"
+    ],
+    "_initialize_content_length": [
+      "self",
+      "headers"
+    ],
+    "_track_content_length": [
+      "self",
+      "length",
+      "end_stream"
+    ],
+    "_inbound_flow_control_change_from_settings": [
+      "self",
+      "delta"
+    ]
+  },
+  "log": [],
+  "table_entry_size": [
+    "name",
+    "value"
+  ],
+  "HeaderTable": {
+    "DEFAULT_SIZE": [],
+    "STATIC_TABLE": [],
+    "STATIC_TABLE_LENGTH": [],
+    "__init__": [
+      "self"
+    ],
+    "get_by_index": [
+      "self",
+      "index"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "name",
+      "value"
+    ],
+    "search": [
+      "self",
+      "name",
+      "value"
+    ],
+    "maxsize": [
+      "self",
+      "newmax"
+    ],
+    "_shrink": [
+      "self"
+    ]
+  },
+  "_build_static_table_mapping": [],
+  "REQUEST_CODES": [],
+  "REQUEST_CODES_LENGTH": [],
+  "HeaderTuple": {
+    "__slots__": [],
+    "indexable": [],
+    "__new__": [
+      "cls"
+    ]
+  },
+  "NeverIndexedHeaderTuple": {
+    "__slots__": [],
+    "indexable": []
+  },
+  "HuffmanEncoder": {
+    "__init__": [
+      "self",
+      "huffman_code_list",
+      "huffman_code_list_lengths"
+    ],
+    "encode": [
+      "self",
+      "bytes_to_encode"
+    ]
+  },
+  "decode_huffman": [
+    "huffman_string"
+  ],
+  "HUFFMAN_COMPLETE": [],
+  "HUFFMAN_EMIT_SYMBOL": [],
+  "HUFFMAN_FAIL": [],
+  "HUFFMAN_TABLE": [],
+  "INDEX_NONE": [],
+  "INDEX_NEVER": [],
+  "INDEX_INCREMENTAL": [],
+  "_PREFIX_BIT_MAX_NUMBERS": [],
+  "basestring": [],
+  "DEFAULT_MAX_HEADER_LIST_SIZE": [],
+  "_unicode_if_needed": [
+    "header",
+    "raw"
+  ],
+  "encode_integer": [
+    "integer",
+    "prefix_bits"
+  ],
+  "decode_integer": [
+    "data",
+    "prefix_bits"
+  ],
+  "_dict_to_iterable": [
+    "header_dict"
+  ],
+  "_to_bytes": [
+    "string"
+  ],
+  "Encoder": {
+    "__init__": [
+      "self"
+    ],
+    "header_table_size": [
+      "self",
+      "value"
+    ],
+    "encode": [
+      "self",
+      "headers",
+      "huffman"
+    ],
+    "add": [
+      "self",
+      "to_add",
+      "sensitive",
+      "huffman"
+    ],
+    "_encode_indexed": [
+      "self",
+      "index"
+    ],
+    "_encode_literal": [
+      "self",
+      "name",
+      "value",
+      "indexbit",
+      "huffman"
+    ],
+    "_encode_indexed_literal": [
+      "self",
+      "index",
+      "value",
+      "indexbit",
+      "huffman"
+    ],
+    "_encode_table_size_change": [
+      "self"
+    ]
+  },
+  "Decoder": {
+    "__init__": [
+      "self",
+      "max_header_list_size"
+    ],
+    "header_table_size": [
+      "self",
+      "value"
+    ],
+    "decode": [
+      "self",
+      "data",
+      "raw"
+    ],
+    "_assert_valid_table_size": [
+      "self"
+    ],
+    "_update_encoding_context": [
+      "self",
+      "data"
+    ],
+    "_decode_indexed": [
+      "self",
+      "data"
+    ],
+    "_decode_literal_no_index": [
+      "self",
+      "data"
+    ],
+    "_decode_literal_index": [
+      "self",
+      "data"
+    ],
+    "_decode_literal": [
+      "self",
+      "data",
+      "should_index"
+    ]
+  },
+  "HPACKError": {},
+  "HPACKDecodingError": {},
+  "InvalidTableIndex": {},
+  "OversizedHeaderListError": {},
+  "InvalidTableSizeError": {},
+  "FRAME_MAX_LEN": [],
+  "FRAME_MAX_ALLOWED_LEN": [],
+  "_STREAM_ASSOC_HAS_STREAM": [],
+  "_STREAM_ASSOC_NO_STREAM": [],
+  "_STREAM_ASSOC_EITHER": [],
+  "_STRUCT_HBBBL": [],
+  "_STRUCT_LL": [],
+  "_STRUCT_HL": [],
+  "_STRUCT_LB": [],
+  "_STRUCT_L": [],
+  "_STRUCT_H": [],
+  "_STRUCT_B": [],
+  "Frame": {
+    "__init__": [
+      "self",
+      "stream_id",
+      "flags"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "explain": [
+      "data"
+    ],
+    "parse_frame_header": [
+      "header",
+      "strict"
+    ],
+    "parse_flags": [
+      "self",
+      "flag_byte"
+    ],
+    "serialize": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "Padding": {
+    "__init__": [
+      "self",
+      "stream_id",
+      "pad_length"
+    ],
+    "serialize_padding_data": [
+      "self"
+    ],
+    "parse_padding_data": [
+      "self",
+      "data"
+    ],
+    "total_padding": [
+      "self"
+    ]
+  },
+  "Priority": {
+    "__init__": [
+      "self",
+      "stream_id",
+      "depends_on",
+      "stream_weight",
+      "exclusive"
+    ],
+    "serialize_priority_data": [
+      "self"
+    ],
+    "parse_priority_data": [
+      "self",
+      "data"
+    ]
+  },
+  "DataFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "data"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ],
+    "flow_controlled_length": [
+      "self"
+    ]
+  },
+  "PriorityFrame": {
+    "type": [],
+    "stream_association": [],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "RstStreamFrame": {
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "error_code"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "SettingsFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "HEADER_TABLE_SIZE": [],
+    "ENABLE_PUSH": [],
+    "MAX_CONCURRENT_STREAMS": [],
+    "INITIAL_WINDOW_SIZE": [],
+    "MAX_FRAME_SIZE": [],
+    "MAX_HEADER_LIST_SIZE": [],
+    "ENABLE_CONNECT_PROTOCOL": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "settings"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "PushPromiseFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "promised_stream_id",
+      "data"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "PingFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "opaque_data"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "GoAwayFrame": {
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "last_stream_id",
+      "error_code",
+      "additional_data"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "WindowUpdateFrame": {
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "window_increment"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "HeadersFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "data"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "ContinuationFrame": {
+    "defined_flags": [],
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "data"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "AltSvcFrame": {
+    "type": [],
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "stream_id",
+      "origin",
+      "field"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "serialize_body": [
+      "self"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ]
+  },
+  "ExtensionFrame": {
+    "stream_association": [],
+    "__init__": [
+      "self",
+      "type",
+      "stream_id",
+      "flag_byte",
+      "body"
+    ],
+    "_body_repr": [
+      "self"
+    ],
+    "parse_flags": [
+      "self",
+      "flag_byte"
+    ],
+    "parse_body": [
+      "self",
+      "data"
+    ],
+    "serialize": [
+      "self"
+    ]
+  },
+  "_raw_data_repr": [
+    "data"
+  ],
+  "FRAMES": [],
+  "HyperframeError": {},
+  "UnknownFrameError": {
+    "__init__": [
+      "self",
+      "frame_type",
+      "length"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "InvalidPaddingError": {},
+  "InvalidFrameError": {},
+  "InvalidDataError": {},
+  "Flag": {},
+  "Flags": {
+    "__init__": [
+      "self",
+      "defined_flags"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "x"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "discard": [
+      "self",
+      "value"
+    ],
+    "add": [
+      "self",
+      "value"
+    ]
+  }
+}

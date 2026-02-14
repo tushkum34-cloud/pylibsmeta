@@ -1,0 +1,9782 @@
+{
+  "__version__": [],
+  "__all__": [],
+  "logger": [],
+  "_is_tool_call_or_response": [
+    "event"
+  ],
+  "_is_transcription": [
+    "event"
+  ],
+  "_has_non_empty_transcription_text": [
+    "transcription"
+  ],
+  "_apply_run_config_custom_metadata": [
+    "event",
+    "run_config"
+  ],
+  "Runner": {
+    "__init__": [
+      "self"
+    ],
+    "_validate_runner_params": [
+      "self",
+      "app",
+      "app_name",
+      "agent",
+      "plugins"
+    ],
+    "_infer_agent_origin": [
+      "self",
+      "agent"
+    ],
+    "_enforce_app_name_alignment": [
+      "self"
+    ],
+    "_format_session_not_found_message": [
+      "self",
+      "session_id"
+    ],
+    "_get_or_create_session": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "rewind_async": [
+      "self"
+    ],
+    "_compute_state_delta_for_rewind": [
+      "self",
+      "session",
+      "rewind_event_index"
+    ],
+    "_compute_artifact_delta_for_rewind": [
+      "self",
+      "session",
+      "rewind_event_index"
+    ],
+    "_should_append_event": [
+      "self",
+      "event",
+      "is_live_call"
+    ],
+    "_exec_with_plugin": [
+      "self",
+      "invocation_context",
+      "session",
+      "execute_fn",
+      "is_live_call"
+    ],
+    "_append_new_message_to_session": [
+      "self"
+    ],
+    "run_live": [
+      "self"
+    ],
+    "_find_agent_to_run": [
+      "self",
+      "session",
+      "root_agent"
+    ],
+    "_is_transferable_across_agent_tree": [
+      "self",
+      "agent_to_run"
+    ],
+    "run_debug": [
+      "self",
+      "user_messages"
+    ],
+    "_setup_context_for_new_invocation": [
+      "self"
+    ],
+    "_setup_context_for_resumed_invocation": [
+      "self"
+    ],
+    "_find_user_message_for_invocation": [
+      "self",
+      "events",
+      "invocation_id"
+    ],
+    "_new_invocation_context": [
+      "self",
+      "session"
+    ],
+    "_new_invocation_context_for_live": [
+      "self",
+      "session"
+    ],
+    "_handle_new_message": [
+      "self"
+    ],
+    "_collect_toolset": [
+      "self",
+      "agent"
+    ],
+    "_cleanup_toolsets": [
+      "self",
+      "toolsets_to_close"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "InMemoryRunner": {
+    "__init__": [
+      "self",
+      "agent"
+    ]
+  },
+  "OTelHooks": {},
+  "maybe_set_otel_providers": [
+    "otel_hooks_to_setup",
+    "otel_resource"
+  ],
+  "_get_otel_resource": [],
+  "_get_otel_exporters": [],
+  "_get_otel_span_exporter": [],
+  "_get_otel_metrics_exporter": [],
+  "_get_otel_logs_exporter": [],
+  "_GCP_LOG_NAME_ENV_VARIABLE_NAME": [],
+  "_DEFAULT_LOG_NAME": [],
+  "get_gcp_exporters": [
+    "enable_cloud_tracing",
+    "enable_cloud_metrics",
+    "enable_cloud_logging",
+    "google_auth"
+  ],
+  "_get_gcp_span_exporter": [
+    "credentials"
+  ],
+  "_get_gcp_metrics_exporter": [
+    "project_id"
+  ],
+  "_get_gcp_logs_exporter": [
+    "project_id"
+  ],
+  "get_gcp_resource": [
+    "project_id"
+  ],
+  "ADK_CAPTURE_MESSAGE_CONTENT_IN_SPANS": [],
+  "OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT": [],
+  "USER_CONTENT_ELIDED": [],
+  "tracer": [],
+  "otel_logger": [],
+  "_safe_json_serialize": [
+    "obj"
+  ],
+  "trace_agent_invocation": [
+    "span",
+    "agent",
+    "ctx"
+  ],
+  "trace_tool_call": [
+    "tool",
+    "args",
+    "function_response_event"
+  ],
+  "trace_merged_tool_calls": [
+    "response_event_id",
+    "function_response_event"
+  ],
+  "trace_call_llm": [
+    "invocation_context",
+    "event_id",
+    "llm_request",
+    "llm_response",
+    "span"
+  ],
+  "trace_send_data": [
+    "invocation_context",
+    "event_id",
+    "data"
+  ],
+  "_build_llm_request_for_trace": [
+    "llm_request"
+  ],
+  "_should_add_request_response_to_spans": [],
+  "use_generate_content_span": [
+    "llm_request",
+    "invocation_context",
+    "model_response_event"
+  ],
+  "_should_log_prompt_response_content": [],
+  "_serialize_content": [
+    "content"
+  ],
+  "_serialize_content_with_elision": [
+    "content"
+  ],
+  "_instrumented_with_opentelemetry_instrumentation_google_genai": [],
+  "_use_extra_generate_content_attributes": [
+    "extra_attributes"
+  ],
+  "_is_gemini_agent": [
+    "agent"
+  ],
+  "_use_native_generate_content_span": [
+    "llm_request",
+    "common_attributes"
+  ],
+  "trace_generate_content_result": [
+    "span",
+    "llm_response"
+  ],
+  "_guess_gemini_system_name": [],
+  "create_oauth2_session": [
+    "auth_scheme",
+    "auth_credential"
+  ],
+  "update_credential_with_tokens": [
+    "auth_credential",
+    "tokens"
+  ],
+  "TOOLSET_AUTH_CREDENTIAL_ID_PREFIX": [],
+  "_AuthLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "request_processor": [],
+  "OpenIdConnectWithConfig": {},
+  "AuthScheme": [],
+  "OAuthGrantType": {
+    "CLIENT_CREDENTIALS": [],
+    "AUTHORIZATION_CODE": [],
+    "IMPLICIT": [],
+    "PASSWORD": [],
+    "from_flow": [
+      "flow"
+    ]
+  },
+  "AuthSchemeType": [],
+  "ExtendedOAuth2": {},
+  "CredentialManager": {
+    "__init__": [
+      "self",
+      "auth_config"
+    ],
+    "register_credential_exchanger": [
+      "self",
+      "credential_type",
+      "exchanger_instance"
+    ],
+    "request_credential": [
+      "self",
+      "context"
+    ],
+    "get_auth_credential": [
+      "self",
+      "context"
+    ],
+    "_load_existing_credential": [
+      "self",
+      "context"
+    ],
+    "_load_from_credential_service": [
+      "self",
+      "context"
+    ],
+    "_load_from_auth_response": [
+      "self",
+      "context"
+    ],
+    "_exchange_credential": [
+      "self",
+      "credential"
+    ],
+    "_refresh_credential": [
+      "self",
+      "credential"
+    ],
+    "_is_credential_ready": [
+      "self"
+    ],
+    "_validate_credential": [
+      "self"
+    ],
+    "_save_credential": [
+      "self",
+      "context",
+      "credential"
+    ],
+    "_populate_auth_scheme": [
+      "self"
+    ],
+    "_missing_oauth_info": [
+      "self"
+    ],
+    "_is_client_credentials_flow": [
+      "self"
+    ]
+  },
+  "AuthorizationServerMetadata": {},
+  "ProtectedResourceMetadata": {},
+  "OAuth2DiscoveryManager": {
+    "discover_auth_server_metadata": [
+      "self",
+      "issuer_url"
+    ],
+    "discover_resource_metadata": [
+      "self",
+      "resource_url"
+    ]
+  },
+  "BaseModelWithConfig": {
+    "model_config": []
+  },
+  "HttpCredentials": {
+    "model_validate": [
+      "cls",
+      "data"
+    ]
+  },
+  "HttpAuth": {},
+  "OAuth2Auth": {},
+  "ServiceAccountCredential": {},
+  "ServiceAccount": {},
+  "AuthCredentialTypes": {
+    "API_KEY": [],
+    "HTTP": [],
+    "OAUTH2": [],
+    "OPEN_ID_CONNECT": [],
+    "SERVICE_ACCOUNT": []
+  },
+  "AuthCredential": {},
+  "_stable_model_digest": [
+    "model"
+  ],
+  "AuthConfig": {
+    "__init__": [
+      "self"
+    ],
+    "get_credential_key": [
+      "self"
+    ]
+  },
+  "AuthToolArguments": {},
+  "AuthHandler": {
+    "__init__": [
+      "self",
+      "auth_config"
+    ],
+    "exchange_auth_token": [
+      "self"
+    ],
+    "parse_and_store_auth_response": [
+      "self",
+      "state"
+    ],
+    "_validate": [
+      "self"
+    ],
+    "get_auth_response": [
+      "self",
+      "state"
+    ],
+    "generate_auth_request": [
+      "self"
+    ],
+    "generate_auth_uri": [
+      "self"
+    ]
+  },
+  "CredentialExchangerRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "credential_type",
+      "exchanger_instance"
+    ],
+    "get_exchanger": [
+      "self",
+      "credential_type"
+    ]
+  },
+  "OAuth2CredentialExchanger": {
+    "exchange": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ],
+    "_determine_grant_type": [
+      "self",
+      "auth_scheme"
+    ],
+    "_exchange_client_credentials": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ],
+    "_normalize_auth_uri": [
+      "self",
+      "auth_uri"
+    ],
+    "_exchange_authorization_code": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ]
+  },
+  "CredentialExchangeError": {},
+  "ExchangeResult": {},
+  "BaseCredentialExchanger": {
+    "exchange": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ]
+  },
+  "CredentialRefresherError": {},
+  "BaseCredentialRefresher": {
+    "is_refresh_needed": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ],
+    "refresh": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ]
+  },
+  "OAuth2CredentialRefresher": {
+    "is_refresh_needed": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ],
+    "refresh": [
+      "self",
+      "auth_credential",
+      "auth_scheme"
+    ]
+  },
+  "CredentialRefresherRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "credential_type",
+      "refresher_instance"
+    ],
+    "get_refresher": [
+      "self",
+      "credential_type"
+    ]
+  },
+  "InMemoryCredentialService": {
+    "__init__": [
+      "self"
+    ],
+    "load_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ],
+    "save_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ],
+    "_get_bucket_for_current_context": [
+      "self",
+      "callback_context"
+    ]
+  },
+  "SessionStateCredentialService": {
+    "load_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ],
+    "save_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ]
+  },
+  "BaseCredentialService": {
+    "load_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ],
+    "save_credential": [
+      "self",
+      "auth_config",
+      "callback_context"
+    ]
+  },
+  "_EVAL_SET_FILE_EXTENSION": [],
+  "TAG_DEBUG": [],
+  "TAG_EVALUATION": [],
+  "_REGEX_PREFIX": [],
+  "_parse_cors_origins": [
+    "allow_origins"
+  ],
+  "ApiServerSpanExporter": {
+    "__init__": [
+      "self",
+      "trace_dict"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ]
+  },
+  "InMemoryExporter": {
+    "__init__": [
+      "self",
+      "trace_dict"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ],
+    "get_finished_spans": [
+      "self",
+      "session_id"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "RunAgentRequest": {},
+  "CreateSessionRequest": {},
+  "SaveArtifactRequest": {},
+  "AddSessionToEvalSetRequest": {},
+  "RunEvalRequest": {},
+  "UpdateMemoryRequest": {},
+  "UpdateSessionRequest": {},
+  "RunEvalResult": {},
+  "RunEvalResponse": {},
+  "GetEventGraphResult": {},
+  "CreateEvalSetRequest": {},
+  "ListEvalSetsResponse": {},
+  "EvalResult": {},
+  "ListEvalResultsResponse": {},
+  "ListMetricsInfoResponse": {},
+  "AppInfo": {},
+  "ListAppsResponse": {},
+  "_setup_telemetry": [
+    "otel_to_cloud",
+    "internal_exporters"
+  ],
+  "_otel_env_vars_enabled": [],
+  "_setup_gcp_telemetry": [
+    "internal_exporters"
+  ],
+  "_setup_telemetry_from_env": [
+    "internal_exporters"
+  ],
+  "_setup_instrumentation_lib_if_installed": [],
+  "AdkWebServer": {
+    "__init__": [
+      "self"
+    ],
+    "get_runner_async": [
+      "self",
+      "app_name"
+    ],
+    "_get_root_agent": [
+      "self",
+      "agent_or_app"
+    ],
+    "_create_runner": [
+      "self",
+      "agentic_app"
+    ],
+    "_instantiate_extra_plugins": [
+      "self"
+    ],
+    "_import_plugin_object": [
+      "self",
+      "qualified_name"
+    ],
+    "_setup_runtime_config": [
+      "self",
+      "web_assets_dir"
+    ],
+    "_create_session": [
+      "self"
+    ],
+    "get_fast_api_app": [
+      "self",
+      "lifespan",
+      "allow_origins",
+      "web_assets_dir",
+      "setup_observer",
+      "tear_down_observer",
+      "register_processors",
+      "otel_to_cloud"
+    ]
+  },
+  "build_graph": [
+    "graph",
+    "agent",
+    "highlight_pairs",
+    "parent_agent"
+  ],
+  "get_agent_graph": [
+    "root_agent",
+    "highlights_pairs",
+    "image"
+  ],
+  "InputFile": {},
+  "run_input_file": [
+    "app_name",
+    "user_id",
+    "agent_or_app",
+    "artifact_service",
+    "session_service",
+    "credential_service",
+    "input_path"
+  ],
+  "run_interactively": [
+    "root_agent_or_app",
+    "artifact_service",
+    "session",
+    "session_service",
+    "credential_service"
+  ],
+  "run_cli": [],
+  "TOOL_TRAJECTORY_SCORE_KEY": [],
+  "RESPONSE_MATCH_SCORE_KEY": [],
+  "SAFETY_V1_KEY": [],
+  "FINAL_RESPONSE_MATCH_V2": [],
+  "RESPONSE_EVALUATION_SCORE_KEY": [],
+  "EVAL_SESSION_ID_PREFIX": [],
+  "DEFAULT_CRITERIA": [],
+  "_import_from_path": [
+    "module_name",
+    "file_path"
+  ],
+  "_get_agent_module": [
+    "agent_module_file_path"
+  ],
+  "get_default_metric_info": [
+    "metric_name",
+    "description"
+  ],
+  "get_root_agent": [
+    "agent_module_file_path"
+  ],
+  "try_get_reset_func": [
+    "agent_module_file_path"
+  ],
+  "parse_and_get_evals_to_run": [
+    "evals_to_run_info"
+  ],
+  "_collect_inferences": [
+    "inference_requests",
+    "eval_service"
+  ],
+  "_collect_eval_results": [
+    "inference_results",
+    "eval_service",
+    "eval_metrics"
+  ],
+  "_convert_content_to_text": [
+    "content"
+  ],
+  "_convert_tool_calls_to_text": [
+    "intermediate_data"
+  ],
+  "pretty_print_eval_result": [
+    "eval_result"
+  ],
+  "get_eval_sets_manager": [
+    "eval_storage_uri",
+    "agents_dir"
+  ],
+  "__getattr__": [
+    "name"
+  ],
+  "get_fast_api_app": [],
+  "_IS_WINDOWS": [],
+  "_GCLOUD_CMD": [],
+  "_ensure_agent_engine_dependency": [
+    "requirements_txt_path"
+  ],
+  "_AGENT_ENGINE_CLASS_METHODS": [],
+  "_resolve_project": [
+    "project_in_option"
+  ],
+  "_validate_gcloud_extra_args": [
+    "extra_gcloud_args",
+    "adk_managed_args"
+  ],
+  "_validate_agent_import": [
+    "agent_src_path",
+    "adk_app_object",
+    "is_config_agent"
+  ],
+  "_get_service_option_by_adk_version": [
+    "adk_version",
+    "session_uri",
+    "artifact_uri",
+    "memory_uri",
+    "use_local_storage"
+  ],
+  "to_cloud_run": [],
+  "to_agent_engine": [],
+  "to_gke": [],
+  "_INIT_PY_TEMPLATE": [],
+  "_AGENT_PY_TEMPLATE": [],
+  "_AGENT_CONFIG_TEMPLATE": [],
+  "_GOOGLE_API_MSG": [],
+  "_GOOGLE_CLOUD_SETUP_MSG": [],
+  "_OTHER_MODEL_MSG": [],
+  "_SUCCESS_MSG_CODE": [],
+  "_SUCCESS_MSG_CONFIG": [],
+  "_get_gcp_project_from_gcloud": [],
+  "_get_gcp_region_from_gcloud": [],
+  "_prompt_str": [
+    "prompt_prefix"
+  ],
+  "_prompt_for_google_cloud": [
+    "google_cloud_project"
+  ],
+  "_prompt_for_google_cloud_region": [
+    "google_cloud_region"
+  ],
+  "_prompt_for_google_api_key": [
+    "google_api_key"
+  ],
+  "_generate_files": [
+    "agent_folder"
+  ],
+  "_prompt_for_model": [],
+  "_prompt_to_choose_backend": [
+    "google_api_key",
+    "google_cloud_project",
+    "google_cloud_region"
+  ],
+  "_prompt_to_choose_type": [],
+  "run_cmd": [
+    "agent_name"
+  ],
+  "LOG_LEVELS": [],
+  "_apply_feature_overrides": [],
+  "feature_options": [],
+  "HelpfulCommand": {
+    "__init__": [
+      "self"
+    ],
+    "_format_missing_arg_error": [
+      "click_exception"
+    ],
+    "parse_args": [
+      "self",
+      "ctx",
+      "args"
+    ]
+  },
+  "_ADK_WEB_WARNING": [],
+  "_warn_if_with_ui": [
+    "with_ui"
+  ],
+  "main": [],
+  "deploy": [],
+  "conformance": [],
+  "cli_conformance_record": [
+    "ctx",
+    "paths"
+  ],
+  "cli_conformance_test": [
+    "ctx",
+    "paths",
+    "mode",
+    "generate_report",
+    "report_dir"
+  ],
+  "cli_create_cmd": [
+    "app_name",
+    "model",
+    "api_key",
+    "project",
+    "region",
+    "type"
+  ],
+  "validate_exclusive": [
+    "ctx",
+    "param",
+    "value"
+  ],
+  "adk_services_options": [],
+  "cli_run": [
+    "agent",
+    "save_session",
+    "session_id",
+    "replay",
+    "resume",
+    "session_service_uri",
+    "artifact_service_uri",
+    "memory_service_uri",
+    "use_local_storage"
+  ],
+  "eval_options": [],
+  "cli_eval": [
+    "agent_module_file_path",
+    "eval_set_file_path_or_id",
+    "config_file_path",
+    "print_detailed_results",
+    "eval_storage_uri",
+    "log_level"
+  ],
+  "eval_set": [],
+  "cli_create_eval_set": [
+    "agent_module_file_path",
+    "eval_set_id",
+    "eval_storage_uri",
+    "log_level"
+  ],
+  "cli_add_eval_case": [
+    "agent_module_file_path",
+    "eval_set_id",
+    "scenarios_file",
+    "eval_storage_uri",
+    "session_input_file",
+    "log_level"
+  ],
+  "web_options": [],
+  "_deprecate_staging_bucket": [
+    "ctx",
+    "param",
+    "value"
+  ],
+  "deprecated_adk_services_options": [],
+  "fast_api_common_options": [],
+  "cli_web": [
+    "agents_dir",
+    "eval_storage_uri",
+    "log_level",
+    "allow_origins",
+    "host",
+    "port",
+    "url_prefix",
+    "trace_to_cloud",
+    "otel_to_cloud",
+    "reload",
+    "session_service_uri",
+    "artifact_service_uri",
+    "memory_service_uri",
+    "use_local_storage",
+    "session_db_url",
+    "artifact_storage_uri",
+    "a2a",
+    "reload_agents",
+    "extra_plugins",
+    "logo_text",
+    "logo_image_url"
+  ],
+  "cli_api_server": [
+    "agents_dir",
+    "eval_storage_uri",
+    "log_level",
+    "allow_origins",
+    "host",
+    "port",
+    "url_prefix",
+    "trace_to_cloud",
+    "otel_to_cloud",
+    "reload",
+    "session_service_uri",
+    "artifact_service_uri",
+    "memory_service_uri",
+    "use_local_storage",
+    "session_db_url",
+    "artifact_storage_uri",
+    "a2a",
+    "reload_agents",
+    "extra_plugins",
+    "auto_create_session"
+  ],
+  "cli_deploy_cloud_run": [
+    "ctx",
+    "agent",
+    "project",
+    "region",
+    "service_name",
+    "app_name",
+    "temp_folder",
+    "port",
+    "trace_to_cloud",
+    "otel_to_cloud",
+    "with_ui",
+    "adk_version",
+    "log_level",
+    "verbosity",
+    "allow_origins",
+    "session_service_uri",
+    "artifact_service_uri",
+    "memory_service_uri",
+    "use_local_storage",
+    "session_db_url",
+    "artifact_storage_uri",
+    "a2a"
+  ],
+  "migrate": [],
+  "cli_migrate_session": [],
+  "cli_deploy_agent_engine": [
+    "agent",
+    "project",
+    "region",
+    "staging_bucket",
+    "agent_engine_id",
+    "trace_to_cloud",
+    "otel_to_cloud",
+    "api_key",
+    "display_name",
+    "description",
+    "adk_app",
+    "adk_app_object",
+    "temp_folder",
+    "env_file",
+    "requirements_file",
+    "absolutize_imports",
+    "agent_engine_config_file",
+    "validate_agent_import",
+    "skip_agent_import_validation_alias"
+  ],
+  "cli_deploy_gke": [
+    "agent",
+    "project",
+    "region",
+    "cluster_name",
+    "service_name",
+    "app_name",
+    "temp_folder",
+    "port",
+    "trace_to_cloud",
+    "otel_to_cloud",
+    "with_ui",
+    "adk_version",
+    "log_level",
+    "session_service_uri",
+    "artifact_service_uri",
+    "memory_service_uri",
+    "use_local_storage"
+  ],
+  "ServiceFactory": {
+    "__call__": [
+      "self",
+      "uri"
+    ]
+  },
+  "ServiceRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "register_session_service": [
+      "self",
+      "scheme",
+      "factory"
+    ],
+    "register_artifact_service": [
+      "self",
+      "scheme",
+      "factory"
+    ],
+    "register_memory_service": [
+      "self",
+      "scheme",
+      "factory"
+    ],
+    "create_session_service": [
+      "self",
+      "uri"
+    ],
+    "create_artifact_service": [
+      "self",
+      "uri"
+    ],
+    "create_memory_service": [
+      "self",
+      "uri"
+    ]
+  },
+  "get_service_registry": [],
+  "load_services_module": [
+    "agents_dir"
+  ],
+  "_register_builtin_services": [
+    "registry"
+  ],
+  "_load_gcp_config": [
+    "agents_dir",
+    "service_name"
+  ],
+  "_parse_agent_engine_kwargs": [
+    "uri_part",
+    "agents_dir"
+  ],
+  "_get_class_from_string": [
+    "class_path"
+  ],
+  "_create_generic_factory": [
+    "class_path"
+  ],
+  "_register_services_from_yaml_config": [
+    "config",
+    "registry"
+  ],
+  "BaseAgentLoader": {
+    "load_agent": [
+      "self",
+      "agent_name"
+    ],
+    "list_agents": [
+      "self"
+    ],
+    "list_agents_detailed": [
+      "self"
+    ]
+  },
+  "BaseModel": {
+    "model_config": []
+  },
+  "LOGGING_FORMAT": [],
+  "setup_adk_logger": [
+    "level"
+  ],
+  "_create_symlink": [
+    "symlink_path",
+    "target_path"
+  ],
+  "_try_create_latest_log_symlink": [
+    "log_dir",
+    "log_file_prefix",
+    "log_filepath"
+  ],
+  "log_to_tmp_folder": [
+    "level"
+  ],
+  "_ADK_DISABLE_LOAD_DOTENV_ENV_VAR": [],
+  "_get_explicit_env_keys": [],
+  "_walk_to_root_until_found": [
+    "folder",
+    "filename"
+  ],
+  "load_dotenv_for_agent": [
+    "agent_name",
+    "agent_parent_folder",
+    "filename"
+  ],
+  "_BUILT_IN_SESSION_SERVICE_KEY": [],
+  "create_local_database_session_service": [],
+  "create_local_session_service": [],
+  "create_local_artifact_service": [],
+  "PerAgentDatabaseSessionService": {
+    "__init__": [
+      "self"
+    ],
+    "_get_service": [
+      "self",
+      "app_name"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ]
+  },
+  "T": [],
+  "SharedValue": {
+    "model_config": []
+  },
+  "close_runners": [
+    "runners"
+  ],
+  "GcsEvalManagers": {
+    "model_config": []
+  },
+  "convert_session_to_eval_invocations": [
+    "session"
+  ],
+  "create_gcs_eval_managers_from_uri": [
+    "eval_storage_uri"
+  ],
+  "_DISABLE_LOCAL_STORAGE_ENV": [],
+  "_FORCE_LOCAL_STORAGE_ENV": [],
+  "_LOCAL_STORAGE_ERRNOS": [],
+  "_CLOUD_RUN_SERVICE_ENV": [],
+  "_KUBERNETES_HOST_ENV": [],
+  "_redact_uri_for_log": [
+    "uri"
+  ],
+  "_is_cloud_run": [],
+  "_is_kubernetes": [],
+  "_is_dir_writable": [
+    "path"
+  ],
+  "_resolve_use_local_storage": [],
+  "_create_in_memory_session_service": [
+    "warning_message"
+  ],
+  "_create_in_memory_artifact_service": [
+    "warning_message"
+  ],
+  "create_session_service_from_options": [],
+  "create_memory_service_from_options": [],
+  "create_artifact_service_from_options": [],
+  "_create_empty_state": [
+    "agent",
+    "all_state"
+  ],
+  "create_empty_state": [
+    "agent",
+    "initialized_states"
+  ],
+  "SPECIAL_AGENTS_DIR": [],
+  "AgentLoader": {
+    "__init__": [
+      "self",
+      "agents_dir"
+    ],
+    "_load_from_module_or_package": [
+      "self",
+      "agent_name"
+    ],
+    "_load_from_submodule": [
+      "self",
+      "agent_name"
+    ],
+    "_load_from_yaml_config": [
+      "self",
+      "agent_name",
+      "agents_dir"
+    ],
+    "_perform_load": [
+      "self",
+      "agent_name"
+    ],
+    "_record_origin_metadata": [
+      "self"
+    ],
+    "load_agent": [
+      "self",
+      "agent_name"
+    ],
+    "list_agents": [
+      "self"
+    ],
+    "list_agents_detailed": [
+      "self"
+    ],
+    "_determine_agent_language": [
+      "self",
+      "agent_name"
+    ],
+    "remove_agent_from_cache": [
+      "self",
+      "agent_name"
+    ]
+  },
+  "AgentChangeEventHandler": {
+    "__init__": [
+      "self",
+      "agent_loader",
+      "runners_to_clean",
+      "current_app_name_ref"
+    ],
+    "on_modified": [
+      "self",
+      "event"
+    ]
+  },
+  "_resolve_agent_dir": [],
+  "DotAdkFolder": {
+    "__init__": [
+      "self",
+      "agent_dir"
+    ],
+    "agent_dir": [
+      "self"
+    ],
+    "dot_adk_dir": [
+      "self"
+    ],
+    "artifacts_dir": [
+      "self"
+    ],
+    "session_db_path": [
+      "self"
+    ]
+  },
+  "dot_adk_folder_for_agent": [],
+  "_TestResult": {},
+  "_ConformanceTestSummary": {
+    "success_rate": [
+      "self"
+    ]
+  },
+  "ConformanceTestRunner": {
+    "__init__": [
+      "self",
+      "test_paths",
+      "client",
+      "mode",
+      "user_id"
+    ],
+    "_discover_test_cases": [
+      "self"
+    ],
+    "_run_user_messages": [
+      "self",
+      "session_id",
+      "test_case"
+    ],
+    "_validate_test_results": [
+      "self",
+      "session_id",
+      "test_case"
+    ],
+    "_run_test_case_replay": [
+      "self",
+      "test_case"
+    ],
+    "run_all_tests": [
+      "self"
+    ]
+  },
+  "run_conformance_test": [
+    "test_paths",
+    "mode",
+    "generate_report",
+    "report_dir"
+  ],
+  "_print_test_header": [
+    "mode"
+  ],
+  "_print_test_case_result": [
+    "result"
+  ],
+  "_print_test_result_details": [
+    "result"
+  ],
+  "_print_test_summary": [
+    "summary"
+  ],
+  "UserMessage": {},
+  "TestSpec": {
+    "model_config": []
+  },
+  "TestCase": {},
+  "_create_conformance_test_files": [
+    "test_case",
+    "user_id"
+  ],
+  "run_conformance_record": [
+    "paths"
+  ],
+  "AdkWebServerClient": {
+    "__init__": [
+      "self",
+      "base_url",
+      "timeout"
+    ],
+    "_get_client": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "update_session": [
+      "self"
+    ],
+    "run_agent": [
+      "self",
+      "request",
+      "mode",
+      "test_case_dir",
+      "user_message_index"
+    ],
+    "get_artifact_version_metadata": [
+      "self"
+    ],
+    "list_artifact_versions_metadata": [
+      "self"
+    ]
+  },
+  "generate_markdown_report": [
+    "summary",
+    "report_dir"
+  ],
+  "load_test_case": [
+    "test_case_dir"
+  ],
+  "load_recorded_session": [
+    "test_case_dir"
+  ],
+  "ComparisonResult": {},
+  "_generate_mismatch_message": [
+    "context",
+    "actual_value",
+    "recorded_value"
+  ],
+  "_generate_diff_message": [
+    "context",
+    "actual_dict",
+    "recorded_dict"
+  ],
+  "_compare_event": [
+    "actual_event",
+    "recorded_event",
+    "index"
+  ],
+  "compare_events": [
+    "actual_events",
+    "recorded_events"
+  ],
+  "compare_session": [
+    "actual_session",
+    "recorded_session"
+  ],
+  "AgentBuilderAssistant": {
+    "create_agent": [
+      "model",
+      "working_directory"
+    ],
+    "_load_schema": [],
+    "_build_schema_reference": [
+      "schema"
+    ],
+    "_extract_core_schema": [
+      "schema"
+    ],
+    "_load_instruction_with_schema": [
+      "model"
+    ],
+    "_extract_project_folder_name": [
+      "context"
+    ],
+    "_load_embedded_schema_instruction_template": []
+  },
+  "root_agent": [],
+  "find_adk_source_folder": [
+    "start_path"
+  ],
+  "_verify_adk_source_folder": [
+    "path"
+  ],
+  "get_adk_schema_path": [
+    "start_path"
+  ],
+  "load_agent_config_schema": [
+    "raw_format",
+    "escape_braces"
+  ],
+  "clear_schema_cache": [],
+  "resolve_file_path": [
+    "file_path",
+    "session_state",
+    "working_directory"
+  ],
+  "resolve_file_paths": [
+    "file_paths",
+    "session_state",
+    "working_directory"
+  ],
+  "_SEGMENT_SPLIT_PATTERN": [],
+  "_BOUNDARY_CHARS": [],
+  "sanitize_generated_file_path": [
+    "file_path"
+  ],
+  "create_google_search_agent": [],
+  "create_url_context_agent": [],
+  "query_schema": [
+    "query_type",
+    "component",
+    "field_path"
+  ],
+  "_get_schema_overview": [
+    "schema"
+  ],
+  "_get_component_details": [
+    "schema",
+    "component"
+  ],
+  "_get_field_details": [
+    "schema",
+    "field_path"
+  ],
+  "_get_all_properties": [
+    "schema"
+  ],
+  "INVALID_FILENAME_CHARACTERS": [],
+  "PARSED_CONFIG_KEY": [],
+  "WORKFLOW_AGENT_CLASSES": [],
+  "IDENTIFIER_PATTERN": [],
+  "CALLBACK_FIELD_NAMES": [],
+  "write_config_files": [
+    "configs",
+    "tool_context",
+    "backup_existing",
+    "create_directories"
+  ],
+  "_build_reference_map": [
+    "rename_map"
+  ],
+  "_update_sub_agent_references": [
+    "config_dict",
+    "reference_map"
+  ],
+  "_canonical_path_key": [
+    "path",
+    "session_state"
+  ],
+  "_validate_single_config": [
+    "file_path",
+    "config_content",
+    "project_folder_name"
+  ],
+  "_validate_against_schema": [
+    "config_dict"
+  ],
+  "_validate_structure": [
+    "config",
+    "file_path"
+  ],
+  "_generate_retry_suggestion": [
+    "errors"
+  ],
+  "_require_llm_agent_model": [
+    "config",
+    "file_path"
+  ],
+  "_require_valid_agent_name": [
+    "config",
+    "file_path"
+  ],
+  "_normalize_agent_name_field": [
+    "config",
+    "file_path"
+  ],
+  "_strip_workflow_agent_fields": [
+    "config"
+  ],
+  "_enforce_project_scoped_references": [
+    "config",
+    "project_folder_name",
+    "file_path"
+  ],
+  "_determine_target_file_path": [
+    "file_path",
+    "agent_name"
+  ],
+  "_to_snake_case": [
+    "value"
+  ],
+  "_sanitize_agent_name_for_filename": [
+    "agent_name"
+  ],
+  "write_files": [
+    "files",
+    "tool_context",
+    "create_backup",
+    "create_directories"
+  ],
+  "_ensure_package_inits": [
+    "file_path",
+    "project_root"
+  ],
+  "read_files": [
+    "file_paths",
+    "tool_context"
+  ],
+  "explore_project": [
+    "tool_context"
+  ],
+  "_analyze_project_info": [
+    "root_path"
+  ],
+  "_find_existing_configs": [
+    "root_path"
+  ],
+  "_analyze_config_file": [
+    "config_path",
+    "root_path"
+  ],
+  "_build_directory_tree": [
+    "root_path",
+    "max_depth"
+  ],
+  "_generate_path_suggestions": [
+    "root_path",
+    "existing_configs"
+  ],
+  "_get_naming_conventions": [],
+  "search_adk_source": [
+    "search_pattern",
+    "file_patterns",
+    "max_results",
+    "context_lines",
+    "case_sensitive"
+  ],
+  "delete_files": [
+    "file_paths",
+    "tool_context",
+    "create_backup",
+    "confirm_deletion"
+  ],
+  "cleanup_unused_files": [
+    "used_files",
+    "tool_context",
+    "file_patterns",
+    "exclude_patterns"
+  ],
+  "read_config_files": [
+    "file_paths",
+    "tool_context"
+  ],
+  "_extract_agent_info": [
+    "content"
+  ],
+  "_extract_sub_agents": [
+    "content"
+  ],
+  "_extract_tools": [
+    "content"
+  ],
+  "_check_file_exists": [
+    "config_path"
+  ],
+  "KNOWLEDGE_SERVICE_APP_URL": [],
+  "KNOWLEDGE_SERVICE_APP_NAME": [],
+  "KNOWLEDGE_SERVICE_APP_USER_NAME": [],
+  "HEADERS": [],
+  "search_adk_knowledge": [
+    "query"
+  ],
+  "error_response": [
+    "error_message"
+  ],
+  "post_request": [
+    "url",
+    "payload"
+  ],
+  "LlmRecording": {
+    "model_config": []
+  },
+  "ToolRecording": {
+    "model_config": []
+  },
+  "Recording": {
+    "model_config": []
+  },
+  "Recordings": {
+    "model_config": []
+  },
+  "ReplayVerificationError": {},
+  "ReplayConfigError": {},
+  "_InvocationReplayState": {},
+  "ReplayPlugin": {
+    "__init__": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "_is_replay_mode_on": [
+      "self",
+      "callback_context"
+    ],
+    "_get_invocation_state": [
+      "self",
+      "callback_context"
+    ],
+    "_load_invocation_state": [
+      "self",
+      "callback_context"
+    ],
+    "_get_next_recording_for_agent": [
+      "self",
+      "state",
+      "agent_name"
+    ],
+    "_verify_and_get_next_llm_recording_for_agent": [
+      "self",
+      "state",
+      "agent_name",
+      "llm_request"
+    ],
+    "_verify_and_get_next_tool_recording_for_agent": [
+      "self",
+      "state",
+      "agent_name",
+      "tool_name",
+      "tool_args"
+    ],
+    "_verify_llm_request_match": [
+      "self",
+      "recorded_request",
+      "current_request",
+      "agent_name",
+      "agent_index"
+    ],
+    "_verify_tool_call_match": [
+      "self",
+      "recorded_call",
+      "tool_name",
+      "tool_args",
+      "agent_name",
+      "agent_index"
+    ]
+  },
+  "_InvocationRecordingState": {},
+  "RecordingsPlugin": {
+    "__init__": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "_is_record_mode_on": [
+      "self",
+      "callback_context"
+    ],
+    "_get_invocation_state": [
+      "self",
+      "callback_context"
+    ],
+    "_create_invocation_state": [
+      "self",
+      "callback_context"
+    ]
+  },
+  "internal_thread": [],
+  "create_thread": [
+    "target"
+  ],
+  "GcsArtifactService": {
+    "__init__": [
+      "self",
+      "bucket_name"
+    ],
+    "save_artifact": [
+      "self"
+    ],
+    "load_artifact": [
+      "self"
+    ],
+    "list_artifact_keys": [
+      "self"
+    ],
+    "delete_artifact": [
+      "self"
+    ],
+    "list_versions": [
+      "self"
+    ],
+    "_file_has_user_namespace": [
+      "self",
+      "filename"
+    ],
+    "_get_blob_prefix": [
+      "self",
+      "app_name",
+      "user_id",
+      "filename",
+      "session_id"
+    ],
+    "_get_blob_name": [
+      "self",
+      "app_name",
+      "user_id",
+      "filename",
+      "version",
+      "session_id"
+    ],
+    "_save_artifact": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename",
+      "artifact",
+      "custom_metadata"
+    ],
+    "_load_artifact": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename",
+      "version"
+    ],
+    "_list_artifact_keys": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id"
+    ],
+    "_delete_artifact": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename"
+    ],
+    "_list_versions": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename"
+    ],
+    "_get_artifact_version_sync": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename",
+      "version"
+    ],
+    "_list_artifact_versions_sync": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id",
+      "filename"
+    ],
+    "list_artifact_versions": [
+      "self"
+    ],
+    "get_artifact_version": [
+      "self"
+    ]
+  },
+  "ParsedArtifactUri": {},
+  "_SESSION_SCOPED_ARTIFACT_URI_RE": [],
+  "_USER_SCOPED_ARTIFACT_URI_RE": [],
+  "parse_artifact_uri": [
+    "uri"
+  ],
+  "get_artifact_uri": [
+    "app_name",
+    "user_id",
+    "filename",
+    "version",
+    "session_id"
+  ],
+  "is_artifact_ref": [
+    "artifact"
+  ],
+  "_ArtifactEntry": {},
+  "InMemoryArtifactService": {
+    "_file_has_user_namespace": [
+      "self",
+      "filename"
+    ],
+    "_artifact_path": [
+      "self",
+      "app_name",
+      "user_id",
+      "filename",
+      "session_id"
+    ],
+    "save_artifact": [
+      "self"
+    ],
+    "load_artifact": [
+      "self"
+    ],
+    "list_artifact_keys": [
+      "self"
+    ],
+    "delete_artifact": [
+      "self"
+    ],
+    "list_versions": [
+      "self"
+    ],
+    "list_artifact_versions": [
+      "self"
+    ],
+    "get_artifact_version": [
+      "self"
+    ]
+  },
+  "_iter_artifact_dirs": [
+    "root"
+  ],
+  "_file_uri_to_path": [
+    "uri"
+  ],
+  "_USER_NAMESPACE_PREFIX": [],
+  "_file_has_user_namespace": [
+    "filename"
+  ],
+  "_strip_user_namespace": [
+    "filename"
+  ],
+  "_to_posix_path": [
+    "path_value"
+  ],
+  "_resolve_scoped_artifact_path": [
+    "scope_root",
+    "filename"
+  ],
+  "_is_user_scoped": [
+    "session_id",
+    "filename"
+  ],
+  "_user_artifacts_dir": [
+    "base_root"
+  ],
+  "_session_artifacts_dir": [
+    "base_root",
+    "session_id"
+  ],
+  "_versions_dir": [
+    "artifact_dir"
+  ],
+  "_metadata_path": [
+    "artifact_dir",
+    "version"
+  ],
+  "_list_versions_on_disk": [
+    "artifact_dir"
+  ],
+  "FileArtifactVersion": {
+    "model_config": []
+  },
+  "FileArtifactService": {
+    "__init__": [
+      "self",
+      "root_dir"
+    ],
+    "_base_root": [],
+    "_scope_root": [
+      "self",
+      "user_id",
+      "session_id",
+      "filename"
+    ],
+    "_artifact_dir": [
+      "self",
+      "user_id",
+      "session_id",
+      "filename"
+    ],
+    "_build_artifact_version": [
+      "self"
+    ],
+    "_canonical_uri": [
+      "self"
+    ],
+    "_latest_metadata": [
+      "self",
+      "artifact_dir"
+    ],
+    "save_artifact": [
+      "self"
+    ],
+    "_save_artifact_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "artifact",
+      "session_id",
+      "custom_metadata"
+    ],
+    "load_artifact": [
+      "self"
+    ],
+    "_load_artifact_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "session_id",
+      "version"
+    ],
+    "list_artifact_keys": [
+      "self"
+    ],
+    "_list_artifact_keys_sync": [
+      "self",
+      "user_id",
+      "session_id"
+    ],
+    "delete_artifact": [
+      "self"
+    ],
+    "_delete_artifact_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "session_id"
+    ],
+    "list_versions": [
+      "self"
+    ],
+    "_list_versions_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "session_id"
+    ],
+    "list_artifact_versions": [
+      "self"
+    ],
+    "_list_artifact_versions_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "session_id"
+    ],
+    "get_artifact_version": [
+      "self"
+    ],
+    "_get_artifact_version_sync": [
+      "self",
+      "user_id",
+      "filename",
+      "session_id",
+      "version"
+    ]
+  },
+  "_write_metadata": [
+    "path"
+  ],
+  "_read_metadata": [
+    "path"
+  ],
+  "ArtifactVersion": {
+    "model_config": []
+  },
+  "BaseArtifactService": {
+    "save_artifact": [
+      "self"
+    ],
+    "load_artifact": [
+      "self"
+    ],
+    "list_artifact_keys": [
+      "self"
+    ],
+    "delete_artifact": [
+      "self"
+    ],
+    "list_versions": [
+      "self"
+    ],
+    "list_artifact_versions": [
+      "self"
+    ],
+    "get_artifact_version": [
+      "self"
+    ]
+  },
+  "_make_feature_decorator": [],
+  "working_in_progress": [
+    "feature_name"
+  ],
+  "experimental": [
+    "feature_name"
+  ],
+  "stable": [
+    "feature_name"
+  ],
+  "FeatureName": {
+    "AUTHENTICATED_FUNCTION_TOOL": [],
+    "BASE_AUTHENTICATED_TOOL": [],
+    "BIG_QUERY_TOOLSET": [],
+    "BIG_QUERY_TOOL_CONFIG": [],
+    "BIGTABLE_TOOL_SETTINGS": [],
+    "BIGTABLE_TOOLSET": [],
+    "COMPUTER_USE": [],
+    "DATA_AGENT_TOOL_CONFIG": [],
+    "DATA_AGENT_TOOLSET": [],
+    "GOOGLE_CREDENTIALS_CONFIG": [],
+    "GOOGLE_TOOL": [],
+    "JSON_SCHEMA_FOR_FUNC_DECL": [],
+    "PROGRESSIVE_SSE_STREAMING": [],
+    "PUBSUB_TOOL_CONFIG": [],
+    "PUBSUB_TOOLSET": [],
+    "SKILL_TOOLSET": [],
+    "SPANNER_TOOLSET": [],
+    "SPANNER_TOOL_SETTINGS": [],
+    "SPANNER_VECTOR_STORE": [],
+    "TOOL_CONFIG": [],
+    "TOOL_CONFIRMATION": []
+  },
+  "FeatureStage": {
+    "WIP": [],
+    "EXPERIMENTAL": [],
+    "STABLE": []
+  },
+  "FeatureConfig": {},
+  "_get_feature_config": [
+    "feature_name"
+  ],
+  "_register_feature": [
+    "feature_name",
+    "config"
+  ],
+  "override_feature_enabled": [
+    "feature_name",
+    "enabled"
+  ],
+  "is_feature_enabled": [
+    "feature_name"
+  ],
+  "_emit_non_stable_warning_once": [
+    "feature_name",
+    "feature_stage"
+  ],
+  "temporary_feature_override": [
+    "feature_name",
+    "enabled"
+  ],
+  "get_express_mode_api_key": [
+    "project",
+    "location",
+    "express_mode_api_key"
+  ],
+  "is_audio_part": [
+    "part"
+  ],
+  "filter_audio_parts": [
+    "content"
+  ],
+  "StreamingResponseAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "_flush_text_buffer_to_sequence": [
+      "self"
+    ],
+    "_get_value_from_partial_arg": [
+      "self",
+      "partial_arg",
+      "json_path"
+    ],
+    "_set_value_by_json_path": [
+      "self",
+      "json_path",
+      "value"
+    ],
+    "_flush_function_call_to_sequence": [
+      "self"
+    ],
+    "_process_streaming_function_call": [
+      "self",
+      "fc"
+    ],
+    "_process_function_call_part": [
+      "self",
+      "part"
+    ],
+    "process_response": [
+      "self",
+      "response"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "load_yaml_file": [
+    "file_path"
+  ],
+  "dump_pydantic_to_yaml": [
+    "model",
+    "file_path"
+  ],
+  "get_tracking_headers": [],
+  "merge_tracking_headers": [
+    "headers"
+  ],
+  "CachePerformanceAnalyzer": {
+    "__init__": [
+      "self",
+      "session_service"
+    ],
+    "_get_agent_cache_history": [
+      "self",
+      "session_id",
+      "user_id",
+      "app_name",
+      "agent_name"
+    ],
+    "analyze_agent_cache_performance": [
+      "self",
+      "session_id",
+      "user_id",
+      "app_name",
+      "agent_name"
+    ]
+  },
+  "_ADK_LABEL": [],
+  "_LANGUAGE_LABEL": [],
+  "_AGENT_ENGINE_TELEMETRY_TAG": [],
+  "_AGENT_ENGINE_TELEMETRY_ENV_VARIABLE_NAME": [],
+  "EVAL_CLIENT_LABEL": [],
+  "_get_default_labels": [],
+  "client_label_context": [
+    "client_label"
+  ],
+  "get_client_labels": [],
+  "extract_model_name": [
+    "model_string"
+  ],
+  "is_gemini_model": [
+    "model_string"
+  ],
+  "is_gemini_1_model": [
+    "model_string"
+  ],
+  "is_gemini_2_or_above": [
+    "model_string"
+  ],
+  "inject_session_state": [
+    "template",
+    "readonly_context"
+  ],
+  "_is_escaped_placeholder": [
+    "value"
+  ],
+  "_is_valid_state_name": [
+    "var_name"
+  ],
+  "_GOOGLE_LLM_VARIANT_VERTEX_AI": [],
+  "_GOOGLE_LLM_VARIANT_GEMINI_API": [],
+  "GoogleLLMVariant": {
+    "VERTEX_AI": [],
+    "GEMINI_API": []
+  },
+  "get_google_llm_variant": [],
+  "can_use_output_schema_with_tools": [
+    "model"
+  ],
+  "_ARGS_MAX_LEN": [],
+  "_RESPONSE_MAX_LEN": [],
+  "_CODE_OUTPUT_MAX_LEN": [],
+  "_truncate": [
+    "text",
+    "max_len"
+  ],
+  "print_event": [
+    "event"
+  ],
+  "_is_truthy_env": [
+    "var_name"
+  ],
+  "_create_decorator": [
+    "message",
+    "label",
+    "block_usage",
+    "bypass_env_var"
+  ],
+  "Aclosing": [],
+  "is_env_enabled": [
+    "env_var_name",
+    "default"
+  ],
+  "CustomMetricConfig": {
+    "model_config": [],
+    "check_code_config_args": [
+      "self"
+    ]
+  },
+  "EvalConfig": {
+    "model_config": []
+  },
+  "_DEFAULT_EVAL_CONFIG": [],
+  "get_evaluation_criteria_or_default": [
+    "eval_config_file_path"
+  ],
+  "get_eval_metrics_from_config": [
+    "eval_config"
+  ],
+  "AutoRaterScore": {},
+  "LlmAsJudge": {
+    "__init__": [
+      "self",
+      "eval_metric",
+      "criterion_type",
+      "expected_invocations_required"
+    ],
+    "format_auto_rater_prompt": [
+      "self",
+      "actual",
+      "expected"
+    ],
+    "convert_auto_rater_response_to_score": [
+      "self",
+      "auto_rater_response"
+    ],
+    "aggregate_per_invocation_samples": [
+      "self",
+      "per_invocation_samples"
+    ],
+    "aggregate_invocation_results": [
+      "self",
+      "per_invocation_results"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ],
+    "_setup_auto_rater": [
+      "self"
+    ]
+  },
+  "RubricResponse": {},
+  "AutoRaterResponseParser": {
+    "parse": [
+      "self",
+      "auto_rater_response"
+    ]
+  },
+  "_PROPERTY_PATTERN": [],
+  "_RATIONALE_PATTERN": [],
+  "_VERDICT_PATTERN": [],
+  "DefaultAutoRaterResponseParser": {
+    "parse": [
+      "self",
+      "auto_rater_response"
+    ]
+  },
+  "PerInvocationResultsAggregator": {
+    "aggregate": [
+      "self",
+      "per_invocation_samples",
+      "threshold"
+    ]
+  },
+  "MajorityVotePerInvocationResultsAggregator": {
+    "aggregate": [
+      "self",
+      "per_invocation_samples",
+      "threshold"
+    ]
+  },
+  "InvocationResultsSummarizer": {
+    "summarize": [
+      "self",
+      "per_invocation_results",
+      "threshold"
+    ]
+  },
+  "MeanInvocationResultsSummarizer": {
+    "summarize": [
+      "self",
+      "per_invocation_results",
+      "threshold"
+    ]
+  },
+  "_normalize_text": [
+    "text"
+  ],
+  "RubricBasedEvaluator": {
+    "__init__": [
+      "self",
+      "eval_metric",
+      "criterion_type",
+      "auto_rater_response_parser",
+      "per_invocation_results_aggregator",
+      "invocation_results_summarizer",
+      "rubric_type"
+    ],
+    "create_effective_rubrics_list": [
+      "self",
+      "invocation_rubrics"
+    ],
+    "get_effective_rubrics_list": [
+      "self"
+    ],
+    "convert_auto_rater_response_to_score": [
+      "self",
+      "auto_rater_response"
+    ],
+    "aggregate_per_invocation_samples": [
+      "self",
+      "per_invocation_samples"
+    ],
+    "aggregate_invocation_results": [
+      "self",
+      "per_invocation_results"
+    ]
+  },
+  "_RUBRIC_BASED_FINAL_RESPONSE_QUALITY_V1_PROMPT": [],
+  "RubricBasedFinalResponseQualityV1Evaluator": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "format_auto_rater_prompt": [
+      "self",
+      "actual_invocation",
+      "_"
+    ]
+  },
+  "EvalBaseModel": {
+    "model_config": []
+  },
+  "_EVAL_SETS_DIR": [],
+  "GcsEvalSetsManager": {
+    "__init__": [
+      "self",
+      "bucket_name"
+    ],
+    "_get_eval_sets_dir": [
+      "self",
+      "app_name"
+    ],
+    "_get_eval_set_blob_name": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "_validate_id": [
+      "self",
+      "id_name",
+      "id_value"
+    ],
+    "_load_eval_set_from_blob": [
+      "self",
+      "blob_name"
+    ],
+    "_write_eval_set_to_blob": [
+      "self",
+      "blob_name",
+      "eval_set"
+    ],
+    "_save_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_set"
+    ],
+    "get_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "create_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "list_eval_sets": [
+      "self",
+      "app_name"
+    ],
+    "get_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ],
+    "add_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case"
+    ],
+    "update_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "updated_eval_case"
+    ],
+    "delete_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ]
+  },
+  "_HALLUCINATIONS_V1_SEGMENTER_PROMPT": [],
+  "_HALLUCINATIONS_V1_VALIDATOR_PROMPT": [],
+  "_POSITIVE_LABELS": [],
+  "_NEGATIVE_LABELS": [],
+  "EvaluationStep": {},
+  "_parse_sentences": [
+    "response_text"
+  ],
+  "_parse_validation_results": [
+    "response_text"
+  ],
+  "HallucinationsV1Evaluator": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "_setup_auto_rater": [
+      "self"
+    ],
+    "_create_context_for_step": [
+      "self",
+      "app_details",
+      "invocation",
+      "events"
+    ],
+    "_evaluate_nl_response": [
+      "self",
+      "nl_response",
+      "context"
+    ],
+    "_get_steps_to_evaluate": [
+      "self",
+      "actual"
+    ],
+    "_aggregate_invocation_results": [
+      "self",
+      "per_invocation_results"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "_FINAL_RESPONSE_MATCH_V2_PROMPT": [],
+  "_parse_critique": [
+    "response"
+  ],
+  "FinalResponseMatchV2Evaluator": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "format_auto_rater_prompt": [
+      "self",
+      "actual_invocation",
+      "expected_invocation"
+    ],
+    "convert_auto_rater_response_to_score": [
+      "self",
+      "llm_response"
+    ],
+    "aggregate_per_invocation_samples": [
+      "self",
+      "per_invocation_samples"
+    ],
+    "aggregate_invocation_results": [
+      "self",
+      "per_invocation_results"
+    ]
+  },
+  "PerInvocationResult": {},
+  "EvaluationResult": {},
+  "Evaluator": {
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "EvalCaseResult": {
+    "model_config": []
+  },
+  "EvalSetResult": {
+    "model_config": []
+  },
+  "TrajectoryEvaluator": {
+    "__init__": [
+      "self",
+      "threshold",
+      "eval_metric"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ],
+    "_calculate_tool_use_accuracy": [
+      "self",
+      "actual_invocation",
+      "expected_invocation"
+    ],
+    "_are_tool_calls_in_order_match": [
+      "self",
+      "actual_tool_calls",
+      "expected_tool_calls"
+    ],
+    "_are_tool_calls_any_order_match": [
+      "self",
+      "actual_tool_calls",
+      "expected_tool_calls"
+    ],
+    "_are_tool_calls_exact_match": [
+      "self",
+      "actual_tool_calls",
+      "expected_tool_calls"
+    ],
+    "_get_eval_status": [
+      "self",
+      "score"
+    ]
+  },
+  "MetricEvaluatorRegistry": {
+    "get_evaluator": [
+      "self",
+      "eval_metric"
+    ],
+    "register_evaluator": [
+      "self",
+      "metric_info",
+      "evaluator"
+    ],
+    "get_registered_metrics": [
+      "self"
+    ]
+  },
+  "_get_default_metric_evaluator_registry": [],
+  "DEFAULT_METRIC_EVALUATOR_REGISTRY": [],
+  "_LLM_REQUEST_ID_KEY": [],
+  "_RequestIntercepterPlugin": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "get_model_request": [
+      "self",
+      "llm_response"
+    ]
+  },
+  "EvalSetResultsManager": {
+    "save_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_results"
+    ],
+    "get_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_result_id"
+    ],
+    "list_eval_set_results": [
+      "self",
+      "app_name"
+    ]
+  },
+  "_ADK_EVAL_HISTORY_DIR": [],
+  "_EVAL_SET_RESULT_FILE_EXTENSION": [],
+  "LocalEvalSetResultsManager": {
+    "__init__": [
+      "self",
+      "agents_dir"
+    ],
+    "save_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_results"
+    ],
+    "get_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_result_id"
+    ],
+    "list_eval_set_results": [
+      "self",
+      "app_name"
+    ],
+    "_get_eval_history_dir": [
+      "self",
+      "app_name"
+    ]
+  },
+  "_ERROR_MESSAGE_SUFFIX": [],
+  "_VertexAiEvalFacade": {
+    "__init__": [
+      "self",
+      "threshold",
+      "metric_name",
+      "expected_invocations_required"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ],
+    "_get_text": [
+      "self",
+      "content"
+    ],
+    "_get_score": [
+      "self",
+      "eval_result"
+    ],
+    "_get_eval_status": [
+      "self",
+      "score"
+    ],
+    "_perform_eval": [
+      "dataset",
+      "metrics"
+    ]
+  },
+  "SafetyEvaluatorV1": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "_USER_AUTHOR": [],
+  "_DEFAULT_AUTHOR": [],
+  "EvalCaseResponses": {},
+  "EvaluationGenerator": {
+    "generate_responses": [
+      "eval_set",
+      "agent_module_path",
+      "repeat_num",
+      "agent_name"
+    ],
+    "generate_responses_from_session": [
+      "session_path",
+      "eval_dataset"
+    ],
+    "_process_query": [
+      "module_name",
+      "user_simulator",
+      "agent_name",
+      "initial_session"
+    ],
+    "_generate_inferences_for_single_user_invocation": [
+      "runner",
+      "user_id",
+      "session_id",
+      "user_content"
+    ],
+    "_generate_inferences_from_root_agent": [
+      "root_agent",
+      "user_simulator",
+      "reset_func",
+      "initial_session",
+      "session_id",
+      "session_service",
+      "artifact_service",
+      "memory_service"
+    ],
+    "convert_events_to_eval_invocations": [
+      "events",
+      "app_details_per_invocation"
+    ],
+    "_get_app_details_by_invocation_id": [
+      "events",
+      "request_intercepter"
+    ],
+    "_collect_events_by_invocation_id": [
+      "events"
+    ],
+    "_process_query_with_session": [
+      "session_data",
+      "data"
+    ]
+  },
+  "InMemoryEvalSetsManager": {
+    "__init__": [
+      "self"
+    ],
+    "_ensure_app_exists": [
+      "self",
+      "app_name"
+    ],
+    "get_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "create_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "list_eval_sets": [
+      "self",
+      "app_name"
+    ],
+    "get_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ],
+    "add_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case"
+    ],
+    "update_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "updated_eval_case"
+    ],
+    "delete_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ]
+  },
+  "_EVAL_HISTORY_DIR": [],
+  "GcsEvalSetResultsManager": {
+    "__init__": [
+      "self",
+      "bucket_name"
+    ],
+    "_get_eval_history_dir": [
+      "self",
+      "app_name"
+    ],
+    "_get_eval_set_result_blob_name": [
+      "self",
+      "app_name",
+      "eval_set_result_id"
+    ],
+    "_write_eval_set_result": [
+      "self",
+      "blob_name",
+      "eval_set_result"
+    ],
+    "save_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_results"
+    ],
+    "get_eval_set_result": [
+      "self",
+      "app_name",
+      "eval_set_result_id"
+    ],
+    "list_eval_set_results": [
+      "self",
+      "app_name"
+    ]
+  },
+  "_get_metric_function": [
+    "custom_function_path"
+  ],
+  "_CustomMetricEvaluator": {
+    "__init__": [
+      "self",
+      "eval_metric",
+      "custom_function_path"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "IntermediateData": {},
+  "InvocationEvent": {},
+  "InvocationEvents": {},
+  "Invocation": {},
+  "SessionInput": {},
+  "EvalCase": {
+    "ensure_conversation_xor_conversation_scenario": [
+      "self"
+    ]
+  },
+  "get_all_tool_calls": [
+    "intermediate_data"
+  ],
+  "get_all_tool_responses": [
+    "intermediate_data"
+  ],
+  "get_all_tool_calls_with_responses": [
+    "intermediate_data"
+  ],
+  "_get_session_id": [],
+  "_add_rubrics_to_invocation": [
+    "invocation",
+    "rubrics_to_add"
+  ],
+  "_copy_eval_case_rubrics_to_actual_invocations": [
+    "eval_case",
+    "actual_invocations"
+  ],
+  "_copy_invocation_rubrics_to_actual_invocations": [
+    "expected_invocations",
+    "actual_invocations"
+  ],
+  "LocalEvalService": {
+    "__init__": [
+      "self",
+      "root_agent",
+      "eval_sets_manager",
+      "metric_evaluator_registry",
+      "session_service",
+      "artifact_service",
+      "eval_set_results_manager",
+      "session_id_supplier",
+      "user_simulator_provider",
+      "memory_service"
+    ],
+    "perform_inference": [
+      "self",
+      "inference_request"
+    ],
+    "evaluate": [
+      "self",
+      "evaluate_request"
+    ],
+    "_evaluate_single_inference_result": [
+      "self",
+      "inference_result",
+      "evaluate_config"
+    ],
+    "_evaluate_metric_for_eval_case": [
+      "self",
+      "eval_metric",
+      "eval_case",
+      "inference_result",
+      "eval_metric_result_per_invocation",
+      "overall_eval_metric_results"
+    ],
+    "_evaluate_metric": [
+      "self",
+      "eval_metric",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ],
+    "_generate_final_eval_status": [
+      "self",
+      "overall_eval_metric_results"
+    ],
+    "_perform_inference_single_eval_item": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case",
+      "root_agent"
+    ]
+  },
+  "EvalConstants": {
+    "QUERY": [],
+    "EXPECTED_TOOL_USE": [],
+    "RESPONSE": [],
+    "REFERENCE": [],
+    "TOOL_NAME": [],
+    "TOOL_INPUT": [],
+    "MOCK_TOOL_OUTPUT": []
+  },
+  "RougeEvaluator": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "_get_text_from_content": [
+    "content"
+  ],
+  "_get_eval_status": [
+    "score",
+    "threshold"
+  ],
+  "_calculate_rouge_1_scores": [
+    "candidate",
+    "reference"
+  ],
+  "_convert_invocation_to_pydantic_schema": [
+    "invocation_in_json_format"
+  ],
+  "convert_eval_set_to_pydantic_schema": [
+    "eval_set_id",
+    "eval_set_in_json_format"
+  ],
+  "load_eval_set_from_file": [
+    "eval_set_file_path",
+    "eval_set_id"
+  ],
+  "LocalEvalSetsManager": {
+    "__init__": [
+      "self",
+      "agents_dir"
+    ],
+    "get_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "create_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "list_eval_sets": [
+      "self",
+      "app_name"
+    ],
+    "get_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ],
+    "add_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case"
+    ],
+    "update_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "updated_eval_case"
+    ],
+    "delete_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ],
+    "_get_eval_set_file_path": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "_validate_id": [
+      "self",
+      "id_name",
+      "id_value"
+    ],
+    "_write_eval_set_to_path": [
+      "self",
+      "eval_set_path",
+      "eval_set"
+    ],
+    "_save_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_set"
+    ]
+  },
+  "TrajectoryEvaluatorMetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "ResponseEvaluatorMetricInfoProvider": {
+    "__init__": [
+      "self",
+      "metric_name"
+    ],
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "SafetyEvaluatorV1MetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "FinalResponseMatchV2EvaluatorMetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "RubricBasedFinalResponseQualityV1EvaluatorMetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "HallucinationsV1EvaluatorMetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "RubricBasedToolUseV1EvaluatorMetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "PerTurnUserSimulatorQualityV1MetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "EvaluateConfig": {
+    "model_config": []
+  },
+  "InferenceConfig": {
+    "model_config": []
+  },
+  "InferenceRequest": {
+    "model_config": []
+  },
+  "InferenceStatus": {
+    "UNKNOWN": [],
+    "SUCCESS": [],
+    "FAILURE": []
+  },
+  "InferenceResult": {
+    "model_config": []
+  },
+  "EvaluateRequest": {
+    "model_config": []
+  },
+  "BaseEvalService": {
+    "perform_inference": [
+      "self",
+      "inference_request"
+    ],
+    "evaluate": [
+      "self",
+      "evaluate_request"
+    ]
+  },
+  "RubricContent": {},
+  "Rubric": {},
+  "RubricScore": {},
+  "_sanitize_eval_set_result_name": [
+    "eval_set_result_name"
+  ],
+  "create_eval_set_result": [
+    "app_name",
+    "eval_set_id",
+    "eval_case_results"
+  ],
+  "parse_eval_set_result_json": [
+    "eval_set_result_json"
+  ],
+  "EvalStatus": {
+    "PASSED": [],
+    "FAILED": [],
+    "NOT_EVALUATED": []
+  },
+  "PrebuiltMetrics": {
+    "TOOL_TRAJECTORY_AVG_SCORE": [],
+    "RESPONSE_EVALUATION_SCORE": [],
+    "RESPONSE_MATCH_SCORE": [],
+    "SAFETY_V1": [],
+    "FINAL_RESPONSE_MATCH_V2": [],
+    "RUBRIC_BASED_FINAL_RESPONSE_QUALITY_V1": [],
+    "HALLUCINATIONS_V1": [],
+    "RUBRIC_BASED_TOOL_USE_QUALITY_V1": [],
+    "PER_TURN_USER_SIMULATOR_QUALITY_V1": []
+  },
+  "JudgeModelOptions": {},
+  "BaseCriterion": {
+    "model_config": []
+  },
+  "LlmAsAJudgeCriterion": {},
+  "RubricsBasedCriterion": {},
+  "HallucinationsCriterion": {},
+  "ToolTrajectoryCriterion": {
+    "_coerce_match_type": [
+      "cls",
+      "value"
+    ]
+  },
+  "LlmBackedUserSimulatorCriterion": {},
+  "EvalMetric": {},
+  "EvalMetricResultDetails": {},
+  "EvalMetricResult": {},
+  "EvalMetricResultPerInvocation": {},
+  "Interval": {},
+  "MetricValueInfo": {},
+  "MetricInfo": {},
+  "MetricInfoProvider": {
+    "get_metric_info": [
+      "self"
+    ]
+  },
+  "_RUBRIC_BASED_TOOL_USE_QUALITY_V1_PROMPT": [],
+  "RubricBasedToolUseV1Evaluator": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "format_auto_rater_prompt": [
+      "self",
+      "actual_invocation",
+      "_"
+    ]
+  },
+  "NUM_RUNS": [],
+  "ALLOWED_CRITERIA": [],
+  "QUERY_COLUMN": [],
+  "REFERENCE_COLUMN": [],
+  "EXPECTED_TOOL_USE_COLUMN": [],
+  "load_json": [
+    "file_path"
+  ],
+  "_EvalMetricResultWithInvocation": {},
+  "AgentEvaluator": {
+    "find_config_for_test_file": [
+      "test_file"
+    ],
+    "evaluate_eval_set": [
+      "agent_module",
+      "eval_set",
+      "criteria",
+      "eval_config",
+      "num_runs",
+      "agent_name",
+      "print_detailed_results"
+    ],
+    "evaluate": [
+      "agent_module",
+      "eval_dataset_file_path_or_dir",
+      "num_runs",
+      "agent_name",
+      "initial_session_file",
+      "print_detailed_results"
+    ],
+    "migrate_eval_data_to_new_schema": [
+      "old_eval_data_file",
+      "new_eval_data_file",
+      "initial_session_file"
+    ],
+    "_load_eval_set_from_file": [
+      "eval_set_file",
+      "eval_config",
+      "initial_session"
+    ],
+    "_get_eval_set_from_old_format": [
+      "eval_set_file",
+      "eval_config",
+      "initial_session"
+    ],
+    "_get_initial_session": [
+      "initial_session_file"
+    ],
+    "_load_dataset": [
+      "input_data"
+    ],
+    "_validate_input": [
+      "eval_dataset",
+      "criteria"
+    ],
+    "_print_details": [
+      "eval_metric_result_with_invocations",
+      "overall_eval_status",
+      "overall_score",
+      "metric_name",
+      "threshold"
+    ],
+    "_convert_content_to_text": [
+      "content"
+    ],
+    "_convert_tool_calls_to_text": [
+      "intermediate_data"
+    ],
+    "_get_agent_for_eval": [
+      "module_name",
+      "agent_name"
+    ],
+    "_get_eval_sets_manager": [
+      "app_name",
+      "eval_set"
+    ],
+    "_get_eval_results_by_eval_id": [
+      "agent_for_eval",
+      "eval_set",
+      "eval_metrics",
+      "num_runs",
+      "user_simulator_provider"
+    ],
+    "_get_eval_metric_results_with_invocation": [
+      "eval_results_per_eval_id"
+    ],
+    "_process_metrics_and_get_failures": [
+      "eval_metric_results",
+      "print_detailed_results",
+      "agent_module"
+    ]
+  },
+  "MISSING_EVAL_DEPENDENCIES_MESSAGE": [],
+  "get_eval_set_from_app_and_id": [
+    "eval_sets_manager",
+    "app_name",
+    "eval_set_id"
+  ],
+  "get_eval_case_from_eval_set": [
+    "eval_set",
+    "eval_case_id"
+  ],
+  "add_eval_case_to_eval_set": [
+    "eval_set",
+    "eval_case"
+  ],
+  "update_eval_case_in_eval_set": [
+    "eval_set",
+    "updated_eval_case"
+  ],
+  "delete_eval_case_from_eval_set": [
+    "eval_set",
+    "eval_case_id"
+  ],
+  "EvalSet": {},
+  "Label": {
+    "TRUE": [],
+    "INVALID": [],
+    "VALID": [],
+    "PARTIALLY_VALID": [],
+    "ALMOST": [],
+    "FALSE": [],
+    "NOT_FOUND": []
+  },
+  "get_text_from_content": [
+    "content"
+  ],
+  "get_eval_status": [
+    "score",
+    "threshold"
+  ],
+  "get_average_rubric_score": [
+    "rubric_scores"
+  ],
+  "_ToolDeclarations": {},
+  "get_tool_declarations_as_json_str": [
+    "app_details"
+  ],
+  "_ToolCallAndResponse": {},
+  "_ToolCallsAndResponses": {},
+  "get_tool_calls_and_responses_as_json_str": [
+    "intermediate_data"
+  ],
+  "_RETRY_HTTP_STATUS_CODES": [],
+  "_DEFAULT_HTTP_RETRY_OPTIONS": [],
+  "add_default_retry_options_if_not_present": [
+    "llm_request"
+  ],
+  "EnsureRetryOptionsPlugin": {
+    "before_model_callback": [
+      "self"
+    ]
+  },
+  "AgentDetails": {},
+  "AppDetails": {
+    "get_developer_instructions": [
+      "self",
+      "agent_name"
+    ],
+    "get_tools_by_agent_name": [
+      "self"
+    ]
+  },
+  "EvalSetsManager": {
+    "get_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "create_eval_set": [
+      "self",
+      "app_name",
+      "eval_set_id"
+    ],
+    "list_eval_sets": [
+      "self",
+      "app_name"
+    ],
+    "get_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ],
+    "add_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case"
+    ],
+    "update_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "updated_eval_case"
+    ],
+    "delete_eval_case": [
+      "self",
+      "app_name",
+      "eval_set_id",
+      "eval_case_id"
+    ]
+  },
+  "ConversationScenario": {},
+  "ConversationScenarios": {},
+  "ResponseEvaluator": {
+    "__init__": [
+      "self",
+      "threshold",
+      "metric_name",
+      "eval_metric"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ]
+  },
+  "UserSimulatorProvider": {
+    "__init__": [
+      "self",
+      "user_simulator_config"
+    ],
+    "provide": [
+      "self",
+      "eval_case"
+    ]
+  },
+  "_LATEST_TURN_USER_SIMULATOR_EVALUATOR_PROMPT": [],
+  "_parse_llm_response": [
+    "response"
+  ],
+  "_format_conversation_history": [
+    "invocations"
+  ],
+  "_get_stop_signal_invocation": [
+    "stop_signal"
+  ],
+  "PerTurnUserSimulatorQualityV1": {
+    "__init__": [
+      "self",
+      "eval_metric"
+    ],
+    "_deserialize_criterion": [
+      "self",
+      "eval_metric"
+    ],
+    "evaluate_invocations": [
+      "self",
+      "actual_invocations",
+      "expected_invocations",
+      "conversation_scenario"
+    ],
+    "_setup_llm": [
+      "self"
+    ],
+    "_format_llm_prompt": [
+      "self",
+      "invocation",
+      "conversation_scenario",
+      "previous_invocations"
+    ],
+    "_convert_llm_response_to_score": [
+      "self",
+      "auto_rater_response"
+    ],
+    "_aggregate_samples": [
+      "self",
+      "per_invocation_samples"
+    ],
+    "_aggregate_conversation_results": [
+      "self",
+      "per_invocation_results"
+    ],
+    "_evaluate_first_turn": [
+      "self",
+      "first_invocation",
+      "conversation_scenario"
+    ],
+    "_evaluate_intermediate_turn": [
+      "self",
+      "invocation_at_step",
+      "invocation_history",
+      "conversation_scenario"
+    ],
+    "_evaluate_stop_signal_turn": [
+      "self",
+      "invocation_history",
+      "conversation_scenario"
+    ],
+    "_sample_llm": [
+      "self",
+      "llm_request"
+    ]
+  },
+  "BaseUserSimulatorConfig": {
+    "model_config": []
+  },
+  "Status": {
+    "SUCCESS": [],
+    "TURN_LIMIT_REACHED": [],
+    "STOP_SIGNAL_DETECTED": [],
+    "NO_MESSAGE_GENERATED": []
+  },
+  "NextUserMessage": {
+    "ensure_user_message_iff_success": [
+      "self"
+    ]
+  },
+  "UserSimulator": {
+    "__init__": [
+      "self",
+      "config",
+      "config_type"
+    ],
+    "get_next_user_message": [
+      "self",
+      "events"
+    ],
+    "get_simulation_evaluator": [
+      "self"
+    ]
+  },
+  "_AUTHOR_USER": [],
+  "_STOP_SIGNAL": [],
+  "_DEFAULT_USER_AGENT_INSTRUCTIONS": [],
+  "LlmBackedUserSimulatorConfig": {
+    "validate_custom_instructions": [
+      "cls",
+      "value"
+    ]
+  },
+  "LlmBackedUserSimulator": {
+    "__init__": [
+      "self"
+    ],
+    "_summarize_conversation": [
+      "cls",
+      "events"
+    ],
+    "_get_llm_response": [
+      "self",
+      "rewritten_dialogue"
+    ],
+    "get_next_user_message": [
+      "self",
+      "events"
+    ],
+    "get_simulation_evaluator": [
+      "self"
+    ]
+  },
+  "StaticUserSimulator": {
+    "__init__": [
+      "self"
+    ],
+    "get_next_user_message": [
+      "self",
+      "events"
+    ],
+    "get_simulation_evaluator": [
+      "self"
+    ]
+  },
+  "a2a_experimental": [],
+  "_NEW_LINE": [],
+  "_EXCLUDED_PART_FIELD": [],
+  "_is_a2a_task": [
+    "obj"
+  ],
+  "_is_a2a_client_event": [
+    "obj"
+  ],
+  "_is_a2a_message": [
+    "obj"
+  ],
+  "_is_a2a_text_part": [
+    "obj"
+  ],
+  "_is_a2a_data_part": [
+    "obj"
+  ],
+  "build_message_part_log": [
+    "part"
+  ],
+  "build_a2a_request_log": [
+    "req"
+  ],
+  "build_a2a_response_log": [
+    "resp"
+  ],
+  "TaskResultAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "process_event": [
+      "self",
+      "event"
+    ],
+    "task_state": [
+      "self"
+    ],
+    "task_status_message": [
+      "self"
+    ]
+  },
+  "A2aAgentExecutorConfig": {},
+  "A2aAgentExecutor": {
+    "__init__": [
+      "self"
+    ],
+    "_resolve_runner": [
+      "self"
+    ],
+    "cancel": [
+      "self",
+      "context",
+      "event_queue"
+    ],
+    "execute": [
+      "self",
+      "context",
+      "event_queue"
+    ],
+    "_handle_request": [
+      "self",
+      "context",
+      "event_queue"
+    ],
+    "_prepare_session": [
+      "self",
+      "context",
+      "run_request",
+      "runner"
+    ]
+  },
+  "AgentCardBuilder": {
+    "__init__": [
+      "self"
+    ],
+    "build": [
+      "self"
+    ]
+  },
+  "_build_primary_skills": [
+    "agent"
+  ],
+  "_build_llm_agent_skills": [
+    "agent"
+  ],
+  "_build_sub_agent_skills": [
+    "agent"
+  ],
+  "_build_tool_skills": [
+    "agent"
+  ],
+  "_build_planner_skill": [
+    "agent"
+  ],
+  "_build_code_executor_skill": [
+    "agent"
+  ],
+  "_build_non_llm_agent_skills": [
+    "agent"
+  ],
+  "_build_orchestration_skill": [
+    "agent",
+    "agent_type"
+  ],
+  "_get_agent_type": [
+    "agent"
+  ],
+  "_get_agent_skill_name": [
+    "agent"
+  ],
+  "_build_agent_description": [
+    "agent"
+  ],
+  "_build_llm_agent_description_with_instructions": [
+    "agent"
+  ],
+  "_replace_pronouns": [
+    "text"
+  ],
+  "_get_workflow_description": [
+    "agent"
+  ],
+  "_build_sequential_description": [
+    "agent"
+  ],
+  "_build_parallel_description": [
+    "agent"
+  ],
+  "_build_loop_description": [
+    "agent"
+  ],
+  "_get_default_description": [
+    "agent"
+  ],
+  "_extract_inputs_from_examples": [
+    "examples"
+  ],
+  "_extract_examples_from_agent": [
+    "agent"
+  ],
+  "_convert_example_tool_examples": [
+    "tool"
+  ],
+  "_extract_examples_from_instruction": [
+    "instruction"
+  ],
+  "_get_input_modes": [
+    "agent"
+  ],
+  "_get_output_modes": [
+    "agent"
+  ],
+  "_load_agent_card": [
+    "agent_card"
+  ],
+  "to_a2a": [
+    "agent"
+  ],
+  "ADK_METADATA_KEY_PREFIX": [],
+  "ADK_CONTEXT_ID_PREFIX": [],
+  "ADK_CONTEXT_ID_SEPARATOR": [],
+  "_get_adk_metadata_key": [
+    "key"
+  ],
+  "_to_a2a_context_id": [
+    "app_name",
+    "user_id",
+    "session_id"
+  ],
+  "_from_a2a_context_id": [
+    "context_id"
+  ],
+  "AgentRunRequest": {},
+  "A2ARequestToAgentRunRequestConverter": [],
+  "_get_user_id": [
+    "request"
+  ],
+  "convert_a2a_request_to_agent_run_request": [
+    "request",
+    "part_converter"
+  ],
+  "ARTIFACT_ID_SEPARATOR": [],
+  "DEFAULT_ERROR_MESSAGE": [],
+  "AdkEventToA2AEventsConverter": [],
+  "_serialize_metadata_value": [
+    "value"
+  ],
+  "_get_context_metadata": [
+    "event",
+    "invocation_context"
+  ],
+  "_create_artifact_id": [
+    "app_name",
+    "user_id",
+    "session_id",
+    "filename",
+    "version"
+  ],
+  "_process_long_running_tool": [
+    "a2a_part",
+    "event"
+  ],
+  "convert_a2a_task_to_event": [
+    "a2a_task",
+    "author",
+    "invocation_context",
+    "part_converter"
+  ],
+  "convert_a2a_message_to_event": [
+    "a2a_message",
+    "author",
+    "invocation_context",
+    "part_converter"
+  ],
+  "convert_event_to_a2a_message": [
+    "event",
+    "invocation_context",
+    "role",
+    "part_converter"
+  ],
+  "_create_error_status_event": [
+    "event",
+    "invocation_context",
+    "task_id",
+    "context_id"
+  ],
+  "_create_status_update_event": [
+    "message",
+    "invocation_context",
+    "event",
+    "task_id",
+    "context_id"
+  ],
+  "convert_event_to_a2a_events": [
+    "event",
+    "invocation_context",
+    "task_id",
+    "context_id",
+    "part_converter"
+  ],
+  "A2A_DATA_PART_METADATA_TYPE_KEY": [],
+  "A2A_DATA_PART_METADATA_IS_LONG_RUNNING_KEY": [],
+  "A2A_DATA_PART_METADATA_TYPE_FUNCTION_CALL": [],
+  "A2A_DATA_PART_METADATA_TYPE_FUNCTION_RESPONSE": [],
+  "A2A_DATA_PART_METADATA_TYPE_CODE_EXECUTION_RESULT": [],
+  "A2A_DATA_PART_METADATA_TYPE_EXECUTABLE_CODE": [],
+  "A2A_DATA_PART_TEXT_MIME_TYPE": [],
+  "A2A_DATA_PART_START_TAG": [],
+  "A2A_DATA_PART_END_TAG": [],
+  "A2APartToGenAIPartConverter": [],
+  "GenAIPartToA2APartConverter": [],
+  "convert_a2a_part_to_genai_part": [
+    "a2a_part"
+  ],
+  "convert_genai_part_to_a2a_part": [
+    "part"
+  ],
+  "BasePlanner": {
+    "build_planning_instruction": [
+      "self",
+      "readonly_context",
+      "llm_request"
+    ],
+    "process_planning_response": [
+      "self",
+      "callback_context",
+      "response_parts"
+    ]
+  },
+  "PLANNING_TAG": [],
+  "REPLANNING_TAG": [],
+  "REASONING_TAG": [],
+  "ACTION_TAG": [],
+  "FINAL_ANSWER_TAG": [],
+  "PlanReActPlanner": {
+    "build_planning_instruction": [
+      "self",
+      "readonly_context",
+      "llm_request"
+    ],
+    "process_planning_response": [
+      "self",
+      "callback_context",
+      "response_parts"
+    ],
+    "_split_by_last_pattern": [
+      "self",
+      "text",
+      "separator"
+    ],
+    "_handle_non_function_call_parts": [
+      "self",
+      "response_part",
+      "preserved_parts"
+    ],
+    "_mark_as_thought": [
+      "self",
+      "response_part"
+    ],
+    "_build_nl_planner_instruction": [
+      "self"
+    ]
+  },
+  "BuiltInPlanner": {
+    "__init__": [
+      "self"
+    ],
+    "apply_thinking_config": [
+      "self",
+      "llm_request"
+    ],
+    "build_planning_instruction": [
+      "self",
+      "readonly_context",
+      "llm_request"
+    ],
+    "process_planning_response": [
+      "self",
+      "callback_context",
+      "response_parts"
+    ]
+  },
+  "format_timestamp": [
+    "timestamp"
+  ],
+  "SearchMemoryResponse": {},
+  "BaseMemoryService": {
+    "add_session_to_memory": [
+      "self",
+      "session"
+    ],
+    "add_events_to_memory": [
+      "self"
+    ],
+    "search_memory": [
+      "self"
+    ]
+  },
+  "MemoryEntry": {},
+  "_GENERATE_MEMORIES_CONFIG_KEYS": [],
+  "_supports_generate_memories_metadata": [],
+  "VertexAiMemoryBankService": {
+    "__init__": [
+      "self",
+      "project",
+      "location",
+      "agent_engine_id"
+    ],
+    "add_session_to_memory": [
+      "self",
+      "session"
+    ],
+    "add_events_to_memory": [
+      "self"
+    ],
+    "_add_events_to_memory_from_events": [
+      "self"
+    ],
+    "search_memory": [
+      "self"
+    ],
+    "_get_api_client": [
+      "self"
+    ]
+  },
+  "_should_filter_out_event": [
+    "content"
+  ],
+  "_build_generate_memories_config": [
+    "custom_metadata"
+  ],
+  "_build_vertex_metadata": [
+    "metadata_by_key"
+  ],
+  "_to_vertex_metadata_value": [
+    "key",
+    "value"
+  ],
+  "_UNKNOWN_SESSION_ID": [],
+  "_user_key": [
+    "app_name",
+    "user_id"
+  ],
+  "_extract_words_lower": [
+    "text"
+  ],
+  "InMemoryMemoryService": {
+    "__init__": [
+      "self"
+    ],
+    "add_session_to_memory": [
+      "self",
+      "session"
+    ],
+    "add_events_to_memory": [
+      "self"
+    ],
+    "search_memory": [
+      "self"
+    ]
+  },
+  "VertexAiRagMemoryService": {
+    "__init__": [
+      "self",
+      "rag_corpus",
+      "similarity_top_k",
+      "vector_distance_threshold"
+    ],
+    "add_session_to_memory": [
+      "self",
+      "session"
+    ],
+    "search_memory": [
+      "self"
+    ]
+  },
+  "_merge_event_lists": [
+    "event_lists"
+  ],
+  "Event": {
+    "model_config": [],
+    "model_post_init": [
+      "self",
+      "__context"
+    ],
+    "is_final_response": [
+      "self"
+    ],
+    "get_function_calls": [
+      "self"
+    ],
+    "get_function_responses": [
+      "self"
+    ],
+    "has_trailing_code_execution_result": [
+      "self"
+    ],
+    "new_id": []
+  },
+  "EventCompaction": {
+    "model_config": []
+  },
+  "EventActions": {
+    "model_config": []
+  },
+  "LiveRequest": {
+    "model_config": []
+  },
+  "LiveRequestQueue": {
+    "__init__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "send_content": [
+      "self",
+      "content"
+    ],
+    "send_realtime": [
+      "self",
+      "blob"
+    ],
+    "send_activity_start": [
+      "self"
+    ],
+    "send_activity_end": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "req"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "_get_last_human_messages": [
+    "events"
+  ],
+  "LangGraphAgent": {
+    "model_config": [],
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_get_messages": [
+      "self",
+      "events"
+    ],
+    "_get_conversation_with_agent": [
+      "self",
+      "events"
+    ]
+  },
+  "ToolThreadPoolConfig": {
+    "model_config": []
+  },
+  "StreamingMode": {
+    "NONE": [],
+    "SSE": [],
+    "BIDI": []
+  },
+  "RunConfig": {
+    "model_config": [],
+    "check_for_deprecated_save_live_audio": [
+      "cls",
+      "data"
+    ],
+    "validate_max_llm_calls": [
+      "cls",
+      "value"
+    ]
+  },
+  "agent_config_discriminator": [
+    "v"
+  ],
+  "ConfigsUnion": [],
+  "AgentConfig": {},
+  "LlmAgentConfig": {
+    "model_config": [],
+    "_normalize_model_code": [
+      "cls",
+      "data"
+    ],
+    "_validate_model_sources": [
+      "self"
+    ]
+  },
+  "LoopAgentConfig": {
+    "model_config": []
+  },
+  "McpInstructionProvider": {
+    "__init__": [
+      "self",
+      "connection_params",
+      "prompt_name",
+      "errlog"
+    ],
+    "__call__": [
+      "self",
+      "context"
+    ]
+  },
+  "ReadonlyContext": {
+    "__init__": [
+      "self",
+      "invocation_context"
+    ],
+    "user_content": [
+      "self"
+    ],
+    "invocation_id": [
+      "self"
+    ],
+    "agent_name": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "session": [
+      "self"
+    ],
+    "user_id": [
+      "self"
+    ],
+    "run_config": [
+      "self"
+    ]
+  },
+  "ContextCacheConfig": {
+    "model_config": [],
+    "ttl_string": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SequentialAgentState": {},
+  "SequentialAgent": {
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_get_start_index": [
+      "self",
+      "agent_state"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ]
+  },
+  "LoopAgentState": {},
+  "LoopAgent": {
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_get_start_state": [
+      "self",
+      "agent_state"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ],
+    "_parse_config": [
+      "cls",
+      "config",
+      "config_abs_path",
+      "kwargs"
+    ]
+  },
+  "A2A_METADATA_PREFIX": [],
+  "DEFAULT_TIMEOUT": [],
+  "AgentCardResolutionError": {},
+  "A2AClientError": {},
+  "RemoteA2aAgent": {
+    "__init__": [
+      "self",
+      "name",
+      "agent_card"
+    ],
+    "_ensure_httpx_client": [
+      "self"
+    ],
+    "_resolve_agent_card_from_url": [
+      "self",
+      "url"
+    ],
+    "_resolve_agent_card_from_file": [
+      "self",
+      "file_path"
+    ],
+    "_resolve_agent_card": [
+      "self"
+    ],
+    "_validate_agent_card": [
+      "self",
+      "agent_card"
+    ],
+    "_ensure_resolved": [
+      "self"
+    ],
+    "_create_a2a_request_for_user_function_response": [
+      "self",
+      "ctx"
+    ],
+    "_is_remote_response": [
+      "self",
+      "event"
+    ],
+    "_construct_message_parts_from_session": [
+      "self",
+      "ctx"
+    ],
+    "_handle_a2a_response": [
+      "self",
+      "a2a_response",
+      "ctx"
+    ],
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "SequentialAgentConfig": {
+    "model_config": []
+  },
+  "TBaseAgentConfig": [],
+  "BaseAgentConfig": {
+    "model_config": []
+  },
+  "CallbackContext": {
+    "__init__": [
+      "self",
+      "invocation_context"
+    ],
+    "state": [
+      "self"
+    ],
+    "load_artifact": [
+      "self",
+      "filename",
+      "version"
+    ],
+    "save_artifact": [
+      "self",
+      "filename",
+      "artifact",
+      "custom_metadata"
+    ],
+    "get_artifact_version": [
+      "self",
+      "filename",
+      "version"
+    ],
+    "list_artifacts": [
+      "self"
+    ],
+    "save_credential": [
+      "self",
+      "auth_config"
+    ],
+    "load_credential": [
+      "self",
+      "auth_config"
+    ],
+    "get_auth_response": [
+      "self",
+      "auth_config"
+    ],
+    "add_session_to_memory": [
+      "self"
+    ],
+    "add_events_to_memory": [
+      "self"
+    ]
+  },
+  "ArgumentConfig": {
+    "model_config": []
+  },
+  "CodeConfig": {
+    "model_config": []
+  },
+  "AgentRefConfig": {
+    "model_config": [],
+    "validate_exactly_one_field": [
+      "self"
+    ]
+  },
+  "SelfAgent": [],
+  "BaseAgentState": {
+    "model_config": []
+  },
+  "AgentState": [],
+  "BaseAgent": {
+    "model_config": [],
+    "_load_agent_state": [
+      "self",
+      "ctx",
+      "state_type"
+    ],
+    "_create_agent_state_event": [
+      "self",
+      "ctx"
+    ],
+    "clone": [
+      "self",
+      "update"
+    ],
+    "run_async": [
+      "self",
+      "parent_context"
+    ],
+    "run_live": [
+      "self",
+      "parent_context"
+    ],
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ],
+    "root_agent": [
+      "self"
+    ],
+    "find_agent": [
+      "self",
+      "name"
+    ],
+    "find_sub_agent": [
+      "self",
+      "name"
+    ],
+    "_create_invocation_context": [
+      "self",
+      "parent_context"
+    ],
+    "canonical_before_agent_callbacks": [
+      "self"
+    ],
+    "canonical_after_agent_callbacks": [
+      "self"
+    ],
+    "_handle_before_agent_callback": [
+      "self",
+      "ctx"
+    ],
+    "_handle_after_agent_callback": [
+      "self",
+      "invocation_context"
+    ],
+    "model_post_init": [
+      "self",
+      "__context"
+    ],
+    "validate_name": [
+      "cls",
+      "value"
+    ],
+    "validate_sub_agents_unique_names": [
+      "cls",
+      "value"
+    ],
+    "__set_parent_agent_for_sub_agents": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ],
+    "_parse_config": [
+      "cls",
+      "config",
+      "config_abs_path",
+      "kwargs"
+    ],
+    "__create_kwargs": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "ActiveStreamingTool": {
+    "model_config": []
+  },
+  "TranscriptionEntry": {
+    "model_config": []
+  },
+  "_create_branch_ctx_for_sub_agent": [
+    "agent",
+    "sub_agent",
+    "invocation_context"
+  ],
+  "_merge_agent_run": [
+    "agent_runs"
+  ],
+  "_merge_agent_run_pre_3_11": [
+    "agent_runs"
+  ],
+  "ParallelAgent": {
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ]
+  },
+  "ParallelAgentConfig": {
+    "model_config": []
+  },
+  "from_config": [
+    "config_path"
+  ],
+  "_resolve_agent_class": [
+    "agent_class"
+  ],
+  "_load_config_from_path": [
+    "config_path"
+  ],
+  "resolve_fully_qualified_name": [
+    "name"
+  ],
+  "resolve_agent_reference": [
+    "ref_config",
+    "referencing_agent_config_abs_path"
+  ],
+  "_resolve_agent_code_reference": [
+    "code"
+  ],
+  "resolve_code_reference": [
+    "code_config"
+  ],
+  "resolve_callbacks": [
+    "callbacks_config"
+  ],
+  "_convert_tool_union_to_tools": [
+    "tool_union",
+    "ctx",
+    "model",
+    "multiple_tools"
+  ],
+  "LlmAgent": {
+    "_run_async_impl": [
+      "self",
+      "ctx"
+    ],
+    "_run_live_impl": [
+      "self",
+      "ctx"
+    ],
+    "canonical_model": [
+      "self"
+    ],
+    "set_default_model": [
+      "cls",
+      "model"
+    ],
+    "_resolve_default_model": [
+      "cls"
+    ],
+    "canonical_instruction": [
+      "self",
+      "ctx"
+    ],
+    "canonical_global_instruction": [
+      "self",
+      "ctx"
+    ],
+    "canonical_tools": [
+      "self",
+      "ctx"
+    ],
+    "canonical_before_model_callbacks": [
+      "self"
+    ],
+    "canonical_after_model_callbacks": [
+      "self"
+    ],
+    "canonical_on_model_error_callbacks": [
+      "self"
+    ],
+    "canonical_before_tool_callbacks": [
+      "self"
+    ],
+    "canonical_after_tool_callbacks": [
+      "self"
+    ],
+    "canonical_on_tool_error_callbacks": [
+      "self"
+    ],
+    "_llm_flow": [
+      "self"
+    ],
+    "_get_subagent_to_resume": [
+      "self",
+      "ctx"
+    ],
+    "__get_agent_to_run": [
+      "self",
+      "agent_name"
+    ],
+    "_get_available_agent_names": [
+      "self"
+    ],
+    "__get_transfer_to_agent_or_none": [
+      "self",
+      "event",
+      "from_agent"
+    ],
+    "__maybe_save_output_to_state": [
+      "self",
+      "event"
+    ],
+    "__model_validator_after": [
+      "self"
+    ],
+    "validate_generate_content_config": [
+      "cls",
+      "generate_content_config"
+    ],
+    "model_post_init": [
+      "self",
+      "__context"
+    ],
+    "_resolve_tools": [
+      "cls",
+      "tool_configs",
+      "config_abs_path"
+    ],
+    "_parse_config": [
+      "cls",
+      "config",
+      "config_abs_path",
+      "kwargs"
+    ]
+  },
+  "LlmCallsLimitExceededError": {},
+  "RealtimeCacheEntry": {
+    "model_config": []
+  },
+  "_InvocationCostManager": {
+    "increment_and_enforce_llm_calls_limit": [
+      "self",
+      "run_config"
+    ]
+  },
+  "InvocationContext": {
+    "model_config": [],
+    "is_resumable": [
+      "self"
+    ],
+    "set_agent_state": [
+      "self",
+      "agent_name"
+    ],
+    "reset_sub_agent_states": [
+      "self",
+      "agent_name"
+    ],
+    "populate_invocation_agent_states": [
+      "self"
+    ],
+    "increment_llm_call_count": [
+      "self"
+    ],
+    "app_name": [
+      "self"
+    ],
+    "user_id": [
+      "self"
+    ],
+    "_get_events": [
+      "self"
+    ],
+    "should_pause_invocation": [
+      "self",
+      "event"
+    ],
+    "_find_matching_function_call": [
+      "self",
+      "function_response_event"
+    ]
+  },
+  "new_invocation_context_id": [],
+  "Frontmatter": {},
+  "Script": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "Resources": {
+    "get_reference": [
+      "self",
+      "reference_id"
+    ],
+    "get_asset": [
+      "self",
+      "asset_id"
+    ],
+    "get_script": [
+      "self",
+      "script_id"
+    ],
+    "list_references": [
+      "self"
+    ],
+    "list_assets": [
+      "self"
+    ],
+    "list_scripts": [
+      "self"
+    ]
+  },
+  "Skill": {
+    "name": [
+      "self"
+    ],
+    "description": [
+      "self"
+    ]
+  },
+  "format_skills_as_xml": [
+    "skills"
+  ],
+  "GlobalInstructionPlugin": {
+    "__init__": [
+      "self",
+      "global_instruction",
+      "name"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "_resolve_global_instruction": [
+      "self",
+      "readonly_context"
+    ]
+  },
+  "LoggingPlugin": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "on_user_message_callback": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "on_event_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "before_agent_callback": [
+      "self"
+    ],
+    "after_agent_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "on_model_error_callback": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ],
+    "_log": [
+      "self",
+      "message"
+    ],
+    "_format_content": [
+      "self",
+      "content",
+      "max_length"
+    ],
+    "_format_args": [
+      "self",
+      "args",
+      "max_length"
+    ]
+  },
+  "_adjust_split_index_to_avoid_orphaned_function_responses": [
+    "contents",
+    "split_index"
+  ],
+  "_is_function_response_content": [
+    "content"
+  ],
+  "_is_human_user_content": [
+    "content"
+  ],
+  "_get_invocation_start_indices": [
+    "contents"
+  ],
+  "ContextFilterPlugin": {
+    "__init__": [
+      "self",
+      "num_invocations_to_keep",
+      "custom_filter",
+      "name"
+    ],
+    "before_model_callback": [
+      "self"
+    ]
+  },
+  "BasePlugin": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "on_user_message_callback": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "on_event_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "before_agent_callback": [
+      "self"
+    ],
+    "after_agent_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "on_model_error_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ]
+  },
+  "REFLECT_AND_RETRY_RESPONSE_TYPE": [],
+  "GLOBAL_SCOPE_KEY": [],
+  "PerToolFailuresCounter": [],
+  "TrackingScope": {
+    "INVOCATION": [],
+    "GLOBAL": []
+  },
+  "ToolFailureResponse": {},
+  "ReflectAndRetryToolPlugin": {
+    "__init__": [
+      "self",
+      "name",
+      "max_retries",
+      "throw_exception_if_retry_exceeded",
+      "tracking_scope"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "extract_error_from_result": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ],
+    "_handle_tool_error": [
+      "self",
+      "tool",
+      "tool_args",
+      "tool_context",
+      "error"
+    ],
+    "_get_scope_key": [
+      "self",
+      "tool_context"
+    ],
+    "_reset_failures_for_tool": [
+      "self",
+      "tool_context",
+      "tool_name"
+    ],
+    "_ensure_exception": [
+      "self",
+      "error"
+    ],
+    "_format_error_details": [
+      "self",
+      "error"
+    ],
+    "_create_tool_reflection_response": [
+      "self",
+      "tool",
+      "tool_args",
+      "error",
+      "retry_count"
+    ],
+    "_get_tool_retry_exceed_msg": [
+      "self",
+      "tool",
+      "tool_args",
+      "error"
+    ]
+  },
+  "PARTS_RETURNED_BY_TOOLS_ID": [],
+  "MultimodalToolResultsPlugin": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ]
+  },
+  "_DebugEntry": {},
+  "_InvocationDebugState": {},
+  "DebugLoggingPlugin": {
+    "__init__": [
+      "self"
+    ],
+    "_get_timestamp": [
+      "self"
+    ],
+    "_serialize_content": [
+      "self",
+      "content"
+    ],
+    "_safe_serialize": [
+      "self",
+      "obj"
+    ],
+    "_add_entry": [
+      "self",
+      "invocation_id",
+      "entry_type",
+      "agent_name"
+    ],
+    "on_user_message_callback": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "on_event_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "before_agent_callback": [
+      "self"
+    ],
+    "after_agent_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "on_model_error_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ]
+  },
+  "_GRPC_DEADLINE_EXCEEDED": [],
+  "_GRPC_INTERNAL": [],
+  "_GRPC_UNAVAILABLE": [],
+  "_format_content": [
+    "content"
+  ],
+  "_recursive_smart_truncate": [
+    "obj",
+    "max_len",
+    "seen"
+  ],
+  "_pyarrow_datetime": [],
+  "_pyarrow_numeric": [],
+  "_pyarrow_bignumeric": [],
+  "_pyarrow_time": [],
+  "_pyarrow_timestamp": [],
+  "_BQ_TO_ARROW_SCALARS": [],
+  "_BQ_FIELD_TYPE_TO_ARROW_FIELD_METADATA": [],
+  "_STRUCT_TYPES": [],
+  "_bq_to_arrow_scalars": [
+    "bq_scalar"
+  ],
+  "_bq_to_arrow_field": [
+    "bq_field"
+  ],
+  "_bq_to_arrow_struct_data_type": [
+    "field"
+  ],
+  "_bq_to_arrow_data_type": [
+    "field"
+  ],
+  "to_arrow_schema": [
+    "bq_schema_list"
+  ],
+  "RetryConfig": {},
+  "BigQueryLoggerConfig": {},
+  "_root_agent_name_ctx": [],
+  "TraceManager": {
+    "init_trace": [
+      "callback_context"
+    ],
+    "get_trace_id": [
+      "callback_context"
+    ],
+    "push_span": [
+      "callback_context",
+      "span_name"
+    ],
+    "attach_current_span": [
+      "callback_context"
+    ],
+    "pop_span": [],
+    "get_current_span_and_parent": [],
+    "get_current_span_id": [],
+    "get_root_agent_name": [],
+    "get_start_time": [
+      "span_id"
+    ],
+    "record_first_token": [
+      "span_id"
+    ],
+    "get_first_token_time": [
+      "span_id"
+    ]
+  },
+  "_SHUTDOWN_SENTINEL": [],
+  "BatchProcessor": {
+    "__init__": [
+      "self",
+      "write_client",
+      "arrow_schema",
+      "write_stream",
+      "batch_size",
+      "flush_interval",
+      "retry_config",
+      "queue_max_size",
+      "shutdown_timeout"
+    ],
+    "flush": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "append": [
+      "self",
+      "row"
+    ],
+    "_prepare_arrow_batch": [
+      "self",
+      "rows"
+    ],
+    "_batch_writer": [
+      "self"
+    ],
+    "_write_rows_with_retry": [
+      "self",
+      "rows"
+    ],
+    "shutdown": [
+      "self",
+      "timeout"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ContentParser": {
+    "__init__": [
+      "self",
+      "max_length"
+    ],
+    "_truncate": [
+      "self",
+      "text"
+    ]
+  },
+  "GCSOffloader": {
+    "__init__": [
+      "self",
+      "project_id",
+      "bucket_name",
+      "executor",
+      "storage_client"
+    ],
+    "upload_content": [
+      "self",
+      "data",
+      "content_type",
+      "path"
+    ],
+    "_upload_sync": [
+      "self",
+      "data",
+      "content_type",
+      "path"
+    ]
+  },
+  "HybridContentParser": {
+    "__init__": [
+      "self",
+      "offloader",
+      "trace_id",
+      "span_id",
+      "max_length",
+      "connection_id"
+    ],
+    "_truncate": [
+      "self",
+      "text"
+    ],
+    "_parse_content_object": [
+      "self",
+      "content"
+    ],
+    "parse": [
+      "self",
+      "content"
+    ]
+  },
+  "_get_events_schema": [],
+  "_LoopState": {},
+  "BigQueryAgentAnalyticsPlugin": {
+    "__init__": [
+      "self",
+      "project_id",
+      "dataset_id",
+      "table_id",
+      "config",
+      "location"
+    ],
+    "batch_processor": [],
+    "write_client": [],
+    "write_stream": [],
+    "__getattribute__": [
+      "self",
+      "name"
+    ],
+    "_batch_processor_prop": [
+      "self"
+    ],
+    "_write_client_prop": [
+      "self"
+    ],
+    "_write_stream_prop": [
+      "self"
+    ],
+    "_format_content_safely": [
+      "self",
+      "content"
+    ],
+    "_get_loop_state": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "_lazy_setup": [
+      "self"
+    ],
+    "_atexit_cleanup": [
+      "batch_processor"
+    ],
+    "_ensure_schema_exists": [
+      "self"
+    ],
+    "shutdown": [
+      "self",
+      "timeout"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_ensure_started": [
+      "self"
+    ],
+    "_log_event": [
+      "self",
+      "event_type",
+      "callback_context",
+      "raw_content",
+      "is_truncated"
+    ],
+    "on_user_message_callback": [
+      "self"
+    ],
+    "on_state_change_callback": [
+      "self"
+    ],
+    "before_run_callback": [
+      "self"
+    ],
+    "after_run_callback": [
+      "self"
+    ],
+    "before_agent_callback": [
+      "self"
+    ],
+    "after_agent_callback": [
+      "self"
+    ],
+    "before_model_callback": [
+      "self"
+    ],
+    "after_model_callback": [
+      "self"
+    ],
+    "on_model_error_callback": [
+      "self"
+    ],
+    "before_tool_callback": [
+      "self"
+    ],
+    "after_tool_callback": [
+      "self"
+    ],
+    "on_tool_error_callback": [
+      "self"
+    ]
+  },
+  "_MODEL_ACCESSIBLE_URI_SCHEMES": [],
+  "SaveFilesAsArtifactsPlugin": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "on_user_message_callback": [
+      "self"
+    ],
+    "_build_file_reference_part": [
+      "self"
+    ]
+  },
+  "_is_model_accessible_uri": [
+    "uri"
+  ],
+  "PluginCallbackName": [],
+  "PluginManager": {
+    "__init__": [
+      "self",
+      "plugins",
+      "close_timeout"
+    ],
+    "register_plugin": [
+      "self",
+      "plugin"
+    ],
+    "get_plugin": [
+      "self",
+      "plugin_name"
+    ],
+    "run_on_user_message_callback": [
+      "self"
+    ],
+    "run_before_run_callback": [
+      "self"
+    ],
+    "run_after_run_callback": [
+      "self"
+    ],
+    "run_on_event_callback": [
+      "self"
+    ],
+    "run_before_agent_callback": [
+      "self"
+    ],
+    "run_after_agent_callback": [
+      "self"
+    ],
+    "run_before_tool_callback": [
+      "self"
+    ],
+    "run_after_tool_callback": [
+      "self"
+    ],
+    "run_on_model_error_callback": [
+      "self"
+    ],
+    "run_before_model_callback": [
+      "self"
+    ],
+    "run_after_model_callback": [
+      "self"
+    ],
+    "run_on_tool_error_callback": [
+      "self"
+    ],
+    "_run_callbacks": [
+      "self",
+      "callback_name"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BaseEventsSummarizer": {
+    "maybe_summarize_events": [
+      "self"
+    ]
+  },
+  "LlmEventSummarizer": {
+    "_DEFAULT_PROMPT_TEMPLATE": [],
+    "__init__": [
+      "self",
+      "llm",
+      "prompt_template"
+    ],
+    "_format_events_for_prompt": [
+      "self",
+      "events"
+    ],
+    "maybe_summarize_events": [
+      "self"
+    ]
+  },
+  "_count_text_chars_in_event": [
+    "event"
+  ],
+  "_is_compaction_subsumed": [],
+  "_estimate_prompt_token_count": [
+    "events"
+  ],
+  "_latest_prompt_token_count": [
+    "events"
+  ],
+  "_latest_compaction_event": [
+    "events"
+  ],
+  "_latest_compaction_end_timestamp": [
+    "events"
+  ],
+  "_run_compaction_for_token_threshold": [
+    "app",
+    "session",
+    "session_service"
+  ],
+  "_run_compaction_for_sliding_window": [
+    "app",
+    "session",
+    "session_service"
+  ],
+  "validate_app_name": [
+    "name"
+  ],
+  "ResumabilityConfig": {},
+  "EventsCompactionConfig": {
+    "model_config": [],
+    "_validate_token_params": [
+      "self"
+    ]
+  },
+  "App": {
+    "model_config": [],
+    "_validate_name": [
+      "self"
+    ]
+  },
+  "_CONTEXT_KEY": [],
+  "_SESSION_ID_KEY": [],
+  "_PROCESSED_FILE_NAMES_KEY": [],
+  "_INPUT_FILE_KEY": [],
+  "_ERROR_COUNT_KEY": [],
+  "_CODE_EXECUTION_RESULTS_KEY": [],
+  "CodeExecutorContext": {
+    "__init__": [
+      "self",
+      "session_state"
+    ],
+    "get_state_delta": [
+      "self"
+    ],
+    "get_execution_id": [
+      "self"
+    ],
+    "set_execution_id": [
+      "self",
+      "session_id"
+    ],
+    "get_processed_file_names": [
+      "self"
+    ],
+    "add_processed_file_names": [
+      "self",
+      "file_names"
+    ],
+    "get_input_files": [
+      "self"
+    ],
+    "add_input_files": [
+      "self",
+      "input_files"
+    ],
+    "clear_input_files": [
+      "self"
+    ],
+    "get_error_count": [
+      "self",
+      "invocation_id"
+    ],
+    "increment_error_count": [
+      "self",
+      "invocation_id"
+    ],
+    "reset_error_count": [
+      "self",
+      "invocation_id"
+    ],
+    "update_code_execution_result": [
+      "self",
+      "invocation_id",
+      "code",
+      "result_stdout",
+      "result_stderr"
+    ],
+    "_get_code_executor_context": [
+      "self",
+      "session_state"
+    ]
+  },
+  "BaseCodeExecutor": {
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ]
+  },
+  "AgentEngineSandboxCodeExecutor": {
+    "__init__": [
+      "self",
+      "sandbox_resource_name",
+      "agent_engine_resource_name"
+    ],
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ],
+    "_get_api_client": [
+      "self"
+    ],
+    "_get_project_id_and_location_from_resource_name": [
+      "self",
+      "resource_name",
+      "pattern"
+    ]
+  },
+  "_SUPPORTED_IMAGE_TYPES": [],
+  "_SUPPORTED_DATA_FILE_TYPES": [],
+  "_IMPORTED_LIBRARIES": [],
+  "_get_code_interpreter_extension": [
+    "resource_name"
+  ],
+  "VertexAiCodeExecutor": {
+    "__init__": [
+      "self",
+      "resource_name"
+    ],
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ],
+    "_execute_code_interpreter": [
+      "self",
+      "code",
+      "input_files",
+      "session_id"
+    ],
+    "_get_code_with_imports": [
+      "self",
+      "code"
+    ]
+  },
+  "client": [],
+  "config": [],
+  "ApiException": [],
+  "GkeCodeExecutor": {
+    "__init__": [
+      "self",
+      "kubeconfig_path",
+      "kubeconfig_context"
+    ],
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ],
+    "_create_job_manifest": [
+      "self",
+      "job_name",
+      "configmap_name",
+      "invocation_context"
+    ],
+    "_watch_job_completion": [
+      "self",
+      "job_name"
+    ],
+    "_get_pod_logs": [
+      "self",
+      "job_name"
+    ],
+    "_create_code_configmap": [
+      "self",
+      "name",
+      "code"
+    ],
+    "_add_owner_reference": [
+      "self",
+      "owner_job",
+      "configmap_name"
+    ]
+  },
+  "_prepare_globals": [
+    "code",
+    "globals_"
+  ],
+  "UnsafeLocalCodeExecutor": {
+    "__init__": [
+      "self"
+    ],
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ]
+  },
+  "DEFAULT_IMAGE_TAG": [],
+  "ContainerCodeExecutor": {
+    "__init__": [
+      "self",
+      "base_url",
+      "image",
+      "docker_path"
+    ],
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ],
+    "_build_docker_image": [
+      "self"
+    ],
+    "_verify_python_installation": [
+      "self"
+    ],
+    "__init_container": [
+      "self"
+    ],
+    "__cleanup_container": [
+      "self"
+    ]
+  },
+  "BuiltInCodeExecutor": {
+    "execute_code": [
+      "self",
+      "invocation_context",
+      "code_execution_input"
+    ],
+    "process_llm_request": [
+      "self",
+      "llm_request"
+    ]
+  },
+  "File": {},
+  "CodeExecutionInput": {},
+  "CodeExecutionResult": {},
+  "CodeExecutionUtils": {
+    "get_encoded_file_content": [
+      "data"
+    ],
+    "extract_code_and_truncate_content": [
+      "content",
+      "code_block_delimiters"
+    ],
+    "build_executable_code_part": [
+      "code"
+    ],
+    "build_code_execution_result_part": [
+      "code_execution_result"
+    ],
+    "convert_code_execution_parts": [
+      "content",
+      "code_block_delimiter",
+      "execution_result_delimiters"
+    ]
+  },
+  "AudioCacheManager": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "cache_audio": [
+      "self",
+      "invocation_context",
+      "audio_blob",
+      "cache_type"
+    ],
+    "flush_caches": [
+      "self",
+      "invocation_context",
+      "flush_user_audio",
+      "flush_model_audio"
+    ],
+    "_flush_cache_to_services": [
+      "self",
+      "invocation_context",
+      "audio_cache",
+      "cache_type"
+    ],
+    "get_cache_stats": [
+      "self",
+      "invocation_context"
+    ]
+  },
+  "AudioCacheConfig": {
+    "__init__": [
+      "self",
+      "max_cache_size_bytes",
+      "max_cache_duration_seconds",
+      "auto_flush_threshold"
+    ]
+  },
+  "AudioTranscriber": {
+    "__init__": [
+      "self",
+      "init_client"
+    ],
+    "transcribe_file": [
+      "self",
+      "invocation_context"
+    ]
+  },
+  "_build_basic_request": [
+    "invocation_context",
+    "llm_request"
+  ],
+  "_BasicLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_IdentityLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "TranscriptionManager": {
+    "handle_input_transcription": [
+      "self",
+      "invocation_context",
+      "transcription"
+    ],
+    "handle_output_transcription": [
+      "self",
+      "invocation_context",
+      "transcription"
+    ],
+    "_create_and_save_transcription_event": [
+      "self",
+      "invocation_context",
+      "transcription",
+      "author",
+      "is_input"
+    ],
+    "get_transcription_stats": [
+      "self",
+      "invocation_context"
+    ]
+  },
+  "_AgentTransferLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_build_target_agents_info": [
+    "target_agent"
+  ],
+  "line_break": [],
+  "_build_transfer_instructions": [
+    "tool_name",
+    "agent",
+    "target_agents"
+  ],
+  "_get_transfer_targets": [
+    "agent"
+  ],
+  "_ADK_AGENT_NAME_LABEL_KEY": [],
+  "DEFAULT_TRANSFER_AGENT_DELAY": [],
+  "DEFAULT_TASK_COMPLETION_DELAY": [],
+  "DEFAULT_ENABLE_CACHE_STATISTICS": [],
+  "_finalize_model_response_event": [
+    "llm_request",
+    "llm_response",
+    "model_response_event"
+  ],
+  "BaseLlmFlow": {
+    "__init__": [
+      "self"
+    ],
+    "run_live": [
+      "self",
+      "invocation_context"
+    ],
+    "_send_to_model": [
+      "self",
+      "llm_connection",
+      "invocation_context"
+    ],
+    "_receive_from_model": [
+      "self",
+      "llm_connection",
+      "event_id",
+      "invocation_context",
+      "llm_request"
+    ],
+    "run_async": [
+      "self",
+      "invocation_context"
+    ],
+    "_run_one_step_async": [
+      "self",
+      "invocation_context"
+    ],
+    "_preprocess_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ],
+    "_resolve_toolset_auth": [
+      "self",
+      "invocation_context",
+      "agent"
+    ],
+    "_postprocess_async": [
+      "self",
+      "invocation_context",
+      "llm_request",
+      "llm_response",
+      "model_response_event"
+    ],
+    "_postprocess_live": [
+      "self",
+      "invocation_context",
+      "llm_request",
+      "llm_response",
+      "model_response_event"
+    ],
+    "_postprocess_run_processors_async": [
+      "self",
+      "invocation_context",
+      "llm_response"
+    ],
+    "_postprocess_handle_function_calls_async": [
+      "self",
+      "invocation_context",
+      "function_call_event",
+      "llm_request"
+    ],
+    "_get_agent_to_run": [
+      "self",
+      "invocation_context",
+      "agent_name"
+    ],
+    "_call_llm_async": [
+      "self",
+      "invocation_context",
+      "llm_request",
+      "model_response_event"
+    ],
+    "_handle_before_model_callback": [
+      "self",
+      "invocation_context",
+      "llm_request",
+      "model_response_event"
+    ],
+    "_handle_after_model_callback": [
+      "self",
+      "invocation_context",
+      "llm_response",
+      "model_response_event"
+    ],
+    "_finalize_model_response_event": [
+      "self",
+      "llm_request",
+      "llm_response",
+      "model_response_event"
+    ],
+    "_handle_control_event_flush": [
+      "self",
+      "invocation_context",
+      "llm_response"
+    ],
+    "_run_and_handle_error": [
+      "self",
+      "response_generator",
+      "invocation_context",
+      "llm_request",
+      "model_response_event"
+    ],
+    "__get_llm": [
+      "self",
+      "invocation_context"
+    ]
+  },
+  "ContextCacheRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ],
+    "_find_cache_info_from_events": [
+      "self",
+      "invocation_context",
+      "agent_name",
+      "current_invocation_id"
+    ]
+  },
+  "_NlPlanningRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_NlPlanningResponse": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_response"
+    ]
+  },
+  "response_processor": [],
+  "_get_planner": [
+    "invocation_context"
+  ],
+  "_remove_thought_from_request": [
+    "llm_request"
+  ],
+  "SingleFlow": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_OutputSchemaRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "create_final_model_response_event": [
+    "invocation_context",
+    "json_response"
+  ],
+  "get_structured_model_response": [
+    "function_response_event"
+  ],
+  "_process_agent_instruction": [
+    "agent",
+    "invocation_context"
+  ],
+  "_build_instructions": [
+    "invocation_context",
+    "llm_request"
+  ],
+  "_InstructionsLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "DataFileUtil": {},
+  "_DATA_FILE_UTIL_MAP": [],
+  "_DATA_FILE_HELPER_LIB": [],
+  "_CodeExecutionRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_CodeExecutionResponseProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_response"
+    ]
+  },
+  "_run_pre_processor": [
+    "invocation_context",
+    "llm_request"
+  ],
+  "_run_post_processor": [
+    "invocation_context",
+    "llm_response"
+  ],
+  "_extract_and_replace_inline_files": [
+    "code_executor_context",
+    "llm_request"
+  ],
+  "_get_or_set_execution_id": [
+    "invocation_context",
+    "code_executor_context"
+  ],
+  "_post_process_code_execution_result": [
+    "invocation_context",
+    "code_executor_context",
+    "code_execution_result"
+  ],
+  "get_content_as_bytes": [
+    "output_content"
+  ],
+  "_get_data_file_preprocessing_code": [
+    "file"
+  ],
+  "_RequestConfirmationLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_ContentLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "_rearrange_events_for_async_function_responses_in_history": [
+    "events"
+  ],
+  "_rearrange_events_for_latest_function_response": [
+    "events"
+  ],
+  "_is_part_invisible": [
+    "p"
+  ],
+  "_contains_empty_content": [
+    "event"
+  ],
+  "_should_include_event_in_context": [
+    "current_branch",
+    "event"
+  ],
+  "_process_compaction_events": [
+    "events"
+  ],
+  "_get_contents": [
+    "current_branch",
+    "events",
+    "agent_name"
+  ],
+  "_get_current_turn_contents": [
+    "current_branch",
+    "events",
+    "agent_name"
+  ],
+  "_is_other_agent_reply": [
+    "current_agent_name",
+    "event"
+  ],
+  "_present_other_agent_message": [
+    "event"
+  ],
+  "_merge_function_response_events": [
+    "function_response_events"
+  ],
+  "_is_event_belongs_to_branch": [
+    "invocation_branch",
+    "event"
+  ],
+  "_is_function_call_event": [
+    "event",
+    "function_name"
+  ],
+  "_is_auth_event": [
+    "event"
+  ],
+  "_is_request_confirmation_event": [
+    "event"
+  ],
+  "_is_adk_framework_event": [
+    "event"
+  ],
+  "_is_request_input_event": [
+    "event"
+  ],
+  "_is_live_model_audio_event_with_inline_data": [
+    "event"
+  ],
+  "_content_contains_function_response": [
+    "content"
+  ],
+  "_add_instructions_to_user_content": [
+    "invocation_context",
+    "llm_request",
+    "instruction_contents"
+  ],
+  "AF_FUNCTION_CALL_ID_PREFIX": [],
+  "REQUEST_EUC_FUNCTION_CALL_NAME": [],
+  "REQUEST_CONFIRMATION_FUNCTION_CALL_NAME": [],
+  "REQUEST_INPUT_FUNCTION_CALL_NAME": [],
+  "_TOOL_THREAD_POOL_LOCK": [],
+  "_get_tool_thread_pool": [
+    "max_workers"
+  ],
+  "_is_sync_tool": [
+    "tool"
+  ],
+  "_call_tool_in_thread_pool": [
+    "tool",
+    "args",
+    "tool_context",
+    "max_workers"
+  ],
+  "generate_client_function_call_id": [],
+  "populate_client_function_call_id": [
+    "model_response_event"
+  ],
+  "remove_client_function_call_id": [
+    "content"
+  ],
+  "get_long_running_function_calls": [
+    "function_calls",
+    "tools_dict"
+  ],
+  "build_auth_request_event": [
+    "invocation_context",
+    "auth_requests"
+  ],
+  "generate_auth_event": [
+    "invocation_context",
+    "function_response_event"
+  ],
+  "generate_request_confirmation_event": [
+    "invocation_context",
+    "function_call_event",
+    "function_response_event"
+  ],
+  "handle_function_calls_async": [
+    "invocation_context",
+    "function_call_event",
+    "tools_dict",
+    "filters",
+    "tool_confirmation_dict"
+  ],
+  "handle_function_call_list_async": [
+    "invocation_context",
+    "function_calls",
+    "tools_dict",
+    "filters",
+    "tool_confirmation_dict"
+  ],
+  "_execute_single_function_call_async": [
+    "invocation_context",
+    "function_call",
+    "tools_dict",
+    "agent",
+    "tool_confirmation"
+  ],
+  "handle_function_calls_live": [
+    "invocation_context",
+    "function_call_event",
+    "tools_dict"
+  ],
+  "_execute_single_function_call_live": [
+    "invocation_context",
+    "function_call",
+    "tools_dict",
+    "agent",
+    "streaming_lock"
+  ],
+  "_process_function_live_helper": [
+    "tool",
+    "tool_context",
+    "function_call",
+    "function_args",
+    "invocation_context",
+    "streaming_lock"
+  ],
+  "_get_tool": [
+    "function_call",
+    "tools_dict"
+  ],
+  "_create_tool_context": [
+    "invocation_context",
+    "function_call",
+    "tool_confirmation"
+  ],
+  "_get_tool_and_context": [
+    "invocation_context",
+    "function_call",
+    "tools_dict",
+    "tool_confirmation"
+  ],
+  "__call_tool_live": [
+    "tool",
+    "args",
+    "tool_context",
+    "invocation_context"
+  ],
+  "__call_tool_async": [
+    "tool",
+    "args",
+    "tool_context"
+  ],
+  "__build_response_event": [
+    "tool",
+    "function_result",
+    "tool_context",
+    "invocation_context"
+  ],
+  "deep_merge_dicts": [
+    "d1",
+    "d2"
+  ],
+  "merge_parallel_function_response_events": [
+    "function_response_events"
+  ],
+  "find_matching_function_call": [
+    "events"
+  ],
+  "InteractionsRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ],
+    "_find_previous_interaction_id": [
+      "self",
+      "invocation_context"
+    ],
+    "_is_event_in_branch": [
+      "self",
+      "current_branch",
+      "event"
+    ]
+  },
+  "BaseLlmRequestProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_request"
+    ]
+  },
+  "BaseLlmResponseProcessor": {
+    "run_async": [
+      "self",
+      "invocation_context",
+      "llm_response"
+    ]
+  },
+  "AutoFlow": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "GetSessionConfig": {},
+  "ListSessionsResponse": {},
+  "BaseSessionService": {
+    "create_session": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ],
+    "_trim_temp_delta_state": [
+      "self",
+      "event"
+    ],
+    "_update_session_state": [
+      "self",
+      "session",
+      "event"
+    ]
+  },
+  "VertexAiSessionService": {
+    "__init__": [
+      "self",
+      "project",
+      "location",
+      "agent_engine_id"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ],
+    "_get_reasoning_engine_id": [
+      "self",
+      "app_name"
+    ],
+    "_api_client_http_options_override": [
+      "self"
+    ],
+    "_get_api_client": [
+      "self"
+    ]
+  },
+  "_from_api_event": [
+    "api_event_obj"
+  ],
+  "InMemorySessionService": {
+    "__init__": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "create_session_sync": [
+      "self"
+    ],
+    "_create_session_impl": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "get_session_sync": [
+      "self"
+    ],
+    "_get_session_impl": [
+      "self"
+    ],
+    "_merge_state": [
+      "self",
+      "app_name",
+      "user_id",
+      "copied_session"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "list_sessions_sync": [
+      "self"
+    ],
+    "_list_sessions_impl": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "delete_session_sync": [
+      "self"
+    ],
+    "_delete_session_impl": [
+      "self"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ]
+  },
+  "State": {
+    "APP_PREFIX": [],
+    "USER_PREFIX": [],
+    "TEMP_PREFIX": [],
+    "__init__": [
+      "self",
+      "value",
+      "delta"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "setdefault": [
+      "self",
+      "key",
+      "default"
+    ],
+    "has_delta": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "key",
+      "default"
+    ],
+    "update": [
+      "self",
+      "delta"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "_SQLITE_DIALECT": [],
+  "_MARIADB_DIALECT": [],
+  "_MYSQL_DIALECT": [],
+  "_POSTGRESQL_DIALECT": [],
+  "_StorageStateT": [],
+  "_select_required_state": [],
+  "_set_sqlite_pragma": [
+    "dbapi_connection",
+    "connection_record"
+  ],
+  "_merge_state": [
+    "app_state",
+    "user_state",
+    "session_state"
+  ],
+  "_SchemaClasses": {
+    "__init__": [
+      "self",
+      "version"
+    ]
+  },
+  "DatabaseSessionService": {
+    "__init__": [
+      "self",
+      "db_url"
+    ],
+    "_get_schema_classes": [
+      "self"
+    ],
+    "_rollback_on_exception_session": [
+      "self"
+    ],
+    "_supports_row_level_locking": [
+      "self"
+    ],
+    "_with_session_lock": [
+      "self"
+    ],
+    "_prepare_tables": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self",
+      "app_name",
+      "user_id",
+      "session_id"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "PRAGMA_FOREIGN_KEYS": [],
+  "APP_STATES_TABLE_SCHEMA": [],
+  "USER_STATES_TABLE_SCHEMA": [],
+  "SESSIONS_TABLE_SCHEMA": [],
+  "EVENTS_TABLE_SCHEMA": [],
+  "CREATE_SCHEMA_SQL": [],
+  "_parse_db_path": [
+    "db_path"
+  ],
+  "SqliteSessionService": {
+    "__init__": [
+      "self",
+      "db_path"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "append_event": [
+      "self",
+      "session",
+      "event"
+    ],
+    "_get_db_connection": [
+      "self"
+    ],
+    "_get_state": [
+      "self",
+      "db",
+      "query",
+      "params"
+    ],
+    "_get_app_state": [
+      "self",
+      "db",
+      "app_name"
+    ],
+    "_get_user_state": [
+      "self",
+      "db",
+      "app_name",
+      "user_id"
+    ],
+    "_get_session_state": [
+      "self",
+      "db",
+      "app_name",
+      "user_id",
+      "session_id"
+    ],
+    "_upsert_app_state": [
+      "self",
+      "db",
+      "app_name",
+      "delta",
+      "now"
+    ],
+    "_upsert_user_state": [
+      "self",
+      "db",
+      "app_name",
+      "user_id",
+      "delta",
+      "now"
+    ],
+    "_update_session_state_in_db": [
+      "self",
+      "db",
+      "app_name",
+      "user_id",
+      "session_id",
+      "delta",
+      "now"
+    ],
+    "_is_migration_needed": [
+      "self"
+    ]
+  },
+  "M": [],
+  "decode_model": [
+    "data",
+    "model_cls"
+  ],
+  "extract_state_delta": [
+    "state"
+  ],
+  "Session": {
+    "model_config": []
+  },
+  "Base": {},
+  "StorageMetadata": {
+    "__tablename__": []
+  },
+  "StorageSession": {
+    "__tablename__": [],
+    "__repr__": [
+      "self"
+    ],
+    "update_timestamp_tz": [
+      "self"
+    ],
+    "get_update_timestamp": [
+      "self",
+      "is_sqlite"
+    ],
+    "to_session": [
+      "self",
+      "state",
+      "events",
+      "is_sqlite"
+    ]
+  },
+  "StorageEvent": {
+    "__tablename__": [],
+    "__table_args__": [],
+    "from_event": [
+      "cls",
+      "session",
+      "event"
+    ],
+    "to_event": [
+      "self"
+    ]
+  },
+  "StorageAppState": {
+    "__tablename__": []
+  },
+  "StorageUserState": {
+    "__tablename__": []
+  },
+  "DynamicPickleType": {
+    "impl": [],
+    "load_dialect_impl": [
+      "self",
+      "dialect"
+    ],
+    "process_bind_param": [
+      "self",
+      "value",
+      "dialect"
+    ],
+    "process_result_value": [
+      "self",
+      "value",
+      "dialect"
+    ]
+  },
+  "DEFAULT_MAX_KEY_LENGTH": [],
+  "DEFAULT_MAX_VARCHAR_LENGTH": [],
+  "DynamicJSON": {
+    "impl": [],
+    "load_dialect_impl": [
+      "self",
+      "dialect"
+    ],
+    "process_bind_param": [
+      "self",
+      "value",
+      "dialect"
+    ],
+    "process_result_value": [
+      "self",
+      "value",
+      "dialect"
+    ]
+  },
+  "PreciseTimestamp": {
+    "impl": [],
+    "cache_ok": [],
+    "load_dialect_impl": [
+      "self",
+      "dialect"
+    ]
+  },
+  "MIGRATIONS": [],
+  "LATEST_VERSION": [],
+  "upgrade": [
+    "source_db_url",
+    "dest_db_url"
+  ],
+  "SCHEMA_VERSION_KEY": [],
+  "SCHEMA_VERSION_0_PICKLE": [],
+  "SCHEMA_VERSION_1_JSON": [],
+  "LATEST_SCHEMA_VERSION": [],
+  "_get_schema_version_impl": [
+    "inspector",
+    "connection"
+  ],
+  "get_db_schema_version_from_connection": [
+    "connection"
+  ],
+  "to_sync_url": [
+    "db_url"
+  ],
+  "get_db_schema_version": [
+    "db_url"
+  ],
+  "_to_datetime_obj": [
+    "val"
+  ],
+  "_row_to_event": [
+    "row"
+  ],
+  "_get_state_dict": [
+    "state_val"
+  ],
+  "_LITELLM_STRUCTURED_TYPES": [],
+  "_JSON_DECODER": [],
+  "_MEDIA_URL_CONTENT_TYPE_BY_MAJOR_MIME_TYPE": [],
+  "_FINISH_REASON_MAPPING": [],
+  "_SUPPORTED_FILE_CONTENT_MIME_TYPES": [],
+  "_FILE_ID_REQUIRED_PROVIDERS": [],
+  "_MISSING_TOOL_RESULT_MESSAGE": [],
+  "_LITELLM_IMPORTED": [],
+  "_LITELLM_GLOBAL_SYMBOLS": [],
+  "_ensure_litellm_imported": [],
+  "_map_finish_reason": [
+    "finish_reason"
+  ],
+  "_get_provider_from_model": [
+    "model"
+  ],
+  "_DEFAULT_MIME_TYPE": [],
+  "_infer_mime_type_from_uri": [
+    "uri"
+  ],
+  "_looks_like_openai_file_id": [
+    "file_uri"
+  ],
+  "_is_http_url": [
+    "uri"
+  ],
+  "_redact_file_uri_for_log": [
+    "file_uri"
+  ],
+  "_requires_file_uri_fallback": [
+    "provider",
+    "model",
+    "file_uri"
+  ],
+  "_decode_inline_text_data": [
+    "raw_bytes"
+  ],
+  "_normalize_mime_type": [
+    "mime_type"
+  ],
+  "_media_url_content_type": [
+    "mime_type"
+  ],
+  "_iter_reasoning_texts": [
+    "reasoning_value"
+  ],
+  "_convert_reasoning_value_to_parts": [
+    "reasoning_value"
+  ],
+  "_extract_reasoning_value": [
+    "message"
+  ],
+  "ChatCompletionFileUrlObject": {},
+  "FunctionChunk": {},
+  "TextChunk": {},
+  "ReasoningChunk": {},
+  "UsageMetadataChunk": {},
+  "LiteLLMClient": {
+    "acompletion": [
+      "self",
+      "model",
+      "messages",
+      "tools"
+    ],
+    "completion": [
+      "self",
+      "model",
+      "messages",
+      "tools",
+      "stream"
+    ]
+  },
+  "_part_has_payload": [
+    "part"
+  ],
+  "_append_fallback_user_content_if_missing": [
+    "llm_request"
+  ],
+  "_extract_cached_prompt_tokens": [
+    "usage"
+  ],
+  "_content_to_message_param": [
+    "content"
+  ],
+  "_ensure_tool_results": [
+    "messages"
+  ],
+  "_get_content": [
+    "parts"
+  ],
+  "_is_ollama_chat_provider": [
+    "model",
+    "custom_llm_provider"
+  ],
+  "_flatten_ollama_content": [
+    "content"
+  ],
+  "_normalize_ollama_chat_messages": [
+    "messages"
+  ],
+  "_build_tool_call_from_json_dict": [
+    "candidate"
+  ],
+  "_parse_tool_calls_from_text": [
+    "text_block"
+  ],
+  "_split_message_content_and_tool_calls": [
+    "message"
+  ],
+  "_to_litellm_role": [
+    "role"
+  ],
+  "TYPE_LABELS": [],
+  "_schema_to_dict": [
+    "schema"
+  ],
+  "_function_declaration_to_tool_param": [
+    "function_declaration"
+  ],
+  "_model_response_to_chunk": [
+    "response"
+  ],
+  "_model_response_to_generate_content_response": [
+    "response"
+  ],
+  "_message_to_generate_content_response": [
+    "message"
+  ],
+  "_to_litellm_response_format": [
+    "response_schema",
+    "model"
+  ],
+  "_get_completion_inputs": [
+    "llm_request",
+    "model"
+  ],
+  "_build_function_declaration_log": [
+    "func_decl"
+  ],
+  "_build_request_log": [
+    "req"
+  ],
+  "_is_litellm_vertex_model": [
+    "model_string"
+  ],
+  "_is_litellm_gemini_model": [
+    "model_string"
+  ],
+  "_extract_gemini_model_from_litellm": [
+    "litellm_model"
+  ],
+  "_warn_gemini_via_litellm": [
+    "model_string"
+  ],
+  "_redirect_litellm_loggers_to_stdout": [],
+  "LiteLlm": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "generate_content_async": [
+      "self",
+      "llm_request",
+      "stream"
+    ],
+    "supported_models": [
+      "cls"
+    ]
+  },
+  "ClaudeRequest": {},
+  "to_claude_role": [
+    "role"
+  ],
+  "to_google_genai_finish_reason": [
+    "anthropic_stop_reason"
+  ],
+  "_is_image_part": [
+    "part"
+  ],
+  "part_to_message_block": [
+    "part"
+  ],
+  "content_to_message_param": [
+    "content"
+  ],
+  "content_block_to_part": [
+    "content_block"
+  ],
+  "message_to_generate_content_response": [
+    "message"
+  ],
+  "_update_type_string": [
+    "value_dict"
+  ],
+  "function_declaration_to_tool_param": [
+    "function_declaration"
+  ],
+  "AnthropicLlm": {
+    "supported_models": [
+      "cls"
+    ],
+    "generate_content_async": [
+      "self",
+      "llm_request",
+      "stream"
+    ],
+    "_anthropic_client": [
+      "self"
+    ]
+  },
+  "Claude": {
+    "_anthropic_client": [
+      "self"
+    ]
+  },
+  "CacheMetadata": {
+    "model_config": [],
+    "expire_soon": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_RESOURCE_EXHAUSTED_POSSIBLE_FIX_MESSAGE": [],
+  "_ResourceExhaustedError": {
+    "__init__": [
+      "self",
+      "client_error"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Gemini": {
+    "supported_models": [
+      "cls"
+    ],
+    "generate_content_async": [
+      "self",
+      "llm_request",
+      "stream"
+    ],
+    "_generate_content_via_interactions": [
+      "self",
+      "llm_request",
+      "stream"
+    ],
+    "api_client": [
+      "self"
+    ],
+    "_api_backend": [
+      "self"
+    ],
+    "_tracking_headers": [
+      "self"
+    ],
+    "_live_api_version": [
+      "self"
+    ],
+    "_live_api_client": [
+      "self"
+    ],
+    "connect": [
+      "self",
+      "llm_request"
+    ],
+    "_adapt_computer_use_tool": [
+      "self",
+      "llm_request"
+    ],
+    "_preprocess_request": [
+      "self",
+      "llm_request"
+    ],
+    "_merge_tracking_headers": [
+      "self",
+      "headers"
+    ]
+  },
+  "_build_response_log": [
+    "resp"
+  ],
+  "_remove_display_name_if_present": [
+    "data_obj"
+  ],
+  "BaseLlm": {
+    "model_config": [],
+    "supported_models": [
+      "cls"
+    ],
+    "generate_content_async": [
+      "self",
+      "llm_request",
+      "stream"
+    ],
+    "_maybe_append_user_content": [
+      "self",
+      "llm_request"
+    ],
+    "connect": [
+      "self",
+      "llm_request"
+    ]
+  },
+  "BaseLlmConnection": {
+    "send_history": [
+      "self",
+      "history"
+    ],
+    "send_content": [
+      "self",
+      "content"
+    ],
+    "send_realtime": [
+      "self",
+      "blob"
+    ],
+    "receive": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "LlmResponse": {
+    "model_config": [],
+    "create": [
+      "generate_content_response"
+    ]
+  },
+  "GeminiContextCacheManager": {
+    "__init__": [
+      "self",
+      "genai_client"
+    ],
+    "handle_context_caching": [
+      "self",
+      "llm_request"
+    ],
+    "_find_count_of_contents_to_cache": [
+      "self",
+      "contents"
+    ],
+    "_is_cache_valid": [
+      "self",
+      "llm_request"
+    ],
+    "_generate_cache_fingerprint": [
+      "self",
+      "llm_request",
+      "cache_contents_count"
+    ],
+    "_create_new_cache_with_contents": [
+      "self",
+      "llm_request",
+      "cache_contents_count"
+    ],
+    "_estimate_request_tokens": [
+      "self",
+      "llm_request"
+    ],
+    "_create_gemini_cache": [
+      "self",
+      "llm_request",
+      "cache_contents_count"
+    ],
+    "cleanup_cache": [
+      "self",
+      "cache_name"
+    ],
+    "_apply_cache_to_request": [
+      "self",
+      "llm_request",
+      "cache_name",
+      "cache_contents_count"
+    ],
+    "populate_cache_metadata_in_response": [
+      "self",
+      "llm_response",
+      "cache_metadata"
+    ]
+  },
+  "GemmaFunctionCallingMixin": {
+    "_move_function_calls_into_system_instruction": [
+      "self",
+      "llm_request"
+    ],
+    "_extract_function_calls_from_response": [
+      "self",
+      "llm_response"
+    ]
+  },
+  "GemmaFunctionCallModel": {},
+  "Gemma": {
+    "__repr__": [
+      "self"
+    ],
+    "supported_models": [
+      "cls"
+    ],
+    "_api_backend": [
+      "self"
+    ],
+    "_preprocess_request": [
+      "self",
+      "llm_request"
+    ],
+    "generate_content_async": [
+      "self",
+      "llm_request",
+      "stream"
+    ]
+  },
+  "_convert_content_parts_for_gemma": [
+    "content_item"
+  ],
+  "_build_gemma_function_system_instruction": [
+    "function_declarations"
+  ],
+  "_get_last_valid_json_substring": [
+    "text"
+  ],
+  "_find_tool_with_function_declarations": [
+    "llm_request"
+  ],
+  "LlmRequest": {
+    "model_config": [],
+    "append_instructions": [
+      "self",
+      "instructions"
+    ],
+    "append_tools": [
+      "self",
+      "tools"
+    ],
+    "set_output_schema": [
+      "self",
+      "base_model"
+    ]
+  },
+  "LLMRegistry": {
+    "new_llm": [
+      "model"
+    ],
+    "_register": [
+      "model_name_regex",
+      "llm_cls"
+    ],
+    "register": [
+      "llm_cls"
+    ],
+    "resolve": [
+      "model"
+    ]
+  },
+  "RealtimeInput": [],
+  "GeminiLlmConnection": {
+    "__init__": [
+      "self",
+      "gemini_session",
+      "api_backend",
+      "model_version"
+    ],
+    "send_history": [
+      "self",
+      "history"
+    ],
+    "send_content": [
+      "self",
+      "content"
+    ],
+    "send_realtime": [
+      "self",
+      "input"
+    ],
+    "__build_full_text_response": [
+      "self",
+      "text"
+    ],
+    "receive": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "convert_part_to_interaction_content": [
+    "part"
+  ],
+  "convert_content_to_turn": [
+    "content"
+  ],
+  "convert_contents_to_turns": [
+    "contents"
+  ],
+  "convert_tools_config_to_interactions_format": [
+    "config"
+  ],
+  "convert_interaction_output_to_part": [
+    "output"
+  ],
+  "convert_interaction_to_llm_response": [
+    "interaction"
+  ],
+  "convert_interaction_event_to_llm_response": [
+    "event",
+    "aggregated_parts",
+    "interaction_id"
+  ],
+  "build_generation_config": [
+    "config"
+  ],
+  "extract_system_instruction": [
+    "config"
+  ],
+  "_build_tool_log": [
+    "tool"
+  ],
+  "build_interactions_request_log": [
+    "model",
+    "input_turns",
+    "system_instruction",
+    "tools",
+    "generation_config",
+    "previous_interaction_id",
+    "stream"
+  ],
+  "build_interactions_response_log": [
+    "interaction"
+  ],
+  "build_interactions_event_log": [
+    "event"
+  ],
+  "_get_latest_user_contents": [
+    "contents"
+  ],
+  "generate_content_via_interactions": [
+    "api_client",
+    "llm_request",
+    "stream"
+  ],
+  "_APIGEE_PROXY_URL_ENV_VARIABLE_NAME": [],
+  "_GOOGLE_GENAI_USE_VERTEXAI_ENV_VARIABLE_NAME": [],
+  "_PROJECT_ENV_VARIABLE_NAME": [],
+  "_LOCATION_ENV_VARIABLE_NAME": [],
+  "ApigeeLlm": {
+    "__init__": [
+      "self"
+    ],
+    "supported_models": [
+      "cls"
+    ],
+    "api_client": [
+      "self"
+    ],
+    "_preprocess_request": [
+      "self",
+      "llm_request"
+    ]
+  },
+  "_identify_vertexai": [
+    "model"
+  ],
+  "_identify_api_version": [
+    "model"
+  ],
+  "_get_model_id": [
+    "model"
+  ],
+  "_validate_model_string": [
+    "model"
+  ],
+  "AlreadyExistsError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "NotFoundError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InputValidationError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "_EXAMPLES_INTRO": [],
+  "_EXAMPLES_END": [],
+  "_EXAMPLE_START": [],
+  "_EXAMPLE_END": [],
+  "_USER_PREFIX": [],
+  "_MODEL_PREFIX": [],
+  "_FUNCTION_PREFIX": [],
+  "_FUNCTION_CALL_PREFIX": [],
+  "_FUNCTION_CALL_SUFFIX": [],
+  "_FUNCTION_RESPONSE_PREFIX": [],
+  "_FUNCTION_RESPONSE_SUFFIX": [],
+  "convert_examples_to_text": [
+    "examples",
+    "model"
+  ],
+  "_get_latest_message_from_user": [
+    "session"
+  ],
+  "build_example_si": [
+    "examples",
+    "query",
+    "model"
+  ],
+  "Example": {},
+  "BaseExampleProvider": {
+    "get_examples": [
+      "self",
+      "query"
+    ]
+  },
+  "VertexAiExampleStore": {
+    "__init__": [
+      "self",
+      "examples_store_name"
+    ],
+    "get_examples": [
+      "self",
+      "query"
+    ]
+  },
+  "LoadSkillTool": {
+    "__init__": [
+      "self",
+      "toolset"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "LoadSkillResourceTool": {
+    "__init__": [
+      "self",
+      "toolset"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "SkillToolset": {
+    "__init__": [
+      "self",
+      "skills"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "_get_skill": [
+      "self",
+      "name"
+    ],
+    "_list_skills": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "_py_type_2_schema_type": [],
+  "_get_fields_dict": [
+    "func"
+  ],
+  "_annotate_nullable_fields": [
+    "schema"
+  ],
+  "_annotate_required_fields": [
+    "schema"
+  ],
+  "_remove_any_of": [
+    "schema"
+  ],
+  "_remove_default": [
+    "schema"
+  ],
+  "_remove_nullable": [
+    "schema"
+  ],
+  "_remove_title": [
+    "schema"
+  ],
+  "_get_pydantic_schema": [
+    "func"
+  ],
+  "_process_pydantic_schema": [
+    "vertexai",
+    "schema"
+  ],
+  "_map_pydantic_type_to_property_schema": [
+    "property_schema"
+  ],
+  "_map_pydantic_type_to_schema_type": [
+    "schema"
+  ],
+  "_get_return_type": [
+    "func"
+  ],
+  "build_function_declaration": [
+    "func",
+    "ignore_params",
+    "variant"
+  ],
+  "build_function_declaration_for_langchain": [
+    "vertexai",
+    "name",
+    "description",
+    "func",
+    "param_pydantic_schema"
+  ],
+  "build_function_declaration_for_params_for_crewai": [
+    "vertexai",
+    "name",
+    "description",
+    "func",
+    "param_pydantic_schema"
+  ],
+  "build_function_declaration_util": [
+    "vertexai",
+    "name",
+    "description",
+    "func",
+    "before_param_pydantic_schema"
+  ],
+  "from_function_with_options": [
+    "func",
+    "variant"
+  ],
+  "EnterpriseWebSearchTool": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "enterprise_web_search_tool": [],
+  "load_web_page": [
+    "url"
+  ],
+  "LangchainTool": {
+    "__init__": [
+      "self",
+      "tool",
+      "name",
+      "description"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "LangchainToolConfig": {},
+  "PreloadMemoryTool": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "preload_memory_tool": [],
+  "extract_text": [
+    "memory",
+    "splitter"
+  ],
+  "get_user_choice": [
+    "options",
+    "tool_context"
+  ],
+  "get_user_choice_tool": [],
+  "LoadMemoryResponse": {},
+  "load_memory": [
+    "query",
+    "tool_context"
+  ],
+  "LoadMemoryTool": {
+    "__init__": [
+      "self"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "load_memory_tool": [],
+  "AuthenticatedFunctionTool": {
+    "__init__": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_run_async_impl": [
+      "self"
+    ]
+  },
+  "GoogleMapsGroundingTool": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "google_maps_grounding": [],
+  "LongRunningFunctionTool": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "_get_declaration": [
+      "self"
+    ]
+  },
+  "FunctionTool": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "_preprocess_args": [
+      "self",
+      "args"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_invoke_callable": [
+      "self",
+      "target",
+      "args_to_call"
+    ],
+    "_call_live": [
+      "self"
+    ],
+    "_get_mandatory_args": [
+      "self"
+    ]
+  },
+  "transfer_to_agent": [
+    "agent_name",
+    "tool_context"
+  ],
+  "TransferToAgentTool": {
+    "__init__": [
+      "self",
+      "agent_names"
+    ],
+    "_get_declaration": [
+      "self"
+    ]
+  },
+  "ToolPredicate": {
+    "__call__": [
+      "self",
+      "tool",
+      "readonly_context"
+    ]
+  },
+  "SelfToolset": [],
+  "BaseToolset": {
+    "__init__": [
+      "self"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "get_tools_with_prefix": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ],
+    "_is_tool_selected": [
+      "self",
+      "tool",
+      "readonly_context"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "get_auth_config": [
+      "self"
+    ]
+  },
+  "ForwardingArtifactService": {
+    "__init__": [
+      "self",
+      "tool_context"
+    ],
+    "save_artifact": [
+      "self"
+    ],
+    "load_artifact": [
+      "self"
+    ],
+    "list_artifact_keys": [
+      "self"
+    ],
+    "delete_artifact": [
+      "self"
+    ],
+    "list_versions": [
+      "self"
+    ],
+    "list_artifact_versions": [
+      "self"
+    ],
+    "get_artifact_version": [
+      "self"
+    ]
+  },
+  "_GEMINI_SUPPORTED_INLINE_MIME_PREFIXES": [],
+  "_GEMINI_SUPPORTED_INLINE_MIME_TYPES": [],
+  "_TEXT_LIKE_MIME_TYPES": [],
+  "_is_inline_mime_type_supported": [
+    "mime_type"
+  ],
+  "_maybe_base64_to_bytes": [
+    "data"
+  ],
+  "_as_safe_part_for_llm": [
+    "artifact",
+    "artifact_name"
+  ],
+  "LoadArtifactsTool": {
+    "__init__": [
+      "self"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "_append_artifacts_to_llm_request": [
+      "self"
+    ]
+  },
+  "load_artifacts_tool": [],
+  "LoadMcpResourceTool": {
+    "__init__": [
+      "self",
+      "mcp_toolset"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "_append_resources_to_llm_request": [
+      "self"
+    ],
+    "_mcp_content_to_part": [
+      "self",
+      "content",
+      "resource_name"
+    ]
+  },
+  "MODEL_JSON_RESPONSE_KEY": [],
+  "SetModelResponseTool": {
+    "__init__": [
+      "self",
+      "output_schema"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "ToolContext": {
+    "__init__": [
+      "self",
+      "invocation_context"
+    ],
+    "actions": [
+      "self"
+    ],
+    "request_credential": [
+      "self",
+      "auth_config"
+    ],
+    "get_auth_response": [
+      "self",
+      "auth_config"
+    ],
+    "request_confirmation": [
+      "self"
+    ],
+    "search_memory": [
+      "self",
+      "query"
+    ]
+  },
+  "VertexAiSearchTool": {
+    "__init__": [
+      "self"
+    ],
+    "_build_vertex_ai_search_config": [
+      "self",
+      "readonly_context"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "SelfTool": [],
+  "BaseTool": {
+    "__init__": [
+      "self"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "_api_variant": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "UrlContextTool": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "url_context": [],
+  "_LAZY_MAPPING": [],
+  "__dir__": [],
+  "GoogleSearchTool": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "google_search": [],
+  "exit_loop": [
+    "tool_context"
+  ],
+  "_get_input_schema": [
+    "agent"
+  ],
+  "_get_output_schema": [
+    "agent"
+  ],
+  "AgentTool": {
+    "__init__": [
+      "self",
+      "agent",
+      "skip_summarization"
+    ],
+    "populate_name": [
+      "cls",
+      "data"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "AgentToolConfig": {},
+  "ExampleTool": {
+    "__init__": [
+      "self",
+      "examples"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "ExampleToolConfig": {},
+  "GoogleTool": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_run_async_with_credential": [
+      "self",
+      "credentials",
+      "tool_settings",
+      "args",
+      "tool_context"
+    ]
+  },
+  "BaseToolConfig": {
+    "model_config": []
+  },
+  "ToolArgsConfig": {
+    "model_config": []
+  },
+  "ToolConfig": {
+    "model_config": []
+  },
+  "BaseGoogleCredentialsConfig": {
+    "model_config": [],
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "GoogleCredentialsManager": {
+    "__init__": [
+      "self",
+      "credentials_config"
+    ],
+    "get_valid_credentials": [
+      "self",
+      "tool_context"
+    ],
+    "_perform_oauth_flow": [
+      "self",
+      "tool_context"
+    ]
+  },
+  "_py_builtin_type_to_schema_type": [],
+  "_handle_params_as_deferred_annotations": [
+    "param",
+    "annotation_under_future",
+    "name"
+  ],
+  "_add_unevaluated_items_to_fixed_len_tuple_schema": [
+    "json_schema"
+  ],
+  "_raise_for_unsupported_param": [
+    "param",
+    "func_name",
+    "exception"
+  ],
+  "_raise_for_invalid_enum_value": [
+    "param"
+  ],
+  "_generate_json_schema_for_parameter": [
+    "param"
+  ],
+  "_is_builtin_primitive_or_compound": [
+    "annotation"
+  ],
+  "_raise_for_any_of_if_mldev": [
+    "schema"
+  ],
+  "_update_for_default_if_mldev": [
+    "schema"
+  ],
+  "_raise_if_schema_unsupported": [
+    "variant",
+    "schema"
+  ],
+  "_is_default_value_compatible": [
+    "default_value",
+    "annotation"
+  ],
+  "_parse_schema_from_parameter": [
+    "variant",
+    "param",
+    "func_name"
+  ],
+  "_get_required_fields": [
+    "schema"
+  ],
+  "GoogleSearchAgentTool": {
+    "__init__": [
+      "self",
+      "agent"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "ToolConfirmation": {
+    "model_config": []
+  },
+  "API_REGISTRY_URL": [],
+  "ApiRegistry": {
+    "__init__": [
+      "self",
+      "api_registry_project_id",
+      "location",
+      "header_provider"
+    ],
+    "get_toolset": [
+      "self",
+      "mcp_server_name",
+      "tool_filter",
+      "tool_name_prefix"
+    ],
+    "_get_auth_headers": [
+      "self"
+    ]
+  },
+  "ToolboxToolset": {
+    "__init__": [
+      "self",
+      "server_url",
+      "toolset_name",
+      "tool_names",
+      "auth_token_getters",
+      "bound_params",
+      "credentials",
+      "additional_headers"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DiscoveryEngineSearchTool": {
+    "__init__": [
+      "self",
+      "data_store_id",
+      "data_store_specs",
+      "search_engine_id",
+      "filter",
+      "max_results"
+    ],
+    "discovery_engine_search": [
+      "self",
+      "query"
+    ]
+  },
+  "CrewaiTool": {
+    "__init__": [
+      "self",
+      "tool"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "CrewaiToolConfig": {},
+  "_ExtendedJSONSchema": {},
+  "_sanitize_schema_type": [
+    "schema",
+    "preserve_null_type"
+  ],
+  "_dereference_schema": [
+    "schema"
+  ],
+  "_sanitize_schema_formats_for_gemini": [
+    "schema",
+    "preserve_null_type"
+  ],
+  "_to_gemini_schema": [
+    "openapi_schema"
+  ],
+  "_get_function_fields": [
+    "func",
+    "ignore_params"
+  ],
+  "_build_parameters_json_schema": [
+    "func",
+    "ignore_params"
+  ],
+  "_build_response_json_schema": [
+    "func"
+  ],
+  "build_function_declaration_with_json_schema": [
+    "func",
+    "ignore_params"
+  ],
+  "BaseAuthenticatedTool": {
+    "__init__": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_run_async_impl": [
+      "self"
+    ]
+  },
+  "APIHubToolset": {
+    "__init__": [
+      "self"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "_prepare_toolset": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_auth_config": [
+      "self"
+    ]
+  },
+  "BaseAPIHubClient": {
+    "get_spec_content": [
+      "self",
+      "resource_name"
+    ]
+  },
+  "APIHubClient": {
+    "__init__": [
+      "self"
+    ],
+    "get_spec_content": [
+      "self",
+      "path"
+    ],
+    "list_apis": [
+      "self",
+      "project",
+      "location"
+    ],
+    "get_api": [
+      "self",
+      "api_resource_name"
+    ],
+    "get_api_version": [
+      "self",
+      "api_version_name"
+    ],
+    "_fetch_spec": [
+      "self",
+      "api_spec_resource_name"
+    ],
+    "_extract_resource_name": [
+      "self",
+      "url_or_path"
+    ],
+    "_get_access_token": [
+      "self"
+    ]
+  },
+  "SecretManagerClient": {
+    "__init__": [
+      "self",
+      "service_account_json",
+      "auth_token"
+    ],
+    "get_secret": [
+      "self",
+      "resource_name"
+    ]
+  },
+  "VertexAiRagRetrieval": {
+    "__init__": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "_get_default_embedding_model": [],
+  "FilesRetrieval": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "BaseRetrievalTool": {
+    "_get_declaration": [
+      "self"
+    ]
+  },
+  "LlamaIndexRetrieval": {
+    "__init__": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ]
+  },
+  "_SPANNER_GSQL_EMBEDDING_MODEL_NAME": [],
+  "_SPANNER_PG_VERTEX_AI_EMBEDDING_MODEL_ENDPOINT": [],
+  "_VERTEX_AI_EMBEDDING_MODEL_NAME": [],
+  "_OUTPUT_DIMENSIONALITY": [],
+  "_TOP_K": [],
+  "_DISTANCE_TYPE": [],
+  "_NEAREST_NEIGHBORS_ALGORITHM": [],
+  "_NUM_LEAVES_TO_SEARCH": [],
+  "_DISTANCE_ALIAS": [],
+  "_GOOGLESQL_PARAMETER_TEXT_QUERY": [],
+  "_POSTGRESQL_PARAMETER_TEXT_QUERY": [],
+  "_GOOGLESQL_PARAMETER_QUERY_EMBEDDING": [],
+  "_POSTGRESQL_PARAMETER_QUERY_EMBEDDING": [],
+  "_generate_googlesql_for_embedding_query": [
+    "spanner_gsql_embedding_model_name"
+  ],
+  "_generate_postgresql_for_embedding_query": [
+    "vertex_ai_embedding_model_endpoint",
+    "output_dimensionality"
+  ],
+  "_get_embedding_for_query": [
+    "database",
+    "dialect",
+    "spanner_gsql_embedding_model_name",
+    "spanner_pg_vertex_ai_embedding_model_endpoint",
+    "query",
+    "output_dimensionality"
+  ],
+  "_get_postgresql_distance_function": [
+    "distance_type"
+  ],
+  "_get_googlesql_distance_function": [
+    "distance_type",
+    "ann"
+  ],
+  "_generate_sql_for_knn": [
+    "dialect",
+    "table_name",
+    "embedding_column_to_search",
+    "columns",
+    "additional_filter",
+    "distance_type",
+    "top_k"
+  ],
+  "_generate_sql_for_ann": [
+    "dialect",
+    "table_name",
+    "embedding_column_to_search",
+    "columns",
+    "additional_filter",
+    "distance_type",
+    "top_k",
+    "num_leaves_to_search"
+  ],
+  "similarity_search": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "table_name",
+    "query",
+    "embedding_column_to_search",
+    "columns",
+    "embedding_options",
+    "credentials",
+    "additional_filter",
+    "search_options"
+  ],
+  "vector_store_similarity_search": [
+    "query",
+    "credentials",
+    "settings"
+  ],
+  "EXACT_NEAREST_NEIGHBORS": [],
+  "APPROXIMATE_NEAREST_NEIGHBORS": [],
+  "NearestNeighborsAlgorithm": [],
+  "Capabilities": {
+    "DATA_READ": []
+  },
+  "QueryResultMode": {
+    "DEFAULT": [],
+    "DICT_LIST": []
+  },
+  "TableColumn": {},
+  "VectorSearchIndexSettings": {},
+  "SpannerVectorStoreSettings": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "SpannerToolSettings": {},
+  "execute_sql": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "query",
+    "credentials",
+    "settings",
+    "tool_context"
+  ],
+  "_EXECUTE_SQL_DICT_LIST_MODE_DOCSTRING": [],
+  "get_execute_sql": [
+    "settings"
+  ],
+  "list_table_names": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "credentials",
+    "named_schema"
+  ],
+  "get_table_schema": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "table_name",
+    "credentials",
+    "named_schema"
+  ],
+  "list_table_indexes": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "table_id",
+    "credentials"
+  ],
+  "list_table_index_columns": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "table_id",
+    "credentials"
+  ],
+  "list_named_schemas": [
+    "project_id",
+    "instance_id",
+    "database_id",
+    "credentials"
+  ],
+  "DEFAULT_MAX_EXECUTED_QUERY_RESULT_ROWS": [],
+  "embed_contents": [
+    "vertex_ai_embedding_model_name",
+    "contents",
+    "output_dimensionality",
+    "genai_client"
+  ],
+  "embed_contents_async": [
+    "vertex_ai_embedding_model_name",
+    "contents",
+    "output_dimensionality",
+    "genai_client"
+  ],
+  "SpannerVectorStore": {
+    "DEFAULT_VECTOR_STORE_ID_COLUMN_NAME": [],
+    "SPANNER_VECTOR_STORE_USER_AGENT": [],
+    "__init__": [
+      "self",
+      "settings",
+      "credentials",
+      "spanner_client",
+      "genai_client"
+    ],
+    "_vector_store_settings": [
+      "self"
+    ],
+    "_create_vector_store_table_ddl": [
+      "self",
+      "dialect"
+    ],
+    "_create_ann_vector_search_index_ddl": [
+      "self",
+      "dialect"
+    ],
+    "create_vector_store": [
+      "self"
+    ],
+    "create_vector_search_index": [
+      "self"
+    ],
+    "create_vector_store_async": [
+      "self"
+    ],
+    "create_vector_search_index_async": [
+      "self"
+    ],
+    "_prepare_and_validate_batches": [
+      "self",
+      "contents",
+      "additional_columns_values",
+      "batch_size"
+    ],
+    "add_contents": [
+      "self",
+      "contents"
+    ],
+    "add_contents_async": [
+      "self",
+      "contents"
+    ]
+  },
+  "SpannerCredentialsConfig": [],
+  "USER_AGENT": [],
+  "get_spanner_client": [],
+  "SPANNER_TOKEN_CACHE_KEY": [],
+  "SPANNER_DEFAULT_SCOPE": [],
+  "DEFAULT_SPANNER_TOOL_NAME_PREFIX": [],
+  "SpannerToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_is_tool_selected": [
+      "self",
+      "tool",
+      "readonly_context"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "StatefulParameter": {},
+  "ToolConnectionMap": {},
+  "AgentSimulatorPlugin": {
+    "__init__": [
+      "self",
+      "simulator_engine"
+    ],
+    "before_tool_callback": [
+      "self",
+      "tool",
+      "tool_args",
+      "tool_context"
+    ]
+  },
+  "agent_simulator_logger": [],
+  "_create_mock_strategy": [
+    "mock_strategy_type",
+    "llm_name",
+    "llm_config"
+  ],
+  "AgentSimulatorEngine": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "simulate": [
+      "self",
+      "tool",
+      "args",
+      "tool_context"
+    ]
+  },
+  "InjectedError": {},
+  "InjectionConfig": {
+    "check_injected_error_or_response": [
+      "self"
+    ]
+  },
+  "MockStrategy": {
+    "MOCK_STRATEGY_UNSPECIFIED": [],
+    "MOCK_STRATEGY_TOOL_SPEC": [],
+    "MOCK_STRATEGY_TRACING": []
+  },
+  "ToolSimulationConfig": {
+    "check_mock_strategy_type": [
+      "self"
+    ]
+  },
+  "AgentSimulatorConfig": {
+    "check_tool_simulation_configs": [
+      "cls",
+      "v"
+    ]
+  },
+  "_TOOL_CONNECTION_ANALYSIS_PROMPT_TEMPLATE": [],
+  "ToolConnectionAnalyzer": {
+    "__init__": [
+      "self",
+      "llm_name",
+      "llm_config"
+    ],
+    "analyze": [
+      "self",
+      "tools"
+    ]
+  },
+  "AgentSimulatorFactory": {
+    "create_callback": [
+      "config"
+    ],
+    "create_plugin": [
+      "config"
+    ]
+  },
+  "TracingMockStrategy": {
+    "__init__": [
+      "self",
+      "llm_name",
+      "llm_config"
+    ],
+    "mock": [
+      "self",
+      "tool",
+      "args",
+      "tool_context",
+      "tool_connection_map",
+      "state_store",
+      "environment_data"
+    ]
+  },
+  "_TOOL_SPEC_MOCK_PROMPT_TEMPLATE": [],
+  "_find_value_by_key": [
+    "data",
+    "target_key"
+  ],
+  "ToolSpecMockStrategy": {
+    "__init__": [
+      "self",
+      "llm_name",
+      "llm_config"
+    ],
+    "mock": [
+      "self",
+      "tool",
+      "args",
+      "tool_context",
+      "tool_connection_map",
+      "state_store",
+      "environment_data"
+    ]
+  },
+  "BIGTABLE_TOKEN_CACHE_KEY": [],
+  "BIGTABLE_DEFAULT_SCOPE": [],
+  "BigtableCredentialsConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "BigtableToolSettings": {},
+  "list_instances": [
+    "project_id",
+    "credentials"
+  ],
+  "get_instance_info": [
+    "project_id",
+    "instance_id",
+    "credentials"
+  ],
+  "list_tables": [
+    "project_id",
+    "instance_id",
+    "credentials"
+  ],
+  "get_table_info": [
+    "project_id",
+    "instance_id",
+    "table_id",
+    "credentials"
+  ],
+  "_get_client_info": [],
+  "get_bigtable_data_client": [],
+  "get_bigtable_admin_client": [],
+  "DEFAULT_BIGTABLE_TOOL_NAME_PREFIX": [],
+  "BigtableToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_is_tool_selected": [
+      "self",
+      "tool",
+      "readonly_context"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ]
+  },
+  "adk_to_mcp_tool_type": [
+    "tool"
+  ],
+  "gemini_to_json_schema": [
+    "gemini_schema"
+  ],
+  "SessionContext": {
+    "__init__": [
+      "self",
+      "client",
+      "timeout",
+      "sse_read_timeout",
+      "is_stdio"
+    ],
+    "session": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_run": [
+      "self"
+    ]
+  },
+  "ProgressCallbackFactory": {
+    "__call__": [
+      "self",
+      "tool_name"
+    ]
+  },
+  "McpTool": {
+    "__init__": [
+      "self"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "raw_mcp_tool": [
+      "self"
+    ],
+    "_invoke_callable": [
+      "self",
+      "target",
+      "args_to_call"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "_run_async_impl": [
+      "self"
+    ],
+    "_resolve_progress_callback": [
+      "self",
+      "tool_context"
+    ],
+    "_get_headers": [
+      "self",
+      "tool_context",
+      "credential"
+    ]
+  },
+  "MCPTool": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_has_cancelled_error_context": [
+    "exc"
+  ],
+  "StdioConnectionParams": {},
+  "SseConnectionParams": {},
+  "CheckableMcpHttpClientFactory": {},
+  "StreamableHTTPConnectionParams": {
+    "model_config": []
+  },
+  "retry_on_errors": [
+    "func"
+  ],
+  "MCPSessionManager": {
+    "__init__": [
+      "self",
+      "connection_params",
+      "errlog"
+    ],
+    "_session_lock": [
+      "self"
+    ],
+    "_generate_session_key": [
+      "self",
+      "merged_headers"
+    ],
+    "_merge_headers": [
+      "self",
+      "additional_headers"
+    ],
+    "_is_session_disconnected": [
+      "self",
+      "session"
+    ],
+    "_cleanup_session": [
+      "self",
+      "session_key",
+      "exit_stack",
+      "stored_loop"
+    ],
+    "_create_client": [
+      "self",
+      "merged_headers"
+    ],
+    "create_session": [
+      "self",
+      "headers"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "SseServerParams": [],
+  "StreamableHTTPServerParams": [],
+  "McpToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_get_auth_headers": [
+      "self"
+    ],
+    "_execute_with_session": [
+      "self",
+      "coroutine_func",
+      "error_message",
+      "readonly_context"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "read_resource": [
+      "self",
+      "name",
+      "readonly_context"
+    ],
+    "list_resources": [
+      "self",
+      "readonly_context"
+    ],
+    "get_resource_info": [
+      "self",
+      "name",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_auth_config": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config",
+      "config_abs_path"
+    ]
+  },
+  "MCPToolset": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "McpToolsetConfig": {
+    "_check_only_one_params_field": [
+      "self"
+    ]
+  },
+  "DATA_AGENT_TOKEN_CACHE_KEY": [],
+  "DATA_AGENT_DEFAULT_SCOPE": [],
+  "DataAgentCredentialsConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "DataAgentToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_is_tool_selected": [
+      "self",
+      "tool",
+      "readonly_context"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DataAgentToolConfig": {
+    "model_config": []
+  },
+  "BASE_URL": [],
+  "_get_http_headers": [
+    "credentials"
+  ],
+  "list_accessible_data_agents": [
+    "project_id",
+    "credentials"
+  ],
+  "get_data_agent_info": [
+    "data_agent_name",
+    "credentials"
+  ],
+  "ask_data_agent": [
+    "data_agent_name",
+    "query"
+  ],
+  "_get_stream": [
+    "url",
+    "ca_payload"
+  ],
+  "_format_bq_table_ref": [
+    "table_ref"
+  ],
+  "_format_schema_as_dict": [
+    "data"
+  ],
+  "_format_datasource_as_dict": [
+    "datasource"
+  ],
+  "_handle_text_response": [
+    "resp"
+  ],
+  "_handle_schema_response": [
+    "resp"
+  ],
+  "_handle_data_response": [
+    "resp",
+    "max_query_result_rows"
+  ],
+  "_handle_error": [
+    "resp"
+  ],
+  "_append_message": [
+    "messages",
+    "new_message"
+  ],
+  "rename_python_keywords": [
+    "s",
+    "prefix"
+  ],
+  "ApiParameter": {
+    "model_post_init": [
+      "self",
+      "_"
+    ],
+    "_default_py_name": [
+      "self"
+    ],
+    "_serialize": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_arg_string": [
+      "self"
+    ],
+    "to_dict_property": [
+      "self"
+    ],
+    "to_pydoc_string": [
+      "self"
+    ]
+  },
+  "TypeHintHelper": {
+    "get_type_value": [
+      "schema"
+    ],
+    "get_type_hint": [
+      "schema"
+    ]
+  },
+  "PydocHelper": {
+    "generate_param_doc": [
+      "param"
+    ],
+    "generate_return_doc": [
+      "responses"
+    ]
+  },
+  "OpenIdConfig": {},
+  "token_to_scheme_credential": [
+    "token_type",
+    "location",
+    "name",
+    "credential_value"
+  ],
+  "service_account_dict_to_scheme_credential": [
+    "config",
+    "scopes"
+  ],
+  "service_account_scheme_credential": [
+    "config"
+  ],
+  "openid_dict_to_scheme_credential": [
+    "config_dict",
+    "scopes",
+    "credential_dict"
+  ],
+  "openid_url_to_scheme_credential": [
+    "openid_url",
+    "scopes",
+    "credential_dict"
+  ],
+  "INTERNAL_AUTH_PREFIX": [],
+  "credential_to_param": [
+    "auth_scheme",
+    "auth_credential"
+  ],
+  "dict_to_auth_scheme": [
+    "data"
+  ],
+  "AuthCredentialMissingError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "BaseAuthCredentialExchanger": {
+    "exchange_credential": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ]
+  },
+  "AutoAuthCredentialExchanger": {
+    "__init__": [
+      "self",
+      "custom_exchangers"
+    ],
+    "exchange_credential": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ]
+  },
+  "ServiceAccountCredentialExchanger": {
+    "exchange_credential": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ]
+  },
+  "OpenAPIToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_configure_auth_all": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "_configure_credential_key_all": [
+      "self",
+      "credential_key"
+    ],
+    "configure_ssl_verify_all": [
+      "self",
+      "ssl_verify"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "get_tool": [
+      "self",
+      "tool_name"
+    ],
+    "_load_spec": [
+      "self",
+      "spec_str",
+      "spec_type"
+    ],
+    "_parse": [
+      "self",
+      "openapi_spec_dict"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_auth_config": [
+      "self"
+    ]
+  },
+  "AuthPreparationState": [],
+  "AuthPreparationResult": {},
+  "ToolContextCredentialStore": {
+    "__init__": [
+      "self",
+      "tool_context"
+    ],
+    "_legacy_stable_digest": [
+      "self",
+      "text"
+    ],
+    "_get_legacy_credential_key": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "get_credential_key": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "get_credential": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "store_credential": [
+      "self",
+      "key",
+      "auth_credential"
+    ],
+    "remove_credential": [
+      "self",
+      "key"
+    ]
+  },
+  "ToolAuthHandler": {
+    "__init__": [
+      "self",
+      "tool_context",
+      "auth_scheme",
+      "auth_credential",
+      "credential_exchanger",
+      "credential_store"
+    ],
+    "_get_credential_key_override": [
+      "self"
+    ],
+    "_build_auth_config": [
+      "self"
+    ],
+    "from_tool_context": [
+      "cls",
+      "tool_context",
+      "auth_scheme",
+      "auth_credential",
+      "credential_exchanger"
+    ],
+    "_get_existing_credential": [
+      "self"
+    ],
+    "_exchange_credential": [
+      "self",
+      "auth_credential"
+    ],
+    "_store_credential": [
+      "self",
+      "auth_credential"
+    ],
+    "_request_credential": [
+      "self"
+    ],
+    "_get_auth_response": [
+      "self"
+    ],
+    "_external_exchange_required": [
+      "self",
+      "credential"
+    ],
+    "prepare_auth_credentials": [
+      "self"
+    ]
+  },
+  "OperationEndpoint": {},
+  "ParsedOperation": {},
+  "OpenApiSpecParser": {
+    "parse": [
+      "self",
+      "openapi_spec_dict"
+    ],
+    "_sanitize_schema_types": [
+      "self",
+      "openapi_spec"
+    ],
+    "_collect_operations": [
+      "self",
+      "openapi_spec"
+    ],
+    "_resolve_references": [
+      "self",
+      "openapi_spec"
+    ]
+  },
+  "OperationParser": {
+    "__init__": [
+      "self",
+      "operation",
+      "should_parse"
+    ],
+    "load": [
+      "cls",
+      "operation",
+      "params",
+      "return_value"
+    ],
+    "_process_operation_parameters": [
+      "self"
+    ],
+    "_process_request_body": [
+      "self"
+    ],
+    "_dedupe_param_names": [
+      "self"
+    ],
+    "_process_return_value": [
+      "self"
+    ],
+    "get_function_name": [
+      "self"
+    ],
+    "get_return_type_hint": [
+      "self"
+    ],
+    "get_return_type_value": [
+      "self"
+    ],
+    "get_parameters": [
+      "self"
+    ],
+    "get_return_value": [
+      "self"
+    ],
+    "get_auth_scheme_name": [
+      "self"
+    ],
+    "get_pydoc_string": [
+      "self"
+    ],
+    "get_json_schema": [
+      "self"
+    ],
+    "get_signature_parameters": [
+      "self"
+    ],
+    "get_annotations": [
+      "self"
+    ]
+  },
+  "snake_to_lower_camel": [
+    "snake_case_string"
+  ],
+  "RestApiTool": {
+    "__init__": [
+      "self",
+      "name",
+      "description",
+      "endpoint",
+      "operation",
+      "auth_scheme",
+      "auth_credential",
+      "should_parse_operation",
+      "ssl_verify",
+      "header_provider"
+    ],
+    "from_parsed_operation": [
+      "cls",
+      "parsed",
+      "ssl_verify",
+      "header_provider"
+    ],
+    "from_parsed_operation_str": [
+      "cls",
+      "parsed_operation_str"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "configure_auth_scheme": [
+      "self",
+      "auth_scheme"
+    ],
+    "configure_auth_credential": [
+      "self",
+      "auth_credential"
+    ],
+    "configure_credential_key": [
+      "self",
+      "credential_key"
+    ],
+    "configure_ssl_verify": [
+      "self",
+      "ssl_verify"
+    ],
+    "set_default_headers": [
+      "self",
+      "headers"
+    ],
+    "_prepare_auth_request_params": [
+      "self",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "_prepare_request_params": [
+      "self",
+      "parameters",
+      "kwargs"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "call": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_request": [],
+  "PUBSUB_TOKEN_CACHE_KEY": [],
+  "PUBSUB_DEFAULT_SCOPE": [],
+  "PubSubCredentialsConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "PubSubToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_is_tool_selected": [
+      "self",
+      "tool",
+      "readonly_context"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_CACHE_TTL": [],
+  "_publisher_client_cache": [],
+  "_publisher_client_lock": [],
+  "get_publisher_client": [],
+  "_subscriber_client_cache": [],
+  "_subscriber_client_lock": [],
+  "get_subscriber_client": [],
+  "cleanup_clients": [],
+  "PubSubToolConfig": {
+    "model_config": []
+  },
+  "publish_message": [
+    "topic_name",
+    "message",
+    "credentials",
+    "settings",
+    "attributes",
+    "ordering_key"
+  ],
+  "_decode_message_data": [
+    "data"
+  ],
+  "pull_messages": [
+    "subscription_name",
+    "credentials",
+    "settings"
+  ],
+  "acknowledge_messages": [
+    "subscription_name",
+    "ack_ids",
+    "credentials",
+    "settings"
+  ],
+  "BigQueryToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "CalendarToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "GmailToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "YoutubeToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "SlidesToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "SheetsToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "DocsToolset": {
+    "__init__": [
+      "self",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ]
+  },
+  "GoogleApiToolset": {
+    "__init__": [
+      "self",
+      "api_name",
+      "api_version",
+      "client_id",
+      "client_secret",
+      "tool_filter",
+      "service_account",
+      "tool_name_prefix"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "set_tool_filter": [
+      "self",
+      "tool_filter"
+    ],
+    "_load_toolset_with_oidc_auth": [
+      "self"
+    ],
+    "configure_auth": [
+      "self",
+      "client_id",
+      "client_secret"
+    ],
+    "configure_sa_auth": [
+      "self",
+      "service_account"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "GoogleApiTool": {
+    "__init__": [
+      "self",
+      "rest_api_tool",
+      "client_id",
+      "client_secret",
+      "service_account"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "configure_auth": [
+      "self",
+      "client_id",
+      "client_secret"
+    ],
+    "configure_sa_auth": [
+      "self",
+      "service_account"
+    ]
+  },
+  "GoogleApiToOpenApiConverter": {
+    "__init__": [
+      "self",
+      "api_name",
+      "api_version"
+    ],
+    "fetch_google_api_spec": [
+      "self"
+    ],
+    "convert": [
+      "self"
+    ],
+    "_convert_info": [
+      "self"
+    ],
+    "_convert_servers": [
+      "self"
+    ],
+    "_convert_security_schemes": [
+      "self"
+    ],
+    "_convert_schemas": [
+      "self"
+    ],
+    "_convert_schema_object": [
+      "self",
+      "schema_def"
+    ],
+    "_convert_resources": [
+      "self",
+      "resources",
+      "parent_path"
+    ],
+    "_convert_methods": [
+      "self",
+      "methods",
+      "resource_path"
+    ],
+    "_extract_path_parameters": [
+      "self",
+      "path"
+    ],
+    "_convert_operation": [
+      "self",
+      "method_data",
+      "path_params"
+    ],
+    "_convert_parameter_schema": [
+      "self",
+      "param_data"
+    ],
+    "save_openapi_spec": [
+      "self",
+      "output_path"
+    ]
+  },
+  "BIGQUERY_TOKEN_CACHE_KEY": [],
+  "BIGQUERY_DEFAULT_SCOPE": [],
+  "BigQueryCredentialsConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "BIGQUERY_SESSION_INFO_KEY": [],
+  "_execute_sql": [
+    "project_id",
+    "query",
+    "credentials",
+    "settings",
+    "tool_context",
+    "dry_run",
+    "caller_id"
+  ],
+  "_execute_sql_write_mode": [],
+  "_execute_sql_protected_write_mode": [],
+  "forecast": [
+    "project_id",
+    "history_data",
+    "timestamp_col",
+    "data_col",
+    "horizon",
+    "id_cols"
+  ],
+  "analyze_contribution": [
+    "project_id",
+    "input_data",
+    "contribution_metric",
+    "dimension_id_cols",
+    "is_test_col",
+    "credentials",
+    "settings",
+    "tool_context",
+    "top_k_insights",
+    "pruning_method"
+  ],
+  "detect_anomalies": [
+    "project_id",
+    "history_data",
+    "times_series_timestamp_col",
+    "times_series_data_col",
+    "horizon",
+    "target_data",
+    "times_series_id_cols",
+    "anomaly_prob_threshold"
+  ],
+  "list_dataset_ids": [
+    "project_id",
+    "credentials",
+    "settings"
+  ],
+  "get_dataset_info": [
+    "project_id",
+    "dataset_id",
+    "credentials",
+    "settings"
+  ],
+  "list_table_ids": [
+    "project_id",
+    "dataset_id",
+    "credentials",
+    "settings"
+  ],
+  "get_job_info": [
+    "project_id",
+    "job_id",
+    "credentials",
+    "settings"
+  ],
+  "get_bigquery_client": [],
+  "WriteMode": {
+    "BLOCKED": [],
+    "PROTECTED": [],
+    "ALLOWED": []
+  },
+  "BigQueryToolConfig": {
+    "model_config": [],
+    "validate_maximum_bytes_billed": [
+      "cls",
+      "v"
+    ],
+    "validate_application_name": [
+      "cls",
+      "v"
+    ],
+    "validate_job_labels": [
+      "cls",
+      "v"
+    ]
+  },
+  "ask_data_insights": [
+    "project_id",
+    "user_query_with_context",
+    "table_references",
+    "credentials",
+    "settings"
+  ],
+  "_is_json": [
+    "s"
+  ],
+  "_get_property": [
+    "data",
+    "field_name",
+    "default"
+  ],
+  "IntegrationConnectorTool": {
+    "EXCLUDE_FIELDS": [],
+    "OPTIONAL_FIELDS": [],
+    "__init__": [
+      "self",
+      "name",
+      "description",
+      "connection_name",
+      "connection_host",
+      "connection_service_name",
+      "entity",
+      "operation",
+      "action",
+      "rest_api_tool",
+      "auth_scheme",
+      "auth_credential"
+    ],
+    "_get_declaration": [
+      "self"
+    ],
+    "_prepare_dynamic_euc": [
+      "self",
+      "auth_credential"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ApplicationIntegrationToolset": {
+    "__init__": [
+      "self",
+      "project",
+      "location",
+      "connection_template_override",
+      "integration",
+      "triggers",
+      "connection",
+      "entity_operations",
+      "actions",
+      "tool_name_prefix",
+      "tool_instructions",
+      "service_account_json",
+      "auth_scheme",
+      "auth_credential",
+      "tool_filter"
+    ],
+    "_parse_spec_to_toolset": [
+      "self",
+      "spec_dict",
+      "connection_details"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_auth_config": [
+      "self"
+    ]
+  },
+  "ConnectionsClient": {
+    "__init__": [
+      "self",
+      "project",
+      "location",
+      "connection",
+      "service_account_json"
+    ],
+    "get_connection_details": [
+      "self"
+    ],
+    "get_entity_schema_and_operations": [
+      "self",
+      "entity"
+    ],
+    "get_action_schema": [
+      "self",
+      "action"
+    ],
+    "get_connector_base_spec": [],
+    "get_action_operation": [
+      "action",
+      "operation",
+      "action_display_name",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "list_operation": [
+      "entity",
+      "schema_as_string",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "get_operation": [
+      "entity",
+      "schema_as_string",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "create_operation": [
+      "entity",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "update_operation": [
+      "entity",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "delete_operation": [
+      "entity",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "create_operation_request": [
+      "entity"
+    ],
+    "update_operation_request": [
+      "entity"
+    ],
+    "get_operation_request": [],
+    "delete_operation_request": [],
+    "list_operation_request": [],
+    "action_request": [
+      "action"
+    ],
+    "action_response": [
+      "action"
+    ],
+    "execute_custom_query_request": [],
+    "connector_payload": [
+      "self",
+      "json_schema"
+    ],
+    "_convert_json_schema_to_openapi_schema": [
+      "self",
+      "json_schema"
+    ],
+    "_get_access_token": [
+      "self"
+    ],
+    "_execute_api_call": [
+      "self",
+      "url"
+    ],
+    "_poll_operation": [
+      "self",
+      "operation_id"
+    ]
+  },
+  "IntegrationClient": {
+    "__init__": [
+      "self",
+      "project",
+      "location",
+      "connection_template_override",
+      "integration",
+      "triggers",
+      "connection",
+      "entity_operations",
+      "actions",
+      "service_account_json"
+    ],
+    "get_openapi_spec_for_integration": [
+      "self"
+    ],
+    "get_openapi_spec_for_connection": [
+      "self",
+      "tool_name",
+      "tool_instructions"
+    ],
+    "_get_access_token": [
+      "self"
+    ]
+  },
+  "ComputerEnvironment": {
+    "ENVIRONMENT_UNSPECIFIED": [],
+    "ENVIRONMENT_BROWSER": []
+  },
+  "ComputerState": {},
+  "BaseComputer": {
+    "screen_size": [
+      "self"
+    ],
+    "open_web_browser": [
+      "self"
+    ],
+    "click_at": [
+      "self",
+      "x",
+      "y"
+    ],
+    "hover_at": [
+      "self",
+      "x",
+      "y"
+    ],
+    "type_text_at": [
+      "self",
+      "x",
+      "y",
+      "text",
+      "press_enter",
+      "clear_before_typing"
+    ],
+    "scroll_document": [
+      "self",
+      "direction"
+    ],
+    "scroll_at": [
+      "self",
+      "x",
+      "y",
+      "direction",
+      "magnitude"
+    ],
+    "wait": [
+      "self",
+      "seconds"
+    ],
+    "go_back": [
+      "self"
+    ],
+    "go_forward": [
+      "self"
+    ],
+    "search": [
+      "self"
+    ],
+    "navigate": [
+      "self",
+      "url"
+    ],
+    "key_combination": [
+      "self",
+      "keys"
+    ],
+    "drag_and_drop": [
+      "self",
+      "x",
+      "y",
+      "destination_x",
+      "destination_y"
+    ],
+    "current_state": [
+      "self"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "environment": [
+      "self"
+    ]
+  },
+  "EXCLUDED_METHODS": [],
+  "ComputerUseToolset": {
+    "__init__": [
+      "self"
+    ],
+    "_ensure_initialized": [
+      "self"
+    ],
+    "adapt_computer_use_tool": [
+      "method_name",
+      "adapter_func",
+      "llm_request"
+    ],
+    "get_tools": [
+      "self",
+      "readonly_context"
+    ],
+    "close": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "ComputerUseTool": {
+    "__init__": [
+      "self"
+    ],
+    "_normalize_x": [
+      "self",
+      "x"
+    ],
+    "_normalize_y": [
+      "self",
+      "y"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "process_llm_request": [
+      "self"
+    ]
+  },
+  "BaseSamplingResult": {},
+  "SamplingResult": [],
+  "BaseAgentWithScores": {},
+  "AgentWithScores": [],
+  "OptimizerResult": {},
+  "UnstructuredSamplingResult": {},
+  "AgentOptimizer": {
+    "optimize": [
+      "self",
+      "initial_agent",
+      "sampler"
+    ]
+  },
+  "_OPTIMIZER_PROMPT_TEMPLATE": [],
+  "SimplePromptOptimizerConfig": {},
+  "SimplePromptOptimizer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_generate_candidate_prompt": [
+      "self",
+      "best_agent",
+      "best_score"
+    ],
+    "_score_agent_on_batch": [
+      "self",
+      "agent",
+      "sampler",
+      "example_ids"
+    ],
+    "_run_optimization_iterations": [
+      "self",
+      "initial_agent",
+      "sampler",
+      "train_example_ids"
+    ],
+    "_run_final_validation": [
+      "self",
+      "best_agent",
+      "sampler"
+    ],
+    "optimize": [
+      "self",
+      "initial_agent",
+      "sampler"
+    ]
+  },
+  "Sampler": {
+    "get_train_example_ids": [
+      "self"
+    ],
+    "get_validation_example_ids": [
+      "self"
+    ],
+    "sample_and_score": [
+      "self",
+      "candidate",
+      "example_set",
+      "batch",
+      "capture_full_eval_data"
+    ]
+  }
+}

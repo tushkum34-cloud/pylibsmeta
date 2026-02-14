@@ -1,0 +1,4140 @@
+{
+  "__version__": [],
+  "VERSION": [],
+  "__all__": [],
+  "CLIENT_SINGLETON": [],
+  "Client": {
+    "logger": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "start_threads": [
+      "self"
+    ],
+    "get_handler": [
+      "self",
+      "name"
+    ],
+    "capture": [
+      "self",
+      "event_type",
+      "date",
+      "context",
+      "custom",
+      "stack",
+      "handled"
+    ],
+    "capture_message": [
+      "self",
+      "message",
+      "param_message"
+    ],
+    "capture_exception": [
+      "self",
+      "exc_info",
+      "handled"
+    ],
+    "queue": [
+      "self",
+      "event_type",
+      "data",
+      "flush"
+    ],
+    "begin_transaction": [
+      "self",
+      "transaction_type",
+      "trace_parent",
+      "start",
+      "auto_activate",
+      "links"
+    ],
+    "end_transaction": [
+      "self",
+      "name",
+      "result",
+      "duration"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_service_info": [
+      "self"
+    ],
+    "get_process_info": [
+      "self"
+    ],
+    "get_system_info": [
+      "self"
+    ],
+    "get_cloud_info": [
+      "self"
+    ],
+    "get_user_agent": [
+      "self"
+    ],
+    "build_metadata": [
+      "self"
+    ],
+    "add_extra_metadata": [
+      "self",
+      "data"
+    ],
+    "_build_msg_for_logging": [
+      "self",
+      "event_type",
+      "date",
+      "context",
+      "custom",
+      "stack",
+      "handled"
+    ],
+    "_filter_exception_type": [
+      "self",
+      "data"
+    ],
+    "_get_stack_info_for_trace": [
+      "self",
+      "frames",
+      "library_frame_context_lines",
+      "in_app_frame_context_lines",
+      "with_locals",
+      "locals_processor_func"
+    ],
+    "_excepthook": [
+      "self",
+      "type_",
+      "value",
+      "traceback"
+    ],
+    "load_processors": [
+      "self"
+    ],
+    "should_ignore_url": [
+      "self",
+      "url"
+    ],
+    "should_ignore_topic": [
+      "self",
+      "topic"
+    ],
+    "check_python_version": [
+      "self"
+    ],
+    "check_server_version": [
+      "self",
+      "gte",
+      "lte"
+    ],
+    "_metrics": [
+      "self"
+    ],
+    "server_version": [
+      "self",
+      "new_version"
+    ]
+  },
+  "DummyClient": {
+    "send": [
+      "self",
+      "url"
+    ]
+  },
+  "get_client": [],
+  "set_client": [
+    "client"
+  ],
+  "error_logger": [],
+  "logger": [],
+  "_time_func": [],
+  "execution_context": [],
+  "SpanType": [],
+  "FuncType": [],
+  "_AnnotatedFunctionT": [],
+  "ChildDuration": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "obj"
+    ],
+    "start": [
+      "self",
+      "timestamp"
+    ],
+    "stop": [
+      "self",
+      "timestamp"
+    ],
+    "duration": [
+      "self"
+    ]
+  },
+  "BaseSpan": {
+    "__init__": [
+      "self",
+      "labels",
+      "start",
+      "links"
+    ],
+    "child_started": [
+      "self",
+      "timestamp"
+    ],
+    "child_ended": [
+      "self",
+      "child"
+    ],
+    "end": [
+      "self",
+      "skip_frames",
+      "duration"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "label": [
+      "self"
+    ],
+    "add_link": [
+      "self",
+      "trace_parent"
+    ],
+    "set_success": [
+      "self"
+    ],
+    "set_failure": [
+      "self"
+    ],
+    "get_dist_tracing_id": [],
+    "tracer": [
+      "self"
+    ]
+  },
+  "Transaction": {
+    "__init__": [
+      "self",
+      "tracer",
+      "transaction_type",
+      "trace_parent",
+      "is_sampled",
+      "start",
+      "sample_rate",
+      "links"
+    ],
+    "end": [
+      "self",
+      "skip_frames",
+      "duration"
+    ],
+    "_begin_span": [
+      "self",
+      "name",
+      "span_type",
+      "context",
+      "leaf",
+      "labels",
+      "parent_span_id",
+      "span_subtype",
+      "span_action",
+      "sync",
+      "start",
+      "auto_activate",
+      "links"
+    ],
+    "begin_span": [
+      "self",
+      "name",
+      "span_type",
+      "context",
+      "leaf",
+      "labels",
+      "span_subtype",
+      "span_action",
+      "sync",
+      "start",
+      "auto_activate",
+      "links"
+    ],
+    "end_span": [
+      "self",
+      "skip_frames",
+      "duration",
+      "outcome"
+    ],
+    "ensure_parent_id": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "track_span_duration": [
+      "self",
+      "span_type",
+      "span_subtype",
+      "self_duration"
+    ],
+    "is_sampled": [
+      "self",
+      "is_sampled"
+    ],
+    "tracer": [
+      "self"
+    ],
+    "track_dropped_span": [
+      "self",
+      "span"
+    ]
+  },
+  "Span": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "transaction",
+      "name",
+      "span_type",
+      "context",
+      "leaf",
+      "labels",
+      "parent",
+      "parent_span_id",
+      "span_subtype",
+      "span_action",
+      "sync",
+      "start",
+      "links"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "is_same_kind": [
+      "self",
+      "other_span"
+    ],
+    "is_exact_match": [
+      "self",
+      "other_span"
+    ],
+    "is_compression_eligible": [
+      "self"
+    ],
+    "discardable": [
+      "self"
+    ],
+    "end": [
+      "self",
+      "skip_frames",
+      "duration"
+    ],
+    "report": [
+      "self"
+    ],
+    "try_to_compress": [
+      "self",
+      "sibling"
+    ],
+    "_try_to_compress_composite": [
+      "self",
+      "sibling"
+    ],
+    "_try_to_compress_regular": [
+      "self",
+      "sibling"
+    ],
+    "update_context": [
+      "self",
+      "key",
+      "data"
+    ],
+    "autofill_resource_context": [
+      "self"
+    ],
+    "autofill_service_target": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "tracer": [
+      "self"
+    ]
+  },
+  "DroppedSpan": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "parent",
+      "leaf",
+      "start",
+      "context"
+    ],
+    "end": [
+      "self",
+      "skip_frames",
+      "duration"
+    ],
+    "child_started": [
+      "self",
+      "timestamp"
+    ],
+    "child_ended": [
+      "self",
+      "child"
+    ],
+    "update_context": [
+      "self",
+      "key",
+      "data"
+    ],
+    "report": [
+      "self"
+    ],
+    "try_to_compress": [
+      "self",
+      "sibling"
+    ],
+    "is_compression_eligible": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ],
+    "subtype": [
+      "self"
+    ],
+    "action": [
+      "self"
+    ]
+  },
+  "Tracer": {
+    "__init__": [
+      "self",
+      "frames_collector_func",
+      "frames_processing_func",
+      "queue_func",
+      "config",
+      "agent"
+    ],
+    "span_stack_trace_min_duration": [
+      "self"
+    ],
+    "begin_transaction": [
+      "self",
+      "transaction_type",
+      "trace_parent",
+      "start",
+      "auto_activate",
+      "links"
+    ],
+    "end_transaction": [
+      "self",
+      "result",
+      "transaction_name",
+      "duration"
+    ],
+    "_should_ignore": [
+      "self",
+      "transaction_name"
+    ]
+  },
+  "capture_span": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "span_type",
+      "extra",
+      "skip_frames",
+      "leaf",
+      "labels",
+      "span_subtype",
+      "span_action",
+      "start",
+      "duration",
+      "sync",
+      "links"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "handle_enter": [
+      "self",
+      "sync"
+    ],
+    "handle_exit": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "label": [],
+  "set_transaction_name": [
+    "name",
+    "override"
+  ],
+  "set_transaction_result": [
+    "result",
+    "override"
+  ],
+  "set_transaction_outcome": [
+    "outcome",
+    "http_status_code",
+    "override"
+  ],
+  "get_transaction_id": [],
+  "get_trace_parent_header": [],
+  "get_trace_id": [],
+  "get_span_id": [],
+  "set_context": [
+    "data",
+    "key"
+  ],
+  "set_custom_context": [],
+  "set_user_context": [
+    "username",
+    "email",
+    "user_id"
+  ],
+  "BaseEvent": {
+    "to_string": [
+      "client",
+      "data"
+    ],
+    "capture": [
+      "client"
+    ]
+  },
+  "Exception": {
+    "to_string": [
+      "client",
+      "data"
+    ],
+    "get_hash": [
+      "data"
+    ],
+    "capture": [
+      "client",
+      "exc_info"
+    ]
+  },
+  "Message": {
+    "to_string": [
+      "client",
+      "data"
+    ],
+    "get_hash": [
+      "data"
+    ],
+    "capture": [
+      "client",
+      "param_message",
+      "message",
+      "level",
+      "logger_name"
+    ]
+  },
+  "_activation_method": [],
+  "ElasticAPM": {
+    "__init__": [
+      "self",
+      "application",
+      "client"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ],
+    "handle_exception": [
+      "self",
+      "exc_info",
+      "environ"
+    ]
+  },
+  "for_events": [],
+  "remove_http_request_body": [
+    "client",
+    "event"
+  ],
+  "remove_stacktrace_locals": [
+    "client",
+    "event"
+  ],
+  "sanitize_stacktrace_locals": [
+    "client",
+    "event"
+  ],
+  "sanitize_http_request_cookies": [
+    "client",
+    "event"
+  ],
+  "sanitize_http_response_cookies": [
+    "client",
+    "event"
+  ],
+  "sanitize_http_headers": [
+    "client",
+    "event"
+  ],
+  "sanitize_http_wsgi_env": [
+    "client",
+    "event"
+  ],
+  "sanitize_http_request_body": [
+    "client",
+    "event"
+  ],
+  "add_context_lines_to_frames": [
+    "client",
+    "event"
+  ],
+  "mark_in_app_frames": [
+    "client",
+    "event"
+  ],
+  "_sanitize": [
+    "key",
+    "value"
+  ],
+  "_sanitize_string": [
+    "unsanitized",
+    "itemsep",
+    "kvsep",
+    "sanitize_field_names"
+  ],
+  "_process_stack_frames": [
+    "event",
+    "func"
+  ],
+  "ContextVarsContext": {
+    "elasticapm_transaction_var": [],
+    "elasticapm_spans_var": [],
+    "get_transaction": [
+      "self",
+      "clear"
+    ],
+    "set_transaction": [
+      "self",
+      "transaction"
+    ],
+    "get_span": [
+      "self"
+    ],
+    "set_span": [
+      "self",
+      "span"
+    ],
+    "unset_span": [
+      "self",
+      "clear_all"
+    ]
+  },
+  "BaseContext": {
+    "set_transaction": [
+      "self",
+      "transaction"
+    ],
+    "get_transaction": [
+      "self",
+      "clear"
+    ],
+    "set_span": [
+      "self",
+      "span"
+    ],
+    "get_span": [
+      "self"
+    ],
+    "unset_span": [
+      "self",
+      "clear_all"
+    ]
+  },
+  "ThreadLocalContext": {
+    "thread_local": [],
+    "get_transaction": [
+      "self",
+      "clear"
+    ],
+    "set_transaction": [
+      "self",
+      "transaction"
+    ],
+    "get_span": [
+      "self"
+    ],
+    "set_span": [
+      "self",
+      "span"
+    ],
+    "unset_span": [
+      "self",
+      "clear_all"
+    ]
+  },
+  "init_execution_context": [],
+  "threading_local_monkey_patched": [],
+  "DISTINCT_LABEL_LIMIT": [],
+  "MetricsRegistry": {
+    "__init__": [
+      "self",
+      "client",
+      "tags"
+    ],
+    "register": [
+      "self",
+      "metricset"
+    ],
+    "get_metricset": [
+      "self",
+      "metricset"
+    ],
+    "collect": [
+      "self"
+    ],
+    "start_thread": [
+      "self",
+      "pid"
+    ],
+    "stop_thread": [
+      "self"
+    ],
+    "collect_interval": [
+      "self"
+    ],
+    "ignore_patterns": [
+      "self"
+    ]
+  },
+  "MetricSet": {
+    "__init__": [
+      "self",
+      "registry"
+    ],
+    "counter": [
+      "self",
+      "name",
+      "reset_on_collect"
+    ],
+    "gauge": [
+      "self",
+      "name",
+      "reset_on_collect"
+    ],
+    "timer": [
+      "self",
+      "name",
+      "reset_on_collect",
+      "unit"
+    ],
+    "histogram": [
+      "self",
+      "name",
+      "reset_on_collect",
+      "unit",
+      "buckets"
+    ],
+    "_metric": [
+      "self",
+      "container",
+      "metric_class",
+      "name",
+      "reset_on_collect",
+      "labels",
+      "unit"
+    ],
+    "collect": [
+      "self"
+    ],
+    "before_collect": [
+      "self"
+    ],
+    "before_yield": [
+      "self",
+      "data"
+    ],
+    "_labels_to_key": [
+      "self",
+      "labels"
+    ]
+  },
+  "SpanBoundMetricSet": {
+    "before_yield": [
+      "self",
+      "data"
+    ]
+  },
+  "BaseMetric": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "reset_on_collect"
+    ]
+  },
+  "Counter": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "initial_value",
+      "reset_on_collect",
+      "unit"
+    ],
+    "inc": [
+      "self",
+      "delta"
+    ],
+    "dec": [
+      "self",
+      "delta"
+    ],
+    "reset": [
+      "self"
+    ],
+    "val": [
+      "self",
+      "value"
+    ]
+  },
+  "Gauge": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "reset_on_collect",
+      "unit"
+    ],
+    "val": [
+      "self",
+      "value"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "Timer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "reset_on_collect",
+      "unit"
+    ],
+    "update": [
+      "self",
+      "duration",
+      "count"
+    ],
+    "reset": [
+      "self"
+    ],
+    "val": [
+      "self",
+      "value"
+    ]
+  },
+  "Histogram": {
+    "DEFAULT_BUCKETS": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "reset_on_collect",
+      "unit",
+      "buckets"
+    ],
+    "update": [
+      "self",
+      "value",
+      "count"
+    ],
+    "val": [
+      "self",
+      "value"
+    ],
+    "buckets": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "NoopMetric": {
+    "__init__": [
+      "self",
+      "label",
+      "initial_value"
+    ],
+    "val": [
+      "self",
+      "value"
+    ],
+    "inc": [
+      "self",
+      "delta"
+    ],
+    "dec": [
+      "self",
+      "delta"
+    ],
+    "update": [
+      "self",
+      "duration",
+      "count"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "noop_metric": [],
+  "MetricSetNotFound": {
+    "__init__": [
+      "self",
+      "class_path"
+    ]
+  },
+  "MetricsSet": [],
+  "CPUMetricSet": {
+    "__init__": [
+      "self",
+      "registry"
+    ],
+    "before_collect": [
+      "self"
+    ]
+  },
+  "BreakdownMetricSet": {},
+  "SYS_STATS": [],
+  "MEM_STATS": [],
+  "PROC_STATS": [],
+  "CGROUP1_MEMORY_LIMIT": [],
+  "CGROUP1_MEMORY_USAGE": [],
+  "CGROUP1_MEMORY_STAT": [],
+  "CGROUP2_MEMORY_LIMIT": [],
+  "CGROUP2_MEMORY_USAGE": [],
+  "CGROUP2_MEMORY_STAT": [],
+  "UNLIMITED": [],
+  "PROC_SELF_CGROUP": [],
+  "PROC_SELF_MOUNTINFO": [],
+  "SYS_FS_CGROUP": [],
+  "CPU_FIELDS": [],
+  "MEM_FIELDS": [],
+  "whitespace_re": [],
+  "MEMORY_CGROUP": [],
+  "CGROUP_V1_MOUNT_POINT": [],
+  "CGROUP_V2_MOUNT_POINT": [],
+  "CGroupFiles": {
+    "__init__": [
+      "self",
+      "limit",
+      "usage",
+      "stat"
+    ]
+  },
+  "PrometheusMetrics": {
+    "__init__": [
+      "self",
+      "registry"
+    ],
+    "before_collect": [
+      "self"
+    ],
+    "_prom_counter_handler": [
+      "self",
+      "name",
+      "samples",
+      "unit"
+    ],
+    "_prom_gauge_handler": [
+      "self",
+      "name",
+      "samples",
+      "unit"
+    ],
+    "_prom_summary_handler": [
+      "self",
+      "name",
+      "samples",
+      "unit"
+    ],
+    "_prom_histogram_handler": [
+      "self",
+      "name",
+      "samples",
+      "unit"
+    ],
+    "METRIC_MAP": []
+  },
+  "grouper": [
+    "iterable",
+    "n",
+    "fillvalue"
+  ],
+  "filter_factory": [
+    "app",
+    "global_conf"
+  ],
+  "wrap_send": [
+    "send",
+    "middleware"
+  ],
+  "ASGITracingMiddleware": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "app"
+    ],
+    "__call__": [
+      "self",
+      "scope",
+      "receive",
+      "send"
+    ],
+    "get_headers": [
+      "self",
+      "scope_or_message"
+    ],
+    "get_url": [
+      "self",
+      "scope",
+      "host"
+    ],
+    "get_ip": [
+      "self",
+      "scope",
+      "headers"
+    ],
+    "get_data_from_request": [
+      "self",
+      "scope",
+      "event_type",
+      "body"
+    ],
+    "get_data_from_response": [
+      "self",
+      "message",
+      "event_type"
+    ],
+    "set_transaction_name": [
+      "self",
+      "method",
+      "url"
+    ]
+  },
+  "LogObserver": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "__call__": [
+      "self",
+      "event"
+    ]
+  },
+  "get_traceparent": [
+    "otel_spancontext"
+  ],
+  "get_span_kind": [
+    "kind"
+  ],
+  "create_key": [
+    "keyname"
+  ],
+  "get_value": [
+    "key",
+    "context"
+  ],
+  "set_value": [
+    "key",
+    "value",
+    "context"
+  ],
+  "get_current": [],
+  "attach": [
+    "context"
+  ],
+  "detach": [
+    "token"
+  ],
+  "get_tracer": [
+    "instrumenting_module_name",
+    "instrumenting_library_version",
+    "tracer_provider",
+    "schema_url",
+    "elasticapm_client",
+    "config"
+  ],
+  "set_tracer_provider": [
+    "tracer_provider"
+  ],
+  "get_tracer_provider": [],
+  "use_span": [
+    "span",
+    "end_on_exit",
+    "record_exception",
+    "set_status_on_exception"
+  ],
+  "get_data_from_request": [
+    "request",
+    "config",
+    "event_type"
+  ],
+  "get_data_from_response": [
+    "response",
+    "config",
+    "event_type"
+  ],
+  "AioHttpTraceParent": {
+    "merge_duplicate_headers": [
+      "cls",
+      "headers",
+      "key"
+    ]
+  },
+  "tracing_middleware": [
+    "app",
+    "client"
+  ],
+  "iterate_with_template_sources": [
+    "frames",
+    "with_locals",
+    "library_frame_context_lines",
+    "in_app_frame_context_lines",
+    "include_paths_re",
+    "exclude_paths_re",
+    "locals_processor_func"
+  ],
+  "get_raw_uri": [
+    "request"
+  ],
+  "rum_tracing": [
+    "request"
+  ],
+  "default_client_class": [],
+  "DjangoClient": {
+    "logger": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_user_info": [
+      "self",
+      "request"
+    ],
+    "get_data_from_request": [
+      "self",
+      "request",
+      "event_type"
+    ],
+    "get_data_from_response": [
+      "self",
+      "response",
+      "event_type"
+    ],
+    "capture": [
+      "self",
+      "event_type",
+      "request"
+    ],
+    "_get_stack_info_for_trace": [
+      "self",
+      "frames",
+      "library_frame_context_lines",
+      "in_app_frame_context_lines",
+      "with_locals",
+      "locals_processor_func"
+    ],
+    "send": [
+      "self",
+      "url"
+    ]
+  },
+  "ProxyClient": {
+    "__members__": [],
+    "__class__": [],
+    "__dict__": [],
+    "__repr__": [],
+    "__getattr__": [],
+    "__setattr__": [],
+    "__delattr__": [],
+    "__lt__": [],
+    "__le__": [],
+    "__eq__": [],
+    "__ne__": [],
+    "__gt__": [],
+    "__ge__": [],
+    "__hash__": [],
+    "__nonzero__": [],
+    "__len__": [],
+    "__getitem__": [],
+    "__iter__": [],
+    "__contains__": [],
+    "__getslice__": [],
+    "__add__": [],
+    "__sub__": [],
+    "__mul__": [],
+    "__floordiv__": [],
+    "__mod__": [],
+    "__divmod__": [],
+    "__pow__": [],
+    "__lshift__": [],
+    "__rshift__": [],
+    "__and__": [],
+    "__xor__": [],
+    "__or__": [],
+    "__div__": [],
+    "__truediv__": [],
+    "__neg__": [],
+    "__pos__": [],
+    "__abs__": [],
+    "__invert__": [],
+    "__complex__": [],
+    "__int__": [],
+    "__float__": [],
+    "__str__": [],
+    "__unicode__": [],
+    "__oct__": [],
+    "__hex__": [],
+    "__index__": [],
+    "__coerce__": [],
+    "__enter__": [],
+    "__exit__": []
+  },
+  "client": [],
+  "_get_installed_apps_paths": [],
+  "LoggingHandler": {
+    "__init__": [
+      "self",
+      "level"
+    ],
+    "client": [
+      "self"
+    ],
+    "_emit": [
+      "self",
+      "record"
+    ]
+  },
+  "exception_handler": [
+    "client",
+    "request"
+  ],
+  "ERROR_DISPATCH_UID": [],
+  "REQUEST_START_DISPATCH_UID": [],
+  "REQUEST_FINISH_DISPATCH_UID": [],
+  "MIDDLEWARE_NAME": [],
+  "TRACEPARENT_HEADER_NAME_WSGI": [],
+  "TRACEPARENT_LEGACY_HEADER_NAME_WSGI": [],
+  "TRACESTATE_HEADER_NAME_WSGI": [],
+  "ElasticAPMConfig": {
+    "name": [],
+    "label": [],
+    "verbose_name": [],
+    "__init__": [
+      "self"
+    ],
+    "ready": [
+      "self"
+    ],
+    "insert_middleware": [
+      "settings"
+    ]
+  },
+  "register_handlers": [
+    "client"
+  ],
+  "_request_started_handler": [
+    "client",
+    "sender"
+  ],
+  "instrument": [
+    "client"
+  ],
+  "_should_start_transaction": [
+    "client"
+  ],
+  "_is_ignorable_404": [
+    "uri"
+  ],
+  "ElasticAPMClientMiddlewareMixin": {
+    "client": [
+      "self"
+    ]
+  },
+  "Catch404Middleware": {
+    "process_response": [
+      "self",
+      "request",
+      "response"
+    ]
+  },
+  "get_name_from_middleware": [
+    "wrapped",
+    "instance"
+  ],
+  "process_request_wrapper": [
+    "wrapped",
+    "instance",
+    "args",
+    "kwargs"
+  ],
+  "process_response_wrapper": [
+    "wrapped",
+    "instance",
+    "args",
+    "kwargs"
+  ],
+  "TracingMiddleware": {
+    "_elasticapm_instrumented": [],
+    "_instrumenting_lock": [],
+    "__init__": [
+      "self"
+    ],
+    "instrument_middlewares": [
+      "self"
+    ],
+    "process_view": [
+      "self",
+      "request",
+      "view_func",
+      "view_args",
+      "view_kwargs"
+    ],
+    "process_response": [
+      "self",
+      "request",
+      "response"
+    ],
+    "get_transaction_name": [
+      "self",
+      "request",
+      "view_func"
+    ]
+  },
+  "ErrorIdMiddleware": {
+    "process_response": [
+      "self",
+      "request",
+      "response"
+    ]
+  },
+  "LogMiddleware": {
+    "thread": [],
+    "process_request": [
+      "self",
+      "request"
+    ]
+  },
+  "blue": [],
+  "cyan": [],
+  "green": [],
+  "magenta": [],
+  "red": [],
+  "white": [],
+  "yellow": [],
+  "TestException": {},
+  "ColoredLogger": {
+    "__init__": [
+      "self",
+      "stream"
+    ],
+    "log": [
+      "self",
+      "level"
+    ],
+    "error": [
+      "self"
+    ],
+    "warning": [
+      "self"
+    ],
+    "info": [
+      "self"
+    ]
+  },
+  "CONFIG_EXAMPLE": [],
+  "Command": {
+    "arguments": [],
+    "args": [],
+    "add_arguments": [
+      "self",
+      "parser"
+    ],
+    "handle": [
+      "self"
+    ],
+    "handle_test": [
+      "self",
+      "command"
+    ],
+    "handle_check": [
+      "self",
+      "command"
+    ],
+    "handle_command_not_found": [
+      "self",
+      "message"
+    ],
+    "write": [
+      "self",
+      "msg",
+      "style_func",
+      "ending",
+      "stream"
+    ],
+    "_get_argv": [
+      "self"
+    ],
+    "dispatch": []
+  },
+  "OTSpan": {
+    "__init__": [
+      "self",
+      "tracer",
+      "context",
+      "elastic_apm_ref"
+    ],
+    "log_kv": [
+      "self",
+      "key_values",
+      "timestamp"
+    ],
+    "set_operation_name": [
+      "self",
+      "operation_name"
+    ],
+    "set_tag": [
+      "self",
+      "key",
+      "value"
+    ],
+    "finish": [
+      "self",
+      "finish_time"
+    ]
+  },
+  "OTSpanContext": {
+    "__init__": [
+      "self",
+      "trace_parent",
+      "span"
+    ]
+  },
+  "CeleryFilter": {
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "register_exception_tracking": [
+    "client"
+  ],
+  "set_celery_headers": [
+    "headers"
+  ],
+  "get_trace_parent": [
+    "celery_task"
+  ],
+  "register_instrumentation": [
+    "client"
+  ],
+  "_register_worker_signals": [
+    "client"
+  ],
+  "register_elasticapm": [
+    "client",
+    "worker"
+  ],
+  "set_body": [
+    "request",
+    "body"
+  ],
+  "get_body": [
+    "request"
+  ],
+  "query_params_to_dict": [
+    "query_params"
+  ],
+  "_get_client_ip": [
+    "request"
+  ],
+  "make_apm_client": [
+    "config",
+    "client_cls"
+  ],
+  "ElasticAPMPatchedErrorHandler": {
+    "__init__": [
+      "self",
+      "current_handler"
+    ],
+    "add": [
+      "self",
+      "exception",
+      "handler"
+    ],
+    "lookup": [
+      "self",
+      "exception"
+    ],
+    "setup_apm_handler": [
+      "self",
+      "apm_handler",
+      "force"
+    ],
+    "_patched_response": [
+      "self",
+      "request",
+      "exception"
+    ],
+    "response": [
+      "self",
+      "request",
+      "exception"
+    ],
+    "default": [
+      "self",
+      "request",
+      "exception"
+    ]
+  },
+  "UserInfoType": [],
+  "LabelInfoType": [],
+  "CustomInfoType": [],
+  "SanicRequestOrResponse": [],
+  "ApmHandlerType": [],
+  "EnvInfoType": [],
+  "TransactionNameCallbackType": [],
+  "UserInfoCallbackType": [],
+  "CustomContextCallbackType": [],
+  "LabelInfoCallbackType": [],
+  "APMConfigType": [],
+  "ExtendableMiddlewareGroup": [],
+  "AllMiddlewareGroup": [],
+  "SanicAPMConfig": {
+    "__init__": [
+      "self",
+      "app"
+    ]
+  },
+  "get_env": [
+    "request"
+  ],
+  "get_request_info": [
+    "config",
+    "request",
+    "event_type"
+  ],
+  "get_response_info": [
+    "config",
+    "response",
+    "event_type"
+  ],
+  "make_client": [
+    "client_cls"
+  ],
+  "_transform_response_cookie": [
+    "cookies"
+  ],
+  "_wrap_rpc_behavior": [
+    "handler",
+    "continuation"
+  ],
+  "_ServicerContextWrapper": {
+    "__init__": [
+      "self",
+      "wrapped",
+      "transaction"
+    ],
+    "abort": [
+      "self",
+      "code",
+      "details"
+    ],
+    "set_code": [
+      "self",
+      "code"
+    ]
+  },
+  "_ServerInterceptor": {
+    "intercept_service": [
+      "self",
+      "continuation",
+      "handler_call_details"
+    ]
+  },
+  "_ClientInterceptor": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "secure"
+    ],
+    "intercept_unary_unary": [
+      "self",
+      "continuation",
+      "client_call_details",
+      "request"
+    ],
+    "attach_traceparent": [
+      "self",
+      "client_call_details",
+      "span"
+    ]
+  },
+  "_AsyncServerInterceptor": {
+    "intercept_service": [
+      "self",
+      "continuation",
+      "handler_call_details"
+    ]
+  },
+  "STATUS_TO_OUTCOME": [],
+  "GRPCApmClient": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "async_capture_span": {
+    "__call__": [
+      "self",
+      "func"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "list_from_setting": [
+    "config",
+    "setting"
+  ],
+  "SERVERLESS_HTTP_REQUEST": [],
+  "COLD_START": [],
+  "INSTRUMENTED": [],
+  "REGISTER_PARTIAL_TRANSACTIONS": [],
+  "_AWSLambdaContextT": [],
+  "capture_serverless": [
+    "func"
+  ],
+  "prep_kwargs": [
+    "kwargs"
+  ],
+  "should_normalize_headers": [
+    "event"
+  ],
+  "_lambda_transaction": {
+    "__init__": [
+      "self",
+      "func",
+      "name",
+      "client",
+      "event",
+      "context"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "set_metadata_and_context": [
+      "self",
+      "coldstart"
+    ],
+    "send_partial_transaction": [
+      "self"
+    ]
+  },
+  "get_url_dict": [
+    "event"
+  ],
+  "_cold_start_lock": [],
+  "AzureFunctionsClient": {
+    "get_service_info": [
+      "self"
+    ],
+    "get_cloud_info": [
+      "self"
+    ]
+  },
+  "ElasticAPMExtension": {
+    "client": [],
+    "init": [
+      "cls"
+    ],
+    "configure": [
+      "cls",
+      "client_class"
+    ],
+    "pre_invocation_app_level": [
+      "cls",
+      "logger",
+      "context",
+      "func_args"
+    ],
+    "post_invocation_app_level": [
+      "cls",
+      "logger",
+      "context",
+      "func_args",
+      "func_ret"
+    ]
+  },
+  "get_faas_data": [
+    "context",
+    "cold_start",
+    "trigger_type"
+  ],
+  "get_account_id": [],
+  "client_kwargs": [],
+  "LambdaError": {},
+  "lambda_handler": [
+    "event",
+    "context"
+  ],
+  "Transport": {
+    "async_mode": [],
+    "__init__": [
+      "self",
+      "client",
+      "compress_level",
+      "json_serializer",
+      "queue_chill_count",
+      "queue_chill_time",
+      "processors"
+    ],
+    "_max_flush_time_seconds": [
+      "self"
+    ],
+    "_max_buffer_size": [
+      "self"
+    ],
+    "queue": [
+      "self",
+      "event_type",
+      "data",
+      "flush"
+    ],
+    "_process_queue": [
+      "self"
+    ],
+    "_process_event": [
+      "self",
+      "event_type",
+      "data"
+    ],
+    "_init_buffer": [
+      "self"
+    ],
+    "_write_metadata": [
+      "self",
+      "buffer"
+    ],
+    "_init_event_queue": [
+      "self",
+      "chill_until",
+      "max_chill_time"
+    ],
+    "_flush": [
+      "self",
+      "buffer",
+      "forced_flush"
+    ],
+    "start_thread": [
+      "self",
+      "pid"
+    ],
+    "send": [
+      "self",
+      "data",
+      "forced_flush"
+    ],
+    "close": [
+      "self"
+    ],
+    "stop_thread": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "handle_transport_success": [
+      "self"
+    ],
+    "handle_transport_fail": [
+      "self",
+      "exception"
+    ],
+    "handle_fork": [
+      "self"
+    ]
+  },
+  "AsyncTransport": [],
+  "TransportState": {
+    "ONLINE": [],
+    "ERROR": [],
+    "__init__": [
+      "self"
+    ],
+    "should_try": [
+      "self"
+    ],
+    "set_fail": [
+      "self"
+    ],
+    "set_success": [
+      "self"
+    ],
+    "did_fail": [
+      "self"
+    ]
+  },
+  "ChilledQueue": {
+    "__init__": [
+      "self",
+      "maxsize",
+      "chill_until",
+      "max_chill_time"
+    ],
+    "put": [
+      "self",
+      "item",
+      "block",
+      "timeout",
+      "chill"
+    ]
+  },
+  "HTTPTransportBase": {
+    "__init__": [
+      "self",
+      "url",
+      "client",
+      "verify_server_cert",
+      "compress_level",
+      "headers",
+      "timeout",
+      "server_cert",
+      "server_ca_cert_file"
+    ],
+    "send": [
+      "self",
+      "data",
+      "forced_flush"
+    ],
+    "get_config": [
+      "self",
+      "current_version",
+      "keys"
+    ],
+    "auth_headers": [
+      "self"
+    ]
+  },
+  "AsyncHTTPTransportBase": [],
+  "version_string_to_tuple": [
+    "version"
+  ],
+  "TransportException": {
+    "__init__": [
+      "self",
+      "message",
+      "data"
+    ]
+  },
+  "structlog_processor": [
+    "logger",
+    "method_name",
+    "event_dict"
+  ],
+  "LoggingFilter": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "log_record_factory": [
+    "wrapped",
+    "instance",
+    "args",
+    "kwargs"
+  ],
+  "_add_attributes_to_log_record": [
+    "record"
+  ],
+  "Formatter": {
+    "__init__": [
+      "self",
+      "fmt",
+      "datefmt",
+      "style"
+    ],
+    "format": [
+      "self",
+      "record"
+    ],
+    "formatTime": [
+      "self",
+      "record",
+      "datefmt"
+    ]
+  },
+  "LOOKBOOK_LEVELS": [],
+  "LogbookHandler": {
+    "__init__": [
+      "self"
+    ],
+    "emit": [
+      "self",
+      "record"
+    ],
+    "_emit": [
+      "self",
+      "record"
+    ]
+  },
+  "_coding_re": [],
+  "get_lines_from_file": [
+    "filename",
+    "lineno",
+    "context_lines",
+    "loader",
+    "module_name"
+  ],
+  "get_source_lines_from_loader": [
+    "loader",
+    "module_name",
+    "lineno",
+    "lower_bound",
+    "upper_bound"
+  ],
+  "get_culprit": [
+    "frames",
+    "include_paths",
+    "exclude_paths"
+  ],
+  "_getitem_from_frame": [
+    "f_locals",
+    "key",
+    "default"
+  ],
+  "to_dict": [
+    "dictish"
+  ],
+  "iter_traceback_frames": [
+    "tb",
+    "config"
+  ],
+  "iter_stack_frames": [
+    "frames",
+    "start_frame",
+    "skip",
+    "skip_top_modules",
+    "config"
+  ],
+  "get_frame_info": [
+    "frame",
+    "lineno",
+    "with_locals",
+    "library_frame_context_lines",
+    "in_app_frame_context_lines",
+    "include_paths_re",
+    "exclude_paths_re",
+    "locals_processor_func"
+  ],
+  "get_stack_info": [
+    "frames",
+    "with_locals",
+    "library_frame_context_lines",
+    "in_app_frame_context_lines",
+    "include_paths_re",
+    "exclude_paths_re",
+    "locals_processor_func"
+  ],
+  "_walk_stack": [
+    "frame"
+  ],
+  "is_library_frame": [
+    "abs_file_path",
+    "include_paths_re",
+    "exclude_paths_re"
+  ],
+  "get_path_regex": [
+    "paths"
+  ],
+  "aws_metadata": [],
+  "gcp_metadata": [],
+  "azure_metadata": [],
+  "azure_app_service_metadata": [],
+  "noop_decorator": [
+    "func"
+  ],
+  "atexit_register": [
+    "func"
+  ],
+  "get_default_library_patters": [],
+  "multidict_to_dict": [
+    "d"
+  ],
+  "deprecated": [
+    "alternative"
+  ],
+  "TraceParent": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "version",
+      "trace_id",
+      "span_id",
+      "trace_options",
+      "tracestate",
+      "is_legacy"
+    ],
+    "copy_from": [
+      "self",
+      "version",
+      "trace_id",
+      "span_id",
+      "trace_options",
+      "tracestate"
+    ],
+    "to_string": [
+      "self"
+    ],
+    "to_ascii": [
+      "self"
+    ],
+    "to_binary": [
+      "self"
+    ],
+    "new": [
+      "cls",
+      "transaction_id",
+      "is_sampled"
+    ],
+    "from_string": [
+      "cls",
+      "traceparent_string",
+      "tracestate_string",
+      "is_legacy"
+    ],
+    "from_headers": [
+      "cls",
+      "headers",
+      "header_name",
+      "legacy_header_name",
+      "tracestate_header_name"
+    ],
+    "from_binary": [
+      "cls",
+      "data"
+    ],
+    "merge_duplicate_headers": [
+      "cls",
+      "headers",
+      "key"
+    ],
+    "_parse_tracestate": [
+      "self",
+      "tracestate"
+    ],
+    "_set_tracestate": [
+      "self"
+    ],
+    "add_tracestate": [
+      "self",
+      "key",
+      "val"
+    ]
+  },
+  "TracingOptions_bits": {
+    "_fields_": []
+  },
+  "TracingOptions": {
+    "_anonymous_": [],
+    "_fields_": [],
+    "__init__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "trace_parent_from_string": [
+    "traceparent_string",
+    "tracestate_string",
+    "is_legacy"
+  ],
+  "trace_parent_from_headers": [
+    "headers"
+  ],
+  "TraceStateFormatException": {},
+  "IntervalTimer": {
+    "__init__": [
+      "self",
+      "function",
+      "interval",
+      "name",
+      "args",
+      "kwargs",
+      "daemon",
+      "evaluate_function_interval"
+    ],
+    "run": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ]
+  },
+  "ThreadManager": {
+    "__init__": [
+      "self"
+    ],
+    "start_thread": [
+      "self",
+      "pid"
+    ],
+    "stop_thread": [
+      "self"
+    ],
+    "is_started": [
+      "self",
+      "current_pid"
+    ]
+  },
+  "partial_types": [],
+  "default_ports": [],
+  "fqdn": [],
+  "varmap": [
+    "func",
+    "var",
+    "context",
+    "name"
+  ],
+  "get_name_from_func": [
+    "func"
+  ],
+  "build_name_with_http_method_prefix": [
+    "name",
+    "request"
+  ],
+  "is_master_process": [],
+  "sanitize_url": [
+    "url"
+  ],
+  "get_host_from_url": [
+    "url"
+  ],
+  "url_to_destination_resource": [
+    "url"
+  ],
+  "read_pem_file": [
+    "file_obj"
+  ],
+  "starmatch_to_regex": [
+    "pattern"
+  ],
+  "nested_key": [
+    "d"
+  ],
+  "getfqdn": [],
+  "CGROUP_PATH": [],
+  "SYSTEMD_SCOPE_SUFFIX": [],
+  "kubepods_regexp": [],
+  "container_id_regexp": [],
+  "get_cgroup_container_metadata": [],
+  "parse_cgroups": [
+    "filehandle"
+  ],
+  "get_logger": [],
+  "import_string": [
+    "dotted_path"
+  ],
+  "CLOCK_DIFF": [],
+  "CLOCK_DIFF_UPDATED": [],
+  "time_to_perf_counter": [
+    "timestamp"
+  ],
+  "_calculate_clock_diff": [],
+  "_clock_diff_stale": [],
+  "get_headers": [
+    "environ"
+  ],
+  "get_environ": [
+    "environ"
+  ],
+  "get_host": [
+    "environ"
+  ],
+  "get_current_url": [
+    "environ",
+    "root_only",
+    "strip_querystring",
+    "host_only",
+    "path_only"
+  ],
+  "BetterSimpleJSONEncoder": {
+    "ENCODERS": [],
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "better_decoder": [
+    "data"
+  ],
+  "dumps": [
+    "value"
+  ],
+  "loads": [
+    "value"
+  ],
+  "BetterJSONEncoder": {
+    "ENCODERS": [],
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "PROTECTED_TYPES": [],
+  "is_protected_type": [
+    "obj"
+  ],
+  "force_text": [
+    "s",
+    "encoding",
+    "strings_only",
+    "errors"
+  ],
+  "_has_elasticapm_metadata": [
+    "value"
+  ],
+  "transform": [
+    "value",
+    "stack",
+    "context"
+  ],
+  "to_unicode": [
+    "value"
+  ],
+  "to_string": [
+    "value"
+  ],
+  "shorten": [
+    "var",
+    "list_length",
+    "string_length",
+    "dict_length"
+  ],
+  "keyword_field": [
+    "string"
+  ],
+  "long_field": [
+    "data"
+  ],
+  "enforce_label_format": [
+    "labels"
+  ],
+  "log_levels_map": [],
+  "logfile_set_up": [],
+  "ConfigurationError": {
+    "__init__": [
+      "self",
+      "msg",
+      "field_name"
+    ]
+  },
+  "_ConfigValue": {
+    "__init__": [
+      "self",
+      "dict_key",
+      "env_key",
+      "type",
+      "validators",
+      "callbacks",
+      "callbacks_on_default",
+      "default",
+      "required"
+    ],
+    "__get__": [
+      "self",
+      "instance",
+      "owner"
+    ],
+    "__set__": [
+      "self",
+      "config_instance",
+      "value"
+    ],
+    "_validate": [
+      "self",
+      "instance",
+      "value"
+    ],
+    "_callback_if_changed": [
+      "self",
+      "instance",
+      "new_value"
+    ],
+    "call_callbacks": [
+      "self",
+      "old_value",
+      "new_value",
+      "config_instance"
+    ]
+  },
+  "_ListConfigValue": {
+    "__init__": [
+      "self",
+      "dict_key",
+      "list_separator"
+    ],
+    "__set__": [
+      "self",
+      "instance",
+      "value"
+    ]
+  },
+  "_DictConfigValue": {
+    "__init__": [
+      "self",
+      "dict_key",
+      "item_separator",
+      "keyval_separator"
+    ],
+    "__set__": [
+      "self",
+      "instance",
+      "value"
+    ]
+  },
+  "_BoolConfigValue": {
+    "__init__": [
+      "self",
+      "dict_key",
+      "true_string",
+      "false_string"
+    ],
+    "__set__": [
+      "self",
+      "instance",
+      "value"
+    ]
+  },
+  "_DurationConfigValue": {
+    "units": [],
+    "__init__": [
+      "self",
+      "dict_key",
+      "allow_microseconds",
+      "unitless_factor"
+    ],
+    "__set__": [
+      "self",
+      "config_instance",
+      "value"
+    ]
+  },
+  "RegexValidator": {
+    "__init__": [
+      "self",
+      "regex",
+      "verbose_pattern"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "UnitValidator": {
+    "__init__": [
+      "self",
+      "regex",
+      "verbose_pattern",
+      "unit_multipliers"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "PrecisionValidator": {
+    "__init__": [
+      "self",
+      "precision",
+      "minimum"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "size_validator": [],
+  "ExcludeRangeValidator": {
+    "__init__": [
+      "self",
+      "range_start",
+      "range_end",
+      "range_desc"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "FileIsReadableValidator": {
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "_in_fips_mode": [],
+  "SupportedValueInFipsModeValidator": {
+    "__init__": [
+      "self",
+      "supported_value"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "EnumerationValidator": {
+    "__init__": [
+      "self",
+      "valid_values",
+      "case_sensitive"
+    ],
+    "__call__": [
+      "self",
+      "value",
+      "field_name"
+    ]
+  },
+  "_log_level_callback": [
+    "dict_key",
+    "old_value",
+    "new_value",
+    "config_instance"
+  ],
+  "_log_ecs_reformatting_callback": [
+    "dict_key",
+    "old_value",
+    "new_value",
+    "config_instance"
+  ],
+  "_ConfigBase": {
+    "_NO_VALUE": [],
+    "__init__": [
+      "self",
+      "config_dict",
+      "env_dict",
+      "inline_dict",
+      "copy"
+    ],
+    "update": [
+      "self",
+      "config_dict",
+      "env_dict",
+      "inline_dict",
+      "initial"
+    ],
+    "call_pending_callbacks": [
+      "self"
+    ],
+    "values": [
+      "self",
+      "values"
+    ],
+    "errors": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ]
+  },
+  "WrapperConfig": {
+    "enabled": [],
+    "instrument": []
+  },
+  "Config": {
+    "service_name": [],
+    "service_node_name": [],
+    "environment": [],
+    "transport_json_serializer": [],
+    "secret_token": [],
+    "api_key": [],
+    "debug": [],
+    "server_url": [],
+    "server_cert": [],
+    "server_ca_cert_file": [],
+    "verify_server_cert": [],
+    "use_certifi": [],
+    "include_paths": [],
+    "exclude_paths": [],
+    "filter_exception_types": [],
+    "server_timeout": [],
+    "hostname": [],
+    "auto_log_stacks": [],
+    "transport_class": [],
+    "processors": [],
+    "sanitize_field_names": [],
+    "metrics_sets": [],
+    "metrics_interval": [],
+    "breakdown_metrics": [],
+    "prometheus_metrics": [],
+    "prometheus_metrics_prefix": [],
+    "disable_metrics": [],
+    "central_config": [],
+    "api_request_size": [],
+    "api_request_time": [],
+    "transaction_sample_rate": [],
+    "transaction_max_spans": [],
+    "stack_trace_limit": [],
+    "span_frames_min_duration": [],
+    "span_stack_trace_min_duration": [],
+    "span_compression_enabled": [],
+    "span_compression_exact_match_max_duration": [],
+    "span_compression_same_kind_max_duration": [],
+    "exit_span_min_duration": [],
+    "collect_local_variables": [],
+    "source_lines_error_app_frames": [],
+    "source_lines_error_library_frames": [],
+    "source_lines_span_app_frames": [],
+    "source_lines_span_library_frames": [],
+    "local_var_max_length": [],
+    "local_var_list_max_length": [],
+    "local_var_dict_max_length": [],
+    "capture_body": [],
+    "async_mode": [],
+    "instrument_django_middleware": [],
+    "autoinsert_django_middleware": [],
+    "transactions_ignore_patterns": [],
+    "transaction_ignore_urls": [],
+    "ignore_message_queues": [],
+    "service_version": [],
+    "framework_name": [],
+    "framework_version": [],
+    "global_labels": [],
+    "disable_send": [],
+    "enabled": [],
+    "recording": [],
+    "instrument": [],
+    "enable_distributed_tracing": [],
+    "capture_headers": [],
+    "django_transaction_name_from_route": [],
+    "disable_log_record_factory": [],
+    "use_elastic_traceparent_header": [],
+    "use_elastic_excepthook": [],
+    "cloud_provider": [],
+    "log_level": [],
+    "log_file": [],
+    "log_file_size": [],
+    "log_ecs_reformatting": [],
+    "trace_continuation_strategy": [],
+    "include_process_args": [],
+    "skip_server_info": [],
+    "is_recording": [
+      "self"
+    ]
+  },
+  "VersionedConfig": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "config_object",
+      "version",
+      "transport"
+    ],
+    "update": [
+      "self",
+      "version"
+    ],
+    "reset": [
+      "self"
+    ],
+    "changed": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "item"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "config_version": [
+      "self"
+    ],
+    "update_config": [
+      "self"
+    ],
+    "start_thread": [
+      "self",
+      "pid"
+    ],
+    "stop_thread": [
+      "self"
+    ]
+  },
+  "setup_logging": [
+    "handler"
+  ],
+  "_starmatch_to_regex": [
+    "pattern"
+  ],
+  "EVENTS_API_PATH": [],
+  "AGENT_CONFIG_PATH": [],
+  "SERVER_INFO_PATH": [],
+  "TRACE_CONTEXT_VERSION": [],
+  "TRACEPARENT_HEADER_NAME": [],
+  "TRACEPARENT_LEGACY_HEADER_NAME": [],
+  "TRACEPARENT_BINARY_HEADER_NAME": [],
+  "TRACESTATE_HEADER_NAME": [],
+  "TIMESTAMP_FORMAT": [],
+  "KEYWORD_MAX_LENGTH": [],
+  "LONG_FIELD_MAX_LENGTH": [],
+  "HTTP_WITH_BODY": [],
+  "MASK": [],
+  "MASK_URL": [],
+  "EXCEPTION_CHAIN_MAX_DEPTH": [],
+  "ERROR": [],
+  "TRANSACTION": [],
+  "SPAN": [],
+  "METRICSET": [],
+  "LABEL_RE": [],
+  "HARDCODED_PROCESSORS": [],
+  "BASE_SANITIZE_FIELD_NAMES_UNPROCESSED": [],
+  "BASE_SANITIZE_FIELD_NAMES": [],
+  "OUTCOME": [],
+  "LABEL_TYPES": [],
+  "TRACESTATE": [],
+  "TRACE_CONTINUATION_STRATEGY": [],
+  "_lock": [],
+  "uninstrument": [],
+  "_cls_register": [],
+  "_wrapper_register": [],
+  "register": [
+    "cls"
+  ],
+  "register_wrapper_instrumentations": [],
+  "_instrumentation_singletons": [],
+  "get_instrumentation_objects": [],
+  "SQS_MAX_ATTRIBUTES": [],
+  "HandlerInfo": [],
+  "endpoint_to_service_id": [],
+  "BotocoreInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "capture_span_ctx": [],
+    "_call": [
+      "self",
+      "service",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "_get_service": [
+      "self",
+      "instance"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "handle_s3": [
+    "operation_name",
+    "service",
+    "instance",
+    "args",
+    "kwargs",
+    "context"
+  ],
+  "handle_dynamodb": [
+    "operation_name",
+    "service",
+    "instance",
+    "args",
+    "kwargs",
+    "context"
+  ],
+  "handle_sns": [
+    "operation_name",
+    "service",
+    "instance",
+    "args",
+    "kwargs",
+    "context"
+  ],
+  "SQS_OPERATIONS": [],
+  "handle_sqs": [
+    "operation_name",
+    "service",
+    "instance",
+    "args",
+    "kwargs",
+    "context"
+  ],
+  "modify_span_sqs_pre": [
+    "span",
+    "args",
+    "kwargs"
+  ],
+  "modify_span_sqs_post": [
+    "span",
+    "args",
+    "kwargs",
+    "result"
+  ],
+  "handle_default": [
+    "operation_name",
+    "service",
+    "instance",
+    "args",
+    "kwargs",
+    "context"
+  ],
+  "handlers": [],
+  "pre_span_modifiers": [],
+  "post_span_modifiers": [],
+  "Redis3CheckMixin": {
+    "instrument_list_3": [],
+    "instrument_list": [],
+    "get_instrument_list": [
+      "self"
+    ]
+  },
+  "RedisInstrumentation": {
+    "name": [],
+    "instrument_list_3": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "RedisPipelineInstrumentation": {
+    "name": [],
+    "instrument_list_3": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "RedisConnectionInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "get_destination_info": [
+    "connection"
+  ],
+  "CassandraInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "request_host": [
+    "request"
+  ],
+  "UrllibInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ],
+    "_set_disttracing_headers": [
+      "self",
+      "request_object",
+      "trace_parent",
+      "transaction"
+    ]
+  },
+  "GRPCClientInstrumentation": {
+    "name": [],
+    "creates_transactions": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "GRPCServerInstrumentation": {
+    "name": [],
+    "creates_transactions": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "GRPCAsyncServerInstrumentation": {
+    "name": [],
+    "creates_transactions": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "_set_disttracing_headers": [
+    "headers",
+    "trace_parent",
+    "transaction"
+  ],
+  "update_headers": [
+    "args",
+    "kwargs",
+    "instance",
+    "transaction",
+    "trace_parent"
+  ],
+  "Urllib3Instrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ]
+  },
+  "ElasticAPMFunctionWrapper": {},
+  "AbstractInstrumentedModule": {
+    "name": [],
+    "mutates_unsampled_arguments": [],
+    "creates_transactions": [],
+    "instrument_list": [],
+    "__init__": [
+      "self"
+    ],
+    "get_wrapped_name": [
+      "self",
+      "wrapped",
+      "instance",
+      "fallback_method"
+    ],
+    "get_instrument_list": [
+      "self"
+    ],
+    "instrument": [
+      "self"
+    ],
+    "uninstrument": [
+      "self"
+    ],
+    "call_if_sampling": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "KafkaInstrumentation": {
+    "instrument_list": [],
+    "provider_name": [],
+    "name": [],
+    "creates_transactions": [],
+    "_trace_send": [
+      "self",
+      "instance",
+      "wrapped"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "get_traceparent_from_result": [
+      "self",
+      "result"
+    ]
+  },
+  "RequestsInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "Jinja2Instrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMemcacheInstrumentation": {
+    "name": [],
+    "method_list": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMongoInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMongoBulkInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMongoCursorInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "GraphQLExecutorInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "GraphQLBackendInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "get_graphql_tx_name": [
+      "self",
+      "graphql_doc"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "Literal": {
+    "__init__": [
+      "self",
+      "literal_type",
+      "content"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "look_for_table": [
+    "sql",
+    "keyword"
+  ],
+  "_scan_for_table_with_tokens": [
+    "tokens",
+    "keyword"
+  ],
+  "tokenize": [
+    "sql"
+  ],
+  "scan": [
+    "tokens"
+  ],
+  "extract_signature": [
+    "sql"
+  ],
+  "QUERY_ACTION": [],
+  "EXEC_ACTION": [],
+  "PROCEDURE_STATEMENTS": [],
+  "extract_action_from_signature": [
+    "signature",
+    "default"
+  ],
+  "CursorProxy": {
+    "provider_name": [],
+    "DML_QUERIES": [],
+    "__init__": [
+      "self",
+      "wrapped",
+      "destination_info"
+    ],
+    "callproc": [
+      "self",
+      "procname",
+      "params"
+    ],
+    "execute": [
+      "self",
+      "sql",
+      "params"
+    ],
+    "executemany": [
+      "self",
+      "sql",
+      "param_list"
+    ],
+    "_bake_sql": [
+      "self",
+      "sql"
+    ],
+    "_trace_sql": [
+      "self",
+      "method",
+      "sql",
+      "params",
+      "action"
+    ],
+    "extract_signature": [
+      "self",
+      "sql"
+    ]
+  },
+  "ConnectionProxy": {
+    "cursor_proxy": [],
+    "__init__": [
+      "self",
+      "wrapped",
+      "destination_info"
+    ],
+    "cursor": [
+      "self"
+    ]
+  },
+  "DbApi2Instrumentation": {
+    "connect_method": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "call_if_sampling": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PythonMemcachedInstrumentation": {
+    "name": [],
+    "method_list": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "StarletteInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "instrumented_apps": [],
+    "creates_transactions": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "TornadoBaseInstrumentedModule": {
+    "instrument": [
+      "self"
+    ]
+  },
+  "TornadoRequestExecuteInstrumentation": {
+    "name": [],
+    "creates_transactions": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "TornadoHandleRequestExceptionInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "TornadoRenderInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "FlaskInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "creates_transactions": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "uninstrument": [
+      "self"
+    ]
+  },
+  "PyLibMcInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "get_address_port_from_instance": [
+    "instance"
+  ],
+  "should_capture_body_re": [],
+  "ElasticsearchConnectionInstrumentation": {
+    "name": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "_update_context_by_request_data": [
+      "self",
+      "context",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "ElasticsearchTransportInstrumentation": {
+    "name": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "_get_signature": [
+      "self",
+      "args",
+      "kwargs"
+    ],
+    "_get_hits": [
+      "self",
+      "result"
+    ]
+  },
+  "PGCursorProxy": {
+    "provider_name": [],
+    "_bake_sql": [
+      "self",
+      "sql"
+    ],
+    "extract_signature": [
+      "self",
+      "sql"
+    ],
+    "execute": [
+      "self",
+      "query",
+      "vars"
+    ],
+    "executemany": [
+      "self",
+      "query",
+      "vars_list"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "_self_database": [
+      "self"
+    ]
+  },
+  "PGConnectionProxy": {
+    "cursor_proxy": [],
+    "__enter__": [
+      "self"
+    ]
+  },
+  "Psycopg2Instrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "Psycopg2ExtensionsInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AzureInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "handle_azureblob": [
+    "request",
+    "hostname",
+    "path",
+    "query_params",
+    "service",
+    "service_type",
+    "context"
+  ],
+  "handle_azurequeue": [
+    "request",
+    "hostname",
+    "path",
+    "query_params",
+    "service",
+    "service_type",
+    "context"
+  ],
+  "handle_azuretable": [
+    "request",
+    "hostname",
+    "path",
+    "query_params",
+    "service",
+    "service_type",
+    "context"
+  ],
+  "handle_azurefile": [
+    "request",
+    "hostname",
+    "path",
+    "query_params",
+    "service",
+    "service_type",
+    "context"
+  ],
+  "MySQLCursorProxy": {
+    "provider_name": [],
+    "extract_signature": [
+      "self",
+      "sql"
+    ]
+  },
+  "MySQLConnectionProxy": {
+    "cursor_proxy": [],
+    "cursor": [
+      "self"
+    ]
+  },
+  "MySQLInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "Httplib2Instrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "args_list": [],
+    "_ensure_headers_in_kwargs": [
+      "self",
+      "args",
+      "kwargs"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ],
+    "_set_disttracing_headers": [
+      "self",
+      "headers",
+      "trace_parent",
+      "transaction"
+    ]
+  },
+  "MySQLConnectorInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PsycopgInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyODBCCursorProxy": {
+    "provider_name": [],
+    "extract_signature": [
+      "self",
+      "sql"
+    ],
+    "_self_database": [
+      "self"
+    ]
+  },
+  "PyODBCConnectionProxy": {
+    "cursor_proxy": []
+  },
+  "PyODBCInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "SQLiteCursorProxy": {
+    "provider_name": [],
+    "extract_signature": [
+      "self",
+      "sql"
+    ]
+  },
+  "SQLiteConnectionProxy": {
+    "cursor_proxy": [],
+    "_trace_sql": [
+      "self",
+      "method",
+      "sql",
+      "params"
+    ],
+    "execute": [
+      "self",
+      "sql",
+      "params"
+    ],
+    "executemany": [
+      "self",
+      "sql",
+      "params"
+    ]
+  },
+  "SQLiteInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMySQLCursorProxy": {
+    "provider_name": [],
+    "extract_signature": [
+      "self",
+      "sql"
+    ],
+    "_self_database": [
+      "self"
+    ]
+  },
+  "PyMySQLConnectionProxy": {
+    "cursor_proxy": []
+  },
+  "PyMySQLConnectorInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "ZLibInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "PyMSSQLCursorProxy": {
+    "provider_name": [],
+    "extract_signature": [
+      "self",
+      "sql"
+    ]
+  },
+  "PyMSSQLConnectionProxy": {
+    "cursor_proxy": [],
+    "cursor": [
+      "self"
+    ]
+  },
+  "PyMSSQLInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "get_host_port": [
+    "args",
+    "kwargs"
+  ],
+  "DjangoAutoInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "creates_transactions": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "DjangoTemplateInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "DjangoTemplateSourceInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "RedisConnectionPoolInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "_get_destination_info": [
+    "connection"
+  ],
+  "AsyncAbstractInstrumentedModule": {
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AioHttpClientInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ],
+    "_set_disttracing_headers": [
+      "self",
+      "headers",
+      "trace_parent",
+      "transaction"
+    ]
+  },
+  "PGAsyncCursorProxy": {
+    "provider_name": [],
+    "_bake_sql": [
+      "self",
+      "sql"
+    ],
+    "extract_signature": [
+      "self",
+      "sql"
+    ],
+    "execute": [
+      "self",
+      "query",
+      "params"
+    ],
+    "executemany": [
+      "self",
+      "query",
+      "params_seq"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "_self_database": [
+      "self"
+    ]
+  },
+  "PGAsyncConnectionProxy": {
+    "cursor_proxy": [],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ]
+  },
+  "AsyncPsycopgInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AsyncCursorProxy": {
+    "provider_name": [],
+    "DML_QUERIES": [],
+    "__init__": [
+      "self",
+      "wrapped",
+      "destination_info"
+    ],
+    "callproc": [
+      "self",
+      "procname",
+      "params"
+    ],
+    "execute": [
+      "self",
+      "sql",
+      "params"
+    ],
+    "executemany": [
+      "self",
+      "sql",
+      "param_list"
+    ],
+    "_bake_sql": [
+      "self",
+      "sql"
+    ],
+    "_trace_sql": [
+      "self",
+      "method",
+      "sql",
+      "params",
+      "action"
+    ],
+    "extract_signature": [
+      "self",
+      "sql"
+    ]
+  },
+  "AsyncConnectionProxy": {
+    "cursor_proxy": [],
+    "__init__": [
+      "self",
+      "wrapped",
+      "destination_info"
+    ],
+    "cursor": [
+      "self"
+    ]
+  },
+  "AsyncDbApi2Instrumentation": {
+    "connect_method": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "call_if_sampling": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AioPGInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "_bake_sql": [
+    "cursor",
+    "sql"
+  ],
+  "AioMySQLInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "StarletteServerErrorMiddlewareInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "creates_transactions": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "ElasticSearchAsyncConnection": {
+    "name": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "ElasticsearchAsyncTransportInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "get_instrument_list": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AsyncIOSleepInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "RedisAsyncioInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AsyncPGInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "get_query": [
+      "self",
+      "method",
+      "args",
+      "kwargs"
+    ],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "AioBotocoreInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "capture_span_ctx": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "get_request_data": [
+    "args",
+    "kwargs"
+  ],
+  "get_status": [
+    "response"
+  ],
+  "set_disttracing_headers": [
+    "headers",
+    "trace_parent",
+    "transaction"
+  ],
+  "HTTPCoreAsyncInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ]
+  },
+  "HttpxAsyncClientInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "HTTPCoreInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ],
+    "mutate_unsampled_call_args": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs",
+      "transaction"
+    ]
+  },
+  "HttpxClientInstrumentation": {
+    "name": [],
+    "instrument_list": [],
+    "call": [
+      "self",
+      "module",
+      "method",
+      "wrapped",
+      "instance",
+      "args",
+      "kwargs"
+    ]
+  },
+  "setup": []
+}

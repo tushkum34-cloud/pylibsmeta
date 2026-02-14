@@ -1,0 +1,2014 @@
+{
+  "optimize": [
+    "seed_candidate",
+    "trainset",
+    "valset",
+    "adapter",
+    "task_lm",
+    "evaluator",
+    "reflection_lm",
+    "candidate_selection_strategy",
+    "frontier_type",
+    "skip_perfect_score",
+    "batch_sampler",
+    "reflection_minibatch_size",
+    "perfect_score",
+    "reflection_prompt_template",
+    "module_selector",
+    "use_merge",
+    "max_merge_invocations",
+    "merge_val_overlap_floor",
+    "max_metric_calls",
+    "stop_callbacks",
+    "logger",
+    "run_dir",
+    "callbacks",
+    "use_wandb",
+    "wandb_api_key",
+    "wandb_init_kwargs",
+    "use_mlflow",
+    "mlflow_tracking_uri",
+    "mlflow_experiment_name",
+    "track_best_outputs",
+    "display_progress_bar",
+    "use_cloudpickle",
+    "cache_evaluation",
+    "seed",
+    "raise_on_exception",
+    "val_evaluation_policy"
+  ],
+  "json_default": [
+    "x"
+  ],
+  "idxmax": [
+    "lst"
+  ],
+  "is_dominated": [
+    "y",
+    "programs",
+    "program_at_pareto_front_valset"
+  ],
+  "remove_dominated_programs": [
+    "program_at_pareto_front_valset",
+    "scores"
+  ],
+  "find_dominator_programs": [
+    "pareto_front_programs",
+    "train_val_weighted_agg_scores_for_all_programs"
+  ],
+  "select_program_candidate_from_pareto_front": [
+    "pareto_front_programs",
+    "train_val_weighted_agg_scores_for_all_programs",
+    "rng"
+  ],
+  "RoundRobinReflectionComponentSelector": {
+    "__call__": [
+      "self",
+      "state",
+      "trajectories",
+      "subsample_scores",
+      "candidate_idx",
+      "candidate"
+    ]
+  },
+  "AllReflectionComponentSelector": {
+    "__call__": [
+      "self",
+      "state",
+      "trajectories",
+      "subsample_scores",
+      "candidate_idx",
+      "candidate"
+    ]
+  },
+  "BatchSampler": {
+    "next_minibatch_ids": [
+      "self",
+      "loader",
+      "state"
+    ]
+  },
+  "EpochShuffledBatchSampler": {
+    "__init__": [
+      "self",
+      "minibatch_size",
+      "rng"
+    ],
+    "_update_shuffled": [
+      "self",
+      "loader"
+    ],
+    "next_minibatch_ids": [
+      "self",
+      "loader",
+      "state"
+    ]
+  },
+  "InstructionProposalSignature": {
+    "default_prompt_template": [],
+    "validate_prompt_template": [
+      "cls",
+      "prompt_template"
+    ],
+    "prompt_renderer": [
+      "cls",
+      "input_dict"
+    ],
+    "output_extractor": [
+      "cls",
+      "lm_out"
+    ]
+  },
+  "EvaluationPolicy": {
+    "get_eval_batch": [
+      "self",
+      "loader",
+      "state",
+      "target_program_idx"
+    ],
+    "get_best_program": [
+      "self",
+      "state"
+    ],
+    "get_valset_score": [
+      "self",
+      "program_idx",
+      "state"
+    ]
+  },
+  "FullEvaluationPolicy": {
+    "get_eval_batch": [
+      "self",
+      "loader",
+      "state",
+      "target_program_idx"
+    ],
+    "get_best_program": [
+      "self",
+      "state"
+    ],
+    "get_valset_score": [
+      "self",
+      "program_idx",
+      "state"
+    ]
+  },
+  "__all__": [],
+  "ParetoCandidateSelector": {
+    "__init__": [
+      "self",
+      "rng"
+    ],
+    "select_candidate_idx": [
+      "self",
+      "state"
+    ]
+  },
+  "CurrentBestCandidateSelector": {
+    "__init__": [
+      "self"
+    ],
+    "select_candidate_idx": [
+      "self",
+      "state"
+    ]
+  },
+  "EpsilonGreedyCandidateSelector": {
+    "__init__": [
+      "self",
+      "epsilon",
+      "rng"
+    ],
+    "select_candidate_idx": [
+      "self",
+      "state"
+    ]
+  },
+  "AncestorLog": [],
+  "MergeDescription": [],
+  "MergeAttempt": [],
+  "does_triplet_have_desirable_predictors": [
+    "program_candidates",
+    "ancestor",
+    "id1",
+    "id2"
+  ],
+  "filter_ancestors": [
+    "i",
+    "j",
+    "common_ancestors",
+    "merges_performed",
+    "agg_scores",
+    "program_candidates"
+  ],
+  "find_common_ancestor_pair": [
+    "rng",
+    "parent_list",
+    "program_indexes",
+    "merges_performed",
+    "agg_scores",
+    "program_candidates",
+    "max_attempts"
+  ],
+  "sample_and_attempt_merge_programs_by_common_predictors": [
+    "agg_scores",
+    "rng",
+    "merge_candidates",
+    "merges_performed",
+    "program_candidates",
+    "parent_program_for_candidate",
+    "has_val_support_overlap",
+    "max_attempts"
+  ],
+  "MergeProposer": {
+    "__init__": [
+      "self",
+      "logger",
+      "valset",
+      "evaluator",
+      "use_merge",
+      "max_merge_invocations",
+      "val_overlap_floor",
+      "rng",
+      "callbacks"
+    ],
+    "schedule_if_needed": [
+      "self"
+    ],
+    "select_eval_subsample_for_merged_program": [
+      "self",
+      "scores1",
+      "scores2",
+      "num_subsample_ids"
+    ],
+    "propose": [
+      "self",
+      "state"
+    ]
+  },
+  "CandidateProposal": {},
+  "ProposeNewCandidate": {
+    "propose": [
+      "self",
+      "state"
+    ]
+  },
+  "ReflectiveMutationProposer": {
+    "__init__": [
+      "self",
+      "logger",
+      "trainset",
+      "adapter",
+      "candidate_selector",
+      "module_selector",
+      "batch_sampler",
+      "perfect_score",
+      "skip_perfect_score",
+      "experiment_tracker",
+      "reflection_lm",
+      "reflection_prompt_template",
+      "callbacks"
+    ],
+    "propose_new_texts": [
+      "self",
+      "candidate",
+      "reflective_dataset",
+      "components_to_update"
+    ],
+    "propose": [
+      "self",
+      "state"
+    ]
+  },
+  "CandidateSelector": {
+    "select_candidate_idx": [
+      "self",
+      "state"
+    ]
+  },
+  "ReflectionComponentSelector": {
+    "__call__": [
+      "self",
+      "state",
+      "trajectories",
+      "subsample_scores",
+      "candidate_idx",
+      "candidate"
+    ]
+  },
+  "LanguageModel": {
+    "__call__": [
+      "self",
+      "prompt"
+    ]
+  },
+  "Signature": {
+    "prompt_renderer": [
+      "cls",
+      "input_dict"
+    ],
+    "output_extractor": [
+      "cls",
+      "lm_out"
+    ],
+    "run": [
+      "cls",
+      "lm",
+      "input_dict"
+    ]
+  },
+  "StopperProtocol": {
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "TimeoutStopCondition": {
+    "__init__": [
+      "self",
+      "timeout_seconds"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "FileStopper": {
+    "__init__": [
+      "self",
+      "stop_file_path"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ],
+    "remove_stop_file": [
+      "self"
+    ]
+  },
+  "ScoreThresholdStopper": {
+    "__init__": [
+      "self",
+      "threshold"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "NoImprovementStopper": {
+    "__init__": [
+      "self",
+      "max_iterations_without_improvement"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "SignalStopper": {
+    "__init__": [
+      "self",
+      "signals"
+    ],
+    "_setup_signal_handlers": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "MaxTrackedCandidatesStopper": {
+    "__init__": [
+      "self",
+      "max_tracked_candidates"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "MaxMetricCallsStopper": {
+    "__init__": [
+      "self",
+      "max_metric_calls"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "CompositeStopper": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "gepa_state"
+    ]
+  },
+  "AnyMathsDataInst": {},
+  "AnyMathsTrajectory": {},
+  "AnyMathsRolloutOutput": {},
+  "AnyMathsStructuredOutput": {},
+  "AnyMathsAdapter": {
+    "__init__": [
+      "self",
+      "model",
+      "failure_score",
+      "api_base",
+      "max_litellm_workers"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ]
+  },
+  "DefaultDataInst": {},
+  "EvaluationResult": {},
+  "DefaultTrajectory": {},
+  "DefaultRolloutOutput": {},
+  "DefaultReflectiveRecord": [],
+  "ChatMessage": {},
+  "ChatCompletionCallable": {
+    "__call__": [
+      "self",
+      "messages"
+    ]
+  },
+  "Evaluator": {
+    "__call__": [
+      "self",
+      "data",
+      "response"
+    ]
+  },
+  "ContainsAnswerEvaluator": {
+    "__init__": [
+      "self",
+      "failure_score"
+    ],
+    "__call__": [
+      "self",
+      "data",
+      "response"
+    ]
+  },
+  "DefaultAdapter": {
+    "__init__": [
+      "self",
+      "model",
+      "evaluator",
+      "max_litellm_workers",
+      "litellm_batch_completion_kwargs"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ]
+  },
+  "RAGEvaluationMetrics": {
+    "evaluate_retrieval": [
+      "self",
+      "retrieved_docs",
+      "relevant_doc_ids"
+    ],
+    "evaluate_generation": [
+      "self",
+      "generated_answer",
+      "ground_truth",
+      "context"
+    ],
+    "combined_rag_score": [
+      "self",
+      "retrieval_metrics",
+      "generation_metrics",
+      "retrieval_weight",
+      "generation_weight"
+    ],
+    "_exact_match": [
+      "self",
+      "prediction",
+      "ground_truth"
+    ],
+    "_token_f1": [
+      "self",
+      "prediction",
+      "ground_truth"
+    ],
+    "_simple_bleu": [
+      "self",
+      "prediction",
+      "ground_truth",
+      "n"
+    ],
+    "_answer_relevance": [
+      "self",
+      "answer",
+      "context"
+    ],
+    "_faithfulness_score": [
+      "self",
+      "answer",
+      "context"
+    ],
+    "_extract_phrases": [
+      "self",
+      "text",
+      "min_length"
+    ],
+    "_normalize_text": [
+      "self",
+      "text"
+    ]
+  },
+  "VectorStoreInterface": {
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "hybrid_search": [
+      "self",
+      "query",
+      "k",
+      "alpha",
+      "filters"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "get_embedding_dimension": [
+      "self"
+    ],
+    "supports_hybrid_search": [
+      "self"
+    ],
+    "supports_metadata_filtering": [
+      "self"
+    ]
+  },
+  "RAGDataInst": {},
+  "RAGTrajectory": {},
+  "RAGOutput": {},
+  "GenericRAGAdapter": {
+    "__init__": [
+      "self",
+      "vector_store",
+      "llm_model",
+      "embedding_model",
+      "embedding_function",
+      "rag_config",
+      "failure_score"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ],
+    "_create_component_example": [
+      "self",
+      "component_name",
+      "trajectory",
+      "output",
+      "score",
+      "candidate"
+    ],
+    "_generate_query_reformulation_feedback": [
+      "self",
+      "trajectory",
+      "score"
+    ],
+    "_generate_context_synthesis_feedback": [
+      "self",
+      "trajectory",
+      "score"
+    ],
+    "_generate_answer_generation_feedback": [
+      "self",
+      "trajectory",
+      "output",
+      "score"
+    ],
+    "_generate_reranking_feedback": [
+      "self",
+      "trajectory",
+      "score"
+    ],
+    "_default_config": [
+      "self"
+    ]
+  },
+  "RAGPipeline": {
+    "__init__": [
+      "self",
+      "vector_store",
+      "llm_client",
+      "embedding_model",
+      "embedding_function"
+    ],
+    "execute_rag": [
+      "self",
+      "query",
+      "prompts",
+      "config"
+    ],
+    "_reformulate_query": [
+      "self",
+      "query",
+      "reformulation_prompt"
+    ],
+    "_retrieve_documents": [
+      "self",
+      "query",
+      "config"
+    ],
+    "_rerank_documents": [
+      "self",
+      "documents",
+      "query",
+      "reranking_prompt",
+      "config"
+    ],
+    "_synthesize_context": [
+      "self",
+      "documents",
+      "query",
+      "synthesis_prompt"
+    ],
+    "_generate_answer": [
+      "self",
+      "query",
+      "context",
+      "generation_prompt"
+    ],
+    "_default_embedding_function": [
+      "self",
+      "text"
+    ],
+    "_estimate_token_count": [
+      "self",
+      "text"
+    ]
+  },
+  "WeaviateVectorStore": {
+    "__init__": [
+      "self",
+      "client",
+      "collection_name",
+      "embedding_function"
+    ],
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "hybrid_search": [
+      "self",
+      "query",
+      "k",
+      "alpha",
+      "filters"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "supports_hybrid_search": [
+      "self"
+    ],
+    "supports_metadata_filtering": [
+      "self"
+    ],
+    "_convert_filters": [
+      "self",
+      "filters"
+    ],
+    "_format_results": [
+      "self",
+      "results"
+    ],
+    "create_local": [
+      "cls",
+      "host",
+      "port",
+      "grpc_port",
+      "collection_name",
+      "headers"
+    ],
+    "create_cloud": [
+      "cls",
+      "cluster_url",
+      "auth_credentials",
+      "collection_name",
+      "headers"
+    ],
+    "create_custom": [
+      "cls",
+      "url",
+      "auth_credentials",
+      "collection_name",
+      "headers",
+      "grpc_port"
+    ]
+  },
+  "MilvusVectorStore": {
+    "__init__": [
+      "self",
+      "client",
+      "collection_name",
+      "embedding_function"
+    ],
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "add_documents": [
+      "self",
+      "documents",
+      "embeddings",
+      "ids"
+    ],
+    "delete_documents": [
+      "self",
+      "ids"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "supports_hybrid_search": [
+      "self"
+    ],
+    "hybrid_search": [
+      "self",
+      "query",
+      "k",
+      "alpha",
+      "filters"
+    ],
+    "_format_results": [
+      "self",
+      "results"
+    ],
+    "_convert_filters": [
+      "self",
+      "filters"
+    ],
+    "create_local": [
+      "cls",
+      "collection_name",
+      "embedding_function",
+      "vector_size",
+      "uri"
+    ],
+    "create_remote": [
+      "cls",
+      "collection_name",
+      "embedding_function",
+      "uri",
+      "user",
+      "password",
+      "token",
+      "vector_size"
+    ]
+  },
+  "QdrantVectorStore": {
+    "__init__": [
+      "self",
+      "client",
+      "collection_name",
+      "embedding_function"
+    ],
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "add_documents": [
+      "self",
+      "documents",
+      "embeddings",
+      "ids"
+    ],
+    "delete_documents": [
+      "self",
+      "ids"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "supports_hybrid_search": [
+      "self"
+    ],
+    "hybrid_search": [
+      "self",
+      "query",
+      "k",
+      "alpha",
+      "filters"
+    ],
+    "_format_results": [
+      "self",
+      "results"
+    ],
+    "_convert_filters": [
+      "self",
+      "filters"
+    ],
+    "create_local": [
+      "cls",
+      "collection_name",
+      "embedding_function",
+      "path",
+      "vector_size"
+    ],
+    "create_remote": [
+      "cls",
+      "collection_name",
+      "embedding_function",
+      "host",
+      "port",
+      "api_key",
+      "vector_size"
+    ]
+  },
+  "ChromaVectorStore": {
+    "__init__": [
+      "self",
+      "client",
+      "collection_name",
+      "embedding_function"
+    ],
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "supports_metadata_filtering": [
+      "self"
+    ],
+    "_convert_filters": [
+      "self",
+      "filters"
+    ],
+    "_format_results": [
+      "self",
+      "results"
+    ],
+    "_extract_distance_value": [
+      "self",
+      "distance"
+    ],
+    "create_local": [
+      "cls",
+      "persist_directory",
+      "collection_name",
+      "embedding_function"
+    ],
+    "create_memory": [
+      "cls",
+      "collection_name",
+      "embedding_function"
+    ]
+  },
+  "LanceDBVectorStore": {
+    "__init__": [
+      "self",
+      "db",
+      "table_name",
+      "embedding_function"
+    ],
+    "similarity_search": [
+      "self",
+      "query",
+      "k",
+      "filters"
+    ],
+    "vector_search": [
+      "self",
+      "query_vector",
+      "k",
+      "filters"
+    ],
+    "add_documents": [
+      "self",
+      "documents",
+      "embeddings",
+      "ids"
+    ],
+    "delete_documents": [
+      "self",
+      "ids"
+    ],
+    "get_collection_info": [
+      "self"
+    ],
+    "supports_hybrid_search": [
+      "self"
+    ],
+    "hybrid_search": [
+      "self",
+      "query",
+      "k",
+      "alpha",
+      "filters"
+    ],
+    "_format_results": [
+      "self",
+      "results_df"
+    ],
+    "_convert_filters": [
+      "self",
+      "filters"
+    ],
+    "create_local": [
+      "cls",
+      "table_name",
+      "embedding_function",
+      "db_path",
+      "vector_size"
+    ],
+    "create_remote": [
+      "cls",
+      "table_name",
+      "embedding_function",
+      "uri",
+      "api_key",
+      "region",
+      "vector_size"
+    ]
+  },
+  "DspyAdapter": {
+    "__init__": [
+      "self",
+      "task_lm",
+      "metric_fn",
+      "reflection_lm",
+      "failure_score",
+      "num_threads",
+      "add_format_failure_as_feedback",
+      "rng"
+    ],
+    "build_program": [
+      "self",
+      "candidate"
+    ],
+    "load_dspy_program_from_code": [
+      "self",
+      "candidate_src",
+      "context"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ],
+    "propose_new_texts": [
+      "self",
+      "candidate",
+      "reflective_dataset",
+      "components_to_update"
+    ]
+  },
+  "DSPyProgramProposalSignature": {
+    "prompt_template": [],
+    "prompt_renderer": [
+      "cls",
+      "input_dict"
+    ],
+    "output_extractor": [
+      "lm_out"
+    ]
+  },
+  "__getattr__": [
+    "name"
+  ],
+  "logger": [],
+  "MCPDataInst": {},
+  "MCPTrajectory": {},
+  "MCPOutput": {},
+  "MCPAdapter": {
+    "__init__": [
+      "self",
+      "tool_names",
+      "task_model",
+      "metric_fn",
+      "server_params",
+      "remote_url",
+      "remote_transport",
+      "remote_headers",
+      "remote_timeout",
+      "base_system_prompt",
+      "enable_two_pass",
+      "failure_score"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "_evaluate_async": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "_first_pass": [
+      "self",
+      "client",
+      "item",
+      "system_prompt",
+      "available_tools"
+    ],
+    "_second_pass": [
+      "self",
+      "client",
+      "item",
+      "system_prompt",
+      "tool_response"
+    ],
+    "_build_system_prompt": [
+      "self",
+      "candidate",
+      "available_tools"
+    ],
+    "_extract_tool_response": [
+      "self",
+      "result"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ],
+    "_generate_tool_feedback": [
+      "self",
+      "traj",
+      "score"
+    ],
+    "_generate_system_prompt_feedback": [
+      "self",
+      "traj",
+      "score"
+    ]
+  },
+  "BaseMCPClient": {
+    "__init__": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "send_request": [
+      "self",
+      "method",
+      "params"
+    ],
+    "close": [
+      "self"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "_send_initialized_notification": [
+      "self"
+    ],
+    "list_tools": [
+      "self"
+    ],
+    "call_tool": [
+      "self",
+      "name",
+      "arguments"
+    ]
+  },
+  "StdioMCPClient": {
+    "__init__": [
+      "self",
+      "command",
+      "args"
+    ],
+    "start": [
+      "self"
+    ],
+    "send_request": [
+      "self",
+      "method",
+      "params"
+    ],
+    "_send_initialized_notification": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "SSEMCPClient": {
+    "__init__": [
+      "self",
+      "url",
+      "headers",
+      "timeout"
+    ],
+    "start": [
+      "self"
+    ],
+    "send_request": [
+      "self",
+      "method",
+      "params"
+    ],
+    "_send_initialized_notification": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "StreamableHTTPMCPClient": {
+    "__init__": [
+      "self",
+      "url",
+      "headers",
+      "timeout",
+      "sse_read_timeout"
+    ],
+    "start": [
+      "self"
+    ],
+    "send_request": [
+      "self",
+      "method",
+      "params"
+    ],
+    "_send_initialized_notification": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "create_mcp_client": [
+    "server_params",
+    "remote_url",
+    "remote_transport",
+    "remote_headers",
+    "remote_timeout",
+    "sse_read_timeout"
+  ],
+  "LoggerAdapter": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "log": [
+      "self",
+      "x"
+    ]
+  },
+  "DSPyTrace": [],
+  "ScoreWithFeedback": {},
+  "PredictorFeedbackFn": {
+    "__call__": [
+      "self",
+      "predictor_output",
+      "predictor_inputs",
+      "module_inputs",
+      "module_outputs",
+      "captured_trace"
+    ]
+  },
+  "TerminalBenchTask": {},
+  "run_agent_tb": [
+    "task_ids",
+    "run_id",
+    "model_name",
+    "instruction_prompt",
+    "dataset_name",
+    "dataset_version",
+    "agent_import_path",
+    "n_concurrent",
+    "prompt_template_path"
+  ],
+  "get_results": [
+    "task_id",
+    "run_id"
+  ],
+  "TerminusAdapter": {
+    "__init__": [
+      "self",
+      "n_concurrent",
+      "instruction_prompt_path"
+    ],
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ]
+  },
+  "LoggerProtocol": {
+    "log": [
+      "self",
+      "message"
+    ]
+  },
+  "StdOutLogger": {
+    "log": [
+      "self",
+      "message"
+    ]
+  },
+  "Tee": {
+    "__init__": [
+      "self"
+    ],
+    "write": [
+      "self",
+      "obj"
+    ],
+    "flush": [
+      "self"
+    ],
+    "isatty": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "fileno": [
+      "self"
+    ]
+  },
+  "Logger": {
+    "__init__": [
+      "self",
+      "filename",
+      "mode"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "log": [
+      "self"
+    ]
+  },
+  "log_detailed_metrics_after_discovering_new_program": [
+    "logger",
+    "gepa_state",
+    "new_program_idx",
+    "valset_evaluation",
+    "objective_scores",
+    "experiment_tracker",
+    "linear_pareto_front_program_idx",
+    "valset_size",
+    "val_evaluation_policy",
+    "log_individual_valset_scores_and_programs"
+  ],
+  "ExperimentTracker": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__init__": [
+      "self",
+      "use_wandb",
+      "wandb_api_key",
+      "wandb_init_kwargs",
+      "use_mlflow",
+      "mlflow_tracking_uri",
+      "mlflow_experiment_name"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "_initialize_wandb": [
+      "self"
+    ],
+    "_initialize_mlflow": [
+      "self"
+    ],
+    "start_run": [
+      "self"
+    ],
+    "log_metrics": [
+      "self",
+      "metrics",
+      "step"
+    ],
+    "end_run": [
+      "self"
+    ],
+    "is_active": [
+      "self"
+    ]
+  },
+  "create_experiment_tracker": [
+    "use_wandb",
+    "wandb_api_key",
+    "wandb_init_kwargs",
+    "use_mlflow",
+    "mlflow_tracking_uri",
+    "mlflow_experiment_name"
+  ],
+  "OptimizationStartEvent": {},
+  "OptimizationEndEvent": {},
+  "IterationStartEvent": {},
+  "IterationEndEvent": {},
+  "CandidateSelectedEvent": {},
+  "MinibatchSampledEvent": {},
+  "EvaluationStartEvent": {},
+  "EvaluationEndEvent": {},
+  "EvaluationSkippedEvent": {},
+  "ReflectiveDatasetBuiltEvent": {},
+  "ProposalStartEvent": {},
+  "ProposalEndEvent": {},
+  "CandidateAcceptedEvent": {},
+  "CandidateRejectedEvent": {},
+  "MergeAttemptedEvent": {},
+  "MergeAcceptedEvent": {},
+  "MergeRejectedEvent": {},
+  "ParetoFrontUpdatedEvent": {},
+  "ValsetEvaluatedEvent": {},
+  "StateSavedEvent": {},
+  "BudgetUpdatedEvent": {},
+  "ErrorEvent": {},
+  "GEPACallback": {
+    "on_optimization_start": [
+      "self",
+      "event"
+    ],
+    "on_optimization_end": [
+      "self",
+      "event"
+    ],
+    "on_iteration_start": [
+      "self",
+      "event"
+    ],
+    "on_iteration_end": [
+      "self",
+      "event"
+    ],
+    "on_candidate_selected": [
+      "self",
+      "event"
+    ],
+    "on_minibatch_sampled": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_start": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_end": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_skipped": [
+      "self",
+      "event"
+    ],
+    "on_valset_evaluated": [
+      "self",
+      "event"
+    ],
+    "on_reflective_dataset_built": [
+      "self",
+      "event"
+    ],
+    "on_proposal_start": [
+      "self",
+      "event"
+    ],
+    "on_proposal_end": [
+      "self",
+      "event"
+    ],
+    "on_candidate_accepted": [
+      "self",
+      "event"
+    ],
+    "on_candidate_rejected": [
+      "self",
+      "event"
+    ],
+    "on_merge_attempted": [
+      "self",
+      "event"
+    ],
+    "on_merge_accepted": [
+      "self",
+      "event"
+    ],
+    "on_merge_rejected": [
+      "self",
+      "event"
+    ],
+    "on_pareto_front_updated": [
+      "self",
+      "event"
+    ],
+    "on_state_saved": [
+      "self",
+      "event"
+    ],
+    "on_budget_updated": [
+      "self",
+      "event"
+    ],
+    "on_error": [
+      "self",
+      "event"
+    ]
+  },
+  "CompositeCallback": {
+    "__init__": [
+      "self",
+      "callbacks"
+    ],
+    "callbacks": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "callback"
+    ],
+    "_notify": [
+      "self",
+      "method_name",
+      "event"
+    ],
+    "on_optimization_start": [
+      "self",
+      "event"
+    ],
+    "on_optimization_end": [
+      "self",
+      "event"
+    ],
+    "on_iteration_start": [
+      "self",
+      "event"
+    ],
+    "on_iteration_end": [
+      "self",
+      "event"
+    ],
+    "on_candidate_selected": [
+      "self",
+      "event"
+    ],
+    "on_minibatch_sampled": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_start": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_end": [
+      "self",
+      "event"
+    ],
+    "on_evaluation_skipped": [
+      "self",
+      "event"
+    ],
+    "on_valset_evaluated": [
+      "self",
+      "event"
+    ],
+    "on_reflective_dataset_built": [
+      "self",
+      "event"
+    ],
+    "on_proposal_start": [
+      "self",
+      "event"
+    ],
+    "on_proposal_end": [
+      "self",
+      "event"
+    ],
+    "on_candidate_accepted": [
+      "self",
+      "event"
+    ],
+    "on_candidate_rejected": [
+      "self",
+      "event"
+    ],
+    "on_merge_attempted": [
+      "self",
+      "event"
+    ],
+    "on_merge_accepted": [
+      "self",
+      "event"
+    ],
+    "on_merge_rejected": [
+      "self",
+      "event"
+    ],
+    "on_pareto_front_updated": [
+      "self",
+      "event"
+    ],
+    "on_state_saved": [
+      "self",
+      "event"
+    ],
+    "on_budget_updated": [
+      "self",
+      "event"
+    ],
+    "on_error": [
+      "self",
+      "event"
+    ]
+  },
+  "notify_callbacks": [
+    "callbacks",
+    "method_name",
+    "event"
+  ],
+  "ComparableHashable": {
+    "__lt__": [],
+    "__gt__": [],
+    "__le__": [],
+    "__ge__": []
+  },
+  "DataId": [],
+  "DataLoader": {
+    "all_ids": [
+      "self"
+    ],
+    "fetch": [
+      "self",
+      "ids"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "MutableDataLoader": {
+    "add_items": [
+      "self",
+      "items"
+    ]
+  },
+  "ListDataLoader": {
+    "__init__": [
+      "self",
+      "items"
+    ],
+    "all_ids": [
+      "self"
+    ],
+    "fetch": [
+      "self",
+      "ids"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "add_items": [
+      "self",
+      "items"
+    ]
+  },
+  "ensure_loader": [
+    "data_or_loader"
+  ],
+  "ProgramIdx": [],
+  "_candidate_hash": [
+    "candidate"
+  ],
+  "CachedEvaluation": {},
+  "EvaluationCache": {
+    "get": [
+      "self",
+      "candidate",
+      "example_id"
+    ],
+    "put": [
+      "self",
+      "candidate",
+      "example_id",
+      "output",
+      "score",
+      "objective_scores"
+    ],
+    "get_batch": [
+      "self",
+      "candidate",
+      "example_ids"
+    ],
+    "put_batch": [
+      "self",
+      "candidate",
+      "example_ids",
+      "outputs",
+      "scores",
+      "objective_scores_list"
+    ],
+    "evaluate_with_cache_full": [
+      "self",
+      "candidate",
+      "example_ids",
+      "fetcher",
+      "evaluator"
+    ]
+  },
+  "ValsetEvaluation": {},
+  "GEPAState": {
+    "__init__": [
+      "self",
+      "seed_candidate",
+      "base_evaluation",
+      "track_best_outputs",
+      "frontier_type",
+      "evaluation_cache"
+    ],
+    "is_consistent": [
+      "self"
+    ],
+    "add_budget_hook": [
+      "self",
+      "hook"
+    ],
+    "increment_evals": [
+      "self",
+      "count"
+    ],
+    "save": [
+      "self",
+      "run_dir"
+    ],
+    "load": [
+      "run_dir"
+    ],
+    "_migrate_from_legacy_state_v0": [
+      "d"
+    ],
+    "_upgrade_state_dict": [
+      "d"
+    ],
+    "_aggregate_objective_scores": [
+      "val_objective_scores"
+    ],
+    "get_program_average_val_subset": [
+      "self",
+      "program_idx"
+    ],
+    "valset_evaluations": [
+      "self"
+    ],
+    "program_full_scores_val_set": [
+      "self"
+    ],
+    "per_program_tracked_scores": [
+      "self"
+    ],
+    "_update_objective_pareto_front": [
+      "self",
+      "objective_scores",
+      "program_idx"
+    ],
+    "_update_pareto_front_for_val_id": [
+      "self",
+      "val_id",
+      "score",
+      "program_idx",
+      "output",
+      "run_dir",
+      "iteration"
+    ],
+    "_update_pareto_front_for_cartesian": [
+      "self",
+      "val_id",
+      "objective",
+      "objective_score",
+      "program_idx"
+    ],
+    "update_state_with_new_program": [
+      "self",
+      "parent_program_idx",
+      "new_program",
+      "valset_evaluation",
+      "run_dir",
+      "num_metric_calls_by_discovery_of_new_program"
+    ],
+    "_get_pareto_front_mapping": [
+      "self",
+      "frontier_type"
+    ],
+    "get_pareto_front_mapping": [
+      "self"
+    ],
+    "cached_evaluate": [
+      "self",
+      "candidate",
+      "example_ids",
+      "fetcher",
+      "evaluator"
+    ],
+    "cached_evaluate_full": [
+      "self",
+      "candidate",
+      "example_ids",
+      "fetcher",
+      "evaluator"
+    ]
+  },
+  "write_eval_scores_to_directory": [
+    "scores",
+    "output_dir"
+  ],
+  "write_eval_outputs_to_directory": [
+    "outputs",
+    "output_dir"
+  ],
+  "initialize_gepa_state": [
+    "run_dir",
+    "logger",
+    "seed_candidate",
+    "valset_evaluator",
+    "track_best_outputs",
+    "frontier_type",
+    "evaluation_cache"
+  ],
+  "GEPAEngine": {
+    "__init__": [
+      "self",
+      "adapter",
+      "run_dir",
+      "valset",
+      "seed_candidate",
+      "perfect_score",
+      "seed",
+      "reflective_proposer",
+      "merge_proposer",
+      "frontier_type",
+      "logger",
+      "experiment_tracker",
+      "callbacks",
+      "track_best_outputs",
+      "display_progress_bar",
+      "raise_on_exception",
+      "use_cloudpickle",
+      "stop_callback",
+      "val_evaluation_policy",
+      "evaluation_cache"
+    ],
+    "_evaluate_on_valset": [
+      "self",
+      "program",
+      "state"
+    ],
+    "_run_full_eval_and_add": [
+      "self",
+      "new_program",
+      "state",
+      "parent_program_idx"
+    ],
+    "run": [
+      "self"
+    ],
+    "_should_stop": [
+      "self",
+      "state"
+    ],
+    "_get_remaining_budget": [
+      "self",
+      "state"
+    ],
+    "request_stop": [
+      "self"
+    ]
+  },
+  "RolloutOutput": [],
+  "Trajectory": [],
+  "DataInst": [],
+  "Candidate": [],
+  "EvaluationBatch": {},
+  "ProposalFn": {
+    "__call__": [
+      "self",
+      "candidate",
+      "reflective_dataset",
+      "components_to_update"
+    ]
+  },
+  "GEPAAdapter": {
+    "evaluate": [
+      "self",
+      "batch",
+      "candidate",
+      "capture_traces"
+    ],
+    "make_reflective_dataset": [
+      "self",
+      "candidate",
+      "eval_batch",
+      "components_to_update"
+    ]
+  },
+  "GEPAResult": {
+    "num_candidates": [
+      "self"
+    ],
+    "num_val_instances": [
+      "self"
+    ],
+    "best_idx": [
+      "self"
+    ],
+    "best_candidate": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "d"
+    ],
+    "_common_kwargs_from_dict": [
+      "d"
+    ],
+    "_migrate_from_dict_v0": [
+      "d"
+    ],
+    "_from_dict_v2": [
+      "d"
+    ],
+    "from_state": [
+      "state",
+      "run_dir",
+      "seed"
+    ]
+  },
+  "init_dataset": [],
+  "_vector_stores": [],
+  "lazy_import_vector_store": [
+    "store_name"
+  ],
+  "get_install_command": [
+    "store_name"
+  ],
+  "create_llm_client": [
+    "model_name"
+  ],
+  "create_embedding_function": [],
+  "setup_chromadb_store": [],
+  "setup_lancedb_store": [],
+  "setup_milvus_store": [],
+  "setup_qdrant_store": [],
+  "setup_weaviate_store": [],
+  "get_sample_documents": [],
+  "get_sample_documents_simple": [],
+  "get_sample_documents_for_qdrant": [],
+  "get_sample_documents_for_weaviate": [],
+  "create_training_data": [],
+  "clean_answer": [
+    "answer"
+  ],
+  "create_initial_prompts": [],
+  "setup_vector_store": [
+    "store_name"
+  ],
+  "parse_arguments": [],
+  "main": [],
+  "INSTRUCTION_PROMPT_PATH": [],
+  "TerminusWrapper": {
+    "__init__": [
+      "self",
+      "model_name",
+      "max_episodes",
+      "api_base"
+    ],
+    "perform_task": [
+      "self",
+      "instruction",
+      "session",
+      "logging_dir"
+    ]
+  },
+  "SIMPLE_MCP_SERVER": [],
+  "create_test_server": [],
+  "create_test_files": [],
+  "create_dataset": [],
+  "metric_fn": [
+    "data_inst",
+    "output"
+  ],
+  "run_local_example": [
+    "task_model",
+    "reflection_model"
+  ],
+  "run_remote_example": [
+    "url",
+    "task_model",
+    "reflection_model"
+  ],
+  "run_multitool_example": [
+    "task_model",
+    "reflection_model"
+  ]
+}

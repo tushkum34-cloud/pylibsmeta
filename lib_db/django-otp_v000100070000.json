@@ -1,0 +1,682 @@
+{
+  "DeviceManager": {
+    "devices_for_user": [
+      "self",
+      "user",
+      "confirmed"
+    ]
+  },
+  "Device": {
+    "user": [],
+    "name": [],
+    "confirmed": [],
+    "objects": [],
+    "__str__": [
+      "self"
+    ],
+    "persistent_id": [
+      "self"
+    ],
+    "model_label": [
+      "cls"
+    ],
+    "from_persistent_id": [
+      "cls",
+      "persistent_id",
+      "for_verify"
+    ],
+    "afrom_persistent_id": [
+      "cls",
+      "persistent_id",
+      "for_verify"
+    ],
+    "_filter_persistent_id": [
+      "cls",
+      "persistent_id",
+      "for_verify"
+    ],
+    "is_interactive": [
+      "self"
+    ],
+    "generate_is_allowed": [
+      "self"
+    ],
+    "generate_challenge": [
+      "self"
+    ],
+    "verify_is_allowed": [
+      "self"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ]
+  },
+  "SideChannelDevice": {
+    "token": [],
+    "valid_until": [],
+    "generate_token": [
+      "self",
+      "length",
+      "valid_secs",
+      "commit"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ]
+  },
+  "GenerateNotAllowed": {
+    "COOLDOWN_DURATION_PENDING": []
+  },
+  "CooldownMixin": {
+    "last_generated_timestamp": [],
+    "generate_is_allowed": [
+      "self"
+    ],
+    "cooldown_reset": [
+      "self",
+      "commit"
+    ],
+    "cooldown_set": [
+      "self",
+      "commit"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ],
+    "cooldown_enabled": [
+      "self"
+    ],
+    "get_cooldown_duration": [
+      "self"
+    ]
+  },
+  "VerifyNotAllowed": {
+    "N_FAILED_ATTEMPTS": []
+  },
+  "ThrottlingMixin": {
+    "throttling_failure_timestamp": [],
+    "throttling_failure_count": [],
+    "verify_is_allowed": [
+      "self"
+    ],
+    "throttle_reset": [
+      "self",
+      "commit"
+    ],
+    "throttle_increment": [
+      "self",
+      "commit"
+    ],
+    "throttling_enabled": [
+      "self"
+    ],
+    "get_throttle_factor": [
+      "self"
+    ]
+  },
+  "TimestampMixin": {
+    "created_at": [],
+    "last_used_at": [],
+    "set_last_used_timestamp": [
+      "self",
+      "commit"
+    ]
+  },
+  "otp_verification_failed": [],
+  "OTPAuthenticationFormMixin": {
+    "otp_error_messages": [],
+    "clean_otp": [
+      "self",
+      "user"
+    ],
+    "_chosen_device": [
+      "self",
+      "user"
+    ],
+    "_handle_challenge": [
+      "self",
+      "device"
+    ],
+    "_verify_token": [
+      "self",
+      "user",
+      "token",
+      "device"
+    ],
+    "_update_form": [
+      "self",
+      "user"
+    ],
+    "device_choices": [
+      "user"
+    ]
+  },
+  "OTPAuthenticationForm": {
+    "otp_device": [],
+    "otp_token": [],
+    "otp_challenge": [],
+    "clean": [
+      "self"
+    ]
+  },
+  "OTPTokenForm": {
+    "otp_device": [],
+    "otp_token": [],
+    "otp_challenge": [],
+    "__init__": [
+      "self",
+      "user",
+      "request"
+    ],
+    "clean": [
+      "self"
+    ],
+    "get_user": [
+      "self"
+    ]
+  },
+  "write_qrcode_image": [
+    "data",
+    "out"
+  ],
+  "OTPTestCaseMixin": {
+    "setUpClass": [
+      "cls"
+    ],
+    "create_user": [
+      "self",
+      "username",
+      "password"
+    ]
+  },
+  "TestCase": {},
+  "TransactionTestCase": {},
+  "TimestampTestMixin": {
+    "setUp": [
+      "self"
+    ],
+    "valid_token": [
+      "self"
+    ],
+    "invalid_token": [
+      "self"
+    ],
+    "test_created_at_set_on_creation": [
+      "self"
+    ],
+    "test_last_used_at_initially_none": [
+      "self"
+    ],
+    "test_set_last_used_timestamp_updates_field": [
+      "self"
+    ],
+    "test_set_last_used_timestamp_without_commit": [
+      "self"
+    ],
+    "test_verify_token_successful_updates_last_used_at": [
+      "self"
+    ],
+    "test_verify_token_failed_does_not_update_last_used_at": [
+      "self"
+    ]
+  },
+  "ThrottlingTestMixin": {
+    "setUp": [
+      "self"
+    ],
+    "valid_token": [
+      "self"
+    ],
+    "invalid_token": [
+      "self"
+    ],
+    "test_delay_imposed_after_fail": [
+      "self"
+    ],
+    "test_delay_after_fail_expires": [
+      "self"
+    ],
+    "test_throttling_failure_count": [
+      "self"
+    ],
+    "test_verify_is_allowed": [
+      "self"
+    ]
+  },
+  "CooldownTestMixin": {
+    "setUp": [
+      "self"
+    ],
+    "valid_token": [
+      "self"
+    ],
+    "invalid_token": [
+      "self"
+    ],
+    "test_generate_is_allowed_on_first_try": [
+      "self"
+    ],
+    "test_cooldown_imposed_after_successful_generation": [
+      "self"
+    ],
+    "test_cooldown_expire_time": [
+      "self"
+    ],
+    "test_cooldown_reset": [
+      "self"
+    ],
+    "test_valid_token_verification_resets_cooldown": [
+      "self"
+    ],
+    "test_invalid_token_verification_does_not_reset_cooldown": [
+      "self"
+    ]
+  },
+  "DEVICE_ID_SESSION_KEY": [],
+  "login": [
+    "request",
+    "device"
+  ],
+  "_handle_auth_login": [
+    "sender",
+    "request",
+    "user"
+  ],
+  "verify_token": [
+    "user",
+    "device_id",
+    "token"
+  ],
+  "match_token": [
+    "user",
+    "token"
+  ],
+  "devices_for_user": [
+    "user",
+    "confirmed",
+    "for_verify"
+  ],
+  "user_has_device": [
+    "user",
+    "confirmed"
+  ],
+  "device_classes": [],
+  "hex_validator": [
+    "length"
+  ],
+  "random_hex": [
+    "length"
+  ],
+  "random_number_token": [
+    "length"
+  ],
+  "Settings": {
+    "defaults": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "settings": [],
+  "otp_required": [
+    "view",
+    "redirect_field_name",
+    "login_url",
+    "if_configured"
+  ],
+  "hotp": [
+    "key",
+    "counter",
+    "digits"
+  ],
+  "totp": [
+    "key",
+    "step",
+    "t0",
+    "digits",
+    "drift"
+  ],
+  "TOTP": {
+    "__init__": [
+      "self",
+      "key",
+      "step",
+      "t0",
+      "digits",
+      "drift"
+    ],
+    "token": [
+      "self"
+    ],
+    "t": [
+      "self"
+    ],
+    "time": [
+      "self"
+    ],
+    "verify": [
+      "self",
+      "token",
+      "tolerance",
+      "min_t"
+    ]
+  },
+  "_admin_template_for_django_version": [],
+  "user_model_search_fields": [
+    "field_names"
+  ],
+  "OTPAdminAuthenticationForm": {
+    "otp_device": [],
+    "otp_token": [],
+    "otp_challenge": [],
+    "clean": [
+      "self"
+    ]
+  },
+  "OTPAdminSite": {
+    "name": [],
+    "login_form": [],
+    "login_template": [],
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "has_permission": [
+      "self",
+      "request"
+    ]
+  },
+  "is_verified": [
+    "user"
+  ],
+  "OTPMiddleware": {
+    "sync_capable": [],
+    "async_capable": [],
+    "__init__": [
+      "self",
+      "get_response"
+    ],
+    "__call__": [
+      "self",
+      "request"
+    ],
+    "__acall__": [
+      "self",
+      "request"
+    ],
+    "_install_lazy_accessors": [
+      "self",
+      "request"
+    ],
+    "_init_user_fields": [
+      "user"
+    ],
+    "_normalize_persistent_id": [
+      "persistent_id"
+    ],
+    "_finalize_device": [
+      "request",
+      "user",
+      "device"
+    ],
+    "_verify_user_sync": [
+      "self",
+      "request",
+      "user"
+    ],
+    "_device_from_persistent_id": [
+      "self",
+      "persistent_id"
+    ],
+    "_verify_user_async_via_auser": [
+      "self",
+      "request",
+      "auser"
+    ],
+    "_adevice_from_persistent_id": [
+      "self",
+      "persistent_id"
+    ]
+  },
+  "LoginView": {
+    "otp_authentication_form": [],
+    "otp_token_form": [],
+    "authentication_form": [
+      "self"
+    ],
+    "form_valid": [
+      "self",
+      "form"
+    ]
+  },
+  "default_key": [],
+  "key_validator": [
+    "value"
+  ],
+  "TOTPDevice": {
+    "key": [],
+    "step": [],
+    "t0": [],
+    "digits": [],
+    "tolerance": [],
+    "drift": [],
+    "last_t": [],
+    "bin_key": [
+      "self"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ],
+    "get_throttle_factor": [
+      "self"
+    ],
+    "config_url": [
+      "self"
+    ],
+    "_read_str_from_settings": [
+      "self",
+      "key"
+    ]
+  },
+  "TOTPDeviceAdmin": {
+    "User": [],
+    "candidate_search_field": [],
+    "list_display": [],
+    "list_filter": [],
+    "raw_id_fields": [],
+    "readonly_fields": [],
+    "radio_fields": [],
+    "get_list_display": [
+      "self",
+      "request"
+    ],
+    "get_fieldsets": [
+      "self",
+      "request",
+      "obj"
+    ],
+    "get_queryset": [
+      "self",
+      "request"
+    ],
+    "qrcode_link": [
+      "self",
+      "device"
+    ],
+    "get_urls": [
+      "self"
+    ],
+    "config_view": [
+      "self",
+      "request",
+      "pk"
+    ],
+    "qrcode_view": [
+      "self",
+      "request",
+      "pk"
+    ]
+  },
+  "DefaultConfig": {
+    "name": [],
+    "default_auto_field": []
+  },
+  "Migration": {
+    "dependencies": [],
+    "operations": []
+  },
+  "HOTPDevice": {
+    "key": [],
+    "digits": [],
+    "tolerance": [],
+    "counter": [],
+    "bin_key": [
+      "self"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ],
+    "get_throttle_factor": [
+      "self"
+    ],
+    "config_url": [
+      "self"
+    ]
+  },
+  "HOTPDeviceAdmin": {
+    "User": [],
+    "candidate_search_field": [],
+    "list_display": [],
+    "list_filter": [],
+    "raw_id_fields": [],
+    "readonly_fields": [],
+    "radio_fields": [],
+    "get_list_display": [
+      "self",
+      "request"
+    ],
+    "get_fieldsets": [
+      "self",
+      "request",
+      "obj"
+    ],
+    "get_queryset": [
+      "self",
+      "request"
+    ],
+    "qrcode_link": [
+      "self",
+      "device"
+    ],
+    "get_urls": [
+      "self"
+    ],
+    "config_view": [
+      "self",
+      "request",
+      "pk"
+    ],
+    "qrcode_view": [
+      "self",
+      "request",
+      "pk"
+    ]
+  },
+  "StaticDevice": {
+    "get_throttle_factor": [
+      "self"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ]
+  },
+  "StaticToken": {
+    "device": [],
+    "token": [],
+    "random_token": []
+  },
+  "add_static_token": [
+    "username",
+    "token"
+  ],
+  "StaticTokenInline": {
+    "model": [],
+    "extra": []
+  },
+  "StaticDeviceAdmin": {
+    "User": [],
+    "candidate_search_field": [],
+    "list_display": [],
+    "list_filter": [],
+    "raw_id_fields": [],
+    "readonly_fields": [],
+    "fieldsets": [],
+    "inlines": [],
+    "get_inline_instances": [
+      "self",
+      "request",
+      "obj"
+    ]
+  },
+  "Command": {
+    "help": [],
+    "add_arguments": [
+      "self",
+      "parser"
+    ],
+    "handle": [
+      "self"
+    ]
+  },
+  "EmailDevice": {
+    "email": [],
+    "generate_challenge": [
+      "self",
+      "extra_context"
+    ],
+    "_deliver_token": [
+      "self",
+      "extra_context"
+    ],
+    "get_subject": [
+      "self"
+    ],
+    "send_mail": [
+      "self",
+      "body"
+    ],
+    "verify_token": [
+      "self",
+      "token"
+    ],
+    "get_cooldown_duration": [
+      "self"
+    ],
+    "get_throttle_factor": [
+      "self"
+    ]
+  },
+  "OTPEmailSettings": {
+    "defaults": [],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "_search_fields": [],
+  "EmailDeviceAdmin": {
+    "list_display": [],
+    "list_filter": [],
+    "raw_id_fields": [],
+    "readonly_fields": [],
+    "fieldsets": []
+  }
+}

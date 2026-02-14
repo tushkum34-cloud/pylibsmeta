@@ -1,0 +1,699 @@
+{
+  "OutputSpec": {
+    "__init__": [
+      "self",
+      "name",
+      "data_type",
+      "nullable",
+      "metadata"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "validate_value": [
+      "self",
+      "obj"
+    ],
+    "validate_spec": [
+      "self",
+      "spec"
+    ],
+    "attributes": [
+      "self"
+    ],
+    "paramdict": [
+      "self"
+    ],
+    "jsondict": [
+      "self"
+    ]
+  },
+  "ConfigSpec": {
+    "__init__": [
+      "self",
+      "name",
+      "data_type",
+      "nullable",
+      "required",
+      "default_value",
+      "metadata"
+    ],
+    "validate_value": [
+      "self",
+      "obj"
+    ],
+    "attributes": [
+      "self"
+    ]
+  },
+  "InputSpec": {
+    "__init__": [
+      "self",
+      "name",
+      "data_type",
+      "nullable",
+      "required",
+      "default_value",
+      "timeout",
+      "default_on_timeout",
+      "metadata"
+    ],
+    "attributes": [
+      "self"
+    ]
+  },
+  "T": [],
+  "TaskSpec": {
+    "__init__": [
+      "self",
+      "configs",
+      "inputs",
+      "outputs",
+      "func",
+      "metadata",
+      "deterministic",
+      "lazy"
+    ],
+    "node_spec": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "parent_workflow": [
+      "self"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "to_json": [
+      "self",
+      "indent"
+    ],
+    "jsondict": [
+      "self"
+    ],
+    "_validate_dependency": [
+      "self"
+    ],
+    "_validate_config": [
+      "self"
+    ],
+    "_parse_spec": [
+      "self",
+      "obj",
+      "to_type"
+    ],
+    "_parse_spec_collection": [
+      "self",
+      "obj",
+      "to_type"
+    ]
+  },
+  "WorkflowSpec": {
+    "__init__": [
+      "self",
+      "configs",
+      "inputs",
+      "outputs",
+      "metadata",
+      "deterministic",
+      "lazy",
+      "tasks",
+      "internal_dependency"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "add_task": [
+      "self",
+      "name",
+      "task",
+      "dependency",
+      "config",
+      "config_dependency"
+    ],
+    "link": [
+      "self",
+      "output",
+      "to_expr"
+    ],
+    "jsondict": [
+      "self"
+    ],
+    "validate": [
+      "self"
+    ],
+    "_append_task": [
+      "self",
+      "task"
+    ]
+  },
+  "to_taskspec": [
+    "obj",
+    "parent_workflow_spec"
+  ],
+  "_no_op": [
+    "self"
+  ],
+  "_NodeSpec": {
+    "__init__": [
+      "self",
+      "workflow",
+      "name",
+      "dependency",
+      "config",
+      "config_dependency"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "jsondict": [
+      "self"
+    ]
+  },
+  "AdagioError": {},
+  "WorkflowBug": {},
+  "CompileError": {},
+  "DependencyDefinitionError": {},
+  "DependencyNotDefinedError": {
+    "__init__": [
+      "self",
+      "name",
+      "expected",
+      "actual"
+    ]
+  },
+  "WorkflowRuntimeError": {},
+  "AbortedError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "SkippedError": {},
+  "WorkflowContextMember": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ],
+    "context": [
+      "self"
+    ],
+    "conf": [
+      "self"
+    ]
+  },
+  "WorkflowResultCache": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ],
+    "skip": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "NoOpCache": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ],
+    "skip": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "WorkflowExecutionEngine": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ],
+    "run": [
+      "self",
+      "spec",
+      "configs"
+    ],
+    "preprocess": [
+      "self",
+      "wf"
+    ],
+    "run_tasks": [
+      "self",
+      "tasks"
+    ]
+  },
+  "ParallelExecutionEngine": {
+    "__init__": [
+      "self",
+      "concurrency",
+      "wf_ctx"
+    ],
+    "preprocess": [
+      "self",
+      "wf"
+    ],
+    "run_tasks": [
+      "self",
+      "tasks"
+    ],
+    "run_single": [
+      "self",
+      "task"
+    ]
+  },
+  "SequentialExecutionEngine": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ]
+  },
+  "WorkflowHooks": {
+    "__init__": [
+      "self",
+      "wf_ctx"
+    ],
+    "on_task_change": [
+      "self",
+      "task",
+      "old_state",
+      "new_state",
+      "e"
+    ]
+  },
+  "WFMT": [],
+  "WorkflowContext": {
+    "__init__": [
+      "self",
+      "cache",
+      "engine",
+      "hooks",
+      "logger",
+      "config"
+    ],
+    "log": [
+      "self"
+    ],
+    "cache": [
+      "self"
+    ],
+    "conf": [
+      "self"
+    ],
+    "hooks": [
+      "self"
+    ],
+    "abort": [
+      "self"
+    ],
+    "abort_requested": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "spec",
+      "conf"
+    ],
+    "_parse_config": [
+      "self",
+      "data",
+      "tp",
+      "args"
+    ]
+  },
+  "TaskContext": {
+    "__init__": [
+      "self",
+      "task"
+    ],
+    "ensure_all_ready": [
+      "self"
+    ],
+    "configs": [
+      "self"
+    ],
+    "inputs": [
+      "self"
+    ],
+    "outputs": [
+      "self"
+    ],
+    "workflow_context": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "spec": [
+      "self"
+    ],
+    "abort_requested": [
+      "self"
+    ],
+    "log": [
+      "self"
+    ]
+  },
+  "_Dependency": {
+    "__init__": [
+      "self"
+    ],
+    "set_dependency": [
+      "self",
+      "other"
+    ],
+    "validate_dependency": [
+      "self",
+      "other"
+    ]
+  },
+  "_Output": {
+    "__init__": [
+      "self",
+      "task",
+      "spec"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "set": [
+      "self",
+      "value",
+      "from_cache"
+    ],
+    "fail": [
+      "self",
+      "exception",
+      "trace",
+      "throw"
+    ],
+    "skip": [
+      "self",
+      "from_cache"
+    ],
+    "is_set": [
+      "self"
+    ],
+    "is_successful": [
+      "self"
+    ],
+    "is_failed": [
+      "self"
+    ],
+    "is_skipped": [
+      "self"
+    ],
+    "validate_dependency": [
+      "self",
+      "other"
+    ]
+  },
+  "_Input": {
+    "__init__": [
+      "self",
+      "task",
+      "spec"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "get": [
+      "self"
+    ],
+    "validate_dependency": [
+      "self",
+      "other"
+    ],
+    "_cache": [
+      "self"
+    ]
+  },
+  "_ConfigVar": {
+    "__init__": [
+      "self",
+      "task",
+      "spec"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "set": [
+      "self",
+      "value"
+    ],
+    "get": [
+      "self"
+    ],
+    "validate_dependency": [
+      "self",
+      "other"
+    ]
+  },
+  "_DependencyDict": {
+    "__init__": [
+      "self",
+      "data"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ],
+    "values": [
+      "self"
+    ]
+  },
+  "_OutputDict": {
+    "__init__": [
+      "self",
+      "data"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ]
+  },
+  "_State": {
+    "CREATED": [],
+    "RUNNING": [],
+    "FINISHED": [],
+    "ABORTED": [],
+    "FAILED": [],
+    "SKIPPED": [],
+    "transit": [
+      "state_from",
+      "state_to"
+    ]
+  },
+  "_Task": {
+    "__init__": [
+      "self",
+      "spec",
+      "ctx",
+      "parent_workflow"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "deterministic": [
+      "self"
+    ],
+    "lazy": [
+      "self"
+    ],
+    "log": [
+      "self"
+    ],
+    "upstream": [
+      "self"
+    ],
+    "downstream": [
+      "self"
+    ],
+    "abort_requested": [
+      "self"
+    ],
+    "__uuid__": [
+      "self"
+    ],
+    "skip": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "update_by_cache": [
+      "self"
+    ],
+    "reraise": [
+      "self"
+    ],
+    "_register": [
+      "self",
+      "temp"
+    ],
+    "_ensure_fully_connected": [
+      "self"
+    ],
+    "_make_dict": [
+      "self",
+      "data",
+      "out_type"
+    ],
+    "_skip_remaining": [
+      "self"
+    ],
+    "_fail_remaining": [
+      "self",
+      "e"
+    ],
+    "_transit": [
+      "self",
+      "new_state",
+      "e"
+    ]
+  },
+  "_Workflow": {
+    "__init__": [
+      "self",
+      "spec",
+      "ctx",
+      "parent_workflow"
+    ],
+    "_init_tasks": [
+      "self"
+    ],
+    "_build_task": [
+      "self",
+      "spec"
+    ],
+    "_set_inputs": [
+      "self",
+      "task",
+      "spec"
+    ],
+    "_set_configs": [
+      "self",
+      "task",
+      "spec"
+    ],
+    "_set_outputs": [
+      "self"
+    ],
+    "_register": [
+      "self",
+      "temp"
+    ],
+    "update_by_cache": [
+      "self"
+    ]
+  },
+  "_make_top_level_workflow": [
+    "spec",
+    "ctx",
+    "configs"
+  ],
+  "function_to_taskspec": [
+    "func",
+    "is_config",
+    "deterministic",
+    "lazy"
+  ],
+  "_interfaceless_wrapper": [
+    "ctx"
+  ],
+  "_parse_annotation": [
+    "anno"
+  ],
+  "_try_parse": [
+    "anno"
+  ],
+  "_get_origin_type": [
+    "anno",
+    "assert_is_type"
+  ],
+  "_is_native_type": [
+    "anno"
+  ],
+  "_is_tuple": [
+    "anno"
+  ],
+  "_is_union": [
+    "anno"
+  ],
+  "test_function_to_taskspec": [],
+  "test__parse_annotation": [],
+  "test__get_origin_type": [],
+  "f1": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "f2": [
+    "a",
+    "b",
+    "c"
+  ],
+  "f3": [
+    "a",
+    "b",
+    "c"
+  ],
+  "f4": [
+    "a",
+    "b",
+    "c"
+  ],
+  "f5": [],
+  "__version__": []
+}

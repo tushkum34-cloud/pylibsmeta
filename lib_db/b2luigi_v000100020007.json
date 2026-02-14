@@ -1,0 +1,850 @@
+{
+  "__version__": [],
+  "requires": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "task_that_requires"
+    ]
+  },
+  "inherits": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "task_that_inherits"
+    ]
+  },
+  "__has_run_already": [],
+  "process": [
+    "task_like_elements",
+    "show_output",
+    "dry_run",
+    "test",
+    "batch",
+    "remove",
+    "remove_only",
+    "auto_confirm",
+    "keep_tasks",
+    "ignore_additional_command_line_args"
+  ],
+  "get_cli_arguments": [
+    "ignore_additional_command_line_args"
+  ],
+  "run_as_batch_worker": [
+    "task_list",
+    "cli_args",
+    "kwargs"
+  ],
+  "run_batched": [
+    "task_list",
+    "cli_args",
+    "kwargs"
+  ],
+  "run_local": [
+    "task_list",
+    "cli_args",
+    "kwargs"
+  ],
+  "run_luigi": [
+    "task_list",
+    "cli_args",
+    "kwargs"
+  ],
+  "run_test_mode": [
+    "task_list",
+    "cli_args",
+    "kwargs"
+  ],
+  "show_all_outputs": [
+    "task_list"
+  ],
+  "dry_run": [
+    "task_list"
+  ],
+  "remove_outputs": [
+    "task_list",
+    "target_tasks",
+    "only",
+    "auto_confirm",
+    "keep_tasks"
+  ],
+  "collect_all_dependents": [
+    "task",
+    "child_to_parents"
+  ],
+  "BatchJobStatusCache": {
+    "__init__": [
+      "self"
+    ],
+    "_ask_for_job_status": [
+      "self",
+      "job_id"
+    ],
+    "__missing__": [
+      "self",
+      "job_id"
+    ]
+  },
+  "BatchSystems": {
+    "lsf": [],
+    "htcondor": [],
+    "slurm": [],
+    "gbasf2": [],
+    "local": [],
+    "test": [],
+    "custom": []
+  },
+  "SendJobWorker": {
+    "detect_batch_system": [
+      "self",
+      "task"
+    ],
+    "_create_task_process": [
+      "self",
+      "task"
+    ]
+  },
+  "SendJobWorkerSchedulerFactory": {
+    "create_worker": [
+      "self",
+      "scheduler",
+      "worker_processes",
+      "assistant"
+    ]
+  },
+  "TestProcess": {
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "get_job_output": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "JobStatus": {
+    "running": [],
+    "successful": [],
+    "aborted": [],
+    "idle": []
+  },
+  "BatchProcess": {
+    "__init__": [
+      "self",
+      "task",
+      "scheduler",
+      "result_queue",
+      "worker_timeout"
+    ],
+    "exitcode": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "terminate": [
+      "self"
+    ],
+    "is_alive": [
+      "self"
+    ],
+    "_put_to_result_queue": [
+      "self",
+      "status",
+      "explanation"
+    ]
+  },
+  "Gbasf2Process": {
+    "_file_dir": [],
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "_on_first_success_action": [
+      "self"
+    ],
+    "_on_failure_action": [
+      "self"
+    ],
+    "_reschedule_failed_jobs": [
+      "self"
+    ],
+    "_reschedule_jobs": [
+      "self",
+      "job_ids"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "_build_gbasf2_submit_command": [
+      "self"
+    ],
+    "_write_path_to_file": [
+      "self"
+    ],
+    "_create_wrapper_steering_file": [
+      "self"
+    ],
+    "_copy_custom_steering_script": [
+      "self"
+    ],
+    "_get_gbasf2_dataset_query": [
+      "self",
+      "output_file_name"
+    ],
+    "_get_project_download_path": [
+      "base_output_dir"
+    ],
+    "_local_gb2_dataset_is_complete": [
+      "self",
+      "output_file_name",
+      "check_temp_dir"
+    ],
+    "_download_dataset": [
+      "self"
+    ],
+    "_download_logs": [
+      "self"
+    ]
+  },
+  "Gbasf2GridProjectTarget": {
+    "__init__": [
+      "self",
+      "project_name",
+      "dirac_user",
+      "gbasf2_setup_path"
+    ],
+    "exists": [
+      "self"
+    ]
+  },
+  "build_gbasf2_submit_command": [
+    "task",
+    "wrapper_file_path",
+    "pickle_file_path",
+    "gbasf2_project_name",
+    "gbasf2_custom_steering_file"
+  ],
+  "check_dataset_exists_on_grid": [
+    "gbasf2_project_name",
+    "dirac_user",
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "get_gbasf2_project_job_status_dict": [
+    "gbasf2_project_name",
+    "dirac_user",
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "check_project_exists": [
+    "gbasf2_project_name",
+    "dirac_user",
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "run_with_gbasf2": [
+    "cmd"
+  ],
+  "get_gbasf2_env": [
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "get_proxy_info": [
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "get_dirac_user": [
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "setup_dirac_proxy": [
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "query_lpns": [
+    "ds_query",
+    "dirac_user",
+    "gbasf2_setup_path",
+    "task"
+  ],
+  "get_unique_project_name": [
+    "task"
+  ],
+  "lfn_follows_gb2v5_convention": [
+    "lfn"
+  ],
+  "_get_lfn_upto_reschedule_number": [
+    "lfn"
+  ],
+  "get_unique_lfns": [
+    "lfns"
+  ],
+  "_move_downloaded_dataset_to_output_dir": [
+    "project_download_path",
+    "output_path"
+  ],
+  "_split_all_extensions": [
+    "path"
+  ],
+  "LSFJobStatusCache": {
+    "_ask_for_job_status": [
+      "self",
+      "job_id"
+    ]
+  },
+  "_batch_job_status_cache": [],
+  "LSFProcess": {
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ]
+  },
+  "SlurmJobStatusCache": {
+    "sacct_disabled": [],
+    "_ask_for_job_status": [
+      "self",
+      "job_id"
+    ],
+    "_fill_from_output": [
+      "self",
+      "output"
+    ],
+    "_get_SlurmJobStatus_from_string": [
+      "self",
+      "state_string"
+    ],
+    "_check_if_sacct_is_disabled_on_server": [
+      "self"
+    ]
+  },
+  "SlurmJobStatus": {
+    "completed": [],
+    "pending": [],
+    "running": [],
+    "suspended": [],
+    "preempted": [],
+    "completing": [],
+    "boot_fail": [],
+    "cancelled": [],
+    "deadline": [],
+    "node_fail": [],
+    "out_of_memory": [],
+    "failed": [],
+    "timeout": [],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "SlurmProcess": {
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "_create_slurm_submit_file": [
+      "self"
+    ]
+  },
+  "HTCondorJobStatusCache": {
+    "_ask_for_job_status": [
+      "self",
+      "job_id"
+    ],
+    "_fill_from_output": [
+      "self",
+      "output"
+    ]
+  },
+  "HTCondorJobStatus": {
+    "idle": [],
+    "running": [],
+    "removed": [],
+    "completed": [],
+    "held": [],
+    "transferring_output": [],
+    "suspended": [],
+    "failed": []
+  },
+  "HTCondorProcess": {
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "_create_htcondor_submit_file": [
+      "self"
+    ]
+  },
+  "ApptainerProcess": {
+    "__init__": [
+      "self"
+    ],
+    "get_job_status": [
+      "self"
+    ],
+    "start_job": [
+      "self"
+    ],
+    "terminate_job": [
+      "self"
+    ],
+    "_write_output": [
+      "self"
+    ]
+  },
+  "JobStatusEncoder": {
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "get_job_status_dict": [
+    "project_name",
+    "user_name",
+    "group_name"
+  ],
+  "search_pattern_in_folder": [
+    "path",
+    "pattern"
+  ],
+  "CertEncoder": {
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "get_lfns": [
+    "dataset",
+    "user"
+  ],
+  "get_alias_dict_from_variable_manager": [],
+  "write_path_and_state_to_file": [
+    "basf2_path",
+    "file_path"
+  ],
+  "Basf2Task": {
+    "git_hash": [],
+    "get_output_file_target": [
+      "self"
+    ],
+    "get_serialized_parameters": [
+      "self"
+    ]
+  },
+  "Basf2PathTask": {
+    "num_processes": [],
+    "max_event": [],
+    "create_path": [
+      "self"
+    ],
+    "process": [
+      "self"
+    ]
+  },
+  "SimplifiedOutputBasf2Task": {
+    "create_path": [
+      "self"
+    ],
+    "output": [
+      "self"
+    ]
+  },
+  "MergerTask": {
+    "cmd": [],
+    "keys": [],
+    "input_keys": [
+      "self"
+    ],
+    "output": [
+      "self"
+    ],
+    "process": [
+      "self"
+    ]
+  },
+  "HaddTask": {
+    "cmd": []
+  },
+  "Basf2FileMergeTask": {
+    "cmd": []
+  },
+  "Basf2nTupleMergeTask": {
+    "cmd": [
+      "self"
+    ]
+  },
+  "get_basf2_git_hash": [],
+  "ROOTLocalTarget": {
+    "exists": [
+      "self"
+    ]
+  },
+  "create_executable_wrapper": [
+    "task"
+  ],
+  "run_task_remote": [
+    "task"
+  ],
+  "Task": {
+    "add_to_output": [
+      "self",
+      "output_file_name",
+      "target_class",
+      "result_dir"
+    ],
+    "_transform_io": [
+      "input_generator"
+    ],
+    "get_all_input_file_names": [
+      "self"
+    ],
+    "get_input_file_names": [
+      "self",
+      "key"
+    ],
+    "get_input_file_names_from_dict": [
+      "self",
+      "requirement_key",
+      "key"
+    ],
+    "get_input_file_name": [
+      "self",
+      "key"
+    ],
+    "get_all_output_file_names": [
+      "self"
+    ],
+    "get_output_file_name": [
+      "self",
+      "key"
+    ],
+    "_get_input_targets": [
+      "self",
+      "key"
+    ],
+    "_get_output_target": [
+      "self",
+      "key"
+    ],
+    "_get_output_file_target": [
+      "self",
+      "base_filename",
+      "target_class",
+      "result_dir"
+    ],
+    "_resolve_output_file_target": [
+      "self",
+      "filename",
+      "target_class"
+    ],
+    "_remove_output_file_target": [
+      "self",
+      "base_filename"
+    ],
+    "_remove_output": [
+      "self"
+    ]
+  },
+  "ExternalTask": {},
+  "WrapperTask": {},
+  "NotCompletedTask": {
+    "__init__": [
+      "self"
+    ],
+    "complete": [
+      "self"
+    ]
+  },
+  "wrap_parameter": [],
+  "BoolParameter": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_current_global_settings": [],
+  "_no_value": [],
+  "get_setting": [
+    "key",
+    "default",
+    "task",
+    "deprecated_keys"
+  ],
+  "set_setting": [
+    "key",
+    "value"
+  ],
+  "clear_setting": [
+    "key"
+  ],
+  "_setting_file_iterator": [],
+  "with_new_settings": [],
+  "_get_setting_implementation": [
+    "key",
+    "task"
+  ],
+  "DeprecatedSettingsWarning": {},
+  "_warn_deprecated_setting": [
+    "setting_name",
+    "new_name"
+  ],
+  "FileSystemTarget": {
+    "__init__": [
+      "self"
+    ],
+    "tmp_name": [
+      "self"
+    ],
+    "get_temporary_input": [
+      "self",
+      "task"
+    ],
+    "temporary_path": [
+      "self",
+      "task"
+    ]
+  },
+  "LocalTarget": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "product_dict": [],
+  "fill_kwargs_with_lists": [],
+  "flatten_to_file_paths": [
+    "inputs"
+  ],
+  "flatten_to_dict": [
+    "inputs"
+  ],
+  "flatten_to_dict_of_lists": [
+    "inputs"
+  ],
+  "task_iterator": [
+    "task",
+    "only_non_complete"
+  ],
+  "get_all_output_files_in_tree": [
+    "root_module",
+    "key"
+  ],
+  "get_serialized_parameters": [
+    "task",
+    "need_hidden"
+  ],
+  "create_output_file_name": [
+    "task",
+    "base_filename",
+    "result_dir",
+    "need_hidden"
+  ],
+  "get_log_file_dir": [
+    "task"
+  ],
+  "get_task_file_dir": [
+    "task"
+  ],
+  "get_filename": [],
+  "map_folder": [
+    "input_folder"
+  ],
+  "_to_dict": [
+    "d"
+  ],
+  "_flatten": [
+    "struct"
+  ],
+  "on_failure": [
+    "task",
+    "_"
+  ],
+  "add_on_failure_function": [
+    "task"
+  ],
+  "create_cmd_from_task": [
+    "task"
+  ],
+  "create_output_dirs": [
+    "task"
+  ],
+  "get_filled_params": [
+    "task"
+  ],
+  "is_subdir": [
+    "path",
+    "parent_dir"
+  ],
+  "get_apptainer_or_singularity": [
+    "task"
+  ],
+  "create_apptainer_command": [
+    "command",
+    "task"
+  ],
+  "get_luigi_logger": [],
+  "dispatch": [
+    "run_function"
+  ],
+  "DispatchableTask": {
+    "process": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "TemporaryFileContextManager": {
+    "__init__": [
+      "self",
+      "task"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "on_temporary_files": [
+    "run_function"
+  ],
+  "XRootDSystem": {
+    "__init__": [
+      "self",
+      "server_path"
+    ],
+    "exists": [
+      "self",
+      "path"
+    ],
+    "copy_file_to_remote": [
+      "self",
+      "local_path",
+      "remote_path",
+      "force"
+    ],
+    "copy_file_from_remote": [
+      "self",
+      "remote_path",
+      "local_path",
+      "force"
+    ],
+    "copy_dir_from_remote": [
+      "self",
+      "remote_path",
+      "local_path",
+      "force"
+    ],
+    "move": [
+      "self",
+      "source_path",
+      "dest_path"
+    ],
+    "mkdir": [
+      "self",
+      "path"
+    ],
+    "locate": [
+      "self",
+      "path"
+    ],
+    "remove": [
+      "self",
+      "path"
+    ],
+    "listdir": [
+      "self",
+      "path",
+      "print_entries"
+    ],
+    "remove_dir": [
+      "self",
+      "path"
+    ],
+    "rename_dont_move": [
+      "self",
+      "path",
+      "dest"
+    ]
+  },
+  "XRootDTarget": {
+    "__init__": [
+      "self",
+      "path",
+      "file_system"
+    ],
+    "base_name": [
+      "self"
+    ],
+    "fs": [
+      "self"
+    ],
+    "makedirs": [
+      "self"
+    ],
+    "move": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "path"
+    ],
+    "open": [
+      "self",
+      "mode"
+    ],
+    "get_temporary_input": [
+      "self",
+      "task"
+    ]
+  }
+}

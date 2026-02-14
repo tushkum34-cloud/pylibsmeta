@@ -1,0 +1,770 @@
+{
+  "_n_ones": [
+    "n"
+  ],
+  "F32_EXP_BIAS": [],
+  "F4_E2M1_MAX": [],
+  "F4_E2M1_EPS": [],
+  "F8_E4M3_MAX": [],
+  "F8_E4M3_EPS": [],
+  "F8_E5M2_MAX": [],
+  "F8_E5M2_EPS": [],
+  "roundup": [
+    "x",
+    "multiple"
+  ],
+  "_float8_round": [
+    "x"
+  ],
+  "_f32_to_floatx_unpacked": [
+    "x",
+    "ebits",
+    "mbits"
+  ],
+  "_floatx_unpacked_to_f32": [
+    "x",
+    "ebits",
+    "mbits"
+  ],
+  "down_size": [
+    "size"
+  ],
+  "up_size": [
+    "size"
+  ],
+  "ceil_div": [
+    "a",
+    "b"
+  ],
+  "pack_uint4": [
+    "uint8_data"
+  ],
+  "unpack_uint4": [
+    "uint8_data"
+  ],
+  "to_blocked": [
+    "input_matrix",
+    "flatten"
+  ],
+  "from_blocked": [
+    "blocked_matrix",
+    "num_rows",
+    "num_cols"
+  ],
+  "fp4_x2_to_f32": [
+    "a"
+  ],
+  "__version__": [],
+  "__all__": [],
+  "quantize_per_tensor_fp8": [
+    "x",
+    "scale",
+    "output_type"
+  ],
+  "dequantize_per_tensor_fp8": [
+    "x",
+    "scale",
+    "output_type"
+  ],
+  "quantize_nvfp4": [
+    "x",
+    "per_tensor_scale",
+    "epsilon",
+    "pad_16x"
+  ],
+  "dequantize_nvfp4": [
+    "qx",
+    "per_tensor_scale",
+    "block_scales",
+    "output_type"
+  ],
+  "scaled_mm_nvfp4": [
+    "a",
+    "b",
+    "tensor_scale_a",
+    "tensor_scale_b",
+    "block_scale_a",
+    "block_scale_b",
+    "bias",
+    "out_dtype",
+    "alpha"
+  ],
+  "apply_rope": [
+    "xq",
+    "xk",
+    "freqs_cis"
+  ],
+  "apply_rope1": [
+    "x",
+    "freqs_cis"
+  ],
+  "set_backend_priority": [
+    "priority"
+  ],
+  "disable_backend": [
+    "name"
+  ],
+  "enable_backend": [
+    "name"
+  ],
+  "list_backends": [],
+  "use_backend": [
+    "name"
+  ],
+  "BackendError": {},
+  "BackendNotFoundError": {
+    "__init__": [
+      "self",
+      "backend_name",
+      "reason"
+    ]
+  },
+  "BackendNotImplementedError": {
+    "__init__": [
+      "self",
+      "backend_name",
+      "func_name"
+    ]
+  },
+  "NoCapableBackendError": {
+    "__init__": [
+      "self",
+      "func_name",
+      "failures"
+    ]
+  },
+  "ShapeRule": {
+    "check": [
+      "self",
+      "tensor"
+    ],
+    "describe": [
+      "self"
+    ]
+  },
+  "DivisibleBy": {
+    "check": [
+      "self",
+      "tensor"
+    ],
+    "describe": [
+      "self"
+    ]
+  },
+  "MinDims": {
+    "check": [
+      "self",
+      "tensor"
+    ],
+    "describe": [
+      "self"
+    ]
+  },
+  "ExactDims": {
+    "check": [
+      "self",
+      "tensor"
+    ],
+    "describe": [
+      "self"
+    ]
+  },
+  "ParamConstraint": {
+    "check_dtype": [
+      "self",
+      "value"
+    ],
+    "check_device": [
+      "self",
+      "tensor",
+      "default_devices"
+    ],
+    "check_shape": [
+      "self",
+      "tensor"
+    ]
+  },
+  "FunctionConstraints": {
+    "__hash__": [
+      "self"
+    ]
+  },
+  "ValidationResult": {
+    "ok": [],
+    "fail": [
+      "param",
+      "reason"
+    ]
+  },
+  "validate_param": [
+    "name",
+    "value",
+    "constraint",
+    "default_devices"
+  ],
+  "validate_function_call": [
+    "constraints",
+    "kwargs",
+    "compute_capability"
+  ],
+  "logger": [],
+  "BackendRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "_compute_capability": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "name",
+      "module",
+      "capabilities"
+    ],
+    "get_constraints": [
+      "self",
+      "backend_name",
+      "func_name"
+    ],
+    "mark_unavailable": [
+      "self",
+      "name",
+      "reason"
+    ],
+    "disable": [
+      "self",
+      "backend_name"
+    ],
+    "enable": [
+      "self",
+      "backend_name"
+    ],
+    "set_priority": [
+      "self",
+      "priority_list"
+    ],
+    "is_available": [
+      "self",
+      "backend_name"
+    ],
+    "list_backends": [
+      "self"
+    ],
+    "validate_backend_for_call": [
+      "self",
+      "backend_name",
+      "func_name",
+      "kwargs"
+    ],
+    "get_capable_backend": [
+      "self",
+      "func_name",
+      "kwargs"
+    ],
+    "get_implementation": [
+      "self",
+      "func_name",
+      "backend",
+      "kwargs"
+    ],
+    "use_backend": [
+      "self",
+      "backend_name"
+    ]
+  },
+  "registry": [],
+  "TensorCoreFP8Layout": {
+    "MIN_SM_VERSION": [],
+    "quantize": [
+      "cls",
+      "tensor",
+      "scale",
+      "dtype"
+    ],
+    "dequantize": [
+      "cls",
+      "qdata",
+      "params"
+    ],
+    "get_plain_tensors": [
+      "cls",
+      "qtensor"
+    ],
+    "state_dict_tensors": [
+      "cls",
+      "qdata",
+      "params"
+    ]
+  },
+  "_fp8_scaled_mm": [
+    "input_qdata",
+    "weight_qdata",
+    "scale_a",
+    "scale_b",
+    "bias",
+    "out_dtype"
+  ],
+  "_make_fp8_shape_handler": [
+    "aten_op"
+  ],
+  "_handle_fp8_linear": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_fp8_mm": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_fp8_addmm": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "LAYOUTS": [],
+  "register_layout_class": [
+    "name",
+    "cls"
+  ],
+  "get_layout_class": [
+    "name"
+  ],
+  "get_cuda_capability": [],
+  "BaseLayoutParams": {
+    "__post_init__": [
+      "self"
+    ],
+    "_validate_tensor_fields": [
+      "self"
+    ],
+    "_tensor_fields": [
+      "self"
+    ],
+    "to_device": [
+      "self",
+      "device"
+    ],
+    "clone": [
+      "self"
+    ],
+    "copy_from": [
+      "self",
+      "src",
+      "non_blocking"
+    ]
+  },
+  "QuantizedLayout": {
+    "quantize": [
+      "cls",
+      "tensor"
+    ],
+    "dequantize": [
+      "cls",
+      "qdata",
+      "params"
+    ],
+    "get_plain_tensors": [
+      "cls",
+      "qtensor"
+    ],
+    "state_dict_tensors": [
+      "cls",
+      "qdata",
+      "params"
+    ],
+    "supports_fast_matmul": [
+      "cls"
+    ],
+    "get_requirements": [
+      "cls"
+    ]
+  },
+  "QuantizedTensor": {
+    "__new__": [
+      "cls",
+      "qdata",
+      "layout_cls",
+      "params"
+    ],
+    "__init__": [
+      "self",
+      "qdata",
+      "layout_cls",
+      "params"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "storage_shape": [
+      "self"
+    ],
+    "storage_dtype": [
+      "self"
+    ],
+    "nbytes": [
+      "self"
+    ],
+    "padded_shape": [
+      "self"
+    ],
+    "is_padded": [
+      "self"
+    ],
+    "layout_cls": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "from_float": [
+      "cls",
+      "tensor",
+      "layout_cls"
+    ],
+    "_copy_with": [
+      "self",
+      "qdata",
+      "params",
+      "clone_params"
+    ],
+    "data_ptr": [
+      "self"
+    ],
+    "is_pinned": [
+      "self"
+    ],
+    "storage": [
+      "self"
+    ],
+    "dequantize": [
+      "self"
+    ],
+    "state_dict": [
+      "self",
+      "prefix"
+    ],
+    "__tensor_flatten__": [
+      "self"
+    ],
+    "__tensor_unflatten__": [
+      "inner_tensors",
+      "ctx",
+      "outer_size",
+      "outer_stride"
+    ],
+    "__torch_dispatch__": [
+      "cls",
+      "func",
+      "types",
+      "args",
+      "kwargs"
+    ],
+    "_dequant_and_fallback": [
+      "cls",
+      "func",
+      "args",
+      "kwargs"
+    ]
+  },
+  "dequantize_args": [
+    "args"
+  ],
+  "_parse_to_args": [
+    "args",
+    "kwargs"
+  ],
+  "_handle_detach": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_clone": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_to": [
+    "qt",
+    "args",
+    "kwargs",
+    "force_copy"
+  ],
+  "_handle_to_copy": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_contiguous": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_is_contiguous": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_copy_": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_empty_like": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_DISPATCH_TABLE": [],
+  "register_layout_op": [
+    "torch_op",
+    "layout_cls"
+  ],
+  "_get_layout_from_args": [
+    "args"
+  ],
+  "TensorCoreNVFP4Layout": {
+    "MIN_SM_VERSION": [],
+    "quantize": [
+      "cls",
+      "tensor",
+      "scale"
+    ],
+    "dequantize": [
+      "cls",
+      "qdata",
+      "params"
+    ],
+    "get_plain_tensors": [
+      "cls",
+      "qtensor"
+    ],
+    "state_dict_tensors": [
+      "cls",
+      "qdata",
+      "params"
+    ],
+    "get_padded_shape": [
+      "cls",
+      "orig_shape"
+    ],
+    "get_storage_shape": [
+      "cls",
+      "orig_shape"
+    ],
+    "get_logical_shape_from_storage": [
+      "cls",
+      "storage_shape"
+    ]
+  },
+  "_handle_nvfp4_transpose": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_slice_to_original_shape": [
+    "result",
+    "orig_m",
+    "orig_n"
+  ],
+  "_handle_nvfp4_mm": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "_handle_nvfp4_linear": [
+    "qt",
+    "args",
+    "kwargs"
+  ],
+  "quantize_fp8_kernel_tl": [
+    "x_ptr",
+    "output_ptr",
+    "scale_ptr",
+    "lp_max",
+    "n_elements",
+    "block_size"
+  ],
+  "dequantize_fp8_kernel_tl": [
+    "x_ptr",
+    "output_ptr",
+    "scale_ptr",
+    "n_elements",
+    "block_size"
+  ],
+  "_compute_swizzled_scale_offset": [
+    "in_row",
+    "in_col",
+    "n_col_blocks",
+    "padded_scale_cols"
+  ],
+  "quantize_nvfp4_kernel_tl": [
+    "x_ptr",
+    "packed_output_ptr",
+    "swizzled_scales_ptr",
+    "per_tensor_scale_ptr",
+    "m",
+    "n",
+    "num_blocks",
+    "scale_rows",
+    "scale_cols",
+    "padded_scale_rows",
+    "padded_scale_cols",
+    "block_size",
+    "blocks_per_program"
+  ],
+  "dequantize_nvfp4_kernel_tl": [
+    "packed_ptr",
+    "scale_ptr",
+    "global_scale_ptr",
+    "output_ptr",
+    "n",
+    "scale_cols",
+    "n_col_blocks",
+    "padded_scale_cols",
+    "block_size",
+    "tile_size"
+  ],
+  "_TRITON_AVAILABLE": [],
+  "_TRITON_ERROR": [],
+  "_build_constraints": [],
+  "_register": [],
+  "apply_rope_kernel": [
+    "xq_ptr",
+    "xk_ptr",
+    "freqs_ptr",
+    "xq_out_ptr",
+    "xk_out_ptr",
+    "batch",
+    "dim1",
+    "dim2",
+    "head_dim",
+    "freqs_batch",
+    "freqs_dim1",
+    "freqs_dim2",
+    "stride_x_batch",
+    "stride_x_dim1",
+    "stride_x_dim2",
+    "stride_x_dim",
+    "stride_freqs_batch",
+    "stride_freqs_dim1",
+    "stride_freqs_dim2",
+    "stride_freqs_dim",
+    "stride_freqs_rot",
+    "stride_freqs_pair",
+    "compute_dtype",
+    "block_size"
+  ],
+  "_apply_freq_tile": [
+    "x_ptr",
+    "x_out_ptr",
+    "mask",
+    "freqs_00",
+    "freqs_01",
+    "freqs_10",
+    "freqs_11",
+    "x_offset_0",
+    "x_offset_1",
+    "compute_dtype"
+  ],
+  "_apply_rope": [
+    "x1",
+    "freqs_cis",
+    "x2"
+  ],
+  "DTYPE_CODE_TO_DTYPE": [],
+  "DTYPE_TO_CODE": [],
+  "E2M1_LUT": [],
+  "E2M1_LUT_CACHE": [],
+  "_op_quantize_fp8": [
+    "x",
+    "scale",
+    "output_dtype_code"
+  ],
+  "_op_quantize_fp8_fake": [
+    "x",
+    "scale",
+    "output_dtype_code"
+  ],
+  "_op_dequantize_fp8": [
+    "x",
+    "scale",
+    "output_dtype_code"
+  ],
+  "_op_dequantize_fp8_fake": [
+    "x",
+    "scale",
+    "output_dtype_code"
+  ],
+  "_op_quantize_nvfp4": [
+    "x",
+    "per_tensor_scale",
+    "epsilon",
+    "pad_16x"
+  ],
+  "_op_quantize_nvfp4_fake": [
+    "x",
+    "per_tensor_scale",
+    "epsilon",
+    "pad_16x"
+  ],
+  "_op_dequantize_nvfp4": [
+    "qx",
+    "per_tensor_scale",
+    "block_scales",
+    "output_dtype_code"
+  ],
+  "_op_dequantize_nvfp4_fake": [
+    "qx",
+    "per_tensor_scale",
+    "block_scales",
+    "output_dtype_code"
+  ],
+  "_op_scaled_mm_nvfp4": [
+    "a",
+    "b",
+    "tensor_scale_a",
+    "tensor_scale_b",
+    "block_scale_a",
+    "block_scale_b",
+    "bias",
+    "output_dtype_code",
+    "alpha"
+  ],
+  "_op_scaled_mm_nvfp4_fake": [
+    "a",
+    "b",
+    "tensor_scale_a",
+    "tensor_scale_b",
+    "block_scale_a",
+    "block_scale_b",
+    "bias",
+    "output_dtype_code",
+    "alpha"
+  ],
+  "_op_apply_rope": [
+    "xq",
+    "xk",
+    "freqs_cis"
+  ],
+  "_op_apply_rope_fake": [
+    "xq",
+    "xk",
+    "freqs_cis"
+  ],
+  "_op_apply_rope1": [
+    "x",
+    "freqs_cis"
+  ],
+  "_op_apply_rope1_fake": [
+    "x",
+    "freqs_cis"
+  ],
+  "_dll_handle": [],
+  "_CUBLASLT_AVAILABLE": [],
+  "get_cublas_workspace_size_bytes": [],
+  "get_cublas_workspace": [],
+  "_wrap_for_dlpack": [
+    "tensor"
+  ]
+}

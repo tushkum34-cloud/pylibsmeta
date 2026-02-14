@@ -1,0 +1,3488 @@
+{
+  "__version__": [],
+  "BaseDistance": {
+    "__init__": [
+      "self",
+      "normalize_embeddings",
+      "p",
+      "power",
+      "is_inverted"
+    ],
+    "forward": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "compute_mat": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "pairwise_distance": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "smallest_dist": [
+      "self"
+    ],
+    "largest_dist": [
+      "self"
+    ],
+    "margin": [
+      "self",
+      "x",
+      "y"
+    ],
+    "normalize": [
+      "self",
+      "embeddings",
+      "dim"
+    ],
+    "maybe_normalize": [
+      "self",
+      "embeddings",
+      "dim"
+    ],
+    "get_norm": [
+      "self",
+      "embeddings",
+      "dim"
+    ],
+    "set_default_stats": [
+      "self",
+      "query_emb",
+      "ref_emb",
+      "query_emb_normalized",
+      "ref_emb_normalized"
+    ],
+    "check_shapes": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ]
+  },
+  "LpDistance": {
+    "__init__": [
+      "self"
+    ],
+    "compute_mat": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "pairwise_distance": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ]
+  },
+  "CosineSimilarity": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "SNRDistance": {
+    "__init__": [
+      "self"
+    ],
+    "compute_mat": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "pairwise_distance": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ]
+  },
+  "BatchedDistance": {
+    "__init__": [
+      "self",
+      "distance",
+      "iter_fn",
+      "batch_size"
+    ],
+    "forward": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "DotProductSimilarity": {
+    "__init__": [
+      "self"
+    ],
+    "compute_mat": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "pairwise_distance": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ]
+  },
+  "CircleLoss": {
+    "__init__": [
+      "self",
+      "m",
+      "gamma"
+    ],
+    "_compute_loss": [
+      "self",
+      "mat",
+      "pos_mask",
+      "neg_mask"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "SubCenterArcFaceLoss": {
+    "__init__": [
+      "self"
+    ],
+    "get_cosine": [
+      "self",
+      "embeddings"
+    ],
+    "get_outliers": [
+      "self",
+      "embeddings",
+      "labels",
+      "threshold",
+      "return_dominant_centers"
+    ]
+  },
+  "GenericPairLoss": {
+    "__init__": [
+      "self",
+      "mat_based_loss"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "_compute_loss": [
+      "self"
+    ],
+    "mat_based_loss": [
+      "self",
+      "mat",
+      "indices_tuple"
+    ],
+    "pair_based_loss": [
+      "self",
+      "mat",
+      "indices_tuple"
+    ],
+    "_assert_either_pos_or_neg": [
+      "pos_mask",
+      "neg_mask"
+    ]
+  },
+  "NPairsLoss": {
+    "__init__": [
+      "self"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "BaseLossWrapper": {
+    "__init__": [
+      "self",
+      "loss"
+    ],
+    "supported_losses": [],
+    "check_loss_support": [
+      "self",
+      "loss_name"
+    ]
+  },
+  "SignalToNoiseRatioContrastiveLoss": {
+    "__init__": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "NTXentLoss": {
+    "__init__": [
+      "self",
+      "temperature"
+    ],
+    "_compute_loss": [
+      "self",
+      "pos_pairs",
+      "neg_pairs",
+      "indices_tuple"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "MultiSimilarityLoss": {
+    "__init__": [
+      "self",
+      "alpha",
+      "beta",
+      "base"
+    ],
+    "_compute_loss": [
+      "self",
+      "mat",
+      "pos_mask",
+      "neg_mask"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "SmoothAPLoss": {
+    "__init__": [
+      "self",
+      "temperature"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "ProxyAnchorLoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size",
+      "margin",
+      "alpha"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "get_default_weight_init_func": [
+      "self"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ],
+    "get_logits": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "MarginLoss": {
+    "__init__": [
+      "self",
+      "margin",
+      "nu",
+      "beta",
+      "triplets_per_anchor",
+      "learn_beta",
+      "num_classes"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "compute_reg_loss": [
+      "self",
+      "beta",
+      "anchor_idx",
+      "divisor"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "initialize_beta": [
+      "self",
+      "beta",
+      "num_classes"
+    ]
+  },
+  "LargeMarginSoftmaxLoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size",
+      "margin",
+      "scale"
+    ],
+    "init_margin": [
+      "self"
+    ],
+    "get_cos_with_margin": [
+      "self",
+      "cosine"
+    ],
+    "get_cosine": [
+      "self",
+      "embeddings"
+    ],
+    "get_angles": [
+      "self",
+      "cosine_of_target_classes"
+    ],
+    "get_target_mask": [
+      "self",
+      "embeddings",
+      "labels"
+    ],
+    "modify_cosine_of_target_classes": [
+      "self",
+      "cosine_of_target_classes"
+    ],
+    "scale_logits": [
+      "self",
+      "logits",
+      "embeddings"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "get_logits": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "ContrastiveLoss": {
+    "__init__": [
+      "self",
+      "pos_margin",
+      "neg_margin"
+    ],
+    "_compute_loss": [
+      "self",
+      "pos_pair_dist",
+      "neg_pair_dist",
+      "indices_tuple"
+    ],
+    "get_per_pair_loss": [
+      "self",
+      "pair_dists",
+      "pos_or_neg"
+    ],
+    "pos_calc": [
+      "self",
+      "pos_pair_dist",
+      "margin"
+    ],
+    "neg_calc": [
+      "self",
+      "neg_pair_dist",
+      "margin"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ]
+  },
+  "ManifoldLoss": {
+    "__init__": [
+      "self",
+      "l",
+      "K",
+      "lambdaC",
+      "alpha",
+      "margin"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "NormalizedSoftmaxLoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size",
+      "temperature"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "get_logits": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "SelfSupervisedLoss": {
+    "__init__": [
+      "self",
+      "loss",
+      "symmetric"
+    ],
+    "supported_losses": [],
+    "check_loss_support": [
+      "cls",
+      "loss_name"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "ref_emb"
+    ]
+  },
+  "filter_pairs": [],
+  "HistogramLoss": {
+    "__init__": [
+      "self",
+      "n_bins",
+      "delta"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "compute_density": [
+      "self",
+      "distances"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "RankedListLoss": {
+    "__init__": [
+      "self",
+      "margin",
+      "Tn",
+      "imbalance",
+      "alpha",
+      "Tp"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "CrossBatchMemory": {
+    "__init__": [
+      "self",
+      "loss",
+      "embedding_size",
+      "memory_size",
+      "miner"
+    ],
+    "supported_losses": [],
+    "check_loss_support": [
+      "cls",
+      "loss_name"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "enqueue_mask"
+    ],
+    "add_to_memory": [
+      "self",
+      "embeddings",
+      "labels",
+      "batch_size"
+    ],
+    "create_indices_tuple": [
+      "self",
+      "embeddings",
+      "labels",
+      "E_mem",
+      "L_mem",
+      "input_indices_tuple",
+      "do_remove_self_comparisons"
+    ],
+    "reset_queue": [
+      "self"
+    ]
+  },
+  "IntraPairVarianceLoss": {
+    "__init__": [
+      "self",
+      "pos_eps",
+      "neg_eps"
+    ],
+    "_compute_loss": [
+      "self",
+      "pos_pairs",
+      "neg_pairs",
+      "indices_tuple"
+    ],
+    "variance_with_eps": [
+      "self",
+      "pairs",
+      "mean_sim",
+      "eps",
+      "incentivize_increase"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "P2SGradLoss": {
+    "__init__": [
+      "self",
+      "descriptors_dim",
+      "num_classes"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "BaseMetricLossFunction": {
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "zero_loss": [
+      "self"
+    ],
+    "zero_losses": [
+      "self"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ],
+    "sub_loss_names": [
+      "self"
+    ],
+    "all_regularization_loss_names": [
+      "self"
+    ]
+  },
+  "find_hard_negatives": [
+    "dmat"
+  ],
+  "DynamicSoftMarginLoss": {
+    "__init__": [
+      "self",
+      "min_val",
+      "num_bins",
+      "momentum"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "compute_loss_without_labels": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "compute_loss_with_labels": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "update_histogram": [
+      "self",
+      "data"
+    ],
+    "weigh_loss": [
+      "self",
+      "data"
+    ]
+  },
+  "SphereFaceLoss": {
+    "scale_logits": [
+      "self",
+      "logits",
+      "embeddings"
+    ]
+  },
+  "FastAPLoss": {
+    "__init__": [
+      "self",
+      "num_bins"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "SoftTripleLoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size",
+      "centers_per_class",
+      "la",
+      "gamma",
+      "margin"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "get_default_weight_init_func": [
+      "self"
+    ],
+    "get_logits": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "SupConLoss": {
+    "__init__": [
+      "self",
+      "temperature"
+    ],
+    "_compute_loss": [
+      "self",
+      "mat",
+      "pos_mask",
+      "neg_mask"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "NCALoss": {
+    "__init__": [
+      "self",
+      "softmax_scale"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "nca_computation": [
+      "self",
+      "query",
+      "reference",
+      "query_labels",
+      "reference_labels",
+      "indices_tuple"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "MultipleLosses": {
+    "__init__": [
+      "self",
+      "losses",
+      "miners",
+      "weights"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple"
+    ],
+    "get_indices_tuple": [
+      "self",
+      "i",
+      "embeddings",
+      "labels",
+      "indices_tuple"
+    ],
+    "assertions_if_not_none": [
+      "self",
+      "x",
+      "match_all_keys"
+    ]
+  },
+  "VICRegLoss": {
+    "__init__": [
+      "self",
+      "invariance_lambda",
+      "variance_mu",
+      "covariance_v",
+      "eps"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "invariance_loss": [
+      "self",
+      "emb",
+      "ref_emb"
+    ],
+    "variance_loss": [
+      "self",
+      "emb",
+      "ref_emb"
+    ],
+    "covariance_loss": [
+      "self",
+      "emb",
+      "ref_emb"
+    ],
+    "_sub_loss_names": [
+      "self"
+    ]
+  },
+  "CosFaceLoss": {
+    "__init__": [
+      "self"
+    ],
+    "init_margin": [
+      "self"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "modify_cosine_of_target_classes": [
+      "self",
+      "cosine_of_target_classes"
+    ],
+    "scale_logits": [
+      "self",
+      "logits"
+    ]
+  },
+  "TripletMarginLoss": {
+    "__init__": [
+      "self",
+      "margin",
+      "swap",
+      "smooth_loss",
+      "triplets_per_anchor"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_reducer": [
+      "self"
+    ]
+  },
+  "ThresholdConsistentMarginLoss": {
+    "__init__": [
+      "self",
+      "lambda_plus",
+      "lambda_minus",
+      "margin_plus",
+      "margin_minus"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "ProxyNCALoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_logits": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "AngularLoss": {
+    "__init__": [
+      "self",
+      "alpha"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_pairs": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "set_stats": [
+      "self",
+      "anchors",
+      "positives",
+      "embeddings",
+      "ref_emb",
+      "keep_mask"
+    ]
+  },
+  "LiftedStructureLoss": {
+    "__init__": [
+      "self",
+      "neg_margin",
+      "pos_margin"
+    ],
+    "_compute_loss": [
+      "self",
+      "pos_pairs",
+      "neg_pairs",
+      "indices_tuple"
+    ]
+  },
+  "GeneralizedLiftedStructureLoss": {
+    "__init__": [
+      "self",
+      "neg_margin",
+      "pos_margin"
+    ],
+    "_compute_loss": [
+      "self",
+      "mat",
+      "pos_mask",
+      "neg_mask"
+    ]
+  },
+  "PNPLoss": {
+    "VARIANTS": [],
+    "__init__": [
+      "self",
+      "b",
+      "alpha",
+      "anneal",
+      "variant"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "sigmoid": [
+      "self",
+      "tensor",
+      "temp"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "WeightMixin": {
+    "__init__": [
+      "self",
+      "weight_init_func"
+    ],
+    "get_default_weight_init_func": [
+      "self"
+    ]
+  },
+  "WeightRegularizerMixin": {
+    "__init__": [
+      "self",
+      "weight_regularizer",
+      "weight_reg_weight"
+    ],
+    "weight_regularization_loss": [
+      "self",
+      "weights"
+    ],
+    "add_weight_regularization_to_loss_dict": [
+      "self",
+      "loss_dict",
+      "weights"
+    ],
+    "regularization_loss_names": [
+      "self"
+    ]
+  },
+  "EmbeddingRegularizerMixin": {
+    "__init__": [
+      "self",
+      "embedding_regularizer",
+      "embedding_reg_weight"
+    ],
+    "embedding_regularization_loss": [
+      "self",
+      "embeddings"
+    ],
+    "add_embedding_regularization_to_loss_dict": [
+      "self",
+      "loss_dict",
+      "embeddings"
+    ],
+    "regularization_loss_names": [
+      "self"
+    ]
+  },
+  "ArcFaceLoss": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "embedding_size",
+      "margin",
+      "scale"
+    ],
+    "init_margin": [
+      "self"
+    ],
+    "cast_types": [
+      "self",
+      "dtype",
+      "device"
+    ],
+    "modify_cosine_of_target_classes": [
+      "self",
+      "cosine_of_target_classes"
+    ],
+    "scale_logits": [
+      "self",
+      "logits"
+    ]
+  },
+  "TupletMarginLoss": {
+    "__init__": [
+      "self",
+      "margin",
+      "scale"
+    ],
+    "_compute_loss": [
+      "self",
+      "pos_pairs",
+      "neg_pairs",
+      "indices_tuple"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "set_stats": [
+      "self",
+      "pos_angles",
+      "neg_pairs"
+    ]
+  },
+  "InstanceLoss": {
+    "__init__": [
+      "self",
+      "gamma"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "Cars196": {
+    "DOWNLOAD_URL": [],
+    "generate_split": [
+      "self"
+    ],
+    "_load_csv": [
+      "self",
+      "path",
+      "names",
+      "split"
+    ],
+    "download_and_remove": [
+      "self"
+    ]
+  },
+  "INaturalist2018": {
+    "IMG_DOWNLOAD_URL": [],
+    "TRAIN_ANN_URL": [],
+    "VAL_ANN_URL": [],
+    "SPLITS_URL": [],
+    "generate_split": [
+      "self"
+    ],
+    "_load_split_txt": [
+      "self",
+      "split"
+    ],
+    "download_and_remove": [
+      "self"
+    ]
+  },
+  "StanfordOnlineProducts": {
+    "DOWNLOAD_URL": [],
+    "generate_split": [
+      "self"
+    ],
+    "_load_split_txt": [
+      "self",
+      "split"
+    ],
+    "download_and_remove": [
+      "self"
+    ]
+  },
+  "CUB": {
+    "DOWNLOAD_URL": [],
+    "generate_split": [
+      "self"
+    ],
+    "download_and_remove": [
+      "self"
+    ]
+  },
+  "BaseDataset": {
+    "__init__": [
+      "self",
+      "root",
+      "split",
+      "transform",
+      "target_transform",
+      "download"
+    ],
+    "generate_split": [],
+    "download_and_remove": [],
+    "get_available_splits": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "is_distributed": [],
+  "all_gather": [
+    "x"
+  ],
+  "all_gather_embeddings_and_labels": [
+    "emb",
+    "labels"
+  ],
+  "gather": [
+    "emb",
+    "labels"
+  ],
+  "gather_emb_and_ref": [
+    "emb",
+    "labels",
+    "ref_emb",
+    "ref_labels"
+  ],
+  "get_indices_tuple": [
+    "labels",
+    "ref_labels",
+    "embeddings",
+    "ref_emb",
+    "miner"
+  ],
+  "gather_enqueue_mask": [
+    "enqueue_mask",
+    "device"
+  ],
+  "select_ref_or_regular": [
+    "regular",
+    "ref"
+  ],
+  "DistributedLossWrapper": {
+    "__init__": [
+      "self",
+      "loss",
+      "efficient"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels",
+      "enqueue_mask"
+    ],
+    "forward_regular_loss": [
+      "self",
+      "emb",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels",
+      "world_size"
+    ],
+    "forward_cross_batch": [
+      "self",
+      "emb",
+      "labels",
+      "indices_tuple",
+      "ref_emb",
+      "ref_labels",
+      "world_size",
+      "enqueue_mask"
+    ]
+  },
+  "DistributedMinerWrapper": {
+    "__init__": [
+      "self",
+      "miner",
+      "efficient"
+    ],
+    "forward": [
+      "self",
+      "emb",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "ModuleWithRecordsAndReducer": {
+    "__init__": [
+      "self",
+      "reducer"
+    ],
+    "get_default_reducer": [
+      "self"
+    ],
+    "set_reducer": [
+      "self",
+      "reducer"
+    ],
+    "sub_loss_names": [
+      "self"
+    ]
+  },
+  "ModuleWithRecordsAndDistance": {
+    "__init__": [
+      "self",
+      "distance"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "ModuleWithRecordsReducerAndDistance": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "KeyCheckerDict": {
+    "__init__": [
+      "self",
+      "children"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "verify": [
+      "self",
+      "obj"
+    ],
+    "_verify_prop": [
+      "self",
+      "obj",
+      "obj_name",
+      "s"
+    ]
+  },
+  "default_important": [
+    "s",
+    "d"
+  ],
+  "KeyChecker": {
+    "__init__": [
+      "self",
+      "keys",
+      "warn_empty",
+      "important",
+      "essential"
+    ]
+  },
+  "HookContainer": {
+    "__init__": [
+      "self",
+      "record_keeper",
+      "record_group_name_prefix",
+      "primary_metric",
+      "validation_split_name",
+      "save_models",
+      "log_freq"
+    ],
+    "end_of_iteration_hook": [
+      "self",
+      "trainer"
+    ],
+    "end_of_epoch_hook": [
+      "self",
+      "tester",
+      "dataset_dict",
+      "model_folder",
+      "test_interval",
+      "patience",
+      "splits_to_eval",
+      "test_collate_fn"
+    ],
+    "end_of_testing_hook": [
+      "self",
+      "tester"
+    ],
+    "load_latest_saved_models": [
+      "self",
+      "trainer",
+      "model_folder",
+      "device",
+      "best"
+    ],
+    "save_models": [
+      "self",
+      "trainer",
+      "model_folder",
+      "curr_suffix",
+      "prev_suffix"
+    ],
+    "save_models_and_eval": [
+      "self",
+      "trainer",
+      "dataset_dict",
+      "model_folder",
+      "test_interval",
+      "tester",
+      "splits_to_eval",
+      "collate_fn"
+    ],
+    "is_new_best_accuracy": [
+      "self",
+      "tester",
+      "split_name",
+      "epoch"
+    ],
+    "get_loss_history": [
+      "self",
+      "loss_names"
+    ],
+    "get_accuracy_history": [
+      "self",
+      "tester",
+      "split_name",
+      "return_all_metrics",
+      "metrics"
+    ],
+    "get_curr_primary_metric": [
+      "self",
+      "tester",
+      "split_name"
+    ],
+    "try_keys": [
+      "self",
+      "input_keys",
+      "tester",
+      "input_func"
+    ],
+    "try_primary_metric": [
+      "self",
+      "tester",
+      "input_func"
+    ],
+    "get_accuracies_of_epoch": [
+      "self",
+      "tester",
+      "split_name",
+      "epoch",
+      "select_all"
+    ],
+    "get_accuracies_of_best_epoch": [
+      "self",
+      "tester",
+      "split_name",
+      "select_all",
+      "ignore_epoch"
+    ],
+    "get_best_epoch_and_accuracy": [
+      "self",
+      "tester",
+      "split_name",
+      "ignore_epoch"
+    ],
+    "patience_remaining": [
+      "self",
+      "epoch",
+      "best_epoch",
+      "patience"
+    ],
+    "run_tester_separately": [
+      "self",
+      "tester",
+      "dataset_dict",
+      "epoch",
+      "trunk",
+      "embedder",
+      "splits_to_eval",
+      "collate_fn",
+      "skip_eval_if_already_done"
+    ],
+    "get_splits_to_eval": [
+      "self",
+      "tester",
+      "dataset_dict",
+      "epoch",
+      "input_splits_to_eval"
+    ],
+    "base_record_group_name": [
+      "self",
+      "tester"
+    ],
+    "record_group_name": [
+      "self",
+      "tester",
+      "split_name"
+    ],
+    "optimizer_custom_attr_func": [
+      "self",
+      "optimizer"
+    ]
+  },
+  "EmptyContainer": {
+    "end_of_epoch_hook": [
+      "self"
+    ],
+    "end_of_iteration_hook": [],
+    "end_of_testing_hook": []
+  },
+  "get_record_keeper": [
+    "csv_folder",
+    "tensorboard_folder",
+    "global_db_path",
+    "experiment_name",
+    "is_new_experiment",
+    "save_lists"
+  ],
+  "get_hook_container": [
+    "record_keeper"
+  ],
+  "LossTracker": {
+    "__init__": [
+      "self",
+      "loss_names"
+    ],
+    "weight_the_losses": [
+      "self",
+      "exclude_loss"
+    ],
+    "get_total_loss": [
+      "self",
+      "exclude_loss"
+    ],
+    "set_loss_weights": [
+      "self",
+      "loss_weight_dict"
+    ],
+    "update": [
+      "self",
+      "loss_weight_dict"
+    ]
+  },
+  "EQUALITY": [],
+  "get_unique_labels": [
+    "labels"
+  ],
+  "maybe_get_avg_of_avgs": [
+    "accuracy_per_sample",
+    "sample_labels",
+    "avg_of_avgs",
+    "return_per_class"
+  ],
+  "get_relevance_mask": [
+    "shape",
+    "gt_labels",
+    "ref_includes_query",
+    "label_counts"
+  ],
+  "r_precision": [
+    "knn_labels",
+    "gt_labels",
+    "ref_includes_query",
+    "label_counts",
+    "avg_of_avgs",
+    "return_per_class",
+    "label_comparison_fn"
+  ],
+  "mean_average_precision": [
+    "knn_labels",
+    "gt_labels",
+    "ref_includes_query",
+    "label_counts",
+    "avg_of_avgs",
+    "return_per_class",
+    "label_comparison_fn",
+    "at_r"
+  ],
+  "mean_reciprocal_rank": [
+    "knn_labels",
+    "gt_labels",
+    "avg_of_avgs",
+    "return_per_class",
+    "label_comparison_fn"
+  ],
+  "precision_at_k": [
+    "knn_labels",
+    "gt_labels",
+    "k",
+    "avg_of_avgs",
+    "return_per_class",
+    "label_comparison_fn"
+  ],
+  "get_label_match_counts": [
+    "query_labels",
+    "reference_labels",
+    "label_comparison_fn"
+  ],
+  "get_lone_query_labels": [
+    "query_labels",
+    "label_counts",
+    "ref_includes_query",
+    "label_comparison_fn"
+  ],
+  "try_getting_not_lone_labels": [
+    "knn_labels",
+    "query_labels",
+    "not_lone_query_mask"
+  ],
+  "nan_accuracy": [
+    "unique_labels",
+    "return_per_class"
+  ],
+  "AccuracyCalculator": {
+    "__init__": [
+      "self",
+      "include",
+      "exclude",
+      "avg_of_avgs",
+      "return_per_class",
+      "k",
+      "label_comparison_fn",
+      "device",
+      "knn_func",
+      "kmeans_func"
+    ],
+    "get_function_dict": [
+      "self",
+      "include",
+      "exclude"
+    ],
+    "get_curr_metrics": [
+      "self"
+    ],
+    "requires_clustering": [
+      "self"
+    ],
+    "requires_knn": [
+      "self"
+    ],
+    "get_cluster_labels": [
+      "self",
+      "query",
+      "query_labels"
+    ],
+    "calculate_NMI": [
+      "self",
+      "query_labels",
+      "cluster_labels"
+    ],
+    "calculate_AMI": [
+      "self",
+      "query_labels",
+      "cluster_labels"
+    ],
+    "calculate_precision_at_1": [
+      "self",
+      "knn_labels",
+      "query_labels",
+      "not_lone_query_mask",
+      "label_counts"
+    ],
+    "calculate_mean_average_precision_at_r": [
+      "self",
+      "knn_labels",
+      "query_labels",
+      "not_lone_query_mask",
+      "ref_includes_query",
+      "label_counts"
+    ],
+    "calculate_mean_average_precision": [
+      "self",
+      "knn_labels",
+      "query_labels",
+      "not_lone_query_mask",
+      "ref_includes_query",
+      "label_counts"
+    ],
+    "calculate_mean_reciprocal_rank": [
+      "self",
+      "knn_labels",
+      "query_labels",
+      "not_lone_query_mask",
+      "label_counts"
+    ],
+    "calculate_r_precision": [
+      "self",
+      "knn_labels",
+      "query_labels",
+      "not_lone_query_mask",
+      "ref_includes_query",
+      "label_counts"
+    ],
+    "get_accuracy": [
+      "self",
+      "query",
+      "query_labels",
+      "reference",
+      "reference_labels",
+      "ref_includes_query",
+      "include",
+      "exclude"
+    ],
+    "_get_accuracy": [
+      "self",
+      "function_dict"
+    ],
+    "check_primary_metrics": [
+      "calc",
+      "include",
+      "exclude"
+    ],
+    "determine_k": [
+      "self",
+      "bin_counts",
+      "num_reference_embeddings",
+      "ref_includes_query"
+    ],
+    "description": [
+      "self"
+    ]
+  },
+  "LOGGER_NAME": [],
+  "LOGGER": [],
+  "NUMPY_RANDOM": [],
+  "COLLECT_STATS": [],
+  "_urlretrieve": [
+    "url",
+    "filename",
+    "chunk_size"
+  ],
+  "set_logger_name": [
+    "name"
+  ],
+  "pos_inf": [
+    "dtype"
+  ],
+  "neg_inf": [
+    "dtype"
+  ],
+  "small_val": [
+    "dtype"
+  ],
+  "is_list_or_tuple": [
+    "x"
+  ],
+  "try_next_on_generator": [
+    "gen",
+    "iterable"
+  ],
+  "numpy_to_torch": [
+    "v"
+  ],
+  "to_numpy": [
+    "v"
+  ],
+  "get_hierarchy_label": [
+    "batch_labels",
+    "hierarchy_level"
+  ],
+  "map_labels": [
+    "label_map",
+    "labels"
+  ],
+  "process_label": [
+    "labels",
+    "hierarchy_level",
+    "label_map"
+  ],
+  "set_requires_grad": [
+    "model",
+    "requires_grad"
+  ],
+  "shift_indices_tuple": [
+    "indices_tuple",
+    "batch_size"
+  ],
+  "safe_random_choice": [
+    "input_data",
+    "size"
+  ],
+  "unslice_by_n": [
+    "input_tensors"
+  ],
+  "set_layers_to_eval": [
+    "layer_name"
+  ],
+  "get_train_dataloader": [
+    "dataset",
+    "batch_size",
+    "sampler",
+    "num_workers",
+    "collate_fn"
+  ],
+  "get_eval_dataloader": [
+    "dataset",
+    "batch_size",
+    "num_workers",
+    "collate_fn"
+  ],
+  "get_labels_to_indices": [
+    "labels"
+  ],
+  "make_label_to_rank_dict": [
+    "label_set"
+  ],
+  "get_label_map": [
+    "labels"
+  ],
+  "LabelMapper": {
+    "__init__": [
+      "self",
+      "set_min_label_to_zero",
+      "dataset_labels"
+    ],
+    "map": [
+      "self",
+      "labels",
+      "hierarchy_level"
+    ]
+  },
+  "add_to_recordable_attributes": [
+    "input_obj",
+    "name",
+    "list_of_names",
+    "is_stat"
+  ],
+  "reset_stats": [
+    "input_obj"
+  ],
+  "list_of_recordable_attributes_list_names": [],
+  "modelpath_creator": [
+    "folder",
+    "basename",
+    "identifier",
+    "extension"
+  ],
+  "save_model": [
+    "model",
+    "filepath"
+  ],
+  "load_model": [
+    "model_def",
+    "model_filename",
+    "device"
+  ],
+  "operate_on_dict_of_models": [
+    "input_dict",
+    "suffix",
+    "folder",
+    "operation",
+    "logging_string",
+    "log_if_successful",
+    "assert_success"
+  ],
+  "save_dict_of_models": [
+    "input_dict",
+    "suffix",
+    "folder"
+  ],
+  "load_dict_of_models": [
+    "input_dict",
+    "suffix",
+    "folder",
+    "device"
+  ],
+  "delete_dict_of_models": [
+    "input_dict",
+    "suffix",
+    "folder"
+  ],
+  "regex_wrapper": [
+    "x"
+  ],
+  "regex_replace": [
+    "search",
+    "replace",
+    "contents"
+  ],
+  "latest_version": [
+    "folder",
+    "string_to_glob",
+    "best"
+  ],
+  "return_input": [
+    "x"
+  ],
+  "check_shapes": [
+    "embeddings",
+    "labels"
+  ],
+  "assert_distance_type": [
+    "obj",
+    "distance_type"
+  ],
+  "torch_arange_from_size": [
+    "input",
+    "size_dim"
+  ],
+  "TorchInitWrapper": {
+    "__init__": [
+      "self",
+      "init_func"
+    ],
+    "__call__": [
+      "self",
+      "tensor"
+    ]
+  },
+  "EmbeddingDataset": {
+    "__init__": [
+      "self",
+      "embeddings",
+      "labels"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "sqlite_obj_to_dict": [
+    "sqlite_obj"
+  ],
+  "torch_all_from_dim_to_end": [
+    "x",
+    "dim"
+  ],
+  "torch_standard_scaler": [
+    "x"
+  ],
+  "to_dtype": [
+    "x",
+    "tensor",
+    "dtype"
+  ],
+  "to_device": [
+    "x",
+    "tensor",
+    "device",
+    "dtype"
+  ],
+  "set_ref_emb": [
+    "embeddings",
+    "labels",
+    "ref_emb",
+    "ref_labels"
+  ],
+  "labels_not_supported": [
+    "labels",
+    "ref_labels"
+  ],
+  "ref_not_supported": [
+    "embeddings",
+    "labels",
+    "ref_emb",
+    "ref_labels"
+  ],
+  "indices_tuple_not_supported": [
+    "indices_tuple"
+  ],
+  "labels_required": [
+    "labels"
+  ],
+  "labels_or_indices_tuple_required": [
+    "labels",
+    "indices_tuple"
+  ],
+  "concatenate_indices_tuples": [
+    "it1",
+    "it2"
+  ],
+  "exclude": [
+    "it",
+    "targets"
+  ],
+  "append_map": [
+    "it",
+    "suf"
+  ],
+  "use_cuda_if_available": [],
+  "logsumexp": [
+    "x",
+    "keep_mask",
+    "add_one",
+    "dim"
+  ],
+  "meshgrid_from_sizes": [
+    "x",
+    "y",
+    "dim"
+  ],
+  "get_matches_and_diffs": [
+    "labels",
+    "ref_labels"
+  ],
+  "get_all_pairs_indices": [
+    "labels",
+    "ref_labels"
+  ],
+  "convert_to_pairs": [
+    "indices_tuple",
+    "labels",
+    "ref_labels"
+  ],
+  "convert_to_pos_pairs_with_unique_labels": [
+    "indices_tuple",
+    "labels"
+  ],
+  "pos_pairs_from_tuple": [
+    "indices_tuple"
+  ],
+  "neg_pairs_from_tuple": [
+    "indices_tuple"
+  ],
+  "get_all_triplets_indices": [
+    "labels",
+    "ref_labels"
+  ],
+  "get_all_triplets_indices_vectorized_method": [
+    "all_matches",
+    "all_diffs"
+  ],
+  "get_all_triplets_indices_loop_method": [
+    "labels",
+    "all_matches",
+    "all_diffs"
+  ],
+  "get_random_triplet_indices": [
+    "labels",
+    "ref_labels",
+    "t_per_anchor",
+    "weights"
+  ],
+  "repeat_to_match_size": [
+    "smaller_set",
+    "larger_size",
+    "smaller_size"
+  ],
+  "matched_size_indices": [
+    "curr_p_idx",
+    "curr_n_idx"
+  ],
+  "convert_to_triplets": [
+    "indices_tuple",
+    "labels",
+    "ref_labels",
+    "t_per_anchor"
+  ],
+  "convert_to_weights": [
+    "indices_tuple",
+    "labels",
+    "dtype",
+    "using_ref"
+  ],
+  "remove_self_comparisons": [
+    "indices_tuple",
+    "curr_batch_idx",
+    "ref_size",
+    "ref_is_subset"
+  ],
+  "not_self_comparisons": [
+    "a",
+    "p",
+    "s",
+    "e",
+    "curr_batch_idx",
+    "ref_size",
+    "ref_is_subset"
+  ],
+  "get_anchors": [
+    "indices_tuple"
+  ],
+  "MatchFinder": {
+    "__init__": [
+      "self",
+      "distance",
+      "threshold"
+    ],
+    "operate_on_emb": [
+      "self",
+      "input_func",
+      "query_emb",
+      "ref_emb"
+    ],
+    "get_matching_pairs": [
+      "self",
+      "query_emb",
+      "ref_emb",
+      "threshold",
+      "return_tuples"
+    ],
+    "_get_matching_pairs": [
+      "self",
+      "query_emb",
+      "ref_emb",
+      "threshold",
+      "return_tuples"
+    ],
+    "is_match": [
+      "self",
+      "x",
+      "y",
+      "threshold"
+    ]
+  },
+  "InferenceModel": {
+    "__init__": [
+      "self",
+      "trunk",
+      "embedder",
+      "match_finder",
+      "normalize_embeddings",
+      "knn_func",
+      "data_device",
+      "dtype"
+    ],
+    "get_embeddings_from_tensor_or_dataset": [
+      "self",
+      "inputs",
+      "batch_size"
+    ],
+    "train_knn": [
+      "self",
+      "inputs",
+      "batch_size"
+    ],
+    "add_to_knn": [
+      "self",
+      "inputs",
+      "batch_size"
+    ],
+    "call_knn": [
+      "self",
+      "func",
+      "inputs",
+      "batch_size"
+    ],
+    "get_nearest_neighbors": [
+      "self",
+      "query",
+      "k"
+    ],
+    "get_embeddings": [
+      "self",
+      "x"
+    ],
+    "get_matches": [
+      "self",
+      "query",
+      "ref",
+      "threshold",
+      "return_tuples"
+    ],
+    "is_match": [
+      "self",
+      "x",
+      "y",
+      "threshold"
+    ],
+    "save_knn_func": [
+      "self",
+      "filename"
+    ],
+    "load_knn_func": [
+      "self",
+      "filename"
+    ],
+    "process_if_list": [
+      "self",
+      "x"
+    ]
+  },
+  "FaissKNN": {
+    "__init__": [
+      "self",
+      "reset_before",
+      "reset_after",
+      "index_init_fn",
+      "gpus"
+    ],
+    "__call__": [
+      "self",
+      "query",
+      "k",
+      "reference",
+      "ref_includes_query"
+    ],
+    "train": [
+      "self",
+      "embeddings"
+    ],
+    "add": [
+      "self",
+      "embeddings"
+    ],
+    "save": [
+      "self",
+      "filename"
+    ],
+    "load": [
+      "self",
+      "filename"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "FaissKMeans": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "x",
+      "nmb_clusters"
+    ]
+  },
+  "add_to_index_and_search": [
+    "index",
+    "query",
+    "reference",
+    "k"
+  ],
+  "convert_to_gpu_index": [
+    "index",
+    "gpus"
+  ],
+  "convert_to_cpu_index": [
+    "index"
+  ],
+  "try_gpu": [
+    "index",
+    "query",
+    "reference",
+    "k",
+    "is_cuda",
+    "gpus"
+  ],
+  "run_pca": [
+    "x",
+    "output_dimensionality"
+  ],
+  "mask_reshape_knn_idx": [
+    "x",
+    "matches_self_idx"
+  ],
+  "return_results": [
+    "D",
+    "I",
+    "ref_includes_query"
+  ],
+  "get_topk": [
+    "distances",
+    "indices",
+    "k",
+    "get_largest"
+  ],
+  "CustomKNN": {
+    "__init__": [
+      "self",
+      "distance",
+      "batch_size"
+    ],
+    "__call__": [
+      "self",
+      "query",
+      "k",
+      "reference",
+      "ref_includes_query"
+    ]
+  },
+  "ModuleWithRecords": {
+    "__init__": [
+      "self",
+      "collect_stats"
+    ],
+    "add_to_recordable_attributes": [
+      "self",
+      "name",
+      "list_of_names",
+      "is_stat"
+    ],
+    "reset_stats": [
+      "self"
+    ]
+  },
+  "HierarchicalSampler": {
+    "__init__": [
+      "self",
+      "labels",
+      "batch_size",
+      "samples_per_class",
+      "batches_per_super_tuple",
+      "super_classes_per_batch",
+      "inner_label",
+      "outer_label"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "reshuffle": [
+      "self"
+    ]
+  },
+  "FixedSetOfTriplets": {
+    "__init__": [
+      "self",
+      "labels",
+      "num_triplets"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "create_fixed_set_of_triplets": [
+      "self"
+    ]
+  },
+  "TuplesToWeightsSampler": {
+    "__init__": [
+      "self",
+      "model",
+      "miner",
+      "dataset",
+      "subset_size"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "MPerClassSampler": {
+    "__init__": [
+      "self",
+      "labels",
+      "m",
+      "batch_size",
+      "length_before_new_iter"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "calculate_num_iters": [
+      "self"
+    ]
+  },
+  "GlobalTwoStreamEmbeddingSpaceTester": {
+    "compute_all_embeddings": [
+      "self",
+      "dataloader",
+      "trunk_model",
+      "embedder_model"
+    ],
+    "get_all_embeddings": [
+      "self",
+      "dataset",
+      "trunk_model",
+      "embedder_model",
+      "collate_fn"
+    ],
+    "set_reference_and_query": [
+      "self",
+      "embeddings_and_labels",
+      "query_split_name",
+      "reference_split_names"
+    ],
+    "ref_includes_query": [
+      "self",
+      "query_split_name",
+      "reference_split_names"
+    ]
+  },
+  "WithSameParentLabelTester": {
+    "do_knn_and_accuracies": [
+      "self",
+      "accuracies",
+      "embeddings_and_labels",
+      "query_split_name",
+      "reference_split_names",
+      "tag_suffix"
+    ]
+  },
+  "GlobalEmbeddingSpaceTester": {
+    "do_knn_and_accuracies": [
+      "self",
+      "accuracies",
+      "embeddings_and_labels",
+      "query_split_name",
+      "reference_split_names"
+    ]
+  },
+  "BaseTester": {
+    "__init__": [
+      "self",
+      "normalize_embeddings",
+      "use_trunk_output",
+      "batch_size",
+      "dataloader_num_workers",
+      "pca",
+      "data_device",
+      "dtype",
+      "data_and_label_getter",
+      "label_hierarchy_level",
+      "end_of_testing_hook",
+      "dataset_labels",
+      "set_min_label_to_zero",
+      "accuracy_calculator",
+      "visualizer",
+      "visualizer_hook"
+    ],
+    "initialize_label_mapper": [
+      "self"
+    ],
+    "initialize_accuracy_calculator": [
+      "self"
+    ],
+    "visualizer_hook": [
+      "self"
+    ],
+    "maybe_normalize": [
+      "self",
+      "embeddings"
+    ],
+    "compute_all_embeddings": [
+      "self",
+      "dataloader",
+      "trunk_model",
+      "embedder_model"
+    ],
+    "get_all_embeddings": [
+      "self",
+      "dataset",
+      "trunk_model",
+      "embedder_model",
+      "collate_fn",
+      "eval",
+      "return_as_numpy"
+    ],
+    "get_embeddings_for_eval": [
+      "self",
+      "trunk_model",
+      "embedder_model",
+      "input_imgs"
+    ],
+    "maybe_visualize": [
+      "self",
+      "embeddings_and_labels",
+      "epoch"
+    ],
+    "description_suffixes": [
+      "self",
+      "base_name"
+    ],
+    "label_hierarchy_level_to_str": [
+      "self",
+      "label_hierarchy_level"
+    ],
+    "accuracies_keyname": [
+      "self",
+      "metric",
+      "label_hierarchy_level",
+      "average"
+    ],
+    "maybe_combine_splits": [
+      "self",
+      "embeddings_and_labels",
+      "splits"
+    ],
+    "set_reference_and_query": [
+      "self",
+      "embeddings_and_labels",
+      "query_split_name",
+      "reference_split_names"
+    ],
+    "label_levels_to_evaluate": [
+      "self",
+      "query_labels"
+    ],
+    "calculate_average_accuracies": [
+      "self",
+      "accuracies",
+      "metrics",
+      "label_levels"
+    ],
+    "get_splits_to_compute_embeddings": [
+      "self",
+      "dataset_dict",
+      "splits_to_eval"
+    ],
+    "get_all_embeddings_for_all_splits": [
+      "self",
+      "dataset_dict",
+      "trunk_model",
+      "embedder_model",
+      "splits_to_compute_embeddings",
+      "collate_fn"
+    ],
+    "do_knn_and_accuracies": [
+      "self",
+      "accuracies",
+      "embeddings_and_labels",
+      "query_split_name",
+      "reference_split_names"
+    ],
+    "ref_includes_query": [
+      "self",
+      "query_split_name",
+      "reference_split_names"
+    ],
+    "test": [
+      "self",
+      "dataset_dict",
+      "epoch",
+      "trunk_model",
+      "embedder_model",
+      "splits_to_eval",
+      "collate_fn"
+    ]
+  },
+  "PairMarginMiner": {
+    "__init__": [
+      "self",
+      "pos_margin",
+      "neg_margin"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "set_stats": [
+      "self",
+      "pos_pair",
+      "neg_pair"
+    ]
+  },
+  "AngularMiner": {
+    "__init__": [
+      "self",
+      "angle"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "set_stats": [
+      "self",
+      "angles",
+      "threshold_condition"
+    ]
+  },
+  "TripletMarginMiner": {
+    "__init__": [
+      "self",
+      "margin",
+      "type_of_triplets"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "set_stats": [
+      "self",
+      "ap_dist",
+      "an_dist",
+      "triplet_margin"
+    ]
+  },
+  "BatchEasyHardMiner": {
+    "HARD": [],
+    "SEMIHARD": [],
+    "EASY": [],
+    "ALL": [],
+    "all_batch_mining_strategies": [],
+    "__init__": [
+      "self",
+      "pos_strategy",
+      "neg_strategy",
+      "allowed_pos_range",
+      "allowed_neg_range"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_positives": [
+      "self",
+      "mat",
+      "a1_idx",
+      "p_idx",
+      "negative_dists"
+    ],
+    "get_negatives": [
+      "self",
+      "mat",
+      "a2_idx",
+      "n_idx",
+      "positive_dists"
+    ],
+    "get_mine_function": [
+      "self",
+      "strategy"
+    ],
+    "get_max_per_row": [
+      "self"
+    ],
+    "get_min_per_row": [
+      "self"
+    ],
+    "get_x_per_row": [
+      "self",
+      "xtype",
+      "mat",
+      "anchor_idx",
+      "other_idx",
+      "val_range",
+      "semihard_thresholds"
+    ],
+    "set_stats": [
+      "self",
+      "positive_dists",
+      "negative_dists"
+    ],
+    "get_func_for_stats": [
+      "self",
+      "min_if_inverted"
+    ]
+  },
+  "DistanceWeightedMiner": {
+    "__init__": [
+      "self",
+      "cutoff",
+      "nonzero_loss_cutoff"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "MultiSimilarityMiner": {
+    "__init__": [
+      "self",
+      "epsilon"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "BatchHardMiner": {
+    "__init__": [
+      "self"
+    ],
+    "mine": [
+      "self"
+    ]
+  },
+  "HDCMiner": {
+    "__init__": [
+      "self",
+      "filter_percentage"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "should_select_largest": [
+      "self",
+      "name"
+    ],
+    "set_idx": [
+      "self",
+      "labels",
+      "ref_labels"
+    ],
+    "set_idx_externally": [
+      "self",
+      "external_indices_tuple",
+      "labels"
+    ],
+    "reset_idx": [
+      "self"
+    ],
+    "filter_original_indices": [
+      "self",
+      "name",
+      "idx"
+    ]
+  },
+  "BaseMiner": {
+    "__init__": [
+      "self"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "output_assertion": [
+      "self",
+      "output"
+    ],
+    "forward": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "UniformHistogramMiner": {
+    "__init__": [
+      "self",
+      "num_bins",
+      "pos_per_bin",
+      "neg_per_bin"
+    ],
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ],
+    "get_bins": [
+      "self",
+      "pairs"
+    ],
+    "filter_by_bin": [
+      "self",
+      "distances",
+      "bins",
+      "num_pairs"
+    ],
+    "get_uniformly_distributed_pairs": [
+      "self",
+      "distances",
+      "anchors",
+      "others",
+      "num_pairs"
+    ]
+  },
+  "EmbeddingsAlreadyPackagedAsTriplets": {
+    "mine": [
+      "self",
+      "embeddings",
+      "labels",
+      "ref_emb",
+      "ref_labels"
+    ]
+  },
+  "RegularFaceRegularizer": {
+    "__init__": [
+      "self"
+    ],
+    "compute_loss": [
+      "self",
+      "weights"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "LpRegularizer": {
+    "__init__": [
+      "self",
+      "p",
+      "power"
+    ],
+    "compute_loss": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "SparseCentersRegularizer": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "centers_per_class"
+    ],
+    "compute_loss": [
+      "self",
+      "weights"
+    ],
+    "set_class_masks": [
+      "self",
+      "num_classes",
+      "centers_per_class"
+    ],
+    "set_stats": [
+      "self",
+      "center_similarities"
+    ],
+    "get_default_distance": [
+      "self"
+    ],
+    "get_default_reducer": [
+      "self"
+    ]
+  },
+  "CenterInvariantRegularizer": {
+    "__init__": [
+      "self"
+    ],
+    "compute_loss": [
+      "self",
+      "weights"
+    ],
+    "get_default_distance": [
+      "self"
+    ]
+  },
+  "BaseRegularizer": {
+    "compute_loss": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ZeroMeanRegularizer": {
+    "compute_loss": [
+      "self",
+      "embeddings"
+    ]
+  },
+  "BaseTrainer": {
+    "__init__": [
+      "self",
+      "models",
+      "optimizers",
+      "batch_size",
+      "loss_funcs",
+      "dataset",
+      "mining_funcs",
+      "iterations_per_epoch",
+      "data_device",
+      "dtype",
+      "loss_weights",
+      "sampler",
+      "collate_fn",
+      "lr_schedulers",
+      "gradient_clippers",
+      "freeze_these",
+      "freeze_trunk_batchnorm",
+      "label_hierarchy_level",
+      "dataloader_num_workers",
+      "data_and_label_getter",
+      "dataset_labels",
+      "set_min_label_to_zero",
+      "end_of_iteration_hook",
+      "end_of_epoch_hook"
+    ],
+    "custom_setup": [
+      "self"
+    ],
+    "calculate_loss": [
+      "self"
+    ],
+    "update_loss_weights": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "start_epoch",
+      "num_epochs"
+    ],
+    "initialize_dataloader": [
+      "self"
+    ],
+    "forward_and_backward": [
+      "self"
+    ],
+    "zero_losses": [
+      "self"
+    ],
+    "zero_grad": [
+      "self"
+    ],
+    "get_batch": [
+      "self"
+    ],
+    "compute_embeddings": [
+      "self",
+      "data"
+    ],
+    "get_final_embeddings": [
+      "self",
+      "base_output"
+    ],
+    "get_trunk_output": [
+      "self",
+      "data"
+    ],
+    "maybe_mine_embeddings": [
+      "self",
+      "embeddings",
+      "labels"
+    ],
+    "maybe_do_batch_mining": [
+      "self",
+      "data",
+      "labels"
+    ],
+    "backward": [
+      "self"
+    ],
+    "get_global_iteration": [
+      "self"
+    ],
+    "step_lr_schedulers": [
+      "self",
+      "end_of_epoch"
+    ],
+    "step_lr_plateau_schedulers": [
+      "self",
+      "validation_info"
+    ],
+    "step_optimizers": [
+      "self"
+    ],
+    "clip_gradients": [
+      "self"
+    ],
+    "maybe_freeze_trunk_batchnorm": [
+      "self"
+    ],
+    "initialize_data_device": [
+      "self"
+    ],
+    "initialize_label_mapper": [
+      "self"
+    ],
+    "initialize_loss_tracker": [
+      "self"
+    ],
+    "initialize_data_and_label_getter": [
+      "self"
+    ],
+    "trainable_attributes": [
+      "self"
+    ],
+    "set_to_train": [
+      "self"
+    ],
+    "set_to_eval": [
+      "self"
+    ],
+    "initialize_loss_weights": [
+      "self"
+    ],
+    "initialize_hooks": [
+      "self"
+    ],
+    "initialize_lr_schedulers": [
+      "self"
+    ],
+    "initialize_models": [
+      "self"
+    ],
+    "verify_dict_keys": [
+      "self"
+    ],
+    "modify_schema": [
+      "self"
+    ],
+    "set_schema": [
+      "self"
+    ],
+    "verify_freeze_these_keys": [
+      "self"
+    ]
+  },
+  "NegativeLpDistance": {
+    "compute_mat": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ],
+    "pairwise_distance": [
+      "self",
+      "query_emb",
+      "ref_emb"
+    ]
+  },
+  "DeepAdversarialMetricLearning": {
+    "__init__": [
+      "self",
+      "metric_alone_epochs",
+      "g_alone_epochs",
+      "g_triplets_per_anchor"
+    ],
+    "custom_setup": [
+      "self"
+    ],
+    "calculate_loss": [
+      "self",
+      "curr_batch"
+    ],
+    "update_loss_weights": [
+      "self"
+    ],
+    "maybe_exclude_networks_from_gradient": [
+      "self"
+    ],
+    "step_optimizers": [
+      "self"
+    ],
+    "calculate_synth_loss": [
+      "self",
+      "penultimate_embeddings",
+      "labels"
+    ],
+    "modify_schema": [
+      "self"
+    ]
+  },
+  "MetricLossOnly": {
+    "calculate_loss": [
+      "self",
+      "curr_batch"
+    ],
+    "maybe_get_metric_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple"
+    ]
+  },
+  "CascadedEmbeddings": {
+    "__init__": [
+      "self",
+      "embedding_sizes"
+    ],
+    "calculate_loss": [
+      "self",
+      "curr_batch"
+    ],
+    "maybe_get_metric_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple",
+      "curr_loss_name"
+    ],
+    "maybe_mine_embeddings": [
+      "self",
+      "embeddings",
+      "labels",
+      "prev_indices_tuple",
+      "curr_miner_name"
+    ],
+    "maybe_get_logits": [
+      "self",
+      "embeddings",
+      "curr_classifier_name"
+    ],
+    "maybe_get_classifier_loss": [
+      "self",
+      "logits",
+      "labels",
+      "curr_loss_name"
+    ],
+    "modify_schema": [
+      "self"
+    ]
+  },
+  "TwoStreamMetricLoss": {
+    "calculate_loss": [
+      "self",
+      "curr_batch"
+    ],
+    "get_batch": [
+      "self"
+    ],
+    "maybe_get_metric_loss": [
+      "self",
+      "embeddings",
+      "labels",
+      "indices_tuple"
+    ],
+    "maybe_mine_embeddings": [
+      "self",
+      "embeddings",
+      "labels"
+    ],
+    "modify_schema": [
+      "self"
+    ]
+  },
+  "TrainWithClassifier": {
+    "calculate_loss": [
+      "self",
+      "curr_batch"
+    ],
+    "maybe_get_classifier_loss": [
+      "self",
+      "logits",
+      "labels"
+    ],
+    "maybe_get_logits": [
+      "self",
+      "embeddings"
+    ],
+    "modify_schema": [
+      "self"
+    ]
+  },
+  "aggregation_func": [
+    "x",
+    "num_per_row"
+  ],
+  "PerAnchorReducer": {
+    "__init__": [
+      "self",
+      "reducer",
+      "aggregation_func"
+    ],
+    "element_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "tuple_reduction_helper": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "pos_pair_reduction": [
+      "self"
+    ],
+    "neg_pair_reduction": [
+      "self"
+    ],
+    "triplet_reduction": [
+      "self"
+    ]
+  },
+  "SumReducer": {
+    "element_reduction": [
+      "self",
+      "losses"
+    ]
+  },
+  "ThresholdReducer": {
+    "__init__": [
+      "self",
+      "low",
+      "high"
+    ],
+    "element_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "pos_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "neg_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "triplet_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "element_reduction_helper": [
+      "self",
+      "losses",
+      "embeddings"
+    ],
+    "set_stats": [
+      "self",
+      "low_condition",
+      "high_condition",
+      "num_past_filter"
+    ]
+  },
+  "ClassWeightedReducer": {
+    "__init__": [
+      "self",
+      "weights"
+    ],
+    "element_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "pos_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "neg_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "triplet_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "element_reduction_helper": [
+      "self",
+      "losses",
+      "indices",
+      "labels"
+    ]
+  },
+  "AvgNonZeroReducer": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "BaseReducer": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "loss_dict",
+      "embeddings",
+      "labels"
+    ],
+    "unpack_loss_info": [
+      "self",
+      "loss_info"
+    ],
+    "reduce_the_loss": [
+      "self",
+      "losses",
+      "loss_indices",
+      "reduction_type",
+      "kwargs",
+      "embeddings",
+      "labels"
+    ],
+    "already_reduced_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "element_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "pos_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "neg_pair_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "triplet_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels"
+    ],
+    "get_reduction_func": [
+      "self",
+      "reduction_type"
+    ],
+    "assert_sizes": [
+      "self",
+      "losses",
+      "loss_indices",
+      "reduction_type"
+    ],
+    "zero_loss": [
+      "self",
+      "embeddings"
+    ],
+    "input_is_zero_loss": [
+      "self",
+      "losses"
+    ],
+    "assert_sizes_already_reduced": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "assert_sizes_element": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "assert_sizes_pair": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "assert_sizes_pos_pair": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "assert_sizes_neg_pair": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "assert_sizes_triplet": [
+      "self",
+      "losses",
+      "loss_indices"
+    ],
+    "set_losses_size_stat": [
+      "self",
+      "losses"
+    ]
+  },
+  "MeanReducer": {
+    "element_reduction": [
+      "self",
+      "losses"
+    ],
+    "pos_pair_reduction": [
+      "self",
+      "losses"
+    ],
+    "neg_pair_reduction": [
+      "self",
+      "losses"
+    ],
+    "triplet_reduction": [
+      "self",
+      "losses"
+    ]
+  },
+  "DoNothingReducer": {
+    "forward": [
+      "self",
+      "loss_dict",
+      "embeddings",
+      "labels"
+    ]
+  },
+  "DivisorReducer": {
+    "__init__": [
+      "self"
+    ],
+    "unpack_loss_info": [
+      "self",
+      "loss_info"
+    ],
+    "sum_and_divide": [
+      "self",
+      "losses",
+      "embeddings",
+      "divisor"
+    ],
+    "element_reduction": [
+      "self",
+      "losses",
+      "loss_indices",
+      "embeddings",
+      "labels",
+      "divisor"
+    ],
+    "pos_pair_reduction": [
+      "self"
+    ],
+    "neg_pair_reduction": [
+      "self"
+    ],
+    "triplet_reduction": [
+      "self"
+    ]
+  },
+  "MultipleReducers": {
+    "__init__": [
+      "self",
+      "reducers",
+      "default_reducer"
+    ],
+    "forward": [
+      "self",
+      "loss_dict",
+      "embeddings",
+      "labels"
+    ],
+    "sub_loss_reduction": [
+      "self",
+      "sub_losses",
+      "embeddings",
+      "labels"
+    ]
+  }
+}

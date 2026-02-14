@@ -1,0 +1,658 @@
+{
+  "logger": [],
+  "create_sqlite_bucket": [
+    "rates",
+    "db_path",
+    "table_name",
+    "use_file_lock"
+  ],
+  "create_sqlite_limiter": [
+    "rate_per_duration",
+    "duration",
+    "db_path",
+    "table_name",
+    "buffer_ms",
+    "use_file_lock"
+  ],
+  "create_inmemory_limiter": [
+    "rate_per_duration",
+    "duration",
+    "buffer_ms"
+  ],
+  "init_global_limiter": [
+    "bucket",
+    "buffer_ms"
+  ],
+  "ItemMapping": [],
+  "DecoratorWrapper": [],
+  "LockLike": {
+    "acquire": [
+      "self",
+      "blocking",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ]
+  },
+  "SingleBucketFactory": {
+    "__init__": [
+      "self",
+      "bucket",
+      "schedule_leak"
+    ],
+    "wrap_item": [
+      "self",
+      "name",
+      "weight"
+    ],
+    "get": [
+      "self",
+      "_"
+    ]
+  },
+  "combined_lock": [
+    "locks",
+    "blocking",
+    "timeout"
+  ],
+  "Limiter": {
+    "__init__": [
+      "self",
+      "argument",
+      "buffer_ms"
+    ],
+    "buckets": [
+      "self"
+    ],
+    "dispose": [
+      "self",
+      "bucket"
+    ],
+    "_init_bucket_factory": [
+      "self",
+      "argument"
+    ],
+    "_delay_waiter": [
+      "self",
+      "bucket",
+      "item",
+      "blocking",
+      "_force_async"
+    ],
+    "handle_bucket_put": [
+      "self",
+      "bucket",
+      "item",
+      "blocking",
+      "_force_async"
+    ],
+    "_get_async_lock": [
+      "self"
+    ],
+    "try_acquire": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout"
+    ],
+    "_acquire_async": [
+      "self",
+      "blocking",
+      "name",
+      "weight"
+    ],
+    "try_acquire_async": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout"
+    ],
+    "_handle_async_acquire": [
+      "self",
+      "item",
+      "blocking",
+      "_force_async"
+    ],
+    "_handle_async_bucket": [
+      "self",
+      "bucket",
+      "item",
+      "blocking",
+      "_force_async"
+    ],
+    "_handle_async_result": [
+      "self",
+      "result"
+    ],
+    "_try_acquire": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout",
+      "_force_async"
+    ],
+    "as_decorator": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "binary_search": [
+    "items",
+    "value"
+  ],
+  "validate_rate_list": [
+    "rates"
+  ],
+  "id_generator": [
+    "size"
+  ],
+  "dedicated_sqlite_clock_connection": [],
+  "AbstractClock": {
+    "now": [
+      "self"
+    ]
+  },
+  "MonotonicClock": {
+    "__init__": [
+      "self"
+    ],
+    "now": [
+      "self"
+    ]
+  },
+  "MonotonicAsyncClock": {
+    "now": [
+      "self"
+    ]
+  },
+  "PostgresClock": {
+    "__init__": [
+      "self",
+      "pool"
+    ],
+    "now": [
+      "self"
+    ]
+  },
+  "Queries": {
+    "CREATE_BUCKET_TABLE": [],
+    "CREATE_INDEX_ON_TIMESTAMP": [],
+    "COUNT_BEFORE_INSERT": [],
+    "PUT_ITEM": [],
+    "LEAK": [],
+    "COUNT_BEFORE_LEAK": [],
+    "FLUSH": [],
+    "DROP_TABLE": [],
+    "DROP_INDEX": [],
+    "COUNT_ALL": [],
+    "GET_ALL_ITEM": [],
+    "GET_FIRST_ITEM": [],
+    "GET_LAG": [],
+    "PEEK": []
+  },
+  "SQLiteBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "conn",
+      "table",
+      "lock"
+    ],
+    "now": [
+      "self"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "_build_full_count_query": [
+      "self",
+      "current_timestamp"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "close": [
+      "self"
+    ],
+    "init_from_file": [
+      "cls",
+      "rates",
+      "table",
+      "db_path",
+      "create_new_table",
+      "use_file_lock"
+    ]
+  },
+  "SQLiteClock": {
+    "time_query": [],
+    "__init__": [
+      "self",
+      "conn"
+    ],
+    "default": [
+      "cls"
+    ],
+    "now": [
+      "self"
+    ]
+  },
+  "InMemoryBucket": {
+    "__init__": [
+      "self",
+      "rates"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ]
+  },
+  "MultiprocessBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "items",
+      "mp_lock"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "init": [
+      "cls",
+      "rates"
+    ]
+  },
+  "PostgresBucket": {
+    "__init__": [
+      "self",
+      "pool",
+      "table",
+      "rates"
+    ],
+    "now": [
+      "self"
+    ],
+    "_get_conn": [
+      "self"
+    ],
+    "_create_table": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "LuaScript": {
+    "PUT_ITEM": []
+  },
+  "RedisBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "redis",
+      "bucket_key",
+      "script_hash"
+    ],
+    "now": [
+      "self"
+    ],
+    "init": [
+      "cls",
+      "rates",
+      "redis",
+      "bucket_key"
+    ],
+    "_check_and_insert": [
+      "self",
+      "item"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ]
+  },
+  "Duration": {
+    "SECOND": [],
+    "MINUTE": [],
+    "HOUR": [],
+    "DAY": [],
+    "WEEK": [],
+    "__mul__": [
+      "self",
+      "mutiplier"
+    ],
+    "__rmul__": [
+      "self",
+      "multiplier"
+    ],
+    "__add__": [
+      "self",
+      "another_duration"
+    ],
+    "__radd__": [
+      "self",
+      "another_duration"
+    ],
+    "__int__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "duration"
+    ],
+    "readable": [
+      "value"
+    ]
+  },
+  "RateItem": {
+    "__init__": [
+      "self",
+      "name",
+      "timestamp",
+      "weight"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Rate": {
+    "__init__": [
+      "self",
+      "limit",
+      "interval"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "BucketAsyncWrapper": {
+    "__init__": [
+      "self",
+      "bucket"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "count": [
+      "self"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "waiting": [
+      "self",
+      "item"
+    ],
+    "now": [
+      "self"
+    ],
+    "failing_rate": [
+      "self"
+    ],
+    "rates": [
+      "self"
+    ]
+  },
+  "AbstractBucket": {
+    "__init__": [
+      "self"
+    ],
+    "now": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "waiting": [
+      "self",
+      "item"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "Leaker": {
+    "daemon": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "leak_interval"
+    ],
+    "register": [
+      "self",
+      "bucket"
+    ],
+    "deregister": [
+      "self",
+      "bucket_id"
+    ],
+    "_leak": [
+      "self",
+      "buckets"
+    ],
+    "leak_async": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BucketFactory": {
+    "leak_interval": [
+      "self",
+      "value"
+    ],
+    "wrap_item": [
+      "self",
+      "name",
+      "weight"
+    ],
+    "get": [
+      "self",
+      "item"
+    ],
+    "create": [
+      "self",
+      "bucket_class"
+    ],
+    "schedule_leak": [
+      "self",
+      "new_bucket"
+    ],
+    "get_buckets": [
+      "self"
+    ],
+    "dispose": [
+      "self",
+      "bucket"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "RateLimitedRequestsSession": {
+    "__init__": [
+      "self",
+      "limiter",
+      "name"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "RateLimiterTransport": {
+    "__init__": [
+      "self",
+      "limiter"
+    ],
+    "handle_request": [
+      "self",
+      "request"
+    ]
+  },
+  "AsyncRateLimiterTransport": {
+    "__init__": [
+      "self",
+      "limiter"
+    ],
+    "handle_async_request": [
+      "self",
+      "request"
+    ]
+  },
+  "RateLimitedSession": {
+    "__init__": [
+      "self",
+      "limiter",
+      "name"
+    ],
+    "get": [
+      "self"
+    ],
+    "post": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ]
+  }
+}
