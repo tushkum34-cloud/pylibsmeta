@@ -173,18 +173,8 @@ def build_package(package):
 # --------------------------
 if __name__ == "__main__":
 
-    packages = [
-        "requests",
-        "rich",
-        "pydantic",
-        "fastapi",
-        "flask",
-        "django",
-        "tornado",
-        "click",
-        "typer",
-        "jinja2",
-    ]
+    with open('l.txt','r') as mm:
+        packages = mm.read().split('\n')
 
     for pkg in packages:
         try:
