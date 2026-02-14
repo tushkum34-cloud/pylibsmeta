@@ -3,12 +3,15 @@ name: Build Library Database
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 0"  # Har Sunday 3 AM UTC
+    - cron: "0 * * * *"
+
+concurrency:
+  group: lib-builder
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
@@ -27,8 +30,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run generator
-        run: |
-          python gen_libs.py
+        run: python gen_libs.py
 
       - name: Commit changes
         run: |
