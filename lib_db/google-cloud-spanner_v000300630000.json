@@ -1,0 +1,7606 @@
+{
+  "__all__": [],
+  "TransactionType": {
+    "READ_ONLY": [],
+    "PARTITIONED": [],
+    "READ_WRITE": []
+  },
+  "DatabaseSessionsManager": {
+    "_ENV_VAR_MULTIPLEXED": [],
+    "_ENV_VAR_MULTIPLEXED_PARTITIONED": [],
+    "_ENV_VAR_MULTIPLEXED_READ_WRITE": [],
+    "_MAINTENANCE_THREAD_POLLING_INTERVAL": [],
+    "_MAINTENANCE_THREAD_REFRESH_INTERVAL": [],
+    "__init__": [
+      "self",
+      "database",
+      "pool",
+      "is_experimental_host"
+    ],
+    "get_session": [
+      "self",
+      "transaction_type"
+    ],
+    "put_session": [
+      "self",
+      "session"
+    ],
+    "_get_multiplexed_session": [
+      "self"
+    ],
+    "_build_multiplexed_session": [
+      "self"
+    ],
+    "_build_maintenance_thread": [
+      "self"
+    ],
+    "_maintain_multiplexed_session": [
+      "session_manager_ref"
+    ],
+    "_use_multiplexed": [
+      "cls",
+      "transaction_type"
+    ],
+    "_getenv": [
+      "cls",
+      "env_var_name"
+    ]
+  },
+  "QUEUE_SIZE_PER_WORKER": [],
+  "MAX_PARALLELISM": [],
+  "PartitionExecutor": {
+    "__init__": [
+      "self",
+      "batch_snapshot",
+      "partition_id",
+      "merged_result_set",
+      "lazy_decode"
+    ],
+    "run": [
+      "self"
+    ],
+    "__run": [
+      "self"
+    ],
+    "_set_metadata": [
+      "self",
+      "results",
+      "is_exception"
+    ]
+  },
+  "PartitionExecutorResult": {},
+  "MergedResultSet": {
+    "__init__": [
+      "self",
+      "batch_snapshot",
+      "partition_ids",
+      "max_parallelism",
+      "lazy_decode"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "stats": [
+      "self"
+    ],
+    "decode_row": [
+      "self",
+      "row"
+    ],
+    "decode_column": [
+      "self",
+      "row",
+      "column_index"
+    ]
+  },
+  "_BACKUP_NAME_RE": [],
+  "Backup": {
+    "__init__": [
+      "self",
+      "backup_id",
+      "instance",
+      "database",
+      "expire_time",
+      "version_time",
+      "encryption_config",
+      "source_backup"
+    ],
+    "name": [
+      "self"
+    ],
+    "database": [
+      "self"
+    ],
+    "expire_time": [
+      "self"
+    ],
+    "create_time": [
+      "self"
+    ],
+    "version_time": [
+      "self"
+    ],
+    "size_bytes": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "referencing_databases": [
+      "self"
+    ],
+    "encryption_info": [
+      "self"
+    ],
+    "max_expire_time": [
+      "self"
+    ],
+    "referencing_backups": [
+      "self"
+    ],
+    "database_dialect": [
+      "self"
+    ],
+    "from_pb": [
+      "cls",
+      "backup_pb",
+      "instance"
+    ],
+    "create": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "reload": [
+      "self"
+    ],
+    "update_expire_time": [
+      "self",
+      "new_expire_time"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "StreamedResultSet": {
+    "__init__": [
+      "self",
+      "response_iterator",
+      "source",
+      "column_info",
+      "lazy_decode"
+    ],
+    "fields": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "stats": [
+      "self"
+    ],
+    "_decoders": [
+      "self"
+    ],
+    "_merge_chunk": [
+      "self",
+      "value"
+    ],
+    "_merge_values": [
+      "self",
+      "values"
+    ],
+    "_consume_next": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "decode_row": [
+      "self",
+      "row"
+    ],
+    "decode_column": [
+      "self",
+      "row",
+      "column_index"
+    ],
+    "one": [
+      "self"
+    ],
+    "one_or_none": [
+      "self"
+    ],
+    "to_dict_list": [
+      "self"
+    ]
+  },
+  "Unmergeable": {
+    "__init__": [
+      "self",
+      "lhs",
+      "rhs",
+      "type_"
+    ]
+  },
+  "_unmergeable": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "_merge_float64": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "_merge_string": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "_UNMERGEABLE_TYPES": [],
+  "_merge_array": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "_merge_struct": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "_MERGE_BY_TYPE": [],
+  "_merge_by_type": [
+    "lhs",
+    "rhs",
+    "type_"
+  ],
+  "JsonObject": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "from_str": [
+      "cls",
+      "str_repr"
+    ],
+    "serialize": [
+      "self"
+    ]
+  },
+  "Interval": {
+    "__str__": [
+      "self"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ]
+  },
+  "_proto_message": [
+    "bytes_val",
+    "proto_message_object"
+  ],
+  "_proto_enum": [
+    "int_val",
+    "proto_enum_object"
+  ],
+  "get_proto_message": [
+    "bytes_string",
+    "proto_message_object"
+  ],
+  "get_proto_enum": [
+    "int_value",
+    "proto_enum_object"
+  ],
+  "DEFAULT_RETRY_TIMEOUT_SECS": [],
+  "_BatchBase": {
+    "__init__": [
+      "self",
+      "session"
+    ],
+    "insert": [
+      "self",
+      "table",
+      "columns",
+      "values"
+    ],
+    "update": [
+      "self",
+      "table",
+      "columns",
+      "values"
+    ],
+    "insert_or_update": [
+      "self",
+      "table",
+      "columns",
+      "values"
+    ],
+    "replace": [
+      "self",
+      "table",
+      "columns",
+      "values"
+    ],
+    "delete": [
+      "self",
+      "table",
+      "keyset"
+    ]
+  },
+  "Batch": {
+    "commit": [
+      "self",
+      "return_commit_stats",
+      "request_options",
+      "max_commit_delay",
+      "exclude_txn_from_change_streams",
+      "isolation_level",
+      "read_lock_mode",
+      "timeout_secs",
+      "default_retry_delay"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "MutationGroup": {
+    "__init__": [
+      "self",
+      "session",
+      "mutations"
+    ]
+  },
+  "MutationGroups": {
+    "__init__": [
+      "self",
+      "session"
+    ],
+    "group": [
+      "self"
+    ],
+    "batch_write": [
+      "self",
+      "request_options",
+      "exclude_txn_from_change_streams"
+    ]
+  },
+  "_make_write_pb": [
+    "table",
+    "columns",
+    "values"
+  ],
+  "_EXISTS_TEMPLATE": [],
+  "_GET_SCHEMA_TEMPLATE": [],
+  "Table": {
+    "__init__": [
+      "self",
+      "table_id",
+      "database",
+      "schema_name"
+    ],
+    "schema_name": [
+      "self"
+    ],
+    "table_id": [
+      "self"
+    ],
+    "qualified_table_name": [
+      "self"
+    ],
+    "_quote_identifier": [
+      "self",
+      "identifier"
+    ],
+    "exists": [
+      "self"
+    ],
+    "_exists": [
+      "self",
+      "snapshot"
+    ],
+    "schema": [
+      "self"
+    ],
+    "_get_schema": [
+      "self",
+      "snapshot"
+    ],
+    "reload": [
+      "self"
+    ]
+  },
+  "SPANNER_DATA_SCOPE": [],
+  "_DATABASE_NAME_RE": [],
+  "_DATABASE_METADATA_FILTER": [],
+  "_LIST_TABLES_QUERY": [],
+  "DEFAULT_RETRY_BACKOFF": [],
+  "Database": {
+    "__transport_lock": [],
+    "__transports_to_channel_id": [],
+    "__init__": [
+      "self",
+      "database_id",
+      "instance",
+      "ddl_statements",
+      "pool",
+      "logger",
+      "encryption_config",
+      "database_dialect",
+      "database_role",
+      "enable_drop_protection",
+      "proto_descriptors"
+    ],
+    "from_pb": [
+      "cls",
+      "database_pb",
+      "instance",
+      "pool"
+    ],
+    "name": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "create_time": [
+      "self"
+    ],
+    "restore_info": [
+      "self"
+    ],
+    "version_retention_period": [
+      "self"
+    ],
+    "earliest_version_time": [
+      "self"
+    ],
+    "encryption_config": [
+      "self"
+    ],
+    "encryption_info": [
+      "self"
+    ],
+    "default_leader": [
+      "self"
+    ],
+    "ddl_statements": [
+      "self"
+    ],
+    "database_dialect": [
+      "self"
+    ],
+    "default_schema_name": [
+      "self"
+    ],
+    "database_role": [
+      "self"
+    ],
+    "reconciling": [
+      "self"
+    ],
+    "enable_drop_protection": [
+      "self",
+      "value"
+    ],
+    "proto_descriptors": [
+      "self"
+    ],
+    "logger": [
+      "self"
+    ],
+    "spanner_api": [
+      "self"
+    ],
+    "metadata_with_request_id": [
+      "self",
+      "nth_request",
+      "nth_attempt",
+      "prior_metadata",
+      "span"
+    ],
+    "metadata_and_request_id": [
+      "self",
+      "nth_request",
+      "nth_attempt",
+      "prior_metadata",
+      "span"
+    ],
+    "with_error_augmentation": [
+      "self",
+      "nth_request",
+      "nth_attempt",
+      "prior_metadata",
+      "span"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "create": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "reload": [
+      "self"
+    ],
+    "update_ddl": [
+      "self",
+      "ddl_statements",
+      "operation_id",
+      "proto_descriptors"
+    ],
+    "update": [
+      "self",
+      "fields"
+    ],
+    "drop": [
+      "self"
+    ],
+    "execute_partitioned_dml": [
+      "self",
+      "dml",
+      "params",
+      "param_types",
+      "query_options",
+      "request_options",
+      "exclude_txn_from_change_streams"
+    ],
+    "_next_nth_request": [
+      "self"
+    ],
+    "_nth_client_id": [
+      "self"
+    ],
+    "session": [
+      "self",
+      "labels",
+      "database_role"
+    ],
+    "snapshot": [
+      "self"
+    ],
+    "batch": [
+      "self",
+      "request_options",
+      "max_commit_delay",
+      "exclude_txn_from_change_streams",
+      "isolation_level",
+      "read_lock_mode"
+    ],
+    "mutation_groups": [
+      "self"
+    ],
+    "batch_snapshot": [
+      "self",
+      "read_timestamp",
+      "exact_staleness",
+      "session_id",
+      "transaction_id"
+    ],
+    "run_in_transaction": [
+      "self",
+      "func"
+    ],
+    "restore": [
+      "self",
+      "source"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "is_optimized": [
+      "self"
+    ],
+    "list_database_operations": [
+      "self",
+      "filter_",
+      "page_size"
+    ],
+    "list_database_roles": [
+      "self",
+      "page_size"
+    ],
+    "table": [
+      "self",
+      "table_id"
+    ],
+    "list_tables": [
+      "self",
+      "schema"
+    ],
+    "get_iam_policy": [
+      "self",
+      "policy_version"
+    ],
+    "set_iam_policy": [
+      "self",
+      "policy"
+    ],
+    "observability_options": [
+      "self"
+    ],
+    "sessions_manager": [
+      "self"
+    ]
+  },
+  "BatchCheckout": {
+    "__init__": [
+      "self",
+      "database",
+      "request_options",
+      "max_commit_delay",
+      "exclude_txn_from_change_streams",
+      "isolation_level",
+      "read_lock_mode"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "MutationGroupsCheckout": {
+    "__init__": [
+      "self",
+      "database"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "SnapshotCheckout": {
+    "__init__": [
+      "self",
+      "database"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "BatchSnapshot": {
+    "__init__": [
+      "self",
+      "database",
+      "read_timestamp",
+      "exact_staleness",
+      "session_id",
+      "transaction_id"
+    ],
+    "from_dict": [
+      "cls",
+      "database",
+      "mapping"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "observability_options": [
+      "self"
+    ],
+    "_get_session": [
+      "self"
+    ],
+    "_get_snapshot": [
+      "self"
+    ],
+    "get_batch_transaction_id": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "execute_sql": [
+      "self"
+    ],
+    "generate_read_batches": [
+      "self",
+      "table",
+      "columns",
+      "keyset",
+      "index",
+      "partition_size_bytes",
+      "max_partitions",
+      "data_boost_enabled",
+      "directed_read_options"
+    ],
+    "process_read_batch": [
+      "self",
+      "batch"
+    ],
+    "generate_query_batches": [
+      "self",
+      "sql",
+      "params",
+      "param_types",
+      "partition_size_bytes",
+      "max_partitions",
+      "query_options",
+      "data_boost_enabled",
+      "directed_read_options"
+    ],
+    "process_query_batch": [
+      "self",
+      "batch"
+    ],
+    "run_partitioned_query": [
+      "self",
+      "sql",
+      "params",
+      "param_types",
+      "partition_size_bytes",
+      "max_partitions",
+      "query_options",
+      "data_boost_enabled",
+      "lazy_decode"
+    ],
+    "process": [
+      "self",
+      "batch"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_check_ddl_statements": [
+    "value"
+  ],
+  "_retry_on_aborted": [
+    "func",
+    "retry_config"
+  ],
+  "REQ_ID_VERSION": [],
+  "REQ_ID_HEADER_KEY": [],
+  "generate_rand_uint64": [],
+  "REQ_RAND_PROCESS_ID": [],
+  "X_GOOG_SPANNER_REQUEST_ID_SPAN_ATTR": [],
+  "with_request_id": [
+    "client_id",
+    "channel_id",
+    "nth_request",
+    "attempt",
+    "other_metadata",
+    "span"
+  ],
+  "with_request_id_metadata_only": [
+    "client_id",
+    "channel_id",
+    "nth_request",
+    "attempt",
+    "other_metadata",
+    "span"
+  ],
+  "build_request_id": [
+    "client_id",
+    "channel_id",
+    "nth_request",
+    "attempt"
+  ],
+  "parse_request_id": [
+    "request_id_str"
+  ],
+  "_NOW": [],
+  "AbstractSessionPool": {
+    "_database": [],
+    "__init__": [
+      "self",
+      "labels",
+      "database_role"
+    ],
+    "labels": [
+      "self"
+    ],
+    "database_role": [
+      "self"
+    ],
+    "bind": [
+      "self",
+      "database"
+    ],
+    "get": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "session"
+    ],
+    "clear": [
+      "self"
+    ],
+    "_new_session": [
+      "self"
+    ],
+    "session": [
+      "self"
+    ]
+  },
+  "FixedSizePool": {
+    "DEFAULT_SIZE": [],
+    "DEFAULT_TIMEOUT": [],
+    "DEFAULT_MAX_AGE_MINUTES": [],
+    "__init__": [
+      "self",
+      "size",
+      "default_timeout",
+      "labels",
+      "database_role",
+      "max_age_minutes"
+    ],
+    "bind": [
+      "self",
+      "database"
+    ],
+    "get": [
+      "self",
+      "timeout"
+    ],
+    "put": [
+      "self",
+      "session"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "BurstyPool": {
+    "__init__": [
+      "self",
+      "target_size",
+      "labels",
+      "database_role"
+    ],
+    "bind": [
+      "self",
+      "database"
+    ],
+    "get": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "session"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "PingingPool": {
+    "__init__": [
+      "self",
+      "size",
+      "default_timeout",
+      "ping_interval",
+      "labels",
+      "database_role"
+    ],
+    "bind": [
+      "self",
+      "database"
+    ],
+    "get": [
+      "self",
+      "timeout"
+    ],
+    "put": [
+      "self",
+      "session"
+    ],
+    "clear": [
+      "self"
+    ],
+    "ping": [
+      "self"
+    ]
+  },
+  "TransactionPingingPool": {
+    "__init__": [
+      "self",
+      "size",
+      "default_timeout",
+      "ping_interval",
+      "labels",
+      "database_role"
+    ],
+    "bind": [
+      "self",
+      "database"
+    ],
+    "put": [
+      "self",
+      "session"
+    ],
+    "begin_pending_transactions": [
+      "self"
+    ]
+  },
+  "SessionCheckout": {
+    "_session": [],
+    "__init__": [
+      "self",
+      "pool"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "_INSTANCE_NAME_RE": [],
+  "DEFAULT_NODE_COUNT": [],
+  "PROCESSING_UNITS_PER_NODE": [],
+  "_OPERATION_METADATA_TYPES": [],
+  "_OPERATION_RESPONSE_TYPES": [],
+  "_type_string_to_type_pb": [
+    "type_string"
+  ],
+  "Instance": {
+    "__init__": [
+      "self",
+      "instance_id",
+      "client",
+      "configuration_name",
+      "node_count",
+      "display_name",
+      "emulator_host",
+      "labels",
+      "processing_units",
+      "experimental_host"
+    ],
+    "_update_from_pb": [
+      "self",
+      "instance_pb"
+    ],
+    "from_pb": [
+      "cls",
+      "instance_pb",
+      "client"
+    ],
+    "name": [
+      "self"
+    ],
+    "processing_units": [
+      "self",
+      "value"
+    ],
+    "node_count": [
+      "self",
+      "value"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "copy": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "reload": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "database": [
+      "self",
+      "database_id",
+      "ddl_statements",
+      "pool",
+      "logger",
+      "encryption_config",
+      "database_dialect",
+      "database_role",
+      "enable_drop_protection",
+      "enable_interceptors_in_tests",
+      "proto_descriptors"
+    ],
+    "list_databases": [
+      "self",
+      "page_size"
+    ],
+    "backup": [
+      "self",
+      "backup_id",
+      "database",
+      "expire_time",
+      "version_time",
+      "encryption_config"
+    ],
+    "copy_backup": [
+      "self",
+      "backup_id",
+      "source_backup",
+      "expire_time",
+      "encryption_config"
+    ],
+    "list_backups": [
+      "self",
+      "filter_",
+      "page_size"
+    ],
+    "list_backup_operations": [
+      "self",
+      "filter_",
+      "page_size"
+    ],
+    "list_database_operations": [
+      "self",
+      "filter_",
+      "page_size"
+    ],
+    "_item_to_operation": [
+      "self",
+      "operation_pb"
+    ]
+  },
+  "TRACER_NAME": [],
+  "TRACER_VERSION": [],
+  "GCP_RESOURCE_NAME_PREFIX": [],
+  "extended_tracing_globally_disabled": [],
+  "end_to_end_tracing_globally_enabled": [],
+  "get_tracer": [
+    "tracer_provider"
+  ],
+  "trace_call": [
+    "name",
+    "session",
+    "extra_attributes",
+    "observability_options",
+    "metadata"
+  ],
+  "get_current_span": [],
+  "add_span_event": [
+    "span",
+    "event_name",
+    "event_attributes"
+  ],
+  "COMMIT_TIMESTAMP": [],
+  "_CLIENT_INFO": [],
+  "EMULATOR_ENV_VAR": [],
+  "SPANNER_DISABLE_BUILTIN_METRICS_ENV_VAR": [],
+  "_EMULATOR_HOST_HTTP_SCHEME": [],
+  "SPANNER_ADMIN_SCOPE": [],
+  "OPTIMIZER_VERSION_ENV_VAR": [],
+  "OPTIMIZER_STATISITCS_PACKAGE_ENV_VAR": [],
+  "_get_spanner_emulator_host": [],
+  "_get_spanner_optimizer_version": [],
+  "_get_spanner_optimizer_statistics_package": [],
+  "log": [],
+  "_metrics_monitor_initialized": [],
+  "_metrics_monitor_lock": [],
+  "_get_spanner_enable_builtin_metrics_env": [],
+  "_initialize_metrics": [
+    "project",
+    "credentials"
+  ],
+  "Client": {
+    "_instance_admin_api": [],
+    "_database_admin_api": [],
+    "_SET_PROJECT": [],
+    "SCOPE": [],
+    "NTH_CLIENT": [],
+    "__init__": [
+      "self",
+      "project",
+      "credentials",
+      "client_info",
+      "client_options",
+      "query_options",
+      "route_to_leader_enabled",
+      "directed_read_options",
+      "observability_options",
+      "default_transaction_options",
+      "experimental_host",
+      "disable_builtin_metrics"
+    ],
+    "_next_nth_request": [
+      "self"
+    ],
+    "credentials": [
+      "self"
+    ],
+    "project_name": [
+      "self"
+    ],
+    "instance_admin_api": [
+      "self"
+    ],
+    "database_admin_api": [
+      "self"
+    ],
+    "route_to_leader_enabled": [
+      "self"
+    ],
+    "observability_options": [
+      "self"
+    ],
+    "default_transaction_options": [
+      "self",
+      "default_transaction_options"
+    ],
+    "directed_read_options": [
+      "self",
+      "directed_read_options"
+    ],
+    "copy": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self",
+      "page_size"
+    ],
+    "instance": [
+      "self",
+      "instance_id",
+      "configuration_name",
+      "display_name",
+      "node_count",
+      "labels",
+      "processing_units"
+    ],
+    "list_instances": [
+      "self",
+      "filter_",
+      "page_size"
+    ]
+  },
+  "_STREAM_RESUMPTION_INTERNAL_ERROR_MESSAGES": [],
+  "_restart_on_unavailable": [
+    "method",
+    "request",
+    "metadata",
+    "trace_name",
+    "session",
+    "attributes",
+    "transaction",
+    "transaction_selector",
+    "observability_options",
+    "request_id_manager"
+  ],
+  "_SnapshotBase": {
+    "__init__": [
+      "self",
+      "session"
+    ],
+    "begin": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "table",
+      "columns",
+      "keyset",
+      "index",
+      "limit",
+      "partition",
+      "request_options",
+      "data_boost_enabled",
+      "directed_read_options"
+    ],
+    "execute_sql": [
+      "self",
+      "sql",
+      "params",
+      "param_types",
+      "query_mode",
+      "query_options",
+      "request_options",
+      "last_statement",
+      "partition",
+      "retry",
+      "timeout",
+      "data_boost_enabled",
+      "directed_read_options",
+      "column_info",
+      "lazy_decode"
+    ],
+    "_get_streamed_result_set": [
+      "self",
+      "method",
+      "request",
+      "metadata",
+      "trace_attributes",
+      "column_info",
+      "lazy_decode"
+    ],
+    "partition_read": [
+      "self",
+      "table",
+      "columns",
+      "keyset",
+      "index",
+      "partition_size_bytes",
+      "max_partitions"
+    ],
+    "partition_query": [
+      "self",
+      "sql",
+      "params",
+      "param_types",
+      "partition_size_bytes",
+      "max_partitions"
+    ],
+    "_begin_transaction": [
+      "self",
+      "mutation",
+      "transaction_tag"
+    ],
+    "_build_transaction_options_pb": [
+      "self"
+    ],
+    "_build_transaction_selector_pb": [
+      "self"
+    ],
+    "_update_for_result_set_pb": [
+      "self",
+      "result_set_pb"
+    ],
+    "_update_for_transaction_pb": [
+      "self",
+      "transaction_pb"
+    ],
+    "_update_for_precommit_token_pb": [
+      "self",
+      "precommit_token_pb"
+    ],
+    "_update_for_precommit_token_pb_unsafe": [
+      "self",
+      "precommit_token_pb"
+    ]
+  },
+  "Snapshot": {
+    "__init__": [
+      "self",
+      "session",
+      "read_timestamp",
+      "min_read_timestamp",
+      "max_staleness",
+      "exact_staleness",
+      "multi_use",
+      "transaction_id"
+    ],
+    "_build_transaction_options_pb": [
+      "self"
+    ],
+    "_update_for_transaction_pb": [
+      "self",
+      "transaction_pb"
+    ]
+  },
+  "wrap_with_request_id": [
+    "error",
+    "request_id"
+  ],
+  "KeyRange": {
+    "__init__": [
+      "self",
+      "start_open",
+      "start_closed",
+      "end_open",
+      "end_closed"
+    ],
+    "_to_pb": [
+      "self"
+    ],
+    "_to_dict": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "KeySet": {
+    "__init__": [
+      "self",
+      "keys",
+      "ranges",
+      "all_"
+    ],
+    "_to_pb": [
+      "self"
+    ],
+    "_to_dict": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "_from_dict": [
+      "cls",
+      "mapping"
+    ]
+  },
+  "Session": {
+    "__init__": [
+      "self",
+      "database",
+      "labels",
+      "database_role",
+      "is_multiplexed"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "session_id": [
+      "self"
+    ],
+    "is_multiplexed": [
+      "self"
+    ],
+    "last_use_time": [
+      "self"
+    ],
+    "database_role": [
+      "self"
+    ],
+    "labels": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "ping": [
+      "self"
+    ],
+    "snapshot": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "table",
+      "columns",
+      "keyset",
+      "index",
+      "limit",
+      "column_info"
+    ],
+    "execute_sql": [
+      "self",
+      "sql",
+      "params",
+      "param_types",
+      "query_mode",
+      "query_options",
+      "request_options",
+      "retry",
+      "timeout",
+      "column_info"
+    ],
+    "batch": [
+      "self"
+    ],
+    "transaction": [
+      "self"
+    ],
+    "run_in_transaction": [
+      "self",
+      "func"
+    ]
+  },
+  "NUMERIC_MAX_SCALE_ERR_MSG": [],
+  "NUMERIC_MAX_PRECISION_ERR_MSG": [],
+  "GOOGLE_CLOUD_REGION_GLOBAL": [],
+  "_get_cloud_region": [],
+  "_try_to_coerce_bytes": [
+    "bytestring"
+  ],
+  "_merge_query_options": [
+    "base",
+    "merge"
+  ],
+  "_assert_numeric_precision_and_scale": [
+    "value"
+  ],
+  "_datetime_to_rfc3339": [
+    "value"
+  ],
+  "_datetime_to_rfc3339_nanoseconds": [
+    "value"
+  ],
+  "_make_value_pb": [
+    "value"
+  ],
+  "_make_list_value_pb": [
+    "values"
+  ],
+  "_make_list_value_pbs": [
+    "values"
+  ],
+  "_parse_value_pb": [
+    "value_pb",
+    "field_type",
+    "field_name",
+    "column_info"
+  ],
+  "_get_type_decoder": [
+    "field_type",
+    "field_name",
+    "column_info"
+  ],
+  "_parse_list_value_pbs": [
+    "rows",
+    "row_type"
+  ],
+  "_parse_string": [
+    "value_pb"
+  ],
+  "_parse_bytes": [
+    "value_pb"
+  ],
+  "_parse_bool": [
+    "value_pb"
+  ],
+  "_parse_int64": [
+    "value_pb"
+  ],
+  "_parse_float": [
+    "value_pb"
+  ],
+  "_parse_date": [
+    "value_pb"
+  ],
+  "_parse_timestamp": [
+    "value_pb"
+  ],
+  "_parse_numeric": [
+    "value_pb"
+  ],
+  "_parse_json": [
+    "value_pb"
+  ],
+  "_parse_uuid": [
+    "value_pb"
+  ],
+  "_parse_proto": [
+    "value_pb",
+    "column_info",
+    "field_name"
+  ],
+  "_parse_proto_enum": [
+    "value_pb",
+    "column_info",
+    "field_name"
+  ],
+  "_parse_array": [
+    "value_pb",
+    "element_decoder"
+  ],
+  "_parse_struct": [
+    "value_pb",
+    "element_decoders"
+  ],
+  "_parse_nullable": [
+    "value_pb",
+    "decoder"
+  ],
+  "_parse_interval": [
+    "value_pb"
+  ],
+  "_SessionWrapper": {
+    "__init__": [
+      "self",
+      "session"
+    ]
+  },
+  "_metadata_with_prefix": [
+    "prefix"
+  ],
+  "_retry_on_aborted_exception": [
+    "func",
+    "deadline",
+    "default_retry_delay"
+  ],
+  "_retry": [
+    "func",
+    "retry_count",
+    "delay",
+    "allowed_exceptions",
+    "before_next_retry"
+  ],
+  "_check_rst_stream_error": [
+    "exc"
+  ],
+  "_metadata_with_leader_aware_routing": [
+    "value"
+  ],
+  "_metadata_with_span_context": [
+    "metadata"
+  ],
+  "_delay_until_retry": [
+    "exc",
+    "deadline",
+    "attempts",
+    "default_retry_delay"
+  ],
+  "_get_retry_delay": [
+    "cause",
+    "attempts",
+    "default_retry_delay"
+  ],
+  "AtomicCounter": {
+    "__init__": [
+      "self",
+      "start_value"
+    ],
+    "value": [
+      "self"
+    ],
+    "increment": [
+      "self",
+      "n"
+    ],
+    "__iadd__": [
+      "self",
+      "n"
+    ],
+    "__add__": [
+      "self",
+      "n"
+    ],
+    "__radd__": [
+      "self",
+      "n"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_metadata_with_request_id": [],
+  "_metadata_with_request_id_and_req_id": [],
+  "_augment_error_with_request_id": [
+    "error",
+    "request_id"
+  ],
+  "_augment_errors_with_request_id": [
+    "request_id"
+  ],
+  "_merge_Transaction_Options": [
+    "defaultTransactionOptions",
+    "mergeTransactionOptions"
+  ],
+  "__version__": [],
+  "Transaction": {
+    "__init__": [
+      "self",
+      "session"
+    ],
+    "_build_transaction_options_pb": [
+      "self"
+    ],
+    "_execute_request": [
+      "self",
+      "method",
+      "request",
+      "metadata",
+      "trace_name",
+      "attributes"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "commit": [
+      "self",
+      "return_commit_stats",
+      "request_options",
+      "max_commit_delay"
+    ],
+    "_make_params_pb": [
+      "params",
+      "param_types"
+    ],
+    "execute_update": [
+      "self",
+      "dml",
+      "params",
+      "param_types",
+      "query_mode",
+      "query_options",
+      "request_options",
+      "last_statement"
+    ],
+    "batch_update": [
+      "self",
+      "statements",
+      "request_options",
+      "last_statement"
+    ],
+    "_begin_transaction": [
+      "self",
+      "mutation"
+    ],
+    "_begin_mutations_only_transaction": [
+      "self"
+    ],
+    "_get_mutation_for_begin_mutations_only_transaction": [
+      "self"
+    ],
+    "_update_for_execute_batch_dml_response_pb": [
+      "self",
+      "response_pb"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "BatchTransactionId": {},
+  "DefaultTransactionOptions": {
+    "__post_init__": [
+      "self"
+    ],
+    "default_read_write_transaction_options": [
+      "self"
+    ]
+  },
+  "STRING": [],
+  "BYTES": [],
+  "BOOL": [],
+  "INT64": [],
+  "FLOAT64": [],
+  "FLOAT32": [],
+  "DATE": [],
+  "TIMESTAMP": [],
+  "NUMERIC": [],
+  "JSON": [],
+  "UUID": [],
+  "PG_NUMERIC": [],
+  "PG_JSONB": [],
+  "PG_OID": [],
+  "INTERVAL": [],
+  "Array": [
+    "element_type"
+  ],
+  "StructField": [
+    "name",
+    "field_type"
+  ],
+  "Struct": [
+    "fields"
+  ],
+  "ProtoMessage": [
+    "proto_message_object"
+  ],
+  "ProtoEnum": [
+    "proto_enum_object"
+  ],
+  "MethodCountInterceptor": {
+    "__init__": [
+      "self"
+    ],
+    "intercept": [
+      "self",
+      "method",
+      "request_or_iterator",
+      "call_details"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "MethodAbortInterceptor": {
+    "__init__": [
+      "self"
+    ],
+    "intercept": [
+      "self",
+      "method",
+      "request_or_iterator",
+      "call_details"
+    ],
+    "set_method_to_abort": [
+      "self",
+      "method_to_abort",
+      "connection",
+      "max_raise_count"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "X_GOOG_REQUEST_ID": [],
+  "XGoogRequestIDHeaderInterceptor": {
+    "__init__": [
+      "self"
+    ],
+    "intercept": [
+      "self",
+      "method",
+      "request_or_iterator",
+      "call_details"
+    ],
+    "unary_request_ids": [
+      "self"
+    ],
+    "stream_request_ids": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "GRPC_GENERATED_VERSION": [],
+  "GRPC_VERSION": [],
+  "_version_not_supported": [],
+  "DatabaseAdminServicer": {
+    "ListDatabases": [
+      "self",
+      "request",
+      "context"
+    ],
+    "CreateDatabase": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetDatabase": [
+      "self",
+      "request",
+      "context"
+    ],
+    "UpdateDatabase": [
+      "self",
+      "request",
+      "context"
+    ],
+    "UpdateDatabaseDdl": [
+      "self",
+      "request",
+      "context"
+    ],
+    "DropDatabase": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetDatabaseDdl": [
+      "self",
+      "request",
+      "context"
+    ],
+    "SetIamPolicy": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetIamPolicy": [
+      "self",
+      "request",
+      "context"
+    ],
+    "TestIamPermissions": [
+      "self",
+      "request",
+      "context"
+    ],
+    "CreateBackup": [
+      "self",
+      "request",
+      "context"
+    ],
+    "CopyBackup": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetBackup": [
+      "self",
+      "request",
+      "context"
+    ],
+    "UpdateBackup": [
+      "self",
+      "request",
+      "context"
+    ],
+    "DeleteBackup": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListBackups": [
+      "self",
+      "request",
+      "context"
+    ],
+    "RestoreDatabase": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListDatabaseOperations": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListBackupOperations": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListDatabaseRoles": [
+      "self",
+      "request",
+      "context"
+    ],
+    "CreateBackupSchedule": [
+      "self",
+      "request",
+      "context"
+    ],
+    "GetBackupSchedule": [
+      "self",
+      "request",
+      "context"
+    ],
+    "UpdateBackupSchedule": [
+      "self",
+      "request",
+      "context"
+    ],
+    "DeleteBackupSchedule": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListBackupSchedules": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "add_DatabaseAdminServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "DatabaseAdmin": {
+    "ListDatabases": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "CreateDatabase": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetDatabase": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "UpdateDatabase": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "UpdateDatabaseDdl": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "DropDatabase": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetDatabaseDdl": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "SetIamPolicy": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetIamPolicy": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "TestIamPermissions": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "CreateBackup": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "CopyBackup": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetBackup": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "UpdateBackup": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "DeleteBackup": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListBackups": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "RestoreDatabase": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListDatabaseOperations": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListBackupOperations": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListDatabaseRoles": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "CreateBackupSchedule": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetBackupSchedule": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "UpdateBackupSchedule": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "DeleteBackupSchedule": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListBackupSchedules": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "MockSpanner": {
+    "__init__": [
+      "self"
+    ],
+    "add_result": [
+      "self",
+      "sql",
+      "result"
+    ],
+    "add_execute_streaming_sql_results": [
+      "self",
+      "sql",
+      "partial_result_sets"
+    ],
+    "get_result": [
+      "self",
+      "sql"
+    ],
+    "add_error": [
+      "self",
+      "method",
+      "error"
+    ],
+    "pop_error": [
+      "self",
+      "context"
+    ],
+    "get_execute_streaming_sql_results": [
+      "self",
+      "sql",
+      "started_transaction"
+    ],
+    "get_result_as_partial_result_sets": [
+      "self",
+      "sql"
+    ]
+  },
+  "SpannerServicer": {
+    "__init__": [
+      "self"
+    ],
+    "mock_spanner": [
+      "self"
+    ],
+    "requests": [
+      "self"
+    ],
+    "clear_requests": [
+      "self"
+    ],
+    "CreateSession": [
+      "self",
+      "request",
+      "context"
+    ],
+    "BatchCreateSessions": [
+      "self",
+      "request",
+      "context"
+    ],
+    "__create_session": [
+      "self",
+      "database",
+      "session_template"
+    ],
+    "GetSession": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ListSessions": [
+      "self",
+      "request",
+      "context"
+    ],
+    "DeleteSession": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ExecuteSql": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ExecuteStreamingSql": [
+      "self",
+      "request",
+      "context"
+    ],
+    "ExecuteBatchDml": [
+      "self",
+      "request",
+      "context"
+    ],
+    "Read": [
+      "self",
+      "request",
+      "context"
+    ],
+    "StreamingRead": [
+      "self",
+      "request",
+      "context"
+    ],
+    "BeginTransaction": [
+      "self",
+      "request",
+      "context"
+    ],
+    "__maybe_create_transaction": [
+      "self",
+      "request"
+    ],
+    "__create_transaction": [
+      "self",
+      "session",
+      "options"
+    ],
+    "Commit": [
+      "self",
+      "request",
+      "context"
+    ],
+    "Rollback": [
+      "self",
+      "request",
+      "context"
+    ],
+    "PartitionQuery": [
+      "self",
+      "request",
+      "context"
+    ],
+    "PartitionRead": [
+      "self",
+      "request",
+      "context"
+    ],
+    "BatchWrite": [
+      "self",
+      "request",
+      "context"
+    ]
+  },
+  "start_mock_server": [],
+  "TestDatabase": {
+    "_interceptors": [],
+    "__init__": [
+      "self",
+      "database_id",
+      "instance",
+      "ddl_statements",
+      "pool",
+      "logger",
+      "encryption_config",
+      "database_dialect",
+      "database_role",
+      "enable_drop_protection"
+    ],
+    "spanner_api": [
+      "self"
+    ],
+    "_create_spanner_client_for_tests": [
+      "self",
+      "client_options",
+      "credentials"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "add_SpannerServicer_to_server": [
+    "servicer",
+    "server"
+  ],
+  "Spanner": {
+    "CreateSession": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "BatchCreateSessions": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "GetSession": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ListSessions": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "DeleteSession": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ExecuteSql": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ExecuteStreamingSql": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "ExecuteBatchDml": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "Read": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "StreamingRead": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "BeginTransaction": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "Commit": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "Rollback": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "PartitionQuery": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "PartitionRead": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ],
+    "BatchWrite": [
+      "request",
+      "target",
+      "options",
+      "channel_credentials",
+      "call_credentials",
+      "insecure",
+      "compression",
+      "wait_for_ready",
+      "timeout",
+      "metadata"
+    ]
+  },
+  "MetricsCapture": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ]
+  },
+  "logger": [],
+  "MAX_BATCH_WRITE": [],
+  "MILLIS_PER_SECOND": [],
+  "_USER_AGENT": [],
+  "_OPTIONS": [],
+  "CloudMonitoringMetricsExporter": {
+    "__init__": [
+      "self",
+      "project_id",
+      "client",
+      "credentials"
+    ],
+    "_batch_write": [
+      "self",
+      "series",
+      "timeout_millis"
+    ],
+    "_resource_to_monitored_resource_pb": [
+      "resource",
+      "labels"
+    ],
+    "_to_metric_kind": [
+      "metric"
+    ],
+    "_extract_metric_labels": [
+      "data_point"
+    ],
+    "_to_point": [
+      "kind",
+      "data_point"
+    ],
+    "_data_point_to_timeseries_pb": [
+      "data_point",
+      "metric",
+      "monitored_resource",
+      "labels"
+    ],
+    "_resource_metrics_to_timeseries_pb": [
+      "metrics_data"
+    ],
+    "export": [
+      "self",
+      "metrics_data",
+      "timeout_millis"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ],
+    "shutdown": [
+      "self",
+      "timeout_millis"
+    ]
+  },
+  "_timestamp_from_nanos": [
+    "nanos"
+  ],
+  "_normalize_label_key": [
+    "key"
+  ],
+  "SpannerMetricsTracerFactory": {
+    "_current_metrics_tracer_ctx": [],
+    "__new__": [
+      "cls",
+      "enabled",
+      "gfe_enabled"
+    ],
+    "get_current_tracer": [],
+    "set_current_tracer": [
+      "tracer"
+    ],
+    "reset_current_tracer": [
+      "token"
+    ],
+    "_generate_client_uid": [],
+    "_get_instance_config": [],
+    "_get_client_name": [],
+    "_generate_client_hash": [
+      "client_uid"
+    ]
+  },
+  "MetricAttemptTracer": {
+    "__init__": [
+      "self"
+    ],
+    "start_time": [
+      "self"
+    ]
+  },
+  "MetricOpTracer": {
+    "__init__": [
+      "self",
+      "is_direct_path_enabled"
+    ],
+    "attempt_count": [
+      "self"
+    ],
+    "current_attempt": [
+      "self"
+    ],
+    "start_time": [
+      "self"
+    ],
+    "increment_attempt_count": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "new_attempt": [
+      "self"
+    ]
+  },
+  "MetricsTracer": {
+    "__init__": [
+      "self",
+      "enabled",
+      "instrument_attempt_latency",
+      "instrument_attempt_counter",
+      "instrument_operation_latency",
+      "instrument_operation_counter",
+      "client_attributes",
+      "gfe_enabled"
+    ],
+    "_get_ms_time_diff": [
+      "start",
+      "end"
+    ],
+    "client_attributes": [
+      "self"
+    ],
+    "instrument_attempt_counter": [
+      "self"
+    ],
+    "instrument_attempt_latency": [
+      "self"
+    ],
+    "instrument_operation_counter": [
+      "self"
+    ],
+    "instrument_operation_latency": [
+      "self"
+    ],
+    "record_attempt_start": [
+      "self"
+    ],
+    "record_attempt_completion": [
+      "self",
+      "status"
+    ],
+    "record_operation_start": [
+      "self"
+    ],
+    "record_operation_completion": [
+      "self"
+    ],
+    "record_gfe_latency": [
+      "self",
+      "latency"
+    ],
+    "record_gfe_missing_header_count": [
+      "self"
+    ],
+    "_create_operation_otel_attributes": [
+      "self"
+    ],
+    "_create_attempt_otel_attributes": [
+      "self"
+    ],
+    "set_project": [
+      "self",
+      "project"
+    ],
+    "set_instance": [
+      "self",
+      "instance"
+    ],
+    "set_instance_config": [
+      "self",
+      "instance_config"
+    ],
+    "set_location": [
+      "self",
+      "location"
+    ],
+    "set_client_hash": [
+      "self",
+      "hash"
+    ],
+    "set_client_uid": [
+      "self",
+      "client_uid"
+    ],
+    "set_client_name": [
+      "self",
+      "client_name"
+    ],
+    "set_database": [
+      "self",
+      "database"
+    ],
+    "set_method": [
+      "self",
+      "method"
+    ],
+    "enable_direct_path": [
+      "self",
+      "enable"
+    ]
+  },
+  "MetricsInterceptor": {
+    "_parse_resource_path": [
+      "path"
+    ],
+    "_extract_resource_from_path": [
+      "metadata"
+    ],
+    "_remove_prefix": [
+      "s",
+      "prefix"
+    ],
+    "_set_metrics_tracer_attributes": [
+      "self",
+      "resources"
+    ],
+    "intercept": [
+      "self",
+      "invoked_method",
+      "request_or_iterator",
+      "call_details"
+    ]
+  },
+  "MetricsTracerFactory": {
+    "instrument_attempt_latency": [
+      "self"
+    ],
+    "instrument_attempt_counter": [
+      "self"
+    ],
+    "instrument_operation_latency": [
+      "self"
+    ],
+    "instrument_operation_counter": [
+      "self"
+    ],
+    "__init__": [
+      "self",
+      "enabled",
+      "service_name"
+    ],
+    "client_attributes": [
+      "self"
+    ],
+    "set_project": [
+      "self",
+      "project"
+    ],
+    "set_instance": [
+      "self",
+      "instance"
+    ],
+    "set_instance_config": [
+      "self",
+      "instance_config"
+    ],
+    "set_location": [
+      "self",
+      "location"
+    ],
+    "set_client_hash": [
+      "self",
+      "hash"
+    ],
+    "set_client_uid": [
+      "self",
+      "client_uid"
+    ],
+    "set_client_name": [
+      "self",
+      "client_name"
+    ],
+    "set_database": [
+      "self",
+      "database"
+    ],
+    "enable_direct_path": [
+      "self",
+      "enable"
+    ],
+    "create_metrics_tracer": [
+      "self"
+    ],
+    "_create_metric_instruments": [
+      "self",
+      "service_name"
+    ]
+  },
+  "BUILT_IN_METRICS_METER_NAME": [],
+  "NATIVE_METRICS_PREFIX": [],
+  "SPANNER_RESOURCE_TYPE": [],
+  "SPANNER_SERVICE_NAME": [],
+  "GOOGLE_CLOUD_RESOURCE_KEY": [],
+  "GOOGLE_CLOUD_REGION_KEY": [],
+  "SPANNER_METHOD_PREFIX": [],
+  "MONITORED_RES_LABEL_KEY_PROJECT": [],
+  "MONITORED_RES_LABEL_KEY_INSTANCE": [],
+  "MONITORED_RES_LABEL_KEY_INSTANCE_CONFIG": [],
+  "MONITORED_RES_LABEL_KEY_LOCATION": [],
+  "MONITORED_RES_LABEL_KEY_CLIENT_HASH": [],
+  "MONITORED_RESOURCE_LABELS": [],
+  "METRIC_LABEL_KEY_CLIENT_UID": [],
+  "METRIC_LABEL_KEY_CLIENT_NAME": [],
+  "METRIC_LABEL_KEY_DATABASE": [],
+  "METRIC_LABEL_KEY_METHOD": [],
+  "METRIC_LABEL_KEY_STATUS": [],
+  "METRIC_LABEL_KEY_DIRECT_PATH_ENABLED": [],
+  "METRIC_LABEL_KEY_DIRECT_PATH_USED": [],
+  "METRIC_LABELS": [],
+  "METRIC_NAME_OPERATION_LATENCIES": [],
+  "METRIC_NAME_ATTEMPT_LATENCIES": [],
+  "METRIC_NAME_OPERATION_COUNT": [],
+  "METRIC_NAME_ATTEMPT_COUNT": [],
+  "METRIC_NAME_GFE_LATENCY": [],
+  "METRIC_NAME_GFE_MISSING_HEADER_COUNT": [],
+  "METRIC_NAMES": [],
+  "METRIC_EXPORT_INTERVAL_MS": [],
+  "ListSessionsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListSessionsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_LOGGER": [],
+  "SpannerClientMeta": {
+    "_transport_registry": [],
+    "get_transport_class": [
+      "cls",
+      "label"
+    ]
+  },
+  "SpannerClient": {
+    "_get_default_mtls_endpoint": [
+      "api_endpoint"
+    ],
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "_use_client_cert_effective": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "transport": [
+      "self"
+    ],
+    "database_path": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "parse_database_path": [
+      "path"
+    ],
+    "session_path": [
+      "project",
+      "instance",
+      "database",
+      "session"
+    ],
+    "parse_session_path": [
+      "path"
+    ],
+    "common_billing_account_path": [
+      "billing_account"
+    ],
+    "parse_common_billing_account_path": [
+      "path"
+    ],
+    "common_folder_path": [
+      "folder"
+    ],
+    "parse_common_folder_path": [
+      "path"
+    ],
+    "common_organization_path": [
+      "organization"
+    ],
+    "parse_common_organization_path": [
+      "path"
+    ],
+    "common_project_path": [
+      "project"
+    ],
+    "parse_common_project_path": [
+      "path"
+    ],
+    "common_location_path": [
+      "project",
+      "location"
+    ],
+    "parse_common_location_path": [
+      "path"
+    ],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "_read_environment_variables": [],
+    "_get_client_cert_source": [
+      "provided_cert_source",
+      "use_cert_flag"
+    ],
+    "_get_api_endpoint": [
+      "api_override",
+      "client_cert_source",
+      "universe_domain",
+      "use_mtls_endpoint"
+    ],
+    "_get_universe_domain": [
+      "client_universe_domain",
+      "universe_domain_env"
+    ],
+    "_validate_universe_domain": [
+      "self"
+    ],
+    "_add_cred_info_for_auth_errors": [
+      "self",
+      "error"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "create_session": [
+      "self",
+      "request"
+    ],
+    "batch_create_sessions": [
+      "self",
+      "request"
+    ],
+    "get_session": [
+      "self",
+      "request"
+    ],
+    "list_sessions": [
+      "self",
+      "request"
+    ],
+    "delete_session": [
+      "self",
+      "request"
+    ],
+    "execute_sql": [
+      "self",
+      "request"
+    ],
+    "execute_streaming_sql": [
+      "self",
+      "request"
+    ],
+    "execute_batch_dml": [
+      "self",
+      "request"
+    ],
+    "read": [
+      "self",
+      "request"
+    ],
+    "streaming_read": [
+      "self",
+      "request"
+    ],
+    "begin_transaction": [
+      "self",
+      "request"
+    ],
+    "commit": [
+      "self",
+      "request"
+    ],
+    "rollback": [
+      "self",
+      "request"
+    ],
+    "partition_query": [
+      "self",
+      "request"
+    ],
+    "partition_read": [
+      "self",
+      "request"
+    ],
+    "batch_write": [
+      "self",
+      "request"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ]
+  },
+  "DEFAULT_CLIENT_INFO": [],
+  "SpannerAsyncClient": {
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "database_path": [],
+    "parse_database_path": [],
+    "session_path": [],
+    "parse_session_path": [],
+    "common_billing_account_path": [],
+    "parse_common_billing_account_path": [],
+    "common_folder_path": [],
+    "parse_common_folder_path": [],
+    "common_organization_path": [],
+    "parse_common_organization_path": [],
+    "common_project_path": [],
+    "parse_common_project_path": [],
+    "common_location_path": [],
+    "parse_common_location_path": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "transport": [
+      "self"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "get_transport_class": [],
+    "__init__": [
+      "self"
+    ],
+    "create_session": [
+      "self",
+      "request"
+    ],
+    "batch_create_sessions": [
+      "self",
+      "request"
+    ],
+    "get_session": [
+      "self",
+      "request"
+    ],
+    "list_sessions": [
+      "self",
+      "request"
+    ],
+    "delete_session": [
+      "self",
+      "request"
+    ],
+    "execute_sql": [
+      "self",
+      "request"
+    ],
+    "execute_streaming_sql": [
+      "self",
+      "request"
+    ],
+    "execute_batch_dml": [
+      "self",
+      "request"
+    ],
+    "read": [
+      "self",
+      "request"
+    ],
+    "streaming_read": [
+      "self",
+      "request"
+    ],
+    "begin_transaction": [
+      "self",
+      "request"
+    ],
+    "commit": [
+      "self",
+      "request"
+    ],
+    "rollback": [
+      "self",
+      "request"
+    ],
+    "partition_query": [
+      "self",
+      "request"
+    ],
+    "partition_read": [
+      "self",
+      "request"
+    ],
+    "batch_write": [
+      "self",
+      "request"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "_BaseSpannerRestTransport": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_LoggingClientInterceptor": {
+    "intercept_unary_unary": [
+      "self",
+      "continuation",
+      "client_call_details",
+      "request"
+    ]
+  },
+  "SpannerGrpcTransport": {
+    "__init__": [
+      "self"
+    ],
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "batch_create_sessions": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "execute_sql": [
+      "self"
+    ],
+    "execute_streaming_sql": [
+      "self"
+    ],
+    "execute_batch_dml": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "streaming_read": [
+      "self"
+    ],
+    "begin_transaction": [
+      "self"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "partition_query": [
+      "self"
+    ],
+    "partition_read": [
+      "self"
+    ],
+    "batch_write": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "SpannerTransport": {
+    "AUTH_SCOPES": [],
+    "__init__": [
+      "self"
+    ],
+    "host": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "close": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "batch_create_sessions": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "execute_sql": [
+      "self"
+    ],
+    "execute_streaming_sql": [
+      "self"
+    ],
+    "execute_batch_dml": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "streaming_read": [
+      "self"
+    ],
+    "begin_transaction": [
+      "self"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "partition_query": [
+      "self"
+    ],
+    "partition_read": [
+      "self"
+    ],
+    "batch_write": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "_transport_registry": [],
+  "SpannerRestInterceptor": {
+    "pre_batch_create_sessions": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_batch_create_sessions": [
+      "self",
+      "response"
+    ],
+    "post_batch_create_sessions_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_batch_write": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_batch_write": [
+      "self",
+      "response"
+    ],
+    "post_batch_write_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_begin_transaction": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_begin_transaction": [
+      "self",
+      "response"
+    ],
+    "post_begin_transaction_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_commit": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_commit": [
+      "self",
+      "response"
+    ],
+    "post_commit_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_session": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_session": [
+      "self",
+      "response"
+    ],
+    "post_create_session_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_delete_session": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_execute_batch_dml": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_execute_batch_dml": [
+      "self",
+      "response"
+    ],
+    "post_execute_batch_dml_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_execute_sql": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_execute_sql": [
+      "self",
+      "response"
+    ],
+    "post_execute_sql_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_execute_streaming_sql": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_execute_streaming_sql": [
+      "self",
+      "response"
+    ],
+    "post_execute_streaming_sql_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_session": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_session": [
+      "self",
+      "response"
+    ],
+    "post_get_session_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_sessions": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_sessions": [
+      "self",
+      "response"
+    ],
+    "post_list_sessions_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_partition_query": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_partition_query": [
+      "self",
+      "response"
+    ],
+    "post_partition_query_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_partition_read": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_partition_read": [
+      "self",
+      "response"
+    ],
+    "post_partition_read_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_read": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_read": [
+      "self",
+      "response"
+    ],
+    "post_read_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_rollback": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_streaming_read": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_streaming_read": [
+      "self",
+      "response"
+    ],
+    "post_streaming_read_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ]
+  },
+  "SpannerRestStub": {},
+  "SpannerRestTransport": {
+    "__init__": [
+      "self"
+    ],
+    "batch_create_sessions": [
+      "self"
+    ],
+    "batch_write": [
+      "self"
+    ],
+    "begin_transaction": [
+      "self"
+    ],
+    "commit": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "execute_batch_dml": [
+      "self"
+    ],
+    "execute_sql": [
+      "self"
+    ],
+    "execute_streaming_sql": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "partition_query": [
+      "self"
+    ],
+    "partition_read": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "streaming_read": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_LoggingClientAIOInterceptor": {
+    "intercept_unary_unary": [
+      "self",
+      "continuation",
+      "client_call_details",
+      "request"
+    ]
+  },
+  "SpannerGrpcAsyncIOTransport": {
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "batch_create_sessions": [
+      "self"
+    ],
+    "get_session": [
+      "self"
+    ],
+    "list_sessions": [
+      "self"
+    ],
+    "delete_session": [
+      "self"
+    ],
+    "execute_sql": [
+      "self"
+    ],
+    "execute_streaming_sql": [
+      "self"
+    ],
+    "execute_batch_dml": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "streaming_read": [
+      "self"
+    ],
+    "begin_transaction": [
+      "self"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "partition_query": [
+      "self"
+    ],
+    "partition_read": [
+      "self"
+    ],
+    "batch_write": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "_wrap_method": [
+      "self",
+      "func"
+    ],
+    "close": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "__protobuf__": [],
+  "TypeCode": {
+    "TYPE_CODE_UNSPECIFIED": [],
+    "BOOL": [],
+    "INT64": [],
+    "FLOAT64": [],
+    "FLOAT32": [],
+    "TIMESTAMP": [],
+    "DATE": [],
+    "STRING": [],
+    "BYTES": [],
+    "ARRAY": [],
+    "STRUCT": [],
+    "NUMERIC": [],
+    "JSON": [],
+    "PROTO": [],
+    "ENUM": [],
+    "INTERVAL": [],
+    "UUID": []
+  },
+  "TypeAnnotationCode": {
+    "TYPE_ANNOTATION_CODE_UNSPECIFIED": [],
+    "PG_NUMERIC": [],
+    "PG_JSONB": [],
+    "PG_OID": []
+  },
+  "Type": {},
+  "StructType": {},
+  "ResultSet": {},
+  "PartialResultSet": {},
+  "ResultSetMetadata": {},
+  "ResultSetStats": {},
+  "ChangeStreamRecord": {},
+  "CommitResponse": {},
+  "CreateSessionRequest": {},
+  "BatchCreateSessionsRequest": {},
+  "BatchCreateSessionsResponse": {},
+  "GetSessionRequest": {},
+  "ListSessionsRequest": {},
+  "ListSessionsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "DeleteSessionRequest": {},
+  "RequestOptions": {},
+  "DirectedReadOptions": {},
+  "ExecuteSqlRequest": {},
+  "ExecuteBatchDmlRequest": {},
+  "ExecuteBatchDmlResponse": {},
+  "PartitionOptions": {},
+  "PartitionQueryRequest": {},
+  "PartitionReadRequest": {},
+  "Partition": {},
+  "PartitionResponse": {},
+  "ReadRequest": {},
+  "BeginTransactionRequest": {},
+  "CommitRequest": {},
+  "RollbackRequest": {},
+  "BatchWriteRequest": {},
+  "BatchWriteResponse": {},
+  "PlanNode": {},
+  "QueryAdvisorResult": {},
+  "QueryPlan": {},
+  "Range": {},
+  "Tablet": {},
+  "Group": {},
+  "KeyRecipe": {},
+  "RecipeList": {},
+  "CacheUpdate": {},
+  "RoutingHint": {},
+  "Mutation": {},
+  "TransactionOptions": {},
+  "TransactionSelector": {},
+  "MultiplexedSessionPrecommitToken": {},
+  "ListDatabasesPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListDatabasesAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListDatabaseOperationsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListDatabaseOperationsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupOperationsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupOperationsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListDatabaseRolesPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListDatabaseRolesAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupSchedulesPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListBackupSchedulesAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DatabaseAdminClientMeta": {
+    "_transport_registry": [],
+    "get_transport_class": [
+      "cls",
+      "label"
+    ]
+  },
+  "DatabaseAdminClient": {
+    "_get_default_mtls_endpoint": [
+      "api_endpoint"
+    ],
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "_use_client_cert_effective": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "transport": [
+      "self"
+    ],
+    "backup_path": [
+      "project",
+      "instance",
+      "backup"
+    ],
+    "parse_backup_path": [
+      "path"
+    ],
+    "backup_schedule_path": [
+      "project",
+      "instance",
+      "database",
+      "schedule"
+    ],
+    "parse_backup_schedule_path": [
+      "path"
+    ],
+    "crypto_key_path": [
+      "project",
+      "location",
+      "key_ring",
+      "crypto_key"
+    ],
+    "parse_crypto_key_path": [
+      "path"
+    ],
+    "crypto_key_version_path": [
+      "project",
+      "location",
+      "key_ring",
+      "crypto_key",
+      "crypto_key_version"
+    ],
+    "parse_crypto_key_version_path": [
+      "path"
+    ],
+    "database_path": [
+      "project",
+      "instance",
+      "database"
+    ],
+    "parse_database_path": [
+      "path"
+    ],
+    "database_role_path": [
+      "project",
+      "instance",
+      "database",
+      "role"
+    ],
+    "parse_database_role_path": [
+      "path"
+    ],
+    "instance_path": [
+      "project",
+      "instance"
+    ],
+    "parse_instance_path": [
+      "path"
+    ],
+    "instance_partition_path": [
+      "project",
+      "instance",
+      "instance_partition"
+    ],
+    "parse_instance_partition_path": [
+      "path"
+    ],
+    "common_billing_account_path": [
+      "billing_account"
+    ],
+    "parse_common_billing_account_path": [
+      "path"
+    ],
+    "common_folder_path": [
+      "folder"
+    ],
+    "parse_common_folder_path": [
+      "path"
+    ],
+    "common_organization_path": [
+      "organization"
+    ],
+    "parse_common_organization_path": [
+      "path"
+    ],
+    "common_project_path": [
+      "project"
+    ],
+    "parse_common_project_path": [
+      "path"
+    ],
+    "common_location_path": [
+      "project",
+      "location"
+    ],
+    "parse_common_location_path": [
+      "path"
+    ],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "_read_environment_variables": [],
+    "_get_client_cert_source": [
+      "provided_cert_source",
+      "use_cert_flag"
+    ],
+    "_get_api_endpoint": [
+      "api_override",
+      "client_cert_source",
+      "universe_domain",
+      "use_mtls_endpoint"
+    ],
+    "_get_universe_domain": [
+      "client_universe_domain",
+      "universe_domain_env"
+    ],
+    "_validate_universe_domain": [
+      "self"
+    ],
+    "_add_cred_info_for_auth_errors": [
+      "self",
+      "error"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "list_databases": [
+      "self",
+      "request"
+    ],
+    "create_database": [
+      "self",
+      "request"
+    ],
+    "get_database": [
+      "self",
+      "request"
+    ],
+    "update_database": [
+      "self",
+      "request"
+    ],
+    "update_database_ddl": [
+      "self",
+      "request"
+    ],
+    "drop_database": [
+      "self",
+      "request"
+    ],
+    "get_database_ddl": [
+      "self",
+      "request"
+    ],
+    "set_iam_policy": [
+      "self",
+      "request"
+    ],
+    "get_iam_policy": [
+      "self",
+      "request"
+    ],
+    "test_iam_permissions": [
+      "self",
+      "request"
+    ],
+    "create_backup": [
+      "self",
+      "request"
+    ],
+    "copy_backup": [
+      "self",
+      "request"
+    ],
+    "get_backup": [
+      "self",
+      "request"
+    ],
+    "update_backup": [
+      "self",
+      "request"
+    ],
+    "delete_backup": [
+      "self",
+      "request"
+    ],
+    "list_backups": [
+      "self",
+      "request"
+    ],
+    "restore_database": [
+      "self",
+      "request"
+    ],
+    "list_database_operations": [
+      "self",
+      "request"
+    ],
+    "list_backup_operations": [
+      "self",
+      "request"
+    ],
+    "list_database_roles": [
+      "self",
+      "request"
+    ],
+    "add_split_points": [
+      "self",
+      "request"
+    ],
+    "create_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "get_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "update_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "delete_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "list_backup_schedules": [
+      "self",
+      "request"
+    ],
+    "internal_update_graph_operation": [
+      "self",
+      "request"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "list_operations": [
+      "self",
+      "request"
+    ],
+    "get_operation": [
+      "self",
+      "request"
+    ],
+    "delete_operation": [
+      "self",
+      "request"
+    ],
+    "cancel_operation": [
+      "self",
+      "request"
+    ]
+  },
+  "DatabaseAdminAsyncClient": {
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "backup_path": [],
+    "parse_backup_path": [],
+    "backup_schedule_path": [],
+    "parse_backup_schedule_path": [],
+    "crypto_key_path": [],
+    "parse_crypto_key_path": [],
+    "crypto_key_version_path": [],
+    "parse_crypto_key_version_path": [],
+    "database_path": [],
+    "parse_database_path": [],
+    "database_role_path": [],
+    "parse_database_role_path": [],
+    "instance_path": [],
+    "parse_instance_path": [],
+    "instance_partition_path": [],
+    "parse_instance_partition_path": [],
+    "common_billing_account_path": [],
+    "parse_common_billing_account_path": [],
+    "common_folder_path": [],
+    "parse_common_folder_path": [],
+    "common_organization_path": [],
+    "parse_common_organization_path": [],
+    "common_project_path": [],
+    "parse_common_project_path": [],
+    "common_location_path": [],
+    "parse_common_location_path": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "transport": [
+      "self"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "get_transport_class": [],
+    "__init__": [
+      "self"
+    ],
+    "list_databases": [
+      "self",
+      "request"
+    ],
+    "create_database": [
+      "self",
+      "request"
+    ],
+    "get_database": [
+      "self",
+      "request"
+    ],
+    "update_database": [
+      "self",
+      "request"
+    ],
+    "update_database_ddl": [
+      "self",
+      "request"
+    ],
+    "drop_database": [
+      "self",
+      "request"
+    ],
+    "get_database_ddl": [
+      "self",
+      "request"
+    ],
+    "set_iam_policy": [
+      "self",
+      "request"
+    ],
+    "get_iam_policy": [
+      "self",
+      "request"
+    ],
+    "test_iam_permissions": [
+      "self",
+      "request"
+    ],
+    "create_backup": [
+      "self",
+      "request"
+    ],
+    "copy_backup": [
+      "self",
+      "request"
+    ],
+    "get_backup": [
+      "self",
+      "request"
+    ],
+    "update_backup": [
+      "self",
+      "request"
+    ],
+    "delete_backup": [
+      "self",
+      "request"
+    ],
+    "list_backups": [
+      "self",
+      "request"
+    ],
+    "restore_database": [
+      "self",
+      "request"
+    ],
+    "list_database_operations": [
+      "self",
+      "request"
+    ],
+    "list_backup_operations": [
+      "self",
+      "request"
+    ],
+    "list_database_roles": [
+      "self",
+      "request"
+    ],
+    "add_split_points": [
+      "self",
+      "request"
+    ],
+    "create_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "get_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "update_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "delete_backup_schedule": [
+      "self",
+      "request"
+    ],
+    "list_backup_schedules": [
+      "self",
+      "request"
+    ],
+    "internal_update_graph_operation": [
+      "self",
+      "request"
+    ],
+    "list_operations": [
+      "self",
+      "request"
+    ],
+    "get_operation": [
+      "self",
+      "request"
+    ],
+    "delete_operation": [
+      "self",
+      "request"
+    ],
+    "cancel_operation": [
+      "self",
+      "request"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "_BaseDatabaseAdminRestTransport": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "DatabaseAdminGrpcTransport": {
+    "__init__": [
+      "self"
+    ],
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_databases": [
+      "self"
+    ],
+    "create_database": [
+      "self"
+    ],
+    "get_database": [
+      "self"
+    ],
+    "update_database": [
+      "self"
+    ],
+    "update_database_ddl": [
+      "self"
+    ],
+    "drop_database": [
+      "self"
+    ],
+    "get_database_ddl": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "create_backup": [
+      "self"
+    ],
+    "copy_backup": [
+      "self"
+    ],
+    "get_backup": [
+      "self"
+    ],
+    "update_backup": [
+      "self"
+    ],
+    "delete_backup": [
+      "self"
+    ],
+    "list_backups": [
+      "self"
+    ],
+    "restore_database": [
+      "self"
+    ],
+    "list_database_operations": [
+      "self"
+    ],
+    "list_backup_operations": [
+      "self"
+    ],
+    "list_database_roles": [
+      "self"
+    ],
+    "add_split_points": [
+      "self"
+    ],
+    "create_backup_schedule": [
+      "self"
+    ],
+    "get_backup_schedule": [
+      "self"
+    ],
+    "update_backup_schedule": [
+      "self"
+    ],
+    "delete_backup_schedule": [
+      "self"
+    ],
+    "list_backup_schedules": [
+      "self"
+    ],
+    "internal_update_graph_operation": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "DatabaseAdminTransport": {
+    "AUTH_SCOPES": [],
+    "__init__": [
+      "self"
+    ],
+    "host": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "close": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_databases": [
+      "self"
+    ],
+    "create_database": [
+      "self"
+    ],
+    "get_database": [
+      "self"
+    ],
+    "update_database": [
+      "self"
+    ],
+    "update_database_ddl": [
+      "self"
+    ],
+    "drop_database": [
+      "self"
+    ],
+    "get_database_ddl": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "create_backup": [
+      "self"
+    ],
+    "copy_backup": [
+      "self"
+    ],
+    "get_backup": [
+      "self"
+    ],
+    "update_backup": [
+      "self"
+    ],
+    "delete_backup": [
+      "self"
+    ],
+    "list_backups": [
+      "self"
+    ],
+    "restore_database": [
+      "self"
+    ],
+    "list_database_operations": [
+      "self"
+    ],
+    "list_backup_operations": [
+      "self"
+    ],
+    "list_database_roles": [
+      "self"
+    ],
+    "add_split_points": [
+      "self"
+    ],
+    "create_backup_schedule": [
+      "self"
+    ],
+    "get_backup_schedule": [
+      "self"
+    ],
+    "update_backup_schedule": [
+      "self"
+    ],
+    "delete_backup_schedule": [
+      "self"
+    ],
+    "list_backup_schedules": [
+      "self"
+    ],
+    "internal_update_graph_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "DatabaseAdminRestInterceptor": {
+    "pre_add_split_points": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_add_split_points": [
+      "self",
+      "response"
+    ],
+    "post_add_split_points_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_copy_backup": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_copy_backup": [
+      "self",
+      "response"
+    ],
+    "post_copy_backup_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_backup": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_backup": [
+      "self",
+      "response"
+    ],
+    "post_create_backup_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_backup_schedule": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_backup_schedule": [
+      "self",
+      "response"
+    ],
+    "post_create_backup_schedule_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_database": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_database": [
+      "self",
+      "response"
+    ],
+    "post_create_database_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_delete_backup": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_delete_backup_schedule": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_drop_database": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_get_backup": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_backup": [
+      "self",
+      "response"
+    ],
+    "post_get_backup_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_backup_schedule": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_backup_schedule": [
+      "self",
+      "response"
+    ],
+    "post_get_backup_schedule_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_database": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_database": [
+      "self",
+      "response"
+    ],
+    "post_get_database_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_database_ddl": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_database_ddl": [
+      "self",
+      "response"
+    ],
+    "post_get_database_ddl_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_iam_policy": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_iam_policy": [
+      "self",
+      "response"
+    ],
+    "post_get_iam_policy_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_backup_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_backup_operations": [
+      "self",
+      "response"
+    ],
+    "post_list_backup_operations_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_backups": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_backups": [
+      "self",
+      "response"
+    ],
+    "post_list_backups_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_backup_schedules": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_backup_schedules": [
+      "self",
+      "response"
+    ],
+    "post_list_backup_schedules_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_database_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_database_operations": [
+      "self",
+      "response"
+    ],
+    "post_list_database_operations_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_database_roles": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_database_roles": [
+      "self",
+      "response"
+    ],
+    "post_list_database_roles_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_databases": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_databases": [
+      "self",
+      "response"
+    ],
+    "post_list_databases_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_restore_database": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_restore_database": [
+      "self",
+      "response"
+    ],
+    "post_restore_database_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_set_iam_policy": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_set_iam_policy": [
+      "self",
+      "response"
+    ],
+    "post_set_iam_policy_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_test_iam_permissions": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_test_iam_permissions": [
+      "self",
+      "response"
+    ],
+    "post_test_iam_permissions_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_backup": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_backup": [
+      "self",
+      "response"
+    ],
+    "post_update_backup_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_backup_schedule": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_backup_schedule": [
+      "self",
+      "response"
+    ],
+    "post_update_backup_schedule_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_database": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_database": [
+      "self",
+      "response"
+    ],
+    "post_update_database_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_database_ddl": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_database_ddl": [
+      "self",
+      "response"
+    ],
+    "post_update_database_ddl_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_cancel_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_cancel_operation": [
+      "self",
+      "response"
+    ],
+    "pre_delete_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_delete_operation": [
+      "self",
+      "response"
+    ],
+    "pre_get_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_operation": [
+      "self",
+      "response"
+    ],
+    "pre_list_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_operations": [
+      "self",
+      "response"
+    ]
+  },
+  "DatabaseAdminRestStub": {},
+  "DatabaseAdminRestTransport": {
+    "__init__": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "add_split_points": [
+      "self"
+    ],
+    "copy_backup": [
+      "self"
+    ],
+    "create_backup": [
+      "self"
+    ],
+    "create_backup_schedule": [
+      "self"
+    ],
+    "create_database": [
+      "self"
+    ],
+    "delete_backup": [
+      "self"
+    ],
+    "delete_backup_schedule": [
+      "self"
+    ],
+    "drop_database": [
+      "self"
+    ],
+    "get_backup": [
+      "self"
+    ],
+    "get_backup_schedule": [
+      "self"
+    ],
+    "get_database": [
+      "self"
+    ],
+    "get_database_ddl": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "internal_update_graph_operation": [
+      "self"
+    ],
+    "list_backup_operations": [
+      "self"
+    ],
+    "list_backups": [
+      "self"
+    ],
+    "list_backup_schedules": [
+      "self"
+    ],
+    "list_database_operations": [
+      "self"
+    ],
+    "list_database_roles": [
+      "self"
+    ],
+    "list_databases": [
+      "self"
+    ],
+    "restore_database": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "update_backup": [
+      "self"
+    ],
+    "update_backup_schedule": [
+      "self"
+    ],
+    "update_database": [
+      "self"
+    ],
+    "update_database_ddl": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DatabaseAdminGrpcAsyncIOTransport": {
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_databases": [
+      "self"
+    ],
+    "create_database": [
+      "self"
+    ],
+    "get_database": [
+      "self"
+    ],
+    "update_database": [
+      "self"
+    ],
+    "update_database_ddl": [
+      "self"
+    ],
+    "drop_database": [
+      "self"
+    ],
+    "get_database_ddl": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "create_backup": [
+      "self"
+    ],
+    "copy_backup": [
+      "self"
+    ],
+    "get_backup": [
+      "self"
+    ],
+    "update_backup": [
+      "self"
+    ],
+    "delete_backup": [
+      "self"
+    ],
+    "list_backups": [
+      "self"
+    ],
+    "restore_database": [
+      "self"
+    ],
+    "list_database_operations": [
+      "self"
+    ],
+    "list_backup_operations": [
+      "self"
+    ],
+    "list_database_roles": [
+      "self"
+    ],
+    "add_split_points": [
+      "self"
+    ],
+    "create_backup_schedule": [
+      "self"
+    ],
+    "get_backup_schedule": [
+      "self"
+    ],
+    "update_backup_schedule": [
+      "self"
+    ],
+    "delete_backup_schedule": [
+      "self"
+    ],
+    "list_backup_schedules": [
+      "self"
+    ],
+    "internal_update_graph_operation": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "_wrap_method": [
+      "self",
+      "func"
+    ],
+    "close": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ]
+  },
+  "DatabaseDialect": {
+    "DATABASE_DIALECT_UNSPECIFIED": [],
+    "GOOGLE_STANDARD_SQL": [],
+    "POSTGRESQL": []
+  },
+  "OperationProgress": {},
+  "EncryptionConfig": {},
+  "EncryptionInfo": {},
+  "CreateBackupRequest": {},
+  "CreateBackupMetadata": {},
+  "CopyBackupRequest": {},
+  "CopyBackupMetadata": {},
+  "UpdateBackupRequest": {},
+  "GetBackupRequest": {},
+  "DeleteBackupRequest": {},
+  "ListBackupsRequest": {},
+  "ListBackupsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "ListBackupOperationsRequest": {},
+  "ListBackupOperationsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "BackupInfo": {},
+  "CreateBackupEncryptionConfig": {},
+  "CopyBackupEncryptionConfig": {},
+  "FullBackupSpec": {},
+  "IncrementalBackupSpec": {},
+  "BackupInstancePartition": {},
+  "RestoreSourceType": {
+    "TYPE_UNSPECIFIED": [],
+    "BACKUP": []
+  },
+  "RestoreInfo": {},
+  "ListDatabasesRequest": {},
+  "ListDatabasesResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "CreateDatabaseRequest": {},
+  "CreateDatabaseMetadata": {},
+  "GetDatabaseRequest": {},
+  "UpdateDatabaseRequest": {},
+  "UpdateDatabaseMetadata": {},
+  "UpdateDatabaseDdlRequest": {},
+  "DdlStatementActionInfo": {},
+  "UpdateDatabaseDdlMetadata": {},
+  "DropDatabaseRequest": {},
+  "GetDatabaseDdlRequest": {},
+  "GetDatabaseDdlResponse": {},
+  "ListDatabaseOperationsRequest": {},
+  "ListDatabaseOperationsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "RestoreDatabaseRequest": {},
+  "RestoreDatabaseEncryptionConfig": {},
+  "RestoreDatabaseMetadata": {},
+  "OptimizeRestoredDatabaseMetadata": {},
+  "DatabaseRole": {},
+  "ListDatabaseRolesRequest": {},
+  "ListDatabaseRolesResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "AddSplitPointsRequest": {},
+  "AddSplitPointsResponse": {},
+  "SplitPoints": {},
+  "InternalUpdateGraphOperationRequest": {},
+  "InternalUpdateGraphOperationResponse": {},
+  "BackupScheduleSpec": {},
+  "BackupSchedule": {},
+  "CrontabSpec": {},
+  "CreateBackupScheduleRequest": {},
+  "GetBackupScheduleRequest": {},
+  "DeleteBackupScheduleRequest": {},
+  "ListBackupSchedulesRequest": {},
+  "ListBackupSchedulesResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "UpdateBackupScheduleRequest": {},
+  "PY_VERSION": [],
+  "VERSION": [],
+  "DEFAULT_USER_AGENT": [],
+  "BatchDmlExecutor": {
+    "__init__": [
+      "self",
+      "cursor"
+    ],
+    "execute_statement": [
+      "self",
+      "parsed_statement"
+    ],
+    "run_batch_dml": [
+      "self"
+    ]
+  },
+  "run_batch_dml": [
+    "cursor",
+    "statements"
+  ],
+  "_do_batch_update_autocommit": [
+    "transaction",
+    "statements"
+  ],
+  "BatchMode": {
+    "DML": [],
+    "DDL": [],
+    "NONE": []
+  },
+  "ARGS": [],
+  "FUNC": [],
+  "VALUES": [],
+  "func": {
+    "__init__": [
+      "self",
+      "func_name",
+      "args"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "terminal": {},
+  "a_args": {
+    "__init__": [
+      "self",
+      "argv"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "has_expr": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "homogenous": [
+      "self"
+    ],
+    "_is_equal_length": [
+      "self"
+    ]
+  },
+  "values": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "pyfmt_str": [],
+  "expect": [
+    "word",
+    "token"
+  ],
+  "CLIENT_TRANSACTION_NOT_STARTED_WARNING": [],
+  "check_not_closed": [
+    "function"
+  ],
+  "Connection": {
+    "__init__": [
+      "self",
+      "instance",
+      "database",
+      "read_only"
+    ],
+    "spanner_client": [
+      "self"
+    ],
+    "current_schema": [
+      "self"
+    ],
+    "autocommit": [
+      "self",
+      "value"
+    ],
+    "database": [
+      "self"
+    ],
+    "autocommit_dml_mode": [
+      "self"
+    ],
+    "inside_transaction": [
+      "self"
+    ],
+    "_client_transaction_started": [
+      "self"
+    ],
+    "_ignore_transaction_warnings": [
+      "self"
+    ],
+    "instance": [
+      "self"
+    ],
+    "read_only": [
+      "self",
+      "value"
+    ],
+    "request_options": [
+      "self"
+    ],
+    "transaction_tag": [
+      "self",
+      "value"
+    ],
+    "isolation_level": [
+      "self",
+      "value"
+    ],
+    "staleness": [
+      "self",
+      "value"
+    ],
+    "_session_checkout": [
+      "self"
+    ],
+    "_release_session": [
+      "self"
+    ],
+    "transaction_checkout": [
+      "self"
+    ],
+    "snapshot_checkout": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "begin": [
+      "self",
+      "isolation_level"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "_reset_post_commit_or_rollback": [
+      "self"
+    ],
+    "cursor": [
+      "self"
+    ],
+    "run_prior_DDL_statements": [
+      "self"
+    ],
+    "run_statement": [
+      "self",
+      "statement",
+      "request_options"
+    ],
+    "validate": [
+      "self"
+    ],
+    "start_batch_dml": [
+      "self",
+      "cursor"
+    ],
+    "execute_batch_dml_statement": [
+      "self",
+      "parsed_statement"
+    ],
+    "run_batch": [
+      "self"
+    ],
+    "abort_batch": [
+      "self"
+    ],
+    "partition_query": [
+      "self",
+      "parsed_statement",
+      "query_options"
+    ],
+    "run_partition": [
+      "self",
+      "encoded_partition_id"
+    ],
+    "run_partitioned_query": [
+      "self",
+      "parsed_statement"
+    ],
+    "_set_autocommit_dml_mode": [
+      "self",
+      "parsed_statement"
+    ],
+    "set_autocommit_dml_mode": [
+      "self",
+      "autocommit_dml_mode"
+    ],
+    "_partitioned_query_validation": [
+      "self",
+      "partitioned_query",
+      "statement"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "etype",
+      "value",
+      "traceback"
+    ]
+  },
+  "connect": [
+    "instance_id",
+    "database_id",
+    "project",
+    "credentials",
+    "pool",
+    "user_agent",
+    "client",
+    "route_to_leader_enabled",
+    "database_role",
+    "experimental_host"
+  ],
+  "re_UNICODE_POINTS": [],
+  "PeekIterator": {
+    "__init__": [
+      "self",
+      "source"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "StreamedManyResultSets": {
+    "__init__": [
+      "self"
+    ],
+    "add_iter": [
+      "self",
+      "iterator"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "backtick_unicode": [
+    "sql"
+  ],
+  "sanitize_literals_for_upload": [
+    "s"
+  ],
+  "TYPES_MAP": [],
+  "SPANNER_RESERVED_KEYWORDS": [],
+  "STMT_DDL": [],
+  "STMT_NON_UPDATING": [],
+  "STMT_UPDATING": [],
+  "STMT_INSERT": [],
+  "RE_NON_UPDATE": [],
+  "RE_WITH": [],
+  "RE_DDL": [],
+  "RE_IS_INSERT": [],
+  "RE_IS_UPDATE": [],
+  "RE_IS_DELETE": [],
+  "RE_INSERT": [],
+  "RE_VALUES_TILL_END": [],
+  "RE_VALUES_PYFORMAT": [],
+  "RE_PYFORMAT": [],
+  "classify_stmt": [
+    "query"
+  ],
+  "classify_statement": [
+    "query",
+    "args"
+  ],
+  "_get_statement_type": [
+    "statement"
+  ],
+  "sql_pyformat_args_to_spanner": [
+    "sql",
+    "params"
+  ],
+  "get_param_types": [
+    "params"
+  ],
+  "ensure_where_clause": [
+    "sql"
+  ],
+  "escape_name": [
+    "name"
+  ],
+  "apilevel": [],
+  "paramstyle": [],
+  "threadsafety": [],
+  "RE_BEGIN": [],
+  "RE_COMMIT": [],
+  "RE_ROLLBACK": [],
+  "RE_SHOW_COMMIT_TIMESTAMP": [],
+  "RE_SHOW_READ_TIMESTAMP": [],
+  "RE_START_BATCH_DML": [],
+  "RE_RUN_BATCH": [],
+  "RE_ABORT_BATCH": [],
+  "RE_PARTITION_QUERY": [],
+  "RE_RUN_PARTITION": [],
+  "RE_RUN_PARTITIONED_QUERY": [],
+  "RE_SET_AUTOCOMMIT_DML_MODE": [],
+  "parse_stmt": [
+    "query"
+  ],
+  "StatementType": {
+    "UNKNOWN": [],
+    "CLIENT_SIDE": [],
+    "DDL": [],
+    "QUERY": [],
+    "UPDATE": [],
+    "INSERT": []
+  },
+  "ClientSideStatementType": {
+    "COMMIT": [],
+    "BEGIN": [],
+    "ROLLBACK": [],
+    "SHOW_COMMIT_TIMESTAMP": [],
+    "SHOW_READ_TIMESTAMP": [],
+    "START_BATCH_DML": [],
+    "RUN_BATCH": [],
+    "ABORT_BATCH": [],
+    "PARTITION_QUERY": [],
+    "RUN_PARTITION": [],
+    "RUN_PARTITIONED_QUERY": [],
+    "SET_AUTOCOMMIT_DML_MODE": []
+  },
+  "AutocommitDmlMode": {
+    "TRANSACTIONAL": [],
+    "PARTITIONED_NON_ATOMIC": []
+  },
+  "Statement": {
+    "get_tuple": [
+      "self"
+    ]
+  },
+  "ParsedStatement": {},
+  "Warning": {},
+  "Error": {
+    "_is_error_cause_instance_of_google_api_exception": [
+      "self"
+    ],
+    "reason": [
+      "self"
+    ],
+    "domain": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "details": [
+      "self"
+    ]
+  },
+  "InterfaceError": {},
+  "DatabaseError": {},
+  "DataError": {},
+  "OperationalError": {},
+  "IntegrityError": {},
+  "InternalError": {},
+  "ProgrammingError": {},
+  "NotSupportedError": {},
+  "RetryAborted": {},
+  "_date_from_ticks": [
+    "ticks"
+  ],
+  "_time_from_ticks": [
+    "ticks"
+  ],
+  "_timestamp_from_ticks": [
+    "ticks"
+  ],
+  "_DBAPITypeObject": {
+    "__init__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "Date": [],
+  "Time": [],
+  "Timestamp": [],
+  "DateFromTicks": [],
+  "TimeFromTicks": [],
+  "TimestampFromTicks": [],
+  "Binary": [],
+  "BINARY": [],
+  "NUMBER": [],
+  "DATETIME": [],
+  "ROWID": [],
+  "TimestampStr": {},
+  "DateStr": {},
+  "ColumnDetails": [],
+  "Cursor": {
+    "__init__": [
+      "self",
+      "connection"
+    ],
+    "request_tag": [
+      "self",
+      "value"
+    ],
+    "request_options": [
+      "self"
+    ],
+    "is_closed": [
+      "self"
+    ],
+    "description": [
+      "self"
+    ],
+    "rowcount": [
+      "self"
+    ],
+    "callproc": [
+      "self",
+      "procname",
+      "args"
+    ],
+    "nextset": [
+      "self"
+    ],
+    "setinputsizes": [
+      "self",
+      "sizes"
+    ],
+    "setoutputsize": [
+      "self",
+      "size",
+      "column"
+    ],
+    "close": [
+      "self"
+    ],
+    "_do_execute_update_in_autocommit": [
+      "self",
+      "transaction",
+      "sql",
+      "params"
+    ],
+    "_batch_DDLs": [
+      "self",
+      "sql"
+    ],
+    "_reset": [
+      "self"
+    ],
+    "execute": [
+      "self",
+      "sql",
+      "args"
+    ],
+    "_execute": [
+      "self",
+      "sql",
+      "args",
+      "call_from_execute_many"
+    ],
+    "_execute_in_rw_transaction": [
+      "self"
+    ],
+    "executemany": [
+      "self",
+      "operation",
+      "seq_of_params"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "_fetch": [
+      "self",
+      "cursor_statement_type",
+      "size"
+    ],
+    "_handle_DQL_with_snapshot": [
+      "self",
+      "snapshot",
+      "sql",
+      "params"
+    ],
+    "_handle_DQL": [
+      "self",
+      "sql",
+      "params"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "etype",
+      "value",
+      "traceback"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "list_tables": [
+      "self",
+      "schema_name",
+      "include_views"
+    ],
+    "run_sql_in_snapshot": [
+      "self",
+      "sql",
+      "params",
+      "param_types"
+    ],
+    "get_table_column_schema": [
+      "self",
+      "table_name",
+      "schema_name"
+    ]
+  },
+  "CONNECTION_CLOSED_ERROR": [],
+  "TRANSACTION_NOT_STARTED_WARNING": [],
+  "execute": [
+    "cursor",
+    "parsed_statement"
+  ],
+  "_get_streamed_result_set": [
+    "column_name",
+    "type_code",
+    "column_values"
+  ],
+  "_get_isolation_level": [
+    "statement"
+  ],
+  "SQL_LIST_TABLES": [],
+  "SQL_LIST_TABLES_AND_VIEWS": [],
+  "SQL_GET_TABLE_COLUMN_SCHEMA": [],
+  "CODE_TO_DISPLAY_SIZE": [],
+  "ColumnInfo": {
+    "__init__": [
+      "self",
+      "name",
+      "type_code",
+      "display_size",
+      "internal_size",
+      "precision",
+      "scale",
+      "null_ok"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ResultsChecksum": {
+    "__init__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "consume_result": [
+      "self",
+      "result"
+    ]
+  },
+  "_compare_checksums": [
+    "original",
+    "retried"
+  ],
+  "decode_from_string": [
+    "encoded_partition_id"
+  ],
+  "encode_to_string": [
+    "batch_transaction_id",
+    "partition_result"
+  ],
+  "PartitionId": {},
+  "MAX_INTERNAL_RETRIES": [],
+  "RETRY_ABORTED_ERROR": [],
+  "TransactionRetryHelper": {
+    "__init__": [
+      "self",
+      "connection"
+    ],
+    "_set_connection_for_retry": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "add_fetch_statement_for_retry": [
+      "self",
+      "cursor",
+      "result_rows",
+      "exception",
+      "is_fetch_all"
+    ],
+    "add_execute_statement_for_retry": [
+      "self",
+      "cursor",
+      "sql",
+      "args",
+      "exception",
+      "is_execute_many"
+    ],
+    "retry_transaction": [
+      "self",
+      "default_retry_delay"
+    ]
+  },
+  "_handle_statement": [
+    "statement_result_details",
+    "cursor"
+  ],
+  "_is_execute_type_statement": [
+    "statement_type"
+  ],
+  "_get_statement_result_checksum": [
+    "res_iter"
+  ],
+  "CursorStatementType": {
+    "EXECUTE": [],
+    "EXECUTE_MANY": [],
+    "FETCH_ONE": [],
+    "FETCH_ALL": [],
+    "FETCH_MANY": []
+  },
+  "ResultType": {
+    "CHECKSUM": [],
+    "NONE": [],
+    "EXCEPTION": [],
+    "ROW_COUNT": [],
+    "BATCH_DML_ROWS_COUNT": []
+  },
+  "StatementDetails": {},
+  "ExecuteStatement": {},
+  "FetchStatement": {},
+  "ListInstanceConfigsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstanceConfigsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstanceConfigOperationsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstanceConfigOperationsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancesPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancesAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancePartitionsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancePartitionsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancePartitionOperationsPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ListInstancePartitionOperationsAsyncPager": {
+    "__init__": [
+      "self",
+      "method",
+      "request",
+      "response"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "pages": [
+      "self"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "InstanceAdminClientMeta": {
+    "_transport_registry": [],
+    "get_transport_class": [
+      "cls",
+      "label"
+    ]
+  },
+  "InstanceAdminClient": {
+    "_get_default_mtls_endpoint": [
+      "api_endpoint"
+    ],
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "_use_client_cert_effective": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "transport": [
+      "self"
+    ],
+    "instance_path": [
+      "project",
+      "instance"
+    ],
+    "parse_instance_path": [
+      "path"
+    ],
+    "instance_config_path": [
+      "project",
+      "instance_config"
+    ],
+    "parse_instance_config_path": [
+      "path"
+    ],
+    "instance_partition_path": [
+      "project",
+      "instance",
+      "instance_partition"
+    ],
+    "parse_instance_partition_path": [
+      "path"
+    ],
+    "common_billing_account_path": [
+      "billing_account"
+    ],
+    "parse_common_billing_account_path": [
+      "path"
+    ],
+    "common_folder_path": [
+      "folder"
+    ],
+    "parse_common_folder_path": [
+      "path"
+    ],
+    "common_organization_path": [
+      "organization"
+    ],
+    "parse_common_organization_path": [
+      "path"
+    ],
+    "common_project_path": [
+      "project"
+    ],
+    "parse_common_project_path": [
+      "path"
+    ],
+    "common_location_path": [
+      "project",
+      "location"
+    ],
+    "parse_common_location_path": [
+      "path"
+    ],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "_read_environment_variables": [],
+    "_get_client_cert_source": [
+      "provided_cert_source",
+      "use_cert_flag"
+    ],
+    "_get_api_endpoint": [
+      "api_override",
+      "client_cert_source",
+      "universe_domain",
+      "use_mtls_endpoint"
+    ],
+    "_get_universe_domain": [
+      "client_universe_domain",
+      "universe_domain_env"
+    ],
+    "_validate_universe_domain": [
+      "self"
+    ],
+    "_add_cred_info_for_auth_errors": [
+      "self",
+      "error"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self",
+      "request"
+    ],
+    "get_instance_config": [
+      "self",
+      "request"
+    ],
+    "create_instance_config": [
+      "self",
+      "request"
+    ],
+    "update_instance_config": [
+      "self",
+      "request"
+    ],
+    "delete_instance_config": [
+      "self",
+      "request"
+    ],
+    "list_instance_config_operations": [
+      "self",
+      "request"
+    ],
+    "list_instances": [
+      "self",
+      "request"
+    ],
+    "list_instance_partitions": [
+      "self",
+      "request"
+    ],
+    "get_instance": [
+      "self",
+      "request"
+    ],
+    "create_instance": [
+      "self",
+      "request"
+    ],
+    "update_instance": [
+      "self",
+      "request"
+    ],
+    "delete_instance": [
+      "self",
+      "request"
+    ],
+    "set_iam_policy": [
+      "self",
+      "request"
+    ],
+    "get_iam_policy": [
+      "self",
+      "request"
+    ],
+    "test_iam_permissions": [
+      "self",
+      "request"
+    ],
+    "get_instance_partition": [
+      "self",
+      "request"
+    ],
+    "create_instance_partition": [
+      "self",
+      "request"
+    ],
+    "delete_instance_partition": [
+      "self",
+      "request"
+    ],
+    "update_instance_partition": [
+      "self",
+      "request"
+    ],
+    "list_instance_partition_operations": [
+      "self",
+      "request"
+    ],
+    "move_instance": [
+      "self",
+      "request"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "list_operations": [
+      "self",
+      "request"
+    ],
+    "get_operation": [
+      "self",
+      "request"
+    ],
+    "delete_operation": [
+      "self",
+      "request"
+    ],
+    "cancel_operation": [
+      "self",
+      "request"
+    ]
+  },
+  "InstanceAdminAsyncClient": {
+    "DEFAULT_ENDPOINT": [],
+    "DEFAULT_MTLS_ENDPOINT": [],
+    "_DEFAULT_ENDPOINT_TEMPLATE": [],
+    "_DEFAULT_UNIVERSE": [],
+    "instance_path": [],
+    "parse_instance_path": [],
+    "instance_config_path": [],
+    "parse_instance_config_path": [],
+    "instance_partition_path": [],
+    "parse_instance_partition_path": [],
+    "common_billing_account_path": [],
+    "parse_common_billing_account_path": [],
+    "common_folder_path": [],
+    "parse_common_folder_path": [],
+    "common_organization_path": [],
+    "parse_common_organization_path": [],
+    "common_project_path": [],
+    "parse_common_project_path": [],
+    "common_location_path": [],
+    "parse_common_location_path": [],
+    "from_service_account_info": [
+      "cls",
+      "info"
+    ],
+    "from_service_account_file": [
+      "cls",
+      "filename"
+    ],
+    "from_service_account_json": [],
+    "get_mtls_endpoint_and_cert_source": [
+      "cls",
+      "client_options"
+    ],
+    "transport": [
+      "self"
+    ],
+    "api_endpoint": [
+      "self"
+    ],
+    "universe_domain": [
+      "self"
+    ],
+    "get_transport_class": [],
+    "__init__": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self",
+      "request"
+    ],
+    "get_instance_config": [
+      "self",
+      "request"
+    ],
+    "create_instance_config": [
+      "self",
+      "request"
+    ],
+    "update_instance_config": [
+      "self",
+      "request"
+    ],
+    "delete_instance_config": [
+      "self",
+      "request"
+    ],
+    "list_instance_config_operations": [
+      "self",
+      "request"
+    ],
+    "list_instances": [
+      "self",
+      "request"
+    ],
+    "list_instance_partitions": [
+      "self",
+      "request"
+    ],
+    "get_instance": [
+      "self",
+      "request"
+    ],
+    "create_instance": [
+      "self",
+      "request"
+    ],
+    "update_instance": [
+      "self",
+      "request"
+    ],
+    "delete_instance": [
+      "self",
+      "request"
+    ],
+    "set_iam_policy": [
+      "self",
+      "request"
+    ],
+    "get_iam_policy": [
+      "self",
+      "request"
+    ],
+    "test_iam_permissions": [
+      "self",
+      "request"
+    ],
+    "get_instance_partition": [
+      "self",
+      "request"
+    ],
+    "create_instance_partition": [
+      "self",
+      "request"
+    ],
+    "delete_instance_partition": [
+      "self",
+      "request"
+    ],
+    "update_instance_partition": [
+      "self",
+      "request"
+    ],
+    "list_instance_partition_operations": [
+      "self",
+      "request"
+    ],
+    "move_instance": [
+      "self",
+      "request"
+    ],
+    "list_operations": [
+      "self",
+      "request"
+    ],
+    "get_operation": [
+      "self",
+      "request"
+    ],
+    "delete_operation": [
+      "self",
+      "request"
+    ],
+    "cancel_operation": [
+      "self",
+      "request"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "_BaseInstanceAdminRestTransport": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "InstanceAdminGrpcTransport": {
+    "__init__": [
+      "self"
+    ],
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self"
+    ],
+    "get_instance_config": [
+      "self"
+    ],
+    "create_instance_config": [
+      "self"
+    ],
+    "update_instance_config": [
+      "self"
+    ],
+    "delete_instance_config": [
+      "self"
+    ],
+    "list_instance_config_operations": [
+      "self"
+    ],
+    "list_instances": [
+      "self"
+    ],
+    "list_instance_partitions": [
+      "self"
+    ],
+    "get_instance": [
+      "self"
+    ],
+    "create_instance": [
+      "self"
+    ],
+    "update_instance": [
+      "self"
+    ],
+    "delete_instance": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "get_instance_partition": [
+      "self"
+    ],
+    "create_instance_partition": [
+      "self"
+    ],
+    "delete_instance_partition": [
+      "self"
+    ],
+    "update_instance_partition": [
+      "self"
+    ],
+    "list_instance_partition_operations": [
+      "self"
+    ],
+    "move_instance": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "InstanceAdminTransport": {
+    "AUTH_SCOPES": [],
+    "__init__": [
+      "self"
+    ],
+    "host": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "close": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self"
+    ],
+    "get_instance_config": [
+      "self"
+    ],
+    "create_instance_config": [
+      "self"
+    ],
+    "update_instance_config": [
+      "self"
+    ],
+    "delete_instance_config": [
+      "self"
+    ],
+    "list_instance_config_operations": [
+      "self"
+    ],
+    "list_instances": [
+      "self"
+    ],
+    "list_instance_partitions": [
+      "self"
+    ],
+    "get_instance": [
+      "self"
+    ],
+    "create_instance": [
+      "self"
+    ],
+    "update_instance": [
+      "self"
+    ],
+    "delete_instance": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "get_instance_partition": [
+      "self"
+    ],
+    "create_instance_partition": [
+      "self"
+    ],
+    "delete_instance_partition": [
+      "self"
+    ],
+    "update_instance_partition": [
+      "self"
+    ],
+    "list_instance_partition_operations": [
+      "self"
+    ],
+    "move_instance": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ]
+  },
+  "InstanceAdminRestInterceptor": {
+    "pre_create_instance": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_instance": [
+      "self",
+      "response"
+    ],
+    "post_create_instance_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_instance_config": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_instance_config": [
+      "self",
+      "response"
+    ],
+    "post_create_instance_config_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_create_instance_partition": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_create_instance_partition": [
+      "self",
+      "response"
+    ],
+    "post_create_instance_partition_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_delete_instance": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_delete_instance_config": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_delete_instance_partition": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "pre_get_iam_policy": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_iam_policy": [
+      "self",
+      "response"
+    ],
+    "post_get_iam_policy_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_instance": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_instance": [
+      "self",
+      "response"
+    ],
+    "post_get_instance_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_instance_config": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_instance_config": [
+      "self",
+      "response"
+    ],
+    "post_get_instance_config_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_get_instance_partition": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_instance_partition": [
+      "self",
+      "response"
+    ],
+    "post_get_instance_partition_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_instance_config_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_instance_config_operations": [
+      "self",
+      "response"
+    ],
+    "post_list_instance_config_operations_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_instance_configs": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_instance_configs": [
+      "self",
+      "response"
+    ],
+    "post_list_instance_configs_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_instance_partition_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_instance_partition_operations": [
+      "self",
+      "response"
+    ],
+    "post_list_instance_partition_operations_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_instance_partitions": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_instance_partitions": [
+      "self",
+      "response"
+    ],
+    "post_list_instance_partitions_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_list_instances": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_instances": [
+      "self",
+      "response"
+    ],
+    "post_list_instances_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_move_instance": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_move_instance": [
+      "self",
+      "response"
+    ],
+    "post_move_instance_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_set_iam_policy": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_set_iam_policy": [
+      "self",
+      "response"
+    ],
+    "post_set_iam_policy_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_test_iam_permissions": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_test_iam_permissions": [
+      "self",
+      "response"
+    ],
+    "post_test_iam_permissions_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_instance": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_instance": [
+      "self",
+      "response"
+    ],
+    "post_update_instance_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_instance_config": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_instance_config": [
+      "self",
+      "response"
+    ],
+    "post_update_instance_config_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_update_instance_partition": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_update_instance_partition": [
+      "self",
+      "response"
+    ],
+    "post_update_instance_partition_with_metadata": [
+      "self",
+      "response",
+      "metadata"
+    ],
+    "pre_cancel_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_cancel_operation": [
+      "self",
+      "response"
+    ],
+    "pre_delete_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_delete_operation": [
+      "self",
+      "response"
+    ],
+    "pre_get_operation": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_get_operation": [
+      "self",
+      "response"
+    ],
+    "pre_list_operations": [
+      "self",
+      "request",
+      "metadata"
+    ],
+    "post_list_operations": [
+      "self",
+      "response"
+    ]
+  },
+  "InstanceAdminRestStub": {},
+  "InstanceAdminRestTransport": {
+    "__init__": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "create_instance": [
+      "self"
+    ],
+    "create_instance_config": [
+      "self"
+    ],
+    "create_instance_partition": [
+      "self"
+    ],
+    "delete_instance": [
+      "self"
+    ],
+    "delete_instance_config": [
+      "self"
+    ],
+    "delete_instance_partition": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "get_instance": [
+      "self"
+    ],
+    "get_instance_config": [
+      "self"
+    ],
+    "get_instance_partition": [
+      "self"
+    ],
+    "list_instance_config_operations": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self"
+    ],
+    "list_instance_partition_operations": [
+      "self"
+    ],
+    "list_instance_partitions": [
+      "self"
+    ],
+    "list_instances": [
+      "self"
+    ],
+    "move_instance": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "update_instance": [
+      "self"
+    ],
+    "update_instance_config": [
+      "self"
+    ],
+    "update_instance_partition": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "InstanceAdminGrpcAsyncIOTransport": {
+    "create_channel": [
+      "cls",
+      "host",
+      "credentials",
+      "credentials_file",
+      "scopes",
+      "quota_project_id"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "grpc_channel": [
+      "self"
+    ],
+    "operations_client": [
+      "self"
+    ],
+    "list_instance_configs": [
+      "self"
+    ],
+    "get_instance_config": [
+      "self"
+    ],
+    "create_instance_config": [
+      "self"
+    ],
+    "update_instance_config": [
+      "self"
+    ],
+    "delete_instance_config": [
+      "self"
+    ],
+    "list_instance_config_operations": [
+      "self"
+    ],
+    "list_instances": [
+      "self"
+    ],
+    "list_instance_partitions": [
+      "self"
+    ],
+    "get_instance": [
+      "self"
+    ],
+    "create_instance": [
+      "self"
+    ],
+    "update_instance": [
+      "self"
+    ],
+    "delete_instance": [
+      "self"
+    ],
+    "set_iam_policy": [
+      "self"
+    ],
+    "get_iam_policy": [
+      "self"
+    ],
+    "test_iam_permissions": [
+      "self"
+    ],
+    "get_instance_partition": [
+      "self"
+    ],
+    "create_instance_partition": [
+      "self"
+    ],
+    "delete_instance_partition": [
+      "self"
+    ],
+    "update_instance_partition": [
+      "self"
+    ],
+    "list_instance_partition_operations": [
+      "self"
+    ],
+    "move_instance": [
+      "self"
+    ],
+    "_prep_wrapped_messages": [
+      "self",
+      "client_info"
+    ],
+    "_wrap_method": [
+      "self",
+      "func"
+    ],
+    "close": [
+      "self"
+    ],
+    "kind": [
+      "self"
+    ],
+    "delete_operation": [
+      "self"
+    ],
+    "cancel_operation": [
+      "self"
+    ],
+    "get_operation": [
+      "self"
+    ],
+    "list_operations": [
+      "self"
+    ]
+  },
+  "FulfillmentPeriod": {
+    "FULFILLMENT_PERIOD_UNSPECIFIED": [],
+    "FULFILLMENT_PERIOD_NORMAL": [],
+    "FULFILLMENT_PERIOD_EXTENDED": []
+  },
+  "ReplicaSelection": {},
+  "ReplicaInfo": {},
+  "InstanceConfig": {},
+  "ReplicaComputeCapacity": {},
+  "AutoscalingConfig": {},
+  "ListInstanceConfigsRequest": {},
+  "ListInstanceConfigsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "GetInstanceConfigRequest": {},
+  "CreateInstanceConfigRequest": {},
+  "UpdateInstanceConfigRequest": {},
+  "DeleteInstanceConfigRequest": {},
+  "ListInstanceConfigOperationsRequest": {},
+  "ListInstanceConfigOperationsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "GetInstanceRequest": {},
+  "CreateInstanceRequest": {},
+  "ListInstancesRequest": {},
+  "ListInstancesResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "UpdateInstanceRequest": {},
+  "DeleteInstanceRequest": {},
+  "CreateInstanceMetadata": {},
+  "UpdateInstanceMetadata": {},
+  "FreeInstanceMetadata": {},
+  "CreateInstanceConfigMetadata": {},
+  "UpdateInstanceConfigMetadata": {},
+  "InstancePartition": {},
+  "CreateInstancePartitionMetadata": {},
+  "CreateInstancePartitionRequest": {},
+  "DeleteInstancePartitionRequest": {},
+  "GetInstancePartitionRequest": {},
+  "UpdateInstancePartitionRequest": {},
+  "UpdateInstancePartitionMetadata": {},
+  "ListInstancePartitionsRequest": {},
+  "ListInstancePartitionsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "ListInstancePartitionOperationsRequest": {},
+  "ListInstancePartitionOperationsResponse": {
+    "raw_page": [
+      "self"
+    ]
+  },
+  "MoveInstanceRequest": {},
+  "MoveInstanceResponse": {},
+  "MoveInstanceMetadata": {}
+}

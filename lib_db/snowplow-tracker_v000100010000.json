@@ -1,0 +1,869 @@
+{
+  "logger": [],
+  "Snowplow": {
+    "create_tracker": [
+      "namespace",
+      "endpoint",
+      "method",
+      "app_id",
+      "subject",
+      "tracker_config",
+      "emitter_config"
+    ],
+    "add_tracker": [
+      "cls",
+      "tracker"
+    ],
+    "remove_tracker": [
+      "cls",
+      "tracker"
+    ],
+    "remove_tracker_by_namespace": [
+      "cls",
+      "namespace"
+    ],
+    "reset": [
+      "cls"
+    ],
+    "get_tracker": [
+      "cls",
+      "namespace"
+    ]
+  },
+  "DEFAULT_MAX_LENGTH": [],
+  "PAYLOAD_DATA_SCHEMA": [],
+  "PROTOCOLS": [],
+  "METHODS": [],
+  "Requester": {
+    "__init__": [
+      "self",
+      "post",
+      "get"
+    ]
+  },
+  "Emitter": {
+    "__init__": [
+      "self",
+      "endpoint",
+      "protocol",
+      "port",
+      "method",
+      "batch_size",
+      "on_success",
+      "on_failure",
+      "byte_limit",
+      "request_timeout",
+      "max_retry_delay_seconds",
+      "buffer_capacity",
+      "custom_retry_codes",
+      "event_store",
+      "session"
+    ],
+    "as_collector_uri": [
+      "endpoint",
+      "protocol",
+      "port",
+      "method"
+    ],
+    "input": [
+      "self",
+      "payload"
+    ],
+    "reached_limit": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "http_post": [
+      "self",
+      "data"
+    ],
+    "http_get": [
+      "self",
+      "payload"
+    ],
+    "sync_flush": [
+      "self"
+    ],
+    "is_good_status_code": [
+      "status_code"
+    ],
+    "send_events": [
+      "self",
+      "evts"
+    ],
+    "_set_retry_timer": [
+      "self",
+      "timeout"
+    ],
+    "set_flush_timer": [
+      "self",
+      "timeout"
+    ],
+    "cancel_flush_timer": [
+      "self"
+    ],
+    "attach_sent_timestamp": [
+      "events"
+    ],
+    "_should_retry": [
+      "self",
+      "status_code"
+    ],
+    "_set_retry_delay": [
+      "self"
+    ],
+    "_reset_retry_delay": [
+      "self"
+    ],
+    "_retry_failed_events": [
+      "self",
+      "failed_events"
+    ],
+    "_cancel_retry_timer": [
+      "self"
+    ],
+    "async_flush": [
+      "self"
+    ]
+  },
+  "AsyncEmitter": {
+    "__init__": [
+      "self",
+      "endpoint",
+      "protocol",
+      "port",
+      "method",
+      "batch_size",
+      "on_success",
+      "on_failure",
+      "thread_count",
+      "byte_limit",
+      "request_timeout",
+      "max_retry_delay_seconds",
+      "buffer_capacity",
+      "custom_retry_codes",
+      "event_store",
+      "session"
+    ],
+    "sync_flush": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "consume": [
+      "self"
+    ]
+  },
+  "FlushTimer": {
+    "__init__": [
+      "self",
+      "emitter",
+      "repeating"
+    ],
+    "start": [
+      "self",
+      "timeout"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "is_active": [
+      "self"
+    ],
+    "_fire": [
+      "self",
+      "timeout"
+    ],
+    "_schedule_timer": [
+      "self",
+      "timeout"
+    ]
+  },
+  "Tracker": {
+    "__init__": [
+      "self",
+      "namespace",
+      "emitters",
+      "subject",
+      "app_id",
+      "encode_base64",
+      "json_encoder"
+    ],
+    "get_uuid": [],
+    "get_timestamp": [
+      "tstamp"
+    ],
+    "track": [
+      "self",
+      "event"
+    ],
+    "complete_payload": [
+      "self",
+      "event"
+    ],
+    "track_page_view": [
+      "self",
+      "page_url",
+      "page_title",
+      "referrer",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_page_ping": [
+      "self",
+      "page_url",
+      "page_title",
+      "referrer",
+      "min_x",
+      "max_x",
+      "min_y",
+      "max_y",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_link_click": [
+      "self",
+      "target_url",
+      "element_id",
+      "element_classes",
+      "element_target",
+      "element_content",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_add_to_cart": [
+      "self",
+      "sku",
+      "quantity",
+      "name",
+      "category",
+      "unit_price",
+      "currency",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_remove_from_cart": [
+      "self",
+      "sku",
+      "quantity",
+      "name",
+      "category",
+      "unit_price",
+      "currency",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_form_change": [
+      "self",
+      "form_id",
+      "element_id",
+      "node_name",
+      "value",
+      "type_",
+      "element_classes",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_form_submit": [
+      "self",
+      "form_id",
+      "form_classes",
+      "elements",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_site_search": [
+      "self",
+      "terms",
+      "filters",
+      "total_results",
+      "page_results",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_ecommerce_transaction_item": [
+      "self",
+      "order_id",
+      "sku",
+      "price",
+      "quantity",
+      "name",
+      "category",
+      "currency",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_ecommerce_transaction": [
+      "self",
+      "order_id",
+      "total_value",
+      "affiliation",
+      "tax_value",
+      "shipping",
+      "city",
+      "state",
+      "country",
+      "currency",
+      "items",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_screen_view": [
+      "self",
+      "name",
+      "id_",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_mobile_screen_view": [
+      "self",
+      "name",
+      "id_",
+      "type",
+      "previous_name",
+      "previous_id",
+      "previous_type",
+      "transition_type",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_struct_event": [
+      "self",
+      "category",
+      "action",
+      "label",
+      "property_",
+      "value",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_self_describing_event": [
+      "self",
+      "event_json",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "track_unstruct_event": [
+      "self",
+      "event_json",
+      "context",
+      "tstamp",
+      "event_subject"
+    ],
+    "flush": [
+      "self",
+      "is_async"
+    ],
+    "set_subject": [
+      "self",
+      "subject"
+    ],
+    "add_emitter": [
+      "self",
+      "emitter"
+    ],
+    "get_namespace": [
+      "self"
+    ]
+  },
+  "DEFAULT_PLATFORM": [],
+  "Subject": {
+    "__init__": [
+      "self"
+    ],
+    "set_platform": [
+      "self",
+      "value"
+    ],
+    "set_user_id": [
+      "self",
+      "user_id"
+    ],
+    "set_screen_resolution": [
+      "self",
+      "width",
+      "height"
+    ],
+    "set_viewport": [
+      "self",
+      "width",
+      "height"
+    ],
+    "set_color_depth": [
+      "self",
+      "depth"
+    ],
+    "set_timezone": [
+      "self",
+      "timezone"
+    ],
+    "set_lang": [
+      "self",
+      "lang"
+    ],
+    "set_domain_user_id": [
+      "self",
+      "duid"
+    ],
+    "set_domain_session_id": [
+      "self",
+      "sid"
+    ],
+    "set_domain_session_index": [
+      "self",
+      "vid"
+    ],
+    "set_ip_address": [
+      "self",
+      "ip"
+    ],
+    "set_useragent": [
+      "self",
+      "ua"
+    ],
+    "set_network_user_id": [
+      "self",
+      "nuid"
+    ],
+    "combine_subject": [
+      "self",
+      "subject"
+    ]
+  },
+  "_CONTRACTS_ENABLED": [],
+  "_MATCH_FIRST_PARAMETER_REGEX": [],
+  "disable_contracts": [],
+  "enable_contracts": [],
+  "contracts_enabled": [],
+  "greater_than": [
+    "value",
+    "compared_to"
+  ],
+  "non_empty": [
+    "seq"
+  ],
+  "non_empty_string": [
+    "s"
+  ],
+  "one_of": [
+    "value",
+    "supported"
+  ],
+  "satisfies": [
+    "value",
+    "check"
+  ],
+  "form_element": [
+    "element"
+  ],
+  "_get_parameter_name": [],
+  "_check_form_element": [
+    "element"
+  ],
+  "EventStore": {
+    "add_event": [
+      "self",
+      "payload"
+    ],
+    "get_events_batch": [
+      "self"
+    ],
+    "cleanup": [
+      "self",
+      "batch",
+      "need_retry"
+    ],
+    "size": [
+      "self"
+    ]
+  },
+  "InMemoryEventStore": {
+    "__init__": [
+      "self",
+      "logger",
+      "buffer_capacity"
+    ],
+    "add_event": [
+      "self",
+      "payload"
+    ],
+    "get_events_batch": [
+      "self"
+    ],
+    "cleanup": [
+      "self",
+      "batch",
+      "need_retry"
+    ],
+    "size": [
+      "self"
+    ],
+    "_buffer_capacity_reached": [
+      "self"
+    ]
+  },
+  "PayloadDict": [],
+  "PayloadDictList": [],
+  "JsonEncoderFunction": [],
+  "FORM_NODE_NAMES": [],
+  "FORM_TYPES": [],
+  "FormNodeName": [],
+  "ElementClasses": [],
+  "FormClasses": [],
+  "HttpProtocol": [],
+  "Method": [],
+  "SuccessCallback": [],
+  "FailureCallback": [],
+  "SUPPORTED_PLATFORMS": [],
+  "SupportedPlatform": [],
+  "EmitterProtocol": {
+    "input": [
+      "self",
+      "payload"
+    ],
+    "flush": [
+      "self"
+    ],
+    "async_flush": [
+      "self"
+    ],
+    "sync_flush": [
+      "self"
+    ]
+  },
+  "TrackerConfiguration": {
+    "__init__": [
+      "self",
+      "encode_base64",
+      "json_encoder"
+    ],
+    "encode_base64": [
+      "self",
+      "value"
+    ],
+    "json_encoder": [
+      "self",
+      "value"
+    ]
+  },
+  "SelfDescribingJson": {
+    "__init__": [
+      "self",
+      "schema",
+      "data"
+    ],
+    "schema": [
+      "self",
+      "value"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "to_string": [
+      "self"
+    ]
+  },
+  "Payload": {
+    "__init__": [
+      "self",
+      "dict_"
+    ],
+    "add": [
+      "self",
+      "name",
+      "value"
+    ],
+    "add_dict": [
+      "self",
+      "dict_",
+      "base64"
+    ],
+    "add_json": [
+      "self",
+      "dict_",
+      "encode_base64",
+      "type_when_encoded",
+      "type_when_not_encoded",
+      "json_encoder"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "VERSION": [],
+  "BASE_SCHEMA_PATH": [],
+  "MOBILE_SCHEMA_PATH": [],
+  "SCHEMA_TAG": [],
+  "CONTEXT_SCHEMA": [],
+  "UNSTRUCT_EVENT_SCHEMA": [],
+  "ContextArray": [],
+  "EmitterConfiguration": {
+    "__init__": [
+      "self",
+      "batch_size",
+      "on_success",
+      "on_failure",
+      "byte_limit",
+      "request_timeout",
+      "buffer_capacity",
+      "custom_retry_codes",
+      "event_store",
+      "session"
+    ],
+    "batch_size": [
+      "self",
+      "value"
+    ],
+    "on_success": [
+      "self",
+      "value"
+    ],
+    "on_failure": [
+      "self",
+      "value"
+    ],
+    "byte_limit": [
+      "self",
+      "value"
+    ],
+    "request_timeout": [
+      "self",
+      "value"
+    ],
+    "buffer_capacity": [
+      "self",
+      "value"
+    ],
+    "custom_retry_codes": [
+      "self",
+      "value"
+    ],
+    "set_retry_code": [
+      "self",
+      "status_code",
+      "retry"
+    ],
+    "event_store": [
+      "self",
+      "value"
+    ],
+    "session": [
+      "self",
+      "value"
+    ]
+  },
+  "__version_info__": [],
+  "__version__": [],
+  "__build_version__": [],
+  "StructuredEvent": {
+    "__init__": [
+      "self",
+      "category",
+      "action",
+      "label",
+      "property_",
+      "value",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "category": [
+      "self",
+      "value"
+    ],
+    "action": [
+      "self",
+      "value"
+    ],
+    "label": [
+      "self",
+      "value"
+    ],
+    "property_": [
+      "self",
+      "value"
+    ],
+    "value": [
+      "self",
+      "value"
+    ]
+  },
+  "Event": {
+    "__init__": [
+      "self",
+      "dict_",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "build_payload": [
+      "self",
+      "encode_base64",
+      "json_encoder",
+      "subject"
+    ],
+    "event_subject": [
+      "self",
+      "value"
+    ],
+    "context": [
+      "self",
+      "value"
+    ],
+    "true_timestamp": [
+      "self",
+      "value"
+    ]
+  },
+  "ScreenView": {
+    "__init__": [
+      "self",
+      "id_",
+      "name",
+      "type",
+      "previous_name",
+      "previous_id",
+      "previous_type",
+      "transition_type",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "id_": [
+      "self",
+      "value"
+    ],
+    "name": [
+      "self",
+      "value"
+    ],
+    "type": [
+      "self",
+      "value"
+    ],
+    "previous_name": [
+      "self",
+      "value"
+    ],
+    "previous_id": [
+      "self",
+      "value"
+    ],
+    "previous_type": [
+      "self",
+      "value"
+    ],
+    "transition_type": [
+      "self",
+      "value"
+    ],
+    "build_payload": [
+      "self",
+      "encode_base64",
+      "json_encoder",
+      "subject"
+    ]
+  },
+  "SelfDescribing": {
+    "__init__": [
+      "self",
+      "event_json",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "event_json": [
+      "self",
+      "value"
+    ],
+    "build_payload": [
+      "self",
+      "encode_base64",
+      "json_encoder",
+      "subject"
+    ]
+  },
+  "PagePing": {
+    "__init__": [
+      "self",
+      "page_url",
+      "page_title",
+      "referrer",
+      "min_x",
+      "max_x",
+      "min_y",
+      "max_y",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "page_url": [
+      "self",
+      "value"
+    ],
+    "page_title": [
+      "self",
+      "value"
+    ],
+    "referrer": [
+      "self",
+      "value"
+    ],
+    "min_x": [
+      "self",
+      "value"
+    ],
+    "max_x": [
+      "self",
+      "value"
+    ],
+    "min_y": [
+      "self",
+      "value"
+    ],
+    "max_y": [
+      "self",
+      "value"
+    ]
+  },
+  "PageView": {
+    "__init__": [
+      "self",
+      "page_url",
+      "page_title",
+      "referrer",
+      "event_subject",
+      "context",
+      "true_timestamp"
+    ],
+    "page_url": [
+      "self",
+      "value"
+    ],
+    "page_title": [
+      "self",
+      "value"
+    ],
+    "referrer": [
+      "self",
+      "value"
+    ]
+  }
+}

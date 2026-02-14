@@ -1,0 +1,3994 @@
+{
+  "ReadItemsHelperSync": {
+    "logger": [],
+    "__init__": [
+      "self",
+      "client",
+      "collection_link",
+      "items",
+      "options",
+      "partition_key_definition"
+    ],
+    "read_items": [
+      "self"
+    ],
+    "_execute_with_executor": [
+      "self",
+      "executor",
+      "query_chunks"
+    ],
+    "_partition_items_by_range": [
+      "self"
+    ],
+    "_create_query_chunks": [
+      "self",
+      "items_by_partition"
+    ],
+    "_execute_query_chunk_worker": [
+      "self",
+      "partition_id",
+      "chunk_partition_items"
+    ],
+    "_execute_query": [
+      "self",
+      "partition_id",
+      "items_for_query",
+      "id_to_idx",
+      "request_kwargs"
+    ],
+    "_execute_point_read": [
+      "self",
+      "item_id",
+      "pk_value",
+      "request_kwargs"
+    ]
+  },
+  "get_user_agent": [
+    "suffix"
+  ],
+  "get_user_agent_async": [
+    "suffix"
+  ],
+  "safe_user_agent_header": [
+    "s"
+  ],
+  "get_index_metrics_info": [
+    "delimited_string"
+  ],
+  "current_time_millis": [],
+  "add_args_to_kwargs": [
+    "arg_names",
+    "args",
+    "kwargs"
+  ],
+  "format_list_with_and": [
+    "items"
+  ],
+  "verify_exclusive_arguments": [
+    "exclusive_keys"
+  ],
+  "valid_key_value_exist": [
+    "kwargs",
+    "key",
+    "invalid_value"
+  ],
+  "MINIMUM_REQUESTS_FOR_FAILURE_RATE": [],
+  "MAX_UNAVAILABLE_TIME_MS": [],
+  "REFRESH_INTERVAL_MS": [],
+  "INITIAL_UNAVAILABLE_TIME_MS": [],
+  "UNHEALTHY": [],
+  "UNHEALTHY_TENTATIVE": [],
+  "UNAVAILABLE_INTERVAL": [],
+  "LAST_UNAVAILABILITY_CHECK_TIME_STAMP": [],
+  "HEALTH_STATUS": [],
+  "_PartitionHealthInfo": {
+    "__init__": [
+      "self"
+    ],
+    "reset_failure_rate_health_stats": [
+      "self"
+    ],
+    "transition_health_status": [
+      "self",
+      "target_health_status",
+      "curr_time"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_has_exceeded_failure_rate_threshold": [
+    "successes",
+    "failures",
+    "failure_rate_threshold"
+  ],
+  "_should_mark_healthy_tentative": [
+    "partition_health_info",
+    "curr_time"
+  ],
+  "logger": [],
+  "_PartitionHealthTracker": {
+    "__init__": [
+      "self"
+    ],
+    "_transition_health_status_on_failure": [
+      "self",
+      "pk_range_wrapper",
+      "location"
+    ],
+    "_transition_health_status_on_success": [
+      "self",
+      "pk_range_wrapper",
+      "location"
+    ],
+    "check_stale_partition_info": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "get_unhealthy_locations": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "add_failure": [
+      "self",
+      "pk_range_wrapper",
+      "operation_type",
+      "location"
+    ],
+    "_check_thresholds": [
+      "self",
+      "pk_range_wrapper",
+      "successes",
+      "failures",
+      "consecutive_failures",
+      "location",
+      "failure_rate_threshold",
+      "consecutive_failure_threshold"
+    ],
+    "add_success": [
+      "self",
+      "pk_range_wrapper",
+      "operation_type",
+      "location"
+    ],
+    "_reset_partition_health_tracker_stats": [
+      "self"
+    ]
+  },
+  "_SessionRetryPolicy": {
+    "Max_retry_attempt_count": [],
+    "Retry_after_in_milliseconds": [],
+    "__init__": [
+      "self",
+      "endpoint_discovery_enable",
+      "global_endpoint_manager",
+      "pk_range_wrapper"
+    ],
+    "ShouldRetry": [
+      "self",
+      "_exception"
+    ]
+  },
+  "HealthCheckRetryPolicy": {
+    "__init__": [
+      "self",
+      "connection_policy"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ]
+  },
+  "DefaultRetryPolicy": {
+    "error_codes": [],
+    "CONNECTION_ERROR_CODES": [],
+    "__init__": [
+      "self"
+    ],
+    "needsRetry": [
+      "self",
+      "error_code"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ]
+  },
+  "Execute": [
+    "client",
+    "global_endpoint_manager",
+    "function"
+  ],
+  "ExecuteFunction": [
+    "function"
+  ],
+  "_has_read_retryable_headers": [
+    "request_headers"
+  ],
+  "_has_database_account_header": [
+    "request_headers"
+  ],
+  "_handle_service_request_retries": [
+    "client",
+    "request_retry_policy",
+    "exception"
+  ],
+  "_handle_service_response_retries": [
+    "request",
+    "client",
+    "response_retry_policy",
+    "exception"
+  ],
+  "is_write_retryable": [
+    "request_params",
+    "client"
+  ],
+  "_configure_timeout": [
+    "request",
+    "absolute",
+    "per_request"
+  ],
+  "ConnectionRetryPolicy": {
+    "__init__": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "request"
+    ]
+  },
+  "HTTPRequestType": [],
+  "InferenceServiceBearerTokenPolicy": {
+    "_update_headers": [
+      "headers",
+      "token"
+    ],
+    "on_request": [
+      "self",
+      "request"
+    ],
+    "authorize_request": [
+      "self",
+      "request"
+    ]
+  },
+  "_is_readable_stream": [
+    "obj"
+  ],
+  "_request_body_from_data": [
+    "data"
+  ],
+  "_Request": [
+    "global_endpoint_manager",
+    "request_params",
+    "connection_policy",
+    "pipeline_client",
+    "request"
+  ],
+  "_replace_url_prefix": [
+    "original_url",
+    "new_prefix"
+  ],
+  "_PipelineRunFunction": [
+    "pipeline_client",
+    "request"
+  ],
+  "SynchronizedRequest": [
+    "client",
+    "request_params",
+    "global_endpoint_manager",
+    "connection_policy",
+    "pipeline_client",
+    "request",
+    "request_data"
+  ],
+  "_RecordDiagnostics": {
+    "_common": [],
+    "__init__": [
+      "self"
+    ],
+    "headers": [
+      "self"
+    ],
+    "body": [
+      "self"
+    ],
+    "request_charge": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "headers",
+      "body"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "__getattr__": [
+    "name"
+  ],
+  "CosmosDict": {
+    "__init__": [],
+    "get_response_headers": [
+      "self"
+    ]
+  },
+  "CosmosList": {
+    "__init__": [],
+    "get_response_headers": [
+      "self"
+    ]
+  },
+  "log_formatter": [],
+  "log_handler": [],
+  "EndpointDiscoveryRetryPolicy": {
+    "Max_retry_attempt_count": [],
+    "Retry_after_in_milliseconds": [],
+    "__init__": [
+      "self",
+      "connection_policy",
+      "global_endpoint_manager"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ]
+  },
+  "ContainerRecreateRetryPolicy": {
+    "__init__": [
+      "self",
+      "client",
+      "container_caches",
+      "request"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ],
+    "__find_container_link_with_rid": [
+      "self",
+      "container_properties_caches",
+      "rid"
+    ],
+    "check_if_rid_different": [
+      "self",
+      "container_link",
+      "container_properties_caches",
+      "rid"
+    ],
+    "should_extract_partition_key": [
+      "self",
+      "container_cache"
+    ],
+    "_extract_partition_key": [
+      "self",
+      "client",
+      "container_cache",
+      "body"
+    ],
+    "_extract_partition_key_async": [
+      "self",
+      "client",
+      "container_cache",
+      "body"
+    ],
+    "should_update_throughput_link": [
+      "self",
+      "body",
+      "cached_container"
+    ],
+    "_update_throughput_link": [
+      "self",
+      "body"
+    ],
+    "__str_to_dict": [
+      "self",
+      "dict_string"
+    ]
+  },
+  "__all__": [],
+  "_get_database_link": [
+    "database_or_id"
+  ],
+  "DatabaseProxy": {
+    "__init__": [
+      "self",
+      "client_connection",
+      "id",
+      "properties"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_get_container_id": [
+      "self",
+      "container_or_id"
+    ],
+    "_get_container_link": [
+      "self",
+      "container_or_id"
+    ],
+    "_get_user_link": [
+      "self",
+      "user_or_id"
+    ],
+    "_get_properties": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "populate_query_metrics"
+    ],
+    "create_container": [
+      "self"
+    ],
+    "create_container_if_not_exists": [
+      "self"
+    ],
+    "delete_container": [
+      "self",
+      "container",
+      "populate_query_metrics"
+    ],
+    "get_container_client": [
+      "self",
+      "container"
+    ],
+    "list_containers": [
+      "self",
+      "max_item_count",
+      "populate_query_metrics"
+    ],
+    "query_containers": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count",
+      "populate_query_metrics"
+    ],
+    "replace_container": [
+      "self"
+    ],
+    "list_users": [
+      "self",
+      "max_item_count"
+    ],
+    "query_users": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count"
+    ],
+    "get_user_client": [
+      "self",
+      "user"
+    ],
+    "create_user": [
+      "self",
+      "body"
+    ],
+    "upsert_user": [
+      "self",
+      "body"
+    ],
+    "replace_user": [
+      "self",
+      "user",
+      "body"
+    ],
+    "delete_user": [
+      "self",
+      "user"
+    ],
+    "read_offer": [
+      "self"
+    ],
+    "get_throughput": [
+      "self"
+    ],
+    "replace_throughput": [
+      "self",
+      "throughput"
+    ]
+  },
+  "MediaTypes": {
+    "Any": [],
+    "ImageJpeg": [],
+    "ImagePng": [],
+    "JavaScript": [],
+    "Json": [],
+    "OctetStream": [],
+    "QueryJson": [],
+    "SQL": [],
+    "TextHtml": [],
+    "TextPlain": [],
+    "Xml": []
+  },
+  "ServiceResponseRetryPolicy": {
+    "__init__": [
+      "self",
+      "connection_policy",
+      "global_endpoint_manager",
+      "pk_range_wrapper"
+    ],
+    "ShouldRetry": [
+      "self"
+    ],
+    "resolve_next_region_service_endpoint": [
+      "self"
+    ]
+  },
+  "_GlobalEndpointManager": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_refresh_time_interval_in_ms_stub": [
+      "self"
+    ],
+    "get_write_endpoint": [
+      "self"
+    ],
+    "get_read_endpoint": [
+      "self"
+    ],
+    "_resolve_service_endpoint": [
+      "self",
+      "request"
+    ],
+    "mark_endpoint_unavailable_for_read": [
+      "self",
+      "endpoint",
+      "refresh_cache",
+      "context"
+    ],
+    "mark_endpoint_unavailable_for_write": [
+      "self",
+      "endpoint",
+      "refresh_cache",
+      "context"
+    ],
+    "get_ordered_write_locations": [
+      "self"
+    ],
+    "get_ordered_read_locations": [
+      "self"
+    ],
+    "can_use_multiple_write_locations": [
+      "self",
+      "request"
+    ],
+    "force_refresh_on_startup": [
+      "self",
+      "database_account"
+    ],
+    "update_location_cache": [
+      "self"
+    ],
+    "_mark_endpoint_unavailable": [
+      "self",
+      "endpoint",
+      "context"
+    ],
+    "refresh_endpoint_list": [
+      "self",
+      "database_account"
+    ],
+    "_refresh_endpoint_list_private": [
+      "self",
+      "database_account"
+    ],
+    "_start_background_refresh": [
+      "self",
+      "target",
+      "kwargs"
+    ],
+    "_GetDatabaseAccount": [
+      "self"
+    ],
+    "_endpoints_health_check": [
+      "self"
+    ],
+    "_refresh_database_account_and_health": [
+      "self"
+    ],
+    "_GetDatabaseAccountStub": [
+      "self",
+      "endpoint"
+    ]
+  },
+  "RetryOptions": {
+    "__init__": [
+      "self",
+      "max_retry_attempt_count",
+      "fixed_retry_interval_in_milliseconds",
+      "max_wait_time_in_seconds"
+    ],
+    "MaxRetryAttemptCount": [
+      "self"
+    ],
+    "FixedRetryIntervalInMilliseconds": [
+      "self"
+    ],
+    "MaxWaitTimeInSeconds": [
+      "self"
+    ]
+  },
+  "TimeoutScope": {},
+  "_Constants": {
+    "INFERENCE_SERVICE_DEFAULT_SCOPE": [],
+    "FAILURE_PERCENTAGE_TOLERATED": []
+  },
+  "VectorSessionToken": {
+    "segment_separator": [],
+    "region_progress_separator": [],
+    "__init__": [
+      "self",
+      "version",
+      "global_lsn",
+      "local_lsn_by_region",
+      "session_token"
+    ],
+    "create": [
+      "cls",
+      "session_token"
+    ],
+    "equals": [
+      "self",
+      "other"
+    ],
+    "merge": [
+      "self",
+      "other"
+    ],
+    "convert_to_string": [
+      "self"
+    ],
+    "are_region_progress_equal": [
+      "self",
+      "other"
+    ]
+  },
+  "ScriptType": {
+    "StoredProcedure": [],
+    "Trigger": [],
+    "UserDefinedFunction": []
+  },
+  "ScriptsProxy": {
+    "__init__": [
+      "self",
+      "client_connection",
+      "container_link",
+      "is_system_key"
+    ],
+    "_get_resource_link": [
+      "self",
+      "script_or_id",
+      "typ"
+    ],
+    "list_stored_procedures": [
+      "self",
+      "max_item_count"
+    ],
+    "query_stored_procedures": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count"
+    ],
+    "get_stored_procedure": [
+      "self",
+      "sproc"
+    ],
+    "create_stored_procedure": [
+      "self",
+      "body"
+    ],
+    "replace_stored_procedure": [
+      "self",
+      "sproc",
+      "body"
+    ],
+    "delete_stored_procedure": [
+      "self",
+      "sproc"
+    ],
+    "execute_stored_procedure": [
+      "self",
+      "sproc",
+      "partition_key",
+      "params",
+      "enable_script_logging"
+    ],
+    "list_triggers": [
+      "self",
+      "max_item_count"
+    ],
+    "query_triggers": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count"
+    ],
+    "get_trigger": [
+      "self",
+      "trigger"
+    ],
+    "create_trigger": [
+      "self",
+      "body"
+    ],
+    "replace_trigger": [
+      "self",
+      "trigger",
+      "body"
+    ],
+    "delete_trigger": [
+      "self",
+      "trigger"
+    ],
+    "list_user_defined_functions": [
+      "self",
+      "max_item_count"
+    ],
+    "query_user_defined_functions": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count"
+    ],
+    "get_user_defined_function": [
+      "self",
+      "udf"
+    ],
+    "create_user_defined_function": [
+      "self",
+      "body"
+    ],
+    "replace_user_defined_function": [
+      "self",
+      "udf",
+      "body"
+    ],
+    "delete_user_defined_function": [
+      "self",
+      "udf"
+    ]
+  },
+  "_InferenceService": {
+    "TOTAL_RETRIES": [],
+    "RETRY_BACKOFF_MAX": [],
+    "RETRY_AFTER_STATUS_CODES": [],
+    "RETRY_BACKOFF_FACTOR": [],
+    "inference_service_default_scope": [],
+    "semantic_reranking_inference_endpoint": [],
+    "__init__": [
+      "self",
+      "cosmos_client_connection"
+    ],
+    "_create_inference_pipeline_client": [
+      "self"
+    ],
+    "rerank": [
+      "self",
+      "reranking_context",
+      "documents",
+      "semantic_reranking_options"
+    ]
+  },
+  "HTTPResponseType": [],
+  "_populate_logger_attributes": [
+    "logger_attributes",
+    "request",
+    "exception"
+  ],
+  "_log_diagnostics_error": [
+    "diagnostics_enabled",
+    "request",
+    "response_headers",
+    "error",
+    "logger_attributes",
+    "global_endpoint_manager",
+    "logger"
+  ],
+  "_get_client_settings": [
+    "global_endpoint_manager"
+  ],
+  "_get_database_account_settings": [
+    "global_endpoint_manager"
+  ],
+  "_redact_header": [
+    "key",
+    "value"
+  ],
+  "_format_error": [
+    "payload"
+  ],
+  "_iter_loggers": [
+    "logger"
+  ],
+  "CosmosHttpLoggingPolicy": {
+    "__init__": [
+      "self",
+      "logger",
+      "global_endpoint_manager"
+    ],
+    "_redact_query_param": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_redact_header": [
+      "self",
+      "key",
+      "value"
+    ],
+    "on_request": [
+      "self",
+      "request"
+    ],
+    "on_response": [
+      "self",
+      "request",
+      "response"
+    ],
+    "on_exception": [
+      "self",
+      "request"
+    ],
+    "_log_client_settings": [
+      "self"
+    ],
+    "_log_database_account_settings": [
+      "self"
+    ]
+  },
+  "_MaximumExclusiveEffectivePartitionKey": [],
+  "_MinimumInclusiveEffectivePartitionKey": [],
+  "_MaxStringChars": [],
+  "_MaxStringBytesToAppend": [],
+  "_MaxPartitionKeyBinarySize": [],
+  "_PartitionKeyComponentType": {
+    "Undefined": [],
+    "Null": [],
+    "PFalse": [],
+    "PTrue": [],
+    "MinNumber": [],
+    "Number": [],
+    "MaxNumber": [],
+    "MinString": [],
+    "String": [],
+    "MaxString": [],
+    "Int64": [],
+    "Int32": [],
+    "Int16": [],
+    "Int8": [],
+    "Uint64": [],
+    "Uint32": [],
+    "Uint16": [],
+    "Uint8": [],
+    "Binary": [],
+    "Guid": [],
+    "Float": [],
+    "Infinity": []
+  },
+  "_PartitionKeyKind": {},
+  "_PartitionKeyVersion": {},
+  "NonePartitionKeyValue": {},
+  "NullPartitionKeyValue": {},
+  "_Empty": {},
+  "_Undefined": {},
+  "_Infinity": {},
+  "_SingularPartitionKeyType": [],
+  "_SequentialPartitionKeyType": [],
+  "PartitionKeyType": [],
+  "PartitionKey": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "kind": [
+      "self",
+      "value"
+    ],
+    "path": [
+      "self",
+      "value"
+    ],
+    "version": [
+      "self",
+      "value"
+    ],
+    "_get_epk_range_for_prefix_partition_key": [
+      "self",
+      "pk_value"
+    ],
+    "_get_epk_range_for_partition_key": [
+      "self",
+      "pk_value"
+    ],
+    "_truncate_for_v1_hashing": [
+      "value"
+    ],
+    "_get_effective_partition_key_for_hash_partitioning": [
+      "pk_value"
+    ],
+    "_get_hashed_partition_key_string": [
+      "pk_value",
+      "kind",
+      "version"
+    ],
+    "_get_effective_partition_key_string": [
+      "self",
+      "pk_value"
+    ],
+    "_write_for_hashing": [
+      "value",
+      "writer"
+    ],
+    "_write_for_hashing_v2": [
+      "value",
+      "writer"
+    ],
+    "_write_for_hashing_core": [
+      "value",
+      "string_suffix",
+      "writer"
+    ],
+    "_get_effective_partition_key_for_hash_partitioning_v2": [
+      "pk_value"
+    ],
+    "_get_effective_partition_key_for_multi_hash_partitioning_v2": [
+      "pk_value"
+    ],
+    "_is_prefix_partition_key": [
+      "self",
+      "partition_key"
+    ]
+  },
+  "_return_undefined_or_empty_partition_key": [
+    "is_system_key"
+  ],
+  "_to_hex": [
+    "bytes_object",
+    "start",
+    "length"
+  ],
+  "_to_hex_encoded_binary_string": [
+    "components"
+  ],
+  "_to_hex_encoded_binary_string_v1": [
+    "components"
+  ],
+  "_write_for_binary_encoding_v1": [
+    "value",
+    "binary_writer"
+  ],
+  "_write_for_binary_encoding": [
+    "value",
+    "binary_writer"
+  ],
+  "_get_partition_key_from_partition_key_definition": [
+    "partition_key_definition"
+  ],
+  "_build_partition_key_from_properties": [
+    "container_properties"
+  ],
+  "ResourceThrottleRetryPolicy": {
+    "__init__": [
+      "self",
+      "max_retry_attempt_count",
+      "fixed_retry_interval_in_milliseconds",
+      "max_wait_time_in_seconds"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ]
+  },
+  "CosmosBearerTokenCredentialPolicy": {
+    "AadDefaultScope": [],
+    "__init__": [
+      "self",
+      "credential",
+      "account_scope",
+      "override_scope"
+    ],
+    "_update_headers": [
+      "headers",
+      "token"
+    ],
+    "on_request": [
+      "self",
+      "request"
+    ],
+    "authorize_request": [
+      "self",
+      "request"
+    ]
+  },
+  "_get_epk_range_for_partition_key": [
+    "container_properties",
+    "partition_key_value"
+  ],
+  "ContainerProxy": {
+    "__init__": [
+      "self",
+      "client_connection",
+      "database_link",
+      "id",
+      "properties"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_get_properties_with_options": [
+      "self",
+      "options"
+    ],
+    "_get_properties": [
+      "self"
+    ],
+    "is_system_key": [
+      "self"
+    ],
+    "scripts": [
+      "self"
+    ],
+    "_get_document_link": [
+      "self",
+      "item_or_link"
+    ],
+    "_get_conflict_link": [
+      "self",
+      "conflict_or_link"
+    ],
+    "_set_partition_key": [
+      "self",
+      "partition_key"
+    ],
+    "__get_client_container_caches": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "populate_query_metrics",
+      "populate_partition_key_range_statistics",
+      "populate_quota_info"
+    ],
+    "read_item": [
+      "self",
+      "item",
+      "partition_key",
+      "populate_query_metrics",
+      "post_trigger_include"
+    ],
+    "read_items": [
+      "self",
+      "items"
+    ],
+    "read_all_items": [
+      "self",
+      "max_item_count",
+      "populate_query_metrics"
+    ],
+    "query_items_change_feed": [
+      "self"
+    ],
+    "query_items": [
+      "self"
+    ],
+    "semantic_rerank": [
+      "self"
+    ],
+    "replace_item": [
+      "self",
+      "item",
+      "body",
+      "populate_query_metrics",
+      "pre_trigger_include",
+      "post_trigger_include"
+    ],
+    "upsert_item": [
+      "self",
+      "body",
+      "populate_query_metrics",
+      "pre_trigger_include",
+      "post_trigger_include"
+    ],
+    "create_item": [
+      "self",
+      "body",
+      "populate_query_metrics",
+      "pre_trigger_include",
+      "post_trigger_include",
+      "indexing_directive"
+    ],
+    "patch_item": [
+      "self",
+      "item",
+      "partition_key",
+      "patch_operations"
+    ],
+    "execute_item_batch": [
+      "self",
+      "batch_operations",
+      "partition_key"
+    ],
+    "delete_item": [
+      "self",
+      "item",
+      "partition_key",
+      "populate_query_metrics",
+      "pre_trigger_include",
+      "post_trigger_include"
+    ],
+    "read_offer": [
+      "self"
+    ],
+    "get_throughput": [
+      "self"
+    ],
+    "replace_throughput": [
+      "self",
+      "throughput"
+    ],
+    "list_conflicts": [
+      "self",
+      "max_item_count"
+    ],
+    "query_conflicts": [
+      "self",
+      "query",
+      "parameters",
+      "enable_cross_partition_query",
+      "partition_key",
+      "max_item_count"
+    ],
+    "get_conflict": [
+      "self",
+      "conflict",
+      "partition_key"
+    ],
+    "delete_conflict": [
+      "self",
+      "conflict",
+      "partition_key"
+    ],
+    "delete_all_items_by_partition_key": [
+      "self",
+      "partition_key"
+    ],
+    "read_feed_ranges": [
+      "self"
+    ],
+    "get_latest_session_token": [
+      "self",
+      "feed_ranges_to_session_tokens",
+      "target_feed_range"
+    ],
+    "feed_range_from_partition_key": [
+      "self",
+      "partition_key"
+    ],
+    "is_feed_range_subset": [
+      "self",
+      "parent_feed_range",
+      "child_feed_range"
+    ]
+  },
+  "__version__": [],
+  "WARN_LEVEL_LOGGING_THRESHOLD": [],
+  "_GlobalPartitionEndpointManagerForCircuitBreakerCore": {
+    "__init__": [
+      "self",
+      "client",
+      "location_cache"
+    ],
+    "log_warn_or_debug": [
+      "self",
+      "message"
+    ],
+    "is_circuit_breaker_applicable": [
+      "self",
+      "request"
+    ],
+    "record_failure": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "check_stale_partition_info": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "add_excluded_locations_to_request": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "record_success": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ]
+  },
+  "PartitionKeyRangeGoneRetryPolicy": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "ShouldRetry": [
+      "self",
+      "exception"
+    ]
+  },
+  "EndpointOperationType": {
+    "NoneType": [],
+    "ReadType": [],
+    "WriteType": []
+  },
+  "RegionalRoutingContext": {
+    "__init__": [
+      "self",
+      "primary_endpoint"
+    ],
+    "set_primary": [
+      "self",
+      "endpoint"
+    ],
+    "get_primary": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "get_regional_routing_contexts_by_loc": [
+    "new_locations"
+  ],
+  "_get_health_check_endpoints": [
+    "regional_routing_contexts"
+  ],
+  "_get_applicable_regional_routing_contexts": [
+    "regional_routing_contexts",
+    "location_name_by_endpoint",
+    "fall_back_regional_routing_context",
+    "exclude_location_list",
+    "circuit_breaker_exclude_list",
+    "resource_type"
+  ],
+  "LocationCache": {
+    "__init__": [
+      "self",
+      "default_endpoint",
+      "connection_policy"
+    ],
+    "get_write_regional_routing_contexts": [
+      "self"
+    ],
+    "get_read_regional_routing_contexts": [
+      "self"
+    ],
+    "get_location_from_endpoint": [
+      "self",
+      "endpoint"
+    ],
+    "get_write_regional_routing_context": [
+      "self"
+    ],
+    "get_read_regional_routing_context": [
+      "self"
+    ],
+    "mark_endpoint_unavailable_for_read": [
+      "self",
+      "endpoint",
+      "refresh_cache",
+      "context"
+    ],
+    "mark_endpoint_unavailable_for_write": [
+      "self",
+      "endpoint",
+      "refresh_cache",
+      "context"
+    ],
+    "perform_on_database_account_read": [
+      "self",
+      "database_account"
+    ],
+    "get_all_write_endpoints": [
+      "self"
+    ],
+    "get_ordered_write_locations": [
+      "self"
+    ],
+    "get_ordered_read_locations": [
+      "self"
+    ],
+    "_get_configured_excluded_locations": [
+      "self",
+      "request"
+    ],
+    "_get_applicable_read_regional_routing_contexts": [
+      "self",
+      "request"
+    ],
+    "_get_applicable_write_regional_routing_contexts": [
+      "self",
+      "request"
+    ],
+    "_resolve_endpoint_without_preferred_locations": [
+      "self",
+      "request",
+      "is_write",
+      "location_index"
+    ],
+    "resolve_service_endpoint": [
+      "self",
+      "request"
+    ],
+    "should_refresh_endpoints": [
+      "self"
+    ],
+    "is_endpoint_unavailable": [
+      "self",
+      "endpoint",
+      "expected_available_operation"
+    ],
+    "mark_endpoint_unavailable": [
+      "self",
+      "unavailable_endpoint",
+      "unavailable_operation_type",
+      "refresh_cache",
+      "context"
+    ],
+    "mark_endpoint_available": [
+      "self",
+      "available_endpoint"
+    ],
+    "update_location_cache": [
+      "self",
+      "write_locations",
+      "read_locations",
+      "enable_multiple_writable_locations"
+    ],
+    "get_preferred_regional_routing_contexts": [
+      "self",
+      "endpoints_by_location",
+      "orderedLocations",
+      "expected_available_operation",
+      "fallback_endpoint"
+    ],
+    "is_default_endpoint_regional": [
+      "self"
+    ],
+    "can_use_multiple_write_locations": [
+      "self"
+    ],
+    "can_use_multiple_write_locations_for_request": [
+      "self",
+      "request"
+    ],
+    "endpoints_to_health_check": [
+      "self"
+    ],
+    "GetLocationalEndpoint": [
+      "default_endpoint",
+      "location_name"
+    ]
+  },
+  "rotate_left_64": [
+    "val",
+    "shift"
+  ],
+  "mix": [
+    "value"
+  ],
+  "murmurhash3_128": [
+    "span",
+    "seed"
+  ],
+  "murmurhash3_32": [
+    "data",
+    "seed"
+  ],
+  "ServiceRequestRetryPolicy": {
+    "__init__": [
+      "self",
+      "connection_policy",
+      "global_endpoint_manager",
+      "pk_range_wrapper"
+    ],
+    "ShouldRetry": [
+      "self"
+    ],
+    "resolve_next_region_service_endpoint": [
+      "self"
+    ],
+    "mark_endpoint_unavailable": [
+      "self",
+      "unavailable_endpoint"
+    ],
+    "update_location_cache": [
+      "self"
+    ]
+  },
+  "ThroughputProperties": {
+    "__init__": [
+      "self"
+    ],
+    "get_response_headers": [
+      "self"
+    ]
+  },
+  "Offer": [],
+  "SessionContainer": {
+    "__init__": [
+      "self"
+    ],
+    "get_session_token": [
+      "self",
+      "resource_path",
+      "pk_value",
+      "container_properties_cache",
+      "routing_map_provider",
+      "partition_key_range_id",
+      "options"
+    ],
+    "get_session_token_async": [
+      "self",
+      "resource_path",
+      "pk_value",
+      "container_properties_cache",
+      "routing_map_provider",
+      "partition_key_range_id",
+      "options"
+    ],
+    "set_session_token": [
+      "self",
+      "client_connection",
+      "response_result",
+      "response_headers"
+    ],
+    "clear_session_token": [
+      "self",
+      "response_headers"
+    ],
+    "parse_session_token": [
+      "response_headers"
+    ],
+    "_resolve_partition_local_session_token": [
+      "self",
+      "pk_range",
+      "token_dict"
+    ]
+  },
+  "Session": {
+    "__init__": [
+      "self",
+      "url_connection"
+    ],
+    "clear_session_token": [
+      "self",
+      "response_headers"
+    ],
+    "update_session": [
+      "self",
+      "client_connection",
+      "response_result",
+      "response_headers"
+    ],
+    "get_session_token": [
+      "self",
+      "resource_path",
+      "pk_value",
+      "container_properties_cache",
+      "routing_map_provider",
+      "partition_key_range_id",
+      "options"
+    ],
+    "get_session_token_async": [
+      "self",
+      "resource_path",
+      "pk_value",
+      "container_properties_cache",
+      "routing_map_provider",
+      "partition_key_range_id",
+      "options"
+    ]
+  },
+  "_QueryBuilder": {
+    "_get_field_expression": [
+      "path"
+    ],
+    "is_id_partition_key_query": [
+      "items",
+      "partition_key_definition"
+    ],
+    "is_single_logical_partition_query": [
+      "items"
+    ],
+    "build_pk_and_id_in_query": [
+      "items",
+      "partition_key_definition"
+    ],
+    "build_id_in_query": [
+      "items"
+    ],
+    "build_parameterized_query_for_items": [
+      "items_by_partition",
+      "partition_key_definition"
+    ]
+  },
+  "UserProxy": {
+    "__init__": [
+      "self",
+      "client_connection",
+      "id",
+      "database_link",
+      "properties"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_get_permission_link": [
+      "self",
+      "permission_or_id"
+    ],
+    "_get_properties": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "list_permissions": [
+      "self",
+      "max_item_count"
+    ],
+    "query_permissions": [
+      "self",
+      "query",
+      "parameters",
+      "max_item_count"
+    ],
+    "get_permission": [
+      "self",
+      "permission"
+    ],
+    "create_permission": [
+      "self",
+      "body"
+    ],
+    "upsert_permission": [
+      "self",
+      "body"
+    ],
+    "replace_permission": [
+      "self",
+      "permission",
+      "body"
+    ],
+    "delete_permission": [
+      "self",
+      "permission"
+    ]
+  },
+  "_UInt32": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "value": [
+      "self",
+      "new_value"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__xor__": [
+      "self",
+      "other"
+    ],
+    "__lshift__": [
+      "self",
+      "other"
+    ],
+    "__ilshift__": [
+      "self",
+      "other"
+    ],
+    "__rshift__": [
+      "self",
+      "other"
+    ],
+    "__irshift__": [
+      "self",
+      "other"
+    ],
+    "__and__": [
+      "self",
+      "other"
+    ],
+    "__or__": [
+      "self",
+      "other"
+    ],
+    "__invert__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__gt__": [
+      "self",
+      "other"
+    ],
+    "__le__": [
+      "self",
+      "other"
+    ],
+    "__ge__": [
+      "self",
+      "other"
+    ],
+    "encode_double_as_uint32": [
+      "value"
+    ],
+    "decode_double_from_uint32": [
+      "value"
+    ],
+    "__int__": [
+      "self"
+    ]
+  },
+  "_UInt64": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "value": [
+      "self",
+      "new_value"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__xor__": [
+      "self",
+      "other"
+    ],
+    "__lshift__": [
+      "self",
+      "other"
+    ],
+    "__rshift__": [
+      "self",
+      "other"
+    ],
+    "__and__": [
+      "self",
+      "other"
+    ],
+    "__or__": [
+      "self",
+      "other"
+    ],
+    "__invert__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__irshift__": [
+      "self",
+      "other"
+    ],
+    "__ilshift__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__gt__": [
+      "self",
+      "other"
+    ],
+    "__le__": [
+      "self",
+      "other"
+    ],
+    "__ge__": [
+      "self",
+      "other"
+    ],
+    "encode_double_as_uint64": [
+      "value"
+    ],
+    "decode_double_from_uint64": [
+      "value"
+    ],
+    "__int__": [
+      "self"
+    ]
+  },
+  "_UInt128": {
+    "__init__": [
+      "self",
+      "low",
+      "high"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__xor__": [
+      "self",
+      "other"
+    ],
+    "__and__": [
+      "self",
+      "other"
+    ],
+    "__or__": [
+      "self",
+      "other"
+    ],
+    "__lshift__": [
+      "self",
+      "shift"
+    ],
+    "__rshift__": [
+      "self",
+      "shift"
+    ],
+    "get_low": [
+      "self"
+    ],
+    "get_high": [
+      "self"
+    ],
+    "as_tuple": [
+      "self"
+    ],
+    "as_hex": [
+      "self"
+    ],
+    "as_int": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_byte_array": [
+      "self"
+    ]
+  },
+  "_GlobalPartitionEndpointManagerForCircuitBreaker": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "is_circuit_breaker_applicable": [
+      "self",
+      "request"
+    ],
+    "create_pk_range_wrapper": [
+      "self",
+      "request"
+    ],
+    "record_failure": [
+      "self",
+      "request"
+    ],
+    "resolve_service_endpoint_for_partition": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "record_success": [
+      "self",
+      "request"
+    ]
+  },
+  "_TimeoutFailoverRetryPolicy": {
+    "__init__": [
+      "self",
+      "connection_policy",
+      "global_endpoint_manager",
+      "pk_range_wrapper"
+    ],
+    "ShouldRetry": [
+      "self",
+      "_exception"
+    ],
+    "resolve_next_region_service_endpoint": [
+      "self"
+    ],
+    "is_operation_retryable": [
+      "self"
+    ]
+  },
+  "merge_session_tokens_with_same_range": [
+    "session_token1",
+    "session_token2"
+  ],
+  "is_compound_session_token": [
+    "session_token"
+  ],
+  "parse_session_token": [
+    "session_token"
+  ],
+  "split_compound_session_tokens": [
+    "compound_session_tokens"
+  ],
+  "merge_session_tokens_for_same_partition": [
+    "session_tokens"
+  ],
+  "merge_ranges_with_subsets": [
+    "overlapping_ranges"
+  ],
+  "get_latest_session_token": [
+    "feed_ranges_to_session_tokens",
+    "target_feed_range"
+  ],
+  "RequestObject": {
+    "__init__": [
+      "self",
+      "resource_type",
+      "operation_type",
+      "headers",
+      "pk_val",
+      "endpoint_override"
+    ],
+    "route_to_location_with_preferred_location_flag": [
+      "self",
+      "location_index",
+      "use_preferred_locations"
+    ],
+    "route_to_location": [
+      "self",
+      "location_endpoint"
+    ],
+    "clear_route_to_location": [
+      "self"
+    ],
+    "_can_set_excluded_location": [
+      "self",
+      "options"
+    ],
+    "set_excluded_location_from_options": [
+      "self",
+      "options"
+    ],
+    "set_retry_write": [
+      "self",
+      "request_options",
+      "client_retry_write"
+    ],
+    "set_excluded_locations_from_circuit_breaker": [
+      "self",
+      "excluded_locations"
+    ]
+  },
+  "Permission": {
+    "__init__": [
+      "self",
+      "id",
+      "user_link",
+      "permission_mode",
+      "resource_link",
+      "properties"
+    ]
+  },
+  "VERSION": [],
+  "FeedRangeInternal": {
+    "get_normalized_range": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "_to_base64_encoded_string": [
+      "self"
+    ]
+  },
+  "FeedRangeInternalPartitionKey": {
+    "type_property_name": [],
+    "__init__": [
+      "self",
+      "pk_value",
+      "feed_range"
+    ],
+    "get_normalized_range": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data",
+      "feed_range"
+    ]
+  },
+  "FeedRangeInternalEpk": {
+    "type_property_name": [],
+    "__init__": [
+      "self",
+      "feed_range"
+    ],
+    "get_normalized_range": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ChangeFeedIterable": {
+    "__init__": [
+      "self",
+      "client",
+      "options",
+      "fetch_function",
+      "collection_link",
+      "continuation_token"
+    ],
+    "_unpack": [
+      "self",
+      "block"
+    ],
+    "_fetch_next": [
+      "self"
+    ],
+    "_initialize_change_feed_fetcher": [
+      "self"
+    ],
+    "_validate_change_feed_state_context": [
+      "self",
+      "change_feed_state_context"
+    ]
+  },
+  "ChangeFeedStateVersion": {
+    "V1": [],
+    "V2": []
+  },
+  "ChangeFeedState": {
+    "version_property_name": [],
+    "__init__": [
+      "self",
+      "version"
+    ],
+    "populate_feed_options": [
+      "self",
+      "feed_options"
+    ],
+    "populate_request_headers": [
+      "self",
+      "routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "populate_request_headers_async": [
+      "self",
+      "async_routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "apply_server_response_continuation": [
+      "self",
+      "continuation",
+      "has_modified_response"
+    ],
+    "from_json": [
+      "container_link",
+      "container_rid",
+      "change_feed_state_context"
+    ]
+  },
+  "ChangeFeedStateV1": {
+    "__init__": [
+      "self",
+      "container_link",
+      "container_rid",
+      "change_feed_start_from",
+      "partition_key_range_id",
+      "partition_key",
+      "continuation"
+    ],
+    "container_rid": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "container_link",
+      "container_rid",
+      "change_feed_state_context"
+    ],
+    "populate_request_headers": [
+      "self",
+      "routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "populate_request_headers_async": [
+      "self",
+      "async_routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "populate_feed_options": [
+      "self",
+      "feed_options"
+    ],
+    "apply_server_response_continuation": [
+      "self",
+      "continuation",
+      "has_modified_response"
+    ]
+  },
+  "ChangeFeedStateV2": {
+    "container_rid_property_name": [],
+    "mode_property_name": [],
+    "change_feed_start_from_property_name": [],
+    "continuation_property_name": [],
+    "__init__": [
+      "self",
+      "container_link",
+      "container_rid",
+      "feed_range",
+      "change_feed_start_from",
+      "continuation",
+      "mode"
+    ],
+    "container_rid": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "set_start_from_request_headers": [
+      "self",
+      "request_headers"
+    ],
+    "set_pk_range_id_request_headers": [
+      "self",
+      "over_lapping_ranges",
+      "request_headers"
+    ],
+    "set_mode_request_headers": [
+      "self",
+      "request_headers"
+    ],
+    "populate_request_headers": [
+      "self",
+      "routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "populate_request_headers_async": [
+      "self",
+      "async_routing_provider",
+      "request_headers",
+      "feed_options"
+    ],
+    "populate_feed_options": [
+      "self",
+      "feed_options"
+    ],
+    "handle_feed_range_gone": [
+      "self",
+      "routing_provider",
+      "resource_link",
+      "feed_options"
+    ],
+    "handle_feed_range_gone_async": [
+      "self",
+      "routing_provider",
+      "resource_link",
+      "feed_options"
+    ],
+    "apply_server_response_continuation": [
+      "self",
+      "continuation",
+      "has_modified_response"
+    ],
+    "should_retry_on_not_modified_response": [
+      "self"
+    ],
+    "apply_not_modified_response": [
+      "self"
+    ],
+    "get_feed_range_gone_error": [
+      "self",
+      "over_lapping_ranges"
+    ],
+    "from_continuation": [
+      "cls",
+      "container_link",
+      "container_rid",
+      "continuation_json"
+    ],
+    "from_initial_state": [
+      "cls",
+      "container_link",
+      "collection_rid",
+      "change_feed_state_context"
+    ]
+  },
+  "ChangeFeedFetcher": {
+    "fetch_next_block": [
+      "self"
+    ]
+  },
+  "ChangeFeedFetcherV1": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "feed_options",
+      "fetch_function"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "fetch_change_feed_items": [
+      "self"
+    ]
+  },
+  "ChangeFeedFetcherV2": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "feed_options",
+      "fetch_function"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "fetch_change_feed_items": [
+      "self"
+    ],
+    "_get_base64_encoded_continuation": [
+      "self"
+    ]
+  },
+  "ChangeFeedStartFromType": {
+    "BEGINNING": [],
+    "NOW": [],
+    "LEASE": [],
+    "POINT_IN_TIME": []
+  },
+  "ChangeFeedStartFromInternal": {
+    "type_property_name": [],
+    "__init__": [
+      "self",
+      "start_from_type"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_start_time": [
+      "start_time"
+    ],
+    "from_json": [
+      "data"
+    ],
+    "populate_request_headers": [
+      "self",
+      "request_headers"
+    ]
+  },
+  "ChangeFeedStartFromBeginning": {
+    "__init__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "populate_request_headers": [
+      "self",
+      "request_headers"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ]
+  },
+  "ChangeFeedStartFromETagAndFeedRange": {
+    "_etag_property_name": [],
+    "_feed_range_property_name": [],
+    "__init__": [
+      "self",
+      "etag",
+      "feed_range"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "populate_request_headers": [
+      "self",
+      "request_headers"
+    ]
+  },
+  "ChangeFeedStartFromNow": {
+    "__init__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "populate_request_headers": [
+      "self",
+      "request_headers"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ]
+  },
+  "ChangeFeedStartFromPointInTime": {
+    "_point_in_time_ms_property_name": [],
+    "__init__": [
+      "self",
+      "start_time"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "populate_request_headers": [
+      "self",
+      "request_headers"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ]
+  },
+  "CHANGE_FEED_MODES": [],
+  "validate_kwargs": [
+    "keyword_arguments"
+  ],
+  "FeedRangeCompositeContinuation": {
+    "_version_property_name": [],
+    "_container_rid_property_name": [],
+    "_continuation_property_name": [],
+    "__init__": [
+      "self",
+      "container_rid",
+      "feed_range",
+      "continuation"
+    ],
+    "current_token": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "handle_feed_range_gone": [
+      "self",
+      "routing_provider",
+      "collection_link",
+      "feed_options"
+    ],
+    "handle_feed_range_gone_async": [
+      "self",
+      "routing_provider",
+      "collection_link",
+      "feed_options"
+    ],
+    "should_retry_on_not_modified_response": [
+      "self"
+    ],
+    "_move_to_next_token": [
+      "self"
+    ],
+    "apply_server_response_continuation": [
+      "self",
+      "etag",
+      "has_modified_response"
+    ],
+    "apply_not_modified_response": [
+      "self"
+    ],
+    "feed_range": [
+      "self"
+    ]
+  },
+  "CompositeContinuationToken": {
+    "token_property_name": [],
+    "feed_range_property_name": [],
+    "__init__": [
+      "self",
+      "feed_range",
+      "token"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "feed_range": [
+      "self"
+    ],
+    "token": [
+      "self"
+    ],
+    "update_token": [
+      "self",
+      "etag"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_Aggregator": {
+    "__metaclass__": [],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_AverageAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_CountAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_MinAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_MaxAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_SumAggregator": {
+    "__init__": [
+      "self"
+    ],
+    "aggregate": [
+      "self",
+      "other"
+    ],
+    "get_result": [
+      "self"
+    ]
+  },
+  "_NonStreamingOrderByContextAggregator": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "query",
+      "options",
+      "partitioned_query_ex_info",
+      "response_hook",
+      "raw_response_hook"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "_repair_document_producer": [
+      "self"
+    ],
+    "_createTargetPartitionQueryExecutionContext": [
+      "self",
+      "partition_key_target_range"
+    ],
+    "_get_target_partition_key_range": [
+      "self"
+    ]
+  },
+  "_DocumentProducer": {
+    "__init__": [
+      "self",
+      "partition_key_target_range",
+      "client",
+      "collection_link",
+      "query",
+      "document_producer_comp",
+      "options",
+      "response_hook",
+      "raw_response_hook"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "get_target_range": [
+      "self"
+    ],
+    "peek": [
+      "self"
+    ],
+    "next": []
+  },
+  "_compare_helper": [
+    "a",
+    "b"
+  ],
+  "_PartitionKeyRangeDocumentProducerComparator": {
+    "__init__": [
+      "self"
+    ],
+    "compare": [
+      "self",
+      "doc_producer1",
+      "doc_producer2"
+    ]
+  },
+  "_OrderByHelper": {
+    "getTypeOrd": [
+      "orderby_item"
+    ],
+    "getTypeStr": [
+      "orderby_item"
+    ],
+    "compare": [
+      "orderby_item1",
+      "orderby_item2"
+    ]
+  },
+  "_peek_order_by_items": [
+    "peek_result"
+  ],
+  "_OrderByDocumentProducerComparator": {
+    "__init__": [
+      "self",
+      "sort_order"
+    ],
+    "compare": [
+      "self",
+      "doc_producer1",
+      "doc_producer2"
+    ],
+    "_validate_orderby_items": [
+      "self",
+      "res1",
+      "res2"
+    ]
+  },
+  "_NonStreamingItemResultProducer": {
+    "__init__": [
+      "self",
+      "item_result",
+      "sort_order"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "RRF_CONSTANT": [],
+  "_Placeholders": {
+    "total_document_count": [],
+    "formattable_total_word_count": [],
+    "formattable_hit_counts_array": [],
+    "formattable_order_by": []
+  },
+  "_retrieve_component_scores": [
+    "drained_results"
+  ],
+  "_compute_rrf_scores": [
+    "ranks",
+    "component_weights",
+    "query_results"
+  ],
+  "_compute_ranks": [
+    "component_scores"
+  ],
+  "_coalesce_duplicate_rids": [
+    "query_results"
+  ],
+  "_drain_and_coalesce_results": [
+    "document_producers_to_drain"
+  ],
+  "_rewrite_query_infos": [
+    "hybrid_search_query_info",
+    "global_statistics",
+    "parameters"
+  ],
+  "_format_component_query": [
+    "format_string",
+    "global_statistics"
+  ],
+  "_format_component_query_workaround": [
+    "format_string",
+    "global_statistics",
+    "component_count"
+  ],
+  "_attach_parameters": [
+    "query",
+    "parameters"
+  ],
+  "_HybridSearchContextAggregator": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "options",
+      "partitioned_query_execution_info",
+      "hybrid_search_query_info",
+      "response_hook",
+      "raw_response_hook"
+    ],
+    "_run_hybrid_search": [
+      "self"
+    ],
+    "_attach_parameters": [
+      "self",
+      "query"
+    ],
+    "_format_final_results": [
+      "self",
+      "results"
+    ],
+    "_rewrite_query_infos": [
+      "self"
+    ],
+    "_aggregate_global_statistics": [
+      "self",
+      "global_statistics_doc_producers"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "_repair_document_producer": [
+      "self",
+      "query",
+      "target_all_ranges"
+    ],
+    "_get_target_partition_key_range": [
+      "self",
+      "target_all_ranges"
+    ]
+  },
+  "_MultiExecutionContextAggregator": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "query",
+      "options",
+      "partitioned_query_ex_info",
+      "response_hook",
+      "raw_response_hook"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "_configure_partition_ranges": [
+      "self"
+    ],
+    "_repair_document_producer": [
+      "self"
+    ],
+    "_createTargetPartitionQueryExecutionContext": [
+      "self",
+      "partition_key_target_range"
+    ],
+    "_get_target_partition_key_range": [
+      "self"
+    ],
+    "next": []
+  },
+  "_LOGGER": [],
+  "_QueryExecutionContextBase": {
+    "__init__": [
+      "self",
+      "client",
+      "options"
+    ],
+    "_get_initial_continuation": [
+      "self"
+    ],
+    "_has_more_pages": [
+      "self"
+    ],
+    "_ensure": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "_fetch_next_block": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "_fetch_items_helper_no_retries": [
+      "self",
+      "fetch_function"
+    ],
+    "_fetch_items_helper_with_retries": [
+      "self",
+      "fetch_function"
+    ],
+    "next": []
+  },
+  "_DefaultQueryExecutionContext": {
+    "__init__": [
+      "self",
+      "client",
+      "options",
+      "fetch_function"
+    ],
+    "_fetch_next_block": [
+      "self"
+    ]
+  },
+  "_QueryExecutionEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionOrderByEndpointComponent": {
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionNonStreamingEndpointComponent": {
+    "__next__": [
+      "self"
+    ]
+  },
+  "_QueryExecutionTopEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context",
+      "top_count"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionDistinctOrderedEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionDistinctUnorderedEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context"
+    ],
+    "make_hash": [
+      "self",
+      "value"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionOffsetEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context",
+      "offset_count"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_QueryExecutionAggregateEndpointComponent": {
+    "__init__": [
+      "self",
+      "execution_context",
+      "aggregate_operators"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": []
+  },
+  "_PartitionedQueryExecutionInfo": {
+    "QueryInfoPath": [],
+    "HasSelectValue": [],
+    "TopPath": [],
+    "OffsetPath": [],
+    "LimitPath": [],
+    "DistinctTypePath": [],
+    "OrderByPath": [],
+    "AggregatesPath": [],
+    "QueryRangesPath": [],
+    "RewrittenQueryPath": [],
+    "HasNonStreamingOrderByPath": [],
+    "HybridSearchQueryInfoPath": [],
+    "__init__": [
+      "self",
+      "query_execution_info"
+    ],
+    "get_top": [
+      "self"
+    ],
+    "get_limit": [
+      "self"
+    ],
+    "get_offset": [
+      "self"
+    ],
+    "get_distinct_type": [
+      "self"
+    ],
+    "get_order_by": [
+      "self"
+    ],
+    "get_aggregates": [
+      "self"
+    ],
+    "get_query_ranges": [
+      "self"
+    ],
+    "get_rewritten_query": [
+      "self"
+    ],
+    "get_non_streaming_order_by": [
+      "self"
+    ],
+    "has_hybrid_search_query_info": [
+      "self"
+    ],
+    "has_select_value": [
+      "self"
+    ],
+    "has_top": [
+      "self"
+    ],
+    "has_limit": [
+      "self"
+    ],
+    "has_offset": [
+      "self"
+    ],
+    "has_distinct_type": [
+      "self"
+    ],
+    "has_order_by": [
+      "self"
+    ],
+    "has_aggregates": [
+      "self"
+    ],
+    "has_rewritten_query": [
+      "self"
+    ],
+    "_extract": [
+      "self",
+      "path"
+    ]
+  },
+  "_is_partitioned_execution_info": [
+    "e"
+  ],
+  "_is_hybrid_search_query": [
+    "query",
+    "e"
+  ],
+  "_verify_valid_hybrid_search_query": [
+    "hybrid_search_query_info"
+  ],
+  "_get_partitioned_execution_info": [
+    "e"
+  ],
+  "_ProxyQueryExecutionContext": {
+    "__init__": [
+      "self",
+      "client",
+      "resource_link",
+      "query",
+      "options",
+      "fetch_function",
+      "response_hook",
+      "raw_response_hook",
+      "resource_type"
+    ],
+    "_create_execution_context_with_query_plan": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "_create_pipelined_execution_context": [
+      "self",
+      "query_execution_info"
+    ],
+    "next": []
+  },
+  "_PipelineExecutionContext": {
+    "DEFAULT_PAGE_SIZE": [],
+    "__init__": [
+      "self",
+      "client",
+      "options",
+      "execution_context",
+      "query_execution_info"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "fetch_next_block": [
+      "self"
+    ],
+    "next": []
+  },
+  "_NonStreamingOrderByComparator": {
+    "__init__": [
+      "self",
+      "sort_order"
+    ],
+    "compare": [
+      "self",
+      "doc_producer1",
+      "doc_producer2"
+    ]
+  },
+  "heap_push": [
+    "heap",
+    "item",
+    "document_producer_comparator"
+  ],
+  "heap_pop": [
+    "heap",
+    "document_producer_comparator"
+  ],
+  "_sift_down": [
+    "heap",
+    "document_producer_comparator",
+    "start_pos",
+    "pos"
+  ],
+  "_sift_up": [
+    "heap",
+    "document_producer_comparator",
+    "pos"
+  ],
+  "ReadItemsHelperAsync": {
+    "logger": [],
+    "__init__": [
+      "self",
+      "client",
+      "collection_link",
+      "items",
+      "options",
+      "partition_key_definition",
+      "max_concurrency"
+    ],
+    "read_items": [
+      "self"
+    ],
+    "_partition_items_by_range": [
+      "self"
+    ],
+    "_create_query_chunks": [
+      "self",
+      "items_by_partition"
+    ],
+    "_execute_queries_concurrently": [
+      "self",
+      "query_chunks"
+    ],
+    "_extract_request_charge": [
+      "self",
+      "headers"
+    ],
+    "_execute_point_read": [
+      "self",
+      "item_id",
+      "pk_value",
+      "request_kwargs"
+    ],
+    "_execute_query": [
+      "self",
+      "partition_id",
+      "items_for_query",
+      "id_to_idx",
+      "request_kwargs"
+    ]
+  },
+  "_GlobalPartitionEndpointManagerForCircuitBreakerAsync": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_pk_range_wrapper": [
+      "self",
+      "request"
+    ],
+    "is_circuit_breaker_applicable": [
+      "self",
+      "request"
+    ],
+    "record_failure": [
+      "self",
+      "request"
+    ],
+    "resolve_service_endpoint_for_partition": [
+      "self",
+      "request",
+      "pk_range_wrapper"
+    ],
+    "record_success": [
+      "self",
+      "request"
+    ]
+  },
+  "AsynchronousRequest": [
+    "client",
+    "request_params",
+    "global_endpoint_manager",
+    "connection_policy",
+    "pipeline_client",
+    "request",
+    "request_data"
+  ],
+  "AsyncInferenceServiceBearerTokenPolicy": {
+    "_update_headers": [
+      "headers",
+      "token"
+    ],
+    "on_request": [
+      "self",
+      "request"
+    ],
+    "authorize_request": [
+      "self",
+      "request"
+    ]
+  },
+  "CredentialDict": {},
+  "CosmosClientConnection": {
+    "_DefaultNumberHashPrecision": [],
+    "_DefaultNumberRangePrecision": [],
+    "_DefaultStringHashPrecision": [],
+    "_DefaultStringRangePrecision": [],
+    "__init__": [
+      "self",
+      "url_connection",
+      "auth",
+      "connection_policy",
+      "consistency_level"
+    ],
+    "_container_properties_cache": [
+      "self"
+    ],
+    "_set_container_properties_cache": [
+      "self",
+      "container_link",
+      "properties"
+    ],
+    "_get_inference_service": [
+      "self"
+    ],
+    "_Session": [
+      "self",
+      "session"
+    ],
+    "_WriteEndpoint": [
+      "self"
+    ],
+    "_ReadEndpoint": [
+      "self"
+    ],
+    "_setup": [
+      "self"
+    ],
+    "_check_if_account_session_consistency": [
+      "self",
+      "database_account"
+    ],
+    "_GetDatabaseIdWithPathForUser": [
+      "self",
+      "database_link",
+      "user"
+    ],
+    "_GetContainerIdWithPathForSproc": [
+      "self",
+      "collection_link",
+      "sproc"
+    ],
+    "_GetContainerIdWithPathForTrigger": [
+      "self",
+      "collection_link",
+      "trigger"
+    ],
+    "_GetContainerIdWithPathForUDF": [
+      "self",
+      "collection_link",
+      "udf"
+    ],
+    "GetDatabaseAccount": [
+      "self",
+      "url_connection"
+    ],
+    "health_check": [
+      "self",
+      "url_connection"
+    ],
+    "CreateDatabase": [
+      "self",
+      "database",
+      "options"
+    ],
+    "CreateUser": [
+      "self",
+      "database_link",
+      "user",
+      "options"
+    ],
+    "CreateContainer": [
+      "self",
+      "database_link",
+      "collection",
+      "options"
+    ],
+    "CreateItem": [
+      "self",
+      "database_or_container_link",
+      "document",
+      "options"
+    ],
+    "CreatePermission": [
+      "self",
+      "user_link",
+      "permission",
+      "options"
+    ],
+    "CreateUserDefinedFunction": [
+      "self",
+      "collection_link",
+      "udf",
+      "options"
+    ],
+    "CreateTrigger": [
+      "self",
+      "collection_link",
+      "trigger",
+      "options"
+    ],
+    "CreateStoredProcedure": [
+      "self",
+      "collection_link",
+      "sproc",
+      "options"
+    ],
+    "ExecuteStoredProcedure": [
+      "self",
+      "sproc_link",
+      "params",
+      "options"
+    ],
+    "Create": [
+      "self",
+      "body",
+      "path",
+      "resource_type",
+      "id",
+      "initial_headers",
+      "options"
+    ],
+    "UpsertUser": [
+      "self",
+      "database_link",
+      "user",
+      "options"
+    ],
+    "UpsertPermission": [
+      "self",
+      "user_link",
+      "permission",
+      "options"
+    ],
+    "UpsertItem": [
+      "self",
+      "database_or_container_link",
+      "document",
+      "options"
+    ],
+    "Upsert": [
+      "self",
+      "body",
+      "path",
+      "resource_type",
+      "id",
+      "initial_headers",
+      "options"
+    ],
+    "__Post": [
+      "self",
+      "path",
+      "request_params",
+      "body",
+      "req_headers"
+    ],
+    "ReadDatabase": [
+      "self",
+      "database_link",
+      "options"
+    ],
+    "ReadContainer": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "ReadItem": [
+      "self",
+      "document_link",
+      "options"
+    ],
+    "ReadUser": [
+      "self",
+      "user_link",
+      "options"
+    ],
+    "ReadPermission": [
+      "self",
+      "permission_link",
+      "options"
+    ],
+    "ReadUserDefinedFunction": [
+      "self",
+      "udf_link",
+      "options"
+    ],
+    "ReadStoredProcedure": [
+      "self",
+      "sproc_link",
+      "options"
+    ],
+    "ReadTrigger": [
+      "self",
+      "trigger_link",
+      "options"
+    ],
+    "ReadConflict": [
+      "self",
+      "conflict_link",
+      "options"
+    ],
+    "Read": [
+      "self",
+      "path",
+      "resource_type",
+      "id",
+      "initial_headers",
+      "options"
+    ],
+    "__Get": [
+      "self",
+      "path",
+      "request_params",
+      "req_headers"
+    ],
+    "ReplaceUser": [
+      "self",
+      "user_link",
+      "user",
+      "options"
+    ],
+    "ReplacePermission": [
+      "self",
+      "permission_link",
+      "permission",
+      "options"
+    ],
+    "ReplaceContainer": [
+      "self",
+      "collection_link",
+      "collection",
+      "options"
+    ],
+    "ReplaceUserDefinedFunction": [
+      "self",
+      "udf_link",
+      "udf",
+      "options"
+    ],
+    "ReplaceTrigger": [
+      "self",
+      "trigger_link",
+      "trigger",
+      "options"
+    ],
+    "ReplaceItem": [
+      "self",
+      "document_link",
+      "new_document",
+      "options"
+    ],
+    "PatchItem": [
+      "self",
+      "document_link",
+      "operations",
+      "options"
+    ],
+    "ReplaceOffer": [
+      "self",
+      "offer_link",
+      "offer"
+    ],
+    "ReplaceStoredProcedure": [
+      "self",
+      "sproc_link",
+      "sproc",
+      "options"
+    ],
+    "Replace": [
+      "self",
+      "resource",
+      "path",
+      "resource_type",
+      "id",
+      "initial_headers",
+      "options"
+    ],
+    "__Put": [
+      "self",
+      "path",
+      "request_params",
+      "body",
+      "req_headers"
+    ],
+    "__Patch": [
+      "self",
+      "path",
+      "request_params",
+      "request_data",
+      "req_headers"
+    ],
+    "DeleteDatabase": [
+      "self",
+      "database_link",
+      "options"
+    ],
+    "DeleteUser": [
+      "self",
+      "user_link",
+      "options"
+    ],
+    "DeletePermission": [
+      "self",
+      "permission_link",
+      "options"
+    ],
+    "DeleteContainer": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "DeleteItem": [
+      "self",
+      "document_link",
+      "options"
+    ],
+    "DeleteUserDefinedFunction": [
+      "self",
+      "udf_link",
+      "options"
+    ],
+    "DeleteTrigger": [
+      "self",
+      "trigger_link",
+      "options"
+    ],
+    "DeleteStoredProcedure": [
+      "self",
+      "sproc_link",
+      "options"
+    ],
+    "DeleteConflict": [
+      "self",
+      "conflict_link",
+      "options"
+    ],
+    "DeleteResource": [
+      "self",
+      "path",
+      "resource_type",
+      "id",
+      "initial_headers",
+      "options"
+    ],
+    "__Delete": [
+      "self",
+      "path",
+      "request_params",
+      "req_headers"
+    ],
+    "Batch": [
+      "self",
+      "collection_link",
+      "batch_operations",
+      "options"
+    ],
+    "_Batch": [
+      "self",
+      "batch_operations",
+      "path",
+      "collection_id",
+      "options"
+    ],
+    "_ReadPartitionKeyRanges": [
+      "self",
+      "collection_link",
+      "feed_options"
+    ],
+    "_QueryPartitionKeyRanges": [
+      "self",
+      "collection_link",
+      "query",
+      "options"
+    ],
+    "ReadDatabases": [
+      "self",
+      "options"
+    ],
+    "QueryDatabases": [
+      "self",
+      "query",
+      "options"
+    ],
+    "ReadContainers": [
+      "self",
+      "database_link",
+      "options"
+    ],
+    "QueryContainers": [
+      "self",
+      "database_link",
+      "query",
+      "options"
+    ],
+    "read_items": [
+      "self",
+      "collection_link",
+      "items",
+      "options"
+    ],
+    "ReadItems": [
+      "self",
+      "collection_link",
+      "feed_options",
+      "response_hook"
+    ],
+    "QueryItems": [
+      "self",
+      "database_or_container_link",
+      "query",
+      "options",
+      "partition_key",
+      "response_hook"
+    ],
+    "QueryItemsChangeFeed": [
+      "self",
+      "collection_link",
+      "options",
+      "response_hook"
+    ],
+    "_QueryChangeFeed": [
+      "self",
+      "collection_link",
+      "resource_type",
+      "options",
+      "partition_key_range_id",
+      "response_hook"
+    ],
+    "QueryOffers": [
+      "self",
+      "query",
+      "options"
+    ],
+    "ReadUsers": [
+      "self",
+      "database_link",
+      "options"
+    ],
+    "QueryUsers": [
+      "self",
+      "database_link",
+      "query",
+      "options"
+    ],
+    "ReadPermissions": [
+      "self",
+      "user_link",
+      "options"
+    ],
+    "QueryPermissions": [
+      "self",
+      "user_link",
+      "query",
+      "options"
+    ],
+    "ReadStoredProcedures": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "QueryStoredProcedures": [
+      "self",
+      "collection_link",
+      "query",
+      "options"
+    ],
+    "ReadTriggers": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "QueryTriggers": [
+      "self",
+      "collection_link",
+      "query",
+      "options"
+    ],
+    "ReadUserDefinedFunctions": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "QueryUserDefinedFunctions": [
+      "self",
+      "collection_link",
+      "query",
+      "options"
+    ],
+    "ReadConflicts": [
+      "self",
+      "collection_link",
+      "feed_options"
+    ],
+    "QueryConflicts": [
+      "self",
+      "collection_link",
+      "query",
+      "options"
+    ],
+    "QueryFeed": [
+      "self",
+      "path",
+      "collection_id",
+      "query",
+      "options",
+      "partition_key_range_id"
+    ],
+    "__QueryFeed": [
+      "self",
+      "path",
+      "resource_type",
+      "id_",
+      "result_fn",
+      "create_fn",
+      "query",
+      "options",
+      "partition_key_range_id",
+      "response_hook",
+      "is_query_plan"
+    ],
+    "__CheckAndUnifyQueryFormat": [
+      "self",
+      "query_body"
+    ],
+    "_UpdateSessionIfRequired": [
+      "self",
+      "request_headers",
+      "response_result",
+      "response_headers"
+    ],
+    "PartitionResolverErrorMessage": [],
+    "_GetContainerIdWithPathForItem": [
+      "self",
+      "database_or_container_link",
+      "document",
+      "options"
+    ],
+    "_GetUserIdWithPathForPermission": [
+      "self",
+      "permission",
+      "user_link"
+    ],
+    "RegisterPartitionResolver": [
+      "self",
+      "database_link",
+      "partition_resolver"
+    ],
+    "GetPartitionResolver": [
+      "self",
+      "database_link"
+    ],
+    "_AddPartitionKey": [
+      "self",
+      "collection_link",
+      "document",
+      "options"
+    ],
+    "_ExtractPartitionKey": [
+      "self",
+      "partitionKeyDefinition",
+      "document"
+    ],
+    "_retrieve_partition_key": [
+      "self",
+      "partition_key_parts",
+      "document",
+      "is_system_key"
+    ],
+    "refresh_routing_map_provider": [
+      "self"
+    ],
+    "_refresh_container_properties_cache": [
+      "self",
+      "container_link"
+    ],
+    "_GetQueryPlanThroughGateway": [
+      "self",
+      "query",
+      "resource_link",
+      "excluded_locations"
+    ],
+    "DeleteAllItemsByPartitionKey": [
+      "self",
+      "collection_link",
+      "options"
+    ],
+    "_get_partition_key_definition": [
+      "self",
+      "collection_link",
+      "options"
+    ]
+  },
+  "CredentialType": [],
+  "_build_auth": [
+    "credential"
+  ],
+  "_build_connection_policy": [
+    "kwargs"
+  ],
+  "CosmosClient": {
+    "__init__": [
+      "self",
+      "url",
+      "credential"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "from_connection_string": [
+      "cls",
+      "conn_str"
+    ],
+    "create_database": [
+      "self"
+    ],
+    "create_database_if_not_exists": [
+      "self"
+    ],
+    "get_database_client": [
+      "self",
+      "database"
+    ],
+    "list_databases": [
+      "self"
+    ],
+    "query_databases": [
+      "self",
+      "query"
+    ],
+    "delete_database": [
+      "self",
+      "database"
+    ],
+    "_get_database_account": [
+      "self"
+    ]
+  },
+  "AsyncCosmosBearerTokenCredentialPolicy": {
+    "AadDefaultScope": [],
+    "__init__": [
+      "self",
+      "credential",
+      "account_scope",
+      "override_scope"
+    ],
+    "_update_headers": [
+      "headers",
+      "token"
+    ],
+    "on_request": [
+      "self",
+      "request"
+    ],
+    "authorize_request": [
+      "self",
+      "request"
+    ]
+  },
+  "ExecuteAsync": [
+    "client",
+    "global_endpoint_manager",
+    "function"
+  ],
+  "ExecuteFunctionAsync": [
+    "function"
+  ],
+  "_ConnectionRetryPolicy": {
+    "__init__": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "request"
+    ]
+  },
+  "QueryIterable": {
+    "__init__": [
+      "self",
+      "client",
+      "query",
+      "options",
+      "fetch_function",
+      "collection_link",
+      "database_link",
+      "partition_key",
+      "continuation_token",
+      "resource_type",
+      "response_hook",
+      "raw_response_hook"
+    ],
+    "_unpack": [
+      "self",
+      "block"
+    ],
+    "_fetch_next": [
+      "self"
+    ]
+  },
+  "PartitionKeyRange": {
+    "MinInclusive": [],
+    "MaxExclusive": [],
+    "Id": [],
+    "Parents": []
+  },
+  "Range": {
+    "MinPath": [],
+    "MaxPath": [],
+    "IsMinInclusivePath": [],
+    "IsMaxInclusivePath": [],
+    "__init__": [
+      "self",
+      "range_min",
+      "range_max",
+      "isMinInclusive",
+      "isMaxInclusive"
+    ],
+    "contains": [
+      "self",
+      "value"
+    ],
+    "get_full_range": [
+      "cls"
+    ],
+    "PartitionKeyRangeToRange": [
+      "cls",
+      "partition_key_range"
+    ],
+    "ParseFromDict": [
+      "cls",
+      "range_as_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_normalized_range": [
+      "self"
+    ],
+    "add_to_effective_partition_key": [
+      "self",
+      "effective_partition_key",
+      "value"
+    ],
+    "hex_binary_to_byte_array": [
+      "self",
+      "hex_binary_string"
+    ],
+    "from_base64_encoded_json_string": [
+      "cls",
+      "data"
+    ],
+    "to_base64_encoded_string": [
+      "self"
+    ],
+    "isSingleValue": [
+      "self"
+    ],
+    "isEmpty": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "_compare_helper": [
+      "a",
+      "b"
+    ],
+    "overlaps": [
+      "range1",
+      "range2"
+    ],
+    "can_merge": [
+      "self",
+      "other"
+    ],
+    "merge": [
+      "self",
+      "other"
+    ],
+    "is_subset": [
+      "self",
+      "parent_range"
+    ]
+  },
+  "PartitionKeyRangeWrapper": {
+    "__init__": [
+      "self",
+      "partition_key_range",
+      "collection_rid"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "CollectionRoutingMap": {
+    "MinimumInclusiveEffectivePartitionKey": [],
+    "MaximumExclusiveEffectivePartitionKey": [],
+    "__init__": [
+      "self",
+      "range_by_id",
+      "range_by_info",
+      "ordered_partition_key_ranges",
+      "ordered_partition_info",
+      "collection_unique_id"
+    ],
+    "CompleteRoutingMap": [
+      "cls",
+      "partition_key_range_info_tuple_list",
+      "collection_unique_id"
+    ],
+    "get_ordered_partition_key_ranges": [
+      "self"
+    ],
+    "get_range_by_effective_partition_key": [
+      "self",
+      "effective_partition_key_value"
+    ],
+    "get_range_by_partition_key_range_id": [
+      "self",
+      "partition_key_range_id"
+    ],
+    "get_overlapping_ranges": [
+      "self",
+      "provided_partition_key_ranges"
+    ],
+    "is_complete_set_of_range": [
+      "ordered_partition_key_range_list"
+    ]
+  },
+  "PartitionKeyRangeCache": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "init_collection_routing_map_if_needed": [
+      "self",
+      "collection_link",
+      "collection_id",
+      "feed_options"
+    ],
+    "get_overlapping_ranges": [
+      "self",
+      "collection_link",
+      "partition_key_ranges",
+      "feed_options"
+    ],
+    "get_range_by_partition_key_range_id": [
+      "self",
+      "collection_link",
+      "partition_key_range_id",
+      "feed_options"
+    ],
+    "_discard_parent_ranges": [
+      "partitionKeyRanges"
+    ]
+  },
+  "_second_range_is_after_first_range": [
+    "range1",
+    "range2"
+  ],
+  "_is_sorted_and_non_overlapping": [
+    "ranges"
+  ],
+  "_subtract_range": [
+    "r",
+    "partition_key_range"
+  ],
+  "SmartRoutingMapProvider": {
+    "get_overlapping_ranges": [
+      "self",
+      "collection_link",
+      "partition_key_ranges",
+      "feed_options"
+    ]
+  }
+}

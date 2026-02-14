@@ -1,0 +1,983 @@
+{
+  "DEPLOY_MSG": [],
+  "CHECK_DEPLOY_STATUS_MSG": [],
+  "RETRIEVE_MSG": [],
+  "CHECK_RETRIEVE_STATUS_MSG": [],
+  "Operation": {
+    "insert": [],
+    "upsert": [],
+    "update": [],
+    "delete": [],
+    "hard_delete": [],
+    "query": [],
+    "query_all": []
+  },
+  "JobState": {
+    "open": [],
+    "aborted": [],
+    "failed": [],
+    "upload_complete": [],
+    "in_progress": [],
+    "job_complete": []
+  },
+  "ColumnDelimiter": {
+    "BACKQUOTE": [],
+    "CARET": [],
+    "COMMA": [],
+    "PIPE": [],
+    "SEMICOLON": [],
+    "TAB": []
+  },
+  "_delimiter_char": [],
+  "LineEnding": {
+    "LF": [],
+    "CRLF": []
+  },
+  "_line_ending_char": [],
+  "ResultsType": {
+    "failed": [],
+    "successful": [],
+    "unprocessed": []
+  },
+  "QueryParameters": {},
+  "QueryResult": {},
+  "MAX_INGEST_JOB_FILE_SIZE": [],
+  "MAX_INGEST_JOB_PARALLELISM": [],
+  "DEFAULT_QUERY_PAGE_SIZE": [],
+  "_split_csv": [
+    "filename",
+    "records",
+    "max_records",
+    "line_ending",
+    "column_delimiter",
+    "quoting"
+  ],
+  "_count_csv": [
+    "filename",
+    "data",
+    "skip_header",
+    "line_ending",
+    "column_delimiter",
+    "quoting"
+  ],
+  "_convert_dict_to_csv": [
+    "data",
+    "column_delimiter",
+    "line_ending",
+    "quoting",
+    "sort_keys"
+  ],
+  "_get_csv_fieldnames": [
+    "filename",
+    "records",
+    "line_ending",
+    "column_delimiter",
+    "quoting"
+  ],
+  "SFBulk2Handler": {
+    "__init__": [
+      "self",
+      "session_id",
+      "bulk2_url",
+      "proxies",
+      "session"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "_Bulk2Client": {
+    "JSON_CONTENT_TYPE": [],
+    "CSV_CONTENT_TYPE": [],
+    "DEFAULT_WAIT_TIMEOUT_SECONDS": [],
+    "MAX_CHECK_INTERVAL_SECONDS": [],
+    "__init__": [
+      "self",
+      "object_name",
+      "bulk2_url",
+      "headers",
+      "session"
+    ],
+    "_get_headers": [
+      "self",
+      "request_content_type",
+      "accept_content_type"
+    ],
+    "_construct_request_url": [
+      "self",
+      "job_id",
+      "is_query"
+    ],
+    "create_job": [
+      "self",
+      "operation",
+      "query",
+      "column_delimiter",
+      "line_ending",
+      "external_id_field"
+    ],
+    "wait_for_job": [
+      "self",
+      "job_id",
+      "is_query",
+      "wait"
+    ],
+    "abort_job": [
+      "self",
+      "job_id",
+      "is_query"
+    ],
+    "close_job": [
+      "self",
+      "job_id"
+    ],
+    "delete_job": [
+      "self",
+      "job_id",
+      "is_query"
+    ],
+    "_set_job_state": [
+      "self",
+      "job_id",
+      "is_query",
+      "state"
+    ],
+    "get_job": [
+      "self",
+      "job_id",
+      "is_query"
+    ],
+    "filter_null_bytes": [
+      "self",
+      "b"
+    ],
+    "get_query_results": [
+      "self",
+      "job_id",
+      "locator",
+      "max_records"
+    ],
+    "download_job_data": [
+      "self",
+      "path",
+      "job_id",
+      "locator",
+      "max_records",
+      "chunk_size"
+    ],
+    "upload_job_data": [
+      "self",
+      "job_id",
+      "data",
+      "content_url"
+    ],
+    "get_ingest_results": [
+      "self",
+      "job_id",
+      "results_type"
+    ],
+    "download_ingest_results": [
+      "self",
+      "file",
+      "job_id",
+      "results_type",
+      "chunk_size"
+    ]
+  },
+  "SFBulk2Type": {
+    "__init__": [
+      "self",
+      "object_name",
+      "bulk2_url",
+      "headers",
+      "session"
+    ],
+    "_upload_data": [
+      "self",
+      "operation",
+      "data",
+      "column_delimiter",
+      "line_ending",
+      "external_id_field",
+      "wait"
+    ],
+    "_constrain_id_only": [
+      "self",
+      "csv_file",
+      "records"
+    ],
+    "_upload_file": [
+      "self",
+      "operation",
+      "csv_file",
+      "records",
+      "batch_size",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "external_id_field",
+      "concurrency",
+      "wait"
+    ],
+    "delete": [
+      "self",
+      "csv_file",
+      "records",
+      "batch_size",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "external_id_field",
+      "wait"
+    ],
+    "insert": [
+      "self",
+      "csv_file",
+      "records",
+      "batch_size",
+      "concurrency",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "wait"
+    ],
+    "upsert": [
+      "self",
+      "csv_file",
+      "records",
+      "external_id_field",
+      "batch_size",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "wait"
+    ],
+    "update": [
+      "self",
+      "csv_file",
+      "records",
+      "batch_size",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "wait"
+    ],
+    "hard_delete": [
+      "self",
+      "csv_file",
+      "records",
+      "batch_size",
+      "column_delimiter",
+      "line_ending",
+      "quoting",
+      "wait"
+    ],
+    "query": [
+      "self",
+      "query",
+      "max_records",
+      "column_delimiter",
+      "line_ending",
+      "wait"
+    ],
+    "query_all": [
+      "self",
+      "query",
+      "max_records",
+      "column_delimiter",
+      "line_ending",
+      "wait"
+    ],
+    "download": [
+      "self",
+      "query",
+      "path",
+      "max_records",
+      "column_delimiter",
+      "line_ending",
+      "wait"
+    ],
+    "_retrieve_ingest_records": [
+      "self",
+      "job_id",
+      "results_type",
+      "file"
+    ],
+    "get_failed_records": [
+      "self",
+      "job_id",
+      "file"
+    ],
+    "get_unprocessed_records": [
+      "self",
+      "job_id",
+      "file"
+    ],
+    "get_successful_records": [
+      "self",
+      "job_id",
+      "file"
+    ],
+    "get_all_ingest_records": [
+      "self",
+      "job_id",
+      "file"
+    ]
+  },
+  "DEFAULT_CLIENT_ID_PREFIX": [],
+  "SalesforceLogin": [
+    "username",
+    "password",
+    "security_token",
+    "organizationId",
+    "sf_version",
+    "proxies",
+    "session",
+    "client_id",
+    "domain",
+    "instance_url",
+    "consumer_key",
+    "consumer_secret",
+    "privatekey_file",
+    "privatekey",
+    "scratch_url"
+  ],
+  "soap_login": [
+    "soap_url",
+    "request_body",
+    "headers",
+    "proxies",
+    "session"
+  ],
+  "token_login": [
+    "token_url",
+    "token_data",
+    "domain",
+    "consumer_key",
+    "headers",
+    "proxies",
+    "session"
+  ],
+  "MetadataType": {
+    "__init__": [
+      "self",
+      "name",
+      "service",
+      "zeep_type",
+      "session_header"
+    ],
+    "_handle_api_response": [
+      "response"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "metadata"
+    ],
+    "read": [
+      "self",
+      "full_names"
+    ],
+    "update": [
+      "self",
+      "metadata"
+    ],
+    "upsert": [
+      "self",
+      "metadata"
+    ],
+    "delete": [
+      "self",
+      "full_names"
+    ],
+    "rename": [
+      "self",
+      "old_full_name",
+      "new_full_name"
+    ],
+    "describe": [
+      "self"
+    ]
+  },
+  "SfdcMetadataApi": {
+    "_METADATA_API_BASE_URI": [],
+    "_XML_NAMESPACES": [],
+    "__init__": [
+      "self",
+      "session",
+      "session_id",
+      "instance",
+      "metadata_url",
+      "headers",
+      "api_version"
+    ],
+    "__getattr__": [
+      "self",
+      "item"
+    ],
+    "describe_metadata": [
+      "self"
+    ],
+    "list_metadata": [
+      "self",
+      "queries"
+    ],
+    "deploy": [
+      "self",
+      "zipfile",
+      "sandbox"
+    ],
+    "_read_deploy_zip": [
+      "zipfile"
+    ],
+    "_retrieve_deploy_result": [
+      "self",
+      "async_process_id"
+    ],
+    "get_component_error_count": [
+      "value"
+    ],
+    "check_deploy_status": [
+      "self",
+      "async_process_id"
+    ],
+    "download_unit_test_logs": [
+      "self",
+      "async_process_id"
+    ],
+    "retrieve": [
+      "self",
+      "async_process_id"
+    ],
+    "retrieve_retrieve_result": [
+      "self",
+      "async_process_id",
+      "include_zip"
+    ],
+    "retrieve_zip": [
+      "self",
+      "async_process_id"
+    ],
+    "check_retrieve_status": [
+      "self",
+      "async_process_id"
+    ]
+  },
+  "DEFAULT_API_VERSION": [],
+  "logger": [],
+  "Salesforce": {
+    "_parse_float": [],
+    "_object_pairs_hook": [],
+    "__init__": [
+      "self",
+      "username",
+      "password",
+      "security_token",
+      "session_id",
+      "instance",
+      "instance_url",
+      "organizationId",
+      "version",
+      "proxies",
+      "session",
+      "client_id",
+      "domain",
+      "consumer_key",
+      "consumer_secret",
+      "privatekey_file",
+      "privatekey",
+      "parse_float",
+      "object_pairs_hook"
+    ],
+    "mdapi": [
+      "self"
+    ],
+    "_generate_headers": [
+      "self"
+    ],
+    "_refresh_session": [
+      "self"
+    ],
+    "describe": [
+      "self"
+    ],
+    "is_sandbox": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "set_password": [
+      "self",
+      "user",
+      "password"
+    ],
+    "restful": [
+      "self",
+      "path",
+      "params",
+      "method"
+    ],
+    "oauth2": [
+      "self",
+      "path",
+      "params",
+      "method"
+    ],
+    "search": [
+      "self",
+      "search"
+    ],
+    "quick_search": [
+      "self",
+      "search"
+    ],
+    "limits": [
+      "self"
+    ],
+    "query": [
+      "self",
+      "query",
+      "include_deleted"
+    ],
+    "query_more": [
+      "self",
+      "next_records_identifier",
+      "identifier_is_url",
+      "include_deleted"
+    ],
+    "query_all_iter": [
+      "self",
+      "query",
+      "include_deleted"
+    ],
+    "query_all": [
+      "self",
+      "query",
+      "include_deleted"
+    ],
+    "toolingexecute": [
+      "self",
+      "action",
+      "method",
+      "data"
+    ],
+    "apexecute": [
+      "self",
+      "action",
+      "method",
+      "data"
+    ],
+    "_call_salesforce": [
+      "self",
+      "method",
+      "url",
+      "name",
+      "retries",
+      "max_retries"
+    ],
+    "parse_api_usage": [
+      "sforce_limit_info"
+    ],
+    "deploy": [
+      "self",
+      "zipfile",
+      "sandbox"
+    ],
+    "checkDeployStatus": [
+      "self",
+      "asyncId"
+    ],
+    "parse_result_to_json": [
+      "self",
+      "result"
+    ]
+  },
+  "SFType": {
+    "_parse_float": [],
+    "_object_pairs_hook": [],
+    "__init__": [
+      "self",
+      "object_name",
+      "session_id",
+      "sf_instance",
+      "sf_version",
+      "proxies",
+      "session",
+      "salesforce",
+      "parse_float",
+      "object_pairs_hook"
+    ],
+    "session_id": [
+      "self"
+    ],
+    "metadata": [
+      "self",
+      "headers"
+    ],
+    "describe": [
+      "self",
+      "headers"
+    ],
+    "describe_layout": [
+      "self",
+      "record_id",
+      "headers"
+    ],
+    "get": [
+      "self",
+      "record_id",
+      "headers"
+    ],
+    "get_by_custom_id": [
+      "self",
+      "custom_id_field",
+      "custom_id",
+      "headers"
+    ],
+    "create": [
+      "self",
+      "data",
+      "headers"
+    ],
+    "upsert": [
+      "self",
+      "record_id",
+      "data",
+      "raw_response",
+      "headers"
+    ],
+    "update": [
+      "self",
+      "record_id",
+      "data",
+      "raw_response",
+      "headers"
+    ],
+    "delete": [
+      "self",
+      "record_id",
+      "raw_response",
+      "headers"
+    ],
+    "deleted": [
+      "self",
+      "start",
+      "end",
+      "headers"
+    ],
+    "updated": [
+      "self",
+      "start",
+      "end",
+      "headers"
+    ],
+    "_call_salesforce": [
+      "self",
+      "method",
+      "url",
+      "retries",
+      "max_retries"
+    ],
+    "_raw_response": [
+      "self",
+      "response",
+      "body_flag"
+    ],
+    "parse_result_to_json": [
+      "self",
+      "result"
+    ],
+    "upload_base64": [
+      "self",
+      "file_path",
+      "base64_field",
+      "headers"
+    ],
+    "update_base64": [
+      "self",
+      "record_id",
+      "file_path",
+      "base64_field",
+      "headers",
+      "raw_response"
+    ],
+    "get_base64": [
+      "self",
+      "record_id",
+      "base64_field",
+      "data",
+      "headers"
+    ]
+  },
+  "soql_escapes": [],
+  "soql_like_escapes": [],
+  "SoqlFormatter": {
+    "format_field": [
+      "self",
+      "value",
+      "format_spec"
+    ]
+  },
+  "format_soql": [
+    "query"
+  ],
+  "quote_soql_value": [
+    "value"
+  ],
+  "format_external_id": [
+    "field",
+    "value"
+  ],
+  "Headers": [],
+  "Proxies": [],
+  "BulkDataAny": [],
+  "BulkDataStr": [],
+  "T": [],
+  "Usage": {},
+  "PerAppUsage": {},
+  "getUniqueElementValueFromXmlString": [
+    "xmlString",
+    "elementName"
+  ],
+  "date_to_iso8601": [
+    "date"
+  ],
+  "exception_handler": [
+    "result",
+    "name"
+  ],
+  "call_salesforce": [
+    "url",
+    "method",
+    "session",
+    "headers"
+  ],
+  "list_from_generator": [
+    "generator_function"
+  ],
+  "SalesforceError": {
+    "__init__": [
+      "self",
+      "url",
+      "status",
+      "resource_name",
+      "content"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__unicode__": [
+      "self"
+    ]
+  },
+  "SalesforceMoreThanOneRecord": {
+    "message": []
+  },
+  "SalesforceMalformedRequest": {
+    "message": []
+  },
+  "SalesforceExpiredSession": {
+    "message": []
+  },
+  "SalesforceRefusedRequest": {
+    "message": []
+  },
+  "SalesforceResourceNotFound": {
+    "message": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SalesforceAuthenticationFailed": {
+    "message": [],
+    "__init__": [
+      "self",
+      "code",
+      "auth_message"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SalesforceGeneralError": {
+    "message": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SalesforceOperationError": {},
+  "SalesforceBulkV2LoadError": {},
+  "SalesforceBulkV2ExtractError": {},
+  "__title__": [],
+  "__description__": [],
+  "__url__": [],
+  "__version__": [],
+  "__author__": [],
+  "__author_email__": [],
+  "__license__": [],
+  "__maintainer__": [],
+  "__maintainer_email__": [],
+  "__keywords__": [],
+  "SFBulkHandler": {
+    "__init__": [
+      "self",
+      "session_id",
+      "bulk_url",
+      "proxies",
+      "session"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "submit_dml": [
+      "self",
+      "object_name",
+      "dml",
+      "data",
+      "external_id_field",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ]
+  },
+  "SFBulkType": {
+    "__init__": [
+      "self",
+      "object_name",
+      "bulk_url",
+      "headers",
+      "session"
+    ],
+    "_create_job": [
+      "self",
+      "operation",
+      "use_serial",
+      "external_id_field"
+    ],
+    "_close_job": [
+      "self",
+      "job_id"
+    ],
+    "_get_job": [
+      "self",
+      "job_id"
+    ],
+    "_add_batch": [
+      "self",
+      "job_id",
+      "data",
+      "operation"
+    ],
+    "_get_batch": [
+      "self",
+      "job_id",
+      "batch_id"
+    ],
+    "_get_batch_results": [
+      "self",
+      "job_id",
+      "batch_id",
+      "operation"
+    ],
+    "_get_batch_request_with_batch_results": [
+      "self",
+      "job_id",
+      "batch_id"
+    ],
+    "worker": [
+      "self",
+      "batch",
+      "operation",
+      "wait",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "_add_autosized_batches": [
+      "self",
+      "data",
+      "operation",
+      "job"
+    ],
+    "_bulk_operation": [
+      "self",
+      "operation",
+      "data",
+      "use_serial",
+      "external_id_field",
+      "batch_size",
+      "wait",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "delete": [
+      "self",
+      "data",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "insert": [
+      "self",
+      "data",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "upsert": [
+      "self",
+      "data",
+      "external_id_field",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "update": [
+      "self",
+      "data",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "hard_delete": [
+      "self",
+      "data",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ],
+    "query": [
+      "self",
+      "data",
+      "lazy_operation",
+      "wait"
+    ],
+    "query_all": [
+      "self",
+      "data",
+      "lazy_operation",
+      "wait"
+    ],
+    "submit_dml": [
+      "self",
+      "function_name",
+      "data",
+      "external_id_field",
+      "batch_size",
+      "use_serial",
+      "bypass_results",
+      "include_detailed_results"
+    ]
+  }
+}

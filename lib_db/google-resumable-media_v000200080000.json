@@ -1,0 +1,570 @@
+{
+  "_SLEEP_RETRY_ERROR_MSG": [],
+  "UPLOAD_CHUNK_SIZE": [],
+  "PERMANENT_REDIRECT": [],
+  "TOO_MANY_REQUESTS": [],
+  "MAX_SLEEP": [],
+  "MAX_CUMULATIVE_RETRY": [],
+  "RETRYABLE": [],
+  "InvalidResponse": {
+    "__init__": [
+      "self",
+      "response"
+    ]
+  },
+  "DataCorruption": {
+    "__init__": [
+      "self",
+      "response"
+    ]
+  },
+  "RetryStrategy": {
+    "__init__": [
+      "self",
+      "max_sleep",
+      "max_cumulative_retry",
+      "max_retries",
+      "initial_delay",
+      "multiplier"
+    ],
+    "retry_allowed": [
+      "self",
+      "total_sleep",
+      "num_retries"
+    ]
+  },
+  "_CONTENT_RANGE_RE": [],
+  "_ACCEPTABLE_STATUS_CODES": [],
+  "_GET": [],
+  "_ZERO_CONTENT_RANGE_HEADER": [],
+  "DownloadBase": {
+    "__init__": [
+      "self",
+      "media_url",
+      "stream",
+      "start",
+      "end",
+      "headers"
+    ],
+    "finished": [
+      "self"
+    ],
+    "_get_status_code": [
+      "response"
+    ],
+    "_get_headers": [
+      "response"
+    ],
+    "_get_body": [
+      "response"
+    ]
+  },
+  "Download": {
+    "__init__": [
+      "self",
+      "media_url",
+      "stream",
+      "start",
+      "end",
+      "headers",
+      "checksum"
+    ],
+    "_prepare_request": [
+      "self"
+    ],
+    "_process_response": [
+      "self",
+      "response"
+    ],
+    "consume": [
+      "self",
+      "transport",
+      "timeout"
+    ]
+  },
+  "ChunkedDownload": {
+    "__init__": [
+      "self",
+      "media_url",
+      "chunk_size",
+      "stream",
+      "start",
+      "end",
+      "headers"
+    ],
+    "bytes_downloaded": [
+      "self"
+    ],
+    "total_bytes": [
+      "self"
+    ],
+    "invalid": [
+      "self"
+    ],
+    "_get_byte_range": [
+      "self"
+    ],
+    "_prepare_request": [
+      "self"
+    ],
+    "_make_invalid": [
+      "self"
+    ],
+    "_process_response": [
+      "self",
+      "response"
+    ],
+    "consume_next_chunk": [
+      "self",
+      "transport",
+      "timeout"
+    ]
+  },
+  "add_bytes_range": [
+    "start",
+    "end",
+    "headers"
+  ],
+  "get_range_info": [
+    "response",
+    "get_headers",
+    "callback"
+  ],
+  "_check_for_zero_content_range": [
+    "response",
+    "get_status_code",
+    "get_headers"
+  ],
+  "_CONTENT_TYPE_HEADER": [],
+  "_CONTENT_RANGE_TEMPLATE": [],
+  "_RANGE_UNKNOWN_TEMPLATE": [],
+  "_EMPTY_RANGE_TEMPLATE": [],
+  "_BOUNDARY_WIDTH": [],
+  "_BOUNDARY_FORMAT": [],
+  "_MULTIPART_SEP": [],
+  "_CRLF": [],
+  "_MULTIPART_BEGIN": [],
+  "_RELATED_HEADER": [],
+  "_BYTES_RANGE_RE": [],
+  "_STREAM_ERROR_TEMPLATE": [],
+  "_STREAM_READ_PAST_TEMPLATE": [],
+  "_DELETE": [],
+  "_POST": [],
+  "_PUT": [],
+  "_UPLOAD_CHECKSUM_MISMATCH_MESSAGE": [],
+  "_UPLOAD_METADATA_NO_APPROPRIATE_CHECKSUM_MESSAGE": [],
+  "_UPLOAD_HEADER_NO_APPROPRIATE_CHECKSUM_MESSAGE": [],
+  "_MPU_INITIATE_QUERY": [],
+  "_MPU_PART_QUERY_TEMPLATE": [],
+  "_S3_COMPAT_XML_NAMESPACE": [],
+  "_UPLOAD_ID_NODE": [],
+  "_MPU_FINAL_QUERY_TEMPLATE": [],
+  "UploadBase": {
+    "__init__": [
+      "self",
+      "upload_url",
+      "headers"
+    ],
+    "finished": [
+      "self"
+    ],
+    "_process_response": [
+      "self",
+      "response"
+    ],
+    "_get_status_code": [
+      "response"
+    ],
+    "_get_headers": [
+      "response"
+    ],
+    "_get_body": [
+      "response"
+    ]
+  },
+  "SimpleUpload": {
+    "_prepare_request": [
+      "self",
+      "data",
+      "content_type"
+    ],
+    "transmit": [
+      "self",
+      "transport",
+      "data",
+      "content_type",
+      "timeout"
+    ]
+  },
+  "MultipartUpload": {
+    "__init__": [
+      "self",
+      "upload_url",
+      "headers",
+      "checksum"
+    ],
+    "_prepare_request": [
+      "self",
+      "data",
+      "metadata",
+      "content_type"
+    ],
+    "transmit": [
+      "self",
+      "transport",
+      "data",
+      "metadata",
+      "content_type",
+      "timeout"
+    ]
+  },
+  "ResumableUpload": {
+    "__init__": [
+      "self",
+      "upload_url",
+      "chunk_size",
+      "checksum",
+      "headers"
+    ],
+    "invalid": [
+      "self"
+    ],
+    "chunk_size": [
+      "self"
+    ],
+    "resumable_url": [
+      "self"
+    ],
+    "bytes_uploaded": [
+      "self"
+    ],
+    "total_bytes": [
+      "self"
+    ],
+    "_prepare_initiate_request": [
+      "self",
+      "stream",
+      "metadata",
+      "content_type",
+      "total_bytes",
+      "stream_final"
+    ],
+    "_process_initiate_response": [
+      "self",
+      "response"
+    ],
+    "initiate": [
+      "self",
+      "transport",
+      "stream",
+      "metadata",
+      "content_type",
+      "total_bytes",
+      "stream_final",
+      "timeout"
+    ],
+    "_prepare_request": [
+      "self"
+    ],
+    "_update_checksum": [
+      "self",
+      "start_byte",
+      "payload"
+    ],
+    "_make_invalid": [
+      "self"
+    ],
+    "_process_resumable_response": [
+      "self",
+      "response",
+      "bytes_sent"
+    ],
+    "_validate_checksum": [
+      "self",
+      "response"
+    ],
+    "transmit_next_chunk": [
+      "self",
+      "transport",
+      "timeout"
+    ],
+    "_prepare_recover_request": [
+      "self"
+    ],
+    "_process_recover_response": [
+      "self",
+      "response"
+    ],
+    "recover": [
+      "self",
+      "transport"
+    ]
+  },
+  "XMLMPUContainer": {
+    "__init__": [
+      "self",
+      "upload_url",
+      "filename",
+      "headers",
+      "upload_id"
+    ],
+    "upload_id": [
+      "self"
+    ],
+    "register_part": [
+      "self",
+      "part_number",
+      "etag"
+    ],
+    "_prepare_initiate_request": [
+      "self",
+      "content_type"
+    ],
+    "_process_initiate_response": [
+      "self",
+      "response"
+    ],
+    "initiate": [
+      "self",
+      "transport",
+      "content_type",
+      "timeout"
+    ],
+    "_prepare_finalize_request": [
+      "self"
+    ],
+    "_process_finalize_response": [
+      "self",
+      "response"
+    ],
+    "finalize": [
+      "self",
+      "transport",
+      "timeout"
+    ],
+    "_prepare_cancel_request": [
+      "self"
+    ],
+    "_process_cancel_response": [
+      "self",
+      "response"
+    ],
+    "cancel": [
+      "self",
+      "transport",
+      "timeout"
+    ]
+  },
+  "XMLMPUPart": {
+    "__init__": [
+      "self",
+      "upload_url",
+      "upload_id",
+      "filename",
+      "start",
+      "end",
+      "part_number",
+      "headers",
+      "checksum"
+    ],
+    "part_number": [
+      "self"
+    ],
+    "upload_id": [
+      "self"
+    ],
+    "filename": [
+      "self"
+    ],
+    "etag": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "end": [
+      "self"
+    ],
+    "_prepare_upload_request": [
+      "self"
+    ],
+    "_process_upload_response": [
+      "self",
+      "response"
+    ],
+    "upload": [
+      "self",
+      "transport",
+      "timeout"
+    ],
+    "_validate_checksum": [
+      "self",
+      "response"
+    ]
+  },
+  "get_boundary": [],
+  "construct_multipart_request": [
+    "data",
+    "metadata",
+    "content_type"
+  ],
+  "get_total_bytes": [
+    "stream"
+  ],
+  "get_next_chunk": [
+    "stream",
+    "chunk_size",
+    "total_bytes"
+  ],
+  "get_content_range": [
+    "start_byte",
+    "end_byte",
+    "total_bytes"
+  ],
+  "__all__": [],
+  "RANGE_HEADER": [],
+  "CONTENT_RANGE_HEADER": [],
+  "CONTENT_ENCODING_HEADER": [],
+  "_SLOW_CRC32C_WARNING": [],
+  "_GENERATION_HEADER": [],
+  "_HASH_HEADER": [],
+  "_STORED_CONTENT_ENCODING_HEADER": [],
+  "_MISSING_CHECKSUM": [],
+  "_LOGGER": [],
+  "do_nothing": [],
+  "header_required": [
+    "response",
+    "name",
+    "get_headers",
+    "callback"
+  ],
+  "require_status_code": [
+    "response",
+    "status_codes",
+    "get_status_code",
+    "callback"
+  ],
+  "calculate_retry_wait": [
+    "base_wait",
+    "max_sleep",
+    "multiplier"
+  ],
+  "_get_crc32c_object": [],
+  "_is_fast_crcmod": [],
+  "_get_metadata_key": [
+    "checksum_type"
+  ],
+  "prepare_checksum_digest": [
+    "digest_bytestring"
+  ],
+  "_get_expected_checksum": [
+    "response",
+    "get_headers",
+    "media_url",
+    "checksum_type"
+  ],
+  "_get_uploaded_checksum_from_headers": [
+    "response",
+    "get_headers",
+    "checksum_type"
+  ],
+  "_parse_checksum_header": [
+    "header_value",
+    "response",
+    "checksum_label"
+  ],
+  "_get_checksum_object": [
+    "checksum_type"
+  ],
+  "_parse_generation_header": [
+    "response",
+    "get_headers"
+  ],
+  "_get_generation_from_url": [
+    "media_url"
+  ],
+  "add_query_parameters": [
+    "media_url",
+    "query_params"
+  ],
+  "_is_decompressive_transcoding": [
+    "response",
+    "get_headers"
+  ],
+  "_DoNothingHash": {
+    "update": [
+      "self",
+      "unused_chunk"
+    ]
+  },
+  "_DEFAULT_RETRY_STRATEGY": [],
+  "_SINGLE_GET_CHUNK_SIZE": [],
+  "_DEFAULT_CONNECT_TIMEOUT": [],
+  "_DEFAULT_READ_TIMEOUT": [],
+  "_CONNECTION_ERROR_CLASSES": [],
+  "RequestsMixin": {
+    "_get_status_code": [
+      "response"
+    ],
+    "_get_headers": [
+      "response"
+    ],
+    "_get_body": [
+      "response"
+    ]
+  },
+  "RawRequestsMixin": {
+    "_get_body": [
+      "response"
+    ]
+  },
+  "wait_and_retry": [
+    "func",
+    "get_status_code",
+    "retry_strategy"
+  ],
+  "_CHECKSUM_MISMATCH": [],
+  "_STREAM_SEEK_ERROR": [],
+  "_RESPONSE_HEADERS_INFO": [],
+  "RawDownload": {
+    "_write_to_stream": [
+      "self",
+      "response"
+    ],
+    "consume": [
+      "self",
+      "transport",
+      "timeout"
+    ]
+  },
+  "RawChunkedDownload": {
+    "consume_next_chunk": [
+      "self",
+      "transport",
+      "timeout"
+    ]
+  },
+  "_add_decoder": [
+    "response_raw",
+    "checksum"
+  ],
+  "_GzipDecoder": {
+    "__init__": [
+      "self",
+      "checksum"
+    ],
+    "decompress": [
+      "self",
+      "data"
+    ]
+  },
+  "_DEFAULT_TIMEOUT": [],
+  "http_request": [
+    "transport",
+    "method",
+    "url",
+    "data",
+    "headers",
+    "retry_strategy"
+  ]
+}

@@ -1,0 +1,7675 @@
+{
+  "__path__": [],
+  "logger": [],
+  "ResultSet": {
+    "__init__": [
+      "self",
+      "connection",
+      "backend",
+      "arraysize",
+      "buffer_size_bytes",
+      "command_id",
+      "status",
+      "has_been_closed_server_side",
+      "has_more_rows",
+      "results_queue",
+      "description",
+      "is_staging_operation",
+      "lz4_compressed",
+      "arrow_schema_bytes"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "_convert_arrow_table": [
+      "self",
+      "table"
+    ],
+    "rownumber": [
+      "self"
+    ],
+    "is_staging_operation": [
+      "self"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "fetchmany_arrow": [
+      "self",
+      "size"
+    ],
+    "fetchall_arrow": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ThriftResultSet": {
+    "__init__": [
+      "self",
+      "connection",
+      "execute_response",
+      "thrift_client",
+      "buffer_size_bytes",
+      "arraysize",
+      "use_cloud_fetch",
+      "t_row_set",
+      "max_download_threads",
+      "ssl_options",
+      "has_more_rows"
+    ],
+    "_fill_results_buffer": [
+      "self"
+    ],
+    "_convert_columnar_table": [
+      "self",
+      "table"
+    ],
+    "fetchmany_arrow": [
+      "self",
+      "size"
+    ],
+    "fetchmany_columnar": [
+      "self",
+      "size"
+    ],
+    "fetchall_arrow": [
+      "self"
+    ],
+    "fetchall_columnar": [
+      "self"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "_get_schema_description": [
+      "table_schema_message"
+    ]
+  },
+  "BIT_MASKS": [],
+  "DEFAULT_ERROR_CONTEXT": [],
+  "get_session_config_value": [
+    "session_configuration",
+    "key"
+  ],
+  "ResultSetQueue": {
+    "next_n_rows": [
+      "self",
+      "num_rows"
+    ],
+    "remaining_rows": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ThriftResultSetQueueFactory": {
+    "build_queue": [
+      "row_set_type",
+      "t_row_set",
+      "arrow_schema_bytes",
+      "max_download_threads",
+      "ssl_options",
+      "session_id_hex",
+      "statement_id",
+      "chunk_id",
+      "http_client",
+      "lz4_compressed",
+      "description"
+    ]
+  },
+  "ColumnTable": {
+    "__init__": [
+      "self",
+      "column_table",
+      "column_names"
+    ],
+    "num_rows": [
+      "self"
+    ],
+    "num_columns": [
+      "self"
+    ],
+    "get_item": [
+      "self",
+      "col_index",
+      "row_index"
+    ],
+    "slice": [
+      "self",
+      "curr_index",
+      "length"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "ColumnQueue": {
+    "__init__": [
+      "self",
+      "column_table"
+    ],
+    "next_n_rows": [
+      "self",
+      "num_rows"
+    ],
+    "remaining_rows": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ArrowQueue": {
+    "__init__": [
+      "self",
+      "arrow_table",
+      "n_valid_rows",
+      "start_row_index"
+    ],
+    "next_n_rows": [
+      "self",
+      "num_rows"
+    ],
+    "remaining_rows": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "CloudFetchQueue": {
+    "__init__": [
+      "self",
+      "max_download_threads",
+      "ssl_options",
+      "session_id_hex",
+      "statement_id",
+      "chunk_id",
+      "http_client",
+      "schema_bytes",
+      "lz4_compressed",
+      "description"
+    ],
+    "next_n_rows": [
+      "self",
+      "num_rows"
+    ],
+    "remaining_rows": [
+      "self"
+    ],
+    "_create_table_at_offset": [
+      "self",
+      "offset"
+    ],
+    "_create_next_table": [
+      "self"
+    ],
+    "_create_empty_table": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ThriftCloudFetchQueue": {
+    "__init__": [
+      "self",
+      "schema_bytes",
+      "max_download_threads",
+      "ssl_options",
+      "session_id_hex",
+      "statement_id",
+      "chunk_id",
+      "http_client",
+      "start_row_offset",
+      "result_links",
+      "lz4_compressed",
+      "description"
+    ],
+    "_create_next_table": [
+      "self"
+    ]
+  },
+  "_bound": [
+    "min_x",
+    "max_x",
+    "x"
+  ],
+  "NoRetryReason": {
+    "OUT_OF_TIME": [],
+    "OUT_OF_ATTEMPTS": [],
+    "NOT_RETRYABLE": []
+  },
+  "RequestErrorInfo": {
+    "request_session_id": [
+      "self"
+    ],
+    "request_query_id": [
+      "self"
+    ],
+    "full_info_logging_context": [
+      "self",
+      "no_retry_reason",
+      "attempt",
+      "max_attempts",
+      "elapsed",
+      "max_duration"
+    ],
+    "user_friendly_error_message": [
+      "self",
+      "no_retry_reason",
+      "attempt",
+      "elapsed"
+    ]
+  },
+  "ParamEscaper": {
+    "_DATE_FORMAT": [],
+    "_TIME_FORMAT": [],
+    "_DATETIME_FORMAT": [],
+    "escape_args": [
+      "self",
+      "parameters"
+    ],
+    "escape_number": [
+      "self",
+      "item"
+    ],
+    "escape_string": [
+      "self",
+      "item"
+    ],
+    "escape_sequence": [
+      "self",
+      "item"
+    ],
+    "escape_mapping": [
+      "self",
+      "item"
+    ],
+    "escape_datetime": [
+      "self",
+      "item",
+      "format",
+      "cutoff"
+    ],
+    "escape_decimal": [
+      "self",
+      "item"
+    ],
+    "escape_item": [
+      "self",
+      "item"
+    ]
+  },
+  "inject_parameters": [
+    "operation",
+    "parameters"
+  ],
+  "_dbsqlparameter_names": [
+    "params"
+  ],
+  "_generate_named_interpolation_values": [
+    "params"
+  ],
+  "_may_contain_inline_positional_markers": [
+    "operation"
+  ],
+  "_interpolate_named_markers": [
+    "operation",
+    "parameters"
+  ],
+  "transform_paramstyle": [
+    "operation",
+    "parameters",
+    "param_structure"
+  ],
+  "create_arrow_table_from_arrow_file": [
+    "file_bytes",
+    "description"
+  ],
+  "convert_arrow_based_file_to_arrow_table": [
+    "file_bytes"
+  ],
+  "convert_arrow_based_set_to_arrow_table": [
+    "arrow_batches",
+    "lz4_compressed",
+    "schema_bytes"
+  ],
+  "convert_decimals_in_arrow_table": [
+    "table",
+    "description"
+  ],
+  "convert_to_assigned_datatypes_in_column_table": [
+    "column_table",
+    "description"
+  ],
+  "convert_column_based_set_to_arrow_table": [
+    "columns",
+    "description"
+  ],
+  "convert_column_based_set_to_column_table": [
+    "columns",
+    "description"
+  ],
+  "_convert_column_to_arrow_array": [
+    "t_col"
+  ],
+  "_convert_column_to_list": [
+    "t_col"
+  ],
+  "_create_arrow_array": [
+    "t_col_value_wrapper",
+    "arrow_type"
+  ],
+  "_create_python_tuple": [
+    "t_col_value_wrapper"
+  ],
+  "concat_table_chunks": [
+    "table_chunks"
+  ],
+  "build_client_context": [
+    "server_hostname",
+    "version"
+  ],
+  "apilevel": [],
+  "threadsafety": [],
+  "paramstyle": [],
+  "TRANSACTION_ISOLATION_LEVEL_REPEATABLE_READ": [],
+  "RedactUrlQueryParamsFilter": {
+    "pattern": [],
+    "mask": [],
+    "__init__": [
+      "self"
+    ],
+    "redact": [
+      "self",
+      "string"
+    ],
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "DBAPITypeObject": {
+    "__init__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "STRING": [],
+  "BINARY": [],
+  "NUMBER": [],
+  "DATETIME": [],
+  "DATE": [],
+  "ROWID": [],
+  "__version__": [],
+  "USER_AGENT_NAME": [],
+  "Date": [],
+  "Timestamp": [],
+  "DateFromTicks": [
+    "ticks"
+  ],
+  "TimestampFromTicks": [
+    "ticks"
+  ],
+  "connect": [
+    "server_hostname",
+    "http_path",
+    "access_token"
+  ],
+  "Error": {
+    "__init__": [
+      "self",
+      "message",
+      "context",
+      "host_url"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "message_with_context": [
+      "self"
+    ]
+  },
+  "Warning": {},
+  "InterfaceError": {},
+  "DatabaseError": {},
+  "InternalError": {},
+  "OperationalError": {},
+  "ProgrammingError": {},
+  "IntegrityError": {},
+  "DataError": {},
+  "NotSupportedError": {},
+  "TransactionError": {},
+  "InvalidServerResponseError": {},
+  "ServerOperationError": {},
+  "RequestError": {},
+  "MaxRetryDurationError": {},
+  "NonRecoverableNetworkError": {},
+  "UnsafeToRetryError": {},
+  "SessionAlreadyClosedError": {},
+  "CursorAlreadyClosedError": {},
+  "TelemetryRateLimitError": {},
+  "TelemetryNonRateLimitError": {
+    "__init__": [
+      "self",
+      "original_exception"
+    ]
+  },
+  "DEFAULT_RESULT_BUFFER_SIZE_BYTES": [],
+  "DEFAULT_ARRAY_SIZE": [],
+  "Connection": {
+    "__init__": [
+      "self",
+      "server_hostname",
+      "http_path",
+      "access_token",
+      "http_headers",
+      "session_configuration",
+      "catalog",
+      "schema",
+      "_use_arrow_native_complex_types",
+      "ignore_transactions"
+    ],
+    "_set_use_inline_params_with_warning": [
+      "self",
+      "value"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "get_session_id": [
+      "self"
+    ],
+    "get_session_id_hex": [
+      "self"
+    ],
+    "server_parameterized_queries_enabled": [
+      "protocolVersion"
+    ],
+    "protocol_version": [
+      "self"
+    ],
+    "get_protocol_version": [
+      "openSessionResp"
+    ],
+    "open": [
+      "self"
+    ],
+    "cursor": [
+      "self",
+      "arraysize",
+      "buffer_size_bytes",
+      "row_limit"
+    ],
+    "close": [
+      "self"
+    ],
+    "_close": [
+      "self",
+      "close_cursors"
+    ],
+    "autocommit": [
+      "self",
+      "value"
+    ],
+    "_fetch_autocommit_state_from_server": [
+      "self"
+    ],
+    "commit": [
+      "self"
+    ],
+    "rollback": [
+      "self"
+    ],
+    "get_transaction_isolation": [
+      "self"
+    ],
+    "set_transaction_isolation": [
+      "self",
+      "level"
+    ]
+  },
+  "Cursor": {
+    "__init__": [
+      "self",
+      "connection",
+      "backend",
+      "result_buffer_size_bytes",
+      "arraysize",
+      "row_limit"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "_determine_parameter_approach": [
+      "self",
+      "params"
+    ],
+    "_all_dbsql_parameters_are_named": [
+      "self",
+      "params"
+    ],
+    "_normalize_tparametersequence": [
+      "self",
+      "params"
+    ],
+    "_normalize_tparameterdict": [
+      "self",
+      "params"
+    ],
+    "_normalize_tparametercollection": [
+      "self",
+      "params"
+    ],
+    "_determine_parameter_structure": [
+      "self",
+      "parameters"
+    ],
+    "_prepare_inline_parameters": [
+      "self",
+      "stmt",
+      "params"
+    ],
+    "_prepare_native_parameters": [
+      "self",
+      "stmt",
+      "params",
+      "param_structure"
+    ],
+    "_close_and_clear_active_result_set": [
+      "self"
+    ],
+    "_check_not_closed": [
+      "self"
+    ],
+    "_handle_staging_operation": [
+      "self",
+      "staging_allowed_local_path",
+      "input_stream"
+    ],
+    "_handle_staging_put": [
+      "self",
+      "presigned_url",
+      "local_file",
+      "headers"
+    ],
+    "_handle_staging_http_response": [
+      "self",
+      "r"
+    ],
+    "_handle_staging_put_stream": [
+      "self",
+      "presigned_url",
+      "stream",
+      "headers"
+    ],
+    "_handle_staging_get": [
+      "self",
+      "local_file",
+      "presigned_url",
+      "headers"
+    ],
+    "_handle_staging_remove": [
+      "self",
+      "presigned_url",
+      "headers"
+    ],
+    "execute": [
+      "self",
+      "operation",
+      "parameters",
+      "enforce_embedded_schema_correctness",
+      "input_stream"
+    ],
+    "execute_async": [
+      "self",
+      "operation",
+      "parameters",
+      "enforce_embedded_schema_correctness"
+    ],
+    "get_query_state": [
+      "self"
+    ],
+    "is_query_pending": [
+      "self"
+    ],
+    "get_async_execution_result": [
+      "self"
+    ],
+    "executemany": [
+      "self",
+      "operation",
+      "seq_of_parameters"
+    ],
+    "catalogs": [
+      "self"
+    ],
+    "schemas": [
+      "self",
+      "catalog_name",
+      "schema_name"
+    ],
+    "tables": [
+      "self",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "table_types"
+    ],
+    "columns": [
+      "self",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "column_name"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "fetchall_arrow": [
+      "self"
+    ],
+    "fetchmany_arrow": [
+      "self",
+      "size"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "query_id": [
+      "self"
+    ],
+    "description": [
+      "self"
+    ],
+    "rownumber": [
+      "self"
+    ],
+    "setinputsizes": [
+      "self",
+      "sizes"
+    ],
+    "setoutputsize": [
+      "self",
+      "size",
+      "column"
+    ]
+  },
+  "SSLOptions": {
+    "__init__": [
+      "self",
+      "tls_verify",
+      "tls_verify_hostname",
+      "tls_trusted_ca_file",
+      "tls_client_cert_file",
+      "tls_client_cert_key_file",
+      "tls_client_cert_key_password"
+    ],
+    "create_ssl_context": [
+      "self"
+    ]
+  },
+  "Row": {
+    "__new__": [
+      "cls"
+    ],
+    "asDict": [
+      "self",
+      "recursive"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__getattr__": [
+      "self",
+      "item"
+    ],
+    "__setattr__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__reduce__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_create_row": [
+    "fields",
+    "values"
+  ],
+  "Session": {
+    "__init__": [
+      "self",
+      "server_hostname",
+      "http_path",
+      "http_client",
+      "http_headers",
+      "session_configuration",
+      "catalog",
+      "schema",
+      "_use_arrow_native_complex_types"
+    ],
+    "_create_backend": [
+      "self",
+      "server_hostname",
+      "http_path",
+      "all_headers",
+      "auth_provider",
+      "_use_arrow_native_complex_types",
+      "kwargs"
+    ],
+    "open": [
+      "self"
+    ],
+    "get_protocol_version": [
+      "session_id"
+    ],
+    "server_parameterized_queries_enabled": [
+      "protocolVersion"
+    ],
+    "session_id": [
+      "self"
+    ],
+    "guid": [
+      "self"
+    ],
+    "guid_hex": [
+      "self"
+    ],
+    "get_autocommit": [
+      "self"
+    ],
+    "set_autocommit": [
+      "self",
+      "value"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "detect_and_parse_proxy": [
+    "scheme",
+    "host",
+    "skip_bypass",
+    "proxy_auth_method"
+  ],
+  "_generate_negotiate_headers": [
+    "proxy_hostname"
+  ],
+  "create_basic_proxy_auth_headers": [
+    "parsed_proxy"
+  ],
+  "normalize_host_with_protocol": [
+    "host"
+  ],
+  "FeatureFlagEntry": {},
+  "FeatureFlagsResponse": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "FEATURE_FLAGS_ENDPOINT_SUFFIX_FORMAT": [],
+  "DEFAULT_TTL_SECONDS": [],
+  "REFRESH_BEFORE_EXPIRY_SECONDS": [],
+  "FeatureFlagsContext": {
+    "__init__": [
+      "self",
+      "connection",
+      "executor",
+      "http_client"
+    ],
+    "_is_refresh_needed": [
+      "self"
+    ],
+    "get_flag_value": [
+      "self",
+      "name",
+      "default_value"
+    ],
+    "_refresh_flags": [
+      "self"
+    ],
+    "_update_cache_from_response": [
+      "self",
+      "ff_response"
+    ]
+  },
+  "FeatureFlagsContextFactory": {
+    "_lock": [],
+    "_initialize": [
+      "cls"
+    ],
+    "get_instance": [
+      "cls",
+      "connection"
+    ],
+    "remove_instance": [
+      "cls",
+      "connection"
+    ]
+  },
+  "HttpMethod": {
+    "GET": [],
+    "POST": [],
+    "PUT": [],
+    "DELETE": []
+  },
+  "HttpHeader": {
+    "CONTENT_TYPE": [],
+    "AUTHORIZATION": []
+  },
+  "OAuthResponse": {},
+  "_extract_http_status_from_max_retry_error": [
+    "e"
+  ],
+  "UnifiedHttpClient": {
+    "__init__": [
+      "self",
+      "client_context"
+    ],
+    "_setup_pool_managers": [
+      "self"
+    ],
+    "_should_use_proxy": [
+      "self",
+      "target_host"
+    ],
+    "_get_pool_manager_for_url": [
+      "self",
+      "url"
+    ],
+    "_prepare_headers": [
+      "self",
+      "headers"
+    ],
+    "_prepare_retry_policy": [
+      "self"
+    ],
+    "request_context": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ],
+    "using_proxy": [
+      "self"
+    ],
+    "proxy_uri": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "BaseTelemetryClient": {
+    "export_initial_telemetry_log": [
+      "self",
+      "driver_connection_params",
+      "user_agent"
+    ],
+    "export_failure_log": [
+      "self",
+      "error_name",
+      "error_message"
+    ],
+    "export_latency_log": [
+      "self",
+      "latency_ms",
+      "sql_execution_event",
+      "sql_statement_id"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "JsonSerializableMixin": {
+    "to_json": [
+      "self"
+    ]
+  },
+  "EnumEncoder": {
+    "default": [
+      "self",
+      "obj"
+    ]
+  },
+  "_extract_cursor_data": [
+    "cursor"
+  ],
+  "_extract_result_set_handler_data": [
+    "handler"
+  ],
+  "_extract_telemetry_data": [
+    "obj"
+  ],
+  "log_latency": [
+    "statement_type"
+  ],
+  "MINIMUM_CALLS": [],
+  "RESET_TIMEOUT": [],
+  "NAME_PREFIX": [],
+  "CIRCUIT_BREAKER_STATE_OPEN": [],
+  "CIRCUIT_BREAKER_STATE_CLOSED": [],
+  "CIRCUIT_BREAKER_STATE_HALF_OPEN": [],
+  "LOG_CIRCUIT_BREAKER_STATE_CHANGED": [],
+  "LOG_CIRCUIT_BREAKER_OPENED": [],
+  "LOG_CIRCUIT_BREAKER_CLOSED": [],
+  "LOG_CIRCUIT_BREAKER_HALF_OPEN": [],
+  "CircuitBreakerStateListener": {
+    "before_call": [
+      "self",
+      "cb",
+      "func"
+    ],
+    "failure": [
+      "self",
+      "cb",
+      "exc"
+    ],
+    "success": [
+      "self",
+      "cb"
+    ],
+    "state_change": [
+      "self",
+      "cb",
+      "old_state",
+      "new_state"
+    ]
+  },
+  "CircuitBreakerManager": {
+    "_lock": [],
+    "get_circuit_breaker": [
+      "cls",
+      "host"
+    ]
+  },
+  "ITelemetryPushClient": {
+    "request": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ]
+  },
+  "TelemetryPushClient": {
+    "__init__": [
+      "self",
+      "http_client"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ]
+  },
+  "CircuitBreakerTelemetryPushClient": {
+    "__init__": [
+      "self",
+      "delegate",
+      "host"
+    ],
+    "_make_request_and_check_status": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "headers"
+    ]
+  },
+  "TelemetryHelper": {
+    "_DRIVER_SYSTEM_CONFIGURATION": [],
+    "TELEMETRY_FEATURE_FLAG_NAME": [],
+    "get_driver_system_configuration": [
+      "cls"
+    ],
+    "get_auth_mechanism": [
+      "auth_provider"
+    ],
+    "get_auth_flow": [
+      "auth_provider"
+    ],
+    "is_telemetry_enabled": [
+      "connection"
+    ]
+  },
+  "NoopTelemetryClient": {
+    "_instance": [],
+    "_lock": [],
+    "__new__": [
+      "cls"
+    ],
+    "export_initial_telemetry_log": [
+      "self",
+      "driver_connection_params",
+      "user_agent",
+      "session_id"
+    ],
+    "export_failure_log": [
+      "self",
+      "error_name",
+      "error_message",
+      "session_id"
+    ],
+    "export_latency_log": [
+      "self",
+      "latency_ms",
+      "sql_execution_event",
+      "sql_statement_id",
+      "session_id"
+    ],
+    "close": [
+      "self"
+    ],
+    "_flush": [
+      "self"
+    ]
+  },
+  "TelemetryClient": {
+    "TELEMETRY_AUTHENTICATED_PATH": [],
+    "TELEMETRY_UNAUTHENTICATED_PATH": [],
+    "__init__": [
+      "self",
+      "telemetry_enabled",
+      "session_id_hex",
+      "auth_provider",
+      "host_url",
+      "executor",
+      "batch_size",
+      "client_context"
+    ],
+    "_export_event": [
+      "self",
+      "event"
+    ],
+    "_flush": [
+      "self"
+    ],
+    "_send_telemetry": [
+      "self",
+      "events"
+    ],
+    "_send_with_unified_client": [
+      "self",
+      "url",
+      "data",
+      "headers",
+      "timeout"
+    ],
+    "_telemetry_request_callback": [
+      "self",
+      "future",
+      "sent_count"
+    ],
+    "_export_telemetry_log": [
+      "self",
+      "session_id"
+    ],
+    "export_initial_telemetry_log": [
+      "self",
+      "driver_connection_params",
+      "user_agent",
+      "session_id"
+    ],
+    "export_failure_log": [
+      "self",
+      "error_name",
+      "error_message",
+      "session_id"
+    ],
+    "export_latency_log": [
+      "self",
+      "latency_ms",
+      "sql_execution_event",
+      "sql_statement_id",
+      "session_id"
+    ],
+    "close": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "_TelemetryClientHolder": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "increment": [
+      "self"
+    ],
+    "decrement": [
+      "self"
+    ]
+  },
+  "TelemetryClientFactory": {
+    "_lock": [],
+    "_original_excepthook": [],
+    "_excepthook_installed": [],
+    "_flush_thread": [],
+    "_flush_event": [],
+    "_flush_interval_seconds": [],
+    "DEFAULT_BATCH_SIZE": [],
+    "UNKNOWN_HOST": [],
+    "getHostUrlSafely": [
+      "host_url"
+    ],
+    "_initialize": [
+      "cls"
+    ],
+    "_start_flush_thread": [
+      "cls"
+    ],
+    "_flush_worker": [
+      "cls"
+    ],
+    "_stop_flush_thread": [
+      "cls"
+    ],
+    "_install_exception_hook": [
+      "cls"
+    ],
+    "_handle_unhandled_exception": [
+      "cls",
+      "exc_type",
+      "exc_value",
+      "exc_traceback"
+    ],
+    "initialize_telemetry_client": [
+      "telemetry_enabled",
+      "session_id_hex",
+      "auth_provider",
+      "host_url",
+      "batch_size",
+      "client_context"
+    ],
+    "get_telemetry_client": [
+      "host_url"
+    ],
+    "close": [
+      "host_url"
+    ],
+    "connection_failure_log": [
+      "error_name",
+      "error_message",
+      "host_url",
+      "http_path",
+      "port",
+      "client_context",
+      "user_agent",
+      "enable_telemetry"
+    ]
+  },
+  "TelemetryRequest": {},
+  "TelemetryResponse": {},
+  "HostDetails": {},
+  "DriverConnectionParameters": {},
+  "DriverSystemConfiguration": {},
+  "DriverVolumeOperation": {},
+  "DriverErrorInfo": {},
+  "ChunkDetails": {},
+  "ResultLatency": {},
+  "OperationDetail": {},
+  "SqlExecutionEvent": {},
+  "TelemetryEvent": {},
+  "TelemetryClientContext": {},
+  "FrontendLogContext": {},
+  "FrontendLogEntry": {},
+  "TelemetryFrontendLog": {},
+  "AuthFlow": {
+    "TYPE_UNSPECIFIED": [],
+    "TOKEN_PASSTHROUGH": [],
+    "CLIENT_CREDENTIALS": [],
+    "BROWSER_BASED_AUTHENTICATION": []
+  },
+  "AuthMech": {
+    "TYPE_UNSPECIFIED": [],
+    "OTHER": [],
+    "PAT": [],
+    "OAUTH": []
+  },
+  "DatabricksClientType": {
+    "SEA": [],
+    "THRIFT": []
+  },
+  "DriverVolumeOperationType": {
+    "TYPE_UNSPECIFIED": [],
+    "PUT": [],
+    "GET": [],
+    "DELETE": [],
+    "LIST": [],
+    "QUERY": []
+  },
+  "ExecutionResultFormat": {
+    "FORMAT_UNSPECIFIED": [],
+    "INLINE_ARROW": [],
+    "EXTERNAL_LINKS": [],
+    "COLUMNAR_INLINE": []
+  },
+  "StatementType": {
+    "NONE": [],
+    "QUERY": [],
+    "SQL": [],
+    "UPDATE": [],
+    "METADATA": []
+  },
+  "AuthType": {
+    "DATABRICKS_OAUTH": [],
+    "AZURE_OAUTH": [],
+    "AZURE_SP_M2M": []
+  },
+  "AzureAppId": {
+    "DEV": [],
+    "STAGING": [],
+    "PROD": []
+  },
+  "ClientContext": {
+    "__init__": [
+      "self",
+      "hostname",
+      "access_token",
+      "auth_type",
+      "oauth_scopes",
+      "oauth_client_id",
+      "azure_client_id",
+      "azure_client_secret",
+      "azure_tenant_id",
+      "azure_workspace_resource_id",
+      "oauth_redirect_port_range",
+      "use_cert_as_auth",
+      "tls_client_cert_file",
+      "oauth_persistence",
+      "credentials_provider",
+      "identity_federation_client_id",
+      "ssl_options",
+      "socket_timeout",
+      "retry_stop_after_attempts_count",
+      "retry_delay_min",
+      "retry_delay_max",
+      "retry_stop_after_attempts_duration",
+      "retry_delay_default",
+      "retry_dangerous_codes",
+      "proxy_auth_method",
+      "pool_connections",
+      "pool_maxsize",
+      "user_agent",
+      "telemetry_circuit_breaker_enabled"
+    ]
+  },
+  "get_effective_azure_login_app_id": [
+    "hostname"
+  ],
+  "get_azure_tenant_id_from_host": [
+    "host",
+    "http_client"
+  ],
+  "Token": {
+    "__init__": [
+      "self",
+      "access_token",
+      "token_type",
+      "refresh_token"
+    ],
+    "is_expired": [
+      "self"
+    ]
+  },
+  "RefreshableTokenSource": {
+    "get_token": [
+      "self"
+    ],
+    "refresh": [
+      "self"
+    ]
+  },
+  "OAuthManager": {
+    "__init__": [
+      "self",
+      "port_range",
+      "client_id",
+      "idp_endpoint",
+      "http_client"
+    ],
+    "__token_urlsafe": [
+      "nbytes"
+    ],
+    "__get_redirect_url": [
+      "redirect_port"
+    ],
+    "__fetch_well_known_config": [
+      "self",
+      "hostname"
+    ],
+    "__get_challenge": [],
+    "__get_authorization_code": [
+      "self",
+      "client",
+      "auth_url",
+      "scope",
+      "state",
+      "challenge"
+    ],
+    "__send_auth_code_token_request": [
+      "self",
+      "client",
+      "token_request_url",
+      "redirect_url",
+      "code",
+      "verifier"
+    ],
+    "__send_token_request": [
+      "self",
+      "token_request_url",
+      "data"
+    ],
+    "__send_refresh_token_request": [
+      "self",
+      "hostname",
+      "refresh_token"
+    ],
+    "__get_tokens_from_response": [
+      "oauth_response"
+    ],
+    "check_and_refresh_access_token": [
+      "self",
+      "hostname",
+      "access_token",
+      "refresh_token"
+    ],
+    "get_tokens": [
+      "self",
+      "hostname",
+      "scope"
+    ]
+  },
+  "ClientCredentialsTokenSource": {
+    "__init__": [
+      "self",
+      "token_url",
+      "client_id",
+      "client_secret",
+      "http_client",
+      "extra_params"
+    ],
+    "get_token": [
+      "self"
+    ],
+    "refresh": [
+      "self"
+    ]
+  },
+  "TokenFederationProvider": {
+    "TOKEN_EXCHANGE_ENDPOINT": [],
+    "TOKEN_EXCHANGE_GRANT_TYPE": [],
+    "TOKEN_EXCHANGE_SUBJECT_TYPE": [],
+    "__init__": [
+      "self",
+      "hostname",
+      "external_provider",
+      "http_client",
+      "identity_federation_client_id"
+    ],
+    "add_headers": [
+      "self",
+      "request_headers"
+    ],
+    "_get_token": [
+      "self"
+    ],
+    "_should_exchange_token": [
+      "self",
+      "access_token"
+    ],
+    "_exchange_token": [
+      "self",
+      "access_token"
+    ],
+    "_extract_token_from_header": [
+      "self",
+      "auth_header"
+    ]
+  },
+  "THttpClient": {
+    "__init__": [
+      "self",
+      "auth_provider",
+      "uri_or_host",
+      "port",
+      "path",
+      "ssl_options",
+      "max_connections",
+      "retry_policy"
+    ],
+    "setCustomHeaders": [
+      "self",
+      "headers"
+    ],
+    "startRetryTimer": [
+      "self"
+    ],
+    "open": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "sz"
+    ],
+    "isOpen": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "using_proxy": [
+      "self"
+    ],
+    "set_retry_command_type": [
+      "self",
+      "value"
+    ]
+  },
+  "get_auth_provider": [
+    "cfg",
+    "http_client"
+  ],
+  "PYSQL_OAUTH_SCOPES": [],
+  "PYSQL_OAUTH_CLIENT_ID": [],
+  "PYSQL_OAUTH_AZURE_CLIENT_ID": [],
+  "PYSQL_OAUTH_REDIRECT_PORT_RANGE": [],
+  "PYSQL_OAUTH_AZURE_REDIRECT_PORT_RANGE": [],
+  "normalize_host_name": [
+    "hostname"
+  ],
+  "get_client_id_and_redirect_port": [
+    "use_azure_auth"
+  ],
+  "get_python_sql_connector_auth_provider": [
+    "hostname",
+    "http_client"
+  ],
+  "AuthProvider": {
+    "add_headers": [
+      "self",
+      "request_headers"
+    ]
+  },
+  "HeaderFactory": [],
+  "CredentialsProvider": {
+    "auth_type": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "AccessTokenAuthProvider": {
+    "__init__": [
+      "self",
+      "access_token"
+    ],
+    "add_headers": [
+      "self",
+      "request_headers"
+    ]
+  },
+  "DatabricksOAuthProvider": {
+    "SCOPE_DELIM": [],
+    "__init__": [
+      "self",
+      "hostname",
+      "oauth_persistence",
+      "redirect_port_range",
+      "client_id",
+      "scopes",
+      "http_client",
+      "auth_type"
+    ],
+    "add_headers": [
+      "self",
+      "request_headers"
+    ],
+    "_initial_get_token": [
+      "self"
+    ],
+    "_update_token_if_expired": [
+      "self"
+    ]
+  },
+  "ExternalAuthProvider": {
+    "__init__": [
+      "self",
+      "credentials_provider"
+    ],
+    "add_headers": [
+      "self",
+      "request_headers"
+    ]
+  },
+  "AzureServicePrincipalCredentialProvider": {
+    "AZURE_AAD_ENDPOINT": [],
+    "AZURE_TOKEN_ENDPOINT": [],
+    "AZURE_MANAGED_RESOURCE": [],
+    "DATABRICKS_AZURE_SP_TOKEN_HEADER": [],
+    "DATABRICKS_AZURE_WORKSPACE_RESOURCE_ID_HEADER": [],
+    "__init__": [
+      "self",
+      "hostname",
+      "azure_client_id",
+      "azure_client_secret",
+      "http_client",
+      "azure_tenant_id",
+      "azure_workspace_resource_id"
+    ],
+    "auth_type": [
+      "self"
+    ],
+    "get_token_source": [
+      "self",
+      "resource"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "CommandType": {
+    "EXECUTE_STATEMENT": [],
+    "CLOSE_SESSION": [],
+    "CLOSE_OPERATION": [],
+    "GET_OPERATION_STATUS": [],
+    "OTHER": [],
+    "get": [
+      "cls",
+      "value"
+    ]
+  },
+  "DatabricksRetryPolicy": {
+    "__init__": [
+      "self",
+      "delay_min",
+      "delay_max",
+      "stop_after_attempts_count",
+      "stop_after_attempts_duration",
+      "delay_default",
+      "force_dangerous_codes",
+      "urllib3_kwargs"
+    ],
+    "__private_init__": [
+      "cls",
+      "retry_start_time",
+      "command_type"
+    ],
+    "new": [
+      "self"
+    ],
+    "command_type": [
+      "self",
+      "value"
+    ],
+    "delay_default": [
+      "self"
+    ],
+    "start_retry_timer": [
+      "self"
+    ],
+    "check_timer_duration": [
+      "self"
+    ],
+    "check_proposed_wait": [
+      "self",
+      "proposed_wait"
+    ],
+    "sleep_for_retry": [
+      "self",
+      "response"
+    ],
+    "get_backoff_time": [
+      "self"
+    ],
+    "should_retry": [
+      "self",
+      "method",
+      "status_code"
+    ],
+    "is_retry": [
+      "self",
+      "method",
+      "status_code",
+      "has_retry_after"
+    ]
+  },
+  "decode_token": [
+    "access_token"
+  ],
+  "is_same_host": [
+    "url1",
+    "url2"
+  ],
+  "OAuthHttpSingleRequestHandler": {
+    "RESPONSE_BODY_TEMPLATE": [],
+    "__init__": [
+      "self",
+      "tool_name"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "do_GET": [
+      "self"
+    ],
+    "log_message": [
+      "self",
+      "format"
+    ]
+  },
+  "OIDC_REDIRECTOR_PATH": [],
+  "OAuthScope": {
+    "OFFLINE_ACCESS": [],
+    "SQL": []
+  },
+  "CloudType": {
+    "AWS": [],
+    "AZURE": [],
+    "GCP": []
+  },
+  "DATABRICKS_AWS_DOMAINS": [],
+  "DATABRICKS_AZURE_DOMAINS": [],
+  "DATABRICKS_GCP_DOMAINS": [],
+  "DATABRICKS_OAUTH_AZURE_DOMAINS": [],
+  "infer_cloud_from_host": [
+    "hostname"
+  ],
+  "is_supported_databricks_oauth_host": [
+    "hostname"
+  ],
+  "get_databricks_oidc_url": [
+    "hostname"
+  ],
+  "OAuthEndpointCollection": {
+    "get_scopes_mapping": [
+      "self",
+      "scopes"
+    ],
+    "get_authorization_url": [
+      "self",
+      "hostname"
+    ],
+    "get_openid_config_url": [
+      "self",
+      "hostname"
+    ]
+  },
+  "AzureOAuthEndpointCollection": {
+    "DATATRICKS_AZURE_APP": [],
+    "get_scopes_mapping": [
+      "self",
+      "scopes"
+    ],
+    "get_authorization_url": [
+      "self",
+      "hostname"
+    ],
+    "get_openid_config_url": [
+      "self",
+      "hostname"
+    ]
+  },
+  "InHouseOAuthEndpointCollection": {
+    "get_scopes_mapping": [
+      "self",
+      "scopes"
+    ],
+    "get_authorization_url": [
+      "self",
+      "hostname"
+    ],
+    "get_openid_config_url": [
+      "self",
+      "hostname"
+    ]
+  },
+  "get_oauth_endpoints": [
+    "hostname",
+    "use_azure_auth"
+  ],
+  "OAuthToken": {
+    "__init__": [
+      "self",
+      "access_token",
+      "refresh_token"
+    ],
+    "access_token": [
+      "self"
+    ],
+    "refresh_token": [
+      "self"
+    ]
+  },
+  "OAuthPersistence": {
+    "persist": [
+      "self",
+      "hostname",
+      "oauth_token"
+    ],
+    "read": [
+      "self",
+      "hostname"
+    ]
+  },
+  "OAuthPersistenceCache": {
+    "__init__": [
+      "self"
+    ],
+    "persist": [
+      "self",
+      "hostname",
+      "oauth_token"
+    ],
+    "read": [
+      "self",
+      "hostname"
+    ]
+  },
+  "DevOnlyFilePersistence": {
+    "__init__": [
+      "self",
+      "file_path"
+    ],
+    "persist": [
+      "self",
+      "hostname",
+      "token"
+    ],
+    "read": [
+      "self",
+      "hostname"
+    ]
+  },
+  "ResultFileDownloadManager": {
+    "__init__": [
+      "self",
+      "links",
+      "max_download_threads",
+      "lz4_compressed",
+      "ssl_options",
+      "session_id_hex",
+      "statement_id",
+      "chunk_id",
+      "http_client"
+    ],
+    "get_next_downloaded_file": [
+      "self",
+      "next_row_offset"
+    ],
+    "_schedule_downloads": [
+      "self"
+    ],
+    "add_link": [
+      "self",
+      "link"
+    ],
+    "_shutdown_manager": [
+      "self"
+    ]
+  },
+  "DownloadedFile": {},
+  "DownloadableResultSettings": {},
+  "ResultSetDownloadHandler": {
+    "__init__": [
+      "self",
+      "settings",
+      "link",
+      "ssl_options",
+      "chunk_id",
+      "session_id_hex",
+      "statement_id",
+      "http_client"
+    ],
+    "run": [
+      "self"
+    ],
+    "_log_download_metrics": [
+      "self",
+      "url",
+      "bytes_downloaded",
+      "duration_seconds"
+    ],
+    "_validate_link": [
+      "link",
+      "expiry_buffer_secs"
+    ],
+    "_decompress_data": [
+      "compressed_data"
+    ]
+  },
+  "ParameterApproach": {
+    "INLINE": [],
+    "NATIVE": [],
+    "NONE": []
+  },
+  "ParameterStructure": {
+    "NAMED": [],
+    "POSITIONAL": [],
+    "NONE": []
+  },
+  "DatabricksSupportedType": {
+    "BIGINT": [],
+    "BINARY": [],
+    "BOOLEAN": [],
+    "DATE": [],
+    "DECIMAL": [],
+    "DOUBLE": [],
+    "FLOAT": [],
+    "INT": [],
+    "INTERVAL": [],
+    "VOID": [],
+    "SMALLINT": [],
+    "STRING": [],
+    "TIMESTAMP": [],
+    "TIMESTAMP_NTZ": [],
+    "TINYINT": [],
+    "ARRAY": [],
+    "MAP": [],
+    "STRUCT": []
+  },
+  "TAllowedParameterValue": [],
+  "DbsqlParameterBase": {
+    "as_tspark_param": [
+      "self",
+      "named"
+    ],
+    "_tspark_param_value": [
+      "self"
+    ],
+    "_tspark_value_arg": [
+      "self"
+    ],
+    "_cast_expr": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "IntegerParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "StringParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "BigIntegerParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "BooleanParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "DateParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "DoubleParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "FloatParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "VoidParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": [],
+    "_tspark_param_value": [
+      "self"
+    ]
+  },
+  "SmallIntParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "TimestampParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "TimestampNTZParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "TinyIntParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "CAST_EXPR": []
+  },
+  "ArrayParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "as_tspark_param": [
+      "self",
+      "named"
+    ],
+    "_tspark_value_arg": [
+      "self"
+    ],
+    "CAST_EXPR": []
+  },
+  "MapParameter": {
+    "__init__": [
+      "self",
+      "value",
+      "name"
+    ],
+    "as_tspark_param": [
+      "self",
+      "named"
+    ],
+    "_tspark_value_arg": [
+      "self"
+    ],
+    "CAST_EXPR": []
+  },
+  "DecimalParameter": {
+    "CAST_EXPR": [],
+    "__init__": [
+      "self",
+      "value",
+      "name",
+      "scale",
+      "precision"
+    ],
+    "valid_scale_and_precision": [
+      "self"
+    ],
+    "_cast_expr": [
+      "self"
+    ],
+    "calculate_decimal_cast_string": [
+      "self",
+      "input"
+    ]
+  },
+  "dbsql_parameter_from_int": [
+    "value",
+    "name"
+  ],
+  "dbsql_parameter_from_primitive": [
+    "value",
+    "name"
+  ],
+  "TDbsqlParameter": [],
+  "TParameterSequence": [],
+  "TParameterDict": [],
+  "TParameterCollection": [],
+  "_all__": [],
+  "all_structs": [],
+  "TProtocolVersion": {
+    "__HIVE_JDBC_WORKAROUND": [],
+    "__TEST_PROTOCOL_VERSION": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V1": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V2": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V3": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V4": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V5": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V6": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V7": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V8": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V9": [],
+    "HIVE_CLI_SERVICE_PROTOCOL_V10": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V1": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V2": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V3": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V4": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V5": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V6": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V7": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V8": [],
+    "SPARK_CLI_SERVICE_PROTOCOL_V9": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TTypeId": {
+    "BOOLEAN_TYPE": [],
+    "TINYINT_TYPE": [],
+    "SMALLINT_TYPE": [],
+    "INT_TYPE": [],
+    "BIGINT_TYPE": [],
+    "FLOAT_TYPE": [],
+    "DOUBLE_TYPE": [],
+    "STRING_TYPE": [],
+    "TIMESTAMP_TYPE": [],
+    "BINARY_TYPE": [],
+    "ARRAY_TYPE": [],
+    "MAP_TYPE": [],
+    "STRUCT_TYPE": [],
+    "UNION_TYPE": [],
+    "USER_DEFINED_TYPE": [],
+    "DECIMAL_TYPE": [],
+    "NULL_TYPE": [],
+    "DATE_TYPE": [],
+    "VARCHAR_TYPE": [],
+    "CHAR_TYPE": [],
+    "INTERVAL_YEAR_MONTH_TYPE": [],
+    "INTERVAL_DAY_TIME_TYPE": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TSparkRowSetType": {
+    "ARROW_BASED_SET": [],
+    "COLUMN_BASED_SET": [],
+    "ROW_BASED_SET": [],
+    "URL_BASED_SET": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TDBSqlCompressionCodec": {
+    "NONE": [],
+    "LZ4_FRAME": [],
+    "LZ4_BLOCK": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TDBSqlArrowLayout": {
+    "ARROW_BATCH": [],
+    "ARROW_STREAMING": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TStatusCode": {
+    "SUCCESS_STATUS": [],
+    "SUCCESS_WITH_INFO_STATUS": [],
+    "STILL_EXECUTING_STATUS": [],
+    "ERROR_STATUS": [],
+    "INVALID_HANDLE_STATUS": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TOperationState": {
+    "INITIALIZED_STATE": [],
+    "RUNNING_STATE": [],
+    "FINISHED_STATE": [],
+    "CANCELED_STATE": [],
+    "CLOSED_STATE": [],
+    "ERROR_STATE": [],
+    "UKNOWN_STATE": [],
+    "PENDING_STATE": [],
+    "TIMEDOUT_STATE": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TOperationType": {
+    "EXECUTE_STATEMENT": [],
+    "GET_TYPE_INFO": [],
+    "GET_CATALOGS": [],
+    "GET_SCHEMAS": [],
+    "GET_TABLES": [],
+    "GET_TABLE_TYPES": [],
+    "GET_COLUMNS": [],
+    "GET_FUNCTIONS": [],
+    "UNKNOWN": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TGetInfoType": {
+    "CLI_MAX_DRIVER_CONNECTIONS": [],
+    "CLI_MAX_CONCURRENT_ACTIVITIES": [],
+    "CLI_DATA_SOURCE_NAME": [],
+    "CLI_FETCH_DIRECTION": [],
+    "CLI_SERVER_NAME": [],
+    "CLI_SEARCH_PATTERN_ESCAPE": [],
+    "CLI_DBMS_NAME": [],
+    "CLI_DBMS_VER": [],
+    "CLI_ACCESSIBLE_TABLES": [],
+    "CLI_ACCESSIBLE_PROCEDURES": [],
+    "CLI_CURSOR_COMMIT_BEHAVIOR": [],
+    "CLI_DATA_SOURCE_READ_ONLY": [],
+    "CLI_DEFAULT_TXN_ISOLATION": [],
+    "CLI_IDENTIFIER_CASE": [],
+    "CLI_IDENTIFIER_QUOTE_CHAR": [],
+    "CLI_MAX_COLUMN_NAME_LEN": [],
+    "CLI_MAX_CURSOR_NAME_LEN": [],
+    "CLI_MAX_SCHEMA_NAME_LEN": [],
+    "CLI_MAX_CATALOG_NAME_LEN": [],
+    "CLI_MAX_TABLE_NAME_LEN": [],
+    "CLI_SCROLL_CONCURRENCY": [],
+    "CLI_TXN_CAPABLE": [],
+    "CLI_USER_NAME": [],
+    "CLI_TXN_ISOLATION_OPTION": [],
+    "CLI_INTEGRITY": [],
+    "CLI_GETDATA_EXTENSIONS": [],
+    "CLI_NULL_COLLATION": [],
+    "CLI_ALTER_TABLE": [],
+    "CLI_ORDER_BY_COLUMNS_IN_SELECT": [],
+    "CLI_SPECIAL_CHARACTERS": [],
+    "CLI_MAX_COLUMNS_IN_GROUP_BY": [],
+    "CLI_MAX_COLUMNS_IN_INDEX": [],
+    "CLI_MAX_COLUMNS_IN_ORDER_BY": [],
+    "CLI_MAX_COLUMNS_IN_SELECT": [],
+    "CLI_MAX_COLUMNS_IN_TABLE": [],
+    "CLI_MAX_INDEX_SIZE": [],
+    "CLI_MAX_ROW_SIZE": [],
+    "CLI_MAX_STATEMENT_LEN": [],
+    "CLI_MAX_TABLES_IN_SELECT": [],
+    "CLI_MAX_USER_NAME_LEN": [],
+    "CLI_OJ_CAPABILITIES": [],
+    "CLI_XOPEN_CLI_YEAR": [],
+    "CLI_CURSOR_SENSITIVITY": [],
+    "CLI_DESCRIBE_PARAMETER": [],
+    "CLI_CATALOG_NAME": [],
+    "CLI_COLLATION_SEQ": [],
+    "CLI_MAX_IDENTIFIER_LEN": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TCacheLookupResult": {
+    "CACHE_INELIGIBLE": [],
+    "LOCAL_CACHE_HIT": [],
+    "REMOTE_CACHE_HIT": [],
+    "CACHE_MISS": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TFetchOrientation": {
+    "FETCH_NEXT": [],
+    "FETCH_PRIOR": [],
+    "FETCH_RELATIVE": [],
+    "FETCH_ABSOLUTE": [],
+    "FETCH_FIRST": [],
+    "FETCH_LAST": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TJobExecutionStatus": {
+    "IN_PROGRESS": [],
+    "COMPLETE": [],
+    "NOT_AVAILABLE": [],
+    "_VALUES_TO_NAMES": [],
+    "_NAMES_TO_VALUES": []
+  },
+  "TTypeQualifierValue": {
+    "__init__": [
+      "self",
+      "i32Value",
+      "stringValue"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TTypeQualifiers": {
+    "__init__": [
+      "self",
+      "qualifiers"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TPrimitiveTypeEntry": {
+    "__init__": [
+      "self",
+      "type",
+      "typeQualifiers"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TArrayTypeEntry": {
+    "__init__": [
+      "self",
+      "objectTypePtr"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TMapTypeEntry": {
+    "__init__": [
+      "self",
+      "keyTypePtr",
+      "valueTypePtr"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TStructTypeEntry": {
+    "__init__": [
+      "self",
+      "nameToTypePtr"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TUnionTypeEntry": {
+    "__init__": [
+      "self",
+      "nameToTypePtr"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TUserDefinedTypeEntry": {
+    "__init__": [
+      "self",
+      "typeClassName"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TTypeEntry": {
+    "__init__": [
+      "self",
+      "primitiveEntry",
+      "arrayEntry",
+      "mapEntry",
+      "structEntry",
+      "unionEntry",
+      "userDefinedTypeEntry"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TTypeDesc": {
+    "__init__": [
+      "self",
+      "types"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TColumnDesc": {
+    "__init__": [
+      "self",
+      "columnName",
+      "typeDesc",
+      "position",
+      "comment"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TTableSchema": {
+    "__init__": [
+      "self",
+      "columns"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TBoolValue": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TByteValue": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI16Value": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI32Value": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI64Value": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDoubleValue": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TStringValue": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TColumnValue": {
+    "__init__": [
+      "self",
+      "boolVal",
+      "byteVal",
+      "i16Val",
+      "i32Val",
+      "i64Val",
+      "doubleVal",
+      "stringVal"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TRow": {
+    "__init__": [
+      "self",
+      "colVals"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TBoolColumn": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TByteColumn": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI16Column": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI32Column": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TI64Column": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDoubleColumn": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TStringColumn": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TBinaryColumn": {
+    "__init__": [
+      "self",
+      "values",
+      "nulls"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TColumn": {
+    "__init__": [
+      "self",
+      "boolVal",
+      "byteVal",
+      "i16Val",
+      "i32Val",
+      "i64Val",
+      "doubleVal",
+      "stringVal",
+      "binaryVal"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDBSqlJsonArrayFormat": {
+    "__init__": [
+      "self",
+      "compressionCodec"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDBSqlCsvFormat": {
+    "__init__": [
+      "self",
+      "compressionCodec"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDBSqlArrowFormat": {
+    "__init__": [
+      "self",
+      "arrowLayout",
+      "compressionCodec"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TDBSqlResultFormat": {
+    "__init__": [
+      "self",
+      "arrowFormat",
+      "csvFormat",
+      "jsonArrayFormat"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkArrowBatch": {
+    "__init__": [
+      "self",
+      "batch",
+      "rowCount"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkArrowResultLink": {
+    "__init__": [
+      "self",
+      "fileLink",
+      "expiryTime",
+      "startRowOffset",
+      "rowCount",
+      "bytesNum",
+      "httpHeaders"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TRowSet": {
+    "__init__": [
+      "self",
+      "startRowOffset",
+      "rows",
+      "columns",
+      "binaryColumns",
+      "columnCount",
+      "arrowBatches",
+      "resultLinks"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TStatus": {
+    "__init__": [
+      "self",
+      "statusCode",
+      "infoMessages",
+      "sqlState",
+      "errorCode",
+      "errorMessage",
+      "displayMessage",
+      "errorDetailsJson"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TNamespace": {
+    "__init__": [
+      "self",
+      "catalogName",
+      "schemaName"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "THandleIdentifier": {
+    "__init__": [
+      "self",
+      "guid",
+      "secret"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSessionHandle": {
+    "__init__": [
+      "self",
+      "sessionId",
+      "serverProtocolVersion"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TOperationHandle": {
+    "__init__": [
+      "self",
+      "operationId",
+      "operationType",
+      "hasResultSet",
+      "modifiedRowCount"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TOpenSessionReq": {
+    "__init__": [
+      "self",
+      "client_protocol",
+      "username",
+      "password",
+      "configuration",
+      "getInfos",
+      "client_protocol_i64",
+      "connectionProperties",
+      "initialNamespace",
+      "canUseMultipleCatalogs"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TOpenSessionResp": {
+    "__init__": [
+      "self",
+      "status",
+      "serverProtocolVersion",
+      "sessionHandle",
+      "configuration",
+      "initialNamespace",
+      "canUseMultipleCatalogs",
+      "getInfos"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCloseSessionReq": {
+    "__init__": [
+      "self",
+      "sessionHandle"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCloseSessionResp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetInfoValue": {
+    "__init__": [
+      "self",
+      "stringValue",
+      "smallIntValue",
+      "integerBitmask",
+      "integerFlag",
+      "binaryValue",
+      "lenValue"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetInfoReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "infoType"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetInfoResp": {
+    "__init__": [
+      "self",
+      "status",
+      "infoValue"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkGetDirectResults": {
+    "__init__": [
+      "self",
+      "maxRows",
+      "maxBytes"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkDirectResults": {
+    "__init__": [
+      "self",
+      "operationStatus",
+      "resultSetMetadata",
+      "resultSet",
+      "closeOperation"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkArrowTypes": {
+    "__init__": [
+      "self",
+      "timestampAsArrow",
+      "decimalAsArrow",
+      "complexTypesAsArrow",
+      "intervalTypesAsArrow",
+      "nullTypeAsArrow"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TExecuteStatementReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "statement",
+      "confOverlay",
+      "runAsync",
+      "getDirectResults",
+      "queryTimeout",
+      "canReadArrowResult",
+      "canDownloadResult",
+      "canDecompressLZ4Result",
+      "maxBytesPerFile",
+      "useArrowNativeTypes",
+      "resultRowLimit",
+      "parameters",
+      "maxBytesPerBatch",
+      "statementConf",
+      "enforceEmbeddedSchemaCorrectness"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkParameterValue": {
+    "__init__": [
+      "self",
+      "stringValue",
+      "doubleValue",
+      "booleanValue"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkParameterValueArg": {
+    "__init__": [
+      "self",
+      "type",
+      "value",
+      "arguments"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TSparkParameter": {
+    "__init__": [
+      "self",
+      "ordinal",
+      "name",
+      "type",
+      "value",
+      "arguments"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TStatementConf": {
+    "__init__": [
+      "self",
+      "sessionless",
+      "initialNamespace",
+      "client_protocol",
+      "client_protocol_i64"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TExecuteStatementResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTypeInfoReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTypeInfoResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetCatalogsReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetCatalogsResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetSchemasReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "catalogName",
+      "schemaName",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetSchemasResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTablesReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "catalogName",
+      "schemaName",
+      "tableName",
+      "tableTypes",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTablesResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTableTypesReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetTableTypesResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetColumnsReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "catalogName",
+      "schemaName",
+      "tableName",
+      "columnName",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetColumnsResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetFunctionsReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "catalogName",
+      "schemaName",
+      "functionName",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetFunctionsResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetPrimaryKeysReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "catalogName",
+      "schemaName",
+      "tableName",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetPrimaryKeysResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetCrossReferenceReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "parentCatalogName",
+      "parentSchemaName",
+      "parentTableName",
+      "foreignCatalogName",
+      "foreignSchemaName",
+      "foreignTableName",
+      "getDirectResults",
+      "runAsync"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetCrossReferenceResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationHandle",
+      "directResults"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetOperationStatusReq": {
+    "__init__": [
+      "self",
+      "operationHandle",
+      "getProgressUpdate"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetOperationStatusResp": {
+    "__init__": [
+      "self",
+      "status",
+      "operationState",
+      "sqlState",
+      "errorCode",
+      "errorMessage",
+      "taskStatus",
+      "operationStarted",
+      "operationCompleted",
+      "hasResultSet",
+      "progressUpdateResponse",
+      "numModifiedRows",
+      "displayMessage",
+      "diagnosticInfo",
+      "errorDetailsJson"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCancelOperationReq": {
+    "__init__": [
+      "self",
+      "operationHandle"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCancelOperationResp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCloseOperationReq": {
+    "__init__": [
+      "self",
+      "operationHandle"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCloseOperationResp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetResultSetMetadataReq": {
+    "__init__": [
+      "self",
+      "operationHandle"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetResultSetMetadataResp": {
+    "__init__": [
+      "self",
+      "status",
+      "schema",
+      "resultFormat",
+      "lz4Compressed",
+      "arrowSchema",
+      "cacheLookupResult",
+      "uncompressedBytes",
+      "compressedBytes",
+      "isStagingOperation"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TFetchResultsReq": {
+    "__init__": [
+      "self",
+      "operationHandle",
+      "orientation",
+      "maxRows",
+      "fetchType",
+      "maxBytes",
+      "startRowOffset",
+      "includeResultSetMetadata"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TFetchResultsResp": {
+    "__init__": [
+      "self",
+      "status",
+      "hasMoreRows",
+      "results",
+      "resultSetMetadata"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetDelegationTokenReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "owner",
+      "renewer"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TGetDelegationTokenResp": {
+    "__init__": [
+      "self",
+      "status",
+      "delegationToken"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCancelDelegationTokenReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "delegationToken"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TCancelDelegationTokenResp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TRenewDelegationTokenReq": {
+    "__init__": [
+      "self",
+      "sessionHandle",
+      "delegationToken"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TRenewDelegationTokenResp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "TProgressUpdateResp": {
+    "__init__": [
+      "self",
+      "headerNames",
+      "rows",
+      "progressedPercentage",
+      "status",
+      "footerSummary",
+      "startTime"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "__all__": [],
+  "Iface": {
+    "OpenSession": [
+      "self",
+      "req"
+    ],
+    "CloseSession": [
+      "self",
+      "req"
+    ],
+    "GetInfo": [
+      "self",
+      "req"
+    ],
+    "ExecuteStatement": [
+      "self",
+      "req"
+    ],
+    "GetTypeInfo": [
+      "self",
+      "req"
+    ],
+    "GetCatalogs": [
+      "self",
+      "req"
+    ],
+    "GetSchemas": [
+      "self",
+      "req"
+    ],
+    "GetTables": [
+      "self",
+      "req"
+    ],
+    "GetTableTypes": [
+      "self",
+      "req"
+    ],
+    "GetColumns": [
+      "self",
+      "req"
+    ],
+    "GetFunctions": [
+      "self",
+      "req"
+    ],
+    "GetPrimaryKeys": [
+      "self",
+      "req"
+    ],
+    "GetCrossReference": [
+      "self",
+      "req"
+    ],
+    "GetOperationStatus": [
+      "self",
+      "req"
+    ],
+    "CancelOperation": [
+      "self",
+      "req"
+    ],
+    "CloseOperation": [
+      "self",
+      "req"
+    ],
+    "GetResultSetMetadata": [
+      "self",
+      "req"
+    ],
+    "FetchResults": [
+      "self",
+      "req"
+    ],
+    "GetDelegationToken": [
+      "self",
+      "req"
+    ],
+    "CancelDelegationToken": [
+      "self",
+      "req"
+    ],
+    "RenewDelegationToken": [
+      "self",
+      "req"
+    ]
+  },
+  "Client": {
+    "__init__": [
+      "self",
+      "iprot",
+      "oprot"
+    ],
+    "OpenSession": [
+      "self",
+      "req"
+    ],
+    "send_OpenSession": [
+      "self",
+      "req"
+    ],
+    "recv_OpenSession": [
+      "self"
+    ],
+    "CloseSession": [
+      "self",
+      "req"
+    ],
+    "send_CloseSession": [
+      "self",
+      "req"
+    ],
+    "recv_CloseSession": [
+      "self"
+    ],
+    "GetInfo": [
+      "self",
+      "req"
+    ],
+    "send_GetInfo": [
+      "self",
+      "req"
+    ],
+    "recv_GetInfo": [
+      "self"
+    ],
+    "ExecuteStatement": [
+      "self",
+      "req"
+    ],
+    "send_ExecuteStatement": [
+      "self",
+      "req"
+    ],
+    "recv_ExecuteStatement": [
+      "self"
+    ],
+    "GetTypeInfo": [
+      "self",
+      "req"
+    ],
+    "send_GetTypeInfo": [
+      "self",
+      "req"
+    ],
+    "recv_GetTypeInfo": [
+      "self"
+    ],
+    "GetCatalogs": [
+      "self",
+      "req"
+    ],
+    "send_GetCatalogs": [
+      "self",
+      "req"
+    ],
+    "recv_GetCatalogs": [
+      "self"
+    ],
+    "GetSchemas": [
+      "self",
+      "req"
+    ],
+    "send_GetSchemas": [
+      "self",
+      "req"
+    ],
+    "recv_GetSchemas": [
+      "self"
+    ],
+    "GetTables": [
+      "self",
+      "req"
+    ],
+    "send_GetTables": [
+      "self",
+      "req"
+    ],
+    "recv_GetTables": [
+      "self"
+    ],
+    "GetTableTypes": [
+      "self",
+      "req"
+    ],
+    "send_GetTableTypes": [
+      "self",
+      "req"
+    ],
+    "recv_GetTableTypes": [
+      "self"
+    ],
+    "GetColumns": [
+      "self",
+      "req"
+    ],
+    "send_GetColumns": [
+      "self",
+      "req"
+    ],
+    "recv_GetColumns": [
+      "self"
+    ],
+    "GetFunctions": [
+      "self",
+      "req"
+    ],
+    "send_GetFunctions": [
+      "self",
+      "req"
+    ],
+    "recv_GetFunctions": [
+      "self"
+    ],
+    "GetPrimaryKeys": [
+      "self",
+      "req"
+    ],
+    "send_GetPrimaryKeys": [
+      "self",
+      "req"
+    ],
+    "recv_GetPrimaryKeys": [
+      "self"
+    ],
+    "GetCrossReference": [
+      "self",
+      "req"
+    ],
+    "send_GetCrossReference": [
+      "self",
+      "req"
+    ],
+    "recv_GetCrossReference": [
+      "self"
+    ],
+    "GetOperationStatus": [
+      "self",
+      "req"
+    ],
+    "send_GetOperationStatus": [
+      "self",
+      "req"
+    ],
+    "recv_GetOperationStatus": [
+      "self"
+    ],
+    "CancelOperation": [
+      "self",
+      "req"
+    ],
+    "send_CancelOperation": [
+      "self",
+      "req"
+    ],
+    "recv_CancelOperation": [
+      "self"
+    ],
+    "CloseOperation": [
+      "self",
+      "req"
+    ],
+    "send_CloseOperation": [
+      "self",
+      "req"
+    ],
+    "recv_CloseOperation": [
+      "self"
+    ],
+    "GetResultSetMetadata": [
+      "self",
+      "req"
+    ],
+    "send_GetResultSetMetadata": [
+      "self",
+      "req"
+    ],
+    "recv_GetResultSetMetadata": [
+      "self"
+    ],
+    "FetchResults": [
+      "self",
+      "req"
+    ],
+    "send_FetchResults": [
+      "self",
+      "req"
+    ],
+    "recv_FetchResults": [
+      "self"
+    ],
+    "GetDelegationToken": [
+      "self",
+      "req"
+    ],
+    "send_GetDelegationToken": [
+      "self",
+      "req"
+    ],
+    "recv_GetDelegationToken": [
+      "self"
+    ],
+    "CancelDelegationToken": [
+      "self",
+      "req"
+    ],
+    "send_CancelDelegationToken": [
+      "self",
+      "req"
+    ],
+    "recv_CancelDelegationToken": [
+      "self"
+    ],
+    "RenewDelegationToken": [
+      "self",
+      "req"
+    ],
+    "send_RenewDelegationToken": [
+      "self",
+      "req"
+    ],
+    "recv_RenewDelegationToken": [
+      "self"
+    ]
+  },
+  "Processor": {
+    "__init__": [
+      "self",
+      "handler"
+    ],
+    "on_message_begin": [
+      "self",
+      "func"
+    ],
+    "process": [
+      "self",
+      "iprot",
+      "oprot"
+    ],
+    "process_OpenSession": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_CloseSession": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetInfo": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_ExecuteStatement": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetTypeInfo": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetCatalogs": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetSchemas": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetTables": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetTableTypes": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetColumns": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetFunctions": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetPrimaryKeys": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetCrossReference": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetOperationStatus": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_CancelOperation": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_CloseOperation": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetResultSetMetadata": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_FetchResults": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_GetDelegationToken": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_CancelDelegationToken": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ],
+    "process_RenewDelegationToken": [
+      "self",
+      "seqid",
+      "iprot",
+      "oprot"
+    ]
+  },
+  "OpenSession_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "OpenSession_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CloseSession_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CloseSession_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetInfo_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetInfo_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "ExecuteStatement_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "ExecuteStatement_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTypeInfo_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTypeInfo_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetCatalogs_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetCatalogs_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetSchemas_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetSchemas_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTables_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTables_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTableTypes_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetTableTypes_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetColumns_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetColumns_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetFunctions_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetFunctions_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetPrimaryKeys_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetPrimaryKeys_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetCrossReference_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetCrossReference_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetOperationStatus_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetOperationStatus_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CancelOperation_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CancelOperation_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CloseOperation_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CloseOperation_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetResultSetMetadata_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetResultSetMetadata_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "FetchResults_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "FetchResults_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetDelegationToken_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "GetDelegationToken_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CancelDelegationToken_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "CancelDelegationToken_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "RenewDelegationToken_args": {
+    "__init__": [
+      "self",
+      "req"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "RenewDelegationToken_result": {
+    "__init__": [
+      "self",
+      "success"
+    ],
+    "read": [
+      "self",
+      "iprot"
+    ],
+    "write": [
+      "self",
+      "oprot"
+    ],
+    "validate": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ]
+  },
+  "PRIMITIVE_TYPES": [],
+  "COMPLEX_TYPES": [],
+  "COLLECTION_TYPES": [],
+  "TYPE_NAMES": [],
+  "CHARACTER_MAXIMUM_LENGTH": [],
+  "PRECISION": [],
+  "SCALE": [],
+  "DatabricksClient": {
+    "open_session": [
+      "self",
+      "session_configuration",
+      "catalog",
+      "schema"
+    ],
+    "close_session": [
+      "self",
+      "session_id"
+    ],
+    "execute_command": [
+      "self",
+      "operation",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "lz4_compression",
+      "cursor",
+      "use_cloud_fetch",
+      "parameters",
+      "async_op",
+      "enforce_embedded_schema_correctness",
+      "row_limit"
+    ],
+    "cancel_command": [
+      "self",
+      "command_id"
+    ],
+    "close_command": [
+      "self",
+      "command_id"
+    ],
+    "get_query_state": [
+      "self",
+      "command_id"
+    ],
+    "get_execution_result": [
+      "self",
+      "command_id",
+      "cursor"
+    ],
+    "get_catalogs": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor"
+    ],
+    "get_schemas": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name"
+    ],
+    "get_tables": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "table_types"
+    ],
+    "get_columns": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "column_name"
+    ],
+    "max_download_threads": [
+      "self"
+    ]
+  },
+  "CommandState": {
+    "PENDING": [],
+    "RUNNING": [],
+    "SUCCEEDED": [],
+    "FAILED": [],
+    "CLOSED": [],
+    "CANCELLED": [],
+    "from_thrift_state": [
+      "cls",
+      "state"
+    ],
+    "from_sea_state": [
+      "cls",
+      "state"
+    ]
+  },
+  "BackendType": {
+    "THRIFT": [],
+    "SEA": []
+  },
+  "SessionId": {
+    "__init__": [
+      "self",
+      "backend_type",
+      "guid",
+      "secret",
+      "properties"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_thrift_handle": [
+      "cls",
+      "session_handle",
+      "properties"
+    ],
+    "from_sea_session_id": [
+      "cls",
+      "session_id",
+      "properties"
+    ],
+    "to_thrift_handle": [
+      "self"
+    ],
+    "to_sea_session_id": [
+      "self"
+    ],
+    "hex_guid": [
+      "self"
+    ],
+    "protocol_version": [
+      "self"
+    ]
+  },
+  "CommandId": {
+    "__init__": [
+      "self",
+      "backend_type",
+      "guid",
+      "secret",
+      "operation_type",
+      "has_result_set",
+      "modified_row_count"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_thrift_handle": [
+      "cls",
+      "operation_handle"
+    ],
+    "from_sea_statement_id": [
+      "cls",
+      "statement_id"
+    ],
+    "to_thrift_handle": [
+      "self"
+    ],
+    "to_sea_statement_id": [
+      "self"
+    ],
+    "to_hex_guid": [
+      "self"
+    ]
+  },
+  "ExecuteResponse": {},
+  "unsafe_logger": [],
+  "THRIFT_ERROR_MESSAGE_HEADER": [],
+  "DATABRICKS_ERROR_OR_REDIRECT_HEADER": [],
+  "DATABRICKS_REASON_HEADER": [],
+  "TIMESTAMP_AS_STRING_CONFIG": [],
+  "DEFAULT_SOCKET_TIMEOUT": [],
+  "_retry_policy": [],
+  "ThriftDatabricksClient": {
+    "CLOSED_OP_STATE": [],
+    "ERROR_OP_STATE": [],
+    "__init__": [
+      "self",
+      "server_hostname",
+      "port",
+      "http_path",
+      "http_headers",
+      "auth_provider",
+      "ssl_options",
+      "http_client"
+    ],
+    "max_download_threads": [
+      "self"
+    ],
+    "_initialize_retry_args": [
+      "self",
+      "kwargs"
+    ],
+    "_check_response_for_error": [
+      "response",
+      "host_url"
+    ],
+    "_extract_error_message_from_headers": [
+      "headers"
+    ],
+    "_handle_request_error": [
+      "self",
+      "error_info",
+      "attempt",
+      "elapsed"
+    ],
+    "make_request": [
+      "self",
+      "method",
+      "request",
+      "retryable"
+    ],
+    "_check_protocol_version": [
+      "self",
+      "t_open_session_resp"
+    ],
+    "_check_initial_namespace": [
+      "self",
+      "catalog",
+      "schema",
+      "response"
+    ],
+    "_check_session_configuration": [
+      "self",
+      "session_configuration"
+    ],
+    "open_session": [
+      "self",
+      "session_configuration",
+      "catalog",
+      "schema"
+    ],
+    "close_session": [
+      "self",
+      "session_id"
+    ],
+    "_check_command_not_in_error_or_closed_state": [
+      "self",
+      "op_handle",
+      "get_operations_resp"
+    ],
+    "_poll_for_status": [
+      "self",
+      "op_handle"
+    ],
+    "_create_arrow_table": [
+      "self",
+      "t_row_set",
+      "lz4_compressed",
+      "schema_bytes",
+      "description"
+    ],
+    "_get_metadata_resp": [
+      "self",
+      "op_handle"
+    ],
+    "_hive_schema_to_arrow_schema": [
+      "t_table_schema",
+      "host_url"
+    ],
+    "_col_to_description": [
+      "col",
+      "field",
+      "host_url"
+    ],
+    "_hive_schema_to_description": [
+      "t_table_schema",
+      "schema_bytes",
+      "host_url"
+    ],
+    "_results_message_to_execute_response": [
+      "self",
+      "resp",
+      "operation_state"
+    ],
+    "get_execution_result": [
+      "self",
+      "command_id",
+      "cursor"
+    ],
+    "_wait_until_command_done": [
+      "self",
+      "op_handle",
+      "initial_operation_status_resp"
+    ],
+    "get_query_state": [
+      "self",
+      "command_id"
+    ],
+    "_check_direct_results_for_error": [
+      "t_spark_direct_results",
+      "host_url"
+    ],
+    "execute_command": [
+      "self",
+      "operation",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "lz4_compression",
+      "cursor",
+      "use_cloud_fetch",
+      "parameters",
+      "async_op",
+      "enforce_embedded_schema_correctness",
+      "row_limit"
+    ],
+    "get_catalogs": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor"
+    ],
+    "get_schemas": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name"
+    ],
+    "get_tables": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "table_types"
+    ],
+    "get_columns": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "column_name"
+    ],
+    "_handle_execute_response": [
+      "self",
+      "resp",
+      "cursor"
+    ],
+    "_handle_execute_response_async": [
+      "self",
+      "resp",
+      "cursor"
+    ],
+    "fetch_results": [
+      "self",
+      "command_id",
+      "max_rows",
+      "max_bytes",
+      "expected_row_start_offset",
+      "lz4_compressed",
+      "arrow_schema_bytes",
+      "description",
+      "chunk_id",
+      "use_cloud_fetch"
+    ],
+    "cancel_command": [
+      "self",
+      "command_id"
+    ],
+    "close_command": [
+      "self",
+      "command_id"
+    ]
+  },
+  "_filter_session_configuration": [
+    "session_configuration"
+  ],
+  "SeaDatabricksClient": {
+    "BASE_PATH": [],
+    "SESSION_PATH": [],
+    "SESSION_PATH_WITH_ID": [],
+    "STATEMENT_PATH": [],
+    "STATEMENT_PATH_WITH_ID": [],
+    "CANCEL_STATEMENT_PATH_WITH_ID": [],
+    "CHUNK_PATH_WITH_ID_AND_INDEX": [],
+    "POLL_INTERVAL_SECONDS": [],
+    "__init__": [
+      "self",
+      "server_hostname",
+      "port",
+      "http_path",
+      "http_headers",
+      "auth_provider",
+      "ssl_options"
+    ],
+    "_extract_warehouse_id": [
+      "self",
+      "http_path"
+    ],
+    "max_download_threads": [
+      "self"
+    ],
+    "open_session": [
+      "self",
+      "session_configuration",
+      "catalog",
+      "schema"
+    ],
+    "close_session": [
+      "self",
+      "session_id"
+    ],
+    "_extract_description_from_manifest": [
+      "self",
+      "manifest"
+    ],
+    "_results_message_to_execute_response": [
+      "self",
+      "response"
+    ],
+    "_response_to_result_set": [
+      "self",
+      "response",
+      "cursor"
+    ],
+    "_check_command_not_in_failed_or_closed_state": [
+      "self",
+      "status",
+      "command_id"
+    ],
+    "_wait_until_command_done": [
+      "self",
+      "response"
+    ],
+    "execute_command": [
+      "self",
+      "operation",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "lz4_compression",
+      "cursor",
+      "use_cloud_fetch",
+      "parameters",
+      "async_op",
+      "enforce_embedded_schema_correctness",
+      "row_limit"
+    ],
+    "cancel_command": [
+      "self",
+      "command_id"
+    ],
+    "close_command": [
+      "self",
+      "command_id"
+    ],
+    "_poll_query": [
+      "self",
+      "command_id"
+    ],
+    "get_query_state": [
+      "self",
+      "command_id"
+    ],
+    "get_execution_result": [
+      "self",
+      "command_id",
+      "cursor"
+    ],
+    "get_chunk_links": [
+      "self",
+      "statement_id",
+      "chunk_index"
+    ],
+    "get_catalogs": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor"
+    ],
+    "get_schemas": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name"
+    ],
+    "get_tables": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "table_types"
+    ],
+    "get_columns": [
+      "self",
+      "session_id",
+      "max_rows",
+      "max_bytes",
+      "cursor",
+      "catalog_name",
+      "schema_name",
+      "table_name",
+      "column_name"
+    ]
+  },
+  "SeaResultSet": {
+    "__init__": [
+      "self",
+      "connection",
+      "execute_response",
+      "sea_client",
+      "result_data",
+      "manifest",
+      "buffer_size_bytes",
+      "arraysize"
+    ],
+    "_convert_json_types": [
+      "self",
+      "row"
+    ],
+    "_convert_json_to_arrow_table": [
+      "self",
+      "rows"
+    ],
+    "_create_json_table": [
+      "self",
+      "rows"
+    ],
+    "fetchmany_json": [
+      "self",
+      "size"
+    ],
+    "fetchall_json": [
+      "self"
+    ],
+    "fetchmany_arrow": [
+      "self",
+      "size"
+    ],
+    "fetchall_arrow": [
+      "self"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "fetchmany": [
+      "self",
+      "size"
+    ],
+    "fetchall": [
+      "self"
+    ]
+  },
+  "SeaResultSetQueueFactory": {
+    "build_queue": [
+      "result_data",
+      "manifest",
+      "statement_id",
+      "ssl_options",
+      "description",
+      "max_download_threads",
+      "sea_client",
+      "lz4_compressed",
+      "http_client"
+    ]
+  },
+  "JsonQueue": {
+    "__init__": [
+      "self",
+      "data_array"
+    ],
+    "next_n_rows": [
+      "self",
+      "num_rows"
+    ],
+    "remaining_rows": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "LinkFetcher": {
+    "__init__": [
+      "self",
+      "download_manager",
+      "backend",
+      "statement_id",
+      "initial_links",
+      "total_chunk_count"
+    ],
+    "_add_links": [
+      "self",
+      "links"
+    ],
+    "_get_next_chunk_index": [
+      "self"
+    ],
+    "_trigger_next_batch_download": [
+      "self"
+    ],
+    "get_chunk_link": [
+      "self",
+      "chunk_index"
+    ],
+    "_convert_to_thrift_link": [
+      "link"
+    ],
+    "_worker_loop": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "SeaCloudFetchQueue": {
+    "__init__": [
+      "self",
+      "result_data",
+      "max_download_threads",
+      "ssl_options",
+      "sea_client",
+      "statement_id",
+      "total_chunk_count",
+      "http_client",
+      "lz4_compressed",
+      "description"
+    ],
+    "_create_next_table": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "SEA_TO_THRIFT_TYPE_MAP": [],
+  "normalize_sea_type_to_thrift": [
+    "type_name",
+    "col_data"
+  ],
+  "ResultSetFilter": {
+    "_create_execute_response": [
+      "result_set"
+    ],
+    "_update_manifest": [
+      "result_set",
+      "new_row_count"
+    ],
+    "_create_filtered_result_set": [
+      "result_set",
+      "result_data",
+      "row_count"
+    ],
+    "_filter_arrow_table": [
+      "table",
+      "column_name",
+      "allowed_values",
+      "case_sensitive"
+    ],
+    "_filter_arrow_result_set": [
+      "result_set",
+      "column_index",
+      "allowed_values",
+      "case_sensitive"
+    ],
+    "_filter_json_result_set": [
+      "result_set",
+      "column_index",
+      "allowed_values",
+      "case_sensitive"
+    ],
+    "filter_tables_by_type": [
+      "result_set",
+      "table_types"
+    ]
+  },
+  "_convert_decimal": [
+    "value",
+    "precision",
+    "scale"
+  ],
+  "SqlType": {
+    "TINYINT": [],
+    "SMALLINT": [],
+    "INT": [],
+    "BIGINT": [],
+    "FLOAT": [],
+    "DOUBLE": [],
+    "DECIMAL": [],
+    "BOOLEAN": [],
+    "DATE": [],
+    "TIMESTAMP": [],
+    "INTERVAL_YEAR_MONTH": [],
+    "INTERVAL_DAY_TIME": [],
+    "CHAR": [],
+    "VARCHAR": [],
+    "STRING": [],
+    "BINARY": [],
+    "ARRAY": [],
+    "MAP": [],
+    "STRUCT": [],
+    "NULL": [],
+    "UNION": [],
+    "USER_DEFINED": []
+  },
+  "SqlTypeConverter": {
+    "convert_value": [
+      "value",
+      "sql_type",
+      "column_name"
+    ]
+  },
+  "SeaHttpClient": {
+    "__init__": [
+      "self",
+      "server_hostname",
+      "port",
+      "http_path",
+      "http_headers",
+      "auth_provider",
+      "ssl_options"
+    ],
+    "_open": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "using_proxy": [
+      "self"
+    ],
+    "set_retry_command_type": [
+      "self",
+      "command_type"
+    ],
+    "start_retry_timer": [
+      "self"
+    ],
+    "_get_auth_headers": [
+      "self"
+    ],
+    "_make_request": [
+      "self",
+      "method",
+      "path",
+      "data"
+    ],
+    "_get_command_type_from_path": [
+      "self",
+      "path",
+      "method"
+    ]
+  },
+  "ResultFormat": {
+    "ARROW_STREAM": [],
+    "JSON_ARRAY": []
+  },
+  "ResultDisposition": {
+    "HYBRID": [],
+    "EXTERNAL_LINKS": [],
+    "INLINE": []
+  },
+  "ResultCompression": {
+    "LZ4_FRAME": [],
+    "NONE": []
+  },
+  "WaitTimeout": {
+    "ASYNC": [],
+    "SYNC": []
+  },
+  "MetadataCommands": {
+    "SHOW_CATALOGS": [],
+    "SHOW_SCHEMAS": [],
+    "SHOW_TABLES": [],
+    "SHOW_TABLES_ALL_CATALOGS": [],
+    "SHOW_COLUMNS": [],
+    "LIKE_PATTERN": [],
+    "SCHEMA_LIKE_PATTERN": [],
+    "TABLE_LIKE_PATTERN": [],
+    "CATALOG_SPECIFIC": []
+  },
+  "ServiceError": {},
+  "StatementStatus": {},
+  "ExternalLink": {},
+  "ChunkInfo": {},
+  "ResultData": {},
+  "ResultManifest": {},
+  "_parse_status": [
+    "data"
+  ],
+  "_parse_manifest": [
+    "data"
+  ],
+  "_parse_result": [
+    "data"
+  ],
+  "ExecuteStatementResponse": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "GetStatementResponse": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "CreateSessionResponse": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "GetChunksResponse": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "StatementParameter": {},
+  "ExecuteStatementRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "GetStatementRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CancelStatementRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CloseStatementRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CreateSessionRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "DeleteSessionRequest": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "guid_to_hex_id": [
+    "guid"
+  ]
+}
