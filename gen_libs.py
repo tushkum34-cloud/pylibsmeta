@@ -14,7 +14,7 @@ import time
 
 OUTPUT_DIR = "lib_db"
 PROGRESS_FILE = "progress.json"
-BATCH_SIZE = 1000              # Per workflow run
+BATCH_SIZE = 2000              # Per workflow run
 MAX_SECONDS = 5 * 60 * 60     # 5 hours safety
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
