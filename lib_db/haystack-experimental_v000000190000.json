@@ -1,0 +1,520 @@
+{
+  "InMemoryChatMessageStore": {
+    "__init__": [
+      "self",
+      "skip_system_messages",
+      "last_k"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "count_messages": [
+      "self",
+      "chat_history_id"
+    ],
+    "write_messages": [
+      "self",
+      "chat_history_id",
+      "messages"
+    ],
+    "retrieve_messages": [
+      "self",
+      "chat_history_id",
+      "last_k"
+    ],
+    "_get_last_k_messages": [
+      "messages",
+      "last_k"
+    ],
+    "delete_messages": [
+      "self",
+      "chat_history_id"
+    ],
+    "delete_all_messages": [
+      "self"
+    ]
+  },
+  "__all__": [],
+  "ChatMessageStore": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "count_messages": [
+      "self",
+      "chat_history_id"
+    ],
+    "write_messages": [
+      "self",
+      "chat_history_id",
+      "messages"
+    ],
+    "delete_messages": [
+      "self",
+      "chat_history_id"
+    ],
+    "delete_all_messages": [
+      "self"
+    ],
+    "retrieve_messages": [
+      "self",
+      "chat_history_id",
+      "last_k"
+    ]
+  },
+  "_import_structure": [],
+  "OpenAIChatGenerator": {
+    "run": [
+      "self",
+      "messages",
+      "streaming_callback",
+      "generation_kwargs"
+    ],
+    "run_async": [
+      "self",
+      "messages",
+      "streaming_callback",
+      "generation_kwargs"
+    ]
+  },
+  "DocumentEmbedder": {
+    "run": [
+      "self",
+      "documents"
+    ]
+  },
+  "_all_": [],
+  "logger": [],
+  "LLMSummarizer": {
+    "__init__": [
+      "self",
+      "chat_generator",
+      "system_prompt",
+      "summary_detail",
+      "minimum_chunk_size",
+      "chunk_delimiter",
+      "summarize_recursively",
+      "split_overlap"
+    ],
+    "_get_separators_from_delimiter": [
+      "delimiter"
+    ],
+    "warm_up": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "num_tokens": [
+      "self",
+      "text"
+    ],
+    "_prepare_text_chunks": [
+      "self",
+      "text",
+      "detail",
+      "minimum_chunk_size",
+      "chunk_delimiter"
+    ],
+    "_process_chunks": [
+      "self",
+      "text_chunks",
+      "summarize_recursively"
+    ],
+    "summarize": [
+      "self",
+      "text",
+      "detail",
+      "minimum_chunk_size",
+      "summarize_recursively"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "ChatMessageRetriever": {
+    "__init__": [
+      "self",
+      "chat_message_store",
+      "last_k"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "run": [
+      "self",
+      "chat_history_id"
+    ]
+  },
+  "TextRetriever": {
+    "run": [
+      "self",
+      "query",
+      "filters",
+      "top_k"
+    ]
+  },
+  "EmbeddingRetriever": {
+    "run": [
+      "self",
+      "query_embedding",
+      "filters",
+      "top_k"
+    ]
+  },
+  "MarkdownHeaderLevelInferrer": {
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "documents"
+    ],
+    "_process_document": [
+      "self",
+      "doc"
+    ],
+    "_rewrite_headers": [
+      "content",
+      "matches"
+    ],
+    "_has_content_between_headers": [
+      "content",
+      "matches",
+      "i"
+    ],
+    "_infer_level": [
+      "i",
+      "current_level",
+      "has_content"
+    ],
+    "_build_final_document": [
+      "doc",
+      "new_content"
+    ]
+  },
+  "ChatMessageWriter": {
+    "__init__": [
+      "self",
+      "chat_message_store"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "run": [
+      "self",
+      "chat_history_id",
+      "messages"
+    ]
+  },
+  "Agent": {
+    "__init__": [
+      "self"
+    ],
+    "_initialize_fresh_execution": [
+      "self",
+      "messages",
+      "streaming_callback",
+      "requires_async"
+    ],
+    "_initialize_from_snapshot": [
+      "self",
+      "snapshot",
+      "streaming_callback",
+      "requires_async"
+    ],
+    "run": [
+      "self",
+      "messages",
+      "streaming_callback"
+    ],
+    "run_async": [
+      "self",
+      "messages",
+      "streaming_callback"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "_select_kwargs": [
+    "obj",
+    "source"
+  ],
+  "HITLBreakpointException": {
+    "__init__": [
+      "self",
+      "message",
+      "tool_name",
+      "snapshot_file_path",
+      "tool_call_id"
+    ]
+  },
+  "_REJECTION_FEEDBACK_TEMPLATE": [],
+  "_MODIFICATION_FEEDBACK_TEMPLATE": [],
+  "BreakpointConfirmationStrategy": {
+    "__init__": [
+      "self",
+      "snapshot_file_path"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_async": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "get_tool_calls_and_descriptions_from_snapshot": [
+    "agent_snapshot",
+    "breakpoint_tool_only"
+  ],
+  "MemoryStore": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "add_memories": [
+      "self"
+    ],
+    "search_memories": [
+      "self"
+    ],
+    "delete_all_memories": [
+      "self"
+    ],
+    "delete_memory": [
+      "self",
+      "memory_id"
+    ]
+  },
+  "Mem0MemoryStore": {
+    "__init__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "add_memories": [
+      "self"
+    ],
+    "search_memories": [
+      "self"
+    ],
+    "search_memories_as_single_message": [
+      "self"
+    ],
+    "delete_all_memories": [
+      "self"
+    ],
+    "delete_memory": [
+      "self",
+      "memory_id"
+    ],
+    "_get_ids": [
+      "self",
+      "user_id",
+      "run_id",
+      "agent_id"
+    ],
+    "normalize_filters": [
+      "filters"
+    ]
+  },
+  "AgentSnapshot": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "_DECISION_ALLOWED": [],
+  "_decision_messages_closed_book": [
+    "user_prompt"
+  ],
+  "_decision_messages_evidence": [
+    "user_prompt"
+  ],
+  "_parse_decision": [
+    "text"
+  ],
+  "_estimate_event_signals_sampling": [],
+  "decision_rule": [],
+  "OpenAIPlanner": {
+    "__init__": [
+      "self",
+      "backend",
+      "temperature",
+      "max_tokens_decision",
+      "q_floor"
+    ],
+    "_build_skeletons": [
+      "self",
+      "item"
+    ],
+    "_evaluate_item": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "items"
+    ]
+  },
+  "calculate_hallucination_metrics": [
+    "prompt",
+    "hallucination_score_config",
+    "chat_generator"
+  ],
+  "EPS": [],
+  "_clamp01": [
+    "x",
+    "eps"
+  ],
+  "_safe_log": [
+    "x"
+  ],
+  "harmonic_number": [
+    "n"
+  ],
+  "expected_harmonic_distance": [
+    "n"
+  ],
+  "martingale_violation_bound": [
+    "n",
+    "L",
+    "C",
+    "alpha"
+  ],
+  "kl_bernoulli": [
+    "p",
+    "q"
+  ],
+  "inv_kl_bernoulli_upper": [
+    "q",
+    "delta",
+    "tol",
+    "max_iter"
+  ],
+  "inv_kl_bernoulli_lower": [
+    "q",
+    "delta",
+    "tol",
+    "max_iter"
+  ],
+  "p_max_edfl": [
+    "delta",
+    "q"
+  ],
+  "p_min_edfl": [
+    "delta",
+    "q"
+  ],
+  "clip_symmetric": [
+    "u",
+    "B"
+  ],
+  "clip_one_sided": [
+    "u",
+    "B"
+  ],
+  "q_bar": [
+    "qs"
+  ],
+  "q_lo": [
+    "qs"
+  ],
+  "delta_bar_from_logs": [
+    "logP_y",
+    "logS_list_y",
+    "B",
+    "clip_mode"
+  ],
+  "delta_bar_from_probs": [
+    "P_y",
+    "S_list_y",
+    "B",
+    "clip_mode"
+  ],
+  "bits_to_trust": [
+    "q_conservative",
+    "h_star"
+  ],
+  "roh_upper_bound": [
+    "delta_bar",
+    "q_avg"
+  ],
+  "isr": [
+    "delta_bar",
+    "b2t"
+  ],
+  "_ERASE_DEFAULT_FIELDS": [],
+  "_CAPITAL_SEQ": [],
+  "_YEAR": [],
+  "_NUMBER": [],
+  "_QUOTED": [],
+  "_skeletonize_prompt": [
+    "text",
+    "fields_to_erase",
+    "mask_token"
+  ],
+  "_extract_blocks": [
+    "text"
+  ],
+  "_permute_prompt_blocks": [
+    "text",
+    "seed"
+  ],
+  "mask_entities_numbers": [
+    "text",
+    "strength",
+    "rng",
+    "mask_token"
+  ],
+  "_make_skeletons_closed_book": [],
+  "_make_skeletons_evidence_erase": [],
+  "_make_skeleton_ensemble_auto": [],
+  "HallucinationScoreConfig": {},
+  "Decision": {},
+  "OpenAIItem": {},
+  "ItemMetrics": {},
+  "_create_agent_snapshot": [],
+  "_create_pipeline_snapshot_from_tool_invoker": []
+}

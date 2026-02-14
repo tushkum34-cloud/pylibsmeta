@@ -1,0 +1,3640 @@
+{
+  "print_env_report": [],
+  "is_peft_available": [],
+  "infer_comm_backend": [],
+  "infer_device": [],
+  "is_npu_available": [],
+  "transformers_version_dispatch": [
+    "required_version",
+    "before_fn",
+    "after_fn",
+    "before_args",
+    "after_args",
+    "before_kwargs",
+    "after_kwargs"
+  ],
+  "get_total_gpu_memory": [],
+  "liger_cross_entropy_kernel": [
+    "X_ptr",
+    "X_stride",
+    "Y_ptr",
+    "Y_stride",
+    "weight_ptr",
+    "loss_ptr",
+    "z_loss_ptr",
+    "loss_stride",
+    "token_accuracy_ptr",
+    "token_accuracy_stride",
+    "n_cols",
+    "n_non_ignore",
+    "sum_non_ignore_weight",
+    "weight_sum",
+    "ignore_index",
+    "lse_square_scale",
+    "label_smoothing",
+    "reduction",
+    "softcap",
+    "RETURN_Z_LOSS",
+    "RETURN_TOKEN_ACCURACY",
+    "BLOCK_SIZE",
+    "HAS_WEIGHT",
+    "HAS_SOFTCAPPING",
+    "HAS_GRADIENTS"
+  ],
+  "cross_entropy_forward": [
+    "_input",
+    "target",
+    "weight",
+    "ignore_index",
+    "lse_square_scale",
+    "label_smoothing",
+    "reduction",
+    "softcap",
+    "return_z_loss",
+    "return_token_accuracy"
+  ],
+  "cross_entropy_backward": [
+    "_input",
+    "grad_output"
+  ],
+  "LigerCrossEntropyFunction": {
+    "forward": [
+      "ctx",
+      "_input",
+      "target",
+      "weight",
+      "ignore_index",
+      "lse_square_scale",
+      "label_smoothing",
+      "reduction",
+      "softcap",
+      "return_z_loss",
+      "return_token_accuracy"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output",
+      "grad_output2",
+      "grad_output3"
+    ]
+  },
+  "LigerTiledMLPFunction": {
+    "forward": [
+      "ctx",
+      "fn",
+      "mlp_module",
+      "x",
+      "shards",
+      "compute_params"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "apply_tiled_mlp": [
+    "fn",
+    "mlp_module",
+    "x",
+    "num_shards",
+    "compute_params"
+  ],
+  "MAX_FUSED_SIZE": [],
+  "fused_linear_jsd_forward": [
+    "student_input",
+    "student_weight",
+    "teacher_input",
+    "teacher_weight",
+    "shift_labels",
+    "jsd_beta",
+    "ignore_index",
+    "has_label",
+    "temperature"
+  ],
+  "fused_linear_jsd_backward": [
+    "grad_output",
+    "grad_input",
+    "grad_weight"
+  ],
+  "LigerFusedLinearJSDFunction": {
+    "forward": [
+      "ctx",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "shift_labels",
+      "jsd_beta",
+      "ignore_index",
+      "temperature"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_str_to_loss_type": [],
+  "_selective_log_softmax_kernel": [
+    "LOGITS",
+    "INPUT_IDS",
+    "LOG_P",
+    "MASK",
+    "TEMPERATURE",
+    "stride_input_ids_b",
+    "L",
+    "N",
+    "BLOCK_N"
+  ],
+  "fused_selective_log_softmax": [
+    "logits",
+    "input_ids",
+    "temperature",
+    "mask"
+  ],
+  "_grpo_loss_fwd_kernel": [
+    "LOGITS",
+    "OLD_LOGP",
+    "REF_LOGP",
+    "INPUT_IDS",
+    "COMPLETION_MASK",
+    "ADVANTAGES",
+    "VLLM_IS_RATIO",
+    "VLLM_IS_RATIO_STRIDE",
+    "LOSS",
+    "LSE",
+    "KL",
+    "IS_CLIPPED",
+    "TEMPERATURE",
+    "BETA",
+    "EPS_LOW",
+    "EPS_HIGH",
+    "LOSS_TYPE",
+    "SAPO_TEMP_POS",
+    "SAPO_TEMP_NEG",
+    "L",
+    "N",
+    "BLOCK_N"
+  ],
+  "_grpo_loss_bwd_kernel": [
+    "DLOSS",
+    "DLOGITS",
+    "LOGITS",
+    "OLD_LOGP",
+    "REF_LOGP",
+    "INPUT_IDS",
+    "ADVANTAGES",
+    "COMPLETION_MASK",
+    "LSE",
+    "VLLM_IS_RATIO",
+    "VLLM_IS_RATIO_STRIDE",
+    "TEMPERATURE",
+    "BETA",
+    "EPS_LOW",
+    "EPS_HIGH",
+    "LOSS_TYPE",
+    "SAPO_TEMP_POS",
+    "SAPO_TEMP_NEG",
+    "loss_stride0",
+    "loss_stride1",
+    "L",
+    "N",
+    "BLOCK_N"
+  ],
+  "GrpoLossFunction": {
+    "forward": [
+      "ctx",
+      "logits",
+      "old_logp",
+      "ref_logp",
+      "completion_ids",
+      "advantages",
+      "completion_mask",
+      "temperature",
+      "beta",
+      "eps_low",
+      "eps_high",
+      "inplace",
+      "loss_type",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg",
+      "vllm_is_ratio"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "REDUCTION_LITERAL": [],
+  "_REDUCTION_MODE_NONE": [],
+  "_REDUCTION_MODE_SUM": [],
+  "_REDUCTION_MODE_MEAN": [],
+  "_REDUCTION_MODE_BATCHMEAN": [],
+  "_str_to_reduction_mode": [],
+  "get_num_warps": [
+    "BLOCK_SIZE"
+  ],
+  "_tv_distance_kernel": [
+    "p_ptr",
+    "p_stride",
+    "q_ptr",
+    "q_stride",
+    "loss_ptr",
+    "loss_stride",
+    "grads_ptr",
+    "grads_stride",
+    "label_ptr",
+    "ignore_index",
+    "n_cols",
+    "BLOCK_SIZE",
+    "HAS_LABEL",
+    "reduction"
+  ],
+  "tv_distance_forward_triton": [
+    "p",
+    "q",
+    "shift_labels",
+    "reduction",
+    "ignore_index",
+    "has_label"
+  ],
+  "tvd_backward_triton": [
+    "grad_output",
+    "grads"
+  ],
+  "LigerTVDLossFunction": {
+    "forward": [
+      "ctx",
+      "p",
+      "q",
+      "shift_labels",
+      "reduction",
+      "ignore_index"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_sparsemax_forward_kernel": [
+    "x_ptr",
+    "x_stride_row",
+    "sorted_x_ptr",
+    "sorted_x_stride_row",
+    "o_ptr",
+    "o_stride_row",
+    "n_cols",
+    "BLOCK_SIZE",
+    "num_warps"
+  ],
+  "_sparsemax_backward_kernel": [
+    "o_ptr",
+    "go_ptr",
+    "gi_ptr",
+    "stride",
+    "n_cols",
+    "BLOCK_SIZE",
+    "num_warps"
+  ],
+  "_sparsemax_forward": [
+    "x",
+    "dim"
+  ],
+  "_sparsemax_backward": [
+    "grad_out",
+    "out_flat",
+    "dim"
+  ],
+  "LigerSparsemaxFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "dim"
+    ],
+    "backward": [
+      "ctx",
+      "grad_out"
+    ]
+  },
+  "_dyt_fwd_kernel": [
+    "X",
+    "Y",
+    "Alpha",
+    "Gamma",
+    "Beta",
+    "HAVE_BETA",
+    "N",
+    "BLOCK_N"
+  ],
+  "_dyt_bwd_kernel": [
+    "DY",
+    "DX",
+    "DA",
+    "DG",
+    "DB",
+    "X",
+    "Alpha",
+    "Gamma",
+    "HAVE_BETA",
+    "M",
+    "N",
+    "BLOCK_N"
+  ],
+  "liger_dyt_fwd": [
+    "x",
+    "alpha",
+    "gamma",
+    "beta"
+  ],
+  "liger_dyt_bwd": [
+    "dy",
+    "x",
+    "alpha",
+    "gamma",
+    "beta"
+  ],
+  "LigerDyTFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "alpha",
+      "gamma",
+      "beta"
+    ],
+    "backward": [
+      "ctx",
+      "dy"
+    ]
+  },
+  "_cast_and_contiguous": [
+    "q",
+    "k",
+    "freqs_complex"
+  ],
+  "_llama4_rope_kernel": [
+    "q_ptr",
+    "k_ptr",
+    "freqs_complex_ptr",
+    "q_row_stride",
+    "k_row_stride",
+    "q_head_stride",
+    "k_head_stride",
+    "freqs_row_stride",
+    "seq_len",
+    "batch_size",
+    "imag_sign",
+    "head_dim_half",
+    "n_q_heads",
+    "n_k_heads",
+    "BLOCK_SIZE"
+  ],
+  "_select_kernel_meta": [
+    "head_dim_half"
+  ],
+  "llama4_rope_forward": [
+    "q",
+    "k",
+    "freqs_cis",
+    "BLOCK_SIZE",
+    "imag_sign"
+  ],
+  "LigerLlama4RopeFunction": {
+    "forward": [
+      "ctx",
+      "q",
+      "k",
+      "freqs_cis",
+      "BLOCK_SIZE"
+    ],
+    "backward": [
+      "ctx",
+      "dq",
+      "dk"
+    ]
+  },
+  "_mask_fwd_kernel": [
+    "scores_ptr",
+    "out_ptr",
+    "stride_b",
+    "stride_m",
+    "stride_n",
+    "L",
+    "mask_val",
+    "BLOCK",
+    "num_warps"
+  ],
+  "_mask_bwd_kernel": [
+    "grad_in_ptr",
+    "out_ptr",
+    "stride_b",
+    "stride_m",
+    "stride_n",
+    "L",
+    "BLOCK",
+    "num_warps"
+  ],
+  "_mask_inf_forward": [
+    "scores"
+  ],
+  "_mask_inf_backward": [
+    "grad"
+  ],
+  "_mask_zero_forward": [
+    "scores"
+  ],
+  "_mask_zero_backward": [
+    "grad"
+  ],
+  "LigerMultiTokenAttentionFunction": {
+    "forward": [
+      "ctx",
+      "scores",
+      "weight",
+      "bias",
+      "stride",
+      "padding",
+      "dilation",
+      "groups",
+      "sparse"
+    ],
+    "backward": [
+      "ctx",
+      "grad_out"
+    ]
+  },
+  "is_hip": [],
+  "ensure_contiguous": [
+    "fn"
+  ],
+  "calculate_settings": [
+    "n"
+  ],
+  "compare_version": [
+    "package",
+    "operator",
+    "target"
+  ],
+  "get_amp_custom_fwd_bwd": [],
+  "torch_to_triton_dtype": [],
+  "element_mul_kernel": [
+    "X_ptr",
+    "X_stride",
+    "grad_output_ptr",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "get_npu_core_count": [
+    "default"
+  ],
+  "set_large_grf_mode": [
+    "kernel_args"
+  ],
+  "_geglu_tanh_forward_kernel": [
+    "a",
+    "b",
+    "c",
+    "stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_geglu_tanh_backward_kernel": [
+    "dc",
+    "a",
+    "b",
+    "stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "geglu_forward": [
+    "a",
+    "b"
+  ],
+  "geglu_backward": [
+    "a",
+    "b",
+    "dc"
+  ],
+  "LigerGELUMulFunction": {
+    "forward": [
+      "ctx",
+      "a",
+      "b"
+    ],
+    "backward": [
+      "ctx",
+      "dc"
+    ]
+  },
+  "_layer_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "W_row_stride",
+    "B_ptr",
+    "B_row_stride",
+    "Mean_ptr",
+    "Mean_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_cols",
+    "eps",
+    "BLOCK_SIZE"
+  ],
+  "_layer_norm_backward_kernel": [
+    "X_ptr",
+    "stride_x",
+    "W_ptr",
+    "Mean_ptr",
+    "stride_mean",
+    "RSTD_ptr",
+    "stride_rstd",
+    "DX_ptr",
+    "stride_dx",
+    "DW_ptr",
+    "stride_dw",
+    "DB_ptr",
+    "stride_db",
+    "DY_ptr",
+    "stride_dy",
+    "n_rows",
+    "n_cols",
+    "rows_per_program",
+    "BLOCK_SIZE"
+  ],
+  "layer_norm_forward": [
+    "X",
+    "W",
+    "B",
+    "eps"
+  ],
+  "layer_norm_backward": [
+    "dY",
+    "X",
+    "W",
+    "B",
+    "Mean",
+    "RSTD"
+  ],
+  "LigerLayerNormFunction": {
+    "forward": [
+      "ctx",
+      "X",
+      "W",
+      "B",
+      "eps"
+    ],
+    "backward": [
+      "ctx",
+      "dY"
+    ]
+  },
+  "_replace_with_vendor_ops": [],
+  "_triton_qwen2vl_mrope": [
+    "q_ptr",
+    "k_ptr",
+    "cos",
+    "sin",
+    "sl",
+    "bs",
+    "n_qh",
+    "n_kh",
+    "hd",
+    "pad_n_qh",
+    "pad_n_kh",
+    "pad_hd",
+    "mrope_section_t",
+    "mrope_section_h",
+    "BLOCK_SIZE",
+    "BACKWARD_PASS"
+  ],
+  "qwen2vl_mrope_forward": [
+    "q",
+    "k",
+    "cos",
+    "sin",
+    "mrope_section"
+  ],
+  "qwen2vl_mrope_backward": [
+    "dq",
+    "dk",
+    "cos",
+    "sin",
+    "mrope_section"
+  ],
+  "LigerQwen2VLMRopeFunction": {
+    "forward": [
+      "ctx",
+      "q",
+      "k",
+      "cos",
+      "sin",
+      "mrope_section",
+      "unsqueeze_dim"
+    ],
+    "backward": [
+      "ctx",
+      "dq",
+      "dk"
+    ]
+  },
+  "silu": [
+    "x"
+  ],
+  "_swiglu_forward_kernel": [
+    "a_ptr",
+    "b_ptr",
+    "c_ptr",
+    "stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_swiglu_backward_kernel": [
+    "dc_ptr",
+    "a_ptr",
+    "b_ptr",
+    "stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "swiglu_forward": [
+    "a",
+    "b"
+  ],
+  "swiglu_backward": [
+    "a",
+    "b",
+    "dc"
+  ],
+  "LigerSiLUMulFunction": {
+    "forward": [
+      "ctx",
+      "a",
+      "b"
+    ],
+    "backward": [
+      "ctx",
+      "dc"
+    ]
+  },
+  "_neighborhood_mask_kernel": [
+    "mask_ptr",
+    "seq_len",
+    "kernel_size",
+    "dilation",
+    "BLOCK_SIZE",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_qk_kernel": [
+    "Q_ptr",
+    "K_ptr",
+    "QK_ptr",
+    "mask_ptr",
+    "q_batch_stride",
+    "q_head_stride",
+    "q_seq_stride",
+    "q_dim_stride",
+    "k_batch_stride",
+    "k_head_stride",
+    "k_seq_stride",
+    "k_dim_stride",
+    "qk_batch_stride",
+    "qk_head_stride",
+    "qk_seq_stride",
+    "qk_seq2_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "scale",
+    "kernel_size",
+    "dilation",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_av_kernel": [
+    "Attn_ptr",
+    "V_ptr",
+    "Out_ptr",
+    "attn_batch_stride",
+    "attn_head_stride",
+    "attn_seq_stride",
+    "attn_seq2_stride",
+    "v_batch_stride",
+    "v_head_stride",
+    "v_seq_stride",
+    "v_dim_stride",
+    "out_batch_stride",
+    "out_head_stride",
+    "out_seq_stride",
+    "out_dim_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_grad_qk_kernel": [
+    "grad_attn_ptr",
+    "K_ptr",
+    "grad_Q_ptr",
+    "grad_attn_batch_stride",
+    "grad_attn_head_stride",
+    "grad_attn_seq_stride",
+    "grad_attn_seq2_stride",
+    "k_batch_stride",
+    "k_head_stride",
+    "k_seq_stride",
+    "k_dim_stride",
+    "grad_q_batch_stride",
+    "grad_q_head_stride",
+    "grad_q_seq_stride",
+    "grad_q_dim_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "scale",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_grad_k_kernel": [
+    "grad_attn_ptr",
+    "Q_ptr",
+    "grad_K_ptr",
+    "grad_attn_batch_stride",
+    "grad_attn_head_stride",
+    "grad_attn_seq_stride",
+    "grad_attn_seq2_stride",
+    "q_batch_stride",
+    "q_head_stride",
+    "q_seq_stride",
+    "q_dim_stride",
+    "grad_k_batch_stride",
+    "grad_k_head_stride",
+    "grad_k_seq_stride",
+    "grad_k_dim_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "scale",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_grad_v_kernel": [
+    "Attn_ptr",
+    "grad_output_ptr",
+    "grad_V_ptr",
+    "attn_batch_stride",
+    "attn_head_stride",
+    "attn_seq_stride",
+    "attn_seq2_stride",
+    "grad_out_batch_stride",
+    "grad_out_head_stride",
+    "grad_out_seq_stride",
+    "grad_out_dim_stride",
+    "grad_v_batch_stride",
+    "grad_v_head_stride",
+    "grad_v_seq_stride",
+    "grad_v_dim_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "_fused_neighborhood_attention_grad_attn_kernel": [
+    "grad_output_ptr",
+    "V_ptr",
+    "grad_attn_ptr",
+    "grad_out_batch_stride",
+    "grad_out_head_stride",
+    "grad_out_seq_stride",
+    "grad_out_dim_stride",
+    "v_batch_stride",
+    "v_head_stride",
+    "v_seq_stride",
+    "v_dim_stride",
+    "grad_attn_batch_stride",
+    "grad_attn_head_stride",
+    "grad_attn_seq_stride",
+    "grad_attn_seq2_stride",
+    "batch_size",
+    "num_heads",
+    "seq_len",
+    "head_dim",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "num_stages",
+    "num_warps"
+  ],
+  "fused_neighborhood_attention_forward": [
+    "query",
+    "key",
+    "value",
+    "kernel_size",
+    "dilation",
+    "scale",
+    "return_lse"
+  ],
+  "LigerFusedNeighborhoodAttentionFunction": {
+    "forward": [
+      "ctx",
+      "query",
+      "key",
+      "value",
+      "kernel_size",
+      "dilation",
+      "scale"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_group_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "Y_col_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_col_stride",
+    "Mean_ptr",
+    "Mean_row_stride",
+    "Mean_col_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "RSTD_col_stride",
+    "W_ptr",
+    "B_ptr",
+    "hidden_size",
+    "channels_per_group",
+    "eps",
+    "BLOCK_SIZE"
+  ],
+  "_group_norm_backward_kernel": [
+    "X_ptr",
+    "X_row_stride",
+    "X_col_stride",
+    "W_ptr",
+    "Mean_ptr",
+    "Mean_ptr_row_stride",
+    "Mean_ptr_col_stride",
+    "RSTD_ptr",
+    "DX_ptr",
+    "DW_ptr",
+    "DB_ptr",
+    "UPSTREAM_ptr",
+    "hidden_size",
+    "channels_per_group",
+    "BLOCK_SIZE",
+    "dtype"
+  ],
+  "group_norm_forward": [
+    "X",
+    "num_channels",
+    "num_groups",
+    "W",
+    "B",
+    "eps"
+  ],
+  "group_norm_backward": [
+    "dY",
+    "X",
+    "W",
+    "B",
+    "Mean",
+    "RSTD",
+    "num_channels",
+    "num_groups"
+  ],
+  "LigerGroupNormFunction": {
+    "forward": [
+      "ctx",
+      "X",
+      "affine_scaling_weight",
+      "affine_shifting_bias",
+      "num_channels",
+      "num_groups",
+      "eps"
+    ],
+    "backward": [
+      "ctx",
+      "dY"
+    ]
+  },
+  "_rms_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE"
+  ],
+  "_rms_norm_backward_kernel": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "rows_per_program",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE"
+  ],
+  "_block_rms_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_rows",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE",
+    "BLOCK_ROW"
+  ],
+  "_block_rms_norm_backward_kernel": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE",
+    "BLOCK_ROW"
+  ],
+  "_str_to_casting_mode": [],
+  "rms_norm_forward": [
+    "X",
+    "W",
+    "eps",
+    "offset",
+    "casting_mode",
+    "row_mode"
+  ],
+  "rms_norm_backward": [
+    "dY",
+    "X",
+    "W",
+    "RSTD",
+    "offset",
+    "casting_mode",
+    "BLOCK_SIZE",
+    "num_warps",
+    "in_place",
+    "row_mode"
+  ],
+  "LigerRMSNormFunction": {
+    "forward": [
+      "ctx",
+      "X",
+      "W",
+      "eps",
+      "offset",
+      "casting_mode",
+      "in_place",
+      "row_mode"
+    ],
+    "backward": [
+      "ctx",
+      "dY"
+    ]
+  },
+  "_poly_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "B_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_cols",
+    "eps",
+    "BLOCK_SIZE"
+  ],
+  "_poly_norm_backward_kernel": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "dB_ptr",
+    "n_rows",
+    "n_cols",
+    "rows_per_program",
+    "BLOCK_SIZE"
+  ],
+  "poly_norm_forward": [
+    "X",
+    "W",
+    "B",
+    "eps"
+  ],
+  "poly_norm_backward": [
+    "dY",
+    "X",
+    "W",
+    "RSTD",
+    "BLOCK_SIZE",
+    "num_warps",
+    "in_place"
+  ],
+  "LigerPolyNormFunction": {
+    "forward": [
+      "ctx",
+      "X",
+      "W",
+      "B",
+      "eps",
+      "in_place"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_softmax_single_block_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_softmax_multi_block_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_softmax_single_block_backward_kernel": [
+    "dy_ptr",
+    "dy_stride",
+    "y_ptr",
+    "y_stride",
+    "dx_ptr",
+    "dx_stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_softmax_multi_block_backward_kernel": [
+    "dy_ptr",
+    "dy_stride",
+    "y_ptr",
+    "y_stride",
+    "dx_ptr",
+    "dx_stride",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_softmax_forward": [
+    "x"
+  ],
+  "_softmax_backward": [
+    "dy",
+    "y",
+    "BLOCK_SIZE",
+    "num_warps",
+    "multi_block_launch"
+  ],
+  "LigerSoftmaxFunction": {
+    "forward": [
+      "ctx",
+      "input_"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_jsd_kernel": [
+    "X_ptr",
+    "X_stride",
+    "Y_ptr",
+    "Y_stride",
+    "loss_ptr",
+    "loss_stride",
+    "dX_ptr",
+    "dX_stride",
+    "label_ptr",
+    "beta",
+    "n_non_ignore",
+    "ignore_index",
+    "n_cols",
+    "BLOCK_SIZE",
+    "HAS_LABEL"
+  ],
+  "jsd_forward": [
+    "_input",
+    "target",
+    "shift_labels",
+    "beta",
+    "ignore_index",
+    "has_label"
+  ],
+  "jsd_backward": [
+    "dX",
+    "grad_output"
+  ],
+  "LigerJSDFunction": {
+    "forward": [
+      "ctx",
+      "_input",
+      "target",
+      "shift_labels",
+      "beta",
+      "ignore_index"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_kldiv_kernel_forward": [
+    "y_ptr",
+    "y_stride",
+    "gt_ptr",
+    "gt_stride",
+    "loss_ptr",
+    "loss_stride",
+    "n_cols",
+    "eps",
+    "BLOCK_SIZE",
+    "log_target",
+    "reduction"
+  ],
+  "_kldiv_kernel_backward": [
+    "target_ptr",
+    "target_stride",
+    "new_grads_ptr",
+    "new_grads_stride",
+    "n_cols",
+    "BLOCK_SIZE",
+    "log_target"
+  ],
+  "kldiv_forward_triton": [
+    "y_pred",
+    "y_true",
+    "log_target",
+    "reduction",
+    "eps"
+  ],
+  "kldiv_backward_triton": [
+    "target",
+    "grad_output",
+    "new_grads",
+    "log_target"
+  ],
+  "LigerKLDivLossFunction": {
+    "forward": [
+      "ctx",
+      "y_pred",
+      "y_true",
+      "reduction",
+      "log_target",
+      "eps"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "fused_linear_cross_entropy_forward": [
+    "_input",
+    "weight",
+    "target",
+    "ce_weight",
+    "bias",
+    "ignore_index",
+    "lse_square_scale",
+    "label_smoothing",
+    "reduction",
+    "softcap",
+    "return_z_loss",
+    "accum_dtype",
+    "use_token_scaling",
+    "return_token_accuracy"
+  ],
+  "fused_linear_cross_entropy_backward": [
+    "grad_output",
+    "grad_input",
+    "grad_weight",
+    "grad_bias"
+  ],
+  "LigerFusedLinearCrossEntropyFunction": {
+    "forward": [
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "ce_weight",
+      "ignore_index",
+      "lse_square_scale",
+      "label_smoothing",
+      "reduction",
+      "softcap",
+      "return_z_loss",
+      "accum_dtype",
+      "use_token_scaling",
+      "return_token_accuracy"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output",
+      "grad_output2",
+      "grad_output3"
+    ]
+  },
+  "_triton_rope": [
+    "q_ptr",
+    "q_row_stride",
+    "k_ptr",
+    "k_row_stride",
+    "cos",
+    "cos_row_stride",
+    "sin",
+    "sin_row_stride",
+    "sl",
+    "bs",
+    "cos_bs",
+    "n_qh",
+    "n_kh",
+    "hd",
+    "pad_n_qh",
+    "pad_n_kh",
+    "pad_hd",
+    "BLOCK_SIZE",
+    "BACKWARD_PASS"
+  ],
+  "rope_forward": [
+    "q",
+    "k",
+    "cos",
+    "sin"
+  ],
+  "rope_backward": [
+    "dq",
+    "dk",
+    "cos",
+    "sin"
+  ],
+  "LigerRopeFunction": {
+    "forward": [
+      "ctx",
+      "q",
+      "k",
+      "cos",
+      "sin",
+      "position_ids",
+      "unsqueeze_dim"
+    ],
+    "backward": [
+      "ctx",
+      "dq",
+      "dk"
+    ]
+  },
+  "_fused_add_rms_norm_forward_kernel": [
+    "Y_ptr",
+    "Y_row_stride",
+    "S_ptr",
+    "S_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "R_ptr",
+    "R_row_stride",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "BLOCK_SIZE"
+  ],
+  "_fused_add_rms_norm_backward_kernel": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dS_out_ptr",
+    "dS_out_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "W_row_stride",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "rows_per_program",
+    "casting_mode",
+    "BLOCK_SIZE",
+    "has_dS_out"
+  ],
+  "fused_add_rms_norm_forward": [
+    "X",
+    "R",
+    "W",
+    "eps",
+    "offset",
+    "casting_mode"
+  ],
+  "fused_add_rms_norm_backward": [
+    "dY",
+    "dS_out",
+    "S",
+    "W",
+    "RSTD",
+    "offset",
+    "casting_mode",
+    "BLOCK_SIZE",
+    "num_warps",
+    "in_place"
+  ],
+  "LigerFusedAddRMSNormFunction": {
+    "forward": [
+      "ctx",
+      "X",
+      "R",
+      "W",
+      "eps",
+      "offset",
+      "casting_mode",
+      "in_place"
+    ],
+    "backward": [
+      "ctx",
+      "dY",
+      "dS_out"
+    ]
+  },
+  "embedding_forward_kernel": [
+    "embeddings_ptr",
+    "indices_ptr",
+    "output_ptr",
+    "n_elements",
+    "embedding_dim",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N"
+  ],
+  "embedding_backward_kernel": [
+    "grad_output_ptr",
+    "grad_weight_ptr",
+    "indices_ptr",
+    "n_elements",
+    "embedding_dim",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N"
+  ],
+  "LigerEmbeddingFunction": {
+    "forward": [
+      "ctx",
+      "embeddings",
+      "indices"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "unpack_weights": [
+    "packed",
+    "bits"
+  ],
+  "pack_weights": [
+    "intweights",
+    "bits"
+  ],
+  "get_autotune_config": [],
+  "matmul_kernel": [
+    "a_ptr",
+    "b_ptr",
+    "c_ptr",
+    "M",
+    "N",
+    "K",
+    "stride_am",
+    "stride_ak",
+    "stride_bk",
+    "stride_bn",
+    "stride_cm",
+    "stride_cn",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "GROUP_SIZE_M"
+  ],
+  "matmul": [
+    "a",
+    "b"
+  ],
+  "_BACKENDS_PACKAGE": [],
+  "VendorInfo": {
+    "module_path": [
+      "self"
+    ]
+  },
+  "register_vendor": [
+    "vendor_info"
+  ],
+  "get_vendor_for_device": [
+    "device"
+  ],
+  "_normalize_tiling_dims": [
+    "tiling_dim"
+  ],
+  "_default_strategy": [
+    "ub_capacity_bits",
+    "safety_margin",
+    "dtype_size",
+    "memory_multiplier",
+    "shapes",
+    "tiling_dims"
+  ],
+  "UBManager": {
+    "__init__": [
+      "self",
+      "ub_capacity_bits"
+    ],
+    "ub_capacity_bits": [
+      "self"
+    ],
+    "ub_capacity_bytes": [
+      "self"
+    ],
+    "npu_model": [
+      "self"
+    ],
+    "_detect_npu_model": [
+      "self"
+    ],
+    "_detect_ub_capacity": [
+      "self"
+    ]
+  },
+  "get_ub_manager": [],
+  "compute_default_tiling_strategy": [
+    "safety_margin",
+    "dtype_size",
+    "memory_multiplier",
+    "shapes",
+    "tiling_dims"
+  ],
+  "get_optimal_block_size": [
+    "total_elements",
+    "dtype_size",
+    "BLOCK_SIZE_N"
+  ],
+  "embedding_forward": [
+    "embeddings",
+    "indices"
+  ],
+  "embedding_backward": [
+    "embeddings",
+    "indices",
+    "grad_output"
+  ],
+  "_triton_llama4_rope_npu": [
+    "q_ptr",
+    "k_ptr",
+    "freqs_complex_ptr",
+    "q_row_stride",
+    "k_row_stride",
+    "q_head_stride",
+    "k_head_stride",
+    "freqs_row_stride",
+    "sl",
+    "bs",
+    "n_qh",
+    "n_kh",
+    "hd",
+    "BLOCK_Q",
+    "BLOCK_K",
+    "imag_sign"
+  ],
+  "llama4_rope_backward": [
+    "dq",
+    "dk",
+    "freqs_cis"
+  ],
+  "_geglu_forward_kernel_flat": [
+    "a_ptr",
+    "b_ptr",
+    "c_ptr",
+    "total_elements",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_geglu_backward_kernel_flat": [
+    "dc_ptr",
+    "a_ptr",
+    "b_ptr",
+    "da_ptr",
+    "db_ptr",
+    "total_elements",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "__all__": [],
+  "_triton_qwen2vl_mrope_npu": [
+    "q_ptr",
+    "q_row_stride",
+    "k_ptr",
+    "k_row_stride",
+    "cos",
+    "sin",
+    "sl",
+    "bs",
+    "total_rows",
+    "n_qh",
+    "n_kh",
+    "hd",
+    "mrope_section_t",
+    "mrope_section_h",
+    "BLOCK_Q",
+    "BLOCK_K",
+    "NUM_STAGES",
+    "BACKWARD_PASS"
+  ],
+  "get_optimal_block_size_mrope": [
+    "pad_n_q_head",
+    "pad_n_kv_head",
+    "pad_hd",
+    "dtype_size"
+  ],
+  "_swiglu_forward_kernel_flat": [
+    "a_ptr",
+    "b_ptr",
+    "c_ptr",
+    "total_elements",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_swiglu_backward_kernel_flat": [
+    "dc_ptr",
+    "a_ptr",
+    "b_ptr",
+    "da_ptr",
+    "db_ptr",
+    "total_elements",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "torch_dtype_to_triton": [
+    "dtype"
+  ],
+  "_rms_norm_forward_kernel_no_tiling": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_rows",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "X_DTYPE",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_rms_norm_forward_kernel_tiled": [
+    "Y_ptr",
+    "Y_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_rows",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "X_DTYPE",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_rms_norm_backward_kernel_no_tiling": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_rms_norm_backward_kernel_tiled": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "casting_mode",
+    "elementwise_affine",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_triton_rope_npu": [
+    "q_ptr",
+    "q_row_stride",
+    "k_ptr",
+    "k_row_stride",
+    "cos",
+    "cos_row_stride",
+    "sin",
+    "sin_row_stride",
+    "sl",
+    "total_rows",
+    "cos_bs",
+    "n_qh",
+    "n_kh",
+    "hd",
+    "BLOCK_Q",
+    "BLOCK_K",
+    "NUM_STAGES",
+    "BACKWARD_PASS"
+  ],
+  "_fused_add_rms_norm_forward_kernel_npu": [
+    "Y_ptr",
+    "Y_row_stride",
+    "S_ptr",
+    "S_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "R_ptr",
+    "R_row_stride",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "n_rows",
+    "n_cols",
+    "eps",
+    "offset",
+    "casting_mode",
+    "X_DTYPE",
+    "BLOCK_SIZE",
+    "NUM_STAGES"
+  ],
+  "_fused_add_rms_norm_backward_kernel_npu": [
+    "dY_ptr",
+    "dY_row_stride",
+    "dS_out_ptr",
+    "dS_out_row_stride",
+    "dX_ptr",
+    "dX_row_stride",
+    "X_ptr",
+    "X_row_stride",
+    "X_dtype",
+    "W_ptr",
+    "RSTD_ptr",
+    "RSTD_row_stride",
+    "dW_ptr",
+    "dW_row_stride",
+    "n_rows",
+    "n_cols",
+    "offset",
+    "casting_mode",
+    "BLOCK_SIZE",
+    "NUM_STAGES",
+    "has_dS_out"
+  ],
+  "LigerCrossEntropyLoss": {
+    "__init__": [
+      "self",
+      "weight",
+      "ignore_index",
+      "lse_square_scale",
+      "label_smoothing",
+      "reduction",
+      "softcap",
+      "return_z_loss",
+      "return_token_accuracy"
+    ],
+    "forward": [
+      "self",
+      "_input",
+      "target"
+    ]
+  },
+  "LigerTiledGEGLUMLP": {
+    "__init__": [
+      "self",
+      "config",
+      "num_shards"
+    ],
+    "_mlp_forward": [
+      "self",
+      "module",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerTiledSwiGLUMLP": {
+    "__init__": [
+      "self",
+      "config",
+      "num_shards"
+    ],
+    "_mlp_forward": [
+      "self",
+      "module",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerFusedLinearJSD": {
+    "__init__": [
+      "self",
+      "jsd_beta",
+      "ignore_index",
+      "temperature"
+    ],
+    "forward": [
+      "self",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "shift_labels"
+    ]
+  },
+  "triton_grpo_loss": [
+    "logits",
+    "old_logp",
+    "ref_logp",
+    "completion_ids",
+    "advantages",
+    "completion_mask",
+    "temperature",
+    "beta",
+    "eps_low",
+    "eps_high",
+    "inplace",
+    "loss_type",
+    "max_completion_length",
+    "importance_sampling_level",
+    "reduce",
+    "sapo_temperature_pos",
+    "sapo_temperature_neg",
+    "vllm_is_ratio"
+  ],
+  "_reduce_grpo_loss": [
+    "per_token_loss",
+    "completion_mask",
+    "loss_type",
+    "max_completion_length"
+  ],
+  "_masked_mean": [
+    "values",
+    "mask"
+  ],
+  "LigerTVDLoss": {
+    "__init__": [
+      "self",
+      "reduction",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "p",
+      "q",
+      "shift_labels"
+    ]
+  },
+  "LigerSparsemax": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "_get_model_config": [
+    "model_dir"
+  ],
+  "AutoLigerKernelForCausalLM": {
+    "from_pretrained": [
+      "cls",
+      "pretrained_model_name_or_path"
+    ],
+    "from_config": [
+      "cls",
+      "config"
+    ]
+  },
+  "_FSDPForwardRedirection": {
+    "__call__": [
+      "self",
+      "wrapper_module",
+      "method"
+    ]
+  },
+  "LigerDyT": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "beta",
+      "init_alpha"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "liger_llama4_text_rotary_pos_emb": [
+    "xq",
+    "xk",
+    "freqs_cis"
+  ],
+  "liger_llama4_vision_rotary_pos_emb": [
+    "query",
+    "key",
+    "freqs_ci"
+  ],
+  "apply_liger_llama4_rope_full": [
+    "modeling_module"
+  ],
+  "LigerMultiTokenAttention": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "groups",
+      "bias",
+      "sparse"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "scores"
+    ]
+  },
+  "LigerGEGLUMLP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerLayerNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "bias",
+      "init_fn"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "is_transformers_available": [],
+  "__getattr__": [
+    "name"
+  ],
+  "liger_multimodal_rotary_pos_emb": [
+    "q",
+    "k",
+    "cos",
+    "sin",
+    "mrope_section",
+    "unsqueeze_dim"
+  ],
+  "LigerSwiGLUMLP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerBlockSparseTop2MLP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerExperts": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "top_k_index",
+      "top_k_weights"
+    ]
+  },
+  "LigerPhi3SwiGLUMLP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerQwen3MoeSwiGLUMLP": {
+    "__init__": [
+      "self",
+      "config",
+      "intermediate_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerHunyuanV1SwiGLUMLP": {
+    "__init__": [
+      "self",
+      "config",
+      "layer_idx",
+      "is_shared_mlp"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerFusedNeighborhoodAttention": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "num_heads",
+      "kernel_size",
+      "dilation",
+      "bias",
+      "dropout",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LigerFusedNeighborhoodAttentionLayer": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "num_heads",
+      "kernel_size",
+      "dilation",
+      "bias",
+      "dropout",
+      "layer_norm_eps",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask"
+    ]
+  },
+  "LigerFusedNeighborhoodAttentionConfig": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "num_heads",
+      "kernel_size",
+      "dilation",
+      "bias",
+      "dropout",
+      "layer_norm_eps",
+      "scale"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "LigerGroupNorm": {
+    "__init__": [
+      "self",
+      "num_channels",
+      "num_groups",
+      "eps",
+      "bias",
+      "init_fn"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LigerRMSNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode",
+      "elementwise_affine"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LigerRMSNormForGemma": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode"
+    ]
+  },
+  "LigerRMSNormForGemma2": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode"
+    ]
+  },
+  "LigerRMSNormForGemma3": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place"
+    ]
+  },
+  "LigerRMSNormForOlmo2": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode"
+    ]
+  },
+  "LigerRMSNormForGlm4": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode"
+    ]
+  },
+  "LigerRMSNormForQwen3Next": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place",
+      "row_mode"
+    ]
+  },
+  "LigerPolyNorm": {
+    "__init__": [
+      "self",
+      "eps",
+      "in_place"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LigerSoftmax": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LigerJSD": {
+    "__init__": [
+      "self",
+      "beta",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "log_q",
+      "log_p",
+      "shift_labels"
+    ]
+  },
+  "CrossEntropyOutput": {},
+  "liger_cross_entropy": [
+    "input",
+    "target",
+    "weight",
+    "size_average",
+    "ignore_index",
+    "reduce",
+    "reduction",
+    "label_smoothing",
+    "lse_square_scale",
+    "softcap",
+    "return_z_loss",
+    "return_token_accuracy"
+  ],
+  "liger_fused_linear_cross_entropy": [
+    "input",
+    "weight",
+    "target",
+    "bias",
+    "ce_weight",
+    "ignore_index",
+    "lse_square_scale",
+    "label_smoothing",
+    "reduction",
+    "softcap",
+    "return_z_loss",
+    "accum_dtype",
+    "use_token_scaling",
+    "return_token_accuracy"
+  ],
+  "liger_fused_linear_jsd": [
+    "student_input",
+    "student_weight",
+    "teacher_input",
+    "teacher_weight",
+    "shift_labels",
+    "jsd_beta",
+    "ignore_index",
+    "temperature"
+  ],
+  "liger_geglu": [
+    "a",
+    "b"
+  ],
+  "liger_group_norm": [
+    "X",
+    "affine_scaling_weight",
+    "affine_shifting_bias",
+    "num_channels",
+    "num_groups",
+    "eps"
+  ],
+  "liger_jsd": [
+    "input",
+    "target",
+    "shift_labels",
+    "beta",
+    "ignore_index"
+  ],
+  "liger_kl_div": [
+    "input",
+    "target",
+    "size_average",
+    "reduce",
+    "reduction",
+    "log_target",
+    "eps"
+  ],
+  "liger_sparsemax": [
+    "input",
+    "dim"
+  ],
+  "liger_multi_token_attention": [
+    "scores",
+    "weight",
+    "bias",
+    "stride",
+    "padding",
+    "dilation",
+    "groups",
+    "sparse"
+  ],
+  "liger_fused_neighborhood_attention": [
+    "query",
+    "key",
+    "value",
+    "kernel_size",
+    "dilation",
+    "scale"
+  ],
+  "liger_tvd": [
+    "input",
+    "target",
+    "shift_labels",
+    "reduction",
+    "ignore_index"
+  ],
+  "liger_layer_norm": [
+    "X",
+    "W",
+    "B",
+    "eps"
+  ],
+  "liger_qwen2vl_mrope": [
+    "q",
+    "k",
+    "cos",
+    "sin",
+    "mrope_section",
+    "unsqueeze_dim"
+  ],
+  "liger_rms_norm": [
+    "X",
+    "W",
+    "eps",
+    "offset",
+    "casting_mode",
+    "in_place"
+  ],
+  "liger_poly_norm": [
+    "X",
+    "W",
+    "B",
+    "eps",
+    "in_place"
+  ],
+  "liger_fused_add_rms_norm": [
+    "X",
+    "R",
+    "W",
+    "eps",
+    "offset",
+    "casting_mode",
+    "in_place"
+  ],
+  "liger_rope": [
+    "q",
+    "k",
+    "cos",
+    "sin",
+    "position_ids",
+    "unsqueeze_dim"
+  ],
+  "liger_swiglu": [
+    "a",
+    "b"
+  ],
+  "liger_softmax": [
+    "x"
+  ],
+  "liger_dyt": [
+    "x",
+    "alpha",
+    "gamma",
+    "beta"
+  ],
+  "LigerKLDIVLoss": {
+    "__init__": [
+      "self",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "y_pred",
+      "y_true"
+    ]
+  },
+  "transformer_version": [],
+  "MIN_SUPPORTED_TRANSFORMERS_VERSION": [],
+  "IS_TRANSFORMERS_V5_OR_LATER": [],
+  "_bind_method_to_module": [
+    "module",
+    "method_name",
+    "new_method"
+  ],
+  "_patch_rms_norm_module": [
+    "module",
+    "offset",
+    "eps",
+    "casting_mode",
+    "in_place",
+    "row_mode"
+  ],
+  "_patch_layer_norm_module": [
+    "module",
+    "eps"
+  ],
+  "_patch_swiglu_module": [
+    "module",
+    "liger_module"
+  ],
+  "_patch_geglu_module": [
+    "module"
+  ],
+  "apply_liger_kernel_to_granite": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_llama": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_smollm3": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_llava": [
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "model"
+  ],
+  "apply_liger_kernel_to_llama4": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model",
+    "layer_norm"
+  ],
+  "apply_liger_kernel_to_mllama": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "layer_norm",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_mistral": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_mixtral": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_pixtral": [
+    "rope",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_gemma": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "geglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_gemma2": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "geglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_gemma3_text": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "geglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_gemma3": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "layer_norm",
+    "rms_norm",
+    "geglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_paligemma": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "layer_norm",
+    "rms_norm",
+    "geglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen2": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen3": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen3_moe": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_gpt_oss": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen2_vl": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "layer_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen2_5_vl": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen3_vl": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen3_vl_moe": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_phi3": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_olmo2": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_olmo3": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_glm4": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_glm4v": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_glm4v_moe": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_internvl": [
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "layer_norm",
+    "model"
+  ],
+  "apply_liger_kernel_to_smolvlm": [
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "layer_norm",
+    "model"
+  ],
+  "apply_liger_kernel_to_falcon_h1": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_qwen3_next": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_hunyuan_v1_dense": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_hunyuan_v1_moe": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "apply_liger_kernel_to_exaone4": [
+    "rope",
+    "cross_entropy",
+    "fused_linear_cross_entropy",
+    "rms_norm",
+    "swiglu",
+    "model"
+  ],
+  "MODEL_TYPE_TO_APPLY_LIGER_FN": [],
+  "_apply_liger_kernel": [
+    "model_type"
+  ],
+  "_apply_liger_kernel_to_instance": [
+    "model"
+  ],
+  "LigerFusedLinearCrossEntropyLoss": {
+    "__init__": [
+      "self",
+      "ce_weight",
+      "ignore_index",
+      "lse_square_scale",
+      "label_smoothing",
+      "reduction",
+      "softcap",
+      "return_z_loss",
+      "accum_dtype",
+      "use_token_scaling",
+      "return_token_accuracy"
+    ],
+    "forward": [
+      "self",
+      "lin_weight",
+      "_input",
+      "target",
+      "bias"
+    ]
+  },
+  "liger_rotary_pos_emb": [
+    "q",
+    "k",
+    "cos",
+    "sin",
+    "position_ids",
+    "unsqueeze_dim"
+  ],
+  "liger_rotary_pos_emb_vision": [
+    "q",
+    "k",
+    "cos",
+    "sin"
+  ],
+  "LigerFusedAddRMSNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "offset",
+      "casting_mode",
+      "init_fn",
+      "in_place"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "residual"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LigerEmbedding": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "padding_idx"
+    ],
+    "forward": [
+      "self",
+      "indices"
+    ]
+  },
+  "LigerORPOTrainer": {
+    "concatenated_forward": [
+      "self",
+      "model",
+      "batch"
+    ],
+    "get_batch_loss_metrics": [
+      "self",
+      "model",
+      "batch",
+      "train_eval"
+    ]
+  },
+  "lce_forward_deprecated": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "skip_logits"
+  ],
+  "lce_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "logits_to_keep",
+    "skip_logits"
+  ],
+  "_TRANSFORMERS_V5_OR_LATER": [],
+  "_get_hidden_size": [
+    "config"
+  ],
+  "_get_vocab_size": [
+    "config"
+  ],
+  "LigerCausalLMOutputWithPast": {},
+  "LigerMoeCausalLMOutputWithPast": {},
+  "lce_maybe_trainable_lm_head": [
+    "self",
+    "hidden_states",
+    "hidden_size",
+    "labels",
+    "shift_labels"
+  ],
+  "_liger_for_causal_lm_loss": [
+    "lm_head",
+    "hidden_states",
+    "hidden_size",
+    "labels",
+    "shift_labels"
+  ],
+  "causal_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "logits_to_keep",
+    "skip_logits"
+  ],
+  "multimodal_forward": [
+    "self",
+    "input_ids",
+    "pixel_values",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "token_type_ids",
+    "cache_position",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "logits_to_keep",
+    "skip_logits"
+  ],
+  "unpack_cross_entropy_result": [
+    "result"
+  ],
+  "fixed_fused_linear_cross_entropy": [
+    "hidden_states",
+    "lm_head_weight",
+    "target",
+    "num_items_in_batch",
+    "ignore_index",
+    "final_logit_softcapping",
+    "accum_dtype",
+    "return_token_accuracy"
+  ],
+  "LigerForCausalLMLoss": [
+    "hidden_states",
+    "lm_head_weight",
+    "labels",
+    "hidden_size",
+    "num_items_in_batch",
+    "ignore_index",
+    "shift_labels",
+    "final_logit_softcapping",
+    "return_token_accuracy"
+  ],
+  "LigerTritonFileCacheManager": {
+    "put": [
+      "self",
+      "data",
+      "filename",
+      "binary"
+    ]
+  },
+  "apply_liger_triton_cache_manager": [],
+  "LigerFusedLinearSimPOFunction": {
+    "preference_loss_fn": [
+      "chosen_logps",
+      "rejected_logps",
+      "full_target",
+      "beta",
+      "gamma",
+      "label_smoothing"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "ignore_index",
+      "beta",
+      "alpha",
+      "label_smoothing",
+      "compute_nll_loss",
+      "compiled",
+      "gamma",
+      "chunk_size"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "LigerFusedLinearSimPOLoss": {
+    "__init__": [
+      "self",
+      "ignore_index",
+      "beta",
+      "alpha",
+      "label_smoothing",
+      "compute_nll_loss",
+      "compiled",
+      "gamma",
+      "chunk_size"
+    ],
+    "forward": [
+      "self",
+      "lin_weight",
+      "_input",
+      "target",
+      "bias"
+    ]
+  },
+  "LigerFusedLinearPreferenceBase": {
+    "preference_loss_fn": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "chunk_size",
+      "ignore_index",
+      "alpha",
+      "beta",
+      "compute_nll_loss",
+      "nll_target",
+      "compiled",
+      "use_ref_model",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "average_log_prob"
+    ],
+    "backward": [
+      "ctx"
+    ],
+    "chunk_forward": [
+      "input_chunk",
+      "weight",
+      "target_chunk",
+      "bias",
+      "ignore_index",
+      "compute_nll_loss",
+      "chosen_nll_target_chunk",
+      "average_log_prob"
+    ],
+    "_compute_loss": [
+      "input_chunk",
+      "weight",
+      "target_chunk",
+      "bias",
+      "preference_loss_fn",
+      "full_target",
+      "ignore_index",
+      "alpha",
+      "beta",
+      "compute_nll_loss",
+      "use_ref_model",
+      "ref_input_chunk",
+      "ref_weight",
+      "ref_bias",
+      "full_nll_target",
+      "chosen_nll_target_chunk",
+      "average_log_prob"
+    ]
+  },
+  "LigerFusedLinearDPOFunction": {
+    "preference_loss_fn": [
+      "chosen_logps",
+      "rejected_logps",
+      "full_target",
+      "ref_chosen_logps",
+      "ref_rejected_logps",
+      "beta",
+      "loss_type"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "ignore_index",
+      "beta",
+      "compute_nll_loss",
+      "compiled",
+      "use_ref_model",
+      "average_log_prob",
+      "chunk_size",
+      "loss_type"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "LigerFusedLinearDPOLoss": {
+    "__init__": [
+      "self",
+      "ignore_index",
+      "beta",
+      "compute_nll_loss",
+      "compiled",
+      "use_ref_model",
+      "average_log_prob",
+      "chunk_size",
+      "loss_type"
+    ],
+    "forward": [
+      "self",
+      "lin_weight",
+      "_input",
+      "target",
+      "bias",
+      "ref_input",
+      "ref_weight",
+      "ref_bias"
+    ]
+  },
+  "LigerFusedLinearORPOFunction": {
+    "preference_loss_fn": [
+      "chosen_logps",
+      "rejected_logps",
+      "full_target",
+      "beta"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "ignore_index",
+      "beta",
+      "compute_nll_loss",
+      "nll_target",
+      "compiled",
+      "chunk_size"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "LigerFusedLinearORPOLoss": {
+    "__init__": [
+      "self",
+      "ignore_index",
+      "beta",
+      "compute_nll_loss",
+      "compiled",
+      "chunk_size"
+    ],
+    "forward": [
+      "self",
+      "lin_weight",
+      "_input",
+      "target",
+      "bias",
+      "nll_target"
+    ]
+  },
+  "LigerFusedLinearKTOFunction": {
+    "preference_loss_fn": [
+      "log_prob_chunk",
+      "preference_labels_chunk",
+      "full_target",
+      "ref_log_prob_chunk",
+      "beta",
+      "kl"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "preference_labels",
+      "bias",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "kl",
+      "ignore_index",
+      "beta",
+      "compiled",
+      "use_ref_model",
+      "average_log_prob",
+      "chunk_size"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "LigerFusedLinearKTOLoss": {
+    "__init__": [
+      "self",
+      "ignore_index",
+      "beta",
+      "compiled",
+      "use_ref_model",
+      "average_log_prob",
+      "chunk_size"
+    ],
+    "forward": [
+      "self",
+      "_input",
+      "lin_weight",
+      "target",
+      "bias",
+      "preference_labels",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "kl"
+    ]
+  },
+  "k3_loss_fn": [
+    "log_p",
+    "log_q"
+  ],
+  "sapo_loss_fn": [
+    "importance_ratio",
+    "temperature"
+  ],
+  "clip_coef_fn": [
+    "coef",
+    "epsilon_low",
+    "epsilon_high",
+    "loss_type"
+  ],
+  "LigerFusedLinearGRPOFunction": {
+    "ppo_loss_fn": [
+      "log_probs",
+      "selected_token_ids",
+      "attention_mask",
+      "advantages",
+      "full_attention_mask",
+      "ref_per_token_logps",
+      "old_per_token_logps",
+      "ref_log_probs",
+      "epsilon_low",
+      "epsilon_high",
+      "beta",
+      "loss_type",
+      "max_completion_length",
+      "importance_sampling_level",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg",
+      "vllm_is_ratio"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "selected_token_ids",
+      "attention_mask",
+      "advantages",
+      "bias",
+      "ref_per_token_logps",
+      "old_per_token_logps",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "beta",
+      "epsilon_low",
+      "epsilon_high",
+      "loss_type",
+      "max_completion_length",
+      "importance_sampling_level",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg",
+      "temperature",
+      "compiled",
+      "use_ref_model",
+      "chunk_size",
+      "vllm_is_ratio"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "LigerFusedLinearGRPOLoss": {
+    "__init__": [
+      "self",
+      "beta",
+      "compiled",
+      "use_ref_model",
+      "chunk_size",
+      "epsilon_low",
+      "epsilon_high",
+      "loss_type",
+      "max_completion_length",
+      "importance_sampling_level",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg",
+      "temperature"
+    ],
+    "forward": [
+      "self",
+      "_input",
+      "lin_weight",
+      "selected_token_ids",
+      "attention_mask",
+      "advantages",
+      "bias",
+      "ref_per_token_logps",
+      "old_per_token_logps",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "vllm_is_ratio"
+    ]
+  },
+  "LigerFusedLinearCPOFunction": {
+    "preference_loss_fn": [
+      "chosen_logps",
+      "rejected_logps",
+      "full_target",
+      "beta",
+      "label_smoothing"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "bias",
+      "ignore_index",
+      "beta",
+      "alpha",
+      "label_smoothing",
+      "compute_nll_loss",
+      "compiled",
+      "average_log_prob",
+      "chunk_size"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "LigerFusedLinearCPOLoss": {
+    "__init__": [
+      "self",
+      "ignore_index",
+      "beta",
+      "alpha",
+      "label_smoothing",
+      "compute_nll_loss",
+      "compiled",
+      "average_log_prob",
+      "chunk_size"
+    ],
+    "forward": [
+      "self",
+      "lin_weight",
+      "_input",
+      "target",
+      "bias"
+    ]
+  },
+  "LigerFusedLinearCosineSimilarityFunction": {
+    "distillation_loss_fn": [
+      "student_logits",
+      "teacher_logits",
+      "target",
+      "ignore_index",
+      "beta"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "true_labels",
+      "student_bias",
+      "teacher_bias",
+      "weight_hard_loss",
+      "weight_soft_loss",
+      "beta",
+      "ignore_index",
+      "temperature",
+      "compiled",
+      "chunk_size",
+      "return_soft_hard_loss"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "LigerFusedLinearCosineSimilarityLoss": {
+    "__init__": [
+      "self",
+      "weight_hard_loss",
+      "weight_soft_loss",
+      "beta",
+      "ignore_index",
+      "temperature",
+      "compiled",
+      "chunk_size",
+      "return_soft_hard_loss"
+    ],
+    "forward": [
+      "self",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "true_labels",
+      "student_bias",
+      "teacher_bias"
+    ]
+  },
+  "LigerFusedLinearUnpairedPreferenceBase": {
+    "preference_loss_fn": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "target",
+      "preference_labels",
+      "bias",
+      "chunk_size",
+      "ignore_index",
+      "compiled",
+      "use_ref_model",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "average_log_prob"
+    ],
+    "backward": [
+      "ctx"
+    ],
+    "chunk_forward": [
+      "input_chunk",
+      "weight",
+      "target_chunk",
+      "preference_labels_chunk",
+      "bias",
+      "ignore_index",
+      "average_log_prob"
+    ],
+    "_compute_loss": [
+      "input_chunk",
+      "weight",
+      "target_chunk",
+      "preference_labels_chunk",
+      "bias",
+      "preference_loss_fn",
+      "full_target",
+      "ignore_index",
+      "use_ref_model",
+      "ref_input_chunk",
+      "ref_weight",
+      "ref_bias",
+      "average_log_prob"
+    ]
+  },
+  "LigerFusedLinearPPOBase": {
+    "ppo_loss_fn": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "_input",
+      "weight",
+      "selected_token_ids",
+      "attention_mask",
+      "advantages",
+      "bias",
+      "ref_per_token_logps",
+      "old_per_token_logps",
+      "ref_input",
+      "ref_weight",
+      "ref_bias",
+      "epsilon_low",
+      "epsilon_high",
+      "beta",
+      "loss_type",
+      "max_completion_length",
+      "importance_sampling_level",
+      "temperature",
+      "compiled",
+      "use_ref_model",
+      "chunk_size",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg",
+      "vllm_is_ratio"
+    ],
+    "_compute_dapo_normalizer": [
+      "attention_mask"
+    ],
+    "_compute_chunk_loss": [
+      "input_chunk",
+      "weight",
+      "selected_token_ids_chunk",
+      "attention_mask_chunk",
+      "advantages_chunk",
+      "bias",
+      "ref_per_token_logps_chunk",
+      "old_per_token_logps_chunk",
+      "ref_input_chunk",
+      "vllm_is_ratio_chunk",
+      "ref_weight",
+      "ref_bias",
+      "full_attention_mask",
+      "epsilon_low",
+      "epsilon_high",
+      "beta",
+      "loss_type",
+      "max_completion_length",
+      "importance_sampling_level",
+      "temperature",
+      "use_ref_model",
+      "ppo_loss_fn",
+      "sapo_temperature_pos",
+      "sapo_temperature_neg"
+    ],
+    "chunk_forward": [
+      "input_chunk",
+      "weight",
+      "bias",
+      "temperature"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "liger_fused_linear_orpo": [],
+  "liger_fused_linear_dpo": [],
+  "liger_fused_linear_cosine": [],
+  "liger_fused_linear_cpo": [],
+  "liger_fused_linear_simpo": [],
+  "liger_fused_linear_kto": [],
+  "liger_fused_linear_grpo": [],
+  "LigerFusedLinearJSDLoss": {
+    "__init__": [
+      "self",
+      "weight_hard_loss",
+      "weight_soft_loss",
+      "beta",
+      "ignore_index",
+      "temperature",
+      "compiled",
+      "chunk_size",
+      "return_soft_hard_loss"
+    ],
+    "forward": [
+      "self",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "true_labels",
+      "student_bias",
+      "teacher_bias"
+    ]
+  },
+  "LigerFusedLinearDistillationBase": {
+    "distillation_loss_fn": [
+      "student_logits",
+      "teacher_logits",
+      "target",
+      "ignore_index"
+    ],
+    "chunk_forward": [
+      "student_input_chunk",
+      "student_weight",
+      "teacher_input_chunk",
+      "teacher_weight",
+      "target_chunk",
+      "student_bias",
+      "teacher_bias",
+      "ignore_index",
+      "compute_ce_loss"
+    ],
+    "_compute_loss": [
+      "student_input_chunk",
+      "student_weight",
+      "teacher_input_chunk",
+      "teacher_weight",
+      "target_chunk",
+      "student_bias",
+      "teacher_bias",
+      "distillation_loss_fn",
+      "full_target",
+      "ignore_index",
+      "weight_hard_loss",
+      "weight_soft_loss",
+      "compute_ce_loss",
+      "temperature"
+    ],
+    "forward": [
+      "cls",
+      "ctx",
+      "student_input",
+      "student_weight",
+      "teacher_input",
+      "teacher_weight",
+      "target",
+      "student_bias",
+      "teacher_bias",
+      "chunk_size",
+      "ignore_index",
+      "weight_hard_loss",
+      "weight_soft_loss",
+      "beta",
+      "compute_ce_loss",
+      "temperature",
+      "compiled",
+      "return_soft_hard_loss"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  }
+}

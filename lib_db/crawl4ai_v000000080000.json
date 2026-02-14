@@ -1,0 +1,4699 @@
+{
+  "PROMPT_EXTRACT_BLOCKS": [],
+  "PROMPT_EXTRACT_BLOCKS_WITH_INSTRUCTION": [],
+  "PROMPT_EXTRACT_SCHEMA_WITH_INSTRUCTION": [],
+  "PROMPT_EXTRACT_INFERRED_SCHEMA": [],
+  "PROMPT_FILTER_CONTENT": [],
+  "JSON_SCHEMA_BUILDER": [],
+  "JSON_SCHEMA_BUILDER_XPATH": [],
+  "GENERATE_SCRIPT_PROMPT": [],
+  "GENERATE_JS_SCRIPT_PROMPT": [],
+  "TableExtractionStrategy": {
+    "__init__": [
+      "self"
+    ],
+    "extract_tables": [
+      "self",
+      "element"
+    ],
+    "_log": [
+      "self",
+      "level",
+      "message",
+      "tag"
+    ]
+  },
+  "DefaultTableExtraction": {
+    "__init__": [
+      "self"
+    ],
+    "extract_tables": [
+      "self",
+      "element"
+    ],
+    "is_data_table": [
+      "self",
+      "table"
+    ],
+    "extract_table_data": [
+      "self",
+      "table"
+    ]
+  },
+  "NoTableExtraction": {
+    "extract_tables": [
+      "self",
+      "element"
+    ]
+  },
+  "LLMTableExtraction": {
+    "TABLE_EXTRACTION_PROMPT": [],
+    "__init__": [
+      "self",
+      "llm_config",
+      "css_selector",
+      "max_tries",
+      "enable_chunking",
+      "chunk_token_threshold",
+      "min_rows_per_chunk",
+      "max_parallel_chunks",
+      "verbose"
+    ],
+    "extract_tables": [
+      "self",
+      "element"
+    ],
+    "_estimate_tokens": [
+      "self",
+      "text"
+    ],
+    "_needs_chunking": [
+      "self",
+      "html_content"
+    ],
+    "_extract_table_structure": [
+      "self",
+      "html_content"
+    ],
+    "_create_smart_chunks": [
+      "self",
+      "html_content"
+    ],
+    "_create_chunk_html": [
+      "self",
+      "header_html",
+      "body_rows",
+      "footer_html"
+    ],
+    "_rebalance_chunks": [
+      "self",
+      "chunks",
+      "min_rows"
+    ],
+    "_process_chunk": [
+      "self",
+      "chunk_html",
+      "chunk_index",
+      "total_chunks",
+      "has_headers"
+    ],
+    "_merge_chunk_results": [
+      "self",
+      "chunk_results"
+    ],
+    "_extract_with_chunking": [
+      "self",
+      "html_content"
+    ],
+    "_css_to_xpath_select": [
+      "self",
+      "element",
+      "css_selector"
+    ],
+    "_validate_table_structure": [
+      "self",
+      "table"
+    ],
+    "_ensure_table_format": [
+      "self",
+      "table"
+    ]
+  },
+  "SSLCertificate": {
+    "__init__": [
+      "self",
+      "cert_info"
+    ],
+    "_decode_cert_data": [
+      "data"
+    ],
+    "from_url": [
+      "url",
+      "timeout"
+    ],
+    "issuer": [
+      "self"
+    ],
+    "subject": [
+      "self"
+    ],
+    "valid_from": [
+      "self"
+    ],
+    "valid_until": [
+      "self"
+    ],
+    "fingerprint": [
+      "self"
+    ],
+    "to_json": [
+      "self",
+      "filepath"
+    ],
+    "to_pem": [
+      "self",
+      "filepath"
+    ],
+    "to_der": [
+      "self",
+      "filepath"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "LinkPreview": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_log": [
+      "self",
+      "level",
+      "message",
+      "tag"
+    ],
+    "extract_link_heads": [
+      "self",
+      "links",
+      "config"
+    ],
+    "_filter_links": [
+      "self",
+      "links",
+      "link_config"
+    ],
+    "_extract_heads_parallel": [
+      "self",
+      "urls",
+      "link_config"
+    ],
+    "_extract_with_progress": [
+      "self",
+      "urls",
+      "seeding_config",
+      "link_config"
+    ],
+    "_merge_head_data": [
+      "self",
+      "original_links",
+      "head_results",
+      "config"
+    ]
+  },
+  "RelevantContentFilter": {
+    "__init__": [
+      "self",
+      "user_query",
+      "verbose",
+      "logger"
+    ],
+    "filter_content": [
+      "self",
+      "html"
+    ],
+    "extract_page_query": [
+      "self",
+      "soup",
+      "body"
+    ],
+    "extract_text_chunks": [
+      "self",
+      "body",
+      "min_word_threshold"
+    ],
+    "_deprecated_extract_text_chunks": [
+      "self",
+      "soup"
+    ],
+    "is_excluded": [
+      "self",
+      "tag"
+    ],
+    "clean_element": [
+      "self",
+      "tag"
+    ]
+  },
+  "BM25ContentFilter": {
+    "__init__": [
+      "self",
+      "user_query",
+      "bm25_threshold",
+      "language",
+      "use_stemming"
+    ],
+    "filter_content": [
+      "self",
+      "html",
+      "min_word_threshold"
+    ]
+  },
+  "PruningContentFilter": {
+    "__init__": [
+      "self",
+      "user_query",
+      "min_word_threshold",
+      "threshold_type",
+      "threshold"
+    ],
+    "filter_content": [
+      "self",
+      "html",
+      "min_word_threshold"
+    ],
+    "_remove_comments": [
+      "self",
+      "soup"
+    ],
+    "_remove_unwanted_tags": [
+      "self",
+      "soup"
+    ],
+    "_prune_tree": [
+      "self",
+      "node"
+    ],
+    "_compute_composite_score": [
+      "self",
+      "metrics",
+      "text_len",
+      "tag_len",
+      "link_text_len"
+    ],
+    "_compute_class_id_weight": [
+      "self",
+      "node"
+    ]
+  },
+  "LLMContentFilter": {
+    "_UNWANTED_PROPS": [],
+    "__init__": [
+      "self",
+      "llm_config",
+      "instruction",
+      "chunk_token_threshold",
+      "overlap_rate",
+      "word_token_rate",
+      "verbose",
+      "logger",
+      "ignore_cache",
+      "provider",
+      "api_token",
+      "base_url",
+      "api_base",
+      "extra_args"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "_get_cache_key": [
+      "self",
+      "html",
+      "instruction"
+    ],
+    "_merge_chunks": [
+      "self",
+      "text"
+    ],
+    "filter_content": [
+      "self",
+      "html",
+      "ignore_cache"
+    ],
+    "show_usage": [
+      "self"
+    ]
+  },
+  "UrlMatcher": [],
+  "MatchMode": {
+    "OR": [],
+    "AND": []
+  },
+  "to_serializable_dict": [
+    "obj",
+    "ignore_default_value"
+  ],
+  "from_serializable_dict": [
+    "data"
+  ],
+  "is_empty_value": [
+    "value"
+  ],
+  "GeolocationConfig": {
+    "__init__": [
+      "self",
+      "latitude",
+      "longitude",
+      "accuracy"
+    ],
+    "from_dict": [
+      "geo_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "ProxyConfig": {
+    "__init__": [
+      "self",
+      "server",
+      "username",
+      "password",
+      "ip"
+    ],
+    "_extract_ip_from_server": [
+      "self"
+    ],
+    "from_string": [
+      "proxy_str"
+    ],
+    "from_dict": [
+      "proxy_dict"
+    ],
+    "from_env": [
+      "env_var"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "BrowserConfig": {
+    "__init__": [
+      "self",
+      "browser_type",
+      "headless",
+      "browser_mode",
+      "use_managed_browser",
+      "cdp_url",
+      "browser_context_id",
+      "target_id",
+      "cdp_cleanup_on_close",
+      "create_isolated_context",
+      "use_persistent_context",
+      "user_data_dir",
+      "chrome_channel",
+      "channel",
+      "proxy",
+      "proxy_config",
+      "viewport_width",
+      "viewport_height",
+      "viewport",
+      "accept_downloads",
+      "downloads_path",
+      "storage_state",
+      "ignore_https_errors",
+      "java_script_enabled",
+      "sleep_on_close",
+      "verbose",
+      "cookies",
+      "headers",
+      "user_agent",
+      "user_agent_mode",
+      "user_agent_generator_config",
+      "text_mode",
+      "light_mode",
+      "extra_args",
+      "debugging_port",
+      "host",
+      "enable_stealth",
+      "init_scripts"
+    ],
+    "from_kwargs": [
+      "kwargs"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ],
+    "dump": [
+      "self"
+    ],
+    "load": [
+      "data"
+    ],
+    "set_nstproxy": [
+      "self",
+      "token",
+      "channel_id",
+      "country",
+      "state",
+      "city",
+      "protocol",
+      "session_duration"
+    ]
+  },
+  "VirtualScrollConfig": {
+    "__init__": [
+      "self",
+      "container_selector",
+      "scroll_count",
+      "scroll_by",
+      "wait_after_scroll"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "LinkPreviewConfig": {
+    "__init__": [
+      "self",
+      "include_internal",
+      "include_external",
+      "include_patterns",
+      "exclude_patterns",
+      "concurrency",
+      "timeout",
+      "max_links",
+      "query",
+      "score_threshold",
+      "verbose"
+    ],
+    "from_dict": [
+      "config_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "HTTPCrawlerConfig": {
+    "__init__": [
+      "self",
+      "method",
+      "headers",
+      "data",
+      "json",
+      "follow_redirects",
+      "verify_ssl"
+    ],
+    "from_kwargs": [
+      "kwargs"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ],
+    "dump": [
+      "self"
+    ],
+    "load": [
+      "data"
+    ]
+  },
+  "CrawlerRunConfig": {
+    "_UNWANTED_PROPS": [],
+    "__init__": [
+      "self",
+      "word_count_threshold",
+      "extraction_strategy",
+      "chunking_strategy",
+      "markdown_generator",
+      "only_text",
+      "css_selector",
+      "target_elements",
+      "excluded_tags",
+      "excluded_selector",
+      "keep_data_attributes",
+      "keep_attrs",
+      "remove_forms",
+      "prettiify",
+      "parser_type",
+      "scraping_strategy",
+      "proxy_config",
+      "proxy_rotation_strategy",
+      "proxy_session_id",
+      "proxy_session_ttl",
+      "proxy_session_auto_release",
+      "locale",
+      "timezone_id",
+      "geolocation",
+      "fetch_ssl_certificate",
+      "cache_mode",
+      "session_id",
+      "bypass_cache",
+      "disable_cache",
+      "no_cache_read",
+      "no_cache_write",
+      "shared_data",
+      "check_cache_freshness",
+      "cache_validation_timeout",
+      "wait_until",
+      "page_timeout",
+      "wait_for",
+      "wait_for_timeout",
+      "wait_for_images",
+      "delay_before_return_html",
+      "mean_delay",
+      "max_range",
+      "semaphore_count",
+      "js_code",
+      "c4a_script",
+      "js_only",
+      "ignore_body_visibility",
+      "scan_full_page",
+      "scroll_delay",
+      "max_scroll_steps",
+      "process_iframes",
+      "remove_overlay_elements",
+      "simulate_user",
+      "override_navigator",
+      "magic",
+      "adjust_viewport_to_content",
+      "screenshot",
+      "screenshot_wait_for",
+      "screenshot_height_threshold",
+      "pdf",
+      "capture_mhtml",
+      "image_description_min_word_threshold",
+      "image_score_threshold",
+      "table_score_threshold",
+      "table_extraction",
+      "exclude_external_images",
+      "exclude_all_images",
+      "exclude_social_media_domains",
+      "exclude_external_links",
+      "exclude_social_media_links",
+      "exclude_domains",
+      "exclude_internal_links",
+      "score_links",
+      "preserve_https_for_internal_links",
+      "verbose",
+      "log_console",
+      "capture_network_requests",
+      "capture_console_messages",
+      "method",
+      "stream",
+      "prefetch",
+      "process_in_browser",
+      "url",
+      "base_url",
+      "check_robots_txt",
+      "user_agent",
+      "user_agent_mode",
+      "user_agent_generator_config",
+      "deep_crawl_strategy",
+      "link_preview_config",
+      "virtual_scroll_config",
+      "url_matcher",
+      "match_mode",
+      "experimental"
+    ],
+    "_compile_c4a_script": [
+      "self"
+    ],
+    "is_match": [
+      "self",
+      "url"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "from_kwargs": [
+      "kwargs"
+    ],
+    "dump": [
+      "self"
+    ],
+    "load": [
+      "data"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "LLMConfig": {
+    "__init__": [
+      "self",
+      "provider",
+      "api_token",
+      "base_url",
+      "temperature",
+      "max_tokens",
+      "top_p",
+      "frequency_penalty",
+      "presence_penalty",
+      "stop",
+      "n",
+      "backoff_base_delay",
+      "backoff_max_attempts",
+      "backoff_exponential_factor"
+    ],
+    "from_kwargs": [
+      "kwargs"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "SeedingConfig": {
+    "__init__": [
+      "self",
+      "source",
+      "pattern",
+      "live_check",
+      "extract_head",
+      "max_urls",
+      "concurrency",
+      "hits_per_sec",
+      "force",
+      "base_directory",
+      "llm_config",
+      "verbose",
+      "query",
+      "score_threshold",
+      "scoring_method",
+      "filter_nonsense_urls",
+      "cache_ttl_hours",
+      "validate_sitemap_lastmod"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_kwargs": [
+      "kwargs"
+    ],
+    "clone": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "BaseCrawler": {
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "url"
+    ],
+    "__init_subclass__": [
+      "cls"
+    ]
+  },
+  "CrawlerHub": {
+    "_discover_crawlers": [
+      "cls"
+    ],
+    "_maybe_register_crawler": [
+      "cls",
+      "obj",
+      "name"
+    ],
+    "get": [
+      "cls",
+      "name"
+    ]
+  },
+  "Crawl4aiClientError": {},
+  "ConnectionError": {},
+  "RequestError": {},
+  "Crawl4aiDockerClient": {
+    "__init__": [
+      "self",
+      "base_url",
+      "timeout",
+      "verify_ssl",
+      "verbose",
+      "log_file"
+    ],
+    "authenticate": [
+      "self",
+      "email"
+    ],
+    "_check_server": [
+      "self"
+    ],
+    "_prepare_request": [
+      "self",
+      "urls",
+      "browser_config",
+      "crawler_config",
+      "hooks",
+      "hooks_timeout"
+    ],
+    "_request": [
+      "self",
+      "method",
+      "endpoint"
+    ],
+    "crawl": [
+      "self",
+      "urls",
+      "browser_config",
+      "crawler_config",
+      "hooks",
+      "hooks_timeout"
+    ],
+    "get_schema": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "main": [],
+  "DomainState": {},
+  "CrawlerTaskResult": {
+    "success": [
+      "self"
+    ]
+  },
+  "CrawlStatus": {
+    "QUEUED": [],
+    "IN_PROGRESS": [],
+    "COMPLETED": [],
+    "FAILED": []
+  },
+  "CrawlStats": {
+    "duration": [
+      "self"
+    ]
+  },
+  "DisplayMode": {
+    "DETAILED": [],
+    "AGGREGATED": []
+  },
+  "TokenUsage": {},
+  "UrlModel": {},
+  "TraversalStats": {},
+  "DispatchResult": {},
+  "MarkdownGenerationResult": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "CrawlResult": {
+    "model_config": [],
+    "__init__": [
+      "self"
+    ],
+    "markdown": [
+      "self",
+      "value"
+    ],
+    "markdown_v2": [
+      "self"
+    ],
+    "fit_markdown": [
+      "self"
+    ],
+    "fit_html": [
+      "self"
+    ],
+    "model_dump": [
+      "self"
+    ]
+  },
+  "StringCompatibleMarkdown": {
+    "__new__": [
+      "cls",
+      "markdown_result"
+    ],
+    "__init__": [
+      "self",
+      "markdown_result"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "CrawlResultT": [],
+  "CrawlResultContainer": {
+    "__init__": [
+      "self",
+      "results"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "attr"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "RunManyReturn": [],
+  "AsyncCrawlResponse": {
+    "model_config": []
+  },
+  "MediaItem": {},
+  "Link": {},
+  "Media": {},
+  "Links": {},
+  "ScrapingResult": {},
+  "CacheValidationResult": {
+    "FRESH": [],
+    "STALE": [],
+    "UNKNOWN": [],
+    "ERROR": []
+  },
+  "ValidationResult": {},
+  "CacheValidator": {
+    "__init__": [
+      "self",
+      "timeout",
+      "user_agent"
+    ],
+    "_get_client": [
+      "self"
+    ],
+    "validate": [
+      "self",
+      "url",
+      "stored_etag",
+      "stored_last_modified",
+      "stored_head_fingerprint"
+    ],
+    "_fetch_head": [
+      "self",
+      "url"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "setup_home_directory": [],
+  "post_install": [],
+  "setup_builtin_browser": [],
+  "_setup_builtin_browser": [],
+  "install_playwright": [],
+  "run_migration": [],
+  "run_doctor": [],
+  "doctor": [],
+  "ExtractionStrategy": {
+    "__init__": [
+      "self",
+      "input_format"
+    ],
+    "extract": [
+      "self",
+      "url",
+      "html"
+    ],
+    "run": [
+      "self",
+      "url",
+      "sections"
+    ],
+    "arun": [
+      "self",
+      "url",
+      "sections"
+    ]
+  },
+  "NoExtractionStrategy": {
+    "extract": [
+      "self",
+      "url",
+      "html"
+    ],
+    "run": [
+      "self",
+      "url",
+      "sections"
+    ]
+  },
+  "CosineStrategy": {
+    "__init__": [
+      "self",
+      "semantic_filter",
+      "word_count_threshold",
+      "max_dist",
+      "linkage_method",
+      "top_k",
+      "model_name",
+      "sim_threshold"
+    ],
+    "filter_documents_embeddings": [
+      "self",
+      "documents",
+      "semantic_filter",
+      "at_least_k"
+    ],
+    "get_embeddings": [
+      "self",
+      "sentences",
+      "batch_size",
+      "bypass_buffer"
+    ],
+    "hierarchical_clustering": [
+      "self",
+      "sentences",
+      "embeddings"
+    ],
+    "filter_clusters_by_word_count": [
+      "self",
+      "clusters"
+    ],
+    "extract": [
+      "self",
+      "url",
+      "html"
+    ],
+    "run": [
+      "self",
+      "url",
+      "sections"
+    ]
+  },
+  "LLMExtractionStrategy": {
+    "_UNWANTED_PROPS": [],
+    "__init__": [
+      "self",
+      "llm_config",
+      "instruction",
+      "schema",
+      "extraction_type",
+      "chunk_token_threshold",
+      "overlap_rate",
+      "word_token_rate",
+      "apply_chunking",
+      "input_format",
+      "force_json_response",
+      "verbose",
+      "provider",
+      "api_token",
+      "base_url",
+      "api_base"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "extract": [
+      "self",
+      "url",
+      "ix",
+      "html"
+    ],
+    "_merge": [
+      "self",
+      "documents",
+      "chunk_token_threshold",
+      "overlap"
+    ],
+    "run": [
+      "self",
+      "url",
+      "sections"
+    ],
+    "aextract": [
+      "self",
+      "url",
+      "ix",
+      "html"
+    ],
+    "arun": [
+      "self",
+      "url",
+      "sections"
+    ],
+    "show_usage": [
+      "self"
+    ]
+  },
+  "JsonElementExtractionStrategy": {
+    "DEL": [],
+    "__init__": [
+      "self",
+      "schema"
+    ],
+    "extract": [
+      "self",
+      "url",
+      "html_content"
+    ],
+    "_parse_html": [
+      "self",
+      "html_content"
+    ],
+    "_get_base_elements": [
+      "self",
+      "parsed_html",
+      "selector"
+    ],
+    "_get_elements": [
+      "self",
+      "element",
+      "selector"
+    ],
+    "_extract_field": [
+      "self",
+      "element",
+      "field"
+    ],
+    "_extract_single_field": [
+      "self",
+      "element",
+      "field"
+    ],
+    "_extract_list_item": [
+      "self",
+      "element",
+      "fields"
+    ],
+    "_extract_item": [
+      "self",
+      "element",
+      "fields"
+    ],
+    "_apply_transform": [
+      "self",
+      "value",
+      "transform"
+    ],
+    "_compute_field": [
+      "self",
+      "item",
+      "field"
+    ],
+    "run": [
+      "self",
+      "url",
+      "sections"
+    ],
+    "_get_element_text": [
+      "self",
+      "element"
+    ],
+    "_get_element_html": [
+      "self",
+      "element"
+    ],
+    "_get_element_attribute": [
+      "self",
+      "element",
+      "attribute"
+    ],
+    "_GENERATE_SCHEMA_UNWANTED_PROPS": [],
+    "_build_schema_prompt": [
+      "html",
+      "schema_type",
+      "query",
+      "target_json_example"
+    ],
+    "generate_schema": [
+      "html",
+      "schema_type",
+      "query",
+      "target_json_example",
+      "llm_config",
+      "provider",
+      "api_token"
+    ],
+    "agenerate_schema": [
+      "html",
+      "schema_type",
+      "query",
+      "target_json_example",
+      "llm_config"
+    ]
+  },
+  "JsonCssExtractionStrategy": {
+    "__init__": [
+      "self",
+      "schema"
+    ],
+    "_parse_html": [
+      "self",
+      "html_content"
+    ],
+    "_get_base_elements": [
+      "self",
+      "parsed_html",
+      "selector"
+    ],
+    "_get_elements": [
+      "self",
+      "element",
+      "selector"
+    ],
+    "_get_element_text": [
+      "self",
+      "element"
+    ],
+    "_get_element_html": [
+      "self",
+      "element"
+    ],
+    "_get_element_attribute": [
+      "self",
+      "element",
+      "attribute"
+    ]
+  },
+  "JsonLxmlExtractionStrategy": {
+    "__init__": [
+      "self",
+      "schema"
+    ],
+    "_parse_html": [
+      "self",
+      "html_content"
+    ],
+    "_optimize_selector": [
+      "self",
+      "selector_str"
+    ],
+    "_create_selector_function": [
+      "self",
+      "selector_str"
+    ],
+    "_make_context_sensitive_xpath": [
+      "self",
+      "xpath",
+      "element"
+    ],
+    "_handle_nth_child_selector": [
+      "self",
+      "element",
+      "selector_str"
+    ],
+    "_fallback_class_id_search": [
+      "self",
+      "element",
+      "selector_str"
+    ],
+    "_get_selector": [
+      "self",
+      "selector_str"
+    ],
+    "_get_base_elements": [
+      "self",
+      "parsed_html",
+      "selector"
+    ],
+    "_get_elements": [
+      "self",
+      "element",
+      "selector"
+    ],
+    "_get_element_text": [
+      "self",
+      "element"
+    ],
+    "_get_element_html": [
+      "self",
+      "element"
+    ],
+    "_get_element_attribute": [
+      "self",
+      "element",
+      "attribute"
+    ],
+    "_clear_caches": [
+      "self"
+    ]
+  },
+  "JsonLxmlExtractionStrategy_naive": {
+    "__init__": [
+      "self",
+      "schema"
+    ],
+    "_parse_html": [
+      "self",
+      "html_content"
+    ],
+    "_get_selector": [
+      "self",
+      "selector_str"
+    ],
+    "_get_base_elements": [
+      "self",
+      "parsed_html",
+      "selector"
+    ],
+    "_get_elements": [
+      "self",
+      "element",
+      "selector"
+    ],
+    "_get_element_text": [
+      "self",
+      "element"
+    ],
+    "_get_element_html": [
+      "self",
+      "element"
+    ],
+    "_get_element_attribute": [
+      "self",
+      "element",
+      "attribute"
+    ]
+  },
+  "JsonXPathExtractionStrategy": {
+    "__init__": [
+      "self",
+      "schema"
+    ],
+    "_parse_html": [
+      "self",
+      "html_content"
+    ],
+    "_get_base_elements": [
+      "self",
+      "parsed_html",
+      "selector"
+    ],
+    "_css_to_xpath": [
+      "self",
+      "css_selector"
+    ],
+    "_basic_css_to_xpath": [
+      "self",
+      "css_selector"
+    ],
+    "_get_elements": [
+      "self",
+      "element",
+      "selector"
+    ],
+    "_get_element_text": [
+      "self",
+      "element"
+    ],
+    "_get_element_html": [
+      "self",
+      "element"
+    ],
+    "_get_element_attribute": [
+      "self",
+      "element",
+      "attribute"
+    ]
+  },
+  "_CTRL": [],
+  "_WB_FIX": [],
+  "_NEEDS_ESCAPE": [],
+  "_sanitize_schema": [
+    "schema"
+  ],
+  "RegexExtractionStrategy": {
+    "Email": [],
+    "PhoneIntl": [],
+    "PhoneUS": [],
+    "Url": [],
+    "IPv4": [],
+    "IPv6": [],
+    "Uuid": [],
+    "Currency": [],
+    "Percentage": [],
+    "Number": [],
+    "DateIso": [],
+    "DateUS": [],
+    "Time24h": [],
+    "PostalUS": [],
+    "PostalUK": [],
+    "HexColor": [],
+    "TwitterHandle": [],
+    "Hashtag": [],
+    "MacAddr": [],
+    "Iban": [],
+    "CreditCard": [],
+    "All": [],
+    "Nothing": [],
+    "_FLAGS": [],
+    "_UNWANTED_PROPS": [],
+    "__init__": [
+      "self",
+      "pattern"
+    ],
+    "extract": [
+      "self",
+      "url",
+      "content"
+    ],
+    "_plain_text": [
+      "self",
+      "content"
+    ],
+    "generate_pattern": [
+      "label",
+      "html"
+    ]
+  },
+  "UAGen": {
+    "generate": [
+      "self",
+      "browsers",
+      "os",
+      "min_version",
+      "platforms",
+      "pct_threshold",
+      "fallback"
+    ],
+    "generate_client_hints": [
+      "user_agent"
+    ]
+  },
+  "ValidUAGenerator": {
+    "__init__": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "browsers",
+      "os",
+      "min_version",
+      "platforms",
+      "pct_threshold",
+      "fallback"
+    ]
+  },
+  "OnlineUAGenerator": {
+    "__init__": [
+      "self"
+    ],
+    "_fetch_agents": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "browsers",
+      "os",
+      "min_version",
+      "platforms",
+      "pct_threshold",
+      "fallback"
+    ]
+  },
+  "UserAgentGenerator": {
+    "__init__": [
+      "self"
+    ],
+    "get_browser_stack": [
+      "self",
+      "num_browsers"
+    ],
+    "generate": [
+      "self",
+      "device_type",
+      "os_type",
+      "device_brand",
+      "browser_type",
+      "num_browsers"
+    ],
+    "generate_with_client_hints": [
+      "self"
+    ],
+    "get_random_platform": [
+      "self",
+      "device_type",
+      "os_type",
+      "device_brand"
+    ],
+    "parse_user_agent": [
+      "self",
+      "user_agent"
+    ],
+    "generate_client_hints": [
+      "self",
+      "user_agent"
+    ]
+  },
+  "ProxyRotationStrategy": {
+    "get_next_proxy": [
+      "self"
+    ],
+    "add_proxies": [
+      "self",
+      "proxies"
+    ],
+    "get_proxy_for_session": [
+      "self",
+      "session_id",
+      "ttl"
+    ],
+    "release_session": [
+      "self",
+      "session_id"
+    ],
+    "get_session_proxy": [
+      "self",
+      "session_id"
+    ],
+    "get_active_sessions": [
+      "self"
+    ]
+  },
+  "RoundRobinProxyStrategy": {
+    "__init__": [
+      "self",
+      "proxies"
+    ],
+    "add_proxies": [
+      "self",
+      "proxies"
+    ],
+    "get_next_proxy": [
+      "self"
+    ],
+    "get_proxy_for_session": [
+      "self",
+      "session_id",
+      "ttl"
+    ],
+    "release_session": [
+      "self",
+      "session_id"
+    ],
+    "get_session_proxy": [
+      "self",
+      "session_id"
+    ],
+    "get_active_sessions": [
+      "self"
+    ],
+    "cleanup_expired_sessions": [
+      "self"
+    ]
+  },
+  "original_applies_to": [],
+  "patched_applies_to": [
+    "self",
+    "filename"
+  ],
+  "chunk_documents": [
+    "documents",
+    "chunk_token_threshold",
+    "overlap",
+    "word_token_rate",
+    "tokenizer"
+  ],
+  "merge_chunks": [
+    "docs",
+    "target_size",
+    "overlap",
+    "word_token_ratio",
+    "splitter"
+  ],
+  "VersionManager": {
+    "__init__": [
+      "self"
+    ],
+    "get_installed_version": [
+      "self"
+    ],
+    "update_version": [
+      "self"
+    ],
+    "needs_update": [
+      "self"
+    ]
+  },
+  "RobotsParser": {
+    "CACHE_TTL": [],
+    "__init__": [
+      "self",
+      "cache_dir",
+      "cache_ttl"
+    ],
+    "_init_db": [
+      "self"
+    ],
+    "_get_cached_rules": [
+      "self",
+      "domain"
+    ],
+    "_cache_rules": [
+      "self",
+      "domain",
+      "content"
+    ],
+    "can_fetch": [
+      "self",
+      "url",
+      "user_agent"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "clear_expired": [
+      "self"
+    ]
+  },
+  "InvalidCSSSelectorError": {},
+  "SPLITS": [],
+  "HTML_CODE_CHARS": [],
+  "advanced_split": [
+    "text"
+  ],
+  "create_box_message": [
+    "message",
+    "type",
+    "width",
+    "add_newlines",
+    "double_line"
+  ],
+  "calculate_semaphore_count": [],
+  "get_system_memory": [],
+  "get_home_folder": [],
+  "get_chromium_path": [
+    "browser_type"
+  ],
+  "beautify_html": [
+    "escaped_html"
+  ],
+  "split_and_parse_json_objects": [
+    "json_string"
+  ],
+  "sanitize_html": [
+    "html"
+  ],
+  "sanitize_input_encode": [
+    "text"
+  ],
+  "escape_json_string": [
+    "s"
+  ],
+  "replace_inline_tags": [
+    "soup",
+    "tags",
+    "only_text"
+  ],
+  "get_content_of_website": [
+    "url",
+    "html",
+    "word_count_threshold",
+    "css_selector"
+  ],
+  "get_content_of_website_optimized": [
+    "url",
+    "html",
+    "word_count_threshold",
+    "css_selector"
+  ],
+  "extract_metadata_using_lxml": [
+    "html",
+    "doc"
+  ],
+  "extract_metadata": [
+    "html",
+    "soup"
+  ],
+  "extract_xml_tags": [
+    "string"
+  ],
+  "extract_xml_data_legacy": [
+    "tags",
+    "string"
+  ],
+  "extract_xml_data": [
+    "tags",
+    "string"
+  ],
+  "perform_completion_with_backoff": [
+    "provider",
+    "prompt_with_variables",
+    "api_token",
+    "json_response",
+    "base_url",
+    "base_delay",
+    "max_attempts",
+    "exponential_factor"
+  ],
+  "aperform_completion_with_backoff": [
+    "provider",
+    "prompt_with_variables",
+    "api_token",
+    "json_response",
+    "base_url",
+    "base_delay",
+    "max_attempts",
+    "exponential_factor"
+  ],
+  "extract_blocks": [
+    "url",
+    "html",
+    "provider",
+    "api_token",
+    "base_url"
+  ],
+  "extract_blocks_batch": [
+    "batch_data",
+    "provider",
+    "api_token"
+  ],
+  "merge_chunks_based_on_token_threshold": [
+    "chunks",
+    "token_threshold"
+  ],
+  "process_sections": [
+    "url",
+    "sections",
+    "provider",
+    "api_token",
+    "base_url"
+  ],
+  "wrap_text": [
+    "draw",
+    "text",
+    "font",
+    "max_width"
+  ],
+  "format_html": [
+    "html_string"
+  ],
+  "fast_format_html": [
+    "html_string"
+  ],
+  "normalize_url": [
+    "href",
+    "base_url"
+  ],
+  "normalize_url_for_deep_crawl": [
+    "href",
+    "base_url",
+    "preserve_https",
+    "original_scheme"
+  ],
+  "efficient_normalize_url_for_deep_crawl": [
+    "href",
+    "base_url",
+    "preserve_https",
+    "original_scheme"
+  ],
+  "normalize_url_tmp": [
+    "href",
+    "base_url"
+  ],
+  "quick_extract_links": [
+    "html",
+    "base_url"
+  ],
+  "get_base_domain": [
+    "url"
+  ],
+  "is_external_url": [
+    "url",
+    "base_domain"
+  ],
+  "clean_tokens": [
+    "tokens"
+  ],
+  "profile_and_time": [
+    "func"
+  ],
+  "generate_content_hash": [
+    "content"
+  ],
+  "compute_head_fingerprint": [
+    "head_html"
+  ],
+  "ensure_content_dirs": [
+    "base_path"
+  ],
+  "configure_windows_event_loop": [],
+  "get_error_context": [
+    "exc_info",
+    "context_lines"
+  ],
+  "truncate": [
+    "value",
+    "threshold"
+  ],
+  "optimize_html": [
+    "html_str",
+    "threshold"
+  ],
+  "HeadPeekr": {
+    "fetch_head_section": [
+      "url",
+      "timeout"
+    ],
+    "peek_html": [
+      "url",
+      "timeout"
+    ],
+    "extract_meta_tags": [
+      "head_content"
+    ],
+    "get_title": [
+      "head_content"
+    ]
+  },
+  "preprocess_html_for_schema": [
+    "html_content",
+    "text_threshold",
+    "attr_value_threshold",
+    "max_size"
+  ],
+  "start_colab_display_server": [],
+  "setup_colab_environment": [],
+  "extract_page_context": [
+    "page_title",
+    "headlines_text",
+    "meta_description",
+    "base_url"
+  ],
+  "calculate_link_intrinsic_score": [
+    "link_text",
+    "url",
+    "title_attr",
+    "class_attr",
+    "rel_attr",
+    "page_context"
+  ],
+  "calculate_total_score": [
+    "intrinsic_score",
+    "contextual_score",
+    "score_links_enabled",
+    "query_provided"
+  ],
+  "get_text_embeddings": [
+    "texts",
+    "llm_config",
+    "model_name",
+    "batch_size"
+  ],
+  "get_text_embeddings_sync": [
+    "texts",
+    "llm_config",
+    "model_name",
+    "batch_size"
+  ],
+  "cosine_similarity": [
+    "vec1",
+    "vec2"
+  ],
+  "cosine_distance": [
+    "vec1",
+    "vec2"
+  ],
+  "get_true_available_memory_gb": [],
+  "get_true_memory_usage_percent": [],
+  "get_memory_stats": [],
+  "hooks_to_string": [
+    "hooks"
+  ],
+  "AsyncCrawlerStrategy": {
+    "crawl": [
+      "self",
+      "url"
+    ]
+  },
+  "AsyncPlaywrightCrawlerStrategy": {
+    "__init__": [
+      "self",
+      "browser_config",
+      "logger"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "kill_session": [
+      "self",
+      "session_id"
+    ],
+    "set_hook": [
+      "self",
+      "hook_type",
+      "hook"
+    ],
+    "execute_hook": [
+      "self",
+      "hook_type"
+    ],
+    "update_user_agent": [
+      "self",
+      "user_agent"
+    ],
+    "set_custom_headers": [
+      "self",
+      "headers"
+    ],
+    "smart_wait": [
+      "self",
+      "page",
+      "wait_for",
+      "timeout"
+    ],
+    "csp_compliant_wait": [
+      "self",
+      "page",
+      "user_wait_function",
+      "timeout"
+    ],
+    "process_iframes": [
+      "self",
+      "page"
+    ],
+    "create_session": [
+      "self"
+    ],
+    "crawl": [
+      "self",
+      "url",
+      "config"
+    ],
+    "_crawl_web": [
+      "self",
+      "url",
+      "config"
+    ],
+    "_handle_full_page_scan": [
+      "self",
+      "page",
+      "scroll_delay",
+      "max_scroll_steps"
+    ],
+    "_handle_virtual_scroll": [
+      "self",
+      "page",
+      "config"
+    ],
+    "_handle_download": [
+      "self",
+      "download"
+    ],
+    "remove_overlay_elements": [
+      "self",
+      "page"
+    ],
+    "export_pdf": [
+      "self",
+      "page"
+    ],
+    "capture_mhtml": [
+      "self",
+      "page"
+    ],
+    "_capture_console_messages": [
+      "self",
+      "page",
+      "file_path"
+    ],
+    "take_screenshot": [
+      "self",
+      "page"
+    ],
+    "take_screenshot_from_pdf": [
+      "self",
+      "pdf_data"
+    ],
+    "take_screenshot_scroller": [
+      "self",
+      "page"
+    ],
+    "take_screenshot_naive": [
+      "self",
+      "page"
+    ],
+    "export_storage_state": [
+      "self",
+      "path"
+    ],
+    "robust_execute_user_script": [
+      "self",
+      "page",
+      "js_code"
+    ],
+    "execute_user_script": [
+      "self",
+      "page",
+      "js_code"
+    ],
+    "check_visibility": [
+      "self",
+      "page"
+    ],
+    "safe_scroll": [
+      "self",
+      "page",
+      "x",
+      "y",
+      "delay"
+    ],
+    "csp_scroll_to": [
+      "self",
+      "page",
+      "x",
+      "y"
+    ],
+    "get_page_dimensions": [
+      "self",
+      "page"
+    ],
+    "page_need_scroll": [
+      "self",
+      "page"
+    ]
+  },
+  "HTTPCrawlerError": {},
+  "ConnectionTimeoutError": {},
+  "HTTPStatusError": {
+    "__init__": [
+      "self",
+      "status_code",
+      "message"
+    ]
+  },
+  "AsyncHTTPCrawlerStrategy": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "browser_config",
+      "logger",
+      "max_connections",
+      "dns_cache_ttl",
+      "chunk_size"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_session_context": [
+      "self"
+    ],
+    "set_hook": [
+      "self",
+      "hook_type",
+      "hook_func"
+    ],
+    "_execute_hook": [
+      "self",
+      "hook_type",
+      "hook_func"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_stream_file": [
+      "self",
+      "path"
+    ],
+    "_handle_file": [
+      "self",
+      "path"
+    ],
+    "_handle_raw": [
+      "self",
+      "content"
+    ],
+    "_handle_http": [
+      "self",
+      "url",
+      "config"
+    ],
+    "crawl": [
+      "self",
+      "url",
+      "config"
+    ]
+  },
+  "BrowserAdapter": {
+    "evaluate": [
+      "self",
+      "page",
+      "expression",
+      "arg"
+    ],
+    "setup_console_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "setup_error_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "retrieve_console_messages": [
+      "self",
+      "page"
+    ],
+    "cleanup_console_capture": [
+      "self",
+      "page",
+      "handle_console",
+      "handle_error"
+    ],
+    "get_imports": [
+      "self"
+    ]
+  },
+  "PlaywrightAdapter": {
+    "evaluate": [
+      "self",
+      "page",
+      "expression",
+      "arg"
+    ],
+    "setup_console_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "setup_error_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "retrieve_console_messages": [
+      "self",
+      "page"
+    ],
+    "cleanup_console_capture": [
+      "self",
+      "page",
+      "handle_console",
+      "handle_error"
+    ],
+    "get_imports": [
+      "self"
+    ]
+  },
+  "StealthAdapter": {
+    "__init__": [
+      "self"
+    ],
+    "_check_stealth_availability": [
+      "self"
+    ],
+    "apply_stealth": [
+      "self",
+      "page"
+    ],
+    "evaluate": [
+      "self",
+      "page",
+      "expression",
+      "arg"
+    ],
+    "setup_console_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "setup_error_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "retrieve_console_messages": [
+      "self",
+      "page"
+    ],
+    "cleanup_console_capture": [
+      "self",
+      "page",
+      "handle_console",
+      "handle_error"
+    ],
+    "get_imports": [
+      "self"
+    ]
+  },
+  "UndetectedAdapter": {
+    "__init__": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "page",
+      "expression",
+      "arg"
+    ],
+    "setup_console_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "setup_error_capture": [
+      "self",
+      "page",
+      "captured_console"
+    ],
+    "retrieve_console_messages": [
+      "self",
+      "page"
+    ],
+    "cleanup_console_capture": [
+      "self",
+      "page",
+      "handle_console",
+      "handle_error"
+    ],
+    "get_imports": [
+      "self"
+    ]
+  },
+  "__all__": [],
+  "console": [],
+  "get_global_config": [],
+  "save_global_config": [
+    "config"
+  ],
+  "setup_llm_config": [],
+  "stream_llm_response": [
+    "url",
+    "markdown",
+    "query",
+    "provider",
+    "token"
+  ],
+  "parse_key_values": [
+    "ctx",
+    "param",
+    "value"
+  ],
+  "load_config_file": [
+    "path"
+  ],
+  "load_schema_file": [
+    "path"
+  ],
+  "run_crawler": [
+    "url",
+    "browser_cfg",
+    "crawler_cfg",
+    "verbose"
+  ],
+  "show_examples": [],
+  "get_directory_size": [
+    "path"
+  ],
+  "display_profiles_table": [
+    "profiles"
+  ],
+  "create_profile_interactive": [
+    "profiler"
+  ],
+  "delete_profile_interactive": [
+    "profiler"
+  ],
+  "crawl_with_profile_cli": [
+    "profile_path",
+    "url"
+  ],
+  "use_profile_to_crawl": [],
+  "manage_profiles": [],
+  "cli": [],
+  "browser_cmd": [],
+  "browser_status_cmd": [],
+  "browser_start_cmd": [
+    "browser_type",
+    "port",
+    "headless"
+  ],
+  "browser_stop_cmd": [],
+  "browser_view_cmd": [
+    "url"
+  ],
+  "browser_restart_cmd": [
+    "browser_type",
+    "port",
+    "headless"
+  ],
+  "cdp_cmd": [
+    "user_data_dir",
+    "port",
+    "browser_type",
+    "headless",
+    "incognito"
+  ],
+  "crawl_cmd": [
+    "url",
+    "browser_config",
+    "crawler_config",
+    "filter_config",
+    "extraction_config",
+    "json_extract",
+    "schema",
+    "browser",
+    "crawler",
+    "output",
+    "output_file",
+    "bypass_cache",
+    "question",
+    "verbose",
+    "profile",
+    "deep_crawl",
+    "max_pages"
+  ],
+  "examples_cmd": [],
+  "config_cmd": [],
+  "config_list_cmd": [],
+  "config_get_cmd": [
+    "key"
+  ],
+  "config_set_cmd": [
+    "key",
+    "value"
+  ],
+  "profiles_cmd": [],
+  "default": [
+    "url",
+    "example",
+    "browser_config",
+    "crawler_config",
+    "filter_config",
+    "extraction_config",
+    "json_extract",
+    "schema",
+    "browser",
+    "crawler",
+    "output",
+    "bypass_cache",
+    "question",
+    "verbose",
+    "profile",
+    "deep_crawl",
+    "max_pages"
+  ],
+  "LINK_PATTERN": [],
+  "fast_urljoin": [
+    "base",
+    "url"
+  ],
+  "MarkdownGenerationStrategy": {
+    "__init__": [
+      "self",
+      "content_filter",
+      "options",
+      "verbose",
+      "content_source"
+    ],
+    "generate_markdown": [
+      "self",
+      "input_html",
+      "base_url",
+      "html2text_options",
+      "content_filter",
+      "citations"
+    ]
+  },
+  "DefaultMarkdownGenerator": {
+    "__init__": [
+      "self",
+      "content_filter",
+      "options",
+      "content_source"
+    ],
+    "convert_links_to_citations": [
+      "self",
+      "markdown",
+      "base_url"
+    ],
+    "generate_markdown": [
+      "self",
+      "input_html",
+      "base_url",
+      "html2text_options",
+      "options",
+      "content_filter",
+      "citations"
+    ]
+  },
+  "LogLevel": {
+    "DEFAULT": [],
+    "DEBUG": [],
+    "INFO": [],
+    "SUCCESS": [],
+    "WARNING": [],
+    "ERROR": [],
+    "CRITICAL": [],
+    "ALERT": [],
+    "NOTICE": [],
+    "EXCEPTION": [],
+    "FATAL": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "LogColor": {
+    "DEBUG": [],
+    "INFO": [],
+    "SUCCESS": [],
+    "WARNING": [],
+    "ERROR": [],
+    "CYAN": [],
+    "GREEN": [],
+    "YELLOW": [],
+    "MAGENTA": [],
+    "DIM_MAGENTA": [],
+    "RED": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "AsyncLoggerBase": {
+    "debug": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "info": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "success": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "warning": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "error": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "url_status": [
+      "self",
+      "url",
+      "success",
+      "timing",
+      "tag",
+      "url_length"
+    ],
+    "error_status": [
+      "self",
+      "url",
+      "error",
+      "tag",
+      "url_length"
+    ]
+  },
+  "AsyncLogger": {
+    "DEFAULT_ICONS": [],
+    "DEFAULT_COLORS": [],
+    "__init__": [
+      "self",
+      "log_file",
+      "log_level",
+      "tag_width",
+      "icons",
+      "colors",
+      "verbose"
+    ],
+    "_format_tag": [
+      "self",
+      "tag"
+    ],
+    "_get_icon": [
+      "self",
+      "tag"
+    ],
+    "_shorten": [
+      "self",
+      "text",
+      "length",
+      "placeholder"
+    ],
+    "_write_to_file": [
+      "self",
+      "message"
+    ],
+    "_log": [
+      "self",
+      "level",
+      "message",
+      "tag",
+      "params",
+      "colors",
+      "boxes",
+      "base_color"
+    ],
+    "debug": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "info": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "success": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "warning": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "critical": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "exception": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "fatal": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "alert": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "notice": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "error": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "url_status": [
+      "self",
+      "url",
+      "success",
+      "timing",
+      "tag",
+      "url_length"
+    ],
+    "error_status": [
+      "self",
+      "url",
+      "error",
+      "tag",
+      "url_length"
+    ]
+  },
+  "AsyncFileLogger": {
+    "__init__": [
+      "self",
+      "log_file"
+    ],
+    "_write_to_file": [
+      "self",
+      "level",
+      "message",
+      "tag"
+    ],
+    "debug": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "info": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "success": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "warning": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "error": [
+      "self",
+      "message",
+      "tag"
+    ],
+    "url_status": [
+      "self",
+      "url",
+      "success",
+      "timing",
+      "tag",
+      "url_length"
+    ],
+    "error_status": [
+      "self",
+      "url",
+      "error",
+      "tag",
+      "url_length"
+    ]
+  },
+  "DEFAULT_PROVIDER": [],
+  "DEFAULT_PROVIDER_API_KEY": [],
+  "MODEL_REPO_BRANCH": [],
+  "PROVIDER_MODELS": [],
+  "PROVIDER_MODELS_PREFIXES": [],
+  "CHUNK_TOKEN_THRESHOLD": [],
+  "OVERLAP_RATE": [],
+  "WORD_TOKEN_RATE": [],
+  "MIN_WORD_THRESHOLD": [],
+  "IMAGE_DESCRIPTION_MIN_WORD_THRESHOLD": [],
+  "IMPORTANT_ATTRS": [],
+  "ONLY_TEXT_ELIGIBLE_TAGS": [],
+  "SOCIAL_MEDIA_DOMAINS": [],
+  "IMAGE_SCORE_THRESHOLD": [],
+  "MAX_METRICS_HISTORY": [],
+  "NEED_MIGRATION": [],
+  "URL_LOG_SHORTEN_LENGTH": [],
+  "SHOW_DEPRECATION_WARNINGS": [],
+  "SCREENSHOT_HEIGHT_TRESHOLD": [],
+  "PAGE_TIMEOUT": [],
+  "DOWNLOAD_PAGE_TIMEOUT": [],
+  "USER_SETTINGS": [],
+  "OG_REGEX": [],
+  "TWITTER_REGEX": [],
+  "DIMENSION_REGEX": [],
+  "parse_srcset": [
+    "s"
+  ],
+  "parse_dimension": [
+    "dimension"
+  ],
+  "fetch_image_file_size": [
+    "img",
+    "base_url"
+  ],
+  "ContentScrapingStrategy": {
+    "scrap": [
+      "self",
+      "url",
+      "html"
+    ],
+    "ascrap": [
+      "self",
+      "url",
+      "html"
+    ]
+  },
+  "LXMLWebScrapingStrategy": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "_log": [
+      "self",
+      "level",
+      "message",
+      "tag"
+    ],
+    "scrap": [
+      "self",
+      "url",
+      "html"
+    ],
+    "ascrap": [
+      "self",
+      "url",
+      "html"
+    ],
+    "process_element": [
+      "self",
+      "url",
+      "element"
+    ],
+    "_process_element": [
+      "self",
+      "url",
+      "element",
+      "media",
+      "internal_links_dict",
+      "external_links_dict",
+      "page_context"
+    ],
+    "find_closest_parent_with_useful_text": [
+      "self",
+      "element"
+    ],
+    "flatten_nested_elements": [
+      "self",
+      "element"
+    ],
+    "process_image": [
+      "self",
+      "img",
+      "url",
+      "index",
+      "total_images"
+    ],
+    "remove_empty_elements_fast": [
+      "self",
+      "root",
+      "word_count_threshold"
+    ],
+    "remove_unwanted_attributes_fast": [
+      "self",
+      "root",
+      "important_attrs",
+      "keep_data_attributes"
+    ],
+    "_scrap": [
+      "self",
+      "url",
+      "html",
+      "word_count_threshold",
+      "css_selector",
+      "target_elements"
+    ]
+  },
+  "WebScrapingStrategy": [],
+  "AsyncWebCrawler": {
+    "_domain_last_hit": [],
+    "__init__": [
+      "self",
+      "crawler_strategy",
+      "config",
+      "base_directory",
+      "thread_safe",
+      "logger"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "nullcontext": [
+      "self"
+    ],
+    "arun": [
+      "self",
+      "url",
+      "config"
+    ],
+    "aprocess_html": [
+      "self",
+      "url",
+      "html",
+      "extracted_content",
+      "config",
+      "screenshot_data",
+      "pdf_data",
+      "verbose"
+    ],
+    "arun_many": [
+      "self",
+      "urls",
+      "config",
+      "dispatcher"
+    ],
+    "aseed_urls": [
+      "self",
+      "domain_or_domains",
+      "config"
+    ]
+  },
+  "BrowserProfiler": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "_is_windows": [
+      "self"
+    ],
+    "_is_macos": [
+      "self"
+    ],
+    "_is_linux": [
+      "self"
+    ],
+    "_get_quit_message": [
+      "self",
+      "tag"
+    ],
+    "_listen_windows": [
+      "self",
+      "user_done_event",
+      "check_browser_process",
+      "tag"
+    ],
+    "_listen_unix": [
+      "self",
+      "user_done_event",
+      "check_browser_process",
+      "tag"
+    ],
+    "_listen_fallback": [
+      "self",
+      "user_done_event",
+      "check_browser_process",
+      "tag"
+    ],
+    "create_profile": [
+      "self",
+      "profile_name",
+      "browser_config"
+    ],
+    "list_profiles": [
+      "self"
+    ],
+    "get_profile_path": [
+      "self",
+      "profile_name"
+    ],
+    "delete_profile": [
+      "self",
+      "profile_name_or_path"
+    ],
+    "interactive_manager": [
+      "self",
+      "crawl_callback"
+    ],
+    "launch_standalone_browser": [
+      "self",
+      "browser_type",
+      "user_data_dir",
+      "debugging_port",
+      "headless",
+      "save_as_builtin"
+    ],
+    "launch_builtin_browser": [
+      "self",
+      "browser_type",
+      "debugging_port",
+      "headless"
+    ],
+    "get_builtin_browser_info": [
+      "self"
+    ],
+    "_is_browser_running": [
+      "self",
+      "pid"
+    ],
+    "kill_builtin_browser": [
+      "self"
+    ],
+    "get_builtin_browser_status": [
+      "self"
+    ]
+  },
+  "CacheMode": [],
+  "AsyncUrlSeeder": [],
+  "ChunkingStrategy": [],
+  "RegexChunking": [],
+  "BaseDispatcher": [],
+  "MemoryAdaptiveDispatcher": [],
+  "SemaphoreDispatcher": [],
+  "RateLimiter": [],
+  "CrawlerMonitor": [],
+  "DeepCrawlStrategy": [],
+  "BFSDeepCrawlStrategy": [],
+  "FilterChain": [],
+  "ContentTypeFilter": [],
+  "DomainFilter": [],
+  "URLFilter": [],
+  "FilterStats": [],
+  "SEOFilter": [],
+  "KeywordRelevanceScorer": [],
+  "URLScorer": [],
+  "CompositeScorer": [],
+  "DomainAuthorityScorer": [],
+  "FreshnessScorer": [],
+  "PathDepthScorer": [],
+  "BestFirstCrawlingStrategy": [],
+  "DFSDeepCrawlStrategy": [],
+  "DeepCrawlDecorator": [],
+  "create_llm_config": [],
+  "__location__": [],
+  "get_available_memory": [
+    "device"
+  ],
+  "calculate_batch_size": [
+    "device"
+  ],
+  "get_device": [],
+  "set_model_device": [
+    "model"
+  ],
+  "load_bert_base_uncased": [],
+  "load_HF_embedding_model": [
+    "model_name"
+  ],
+  "load_text_classifier": [],
+  "load_text_multilabel_classifier": [],
+  "load_nltk_punkt": [],
+  "load_spacy_model": [],
+  "download_all_models": [
+    "remove_existing"
+  ],
+  "CrawlState": {
+    "save": [
+      "self",
+      "path"
+    ],
+    "load": [
+      "cls",
+      "path"
+    ],
+    "_crawl_result_to_dict": [
+      "cr"
+    ],
+    "_dict_to_crawl_result": [
+      "d"
+    ]
+  },
+  "AdaptiveConfig": {
+    "validate": [
+      "self"
+    ]
+  },
+  "CrawlStrategy": {
+    "calculate_confidence": [
+      "self",
+      "state"
+    ],
+    "rank_links": [
+      "self",
+      "state",
+      "config"
+    ],
+    "should_stop": [
+      "self",
+      "state",
+      "config"
+    ],
+    "update_state": [
+      "self",
+      "state",
+      "new_results"
+    ]
+  },
+  "StatisticalStrategy": {
+    "__init__": [
+      "self"
+    ],
+    "calculate_confidence": [
+      "self",
+      "state"
+    ],
+    "_calculate_coverage": [
+      "self",
+      "state"
+    ],
+    "_calculate_consistency": [
+      "self",
+      "state"
+    ],
+    "_calculate_saturation": [
+      "self",
+      "state"
+    ],
+    "rank_links": [
+      "self",
+      "state",
+      "config"
+    ],
+    "_calculate_relevance": [
+      "self",
+      "link",
+      "state"
+    ],
+    "_calculate_novelty": [
+      "self",
+      "link",
+      "state"
+    ],
+    "_calculate_authority": [
+      "self",
+      "link"
+    ],
+    "should_stop": [
+      "self",
+      "state",
+      "config"
+    ],
+    "update_state": [
+      "self",
+      "state",
+      "new_results"
+    ],
+    "_tokenize": [
+      "self",
+      "text"
+    ],
+    "_get_document_terms": [
+      "self",
+      "crawl_result"
+    ]
+  },
+  "EmbeddingStrategy": {
+    "__init__": [
+      "self",
+      "embedding_model",
+      "llm_config"
+    ],
+    "_get_embeddings": [
+      "self",
+      "texts"
+    ],
+    "_compute_distance_matrix": [
+      "self",
+      "query_embeddings",
+      "kb_embeddings"
+    ],
+    "_get_cached_distance_matrix": [
+      "self",
+      "query_embeddings",
+      "kb_embeddings"
+    ],
+    "map_query_semantic_space": [
+      "self",
+      "query",
+      "n_synthetic"
+    ],
+    "compute_coverage_shape": [
+      "self",
+      "query_points",
+      "alpha"
+    ],
+    "_sample_boundary_points": [
+      "self",
+      "shape",
+      "n_samples"
+    ],
+    "find_coverage_gaps": [
+      "self",
+      "kb_embeddings",
+      "query_embeddings"
+    ],
+    "select_links_for_expansion": [
+      "self",
+      "candidate_links",
+      "gaps",
+      "kb_embeddings"
+    ],
+    "calculate_confidence": [
+      "self",
+      "state"
+    ],
+    "rank_links": [
+      "self",
+      "state",
+      "config"
+    ],
+    "validate_coverage": [
+      "self",
+      "state"
+    ],
+    "should_stop": [
+      "self",
+      "state",
+      "config"
+    ],
+    "get_quality_confidence": [
+      "self",
+      "state"
+    ],
+    "update_state": [
+      "self",
+      "state",
+      "new_results"
+    ]
+  },
+  "AdaptiveCrawler": {
+    "__init__": [
+      "self",
+      "crawler",
+      "config",
+      "strategy"
+    ],
+    "_create_strategy": [
+      "self",
+      "strategy_name"
+    ],
+    "digest": [
+      "self",
+      "start_url",
+      "query",
+      "resume_from"
+    ],
+    "_crawl_with_preview": [
+      "self",
+      "url",
+      "query"
+    ],
+    "_crawl_batch": [
+      "self",
+      "links_with_scores",
+      "query"
+    ],
+    "confidence": [
+      "self"
+    ],
+    "coverage_stats": [
+      "self"
+    ],
+    "is_sufficient": [
+      "self"
+    ],
+    "print_stats": [
+      "self",
+      "detailed"
+    ],
+    "_get_content_from_result": [
+      "self",
+      "result"
+    ],
+    "export_knowledge_base": [
+      "self",
+      "filepath",
+      "format"
+    ],
+    "_crawl_result_to_export_dict": [
+      "self",
+      "result"
+    ],
+    "import_knowledge_base": [
+      "self",
+      "filepath",
+      "format"
+    ],
+    "_import_dict_to_crawl_result": [
+      "self",
+      "data"
+    ],
+    "get_relevant_content": [
+      "self",
+      "top_k"
+    ]
+  },
+  "__version__": [],
+  "__nightly_version__": [],
+  "DatabaseMigration": {
+    "__init__": [
+      "self",
+      "db_path"
+    ],
+    "_ensure_content_dirs": [
+      "self",
+      "base_path"
+    ],
+    "_generate_content_hash": [
+      "self",
+      "content"
+    ],
+    "_store_content": [
+      "self",
+      "content",
+      "content_type"
+    ],
+    "migrate_database": [
+      "self"
+    ]
+  },
+  "backup_database": [
+    "db_path"
+  ],
+  "IdentityChunking": {
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "NlpSentenceChunking": {
+    "__init__": [
+      "self"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "TopicSegmentationChunking": {
+    "__init__": [
+      "self",
+      "num_keywords"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ],
+    "extract_keywords": [
+      "self",
+      "text"
+    ],
+    "chunk_with_topics": [
+      "self",
+      "text"
+    ]
+  },
+  "FixedLengthWordChunking": {
+    "__init__": [
+      "self",
+      "chunk_size"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "SlidingWindowChunking": {
+    "__init__": [
+      "self",
+      "window_size",
+      "step"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "OverlappingWindowChunking": {
+    "__init__": [
+      "self",
+      "window_size",
+      "overlap"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "BROWSER_DISABLE_OPTIONS": [],
+  "ManagedBrowser": {
+    "build_browser_flags": [
+      "config"
+    ],
+    "__init__": [
+      "self",
+      "browser_type",
+      "user_data_dir",
+      "headless",
+      "logger",
+      "host",
+      "debugging_port",
+      "cdp_url",
+      "browser_config"
+    ],
+    "start": [
+      "self"
+    ],
+    "_initial_startup_check": [
+      "self"
+    ],
+    "_monitor_browser_process": [
+      "self"
+    ],
+    "_get_browser_path_WIP": [
+      "self"
+    ],
+    "_get_browser_path": [
+      "self"
+    ],
+    "_get_browser_args": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "create_profile": [
+      "browser_config",
+      "profile_name",
+      "logger"
+    ],
+    "list_profiles": [],
+    "delete_profile": [
+      "profile_name_or_path"
+    ]
+  },
+  "clone_runtime_state": [
+    "src",
+    "dst",
+    "crawlerRunConfig",
+    "browserConfig"
+  ],
+  "BrowserManager": {
+    "_playwright_instance": [],
+    "get_playwright": [
+      "cls",
+      "use_undetected"
+    ],
+    "__init__": [
+      "self",
+      "browser_config",
+      "logger",
+      "use_undetected"
+    ],
+    "start": [
+      "self"
+    ],
+    "_verify_cdp_ready": [
+      "self",
+      "cdp_url"
+    ],
+    "_build_browser_args": [
+      "self"
+    ],
+    "setup_context": [
+      "self",
+      "context",
+      "crawlerRunConfig",
+      "is_default"
+    ],
+    "create_browser_context": [
+      "self",
+      "crawlerRunConfig"
+    ],
+    "_make_config_signature": [
+      "self",
+      "crawlerRunConfig"
+    ],
+    "_apply_stealth_to_page": [
+      "self",
+      "page"
+    ],
+    "_get_page_by_target_id": [
+      "self",
+      "context",
+      "target_id"
+    ],
+    "get_page": [
+      "self",
+      "crawlerRunConfig"
+    ],
+    "kill_session": [
+      "self",
+      "session_id"
+    ],
+    "_cleanup_expired_sessions": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "CacheContext": {
+    "__init__": [
+      "self",
+      "url",
+      "cache_mode",
+      "always_bypass"
+    ],
+    "should_read": [
+      "self"
+    ],
+    "should_write": [
+      "self"
+    ],
+    "display_url": [
+      "self"
+    ]
+  },
+  "_legacy_to_cache_mode": [
+    "disable_cache",
+    "bypass_cache",
+    "no_cache_read",
+    "no_cache_write"
+  ],
+  "COLLINFO_URL": [],
+  "TTL": [],
+  "_meta_rx": [],
+  "_charset_rx": [],
+  "_title_rx": [],
+  "_link_rx": [],
+  "_parse_sitemap_lastmod": [
+    "xml_content"
+  ],
+  "_is_cache_valid": [
+    "cache_path",
+    "ttl_hours",
+    "validate_lastmod",
+    "current_lastmod"
+  ],
+  "_read_cache": [
+    "cache_path"
+  ],
+  "_write_cache": [
+    "cache_path",
+    "urls",
+    "sitemap_url",
+    "sitemap_lastmod"
+  ],
+  "_match": [
+    "url",
+    "pattern"
+  ],
+  "_parse_head": [
+    "src"
+  ],
+  "base_directory": [],
+  "DB_PATH": [],
+  "AsyncDatabaseManager": {
+    "__init__": [
+      "self",
+      "pool_size",
+      "max_retries"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "get_connection": [
+      "self"
+    ],
+    "execute_with_retry": [
+      "self",
+      "operation"
+    ],
+    "ainit_db": [
+      "self"
+    ],
+    "update_db_schema": [
+      "self"
+    ],
+    "aalter_db_add_column": [
+      "self",
+      "new_column",
+      "db"
+    ],
+    "aget_cached_url": [
+      "self",
+      "url"
+    ],
+    "aget_cache_metadata": [
+      "self",
+      "url"
+    ],
+    "aupdate_cache_metadata": [
+      "self",
+      "url",
+      "etag",
+      "last_modified",
+      "head_fingerprint"
+    ],
+    "acache_url": [
+      "self",
+      "result"
+    ],
+    "aget_total_count": [
+      "self"
+    ],
+    "aclear_db": [
+      "self"
+    ],
+    "aflush_db": [
+      "self"
+    ],
+    "_store_content": [
+      "self",
+      "content",
+      "content_type"
+    ],
+    "_load_content": [
+      "self",
+      "content_hash",
+      "content_type"
+    ]
+  },
+  "async_db_manager": [],
+  "TerminalUI": {
+    "__init__": [
+      "self",
+      "refresh_rate",
+      "max_width"
+    ],
+    "start": [
+      "self",
+      "monitor"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_ui_loop": [
+      "self"
+    ],
+    "_update_display": [
+      "self"
+    ],
+    "_create_status_panel": [
+      "self"
+    ],
+    "_create_pipeline_panel": [
+      "self"
+    ],
+    "_create_task_details_panel": [
+      "self"
+    ],
+    "_create_footer": [
+      "self"
+    ]
+  },
+  "GoogleSearchCrawler": {
+    "__meta__": [],
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "url",
+      "query",
+      "search_type",
+      "schema_cache_path"
+    ],
+    "_build_schemas": [
+      "self",
+      "html",
+      "schema_cache_path"
+    ]
+  },
+  "__meta__": [],
+  "AmazonProductCrawler": {
+    "run": [
+      "self",
+      "url"
+    ]
+  },
+  "C4AScriptError": {
+    "__init__": [
+      "self",
+      "message",
+      "line",
+      "column",
+      "error_type",
+      "details"
+    ],
+    "_format_message": [
+      "self"
+    ],
+    "from_exception": [
+      "cls",
+      "exc",
+      "script"
+    ]
+  },
+  "GRAMMAR": [],
+  "Cmd": {},
+  "Proc": {},
+  "ASTBuilder": {
+    "_strip": [
+      "self",
+      "s"
+    ],
+    "start": [
+      "self"
+    ],
+    "line": [
+      "self",
+      "i"
+    ],
+    "command": [
+      "self",
+      "i"
+    ],
+    "wait_cmd": [
+      "self",
+      "rest",
+      "timeout"
+    ],
+    "go": [
+      "self",
+      "u"
+    ],
+    "reload": [
+      "self"
+    ],
+    "back": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ],
+    "click": [
+      "self"
+    ],
+    "double_click": [
+      "self"
+    ],
+    "right_click": [
+      "self"
+    ],
+    "_handle_click": [
+      "self",
+      "op",
+      "args"
+    ],
+    "coords": [
+      "self",
+      "x",
+      "y"
+    ],
+    "move": [
+      "self",
+      "c"
+    ],
+    "drag": [
+      "self",
+      "c1",
+      "c2"
+    ],
+    "scroll": [
+      "self",
+      "dir_tok",
+      "amt"
+    ],
+    "type": [
+      "self",
+      "tok"
+    ],
+    "clear": [
+      "self",
+      "sel"
+    ],
+    "set_input": [
+      "self",
+      "sel",
+      "val"
+    ],
+    "press": [
+      "self",
+      "w"
+    ],
+    "key_down": [
+      "self",
+      "w"
+    ],
+    "key_up": [
+      "self",
+      "w"
+    ],
+    "eval_cmd": [
+      "self",
+      "txt"
+    ],
+    "setvar": [
+      "self",
+      "n",
+      "v"
+    ],
+    "proc_call": [
+      "self",
+      "n"
+    ],
+    "proc_def": [
+      "self",
+      "n"
+    ],
+    "include": [
+      "self",
+      "p"
+    ],
+    "comment": [
+      "self"
+    ],
+    "if_cmd": [
+      "self",
+      "condition",
+      "then_cmd",
+      "else_cmd"
+    ],
+    "condition": [
+      "self",
+      "cond"
+    ],
+    "not_cond": [
+      "self",
+      "cond"
+    ],
+    "exists_cond": [
+      "self",
+      "selector"
+    ],
+    "js_cond": [
+      "self",
+      "expr"
+    ],
+    "repeat_cmd": [
+      "self",
+      "cmd",
+      "count"
+    ],
+    "repeat_count": [
+      "self",
+      "value"
+    ]
+  },
+  "Compiler": {
+    "__init__": [
+      "self",
+      "root"
+    ],
+    "compile": [
+      "self",
+      "text"
+    ],
+    "_parse_with_includes": [
+      "self",
+      "txt",
+      "seen"
+    ],
+    "_collect_procs": [
+      "self",
+      "ir"
+    ],
+    "_inline_calls": [
+      "self",
+      "ir"
+    ],
+    "_apply_set_vars": [
+      "self",
+      "ir"
+    ],
+    "_emit_js": [
+      "self",
+      "cmd"
+    ],
+    "_emit_condition": [
+      "self",
+      "condition"
+    ],
+    "_handle_cmd_or_proc": [
+      "self",
+      "cmd"
+    ]
+  },
+  "compile_string": [
+    "script"
+  ],
+  "compile_file": [
+    "path"
+  ],
+  "compile_lines": [
+    "lines"
+  ],
+  "DEMO": [],
+  "ErrorType": {
+    "SYNTAX": [],
+    "SEMANTIC": [],
+    "RUNTIME": []
+  },
+  "Severity": {
+    "ERROR": [],
+    "WARNING": [],
+    "INFO": []
+  },
+  "Suggestion": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ErrorDetail": {
+    "to_dict": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "formatted_message": [
+      "self"
+    ],
+    "simple_message": [
+      "self"
+    ]
+  },
+  "WarningDetail": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CompilationResult": {
+    "to_dict": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "has_errors": [
+      "self"
+    ],
+    "has_warnings": [
+      "self"
+    ],
+    "first_error": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "C4ACompiler": {
+    "ERROR_CODES": [],
+    "compile": [
+      "cls",
+      "script",
+      "root"
+    ],
+    "validate": [
+      "cls",
+      "script"
+    ],
+    "compile_file": [
+      "cls",
+      "path"
+    ],
+    "_exception_to_error": [
+      "cls",
+      "exc",
+      "script_lines"
+    ],
+    "_handle_unexpected_token": [
+      "cls",
+      "exc",
+      "script_lines"
+    ],
+    "_handle_unexpected_chars": [
+      "cls",
+      "exc",
+      "script_lines"
+    ],
+    "_handle_value_error": [
+      "cls",
+      "exc",
+      "script_lines"
+    ],
+    "generate_script": [
+      "html",
+      "query",
+      "mode",
+      "llm_config"
+    ]
+  },
+  "compile": [
+    "script",
+    "root"
+  ],
+  "validate": [
+    "script"
+  ],
+  "AnchorElement": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "attrs",
+      "count",
+      "outcount"
+    ]
+  },
+  "ListElement": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "num"
+    ]
+  },
+  "unifiable_n": [],
+  "hn": [
+    "tag"
+  ],
+  "dumb_property_dict": [
+    "style"
+  ],
+  "dumb_css_parser": [
+    "data"
+  ],
+  "element_style": [
+    "attrs",
+    "style_def",
+    "parent_style"
+  ],
+  "google_list_style": [
+    "style"
+  ],
+  "google_has_height": [
+    "style"
+  ],
+  "google_text_emphasis": [
+    "style"
+  ],
+  "google_fixed_width_font": [
+    "style"
+  ],
+  "list_numbering_start": [
+    "attrs"
+  ],
+  "skipwrap": [
+    "para",
+    "wrap_links",
+    "wrap_list_items",
+    "wrap_tables"
+  ],
+  "escape_md": [
+    "text"
+  ],
+  "escape_md_section": [
+    "text",
+    "escape_backslash",
+    "snob",
+    "escape_dot",
+    "escape_plus",
+    "escape_dash"
+  ],
+  "reformat_table": [
+    "lines",
+    "right_margin"
+  ],
+  "pad_tables_in_text": [
+    "text",
+    "right_margin"
+  ],
+  "HTML2Text": {
+    "__init__": [
+      "self",
+      "out",
+      "baseurl",
+      "bodywidth"
+    ],
+    "update_params": [
+      "self"
+    ],
+    "feed": [
+      "self",
+      "data"
+    ],
+    "handle": [
+      "self",
+      "data"
+    ],
+    "outtextf": [
+      "self",
+      "s"
+    ],
+    "finish": [
+      "self"
+    ],
+    "handle_charref": [
+      "self",
+      "c"
+    ],
+    "handle_entityref": [
+      "self",
+      "c"
+    ],
+    "handle_starttag": [
+      "self",
+      "tag",
+      "attrs"
+    ],
+    "handle_endtag": [
+      "self",
+      "tag"
+    ],
+    "previousIndex": [
+      "self",
+      "attrs"
+    ],
+    "handle_emphasis": [
+      "self",
+      "start",
+      "tag_style",
+      "parent_style"
+    ],
+    "handle_tag": [
+      "self",
+      "tag",
+      "attrs",
+      "start"
+    ],
+    "pbr": [
+      "self"
+    ],
+    "p": [
+      "self"
+    ],
+    "soft_br": [
+      "self"
+    ],
+    "o": [
+      "self",
+      "data",
+      "puredata",
+      "force"
+    ],
+    "handle_data": [
+      "self",
+      "data",
+      "entity_char"
+    ],
+    "charref": [
+      "self",
+      "name"
+    ],
+    "entityref": [
+      "self",
+      "c"
+    ],
+    "google_nest_count": [
+      "self",
+      "style"
+    ],
+    "optwrap": [
+      "self",
+      "text"
+    ]
+  },
+  "html2text": [
+    "html",
+    "baseurl",
+    "bodywidth"
+  ],
+  "CustomHTML2Text": {
+    "__init__": [
+      "self"
+    ],
+    "update_params": [
+      "self"
+    ],
+    "handle_tag": [
+      "self",
+      "tag",
+      "attrs",
+      "start"
+    ],
+    "handle_data": [
+      "self",
+      "data",
+      "entity_char"
+    ]
+  },
+  "OutCallback": {
+    "__call__": [
+      "self",
+      "s"
+    ]
+  },
+  "UNICODE_SNOB": [],
+  "TABLE_MARKER_FOR_PAD": [],
+  "ESCAPE_SNOB": [],
+  "ESCAPE_BACKSLASH": [],
+  "ESCAPE_DOT": [],
+  "ESCAPE_PLUS": [],
+  "ESCAPE_DASH": [],
+  "LINKS_EACH_PARAGRAPH": [],
+  "BODY_WIDTH": [],
+  "SKIP_INTERNAL_LINKS": [],
+  "INLINE_LINKS": [],
+  "PROTECT_LINKS": [],
+  "WRAP_LINKS": [],
+  "WRAP_LIST_ITEMS": [],
+  "WRAP_TABLES": [],
+  "GOOGLE_LIST_INDENT": [],
+  "BOLD_TEXT_STYLE_VALUES": [],
+  "IGNORE_ANCHORS": [],
+  "IGNORE_MAILTO_LINKS": [],
+  "IGNORE_IMAGES": [],
+  "IMAGES_AS_HTML": [],
+  "IMAGES_TO_ALT": [],
+  "IMAGES_WITH_SIZE": [],
+  "IGNORE_EMPHASIS": [],
+  "MARK_CODE": [],
+  "DECODE_ERRORS": [],
+  "DEFAULT_IMAGE_ALT": [],
+  "PAD_TABLES": [],
+  "USE_AUTOMATIC_LINKS": [],
+  "RE_SPACE": [],
+  "RE_ORDERED_LIST_MATCHER": [],
+  "RE_UNORDERED_LIST_MATCHER": [],
+  "RE_MD_CHARS_MATCHER": [],
+  "RE_MD_CHARS_MATCHER_ALL": [],
+  "RE_LINK": [],
+  "RE_TABLE": [],
+  "RE_MD_DOT_MATCHER": [],
+  "RE_MD_PLUS_MATCHER": [],
+  "RE_MD_DASH_MATCHER": [],
+  "RE_SLASH_CHARS": [],
+  "RE_MD_BACKSLASH_MATCHER": [],
+  "UNIFIABLE": [],
+  "BYPASS_TABLES": [],
+  "IGNORE_TABLES": [],
+  "SINGLE_LINE_BREAK": [],
+  "OPEN_QUOTE": [],
+  "CLOSE_QUOTE": [],
+  "INCLUDE_SUP_SUB": [],
+  "URLPatternFilter": {
+    "__slots__": [],
+    "PATTERN_TYPES": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "use_glob",
+      "reverse"
+    ],
+    "_categorize_pattern": [
+      "self",
+      "pattern"
+    ],
+    "_add_pattern": [
+      "self",
+      "pattern",
+      "pattern_type"
+    ],
+    "apply": [
+      "self",
+      "url"
+    ]
+  },
+  "ContentRelevanceFilter": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "query",
+      "threshold",
+      "k1",
+      "b",
+      "avgdl"
+    ],
+    "apply": [
+      "self",
+      "url"
+    ],
+    "_build_document": [
+      "self",
+      "fields"
+    ],
+    "_tokenize": [
+      "self",
+      "text"
+    ],
+    "_bm25": [
+      "self",
+      "document"
+    ]
+  },
+  "PLATFORM": [],
+  "_SCORE_LOOKUP": [],
+  "_FRESHNESS_SCORES": [],
+  "ScoringStats": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "score"
+    ],
+    "get_average": [
+      "self"
+    ],
+    "get_min": [
+      "self"
+    ],
+    "get_max": [
+      "self"
+    ]
+  },
+  "ContentTypeScorer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "type_weights",
+      "weight"
+    ],
+    "_quick_extension": [
+      "url"
+    ],
+    "_calculate_score": [
+      "self",
+      "url"
+    ]
+  },
+  "PriorityT": [],
+  "P": [],
+  "deep_crawl_ctx": [],
+  "TraversalContext": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "priority_fn"
+    ],
+    "clone_for_level": [
+      "self"
+    ]
+  },
+  "PriorityQueue": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "insert": [
+      "self",
+      "priority",
+      "item"
+    ],
+    "extract": [
+      "self",
+      "top_n"
+    ],
+    "is_empty": [
+      "self"
+    ]
+  },
+  "BloomFilter": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "capacity",
+      "error_rate"
+    ],
+    "_optimal_size": [
+      "n",
+      "p"
+    ],
+    "_optimal_hashes": [
+      "n",
+      "m"
+    ],
+    "add": [
+      "self",
+      "item"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "copy": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "bit_count": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "collect_results": [
+    "url",
+    "crawler",
+    "config"
+  ],
+  "collect_many_results": [
+    "url",
+    "crawler",
+    "config"
+  ],
+  "calculate_quantum_batch_size": [
+    "depth",
+    "max_depth",
+    "frontier_size",
+    "visited_size"
+  ],
+  "BATCH_SIZE": [],
+  "init_db": [],
+  "alter_db_add_screenshot": [
+    "new_column"
+  ],
+  "check_db_path": [],
+  "get_cached_url": [
+    "url"
+  ],
+  "cache_url": [
+    "url",
+    "html",
+    "cleaned_html",
+    "markdown",
+    "extracted_content",
+    "success",
+    "media",
+    "links",
+    "metadata",
+    "screenshot"
+  ],
+  "get_total_count": [],
+  "clear_db": [],
+  "flush_db": [],
+  "update_existing_records": [
+    "new_column",
+    "default_value"
+  ],
+  "WebCrawler": {
+    "__init__": [
+      "self",
+      "crawler_strategy",
+      "always_by_pass_cache",
+      "verbose"
+    ],
+    "warmup": [
+      "self"
+    ],
+    "fetch_page": [
+      "self",
+      "url_model",
+      "provider",
+      "api_token",
+      "extract_blocks_flag",
+      "word_count_threshold",
+      "css_selector",
+      "screenshot",
+      "use_cached_html",
+      "extraction_strategy",
+      "chunking_strategy"
+    ],
+    "fetch_pages": [
+      "self",
+      "url_models",
+      "provider",
+      "api_token",
+      "extract_blocks_flag",
+      "word_count_threshold",
+      "use_cached_html",
+      "css_selector",
+      "screenshot",
+      "extraction_strategy",
+      "chunking_strategy"
+    ],
+    "run": [
+      "self",
+      "url",
+      "word_count_threshold",
+      "extraction_strategy",
+      "chunking_strategy",
+      "bypass_cache",
+      "css_selector",
+      "screenshot",
+      "user_agent",
+      "verbose"
+    ],
+    "process_html": [
+      "self",
+      "url",
+      "html",
+      "extracted_content",
+      "word_count_threshold",
+      "extraction_strategy",
+      "chunking_strategy",
+      "css_selector",
+      "screenshot",
+      "verbose",
+      "is_cached"
+    ]
+  },
+  "DocsManager": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "ensure_docs_exist": [
+      "self"
+    ],
+    "fetch_docs": [
+      "self"
+    ],
+    "list": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "sections",
+      "mode"
+    ],
+    "search": [
+      "self",
+      "query",
+      "top_k"
+    ]
+  },
+  "docs_manager": [],
+  "print_table": [
+    "headers",
+    "rows",
+    "padding"
+  ],
+  "docs": [],
+  "combine": [
+    "sections",
+    "mode"
+  ],
+  "search": [
+    "query",
+    "top_k",
+    "build_index"
+  ],
+  "update": [],
+  "index": [
+    "force_facts",
+    "clear_cache"
+  ],
+  "list": [],
+  "_compute_file_hash": [
+    "file_path"
+  ],
+  "AsyncLLMTextManager": {
+    "__init__": [
+      "self",
+      "docs_dir",
+      "logger",
+      "max_concurrent_calls",
+      "batch_size"
+    ],
+    "_process_document_batch": [
+      "self",
+      "doc_batch"
+    ],
+    "_validate_fact_line": [
+      "self",
+      "line"
+    ],
+    "_load_or_create_token_cache": [
+      "self",
+      "fact_file"
+    ],
+    "_save_token_cache": [
+      "self",
+      "fact_file",
+      "cache"
+    ],
+    "preprocess_text": [
+      "self",
+      "text"
+    ],
+    "maybe_load_bm25_index": [
+      "self",
+      "clear_cache"
+    ],
+    "build_search_index": [
+      "self",
+      "clear_cache"
+    ],
+    "generate_index_files": [
+      "self",
+      "force_generate_facts",
+      "clear_bm25_cache"
+    ],
+    "generate": [
+      "self",
+      "sections",
+      "mode"
+    ],
+    "search": [
+      "self",
+      "query",
+      "top_k"
+    ],
+    "_aggregate_search_scores": [
+      "self",
+      "doc_scores",
+      "score_threshold",
+      "query_tokens"
+    ],
+    "refresh_index": [
+      "self"
+    ]
+  },
+  "logger_driver": [],
+  "urllib3_logger": [],
+  "http_client_logger": [],
+  "driver_finder_logger": [],
+  "CrawlerStrategy": {
+    "crawl": [
+      "self",
+      "url"
+    ],
+    "take_screenshot": [
+      "self",
+      "save_path"
+    ],
+    "update_user_agent": [
+      "self",
+      "user_agent"
+    ],
+    "set_hook": [
+      "self",
+      "hook_type",
+      "hook"
+    ]
+  },
+  "CloudCrawlerStrategy": {
+    "__init__": [
+      "self",
+      "use_cached_html"
+    ],
+    "crawl": [
+      "self",
+      "url"
+    ]
+  },
+  "LocalSeleniumCrawlerStrategy": {
+    "__init__": [
+      "self",
+      "use_cached_html",
+      "js_code"
+    ],
+    "set_hook": [
+      "self",
+      "hook_type",
+      "hook"
+    ],
+    "execute_hook": [
+      "self",
+      "hook_type"
+    ],
+    "update_user_agent": [
+      "self",
+      "user_agent"
+    ],
+    "set_custom_headers": [
+      "self",
+      "headers"
+    ],
+    "_ensure_page_load": [
+      "self",
+      "max_checks",
+      "check_interval"
+    ],
+    "crawl": [
+      "self",
+      "url"
+    ],
+    "take_screenshot": [
+      "self"
+    ],
+    "quit": [
+      "self"
+    ]
+  },
+  "load_js_script": [
+    "script_name"
+  ],
+  "apply_png_predictor": [
+    "data",
+    "width",
+    "bits",
+    "color_channels"
+  ],
+  "paeth_predictor": [
+    "a",
+    "b",
+    "c"
+  ],
+  "clean_pdf_text_to_html": [
+    "page_number",
+    "text"
+  ],
+  "clean_pdf_text": [
+    "page_number",
+    "text"
+  ],
+  "PDFCrawlerStrategy": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "crawl": [
+      "self",
+      "url"
+    ],
+    "close": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "PDFContentScrapingStrategy": {
+    "__init__": [
+      "self",
+      "save_images_locally",
+      "extract_images",
+      "image_save_dir",
+      "batch_size",
+      "logger"
+    ],
+    "scrap": [
+      "self",
+      "url",
+      "html"
+    ],
+    "ascrap": [
+      "self",
+      "url",
+      "html"
+    ],
+    "_get_pdf_path": [
+      "self",
+      "url"
+    ]
+  },
+  "PDFMetadata": {},
+  "PDFPage": {},
+  "PDFProcessResult": {},
+  "PDFProcessorStrategy": {
+    "process": [
+      "self",
+      "pdf_path"
+    ]
+  },
+  "NaivePDFProcessorStrategy": {
+    "__init__": [
+      "self",
+      "image_dpi",
+      "image_quality",
+      "extract_images",
+      "save_images_locally",
+      "image_save_dir",
+      "batch_size"
+    ],
+    "process": [
+      "self",
+      "pdf_path"
+    ],
+    "process_batch": [
+      "self",
+      "pdf_path"
+    ],
+    "_process_page": [
+      "self",
+      "page",
+      "image_dir"
+    ],
+    "_extract_images": [
+      "self",
+      "page",
+      "image_dir"
+    ],
+    "_extract_links": [
+      "self",
+      "page"
+    ],
+    "_extract_metadata": [
+      "self",
+      "pdf_path",
+      "reader"
+    ],
+    "_parse_pdf_date": [
+      "self",
+      "date_str"
+    ]
+  }
+}

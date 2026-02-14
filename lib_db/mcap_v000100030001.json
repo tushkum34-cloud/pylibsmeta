@@ -1,0 +1,663 @@
+{
+  "MCAP0_MAGIC": [],
+  "LIBRARY_IDENTIFIER": [],
+  "CompressionType": {
+    "NONE": [],
+    "LZ4": [],
+    "ZSTD": []
+  },
+  "IndexType": {
+    "NONE": [],
+    "ATTACHMENT": [],
+    "CHUNK": [],
+    "MESSAGE": [],
+    "METADATA": [],
+    "ALL": []
+  },
+  "Writer": {
+    "__init__": [
+      "self",
+      "output",
+      "chunk_size",
+      "compression",
+      "index_types",
+      "repeat_channels",
+      "repeat_schemas",
+      "use_chunking",
+      "use_statistics",
+      "use_summary_offsets",
+      "enable_crcs",
+      "enable_data_crcs"
+    ],
+    "add_attachment": [
+      "self",
+      "create_time",
+      "log_time",
+      "name",
+      "media_type",
+      "data"
+    ],
+    "add_message": [
+      "self",
+      "channel_id",
+      "log_time",
+      "data",
+      "publish_time",
+      "sequence"
+    ],
+    "add_metadata": [
+      "self",
+      "name",
+      "data"
+    ],
+    "finish": [
+      "self"
+    ],
+    "register_channel": [
+      "self",
+      "topic",
+      "message_encoding",
+      "schema_id",
+      "metadata"
+    ],
+    "register_schema": [
+      "self",
+      "name",
+      "encoding",
+      "data"
+    ],
+    "start": [
+      "self",
+      "profile",
+      "library"
+    ],
+    "__flush": [
+      "self"
+    ],
+    "__finalize_chunk": [
+      "self"
+    ],
+    "__maybe_finalize_chunk": [
+      "self"
+    ]
+  },
+  "__all__": [],
+  "ReadDataStream": {
+    "__init__": [
+      "self",
+      "stream",
+      "calculate_crc"
+    ],
+    "count": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "length"
+    ],
+    "checksum": [
+      "self"
+    ],
+    "read1": [
+      "self"
+    ],
+    "read2": [
+      "self"
+    ],
+    "read4": [
+      "self"
+    ],
+    "read8": [
+      "self"
+    ],
+    "read_prefixed_string": [
+      "self"
+    ]
+  },
+  "RecordBuilder": {
+    "__init__": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "start_record": [
+      "self",
+      "opcode"
+    ],
+    "finish_record": [
+      "self"
+    ],
+    "end": [
+      "self"
+    ],
+    "write": [
+      "self",
+      "data"
+    ],
+    "write_prefixed_string": [
+      "self",
+      "value"
+    ],
+    "write1": [
+      "self",
+      "value"
+    ],
+    "write2": [
+      "self",
+      "value"
+    ],
+    "write4": [
+      "self",
+      "value"
+    ],
+    "write8": [
+      "self",
+      "value"
+    ]
+  },
+  "Opcode": {
+    "ATTACHMENT": [],
+    "ATTACHMENT_INDEX": [],
+    "CHANNEL": [],
+    "CHUNK": [],
+    "CHUNK_INDEX": [],
+    "DATA_END": [],
+    "FOOTER": [],
+    "HEADER": [],
+    "MESSAGE": [],
+    "MESSAGE_INDEX": [],
+    "METADATA": [],
+    "METADATA_INDEX": [],
+    "SCHEMA": [],
+    "STATISTICS": [],
+    "SUMMARY_OFFSET": []
+  },
+  "Profile": {
+    "ROS1": [],
+    "ROS2": []
+  },
+  "SchemaEncoding": {
+    "SelfDescribing": [],
+    "Protobuf": [],
+    "Flatbuffer": [],
+    "ROS1": [],
+    "ROS2": [],
+    "ROS2IDL": [],
+    "JSONSchema": []
+  },
+  "MessageEncoding": {
+    "ROS1": [],
+    "CDR": [],
+    "Protobuf": [],
+    "Flatbuffer": [],
+    "CBOR": [],
+    "JSON": []
+  },
+  "MAGIC_SIZE": [],
+  "CRCValidationError": {
+    "__init__": [
+      "self",
+      "expected",
+      "actual",
+      "record"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "breakup_chunk": [
+    "chunk",
+    "validate_crc"
+  ],
+  "get_chunk_data_stream": [
+    "chunk",
+    "validate_crc"
+  ],
+  "read_magic": [
+    "stream"
+  ],
+  "StreamReader": {
+    "__init__": [
+      "self",
+      "input",
+      "skip_magic",
+      "emit_chunks",
+      "validate_crcs",
+      "record_size_limit"
+    ],
+    "records": [
+      "self"
+    ],
+    "_read_record": [
+      "self",
+      "opcode",
+      "length"
+    ]
+  },
+  "DecoderFactory": {
+    "decoder_for": [
+      "self",
+      "message_encoding",
+      "schema"
+    ]
+  },
+  "__version__": [],
+  "QueueItem": [],
+  "_Orderable": {
+    "__init__": [
+      "self",
+      "item",
+      "reverse"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "_compare": [
+      "self",
+      "a",
+      "b"
+    ],
+    "_position_less_than": [
+      "self",
+      "other"
+    ],
+    "log_time": [
+      "self"
+    ],
+    "position": [
+      "self"
+    ]
+  },
+  "_ChunkIndexWrapper": {
+    "log_time": [
+      "self"
+    ],
+    "position": [
+      "self"
+    ]
+  },
+  "_MessageTupleWrapper": {
+    "log_time": [
+      "self"
+    ],
+    "position": [
+      "self"
+    ]
+  },
+  "_make_orderable": [
+    "item",
+    "reverse"
+  ],
+  "_MessageQueue": {
+    "push": [
+      "self",
+      "item"
+    ],
+    "pop": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "LogTimeOrderQueue": {
+    "__init__": [
+      "self",
+      "reverse"
+    ],
+    "push": [
+      "self",
+      "item"
+    ],
+    "pop": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "InsertOrderQueue": {
+    "__init__": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "item"
+    ],
+    "pop": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "make_message_queue": [
+    "log_time_order",
+    "reverse"
+  ],
+  "_get_record_size": [
+    "record"
+  ],
+  "FOOTER_SIZE": [],
+  "_read_summary_from_stream_reader": [
+    "stream_reader"
+  ],
+  "_chunks_matching_topics": [
+    "summary",
+    "topics",
+    "start_time",
+    "end_time"
+  ],
+  "DecodedMessageTuple": {},
+  "McapReader": {
+    "__init__": [
+      "self",
+      "decoder_factories"
+    ],
+    "iter_messages": [
+      "self",
+      "topics",
+      "start_time",
+      "end_time",
+      "log_time_order",
+      "reverse"
+    ],
+    "iter_decoded_messages": [
+      "self",
+      "topics",
+      "start_time",
+      "end_time",
+      "log_time_order",
+      "reverse"
+    ],
+    "get_header": [
+      "self"
+    ],
+    "get_summary": [
+      "self"
+    ],
+    "iter_attachments": [
+      "self"
+    ],
+    "iter_metadata": [
+      "self"
+    ]
+  },
+  "make_reader": [
+    "stream",
+    "validate_crcs",
+    "decoder_factories"
+  ],
+  "SeekingReader": {
+    "__init__": [
+      "self",
+      "stream",
+      "validate_crcs",
+      "decoder_factories",
+      "record_size_limit"
+    ],
+    "iter_messages": [
+      "self",
+      "topics",
+      "start_time",
+      "end_time",
+      "log_time_order",
+      "reverse"
+    ],
+    "get_header": [
+      "self"
+    ],
+    "get_summary": [
+      "self"
+    ],
+    "iter_attachments": [
+      "self"
+    ],
+    "iter_metadata": [
+      "self"
+    ]
+  },
+  "NonSeekingReader": {
+    "__init__": [
+      "self",
+      "stream",
+      "validate_crcs",
+      "decoder_factories",
+      "record_size_limit"
+    ],
+    "_check_spent": [
+      "self"
+    ],
+    "get_header": [
+      "self"
+    ],
+    "iter_messages": [
+      "self",
+      "topics",
+      "start_time",
+      "end_time",
+      "log_time_order",
+      "reverse"
+    ],
+    "_iter_messages_internal": [
+      "self",
+      "topics",
+      "start_time",
+      "end_time"
+    ],
+    "get_summary": [
+      "self"
+    ],
+    "iter_attachments": [
+      "self"
+    ],
+    "iter_metadata": [
+      "self"
+    ]
+  },
+  "McapError": {},
+  "InvalidMagic": {
+    "__init__": [
+      "self",
+      "bad_magic"
+    ]
+  },
+  "DecoderNotFoundError": {},
+  "EndOfFile": {},
+  "RecordLengthLimitExceeded": {
+    "__init__": [
+      "self",
+      "opcode",
+      "length",
+      "limit"
+    ]
+  },
+  "UnsupportedCompressionError": {
+    "__init__": [
+      "self",
+      "compression"
+    ]
+  },
+  "ChunkBuilder": {
+    "__init__": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "end": [
+      "self"
+    ],
+    "add_channel": [
+      "self",
+      "channel"
+    ],
+    "add_schema": [
+      "self",
+      "schema"
+    ],
+    "add_message": [
+      "self",
+      "message"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "Summary": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "ValueType": [],
+  "normalize_value": [
+    "value"
+  ],
+  "stringify_record": [
+    "record"
+  ],
+  "McapRecord": {
+    "write": [
+      "self",
+      "stream"
+    ]
+  },
+  "Attachment": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "AttachmentIndex": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Channel": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Chunk": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "ChunkIndex": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "DataEnd": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Footer": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Header": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Message": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream",
+      "length"
+    ]
+  },
+  "MessageIndex": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Metadata": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "MetadataIndex": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Schema": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "Statistics": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  },
+  "SummaryOffset": {
+    "write": [
+      "self",
+      "stream"
+    ],
+    "read": [
+      "stream"
+    ]
+  }
+}

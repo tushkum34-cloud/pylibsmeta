@@ -1,0 +1,456 @@
+{
+  "root_dir": [],
+  "DEFAULT_CFG_PATH": [],
+  "logger": [],
+  "RapidOCR": {
+    "__init__": [
+      "self",
+      "config_path"
+    ],
+    "__call__": [
+      "self",
+      "img_content",
+      "use_det",
+      "use_cls",
+      "use_rec"
+    ],
+    "preprocess": [
+      "self",
+      "img"
+    ],
+    "maybe_add_letterbox": [
+      "self",
+      "img",
+      "op_record"
+    ],
+    "_get_padding_h": [
+      "self",
+      "h",
+      "w"
+    ],
+    "auto_text_det": [
+      "self",
+      "img"
+    ],
+    "get_crop_img_list": [
+      "self",
+      "img",
+      "dt_boxes"
+    ],
+    "sorted_boxes": [
+      "dt_boxes"
+    ],
+    "_get_origin_points": [
+      "self",
+      "dt_boxes",
+      "op_record",
+      "raw_h",
+      "raw_w"
+    ],
+    "get_final_res": [
+      "self",
+      "dt_boxes",
+      "cls_res",
+      "rec_res",
+      "det_elapse",
+      "cls_elapse",
+      "rec_elapse"
+    ],
+    "filter_result": [
+      "self",
+      "dt_boxes",
+      "rec_res"
+    ]
+  },
+  "main": [],
+  "TextRecognizer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "__call__": [
+      "self",
+      "img_list",
+      "return_word_box"
+    ],
+    "resize_norm_img": [
+      "self",
+      "img",
+      "max_wh_ratio"
+    ]
+  },
+  "CTCLabelDecode": {
+    "__init__": [
+      "self",
+      "character",
+      "character_path"
+    ],
+    "__call__": [
+      "self",
+      "preds",
+      "return_word_box"
+    ],
+    "get_character": [
+      "self",
+      "character",
+      "character_path"
+    ],
+    "read_character_file": [
+      "character_path"
+    ],
+    "insert_special_char": [
+      "character_list",
+      "special_char",
+      "loc"
+    ],
+    "decode": [
+      "self",
+      "text_index",
+      "text_prob",
+      "return_word_box",
+      "is_remove_duplicate"
+    ],
+    "get_word_info": [
+      "text",
+      "selection"
+    ],
+    "get_ignored_tokens": []
+  },
+  "TextDetector": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "get_preprocess": [
+      "self",
+      "max_wh"
+    ],
+    "filter_tag_det_res": [
+      "self",
+      "dt_boxes",
+      "image_shape"
+    ],
+    "order_points_clockwise": [
+      "self",
+      "pts"
+    ],
+    "clip_det_res": [
+      "self",
+      "points",
+      "img_height",
+      "img_width"
+    ]
+  },
+  "DetPreProcess": {
+    "__init__": [
+      "self",
+      "limit_side_len",
+      "limit_type",
+      "mean",
+      "std"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "normalize": [
+      "self",
+      "img"
+    ],
+    "permute": [
+      "self",
+      "img"
+    ],
+    "resize": [
+      "self",
+      "img"
+    ]
+  },
+  "ResizeImgError": {},
+  "DBPostProcess": {
+    "__init__": [
+      "self",
+      "thresh",
+      "box_thresh",
+      "max_candidates",
+      "unclip_ratio",
+      "score_mode",
+      "use_dilation"
+    ],
+    "__call__": [
+      "self",
+      "pred",
+      "ori_shape"
+    ],
+    "boxes_from_bitmap": [
+      "self",
+      "pred",
+      "bitmap",
+      "dest_width",
+      "dest_height"
+    ],
+    "get_mini_boxes": [
+      "self",
+      "contour"
+    ],
+    "box_score_fast": [
+      "bitmap",
+      "_box"
+    ],
+    "box_score_slow": [
+      "self",
+      "bitmap",
+      "contour"
+    ],
+    "unclip": [
+      "self",
+      "box"
+    ]
+  },
+  "get_logger": [
+    "name"
+  ],
+  "InputType": [],
+  "update_model_path": [
+    "config"
+  ],
+  "init_args": [],
+  "UpdateParameters": {
+    "__init__": [
+      "self"
+    ],
+    "parse_kwargs": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "config"
+    ],
+    "update_global_to_module": [
+      "self",
+      "config",
+      "params",
+      "src",
+      "dsts"
+    ],
+    "update_global_params": [
+      "self",
+      "config",
+      "global_dict"
+    ],
+    "update_params": [
+      "self",
+      "config",
+      "param_dict",
+      "prefix",
+      "need_remove_prefix"
+    ],
+    "remove_prefix": [
+      "config",
+      "prefix",
+      "need_remove_prefix"
+    ]
+  },
+  "read_yaml": [
+    "yaml_path"
+  ],
+  "reduce_max_side": [
+    "img",
+    "max_side_len"
+  ],
+  "increase_min_side": [
+    "img",
+    "min_side_len"
+  ],
+  "add_round_letterbox": [
+    "img",
+    "padding_tuple"
+  ],
+  "EP": {
+    "CPU_EP": [],
+    "CUDA_EP": [],
+    "DIRECTML_EP": []
+  },
+  "OrtInferSession": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_init_sess_opts": [
+      "config"
+    ],
+    "_get_ep_list": [
+      "self"
+    ],
+    "_check_cuda": [
+      "self"
+    ],
+    "_check_dml": [
+      "self"
+    ],
+    "_verify_providers": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "input_content"
+    ],
+    "get_input_names": [
+      "self"
+    ],
+    "get_output_names": [
+      "self"
+    ],
+    "get_character_list": [
+      "self",
+      "key"
+    ],
+    "have_key": [
+      "self",
+      "key"
+    ],
+    "_verify_model": [
+      "model_path"
+    ]
+  },
+  "ONNXRuntimeError": {},
+  "VisRes": {
+    "__init__": [
+      "self",
+      "text_score"
+    ],
+    "__call__": [
+      "self",
+      "img_content",
+      "dt_boxes",
+      "txts",
+      "scores",
+      "font_path"
+    ],
+    "draw_dt_boxes": [
+      "self",
+      "img_content",
+      "dt_boxes"
+    ],
+    "draw_ocr_box_txt": [
+      "self",
+      "img_content",
+      "dt_boxes",
+      "txts",
+      "scores",
+      "font_path"
+    ],
+    "get_font_path": [
+      "font_path"
+    ],
+    "get_random_color": [],
+    "get_box_height": [
+      "box"
+    ],
+    "get_box_width": [
+      "box"
+    ],
+    "get_char_size": [
+      "font",
+      "char_str"
+    ]
+  },
+  "LoadImage": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "img"
+    ],
+    "load_img": [
+      "self",
+      "img"
+    ],
+    "img_to_ndarray": [
+      "self",
+      "img"
+    ],
+    "convert_img": [
+      "self",
+      "img",
+      "origin_img_type"
+    ],
+    "cvt_two_to_three": [
+      "img"
+    ],
+    "cvt_four_to_three": [
+      "img"
+    ],
+    "verify_exist": [
+      "file_path"
+    ]
+  },
+  "LoadImageError": {},
+  "CalRecBoxes": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "imgs",
+      "dt_boxes",
+      "rec_res"
+    ],
+    "get_box_direction": [
+      "box"
+    ],
+    "cal_ocr_word_box": [
+      "rec_txt",
+      "box",
+      "rec_word_info"
+    ],
+    "adjust_box_overlap": [
+      "word_box_list"
+    ],
+    "reverse_rotate_crop_image": [
+      "self",
+      "bbox_points",
+      "word_points_list",
+      "direction"
+    ],
+    "s_rotate": [
+      "angle",
+      "valuex",
+      "valuey",
+      "pointx",
+      "pointy"
+    ],
+    "order_points": [
+      "box"
+    ]
+  },
+  "ClsPostProcess": {
+    "__init__": [
+      "self",
+      "label_list"
+    ],
+    "__call__": [
+      "self",
+      "preds"
+    ]
+  },
+  "TextClassifier": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "__call__": [
+      "self",
+      "img_list"
+    ],
+    "resize_norm_img": [
+      "self",
+      "img"
+    ]
+  }
+}

@@ -1,0 +1,5997 @@
+{
+  "__version__": [],
+  "make_config_schedule_cases": [],
+  "ConfigScheduleTest": {
+    "test_config_schedule": [
+      "self",
+      "lhs_share_stats",
+      "rhs_share_stats",
+      "lhs_shape",
+      "rhs_shape",
+      "op"
+    ],
+    "test_inference_schedule": [
+      "self",
+      "lhs_share_stats",
+      "rhs_share_stats",
+      "lhs_shape",
+      "rhs_shape",
+      "op"
+    ]
+  },
+  "FPMetadata": [],
+  "EXPONENT_BIAS": [],
+  "get_max_number": [],
+  "get_exponent": [
+    "t"
+  ],
+  "flush_to_zero": [
+    "t",
+    "exponent",
+    "min_exp"
+  ],
+  "get_max_frac_in_binary": [
+    "mantissa_bits",
+    "dtype"
+  ],
+  "handle_overflow": [
+    "t",
+    "exponent",
+    "max_exp",
+    "mantissa_bits"
+  ],
+  "get_mask": [
+    "dtype",
+    "num_lsbs"
+  ],
+  "_round_stochastic": [
+    "t",
+    "mask_bits"
+  ],
+  "_round_to_nearest_even": [
+    "t",
+    "mask_bits"
+  ],
+  "_round_away_from_zero": [
+    "t",
+    "mask_bits"
+  ],
+  "rounding": [
+    "t",
+    "mask_bits",
+    "rounding_mode"
+  ],
+  "handle_mantissa": [
+    "t",
+    "mantissa_bits",
+    "min_exp",
+    "rounding_mode"
+  ],
+  "static_handle_exponent": [
+    "t",
+    "min_exp",
+    "max_exp",
+    "mantissa_bits"
+  ],
+  "emulated_fp": [
+    "t",
+    "fp_metadata"
+  ],
+  "emulated_e8mn": [
+    "t",
+    "fp_metadata"
+  ],
+  "_get_max_number_float": [],
+  "check_shapes_conformal": [
+    "actual",
+    "expected"
+  ],
+  "_get_clip_bound_int": [
+    "config"
+  ],
+  "get_clip_bound": [
+    "config"
+  ],
+  "safe_clip_bound": [
+    "config"
+  ],
+  "IntQuantConfig": {
+    "validate": [
+      "self"
+    ],
+    "compatible_with_int8": [
+      "self"
+    ]
+  },
+  "RoundingMode": {
+    "ROUND_AWAY_FROM_ZERO": [],
+    "ROUND_TO_NEAREST_EVEN": [],
+    "ROUND_STOCHASTIC": []
+  },
+  "SmallFloatConfig": {},
+  "FloatConfig": {},
+  "QuantConfig": [],
+  "StatsConfig": {
+    "validate": [
+      "self",
+      "data_shape",
+      "dynamic"
+    ]
+  },
+  "CalibrationConfig": {},
+  "AqtTensorConfig": {
+    "validate": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "AqtScheduleConfig": {
+    "quantization_mode": [
+      "self"
+    ],
+    "validate": [
+      "self",
+      "data_shape"
+    ],
+    "fill_gaps_with_float_config": [
+      "self"
+    ]
+  },
+  "AqtMatmulConfig": {},
+  "AqtEinsumConfig": {},
+  "ROUND_AWAY_FROM_ZERO": [],
+  "ROUND_TO_NEAREST_EVEN": [],
+  "ROUND_STOCHASTIC": [],
+  "EmulatedFromatsEnum": {
+    "E5M2B15_RTNE": [],
+    "E5M2B15_STOC": [],
+    "E4M3B11_RTNE": [],
+    "E4M3B11_STOC": [],
+    "E4M3B7_RTNE": [],
+    "E4M3B7_STOC": [],
+    "E8M2B127_RTNE": [],
+    "E8M3B127_RTNE": [],
+    "E8M4B127_RTNE": [],
+    "E8M5B127_RTNE": [],
+    "E8M6B127_RTNE": [],
+    "INT8_RTNE": [],
+    "INT8_STOC": [],
+    "BFLOAT16": [],
+    "INT8": []
+  },
+  "get_metadata": [
+    "target_format"
+  ],
+  "is_fp8_format": [
+    "target_format"
+  ],
+  "is_e8_format": [
+    "target_format"
+  ],
+  "get_max_number_from_mantissa_and_max_exp": [
+    "mantissa_bits",
+    "max_exp"
+  ],
+  "ConfigError": {},
+  "T": [],
+  "_BaseConfig": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "validate": [
+      "self"
+    ]
+  },
+  "aqt_tensor_config_type": [],
+  "_validate_intervals": [
+    "configs"
+  ],
+  "_validate_alignment": [
+    "lhs_path",
+    "lhs_configs",
+    "rhs_path",
+    "rhs_configs"
+  ],
+  "test_stats_config": [],
+  "calibration_config": [
+    "const_coeff"
+  ],
+  "_schedule_config": [
+    "bits",
+    "const_bound_coeff",
+    "share_stats_axes",
+    "freeze_scale_at_begin"
+  ],
+  "config_from_schedule": [
+    "schedule"
+  ],
+  "MatmulTest": {
+    "constant": [
+      "self",
+      "x"
+    ],
+    "matmul": [
+      "self",
+      "config",
+      "lhs_shape",
+      "rhs_shape",
+      "name"
+    ],
+    "matmul_apply": [
+      "self",
+      "module",
+      "lhs",
+      "rhs",
+      "train",
+      "keep_stats"
+    ],
+    "matmul_unquantized": [
+      "self",
+      "lhs",
+      "rhs"
+    ],
+    "gradients": [
+      "self",
+      "fwd_func",
+      "x",
+      "w",
+      "reduce_sum"
+    ],
+    "exact_int8_matmul_example": [
+      "self",
+      "lhs_use_quantized_variable",
+      "rhs_use_quantized_variable",
+      "name",
+      "use_float_config",
+      "use_grad_quantization"
+    ],
+    "test_matmul_none": [
+      "self"
+    ],
+    "basic_quant_example": [
+      "self"
+    ],
+    "test_basic_matmul": [
+      "self"
+    ],
+    "test_float_config_basic_matmul": [
+      "self",
+      "lhs_float"
+    ],
+    "test_unaligned_schedule_intervals": [
+      "self",
+      "lhs_intervals",
+      "rhs_intervals"
+    ],
+    "test_vars_dont_kill_grads": [
+      "self"
+    ],
+    "test_vars_over_inputs_at_inference": [
+      "self",
+      "lhs_use_quantized_variable"
+    ],
+    "test_float_config_not_save_quantized_var": [
+      "self"
+    ],
+    "test_exact_grads": [
+      "self"
+    ]
+  },
+  "f32": [
+    "x"
+  ],
+  "StatsTest": {
+    "_stats": [],
+    "set_stats": [
+      "self",
+      "data_shape",
+      "config"
+    ],
+    "update": [
+      "self",
+      "sample",
+      "weight"
+    ],
+    "stats": [
+      "self"
+    ],
+    "stats_state": [
+      "self"
+    ],
+    "get_sum_of_ones": [
+      "self"
+    ],
+    "get_sum_of_vals": [
+      "self"
+    ],
+    "get_max_of_abs_vals": [
+      "self"
+    ],
+    "get_sum_of_l1_vals": [
+      "self"
+    ],
+    "get_sum_of_lp_vals": [
+      "self"
+    ],
+    "set_ema_update_count": [
+      "self",
+      "ema_update_count"
+    ],
+    "mean": [
+      "self"
+    ],
+    "max_dev": [
+      "self"
+    ],
+    "l1_dev": [
+      "self"
+    ],
+    "lp_dev": [
+      "self"
+    ],
+    "bound": [
+      "self",
+      "calibration_config"
+    ],
+    "check_mean": [
+      "self",
+      "mean"
+    ],
+    "check_max_dev": [
+      "self",
+      "expected_max"
+    ],
+    "check_l1_dev": [
+      "self",
+      "l1_dev"
+    ],
+    "check_lp_dev": [
+      "self",
+      "lp_dev",
+      "approx"
+    ],
+    "test_basics_carefully": [
+      "self"
+    ],
+    "test_filter_zeros_and_bound": [
+      "self"
+    ],
+    "test_filter_zeros_and_safe_divide": [
+      "self",
+      "inp",
+      "w",
+      "mean",
+      "l1",
+      "lp",
+      "mx",
+      "bd"
+    ],
+    "test_p_norm": [
+      "self"
+    ],
+    "test_max_skips_zero_weight": [
+      "self"
+    ],
+    "test_odd_norm": [
+      "self"
+    ],
+    "test_prior_and_ema": [
+      "self",
+      "op",
+      "mp",
+      "l1p",
+      "lpp",
+      "mxp",
+      "ema"
+    ],
+    "test_no_axis_share": [
+      "self"
+    ],
+    "test_axis_share_both": [
+      "self"
+    ],
+    "test_cross_tpu": [
+      "self"
+    ]
+  },
+  "input_stats": [
+    "filter_zeros"
+  ],
+  "filter_stats": [
+    "filter_zeros"
+  ],
+  "int_quant_config": [
+    "bits",
+    "preserve_zero"
+  ],
+  "stats_config": [
+    "input_or_filter",
+    "filter_zeros"
+  ],
+  "schedule_config": [
+    "input_or_filter"
+  ],
+  "empty_config": [
+    "input_or_filter"
+  ],
+  "generate_missing_contraction_dims": [],
+  "ConvTest": {
+    "setUp": [
+      "self"
+    ],
+    "create_random_input_and_filter": [
+      "self",
+      "input_shape",
+      "filter_shape"
+    ],
+    "exact_int8_conv_example": [
+      "self",
+      "lhs_shape",
+      "rhs_shape",
+      "lhs_share_stats_axes",
+      "rhs_share_stats_axes",
+      "lhs_use_quantized_variable",
+      "rhs_use_quantized_variable"
+    ],
+    "conv_op_quantized": [
+      "self",
+      "input",
+      "filter",
+      "input_config",
+      "filter_config",
+      "event_count",
+      "input_weights",
+      "train"
+    ],
+    "conv_op_unquantized": [
+      "self",
+      "input",
+      "filter"
+    ],
+    "get_conv_kwargs": [
+      "self",
+      "strides",
+      "padding",
+      "data_format",
+      "dilations"
+    ],
+    "get_module_and_side_effect": [
+      "self"
+    ],
+    "constant": [
+      "self",
+      "x"
+    ],
+    "gradients": [
+      "self",
+      "fwd_func",
+      "x",
+      "w"
+    ],
+    "test_basic_conv": [
+      "self"
+    ],
+    "test_missing_contraction_dims": [
+      "self",
+      "data_format",
+      "filter_axes",
+      "input_axes"
+    ],
+    "test_exact_int8_and_no_quant": [
+      "self",
+      "strides",
+      "padding",
+      "dilations"
+    ],
+    "test_exact_grads": [
+      "self"
+    ],
+    "test_filter_dilation": [
+      "self"
+    ],
+    "test_zero_preservation_for_filter_dilation": [
+      "self"
+    ]
+  },
+  "make_quant_cases": [],
+  "AqtTensorQuantizerTest": {
+    "make_tensor_quantizer": [
+      "self",
+      "data_shape",
+      "config",
+      "name"
+    ],
+    "update_quantizer": [
+      "self",
+      "quant",
+      "sample",
+      "weight",
+      "event_count"
+    ],
+    "to_quant": [
+      "self",
+      "quant",
+      "x",
+      "train"
+    ],
+    "get_quant_scale": [
+      "self",
+      "quant",
+      "train"
+    ],
+    "init": [
+      "self"
+    ],
+    "get_scale": [
+      "self",
+      "quant"
+    ],
+    "get_clip_range": [
+      "self",
+      "quant"
+    ],
+    "get_last_update": [
+      "self",
+      "quant"
+    ],
+    "get_quantized_variable": [
+      "self",
+      "quant"
+    ],
+    "quantize": [
+      "self",
+      "x",
+      "quant",
+      "train"
+    ],
+    "test_validates_shape_config": [
+      "self"
+    ],
+    "test_validates_shape_update": [
+      "self"
+    ],
+    "test_assert_min_event": [
+      "self"
+    ],
+    "test_single_quant_simple": [
+      "self"
+    ],
+    "test_quant": [
+      "self",
+      "const_calibration",
+      "freeze_scale_at_begin"
+    ],
+    "test_update_saves_variable": [
+      "self"
+    ],
+    "test_none_weights": [
+      "self"
+    ],
+    "test_float_config_not_save_quantized_var": [
+      "self"
+    ],
+    "test_float_config_not_quantized": [
+      "self"
+    ],
+    "test_inference_config_index": [
+      "self",
+      "use_quantized_variable"
+    ],
+    "test_scale_and_inv_scale": [
+      "self",
+      "shared_stats_axes"
+    ]
+  },
+  "generate_unaligned_schedule_intervals": [],
+  "exact_int8_example": [
+    "lhs_shape",
+    "rhs_shape",
+    "lhs_share_stats_axes",
+    "rhs_share_stats_axes",
+    "lhs_use_quantized_variable",
+    "rhs_use_quantized_variable"
+  ],
+  "generate_nondefault_conv_args": [],
+  "ConvGeneralModule": {
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "weights",
+      "event_count",
+      "event_count_for_filter",
+      "train"
+    ]
+  },
+  "ConvGeneralTest": {
+    "conv_op_quantized": [
+      "self",
+      "input",
+      "filter",
+      "input_config",
+      "filter_config",
+      "event_count",
+      "event_count_for_filter",
+      "input_weights",
+      "train",
+      "var_scope_name"
+    ],
+    "conv_op_unquantized": [
+      "self",
+      "input",
+      "filter"
+    ],
+    "get_conv_kwargs": [
+      "self",
+      "strides",
+      "padding",
+      "data_format",
+      "dilations",
+      "lhs_dilation"
+    ],
+    "constant": [
+      "self",
+      "x"
+    ],
+    "gradients": [
+      "self",
+      "fwd_func",
+      "x",
+      "w"
+    ],
+    "test_vars_over_inputs_at_inference": [
+      "self"
+    ],
+    "test_zero_preservation_for_input_dilation": [
+      "self"
+    ],
+    "test_jvp": [
+      "self"
+    ],
+    "test_nondefault_conv_args": [
+      "self",
+      "dimension_numbers",
+      "window_strides",
+      "padding"
+    ],
+    "test_weight_only_quantization": [
+      "self"
+    ]
+  },
+  "pass_through": [
+    "x",
+    "fn"
+  ],
+  "Stats": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "x",
+      "weight",
+      "override_ema_update_count"
+    ],
+    "mean": [
+      "self"
+    ],
+    "max_dev": [
+      "self"
+    ],
+    "l1_dev": [
+      "self"
+    ],
+    "lp_dev": [
+      "self"
+    ],
+    "bound": [
+      "self",
+      "calibration_config"
+    ]
+  },
+  "is_config_active": [
+    "config",
+    "event_count"
+  ],
+  "TensorQuantizer": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "_fresh_scale": [
+      "self",
+      "config"
+    ],
+    "clip_range": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "sample",
+      "weight",
+      "event_count"
+    ],
+    "_update_config": [
+      "self",
+      "config",
+      "sample",
+      "weight",
+      "event_count"
+    ],
+    "_should_update_scale": [
+      "self",
+      "config",
+      "event_count"
+    ],
+    "_to_quant": [
+      "self",
+      "x",
+      "train"
+    ],
+    "_get_quant_scale": [
+      "self",
+      "train"
+    ]
+  },
+  "shape": [],
+  "ndim": [],
+  "_max": [],
+  "matmul": [
+    "a",
+    "b"
+  ],
+  "DotModule": {
+    "__call__": [
+      "self"
+    ]
+  },
+  "DotGeneralModule": {
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "train"
+    ]
+  },
+  "_generate_dimension_numbers": [],
+  "AqtDotGeneralTest": {
+    "vgrad": [
+      "self",
+      "f",
+      "lhs",
+      "rhs"
+    ],
+    "get_dot_module": [
+      "self",
+      "lhs_config",
+      "rhs_config",
+      "lhs_shape",
+      "rhs_shape"
+    ],
+    "get_dot_general_module": [
+      "self",
+      "lhs_config",
+      "rhs_config",
+      "lhs",
+      "rhs"
+    ],
+    "exact_int8_dot_general_example": [
+      "self",
+      "lhs_use_quantized_variable",
+      "rhs_use_quantized_variable"
+    ],
+    "test_dot_none": [
+      "self"
+    ],
+    "test_dot_incompatible_shapes": [
+      "self"
+    ],
+    "test_dot_general_none": [
+      "self",
+      "dimension_numbers"
+    ],
+    "test_validates_contraction": [
+      "self",
+      "dimension_numbers"
+    ],
+    "test_unaligned_schedule_intervals": [
+      "self",
+      "lhs_intervals",
+      "rhs_intervals"
+    ],
+    "get_dot_general_for_grad": [
+      "self",
+      "lhs_config",
+      "rhs_config",
+      "lhs",
+      "rhs",
+      "dimension_numbers"
+    ],
+    "test_vars_dont_kill_grads": [
+      "self",
+      "dimension_numbers"
+    ],
+    "test_vars_over_inputs_at_inference": [
+      "self",
+      "dimension_numbers"
+    ],
+    "test_exact_grads": [
+      "self",
+      "dimension_numbers"
+    ],
+    "test_weight_only_quantization": [
+      "self"
+    ]
+  },
+  "possibly_use_quantized_variable": [
+    "quantizer",
+    "x",
+    "train"
+  ],
+  "should_int8_quantize": [
+    "lhs_quantizer",
+    "rhs_quantizer"
+  ],
+  "_conv_general_aqt": [
+    "lhs",
+    "rhs",
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "should_int8_quantize",
+    "train",
+    "window_strides",
+    "padding",
+    "lhs_dilation",
+    "rhs_dilation",
+    "dimension_numbers",
+    "feature_group_count",
+    "batch_group_count"
+  ],
+  "_conv_general_aqt_jvp": [
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "should_int8_quantize",
+    "train",
+    "window_strides",
+    "padding",
+    "lhs_dilation",
+    "rhs_dilation",
+    "dimension_numbers",
+    "feature_group_count",
+    "batch_group_count",
+    "primals",
+    "tangents"
+  ],
+  "_validate_dilation_argument": [
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "lhs_dilation",
+    "rhs_dilation"
+  ],
+  "_validate_inputs": [
+    "input_quantizer",
+    "filter_quantizer",
+    "dimension_numbers"
+  ],
+  "_transpose_inv_scale": [
+    "x",
+    "dimension_numbers_before",
+    "dimension_numbers_after"
+  ],
+  "conv_general_dilated": [
+    "lhs",
+    "rhs",
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "window_strides",
+    "padding",
+    "lhs_dilation",
+    "rhs_dilation",
+    "dimension_numbers",
+    "feature_group_count",
+    "batch_group_count",
+    "train"
+  ],
+  "aqt_conv_general_dilated": [],
+  "aqt_dot": [],
+  "aqt_dot_general": [],
+  "aqt_matmul": [],
+  "dot_general": [],
+  "Matmul": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "train"
+    ],
+    "update_lhs": [
+      "self",
+      "x",
+      "weight",
+      "event_count"
+    ],
+    "update_rhs": [
+      "self",
+      "x",
+      "weight",
+      "event_count"
+    ]
+  },
+  "AqtMatmulTest": {
+    "_matmul_state": [],
+    "constant": [
+      "self",
+      "x"
+    ],
+    "matmul": [
+      "self",
+      "config",
+      "lhs_shape",
+      "rhs_shape",
+      "name"
+    ],
+    "matmul_apply": [
+      "self",
+      "mm",
+      "lhs",
+      "rhs",
+      "train",
+      "keep_stats"
+    ],
+    "matmul_unquantized": [
+      "self",
+      "lhs",
+      "rhs"
+    ],
+    "gradients": [
+      "self",
+      "fwd_func",
+      "x",
+      "w",
+      "reduce_sum"
+    ]
+  },
+  "_dot_general_aqt": [
+    "lhs",
+    "rhs",
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "dimension_numbers",
+    "should_int8_quantize",
+    "train"
+  ],
+  "_dot_general_aqt_jvp": [
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "dimension_numbers",
+    "should_int8_quantize",
+    "train",
+    "primals",
+    "tangents"
+  ],
+  "dot": [
+    "lhs",
+    "rhs",
+    "lhs_quantizer",
+    "rhs_quantizer"
+  ],
+  "injectable_dot_general": [
+    "lhs_quantizer",
+    "rhs_quantizer",
+    "train"
+  ],
+  "rand_unif": [
+    "shape",
+    "maxval",
+    "seed",
+    "dtype"
+  ],
+  "_apply_po2_scale": [
+    "quantizer"
+  ],
+  "AqtConvGeneralTest": {
+    "test_conv_general_dilated": [
+      "self",
+      "lhs_bits",
+      "rhs_bits",
+      "lhs_maxval",
+      "rhs_maxval",
+      "seed"
+    ],
+    "test_conv_general_dilated_quantized": [
+      "self",
+      "lhs_bits",
+      "rhs_bits",
+      "lhs_maxval",
+      "rhs_maxval",
+      "seed"
+    ]
+  },
+  "AxisIdx": [],
+  "TensorTiling": [],
+  "Cfg": [],
+  "AxisTiling": [],
+  "get_shape_from_axes": [
+    "axes",
+    "shape"
+  ],
+  "assign_input_shape": [
+    "rng_key",
+    "ca_shape",
+    "ba_shape",
+    "ra_shape"
+  ],
+  "get_axis_tiles": [
+    "axes",
+    "input_shape",
+    "subsample_ts"
+  ],
+  "generate_inputs": [
+    "rng_key",
+    "num_ca",
+    "num_ba",
+    "num_lhs_ra",
+    "num_rhs_ra",
+    "max_shape_val"
+  ],
+  "generate_tiling_cfgs": [
+    "lhs_shape",
+    "lhs_ca",
+    "lhs_ra",
+    "rhs_shape",
+    "rhs_ca",
+    "rhs_ra"
+  ],
+  "TiledDotGeneralTest": {
+    "test_tiled_dot_general_shape": [
+      "self"
+    ],
+    "test_tiled_dot_general": [
+      "self"
+    ],
+    "test_single": [
+      "self"
+    ],
+    "test_tiling_state_for_single_tensor": [
+      "self"
+    ],
+    "test_negative_axis_index": [
+      "self"
+    ]
+  },
+  "sample_groups": [
+    "m",
+    "num_groups",
+    "key"
+  ],
+  "random_dense": [
+    "shape",
+    "key",
+    "dtype"
+  ],
+  "AqtRaggedDotTest": {
+    "assert_allclose": [
+      "self",
+      "out",
+      "expected_out"
+    ],
+    "make_args": [
+      "self",
+      "m",
+      "k",
+      "n",
+      "num_groups",
+      "in_dtype",
+      "balanced_groups"
+    ],
+    "test_numeric_correctness": [
+      "self",
+      "in_dtype",
+      "balanced_groups"
+    ],
+    "test_ragged_dot_with_precision": [
+      "self",
+      "precision"
+    ]
+  },
+  "AqtTransposeTest": {
+    "test_transpose": [
+      "self",
+      "tensor_shape",
+      "transpose_axes"
+    ],
+    "test_lhs_scale_transpose_to_output": [
+      "self",
+      "lhs_scale_shape",
+      "lhs_shape",
+      "rhs_shape",
+      "dimension_numbers",
+      "expected_qlhs_scale_t_shape"
+    ],
+    "test_rhs_scale_transpose_to_output": [
+      "self",
+      "lhs_shape",
+      "rhs_scale_shape",
+      "rhs_shape",
+      "dimension_numbers",
+      "expected_qrhs_scale_t_shape"
+    ],
+    "test_lhs_scale_transpose_for_rhs_input": [
+      "self",
+      "lhs_scale_shape",
+      "rhs_shape",
+      "dimension_numbers",
+      "expected_shape"
+    ],
+    "test_rhs_scale_transpose_for_lhs_input": [
+      "self",
+      "lhs_shape",
+      "rhs_scale_shape",
+      "dimension_numbers",
+      "expected_shape"
+    ]
+  },
+  "ceil_to_po2": [
+    "scale"
+  ],
+  "Calibration": {
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ],
+    "init_calibration": [
+      "self"
+    ]
+  },
+  "ConstantCalibration": {
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "AbsMaxCalibration": {
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "AbsMeanCalibration": {
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "SnrBasedAutoCalibration": {
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ],
+    "_update_best_clip_scales_and_max_snr": [
+      "self",
+      "current_clip_scales",
+      "current_snr_values",
+      "clip_scale",
+      "x",
+      "abs_max",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ],
+    "_calculate_snr": [
+      "self",
+      "x",
+      "bound",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "NoiseFn": [],
+  "_degenerate_noise_shape": [
+    "shape",
+    "noise_sharing_axes"
+  ],
+  "JaxUniform": {
+    "__call__": [
+      "self",
+      "shape",
+      "key",
+      "noise_sharing_axes"
+    ]
+  },
+  "RandomCenteredUniform": {
+    "__call__": [
+      "self",
+      "shape",
+      "key",
+      "noise_sharing_axes"
+    ]
+  },
+  "GradientFn": [],
+  "_MSG_NO_QVALUE": [],
+  "TilingState": [],
+  "QTensor": {
+    "dtype": [
+      "self"
+    ],
+    "_validate_tiling_state": [
+      "self"
+    ],
+    "is_full": [
+      "self"
+    ],
+    "without_qvalue": [
+      "self"
+    ],
+    "astype": [
+      "self",
+      "dtype"
+    ],
+    "quant": [
+      "self",
+      "x"
+    ],
+    "dequant": [
+      "self"
+    ],
+    "qvalue_astype": [
+      "self",
+      "dtype"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "ndim": [
+      "self"
+    ],
+    "shape": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "zeros": [
+    "shape"
+  ],
+  "zeros_with_scale": [
+    "shape",
+    "calibration_axis"
+  ],
+  "partition_spec": [
+    "partitions",
+    "calibration_axis",
+    "dtype"
+  ],
+  "dynamic_slice": [
+    "operand",
+    "start_indices",
+    "slice_sizes"
+  ],
+  "dynamic_update_slice": [
+    "operand",
+    "update",
+    "start_indices"
+  ],
+  "update_frame": [
+    "operand",
+    "frame",
+    "update"
+  ],
+  "_dot_general_full_init_calibration": [
+    "cfg"
+  ],
+  "AqtConfigTest": {
+    "_retrieve_quantizers": [
+      "self",
+      "dot_general_raws"
+    ],
+    "test_config_v4": [
+      "self"
+    ],
+    "test_config_v4_original": [
+      "self"
+    ],
+    "test_config_fwd_fp8": [
+      "self"
+    ],
+    "test_set_int_numerics_preserve_zero": [
+      "self"
+    ],
+    "test_set_absmax_calib_scale": [
+      "self"
+    ]
+  },
+  "test_jaxpr_dtype": [
+    "f",
+    "dg_raws",
+    "float_dtype"
+  ],
+  "test_eq": [
+    "name",
+    "a",
+    "b"
+  ],
+  "_check_result_eq": [
+    "dgs"
+  ],
+  "fqt_param_dict": [
+    "s",
+    "use_fwd_quant"
+  ],
+  "_TrickyNumerics": {
+    "get_dtype": [
+      "self"
+    ],
+    "get_quant_bound": [
+      "self"
+    ],
+    "fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "_modify_dg": [
+    "readonly_dg"
+  ],
+  "_aqt_dg_full_lr_diff": [
+    "lhs_dequant_mode",
+    "rhs_dequant_mode",
+    "lhs_calibration_mode",
+    "rhs_calibration_mode",
+    "use_fwd_quant",
+    "use_mid_quant",
+    "disable_rounding",
+    "fwd_lhs_tricky_clip_and_round",
+    "local_aqt"
+  ],
+  "_aqt_dg_full": [
+    "dequant_mode",
+    "calibration_mode",
+    "use_fwd_quant",
+    "disable_rounding",
+    "fwd_lhs_tricky_clip_and_round",
+    "local_aqt",
+    "use_mid_quant"
+  ],
+  "_aqt_dg_raw_lr_diff": [
+    "lhs_dequant_mode",
+    "rhs_dequant_mode",
+    "lhs_calibration_mode",
+    "rhs_calibration_mode"
+  ],
+  "_aqt_dg_raw": [
+    "dequant_mode",
+    "calibration_mode"
+  ],
+  "AqtDotGeneralResearchTest": {
+    "test_empty": [
+      "self"
+    ],
+    "test_fq_noise": [
+      "self",
+      "preserve_zero",
+      "prec",
+      "v",
+      "seed"
+    ],
+    "test_stochastic_rounding_noise": [
+      "self"
+    ],
+    "test_fake_quant": [
+      "self",
+      "bits",
+      "maxval",
+      "shape"
+    ],
+    "test_dot_general_calibration_with_contracting_axis": [
+      "self",
+      "dg",
+      "lhs_maxval",
+      "rhs_maxval",
+      "gra_maxval",
+      "dims",
+      "lhs_shape",
+      "rhs_shape",
+      "gra_shape",
+      "seed",
+      "dtype",
+      "clip_gradient"
+    ],
+    "test_dot_general_calibration_with_remaining_axis": [
+      "self",
+      "dg",
+      "lhs_maxval",
+      "rhs_maxval",
+      "gra_maxval",
+      "dims",
+      "lhs_shape",
+      "rhs_shape",
+      "gra_shape",
+      "seed",
+      "dtype",
+      "clip_gradient"
+    ],
+    "test_dot_general_calibrate_dequant_mode_mismatch": [
+      "self"
+    ],
+    "test_dot_general_prevent_fwd_quant_with_remaining_axis": [
+      "self"
+    ],
+    "test_dot_general_equality_between_different_calibration_axes": [
+      "self",
+      "dg"
+    ],
+    "test_dynamic_context": [
+      "self"
+    ],
+    "test_hardware_int8": [
+      "self",
+      "seed"
+    ],
+    "test_local_aqt": [
+      "self",
+      "shard_count",
+      "lhs",
+      "expected_product"
+    ],
+    "test_per_tensor": [
+      "self"
+    ],
+    "test_per_subchannel": [
+      "self"
+    ],
+    "test_mid_quantization": [
+      "self"
+    ]
+  },
+  "make_conv_general_dilated_with_qt": [
+    "cfg"
+  ],
+  "make_conv_general_dilated": [
+    "cfg"
+  ],
+  "conv_general_dilated_make": [
+    "spatial_dimensions",
+    "lhs_bits",
+    "rhs_bits",
+    "initialize_calibration"
+  ],
+  "AxisSize": [],
+  "ShapeTemplate": [],
+  "DotGeneralT": [],
+  "assert_shape": [
+    "shape",
+    "shape_template",
+    "msg"
+  ],
+  "assert_eq": [
+    "value",
+    "expected",
+    "value_name"
+  ],
+  "flax_slots_dataclass": [],
+  "flax_slots_kw_only_dataclass": [],
+  "dataclass_field": [
+    "default"
+  ],
+  "QuantMode": {
+    "TRAIN": [],
+    "CALIBRATE": [],
+    "CONVERT": [],
+    "SERVE": []
+  },
+  "static_field": [],
+  "dynamic_field": [],
+  "print_diff": [
+    "str_a",
+    "str_b",
+    "do_print_diff"
+  ],
+  "test_pprint_eq": [
+    "input_a",
+    "input_b",
+    "remove_memory_addresses"
+  ],
+  "infer_dtype_from_bits": [
+    "bits"
+  ],
+  "get_remaining_axes": [
+    "rank",
+    "contraction_axes",
+    "batch_axes"
+  ],
+  "Context": {},
+  "AbstractAqtNumerics": [],
+  "AbstractAqtCalibration": [],
+  "Quantizer": {
+    "init_calibration": [
+      "self"
+    ],
+    "quant": [
+      "self",
+      "x"
+    ],
+    "calibrate": [
+      "self",
+      "x"
+    ],
+    "calculate_qvalue": [
+      "self",
+      "x",
+      "qt"
+    ]
+  },
+  "quantizer_make": [
+    "n_bits",
+    "preserve_max_val",
+    "initialize_calibration",
+    "scale_stop_grad",
+    "scale_dtype"
+  ],
+  "make_fake_quant": [
+    "quantizer",
+    "calibration_axes"
+  ],
+  "StochasticRoundingTest": {
+    "test_range": [
+      "self",
+      "noise_fn"
+    ],
+    "test_shape": [
+      "self",
+      "noise_fn"
+    ]
+  },
+  "RaggedDot": {
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "precision",
+      "preferred_element_type"
+    ]
+  },
+  "ragged_dot": [
+    "lhs",
+    "rhs",
+    "group_sizes",
+    "precision",
+    "preferred_element_type",
+    "cfg"
+  ],
+  "SKIP": [],
+  "_split_key": [
+    "key",
+    "num_splits"
+  ],
+  "set_context": [
+    "cfg",
+    "key",
+    "train_step",
+    "lhs_quant_mode",
+    "rhs_quant_mode"
+  ],
+  "set_fwd_dequant_mode": [
+    "cfg"
+  ],
+  "set_fwd_calibration_mode": [
+    "cfg"
+  ],
+  "set_numerics": [
+    "cfg",
+    "lhs_numerics",
+    "rhs_numerics"
+  ],
+  "set_fwd_rhs_dtype_int2": [
+    "cfg"
+  ],
+  "set_accumulator_dtype": [
+    "cfg",
+    "fwd_dtype",
+    "dlhs_dtype",
+    "drhs_dtype"
+  ],
+  "set_stochastic_rounding": [
+    "cfg",
+    "vjp_lhs_stochastic_rounding",
+    "vjp_rhs_stochastic_rounding",
+    "implementation",
+    "noise_sharing_axes"
+  ],
+  "set_constant_calibration": [
+    "cfg",
+    "bound",
+    "bias"
+  ],
+  "set_local_aqt": [
+    "cfg",
+    "fwd_local_aqt",
+    "dlhs_local_aqt",
+    "drhs_local_aqt"
+  ],
+  "set_use_fwd_quant": [
+    "cfg",
+    "dlhs_use_fwd_quant",
+    "drhs_use_fwd_quant"
+  ],
+  "set_use_mid_quant": [
+    "cfg",
+    "fwd_mid_alpha_both",
+    "dlhs_mid_alpha_both",
+    "drhs_mid_alpha_both"
+  ],
+  "set_int_numerics_preserve_zero": [
+    "cfg",
+    "preserve_zero"
+  ],
+  "set_auto_calib_scale": [
+    "cfg",
+    "auto_clip_search_config"
+  ],
+  "set_absmax_calib_scale": [
+    "cfg",
+    "scale"
+  ],
+  "set_bits": [
+    "cfg",
+    "fwd_lhs_bit",
+    "fwd_rhs_bit",
+    "dlhs_lhs_bit",
+    "dlhs_rhs_bit",
+    "drhs_lhs_bit",
+    "drhs_rhs_bit"
+  ],
+  "set_scale_and_bias_dtype": [
+    "cfg",
+    "dtype"
+  ],
+  "default_unquantized_config": [],
+  "fully_quantized": [],
+  "config_v3": [],
+  "config_v4": [],
+  "config_fwd_fp8": [
+    "fwd_bits"
+  ],
+  "set_fwd_calibration": [
+    "cfg",
+    "calibration_factory"
+  ],
+  "transpose": [
+    "t",
+    "axes"
+  ],
+  "_scale_trans": [
+    "x",
+    "ca",
+    "ba"
+  ],
+  "lhs_scale_transpose_to_output": [
+    "lhs_scale",
+    "dimension_numbers",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "rhs_scale_transpose_to_output": [
+    "rhs_scale",
+    "dimension_numbers",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "_scale_trans_back": [
+    "scale_t",
+    "ca",
+    "ba"
+  ],
+  "lhs_recover_scale_from_scale_t": [
+    "lhs_scale_t",
+    "dimension_numbers",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "rhs_recover_scale_from_scale_t": [
+    "rhs_scale_t",
+    "dimension_numbers",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "_scale_trans_for_other_input": [
+    "x",
+    "my_ca",
+    "my_ba",
+    "other_ca",
+    "other_ba",
+    "other_rank"
+  ],
+  "lhs_scale_transpose_for_rhs_input": [
+    "lhs_scale",
+    "dimension_numbers",
+    "rhs_shape"
+  ],
+  "rhs_scale_transpose_for_lhs_input": [
+    "rhs_scale",
+    "dimension_numbers",
+    "lhs_shape"
+  ],
+  "AqtTensorTest": {
+    "test_dynamic_slice": [
+      "self"
+    ],
+    "test_getitem": [
+      "self"
+    ],
+    "test_dynamic_update": [
+      "self"
+    ],
+    "test_dtype": [
+      "self"
+    ],
+    "test_tiling_state": [
+      "self"
+    ]
+  },
+  "AqtTileMap": [],
+  "EinsumEqnLetter": [],
+  "EinsumTileSizes": [],
+  "BROADCAST_PREFIX": [],
+  "interleave": [
+    "tile_count",
+    "tile_size",
+    "tile_map",
+    "remaining_axes",
+    "product"
+  ],
+  "get_ra": [
+    "rank",
+    "ca",
+    "ba"
+  ],
+  "maybe_add_one": [
+    "i",
+    "min_i"
+  ],
+  "print_dimension_numbers": [
+    "dimension_numbers",
+    "lhs",
+    "rhs",
+    "label"
+  ],
+  "generate_tiling_state": [
+    "tensor",
+    "tiled_axes"
+  ],
+  "generate_tiling_states_for_dot_general": [
+    "cfg",
+    "lhs",
+    "rhs",
+    "dimension_numbers"
+  ],
+  "tiled_dot_general_with_tiling_states": [
+    "lhs",
+    "xlhs",
+    "rhs",
+    "xrhs",
+    "untiled_dimension_numbers",
+    "precision",
+    "preferred_element_type",
+    "dot_general"
+  ],
+  "tiled_dot_general": [
+    "cfg",
+    "lhs",
+    "rhs",
+    "dimension_numbers",
+    "precision",
+    "preferred_element_type",
+    "dot_general"
+  ],
+  "dtypes_allowed_for_int32_accum": [],
+  "CalibrationMode": {
+    "CONTRACTING_AXIS": [],
+    "REMAINING_AXIS": []
+  },
+  "DequantMode": {
+    "OUTPUT": [],
+    "THIS_INPUT": [],
+    "OTHER_INPUT": []
+  },
+  "Tensor": {},
+  "LocalAqt": {},
+  "dot_general_raw_make": [
+    "lhs_bits",
+    "rhs_bits",
+    "local_aqt",
+    "jax_scope_name",
+    "initialize_calibration",
+    "allow_dummy_gradients"
+  ],
+  "dot_general_make": [
+    "lhs_bits",
+    "rhs_bits",
+    "bwd_bits",
+    "use_fwd_quant",
+    "dlhs_local_aqt",
+    "drhs_local_aqt",
+    "allow_dummy_gradients"
+  ],
+  "MultiTensor": {},
+  "TensorRes": {},
+  "DotGeneralRes": {},
+  "einsum": [
+    "eqn",
+    "lhs",
+    "rhs",
+    "dg"
+  ],
+  "_get_scale_t": [
+    "qt",
+    "transpose_fn",
+    "dimension_numbers",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "_apply_local_aqt": [
+    "local_aqt",
+    "lhs",
+    "rhs",
+    "dimension_numbers"
+  ],
+  "DotGeneralQuantizer": {
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "lhs_mode",
+      "rhs_mode"
+    ],
+    "init_calibration": [
+      "self"
+    ],
+    "calibrate": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "lhs_mode",
+      "rhs_mode"
+    ],
+    "calculate_qvalue": [
+      "self",
+      "lhs",
+      "lhs_qt",
+      "rhs",
+      "rhs_qt"
+    ],
+    "swap_lhs_and_rhs": [
+      "self"
+    ],
+    "assert_calib_shared_axes_value": [
+      "self",
+      "lhs_val",
+      "rhs_val",
+      "msg"
+    ],
+    "set_context": [
+      "self",
+      "lhs_context",
+      "rhs_context"
+    ]
+  },
+  "DefaultDotGeneralQuantizer": {
+    "init_calibration": [
+      "self"
+    ],
+    "calibrate": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "lhs_mode",
+      "rhs_mode"
+    ],
+    "calculate_qvalue": [
+      "self",
+      "lhs",
+      "lhs_qt",
+      "rhs",
+      "rhs_qt"
+    ],
+    "swap_lhs_and_rhs": [
+      "self"
+    ],
+    "assert_calib_shared_axes_value": [
+      "self",
+      "lhs_val",
+      "rhs_val",
+      "msg"
+    ],
+    "set_context": [
+      "self",
+      "lhs_context",
+      "rhs_context"
+    ]
+  },
+  "quant": [
+    "lhs",
+    "rhs",
+    "lhs_qt",
+    "rhs_qt",
+    "dg_quantizer",
+    "lhs_cfg",
+    "rhs_cfg",
+    "dimension_numbers",
+    "allow_dummy_gradient_into_qtensor"
+  ],
+  "_maybe_use_fwd_quant": [
+    "lhs",
+    "rhs",
+    "dimension_numbers",
+    "use_fwd_quant"
+  ],
+  "DotGeneralRaw": {
+    "make": [
+      "cls"
+    ],
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "lhs_qt",
+      "rhs_qt",
+      "dimension_numbers"
+    ]
+  },
+  "_qtensor_dot_general": [
+    "lhs_qt",
+    "rhs_qt",
+    "dimension_numbers",
+    "cfg",
+    "dequant_dtype"
+  ],
+  "DotGeneral": {
+    "make": [
+      "cls"
+    ],
+    "dg_core": [
+      "self",
+      "lhs",
+      "rhs",
+      "lhs_qt",
+      "rhs_qt",
+      "dimension_numbers"
+    ],
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "precision",
+      "preferred_element_type"
+    ],
+    "assert_config_validity": [
+      "self"
+    ]
+  },
+  "_dg_core": [
+    "lhs",
+    "rhs",
+    "lhs_qt",
+    "rhs_qt",
+    "dimension_numbers",
+    "cfg"
+  ],
+  "dg_core_vjp_fwd": [
+    "lhs",
+    "rhs",
+    "lhs_qt",
+    "rhs_qt",
+    "dimension_numbers",
+    "cfg"
+  ],
+  "_update_dimension_numbers_for_backward": [
+    "fwd_dimension_numbers",
+    "y_is_lhs",
+    "gradient_rank",
+    "y_rank"
+  ],
+  "dg_core_vjp_bwd": [
+    "fwd_dimension_numbers",
+    "res",
+    "g"
+  ],
+  "_get_quant_mode": [
+    "context"
+  ],
+  "_get_divisible_blocksize": [
+    "dim",
+    "blocksize_top"
+  ],
+  "_reshape_kernel_for_gptq": [
+    "kernel",
+    "ca",
+    "sharding_axes",
+    "act_order",
+    "perm",
+    "blocksize"
+  ],
+  "_recover_kernel_from_gptq_result": [
+    "kernel",
+    "ca",
+    "sharding_axes",
+    "act_order",
+    "perm",
+    "kernel_dtype",
+    "kernel_feature_grouped_shape"
+  ],
+  "_init_hinv_for_calibration": [
+    "inputs",
+    "perc_damp"
+  ],
+  "GptqHinvCollector": {
+    "__call__": [
+      "self",
+      "x",
+      "ca",
+      "quant_mode"
+    ]
+  },
+  "GptqDotGeneralQuantizer": {
+    "calibrate": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "lhs_mode",
+      "rhs_mode"
+    ],
+    "swap_lhs_and_rhs": [
+      "self"
+    ]
+  },
+  "GptqDotGeneralQuantizerTest": {
+    "test_kernel_shape_transform": [
+      "self",
+      "param_shape",
+      "ca",
+      "block_size",
+      "expected_converted_kernel_shape"
+    ]
+  },
+  "_dummy_dataset": [
+    "ds_size",
+    "image_rng",
+    "label_rng"
+  ],
+  "GptqTest": {
+    "test_gptq": [
+      "self"
+    ]
+  },
+  "create_train_state": [],
+  "train_and_evaluate": [],
+  "train_epoch": [],
+  "calibrate": [],
+  "calibration_conversion": [],
+  "calibrate_epoch": [],
+  "serve": [],
+  "serving_conversion": [],
+  "update_cfg_with_gptq": [
+    "aqt_cfg"
+  ],
+  "main": [
+    "argv"
+  ],
+  "BlockSpec": [],
+  "no_block_spec": [],
+  "tree_util": [],
+  "TransposedTensor": [],
+  "ArgAndBlockSpec": [],
+  "_make_qtensor_blockspec": [
+    "arg",
+    "block_spec"
+  ],
+  "_transpose_tensor_for_memory_saving": [
+    "arg",
+    "block_spec"
+  ],
+  "_is_qtensor": [
+    "x"
+  ],
+  "_is_transposed_tensor": [
+    "x"
+  ],
+  "_is_arg_and_block_spec": [
+    "x"
+  ],
+  "pallas_call": [
+    "f"
+  ],
+  "load_qtensor": [],
+  "DotGeneralTest": {
+    "test_quantized_matmul_error": [
+      "self",
+      "mkn_and_blk",
+      "quantize_lhs",
+      "quantize_rhs",
+      "quant_type"
+    ],
+    "test_dequantization_location": [
+      "self",
+      "lhs_shape",
+      "rhs_shape",
+      "lhs_calibration_axes",
+      "rhs_calibration_axes",
+      "dequant_mode_lhs",
+      "dequant_mode_rhs",
+      "dimension_numbers"
+    ]
+  },
+  "_dtype_to_bits": [
+    "dtype"
+  ],
+  "AqtPallasTest": {
+    "test_quant": [
+      "self",
+      "tensor_shape",
+      "calibration_axes",
+      "use_dummy_static_bound",
+      "expected_scale_shape",
+      "dtype"
+    ]
+  },
+  "Array": [],
+  "_called_within_pallas_kernel": [
+    "func"
+  ],
+  "_count_less": [
+    "list_",
+    "item"
+  ],
+  "transpose_tensor_for_memory_saving": [
+    "s",
+    "block_spec"
+  ],
+  "make_qtensor_blockspec": [
+    "qtensor",
+    "block_spec"
+  ],
+  "PallasTensorTest": {
+    "test_qtensor_blockspec_correctness": [
+      "self",
+      "qvalue_shape",
+      "scale_shape",
+      "block_shape",
+      "expected_scale_block_shape",
+      "index_and_expected_index"
+    ],
+    "test_transpose_for_memory_saving": [
+      "self",
+      "tensor_shape",
+      "block_shape",
+      "expect_transpose",
+      "expected_permute_axes",
+      "expected_transposed_tensor_shape",
+      "expected_block_shape"
+    ]
+  },
+  "PaxBaseOpsTest": {
+    "test_einsum_is_quantized": [
+      "self",
+      "cfg"
+    ]
+  },
+  "AqtEinsum": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "eqn",
+      "lhs",
+      "rhs"
+    ]
+  },
+  "CALIBRATION_STATS": [],
+  "Dataset": [],
+  "CNN": {
+    "get_flax_cls": [
+      "self",
+      "aqt_cfg",
+      "tiling_cfg"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "apply_model": [
+    "model_params",
+    "images",
+    "labels",
+    "apply_fn"
+  ],
+  "update_model": [
+    "state",
+    "grads",
+    "updated_var"
+  ],
+  "update_model_params_with_grads": [
+    "state",
+    "grads",
+    "updated_var"
+  ],
+  "_prepare_data_perm": [
+    "ds",
+    "batch_size",
+    "rng",
+    "num_steps"
+  ],
+  "get_datasets": [],
+  "TrainState": {},
+  "_merge_pytrees": [
+    "from_model",
+    "to_model"
+  ],
+  "update_cfg_with_calibration": [
+    "aqt_cfg"
+  ],
+  "update_cfg_raw_with_calibration": [
+    "aqt_cfg_raw"
+  ],
+  "serve_fn_hlo": [
+    "state"
+  ],
+  "MnistTest": {
+    "test_mnist_training": [
+      "self",
+      "configs",
+      "bits"
+    ],
+    "test_mnist_training_quantized_conv": [
+      "self",
+      "configs",
+      "bits"
+    ],
+    "test_mnist_calibration": [
+      "self",
+      "configs",
+      "bits"
+    ],
+    "test_mnist_weighted_stats_calibration": [
+      "self",
+      "configs",
+      "bits"
+    ],
+    "test_mnist_delayed_scaling_calibration": [
+      "self",
+      "bits"
+    ],
+    "test_mnist_training_backward_compatibility": [
+      "self"
+    ]
+  },
+  "ModuleDef": [],
+  "_get_aqt_injected_model_kwargs": [
+    "aqt_cfg",
+    "lhs_quant_mode",
+    "rhs_quant_mode"
+  ],
+  "_get_quantized_vars": [
+    "model_cls",
+    "aqt_cfg",
+    "model_vars",
+    "act_calibrated"
+  ],
+  "_get_serving_model": [
+    "model_cls",
+    "aqt_cfg",
+    "act_calibrated"
+  ],
+  "serve_quantized": [
+    "model_cls",
+    "test_ds",
+    "aqt_cfg",
+    "model_vars",
+    "act_calibrated"
+  ],
+  "_get_calibration_model": [
+    "model_cls",
+    "aqt_cfg"
+  ],
+  "_calibrate_epoch": [
+    "calibration_model",
+    "model_vars",
+    "calibrate_ds",
+    "batch_size",
+    "rng",
+    "calibration_steps"
+  ],
+  "prepare_data_perm": [
+    "ds",
+    "batch_size",
+    "rng",
+    "num_steps"
+  ],
+  "_apply_model": [
+    "model_vars",
+    "images",
+    "labels",
+    "apply_fn"
+  ],
+  "_update_model": [
+    "state",
+    "grads",
+    "model_vars"
+  ],
+  "_train_epoch": [
+    "state",
+    "train_ds",
+    "batch_size",
+    "rng"
+  ],
+  "_WEIGHT_ONLY": [],
+  "run": [
+    "train_ds",
+    "test_ds"
+  ],
+  "_set_static_range_calib_options": [
+    "aqt_cfg"
+  ],
+  "CnnExamplesSmokeTest": {
+    "test_run_function": [
+      "self",
+      "test_func"
+    ]
+  },
+  "bf16": [],
+  "assert_equal": [
+    "x",
+    "expected_x",
+    "error_msg",
+    "aux_x",
+    "mask"
+  ],
+  "fp_values": [
+    "cfg"
+  ],
+  "FpTest": {
+    "test_fp_values_on_extisting_dtypes": [
+      "self"
+    ],
+    "test_fp_some_fp_values": [
+      "self",
+      "nexp",
+      "minexp",
+      "nmant",
+      "has_subnormals",
+      "expected_values",
+      "radix"
+    ],
+    "test_fp_round": [
+      "self",
+      "nexp",
+      "minexp",
+      "nmant",
+      "has_subnormals",
+      "radix",
+      "det_x_count",
+      "x_count",
+      "sr_sample_count",
+      "test_dtype"
+    ],
+    "test_fp_round_old_vs_new": [
+      "self",
+      "cfg",
+      "sr",
+      "f32_input_samples"
+    ],
+    "test_e1m2_vs_e0m3": [
+      "self"
+    ]
+  },
+  "averaged_stochastic_rounding": [
+    "numerics",
+    "key",
+    "x_count",
+    "x_min",
+    "x_max",
+    "sr_count"
+  ],
+  "MyTest": {
+    "test_2bit_mantissa": [
+      "self"
+    ],
+    "test_3bit_mantissa": [
+      "self"
+    ],
+    "test_retains_dtype": [
+      "self"
+    ],
+    "test_mnist_training": [
+      "self",
+      "fwd_bits"
+    ],
+    "test_fp8_stochastic_rounding": [
+      "self",
+      "key",
+      "x_count",
+      "x_min",
+      "x_max",
+      "sr_count",
+      "dtype",
+      "exponent_bits",
+      "mantissa_bits"
+    ]
+  },
+  "illustrate_bf16": [],
+  "illustrate_bf16_2": [],
+  "plot_sr_error": [
+    "x_min",
+    "x_max",
+    "sr_count",
+    "x_count"
+  ],
+  "IntSymmetric": {
+    "get_edge_of_last_int_bucket": [
+      "self"
+    ],
+    "get_center_of_last_int_bucket": [
+      "self"
+    ],
+    "get_quant_bound": [
+      "self"
+    ],
+    "_get_fwd_clip_bound": [
+      "self"
+    ],
+    "get_dtype": [
+      "self"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "get_numerics": [
+    "bits",
+    "preserve_max_val"
+  ],
+  "NoNumerics": {
+    "get_dtype": [
+      "self"
+    ],
+    "get_quant_bound": [
+      "self"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "inclusive_arange": [
+    "start",
+    "stop",
+    "step"
+  ],
+  "assert_array_less_or_equal": [
+    "x",
+    "y",
+    "err_msg",
+    "verbose"
+  ],
+  "assert_array_greater_or_equal": [
+    "x",
+    "y",
+    "err_msg",
+    "verbose"
+  ],
+  "IntSymmetricTest": {
+    "test_quant_range": [
+      "self",
+      "bits",
+      "preserve_zero",
+      "preserve_max_val"
+    ]
+  },
+  "AqtNumerics": {
+    "get_dtype": [
+      "self"
+    ],
+    "get_quant_bound": [
+      "self"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "float_repr": [],
+  "FpNumericsConfig": {},
+  "e5m0_ocp": [],
+  "e4m1_ocp": [],
+  "e3m2_ocp": [],
+  "e2m3_ocp": [],
+  "e1m4_ocp": [],
+  "e0m5_ocp": [],
+  "e4m0_ocp": [],
+  "e3m1_ocp": [],
+  "e2m2_ocp": [],
+  "e1m3_ocp": [],
+  "e0m4_ocp": [],
+  "e3m0": [],
+  "e3m0_ocp": [],
+  "e2m1": [],
+  "e2m1_ocp": [],
+  "e1m2": [],
+  "e1m2_ocp": [],
+  "e0m3": [],
+  "e0m3_ocp": [],
+  "e1m0": [],
+  "float8_e4m3fn": [],
+  "float8_e5m2": [],
+  "float16": [],
+  "RADIX4": [],
+  "fp_round": [
+    "x"
+  ],
+  "radix2_round": [
+    "x"
+  ],
+  "fp_round_new": [
+    "x"
+  ],
+  "fp_largest_representable": [
+    "cfg"
+  ],
+  "FpNumerics": {
+    "get_quant_bound": [
+      "self"
+    ],
+    "get_dtype": [
+      "self"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "radix4_round": [
+    "x"
+  ],
+  "fp8_map": [],
+  "_convert_to_fp8dtype": [
+    "dtype"
+  ],
+  "fp_mantissa_round": [
+    "x",
+    "mantissa_bits",
+    "key"
+  ],
+  "Fp8Numerics": {
+    "_get_edge_of_last_fp8_bucket": [
+      "self"
+    ],
+    "get_dtype": [
+      "self"
+    ],
+    "get_quant_bound": [
+      "self"
+    ],
+    "vjp_fwd": [
+      "self",
+      "x",
+      "context"
+    ],
+    "vjp_bwd": [
+      "self",
+      "res",
+      "grad"
+    ]
+  },
+  "round_to_nearest_even": [
+    "x",
+    "dtype"
+  ],
+  "_CustomStructure": {},
+  "TestModel": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ],
+    "freezer_get": [
+      "self"
+    ],
+    "freezer_set": [
+      "self",
+      "x"
+    ]
+  },
+  "FreezerTest": {
+    "_create_custom_structure": [
+      "self",
+      "prngkey"
+    ],
+    "_assert_same_tree_shape_dtype": [
+      "self",
+      "tree1",
+      "tree2"
+    ],
+    "test_freezer_get_set": [
+      "self"
+    ]
+  },
+  "_SUM_OF_ONES": [],
+  "_SUM_OF_VALS": [],
+  "_MAX_OF_ABS_VALS": [],
+  "_SUM_OF_L1_VALS": [],
+  "_SUM_OF_LP_VALS": [],
+  "MeanOfAbsMaxCalibration": {
+    "get_bound": [
+      "self",
+      "x",
+      "shared_axes",
+      "context"
+    ],
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "WeightedStatsCalibration": {
+    "_get_value": [
+      "self",
+      "name"
+    ],
+    "_mean": [
+      "self"
+    ],
+    "_max_dev": [
+      "self"
+    ],
+    "_l1_dev": [
+      "self"
+    ],
+    "_lp_dev": [
+      "self"
+    ],
+    "_update_var": [
+      "self",
+      "var",
+      "s",
+      "shared_axes",
+      "weight",
+      "reduce_max"
+    ],
+    "_divide": [
+      "self",
+      "x",
+      "y"
+    ],
+    "get_bound": [
+      "self",
+      "x",
+      "shared_axes",
+      "context"
+    ],
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ]
+  },
+  "dg_core_flax_lifted": [
+    "lhs",
+    "rhs",
+    "lhs_qt",
+    "rhs_qt",
+    "dimension_numbers",
+    "mdl",
+    "cfg"
+  ],
+  "DelayedScalingCalibration": {
+    "setup": [
+      "self"
+    ],
+    "get_bound": [
+      "self",
+      "x",
+      "shared_axes",
+      "context"
+    ],
+    "get_scale_and_bias_and_sparsity": [
+      "self",
+      "x",
+      "shared_axes",
+      "numerics_",
+      "context"
+    ],
+    "compute_bound": [
+      "self",
+      "amax",
+      "prev_bound"
+    ],
+    "compute_history": [
+      "self",
+      "x",
+      "amax_history"
+    ],
+    "init_calibration": [
+      "self"
+    ]
+  },
+  "FreezerMode": {
+    "NONE": [],
+    "WRITE": [],
+    "READ": []
+  },
+  "_FREEZE_VAR_NAME": [],
+  "Freezer": {
+    "_get_or_set": [
+      "self",
+      "inputs",
+      "is_set"
+    ],
+    "get": [
+      "self"
+    ],
+    "set": [
+      "self",
+      "inputs"
+    ]
+  },
+  "AqtFlaxTest": {
+    "test_aqt_promote_dtype": [
+      "self",
+      "lhs_dtype",
+      "rhs_dtype",
+      "expected_dtype"
+    ],
+    "test_aqt_einsum": [
+      "self"
+    ],
+    "test_einsum_grad_leak": [
+      "self"
+    ],
+    "test_freezer": [
+      "self",
+      "use_legacy_freezer"
+    ],
+    "test_dot_general_tiling_fn": [
+      "self"
+    ],
+    "test_einsum_tiling_fn": [
+      "self"
+    ]
+  },
+  "NoShardingAxes": [],
+  "AxisMetadataWrapper": [],
+  "DotGeneralTilingFn": [],
+  "EinsumTilingFn": [],
+  "_QUANT_TO_FREEZER_MODE": [],
+  "_freezer_qtensor_init_wrapper": [
+    "qt",
+    "contracting_axis",
+    "axis_metadata_wrapper",
+    "tile_map"
+  ],
+  "aqt_promote_dtype": [
+    "lhs_in",
+    "rhs_in"
+  ],
+  "_maybe_recover_scale_from_scale_t": [
+    "qt",
+    "dimension_numbers",
+    "is_rhs",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "_populate_scale_t": [
+    "qt",
+    "dimension_numbers",
+    "is_rhs",
+    "lhs_shape",
+    "rhs_shape"
+  ],
+  "AqtDotGeneral": {
+    "make_aqt_dg": [
+      "self",
+      "lhs_shape",
+      "rhs_shape",
+      "dimension_numbers",
+      "lhs_tile_map",
+      "rhs_tile_map"
+    ],
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "dimension_numbers",
+      "precision",
+      "preferred_element_type"
+    ]
+  },
+  "AqtConvGeneralDilated": {
+    "make_aqt_cg": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "lhs",
+      "rhs",
+      "window_strides",
+      "padding",
+      "lhs_dilation",
+      "rhs_dilation",
+      "dimension_numbers",
+      "feature_group_count",
+      "batch_group_count",
+      "precision",
+      "preferred_element_type"
+    ]
+  },
+  "_Args": [],
+  "_Kwargs": [],
+  "_NextGetter": [],
+  "_Interceptor": [],
+  "_DotGeneralScope": {
+    "__init__": [
+      "self",
+      "dot_general"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exception_type",
+      "exception_value",
+      "traceback"
+    ]
+  },
+  "DotGeneralGeneratorBase": {
+    "__call__": [
+      "self",
+      "next_f",
+      "args",
+      "kwargs",
+      "context"
+    ]
+  },
+  "DotGeneralGenerator": {
+    "__init__": [
+      "self",
+      "dot_general"
+    ],
+    "__call__": [
+      "self",
+      "next_f",
+      "args",
+      "kwargs",
+      "context"
+    ]
+  },
+  "DotGeneralGeneratorByModule": {
+    "__call__": [
+      "self",
+      "next_f",
+      "args",
+      "kwargs",
+      "context"
+    ],
+    "generate_by_module": [
+      "self",
+      "module"
+    ]
+  },
+  "intercept_methods_replace_dot_general": [
+    "dot_general_generator"
+  ],
+  "AqtDotGeneralGenerator": {
+    "__init__": [
+      "self"
+    ],
+    "generate_by_module": [
+      "self",
+      "module"
+    ]
+  },
+  "intercept_methods": [],
+  "intercept_wrapper": [
+    "func"
+  ],
+  "MlpBlock": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "NestedMlpBlock": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "MockDotGeneralGenerator": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "MockDotGeneralGeneratorByModule": {
+    "__init__": [
+      "self"
+    ],
+    "generate_by_module": [
+      "self",
+      "module"
+    ]
+  },
+  "AqtInterceptMethodsTest": {
+    "test_intercept_methods_replace_dot_general_count": [
+      "self",
+      "model_cls",
+      "dot_general_generator_cls",
+      "expected_count"
+    ],
+    "test_aqt_dot_general_generator": [
+      "self"
+    ]
+  },
+  "EventSeries": {},
+  "_sort_and_deduplicate_entries": [
+    "event_series"
+  ],
+  "get_tfevent_paths": [
+    "dir_path"
+  ],
+  "get_parsed_tfevents": [
+    "dir_path",
+    "tags_to_include"
+  ],
+  "get_fp_spec": [
+    "sig_bit",
+    "exp_bit"
+  ],
+  "dataclass": [],
+  "HParamsMetadata": {},
+  "save_dataclass_to_disk": [
+    "data",
+    "path"
+  ],
+  "write_hparams_to_file_with_host_id_check": [
+    "hparams",
+    "output_dir"
+  ],
+  "load_dataclass_from_dict": [
+    "dataclass_name",
+    "data_dict"
+  ],
+  "_convert_lists_to_tuples": [
+    "node"
+  ],
+  "load_dataclass_from_json": [
+    "dataclass_name",
+    "json_data"
+  ],
+  "load_hparams_from_config_dict": [
+    "hparams_classname",
+    "model_classname",
+    "config_dict"
+  ],
+  "load_dataclass_from_config_dict": [
+    "dataclass_name",
+    "config_dict"
+  ],
+  "TfEventUtilsTest": {
+    "test_sort_and_deduplicate_entries": [
+      "self",
+      "events",
+      "exp"
+    ],
+    "test_sort_and_deduplicate_entries_should_raise_error_when_wall_times_unsorted": [
+      "self"
+    ]
+  },
+  "MakeReferenceRecursiveTest": {
+    "test_scalar_fields": [
+      "self"
+    ],
+    "test_nested_fields": [
+      "self"
+    ]
+  },
+  "SetDefaultReferenceTest": {
+    "test_when_child_field_is_list": [
+      "self"
+    ],
+    "test_reference_to_self": [
+      "self"
+    ]
+  },
+  "BaseConfigTest": {
+    "test_precision_propagates": [
+      "self",
+      "use_auto_acts"
+    ],
+    "test_fp_precision_propagates": [
+      "self",
+      "use_auto_acts"
+    ],
+    "test_sparsity_propagates": [
+      "self",
+      "use_unstructured"
+    ],
+    "test_auto_acts_parameter": [
+      "self"
+    ],
+    "test_schema_matches_expected": [
+      "self",
+      "use_auto_acts",
+      "fp_quant",
+      "use_unstructured"
+    ]
+  },
+  "get_state_dict_summary": [
+    "state_dict",
+    "keys"
+  ],
+  "_get_state_dict_summary_recursive": [
+    "parent_module",
+    "keys",
+    "path_to_parent_module",
+    "summary"
+  ],
+  "write_state_dict_summaries_to_tb": [
+    "state_dict_summary_all",
+    "train_summary_writer",
+    "state_dict_summary_freq",
+    "step"
+  ],
+  "PandasUtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_select_rows_by_column_values": [
+      "self",
+      "column_name",
+      "values",
+      "exp"
+    ],
+    "test_select_rows_by_regex": [
+      "self",
+      "column_name",
+      "regex_str",
+      "exp"
+    ],
+    "test_drop_rows_by_column_values": [
+      "self",
+      "column_name",
+      "values",
+      "exp"
+    ],
+    "test_drop_rows_by_regex": [
+      "self",
+      "column_name",
+      "regex_str",
+      "exp"
+    ],
+    "test_filter_columns": [
+      "self",
+      "columns_to_keep",
+      "exp"
+    ],
+    "test_filter_columns_by_regex": [
+      "self",
+      "column_regex",
+      "exp"
+    ],
+    "test_drop_columns": [
+      "self",
+      "columns_to_drop",
+      "exp"
+    ],
+    "test_drop_columns_by_regex": [
+      "self",
+      "column_regex",
+      "exp"
+    ],
+    "test_group_by_with_aggregation": [
+      "self"
+    ],
+    "test_rename_values_in_column": [
+      "self",
+      "column_name",
+      "pattern",
+      "repl",
+      "exp"
+    ],
+    "test_rename_column_headers": [
+      "self",
+      "pattern",
+      "repl",
+      "exp"
+    ],
+    "test_apply_filter_drop_rename_operations": [
+      "self"
+    ]
+  },
+  "make_reference": [
+    "config",
+    "field"
+  ],
+  "set_default_reference": [
+    "child_config",
+    "parent_config",
+    "field"
+  ],
+  "float_ph": [],
+  "int_ph": [],
+  "str_ph": [],
+  "bool_ph": [],
+  "get_dense_config": [
+    "parent_config"
+  ],
+  "get_conv_config": [
+    "parent_config"
+  ],
+  "get_fp_quant_config": [],
+  "get_fp_config": [],
+  "get_sparse_config": [
+    "use_unstructured"
+  ],
+  "get_base_config": [
+    "use_auto_acts",
+    "fp_quant",
+    "use_unstructured"
+  ],
+  "ReportUtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "assertEventSeriesEqual": [
+      "self",
+      "x",
+      "y"
+    ],
+    "test_apply_smoothing_about_step_with_rectangular_kernel": [
+      "self",
+      "window_size_in_steps",
+      "step",
+      "exp"
+    ],
+    "test_apply_smoothing_about_step_with_triangular_kernel": [
+      "self",
+      "window_size_in_steps",
+      "step",
+      "exp"
+    ],
+    "test_apply_smoothing_about_step_raise_value_error": [
+      "self",
+      "event_series_key",
+      "window_size_in_steps",
+      "step"
+    ],
+    "test_apply_smoothing_with_rectangular_kernel": [
+      "self",
+      "window_size_in_steps",
+      "exp"
+    ],
+    "test_apply_smoothing_with_triangular_kernel": [
+      "self",
+      "window_size_in_steps",
+      "exp"
+    ],
+    "test_find_early_stop_step": [
+      "self",
+      "event_series_key",
+      "early_stop_agg",
+      "start_step",
+      "exp"
+    ],
+    "test_find_early_stop_step_raises_value_error_on_too_large_start_step": [
+      "self"
+    ],
+    "test_get_early_stop_func": [
+      "self",
+      "early_stop_agg",
+      "exp"
+    ],
+    "test_get_early_stop_func_raises_error_on_unknown_agg": [
+      "self"
+    ],
+    "test_get_smoothing_kernel_func": [
+      "self"
+    ],
+    "test_get_smoothing_kernel_func_raises_error_on_unknown_agg": [
+      "self"
+    ],
+    "test_get_smoothing_kernel_func_raises_error_on_rect_kernel_without_window_size": [
+      "self"
+    ],
+    "test_check_for_nans": [
+      "self",
+      "event_series_key",
+      "start_step",
+      "exp"
+    ],
+    "test_check_all_events_for_nans": [
+      "self",
+      "all_events",
+      "exp"
+    ],
+    "test_get_agg_metrics_at_step": [
+      "self",
+      "all_events",
+      "early_stop_step",
+      "smoothing",
+      "exp_agg_metrics"
+    ],
+    "test_compute_agg_metrics_from_events": [
+      "self",
+      "all_events",
+      "exp_stop_step",
+      "exp_first_nan_step",
+      "exp_agg_metrics",
+      "exp_agg_metrics_unsmoothed"
+    ],
+    "test_report_path_from_model_dir": [
+      "self",
+      "model_dir",
+      "exp"
+    ],
+    "test_save_report": [
+      "self"
+    ]
+  },
+  "flatten_with_joined_string_paths": [
+    "dictionary"
+  ],
+  "convert_report_to_flat_dict_default": [
+    "report"
+  ],
+  "convert_reports_to_dataframe": [
+    "reports",
+    "convert_report_to_flat_dict_fn"
+  ],
+  "clickable_link": [
+    "link",
+    "display_str"
+  ],
+  "AnalysisUtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_convert_report_to_flat_dict_default": [
+      "self"
+    ],
+    "test_convert_reports_to_dataframe": [
+      "self"
+    ],
+    "test_flatten_with_joined_string_paths": [
+      "self",
+      "nested_dict",
+      "exp"
+    ],
+    "test_clickable_link": [
+      "self"
+    ]
+  },
+  "SummaryUtilsTest": {
+    "assertNestedDictEqual": [
+      "self",
+      "a",
+      "b"
+    ],
+    "test_empty_get_state_dict_summary": [
+      "self",
+      "keys"
+    ],
+    "test_get_state_dict_summary": [
+      "self",
+      "keys",
+      "expected_summary"
+    ]
+  },
+  "Regex": [],
+  "NewStr": [],
+  "ColumnName": [],
+  "ColumnValue": [],
+  "OrderAscending": [],
+  "SingleColumnFilter": [],
+  "SingleColumnRegex": [],
+  "SingleColumnRegexReplace": [],
+  "ColumnNameRegexReplace": [],
+  "SortBy": [],
+  "select_rows_by_column_values": [
+    "df",
+    "column_name",
+    "values"
+  ],
+  "select_rows_by_regex": [
+    "df",
+    "column_name",
+    "regex_str"
+  ],
+  "drop_rows_by_column_values": [
+    "df",
+    "column_name",
+    "values"
+  ],
+  "drop_rows_by_regex": [
+    "df",
+    "column_name",
+    "regex_str"
+  ],
+  "filter_columns": [
+    "df",
+    "columns_to_keep"
+  ],
+  "filter_columns_by_regex": [
+    "df",
+    "column_regex"
+  ],
+  "drop_columns": [
+    "df",
+    "columns_to_drop"
+  ],
+  "drop_columns_by_regex": [
+    "df",
+    "column_regex"
+  ],
+  "group_by_with_aggregation": [
+    "df",
+    "by",
+    "agg_column_names",
+    "aggregators"
+  ],
+  "rename_values_in_column": [
+    "df",
+    "column_name",
+    "pattern",
+    "repl"
+  ],
+  "rename_column_headers": [
+    "df",
+    "pattern",
+    "repl"
+  ],
+  "apply_filter_drop_rename_operations": [
+    "df",
+    "row_filter_args",
+    "row_regex_filter_args",
+    "rename_row_value_args",
+    "drop_columns_by_regex_args",
+    "rename_column_name_args",
+    "sort_by_args"
+  ],
+  "boxplot_with_group_by_sorted_by_median": [
+    "df",
+    "column_to_plot",
+    "by"
+  ],
+  "COMPUTE_MEMORY_COST_FILENAME": [],
+  "HPARAMS_CONFIG_FILENAME": [],
+  "REPORT_FILENAME": [],
+  "_AllEvents": [],
+  "_AllAggMetrics": [],
+  "MinOrMax": {
+    "MIN": [],
+    "MAX": [],
+    "get_func": [
+      "self"
+    ]
+  },
+  "SmoothingKernel": {
+    "RECTANGULAR": [],
+    "TRIANGULAR": [],
+    "rectangular_kernel": [
+      "self",
+      "x",
+      "window_size_in_steps"
+    ],
+    "triangular_kernel": [
+      "self",
+      "x",
+      "window_size_in_steps"
+    ],
+    "get_func": [
+      "self",
+      "window_size_in_steps"
+    ]
+  },
+  "ExperimentReport": {},
+  "check_for_nans": [
+    "event_series",
+    "start_step"
+  ],
+  "check_all_events_for_nans": [
+    "all_events"
+  ],
+  "find_early_stop_step": [
+    "event_series",
+    "early_stop_func",
+    "start_step"
+  ],
+  "apply_smoothing_about_step": [
+    "events",
+    "step",
+    "kernel_fn"
+  ],
+  "apply_smoothing": [
+    "events",
+    "kernel_fn"
+  ],
+  "get_agg_metrics_at_step": [
+    "all_events",
+    "step",
+    "smoothing_kernel_fn"
+  ],
+  "compute_agg_metrics_from_events": [
+    "all_events",
+    "early_stop_component",
+    "early_stop_attr",
+    "early_stop_agg",
+    "smoothing_kernel",
+    "window_size_in_steps",
+    "start_step"
+  ],
+  "create_end_of_training_report": [
+    "model_dir",
+    "eval_freq",
+    "num_train_steps",
+    "early_stop_attr",
+    "early_stop_agg",
+    "smoothing_kernel",
+    "early_stop_ds_dir",
+    "other_ds_dirs",
+    "tags_to_include",
+    "window_size_in_steps",
+    "start_step",
+    "experiment_name",
+    "user_name",
+    "launch_time",
+    "tensorboard_id"
+  ],
+  "report_path_from_model_dir": [
+    "model_dir"
+  ],
+  "save_report": [
+    "report",
+    "report_dir"
+  ],
+  "DynamicBounds": {
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "GetBounds": {
+    "__call__": [
+      "self",
+      "x"
+    ],
+    "_stats_to_bounds": [
+      "self",
+      "stats_value"
+    ]
+  },
+  "subvals": [
+    "seq",
+    "vals"
+  ],
+  "make_padding_mask": [
+    "padding_mask_query",
+    "padding_mask_key",
+    "query_shape",
+    "key_shape",
+    "attention_axis",
+    "segmentation_mask"
+  ],
+  "_make_causal_mask": [
+    "key",
+    "attention_axis",
+    "self_mask"
+  ],
+  "ExpHParams": {},
+  "ReciprocalHParams": {},
+  "SoftmaxQuantHParams": {},
+  "SoftmaxHParams": {},
+  "DotProductAttnHParams": {},
+  "reciprocal": [
+    "tensor",
+    "dtype",
+    "recip_hparams"
+  ],
+  "exponential": [
+    "tensor",
+    "dtype",
+    "exp_hparams"
+  ],
+  "softmax": [
+    "attn_weights",
+    "norm_dims",
+    "dtype",
+    "softmax_hparams",
+    "dynamic_context"
+  ],
+  "dot_product_attention": [
+    "query",
+    "key",
+    "value",
+    "hparams",
+    "dynamic_context",
+    "paxis_name",
+    "train",
+    "key_padding_mask",
+    "query_padding_mask",
+    "attn_mask",
+    "dtype",
+    "bias",
+    "axis",
+    "broadcast_dropout",
+    "dropout_rng",
+    "dropout_rate",
+    "deterministic",
+    "precision"
+  ],
+  "_invert_perm": [
+    "perm"
+  ],
+  "MultiHeadDotProductAttentionAqt": {
+    "__call__": [
+      "self",
+      "inputs_q",
+      "inputs_kv"
+    ]
+  },
+  "SelfAttentionAqt": {
+    "__call__": [
+      "self",
+      "inputs_q"
+    ]
+  },
+  "FLAGS": [],
+  "fp143_scaled": [],
+  "fp143_unscaled": [],
+  "METADATA_KEY": [],
+  "filter_out_metadata": [
+    "params"
+  ],
+  "param_dtypes_shapes_axes": [
+    "params",
+    "params_axes"
+  ],
+  "ConvAqtTest": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "init_model_with_1_layer": [
+      "self",
+      "inputs",
+      "num_features",
+      "kernel_size",
+      "kernel_init",
+      "weight_prec",
+      "quant_act",
+      "weight_half_shift"
+    ],
+    "test_conv": [
+      "self",
+      "weight_prec"
+    ],
+    "test_group_conv": [
+      "self",
+      "weight_prec"
+    ],
+    "test_full_range_integer_weights_should_give_precise_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_full_range_integer_weights_with_float_scale_should_give_close_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_weight_invariance_to_power_of_2_weight_scaling": [
+      "self",
+      "weight_prec",
+      "weight_scale"
+    ],
+    "test_1_bit_makes_all_weight_equal_to_zero": [
+      "self"
+    ],
+    "test_quantized_weights_and_symmetrics_acts_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "weight_prec",
+      "acts_prec",
+      "fixed_bounds"
+    ],
+    "test_without_quantized_weights_should_not_call_quantization_ops": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient"
+    ]
+  },
+  "DenseAqtTest": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "init_model_with_1_layer": [
+      "self",
+      "inputs",
+      "num_features",
+      "kernel_init",
+      "weight_prec",
+      "quant_act",
+      "weight_half_shift",
+      "kernel_axis_names",
+      "train",
+      "possibly_use_quantized_vars",
+      "quant_type"
+    ],
+    "test_padding": [
+      "self"
+    ],
+    "test_ones_weights_should_give_precise_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_logical_axis_names": [
+      "self"
+    ],
+    "test_full_range_integer_weights_should_give_precise_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_full_range_integer_weights_with_float_scale_should_give_close_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_float_weights_should_give_close_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_weight_invariance_to_power_of_2_weight_scaling": [
+      "self",
+      "weight_prec",
+      "weight_scale"
+    ],
+    "test_1_bit_makes_all_weight_equal_to_zero": [
+      "self"
+    ],
+    "test_quantized_weights_and_symmetrics_acts_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "weight_prec",
+      "acts_prec",
+      "fixed_bounds"
+    ],
+    "test_quantized_inputs_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "pos_inputs_prec",
+      "fixed_bounds"
+    ],
+    "test_fp_quantized_inputs_should_call_downcast_sat_ftz": [
+      "self",
+      "downcast_mock",
+      "inputs_prec",
+      "fixed_bounds"
+    ],
+    "test_without_quantized_weights_should_not_call_quantization_ops": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient"
+    ],
+    "test_quant_granularity": [
+      "self",
+      "_",
+      "mock_quantized_dot_general",
+      "granularity",
+      "axis"
+    ],
+    "test_train_inference_differentiation": [
+      "self",
+      "train",
+      "possibly_use_quantized_vars",
+      "param_info"
+    ]
+  },
+  "EmbedLayerTest": {
+    "test_embed": [
+      "self",
+      "weight_prec"
+    ],
+    "test_embed_equality": [
+      "self",
+      "weight_prec"
+    ],
+    "test_embed_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "weight_prec",
+      "acts_prec",
+      "fixed_bounds"
+    ]
+  },
+  "LayerNormTest": {
+    "make_hparams": [
+      "cls",
+      "quantize_reductions",
+      "exp_min",
+      "exp_max",
+      "sig_bits"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_quantized_layer_norm_matches_unquantized_in_fp32": [
+      "self",
+      "quantize_acts",
+      "quantize_reductions"
+    ],
+    "test_epsilon_rounding": [
+      "self"
+    ]
+  },
+  "assert_same_tree": [
+    "a",
+    "b"
+  ],
+  "DenseGeneralAqtTest": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "init_model_with_1_layer": [
+      "self",
+      "inputs",
+      "num_features",
+      "axis",
+      "kernel_init",
+      "weight_prec",
+      "weight_half_shift",
+      "quant_act",
+      "train",
+      "kernel_axis_names",
+      "reshape_kernel",
+      "possibly_use_quantized_vars"
+    ],
+    "test_ones_weights_should_give_precise_output": [
+      "self",
+      "weight_prec",
+      "reshape"
+    ],
+    "test_logical_axis_names": [
+      "self",
+      "reshape_kernel"
+    ],
+    "test_full_range_integer_weights_should_give_precise_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_float_weights_regression_test": [
+      "self",
+      "weight_prec",
+      "expected_output"
+    ],
+    "test_full_range_integer_weights_with_float_scale_should_give_close_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_float_weights_should_give_close_output": [
+      "self",
+      "weight_prec"
+    ],
+    "test_weight_invariance_to_power_of_2_weight_scaling": [
+      "self",
+      "weight_prec",
+      "weight_scale"
+    ],
+    "test_1_bit_makes_all_weight_equal_to_zero": [
+      "self"
+    ],
+    "test_quantized_weights_and_symmetrics_acts_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "weight_prec",
+      "acts_prec",
+      "fixed_bounds"
+    ],
+    "test_without_quantized_weights_should_not_call_quantization_ops": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient"
+    ],
+    "test_quantized_inputs_should_call_clip_and_round": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "pos_inputs_prec",
+      "fixed_bounds"
+    ],
+    "test_weights_quant_granularity": [
+      "self",
+      "_",
+      "mock_flaxformer_dot_general",
+      "granularity",
+      "axis"
+    ],
+    "test_acts_quant_granularity": [
+      "self",
+      "_",
+      "mock_flaxformer_dot_general",
+      "granularity",
+      "quant_axis"
+    ],
+    "test_train_inference_differentiation": [
+      "self",
+      "train",
+      "possibly_use_quantized_vars",
+      "param_info"
+    ]
+  },
+  "DenseGeneralTest": {
+    "_mock_initializer": [
+      "self",
+      "key",
+      "shape",
+      "dtype",
+      "val"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_dense_general_no_bias": [
+      "self"
+    ],
+    "test_dense_general_with_bias": [
+      "self"
+    ],
+    "test_dense_general_two_features": [
+      "self"
+    ],
+    "test_dense_general_two_axes": [
+      "self"
+    ]
+  },
+  "fp32": [],
+  "QuantOpsTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_attributes_create_positive": [
+      "self",
+      "bounds",
+      "prec"
+    ],
+    "test_attributes_create_symmetric": [
+      "self",
+      "bounds",
+      "prec"
+    ],
+    "test_attributes_create_weights_op_fp": [
+      "self",
+      "weight_range",
+      "weight_shape",
+      "fp_quant"
+    ],
+    "test_attributes_create_acts_op_fp": [
+      "self",
+      "act_distribution",
+      "use_hparams_bounds"
+    ],
+    "test_attributes_create_weights_ops": [
+      "self",
+      "weight_range",
+      "weight_shape",
+      "prec"
+    ]
+  },
+  "WeightQuantizationTest": {
+    "test_weight_scale_shape_is_expected": [
+      "self",
+      "axis"
+    ],
+    "test_float_weights_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_full_range_int_weight_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_scale_invariance_weight_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_per_feature_dim_scale_invariance_weight_quantization": [
+      "self",
+      "prec"
+    ]
+  },
+  "ActQuantizationTest": {
+    "test_inputs_scale_shape_is_expected": [
+      "self"
+    ],
+    "test_positive_activation_quantization_clips_outside_bounds": [
+      "self",
+      "prec"
+    ],
+    "test_per_feature_dim_unsigned_activation_quantization_clips_outside_bounds": [
+      "self",
+      "prec"
+    ],
+    "test_scale_invariance_signed_activation_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_per_feature_dim_scale_invariance_pos_activation_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_int_positive_act_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_int_symmetric_act_quantization": [
+      "self",
+      "prec"
+    ],
+    "test_no_quantization": [
+      "self",
+      "prec"
+    ]
+  },
+  "AQTTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_quantized_dot_aqt": [
+      "self",
+      "act_bounds",
+      "weight_prec",
+      "weight_axis"
+    ],
+    "test_quantized_dot_general_aqt": [
+      "self",
+      "act_bounds",
+      "weight_prec",
+      "weight_axis"
+    ],
+    "assert_is_integer_in_range": [
+      "self",
+      "x"
+    ],
+    "test_lax_dot_has_integer_inputs_in_quantized_dot": [
+      "self",
+      "mock_dot_general",
+      "act_distribution",
+      "prefer_int8_to_int32_dot",
+      "prec"
+    ],
+    "test_quantized_dot_has_correct_dtype": [
+      "self",
+      "input_dtype",
+      "act_prec",
+      "quant_type"
+    ],
+    "test_dynamic_quantized_dot_general_has_correct_dtype": [
+      "self",
+      "input_dtype",
+      "act_prec",
+      "quant_type"
+    ],
+    "test_quantized_dynamic_dot_general": [
+      "self",
+      "lhs_prec",
+      "rhs_prec"
+    ],
+    "test_quantized_dynamic_dot_general_get_bounds": [
+      "self"
+    ],
+    "test_lax_dot_has_integer_inputs_in_dynamic_dot_general": [
+      "self",
+      "mock_dot_general",
+      "lhs_distribution",
+      "rhs_distribution"
+    ],
+    "test_quantized_dot_no_quant": [
+      "self"
+    ],
+    "test_quantized_dynamic_dot_general_no_quant": [
+      "self"
+    ]
+  },
+  "QuantizedDotFakeQuantTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_quantized_dot_general_should_call_weights_and_inputs_quantization": [
+      "self",
+      "mock_act_fq",
+      "mock_w_fq",
+      "weight_prec",
+      "act_prec",
+      "strategy"
+    ]
+  },
+  "QuantizedDynamicDotGeneralTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_quantized_dynamic_dot_general_should_call_inputs_quantization": [
+      "self",
+      "mock_act_fq",
+      "lhs_act_prec",
+      "rhs_act_prec",
+      "strategy"
+    ]
+  },
+  "QuantizedSumTest": {
+    "test_quantized_sum": [
+      "self",
+      "exp_min",
+      "exp_max",
+      "sig_bits",
+      "expected_result"
+    ],
+    "test_keepdims_and_axis": [
+      "self",
+      "keepdims",
+      "axis",
+      "expected_shape"
+    ]
+  },
+  "load_hlo_proto_from_jax_fn": [
+    "fn"
+  ],
+  "load_hlo_proto_from_model": [
+    "model",
+    "state",
+    "input_shapes"
+  ],
+  "output_hlo": [
+    "computation",
+    "file_path"
+  ],
+  "count_ops_in_hlo_proto": [
+    "hlo_proto",
+    "ops_regex"
+  ],
+  "DISABLE_EPSILON_IN_SCALE_FUN_FOR_TESTING": [],
+  "SCALE_DTYPE": [],
+  "ActsBoundT": [],
+  "_FloatQuant": {},
+  "_PrecT": [],
+  "QuantType": {
+    "FAKE_QUANT": [],
+    "FAKE_QUANT_WITH_INT": [],
+    "AQT": [],
+    "to_jax_type": [
+      "self"
+    ]
+  },
+  "QuantOps": {
+    "FloatQuant": [],
+    "PrecT": [],
+    "__init__": [
+      "self"
+    ],
+    "create_symmetric_fp": [
+      "cls"
+    ],
+    "create_symmetric": [
+      "cls"
+    ],
+    "create_positive": [
+      "cls"
+    ],
+    "assert_scale_shape_is": [
+      "self"
+    ],
+    "to_quantized": [
+      "self",
+      "x"
+    ],
+    "from_quantized": [
+      "self",
+      "x"
+    ],
+    "fake_quant": [
+      "self",
+      "x"
+    ],
+    "create_weights_ops": [
+      "cls",
+      "w"
+    ],
+    "create_weights_fake_quant": [
+      "cls",
+      "w"
+    ],
+    "create_input_ops": [
+      "cls",
+      "inputs"
+    ],
+    "create_inputs_fake_quant": [
+      "cls",
+      "inputs"
+    ],
+    "should_quantize": [
+      "self"
+    ],
+    "get_scale_for_aqt": [
+      "self"
+    ]
+  },
+  "PrecisionType": [],
+  "quantized_dot": [],
+  "_canonicalize_feature_axes": [
+    "axis",
+    "ndims"
+  ],
+  "QuantW": {},
+  "flaxformer_dot_general": [],
+  "quantized_dot_general": [],
+  "QuantizedDot": {
+    "__call__": [
+      "self",
+      "w",
+      "act",
+      "bounds_params"
+    ]
+  },
+  "quantized_dynamic_dot_general": [],
+  "quantized_sum": [
+    "x",
+    "axis",
+    "keepdims",
+    "prec"
+  ],
+  "_quantized_sum_jvp": [
+    "axis",
+    "keepdims",
+    "prec",
+    "primals",
+    "tangents"
+  ],
+  "dot_general_aqt": [
+    "lhs",
+    "rhs",
+    "dimension_numbers",
+    "dot_precision",
+    "use_int8_to_int32_dot"
+  ],
+  "assert_all_close_prec": [
+    "exact",
+    "res",
+    "prec"
+  ],
+  "_iterate_stats_recursive": [
+    "state1",
+    "state2",
+    "layer_name"
+  ],
+  "_iterate_stats": [
+    "state1",
+    "state2"
+  ],
+  "assert_stats_are_equal": [
+    "state1",
+    "state2"
+  ],
+  "assert_stats_are_unequal": [
+    "state1",
+    "state2"
+  ],
+  "configure_jax": [],
+  "FloatingPointBounds": {},
+  "get_bounds": [
+    "exp_min",
+    "exp_max",
+    "sig_bits"
+  ],
+  "downcast_sat_ftz": [
+    "x",
+    "exp_min",
+    "exp_max",
+    "sig_bits"
+  ],
+  "_downcast_sat_ftz_jvp": [
+    "exp_min",
+    "exp_max",
+    "sig_bits",
+    "primals",
+    "tangents"
+  ],
+  "is_in_pmapped_context": [
+    "paxis_name"
+  ],
+  "masked_reduction": [
+    "x"
+  ],
+  "masked_sum": [],
+  "masked_mean_of_max": [],
+  "masked_mean_of_min": [],
+  "masked_mean": [
+    "x"
+  ],
+  "HloUtilsTest": {
+    "test_load_hlo_proto_from_jax_fn_and_count_ops": [
+      "self",
+      "fn",
+      "fn_args",
+      "ops_regex",
+      "exp_count"
+    ],
+    "test_load_hlo_proto_from_model_and_count_ops": [
+      "self"
+    ]
+  },
+  "normalize_axes": [
+    "axes",
+    "ndim"
+  ],
+  "broadcast_rank": [
+    "source",
+    "target"
+  ],
+  "GetBoundsTest": {
+    "setUp": [
+      "self"
+    ],
+    "init_model": [
+      "self",
+      "update_bounds",
+      "update_stats",
+      "reset_stats",
+      "use_cams",
+      "granularity",
+      "ema_coeff"
+    ],
+    "test_get_bounds_init": [
+      "self",
+      "update_bound"
+    ],
+    "test_update_stats": [
+      "self",
+      "update_bound",
+      "reset_stats"
+    ],
+    "test_update_stats_false": [
+      "self",
+      "update_bound",
+      "reset_stats"
+    ],
+    "test_update_state_with_mutable_false_context_raises_error": [
+      "self",
+      "update_stats",
+      "update_bounds"
+    ],
+    "test_get_bounds_update_bounds": [
+      "self",
+      "update_bound",
+      "use_cams"
+    ],
+    "test_ema_coeff": [
+      "self",
+      "ema_coeff"
+    ],
+    "test_dynamic_bounds": [
+      "self",
+      "clipping_coeff",
+      "granularity"
+    ]
+  },
+  "DotMetadataMonkeyPatch": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "ConvMetadataMonkeyPatch": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "_quantization_annotation": [
+    "lhs_prec",
+    "rhs_prec",
+    "rhs_is_weight"
+  ],
+  "_find_lhs_shape": [
+    "instr",
+    "computations"
+  ],
+  "_find_rhs_shape": [
+    "instr",
+    "computations"
+  ],
+  "_estimate_weights": [
+    "instr",
+    "computations"
+  ],
+  "_estimate_conv_mults": [
+    "instr",
+    "computations"
+  ],
+  "_estimate_dot_mults": [
+    "instr",
+    "computations"
+  ],
+  "_extract_quant_info": [
+    "instr"
+  ],
+  "_list_supported_ops_from_hlo": [
+    "hlo_proto"
+  ],
+  "_get_supported_ops": [],
+  "estimate_compute_cost": [
+    "hlo_proto"
+  ],
+  "estimate_memory_cost": [
+    "hlo_proto"
+  ],
+  "estimate_costs_of_dot_and_conv_ops_from_jax_fn": [
+    "fn"
+  ],
+  "ComputeCostUtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "compare_hlo_instructions": [
+      "self",
+      "hlo_no_annotation",
+      "hlo_w_annotation"
+    ],
+    "test_estimate_simple_model_cost": [
+      "self",
+      "modelclass",
+      "input_shapes",
+      "model_kwargs",
+      "expected_compute_cost",
+      "expected_compute_cost_ratio",
+      "expected_compute_cost_linear",
+      "expected_compute_cost_ratio_linear",
+      "expected_memory_cost",
+      "expected_memory_cost_ratio"
+    ],
+    "test_batch_size_has_no_effect_on_cost": [
+      "self",
+      "modelclass",
+      "input_shape_per_sample",
+      "model_kwargs"
+    ],
+    "test_check_value_inside_and_outside_of_context_conv_general": [
+      "self",
+      "weight_prec"
+    ],
+    "test_annotation_only_changes_hlo_metadata_conv": [
+      "self",
+      "weight_prec",
+      "acts_prec"
+    ],
+    "test_check_value_inside_and_outside_of_context_dot_general": [
+      "self",
+      "weight_prec"
+    ],
+    "test_annotation_only_changes_hlo_metadata_dense": [
+      "self",
+      "weight_prec",
+      "acts_prec"
+    ]
+  },
+  "should_quantize_weights": [
+    "weight_quant_start_step",
+    "step"
+  ],
+  "should_update_bounds": [
+    "activation_bound_update_freq",
+    "activation_bound_start_step",
+    "step"
+  ],
+  "update_sparsity_mask": [
+    "sparsity_start_step",
+    "sparsity_update_freq",
+    "step"
+  ],
+  "get_dynamic_context_for_step": [],
+  "InitializerType": [],
+  "default_kernel_init": [],
+  "DType": [],
+  "PRNGKey": [],
+  "Shape": [],
+  "Initializer": [],
+  "PrecisionLike": [],
+  "DenseAqt": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "_canonicalize_tuple": [
+    "x"
+  ],
+  "_RESHAPED_KERNEL_AXIS_NAME_MAP": [],
+  "_normalize_axes": [
+    "axes",
+    "ndim"
+  ],
+  "DenseGeneralAqt": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ConvAqt": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "default_embed_init": [],
+  "EmbedAqt": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "inputs"
+    ],
+    "attend": [
+      "self",
+      "query",
+      "padding_mask"
+    ]
+  },
+  "LayerNormAqt": {
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "assert_shapes_equal": [
+    "shape",
+    "expected_shape"
+  ],
+  "assert_shapes_compatible": [
+    "lhs",
+    "rhs"
+  ],
+  "StatsTagTest": {
+    "setUp": [
+      "self"
+    ],
+    "init_model": [
+      "self",
+      "init_x",
+      "channel_axis",
+      "update_stats",
+      "num_indices_per_ax"
+    ],
+    "test_masking": [
+      "self"
+    ],
+    "test_init_and_shape": [
+      "self",
+      "channel_axis",
+      "expected_shape"
+    ],
+    "test_tag_stats_ones": [
+      "self",
+      "channel_axis",
+      "expected_shape"
+    ],
+    "test_tag_stats_numpy_comparison": [
+      "self",
+      "channel_axis",
+      "reduction_axis"
+    ],
+    "test_channel_axis_sampling": [
+      "self",
+      "channel_axis",
+      "num_indices_per_ax",
+      "expected_shape"
+    ]
+  },
+  "BoundsT": [],
+  "jnp_dtype": [],
+  "add_straight_through_estimator": [
+    "jax_function"
+  ],
+  "floor_with_gradient": [
+    "x"
+  ],
+  "round_with_gradient": [
+    "x"
+  ],
+  "round_and_clip_to_signed_int": [
+    "x"
+  ],
+  "floor_and_clip_to_unsigned_int": [
+    "x"
+  ],
+  "signed_int_bound": [
+    "prec",
+    "half_shift"
+  ],
+  "max_abs_weights": [
+    "x"
+  ],
+  "unsigned_int_bound": [
+    "prec"
+  ],
+  "mod_softmax_clipped": [
+    "sum_high_bound",
+    "low_bound",
+    "x",
+    "xs"
+  ],
+  "softmax_exp_lin": [
+    "a",
+    "x",
+    "xs"
+  ],
+  "softmax_recip_lin": [
+    "a",
+    "x",
+    "xs"
+  ],
+  "SoftmaxTest": {
+    "rand_2x2_tensor": [],
+    "norm_dims": [],
+    "tensor_sub_max": [],
+    "test_custom_softmax_vs_mock": [
+      "self",
+      "input_tensor",
+      "norm_dims",
+      "softmax_hparams",
+      "expected_output"
+    ],
+    "random_input": [],
+    "test_softmax_vs_original": [
+      "self",
+      "input_tensor",
+      "softmax_hparams"
+    ]
+  },
+  "AttentionTest": {
+    "construct_hparams": [
+      "cls",
+      "weight_prec"
+    ],
+    "test_multihead_self_attention": [
+      "self",
+      "weight_prec"
+    ],
+    "test_multihead_encoder_decoder_attention": [
+      "self",
+      "weight_prec"
+    ],
+    "test_multihead_self_attention_w_dropout": [
+      "self",
+      "weight_prec"
+    ],
+    "test_decoding": [
+      "self",
+      "weight_prec",
+      "spatial_shape",
+      "attn_dims"
+    ],
+    "test_autoregresive_receptive_field_1d": [
+      "self",
+      "weight_prec"
+    ],
+    "test_padding_mask": [
+      "self"
+    ]
+  },
+  "AttnActsMatmulQuantTest": {
+    "construct_hparams": [
+      "self",
+      "attn_act_q",
+      "attn_act_k",
+      "attn_act_probs",
+      "attn_act_v"
+    ],
+    "test_self_attention_act_quant_should_call_quant_ops": [
+      "self",
+      "mock_inputs_fake_quant",
+      "attn_act_q",
+      "attn_act_k",
+      "attn_act_probs",
+      "attn_act_v",
+      "update_bounds",
+      "paxis_name",
+      "train"
+    ]
+  },
+  "fp8_143_max_value": [],
+  "fp8_143_min_value": [],
+  "test_data": [
+    "dtype"
+  ],
+  "gradient_test_data": [
+    "sig_bits"
+  ],
+  "FpCastTest": {
+    "test_downcast_sat_ftz": [
+      "self",
+      "dtype",
+      "argument_result_values"
+    ],
+    "test_invalid_argument_type": [
+      "self"
+    ],
+    "test_return_type": [
+      "self"
+    ],
+    "test_sig_bits_zero": [
+      "self"
+    ],
+    "test_grad": [
+      "self",
+      "primal",
+      "expected_grad",
+      "sig_bits",
+      "exp_min",
+      "exp_max"
+    ]
+  },
+  "_take_subset_of_axes": [
+    "x",
+    "axis",
+    "num_indices_per_ax"
+  ],
+  "StatsTag": {
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "QuantGranularity": {
+    "PER_TENSOR": [],
+    "PER_CHANNEL": []
+  },
+  "DynamicContext": {},
+  "PrimitivesTest": {
+    "test_floor_and_clip_to_unsigned_int": [
+      "self",
+      "prec"
+    ],
+    "test_round_and_clip_to_signed_int": [
+      "self",
+      "prec"
+    ],
+    "test_round_and_clip_to_signed_int_bound_half_shift": [
+      "self",
+      "prec"
+    ],
+    "test_round_and_clip_to_signed_int_half_shift": [
+      "self"
+    ],
+    "test_ste": [
+      "self",
+      "op_with_ste"
+    ],
+    "test_grad_of_round_and_clip_to_signed_int": [
+      "self"
+    ],
+    "test_grad_of_round_and_clip_to_unsigned_int": [
+      "self"
+    ]
+  },
+  "UpdateUtilsTest": {
+    "test_should_update_bounds": [
+      "self",
+      "frequency",
+      "start_step",
+      "current_step",
+      "should_update"
+    ],
+    "test_should_update_sparsity_mask": [
+      "self",
+      "frequency",
+      "start_step",
+      "current_step",
+      "should_update"
+    ],
+    "test_num_update_sparsity": [
+      "self",
+      "step",
+      "sparsity_start_step",
+      "sparsity_update_freq",
+      "num_update_sparsity"
+    ]
+  },
+  "HParamsTest": {
+    "test_dynamic_hparams": [
+      "self"
+    ],
+    "test_convert_lists_to_tuples": [
+      "self"
+    ]
+  },
+  "EOS_ID": [],
+  "NEG_INF": [],
+  "brevity_penalty": [
+    "alpha",
+    "length"
+  ],
+  "top_k": [
+    "x",
+    "k"
+  ],
+  "add_beam_dim": [
+    "x",
+    "beam_size"
+  ],
+  "flatten_beam_dim": [
+    "x"
+  ],
+  "unflatten_beam_dim": [
+    "x",
+    "batch_size",
+    "beam_size"
+  ],
+  "flat_batch_beam_expand": [
+    "x",
+    "beam_size"
+  ],
+  "gather_beams": [
+    "nested",
+    "beam_indices",
+    "batch_size",
+    "new_beam_size"
+  ],
+  "gather_topk_beams": [
+    "nested",
+    "score_or_log_prob",
+    "batch_size",
+    "new_beam_size"
+  ],
+  "BeamState": {},
+  "beam_init": [
+    "batch_size",
+    "beam_size",
+    "max_decode_len",
+    "cache"
+  ],
+  "beam_search": [
+    "inputs",
+    "cache",
+    "tokens_to_logits",
+    "beam_size",
+    "alpha",
+    "eos_token",
+    "max_decode_len"
+  ],
+  "ModelsTest": {
+    "setUp": [
+      "self"
+    ],
+    "init_model": [
+      "self",
+      "transformer_kwargs"
+    ],
+    "test_mlp_weight_quant": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient",
+      "mlp_weight_prec"
+    ],
+    "test_without_mlp_weight_quant": [
+      "self",
+      "floor_with_gradient",
+      "round_with_gradient"
+    ],
+    "_num_mlp_floors": [
+      "self",
+      "weight_quant",
+      "pos_input_quant",
+      "neg_input_quant"
+    ],
+    "_num_embedding_floors": [
+      "self",
+      "weight_quant",
+      "act_quant"
+    ],
+    "_num_attention_floors": [
+      "self",
+      "weight_quant",
+      "kqv_input_quant",
+      "out_input_quant",
+      "act_q_input_quant",
+      "act_k_input_quant",
+      "act_qk_input_quant",
+      "act_v_input_quant"
+    ],
+    "test_number_of_floor_ops": [
+      "self",
+      "num_layers",
+      "mlp_weight_prec",
+      "mlp_pos_inputs_prec",
+      "mlp_signed_inputs_prec",
+      "attention_kqv_inputs_prec",
+      "attention_out_inputs_prec",
+      "embedding_weight_prec",
+      "attention_weight_prec",
+      "logits_inputs_prec",
+      "attention_act_q_inputs_prec",
+      "attention_act_k_inputs_prec",
+      "attention_act_probs_inputs_prec",
+      "attention_act_v_inputs_prec"
+    ],
+    "test_number_of_floor_ops_attention": [
+      "self",
+      "num_layers",
+      "attention_kqv_inputs_prec",
+      "attention_out_inputs_prec",
+      "attention_weight_prec",
+      "attention_act_q_inputs_prec",
+      "attention_act_k_inputs_prec",
+      "attention_act_probs_inputs_prec",
+      "attention_act_v_inputs_prec",
+      "inputs_hyper_is_float"
+    ],
+    "test_number_of_floor_ops_mlp": [
+      "self",
+      "num_layers",
+      "mlp_weight_prec",
+      "mlp_pos_inputs_prec",
+      "mlp_pos_inputs_hyper_is_float",
+      "mlp_signed_inputs_prec",
+      "mlp_signed_inputs_hyper_is_float"
+    ],
+    "test_number_of_floor_ops_embedding": [
+      "self",
+      "num_layers",
+      "embedding_weight_prec",
+      "logits_inputs_prec",
+      "logits_inputs_hyper_is_float",
+      "logits_via_embeddings"
+    ],
+    "test_padding_mask": [
+      "self"
+    ],
+    "test_hparams_without_logits_when_logits_not_shared_raises_error": [
+      "self"
+    ]
+  },
+  "hardware_bernoulli": [
+    "rng_key",
+    "p",
+    "shape"
+  ],
+  "set_hardware_bernoulli": [],
+  "shift_right": [
+    "x",
+    "axis"
+  ],
+  "AddPositionEmbs": {
+    "__call__": [
+      "self",
+      "inputs",
+      "inputs_positions"
+    ]
+  },
+  "Encoder1DBlock": {
+    "__call__": [
+      "self",
+      "inputs",
+      "padding_mask",
+      "inputs_segmentation"
+    ]
+  },
+  "EncoderDecoder1DBlock": {
+    "__call__": [
+      "self",
+      "targets",
+      "encoded",
+      "padding_mask",
+      "key_padding_mask",
+      "inputs_segmentation",
+      "targets_segmentation"
+    ]
+  },
+  "Encoder": {
+    "__call__": [
+      "self",
+      "inputs",
+      "inputs_positions",
+      "inputs_segmentation"
+    ]
+  },
+  "Decoder": {
+    "__call__": [
+      "self",
+      "encoded",
+      "src_padding_mask",
+      "targets",
+      "targets_positions",
+      "inputs_segmentation",
+      "targets_segmentation",
+      "tgt_padding_mask"
+    ]
+  },
+  "Transformer": {
+    "setup": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "inputs",
+      "targets",
+      "inputs_positions",
+      "targets_positions",
+      "inputs_segmentation",
+      "targets_segmentation"
+    ],
+    "encode": [
+      "self",
+      "inputs",
+      "inputs_positions",
+      "inputs_segmentation"
+    ],
+    "decode": [
+      "self",
+      "encoded",
+      "src_padding_mask",
+      "targets",
+      "targets_positions",
+      "inputs_segmentation",
+      "targets_segmentation",
+      "tgt_padding_mask"
+    ]
+  },
+  "create_1x1": [],
+  "create_mock_data": [],
+  "MockEncoder": {
+    "vocab_size": [
+      "self"
+    ],
+    "detokenize": [
+      "self",
+      "_"
+    ]
+  },
+  "TrainTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_train_with_config_file": [
+      "self",
+      "hparams_config_filename"
+    ],
+    "test_checkpointing": [
+      "self"
+    ]
+  },
+  "LearningRateSchedulerTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_constant": [
+      "self"
+    ],
+    "test_linear_warmup": [
+      "self"
+    ],
+    "test_rsqrt_decay": [
+      "self"
+    ],
+    "test_mlperf_schedule": [
+      "self"
+    ]
+  },
+  "BestCheckpointTest": {
+    "setUp": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "loss"
+    ],
+    "get_model_dir_files": [
+      "self"
+    ],
+    "get_checkpoint": [
+      "self"
+    ],
+    "test_min_loss_saved": [
+      "self"
+    ],
+    "test_nonfinite_ignored": [
+      "self",
+      "bad_value"
+    ],
+    "test_duplicate_loss": [
+      "self"
+    ],
+    "test_no_checkpoint_saved_if_all_nan": [
+      "self"
+    ]
+  },
+  "UnicodeRegex": {
+    "__init__": [
+      "self"
+    ],
+    "property_chars": [
+      "self",
+      "prefix"
+    ]
+  },
+  "uregex": [],
+  "bleu_tokenize": [
+    "string"
+  ],
+  "_get_ngrams": [
+    "segment",
+    "max_order"
+  ],
+  "compute_bleu": [
+    "reference_corpus",
+    "translation_corpus",
+    "max_order",
+    "use_bp"
+  ],
+  "bleu_local": [
+    "ref_lines",
+    "hyp_lines",
+    "case_sensitive"
+  ],
+  "bleu_wrapper": [
+    "ref_filename",
+    "hyp_filename",
+    "case_sensitive"
+  ],
+  "AUTOTUNE": [],
+  "raw_wmt_datasets": [
+    "dataset_name",
+    "evaluation_datasets",
+    "reverse_translation",
+    "shard_idx",
+    "shard_count",
+    "data_dir"
+  ],
+  "dump_chars_to_textfile": [
+    "dataset",
+    "maxchars",
+    "data_keys"
+  ],
+  "train_sentencepiece": [
+    "dataset",
+    "vocab_size",
+    "maxchars",
+    "character_coverage",
+    "model_path",
+    "model_type",
+    "data_keys"
+  ],
+  "load_sentencepiece_tokenizer": [
+    "model_path",
+    "add_bos",
+    "add_eos",
+    "reverse"
+  ],
+  "bin_and_batch": [
+    "dataset",
+    "n_devices",
+    "batch_size",
+    "bucket_length",
+    "buckets",
+    "drop_remainder"
+  ],
+  "pack_dataset": [
+    "dataset",
+    "length",
+    "keys"
+  ],
+  "_pack_with_tf_ops": [
+    "dataset",
+    "keys",
+    "length"
+  ],
+  "preprocess_wmt_data": [
+    "dataset",
+    "training",
+    "n_devices",
+    "dynamic_batching",
+    "pack_examples",
+    "shuffle_buffer_size",
+    "max_length",
+    "batch_size",
+    "bucket_length",
+    "drop_remainder",
+    "prefetch_size",
+    "seed"
+  ],
+  "get_wmt_datasets": [
+    "n_devices",
+    "dataset_name",
+    "eval_dataset_list",
+    "reverse_translation",
+    "shard_idx",
+    "shard_count",
+    "data_dir",
+    "vocab_path",
+    "target_vocab_size",
+    "max_corpus_chars",
+    "batch_size",
+    "bucket_length",
+    "dynamic_batching",
+    "pack_examples",
+    "max_length",
+    "max_eval_length",
+    "seed"
+  ],
+  "EOS_TOKEN": [],
+  "create_learning_rate_scheduler": [
+    "hparams"
+  ],
+  "create_model": [
+    "key",
+    "input_shape",
+    "target_shape",
+    "transformer_kwargs",
+    "hparams"
+  ],
+  "create_optimizer": [
+    "params",
+    "learning_rate",
+    "weight_decay",
+    "beta1",
+    "beta2",
+    "eps"
+  ],
+  "cross_entropy_with_logits": [
+    "logits",
+    "targets"
+  ],
+  "compute_weighted_cross_entropy": [
+    "logits",
+    "targets",
+    "weights",
+    "label_smoothing"
+  ],
+  "compute_weighted_accuracy": [
+    "logits",
+    "targets",
+    "weights"
+  ],
+  "compute_metrics": [
+    "logits",
+    "labels",
+    "weights"
+  ],
+  "WrapHashably": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "val"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "train_step": [
+    "optimizer",
+    "batch",
+    "dynamic_context",
+    "transformer_kwargs",
+    "hparams",
+    "state",
+    "dropout_rng"
+  ],
+  "p_train_step": [],
+  "_write_beam_hlo": [
+    "params",
+    "input_shape",
+    "cache",
+    "state",
+    "transformer_kwargs",
+    "hparams",
+    "dynamic_context"
+  ],
+  "get_jax_computation_of_model": [
+    "transformer_kwargs",
+    "params",
+    "state",
+    "hparams",
+    "with_weights"
+  ],
+  "estimate_compute_and_memory_cost": [
+    "model_dir",
+    "params",
+    "transformer_kwargs",
+    "state",
+    "hparams"
+  ],
+  "_write_train_hlo": [
+    "transformer_kwargs",
+    "params",
+    "state",
+    "hparams"
+  ],
+  "_write_hlo": [
+    "output",
+    "fn"
+  ],
+  "eval_step": [
+    "params",
+    "batch",
+    "state",
+    "transformer_kwargs",
+    "hparams",
+    "dynamic_context"
+  ],
+  "p_eval_step": [],
+  "predict_step": [
+    "inputs",
+    "params",
+    "cache",
+    "state",
+    "eos_token",
+    "transformer_kwargs",
+    "hparams",
+    "dynamic_context"
+  ],
+  "p_pred_step": [],
+  "pad_examples": [
+    "x",
+    "desired_batch_size"
+  ],
+  "tohost": [
+    "x"
+  ],
+  "run_eval": [],
+  "decode_tokens": [
+    "toks",
+    "encoder"
+  ],
+  "initialize_cache": [
+    "batch_size",
+    "transformer_kwargs",
+    "hparams"
+  ],
+  "run_inference": [],
+  "TrainingState": {
+    "initialize": [
+      "cls",
+      "encoder",
+      "hparams",
+      "transformer_kwargs_overrides"
+    ],
+    "save_checkpoint": [
+      "self"
+    ],
+    "restore_checkpoint": [
+      "self"
+    ]
+  },
+  "get_dynamic_context": [
+    "hparams",
+    "step",
+    "train"
+  ],
+  "run_train_step": [],
+  "Datasets": {
+    "load": [
+      "cls",
+      "random_seed",
+      "eval_dataset_list",
+      "batch_size"
+    ]
+  },
+  "save_best_checkpoint": [],
+  "get_state_dict_keys_from_flags": [],
+  "eval_ds_name_to_summary_dir": [
+    "eval_dataset_name"
+  ],
+  "does_checkpoint_exist": [
+    "model_dir"
+  ],
+  "run_training": [
+    "datasets",
+    "hparams",
+    "io_executor",
+    "transformer_kwargs_overrides"
+  ],
+  "step": [
+    "inputs",
+    "params",
+    "cache",
+    "state",
+    "eos_token",
+    "max_decode_len",
+    "transformer_kwargs",
+    "hparams",
+    "dynamic_context"
+  ],
+  "LearningRateSchedulerHParams": {},
+  "TrainingHParams": {
+    "from_config_dict": [
+      "cls",
+      "config_dict"
+    ]
+  },
+  "_restore_from_checkpoint": [
+    "model",
+    "checkpoint_file"
+  ],
+  "encoder_from_file": [
+    "config",
+    "batch_size",
+    "encode_length",
+    "use_bfloat16",
+    "use_xla_optimizations"
+  ],
+  "encoder_n_32": [
+    "layers"
+  ],
+  "encoder_full_model_opt_8_16": [],
+  "encoder_full_model_quantized_8_16": [],
+  "encoder_small_model_quantized_1_32": [],
+  "encoder_1_32_big_model": [],
+  "encoder_2_32_big_model": [],
+  "transformer": [
+    "config",
+    "batch_size",
+    "encode_length",
+    "decode_length"
+  ],
+  "transformer_32_64_big_model": [],
+  "transformer_32_64": [],
+  "transformer_16_97_147_big_model": [],
+  "DEFAULTS": [],
+  "BaseConfigSize": {
+    "MINIMAL_MODEL": [],
+    "SMALL_MODEL": [],
+    "FULL_MODEL": []
+  },
+  "BaseConfigQuantTarget": {
+    "NONE": [],
+    "WEIGHTS_ONLY": [],
+    "WEIGHTS_AND_SOME_ACTS_1": [],
+    "WEIGHTS_AND_SOME_ACTS_2": [],
+    "WEIGHTS_AND_ACTS": []
+  },
+  "BaseConfig": {
+    "create_from_flags": [
+      "cls"
+    ]
+  },
+  "ConfigGenerator": {
+    "BFLOAT16": [],
+    "WEIGHTS_ONLY": [],
+    "WEIGHTS_AND_FIXED_ACTS": [],
+    "WEIGHTS_AND_AUTO_ACTS": []
+  },
+  "parse_base_config_prec": [
+    "prec"
+  ],
+  "create_base_transformer_hparams": [],
+  "create_training_hparams_from_base_config": [
+    "base_config"
+  ],
+  "create_training_hparams_from_flags": [],
+  "get_wmt_base_config": [
+    "use_auto_acts",
+    "fp_quant"
+  ],
+  "get_mlp_block_config": [
+    "parent_config"
+  ],
+  "get_fp_quant_hparams_config": [
+    "quantized",
+    "quantized_reductions"
+  ],
+  "get_softmax_config": [
+    "quantized",
+    "quantized_reductions"
+  ],
+  "get_layer_norm_config": [
+    "quantized",
+    "quantized_reductions"
+  ],
+  "set_global_softmax_config": [
+    "base_config",
+    "softmax_config"
+  ],
+  "set_global_layer_norm_config": [
+    "base_config",
+    "layer_norm_config"
+  ],
+  "get_attention_config": [
+    "parent_config"
+  ],
+  "BlockKind": {
+    "ENCODER": [],
+    "DECODER": []
+  },
+  "get_block_config": [
+    "parent_config",
+    "block_kind"
+  ],
+  "get_embedding_config": [
+    "parent_config"
+  ],
+  "get_config": [
+    "n_layers",
+    "use_auto_acts",
+    "fp_quant"
+  ],
+  "QuantTarget": {
+    "NONE": [],
+    "WEIGHTS_ONLY": [],
+    "WEIGHTS_AND_FIXED_ACTS": [],
+    "WEIGHTS_AND_AUTO_ACTS": []
+  },
+  "get_auto_acts_config": [
+    "n_layers",
+    "fp_quant"
+  ],
+  "get_weights_only_config": [
+    "n_layers",
+    "fp_quant"
+  ],
+  "get_fixed_acts_config": [
+    "n_layers",
+    "fp_quant"
+  ],
+  "get_model_size_configs": [],
+  "CostTest": {
+    "setUp": [
+      "self"
+    ],
+    "_create_hlo_from_resnet_hparams": [
+      "self",
+      "hparams",
+      "input_shape"
+    ],
+    "test_estimate_resnet_cost": [
+      "self",
+      "base_config_filename",
+      "expected_compute_cost",
+      "expected_compute_cost_ratio",
+      "expected_memory_cost",
+      "expected_memory_cost_ratio"
+    ]
+  },
+  "PokeBNNTest": {
+    "test_size_stats": [
+      "self"
+    ]
+  },
+  "ImagenetBenchmark": {
+    "test_8x_v100_half_precision": [
+      "self"
+    ]
+  },
+  "Dtype": [],
+  "ResidualBlock": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ResNet": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "create_resnet": [
+    "hparams",
+    "dtype",
+    "train"
+  ],
+  "ConfigsTest": {
+    "test_unquantized_config": [
+      "self",
+      "config_dict_module"
+    ],
+    "test_weights_only_quantized_config": [
+      "self",
+      "config_dict_module",
+      "prec"
+    ],
+    "test_fully_quantized_quantized_config": [
+      "self",
+      "config_dict_module",
+      "weight_prec",
+      "act_prec"
+    ]
+  },
+  "DPReLU": {
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "PokeBNN": {
+    "op_log": [],
+    "instr": [
+      "self",
+      "name",
+      "op",
+      "other"
+    ],
+    "batch_norm": [
+      "self"
+    ],
+    "conv": [
+      "self",
+      "use_bias"
+    ],
+    "dense": [
+      "self"
+    ],
+    "dprelu": [
+      "self"
+    ],
+    "reshape_add": [
+      "self",
+      "r",
+      "yy",
+      "method",
+      "name"
+    ],
+    "poke_init": [
+      "self",
+      "x"
+    ],
+    "se": [
+      "self",
+      "x",
+      "features",
+      "name"
+    ],
+    "poke_conv": [
+      "self",
+      "x",
+      "r1",
+      "name",
+      "features",
+      "kernel_size",
+      "strides"
+    ],
+    "bottleneck_block": [
+      "self",
+      "x",
+      "name",
+      "hparams",
+      "features",
+      "strides"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ],
+    "size_stats": [
+      "self"
+    ]
+  },
+  "create_pokebnn": [
+    "hparams",
+    "train"
+  ],
+  "TRAIN_IMAGES": [],
+  "EVAL_IMAGES": [],
+  "IMAGE_SIZE": [],
+  "CROP_PADDING": [],
+  "MEAN_RGB": [],
+  "STDDEV_RGB": [],
+  "distorted_bounding_box_crop": [
+    "image_bytes",
+    "bbox",
+    "min_object_covered",
+    "aspect_ratio_range",
+    "area_range",
+    "max_attempts"
+  ],
+  "_resize": [
+    "image",
+    "image_size"
+  ],
+  "_at_least_x_are_equal": [
+    "a",
+    "b",
+    "x"
+  ],
+  "_decode_and_random_crop": [
+    "image_bytes",
+    "image_size"
+  ],
+  "_decode_and_center_crop": [
+    "image_bytes",
+    "image_size"
+  ],
+  "normalize_image": [
+    "image"
+  ],
+  "preprocess_for_train": [
+    "image_bytes",
+    "dtype",
+    "image_size"
+  ],
+  "preprocess_for_eval": [
+    "image_bytes",
+    "dtype",
+    "image_size"
+  ],
+  "load_split": [
+    "batch_size",
+    "train",
+    "data_dir",
+    "dtype",
+    "image_size",
+    "cache"
+  ],
+  "LrScheduler": {},
+  "Adam": {},
+  "cross_entropy_loss": [
+    "logits",
+    "labels"
+  ],
+  "kl_div_loss": [
+    "logits",
+    "teacher_logits"
+  ],
+  "prepare_tf_data": [
+    "xs"
+  ],
+  "create_input_iter": [
+    "batch_size",
+    "data_dir",
+    "image_size",
+    "dtype",
+    "train",
+    "cache"
+  ],
+  "sync_batch_stats": [
+    "state"
+  ],
+  "cosine_decay": [
+    "base_learning_rate",
+    "step",
+    "decay_steps",
+    "alpha"
+  ],
+  "step_decay": [
+    "lr",
+    "step",
+    "interval"
+  ],
+  "create_learning_rate_fn": [
+    "base_learning_rate",
+    "steps_per_epoch",
+    "lr_scheduler",
+    "batch_size"
+  ],
+  "restore_checkpoint": [
+    "state"
+  ],
+  "save_checkpoint": [
+    "state"
+  ],
+  "_get_state_dict_keys_from_flags": [],
+  "prepare_and_save_report": [
+    "hparams",
+    "eval_freq",
+    "num_train_steps"
+  ],
+  "get_residual_config": [
+    "parent_config"
+  ],
+  "ImagenetType": {
+    "RESNET29": [],
+    "RESNET50": [],
+    "RESNET101": [],
+    "RESNET152": [],
+    "RESNET200": [],
+    "get_residual_layers": [
+      "self"
+    ]
+  },
+  "SparsityTest": {
+    "init_model": [
+      "self",
+      "update_mask",
+      "apply_mask",
+      "unstruct_sparsity",
+      "structure_decay",
+      "num_update_sparsity",
+      "mask_decay_weight",
+      "prune_rate",
+      "sparse_ste"
+    ],
+    "test_init": [
+      "self",
+      "unstruct_sparsity"
+    ],
+    "test_structure_decay": [
+      "self",
+      "num_update_sparsity",
+      "out",
+      "mask"
+    ],
+    "test_mask_decay": [
+      "self",
+      "num_update_sparsity",
+      "out",
+      "mask"
+    ],
+    "test_sorting_network_sparse_2_4": [
+      "self"
+    ],
+    "test_column_row_pruning": [
+      "self",
+      "order",
+      "exp_output"
+    ],
+    "test_3d_column_pruning": [
+      "self",
+      "order",
+      "exp_output"
+    ],
+    "test_n_m_row_wise_sparsity_with_offset": [
+      "self",
+      "offset",
+      "exp_output"
+    ],
+    "test_sr_ste_fwd_pass": [
+      "self",
+      "update_mask",
+      "apply_mask"
+    ],
+    "test_sr_ste_bwd_pass": [
+      "self"
+    ],
+    "test_mask": [
+      "self",
+      "update_mask",
+      "apply_mask"
+    ]
+  },
+  "PruningParamsTest": {
+    "test_invalid_params": [
+      "self",
+      "sparse_type",
+      "prune_rate"
+    ],
+    "test_invalid_mask_decay_weight": [
+      "self",
+      "sparse_type",
+      "prune_rate",
+      "mask_decay_weight"
+    ],
+    "test_invalid_sparse_ste_with_non_zero_mask_decay_weight": [
+      "self",
+      "sparse_type",
+      "prune_rate",
+      "sparse_ste",
+      "mask_decay_weight"
+    ],
+    "test_invalid_sparse_ste_with_structure_decay": [
+      "self",
+      "sparse_type",
+      "prune_rate",
+      "sparse_ste",
+      "structure_decay"
+    ],
+    "test_invalid_sparse_ste_with_unstructured_sparsity": [
+      "self",
+      "sparse_type",
+      "prune_rate",
+      "sparse_ste"
+    ],
+    "test_invalid_prune_rate": [
+      "self",
+      "sparse_type",
+      "prune_rate",
+      "error_msg"
+    ]
+  },
+  "PruningFunctionalityTest": {
+    "test_pruning_mask": [
+      "self"
+    ],
+    "test_smallest_largest_magnitude_mask": [
+      "self"
+    ],
+    "test_prune_inputs_unstruct": [
+      "self"
+    ],
+    "test_smallest_largest_magnitude_prune_unstruct": [
+      "self"
+    ],
+    "test_prune_inputs_n_m": [
+      "self"
+    ],
+    "test_order_not_valid": [
+      "self"
+    ],
+    "test_n_m_pruning_mask": [
+      "self"
+    ]
+  },
+  "SparseType": {
+    "STRUCTURED_NM": [],
+    "UNSTRUCTURED": []
+  },
+  "SparseHParams": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "sr_ste": [
+    "inputs",
+    "mask",
+    "update_mask",
+    "apply_mask",
+    "sparsity_hparams",
+    "n_sparsity",
+    "m_sparsity"
+  ],
+  "sr_ste_fwd": [
+    "inputs",
+    "mask",
+    "update_mask",
+    "apply_mask",
+    "sparsity_hparams",
+    "n_sparsity",
+    "m_sparsity"
+  ],
+  "sr_ste_bwd": [
+    "sparsity_hparams",
+    "n_sparsity",
+    "m_sparsity",
+    "res",
+    "g"
+  ],
+  "Sparsity": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "apply_sparsity": [
+    "inputs",
+    "sparsity_hparams",
+    "n_sparsity",
+    "m_sparsity"
+  ],
+  "get_sparsity_mask": [
+    "inputs",
+    "sparsity_hparams",
+    "n_sparsity",
+    "m_sparsity"
+  ],
+  "prune_inputs_n_m": [
+    "inputs"
+  ],
+  "prune_2_4": [
+    "inputs"
+  ],
+  "get_pruning_n_m_mask": [
+    "inputs",
+    "n",
+    "m"
+  ],
+  "get_pruning_unstruct_mask": [
+    "inputs"
+  ],
+  "prune_inputs_unstruct": [
+    "inputs"
+  ],
+  "field": [
+    "pytree_node"
+  ]
+}

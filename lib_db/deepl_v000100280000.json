@@ -1,0 +1,897 @@
+{
+  "VERSION": [],
+  "__author__": [],
+  "__all__": [],
+  "Translator": {
+    "_DEEPL_SERVER_URL": [],
+    "_DEEPL_SERVER_URL_FREE": [],
+    "_HTTP_STATUS_QUOTA_EXCEEDED": [],
+    "__init__": [
+      "self",
+      "auth_key"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_api_call": [
+      "self",
+      "url"
+    ],
+    "_raise_for_status": [
+      "self",
+      "status_code",
+      "content",
+      "json",
+      "glossary",
+      "downloading_document"
+    ],
+    "_check_valid_languages": [
+      "self",
+      "source_lang",
+      "target_lang"
+    ],
+    "_check_language_and_formality": [
+      "self",
+      "source_lang",
+      "target_lang",
+      "formality",
+      "glossary",
+      "style_rule"
+    ],
+    "_create_glossary": [
+      "self",
+      "name",
+      "source_lang",
+      "target_lang",
+      "entries_format",
+      "entries"
+    ],
+    "close": [
+      "self"
+    ],
+    "set_app_info": [
+      "self",
+      "app_info_name",
+      "app_info_version"
+    ],
+    "server_url": [
+      "self"
+    ],
+    "translate_text": [
+      "self",
+      "text"
+    ],
+    "translate_text_with_glossary": [
+      "self",
+      "text",
+      "glossary",
+      "target_lang"
+    ],
+    "translate_document_from_filepath": [
+      "self",
+      "input_path",
+      "output_path"
+    ],
+    "translate_document": [
+      "self",
+      "input_document",
+      "output_document"
+    ],
+    "translate_document_upload": [
+      "self",
+      "input_document"
+    ],
+    "translate_document_get_status": [
+      "self",
+      "handle"
+    ],
+    "translate_document_wait_until_done": [
+      "self",
+      "handle",
+      "timeout_s"
+    ],
+    "translate_document_download": [
+      "self",
+      "handle",
+      "output_file",
+      "chunk_size"
+    ],
+    "get_source_languages": [
+      "self",
+      "skip_cache"
+    ],
+    "get_target_languages": [
+      "self",
+      "skip_cache"
+    ],
+    "get_glossary_languages": [
+      "self"
+    ],
+    "get_usage": [
+      "self"
+    ],
+    "create_glossary": [
+      "self",
+      "name",
+      "source_lang",
+      "target_lang",
+      "entries"
+    ],
+    "create_glossary_from_csv": [
+      "self",
+      "name",
+      "source_lang",
+      "target_lang",
+      "csv_data"
+    ],
+    "get_glossary": [
+      "self",
+      "glossary_id"
+    ],
+    "list_glossaries": [
+      "self"
+    ],
+    "get_glossary_entries": [
+      "self",
+      "glossary"
+    ],
+    "delete_glossary": [
+      "self",
+      "glossary"
+    ]
+  },
+  "logger": [],
+  "_optional_import": [
+    "module_name"
+  ],
+  "_get_log_text": [
+    "message"
+  ],
+  "log_debug": [
+    "message"
+  ],
+  "log_info": [
+    "message"
+  ],
+  "get_int_safe": [
+    "d",
+    "key"
+  ],
+  "auth_key_is_free_account": [
+    "auth_key"
+  ],
+  "validate_glossary_term": [
+    "term"
+  ],
+  "convert_tsv_to_dict": [
+    "tsv",
+    "term_separator",
+    "skip_checks"
+  ],
+  "convert_dict_to_tsv": [
+    "entry_dict",
+    "skip_checks"
+  ],
+  "convert_csv_to_dict": [
+    "csv_data",
+    "skip_checks"
+  ],
+  "parse_timestamp": [
+    "creation_time"
+  ],
+  "DeepLException": {
+    "__init__": [
+      "self",
+      "message",
+      "should_retry",
+      "http_status_code"
+    ]
+  },
+  "AuthorizationException": {},
+  "QuotaExceededException": {},
+  "TooManyRequestsException": {},
+  "ConnectionException": {
+    "__init__": [
+      "self",
+      "message",
+      "should_retry"
+    ]
+  },
+  "DocumentTranslationException": {
+    "__init__": [
+      "self",
+      "message",
+      "document_handle"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "document_request": [
+      "self"
+    ]
+  },
+  "GlossaryNotFoundException": {},
+  "DocumentNotReadyException": {},
+  "TextResult": {
+    "__init__": [
+      "self",
+      "text",
+      "detected_source_lang",
+      "billed_characters",
+      "model_type_used"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "WriteResult": {
+    "__init__": [
+      "self",
+      "text",
+      "detected_source_language",
+      "target_language"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "DocumentHandle": {
+    "__init__": [
+      "self",
+      "document_id",
+      "document_key"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "document_id": [
+      "self"
+    ],
+    "document_key": [
+      "self"
+    ]
+  },
+  "DocumentStatus": {
+    "__init__": [
+      "self",
+      "status",
+      "seconds_remaining",
+      "billed_characters",
+      "error_message"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "ok": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "seconds_remaining": [
+      "self"
+    ],
+    "billed_characters": [
+      "self"
+    ],
+    "error_message": [
+      "self"
+    ]
+  },
+  "Usage": {
+    "__init__": [
+      "self",
+      "json"
+    ],
+    "any_limit_reached": [
+      "self"
+    ],
+    "any_limit_exceeded": [
+      "self"
+    ],
+    "character": [
+      "self"
+    ],
+    "document": [
+      "self"
+    ],
+    "team_document": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Language": {
+    "__init__": [
+      "self",
+      "code",
+      "name",
+      "supports_formality"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "remove_regional_variant": [
+      "language"
+    ],
+    "ARABIC": [],
+    "BULGARIAN": [],
+    "CZECH": [],
+    "DANISH": [],
+    "GERMAN": [],
+    "GREEK": [],
+    "ENGLISH": [],
+    "ENGLISH_BRITISH": [],
+    "ENGLISH_AMERICAN": [],
+    "SPANISH": [],
+    "ESTONIAN": [],
+    "FINNISH": [],
+    "FRENCH": [],
+    "HUNGARIAN": [],
+    "INDONESIAN": [],
+    "ITALIAN": [],
+    "JAPANESE": [],
+    "KOREAN": [],
+    "LITHUANIAN": [],
+    "LATVIAN": [],
+    "NORWEGIAN": [],
+    "DUTCH": [],
+    "POLISH": [],
+    "PORTUGUESE": [],
+    "PORTUGUESE_BRAZILIAN": [],
+    "PORTUGUESE_EUROPEAN": [],
+    "ROMANIAN": [],
+    "RUSSIAN": [],
+    "SLOVAK": [],
+    "SLOVENIAN": [],
+    "SWEDISH": [],
+    "TURKISH": [],
+    "UKRAINIAN": [],
+    "CHINESE": []
+  },
+  "GlossaryLanguagePair": {
+    "__init__": [
+      "self",
+      "source_lang",
+      "target_lang"
+    ],
+    "source_lang": [
+      "self"
+    ],
+    "target_lang": [
+      "self"
+    ]
+  },
+  "MultilingualGlossaryDictionaryEntries": {
+    "__init__": [
+      "self",
+      "source_lang",
+      "target_lang",
+      "entries"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "source_lang": [
+      "self"
+    ],
+    "target_lang": [
+      "self"
+    ],
+    "entries": [
+      "self"
+    ]
+  },
+  "MultilingualGlossaryDictionaryEntriesResponse": {
+    "__init__": [
+      "self",
+      "dictionaries"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "dictionaries": [
+      "self"
+    ]
+  },
+  "MultilingualGlossaryDictionaryInfo": {
+    "__init__": [
+      "self",
+      "source_lang",
+      "target_lang",
+      "entry_count"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "source_lang": [
+      "self"
+    ],
+    "target_lang": [
+      "self"
+    ],
+    "entry_count": [
+      "self"
+    ]
+  },
+  "MultilingualGlossaryInfo": {
+    "__init__": [
+      "self",
+      "glossary_id",
+      "name",
+      "creation_time",
+      "dictionaries"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "glossary_id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "dictionaries": [
+      "self"
+    ],
+    "creation_time": [
+      "self"
+    ]
+  },
+  "GlossaryInfo": {
+    "__init__": [
+      "self",
+      "glossary_id",
+      "name",
+      "ready",
+      "source_lang",
+      "target_lang",
+      "creation_time",
+      "entry_count"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "glossary_id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "ready": [
+      "self"
+    ],
+    "source_lang": [
+      "self"
+    ],
+    "target_lang": [
+      "self"
+    ],
+    "creation_time": [
+      "self"
+    ],
+    "entry_count": [
+      "self"
+    ]
+  },
+  "Formality": {
+    "LESS": [],
+    "DEFAULT": [],
+    "MORE": [],
+    "PREFER_MORE": [],
+    "PREFER_LESS": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SplitSentences": {
+    "OFF": [],
+    "ALL": [],
+    "NO_NEWLINES": [],
+    "DEFAULT": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ModelType": {
+    "QUALITY_OPTIMIZED": [],
+    "LATENCY_OPTIMIZED": [],
+    "PREFER_QUALITY_OPTIMIZED": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "WritingStyle": {
+    "ACADEMIC": [],
+    "BUSINESS": [],
+    "CASUAL": [],
+    "DEFAULT": [],
+    "PREFER_ACADEMIC": [],
+    "PREFER_BUSINESS": [],
+    "PREFER_CASUAL": [],
+    "PREFER_SIMPLE": [],
+    "SIMPLE": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "WritingTone": {
+    "CONFIDENT": [],
+    "DEFAULT": [],
+    "DIPLOMATIC": [],
+    "ENTHUSIASTIC": [],
+    "FRIENDLY": [],
+    "PREFER_CONFIDENT": [],
+    "PREFER_DIPLOMATIC": [],
+    "PREFER_ENTHUSIASTIC": [],
+    "PREFER_FRIENDLY": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ConfiguredRules": {
+    "__init__": [
+      "self",
+      "dates_and_times",
+      "formatting",
+      "numbers",
+      "punctuation",
+      "spelling_and_grammar",
+      "style_and_tone",
+      "vocabulary"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "dates_and_times": [
+      "self"
+    ],
+    "formatting": [
+      "self"
+    ],
+    "numbers": [
+      "self"
+    ],
+    "punctuation": [
+      "self"
+    ],
+    "spelling_and_grammar": [
+      "self"
+    ],
+    "style_and_tone": [
+      "self"
+    ],
+    "vocabulary": [
+      "self"
+    ]
+  },
+  "CustomInstruction": {
+    "__init__": [
+      "self",
+      "label",
+      "prompt",
+      "source_language"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "label": [
+      "self"
+    ],
+    "prompt": [
+      "self"
+    ],
+    "source_language": [
+      "self"
+    ]
+  },
+  "StyleRuleInfo": {
+    "__init__": [
+      "self",
+      "style_id",
+      "name",
+      "creation_time",
+      "updated_time",
+      "language",
+      "version",
+      "configured_rules",
+      "custom_instructions"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_json": [
+      "json"
+    ],
+    "style_id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "creation_time": [
+      "self"
+    ],
+    "updated_time": [
+      "self"
+    ],
+    "language": [
+      "self"
+    ],
+    "version": [
+      "self"
+    ],
+    "configured_rules": [
+      "self"
+    ],
+    "custom_instructions": [
+      "self"
+    ]
+  },
+  "user_agent": [],
+  "max_network_retries": [],
+  "min_connection_timeout": [],
+  "_BackoffTimer": {
+    "BACKOFF_INITIAL": [],
+    "BACKOFF_MAX": [],
+    "BACKOFF_JITTER": [],
+    "BACKOFF_MULTIPLIER": [],
+    "__init__": [
+      "self"
+    ],
+    "get_num_retries": [
+      "self"
+    ],
+    "get_timeout": [
+      "self"
+    ],
+    "get_time_until_deadline": [
+      "self"
+    ],
+    "sleep_until_deadline": [
+      "self"
+    ]
+  },
+  "HttpClient": {
+    "__init__": [
+      "self",
+      "proxy",
+      "send_platform_info",
+      "verify_ssl"
+    ],
+    "set_app_info": [
+      "self",
+      "app_info_name",
+      "app_info_version"
+    ],
+    "close": [
+      "self"
+    ],
+    "request_with_backoff": [
+      "self",
+      "method",
+      "url",
+      "data",
+      "json",
+      "headers",
+      "stream"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "data",
+      "json",
+      "headers",
+      "stream"
+    ],
+    "_internal_request": [
+      "self",
+      "request",
+      "stream",
+      "timeout"
+    ],
+    "_should_retry": [
+      "self",
+      "response",
+      "exception",
+      "num_retries"
+    ],
+    "_prepare_request": [
+      "self",
+      "method",
+      "url",
+      "data",
+      "json",
+      "headers"
+    ]
+  },
+  "_generate_user_agent": [
+    "user_agent_str",
+    "send_platform_info",
+    "app_info_name",
+    "app_info_version"
+  ],
+  "DeepLClient": {
+    "__init__": [
+      "self",
+      "auth_key"
+    ],
+    "rephrase_text": [
+      "self",
+      "text"
+    ],
+    "create_multilingual_glossary": [
+      "self",
+      "name",
+      "glossary_dicts"
+    ],
+    "create_multilingual_glossary_from_csv": [
+      "self",
+      "name",
+      "source_lang",
+      "target_lang",
+      "csv_data"
+    ],
+    "_create_multilingual_glossary": [
+      "self",
+      "name",
+      "glossary_dicts"
+    ],
+    "update_multilingual_glossary_name": [
+      "self",
+      "glossary",
+      "name"
+    ],
+    "update_multilingual_glossary_dictionary": [
+      "self",
+      "glossary",
+      "glossary_dict"
+    ],
+    "update_multilingual_glossary_dictionary_from_csv": [
+      "self",
+      "glossary",
+      "source_lang",
+      "target_lang",
+      "csv_data"
+    ],
+    "_update_multilingual_glossary": [
+      "self",
+      "glossary_id",
+      "dictionaries"
+    ],
+    "replace_multilingual_glossary_dictionary": [
+      "self",
+      "glossary",
+      "glossary_dict"
+    ],
+    "replace_multilingual_glossary_dictionary_from_csv": [
+      "self",
+      "glossary",
+      "source_lang",
+      "target_lang",
+      "csv_data"
+    ],
+    "_replace_multilingual_glossary_dictionary": [
+      "self",
+      "glossary_id",
+      "source_lang",
+      "target_lang",
+      "entries"
+    ],
+    "get_multilingual_glossary": [
+      "self",
+      "glossary_id"
+    ],
+    "list_multilingual_glossaries": [
+      "self"
+    ],
+    "get_multilingual_glossary_entries": [
+      "self",
+      "glossary",
+      "source_lang",
+      "target_lang"
+    ],
+    "delete_multilingual_glossary": [
+      "self",
+      "glossary"
+    ],
+    "delete_multilingual_glossary_dictionary": [
+      "self",
+      "glossary",
+      "dictionary",
+      "source_lang",
+      "target_lang"
+    ],
+    "get_all_style_rules": [
+      "self",
+      "page",
+      "page_size",
+      "detailed"
+    ]
+  },
+  "name": [],
+  "env_auth_key": [],
+  "env_server_url": [],
+  "env_proxy_url": [],
+  "keyring_key_folder": [],
+  "keyring_key_name": [],
+  "action_usage": [
+    "deepl_client"
+  ],
+  "action_languages": [
+    "deepl_client",
+    "glossary"
+  ],
+  "action_document": [
+    "deepl_client",
+    "file",
+    "dest",
+    "output_format"
+  ],
+  "action_text": [
+    "deepl_client",
+    "show_detected_source",
+    "show_billed_characters",
+    "show_model_type_used"
+  ],
+  "action_rephrase": [
+    "deepl_client"
+  ],
+  "action_glossary": [
+    "deepl_client",
+    "subcommand"
+  ],
+  "action_glossary_create": [
+    "deepl_client",
+    "entry_list",
+    "file",
+    "csv"
+  ],
+  "print_glossaries": [
+    "glossaries"
+  ],
+  "action_glossary_list": [
+    "deepl_client"
+  ],
+  "action_glossary_get": [
+    "deepl_client"
+  ],
+  "action_glossary_entries": [
+    "deepl_client",
+    "glossary_id"
+  ],
+  "action_glossary_delete": [
+    "deepl_client",
+    "glossary_id_list"
+  ],
+  "get_parser": [
+    "prog_name"
+  ],
+  "main": [
+    "args",
+    "prog_name"
+  ]
+}

@@ -1,0 +1,5791 @@
+{
+  "log": [],
+  "KDRecipeSingleDevice": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "load_teacher_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "compile_model",
+      "base_model_state_dict",
+      "lora_weights_state_dict"
+    ],
+    "_setup_teacher_model": [
+      "self",
+      "model_cfg",
+      "model_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "dataloader_state_dict"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "_loss_step": [
+      "self",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "recipe_main": [
+    "cfg"
+  ],
+  "PPOFullFinetuneRecipeSingleDevice": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_training_hyperparameters": [
+      "self",
+      "cfg"
+    ],
+    "_setup_training_parameters": [
+      "self",
+      "cfg"
+    ],
+    "_setup_checkpointers": [
+      "self",
+      "policy_cfg",
+      "ref_policy_cfg",
+      "value_cfg",
+      "reward_cfg"
+    ],
+    "_setup_models": [
+      "self",
+      "cfg_model",
+      "cfg_reward_value_model",
+      "enable_activation_checkpointing",
+      "compile_model",
+      "policy_state_dict",
+      "ref_policy_state_dict",
+      "value_model_state_dict",
+      "reward_model_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch",
+      "is_intermediate_checkpoint"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "generate_trajectory": [
+      "self",
+      "input_ids"
+    ],
+    "generate_trajectory_batched": [
+      "self",
+      "input_ids"
+    ],
+    "train": [
+      "self"
+    ],
+    "ppo_step": [
+      "self",
+      "trajectory",
+      "advantages",
+      "returns",
+      "context_length"
+    ],
+    "log_metrics": [
+      "self",
+      "trajectory",
+      "ppo_stats",
+      "kl",
+      "kl_rewards",
+      "tokens_per_second_trajectory",
+      "tokens_per_second_loss"
+    ],
+    "cleanup_after_step": [
+      "self",
+      "trajectory",
+      "ppo_stats",
+      "advantages",
+      "returns",
+      "kl",
+      "kl_rewards"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "InferenceRecipe": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_model": [
+      "self",
+      "model_cfg",
+      "model_state_dict"
+    ],
+    "convert_prompt_to_tokens": [
+      "self",
+      "prompt"
+    ],
+    "generate": [
+      "self",
+      "cfg"
+    ]
+  },
+  "main": [
+    "cfg"
+  ],
+  "LoRAFinetuneRecipeSingleDevice": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "compile_model",
+      "base_model_state_dict",
+      "lora_weights_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn",
+      "dataloader_state_dict"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "_loss_step": [
+      "self",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "LoRADPORecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "base_model_state_dict",
+      "custom_sharded_layers",
+      "lora_weights_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "concatenated_forward": [
+      "self",
+      "model",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "QATLoRAFinetuneRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_convert_model_to_qat": [
+      "self",
+      "model",
+      "quantizer_cfg"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "base_model_state_dict",
+      "custom_sharded_layers",
+      "lora_weights_state_dict",
+      "quantizer_cfg"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "FullFinetuneRecipeSingleDevice": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "compile_model",
+      "model_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn",
+      "dataloader_state_dict"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "_loss_step": [
+      "self",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "LoRADPORecipeSingleDevice": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "compile_model",
+      "base_model_state_dict",
+      "lora_weights_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "concatenated_forward": [
+      "self",
+      "model",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "KDRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "load_teacher_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "base_model_state_dict",
+      "custom_sharded_layers",
+      "lora_weights_state_dict"
+    ],
+    "_setup_teacher_model": [
+      "self",
+      "model_cfg",
+      "custom_sharded_layers",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "_loss_step": [
+      "self",
+      "batch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "QuantizationRecipe": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "checkpointer_cfg"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_model": [
+      "self",
+      "model_cfg",
+      "model_state_dict"
+    ],
+    "quantize": [
+      "self",
+      "cfg"
+    ],
+    "save_checkpoint": [
+      "self",
+      "cfg"
+    ]
+  },
+  "FullDPORecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_load_ref_checkpoint": [
+      "self",
+      "cfg_ref_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict",
+      "custom_sharded_layers"
+    ],
+    "_setup_reference_model": [
+      "self",
+      "cfg_model",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict",
+      "custom_sharded_layers"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "concatenated_forward": [
+      "self",
+      "model",
+      "batch",
+      "activations_handling"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "FullFinetuneRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict",
+      "custom_sharded_layers",
+      "ac_mode",
+      "ac_option"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn",
+      "dataloader_state_dict"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "_VLMEvalWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "transform"
+    ],
+    "model": [
+      "self"
+    ],
+    "model_transform": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "cache_hook": [
+      "self"
+    ],
+    "rank": [
+      "self"
+    ],
+    "world_size": [
+      "self"
+    ],
+    "batch_size": [
+      "self"
+    ],
+    "eos_token_id": [
+      "self"
+    ],
+    "eot_token_id": [
+      "self"
+    ],
+    "max_length": [
+      "self"
+    ],
+    "truncation": [
+      "self"
+    ],
+    "tok_encode": [
+      "self",
+      "string"
+    ],
+    "tok_decode": [
+      "self",
+      "tokens",
+      "skip_special_tokens"
+    ],
+    "tok_batch_multimodal_encode": [
+      "self",
+      "all_texts",
+      "all_images",
+      "left_truncate_len"
+    ],
+    "_model_multimodal_generate": [
+      "self",
+      "batch",
+      "max_length",
+      "stop"
+    ]
+  },
+  "_LLMEvalWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "tokenizer"
+    ],
+    "model": [
+      "self"
+    ],
+    "eot_token_id": [
+      "self"
+    ],
+    "max_length": [
+      "self"
+    ],
+    "max_gen_toks": [
+      "self"
+    ],
+    "batch_size": [
+      "self"
+    ],
+    "device": [
+      "self"
+    ],
+    "enable_kv_cache": [
+      "self"
+    ],
+    "tok_encode": [
+      "self",
+      "text"
+    ],
+    "tok_batch_encode": [
+      "self",
+      "text",
+      "left_truncate_len"
+    ],
+    "tok_decode": [
+      "self",
+      "tokens"
+    ],
+    "_model_call": [
+      "self",
+      "inps"
+    ],
+    "_model_generate": [
+      "self",
+      "context"
+    ]
+  },
+  "EleutherEvalRecipe": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "evaluate": [
+      "self"
+    ]
+  },
+  "QATRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict",
+      "custom_sharded_layers",
+      "ac_mode",
+      "ac_option",
+      "quantizer_cfg"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "LoRAFinetuneRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "base_model_state_dict",
+      "custom_sharded_layers",
+      "lora_weights_state_dict"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn",
+      "dataloader_state_dict"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "SingleTurnYAMLToMessages": {
+    "__call__": [
+      "self",
+      "prompt"
+    ]
+  },
+  "FullGRPOFinetuneRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "load_ref_checkpoint": [
+      "self",
+      "cfg_ref_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_lr_scheduler": [
+      "self",
+      "cfg_lr_scheduler",
+      "num_training_steps",
+      "last_epoch"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "fsdp_cpu_offload",
+      "model_state_dict",
+      "ref_model_state_dict",
+      "custom_sharded_layers"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "opt_state_dict"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn",
+      "dataloader_state_dict"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "generate_trajectory": [
+      "self",
+      "input_ids",
+      "answers"
+    ],
+    "generate_trajectory_batched": [
+      "self",
+      "input_ids",
+      "answers"
+    ],
+    "grpo_step": [
+      "self",
+      "trajectory",
+      "context_length"
+    ],
+    "train": [
+      "self"
+    ],
+    "log_metrics": [
+      "self",
+      "trajectory",
+      "grpo_stats"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "cleanup_after_step": [
+      "self",
+      "trajectory",
+      "l_grpo_stats"
+    ]
+  },
+  "EarlyExitFinetuneRecipeDistributed": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "load_checkpoint": [
+      "self",
+      "cfg_checkpointer"
+    ],
+    "_update_recipe_state": [
+      "self",
+      "ckpt_dict"
+    ],
+    "setup": [
+      "self",
+      "cfg"
+    ],
+    "_setup_profiler": [
+      "self",
+      "cfg_profiler"
+    ],
+    "_setup_model": [
+      "self",
+      "cfg_model",
+      "enable_activation_checkpointing",
+      "enable_activation_offloading",
+      "fsdp_cpu_offload",
+      "reshard_after_forward",
+      "model_state_dict",
+      "custom_sharded_layers",
+      "ac_mode",
+      "ac_option"
+    ],
+    "_setup_optimizer": [
+      "self",
+      "cfg_optimizer",
+      "optimizer_in_bwd",
+      "opt_state_dict"
+    ],
+    "_setup_data": [
+      "self",
+      "cfg_dataset",
+      "shuffle",
+      "batch_size",
+      "collate_fn"
+    ],
+    "_setup_early_exit_loss": [
+      "self",
+      "cfg_early_exit_loss"
+    ],
+    "save_checkpoint": [
+      "self",
+      "epoch"
+    ],
+    "train": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "Config": {},
+  "Recipe": {},
+  "_ALL_RECIPES": [],
+  "get_all_recipes": [],
+  "FTRecipeInterface": {
+    "load_checkpoint": [
+      "self"
+    ],
+    "setup": [
+      "self"
+    ],
+    "train": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "EvalRecipeInterface": {
+    "load_checkpoint": [
+      "self"
+    ],
+    "setup": [
+      "self"
+    ],
+    "evaluate": [
+      "self"
+    ]
+  },
+  "__version__": [],
+  "__all__": [],
+  "multinomial_sample_one": [
+    "probs",
+    "q"
+  ],
+  "sample": [
+    "logits"
+  ],
+  "generate_next_token": [
+    "model",
+    "input_pos",
+    "x",
+    "q"
+  ],
+  "update_stop_tokens_tracker": [
+    "tokens",
+    "stop_tokens",
+    "stop_token_reached"
+  ],
+  "get_causal_mask_from_padding_mask": [
+    "padding_mask",
+    "target_seq_len"
+  ],
+  "get_position_ids_from_padding_mask": [
+    "padding_mask"
+  ],
+  "generate": [
+    "model",
+    "prompt"
+  ],
+  "_set_float32_precision": [
+    "precision"
+  ],
+  "verify_bf16_support": [],
+  "get_dtype": [
+    "dtype",
+    "device"
+  ],
+  "set_default_dtype": [
+    "dtype"
+  ],
+  "validate_expected_param_dtype": [
+    "named_params",
+    "dtype",
+    "exclude_param_names"
+  ],
+  "PROFILER_KEY": [],
+  "DEFAULT_PROFILER_ACTIVITIES": [],
+  "_warn": [
+    "msg"
+  ],
+  "trace_handler": [
+    "prof",
+    "output_dir",
+    "metric",
+    "row_limit"
+  ],
+  "DummyProfiler": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "setup_torch_profiler": [
+    "enabled",
+    "cpu",
+    "cuda",
+    "xpu",
+    "profile_memory",
+    "with_stack",
+    "record_shapes",
+    "with_flops",
+    "wait_steps",
+    "warmup_steps",
+    "active_steps",
+    "num_cycles",
+    "output_dir"
+  ],
+  "_torchao_0_7_supported": [],
+  "_quantizer_to_mode": [],
+  "_quantizer_mode_to_disable_fake_quant": [],
+  "_quantizer_mode_to_enable_fake_quant": [],
+  "Int8DynActInt4WeightQuantizer": {
+    "__init__": [
+      "self",
+      "groupsize"
+    ],
+    "quantize": [
+      "self",
+      "model"
+    ]
+  },
+  "Int4WeightOnlyQuantizer": {
+    "__init__": [
+      "self",
+      "groupsize",
+      "inner_k_tiles"
+    ],
+    "quantize": [
+      "self",
+      "model"
+    ]
+  },
+  "Int4WeightOnlyQATQuantizerModuleSwap": {},
+  "disable_4w_fake_quant_module_swap": [],
+  "enable_4w_fake_quant_module_swap": [],
+  "Int8DynActInt4WeightQATQuantizerModuleSwap": {},
+  "disable_8da4w_fake_quant_module_swap": [],
+  "enable_8da4w_fake_quant_module_swap": [],
+  "get_quantizer_mode": [
+    "quantizer"
+  ],
+  "_get_disable_fake_quant": [
+    "quantizer_mode"
+  ],
+  "_get_enable_fake_quant": [
+    "quantizer_mode"
+  ],
+  "swap_lora_linear_with_qat": [
+    "module",
+    "activation_qat_config",
+    "weight_qat_config"
+  ],
+  "checkpoint_wrapper": [
+    "module",
+    "ac_mode",
+    "ac_style"
+  ],
+  "apply_selective_activation_checkpointing": [
+    "model",
+    "ac_mode",
+    "ac_option"
+  ],
+  "compile_model": [
+    "model",
+    "verbose"
+  ],
+  "compile_loss": [
+    "loss",
+    "verbose"
+  ],
+  "OffloadActivations": {
+    "__init__": [
+      "self",
+      "use_pin_memory",
+      "use_streams",
+      "max_fwd_stash_size",
+      "min_offload_size"
+    ]
+  },
+  "NoOpManager": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "get_act_offloading_ctx_manager": [
+    "model",
+    "enable_activation_offloading"
+  ],
+  "torch_version": [],
+  "_DISTRIBUTED_STATE_DICT_API_IS_AVAILABLE": [],
+  "_get_sharding_strategy": [
+    "strategy"
+  ],
+  "is_distributed": [],
+  "_broadcast_tensor": [
+    "tensor",
+    "src"
+  ],
+  "get_distributed_backend": [
+    "device_type",
+    "offload_ops_to_cpu"
+  ],
+  "init_distributed": [],
+  "set_torch_num_threads": [],
+  "get_world_size_and_rank": [],
+  "validate_no_params_on_meta_device": [
+    "model"
+  ],
+  "load_from_full_model_state_dict": [
+    "model",
+    "full_sd",
+    "device",
+    "strict",
+    "cpu_offload"
+  ],
+  "_gather_nf4_tensor": [
+    "sharded_param"
+  ],
+  "gather_cpu_state_dict": [
+    "model",
+    "is_rank_zero",
+    "device",
+    "adapter_weights_only"
+  ],
+  "get_full_optimizer_state_dict": [
+    "model",
+    "opt",
+    "is_rank_zero",
+    "device"
+  ],
+  "load_from_full_optimizer_state_dict": [
+    "model",
+    "opt",
+    "full_sd",
+    "device"
+  ],
+  "get_shard_conditions": [
+    "name",
+    "module",
+    "names_to_match"
+  ],
+  "shard_model": [
+    "model",
+    "shard_conditions"
+  ],
+  "prepare_mha_for_tp": [
+    "model",
+    "tp_mesh"
+  ],
+  "disable_dropout": [
+    "model"
+  ],
+  "get_unmasked_sequence_lengths": [
+    "mask"
+  ],
+  "get_cosine_schedule_with_warmup": [
+    "optimizer",
+    "num_warmup_steps",
+    "num_training_steps",
+    "num_cycles",
+    "last_epoch"
+  ],
+  "get_lr": [
+    "optimizer"
+  ],
+  "set_activation_checkpointing": [
+    "model",
+    "auto_wrap_policy"
+  ],
+  "cleanup_before_training": [],
+  "OptimizerInBackwardWrapper": {
+    "__init__": [
+      "self",
+      "optim_map"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "optim_ckpt_map"
+    ],
+    "get_optim_key": [
+      "self",
+      "key"
+    ],
+    "set_lr_scheduler": [
+      "self",
+      "lr_scheduler"
+    ],
+    "step_lr_scheduler": [
+      "self",
+      "epoch"
+    ],
+    "get_last_lr": [
+      "self"
+    ]
+  },
+  "create_optim_in_bwd_wrapper": [
+    "model",
+    "optim_dict"
+  ],
+  "register_optim_in_bwd_hooks": [
+    "model",
+    "optim_dict"
+  ],
+  "get_memory_stats": [
+    "device",
+    "reset_stats"
+  ],
+  "DEFAULT_LOG_MESSAGE": [],
+  "log_memory_stats": [
+    "stats",
+    "message"
+  ],
+  "set_seed": [
+    "seed",
+    "debug_mode"
+  ],
+  "scale_grads": [
+    "model",
+    "scaler"
+  ],
+  "Scalar": [],
+  "save_config": [
+    "config"
+  ],
+  "flatten_dict": [
+    "d"
+  ],
+  "MetricLoggerInterface": {
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DiskLogger": {
+    "__init__": [
+      "self",
+      "log_dir",
+      "filename"
+    ],
+    "path_to_log_file": [
+      "self"
+    ],
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "StdoutLogger": {
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "WandBLogger": {
+    "__init__": [
+      "self",
+      "project",
+      "entity",
+      "group",
+      "log_dir"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "TensorBoardLogger": {
+    "__init__": [
+      "self",
+      "log_dir",
+      "organize_logs"
+    ],
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "CometLogger": {
+    "__init__": [
+      "self",
+      "api_key",
+      "workspace",
+      "project",
+      "experiment_key",
+      "mode",
+      "online",
+      "experiment_name",
+      "tags",
+      "log_code"
+    ],
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "close": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "MLFlowLogger": {
+    "__init__": [
+      "self",
+      "experiment_name",
+      "tracking_uri",
+      "run_id",
+      "run_name"
+    ],
+    "log_config": [
+      "self",
+      "config"
+    ],
+    "log": [
+      "self",
+      "name",
+      "data",
+      "step"
+    ],
+    "log_dict": [
+      "self",
+      "payload",
+      "step"
+    ],
+    "close": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "ADAPTER_CONFIG": [],
+  "ADAPTER_CONFIG_FNAME": [],
+  "ADAPTER_MODEL_FNAME": [],
+  "SAFETENSOR_INDEX_FNAME": [],
+  "TORCH_INDEX_FNAME": [],
+  "SHARD_FNAME": [],
+  "RECIPE_STATE_DIRNAME": [],
+  "REPO_ID_FNAME": [],
+  "SUFFIXES_TO_NOT_COPY": [],
+  "ADAPTER_KEY": [],
+  "EPOCHS_KEY": [],
+  "MAX_STEPS_KEY": [],
+  "MODEL_KEY": [],
+  "OPT_KEY": [],
+  "SEED_KEY": [],
+  "TOTAL_EPOCHS_KEY": [],
+  "STEPS_KEY": [],
+  "RNG_KEY": [],
+  "DATALOADER_KEY": [],
+  "ModelType": {},
+  "FormattedCheckpointFiles": {
+    "__init__": [
+      "self",
+      "filename_format",
+      "max_filename"
+    ],
+    "from_dict": [
+      "cls",
+      "d"
+    ],
+    "_validate_filename_format": [
+      "self"
+    ],
+    "build_checkpoint_filenames": [
+      "self"
+    ]
+  },
+  "get_path": [
+    "input_dir",
+    "filename",
+    "missing_ok"
+  ],
+  "safe_torch_load": [
+    "checkpoint_path",
+    "weights_only",
+    "mmap"
+  ],
+  "update_state_dict_for_classifier": [
+    "state_dict",
+    "model_named_parameters",
+    "force_override"
+  ],
+  "get_largest_iter_folder": [
+    "dir",
+    "pattern"
+  ],
+  "copy_files": [
+    "input_dir",
+    "output_dir"
+  ],
+  "get_recipe_checkpoint_path": [
+    "output_dir",
+    "recipe_checkpoint",
+    "should_load_recipe_state"
+  ],
+  "get_adapter_checkpoint_path": [
+    "output_dir",
+    "adapter_checkpoint",
+    "should_load_recipe_state",
+    "pattern"
+  ],
+  "get_model_checkpoint_path": [
+    "checkpoint_files",
+    "checkpoint_dir",
+    "output_dir",
+    "should_load_recipe_state",
+    "has_adapter_checkpoint"
+  ],
+  "check_outdir_not_in_ckptdir": [
+    "ckpt_dir",
+    "out_dir"
+  ],
+  "Checkpointer": [],
+  "TrainingProgress": {
+    "state_dict": [
+      "self"
+    ]
+  },
+  "CheckpointClient": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_get_checkpointer": [
+      "self"
+    ],
+    "_get_dcp_checkpointer": [
+      "self"
+    ],
+    "_save_checkpoint_async": [
+      "self",
+      "model",
+      "optimizer",
+      "training_progress",
+      "epoch"
+    ],
+    "_save_checkpoint_sync": [
+      "self",
+      "model",
+      "optimizer",
+      "training_progress",
+      "epoch"
+    ],
+    "save_checkpoint": [
+      "self",
+      "model",
+      "optimizer",
+      "training_progress",
+      "epoch"
+    ],
+    "load_base_checkpoint": [
+      "self"
+    ],
+    "load_distributed_checkpoint": [
+      "self",
+      "model",
+      "optimizer"
+    ]
+  },
+  "_CheckpointerInterface": {
+    "load_checkpoint": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "FullModelTorchTuneCheckpointer": {
+    "__init__": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint_files",
+      "model_type",
+      "output_dir",
+      "adapter_checkpoint",
+      "recipe_checkpoint",
+      "resume_from_checkpoint",
+      "should_load_recipe_state"
+    ],
+    "load_checkpoint": [
+      "self",
+      "weights_only"
+    ],
+    "save_checkpoint": [
+      "self",
+      "state_dict",
+      "epoch",
+      "intermediate_checkpoint",
+      "adapter_only"
+    ]
+  },
+  "FullModelHFCheckpointer": {
+    "__init__": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint_files",
+      "model_type",
+      "output_dir",
+      "adapter_checkpoint",
+      "recipe_checkpoint",
+      "resume_from_checkpoint",
+      "safe_serialization",
+      "should_load_recipe_state"
+    ],
+    "load_checkpoint": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "state_dict",
+      "epoch",
+      "intermediate_checkpoint",
+      "adapter_only"
+    ]
+  },
+  "FullModelMetaCheckpointer": {
+    "__init__": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint_files",
+      "model_type",
+      "output_dir",
+      "adapter_checkpoint",
+      "recipe_checkpoint",
+      "resume_from_checkpoint",
+      "should_load_recipe_state"
+    ],
+    "load_checkpoint": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "state_dict",
+      "epoch",
+      "intermediate_checkpoint",
+      "adapter_only"
+    ]
+  },
+  "DistributedCheckpointer": {
+    "__init__": [
+      "self",
+      "checkpoint_dir",
+      "output_dir",
+      "process_group"
+    ],
+    "_get_latest_intermediate_checkpoint": [
+      "self"
+    ],
+    "load_checkpoint": [
+      "self",
+      "state_dict",
+      "checkpoint_path"
+    ],
+    "save_checkpoint": [
+      "self",
+      "state_dict",
+      "epoch",
+      "save_async"
+    ]
+  },
+  "chat_dataset": [
+    "tokenizer"
+  ],
+  "ConcatDataset": {
+    "__init__": [
+      "self",
+      "datasets"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "cnn_dailymail_articles_dataset": [
+    "tokenizer",
+    "source",
+    "max_seq_len",
+    "filter_fn",
+    "split"
+  ],
+  "hh_rlhf_helpful_dataset": [
+    "tokenizer"
+  ],
+  "instruct_dataset": [
+    "tokenizer"
+  ],
+  "StackExchangePairedToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "stack_exchange_paired_dataset": [
+    "tokenizer"
+  ],
+  "SFTDataset": {
+    "__init__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "SFTTransform": {
+    "__init__": [
+      "self",
+      "message_transform",
+      "model_transform"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "alpaca_dataset": [
+    "tokenizer"
+  ],
+  "alpaca_cleaned_dataset": [],
+  "PreferenceDataset": {
+    "__init__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "_prepare_sample": [
+      "self",
+      "sample"
+    ]
+  },
+  "preference_dataset": [
+    "tokenizer"
+  ],
+  "grammar_dataset": [
+    "tokenizer"
+  ],
+  "wikitext_dataset": [
+    "tokenizer",
+    "source",
+    "subset",
+    "max_seq_len",
+    "packed",
+    "filter_fn",
+    "split"
+  ],
+  "PackedDataset": {
+    "__init__": [
+      "self",
+      "ds"
+    ],
+    "_pack": [
+      "self"
+    ],
+    "_should_stop_packing": [
+      "self"
+    ],
+    "_split_and_add_pack": [
+      "self",
+      "current_pack"
+    ],
+    "_add_pack": [
+      "self",
+      "pack"
+    ],
+    "_convert_to_tensors": [
+      "self",
+      "pack"
+    ],
+    "_pad_pack": [
+      "self",
+      "pack",
+      "padding_idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "samsum_dataset": [
+    "tokenizer"
+  ],
+  "TextCompletionDataset": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "source",
+      "column",
+      "add_eos",
+      "filter_fn"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "_prepare_sample": [
+      "self",
+      "sample"
+    ]
+  },
+  "text_completion_dataset": [
+    "tokenizer",
+    "source",
+    "column",
+    "add_eos",
+    "packed",
+    "split_across_pack",
+    "split",
+    "filter_fn"
+  ],
+  "slimorca_dataset": [
+    "tokenizer"
+  ],
+  "vqa_dataset": [
+    "model_transform"
+  ],
+  "TheCauldronToMessages": {
+    "__init__": [
+      "self",
+      "column_map",
+      "new_system_prompt"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "the_cauldron_dataset": [
+    "model_transform"
+  ],
+  "the_cauldron_transform": [
+    "model_transform",
+    "texts_col",
+    "images_col",
+    "new_system_prompt"
+  ],
+  "multimodal_chat_dataset": [
+    "model_transform"
+  ],
+  "llava_instruct_dataset": [
+    "model_transform"
+  ],
+  "get_reward_penalty_mask": [
+    "padding_masks",
+    "seq_lens",
+    "penalise_no_eos",
+    "min_response_length"
+  ],
+  "get_rewards_ppo": [
+    "scores",
+    "logprobs",
+    "ref_logprobs",
+    "kl_coeff",
+    "valid_score_idxs"
+  ],
+  "masked_mean": [
+    "x",
+    "mask",
+    "dim"
+  ],
+  "masked_var": [
+    "centered_values",
+    "mask",
+    "unbiased"
+  ],
+  "whiten": [
+    "x",
+    "mask",
+    "shift_mean"
+  ],
+  "estimate_advantages": [
+    "values",
+    "rewards",
+    "gamma",
+    "lmbda",
+    "masks"
+  ],
+  "Trajectory": {},
+  "PPOStats": {},
+  "truncate_sequence_at_first_stop_token": [
+    "sequences",
+    "stop_tokens",
+    "fill_value"
+  ],
+  "logits_to_logprobs": [
+    "logits",
+    "sequences",
+    "temperature"
+  ],
+  "get_batch_log_probs": [
+    "logits",
+    "labels",
+    "label_pad_token_id",
+    "return_average_logprobs"
+  ],
+  "truncate_sequence_for_logprobs": [
+    "query_response_logits",
+    "context_length"
+  ],
+  "PPOLoss": {
+    "__init__": [
+      "self",
+      "epsilon",
+      "value_clip_range",
+      "value_coeff"
+    ],
+    "forward": [
+      "self",
+      "pi_old_logprobs",
+      "pi_logprobs",
+      "advantages",
+      "phi_old_values",
+      "phi_values",
+      "returns",
+      "padding_masks",
+      "value_padding_masks"
+    ]
+  },
+  "DPOLoss": {
+    "__init__": [
+      "self",
+      "beta",
+      "label_smoothing"
+    ],
+    "forward": [
+      "self",
+      "policy_chosen_logps",
+      "policy_rejected_logps",
+      "reference_chosen_logps",
+      "reference_rejected_logps"
+    ]
+  },
+  "RSOLoss": {
+    "__init__": [
+      "self",
+      "gamma"
+    ],
+    "forward": [
+      "self",
+      "policy_chosen_logps",
+      "policy_rejected_logps",
+      "reference_chosen_logps",
+      "reference_rejected_logps"
+    ]
+  },
+  "_REWARD": [],
+  "reward_hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "reward_tune_to_hf": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim"
+  ],
+  "Validate": {
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_add_arguments": [
+      "self"
+    ],
+    "_validate_cmd": [
+      "self",
+      "args"
+    ]
+  },
+  "ROOT": [],
+  "Copy": {
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_add_arguments": [
+      "self"
+    ],
+    "_cp_cmd": [
+      "self",
+      "args"
+    ]
+  },
+  "Cat": {
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_get_all_recipes": [
+      "self"
+    ],
+    "_get_config": [
+      "self",
+      "config_str"
+    ],
+    "_print_yaml_file": [
+      "self",
+      "file",
+      "sort_keys"
+    ],
+    "_cat_cmd": [
+      "self",
+      "args"
+    ]
+  },
+  "TuneCLIParser": {
+    "__init__": [
+      "self"
+    ],
+    "parse_args": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "args"
+    ]
+  },
+  "List": {
+    "NULL_VALUE": [],
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_ls_cmd": [
+      "self",
+      "args"
+    ]
+  },
+  "Download": {
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_add_arguments": [
+      "self"
+    ],
+    "_download_cmd": [
+      "self",
+      "args"
+    ],
+    "_download_from_huggingface": [
+      "self",
+      "args"
+    ],
+    "_download_from_kaggle": [
+      "self",
+      "args"
+    ],
+    "_validate_kaggle_model_handle": [
+      "self",
+      "handle"
+    ],
+    "_set_kaggle_credentials": [
+      "self",
+      "args"
+    ]
+  },
+  "Subcommand": {
+    "__init__": [
+      "self"
+    ],
+    "create": [
+      "cls"
+    ],
+    "_add_arguments": [
+      "self"
+    ]
+  },
+  "Run": {
+    "__init__": [
+      "self",
+      "subparsers"
+    ],
+    "_add_arguments": [
+      "self"
+    ],
+    "_run_distributed": [
+      "self",
+      "args",
+      "is_builtin"
+    ],
+    "_run_single_device": [
+      "self",
+      "args",
+      "is_builtin"
+    ],
+    "_is_distributed_args": [
+      "self",
+      "args"
+    ],
+    "_get_recipe": [
+      "self",
+      "recipe_str"
+    ],
+    "_convert_to_dotpath": [
+      "self",
+      "recipe_path"
+    ],
+    "_get_config": [
+      "self",
+      "config_str",
+      "specific_recipe"
+    ],
+    "_run_cmd": [
+      "self",
+      "args"
+    ]
+  },
+  "log_config": [
+    "recipe_name",
+    "cfg"
+  ],
+  "_has_component": [
+    "node"
+  ],
+  "_get_component_from_path": [
+    "path"
+  ],
+  "_merge_yaml_and_cli_args": [
+    "yaml_args",
+    "cli_args"
+  ],
+  "_remove_key_by_dotpath": [
+    "nested_dict",
+    "dotpath"
+  ],
+  "InstantiationError": {},
+  "ConfigError": {
+    "__init__": [
+      "self",
+      "errors"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_create_component": [
+    "_component_",
+    "args",
+    "kwargs"
+  ],
+  "_instantiate_node": [
+    "node"
+  ],
+  "instantiate": [
+    "config"
+  ],
+  "validate": [
+    "cfg"
+  ],
+  "TuneRecipeArgumentParser": {
+    "__init__": [
+      "self"
+    ],
+    "parse_known_args": [
+      "self"
+    ]
+  },
+  "parse": [
+    "recipe_main"
+  ],
+  "_SUPPORTS_FLEX_ATTENTION": [],
+  "_TORCHDATA_MIN_VERSION": [],
+  "T": [],
+  "get_logger": [
+    "level"
+  ],
+  "log_once": [
+    "logger",
+    "msg",
+    "level"
+  ],
+  "deprecated": [
+    "msg"
+  ],
+  "log_rank_zero": [
+    "logger",
+    "msg",
+    "level"
+  ],
+  "is_torch_npu_available": [],
+  "is_npu_available": [],
+  "_get_local_rank": [],
+  "_setup_device": [
+    "device"
+  ],
+  "_get_device_type_from_env": [],
+  "_validate_device_from_env": [
+    "device"
+  ],
+  "get_device": [
+    "device"
+  ],
+  "batch_to_device": [
+    "batch",
+    "device"
+  ],
+  "DeviceSupport": {
+    "CPU": [],
+    "CUDA": [],
+    "NPU": [],
+    "XPU": [],
+    "__init__": [
+      "self",
+      "device_type",
+      "device_name",
+      "communication_backend"
+    ],
+    "from_type": [
+      "device_type"
+    ]
+  },
+  "get_device_support": [],
+  "get_torch_device_namespace": [],
+  "torch_version_ge": [
+    "version"
+  ],
+  "_is_fbcode": [],
+  "_nightly_version_ge": [
+    "ao_version_str",
+    "date"
+  ],
+  "truncate": [
+    "tokens",
+    "max_seq_len",
+    "eos_id"
+  ],
+  "load_image": [
+    "image_loc"
+  ],
+  "format_content_with_images": [
+    "content"
+  ],
+  "chain": [],
+  "load_hf_dataset": [
+    "source",
+    "transform",
+    "filter_fn",
+    "shuffle",
+    "seed",
+    "num_workers",
+    "parallel_method",
+    "streaming"
+  ],
+  "get_multi_dataset": [
+    "datasets",
+    "weights",
+    "stop_criteria",
+    "seed"
+  ],
+  "get_dataloader": [
+    "dataset",
+    "model_transform",
+    "batch_size",
+    "collate_fn",
+    "drop_last",
+    "num_workers",
+    "parallel_method",
+    "prefetch_factor",
+    "pin_memory"
+  ],
+  "_TemplateType": [],
+  "PromptTemplateInterface": {
+    "__call__": [
+      "self",
+      "messages",
+      "inference"
+    ]
+  },
+  "PromptTemplate": {
+    "__init__": [
+      "self",
+      "template"
+    ],
+    "__call__": [
+      "self",
+      "messages",
+      "inference"
+    ]
+  },
+  "ChatMLTemplate": {
+    "template": [],
+    "__call__": [
+      "self",
+      "messages",
+      "inference"
+    ]
+  },
+  "GrammarErrorCorrectionTemplate": [],
+  "SummarizeTemplate": [],
+  "QuestionAnswerTemplate": [],
+  "_get_prompt_template": [
+    "prompt_template"
+  ],
+  "assert_torchdata_installed": [],
+  "requires_torchdata": [
+    "func"
+  ],
+  "Role": [],
+  "Message": {
+    "__init__": [
+      "self",
+      "role",
+      "content",
+      "masked",
+      "ipython",
+      "eot"
+    ],
+    "_convert_to_list_of_dict": [
+      "self",
+      "content"
+    ],
+    "from_dict": [
+      "cls",
+      "d"
+    ],
+    "get_media": [
+      "self"
+    ],
+    "contains_media": [
+      "self"
+    ],
+    "text_content": [
+      "self"
+    ],
+    "_validate_message": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "InputOutputToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map",
+      "new_system_prompt",
+      "image_dir"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "ChosenRejectedToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map",
+      "new_system_prompt"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "ShareGPTToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map",
+      "new_system_prompt",
+      "image_dir",
+      "image_tag"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "OpenAIToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map",
+      "new_system_prompt"
+    ],
+    "_convert_from_openai_content": [
+      "self",
+      "content"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "validate_messages": [
+    "messages"
+  ],
+  "AlpacaToMessages": {
+    "__init__": [
+      "self",
+      "train_on_input",
+      "column_map"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "CROSS_ENTROPY_IGNORE_IDX": [],
+  "PACK_TYPE": [],
+  "left_pad_sequence": [
+    "sequences",
+    "batch_first",
+    "padding_value"
+  ],
+  "padded_collate": [
+    "batch"
+  ],
+  "padded_collate_sft": [
+    "batch",
+    "padding_idx",
+    "ignore_idx"
+  ],
+  "padded_collate_tiled_images_and_mask": [
+    "batch",
+    "padding_idx",
+    "ignore_idx",
+    "pad_direction",
+    "pad_max_tiles",
+    "pad_max_images"
+  ],
+  "padded_collate_packed": [
+    "batch"
+  ],
+  "padded_collate_dpo": [
+    "batch",
+    "padding_idx",
+    "ignore_idx"
+  ],
+  "_FROM_META": [],
+  "_FROM_HF": [],
+  "get_mapped_key": [
+    "key",
+    "mapping_dict"
+  ],
+  "meta_to_tune": [
+    "state_dict"
+  ],
+  "tune_to_meta": [
+    "state_dict"
+  ],
+  "hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "tune_to_hf": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "_TO_PEFT_KEYS": [],
+  "_TO_PEFT_TARGET_MODULES": [],
+  "_PEFT_CONFIG_EXPECTED_KEYS": [],
+  "tune_to_peft_adapter_config": [
+    "adapter_config",
+    "base_model_name_or_path"
+  ],
+  "tune_to_peft_adapter_weights": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "qwen2_5_0_5b": [],
+  "qwen2_5_1_5b_base": [],
+  "qwen2_5_1_5b_instruct": [],
+  "qwen2_5_3b": [],
+  "qwen2_5_7b_base": [],
+  "qwen2_5_7b_instruct": [],
+  "qwen2_5_14b_base": [],
+  "qwen2_5_14b_instruct": [],
+  "qwen2_5_32b_base": [],
+  "qwen2_5_32b_instruct": [],
+  "qwen2_5_72b_base": [],
+  "qwen2_5_72b_instruct": [],
+  "qwen2_5_tokenizer": [
+    "path",
+    "merges_file",
+    "special_tokens_path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_qwen2_5_0_5b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_1_5b_base": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_1_5b_instruct": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_3b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_7b_base": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_7b_instruct": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_14b_base": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_14b_instruct": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_32b_base": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_32b_instruct": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_72b_base": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_5_72b_instruct": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "QWEN2_5_SPECIAL_TOKENS": [],
+  "Qwen2_5Tokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "merges_file",
+      "special_tokens",
+      "max_seq_len"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "_tokenize_header": [
+      "self",
+      "messages",
+      "i"
+    ],
+    "_tokenize_footer": [
+      "self",
+      "messages",
+      "i"
+    ],
+    "_add_message_start_tokens": [
+      "self",
+      "tokens",
+      "role"
+    ],
+    "_add_message_end_tokens": [
+      "self",
+      "tokens"
+    ]
+  },
+  "TanhSoftCapping": {
+    "__init__": [
+      "self",
+      "capping_value"
+    ],
+    "forward": [
+      "self",
+      "attn_weights"
+    ]
+  },
+  "Gemma2FinalNorm": {
+    "__init__": [
+      "self",
+      "capping_value",
+      "embed_dim",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "gemma2": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "head_dim",
+    "num_kv_heads",
+    "embed_dim",
+    "intermediate_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "norm_eps",
+    "rope_base",
+    "hidden_capping_value",
+    "final_capping_value",
+    "sliding_window_size",
+    "query_pre_attn_scalar"
+  ],
+  "lora_gemma2": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp"
+  ],
+  "lora_gemma2_self_attention": [
+    "lora_modules"
+  ],
+  "_GEMMA2_FROM_HF": [],
+  "gemma2_hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "gemma2_tune_to_hf": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim"
+  ],
+  "gemma2_2b": [],
+  "lora_gemma2_2b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_gemma2_2b": [],
+  "gemma2_9b": [],
+  "lora_gemma2_9b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_gemma2_9b": [],
+  "gemma2_27b": [],
+  "lora_gemma2_27b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_gemma2_27b": [],
+  "Gemma2Attention": {
+    "__init__": [
+      "self"
+    ],
+    "setup_cache": [
+      "self",
+      "batch_size",
+      "dtype",
+      "max_seq_len"
+    ],
+    "reset_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "t5_encoder": [
+    "embed_dim",
+    "mlp_dim",
+    "num_heads",
+    "head_dim",
+    "num_layers",
+    "rel_pos_num_buckets",
+    "rel_pos_max_dist",
+    "vocab_size",
+    "norm_eps",
+    "max_seq_len"
+  ],
+  "_IGNORE": [],
+  "t5_encoder_hf_to_tune": [
+    "state_dict"
+  ],
+  "t5_v1_1_xxl_encoder": [
+    "max_seq_len"
+  ],
+  "t5_tokenizer": [
+    "path",
+    "max_seq_len",
+    "truncate"
+  ],
+  "T5Encoder": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "tokens"
+    ]
+  },
+  "T5EncoderLayer": {
+    "__init__": [
+      "self",
+      "attn",
+      "mlp",
+      "sa_norm",
+      "mlp_norm"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "rel_pos_bias"
+    ]
+  },
+  "T5EncoderSelfAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "head_dim",
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "output_proj"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "rel_pos_bias"
+    ]
+  },
+  "T5EncoderRelativePositionBias": {
+    "__init__": [
+      "self",
+      "num_buckets",
+      "max_dist",
+      "num_heads",
+      "max_seq_len"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "_calc_birectional_rel_pos_to_bucket": [
+    "num_buckets",
+    "max_dist",
+    "max_seq_len"
+  ],
+  "T5Tokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "max_seq_len",
+      "truncate"
+    ],
+    "encode": [
+      "self",
+      "text"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "llama3_3_70b": [],
+  "lora_llama3_3_70b": [],
+  "qlora_llama3_3_70b": [],
+  "llama2": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "intermediate_dim",
+    "norm_eps",
+    "rope_base"
+  ],
+  "llama2_mlp": [
+    "dim",
+    "hidden_dim",
+    "quantize_base"
+  ],
+  "lora_llama2": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama2_self_attention": [
+    "lora_modules"
+  ],
+  "lora_llama2_mlp": [],
+  "llama2_classifier": [
+    "num_classes"
+  ],
+  "lora_llama2_classifier": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "llama2_7b": [],
+  "llama2_tokenizer": [
+    "path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_llama2_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_llama2_7b": [],
+  "llama2_13b": [],
+  "lora_llama2_13b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_llama2_13b": [],
+  "llama2_70b": [],
+  "lora_llama2_70b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_llama2_70b": [],
+  "llama2_reward_7b": [],
+  "lora_llama2_reward_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_llama2_reward_7b": [],
+  "Llama2ChatTemplate": {
+    "template": [],
+    "__call__": [
+      "self",
+      "messages"
+    ]
+  },
+  "scale_hidden_dim_for_mlp": [
+    "dim",
+    "multiple_of"
+  ],
+  "WHITESPACE_CHARS": [],
+  "Llama2Tokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "eos_id": [
+      "self"
+    ],
+    "bos_id": [
+      "self"
+    ],
+    "pad_id": [
+      "self"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos",
+      "trim_leading_whitespace"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "llama3_2": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "rope_base",
+    "intermediate_dim",
+    "norm_eps",
+    "scale_factor",
+    "tie_word_embeddings"
+  ],
+  "llama3_mlp": [
+    "dim",
+    "hidden_dim",
+    "quantize_base"
+  ],
+  "lora_llama3_2": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama3_2_self_attention": [
+    "lora_modules",
+    "pos_embeddings"
+  ],
+  "lora_llama3_mlp": [],
+  "llama3_2_1b": [
+    "tie_word_embeddings"
+  ],
+  "llama3_2_3b": [
+    "tie_word_embeddings"
+  ],
+  "lora_llama3_2_1b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base",
+    "tie_word_embeddings"
+  ],
+  "lora_llama3_2_3b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base",
+    "tie_word_embeddings"
+  ],
+  "qlora_llama3_2_1b": [],
+  "qlora_llama3_2_3b": [],
+  "gemma": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "head_dim",
+    "num_kv_heads",
+    "embed_dim",
+    "intermediate_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "norm_eps",
+    "rope_base"
+  ],
+  "gemma_mlp": [
+    "dim",
+    "hidden_dim",
+    "quantize_base"
+  ],
+  "lora_gemma": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp"
+  ],
+  "lora_gemma_self_attention": [
+    "lora_modules"
+  ],
+  "lora_gemma_mlp": [],
+  "gemma_2b": [],
+  "gemma_tokenizer": [
+    "path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_gemma_2b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_gemma_2b": [],
+  "gemma_7b": [],
+  "lora_gemma_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_gemma_7b": [],
+  "GemmaRMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps"
+    ],
+    "_norm": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GemmaTokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "eos_id": [
+      "self"
+    ],
+    "bos_id": [
+      "self"
+    ],
+    "pad_id": [
+      "self"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos",
+      "trim_leading_whitespace"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "GemmaNormEmbeddings": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "clip_vision_encoder": [
+    "tile_size",
+    "patch_size",
+    "embed_dim",
+    "num_layers",
+    "num_heads",
+    "activation",
+    "cls_output_dim",
+    "attn_bias",
+    "use_rope",
+    "out_indices",
+    "output_cls_projection",
+    "max_num_tiles",
+    "in_channels",
+    "append_cls_token",
+    "use_tile_pos_embed"
+  ],
+  "clip_text_encoder": [
+    "embed_dim",
+    "num_heads",
+    "num_layers",
+    "vocab_size",
+    "max_seq_len",
+    "norm_eps"
+  ],
+  "clip_mlp": [
+    "in_dim",
+    "out_dim",
+    "hidden_dim",
+    "activation",
+    "quantize_base"
+  ],
+  "lora_clip_vision_encoder": [
+    "lora_modules",
+    "apply_lora_to_mlp"
+  ],
+  "lora_clip_attention": [
+    "lora_modules"
+  ],
+  "lora_clip_mlp": [],
+  "clip_text_hf_to_tune": [
+    "state_dict"
+  ],
+  "clip_tokenizer": [
+    "path",
+    "max_seq_len",
+    "truncate"
+  ],
+  "clip_text_vit_large_patch14": [],
+  "clip_vit_224_transform": [],
+  "CLIPTextEncoder": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "tokens"
+    ]
+  },
+  "QuickGELU": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TokenPositionalEmbedding": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "tile_size",
+      "patch_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TiledTokenPositionalEmbedding": {
+    "__init__": [
+      "self",
+      "max_num_tiles",
+      "embed_dim",
+      "tile_size",
+      "patch_size"
+    ],
+    "_load_state_dict_hook": [
+      "self",
+      "state_dict",
+      "prefix"
+    ],
+    "_resize_local_position_embedding": [
+      "local_pos_embed",
+      "tgt_patch_grid_size"
+    ],
+    "_resize_global_position_embedding": [
+      "global_pos_embed",
+      "tgt_max_num_tiles",
+      "tgt_patch_grid_size"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "aspect_ratio"
+    ]
+  },
+  "TilePositionalEmbedding": {
+    "__init__": [
+      "self",
+      "max_num_tiles",
+      "embed_dim"
+    ],
+    "_load_state_dict_hook": [
+      "self",
+      "state_dict",
+      "prefix"
+    ],
+    "_resize_position_embedding": [
+      "embedding",
+      "tgt_max_num_tiles"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "aspect_ratio"
+    ]
+  },
+  "WORD_BOUNDARY": [],
+  "CLIPTokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "max_seq_len",
+      "truncate"
+    ],
+    "encode": [
+      "self",
+      "text"
+    ],
+    "decode": [
+      "self",
+      "tokens"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ],
+    "_bpe": [
+      "self",
+      "token"
+    ]
+  },
+  "_bytes_to_unicode": [],
+  "_get_pairs": [
+    "word"
+  ],
+  "_clean_text": [
+    "text"
+  ],
+  "_load_merges": [
+    "path"
+  ],
+  "CLIPImageTransform": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "_CLIPImageTransform": {
+    "__init__": [
+      "self",
+      "resample",
+      "image_mean",
+      "image_std",
+      "tile_size",
+      "max_num_tiles",
+      "antialias"
+    ],
+    "check_variable_bounds_for_export": [
+      "self",
+      "target_size",
+      "canvas_size",
+      "lower",
+      "upper"
+    ],
+    "forward": [
+      "self",
+      "image",
+      "target_size",
+      "canvas_size"
+    ]
+  },
+  "qwen2": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "intermediate_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "norm_eps",
+    "rope_base",
+    "tie_word_embeddings"
+  ],
+  "qwen2_mlp": [
+    "dim",
+    "hidden_dim"
+  ],
+  "lora_qwen2": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_qwen2_self_attention": [
+    "lora_modules"
+  ],
+  "lora_qwen2_mlp": [],
+  "QWEN2_TIED_KEY": [],
+  "qwen2_hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim",
+    "tie_word_embeddings"
+  ],
+  "qwen2_tune_to_hf": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim",
+    "tie_word_embeddings"
+  ],
+  "qwen2_7b": [],
+  "qwen2_0_5b": [],
+  "qwen2_1_5b": [],
+  "qwen2_tokenizer": [
+    "path",
+    "merges_file",
+    "special_tokens_path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_qwen2_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_0_5b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_qwen2_1_5b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "Qwen2RotaryPositionalEmbeddings": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_seq_len",
+      "base"
+    ],
+    "rope_init": [
+      "self"
+    ],
+    "build_rope_cache": [
+      "self",
+      "max_seq_len"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "input_pos"
+    ]
+  },
+  "PRETOKENIZE_REGEX": [],
+  "QWEN2_SPECIAL_TOKENS": [],
+  "ENDOFTEXT": [],
+  "IM_START": [],
+  "IM_END": [],
+  "DEFAULT_QWEN2_TOKENIZER_BPE_CACHE_SIZE": [],
+  "bytes_to_unicode": [],
+  "get_pairs": [
+    "word"
+  ],
+  "Qwen2Tokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "merges_file",
+      "special_tokens",
+      "max_seq_len"
+    ],
+    "_bpe_without_cache": [
+      "self",
+      "token"
+    ],
+    "_tokenize": [
+      "self",
+      "text"
+    ],
+    "_convert_token_to_id": [
+      "self",
+      "token"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "_convert_id_to_token": [
+      "self",
+      "index"
+    ],
+    "_convert_tokens_to_string": [
+      "self",
+      "tokens"
+    ],
+    "decode": [
+      "self",
+      "token_ids",
+      "skip_special_tokens"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "mistral": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "intermediate_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "norm_eps",
+    "rope_base"
+  ],
+  "mistral_mlp": [
+    "dim",
+    "hidden_dim",
+    "quantize_base"
+  ],
+  "lora_mistral": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_mistral_self_attention": [
+    "lora_modules"
+  ],
+  "lora_mistral_mlp": [],
+  "mistral_classifier": [
+    "num_classes"
+  ],
+  "lora_mistral_classifier": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "mistral_7b": [],
+  "mistral_tokenizer": [
+    "path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_mistral_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_mistral_7b": [],
+  "mistral_reward_7b": [],
+  "lora_mistral_reward_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_mistral_reward_7b": [],
+  "MistralChatTemplate": {
+    "template": [],
+    "__call__": [
+      "self",
+      "messages"
+    ]
+  },
+  "MistralTokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "eos_id": [
+      "self"
+    ],
+    "bos_id": [
+      "self"
+    ],
+    "pad_id": [
+      "self"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos",
+      "trim_leading_whitespace"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "phi4_14b": [],
+  "phi4_tokenizer": [
+    "vocab_path",
+    "merges_path",
+    "special_tokens_path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_phi4_14b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_phi4_14b": [],
+  "PHI4_SPECIAL_TOKENS": [],
+  "current_dummy_index": [],
+  "CL100K_PATTERN": [],
+  "Phi4Tokenizer": {
+    "__init__": [
+      "self",
+      "merges_path",
+      "vocab_path",
+      "special_tokens",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "ids",
+      "skip_special_tokens"
+    ],
+    "_tokenize_header": [
+      "self",
+      "role"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "llama3": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "rope_base",
+    "intermediate_dim",
+    "norm_eps"
+  ],
+  "lora_llama3": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama3_self_attention": [
+    "lora_modules"
+  ],
+  "llama3_8b": [],
+  "llama3_70b": [],
+  "llama3_tokenizer": [
+    "path",
+    "special_tokens_path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_llama3_8b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "quantize_base",
+    "use_dora"
+  ],
+  "lora_llama3_70b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "quantize_base",
+    "use_dora"
+  ],
+  "qlora_llama3_8b": [],
+  "qlora_llama3_70b": [],
+  "SPECIAL_TOKENS": [],
+  "NUM_RESERVED_SPECIAL_TOKENS": [],
+  "RESERVED_TOKENS": [],
+  "LLAMA3_SPECIAL_TOKENS": [],
+  "Llama3Tokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "special_tokens",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "_validate_special_tokens": [
+      "self"
+    ],
+    "_remove_special_tokens": [
+      "self",
+      "text"
+    ],
+    "base_vocab_size": [
+      "self"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "token_ids",
+      "truncate_at_eos",
+      "skip_special_tokens"
+    ],
+    "_tokenize_header": [
+      "self",
+      "message"
+    ],
+    "_tokenize_end": [
+      "self",
+      "message"
+    ],
+    "_tokenize_body": [
+      "self",
+      "message"
+    ],
+    "tokenize_message": [
+      "self",
+      "message"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "BASE_LLAMA_TP_PLAN": [],
+  "base_llama_tp_plan": [],
+  "llama3_1": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "rope_base",
+    "intermediate_dim",
+    "norm_eps",
+    "scale_factor"
+  ],
+  "lora_llama3_1": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama3_attention": [
+    "lora_modules",
+    "pos_embeddings"
+  ],
+  "llama3_1_8b": [],
+  "llama3_1_70b": [],
+  "llama3_1_405b": [],
+  "lora_llama3_1_8b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_llama3_1_70b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "lora_llama3_1_405b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "quantize_base"
+  ],
+  "qlora_llama3_1_8b": [],
+  "qlora_llama3_1_70b": [],
+  "qlora_llama3_1_405b": [],
+  "Llama3ScaledRoPE": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_seq_len",
+      "base",
+      "scale_factor",
+      "low_freq_factor",
+      "high_freq_factor",
+      "old_context_len"
+    ],
+    "rope_init": [
+      "self"
+    ],
+    "build_rope_cache": [
+      "self",
+      "max_seq_len"
+    ],
+    "apply_scaling": [
+      "self",
+      "freqs",
+      "scale_factor",
+      "low_freq_factor",
+      "high_freq_factor",
+      "old_context_len"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "REGEX_CONVERSIONS": [],
+  "REGEX_UNCHANGED": [],
+  "RESNET_LAYER_CONVERSION": [],
+  "ATTN_LAYER_CONVERSION": [],
+  "flux_ae_hf_to_tune": [
+    "state_dict"
+  ],
+  "ConversionError": {},
+  "_convert_key": [
+    "key"
+  ],
+  "_convert_attn_layer": [
+    "new_parts",
+    "parts",
+    "i"
+  ],
+  "_convert_resnet_layer": [
+    "new_parts",
+    "parts",
+    "i"
+  ],
+  "flux_1_autoencoder": [
+    "resolution",
+    "ch_in",
+    "ch_out",
+    "ch_base",
+    "ch_mults",
+    "ch_z",
+    "n_layers_per_resample_block",
+    "scale_factor",
+    "shift_factor"
+  ],
+  "FluxAutoencoder": {
+    "__init__": [
+      "self",
+      "img_shape",
+      "encoder",
+      "decoder"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "z"
+    ]
+  },
+  "FluxEncoder": {
+    "__init__": [
+      "self",
+      "ch_in",
+      "ch_z",
+      "channels",
+      "n_layers_per_down_block",
+      "scale_factor",
+      "shift_factor"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FluxDecoder": {
+    "__init__": [
+      "self",
+      "ch_out",
+      "ch_z",
+      "channels",
+      "n_layers_per_up_block",
+      "scale_factor",
+      "shift_factor"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ]
+  },
+  "mid_block": [
+    "ch"
+  ],
+  "end_block": [
+    "ch_in",
+    "ch_out"
+  ],
+  "DownBlock": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "ch_in",
+      "ch_out",
+      "downsample"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "UpBlock": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "ch_in",
+      "ch_out",
+      "upsample"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "resnet_layers": [
+    "n",
+    "ch_in",
+    "ch_out"
+  ],
+  "AttnLayer": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResnetLayer": {
+    "__init__": [
+      "self",
+      "ch_in",
+      "ch_out"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Downsample": {
+    "__init__": [
+      "self",
+      "ch"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Upsample": {
+    "__init__": [
+      "self",
+      "ch"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "diagonal_gaussian": [
+    "z"
+  ],
+  "phi3": [
+    "vocab_size",
+    "num_layers",
+    "num_heads",
+    "num_kv_heads",
+    "embed_dim",
+    "intermediate_dim",
+    "max_seq_len",
+    "attn_dropout",
+    "norm_eps",
+    "rope_base"
+  ],
+  "phi3_mlp": [
+    "dim",
+    "hidden_dim",
+    "quantize_base"
+  ],
+  "lora_phi3": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_phi3_self_attention": [
+    "lora_modules"
+  ],
+  "lora_phi3_mlp": [],
+  "_PHI3_MINI": [],
+  "phi3_hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim"
+  ],
+  "phi3_tune_to_hf": [
+    "state_dict"
+  ],
+  "phi3_mini": [],
+  "phi3_mini_tokenizer": [
+    "path",
+    "special_tokens_path",
+    "max_seq_len",
+    "prompt_template"
+  ],
+  "lora_phi3_mini": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_phi3_mini": [],
+  "Phi3RotaryPositionalEmbeddings": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_seq_len",
+      "base"
+    ],
+    "rope_init": [
+      "self"
+    ],
+    "build_rope_cache": [
+      "self",
+      "max_seq_len"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "input_pos"
+    ]
+  },
+  "PHI3_SPECIAL_TOKENS": [],
+  "Phi3MiniTokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "special_tokens",
+      "max_seq_len",
+      "prompt_template"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "bos_id": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos",
+      "trim_leading_whitespace"
+    ],
+    "decode": [
+      "self",
+      "ids",
+      "skip_special_tokens"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "llama3_2_vision_encoder": [],
+  "llama3_2_vision_decoder": [],
+  "llama3_2_vision_projection_head": [],
+  "LoRATrainable": {
+    "FULL": [],
+    "LORA": [],
+    "FROZEN": []
+  },
+  "lora_llama3_2_vision_encoder": [
+    "encoder_lora",
+    "fusion_lora",
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama3_2_vision_decoder": [
+    "decoder_lora",
+    "fusion_lora",
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "lora_llama3_2_vision_projection_head": [
+    "lora_modules"
+  ],
+  "_layer_num": [
+    "key"
+  ],
+  "llama3_vision_meta_to_tune": [
+    "state_dict"
+  ],
+  "llama3_vision_tune_to_meta": [
+    "state_dict"
+  ],
+  "llama3_vision_hf_to_tune": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim",
+    "vocab_size",
+    "cross_attention_layers",
+    "encoder_dim",
+    "tile_size",
+    "num_tiles",
+    "supported_aspect_ratios"
+  ],
+  "llama3_vision_tune_to_hf": [
+    "state_dict",
+    "num_heads",
+    "num_kv_heads",
+    "dim",
+    "head_dim",
+    "vocab_size",
+    "cross_attention_layers",
+    "encoder_dim",
+    "tile_size",
+    "num_tiles",
+    "supported_aspect_ratios"
+  ],
+  "llama3_2_vision_transform": [
+    "path",
+    "max_seq_len",
+    "image_size",
+    "special_tokens_path",
+    "prompt_template"
+  ],
+  "llama3_2_vision_11b": [
+    "decoder_trainable",
+    "encoder_trainable",
+    "fusion_trainable",
+    "image_size"
+  ],
+  "lora_llama3_2_vision_11b": [
+    "lora_attn_modules",
+    "decoder_trainable",
+    "encoder_trainable",
+    "fusion_trainable",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base",
+    "image_size"
+  ],
+  "llama3_2_vision_90b": [
+    "decoder_trainable",
+    "encoder_trainable",
+    "fusion_trainable",
+    "image_size"
+  ],
+  "lora_llama3_2_vision_90b": [
+    "lora_attn_modules",
+    "decoder_trainable",
+    "encoder_trainable",
+    "fusion_trainable",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base",
+    "image_size"
+  ],
+  "qlora_llama3_2_vision_11b": [],
+  "qlora_llama3_2_vision_90b": [],
+  "Llama3VisionProjectionHead": {
+    "__init__": [
+      "self",
+      "layers",
+      "output",
+      "num_hidden_inputs"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "hidden_states"
+    ]
+  },
+  "Llama3VisionEncoder": {
+    "__init__": [
+      "self",
+      "clip",
+      "projection_head"
+    ],
+    "forward": [
+      "self",
+      "images",
+      "aspect_ratio"
+    ]
+  },
+  "Llama3VisionTransform": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "base_vocab_size": [
+      "self"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "token_ids",
+      "truncate_at_eos",
+      "skip_special_tokens"
+    ],
+    "tokenize_message": [
+      "self",
+      "message",
+      "tokenize_header",
+      "tokenize_end"
+    ],
+    "tokenize_messages": [
+      "self",
+      "messages",
+      "add_eos"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "code_llama2_7b": [],
+  "lora_code_llama2_7b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_code_llama2_7b": [],
+  "code_llama2_13b": [],
+  "lora_code_llama2_13b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_code_llama2_13b": [],
+  "code_llama2_70b": [],
+  "lora_code_llama2_70b": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "lora_rank",
+    "lora_alpha",
+    "lora_dropout",
+    "use_dora",
+    "quantize_base"
+  ],
+  "qlora_code_llama2_70b": [],
+  "TanhGate": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RotaryPositionalEmbeddings": {
+    "__init__": [
+      "self",
+      "dim",
+      "max_seq_len",
+      "base"
+    ],
+    "rope_init": [
+      "self"
+    ],
+    "build_rope_cache": [
+      "self",
+      "max_seq_len"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VisionRotaryPositionalEmbeddings": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "tile_size",
+      "max_num_tiles",
+      "dim",
+      "base",
+      "append_cls_token"
+    ],
+    "rope_init": [
+      "self"
+    ],
+    "build_rope_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VisionTransformer": {
+    "__init__": [
+      "self",
+      "patch_size",
+      "tile_size",
+      "num_layers",
+      "embed_dim",
+      "layer",
+      "token_pos_embedding",
+      "pre_tile_pos_embed",
+      "post_tile_pos_embed",
+      "cls_projection",
+      "out_indices",
+      "in_channels",
+      "append_cls_token"
+    ],
+    "get_image_tokens_per_tile": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "images",
+      "aspect_ratio"
+    ]
+  },
+  "CLSEmbedding": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "append_cls_token"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CLSProjection": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "cls_output_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "KVCache": {
+    "__init__": [
+      "self",
+      "batch_size",
+      "max_seq_len",
+      "num_kv_heads",
+      "head_dim",
+      "dtype"
+    ],
+    "reset": [
+      "self"
+    ],
+    "size": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "k_val",
+      "v_val"
+    ]
+  },
+  "uniform_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "linear_l_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "sum_l_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "sqrt_l_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "inv_l_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "inv_sqrt_l_loss_scale": [
+    "layer_ids",
+    "n_layers",
+    "e_scale"
+  ],
+  "early_exit_loss": [
+    "model",
+    "hidden_states_dict",
+    "labels",
+    "loss_fn",
+    "e_scale",
+    "loss_scale_fn"
+  ],
+  "EarlyExitCurriculum": {
+    "__init__": [
+      "self",
+      "do_output_hidden_states",
+      "max_steps",
+      "train_last_layer",
+      "last_step",
+      "verbose"
+    ],
+    "step": [
+      "self"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "RotationalEarlyExitCurriculum": {
+    "__init__": [
+      "self",
+      "do_output_hidden_states",
+      "max_steps",
+      "train_last_layer",
+      "last_step",
+      "verbose"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "GradualEarlyExitCurriculum": {
+    "__init__": [
+      "self",
+      "do_output_hidden_states",
+      "max_steps",
+      "train_last_layer",
+      "last_step",
+      "fraction_scale",
+      "verbose"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "reparametrize_as_dtype_state_dict_post_hook": [
+    "model",
+    "state_dict"
+  ],
+  "slice_str_to_array": [
+    "slice_str",
+    "length"
+  ],
+  "_low_ram_reparametrize_as_dtype_state_dict_post_hook": [
+    "model",
+    "state_dict"
+  ],
+  "_register_reparametrize_state_dict_hooks": [
+    "module",
+    "dtype",
+    "offload_to_cpu"
+  ],
+  "disable_kv_cache": [
+    "model"
+  ],
+  "local_kv_cache": [
+    "model"
+  ],
+  "delete_kv_caches": [
+    "model"
+  ],
+  "_get_document_ids_from_seq_lens": [
+    "seq_lens"
+  ],
+  "create_block_causal_mask": [
+    "seq_lens"
+  ],
+  "packed_block_causal_mask": [
+    "seq_lens"
+  ],
+  "_sdpa_or_flex_attention": [],
+  "Linear": {
+    "forward": [
+      "self",
+      "x",
+      "weight"
+    ]
+  },
+  "TiedLinear": {
+    "__init__": [
+      "self",
+      "tied_module"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "Fp32LayerNorm": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiHeadAttention": {
+    "__init__": [
+      "self"
+    ],
+    "setup_cache": [
+      "self",
+      "batch_size",
+      "dtype",
+      "max_seq_len"
+    ],
+    "reset_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "TransformerSelfAttentionLayer": {
+    "__init__": [
+      "self",
+      "attn",
+      "mlp"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TransformerCrossAttentionLayer": {
+    "__init__": [
+      "self",
+      "attn",
+      "mlp"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_cache": [
+      "self"
+    ],
+    "_skip_mask": [
+      "self",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_get_clones": [
+    "module",
+    "n"
+  ],
+  "TransformerDecoder": {
+    "__init__": [
+      "self"
+    ],
+    "set_num_output_chunks": [
+      "self",
+      "num_output_chunks"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_caches": [
+      "self"
+    ],
+    "chunked_output": [
+      "self",
+      "last_hidden_state"
+    ],
+    "_validate_inputs": [
+      "self",
+      "seq_len",
+      "mask",
+      "encoder_input",
+      "encoder_mask",
+      "input_pos"
+    ],
+    "forward": [
+      "self",
+      "tokens"
+    ],
+    "unembed": [
+      "self",
+      "h"
+    ]
+  },
+  "VectorQuantizedEmbeddings": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerDropout": {
+    "__init__": [
+      "self",
+      "prob",
+      "dim",
+      "disable_on_eval",
+      "seed"
+    ],
+    "forward": [
+      "self",
+      "function",
+      "input"
+    ]
+  },
+  "ModuleLayerDropoutWrapper": {
+    "__init__": [
+      "self",
+      "module",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "ScaleType": {
+    "UNIFORM": [],
+    "EXP": [],
+    "LINEAR": [],
+    "LOG": [],
+    "SIN": [],
+    "SIGMOID": [],
+    "STEP": []
+  },
+  "get_scale": [
+    "scale_type",
+    "scale_period",
+    "val"
+  ],
+  "prepare_layer_dropout": [
+    "layers",
+    "prob_max",
+    "prob_layer_scale",
+    "layers_str",
+    "disable_on_eval"
+  ],
+  "FeedForward": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CEWithChunkedOutputLoss": {
+    "__init__": [
+      "self",
+      "num_output_chunks",
+      "ignore_index"
+    ],
+    "compute_cross_entropy": [
+      "self",
+      "logits",
+      "labels",
+      "normalize"
+    ],
+    "forward": [
+      "self",
+      "logits",
+      "labels"
+    ]
+  },
+  "ForwardKLLoss": {
+    "__init__": [
+      "self",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels",
+      "normalize"
+    ]
+  },
+  "ReverseKLLoss": {
+    "__init__": [
+      "self",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels",
+      "normalize"
+    ]
+  },
+  "SymmetricKLLoss": {
+    "__init__": [
+      "self",
+      "sym_kd_ratio",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels",
+      "normalize"
+    ]
+  },
+  "ForwardKLWithChunkedOutputLoss": {
+    "__init__": [
+      "self",
+      "num_output_chunks",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels"
+    ]
+  },
+  "ReverseKLWithChunkedOutputLoss": {
+    "__init__": [
+      "self",
+      "num_output_chunks",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels"
+    ]
+  },
+  "SymmetricKLWithChunkedOutputLoss": {
+    "__init__": [
+      "self",
+      "num_output_chunks",
+      "sym_kd_ratio",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "student_logits",
+      "teacher_logits",
+      "labels"
+    ]
+  },
+  "EarlyFusionModel": {
+    "__init__": [
+      "self",
+      "decoder",
+      "encoders",
+      "encoder_tokens",
+      "decoder_trainable",
+      "encoders_trainable",
+      "fusion_trainable"
+    ],
+    "_state_dict_hook": [
+      "module",
+      "state_dict",
+      "prefix"
+    ],
+    "_load_state_dict_hook": [
+      "module",
+      "state_dict",
+      "prefix"
+    ],
+    "set_num_output_chunks": [
+      "self",
+      "num_output_chunks"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_caches": [
+      "self"
+    ],
+    "_decoder_embed": [
+      "self",
+      "tokens"
+    ],
+    "forward": [
+      "self",
+      "tokens"
+    ]
+  },
+  "DeepFusionModel": {
+    "__init__": [
+      "self",
+      "decoder",
+      "encoder"
+    ],
+    "set_num_output_chunks": [
+      "self",
+      "num_output_chunks"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_caches": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "tokens"
+    ]
+  },
+  "FusionLayer": {
+    "__init__": [
+      "self",
+      "layer",
+      "fusion_layer",
+      "fusion_first"
+    ],
+    "_state_dict_hook": [
+      "self",
+      "state_dict",
+      "prefix"
+    ],
+    "_load_state_dict_hook": [
+      "self",
+      "state_dict",
+      "prefix"
+    ],
+    "setup_caches": [
+      "self",
+      "batch_size",
+      "dtype"
+    ],
+    "caches_are_setup": [
+      "self"
+    ],
+    "caches_are_enabled": [
+      "self"
+    ],
+    "reset_cache": [
+      "self"
+    ],
+    "fusion_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FusionEmbedding": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "fusion_vocab_size",
+      "embed_dim"
+    ],
+    "_state_dict_hook": [
+      "self",
+      "destination",
+      "prefix",
+      "keep_vars"
+    ],
+    "_load_state_dict_hook": [
+      "self",
+      "state_dict",
+      "prefix"
+    ],
+    "fusion_params": [
+      "self"
+    ],
+    "_fused_embed": [
+      "self",
+      "bs",
+      "seq_len"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "register_fusion_module": [
+    "module"
+  ],
+  "get_fusion_params": [
+    "model"
+  ],
+  "LORA_ATTN_MODULES": [],
+  "AdapterModule": {
+    "adapter_params": [
+      "self"
+    ]
+  },
+  "get_adapter_params": [
+    "model"
+  ],
+  "set_trainable_params": [
+    "model",
+    "adapter_params"
+  ],
+  "get_lora_module_names": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output"
+  ],
+  "get_adapter_state_dict": [
+    "state_dict",
+    "device"
+  ],
+  "_get_lora_modules": [
+    "state_dict"
+  ],
+  "get_merged_lora_ckpt": [
+    "state_dict",
+    "rank",
+    "alpha"
+  ],
+  "disable_adapter": [
+    "model"
+  ],
+  "validate_missing_and_unexpected_for_lora": [
+    "lora_attn_modules",
+    "apply_lora_to_mlp",
+    "apply_lora_to_output",
+    "base_missing",
+    "base_unexpected",
+    "lora_missing",
+    "lora_unexpected"
+  ],
+  "LoRALinear": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "rank",
+      "alpha",
+      "dropout",
+      "use_bias",
+      "quantize_base"
+    ],
+    "to_empty": [
+      "self"
+    ],
+    "initialize_parameters": [
+      "self"
+    ],
+    "adapter_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "QATLoRALinear": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "rank",
+      "alpha",
+      "dropout",
+      "activation_qat_config",
+      "weight_qat_config"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "from_lora_linear": [
+      "cls",
+      "lora_linear",
+      "activation_qat_config",
+      "weight_qat_config"
+    ]
+  },
+  "_lora_a_init_params": [
+    "x"
+  ],
+  "_lora_b_init_params": [
+    "x"
+  ],
+  "DoRALinear": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "rank",
+      "alpha",
+      "dropout",
+      "use_bias",
+      "quantize_base"
+    ],
+    "to_empty": [
+      "self"
+    ],
+    "initialize_parameters": [
+      "self"
+    ],
+    "initialize_dora_magnitude": [
+      "self"
+    ],
+    "_get_weight_norm": [
+      "self",
+      "weight",
+      "lora_weight"
+    ],
+    "adapter_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Transform": {
+    "__call__": [
+      "self",
+      "sample"
+    ]
+  },
+  "VisionCrossAttentionMask": {
+    "__init__": [
+      "self",
+      "tile_size",
+      "patch_size",
+      "image_token_id"
+    ],
+    "_get_image_attention_intervals": [
+      "self",
+      "tokens"
+    ],
+    "__call__": [
+      "self",
+      "sample",
+      "inference"
+    ]
+  },
+  "BaseTokenizer": {
+    "encode": [
+      "self",
+      "text"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ]
+  },
+  "ModelTokenizer": {
+    "tokenize_messages": [
+      "self",
+      "messages"
+    ]
+  },
+  "tokenize_messages_no_special_tokens": [
+    "tokenizer",
+    "messages"
+  ],
+  "parse_hf_tokenizer_json": [
+    "tokenizer_json_path"
+  ],
+  "HuggingFaceBaseTokenizer": {
+    "__init__": [
+      "self",
+      "tokenizer_json_path"
+    ],
+    "_get_token_from_config": [
+      "self",
+      "config",
+      "key"
+    ],
+    "_infer_bos_eos_tokens": [
+      "self"
+    ],
+    "_infer_should_add_bos_eos": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ]
+  },
+  "MAX_ENCODE_CHARS": [],
+  "MAX_NO_WHITESPACE_CHARS": [],
+  "TikTokenBaseTokenizer": {
+    "__init__": [
+      "self",
+      "path",
+      "name",
+      "pattern",
+      "bos_id",
+      "eos_id",
+      "special_tokens"
+    ],
+    "_split_long_repetitions": [
+      "self",
+      "s",
+      "max_consecutive_slice_len"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "token_ids",
+      "truncate_at_eos"
+    ]
+  },
+  "SentencePieceBaseTokenizer": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos",
+      "trim_leading_whitespace",
+      "prefix"
+    ],
+    "decode": [
+      "self",
+      "ids"
+    ]
+  },
+  "GPT2BaseTokenizer": {
+    "__init__": [
+      "self",
+      "vocab_path",
+      "merges_path",
+      "unk_id",
+      "bos_id",
+      "eos_id",
+      "pad_id"
+    ],
+    "vocab_size": [
+      "self"
+    ],
+    "bpe": [
+      "self",
+      "token"
+    ],
+    "_tokenize": [
+      "self",
+      "text"
+    ],
+    "_convert_token_to_id": [
+      "self",
+      "token"
+    ],
+    "_convert_id_to_token": [
+      "self",
+      "index"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "add_bos",
+      "add_eos"
+    ],
+    "decode": [
+      "self",
+      "tokens"
+    ]
+  },
+  "get_canvas_best_fit": [
+    "image",
+    "possible_resolutions",
+    "resize_to_max_canvas"
+  ],
+  "find_supported_resolutions": [
+    "max_num_tiles",
+    "tile_size"
+  ],
+  "_get_factors": [
+    "n"
+  ],
+  "pad_dim_to_size": [
+    "input",
+    "size",
+    "dim"
+  ],
+  "resize_with_pad": [
+    "image",
+    "target_size",
+    "resample",
+    "max_size"
+  ],
+  "_pad_image_top_left": [
+    "image",
+    "target_size"
+  ],
+  "_get_max_res_without_distortion": [
+    "image_size",
+    "target_size"
+  ],
+  "get_inscribed_size": [
+    "image_size",
+    "target_size",
+    "max_size"
+  ],
+  "tile_crop": [
+    "image",
+    "tile_size"
+  ],
+  "SDPA": {
+    "__init__": [
+      "self",
+      "num_kv_heads",
+      "num_heads",
+      "head_dim",
+      "attn_dropout",
+      "is_causal",
+      "attention_fn",
+      "kv_cache"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "bsz",
+      "seq_len",
+      "mask"
+    ]
+  },
+  "_replace_mha_with_inference_mha": [
+    "module"
+  ],
+  "replace_mha_with_inference_mha": [
+    "module"
+  ],
+  "FORMAT": [],
+  "replace_tile_positional_embedding": [
+    "model"
+  ],
+  "replace_tiled_token_positional_embedding": [
+    "model"
+  ],
+  "FrozenNF4Linear": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "bias",
+      "device",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "clone": [
+    "func"
+  ]
+}

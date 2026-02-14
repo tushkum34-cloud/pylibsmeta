@@ -1,0 +1,509 @@
+{
+  "__version__": [],
+  "__all__": [],
+  "ParamsOptimizer": {},
+  "Context": {
+    "create_constant_model": [
+      "self",
+      "constant_value"
+    ],
+    "create_model": [
+      "self",
+      "params",
+      "validate_input"
+    ],
+    "create_seed_finder": [
+      "self",
+      "components"
+    ],
+    "create_matrix_builder": [
+      "self",
+      "params"
+    ],
+    "create_default_starting_params": [
+      "self",
+      "y",
+      "components"
+    ],
+    "create_params_optimizer": [
+      "self"
+    ],
+    "create_case_from_dictionary": [
+      "self"
+    ],
+    "create_case": [
+      "self",
+      "components"
+    ],
+    "create_components": [
+      "self"
+    ]
+  },
+  "MatrixBuilder": {
+    "__init": [
+      "self",
+      "model_params"
+    ],
+    "make_seasonal_components_for_w": [
+      "self"
+    ],
+    "make_gamma_vector": [
+      "self"
+    ],
+    "make_A_matrix": [
+      "self"
+    ]
+  },
+  "Model": {},
+  "ModelParams": {
+    "__init__": [
+      "self",
+      "components",
+      "alpha",
+      "beta",
+      "phi",
+      "box_cox_lambda",
+      "gamma_params",
+      "ar_coefs",
+      "ma_coefs",
+      "x0"
+    ],
+    "with_default_starting_params": [
+      "cls",
+      "y",
+      "components"
+    ],
+    "seasonal_components_amount": [
+      "self"
+    ],
+    "_normalize_gamma_params": [
+      "self",
+      "gamma_params"
+    ]
+  },
+  "BATS": {
+    "__init__": [
+      "self",
+      "use_box_cox",
+      "box_cox_bounds",
+      "use_trend",
+      "use_damped_trend",
+      "seasonal_periods",
+      "use_arma_errors",
+      "show_warnings",
+      "n_jobs",
+      "multiprocessing_start_method",
+      "context"
+    ],
+    "_normalize_seasonal_periods": [
+      "self",
+      "seasonal_periods"
+    ],
+    "_do_fit": [
+      "self",
+      "y"
+    ]
+  },
+  "Case": {
+    "fit_initial_model": [
+      "self",
+      "y"
+    ]
+  },
+  "SeedFinder": {
+    "__init__": [
+      "self",
+      "components"
+    ],
+    "to_matrix_for_linear_regression": [
+      "self",
+      "w_tilda"
+    ],
+    "from_linear_regression_coefs_to_x0": [
+      "self",
+      "linear_regression_coefs"
+    ],
+    "prepare_seasonal_params": [
+      "self",
+      "w_tilda_obj"
+    ],
+    "transform_to_seasonal_vector": [
+      "self",
+      "lr_coefs"
+    ],
+    "get_mask": [
+      "self"
+    ],
+    "prepare_mask": [
+      "cls",
+      "seasonal_periods"
+    ],
+    "mask_to_seasonal_cuts": [
+      "self",
+      "mask"
+    ]
+  },
+  "Components": {
+    "__init__": [
+      "self",
+      "use_box_cox",
+      "use_trend",
+      "use_damped_trend",
+      "seasonal_periods",
+      "use_arma_errors",
+      "p",
+      "q",
+      "box_cox_bounds"
+    ],
+    "create_constant_components": [
+      "cls"
+    ],
+    "seasonal_components_amount": [
+      "self"
+    ],
+    "gamma_params_amount": [
+      "self"
+    ],
+    "_normalize_seasons": [
+      "self",
+      "seasonal_periods"
+    ],
+    "_seasonal_summary": [
+      "self"
+    ]
+  },
+  "Guerrero": {
+    "__init__": [
+      "self"
+    ],
+    "find_lambda": [
+      "self",
+      "y",
+      "seasonal_periods",
+      "bounds"
+    ],
+    "find_longest_season_with_2x_observations": [
+      "y",
+      "seasonal_periods"
+    ],
+    "minimize": [
+      "self",
+      "y",
+      "bounds"
+    ],
+    "guerrero_coefficient_of_variation": [
+      "self",
+      "lam"
+    ]
+  },
+  "find_box_cox_lambda": [
+    "y",
+    "seasonal_periods",
+    "bounds"
+  ],
+  "boxcox": [
+    "y",
+    "lam",
+    "seasonal_periods",
+    "bounds"
+  ],
+  "inv_boxcox": [
+    "y",
+    "lam",
+    "force_valid"
+  ],
+  "HarmonicsChoosingStrategy": {
+    "__init__": [
+      "self",
+      "context",
+      "checking_range"
+    ],
+    "choose": [
+      "self",
+      "y",
+      "components"
+    ],
+    "initial_harmonics_to_check": [
+      "self",
+      "max_harmonic"
+    ],
+    "next_harmonics_to_check": [
+      "self",
+      "max_harmonic",
+      "previously_checked",
+      "chosen_harmonic"
+    ],
+    "choose_for_season": [
+      "self",
+      "season_index",
+      "max_harmonic",
+      "best_model_so_far"
+    ],
+    "_fit_model": [
+      "self",
+      "harmonic_to_check"
+    ],
+    "choose_for_season_serial": [
+      "self",
+      "season_index",
+      "max_harmonic",
+      "best_model_so_far"
+    ],
+    "fit_model_like_previous_with_harmonic": [
+      "self",
+      "previous_model",
+      "season_index",
+      "harmonic_to_check"
+    ],
+    "calculate_max": [
+      "cls",
+      "seasonal_periods",
+      "dependency_reduction_function"
+    ],
+    "max_harmonic_dependency_reduction": [
+      "cls",
+      "max_harmonic_proposal",
+      "period_length",
+      "seasonal_periods"
+    ],
+    "max_harmonic_dependency_reduction_better": [
+      "cls",
+      "max_harmonic_proposal",
+      "period_length",
+      "seasonal_periods"
+    ]
+  },
+  "TBATS": {
+    "__init__": [
+      "self",
+      "use_box_cox",
+      "box_cox_bounds",
+      "use_trend",
+      "use_damped_trend",
+      "seasonal_periods",
+      "use_arma_errors",
+      "show_warnings",
+      "n_jobs",
+      "multiprocessing_start_method",
+      "context"
+    ],
+    "_normalize_seasonal_periods": [
+      "self",
+      "seasonal_periods"
+    ],
+    "_do_fit": [
+      "self",
+      "y"
+    ],
+    "create_most_complex_components": [
+      "self"
+    ]
+  },
+  "ModelWarning": {},
+  "InputArgsWarning": {},
+  "InputArgsException": {},
+  "BatsException": {},
+  "BatsWarning": {},
+  "ExceptionHandler": {
+    "__init__": [
+      "self",
+      "show_warnings"
+    ],
+    "warn": [
+      "self",
+      "message",
+      "warning_type"
+    ],
+    "exception": [
+      "self",
+      "message",
+      "exception_type",
+      "previous_exception"
+    ]
+  },
+  "MatrixBuilderCache": {
+    "__init__": [
+      "self",
+      "matrix_builder"
+    ],
+    "make_w_vector": [
+      "self"
+    ],
+    "make_g_vector": [
+      "self"
+    ],
+    "make_F_matrix": [
+      "self"
+    ],
+    "calculate_D_matrix": [
+      "self"
+    ]
+  },
+  "ContextInterface": {
+    "get_exception_handler": [
+      "self"
+    ],
+    "create_constant_model": [
+      "self",
+      "constant_value"
+    ],
+    "create_model": [
+      "self",
+      "params",
+      "validate_input"
+    ],
+    "create_seed_finder": [
+      "self",
+      "components"
+    ],
+    "create_matrix_builder": [
+      "self",
+      "params"
+    ],
+    "create_default_starting_params": [
+      "self",
+      "y",
+      "components"
+    ],
+    "create_params_optimizer": [
+      "self"
+    ],
+    "create_case": [
+      "self",
+      "components"
+    ],
+    "create_case_from_dictionary": [
+      "self"
+    ],
+    "create_components": [
+      "self"
+    ],
+    "create_harmonics_choosing_strategy": [
+      "self"
+    ],
+    "multiprocessing": [
+      "self"
+    ]
+  },
+  "MatrixBuilderInterface": {
+    "make_w_vector": [
+      "self"
+    ],
+    "make_g_vector": [
+      "self"
+    ],
+    "make_F_matrix": [
+      "self"
+    ],
+    "calculate_D_matrix": [
+      "self"
+    ]
+  },
+  "ArrayHelper": {
+    "to_array": [
+      "cls",
+      "values",
+      "type",
+      "give_shape"
+    ],
+    "make_one_and_zeroes_vector": [
+      "cls",
+      "size",
+      "one",
+      "one_position"
+    ]
+  },
+  "Estimator": {
+    "__init__": [
+      "self",
+      "context",
+      "use_box_cox",
+      "box_cox_bounds",
+      "use_trend",
+      "use_damped_trend",
+      "seasonal_periods",
+      "use_arma_errors",
+      "n_jobs"
+    ],
+    "_normalize_seasonal_periods": [
+      "self",
+      "seasonal_periods"
+    ],
+    "_do_fit": [
+      "self",
+      "y"
+    ],
+    "fit": [
+      "self",
+      "y"
+    ],
+    "_validate": [
+      "self",
+      "y"
+    ],
+    "_case_fit": [
+      "self",
+      "components_combination"
+    ],
+    "_choose_model_from_possible_component_settings": [
+      "self",
+      "y",
+      "components_grid"
+    ],
+    "_prepare_components_grid": [
+      "self",
+      "seasonal_harmonics"
+    ],
+    "_prepare_non_seasonal_components_grid": [
+      "self"
+    ],
+    "__prepare_component_boolean_combinations": [
+      "param"
+    ],
+    "_normalize_seasonal_periods_to_type": [
+      "self",
+      "seasonal_periods",
+      "dtype"
+    ]
+  },
+  "ComponentMatrix": {
+    "__init__": [
+      "self",
+      "matrix",
+      "model_components",
+      "append_arma_coefs"
+    ],
+    "without_arma": [
+      "self"
+    ],
+    "with_replaced_seasonal": [
+      "self",
+      "new_seasonal_part",
+      "new_seasonal_periods"
+    ],
+    "as_matrix": [
+      "self"
+    ],
+    "as_vector": [
+      "self"
+    ],
+    "seasonal_part": [
+      "self"
+    ],
+    "alpha_beta_part": [
+      "self"
+    ],
+    "arma_part": [
+      "self"
+    ],
+    "break_into_seasons": [
+      "self"
+    ],
+    "arma_offset": [
+      "self"
+    ],
+    "seasonal_offset": [
+      "self"
+    ]
+  }
+}

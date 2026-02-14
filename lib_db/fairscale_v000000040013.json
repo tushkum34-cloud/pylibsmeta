@@ -1,0 +1,4695 @@
+{
+  "this_dir": [],
+  "fetch_requirements": [],
+  "find_version": [
+    "version_file_path"
+  ],
+  "extensions": [],
+  "cmdclass": [],
+  "__version_tuple__": [],
+  "__version__": [],
+  "DEBUG": [],
+  "_next_power_of_2_or_max": [
+    "n",
+    "max_n"
+  ],
+  "_reshape_inputs": [
+    "input",
+    "target"
+  ],
+  "get_data": [
+    "shape",
+    "dtype",
+    "device"
+  ],
+  "BaselineSoftmax": {
+    "__init__": [
+      "self",
+      "proj_weight",
+      "tile_factor",
+      "log_softmax",
+      "margin",
+      "scale"
+    ],
+    "lmcl_pre_softmax": [
+      "self",
+      "input",
+      "target"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "BaselineSoftmaxNllLoss": {
+    "__init__": [
+      "self",
+      "proj_weight",
+      "tile_factor",
+      "log_softmax",
+      "margin",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "lmcl_matmul": [
+    "i",
+    "w",
+    "tgt",
+    "w_idx",
+    "margin",
+    "scale"
+  ],
+  "GetMaxFunction": {
+    "get_max": [
+      "i",
+      "w",
+      "tgt",
+      "w_idx",
+      "full_precision",
+      "margin",
+      "scale"
+    ],
+    "forward": [
+      "ctx",
+      "i",
+      "w",
+      "tgt",
+      "kernel_obj",
+      "w_idx",
+      "w_split_size",
+      "split_dim"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "GetSumFunction": {
+    "get_sum": [
+      "i",
+      "w",
+      "tgt",
+      "maxs",
+      "w_idx",
+      "full_precision",
+      "margin",
+      "scale"
+    ],
+    "forward": [
+      "ctx",
+      "i",
+      "w",
+      "tgt",
+      "maxs",
+      "kernel_obj",
+      "w_idx",
+      "w_split_size",
+      "split_dim"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "TargetScoreFunction": {
+    "get_target_score": [
+      "i",
+      "w",
+      "target",
+      "full_precision",
+      "margin",
+      "scale"
+    ],
+    "forward": [
+      "ctx",
+      "i",
+      "w",
+      "target",
+      "kernel_obj"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "BackwardTriggerFn": {
+    "forward": [
+      "ctx",
+      "w",
+      "trigger_tensor"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "BackwardTrigger": {
+    "__init__": [
+      "self",
+      "linked_param"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "MemoryEfficientVocabOutput": {
+    "__init__": [
+      "self",
+      "proj_weight",
+      "tile_factor",
+      "reduction",
+      "margin",
+      "scale"
+    ],
+    "get_target_nlprob": [
+      "self",
+      "i",
+      "w",
+      "target",
+      "debase_max",
+      "exp_sums"
+    ],
+    "eval_forward": [
+      "self",
+      "input"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "_forward": [
+    "input",
+    "affine",
+    "mean",
+    "invstd",
+    "weight",
+    "bias"
+  ],
+  "_track_running_stats": [
+    "running_mean",
+    "running_var",
+    "momentum",
+    "mean",
+    "var",
+    "total_count"
+  ],
+  "_calculate_stats": [
+    "input",
+    "eps",
+    "process_group"
+  ],
+  "_SyncBatchNormFunction": {
+    "forward": [
+      "ctx",
+      "input",
+      "weight",
+      "bias",
+      "affine",
+      "mean",
+      "invstd",
+      "total_count",
+      "process_group"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "SyncBatchNorm": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "convert_sync_batchnorm": [
+      "cls",
+      "module",
+      "process_group"
+    ]
+  },
+  "_conditional_amp_fwd_decorator": [
+    "orig_func"
+  ],
+  "_conditional_amp_bwd_decorator": [
+    "orig_func"
+  ],
+  "_split": [
+    "modules",
+    "number_splits"
+  ],
+  "ModelShard": {
+    "__init__": [
+      "self",
+      "cpu_model_shard",
+      "device",
+      "offload_device",
+      "index"
+    ],
+    "forward": [
+      "self"
+    ],
+    "to": [
+      "self",
+      "device"
+    ],
+    "train": [
+      "self",
+      "mode"
+    ],
+    "to_device": [
+      "self"
+    ],
+    "forward_load": [
+      "self",
+      "non_blocking"
+    ],
+    "backward_load": [
+      "self",
+      "non_blocking"
+    ],
+    "forward_drop": [
+      "self",
+      "non_blocking"
+    ],
+    "backward_drop": [
+      "self",
+      "non_blocking"
+    ]
+  },
+  "OffloadFunction": {
+    "forward": [
+      "ctx",
+      "inputs",
+      "dummy_input",
+      "model_instance"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "ShardSyncLayer": {
+    "forward": [
+      "ctx",
+      "inputs",
+      "index",
+      "model_slices",
+      "model_instance"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "OffloadModel": {
+    "__init__": [
+      "self",
+      "model",
+      "device",
+      "offload_device",
+      "num_slices",
+      "checkpoint_activation",
+      "num_microbatches"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "_get_count": [
+    "param_count",
+    "node_name"
+  ],
+  "_create_shard_to_param_count": [
+    "param_count",
+    "node_name_to_shard_id"
+  ],
+  "_split_nodes": [
+    "traced_graph_module",
+    "shard_count"
+  ],
+  "_ExtendedLeafTracer": {
+    "__init__": [
+      "self",
+      "leaf_modules"
+    ],
+    "is_leaf_module": [
+      "self",
+      "m",
+      "model_qualified_name"
+    ]
+  },
+  "_trace": [
+    "model"
+  ],
+  "shard_model": [
+    "model",
+    "shard_count"
+  ],
+  "create_task_without_skip_trackers": [
+    "checkpoint_stop",
+    "i",
+    "j",
+    "batch",
+    "partition"
+  ],
+  "AsyncAMPnetEventLoop": {
+    "__init__": [
+      "self",
+      "partitions",
+      "group",
+      "transport",
+      "min_update_interval",
+      "weight_prediction",
+      "checkpoint_stop",
+      "input_device",
+      "chunks"
+    ],
+    "perform_optimizer_step": [
+      "self",
+      "optimizer",
+      "num_gradients"
+    ],
+    "async_send_inner": [
+      "self",
+      "batch",
+      "index"
+    ],
+    "async_grad_inner": [
+      "self",
+      "message",
+      "activations"
+    ],
+    "get_batch_from_message": [
+      "self",
+      "message",
+      "queue_name"
+    ],
+    "event_loop_head_across_minibatches": [
+      "self",
+      "lm_dataloader",
+      "criterion",
+      "optimizer",
+      "transform_logger_object"
+    ],
+    "event_loop_tail_across_minibatches": [
+      "self",
+      "lm_dataloader",
+      "criterion",
+      "optimizer",
+      "transform_logger_object"
+    ],
+    "event_loop_trunk_forward_helper": [
+      "self",
+      "activations"
+    ],
+    "event_loop_trunk_backward_helper": [
+      "self",
+      "activations"
+    ],
+    "event_loop_across_minibatches": [
+      "self",
+      "lm_dataloader",
+      "criterion",
+      "optimizer",
+      "transform_logger_object"
+    ]
+  },
+  "__all__": [],
+  "AMPnetPipe": {
+    "__init__": [
+      "self"
+    ],
+    "interleave": [
+      "self",
+      "lm_dataloader",
+      "criterion",
+      "optimizer",
+      "transform_logger_object",
+      "min_update_interval",
+      "weight_prediction"
+    ]
+  },
+  "ExcInfo": [],
+  "DistributedPipelineRecord": {
+    "DataConsumer": [],
+    "__init__": [
+      "self",
+      "device",
+      "rank",
+      "chunks",
+      "num_inputs",
+      "num_outputs",
+      "consumers"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "feed": [
+      "self",
+      "chunk",
+      "input_idx",
+      "input"
+    ],
+    "wait_for": [
+      "self",
+      "chunk"
+    ],
+    "fence": [
+      "self",
+      "chunk"
+    ],
+    "sync_stream": [
+      "self",
+      "chunk",
+      "stream"
+    ],
+    "forward_results": [
+      "self",
+      "chunk"
+    ],
+    "get_batch": [
+      "self",
+      "chunk"
+    ]
+  },
+  "PartitionHandler": {
+    "__init__": [
+      "self",
+      "module_rref",
+      "device",
+      "num_inputs",
+      "num_outputs",
+      "rank",
+      "chunks",
+      "checkpoint_stop"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "local_parameter_rrefs": [
+      "self"
+    ],
+    "make_pipeline_record": [
+      "self",
+      "consumers"
+    ],
+    "run": [
+      "self",
+      "pipeline_record"
+    ],
+    "compute": [
+      "self",
+      "pipeline_record",
+      "chunk"
+    ],
+    "run_pipeline": [
+      "self",
+      "pipeline_record_rref"
+    ]
+  },
+  "_rloss": [
+    "loss_func",
+    "input_rref",
+    "target_rref"
+  ],
+  "DistributedLoss": [
+    "loss"
+  ],
+  "MultiInputSequential": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "RemoteSequential": [
+    "rref_list"
+  ],
+  "NodeDataConsumer": [],
+  "DataSource": {},
+  "Node": {
+    "__init__": [
+      "self",
+      "module"
+    ]
+  },
+  "PipelineModulesGraph": {
+    "__init__": [
+      "self"
+    ],
+    "_find_node": [
+      "self",
+      "module"
+    ],
+    "_find_or_add": [
+      "self",
+      "module"
+    ],
+    "DataSourceSpec": [],
+    "_data_source_spec_to_data_source": [
+      "self",
+      "spec"
+    ],
+    "add_layer": [
+      "self",
+      "module",
+      "inputs",
+      "num_outputs"
+    ],
+    "add_sequence": [
+      "self",
+      "modules",
+      "first_module_inputs",
+      "last_module_num_outputs"
+    ],
+    "_compile": [
+      "self"
+    ],
+    "_trace_modules": [
+      "self",
+      "node"
+    ],
+    "partition_graph": [
+      "self"
+    ]
+  },
+  "Device": [],
+  "check_pytorch_version": [],
+  "MOVING_DENIED": [],
+  "DistributedPipeline": {
+    "DataConsumer": [],
+    "__init__": [
+      "self",
+      "graph",
+      "chunks",
+      "checkpoint"
+    ],
+    "cuda": [
+      "self",
+      "device"
+    ],
+    "cpu": [
+      "self"
+    ],
+    "to": [
+      "self"
+    ],
+    "parameter_rrefs": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "ConsumerType": [],
+  "DataConsumer": {},
+  "RemoteModuleTracer": {
+    "is_leaf_module": [
+      "self",
+      "m",
+      "module_qualified_name"
+    ]
+  },
+  "GraphCreator": {
+    "__init__": [
+      "self",
+      "tracer"
+    ],
+    "get_module": [
+      "self",
+      "node"
+    ],
+    "create_graph": [
+      "self"
+    ]
+  },
+  "_call_trace": [
+    "tracer",
+    "module"
+  ],
+  "make_graph": [
+    "module"
+  ],
+  "HEARTBEAT_TIMEOUT": [],
+  "BROADCAST_BUCKET_SIZE": [],
+  "SlowMoBaseAlgorithm": {
+    "LOCALSGD": [],
+    "SGP": []
+  },
+  "SlowMoDistributedDataParallel": {
+    "__init__": [
+      "self",
+      "module",
+      "nprocs_per_node",
+      "broadcast_buffers",
+      "slowmo_base_algorithm",
+      "slowmo_momentum",
+      "slowmo_memory_efficient",
+      "slowmo_frequency",
+      "slowmo_lr",
+      "slowmo_num_shards",
+      "localsgd_frequency",
+      "graph",
+      "mixing",
+      "push_sum",
+      "overlap",
+      "synch_freq",
+      "use_streams",
+      "slowmo_sgp_average_params",
+      "verbose",
+      "profile_mode",
+      "process_rank",
+      "process_world_size",
+      "global_group",
+      "master_group",
+      "local_node_group",
+      "comm_device"
+    ],
+    "_initialize_logger": [
+      "self",
+      "verbose",
+      "process_rank"
+    ],
+    "_maybe_create_process_groups": [
+      "self",
+      "process_rank",
+      "process_world_size",
+      "nprocs_per_node",
+      "global_group",
+      "master_group",
+      "local_node_group"
+    ],
+    "_maybe_initialize_global_group": [
+      "self",
+      "global_group",
+      "process_world_size"
+    ],
+    "_maybe_initialize_master_group": [
+      "self",
+      "master_group",
+      "process_rank",
+      "process_world_size",
+      "nprocs_per_node"
+    ],
+    "_maybe_initialize_local_node_group": [
+      "self",
+      "local_node_group",
+      "process_rank",
+      "logical_world_size"
+    ],
+    "forward": [
+      "self"
+    ],
+    "_sync_params": [
+      "self"
+    ],
+    "_sync_buffers": [
+      "self"
+    ],
+    "_distributed_broadcast_coalesced": [
+      "self",
+      "process_group",
+      "tensors",
+      "buffer_size"
+    ],
+    "_create_event_recorder": [
+      "self",
+      "event_name"
+    ],
+    "_fp16_fp32_iterator": [
+      "self",
+      "optimizer",
+      "fp32_params"
+    ],
+    "_should_perform_slowmo": [
+      "self"
+    ],
+    "_should_perform_localsgd": [
+      "self"
+    ],
+    "_skip_averaging_memory_efficient_slowmo": [
+      "self"
+    ],
+    "_should_perform_sgp_common": [
+      "self"
+    ],
+    "_should_perform_sgp": [
+      "self"
+    ],
+    "_should_perform_sgp_overlap": [
+      "self"
+    ],
+    "_should_use_error_feedback": [
+      "self",
+      "fp16_fp32_list"
+    ],
+    "_should_allreduce_params": [
+      "self"
+    ],
+    "_maybe_pre_communicate_error_feedback": [
+      "self",
+      "fp16_fp32_list"
+    ],
+    "_maybe_post_communicate_error_feedback": [
+      "self",
+      "fp16_fp32_list"
+    ],
+    "_maybe_perform_sgp": [
+      "self"
+    ],
+    "_maybe_allreduce": [
+      "self"
+    ],
+    "_maybe_sync_locally": [
+      "self"
+    ],
+    "_maybe_perform_slowmo": [
+      "self",
+      "optimizer"
+    ],
+    "_maybe_copy_back_fp32_parameters": [
+      "self",
+      "fp16_fp32_list"
+    ],
+    "_maybe_sgp_overlap_pre_communicate_error_feedback": [
+      "self",
+      "fp16_fp32_list"
+    ],
+    "perform_slowmo": [
+      "self",
+      "optimizer",
+      "fp32_params"
+    ],
+    "_init_global_momentum_buffers": [
+      "self",
+      "optimizer"
+    ],
+    "_distributed_comm": [
+      "self",
+      "optimizer",
+      "mode"
+    ],
+    "_global_momentum_step": [
+      "self",
+      "optimizer"
+    ],
+    "_perform_local_optimization": [
+      "self",
+      "optimizer"
+    ],
+    "_register_hooks": [
+      "self"
+    ],
+    "__make_backward_hook": [
+      "self"
+    ],
+    "__make_forward_pre_hook": [
+      "self"
+    ],
+    "_sgp_init": [
+      "self",
+      "module",
+      "first_param_dtype",
+      "logical_rank",
+      "logical_world_size",
+      "comm_device",
+      "graph",
+      "mixing",
+      "push_sum",
+      "overlap",
+      "synch_freq",
+      "use_streams",
+      "slowmo_sgp_average_params"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "_sgp_ps_numerator": [
+      "self"
+    ],
+    "_sgp_unbias": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "mode"
+    ],
+    "eval": [
+      "self"
+    ],
+    "_sgp_query_gossip_queue": [
+      "self",
+      "non_blocking"
+    ],
+    "_sgp_transfer_params": [
+      "self",
+      "mix"
+    ],
+    "_sgp_gossip_into_receive_buffer": [
+      "send_buffer",
+      "gossiper",
+      "receive_buffer",
+      "gossip_ps_weight",
+      "gossip_lock",
+      "dist_config"
+    ],
+    "_sgp_gossip_target": [
+      "dist_config",
+      "gossip_flag",
+      "train_flag",
+      "gossip_lock",
+      "gossip_params",
+      "gossip_device_buffer",
+      "gossip_ps_weight",
+      "gossip_ps_factor",
+      "gossip_stream"
+    ]
+  },
+  "MixingManager": {
+    "__init__": [
+      "self",
+      "graph",
+      "device"
+    ],
+    "is_regular": [
+      "self"
+    ],
+    "is_uniform": [
+      "self"
+    ],
+    "get_mixing_weights": [
+      "self",
+      "residual_adjusted"
+    ]
+  },
+  "UniformMixing": {
+    "get_mixing_weights": [
+      "self",
+      "residual_adjusted"
+    ],
+    "is_uniform": [
+      "self"
+    ]
+  },
+  "dist_backend": {
+    "UNDEFINED": [],
+    "TCP": [],
+    "MPI": [],
+    "GLOO": [],
+    "NCCL": []
+  },
+  "Gossiper": {
+    "__init__": [
+      "self",
+      "msg",
+      "graph",
+      "device",
+      "mixing",
+      "logger",
+      "rank",
+      "world_size"
+    ],
+    "ps_weight": [
+      "self",
+      "v"
+    ],
+    "peers_per_itr": [
+      "self",
+      "v"
+    ],
+    "refresh_peers_": [
+      "self",
+      "rotate"
+    ],
+    "refresh_mixing_weights_": [
+      "self",
+      "residual_adjusted"
+    ],
+    "mix_out_msg_": [
+      "self",
+      "out_msg",
+      "ps_weight"
+    ],
+    "clean_msg_buffers_": [
+      "self"
+    ],
+    "parse_in_msg_buffer": [
+      "self"
+    ],
+    "mix": [
+      "self",
+      "out_msg",
+      "ps_weight"
+    ]
+  },
+  "PushSum": {
+    "mix": [
+      "self",
+      "out_msg",
+      "ps_weight"
+    ]
+  },
+  "PushPull": {
+    "mix": [
+      "self",
+      "out_msg",
+      "ps_weight"
+    ]
+  },
+  "Edge": {
+    "__init__": [
+      "self",
+      "local_master_rank",
+      "dest",
+      "src",
+      "local_rank"
+    ]
+  },
+  "GraphManager": {
+    "__init__": [
+      "self",
+      "rank",
+      "world_size",
+      "nprocs_per_node",
+      "local_rank",
+      "peers_per_itr"
+    ],
+    "peers_per_itr": [
+      "self",
+      "v"
+    ],
+    "_make_graph": [
+      "self"
+    ],
+    "_add_peers": [
+      "self",
+      "rank",
+      "peers"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ],
+    "get_peers": [
+      "self",
+      "rotate"
+    ],
+    "get_edges": [
+      "self",
+      "rotate"
+    ],
+    "_rotate_group_indices": [
+      "self"
+    ],
+    "_rotate_forward": [
+      "self",
+      "r",
+      "p"
+    ],
+    "_rotate_backward": [
+      "self",
+      "r",
+      "p"
+    ]
+  },
+  "DynamicDirectedExponentialGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "NPeerDynamicDirectedExponentialGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "DynamicBipartiteExponentialGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "DynamicDirectedLinearGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "DynamicBipartiteLinearGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "RingGraph": {
+    "_make_graph": [
+      "self"
+    ],
+    "is_regular_graph": [
+      "self"
+    ],
+    "is_bipartite_graph": [
+      "self"
+    ],
+    "is_passive": [
+      "self",
+      "rank"
+    ],
+    "is_dynamic_graph": [
+      "self"
+    ]
+  },
+  "flatten_tensors": [
+    "tensors"
+  ],
+  "unflatten_tensors": [
+    "flat",
+    "tensors"
+  ],
+  "group_by_dtype": [
+    "tensors"
+  ],
+  "communicate": [
+    "tensors",
+    "communication_op",
+    "logger"
+  ],
+  "make_logger": [
+    "rank",
+    "verbose"
+  ],
+  "create_process_group": [
+    "ranks"
+  ],
+  "MultiProcessAdapter": {
+    "process": [
+      "self",
+      "msg",
+      "kwargs"
+    ]
+  },
+  "MAX_LEN_DEQUEUE": [],
+  "deque_with_max_len_fixed": [],
+  "create_and_record_event": [],
+  "EventRecorder": {
+    "stop": [
+      "self"
+    ]
+  },
+  "create_event_recorder": [
+    "event_name",
+    "dummy"
+  ],
+  "CudaEventRecorder": {
+    "__init__": [
+      "self",
+      "event_name"
+    ],
+    "stop": [
+      "self"
+    ],
+    "find_time_elapsed": [
+      "self"
+    ],
+    "reset": [
+      "cls"
+    ],
+    "get_common_timings": [
+      "cls",
+      "event_recorders",
+      "description"
+    ],
+    "get_timings": [
+      "cls"
+    ],
+    "get_all_timings": [
+      "cls"
+    ]
+  },
+  "DummyCudaEventRecorder": {},
+  "TraceForwardEvent": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "serialized"
+    ]
+  },
+  "TraceBackwardEvent": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "serialized"
+    ]
+  },
+  "LayerMemoryTrace": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "serialized"
+    ]
+  },
+  "LayerwiseMemoryTrackerSummary": {},
+  "ProcessGroupTrackingEvent": {
+    "allgather": []
+  },
+  "ProcessGroupTracker": {
+    "__init__": [
+      "self",
+      "group",
+      "listener"
+    ],
+    "__getattr__": [
+      "self",
+      "item"
+    ],
+    "_build_wrapper": [
+      "self",
+      "fct"
+    ]
+  },
+  "LayerwiseMemoryTracker": {
+    "__init__": [
+      "self"
+    ],
+    "monitor": [
+      "self",
+      "model"
+    ],
+    "clear_traces": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "forward_traces": [
+      "self"
+    ],
+    "backward_traces": [
+      "self"
+    ],
+    "max_memory_allocated": [
+      "self"
+    ],
+    "max_memory_cached": [
+      "self"
+    ],
+    "summary": [
+      "self"
+    ],
+    "top_forward_activation_producers": [
+      "self",
+      "top"
+    ],
+    "show_plots": [
+      "self",
+      "figsize",
+      "capture"
+    ],
+    "save_traces": [
+      "self",
+      "path"
+    ],
+    "load": [
+      "cls",
+      "path"
+    ],
+    "_create_pre_forward_hook": [
+      "self",
+      "name"
+    ],
+    "_handle_process_group_call": [
+      "self",
+      "event"
+    ],
+    "_create_post_forward_hook": [
+      "self",
+      "name"
+    ],
+    "_create_backward_hook": [
+      "self",
+      "name"
+    ],
+    "_capture_memory": [],
+    "_get_parameter_size": [
+      "cls",
+      "module"
+    ],
+    "_get_module_output_size": [
+      "cls",
+      "xs"
+    ],
+    "_get_dtype_size": [
+      "cls",
+      "x"
+    ],
+    "_filter_allocated_output": [
+      "cls",
+      "inputs",
+      "outputs"
+    ],
+    "_is_same_storage": [
+      "x",
+      "y"
+    ],
+    "_collect_tensors": [
+      "module_io_tensors"
+    ]
+  },
+  "find_best_reset_points": [
+    "activation_sizes",
+    "num_checkpoints"
+  ],
+  "SuggestedCheckpoints": {},
+  "suggest_checkpoint_location": [
+    "traces",
+    "num_checkpoints",
+    "num_skipped_layers"
+  ],
+  "_assert_visualisation_library_installed": [],
+  "compare_memory_traces_in_plot": [
+    "memory_traces_by_job",
+    "figsize",
+    "capture"
+  ],
+  "_MemoryGraphCreator": {
+    "__init__": [
+      "self"
+    ],
+    "allocated_memory_curve": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "reserved_memory_curve": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "activation_allocations": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "cumulative_activations": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "all_gathered_memory": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "module_parameters": [
+      "self",
+      "ax",
+      "job_name",
+      "memory_traces"
+    ],
+    "_y_axis_in_gigabytes": [
+      "ax"
+    ],
+    "_split_forward_backward": [
+      "cls",
+      "memory_traces",
+      "values"
+    ],
+    "_mask_forward_backward": [
+      "cls",
+      "memory_traces"
+    ]
+  },
+  "null_context": [],
+  "matplotlib_figure_to_image": [
+    "fig"
+  ],
+  "EnergyConcentrationProfile": {
+    "__init__": [
+      "self",
+      "dim",
+      "top_k_percents"
+    ],
+    "measure": [
+      "self",
+      "in_tensor"
+    ],
+    "measure_fft": [
+      "self",
+      "in_tensor"
+    ]
+  },
+  "_get_k_for_topk": [
+    "topk_percent",
+    "top_k_element",
+    "top_k_total_size"
+  ],
+  "_scatter_topk_to_sparse_tensor": [
+    "top_k_tensor",
+    "to_be_sparsify_tensor",
+    "k",
+    "dim"
+  ],
+  "_top_k_total_size": [
+    "tensor",
+    "topk_dim"
+  ],
+  "_is_sparsity_zero": [
+    "dense",
+    "topk_percent",
+    "topk_element",
+    "top_k_dim"
+  ],
+  "_fft_transform": [
+    "dense",
+    "dim"
+  ],
+  "_ifft_transform": [
+    "sst",
+    "dim"
+  ],
+  "_dct_transform": [
+    "dense",
+    "dim"
+  ],
+  "_idct_transform": [
+    "sst",
+    "dim"
+  ],
+  "Algo": {
+    "FFT": [],
+    "DCT": []
+  },
+  "SignalSparsity": {
+    "__init__": [
+      "self",
+      "algo",
+      "sst_top_k_dim",
+      "sst_top_k_element",
+      "sst_top_k_percent",
+      "dst_top_k_dim",
+      "dst_top_k_element",
+      "dst_top_k_percent"
+    ],
+    "_sst_enabled": [
+      "self"
+    ],
+    "_dst_enabled": [
+      "self"
+    ],
+    "_validate_conf": [
+      "self"
+    ],
+    "dense_to_sst": [
+      "self",
+      "dense"
+    ],
+    "dense_sst_to_dst": [
+      "self",
+      "dense",
+      "sst"
+    ],
+    "sst_dst_to_dense": [
+      "self",
+      "sst",
+      "dst"
+    ],
+    "lossy_compress": [
+      "self",
+      "dense"
+    ]
+  },
+  "random_sparse_mask": [
+    "dense",
+    "percent",
+    "dim"
+  ],
+  "ExitCode": {
+    "CLEAN": [],
+    "FILE_EXISTS_ERROR": [],
+    "FILE_DOES_NOT_EXIST_ERROR": []
+  },
+  "main": [
+    "argv"
+  ],
+  "ENTRY_RF_KEY": [],
+  "ENTRY_COMP_KEY": [],
+  "ENTRY_OS_KEY": [],
+  "ENTRY_DS_KEY": [],
+  "ENTRY_CS_KEY": [],
+  "ENTRY_NAMES_KEY": [],
+  "STORE_CREATE_DATE_KEY": [],
+  "STORE_OS_KEY": [],
+  "STORE_DS_KEY": [],
+  "STORE_CS_KEY": [],
+  "_get_json_entry": [
+    "d"
+  ],
+  "_copy_compressed": [
+    "src",
+    "dest",
+    "thread",
+    "blocksize"
+  ],
+  "_copy_uncompressed": [
+    "src",
+    "dest",
+    "thread",
+    "blocksize"
+  ],
+  "_JSON_DictContext": {
+    "__init__": [
+      "self",
+      "s",
+      "readonly"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "exc_traceback"
+    ]
+  },
+  "SHA1_Store": {
+    "__init__": [
+      "self",
+      "path",
+      "init",
+      "sha1_buf_size",
+      "tmp_dir",
+      "pgzip_threads",
+      "pgzip_block_size"
+    ],
+    "add": [
+      "self",
+      "file_or_obj",
+      "compress",
+      "name"
+    ],
+    "get": [
+      "self",
+      "sha1"
+    ],
+    "delete": [
+      "self",
+      "sha1"
+    ],
+    "size_info": [
+      "self",
+      "sha1"
+    ],
+    "names": [
+      "self",
+      "sha1"
+    ],
+    "_get_sha1_hash": [
+      "self",
+      "file_path"
+    ],
+    "_get_tmp_file_path": [
+      "self"
+    ],
+    "_sha1_to_dir": [
+      "self",
+      "sha1"
+    ],
+    "_add_ref": [
+      "self",
+      "current_sha1_hash",
+      "inc",
+      "compressed"
+    ]
+  },
+  "SHA1_STORE_DIR_NAME": [],
+  "SHA1_KEY": [],
+  "LAST_MODIFIED_TS_KEY": [],
+  "REL_PATH_KEY": [],
+  "RepoStatus": {
+    "CLEAN": [],
+    "CHANGES_NOT_ADDED": [],
+    "CHANGES_ADDED_NOT_COMMITED": []
+  },
+  "SizeInfo": {},
+  "_SHA1_Tensor": {},
+  "_recursive_apply_to_elements": [
+    "data",
+    "fn",
+    "names"
+  ],
+  "Repo": {
+    "__init__": [
+      "self",
+      "parent_dir",
+      "init"
+    ],
+    "_recursive_search_and_may_init_dot_wgit_dir_path": [
+      "self",
+      "check_dir"
+    ],
+    "_weigit_repo_exists": [
+      "self",
+      "check_dir"
+    ],
+    "_weigit_repo_file_check": [
+      "self",
+      "check_dir"
+    ],
+    "_sanity_check": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "in_file_path",
+      "per_tensor",
+      "gzip",
+      "sparsify",
+      "sparsify_policy"
+    ],
+    "commit": [
+      "self",
+      "message"
+    ],
+    "size_info": [
+      "self",
+      "path"
+    ],
+    "status": [
+      "self"
+    ],
+    "log": [
+      "self",
+      "file"
+    ],
+    "checkout": [
+      "self",
+      "sha1"
+    ],
+    "checkout_by_steps": [
+      "self"
+    ],
+    "_get_metdata_files": [
+      "self"
+    ],
+    "_is_metadata_file": [
+      "self",
+      "file"
+    ],
+    "_is_file_modified": [
+      "self",
+      "file"
+    ],
+    "_process_metadata_file": [
+      "self",
+      "metadata_fname"
+    ],
+    "_write_metadata": [
+      "self",
+      "metadata_file",
+      "file_path",
+      "sha1"
+    ],
+    "_rel_file_path": [
+      "self",
+      "filepath"
+    ]
+  },
+  "PyGit": {
+    "__init__": [
+      "self",
+      "parent_path",
+      "gitignore",
+      "name",
+      "email"
+    ],
+    "_init_wgit_git": [
+      "self",
+      "gitignore"
+    ],
+    "add": [
+      "self"
+    ],
+    "commit": [
+      "self",
+      "message"
+    ],
+    "_exists": [
+      "self"
+    ],
+    "_path": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "_set_author_config": [
+      "self",
+      "name",
+      "email"
+    ]
+  },
+  "OptState": {
+    "READY": [],
+    "UNSCALED": [],
+    "STEPPED": []
+  },
+  "_refresh_per_optimizer_state": [],
+  "DynamicLossScaler": {
+    "__init__": [
+      "self",
+      "init_scale",
+      "scale_factor",
+      "scale_window",
+      "tolerance",
+      "threshold",
+      "min_loss_scale"
+    ],
+    "scale": [
+      "self",
+      "outputs"
+    ],
+    "_get_gradients_norm": [
+      "self",
+      "params"
+    ],
+    "_decrease_loss_scale": [
+      "self"
+    ],
+    "_check_overflow": [
+      "self",
+      "grad_norm"
+    ],
+    "update": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "optimizer"
+    ],
+    "unscale_": [
+      "self",
+      "optimizer"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "_enable_pre_load_state_dict_hook": [],
+  "FlatParameter": {
+    "__new__": [
+      "cls",
+      "params",
+      "requires_grad"
+    ],
+    "__init__": [
+      "self",
+      "params",
+      "requires_grad"
+    ],
+    "get_param_views": [
+      "self",
+      "external_data"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "__reduce_ex__": [
+      "self",
+      "proto"
+    ]
+  },
+  "ParamGroups": [],
+  "FlattenParamsWrapper": {
+    "__init__": [
+      "self",
+      "module",
+      "param_list",
+      "flat_param_names"
+    ],
+    "module": [
+      "self"
+    ],
+    "flat_param": [
+      "self"
+    ],
+    "_init_flatten_params": [
+      "self",
+      "p_set"
+    ],
+    "_param_infos": [
+      "self"
+    ],
+    "_shared_param_infos": [
+      "self"
+    ],
+    "_flatten_params": [
+      "self",
+      "flat_params"
+    ],
+    "_unflatten_params": [
+      "self",
+      "external_data"
+    ],
+    "_unflatten_params_as_views": [
+      "self"
+    ],
+    "unflatten_params": [
+      "self",
+      "flat_params"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "flat_state_dict": [
+      "self"
+    ],
+    "_no_auto_unflatten_state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict",
+      "strict"
+    ],
+    "forward": [
+      "self"
+    ],
+    "get_param_views": [
+      "self",
+      "external_data_list"
+    ],
+    "metadata": [
+      "self",
+      "flat_param_idx"
+    ]
+  },
+  "_post_state_dict_hook": [
+    "module",
+    "state_dict",
+    "prefix"
+  ],
+  "_pre_load_state_dict_hook": [
+    "state_dict",
+    "prefix"
+  ],
+  "Bucket": {
+    "__init__": [
+      "self",
+      "size",
+      "dtype",
+      "device"
+    ],
+    "to": [
+      "self",
+      "device",
+      "dtype",
+      "non_blocking",
+      "keep_param_alignment"
+    ]
+  },
+  "ParamBucket": {
+    "__init__": [
+      "self",
+      "size",
+      "dtype",
+      "device"
+    ],
+    "to": [
+      "self",
+      "device",
+      "dtype",
+      "non_blocking",
+      "keep_param_alignment"
+    ],
+    "add_param": [
+      "self",
+      "param"
+    ],
+    "_add_param_as_view": [
+      "self",
+      "param",
+      "keep_existing_value"
+    ],
+    "_reattach_params": [
+      "self"
+    ]
+  },
+  "GradBucket": {
+    "__init__": [
+      "self",
+      "size",
+      "dtype",
+      "device",
+      "destination"
+    ],
+    "reset_checked_in": [
+      "self"
+    ],
+    "all_checked_in": [
+      "self"
+    ],
+    "can_add_grad_view": [
+      "self",
+      "param"
+    ],
+    "to": [
+      "self",
+      "device",
+      "dtype",
+      "non_blocking",
+      "keep_param_alignment"
+    ],
+    "zero": [
+      "self"
+    ],
+    "add_grad": [
+      "self",
+      "param"
+    ],
+    "collapse": [
+      "self"
+    ],
+    "rebuild": [
+      "self"
+    ],
+    "shrink": [
+      "self"
+    ],
+    "_reattach_grads": [
+      "self"
+    ],
+    "_add_grad_as_view": [
+      "self",
+      "param",
+      "keep_existing_value"
+    ]
+  },
+  "_trainable": [
+    "param"
+  ],
+  "ShardedDataParallel": {
+    "__init__": [
+      "self",
+      "module",
+      "sharded_optimizer",
+      "process_group",
+      "broadcast_buffers",
+      "sync_models_at_startup",
+      "reduce_buffer_size",
+      "auto_refresh_trainable",
+      "reduce_fp16",
+      "warn_on_trainable_params_changed"
+    ],
+    "forward": [
+      "self"
+    ],
+    "to": [
+      "self",
+      "device",
+      "dtype",
+      "non_blocking"
+    ],
+    "refresh_trainable": [
+      "self"
+    ],
+    "reduce": [
+      "self"
+    ],
+    "sync_buffers": [
+      "self",
+      "blocking"
+    ],
+    "zero_grad": [
+      "self",
+      "set_to_none"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "no_sync": [
+      "self"
+    ],
+    "_clear_counters": [
+      "self"
+    ],
+    "_get_reduce_fn": [
+      "self",
+      "index",
+      "param",
+      "dst_rank"
+    ],
+    "_setup_backward_hooks": [
+      "self"
+    ],
+    "_sync_params_and_buffers": [
+      "self"
+    ],
+    "_passing_sync_batchnorm_handle": [
+      "self",
+      "module"
+    ],
+    "_setup_bucket_strategy": [
+      "self"
+    ],
+    "_consume_work_handles": [
+      "self"
+    ],
+    "_try_consume_work_handle": [
+      "self"
+    ],
+    "_flush_reduce_calls": [
+      "self"
+    ],
+    "_detect_train_change": [
+      "self"
+    ]
+  },
+  "flatten_optim_state_dict": [
+    "sd"
+  ],
+  "check_param_counts_before_sharding": [
+    "full_optim_state_dict",
+    "n_instances"
+  ],
+  "_extract_non_tensor_state": [
+    "combined_state",
+    "param_id"
+  ],
+  "_unflatten_optim_state": [
+    "combined_state",
+    "instance_list",
+    "world_pad_info",
+    "singleton_state"
+  ],
+  "build_unflat_state_dict": [
+    "instance_list",
+    "world_pad_info",
+    "state",
+    "singleton_state",
+    "uncollected_opt_state",
+    "original_sd"
+  ],
+  "is_singleton_tensor": [
+    "x"
+  ],
+  "TrainingState": {
+    "IDLE": [],
+    "FORWARD": [],
+    "BACKWARD_PRE": [],
+    "BACKWARD_POST": [],
+    "SUMMON_FULL_PARAMS": []
+  },
+  "FullyShardedDataParallel": {
+    "__init__": [
+      "self",
+      "module",
+      "process_group",
+      "process_group_reduce_scatter",
+      "reshard_after_forward",
+      "disable_reshard_on_root",
+      "mixed_precision",
+      "fp32_reduce_scatter",
+      "flatten_parameters",
+      "move_params_to_cpu",
+      "compute_dtype",
+      "buffer_dtype",
+      "move_grads_to_cpu",
+      "bucket_cap_mb",
+      "compute_device",
+      "no_broadcast_optim_state",
+      "state_dict_device",
+      "clear_autocast_cache",
+      "force_input_to_fp32",
+      "verbose",
+      "cpu_offload",
+      "state_dict_on_rank_0_only",
+      "gradient_predivide_factor",
+      "allow_reset_parameters"
+    ],
+    "_get_gradient_predivide_factor": [
+      "self",
+      "world_size"
+    ],
+    "set_gradient_divide_factors": [
+      "self",
+      "pre",
+      "post",
+      "recursive"
+    ],
+    "module": [
+      "self"
+    ],
+    "append_shared_param": [
+      "self",
+      "p"
+    ],
+    "non_shared_params": [
+      "self"
+    ],
+    "apply": [
+      "self",
+      "fn"
+    ],
+    "_cast_buffers": [
+      "self",
+      "device",
+      "dtype",
+      "memo"
+    ],
+    "params_with_grad": [
+      "self"
+    ],
+    "clip_grad_norm_": [
+      "self",
+      "max_norm",
+      "norm_type"
+    ],
+    "_shard_parameters_": [
+      "self"
+    ],
+    "_get_shard": [
+      "self",
+      "tensor"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "parameters": [
+      "self",
+      "recurse"
+    ],
+    "named_parameters": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "local_state_dict": [
+      "self"
+    ],
+    "_no_return_full_state_dict": [
+      "self"
+    ],
+    "_load_state_dict": [
+      "self",
+      "state_dict",
+      "strict"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict",
+      "strict"
+    ],
+    "load_local_state_dict": [
+      "self",
+      "state_dict",
+      "strict"
+    ],
+    "no_sync": [
+      "self"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "_apply": [
+      "self",
+      "fn"
+    ],
+    "summon_full_params": [
+      "self",
+      "recurse",
+      "volatile"
+    ],
+    "_reset_lazy_init": [
+      "self"
+    ],
+    "_lazy_init": [
+      "self"
+    ],
+    "_init_param_attributes": [
+      "self",
+      "p"
+    ],
+    "_set_is_root": [
+      "self"
+    ],
+    "_setup_streams": [
+      "self"
+    ],
+    "_setup_output_hook_list": [
+      "self"
+    ],
+    "_wait_for_previous_optim_step": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ],
+    "_register_pre_backward_hooks": [
+      "self",
+      "outputs"
+    ],
+    "_register_post_backward_hooks": [
+      "self"
+    ],
+    "_post_backward_hook": [
+      "self",
+      "param"
+    ],
+    "_post_reduction_hook": [
+      "self",
+      "param",
+      "reduced_grad"
+    ],
+    "_queue_wait_for_post_backward": [
+      "self"
+    ],
+    "_wait_for_post_backward": [
+      "self"
+    ],
+    "_rebuild_full_params": [
+      "self",
+      "force_full_precision"
+    ],
+    "_use_full_params": [
+      "self"
+    ],
+    "_prep_grads_for_backward": [
+      "self"
+    ],
+    "_free_full_params": [
+      "self",
+      "params"
+    ],
+    "local_metadata_dict": [
+      "self"
+    ],
+    "consolidate_shard_weights": [
+      "shard_weights",
+      "shard_metadata",
+      "with_module_buffers",
+      "strict"
+    ],
+    "_use_fp32_param_shard": [
+      "self",
+      "params"
+    ],
+    "_cast_fp32_param_shards_to_fp16": [
+      "self",
+      "params"
+    ],
+    "_free_fp16_param_shard": [
+      "self",
+      "params"
+    ],
+    "assert_state": [
+      "self",
+      "state"
+    ],
+    "_broadcast_pad_info_to_r0": [
+      "self"
+    ],
+    "_gather_optim_state": [
+      "self",
+      "sd_state"
+    ],
+    "gather_full_optim_state_dict": [
+      "self",
+      "optim"
+    ],
+    "_remove_uncollectable_params_from_optim_state_dict": [
+      "self",
+      "osd"
+    ],
+    "get_shard_from_optim_state_dict": [
+      "self",
+      "full_optim_state_dict"
+    ],
+    "_print_r0": [
+      "self",
+      "msg",
+      "restart"
+    ],
+    "cpu_offload": [
+      "self"
+    ]
+  },
+  "p_assert": [
+    "cond",
+    "s"
+  ],
+  "_get_default_cuda_device": [
+    "module"
+  ],
+  "cast_floats_to_right_precision": [
+    "to_fp16",
+    "no_grad"
+  ],
+  "free_storage_": [
+    "data"
+  ],
+  "alloc_storage_": [
+    "data",
+    "size"
+  ],
+  "no_pre_load_state_dict_hook": [],
+  "_clean_path": [
+    "path"
+  ],
+  "_unpad": [
+    "shard",
+    "pad"
+  ],
+  "auto_wrap_bn": [
+    "module",
+    "single_rank_pg",
+    "process_group",
+    "fsdp_config",
+    "wrap_it",
+    "assert_on_collision"
+  ],
+  "get_fsdp_instances": [
+    "mod",
+    "skip_empty"
+  ],
+  "_AllToAll": {
+    "forward": [
+      "ctx",
+      "group",
+      "input"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "MOELayer": {
+    "__init__": [
+      "self",
+      "gate",
+      "experts",
+      "group"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "gumbel_rsample": [
+    "shape",
+    "device"
+  ],
+  "one_hot": [
+    "tensor",
+    "num_classes"
+  ],
+  "top2gating": [
+    "logits"
+  ],
+  "Top2Gate": {
+    "__init__": [
+      "self",
+      "model_dim",
+      "num_experts"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "patch_batchnorm": [
+    "module"
+  ],
+  "ThreadLocalCheckpointingState": {},
+  "thread_local": [],
+  "disable_checkpointing": [],
+  "enable_checkpointing": [],
+  "enable_recomputing": [],
+  "is_checkpointing": [],
+  "is_recomputing": [],
+  "checkpoint_wrapper": [
+    "module",
+    "offload_to_cpu"
+  ],
+  "_checkpointed_forward": [
+    "original_forward",
+    "weak_self",
+    "offload_to_cpu"
+  ],
+  "get_rng_state": [],
+  "set_rng_state": [
+    "state"
+  ],
+  "is_autocast_enabled": [],
+  "autocast": [
+    "enabled"
+  ],
+  "CheckpointFunction": {
+    "forward": [
+      "ctx",
+      "dummy_tensor_requires_grad",
+      "run_function",
+      "parent_ctx_dict",
+      "kwarg_keys"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "default_auto_wrap_policy": [
+    "module",
+    "recurse",
+    "unwrapped_params",
+    "module_is_root",
+    "min_num_params",
+    "force_leaf_modules",
+    "exclude_wrap_modules",
+    "skip_params_check_for_root"
+  ],
+  "config_auto_wrap_policy": [
+    "module",
+    "recurse",
+    "unwrapped_params",
+    "module_is_root"
+  ],
+  "enable_wrap": [
+    "auto_wrap_policy"
+  ],
+  "wrap": [
+    "module"
+  ],
+  "auto_wrap": [
+    "module",
+    "auto_wrap_policy"
+  ],
+  "ConfigAutoWrap": {
+    "__init__": [
+      "self",
+      "auto_wrap_policy"
+    ],
+    "enable_autowrap_context": [
+      "auto_wrap_policy",
+      "kwargs"
+    ],
+    "disable_autowrap_context": [],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "recursive_wrap": [
+      "module",
+      "auto_wrap_policy",
+      "module_is_root"
+    ]
+  },
+  "TModule": [],
+  "DeferredBatchNorm": {
+    "__init__": [
+      "self",
+      "num_features",
+      "eps",
+      "momentum",
+      "affine",
+      "chunks"
+    ],
+    "_check_input_dim": [
+      "self",
+      "input"
+    ],
+    "_track": [
+      "self",
+      "input"
+    ],
+    "_commit": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "convert_deferred_batch_norm": [
+      "cls",
+      "module",
+      "chunks"
+    ]
+  },
+  "MESSAGE_TENSOR_SIZE": [],
+  "to_input_device": [
+    "tensors",
+    "input_device"
+  ],
+  "rpc_push_queue": [
+    "message"
+  ],
+  "Transport": {
+    "recv_message": [
+      "self",
+      "queue_name"
+    ],
+    "recv_message_header": [
+      "self",
+      "queue_name",
+      "nowait"
+    ],
+    "recv_message_tensors": [
+      "self",
+      "message"
+    ],
+    "send_message": [
+      "self",
+      "message",
+      "sync",
+      "skip_header"
+    ],
+    "get_out_of_order": [
+      "self",
+      "queue_name",
+      "index"
+    ]
+  },
+  "MakeTransport": [
+    "use_rpc",
+    "worker_map",
+    "input_device"
+  ],
+  "RpcTransport": {
+    "send_message": [
+      "self",
+      "message",
+      "sync",
+      "skip_header"
+    ],
+    "recv_message_header": [
+      "self",
+      "queue_name",
+      "nowait"
+    ],
+    "recv_message_tensors": [
+      "self",
+      "message"
+    ],
+    "get_out_of_order": [
+      "self",
+      "queue_name",
+      "index"
+    ]
+  },
+  "SendRecvTransport": {
+    "send_message": [
+      "self",
+      "message",
+      "sync",
+      "skip_header"
+    ],
+    "recv_message_header": [
+      "self",
+      "queue_name",
+      "nowait"
+    ],
+    "recv_message_tensors": [
+      "self",
+      "message"
+    ],
+    "get_out_of_order": [
+      "self",
+      "queue_name",
+      "index"
+    ]
+  },
+  "Task": {
+    "__init__": [
+      "self",
+      "stream"
+    ],
+    "compute": [
+      "self"
+    ],
+    "finalize": [
+      "self",
+      "batch"
+    ]
+  },
+  "worker": [
+    "in_queue",
+    "out_queue",
+    "device"
+  ],
+  "create_workers": [
+    "devices"
+  ],
+  "join_workers": [
+    "in_queues",
+    "out_queues"
+  ],
+  "spawn_workers": [
+    "devices"
+  ],
+  "fork": [
+    "input"
+  ],
+  "Fork": {
+    "forward": [
+      "ctx",
+      "input"
+    ],
+    "backward": [
+      "ctx",
+      "grad_input",
+      "grad_grad"
+    ]
+  },
+  "join": [
+    "input",
+    "phony"
+  ],
+  "Join": {
+    "forward": [
+      "ctx",
+      "input",
+      "phony"
+    ],
+    "backward": [
+      "ctx",
+      "grad_input"
+    ]
+  },
+  "Tensors": [],
+  "TensorOrTensors": [],
+  "Recomputed": [],
+  "RNGStates": [],
+  "Function": {
+    "__call__": [
+      "self",
+      "input"
+    ]
+  },
+  "Checkpointing": {
+    "__init__": [
+      "self",
+      "function",
+      "batch"
+    ],
+    "checkpoint": [
+      "self"
+    ],
+    "recompute": [
+      "self",
+      "batch"
+    ]
+  },
+  "ThreadLocal": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "Context": {
+    "save_for_backward": [
+      "self"
+    ]
+  },
+  "save_rng_states": [
+    "device",
+    "rng_states"
+  ],
+  "restore_rng_states": [
+    "device",
+    "rng_states"
+  ],
+  "Checkpoint": {
+    "forward": [
+      "ctx",
+      "phony",
+      "recomputed",
+      "rng_states",
+      "function",
+      "input_atomic"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "Recompute": {
+    "forward": [
+      "ctx",
+      "phony",
+      "recomputed",
+      "rng_states",
+      "function",
+      "input_atomic"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "DEFAULT_MAX_SOURCE_POSITIONS": [],
+  "DEFAULT_MAX_TARGET_POSITIONS": [],
+  "SizeOrSizes": [],
+  "DtypeOrDtypes": [],
+  "set_device_based_on_group": [
+    "group"
+  ],
+  "get_shapes": [
+    "tensor"
+  ],
+  "get_dtype": [
+    "tensor"
+  ],
+  "get_global_ranks_from_group": [
+    "group"
+  ],
+  "PipeBackRedirect": {
+    "forward": [
+      "ctx",
+      "inputs",
+      "dest",
+      "event",
+      "message",
+      "transport",
+      "futures"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "callback_with_model": [
+    "callback",
+    "ctx"
+  ],
+  "PipeRPCWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "_get_rpc_name": [
+      "self",
+      "rank"
+    ],
+    "_foreach_worker": [
+      "self",
+      "callback",
+      "args"
+    ],
+    "foreach_worker": [
+      "self",
+      "callback",
+      "ctx"
+    ],
+    "forward": [
+      "self",
+      "tensor"
+    ],
+    "final_stage": [
+      "self"
+    ],
+    "_recv_result": [
+      "model",
+      "shapes",
+      "dtypes",
+      "message"
+    ],
+    "_send_result_and_do_backwards": [
+      "training",
+      "message",
+      "grads_message"
+    ],
+    "_register_remote_model": [
+      "args",
+      "kwargs"
+    ],
+    "_model_forward": [
+      "training",
+      "shape",
+      "dtype"
+    ],
+    "_model_forward_first_stage": [
+      "self",
+      "tensor",
+      "event"
+    ]
+  },
+  "Devices": [],
+  "recommend_auto_balance": [
+    "message"
+  ],
+  "verify_module": [
+    "module"
+  ],
+  "verify_splitting": [
+    "module",
+    "partitions",
+    "balance",
+    "devices"
+  ],
+  "BalanceError": {},
+  "split_module": [
+    "module",
+    "balance",
+    "devices"
+  ],
+  "Pipe": {
+    "__init__": [
+      "self",
+      "module",
+      "balance"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "cuda": [
+      "self",
+      "device"
+    ],
+    "cpu": [
+      "self"
+    ],
+    "to": [
+      "self"
+    ],
+    "_ensure_copy_streams": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "create_task": [
+    "checkpoint_stop",
+    "chunk_id",
+    "part_id",
+    "batch",
+    "partition",
+    "skip_trackers"
+  ],
+  "Location": {
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Invocation": {},
+  "Activations": [],
+  "Invocations": [],
+  "TailBackwardContext": {},
+  "ModuleWrapper": {
+    "__init__": [
+      "self",
+      "module",
+      "location",
+      "invocations"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "AsyncMessageType": {
+    "Activations": [],
+    "Gradients": []
+  },
+  "AsyncMessageBody": {},
+  "AutogradWithoutActivations": {
+    "forward": [
+      "ctx"
+    ],
+    "backward": [
+      "ctx",
+      "grad"
+    ]
+  },
+  "AsyncRecvOperator": {
+    "forward": [
+      "ctx",
+      "phony",
+      "transport",
+      "message",
+      "queue_name"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "AsyncEventLoop": {
+    "__init__": [
+      "self",
+      "partitions",
+      "group",
+      "transport",
+      "training",
+      "checkpoint_stop"
+    ],
+    "send_async_message": [
+      "self",
+      "dst_rank",
+      "result",
+      "invocation"
+    ],
+    "run_invocation": [
+      "self",
+      "batch",
+      "partition",
+      "skip_trackers",
+      "invocation"
+    ],
+    "perform_backward_for_invocation": [
+      "transport",
+      "message",
+      "activations",
+      "invocation"
+    ],
+    "run_invocations_on_batch": [
+      "self",
+      "batch",
+      "invocations",
+      "order",
+      "skip_trackers",
+      "activations"
+    ],
+    "event_loop_head": [
+      "self",
+      "batches",
+      "skip_trackers",
+      "event"
+    ],
+    "get_batch_from_message": [
+      "self",
+      "message"
+    ],
+    "event_loop_tail": [
+      "self",
+      "batches",
+      "skip_trackers"
+    ],
+    "get_invocations_and_activations": [
+      "self"
+    ],
+    "event_loop": [
+      "self",
+      "num_microbatch",
+      "skip_trackers"
+    ],
+    "event_loop_inner": [
+      "self",
+      "expected_invocations",
+      "skip_trackers",
+      "activations",
+      "invocations",
+      "count_per_order"
+    ],
+    "prepare_tail_backward": [
+      "batch",
+      "activations",
+      "invocations",
+      "count_per_order",
+      "expected_gradients"
+    ]
+  },
+  "depend": [
+    "fork_from",
+    "join_to"
+  ],
+  "copy": [
+    "batch",
+    "prev_stream",
+    "next_stream"
+  ],
+  "wait": [
+    "batch",
+    "prev_stream",
+    "next_stream"
+  ],
+  "clock_cycles": [
+    "m",
+    "n"
+  ],
+  "Pipeline": {
+    "__init__": [
+      "self",
+      "partitions",
+      "devices",
+      "copy_streams",
+      "skip_layout",
+      "checkpoint_stop"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "batches"
+    ],
+    "fence": [
+      "self",
+      "batches",
+      "schedule",
+      "skip_trackers"
+    ],
+    "compute": [
+      "self",
+      "batches",
+      "schedule",
+      "skip_trackers"
+    ]
+  },
+  "get_phony": [
+    "device"
+  ],
+  "Copy": {
+    "forward": [
+      "ctx",
+      "prev_stream",
+      "next_stream"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "Wait": {
+    "forward": [
+      "ctx",
+      "prev_stream",
+      "next_stream"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "ACTIVATIONS_GRADS_QUEUE": [],
+  "SKIP_TENSOR_QUEUE": [],
+  "PORTAL_QUEUE": [],
+  "EVENT_LOOP_QUEUE": [],
+  "EVENT_LOOP_ACTIVATIONS_QUEUE": [],
+  "EVENT_LOOP_GRADIENTS_QUEUE": [],
+  "MESSAGE_GENERATION_START": [],
+  "MessageGeneration": [],
+  "InputDevice": [],
+  "LazyModule": {
+    "__init__": [
+      "self",
+      "function"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "PipeMessage": {
+    "__init__": [
+      "self",
+      "src",
+      "dest",
+      "queue_name",
+      "args",
+      "tensors",
+      "tensor_count"
+    ]
+  },
+  "AsyncPipeline": {
+    "__init__": [
+      "self",
+      "partitions",
+      "skip_layout",
+      "checkpoint_stop",
+      "group"
+    ],
+    "checkpoint_stop": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "training",
+      "batches",
+      "event"
+    ],
+    "back_helper": [
+      "self",
+      "output"
+    ]
+  },
+  "CPUStreamType": {},
+  "CPUStream": [],
+  "AbstractStream": [],
+  "new_stream": [
+    "device"
+  ],
+  "current_stream": [
+    "device"
+  ],
+  "default_stream": [
+    "device"
+  ],
+  "use_device": [
+    "device"
+  ],
+  "use_stream": [
+    "stream"
+  ],
+  "get_device": [
+    "stream"
+  ],
+  "wait_stream": [
+    "source",
+    "target"
+  ],
+  "record_stream": [
+    "tensor",
+    "stream"
+  ],
+  "is_cuda": [
+    "stream"
+  ],
+  "as_cuda": [
+    "stream"
+  ],
+  "PartitionInfo": {
+    "__len__": [
+      "self"
+    ]
+  },
+  "check_balance": [
+    "module",
+    "balance"
+  ],
+  "AsyncPipe": {
+    "__init__": [
+      "self",
+      "module",
+      "balance"
+    ],
+    "create_pipeline": [
+      "self"
+    ],
+    "instantiate_partition": [
+      "self",
+      "module",
+      "balance",
+      "group"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "back_helper": [
+      "self",
+      "output"
+    ]
+  },
+  "Batch": {
+    "__init__": [
+      "self",
+      "value",
+      "index"
+    ],
+    "index": [
+      "self"
+    ],
+    "tensor": [
+      "self"
+    ],
+    "tensors": [
+      "self"
+    ],
+    "tensor_or_tensors": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "function"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__setitem__": [
+      "self",
+      "index",
+      "value"
+    ],
+    "_setitem_by_index": [
+      "self",
+      "index",
+      "value"
+    ],
+    "_setitem_by_slice": [
+      "self",
+      "index",
+      "value"
+    ]
+  },
+  "check": [
+    "input"
+  ],
+  "scatter": [
+    "input",
+    "chunks"
+  ],
+  "gather": [
+    "outputs"
+  ],
+  "solve": [
+    "sequence",
+    "partitions"
+  ],
+  "_balance_cost": [
+    "cost",
+    "partitions"
+  ],
+  "balance_by_time": [
+    "partitions",
+    "module",
+    "sample"
+  ],
+  "balance_by_size": [
+    "partitions",
+    "module",
+    "input"
+  ],
+  "layerwise_sandbox": [
+    "module",
+    "device"
+  ],
+  "detach": [
+    "batch"
+  ],
+  "profile_times": [
+    "module",
+    "sample",
+    "timeout",
+    "device"
+  ],
+  "profile_sizes": [
+    "module",
+    "input",
+    "chunks",
+    "param_scale",
+    "device"
+  ],
+  "StashPop": [],
+  "StashPopGenerator": [],
+  "T": [],
+  "Skippable": {
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "namespaced": [
+      "self",
+      "name"
+    ],
+    "stashable": [
+      "self"
+    ],
+    "poppable": [
+      "self"
+    ],
+    "isolate": [
+      "self",
+      "ns"
+    ],
+    "dispatch": [
+      "self",
+      "input",
+      "handle_stash",
+      "handle_pop"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "skippable": [
+    "stash",
+    "pop"
+  ],
+  "stash": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "tensor"
+    ]
+  },
+  "pop": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name"
+    ]
+  },
+  "verify_skippables": [
+    "module"
+  ],
+  "SkipTracker": {
+    "__init__": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "batch",
+      "ns",
+      "name",
+      "tensor"
+    ],
+    "load": [
+      "self",
+      "batch",
+      "ns",
+      "name"
+    ],
+    "copy": [
+      "self",
+      "batch",
+      "prev_stream",
+      "next_stream",
+      "ns",
+      "name"
+    ],
+    "index": [
+      "self"
+    ]
+  },
+  "SkipTrackerThroughPotals": {
+    "__init__": [
+      "self",
+      "skip_layout",
+      "index"
+    ],
+    "index": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "batch",
+      "ns",
+      "name",
+      "tensor"
+    ],
+    "load": [
+      "self",
+      "batch",
+      "ns",
+      "name"
+    ],
+    "copy": [
+      "self",
+      "batch",
+      "prev_stream",
+      "next_stream",
+      "ns",
+      "name"
+    ]
+  },
+  "use_skip_tracker": [
+    "skip_tracker"
+  ],
+  "current_skip_tracker": [],
+  "SkipLayout": {
+    "__init__": [
+      "self",
+      "num_partitions",
+      "skip_routes"
+    ],
+    "copy_policy_by_src": [
+      "self",
+      "prev_j"
+    ],
+    "copy_policy": [
+      "self",
+      "next_j"
+    ],
+    "requires_copy": [
+      "self",
+      "ns",
+      "name"
+    ]
+  },
+  "inspect_skip_layout": [
+    "partitions"
+  ],
+  "Portal": {
+    "__init__": [
+      "self",
+      "tensor",
+      "tensor_life",
+      "index"
+    ],
+    "index": [
+      "self"
+    ],
+    "blue": [
+      "self"
+    ],
+    "orange": [
+      "self",
+      "phony"
+    ],
+    "copy": [
+      "self",
+      "prev_stream",
+      "next_stream",
+      "phony"
+    ],
+    "check_tensor_life": [
+      "self"
+    ],
+    "put_tensor": [
+      "self",
+      "tensor",
+      "tensor_life"
+    ],
+    "use_tensor": [
+      "self"
+    ],
+    "put_grad": [
+      "self",
+      "grad"
+    ],
+    "use_grad": [
+      "self"
+    ]
+  },
+  "PortalBlue": {
+    "forward": [
+      "ctx",
+      "portal",
+      "tensor"
+    ],
+    "backward": [
+      "ctx",
+      "grad_phony"
+    ]
+  },
+  "PortalOrange": {
+    "forward": [
+      "ctx",
+      "portal",
+      "phony"
+    ],
+    "backward": [
+      "ctx",
+      "grad"
+    ]
+  },
+  "PortalCopy": {
+    "forward": [
+      "ctx",
+      "portal",
+      "prev_stream",
+      "next_stream",
+      "phony"
+    ],
+    "backward": [
+      "ctx",
+      "grad_phony"
+    ]
+  },
+  "Namespace": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "_VocabParallelCrossEntropy": {
+    "forward": [
+      "ctx",
+      "vocab_parallel_logits",
+      "target"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "vocab_parallel_cross_entropy": [
+    "vocab_parallel_logits",
+    "target"
+  ],
+  "_reduce": [
+    "ctx",
+    "input_"
+  ],
+  "_gather": [
+    "input_"
+  ],
+  "_CopyToModelParallelRegion": {
+    "forward": [
+      "ctx",
+      "input_"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_ReduceFromModelParallelRegion": {
+    "forward": [
+      "ctx",
+      "input_"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_ScatterToModelParallelRegion": {
+    "forward": [
+      "ctx",
+      "input_"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "_GatherFromModelParallelRegion": {
+    "forward": [
+      "ctx",
+      "input_"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "copy_to_model_parallel_region": [
+    "input_"
+  ],
+  "reduce_from_model_parallel_region": [
+    "input_"
+  ],
+  "scatter_to_model_parallel_region": [
+    "input_"
+  ],
+  "gather_from_model_parallel_region": [
+    "input_"
+  ],
+  "ensure_divisibility": [
+    "numerator",
+    "denominator"
+  ],
+  "divide_and_check_no_remainder": [
+    "numerator",
+    "denominator"
+  ],
+  "split_tensor_along_last_dim": [
+    "tensor",
+    "num_partitions",
+    "contiguous_split_chunks"
+  ],
+  "VocabUtility": {
+    "vocab_range_from_per_partition_vocab_size": [
+      "per_partition_vocab_size",
+      "rank",
+      "world_size"
+    ],
+    "vocab_range_from_global_vocab_size": [
+      "global_vocab_size",
+      "rank",
+      "world_size"
+    ]
+  },
+  "_initialize_affine_weight": [
+    "weight",
+    "out_features",
+    "in_features",
+    "per_partition_size",
+    "partition_dim",
+    "init_method",
+    "stride",
+    "return_master_weight"
+  ],
+  "VocabParallelEmbedding": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "padding_idx",
+      "max_norm",
+      "norm_type",
+      "scale_grad_by_freq",
+      "sparse",
+      "init_method"
+    ],
+    "forward": [
+      "self",
+      "input_"
+    ]
+  },
+  "ParallelEmbedding": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "padding_idx",
+      "max_norm",
+      "norm_type",
+      "scale_grad_by_freq",
+      "sparse",
+      "init_method",
+      "keep_master_weight_for_test"
+    ],
+    "forward": [
+      "self",
+      "input_"
+    ]
+  },
+  "ColumnParallelLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias",
+      "gather_output",
+      "init_method",
+      "stride",
+      "keep_master_weight_for_test"
+    ],
+    "get_master_weight": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_"
+    ]
+  },
+  "RowParallelLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias",
+      "input_is_parallel",
+      "init_method",
+      "stride",
+      "keep_master_weight_for_test"
+    ],
+    "get_master_weight": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_"
+    ]
+  },
+  "_MODEL_PARALLEL_GROUP": [],
+  "_DATA_PARALLEL_GROUP": [],
+  "_PIPELINE_PARALLEL_GROUP": [],
+  "_PIPELINE_PARALLEL_RANKS": [],
+  "initialize_model_parallel": [
+    "model_parallel_size_",
+    "pipeline_length"
+  ],
+  "model_parallel_is_initialized": [],
+  "get_model_parallel_group": [],
+  "get_data_parallel_group": [],
+  "get_pipeline_parallel_group": [],
+  "get_pipeline_parallel_ranks": [],
+  "get_model_parallel_world_size": [],
+  "get_model_parallel_rank": [],
+  "get_model_parallel_src_rank": [],
+  "get_data_parallel_world_size": [],
+  "get_data_parallel_rank": [],
+  "destroy_model_parallel": [],
+  "_MODEL_PARALLEL_RNG_TRACKER_NAME": [],
+  "_set_cuda_rng_state": [
+    "new_state",
+    "device"
+  ],
+  "CudaRNGStatesTracker": {
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "get_states": [
+      "self"
+    ],
+    "set_states": [
+      "self",
+      "states"
+    ],
+    "add": [
+      "self",
+      "name",
+      "seed"
+    ],
+    "fork": [
+      "self",
+      "name"
+    ]
+  },
+  "_CUDA_RNG_STATE_TRACKER": [],
+  "get_cuda_rng_tracker": [],
+  "model_parallel_cuda_manual_seed": [
+    "seed"
+  ],
+  "checkpoint": [
+    "function"
+  ],
+  "torch_version": [
+    "version"
+  ],
+  "ReduceScatterBucketer": {
+    "__init__": [
+      "self",
+      "bucket_cap_mb"
+    ],
+    "reduce_scatter_async": [
+      "self",
+      "input_list",
+      "group",
+      "callback_fn"
+    ],
+    "flush": [
+      "self"
+    ],
+    "teardown": [
+      "self"
+    ],
+    "_get_shard_size": [
+      "self",
+      "element_size",
+      "num_shards"
+    ],
+    "_get_bucket": [
+      "self",
+      "tensor",
+      "group"
+    ]
+  },
+  "Workhandle": {},
+  "get_global_rank": [
+    "group",
+    "rank"
+  ],
+  "recursive_copy_to_device": [
+    "value",
+    "non_blocking",
+    "device"
+  ],
+  "calc_grad_norm": [
+    "parameters",
+    "p"
+  ],
+  "apply_to_type": [
+    "type_fn",
+    "fn",
+    "container"
+  ],
+  "apply_to_tensors": [
+    "fn",
+    "container"
+  ],
+  "to_np": [
+    "tensor_or_container"
+  ],
+  "from_np": [
+    "ndarray_or_container"
+  ],
+  "pack_kwargs": [],
+  "unpack_kwargs": [
+    "kwarg_keys",
+    "flat_args"
+  ],
+  "split_non_tensors": [
+    "mixed"
+  ],
+  "unpack_non_tensors": [
+    "tensors",
+    "packed_non_tensors"
+  ],
+  "pyobject_to_tensor": [
+    "obj",
+    "fixed_buffer_size"
+  ],
+  "tensor_to_pyobject": [
+    "tensor"
+  ],
+  "chunk_and_pad": [
+    "tensor",
+    "num_chunks"
+  ],
+  "validate_process_group": [
+    "device",
+    "process_group"
+  ],
+  "enable_pytorch_sync_bn": [
+    "module"
+  ],
+  "ProcessGroupName": {
+    "default": [],
+    "reduce_scatter": []
+  },
+  "get_process_group_cached": [
+    "name",
+    "ranks"
+  ],
+  "find_module_instances": [
+    "module",
+    "search_class"
+  ],
+  "replace_by_prefix_": [
+    "state_dict",
+    "old_prefix",
+    "new_prefix"
+  ],
+  "DATASET_CACHE_ROOT": [],
+  "adascale_test_data": [],
+  "corr_mean_test_data": [],
+  "skip_if_cuda": [],
+  "skip_if_no_cuda": [],
+  "skip_if_single_gpu": [],
+  "skip_if_less_than_four_gpu": [],
+  "skip_if_py38": [],
+  "skip_if_py39_no_cuda": [],
+  "skip_due_to_flakyness": [],
+  "available_devices": [],
+  "IdentityLayer": {
+    "__init__": [
+      "self",
+      "size",
+      "scale"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "set_random_seed": [
+    "seed",
+    "model_parallel"
+  ],
+  "in_circle_ci": [],
+  "torch_cuda_version": [
+    "compiled"
+  ],
+  "make_cudnn_deterministic": [],
+  "dist_init": [
+    "rank",
+    "world_size",
+    "filename",
+    "filename_rpc"
+  ],
+  "get_worker_map": [],
+  "get_world_sizes": [],
+  "test_runner": [
+    "rank",
+    "test_func",
+    "deterministic"
+  ],
+  "spawn_for_all_world_sizes": [
+    "test_func",
+    "world_sizes",
+    "args",
+    "deterministic"
+  ],
+  "worker_process": [
+    "rank",
+    "world_size",
+    "filename",
+    "filename_rpc",
+    "func",
+    "args",
+    "error_queue"
+  ],
+  "teardown": [],
+  "torch_spawn": [
+    "world_sizes"
+  ],
+  "_Block": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "GPT2": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "num_layers",
+      "num_positions",
+      "num_vocab",
+      "num_classes"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "classify"
+    ]
+  },
+  "objects_are_equal": [
+    "a",
+    "b",
+    "raise_exception",
+    "dict_key",
+    "rtol",
+    "atol"
+  ],
+  "check_same_model_params": [
+    "model_a",
+    "model_b",
+    "message"
+  ],
+  "check_same_models_across_ranks": [
+    "model",
+    "process_group",
+    "params_should_be_equal",
+    "check_broadcast_buffers"
+  ],
+  "DeviceAndTypeCheckModule": {
+    "__init__": [
+      "self",
+      "expected_input_dtype",
+      "expected_input_device",
+      "expected_param_dtype",
+      "expected_param_device",
+      "expected_loss_dtype",
+      "expected_loss_device",
+      "expected_buffer_dtype"
+    ],
+    "_check": [
+      "self",
+      "key",
+      "x",
+      "expected"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "get_cycles_per_ms": [],
+  "DummyProcessGroup": {
+    "__init__": [
+      "self",
+      "rank",
+      "size"
+    ],
+    "rank": [
+      "self"
+    ],
+    "size": [
+      "self"
+    ]
+  },
+  "SGDWithPausingCompute": {
+    "__init__": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "state_dict_norm": [
+    "state"
+  ],
+  "rmf": [
+    "filename"
+  ],
+  "in_temporary_directory": [],
+  "temp_files_ctx": [
+    "num"
+  ],
+  "dump_all_tensors": [
+    "rank"
+  ],
+  "get_smi_memory": [],
+  "skip_a_test_if_in_CI": [],
+  "find_tensor_by_shape": [
+    "target_shape",
+    "only_param"
+  ],
+  "_gpu_capabilities_older_than_50": [],
+  "_broadcast_object": [
+    "obj",
+    "src_rank",
+    "group",
+    "dist_device"
+  ],
+  "OSS": {
+    "__init__": [
+      "self",
+      "params",
+      "optim",
+      "group",
+      "broadcast_buffer_size",
+      "broadcast_fp16",
+      "force_broadcast_object"
+    ],
+    "partition_parameters": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ],
+    "clip_grad_norm": [
+      "self",
+      "max_norm",
+      "norm_type",
+      "filter_params_fn"
+    ],
+    "consolidate_state_dict": [
+      "self",
+      "recipient_rank"
+    ],
+    "state_dict": [
+      "self",
+      "all_ranks"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "refresh_trainable": [
+      "self"
+    ],
+    "add_param_group": [
+      "self",
+      "param_group"
+    ],
+    "_local_params": [
+      "self"
+    ],
+    "_param_to_index": [
+      "self"
+    ],
+    "_per_device_params": [
+      "self"
+    ],
+    "_param_to_rank": [
+      "self"
+    ],
+    "_clear_cache": [
+      "self"
+    ],
+    "_sync_param_groups": [
+      "source",
+      "destination"
+    ],
+    "_broadcast_params": [
+      "self"
+    ],
+    "_setup_flat_buffers": [
+      "self"
+    ]
+  },
+  "_GeneralMultiDeviceReplicator": {
+    "__init__": [
+      "self",
+      "master_tensor"
+    ],
+    "get": [
+      "self",
+      "device"
+    ]
+  },
+  "GradScaler": {
+    "_unscale_grads_": [
+      "self",
+      "optimizer",
+      "inv_scale",
+      "found_inf",
+      "allow_fp16"
+    ]
+  },
+  "ShardedGradScaler": {
+    "__init__": [
+      "self",
+      "init_scale",
+      "growth_factor",
+      "backoff_factor",
+      "growth_interval",
+      "enabled",
+      "process_group"
+    ],
+    "scale": [
+      "self",
+      "outputs"
+    ],
+    "_foreach_non_finite_check_and_unscale_cpu_": [
+      "self",
+      "grads",
+      "found_inf",
+      "inv_scale"
+    ],
+    "_unscale_grads_": [
+      "self",
+      "optimizer",
+      "inv_scale",
+      "found_inf",
+      "allow_fp16"
+    ],
+    "unscale_": [
+      "self",
+      "optimizer"
+    ],
+    "step": [
+      "self",
+      "optimizer"
+    ],
+    "_amp_update_scale_cpu_": [
+      "self",
+      "found_inf"
+    ],
+    "update": [
+      "self",
+      "new_scale"
+    ]
+  },
+  "LayerInfo": {
+    "__init__": [
+      "self",
+      "name",
+      "layer",
+      "scale",
+      "scale_layer"
+    ]
+  },
+  "GradientHelper": {
+    "__init__": [
+      "self",
+      "name",
+      "inputs_multiplier",
+      "outputs_multiplier"
+    ],
+    "scale_gradients": [
+      "self",
+      "m",
+      "inputs",
+      "outputs"
+    ]
+  },
+  "LayerwiseGradientScaler": {
+    "__init__": [
+      "self",
+      "model",
+      "layer_scale_dict",
+      "growth_factor",
+      "backoff_factor",
+      "growth_interval",
+      "min_scale",
+      "max_scale"
+    ],
+    "_build_layer_info": [
+      "self"
+    ],
+    "scale": [
+      "self"
+    ],
+    "_get_layers_with_finite_values": [
+      "self"
+    ],
+    "unscale": [
+      "self"
+    ],
+    "_check_for_inf_or_nan": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "optimizer"
+    ],
+    "_update_scale": [
+      "self"
+    ],
+    "get_layer_info": [
+      "self"
+    ],
+    "get_backward_hooks": [
+      "self"
+    ]
+  },
+  "AdaScale": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "world_size",
+      "scale",
+      "smoothing",
+      "num_gradients_to_accumulate",
+      "is_scaled_loss",
+      "debias_ewma"
+    ],
+    "_hook": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "unhook": [
+      "self"
+    ],
+    "_state": [
+      "self"
+    ],
+    "scale": [
+      "self"
+    ],
+    "smoothing": [
+      "self"
+    ],
+    "set_scale": [
+      "self",
+      "scale",
+      "update_estimate"
+    ],
+    "_grad_sqr_avg": [
+      "self",
+      "pg_idx"
+    ],
+    "_grad_var_avg": [
+      "self",
+      "pg_idx"
+    ],
+    "gain": [
+      "self",
+      "pg_idx"
+    ],
+    "_update_avg": [
+      "self",
+      "name",
+      "value",
+      "factor"
+    ],
+    "_gather_flat_grad": [
+      "self"
+    ],
+    "_compute_intra_grad_corr_mean": [
+      "self"
+    ],
+    "_backward_hook": [
+      "self",
+      "pg_idx",
+      "grad"
+    ],
+    "_queue_callback": [
+      "self"
+    ],
+    "_final_callback": [
+      "self"
+    ],
+    "step": [
+      "self"
+    ],
+    "add_param_group": [
+      "self",
+      "pg"
+    ],
+    "zero_grad": [
+      "self"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "data"
+    ],
+    "set_num_gradients_to_accumulate": [
+      "self",
+      "num_gradients_to_accumulate",
+      "update_smoothing"
+    ],
+    "scale_grad_by_num_grads_to_accum": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "AdaScaleWrapper": {
+    "__init__": [
+      "self",
+      "params",
+      "world_size",
+      "scale",
+      "smoothing",
+      "num_gradients_to_accumulate",
+      "debias_ewma",
+      "optim_cls"
+    ]
+  },
+  "TEMPDIR": [],
+  "get_problem": [
+    "rank",
+    "world_size",
+    "batch_size",
+    "device",
+    "model_name"
+  ],
+  "OptimType": {
+    "vanilla": [],
+    "oss_ddp": [],
+    "oss_sharded_ddp": [],
+    "everyone": []
+  },
+  "validate_benchmark": [
+    "measurements",
+    "final_loss",
+    "args",
+    "check_regression"
+  ],
+  "train": [
+    "rank",
+    "args",
+    "backend",
+    "optim_type",
+    "check_regression"
+  ],
+  "RPC_PORT": [],
+  "verify_peak_memory": [
+    "rank",
+    "golden_config",
+    "std_dev"
+  ],
+  "verify_lm_run": [
+    "wps",
+    "golden_config",
+    "args"
+  ],
+  "init_random_seed": [
+    "seed"
+  ],
+  "get_model_and_optimizer": [
+    "args",
+    "device",
+    "benchmark_config",
+    "model_config"
+  ],
+  "get_lm_model": [
+    "args",
+    "device",
+    "config"
+  ],
+  "get_tensors_by_size_bucket": [],
+  "log_number_of_parameters": [
+    "model"
+  ],
+  "get_fake_dataloader": [
+    "lm_dataloader_len",
+    "args"
+  ],
+  "get_number_of_words": [
+    "data"
+  ],
+  "benchmark_language_model": [
+    "model_config",
+    "model",
+    "benchmark_config",
+    "model_specs",
+    "args"
+  ],
+  "get_synthetic_dataloaders": [
+    "args",
+    "device",
+    "benchmark_config",
+    "model_specs"
+  ],
+  "get_real_dataloaders": [
+    "args",
+    "device",
+    "benchmark_config",
+    "model_specs"
+  ],
+  "create_model_config": [
+    "args",
+    "benchmark_config",
+    "model_specs"
+  ],
+  "create_benchmark_config": [
+    "model_name"
+  ],
+  "get_model_specs": [
+    "model_name"
+  ],
+  "get_golden_config": [
+    "model_name",
+    "args"
+  ],
+  "benchmark_fsdp": [
+    "rank",
+    "args",
+    "world_size"
+  ],
+  "parser": [],
+  "MPI_PORT": [],
+  "evaluate": [
+    "eval_model",
+    "data_source",
+    "criterion",
+    "ntokens"
+  ],
+  "generate_balance": [
+    "num_devices",
+    "num_layers"
+  ],
+  "benchmark_single_process": [
+    "config_class",
+    "args"
+  ],
+  "run_worker": [
+    "rank",
+    "world_size",
+    "args"
+  ],
+  "init_args": [],
+  "get_dataset_info": [
+    "args"
+  ],
+  "get_data_loader": [
+    "dataset_info",
+    "args",
+    "benchmark_config",
+    "model_specs",
+    "num_replicas",
+    "rank"
+  ],
+  "setup_cached_mnist": [],
+  "_batchify": [
+    "data",
+    "batch_size"
+  ],
+  "_get_total_batch_size": [
+    "benchmark_config",
+    "model_specs"
+  ],
+  "DatasetsInfo": [],
+  "get_real_datasets": [],
+  "get_dataloaders": [
+    "datasets_info",
+    "benchmark_config",
+    "model_specs",
+    "num_replicas",
+    "rank"
+  ],
+  "get_synthetic_datasets": [],
+  "Offload_Transformer": {
+    "get_model_config": [],
+    "get_benchmark_config": [
+      "checkpoint_activation"
+    ],
+    "get_golden_real_stats": []
+  },
+  "Offload_Sequential": {
+    "get_model_config": [],
+    "get_benchmark_config": []
+  },
+  "FSDP": {
+    "get_model_config": [],
+    "get_benchmark_config": [],
+    "get_golden_real_stats": [],
+    "get_golden_synthetic_stats": []
+  },
+  "MOE": {
+    "get_model_config": [],
+    "get_benchmark_config": []
+  },
+  "get_golden_real_stats": [],
+  "get_golden_synthetic_stats": [],
+  "EmbeddingLayer": {
+    "__init__": [
+      "self",
+      "ntoken",
+      "ninp",
+      "initrange"
+    ],
+    "forward": [
+      "self",
+      "src"
+    ]
+  },
+  "PositionalEncodingLayer": {
+    "__init__": [
+      "self",
+      "d_model",
+      "dropout",
+      "max_len"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeedForwardLayer": {
+    "__init__": [
+      "self",
+      "d_model",
+      "dim_feedforward",
+      "activation",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TransformerEncoderLayer": {
+    "__constants__": [],
+    "__init__": [
+      "self",
+      "d_model",
+      "nhead",
+      "dim_feedforward",
+      "dropout",
+      "activation",
+      "layer_norm_eps",
+      "norm_first",
+      "is_moe",
+      "num_local_experts"
+    ],
+    "forward": [
+      "self",
+      "src",
+      "src_mask",
+      "src_key_padding_mask"
+    ],
+    "_sa_block": [
+      "self",
+      "x",
+      "attn_mask",
+      "key_padding_mask"
+    ],
+    "_ff_block": [
+      "self",
+      "x"
+    ]
+  },
+  "TransformerDecoderLayer": {
+    "__init__": [
+      "self",
+      "ninp",
+      "nhead",
+      "nhid",
+      "dropout",
+      "is_moe",
+      "num_local_experts"
+    ],
+    "_generate_square_subsequent_mask": [
+      "self",
+      "sz"
+    ],
+    "forward": [
+      "self",
+      "src"
+    ]
+  },
+  "LinearLayer": {
+    "__init__": [
+      "self",
+      "ninp",
+      "ntoken",
+      "initrange"
+    ]
+  },
+  "TransformerLM": {
+    "__init__": [
+      "self",
+      "ntokens",
+      "ninp",
+      "nhead",
+      "nhid",
+      "dropout",
+      "initrange",
+      "ndecoder",
+      "is_moe",
+      "num_local_experts"
+    ]
+  }
+}

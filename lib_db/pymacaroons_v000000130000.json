@@ -1,0 +1,564 @@
+{
+  "MACAROON_V1": [],
+  "MACAROON_V2": [],
+  "Macaroon": {
+    "__init__": [
+      "self",
+      "location",
+      "identifier",
+      "key",
+      "caveats",
+      "signature",
+      "version"
+    ],
+    "deserialize": [
+      "cls",
+      "serialized",
+      "serializer"
+    ],
+    "location": [
+      "self",
+      "string_or_bytes"
+    ],
+    "version": [
+      "self"
+    ],
+    "identifier": [
+      "self",
+      "string_or_bytes"
+    ],
+    "identifier_bytes": [
+      "self"
+    ],
+    "signature": [
+      "self",
+      "string_or_bytes"
+    ],
+    "signature_bytes": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "serialize": [
+      "self",
+      "serializer"
+    ],
+    "inspect": [
+      "self"
+    ],
+    "first_party_caveats": [
+      "self"
+    ],
+    "third_party_caveats": [
+      "self"
+    ],
+    "prepare_for_request": [
+      "self",
+      "discharge_macaroon"
+    ],
+    "add_first_party_caveat": [
+      "self",
+      "predicate"
+    ],
+    "add_third_party_caveat": [
+      "self",
+      "location",
+      "key",
+      "key_id"
+    ]
+  },
+  "Caveat": {
+    "__init__": [
+      "self",
+      "caveat_id",
+      "verification_key_id",
+      "location",
+      "version"
+    ],
+    "caveat_id": [
+      "self",
+      "value"
+    ],
+    "caveat_id_bytes": [
+      "self"
+    ],
+    "verification_key_id": [
+      "self",
+      "value"
+    ],
+    "location": [
+      "self",
+      "value"
+    ],
+    "first_party": [
+      "self"
+    ],
+    "third_party": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "convert_to_bytes": [
+    "string_or_bytes"
+  ],
+  "convert_to_string": [
+    "string_or_bytes"
+  ],
+  "truncate_or_pad": [
+    "byte_string",
+    "size"
+  ],
+  "generate_derived_key": [
+    "key"
+  ],
+  "hmac_digest": [
+    "key",
+    "data"
+  ],
+  "hmac_hex": [
+    "key",
+    "data"
+  ],
+  "create_initial_signature": [
+    "key",
+    "identifier"
+  ],
+  "hmac_concat": [
+    "key",
+    "data1",
+    "data2"
+  ],
+  "sign_first_party_caveat": [
+    "signature",
+    "predicate"
+  ],
+  "sign_third_party_caveat": [
+    "signature",
+    "verification_id",
+    "caveat_id"
+  ],
+  "equals": [
+    "val1",
+    "val2"
+  ],
+  "add_base64_padding": [
+    "b"
+  ],
+  "raw_b64decode": [
+    "s"
+  ],
+  "raw_urlsafe_b64decode": [
+    "s"
+  ],
+  "raw_urlsafe_b64encode": [
+    "b"
+  ],
+  "__all__": [],
+  "__author__": [],
+  "__version__": [],
+  "__version_info__": [],
+  "__short_version__": [],
+  "MacaroonException": {},
+  "MacaroonInitException": {},
+  "MacaroonVerificationFailedException": {},
+  "MacaroonInvalidSignatureException": {},
+  "MacaroonUnmetCaveatException": {},
+  "MacaroonSerializationException": {},
+  "MacaroonDeserializationException": {},
+  "Verifier": {
+    "__init__": [
+      "self"
+    ],
+    "satisfy_exact": [
+      "self",
+      "predicate"
+    ],
+    "satisfy_general": [
+      "self",
+      "func"
+    ],
+    "verify_exact": [
+      "self",
+      "predicate"
+    ],
+    "verify": [
+      "self",
+      "macaroon",
+      "key",
+      "discharge_macaroons"
+    ],
+    "verify_discharge": [
+      "self",
+      "root",
+      "discharge",
+      "key",
+      "discharge_macaroons"
+    ],
+    "_verify_caveats": [
+      "self",
+      "root",
+      "macaroon",
+      "discharge_macaroons",
+      "signature"
+    ],
+    "_caveat_met": [
+      "self",
+      "root",
+      "caveat",
+      "macaroon",
+      "discharge_macaroons",
+      "signature"
+    ],
+    "_update_signature": [
+      "self",
+      "caveat",
+      "signature"
+    ],
+    "_signatures_match": [
+      "self",
+      "macaroon_signature",
+      "computed_signature"
+    ]
+  },
+  "BaseThirdPartyCaveatDelegate": {
+    "__metaclass__": [],
+    "__init__": [
+      "self"
+    ],
+    "add_third_party_caveat": [
+      "self",
+      "macaroon",
+      "location",
+      "key",
+      "key_id"
+    ]
+  },
+  "BaseThirdPartyCaveatVerifierDelegate": {
+    "__metaclass__": [],
+    "__init__": [
+      "self"
+    ],
+    "verify_third_party_caveat": [
+      "self",
+      "verifier",
+      "caveat",
+      "root",
+      "macaroon",
+      "discharge_macaroons",
+      "signature"
+    ],
+    "update_signature": [
+      "self",
+      "signature",
+      "caveat"
+    ]
+  },
+  "ThirdPartyCaveatDelegate": {
+    "__init__": [
+      "self"
+    ],
+    "add_third_party_caveat": [
+      "self",
+      "macaroon",
+      "location",
+      "key",
+      "key_id"
+    ]
+  },
+  "ThirdPartyCaveatVerifierDelegate": {
+    "__init__": [
+      "self"
+    ],
+    "verify_third_party_caveat": [
+      "self",
+      "verifier",
+      "caveat",
+      "root",
+      "macaroon",
+      "discharge_macaroons",
+      "signature"
+    ],
+    "update_signature": [
+      "self",
+      "signature",
+      "caveat"
+    ],
+    "_caveat_macaroon": [
+      "self",
+      "caveat",
+      "discharge_macaroons"
+    ],
+    "_extract_caveat_key": [
+      "self",
+      "signature",
+      "caveat"
+    ]
+  },
+  "BaseFirstPartyCaveatDelegate": {
+    "__metaclass__": [],
+    "__init__": [
+      "self"
+    ],
+    "add_first_party_caveat": [
+      "self",
+      "macaroon",
+      "predicate"
+    ]
+  },
+  "BaseFirstPartyCaveatVerifierDelegate": {
+    "__metaclass__": [],
+    "__init__": [
+      "self"
+    ],
+    "verify_first_party_caveat": [
+      "self",
+      "verifier",
+      "caveat",
+      "signature"
+    ],
+    "update_signature": [
+      "self",
+      "signature",
+      "caveat"
+    ]
+  },
+  "FirstPartyCaveatDelegate": {
+    "__init__": [
+      "self"
+    ],
+    "add_first_party_caveat": [
+      "self",
+      "macaroon",
+      "predicate"
+    ]
+  },
+  "FirstPartyCaveatVerifierDelegate": {
+    "__init__": [
+      "self"
+    ],
+    "verify_first_party_caveat": [
+      "self",
+      "verifier",
+      "caveat",
+      "signature"
+    ],
+    "update_signature": [
+      "self",
+      "signature",
+      "caveat"
+    ]
+  },
+  "EncryptedFirstPartyCaveatDelegate": {
+    "__init__": [
+      "self",
+      "field_encryptor"
+    ],
+    "add_first_party_caveat": [
+      "self",
+      "macaroon",
+      "predicate"
+    ]
+  },
+  "EncryptedFirstPartyCaveatVerifierDelegate": {
+    "__init__": [
+      "self",
+      "field_encryptors"
+    ],
+    "verify_first_party_caveat": [
+      "self",
+      "verifier",
+      "caveat",
+      "signature"
+    ]
+  },
+  "BaseBinder": {
+    "__metaclass__": [],
+    "__init__": [
+      "self",
+      "root"
+    ],
+    "bind": [
+      "self",
+      "discharge"
+    ],
+    "bind_signature": [
+      "self",
+      "signature"
+    ]
+  },
+  "HashSignaturesBinder": {
+    "__init__": [
+      "self",
+      "root",
+      "key"
+    ],
+    "bind_signature": [
+      "self",
+      "signature"
+    ]
+  },
+  "BaseFieldEncryptor": {
+    "__init__": [
+      "self",
+      "signifier",
+      "nonce"
+    ],
+    "signifier": [
+      "self",
+      "string_or_bytes"
+    ],
+    "encrypt": [
+      "self",
+      "signature",
+      "field_data"
+    ],
+    "decrypt": [
+      "self",
+      "signature",
+      "field_data"
+    ]
+  },
+  "SecretBoxEncryptor": {
+    "__init__": [
+      "self",
+      "signifier",
+      "nonce"
+    ],
+    "encrypt": [
+      "self",
+      "signature",
+      "field_data"
+    ],
+    "decrypt": [
+      "self",
+      "signature",
+      "field_data"
+    ]
+  },
+  "PacketV2": [],
+  "BinarySerializer": {
+    "PACKET_PREFIX_LENGTH": [],
+    "_LOCATION": [],
+    "_IDENTIFIER": [],
+    "_VID": [],
+    "_SIGNATURE": [],
+    "_EOS": [],
+    "serialize": [
+      "self",
+      "macaroon"
+    ],
+    "serialize_raw": [
+      "self",
+      "macaroon"
+    ],
+    "_serialize_v1": [
+      "self",
+      "macaroon"
+    ],
+    "_serialize_v2": [
+      "self",
+      "macaroon"
+    ],
+    "deserialize": [
+      "self",
+      "serialized"
+    ],
+    "deserialize_raw": [
+      "self",
+      "serialized"
+    ],
+    "_deserialize_v1": [
+      "self",
+      "decoded"
+    ],
+    "_deserialize_v2": [
+      "self",
+      "serialized"
+    ],
+    "_packetize": [
+      "self",
+      "key",
+      "data"
+    ],
+    "_depacketize": [
+      "self",
+      "packet"
+    ],
+    "_append_packet": [
+      "self",
+      "data",
+      "field_type",
+      "packet_data"
+    ],
+    "_parse_section_v2": [
+      "self",
+      "data"
+    ],
+    "_parse_packet_v2": [
+      "self",
+      "data"
+    ]
+  },
+  "_encode_uvarint": [
+    "data",
+    "n"
+  ],
+  "_is_ascii_hex": [
+    "b"
+  ],
+  "BaseSerializer": {
+    "__metaclass__": [],
+    "serialize": [
+      "self",
+      "macaroon"
+    ],
+    "deserialize": [
+      "self",
+      "serialized"
+    ]
+  },
+  "JsonSerializer": {
+    "serialize": [
+      "self",
+      "m"
+    ],
+    "_serialize_v1": [
+      "self",
+      "macaroon"
+    ],
+    "_serialize_v2": [
+      "self",
+      "macaroon"
+    ],
+    "deserialize": [
+      "self",
+      "serialized"
+    ],
+    "_deserialize_v1": [
+      "self",
+      "deserialized"
+    ],
+    "_deserialize_v2": [
+      "self",
+      "deserialized"
+    ]
+  },
+  "_caveat_v1_to_dict": [
+    "c"
+  ],
+  "_caveat_v2_to_dict": [
+    "c"
+  ],
+  "_add_json_binary_field": [
+    "b",
+    "serialized",
+    "field"
+  ],
+  "_read_json_binary_field": [
+    "deserialized",
+    "field"
+  ]
+}

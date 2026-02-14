@@ -1,0 +1,460 @@
+{
+  "_rename_weights": [
+    "weights_dict"
+  ],
+  "onnx2torch": [
+    "onnx_path",
+    "torch_path",
+    "verbose"
+  ],
+  "onnx2torch_v3": [
+    "onnx_path",
+    "torch_path",
+    "verbose"
+  ],
+  "load_audio": [
+    "file",
+    "sr"
+  ],
+  "_mel_filters": [
+    "device",
+    "n_mels"
+  ],
+  "log_mel_spectrogram": [
+    "audio",
+    "n_mels",
+    "padding",
+    "device"
+  ],
+  "make_non_pad_mask": [
+    "lengths",
+    "max_len"
+  ],
+  "mask_to_bias": [
+    "mask",
+    "dtype"
+  ],
+  "padding": [
+    "data"
+  ],
+  "merge_tokenized_segments": [
+    "tokenized_segments",
+    "overlap",
+    "token_rate"
+  ],
+  "__all__": [],
+  "_MODELS": [],
+  "_SHA256S": [],
+  "_download": [
+    "name",
+    "root"
+  ],
+  "available_models": [],
+  "load_model": [
+    "name",
+    "download_root"
+  ],
+  "AudioDataset": {
+    "__init__": [
+      "self",
+      "wav_scp"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "collate_fn": [
+    "batch"
+  ],
+  "init_distributed": [],
+  "get_args": [],
+  "main": [],
+  "ModelConfig": {},
+  "LayerNorm": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Linear": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Conv1d": {
+    "_conv_forward": [
+      "self",
+      "x",
+      "weight",
+      "bias"
+    ]
+  },
+  "sinusoids": [
+    "length",
+    "channels",
+    "max_timescale"
+  ],
+  "MultiHeadAttention": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ],
+    "qkv_attention": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask"
+    ]
+  },
+  "ResidualAttentionBlock": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ]
+  },
+  "AudioEncoder": {
+    "__init__": [
+      "self",
+      "n_mels",
+      "n_ctx",
+      "n_state",
+      "n_head",
+      "n_layer",
+      "stride",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_len"
+    ]
+  },
+  "EuclideanCodebook": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size"
+    ],
+    "preprocess": [
+      "self",
+      "x"
+    ],
+    "quantize": [
+      "self",
+      "x"
+    ],
+    "postprocess_emb": [
+      "self",
+      "embed_ind",
+      "shape"
+    ],
+    "dequantize": [
+      "self",
+      "embed_ind"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ]
+  },
+  "VectorQuantization": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size"
+    ],
+    "codebook": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ]
+  },
+  "S3Tokenizer": {
+    "__init__": [
+      "self",
+      "name",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "quantize": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "_quantize_mixed_batch": [
+      "self",
+      "mel",
+      "mel_len",
+      "long_audio_mask",
+      "max_frames"
+    ],
+    "device": [
+      "self"
+    ],
+    "init_from_onnx": [
+      "self",
+      "onnx_path"
+    ],
+    "init_from_pt": [
+      "self",
+      "ckpt_path"
+    ],
+    "freeze": [
+      "self"
+    ]
+  },
+  "precompute_freqs_cis": [
+    "dim",
+    "end",
+    "theta",
+    "scaling"
+  ],
+  "apply_rotary_emb": [
+    "xq",
+    "xk",
+    "freqs_cis"
+  ],
+  "reshape_for_broadcast": [
+    "freqs_cis",
+    "x"
+  ],
+  "FSQCodebook": {
+    "__init__": [
+      "self",
+      "dim",
+      "level"
+    ],
+    "preprocess": [
+      "self",
+      "x"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ]
+  },
+  "FSQVectorQuantization": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size"
+    ],
+    "codebook": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ]
+  },
+  "FSMNMultiHeadAttention": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "kernel_size",
+      "use_sdpa"
+    ],
+    "forward_fsmn": [
+      "self",
+      "inputs",
+      "mask"
+    ],
+    "qkv_attention": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask",
+      "mask_pad",
+      "freqs_cis"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "mask_pad",
+      "freqs_cis"
+    ]
+  },
+  "AudioEncoderV2": {
+    "__init__": [
+      "self",
+      "n_mels",
+      "n_state",
+      "n_head",
+      "n_layer",
+      "stride",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_len"
+    ]
+  },
+  "S3TokenizerV2": {
+    "__init__": [
+      "self",
+      "name",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "quantize": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "_quantize_mixed_batch": [
+      "self",
+      "mel",
+      "mel_len",
+      "long_audio_mask",
+      "max_frames"
+    ],
+    "device": [
+      "self"
+    ],
+    "init_from_onnx": [
+      "self",
+      "onnx_path"
+    ],
+    "init_from_pt": [
+      "self",
+      "ckpt_path"
+    ],
+    "freeze": [
+      "self"
+    ]
+  },
+  "ModelConfigV3": {},
+  "MultiHeadAttentionV3": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "kernel_size",
+      "use_sdpa"
+    ]
+  },
+  "ResidualAttentionBlockV3": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "kernel_size",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "mask_pad",
+      "freqs_cis"
+    ]
+  },
+  "AudioEncoderV3": {
+    "__init__": [
+      "self",
+      "n_mels",
+      "n_state",
+      "n_head",
+      "n_layer",
+      "stride",
+      "use_sdpa"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "x_len"
+    ]
+  },
+  "S3TokenizerV3": {
+    "__init__": [
+      "self",
+      "name",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "quantize": [
+      "self",
+      "mel",
+      "mel_len"
+    ],
+    "_quantize_mixed_batch": [
+      "self",
+      "mel",
+      "mel_len",
+      "long_audio_mask"
+    ],
+    "device": [
+      "self"
+    ],
+    "init_from_onnx": [
+      "self",
+      "onnx_path"
+    ],
+    "init_from_pt": [
+      "self",
+      "ckpt_path"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict",
+      "strict"
+    ],
+    "freeze": [
+      "self"
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "__author__": [],
+  "__email__": [],
+  "__version__": [],
+  "__copyright__": [],
+  "logger": [],
+  "DynamoDBLockClient": {
+    "_DEFAULT_TABLE_NAME": [],
+    "_DEFAULT_PARTITION_KEY_NAME": [],
+    "_DEFAULT_SORT_KEY_NAME": [],
+    "_DEFAULT_TTL_ATTRIBUTE_NAME": [],
+    "_DEFAULT_HEARTBEAT_PERIOD": [],
+    "_DEFAULT_SAFE_PERIOD": [],
+    "_DEFAULT_LEASE_DURATION": [],
+    "_DEFAULT_EXPIRY_PERIOD": [],
+    "_DEFAULT_HEARTBEAT_TPS": [],
+    "_DEFAULT_APP_CALLBACK_THREADPOOL_SIZE": [],
+    "_DEFAULT_READ_CAPACITY": [],
+    "_DEFAULT_WRITE_CAPACITY": [],
+    "_DEFAULT_SORT_KEY_VALUE": [],
+    "_COL_OWNER_NAME": [],
+    "_COL_LEASE_DURATION": [],
+    "_COL_RECORD_VERSION_NUMBER": [],
+    "__init__": [
+      "self",
+      "dynamodb_resource",
+      "table_name",
+      "partition_key_name",
+      "sort_key_name",
+      "ttl_attribute_name",
+      "owner_name",
+      "heartbeat_period",
+      "safe_period",
+      "lease_duration",
+      "expiry_period",
+      "heartbeat_tps",
+      "app_callback_executor"
+    ],
+    "_start_heartbeat_sender_thread": [
+      "self"
+    ],
+    "_send_heartbeat_loop": [
+      "self"
+    ],
+    "_send_heartbeat": [
+      "self",
+      "lock"
+    ],
+    "_start_heartbeat_checker_thread": [
+      "self"
+    ],
+    "_check_heartbeat_loop": [
+      "self"
+    ],
+    "_check_heartbeat": [
+      "self",
+      "lock"
+    ],
+    "_call_app_callback": [
+      "self",
+      "lock",
+      "code"
+    ],
+    "acquire_lock": [
+      "self",
+      "partition_key",
+      "sort_key",
+      "retry_period",
+      "retry_timeout",
+      "additional_attributes",
+      "app_callback"
+    ],
+    "release_lock": [
+      "self",
+      "lock",
+      "best_effort"
+    ],
+    "_get_lock_from_dynamodb": [
+      "self",
+      "partition_key",
+      "sort_key"
+    ],
+    "_add_new_lock_to_dynamodb": [
+      "self",
+      "lock"
+    ],
+    "_overwrite_existing_lock_in_dynamodb": [
+      "self",
+      "lock",
+      "record_version_number"
+    ],
+    "_get_lock_from_item": [
+      "self",
+      "item"
+    ],
+    "_get_item_from_lock": [
+      "self",
+      "lock"
+    ],
+    "_release_all_locks": [
+      "self"
+    ],
+    "close": [
+      "self",
+      "release_locks"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "create_dynamodb_table": [
+      "cls",
+      "dynamodb_client",
+      "table_name",
+      "partition_key_name",
+      "sort_key_name",
+      "ttl_attribute_name",
+      "read_capacity",
+      "write_capacity"
+    ],
+    "_wait_for_table_to_be_active": [
+      "cls",
+      "dynamodb_client",
+      "table_name"
+    ]
+  },
+  "BaseDynamoDBLock": {
+    "__init__": [
+      "self",
+      "partition_key",
+      "sort_key",
+      "owner_name",
+      "lease_duration",
+      "record_version_number",
+      "expiry_time",
+      "additional_attributes"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "DynamoDBLock": {
+    "PENDING": [],
+    "LOCKED": [],
+    "RELEASED": [],
+    "IN_DANGER": [],
+    "INVALID": [],
+    "__init__": [
+      "self",
+      "partition_key",
+      "sort_key",
+      "owner_name",
+      "lease_duration",
+      "record_version_number",
+      "expiry_time",
+      "additional_attributes",
+      "app_callback",
+      "lock_client"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "release": [
+      "self",
+      "best_effort"
+    ]
+  },
+  "DynamoDBLockError": {
+    "CLIENT_SHUTDOWN": [],
+    "ACQUIRE_TIMEOUT": [],
+    "LOCK_NOT_OWNED": [],
+    "LOCK_STOLEN": [],
+    "LOCK_IN_DANGER": [],
+    "UNKNOWN": [],
+    "__init__": [
+      "self",
+      "code",
+      "message"
+    ],
+    "__str__": [
+      "self"
+    ]
+  }
+}

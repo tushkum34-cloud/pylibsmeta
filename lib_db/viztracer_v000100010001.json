@@ -1,0 +1,874 @@
+{
+  "patch_subprocess": [
+    "viz_args"
+  ],
+  "patch_multiprocessing": [
+    "tracer",
+    "viz_args"
+  ],
+  "SpawnProcess": {
+    "__init__": [
+      "self",
+      "viztracer_kwargs",
+      "run",
+      "target",
+      "args",
+      "kwargs",
+      "cmdline_args"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "patch_spawned_process": [
+    "viztracer_kwargs",
+    "cmdline_args"
+  ],
+  "filter_args": [
+    "args"
+  ],
+  "install_all_hooks": [
+    "tracer",
+    "args",
+    "patch_multiprocess"
+  ],
+  "VizLoggingHandler": {
+    "__init__": [
+      "self"
+    ],
+    "emit": [
+      "self",
+      "record"
+    ],
+    "setTracer": [
+      "self",
+      "tracer"
+    ]
+  },
+  "_EventBase": {
+    "__init__": [
+      "self",
+      "tracer",
+      "name"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "_viztracer_get_attr_list": [
+      "self"
+    ],
+    "_viztracer_set_config": [
+      "self",
+      "key",
+      "value"
+    ],
+    "config": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_viztracer_log": [
+      "self"
+    ],
+    "log": [
+      "self"
+    ],
+    "triggerlog": [
+      "method",
+      "when"
+    ]
+  },
+  "VizPluginError": {},
+  "VizPluginBase": {
+    "__init__": [
+      "self"
+    ],
+    "support_version": [
+      "self"
+    ],
+    "message": [
+      "self",
+      "m_type",
+      "payload"
+    ]
+  },
+  "VizPluginManager": {
+    "__init__": [
+      "self",
+      "tracer",
+      "plugins"
+    ],
+    "_get_plugin_from_string": [
+      "self",
+      "plugin"
+    ],
+    "_send_message": [
+      "self",
+      "plugin",
+      "m_type",
+      "payload"
+    ],
+    "has_plugin": [
+      "self"
+    ],
+    "event": [
+      "self",
+      "when"
+    ],
+    "command": [
+      "self",
+      "cmd"
+    ],
+    "terminate": [
+      "self"
+    ],
+    "assert_success": [
+      "self",
+      "plugin",
+      "cmd",
+      "ret"
+    ],
+    "resolve": [
+      "self",
+      "version",
+      "ret"
+    ]
+  },
+  "load_ipython_extension": [
+    "ipython"
+  ],
+  "dir_lock": [],
+  "chdir_temp": [
+    "d"
+  ],
+  "HttpHandler": {
+    "end_headers": [
+      "self"
+    ],
+    "log_message": [
+      "self",
+      "format"
+    ]
+  },
+  "ExternalProcessorHandler": {
+    "__init__": [
+      "self",
+      "server_thread"
+    ],
+    "do_GET": [
+      "self"
+    ]
+  },
+  "PerfettoHandler": {
+    "__init__": [
+      "self",
+      "server_thread"
+    ],
+    "do_GET": [
+      "self"
+    ]
+  },
+  "HtmlHandler": {
+    "__init__": [
+      "self",
+      "server_thread"
+    ],
+    "do_GET": [
+      "self"
+    ]
+  },
+  "DirectoryHandler": {
+    "__init__": [
+      "self",
+      "directory_viewer"
+    ],
+    "do_GET": [
+      "self"
+    ],
+    "send_head": [
+      "self"
+    ],
+    "list_directory": [
+      "self",
+      "path"
+    ]
+  },
+  "ExternalProcessorProcess": {
+    "trace_processor_path": [],
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "_wait_start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "VizViewerTCPServer": {
+    "handle_timeout": [
+      "self"
+    ]
+  },
+  "ServerThread": {
+    "__init__": [
+      "self",
+      "path",
+      "port",
+      "once",
+      "use_external_processor",
+      "timeout",
+      "quiet"
+    ],
+    "run": [
+      "self"
+    ],
+    "view": [
+      "self"
+    ],
+    "notify_active": [
+      "self"
+    ],
+    "is_port_in_use": [
+      "self"
+    ]
+  },
+  "DirectoryViewer": {
+    "__init__": [
+      "self",
+      "path",
+      "port",
+      "server_only",
+      "timeout",
+      "use_external_processor"
+    ],
+    "get_link": [
+      "self",
+      "path"
+    ],
+    "create_server": [
+      "self",
+      "path"
+    ],
+    "clean_servers": [
+      "self",
+      "force"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "viewer_main": [],
+  "VizProcedureResult": [],
+  "VizUI": {
+    "__init__": [
+      "self"
+    ],
+    "create_parser": [
+      "self"
+    ],
+    "load_config_file": [
+      "self",
+      "filename"
+    ],
+    "parse": [
+      "self",
+      "argv"
+    ],
+    "search_file": [
+      "self",
+      "file_name"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_code": [
+      "self",
+      "code",
+      "global_dict"
+    ],
+    "run_module": [
+      "self"
+    ],
+    "run_string": [
+      "self"
+    ],
+    "run_command": [
+      "self"
+    ],
+    "run_compress": [
+      "self"
+    ],
+    "run_decompress": [
+      "self"
+    ],
+    "run_combine": [
+      "self",
+      "files",
+      "align"
+    ],
+    "show_version": [
+      "self"
+    ],
+    "_check_attach_availability": [
+      "self"
+    ],
+    "attach": [
+      "self"
+    ],
+    "uninstall": [
+      "self"
+    ],
+    "attach_installed": [
+      "self"
+    ],
+    "_wait_attach": [
+      "self",
+      "interval"
+    ],
+    "save": [
+      "self"
+    ],
+    "wait_children_finish": [
+      "self"
+    ],
+    "exit_routine": [
+      "self"
+    ]
+  },
+  "main": [],
+  "VizEvent": {
+    "__init__": [
+      "self",
+      "tracer",
+      "event_name",
+      "file_name",
+      "lineno"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "trace"
+    ]
+  },
+  "FuncTreeNode": {
+    "name_regex": [],
+    "__init__": [
+      "self",
+      "event"
+    ],
+    "is_ancestor": [
+      "self",
+      "other"
+    ],
+    "is_same": [
+      "self",
+      "other"
+    ],
+    "adopt": [
+      "self",
+      "other"
+    ]
+  },
+  "FuncTree": {
+    "__init__": [
+      "self",
+      "pid",
+      "tid"
+    ],
+    "is_same": [
+      "self",
+      "other"
+    ],
+    "add_event": [
+      "self",
+      "event"
+    ],
+    "first_ts": [
+      "self"
+    ],
+    "first_node": [
+      "self"
+    ],
+    "node_by_timestamp": [
+      "self",
+      "ts"
+    ],
+    "normalize": [
+      "self",
+      "first_ts"
+    ],
+    "inorder_traverse": [
+      "self"
+    ]
+  },
+  "VizCounter": {
+    "_viztracer_log": [
+      "self"
+    ]
+  },
+  "get_json": [
+    "data"
+  ],
+  "ReportBuilder": {
+    "__init__": [
+      "self",
+      "data",
+      "verbose",
+      "align",
+      "minimize_memory",
+      "base_time"
+    ],
+    "load_jsons": [
+      "self"
+    ],
+    "combine_json": [
+      "self"
+    ],
+    "align_events": [
+      "self",
+      "original_events",
+      "sync_marker"
+    ],
+    "prepare_json": [
+      "self",
+      "file_info",
+      "display_time_unit"
+    ],
+    "get_source_from_filename": [
+      "cls",
+      "filename"
+    ],
+    "generate_report": [
+      "self",
+      "output_file",
+      "output_format",
+      "file_info"
+    ],
+    "save": [
+      "self",
+      "output_file",
+      "file_info"
+    ],
+    "print_messages": [
+      "self"
+    ]
+  },
+  "__version__": [],
+  "__all__": [],
+  "AstTransformer": {
+    "__init__": [
+      "self",
+      "inst_type",
+      "inst_args"
+    ],
+    "visit_Assign": [
+      "self",
+      "node"
+    ],
+    "visit_AugAssign": [
+      "self",
+      "node"
+    ],
+    "visit_AnnAssign": [
+      "self",
+      "node"
+    ],
+    "visit_FunctionDef": [
+      "self",
+      "node"
+    ],
+    "visit_For": [
+      "self",
+      "node"
+    ],
+    "visit_Raise": [
+      "self",
+      "node"
+    ],
+    "_visit_generic_assign": [
+      "self",
+      "node"
+    ],
+    "get_assign_targets": [
+      "self",
+      "node"
+    ],
+    "get_assign_targets_with_attr": [
+      "self",
+      "node"
+    ],
+    "get_assign_log_nodes": [
+      "self",
+      "target"
+    ],
+    "get_instrument_node": [
+      "self",
+      "trigger",
+      "name"
+    ],
+    "get_instrument_node_by_node": [
+      "self",
+      "trigger",
+      "node"
+    ],
+    "get_add_variable_node": [
+      "self",
+      "name",
+      "var_node",
+      "event"
+    ],
+    "get_add_func_exec_node": [
+      "self",
+      "name",
+      "val",
+      "lineno"
+    ],
+    "copy_node_with_load": [
+      "self",
+      "node"
+    ],
+    "get_string_of_expr": [
+      "self",
+      "node"
+    ]
+  },
+  "SourceProcessor": {
+    "process": [
+      "self",
+      "source"
+    ],
+    "line_transform": [
+      "self",
+      "re_match"
+    ],
+    "line_transform_condition": [
+      "self",
+      "re_match"
+    ],
+    "inline_transform": [
+      "self",
+      "re_match"
+    ],
+    "inline_transform_condition": [
+      "self",
+      "re_match"
+    ],
+    "re_patterns": []
+  },
+  "CodeMonkey": {
+    "__init__": [
+      "self",
+      "file_name"
+    ],
+    "add_instrument": [
+      "self",
+      "inst_type",
+      "inst_args"
+    ],
+    "add_source_processor": [
+      "self"
+    ],
+    "compile": [
+      "self",
+      "source",
+      "filename",
+      "mode",
+      "flags",
+      "dont_inherit",
+      "optimize"
+    ]
+  },
+  "STILL_ACTIVE": [],
+  "ERROR_ACCESS_DENIED": [],
+  "PROCESS_QUERY_LIMITED_INFORMATION": [],
+  "size_fmt": [
+    "num",
+    "suffix"
+  ],
+  "_bcolors": {
+    "HEADER": [],
+    "OKBLUE": [],
+    "OKGREEN": [],
+    "WARNING": [],
+    "FAIL": [],
+    "ENDC": [],
+    "BOLD": [],
+    "UNDERLINE": []
+  },
+  "bcolors": [],
+  "color_support": [],
+  "color_print": [
+    "color",
+    "s"
+  ],
+  "same_line_print": [
+    "s",
+    "width"
+  ],
+  "unique_file_name": [
+    "exec_name"
+  ],
+  "compare_version": [
+    "ver1",
+    "ver2"
+  ],
+  "time_str_to_us": [
+    "t_s"
+  ],
+  "pid_exists": [
+    "pid"
+  ],
+  "frame_stack_has_func": [
+    "frame",
+    "funcs"
+  ],
+  "VizTracer": {
+    "__init__": [
+      "self",
+      "tracer_entries",
+      "verbose",
+      "max_stack_depth",
+      "include_files",
+      "exclude_files",
+      "ignore_c_function",
+      "ignore_frozen",
+      "log_func_retval",
+      "log_func_args",
+      "log_func_repr",
+      "log_func_with_objprint",
+      "log_print",
+      "log_gc",
+      "log_sparse",
+      "log_async",
+      "log_torch",
+      "log_audit",
+      "pid_suffix",
+      "file_info",
+      "register_global",
+      "trace_self",
+      "min_duration",
+      "minimize_memory",
+      "dump_raw",
+      "sanitize_function_name",
+      "process_name",
+      "output_file",
+      "plugins"
+    ],
+    "pid_suffix": [
+      "self",
+      "pid_suffix"
+    ],
+    "init_kwargs": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "trace"
+    ],
+    "register_global": [
+      "self"
+    ],
+    "install": [
+      "self"
+    ],
+    "log_instant": [
+      "self",
+      "name",
+      "args",
+      "scope",
+      "cond"
+    ],
+    "log_var": [
+      "self",
+      "name",
+      "var",
+      "cond"
+    ],
+    "log_event": [
+      "self",
+      "event_name"
+    ],
+    "shield_ignore": [
+      "self",
+      "func"
+    ],
+    "set_afterfork": [
+      "self",
+      "callback"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self",
+      "stop_option"
+    ],
+    "parse": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "command",
+      "output_file"
+    ],
+    "save": [
+      "self",
+      "output_file",
+      "file_info",
+      "verbose"
+    ],
+    "fork_save": [
+      "self",
+      "output_file"
+    ],
+    "label_file_to_write": [
+      "self"
+    ],
+    "terminate": [
+      "self"
+    ],
+    "register_exit": [
+      "self"
+    ],
+    "exit_routine": [
+      "self"
+    ],
+    "enable_thread_tracing": [
+      "self"
+    ],
+    "add_variable": [
+      "self",
+      "name",
+      "var",
+      "event"
+    ],
+    "overload_print": [
+      "self"
+    ],
+    "restore_print": [
+      "self"
+    ],
+    "add_func_exec": [
+      "self",
+      "name",
+      "val",
+      "lineno"
+    ],
+    "log_gc": [
+      "self",
+      "log_gc"
+    ],
+    "add_garbage_collection": [
+      "self",
+      "phase",
+      "info"
+    ]
+  },
+  "get_tracer": [],
+  "VizObject": {
+    "__init__": [
+      "self",
+      "tracer",
+      "name"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_viztracer_log": [
+      "self",
+      "ph"
+    ]
+  },
+  "AttachStatus": {},
+  "attach_status": [],
+  "start_attach": [
+    "init_kwargs_b64"
+  ],
+  "stop_attach": [],
+  "uninstall_attach": [],
+  "R": [],
+  "ignore_function": [
+    "method",
+    "tracer"
+  ],
+  "trace_and_save": [
+    "method",
+    "output_dir"
+  ],
+  "_log_sparse_wrapper": [
+    "func",
+    "stack_depth",
+    "dynamic_tracer_check"
+  ],
+  "log_sparse": [
+    "func",
+    "stack_depth",
+    "dynamic_tracer_check"
+  ],
+  "_create_win_event": [
+    "name"
+  ],
+  "IS_WINDOWS": [],
+  "IS_LINUX": [],
+  "IS_MAC": [],
+  "is_python_64bit": [],
+  "get_target_filename": [
+    "is_target_process_64",
+    "prefix",
+    "extension"
+  ],
+  "run_python_code_windows": [
+    "pid",
+    "python_code",
+    "connect_debugger_tracing",
+    "show_debug_info"
+  ],
+  "_acquire_mutex": [
+    "mutex_name",
+    "timeout"
+  ],
+  "_win_write_to_shared_named_memory": [
+    "python_code",
+    "pid"
+  ],
+  "run_python_code_linux": [
+    "pid",
+    "python_code",
+    "connect_debugger_tracing",
+    "show_debug_info"
+  ],
+  "find_helper_script": [
+    "filedir",
+    "script_name"
+  ],
+  "run_python_code_mac": [
+    "pid",
+    "python_code",
+    "connect_debugger_tracing",
+    "show_debug_info"
+  ],
+  "test": [],
+  "load_lib_and_attach": [
+    "debugger",
+    "command",
+    "result",
+    "internal_dict"
+  ],
+  "__lldb_init_module": [
+    "debugger",
+    "internal_dict"
+  ]
+}

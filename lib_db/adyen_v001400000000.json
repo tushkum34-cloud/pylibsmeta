@@ -1,0 +1,2537 @@
+{
+  "LIB_NAME": [],
+  "LIB_VERSION": [],
+  "Adyen": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_base_adyen_obj": [],
+  "recurring": [],
+  "payment": [],
+  "payout": [],
+  "checkout": [],
+  "binlookup": [],
+  "terminal": [],
+  "management": [],
+  "legalEntityManagement": [],
+  "dataProtection": [],
+  "transfers": [],
+  "storedValue": [],
+  "balancePlatform": [],
+  "disputes": [],
+  "sessionAuthentication": [],
+  "AdyenResult": {
+    "__init__": [
+      "self",
+      "message",
+      "status_code",
+      "psp",
+      "raw_request",
+      "raw_response"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "AdyenClient": {
+    "IDEMPOTENCY_HEADER_NAME": [],
+    "APPLICATION_INFO_HEADER_NAME": [],
+    "APPLICATION_VERSION_HEADER_NAME": [],
+    "__init__": [
+      "self",
+      "username",
+      "password",
+      "xapikey",
+      "review_payout_username",
+      "review_payout_password",
+      "store_payout_username",
+      "store_payout_password",
+      "platform",
+      "merchant_account",
+      "merchant_specific_url",
+      "hmac",
+      "http_force",
+      "live_endpoint_prefix",
+      "http_timeout",
+      "api_bin_lookup_version",
+      "api_checkout_version",
+      "api_management_version",
+      "api_payment_version",
+      "api_payout_version",
+      "api_recurring_version",
+      "api_terminal_version",
+      "api_legal_entity_management_version",
+      "api_data_protection_version",
+      "api_transfers_version",
+      "api_stored_value_version",
+      "api_balance_platform_version",
+      "api_disputes_version",
+      "api_session_authentication_version"
+    ],
+    "_determine_api_url": [
+      "self",
+      "platform",
+      "endpoint"
+    ],
+    "_review_payout_username": [
+      "self"
+    ],
+    "_review_payout_pass": [
+      "self"
+    ],
+    "_store_payout_username": [
+      "self"
+    ],
+    "_store_payout_pass": [
+      "self"
+    ],
+    "_set_credentials": [
+      "self",
+      "service",
+      "endpoint"
+    ],
+    "_set_platform": [
+      "self"
+    ],
+    "_set_url_version": [
+      "self",
+      "service",
+      "endpoint"
+    ],
+    "call_adyen_api": [
+      "self",
+      "request_data",
+      "service",
+      "method",
+      "endpoint",
+      "idempotency_key"
+    ],
+    "_init_http_client": [
+      "self"
+    ],
+    "_handle_response": [
+      "self",
+      "url",
+      "raw_response",
+      "raw_request",
+      "status_code",
+      "headers"
+    ],
+    "_raise_http_error": [
+      "url",
+      "response_obj",
+      "status_code",
+      "psp_ref",
+      "raw_request",
+      "raw_response",
+      "headers"
+    ],
+    "_get_psp": [
+      "response",
+      "headers"
+    ]
+  },
+  "generate_notification_sig": [
+    "dict_object",
+    "hmac_key"
+  ],
+  "generate_payload_sig": [
+    "payload",
+    "hmac_key"
+  ],
+  "is_valid_hmac_notification": [
+    "dict_object",
+    "hmac_key"
+  ],
+  "is_valid_hmac_payload": [
+    "hmac_signature",
+    "hmac_key",
+    "payload"
+  ],
+  "get_query": [
+    "query_parameters"
+  ],
+  "AdyenError": {
+    "__init__": [
+      "self",
+      "message",
+      "raw_request",
+      "raw_response",
+      "url",
+      "psp",
+      "headers",
+      "status_code",
+      "error_code"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "debug": [
+      "self"
+    ]
+  },
+  "AdyenInvalidRequestError": {},
+  "AdyenAPIResponseError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "AdyenAPIAuthenticationError": {},
+  "AdyenAPIInvalidPermission": {},
+  "AdyenAPICommunicationError": {},
+  "AdyenAPIValidationError": {},
+  "AdyenAPIUnprocessableEntity": {},
+  "AdyenAPIInvalidFormat": {},
+  "AdyenEndpointInvalidFormat": {},
+  "HTTPClient": {
+    "__init__": [
+      "self",
+      "user_agent_suffix",
+      "lib_version",
+      "force_request",
+      "timeout"
+    ],
+    "_pycurl_request": [
+      "self",
+      "method",
+      "url",
+      "json",
+      "data",
+      "username",
+      "password",
+      "xapikey",
+      "headers"
+    ],
+    "_requests_request": [
+      "self",
+      "method",
+      "url",
+      "json",
+      "data",
+      "username",
+      "password",
+      "xapikey",
+      "headers"
+    ],
+    "_urllib_request": [
+      "self",
+      "method",
+      "url",
+      "json",
+      "data",
+      "username",
+      "password",
+      "xapikey",
+      "headers"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url",
+      "json",
+      "data",
+      "username",
+      "password",
+      "headers"
+    ]
+  },
+  "AdyenBase": {
+    "__setattr__": [
+      "self",
+      "attr",
+      "value"
+    ],
+    "__getattr__": [
+      "self",
+      "attr"
+    ]
+  },
+  "AdyenServiceBase": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "AdyenTerminalApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "assign_terminals": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "find_terminal": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_stores_under_account": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_terminal_details": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_terminals_under_account": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "InitializationApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "store_detail": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "store_detail_and_submit_third_party": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "submit_third_party": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "ReviewingApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "confirm_third_party": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "decline_third_party": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenPayoutsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "InstantPayoutsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "payout": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenBinlookupApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "BinLookupApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get3ds_availability": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_cost_estimate": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "TransferLimitsBalancePlatformLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_transfer_limit": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "delete_pending_transfer_limit": [
+      "self",
+      "id",
+      "transferLimitId",
+      "idempotency_key"
+    ],
+    "get_specific_transfer_limit": [
+      "self",
+      "id",
+      "transferLimitId",
+      "idempotency_key"
+    ],
+    "get_transfer_limits": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "AccountHoldersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_account_holder": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_account_holder": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_all_balance_accounts_of_account_holder": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_all_transaction_rules_for_account_holder": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_tax_form": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "update_account_holder": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "GrantOffersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_all_available_grant_offers": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_grant_offer": [
+      "self",
+      "grantOfferId",
+      "idempotency_key"
+    ]
+  },
+  "TransferLimitsBalanceAccountLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "approve_pending_transfer_limits": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "create_transfer_limit": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "delete_pending_transfer_limit": [
+      "self",
+      "id",
+      "transferLimitId",
+      "idempotency_key"
+    ],
+    "get_current_transfer_limits": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_specific_transfer_limit": [
+      "self",
+      "id",
+      "transferLimitId",
+      "idempotency_key"
+    ],
+    "get_transfer_limits": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "BalanceAccountsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_balance_account": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "create_sweep": [
+      "self",
+      "request",
+      "balanceAccountId",
+      "idempotency_key"
+    ],
+    "delete_sweep": [
+      "self",
+      "balanceAccountId",
+      "sweepId",
+      "idempotency_key"
+    ],
+    "get_all_sweeps_for_balance_account": [
+      "self",
+      "balanceAccountId",
+      "idempotency_key"
+    ],
+    "get_all_transaction_rules_for_balance_account": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_balance_account": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_payment_instruments_linked_to_balance_account": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_sweep": [
+      "self",
+      "balanceAccountId",
+      "sweepId",
+      "idempotency_key"
+    ],
+    "update_balance_account": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "update_sweep": [
+      "self",
+      "request",
+      "balanceAccountId",
+      "sweepId",
+      "idempotency_key"
+    ]
+  },
+  "CardOrdersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_card_order_items": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "list_card_orders": [
+      "self",
+      "idempotency_key"
+    ]
+  },
+  "BankAccountValidationApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "validate_bank_account_identification": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "TransactionRulesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_transaction_rule": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "delete_transaction_rule": [
+      "self",
+      "transactionRuleId",
+      "idempotency_key"
+    ],
+    "get_transaction_rule": [
+      "self",
+      "transactionRuleId",
+      "idempotency_key"
+    ],
+    "update_transaction_rule": [
+      "self",
+      "request",
+      "transactionRuleId",
+      "idempotency_key"
+    ]
+  },
+  "TransferRoutesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "calculate_transfer_routes": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "PaymentInstrumentGroupsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_payment_instrument_group": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_all_transaction_rules_for_payment_instrument_group": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_payment_instrument_group": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "AdyenBalancePlatformApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "AuthorizedCardUsersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_authorised_card_users": [
+      "self",
+      "request",
+      "paymentInstrumentId",
+      "idempotency_key"
+    ],
+    "delete_authorised_card_users": [
+      "self",
+      "paymentInstrumentId",
+      "idempotency_key"
+    ],
+    "get_all_authorised_card_users": [
+      "self",
+      "paymentInstrumentId",
+      "idempotency_key"
+    ],
+    "update_authorised_card_users": [
+      "self",
+      "request",
+      "paymentInstrumentId",
+      "idempotency_key"
+    ]
+  },
+  "BalancesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_webhook_setting": [
+      "self",
+      "request",
+      "balancePlatformId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "delete_webhook_setting": [
+      "self",
+      "balancePlatformId",
+      "webhookId",
+      "settingId",
+      "idempotency_key"
+    ],
+    "get_all_webhook_settings": [
+      "self",
+      "balancePlatformId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "get_webhook_setting": [
+      "self",
+      "balancePlatformId",
+      "webhookId",
+      "settingId",
+      "idempotency_key"
+    ],
+    "update_webhook_setting": [
+      "self",
+      "request",
+      "balancePlatformId",
+      "webhookId",
+      "settingId",
+      "idempotency_key"
+    ]
+  },
+  "NetworkTokensApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_network_token": [
+      "self",
+      "networkTokenId",
+      "idempotency_key"
+    ],
+    "update_network_token": [
+      "self",
+      "request",
+      "networkTokenId",
+      "idempotency_key"
+    ]
+  },
+  "PaymentInstrumentsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_network_token_provisioning_data": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "create_payment_instrument": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_all_transaction_rules_for_payment_instrument": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_network_token_activation_data": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_pan_of_payment_instrument": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_payment_instrument": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "list_network_tokens": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "reveal_data_of_payment_instrument": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "update_payment_instrument": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "ManageCardPINApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "change_card_pin": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "public_key": [
+      "self",
+      "idempotency_key"
+    ],
+    "reveal_card_pin": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "ManageSCADevicesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "complete_association_between_sca_device_and_resource": [
+      "self",
+      "request",
+      "deviceId",
+      "idempotency_key"
+    ],
+    "complete_registration_of_sca_device": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "delete_registration_of_sca_device": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "initiate_association_between_sca_device_and_resource": [
+      "self",
+      "request",
+      "deviceId",
+      "idempotency_key"
+    ],
+    "initiate_registration_of_sca_device": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "list_registered_sca_devices": [
+      "self",
+      "idempotency_key"
+    ]
+  },
+  "PlatformApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_all_account_holders_under_balance_platform": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_all_transaction_rules_for_balance_platform": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_balance_platform": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "GrantAccountsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_grant_account": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "AdyenRecurringApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "RecurringApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_permit": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "disable": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "disable_permit": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "list_recurring_details": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "notify_shopper": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "schedule_account_updater": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenDataProtectionApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "DataProtectionApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "request_subject_erasure": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "TransactionsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_all_transactions": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_transaction": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "TransfersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "approve_initiated_transfers": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "cancel_initiated_transfers": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_all_transfers": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_transfer": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "return_transfer": [
+      "self",
+      "request",
+      "transferId",
+      "idempotency_key"
+    ],
+    "transfer_funds": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenTransfersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "CapitalApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_capital_account": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_grant_reference_details": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "request_grant_payout": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenStoredValueApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "StoredValueApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "change_status": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "check_balance": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "issue": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "load": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "merge_balance": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "void_transaction": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "PCIQuestionnairesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "calculate_pci_status_of_legal_entity": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "generate_pci_questionnaire": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "get_pci_questionnaire": [
+      "self",
+      "id",
+      "pciid",
+      "idempotency_key"
+    ],
+    "get_pci_questionnaire_details": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "sign_pci_questionnaire": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "HostedOnboardingApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_link_to_adyenhosted_onboarding_page": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "get_onboarding_link_theme": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "list_hosted_onboarding_page_themes": [
+      "self",
+      "idempotency_key"
+    ]
+  },
+  "TaxEDeliveryConsentApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "check_status_of_consent_for_electronic_delivery_of_tax_forms": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "set_consent_status_for_electronic_delivery_of_tax_forms": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "AdyenLegalEntityManagementApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "LegalEntitiesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "check_legal_entitys_verification_errors": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "confirm_data_review": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "create_legal_entity": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_all_business_lines_under_legal_entity": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_legal_entity": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "update_legal_entity": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "TransferInstrumentsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_transfer_instrument": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "delete_transfer_instrument": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_transfer_instrument": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "update_transfer_instrument": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "BusinessLinesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_business_line": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "delete_business_line": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_business_line": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "update_business_line": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "DocumentsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "delete_document": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_document": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "update_document": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "upload_document_for_verification_checks": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "TermsOfServiceApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "accept_terms_of_service": [
+      "self",
+      "request",
+      "id",
+      "termsofservicedocumentid",
+      "idempotency_key"
+    ],
+    "get_accepted_terms_of_service_document": [
+      "self",
+      "id",
+      "termsofserviceacceptancereference",
+      "idempotency_key"
+    ],
+    "get_terms_of_service_document": [
+      "self",
+      "request",
+      "id",
+      "idempotency_key"
+    ],
+    "get_terms_of_service_information_for_legal_entity": [
+      "self",
+      "id",
+      "idempotency_key"
+    ],
+    "get_terms_of_service_status": [
+      "self",
+      "id",
+      "idempotency_key"
+    ]
+  },
+  "AdyenPaymentsAppApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "PaymentsAppApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_payments_app_boarding_token_for_merchant": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "generate_payments_app_boarding_token_for_store": [
+      "self",
+      "request",
+      "merchantId",
+      "storeId",
+      "idempotency_key"
+    ],
+    "list_payments_app_for_merchant": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_payments_app_for_store": [
+      "self",
+      "merchantId",
+      "storeId",
+      "idempotency_key"
+    ],
+    "revoke_payments_app": [
+      "self",
+      "merchantId",
+      "installationId",
+      "idempotency_key"
+    ]
+  },
+  "AdyenDisputesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "DisputesApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "accept_dispute": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "defend_dispute": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "delete_dispute_defense_document": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "retrieve_applicable_defense_reasons": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "supply_defense_document": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "PaymentsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "authorise": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "authorise3d": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "authorise3ds2": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_authentication_result": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "retrieve3ds2_result": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "ModificationsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "adjust_authorisation": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "cancel": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "cancel_or_refund": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "capture": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "donate": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "refund": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "technical_cancel": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "void_pending_refund": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenPaymentsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "SessionAuthenticationApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_authentication_session": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenSessionAuthenticationApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "UtilityApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_apple_pay_session": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "origin_keys": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "updates_order_for_paypal_express_checkout": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "validate_shopper_id": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenCheckoutApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "PaymentLinksApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_payment_link": [
+      "self",
+      "linkId",
+      "idempotency_key"
+    ],
+    "payment_links": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "update_payment_link": [
+      "self",
+      "request",
+      "linkId",
+      "idempotency_key"
+    ]
+  },
+  "OrdersApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "cancel_order": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_balance_of_gift_card": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "orders": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "DonationsApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "donation_campaigns": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "donations": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "ClientKeyMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_new_client_key": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "WebhooksMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_hmac_key": [
+      "self",
+      "merchantId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "get_webhook": [
+      "self",
+      "merchantId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "list_all_webhooks": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "remove_webhook": [
+      "self",
+      "merchantId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "set_up_webhook": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "test_webhook": [
+      "self",
+      "request",
+      "merchantId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "update_webhook": [
+      "self",
+      "request",
+      "merchantId",
+      "webhookId",
+      "idempotency_key"
+    ]
+  },
+  "APICredentialsMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_api_credential": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_api_credential": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ],
+    "list_api_credentials": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_api_credential": [
+      "self",
+      "request",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "APIKeyMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_new_api_key": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "AccountCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_company_account": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_company_accounts": [
+      "self",
+      "idempotency_key"
+    ],
+    "list_merchant_accounts": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ]
+  },
+  "APIKeyCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_new_api_key": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "AllowedOriginsMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_allowed_origin": [
+      "self",
+      "request",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ],
+    "delete_allowed_origin": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "originId",
+      "idempotency_key"
+    ],
+    "get_allowed_origin": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "originId",
+      "idempotency_key"
+    ],
+    "list_allowed_origins": [
+      "self",
+      "merchantId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalOrdersMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "cancel_order": [
+      "self",
+      "merchantId",
+      "orderId",
+      "idempotency_key"
+    ],
+    "create_order": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "create_shipping_location": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_order": [
+      "self",
+      "merchantId",
+      "orderId",
+      "idempotency_key"
+    ],
+    "list_billing_entities": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_orders": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_shipping_locations": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_terminal_models": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_terminal_products": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_order": [
+      "self",
+      "request",
+      "merchantId",
+      "orderId",
+      "idempotency_key"
+    ]
+  },
+  "WebhooksCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_hmac_key": [
+      "self",
+      "companyId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "get_webhook": [
+      "self",
+      "companyId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "list_all_webhooks": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "remove_webhook": [
+      "self",
+      "companyId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "set_up_webhook": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "test_webhook": [
+      "self",
+      "request",
+      "companyId",
+      "webhookId",
+      "idempotency_key"
+    ],
+    "update_webhook": [
+      "self",
+      "request",
+      "companyId",
+      "webhookId",
+      "idempotency_key"
+    ]
+  },
+  "AdyenManagementApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "PaymentMethodsMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "add_apple_pay_domain": [
+      "self",
+      "request",
+      "merchantId",
+      "paymentMethodId",
+      "idempotency_key"
+    ],
+    "get_all_payment_methods": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_apple_pay_domains": [
+      "self",
+      "merchantId",
+      "paymentMethodId",
+      "idempotency_key"
+    ],
+    "get_payment_method_details": [
+      "self",
+      "merchantId",
+      "paymentMethodId",
+      "idempotency_key"
+    ],
+    "request_payment_method": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_payment_method": [
+      "self",
+      "request",
+      "merchantId",
+      "paymentMethodId",
+      "idempotency_key"
+    ]
+  },
+  "UsersCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_new_user": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "get_user_details": [
+      "self",
+      "companyId",
+      "userId",
+      "idempotency_key"
+    ],
+    "list_users": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "update_user_details": [
+      "self",
+      "request",
+      "companyId",
+      "userId",
+      "idempotency_key"
+    ]
+  },
+  "SplitConfigurationMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_rule": [
+      "self",
+      "request",
+      "merchantId",
+      "splitConfigurationId",
+      "idempotency_key"
+    ],
+    "create_split_configuration": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "delete_split_configuration": [
+      "self",
+      "merchantId",
+      "splitConfigurationId",
+      "idempotency_key"
+    ],
+    "delete_split_configuration_rule": [
+      "self",
+      "merchantId",
+      "splitConfigurationId",
+      "ruleId",
+      "idempotency_key"
+    ],
+    "get_split_configuration": [
+      "self",
+      "merchantId",
+      "splitConfigurationId",
+      "idempotency_key"
+    ],
+    "list_split_configurations": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_split_conditions": [
+      "self",
+      "request",
+      "merchantId",
+      "splitConfigurationId",
+      "ruleId",
+      "idempotency_key"
+    ],
+    "update_split_configuration_description": [
+      "self",
+      "request",
+      "merchantId",
+      "splitConfigurationId",
+      "idempotency_key"
+    ],
+    "update_split_logic": [
+      "self",
+      "request",
+      "merchantId",
+      "splitConfigurationId",
+      "ruleId",
+      "splitLogicId",
+      "idempotency_key"
+    ]
+  },
+  "AccountMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_merchant_account": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "get_merchant_account": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "list_merchant_accounts": [
+      "self",
+      "idempotency_key"
+    ],
+    "request_to_activate_merchant_account": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ]
+  },
+  "AndroidFilesCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_android_app": [
+      "self",
+      "companyId",
+      "id",
+      "idempotency_key"
+    ],
+    "list_android_apps": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_android_certificates": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "reprocess_android_app": [
+      "self",
+      "companyId",
+      "id",
+      "idempotency_key"
+    ],
+    "upload_android_app": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "upload_android_certificate": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalActionsCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_terminal_action": [
+      "self",
+      "companyId",
+      "actionId",
+      "idempotency_key"
+    ],
+    "list_terminal_actions": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalOrdersCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "cancel_order": [
+      "self",
+      "companyId",
+      "orderId",
+      "idempotency_key"
+    ],
+    "create_order": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "create_shipping_location": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "get_order": [
+      "self",
+      "companyId",
+      "orderId",
+      "idempotency_key"
+    ],
+    "list_billing_entities": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_orders": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_shipping_locations": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_terminal_models": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "list_terminal_products": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "update_order": [
+      "self",
+      "request",
+      "companyId",
+      "orderId",
+      "idempotency_key"
+    ]
+  },
+  "MyAPICredentialApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "add_allowed_origin": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "generate_client_key": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_allowed_origin_details": [
+      "self",
+      "originId",
+      "idempotency_key"
+    ],
+    "get_allowed_origins": [
+      "self",
+      "idempotency_key"
+    ],
+    "get_api_credential_details": [
+      "self",
+      "idempotency_key"
+    ],
+    "remove_allowed_origin": [
+      "self",
+      "originId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalsTerminalLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "list_terminals": [
+      "self",
+      "idempotency_key"
+    ],
+    "reassign_terminal": [
+      "self",
+      "request",
+      "terminalId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalSettingsMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_terminal_logo": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_terminal_settings": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_terminal_logo": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_terminal_settings": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ]
+  },
+  "APICredentialsCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_api_credential": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "get_api_credential": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ],
+    "list_api_credentials": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "update_api_credential": [
+      "self",
+      "request",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalActionsTerminalLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_terminal_action": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "TerminalSettingsStoreLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_terminal_logo": [
+      "self",
+      "merchantId",
+      "reference",
+      "idempotency_key"
+    ],
+    "get_terminal_logo_by_store_id": [
+      "self",
+      "storeId",
+      "idempotency_key"
+    ],
+    "get_terminal_settings": [
+      "self",
+      "merchantId",
+      "reference",
+      "idempotency_key"
+    ],
+    "get_terminal_settings_by_store_id": [
+      "self",
+      "storeId",
+      "idempotency_key"
+    ],
+    "update_terminal_logo": [
+      "self",
+      "request",
+      "merchantId",
+      "reference",
+      "idempotency_key"
+    ],
+    "update_terminal_logo_by_store_id": [
+      "self",
+      "request",
+      "storeId",
+      "idempotency_key"
+    ],
+    "update_terminal_settings": [
+      "self",
+      "request",
+      "merchantId",
+      "reference",
+      "idempotency_key"
+    ],
+    "update_terminal_settings_by_store_id": [
+      "self",
+      "request",
+      "storeId",
+      "idempotency_key"
+    ]
+  },
+  "ClientKeyCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "generate_new_client_key": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalSettingsCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_terminal_logo": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "get_terminal_settings": [
+      "self",
+      "companyId",
+      "idempotency_key"
+    ],
+    "update_terminal_logo": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ],
+    "update_terminal_settings": [
+      "self",
+      "request",
+      "companyId",
+      "idempotency_key"
+    ]
+  },
+  "PayoutSettingsMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "add_payout_setting": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "delete_payout_setting": [
+      "self",
+      "merchantId",
+      "payoutSettingsId",
+      "idempotency_key"
+    ],
+    "get_payout_setting": [
+      "self",
+      "merchantId",
+      "payoutSettingsId",
+      "idempotency_key"
+    ],
+    "list_payout_settings": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_payout_setting": [
+      "self",
+      "request",
+      "merchantId",
+      "payoutSettingsId",
+      "idempotency_key"
+    ]
+  },
+  "AccountStoreLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_store": [
+      "self",
+      "request",
+      "idempotency_key"
+    ],
+    "create_store_by_merchant_id": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_store": [
+      "self",
+      "merchantId",
+      "storeId",
+      "idempotency_key"
+    ],
+    "get_store_by_id": [
+      "self",
+      "storeId",
+      "idempotency_key"
+    ],
+    "list_stores": [
+      "self",
+      "idempotency_key"
+    ],
+    "list_stores_by_merchant_id": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_store": [
+      "self",
+      "request",
+      "merchantId",
+      "storeId",
+      "idempotency_key"
+    ],
+    "update_store_by_id": [
+      "self",
+      "request",
+      "storeId",
+      "idempotency_key"
+    ]
+  },
+  "AllowedOriginsCompanyLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_allowed_origin": [
+      "self",
+      "request",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ],
+    "delete_allowed_origin": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "originId",
+      "idempotency_key"
+    ],
+    "get_allowed_origin": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "originId",
+      "idempotency_key"
+    ],
+    "list_allowed_origins": [
+      "self",
+      "companyId",
+      "apiCredentialId",
+      "idempotency_key"
+    ]
+  },
+  "TerminalSettingsTerminalLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_terminal_logo": [
+      "self",
+      "terminalId",
+      "idempotency_key"
+    ],
+    "get_terminal_settings": [
+      "self",
+      "terminalId",
+      "idempotency_key"
+    ],
+    "update_logo": [
+      "self",
+      "request",
+      "terminalId",
+      "idempotency_key"
+    ],
+    "update_terminal_settings": [
+      "self",
+      "request",
+      "terminalId",
+      "idempotency_key"
+    ]
+  },
+  "UsersMerchantLevelApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_new_user": [
+      "self",
+      "request",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "get_user_details": [
+      "self",
+      "merchantId",
+      "userId",
+      "idempotency_key"
+    ],
+    "list_users": [
+      "self",
+      "merchantId",
+      "idempotency_key"
+    ],
+    "update_user": [
+      "self",
+      "request",
+      "merchantId",
+      "userId",
+      "idempotency_key"
+    ]
+  },
+  "AdyenBalanceControlApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "BalanceControlApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "balance_transfer": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  },
+  "AdyenPosMobileApi": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "PosMobileApi": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create_communication_session": [
+      "self",
+      "request",
+      "idempotency_key"
+    ]
+  }
+}

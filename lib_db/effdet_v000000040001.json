@@ -1,0 +1,1652 @@
+{
+  "__version__": [],
+  "_post_process": [
+    "cls_outputs",
+    "box_outputs",
+    "num_levels",
+    "num_classes",
+    "max_detection_points"
+  ],
+  "_batch_detection": [
+    "batch_size",
+    "class_out",
+    "box_out",
+    "anchor_boxes",
+    "indices",
+    "classes",
+    "img_scale",
+    "img_size",
+    "max_det_per_image",
+    "soft_nms"
+  ],
+  "DetBenchPredict": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "img_info"
+    ]
+  },
+  "DetBenchTrain": {
+    "__init__": [
+      "self",
+      "model",
+      "create_labeler"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "target"
+    ]
+  },
+  "unwrap_bench": [
+    "model"
+  ],
+  "create_model": [
+    "model_name",
+    "bench_task",
+    "num_classes",
+    "pretrained",
+    "checkpoint_path",
+    "checkpoint_ema"
+  ],
+  "create_model_from_config": [
+    "config",
+    "bench_task",
+    "num_classes",
+    "pretrained",
+    "checkpoint_path",
+    "checkpoint_ema"
+  ],
+  "_LOCAL_PROCESS_GROUP": [],
+  "get_world_size": [],
+  "get_rank": [],
+  "get_local_rank": [],
+  "get_local_size": [],
+  "is_main_process": [],
+  "synchronize": [],
+  "_get_global_gloo_group": [],
+  "_serialize_to_tensor": [
+    "data",
+    "group"
+  ],
+  "_pad_to_largest_tensor": [
+    "tensor",
+    "group"
+  ],
+  "all_gather": [
+    "data",
+    "group"
+  ],
+  "gather": [
+    "data",
+    "dst",
+    "group"
+  ],
+  "shared_random_seed": [],
+  "reduce_dict": [
+    "input_dict",
+    "average"
+  ],
+  "all_gather_container": [
+    "container",
+    "group",
+    "cat_dim"
+  ],
+  "gather_container": [
+    "container",
+    "dst",
+    "group",
+    "cat_dim"
+  ],
+  "focal_loss_legacy": [
+    "logits",
+    "targets",
+    "alpha",
+    "gamma",
+    "normalizer"
+  ],
+  "new_focal_loss": [
+    "logits",
+    "targets",
+    "alpha",
+    "gamma",
+    "normalizer",
+    "label_smoothing"
+  ],
+  "huber_loss": [
+    "input",
+    "target",
+    "delta",
+    "weights",
+    "size_average"
+  ],
+  "smooth_l1_loss": [
+    "input",
+    "target",
+    "beta",
+    "weights",
+    "size_average"
+  ],
+  "_box_loss": [
+    "box_outputs",
+    "box_targets",
+    "num_positives",
+    "delta"
+  ],
+  "one_hot": [
+    "x",
+    "num_classes"
+  ],
+  "loss_fn": [
+    "cls_outputs",
+    "box_outputs",
+    "cls_targets",
+    "box_targets",
+    "num_positives",
+    "num_classes",
+    "alpha",
+    "gamma",
+    "delta",
+    "box_loss_weight",
+    "label_smoothing",
+    "legacy_focal"
+  ],
+  "loss_jit": [],
+  "DetectionLoss": {
+    "__constants__": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "cls_outputs",
+      "box_outputs",
+      "cls_targets",
+      "box_targets",
+      "num_positives"
+    ]
+  },
+  "_logger": [],
+  "__all__": [],
+  "Evaluator": {
+    "__init__": [
+      "self",
+      "distributed",
+      "pred_yxyx"
+    ],
+    "add_predictions": [
+      "self",
+      "detections",
+      "target"
+    ],
+    "_coco_predictions": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "output_result_file"
+    ],
+    "save": [
+      "self",
+      "result_file"
+    ]
+  },
+  "CocoEvaluator": {
+    "__init__": [
+      "self",
+      "dataset",
+      "distributed",
+      "pred_yxyx"
+    ],
+    "reset": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "output_result_file"
+    ]
+  },
+  "TfmEvaluator": {
+    "__init__": [
+      "self",
+      "dataset",
+      "distributed",
+      "pred_yxyx",
+      "evaluator_cls"
+    ],
+    "reset": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "output_result_file"
+    ]
+  },
+  "PascalEvaluator": {
+    "__init__": [
+      "self",
+      "dataset",
+      "distributed",
+      "pred_yxyx"
+    ]
+  },
+  "OpenImagesEvaluator": {
+    "__init__": [
+      "self",
+      "dataset",
+      "distributed",
+      "pred_yxyx"
+    ]
+  },
+  "create_evaluator": [
+    "name",
+    "dataset",
+    "distributed",
+    "pred_yxyx"
+  ],
+  "_DEBUG": [],
+  "_USE_SCALE": [],
+  "_ACT_LAYER": [],
+  "SequentialList": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvBnAct2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "dilation",
+      "padding",
+      "bias",
+      "norm_layer",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SeparableConv2d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "dilation",
+      "padding",
+      "bias",
+      "channel_multiplier",
+      "pw_kernel_size",
+      "norm_layer",
+      "act_layer"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Interpolate2d": {
+    "__constants__": [],
+    "__init__": [
+      "self",
+      "size",
+      "scale_factor",
+      "mode",
+      "align_corners"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "ResampleFeatureMap": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "input_size",
+      "output_size",
+      "pad_type",
+      "downsample",
+      "upsample",
+      "norm_layer",
+      "apply_bn",
+      "redundant_bias"
+    ]
+  },
+  "FpnCombine": {
+    "__init__": [
+      "self",
+      "feature_info",
+      "fpn_channels",
+      "inputs_offsets",
+      "output_size",
+      "pad_type",
+      "downsample",
+      "upsample",
+      "norm_layer",
+      "apply_resample_bn",
+      "redundant_bias",
+      "weight_method"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Fnode": {
+    "__init__": [
+      "self",
+      "combine",
+      "after_combine"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "BiFpnLayer": {
+    "__init__": [
+      "self",
+      "feature_info",
+      "feat_sizes",
+      "fpn_config",
+      "fpn_channels",
+      "num_levels",
+      "pad_type",
+      "downsample",
+      "upsample",
+      "norm_layer",
+      "act_layer",
+      "apply_resample_bn",
+      "pre_act",
+      "separable_conv",
+      "redundant_bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "BiFpn": {
+    "__init__": [
+      "self",
+      "config",
+      "feature_info"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "HeadNet": {
+    "__init__": [
+      "self",
+      "config",
+      "num_outputs"
+    ],
+    "toggle_bn_level_first": [
+      "self"
+    ],
+    "_forward": [
+      "self",
+      "x"
+    ],
+    "_forward_level_first": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_init_weight": [
+    "m",
+    "n"
+  ],
+  "_init_weight_alt": [
+    "m",
+    "n"
+  ],
+  "get_feature_info": [
+    "backbone"
+  ],
+  "EfficientDet": {
+    "__init__": [
+      "self",
+      "config",
+      "pretrained_backbone",
+      "alternate_init"
+    ],
+    "reset_head": [
+      "self",
+      "num_classes",
+      "aspect_ratios",
+      "num_scales",
+      "alternate_init"
+    ],
+    "toggle_head_bn_level_first": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MIN_CLASS_SCORE": [],
+  "_DUMMY_DETECTION_SCORE": [],
+  "decode_box_outputs": [
+    "rel_codes",
+    "anchors",
+    "output_xyxy"
+  ],
+  "clip_boxes_xyxy": [
+    "boxes",
+    "size"
+  ],
+  "generate_detections": [
+    "cls_outputs",
+    "box_outputs",
+    "anchor_boxes",
+    "indices",
+    "classes",
+    "img_scale",
+    "img_size",
+    "max_det_per_image",
+    "soft_nms"
+  ],
+  "get_feat_sizes": [
+    "image_size",
+    "max_level"
+  ],
+  "Anchors": {
+    "__init__": [
+      "self",
+      "min_level",
+      "max_level",
+      "num_scales",
+      "aspect_ratios",
+      "anchor_scale",
+      "image_size"
+    ],
+    "from_config": [
+      "cls",
+      "config"
+    ],
+    "_generate_configs": [
+      "self"
+    ],
+    "_generate_boxes": [
+      "self"
+    ],
+    "get_anchors_per_location": [
+      "self"
+    ]
+  },
+  "AnchorLabeler": {
+    "__init__": [
+      "self",
+      "anchors",
+      "num_classes",
+      "match_threshold"
+    ],
+    "label_anchors": [
+      "self",
+      "gt_boxes",
+      "gt_classes",
+      "filter_valid"
+    ],
+    "batch_label_anchors": [
+      "self",
+      "gt_boxes",
+      "gt_classes",
+      "filter_valid"
+    ]
+  },
+  "load_pretrained": [
+    "model",
+    "url",
+    "filter_fn",
+    "strict"
+  ],
+  "pairwise_iou": [
+    "boxes1",
+    "boxes2"
+  ],
+  "soft_nms": [
+    "boxes",
+    "scores",
+    "method_gaussian",
+    "sigma",
+    "iou_threshold",
+    "score_threshold"
+  ],
+  "batched_soft_nms": [
+    "boxes",
+    "scores",
+    "idxs",
+    "method_gaussian",
+    "sigma",
+    "iou_threshold",
+    "score_threshold"
+  ],
+  "set_config_readonly": [
+    "conf"
+  ],
+  "set_config_writeable": [
+    "conf"
+  ],
+  "default_detection_train_config": [],
+  "bifpn_config": [
+    "min_level",
+    "max_level",
+    "weight_method"
+  ],
+  "panfpn_config": [
+    "min_level",
+    "max_level",
+    "weight_method"
+  ],
+  "qufpn_config": [
+    "min_level",
+    "max_level",
+    "weight_method"
+  ],
+  "get_fpn_config": [
+    "fpn_name",
+    "min_level",
+    "max_level"
+  ],
+  "default_detection_model_configs": [],
+  "tf_efficientdet_lite_common": [],
+  "efficientdet_model_param_dict": [],
+  "get_efficientdet_config": [
+    "model_name"
+  ],
+  "BoxList": {
+    "__init__": [
+      "self",
+      "data"
+    ],
+    "num_boxes": [
+      "self"
+    ],
+    "get_extra_fields": [
+      "self"
+    ],
+    "has_field": [
+      "self",
+      "field"
+    ],
+    "add_field": [
+      "self",
+      "field",
+      "field_data"
+    ],
+    "get": [
+      "self"
+    ],
+    "get_field": [
+      "self",
+      "field"
+    ],
+    "get_coordinates": [
+      "self"
+    ],
+    "_is_valid_boxes": [
+      "self",
+      "data"
+    ]
+  },
+  "area": [
+    "boxes"
+  ],
+  "intersection": [
+    "boxes1",
+    "boxes2"
+  ],
+  "iou": [
+    "boxes1",
+    "boxes2"
+  ],
+  "ioa": [
+    "boxes1",
+    "boxes2"
+  ],
+  "SortOrder": {
+    "ASCEND": [],
+    "DESCEND": []
+  },
+  "area_boxlist": [
+    "boxlist"
+  ],
+  "intersection_boxlist": [
+    "boxlist1",
+    "boxlist2"
+  ],
+  "iou_boxlist": [
+    "boxlist1",
+    "boxlist2"
+  ],
+  "ioa_boxlist": [
+    "boxlist1",
+    "boxlist2"
+  ],
+  "gather_boxlist": [
+    "boxlist",
+    "indices",
+    "fields"
+  ],
+  "sort_by_field_boxlist": [
+    "boxlist",
+    "field",
+    "order"
+  ],
+  "non_max_suppression": [
+    "boxlist",
+    "max_output_size",
+    "iou_threshold",
+    "score_threshold"
+  ],
+  "multi_class_non_max_suppression": [
+    "boxlist",
+    "score_thresh",
+    "iou_thresh",
+    "max_output_size"
+  ],
+  "scale": [
+    "boxlist",
+    "y_scale",
+    "x_scale"
+  ],
+  "clip_to_window": [
+    "boxlist",
+    "window",
+    "filter_nonoverlapping"
+  ],
+  "prune_non_overlapping_boxes": [
+    "boxlist1",
+    "boxlist2",
+    "minoverlap"
+  ],
+  "prune_outside_window": [
+    "boxlist",
+    "window"
+  ],
+  "concatenate_boxlist": [
+    "boxlists",
+    "fields"
+  ],
+  "filter_scores_greater_than": [
+    "boxlist",
+    "thresh"
+  ],
+  "change_coordinate_frame": [
+    "boxlist",
+    "window"
+  ],
+  "_copy_extra_fields": [
+    "boxlist_to_copy_to",
+    "boxlist_to_copy_from"
+  ],
+  "_update_valid_indices_by_removing_high_iou_boxes": [
+    "selected_indices",
+    "is_index_valid",
+    "intersect_over_union",
+    "threshold"
+  ],
+  "ObjectDetectionEvaluation": {
+    "__init__": [
+      "self",
+      "num_gt_classes",
+      "matching_iou_threshold",
+      "nms_iou_threshold",
+      "nms_max_output_boxes",
+      "recall_lower_bound",
+      "recall_upper_bound",
+      "use_weighted_mean_ap",
+      "label_id_offset",
+      "group_of_weight",
+      "per_image_eval_class"
+    ],
+    "_initialize_detections": [
+      "self"
+    ],
+    "clear_detections": [
+      "self"
+    ],
+    "add_single_ground_truth_image_info": [
+      "self",
+      "image_key",
+      "gt_boxes",
+      "gt_class_labels",
+      "gt_is_difficult_list",
+      "gt_is_group_of_list",
+      "gt_masks"
+    ],
+    "add_single_detected_image_info": [
+      "self",
+      "image_key",
+      "detected_boxes",
+      "detected_scores",
+      "detected_class_labels",
+      "detected_masks"
+    ],
+    "evaluate": [
+      "self"
+    ]
+  },
+  "compute_precision_recall": [
+    "scores",
+    "labels",
+    "num_gt"
+  ],
+  "compute_average_precision": [
+    "precision",
+    "recall"
+  ],
+  "compute_cor_loc": [
+    "num_gt_imgs_per_class",
+    "num_images_correctly_detected_per_class"
+  ],
+  "compute_median_rank_at_k": [
+    "tp_fp_list",
+    "k"
+  ],
+  "compute_recall_at_k": [
+    "tp_fp_list",
+    "num_gt",
+    "k"
+  ],
+  "create_category_index": [
+    "categories"
+  ],
+  "DetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories"
+    ],
+    "observe_result_dict_for_single_example": [
+      "self",
+      "eval_dict"
+    ],
+    "add_single_ground_truth_image_info": [
+      "self",
+      "image_id",
+      "gt_dict"
+    ],
+    "add_single_detected_image_info": [
+      "self",
+      "image_id",
+      "detections_dict"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "ObjectDetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "matching_iou_threshold",
+      "recall_lower_bound",
+      "recall_upper_bound",
+      "evaluate_corlocs",
+      "evaluate_precision_recall",
+      "metric_prefix",
+      "use_weighted_mean_ap",
+      "evaluate_masks",
+      "group_of_weight"
+    ],
+    "_build_metric_names": [
+      "self"
+    ],
+    "add_single_ground_truth_image_info": [
+      "self",
+      "image_id",
+      "gt_dict"
+    ],
+    "add_single_detected_image_info": [
+      "self",
+      "image_id",
+      "detections_dict"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "PascalDetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "matching_iou_threshold"
+    ]
+  },
+  "WeightedPascalDetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "matching_iou_threshold"
+    ]
+  },
+  "PrecisionAtRecallDetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "matching_iou_threshold",
+      "recall_lower_bound",
+      "recall_upper_bound"
+    ]
+  },
+  "OpenImagesDetectionEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "matching_iou_threshold",
+      "evaluate_masks",
+      "evaluate_corlocs",
+      "metric_prefix",
+      "group_of_weight"
+    ],
+    "add_single_ground_truth_image_info": [
+      "self",
+      "image_id",
+      "gt_dict"
+    ]
+  },
+  "OpenImagesChallengeEvaluator": {
+    "__init__": [
+      "self",
+      "categories",
+      "evaluate_masks",
+      "matching_iou_threshold",
+      "evaluate_corlocs",
+      "group_of_weight"
+    ],
+    "add_single_ground_truth_image_info": [
+      "self",
+      "image_id",
+      "gt_dict"
+    ],
+    "add_single_detected_image_info": [
+      "self",
+      "image_id",
+      "detections_dict"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "EPSILON": [],
+  "MaskList": {
+    "__init__": [
+      "self",
+      "box_data",
+      "mask_data"
+    ],
+    "get_masks": [
+      "self"
+    ]
+  },
+  "boxlist_to_masklist": [
+    "boxlist"
+  ],
+  "area_mask": [
+    "masks"
+  ],
+  "intersection_mask": [
+    "masks1",
+    "masks2"
+  ],
+  "iou_mask": [
+    "masks1",
+    "masks2"
+  ],
+  "ioa_mask": [
+    "masks1",
+    "masks2"
+  ],
+  "area_masklist": [
+    "masklist"
+  ],
+  "intersection_masklist": [
+    "masklist1",
+    "masklist2"
+  ],
+  "iou_masklist": [
+    "masklist1",
+    "masklist2"
+  ],
+  "ioa_masklist": [
+    "masklist1",
+    "masklist2"
+  ],
+  "gather_masklist": [
+    "masklist",
+    "indices",
+    "fields"
+  ],
+  "sort_by_field_masklist": [
+    "masklist",
+    "field",
+    "order"
+  ],
+  "non_max_suppression_mask": [
+    "masklist",
+    "max_output_size",
+    "iou_threshold",
+    "score_threshold"
+  ],
+  "multi_class_non_max_suppression_mask": [
+    "masklist",
+    "score_thresh",
+    "iou_thresh",
+    "max_output_size"
+  ],
+  "prune_non_overlapping_masklist": [
+    "masklist1",
+    "masklist2",
+    "minoverlap"
+  ],
+  "concatenate_masklist": [
+    "masklists",
+    "fields"
+  ],
+  "filter_scores_greater_than_masklist": [
+    "masklist",
+    "thresh"
+  ],
+  "PerImageEvaluation": {
+    "__init__": [
+      "self",
+      "num_gt_classes",
+      "matching_iou_threshold",
+      "nms_iou_threshold",
+      "nms_max_output_boxes",
+      "group_of_weight"
+    ],
+    "compute_object_detection_metrics": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_class_labels",
+      "gt_boxes",
+      "gt_class_labels",
+      "gt_is_difficult_list",
+      "gt_is_group_of_list",
+      "detected_masks",
+      "gt_masks"
+    ],
+    "_compute_cor_loc": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_class_labels",
+      "gt_boxes",
+      "gt_class_labels",
+      "detected_masks",
+      "gt_masks"
+    ],
+    "_compute_is_class_correctly_detected_in_image": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "gt_boxes",
+      "detected_masks",
+      "gt_masks"
+    ],
+    "_compute_tp_fp": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_class_labels",
+      "gt_boxes",
+      "gt_class_labels",
+      "gt_is_difficult_list",
+      "gt_is_group_of_list",
+      "detected_masks",
+      "gt_masks"
+    ],
+    "_get_overlaps_and_scores_mask_mode": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_masks",
+      "gt_boxes",
+      "gt_masks",
+      "gt_is_group_of_list"
+    ],
+    "_get_overlaps_and_scores_box_mode": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "gt_boxes",
+      "gt_is_group_of_list"
+    ],
+    "_compute_tp_fp_for_single_class": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "gt_boxes",
+      "gt_is_difficult_list",
+      "gt_is_group_of_list",
+      "detected_masks",
+      "gt_masks"
+    ],
+    "_get_ith_class_arrays": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_masks",
+      "detected_class_labels",
+      "gt_boxes",
+      "gt_masks",
+      "gt_class_labels",
+      "class_index"
+    ],
+    "_remove_invalid_boxes": [
+      "self",
+      "detected_boxes",
+      "detected_scores",
+      "detected_class_labels",
+      "detected_masks"
+    ]
+  },
+  "InputDataFields": {
+    "image": [],
+    "key": [],
+    "filename": [],
+    "gt_boxes": [],
+    "gt_classes": [],
+    "gt_confidences": [],
+    "gt_label_types": [],
+    "gt_image_classes": [],
+    "gt_image_confidences": [],
+    "gt_labeled_classes": [],
+    "gt_is_crowd": [],
+    "gt_area": [],
+    "gt_difficult": [],
+    "gt_group_of": [],
+    "gt_instance_masks": [],
+    "gt_instance_boundaries": [],
+    "gt_instance_classes": [],
+    "image_height": [],
+    "image_width": [],
+    "image_size": []
+  },
+  "DetectionResultFields": {
+    "key": [],
+    "detection_boxes": [],
+    "detection_scores": [],
+    "detection_classes": [],
+    "detection_masks": []
+  },
+  "BoxListFields": {
+    "boxes": [],
+    "classes": [],
+    "scores": [],
+    "weights": [],
+    "confidences": [],
+    "objectness": [],
+    "masks": [],
+    "boundaries": [],
+    "keypoints": [],
+    "keypoint_visibilities": [],
+    "keypoint_heatmaps": [],
+    "is_crowd": [],
+    "group_of": []
+  },
+  "IMAGENET_DEFAULT_MEAN": [],
+  "IMAGENET_DEFAULT_STD": [],
+  "IMAGENET_INCEPTION_MEAN": [],
+  "IMAGENET_INCEPTION_STD": [],
+  "ImageToNumpy": {
+    "__call__": [
+      "self",
+      "pil_img",
+      "annotations"
+    ]
+  },
+  "ImageToTensor": {
+    "__init__": [
+      "self",
+      "dtype"
+    ],
+    "__call__": [
+      "self",
+      "pil_img",
+      "annotations"
+    ]
+  },
+  "_pil_interp": [
+    "method"
+  ],
+  "_RANDOM_INTERPOLATION": [],
+  "clip_boxes_": [
+    "boxes",
+    "img_size"
+  ],
+  "clip_boxes": [
+    "boxes",
+    "img_size"
+  ],
+  "_size_tuple": [
+    "size"
+  ],
+  "ResizePad": {
+    "__init__": [
+      "self",
+      "target_size",
+      "interpolation",
+      "fill_color"
+    ],
+    "__call__": [
+      "self",
+      "img",
+      "anno"
+    ]
+  },
+  "RandomResizePad": {
+    "__init__": [
+      "self",
+      "target_size",
+      "scale",
+      "interpolation",
+      "fill_color"
+    ],
+    "_get_params": [
+      "self",
+      "img"
+    ],
+    "__call__": [
+      "self",
+      "img",
+      "anno"
+    ]
+  },
+  "RandomFlip": {
+    "__init__": [
+      "self",
+      "horizontal",
+      "vertical",
+      "prob"
+    ],
+    "_get_params": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "img",
+      "annotations"
+    ]
+  },
+  "resolve_fill_color": [
+    "fill_color",
+    "img_mean"
+  ],
+  "Compose": {
+    "__init__": [
+      "self",
+      "transforms"
+    ],
+    "__call__": [
+      "self",
+      "img",
+      "annotations"
+    ]
+  },
+  "transforms_coco_eval": [
+    "img_size",
+    "interpolation",
+    "use_prefetcher",
+    "fill_color",
+    "mean",
+    "std"
+  ],
+  "transforms_coco_train": [
+    "img_size",
+    "interpolation",
+    "use_prefetcher",
+    "fill_color",
+    "mean",
+    "std"
+  ],
+  "MAX_NUM_INSTANCES": [],
+  "DetectionFastCollate": {
+    "__init__": [
+      "self",
+      "instance_keys",
+      "instance_shapes",
+      "instance_fill",
+      "max_instances",
+      "anchor_labeler"
+    ],
+    "__call__": [
+      "self",
+      "batch"
+    ]
+  },
+  "PrefetchLoader": {
+    "__init__": [
+      "self",
+      "loader",
+      "mean",
+      "std",
+      "re_prob",
+      "re_mode",
+      "re_count"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sampler": [
+      "self"
+    ],
+    "dataset": [
+      "self"
+    ]
+  },
+  "create_loader": [
+    "dataset",
+    "input_size",
+    "batch_size",
+    "is_training",
+    "use_prefetcher",
+    "re_prob",
+    "re_mode",
+    "re_count",
+    "interpolation",
+    "fill_color",
+    "mean",
+    "std",
+    "num_workers",
+    "distributed",
+    "pin_mem",
+    "anchor_labeler",
+    "transform_fn",
+    "collate_fn"
+  ],
+  "DetectionDatset": {
+    "__init__": [
+      "self",
+      "data_dir",
+      "parser",
+      "parser_kwargs",
+      "transform"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "parser": [
+      "self"
+    ],
+    "transform": [
+      "self",
+      "t"
+    ]
+  },
+  "SkipSubset": {
+    "__init__": [
+      "self",
+      "dataset",
+      "n"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "parser": [
+      "self"
+    ],
+    "transform": [
+      "self",
+      "t"
+    ]
+  },
+  "CocoCfg": {},
+  "Coco2017Cfg": {},
+  "Coco2014Cfg": {},
+  "VocCfg": {},
+  "Voc2007Cfg": {},
+  "Voc2012Cfg": {},
+  "Voc0712Cfg": {},
+  "OpenImagesCfg": {
+    "img_filename": []
+  },
+  "OpenImagesObjCfg": {},
+  "OpenImagesSegCfg": {},
+  "OpenImagesObjV5Cfg": {},
+  "OpenImagesObjChallenge2019Cfg": {},
+  "OpenImagesSegV5Cfg": {},
+  "OpenImagesSegChallenge2019Cfg": {},
+  "_get_pixels": [
+    "per_pixel",
+    "rand_color",
+    "patch_size",
+    "dtype",
+    "device"
+  ],
+  "RandomErasing": {
+    "__init__": [
+      "self",
+      "probability",
+      "min_area",
+      "max_area",
+      "min_aspect",
+      "max_aspect",
+      "mode",
+      "min_count",
+      "max_count",
+      "num_splits",
+      "device"
+    ],
+    "_erase": [
+      "self",
+      "img",
+      "chan",
+      "img_h",
+      "img_w",
+      "dtype"
+    ],
+    "__call__": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "create_dataset": [
+    "name",
+    "root",
+    "splits"
+  ],
+  "resolve_input_config": [
+    "args",
+    "model_config",
+    "model"
+  ],
+  "Parser": {
+    "__init__": [
+      "self",
+      "bbox_yxyx",
+      "has_labels",
+      "include_masks",
+      "include_bboxes_ignore",
+      "ignore_empty_gt",
+      "min_img_size"
+    ],
+    "cat_dicts": [
+      "self"
+    ],
+    "max_label": [
+      "self"
+    ]
+  },
+  "VocParser": {
+    "DEFAULT_CLASSES": [],
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_load_annotations": [
+      "self",
+      "split_filename",
+      "img_filename",
+      "ann_filename",
+      "classes"
+    ],
+    "merge": [
+      "self",
+      "other"
+    ],
+    "get_ann_info": [
+      "self",
+      "idx"
+    ],
+    "_parse_ann_info": [
+      "self",
+      "ann_info"
+    ]
+  },
+  "OpenImagesParser": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "_load_annotations": [
+      "self",
+      "categories_filename",
+      "img_info_filename",
+      "img_filename",
+      "masks_filename",
+      "bbox_filename"
+    ],
+    "get_ann_info": [
+      "self",
+      "idx"
+    ],
+    "_parse_ann_info": [
+      "self",
+      "img_idx",
+      "ann_keys",
+      "ann_values"
+    ]
+  },
+  "CocoParser": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "get_ann_info": [
+      "self",
+      "idx"
+    ],
+    "_load_annotations": [
+      "self",
+      "ann_file"
+    ],
+    "_parse_img_ann": [
+      "self",
+      "img_id"
+    ]
+  },
+  "create_parser": [
+    "name"
+  ],
+  "CocoParserCfg": {},
+  "VocParserCfg": {},
+  "OpenImagesParserCfg": {},
+  "one_hot_bool": [
+    "x",
+    "num_classes"
+  ],
+  "ArgMaxMatcher": {
+    "__init__": [
+      "self",
+      "matched_threshold",
+      "unmatched_threshold",
+      "negatives_lower_than_unmatched",
+      "force_match_for_each_row"
+    ],
+    "_match_when_rows_are_empty": [
+      "self",
+      "similarity_matrix"
+    ],
+    "_match_when_rows_are_non_empty": [
+      "self",
+      "similarity_matrix"
+    ],
+    "match": [
+      "self",
+      "similarity_matrix"
+    ],
+    "_set_values_using_indicator": [
+      "self",
+      "x",
+      "indicator",
+      "val"
+    ]
+  },
+  "IouSimilarity": {
+    "__init__": [
+      "self"
+    ],
+    "compare": [
+      "self",
+      "boxlist1",
+      "boxlist2"
+    ]
+  },
+  "FASTER_RCNN": [],
+  "KEYPOINT": [],
+  "MEAN_STDDEV": [],
+  "SQUARE": [],
+  "EPS": [],
+  "FasterRcnnBoxCoder": {
+    "__init__": [
+      "self",
+      "scale_factors",
+      "eps"
+    ],
+    "code_size": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "boxes",
+      "anchors"
+    ],
+    "decode": [
+      "self",
+      "rel_codes",
+      "anchors"
+    ]
+  },
+  "batch_decode": [
+    "encoded_boxes",
+    "box_coder",
+    "anchors"
+  ],
+  "KEYPOINTS_FIELD_NAME": [],
+  "TargetAssigner": {
+    "__init__": [
+      "self",
+      "similarity_calc",
+      "matcher",
+      "box_coder",
+      "negative_class_weight",
+      "unmatched_cls_target",
+      "keypoints_field_name"
+    ],
+    "assign": [
+      "self",
+      "anchors",
+      "groundtruth_boxes",
+      "groundtruth_labels",
+      "groundtruth_weights"
+    ],
+    "_create_regression_targets": [
+      "self",
+      "anchors",
+      "groundtruth_boxes",
+      "match"
+    ],
+    "_default_regression_target": [
+      "self",
+      "device"
+    ],
+    "_create_classification_targets": [
+      "self",
+      "groundtruth_labels",
+      "match"
+    ],
+    "_create_regression_weights": [
+      "self",
+      "match",
+      "groundtruth_weights"
+    ],
+    "_create_classification_weights": [
+      "self",
+      "match",
+      "groundtruth_weights"
+    ],
+    "box_coder": [
+      "self"
+    ]
+  },
+  "Match": {
+    "__init__": [
+      "self",
+      "match_results"
+    ],
+    "matched_column_indices": [
+      "self"
+    ],
+    "matched_column_indicator": [
+      "self"
+    ],
+    "num_matched_columns": [
+      "self"
+    ],
+    "unmatched_column_indices": [
+      "self"
+    ],
+    "unmatched_column_indicator": [
+      "self"
+    ],
+    "num_unmatched_columns": [
+      "self"
+    ],
+    "ignored_column_indices": [
+      "self"
+    ],
+    "ignored_column_indicator": [
+      "self"
+    ],
+    "num_ignored_columns": [
+      "self"
+    ],
+    "unmatched_or_ignored_column_indices": [
+      "self"
+    ],
+    "matched_row_indices": [
+      "self"
+    ],
+    "gather_based_on_match": [
+      "self",
+      "input_tensor",
+      "unmatched_value",
+      "ignored_value"
+    ]
+  }
+}

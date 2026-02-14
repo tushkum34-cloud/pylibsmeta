@@ -1,0 +1,885 @@
+{
+  "PKCS7_OID": [],
+  "IN_APP_ARRAY": [],
+  "TRANSACTION_IDENTIFIER": [],
+  "ORIGINAL_TRANSACTION_IDENTIFIER": [],
+  "ReceiptUtility": {
+    "extract_transaction_id_from_app_receipt": [
+      "self",
+      "app_receipt"
+    ],
+    "extract_transaction_id_from_transaction_receipt": [
+      "self",
+      "transaction_receipt"
+    ]
+  },
+  "IndefiniteFormAwareDecoder": {
+    "_read_length": [
+      "self"
+    ]
+  },
+  "PromotionalOfferSignatureCreator": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "bundle_id"
+    ],
+    "create_signature": [
+      "self",
+      "product_identifier",
+      "subscription_offer_id",
+      "application_username",
+      "nonce",
+      "timestamp"
+    ]
+  },
+  "SignedDataVerifier": {
+    "__init__": [
+      "self",
+      "root_certificates",
+      "enable_online_checks",
+      "environment",
+      "bundle_id",
+      "app_apple_id"
+    ],
+    "verify_and_decode_renewal_info": [
+      "self",
+      "signed_renewal_info"
+    ],
+    "verify_and_decode_signed_transaction": [
+      "self",
+      "signed_transaction"
+    ],
+    "verify_and_decode_notification": [
+      "self",
+      "signed_payload"
+    ],
+    "_verify_notification": [
+      "self",
+      "bundle_id",
+      "app_apple_id",
+      "environment"
+    ],
+    "verify_and_decode_app_transaction": [
+      "self",
+      "signed_app_transaction"
+    ],
+    "verify_and_decode_realtime_request": [
+      "self",
+      "signed_payload"
+    ],
+    "_decode_signed_object": [
+      "self",
+      "signed_obj"
+    ]
+  },
+  "_ChainVerifier": {
+    "MAXIMUM_CACHE_SIZE": [],
+    "CACHE_TIME_LIMIT": [],
+    "__init__": [
+      "self",
+      "root_certificates",
+      "enable_strict_checks"
+    ],
+    "verify_chain": [
+      "self",
+      "certificates",
+      "perform_online_checks",
+      "effective_date"
+    ],
+    "_verify_chain_without_caching": [
+      "self",
+      "certificates",
+      "perform_online_checks",
+      "effective_date"
+    ],
+    "check_oid": [
+      "self",
+      "cert",
+      "oid"
+    ],
+    "check_ocsp_status": [
+      "self",
+      "cert",
+      "issuer",
+      "root"
+    ],
+    "get_cached_public_key": [
+      "self",
+      "certificates"
+    ],
+    "put_verified_public_key": [
+      "self",
+      "certificates",
+      "verified_public_key"
+    ]
+  },
+  "VerificationStatus": {
+    "OK": [],
+    "VERIFICATION_FAILURE": [],
+    "INVALID_APP_IDENTIFIER": [],
+    "INVALID_CERTIFICATE": [],
+    "INVALID_CHAIN_LENGTH": [],
+    "INVALID_CHAIN": [],
+    "INVALID_ENVIRONMENT": [],
+    "RETRYABLE_VERIFICATION_FAILURE": []
+  },
+  "VerificationException": {
+    "__init__": [
+      "self",
+      "status"
+    ]
+  },
+  "T": [],
+  "APIError": {
+    "GENERAL_BAD_REQUEST": [],
+    "INVALID_APP_IDENTIFIER": [],
+    "INVALID_REQUEST_REVISION": [],
+    "INVALID_TRANSACTION_ID": [],
+    "INVALID_ORIGINAL_TRANSACTION_ID": [],
+    "INVALID_EXTEND_BY_DAYS": [],
+    "INVALID_EXTEND_REASON_CODE": [],
+    "INVALID_REQUEST_IDENTIFIER": [],
+    "START_DATE_TOO_FAR_IN_PAST": [],
+    "START_DATE_AFTER_END_DATE": [],
+    "INVALID_PAGINATION_TOKEN": [],
+    "INVALID_START_DATE": [],
+    "INVALID_END_DATE": [],
+    "PAGINATION_TOKEN_EXPIRED": [],
+    "INVALID_NOTIFICATION_TYPE": [],
+    "MULTIPLE_FILTERS_SUPPLIED": [],
+    "INVALID_TEST_NOTIFICATION_TOKEN": [],
+    "INVALID_SORT": [],
+    "INVALID_PRODUCT_TYPE": [],
+    "INVALID_PRODUCT_ID": [],
+    "INVALID_SUBSCRIPTION_GROUP_IDENTIFIER": [],
+    "INVALID_EXCLUDE_REVOKED": [],
+    "INVALID_IN_APP_OWNERSHIP_TYPE": [],
+    "INVALID_EMPTY_STOREFRONT_COUNTRY_CODE_LIST": [],
+    "INVALID_STOREFRONT_COUNTRY_CODE": [],
+    "INVALID_REVOKED": [],
+    "INVALID_STATUS": [],
+    "INVALID_ACCOUNT_TENURE": [],
+    "INVALID_APP_ACCOUNT_TOKEN": [],
+    "INVALID_CONSUMPTION_STATUS": [],
+    "INVALID_CUSTOMER_CONSENTED": [],
+    "INVALID_DELIVERY_STATUS": [],
+    "INVALID_LIFETIME_DOLLARS_PURCHASED": [],
+    "INVALID_LIFETIME_DOLLARS_REFUNDED": [],
+    "INVALID_PLATFORM": [],
+    "INVALID_PLAY_TIME": [],
+    "INVALID_SAMPLE_CONTENT_PROVIDED": [],
+    "INVALID_USER_STATUS": [],
+    "INVALID_TRANSACTION_NOT_CONSUMABLE": [],
+    "INVALID_TRANSACTION_TYPE_NOT_SUPPORTED": [],
+    "APP_TRANSACTION_ID_NOT_SUPPORTED_ERROR": [],
+    "INVALID_IMAGE": [],
+    "HEADER_TOO_LONG": [],
+    "BODY_TOO_LONG": [],
+    "INVALID_LOCALE": [],
+    "ALT_TEXT_TOO_LONG": [],
+    "INVALID_APP_ACCOUNT_TOKEN_UUID_ERROR": [],
+    "FAMILY_TRANSACTION_NOT_SUPPORTED_ERROR": [],
+    "TRANSACTION_ID_IS_NOT_ORIGINAL_TRANSACTION_ID_ERROR": [],
+    "SUBSCRIPTION_EXTENSION_INELIGIBLE": [],
+    "SUBSCRIPTION_MAX_EXTENSION": [],
+    "FAMILY_SHARED_SUBSCRIPTION_EXTENSION_INELIGIBLE": [],
+    "MAXIMUM_NUMBER_OF_IMAGES_REACHED": [],
+    "MAXIMUM_NUMBER_OF_MESSAGES_REACHED": [],
+    "MESSAGE_NOT_APPROVED": [],
+    "IMAGE_NOT_APPROVED": [],
+    "IMAGE_IN_USE": [],
+    "ACCOUNT_NOT_FOUND": [],
+    "ACCOUNT_NOT_FOUND_RETRYABLE": [],
+    "APP_NOT_FOUND": [],
+    "APP_NOT_FOUND_RETRYABLE": [],
+    "ORIGINAL_TRANSACTION_ID_NOT_FOUND": [],
+    "ORIGINAL_TRANSACTION_ID_NOT_FOUND_RETRYABLE": [],
+    "SERVER_NOTIFICATION_URL_NOT_FOUND": [],
+    "TEST_NOTIFICATION_NOT_FOUND": [],
+    "STATUS_REQUEST_NOT_FOUND": [],
+    "TRANSACTION_ID_NOT_FOUND": [],
+    "IMAGE_NOT_FOUND": [],
+    "MESSAGE_NOT_FOUND": [],
+    "APP_TRANSACTION_DOES_NOT_EXIST_ERROR": [],
+    "IMAGE_ALREADY_EXISTS": [],
+    "MESSAGE_ALREADY_EXISTS": [],
+    "RATE_LIMIT_EXCEEDED": [],
+    "GENERAL_INTERNAL": [],
+    "GENERAL_INTERNAL_RETRYABLE": []
+  },
+  "APIException": {
+    "__init__": [
+      "self",
+      "http_status_code",
+      "raw_api_error",
+      "error_message"
+    ]
+  },
+  "GetTransactionHistoryVersion": {
+    "V1": [],
+    "V2": []
+  },
+  "BaseAppStoreServerAPIClient": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id",
+      "environment"
+    ],
+    "_generate_token": [
+      "self"
+    ],
+    "_get_full_url": [
+      "self",
+      "path"
+    ],
+    "_get_headers": [
+      "self"
+    ],
+    "_get_request_json": [
+      "self",
+      "body"
+    ],
+    "_parse_response": [
+      "self",
+      "status_code",
+      "headers",
+      "json_supplier",
+      "destination_class"
+    ]
+  },
+  "AppStoreServerAPIClient": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id",
+      "environment"
+    ],
+    "_make_request": [
+      "self",
+      "path",
+      "method",
+      "queryParameters",
+      "body",
+      "destination_class",
+      "content_type"
+    ],
+    "_execute_request": [
+      "self",
+      "method",
+      "url",
+      "params",
+      "headers",
+      "json",
+      "data"
+    ],
+    "extend_renewal_date_for_all_active_subscribers": [
+      "self",
+      "mass_extend_renewal_date_request"
+    ],
+    "extend_subscription_renewal_date": [
+      "self",
+      "original_transaction_id",
+      "extend_renewal_date_request"
+    ],
+    "get_all_subscription_statuses": [
+      "self",
+      "transaction_id",
+      "status"
+    ],
+    "get_refund_history": [
+      "self",
+      "transaction_id",
+      "revision"
+    ],
+    "get_status_of_subscription_renewal_date_extensions": [
+      "self",
+      "request_identifier",
+      "product_id"
+    ],
+    "get_test_notification_status": [
+      "self",
+      "test_notification_token"
+    ],
+    "get_notification_history": [
+      "self",
+      "pagination_token",
+      "notification_history_request"
+    ],
+    "get_transaction_history": [
+      "self",
+      "transaction_id",
+      "revision",
+      "transaction_history_request",
+      "version"
+    ],
+    "get_transaction_info": [
+      "self",
+      "transaction_id"
+    ],
+    "look_up_order_id": [
+      "self",
+      "order_id"
+    ],
+    "request_test_notification": [
+      "self"
+    ],
+    "send_consumption_data": [
+      "self",
+      "transaction_id",
+      "consumption_request"
+    ],
+    "set_app_account_token": [
+      "self",
+      "original_transaction_id",
+      "update_app_account_token_request"
+    ],
+    "upload_image": [
+      "self",
+      "image_identifier",
+      "image"
+    ],
+    "delete_image": [
+      "self",
+      "image_identifier"
+    ],
+    "get_image_list": [
+      "self"
+    ],
+    "upload_message": [
+      "self",
+      "message_identifier",
+      "upload_message_request_body"
+    ],
+    "delete_message": [
+      "self",
+      "message_identifier"
+    ],
+    "get_message_list": [
+      "self"
+    ],
+    "configure_default_message": [
+      "self",
+      "product_id",
+      "locale",
+      "default_configuration_request"
+    ],
+    "delete_default_message": [
+      "self",
+      "product_id",
+      "locale"
+    ],
+    "get_app_transaction_info": [
+      "self",
+      "transaction_id"
+    ]
+  },
+  "AsyncAppStoreServerAPIClient": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id",
+      "environment"
+    ],
+    "async_close": [
+      "self"
+    ],
+    "_make_request": [
+      "self",
+      "path",
+      "method",
+      "queryParameters",
+      "body",
+      "destination_class",
+      "content_type"
+    ],
+    "_execute_request": [
+      "self",
+      "method",
+      "url",
+      "params",
+      "headers",
+      "json",
+      "data"
+    ],
+    "extend_renewal_date_for_all_active_subscribers": [
+      "self",
+      "mass_extend_renewal_date_request"
+    ],
+    "extend_subscription_renewal_date": [
+      "self",
+      "original_transaction_id",
+      "extend_renewal_date_request"
+    ],
+    "get_all_subscription_statuses": [
+      "self",
+      "transaction_id",
+      "status"
+    ],
+    "get_refund_history": [
+      "self",
+      "transaction_id",
+      "revision"
+    ],
+    "get_status_of_subscription_renewal_date_extensions": [
+      "self",
+      "request_identifier",
+      "product_id"
+    ],
+    "get_test_notification_status": [
+      "self",
+      "test_notification_token"
+    ],
+    "get_notification_history": [
+      "self",
+      "pagination_token",
+      "notification_history_request"
+    ],
+    "get_transaction_history": [
+      "self",
+      "transaction_id",
+      "revision",
+      "transaction_history_request",
+      "version"
+    ],
+    "get_transaction_info": [
+      "self",
+      "transaction_id"
+    ],
+    "look_up_order_id": [
+      "self",
+      "order_id"
+    ],
+    "request_test_notification": [
+      "self"
+    ],
+    "send_consumption_data": [
+      "self",
+      "transaction_id",
+      "consumption_request"
+    ],
+    "set_app_account_token": [
+      "self",
+      "original_transaction_id",
+      "update_app_account_token_request"
+    ],
+    "upload_image": [
+      "self",
+      "image_identifier",
+      "image"
+    ],
+    "delete_image": [
+      "self",
+      "image_identifier"
+    ],
+    "get_image_list": [
+      "self"
+    ],
+    "upload_message": [
+      "self",
+      "message_identifier",
+      "upload_message_request_body"
+    ],
+    "delete_message": [
+      "self",
+      "message_identifier"
+    ],
+    "get_message_list": [
+      "self"
+    ],
+    "configure_default_message": [
+      "self",
+      "product_id",
+      "locale",
+      "default_configuration_request"
+    ],
+    "delete_default_message": [
+      "self",
+      "product_id",
+      "locale"
+    ],
+    "get_app_transaction_info": [
+      "self",
+      "transaction_id"
+    ]
+  },
+  "AdvancedCommerceAPIInAppRequest": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JWSSignatureCreator": {
+    "__init__": [
+      "self",
+      "audience",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id"
+    ],
+    "_create_signature": [
+      "self",
+      "feature_specific_claims"
+    ]
+  },
+  "PromotionalOfferV2SignatureCreator": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id"
+    ],
+    "create_signature": [
+      "self",
+      "product_id",
+      "offer_identifier",
+      "transaction_id"
+    ]
+  },
+  "IntroductoryOfferEligibilitySignatureCreator": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id"
+    ],
+    "create_signature": [
+      "self",
+      "product_id",
+      "allow_introductory_offer",
+      "transaction_id"
+    ]
+  },
+  "AdvancedCommerceAPIInAppSignatureCreator": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "key_id",
+      "issuer_id",
+      "bundle_id"
+    ],
+    "create_signature": [
+      "self",
+      "advanced_commerce_in_app_request"
+    ]
+  },
+  "InAppOwnershipType": {
+    "FAMILY_SHARED": [],
+    "PURCHASED": []
+  },
+  "PlayTime": {
+    "UNDECLARED": [],
+    "ZERO_TO_FIVE_MINUTES": [],
+    "FIVE_TO_SIXTY_MINUTES": [],
+    "ONE_TO_SIX_HOURS": [],
+    "SIX_HOURS_TO_TWENTY_FOUR_HOURS": [],
+    "ONE_DAY_TO_FOUR_DAYS": [],
+    "FOUR_DAYS_TO_SIXTEEN_DAYS": [],
+    "OVER_SIXTEEN_DAYS": []
+  },
+  "GetImageListResponse": {},
+  "TransactionInfoResponse": {},
+  "UpdateAppAccountTokenRequest": {},
+  "GetMessageListResponseItem": {},
+  "ExtendReasonCode": {
+    "UNDECLARED": [],
+    "CUSTOMER_SATISFACTION": [],
+    "OTHER": [],
+    "SERVICE_ISSUE_OR_OUTAGE": []
+  },
+  "NotificationHistoryResponseItem": {},
+  "ConsumptionRequest": {},
+  "RealtimeRequestBody": {},
+  "Message": {},
+  "AppTransaction": {},
+  "HistoryResponse": {},
+  "Subtype": {
+    "INITIAL_BUY": [],
+    "RESUBSCRIBE": [],
+    "DOWNGRADE": [],
+    "UPGRADE": [],
+    "AUTO_RENEW_ENABLED": [],
+    "AUTO_RENEW_DISABLED": [],
+    "VOLUNTARY": [],
+    "BILLING_RETRY": [],
+    "PRICE_INCREASE": [],
+    "GRACE_PERIOD": [],
+    "PENDING": [],
+    "ACCEPTED": [],
+    "BILLING_RECOVERY": [],
+    "PRODUCT_NOT_FOR_SALE": [],
+    "SUMMARY": [],
+    "FAILURE": [],
+    "UNREPORTED": []
+  },
+  "ResponseBodyV2": {},
+  "MassExtendRenewalDateRequest": {},
+  "Summary": {},
+  "AlternateProduct": {},
+  "OrderLookupResponse": {},
+  "SendTestNotificationResponse": {},
+  "FirstSendAttemptResult": {
+    "SUCCESS": [],
+    "TIMED_OUT": [],
+    "TLS_ISSUE": [],
+    "CIRCULAR_REDIRECT": [],
+    "NO_RESPONSE": [],
+    "SOCKET_ISSUE": [],
+    "UNSUPPORTED_CHARSET": [],
+    "INVALID_RESPONSE": [],
+    "PREMATURE_CLOSE": [],
+    "UNSUCCESSFUL_HTTP_RESPONSE_CODE": [],
+    "OTHER": []
+  },
+  "RefundHistoryResponse": {},
+  "Status": {
+    "ACTIVE": [],
+    "EXPIRED": [],
+    "BILLING_RETRY": [],
+    "BILLING_GRACE_PERIOD": [],
+    "REVOKED": []
+  },
+  "ConsumptionRequestReason": {
+    "UNINTENDED_PURCHASE": [],
+    "FULFILLMENT_ISSUE": [],
+    "UNSATISFIED_WITH_PURCHASE": [],
+    "LEGAL": [],
+    "OTHER": []
+  },
+  "OfferDiscountType": {
+    "FREE_TRIAL": [],
+    "PAY_AS_YOU_GO": [],
+    "PAY_UP_FRONT": [],
+    "ONE_TIME": []
+  },
+  "PriceIncreaseStatus": {
+    "CUSTOMER_HAS_NOT_RESPONDED": [],
+    "CUSTOMER_CONSENTED_OR_WAS_NOTIFIED_WITHOUT_NEEDING_CONSENT": []
+  },
+  "UserStatus": {
+    "UNDECLARED": [],
+    "ACTIVE": [],
+    "SUSPENDED": [],
+    "TERMINATED": [],
+    "LIMITED_ACCESS": []
+  },
+  "RefundPreference": {
+    "UNDECLARED": [],
+    "PREFER_GRANT": [],
+    "PREFER_DECLINE": [],
+    "NO_PREFERENCE": []
+  },
+  "JWSRenewalInfoDecodedPayload": {},
+  "ExtendRenewalDateRequest": {},
+  "SendAttemptResult": {
+    "SUCCESS": [],
+    "TIMED_OUT": [],
+    "TLS_ISSUE": [],
+    "CIRCULAR_REDIRECT": [],
+    "NO_RESPONSE": [],
+    "SOCKET_ISSUE": [],
+    "UNSUPPORTED_CHARSET": [],
+    "INVALID_RESPONSE": [],
+    "PREMATURE_CLOSE": [],
+    "UNSUCCESSFUL_HTTP_RESPONSE_CODE": [],
+    "OTHER": []
+  },
+  "OfferType": {
+    "INTRODUCTORY_OFFER": [],
+    "PROMOTIONAL_OFFER": [],
+    "OFFER_CODE": [],
+    "WIN_BACK_OFFER": []
+  },
+  "ExpirationIntent": {
+    "CUSTOMER_CANCELLED": [],
+    "BILLING_ERROR": [],
+    "CUSTOMER_DID_NOT_CONSENT_TO_PRICE_INCREASE": [],
+    "PRODUCT_NOT_AVAILABLE": [],
+    "OTHER": []
+  },
+  "LifetimeDollarsRefunded": {
+    "UNDECLARED": [],
+    "ZERO_DOLLARS": [],
+    "ONE_CENT_TO_FORTY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "FIFTY_DOLLARS_TO_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "ONE_HUNDRED_DOLLARS_TO_FOUR_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "FIVE_HUNDRED_DOLLARS_TO_NINE_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "ONE_THOUSAND_DOLLARS_TO_ONE_THOUSAND_NINE_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "TWO_THOUSAND_DOLLARS_OR_GREATER": []
+  },
+  "RealtimeResponseBody": {},
+  "ImageState": {
+    "PENDING": [],
+    "APPROVED": [],
+    "REJECTED": []
+  },
+  "TransactionReason": {
+    "PURCHASE": [],
+    "RENEWAL": []
+  },
+  "DefaultConfigurationRequest": {},
+  "PurchasePlatform": {
+    "IOS": [],
+    "MAC_OS": [],
+    "TV_OS": [],
+    "VISION_OS": []
+  },
+  "metadata_key": [],
+  "metadata_type_key": [],
+  "AppStoreServerLibraryEnumMeta": {
+    "__contains__": [
+      "c",
+      "val"
+    ],
+    "create_main_attr": [
+      "c",
+      "raw_field_name",
+      "raw_required"
+    ],
+    "create_raw_attr": [
+      "c",
+      "field_name",
+      "required"
+    ]
+  },
+  "AttrsRawValueAware": {
+    "__attrs_post_init__": [
+      "self"
+    ]
+  },
+  "_get_cattrs_converter": [
+    "destination_class"
+  ],
+  "AutoRenewStatus": {
+    "OFF": [],
+    "ON": []
+  },
+  "AccountTenure": {
+    "UNDECLARED": [],
+    "ZERO_TO_THREE_DAYS": [],
+    "THREE_DAYS_TO_TEN_DAYS": [],
+    "TEN_DAYS_TO_THIRTY_DAYS": [],
+    "THIRTY_DAYS_TO_NINETY_DAYS": [],
+    "NINETY_DAYS_TO_ONE_HUNDRED_EIGHTY_DAYS": [],
+    "ONE_HUNDRED_EIGHTY_DAYS_TO_THREE_HUNDRED_SIXTY_FIVE_DAYS": [],
+    "GREATER_THAN_THREE_HUNDRED_SIXTY_FIVE_DAYS": []
+  },
+  "SubscriptionGroupIdentifierItem": {},
+  "PromotionalOfferSignatureV1": {},
+  "PromotionalOffer": {},
+  "UploadMessageImage": {},
+  "JWSTransactionDecodedPayload": {},
+  "NotificationTypeV2": {
+    "SUBSCRIBED": [],
+    "DID_CHANGE_RENEWAL_PREF": [],
+    "DID_CHANGE_RENEWAL_STATUS": [],
+    "OFFER_REDEEMED": [],
+    "DID_RENEW": [],
+    "EXPIRED": [],
+    "DID_FAIL_TO_RENEW": [],
+    "GRACE_PERIOD_EXPIRED": [],
+    "PRICE_INCREASE": [],
+    "REFUND": [],
+    "REFUND_DECLINED": [],
+    "CONSUMPTION_REQUEST": [],
+    "RENEWAL_EXTENDED": [],
+    "REVOKE": [],
+    "TEST": [],
+    "RENEWAL_EXTENSION": [],
+    "REFUND_REVERSED": [],
+    "EXTERNAL_PURCHASE_TOKEN": [],
+    "ONE_TIME_CHARGE": []
+  },
+  "MassExtendRenewalDateResponse": {},
+  "ProductType": {
+    "AUTO_RENEWABLE": [],
+    "NON_RENEWABLE": [],
+    "CONSUMABLE": [],
+    "NON_CONSUMABLE": []
+  },
+  "Order": {
+    "ASCENDING": [],
+    "DESCENDING": []
+  },
+  "TransactionHistoryRequest": {},
+  "UploadMessageRequestBody": {},
+  "GetMessageListResponse": {},
+  "ExtendRenewalDateResponse": {},
+  "StatusResponse": {},
+  "MessageState": {
+    "PENDING": [],
+    "APPROVED": [],
+    "REJECTED": []
+  },
+  "ResponseBodyV2DecodedPayload": {},
+  "Platform": {
+    "UNDECLARED": [],
+    "APPLE": [],
+    "NON_APPLE": []
+  },
+  "Data": {},
+  "AppTransactionInfoResponse": {},
+  "RevocationReason": {
+    "REFUNDED_DUE_TO_ISSUE": [],
+    "REFUNDED_FOR_OTHER_REASON": []
+  },
+  "Environment": {
+    "SANDBOX": [],
+    "PRODUCTION": [],
+    "XCODE": [],
+    "LOCAL_TESTING": []
+  },
+  "LastTransactionsItem": {},
+  "OrderLookupStatus": {
+    "VALID": [],
+    "INVALID": []
+  },
+  "ConsumptionStatus": {
+    "UNDECLARED": [],
+    "NOT_CONSUMED": [],
+    "PARTIALLY_CONSUMED": [],
+    "FULLY_CONSUMED": []
+  },
+  "DecodedRealtimeRequestBody": {},
+  "NotificationHistoryResponse": {},
+  "SendAttemptItem": {},
+  "Type": {
+    "AUTO_RENEWABLE_SUBSCRIPTION": [],
+    "NON_CONSUMABLE": [],
+    "CONSUMABLE": [],
+    "NON_RENEWING_SUBSCRIPTION": []
+  },
+  "NotificationHistoryRequest": {},
+  "GetImageListResponseItem": {},
+  "MassExtendRenewalDateStatusResponse": {},
+  "DeliveryStatus": {
+    "DELIVERED_AND_WORKING_PROPERLY": [],
+    "DID_NOT_DELIVER_DUE_TO_QUALITY_ISSUE": [],
+    "DELIVERED_WRONG_ITEM": [],
+    "DID_NOT_DELIVER_DUE_TO_SERVER_OUTAGE": [],
+    "DID_NOT_DELIVER_DUE_TO_IN_GAME_CURRENCY_CHANGE": [],
+    "DID_NOT_DELIVER_FOR_OTHER_REASON": []
+  },
+  "ExternalPurchaseToken": {},
+  "CheckTestNotificationResponse": {},
+  "LifetimeDollarsPurchased": {
+    "UNDECLARED": [],
+    "ZERO_DOLLARS": [],
+    "ONE_CENT_TO_FORTY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "FIFTY_DOLLARS_TO_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "ONE_HUNDRED_DOLLARS_TO_FOUR_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "FIVE_HUNDRED_DOLLARS_TO_NINE_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "ONE_THOUSAND_DOLLARS_TO_ONE_THOUSAND_NINE_HUNDRED_NINETY_NINE_DOLLARS_AND_NINETY_NINE_CENTS": [],
+    "TWO_THOUSAND_DOLLARS_OR_GREATER": []
+  }
+}

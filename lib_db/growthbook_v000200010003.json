@@ -1,0 +1,1048 @@
+{
+  "logger": [],
+  "decrypt": [
+    "encrypted_str",
+    "key_str"
+  ],
+  "AbstractFeatureCache": {
+    "get": [
+      "self",
+      "key"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "ttl"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "CacheEntry": {
+    "__init__": [
+      "self",
+      "value",
+      "ttl"
+    ],
+    "update": [
+      "self",
+      "value"
+    ]
+  },
+  "InMemoryFeatureCache": {
+    "__init__": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "ttl"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "InMemoryStickyBucketService": {
+    "__init__": [
+      "self"
+    ],
+    "get_assignments": [
+      "self",
+      "attributeName",
+      "attributeValue"
+    ],
+    "save_assignments": [
+      "self",
+      "doc"
+    ],
+    "destroy": [
+      "self"
+    ]
+  },
+  "SSEClient": {
+    "__init__": [
+      "self",
+      "api_host",
+      "client_key",
+      "on_event",
+      "reconnect_delay",
+      "headers",
+      "timeout"
+    ],
+    "connect": [
+      "self"
+    ],
+    "disconnect": [
+      "self",
+      "timeout"
+    ],
+    "_get_sse_url": [
+      "self",
+      "api_host",
+      "client_key"
+    ],
+    "_init_session": [
+      "self"
+    ],
+    "_process_response": [
+      "self",
+      "response"
+    ],
+    "_wait_for_reconnect": [
+      "self"
+    ],
+    "_close_session": [
+      "self"
+    ],
+    "_run_sse_channel": [
+      "self"
+    ],
+    "_stop_session": [
+      "self",
+      "timeout"
+    ]
+  },
+  "FeatureRepository": {
+    "__init__": [
+      "self"
+    ],
+    "set_cache": [
+      "self",
+      "cache"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "save_in_cache": [
+      "self",
+      "key",
+      "res",
+      "ttl"
+    ],
+    "add_feature_update_callback": [
+      "self",
+      "callback"
+    ],
+    "remove_feature_update_callback": [
+      "self",
+      "callback"
+    ],
+    "_notify_feature_update_callbacks": [
+      "self",
+      "features_data"
+    ],
+    "load_features": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "ttl"
+    ],
+    "load_features_async": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "ttl"
+    ],
+    "user_agent_suffix": [
+      "self",
+      "value"
+    ],
+    "_get": [
+      "self",
+      "url",
+      "headers"
+    ],
+    "_get_headers": [
+      "self",
+      "client_key",
+      "existing_headers"
+    ],
+    "_fetch_and_decode": [
+      "self",
+      "api_host",
+      "client_key"
+    ],
+    "_fetch_and_decode_async": [
+      "self",
+      "api_host",
+      "client_key"
+    ],
+    "decrypt_response": [
+      "self",
+      "data",
+      "decryption_key"
+    ],
+    "_fetch_features": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key"
+    ],
+    "_fetch_features_async": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key"
+    ],
+    "startAutoRefresh": [
+      "self",
+      "api_host",
+      "client_key",
+      "cb",
+      "streaming_timeout"
+    ],
+    "stopAutoRefresh": [
+      "self",
+      "timeout"
+    ],
+    "start_background_refresh": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "ttl",
+      "refresh_interval"
+    ],
+    "_background_refresh_worker": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "ttl",
+      "refresh_interval"
+    ],
+    "stop_background_refresh": [
+      "self"
+    ],
+    "_get_features_url": [
+      "api_host",
+      "client_key"
+    ]
+  },
+  "feature_repo": [],
+  "GrowthBook": {
+    "__init__": [
+      "self",
+      "enabled",
+      "attributes",
+      "url",
+      "features",
+      "qa_mode",
+      "on_experiment_viewed",
+      "on_feature_usage",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "cache_ttl",
+      "forced_variations",
+      "sticky_bucket_service",
+      "sticky_bucket_identifier_attributes",
+      "savedGroups",
+      "streaming",
+      "streaming_connection_timeout",
+      "stale_while_revalidate",
+      "stale_ttl",
+      "plugins",
+      "skip_all_experiments",
+      "trackingCallback",
+      "qaMode",
+      "user",
+      "groups",
+      "overrides",
+      "forcedVariations"
+    ],
+    "_on_feature_update": [
+      "self",
+      "features_data"
+    ],
+    "load_features": [
+      "self"
+    ],
+    "load_features_async": [
+      "self"
+    ],
+    "_features_event_handler": [
+      "self",
+      "features"
+    ],
+    "_dispatch_sse_event": [
+      "self",
+      "event_data"
+    ],
+    "startAutoRefresh": [
+      "self"
+    ],
+    "stopAutoRefresh": [
+      "self",
+      "timeout"
+    ],
+    "setFeatures": [
+      "self",
+      "features"
+    ],
+    "set_features": [
+      "self",
+      "features"
+    ],
+    "getFeatures": [
+      "self"
+    ],
+    "get_features": [
+      "self"
+    ],
+    "setAttributes": [
+      "self",
+      "attributes"
+    ],
+    "set_attributes": [
+      "self",
+      "attributes"
+    ],
+    "getAttributes": [
+      "self"
+    ],
+    "get_attributes": [
+      "self"
+    ],
+    "destroy": [
+      "self",
+      "timeout"
+    ],
+    "isOn": [
+      "self",
+      "key"
+    ],
+    "is_on": [
+      "self",
+      "key"
+    ],
+    "isOff": [
+      "self",
+      "key"
+    ],
+    "is_off": [
+      "self",
+      "key"
+    ],
+    "getFeatureValue": [
+      "self",
+      "key",
+      "fallback"
+    ],
+    "get_feature_value": [
+      "self",
+      "key",
+      "fallback"
+    ],
+    "evalFeature": [
+      "self",
+      "key"
+    ],
+    "_ensure_fresh_features": [
+      "self"
+    ],
+    "_get_eval_context": [
+      "self"
+    ],
+    "eval_feature": [
+      "self",
+      "key"
+    ],
+    "getAllResults": [
+      "self"
+    ],
+    "get_all_results": [
+      "self"
+    ],
+    "_fireSubscriptions": [
+      "self",
+      "experiment",
+      "result"
+    ],
+    "run": [
+      "self",
+      "experiment"
+    ],
+    "subscribe": [
+      "self",
+      "callback"
+    ],
+    "_track": [
+      "self",
+      "experiment",
+      "result",
+      "user_context"
+    ],
+    "_derive_sticky_bucket_identifier_attributes": [
+      "self"
+    ],
+    "_get_sticky_bucket_attributes": [
+      "self"
+    ],
+    "refresh_sticky_buckets": [
+      "self",
+      "force"
+    ],
+    "_initialize_plugins": [
+      "self"
+    ],
+    "user_agent_suffix": [
+      "self",
+      "value"
+    ],
+    "_cleanup_plugins": [
+      "self"
+    ]
+  },
+  "evalCondition": [
+    "attributes",
+    "condition",
+    "savedGroups"
+  ],
+  "evalOr": [
+    "attributes",
+    "conditions",
+    "savedGroups"
+  ],
+  "evalAnd": [
+    "attributes",
+    "conditions",
+    "savedGroups"
+  ],
+  "isOperatorObject": [
+    "obj"
+  ],
+  "_is_numeric": [
+    "v"
+  ],
+  "getType": [
+    "attributeValue"
+  ],
+  "getPath": [
+    "attributes",
+    "path"
+  ],
+  "evalConditionValue": [
+    "conditionValue",
+    "attributeValue",
+    "savedGroups",
+    "insensitive"
+  ],
+  "elemMatch": [
+    "condition",
+    "attributeValue",
+    "savedGroups"
+  ],
+  "compare": [
+    "val1",
+    "val2"
+  ],
+  "evalOperatorCondition": [
+    "operator",
+    "attributeValue",
+    "conditionValue",
+    "savedGroups"
+  ],
+  "paddedVersionString": [
+    "input"
+  ],
+  "isIn": [
+    "conditionValue",
+    "attributeValue",
+    "insensitive"
+  ],
+  "isInAll": [
+    "conditionValue",
+    "attributeValue",
+    "savedGroups",
+    "insensitive"
+  ],
+  "_getOrigHashValue": [
+    "eval_context",
+    "attr",
+    "fallbackAttr"
+  ],
+  "_getHashValue": [
+    "eval_context",
+    "attr",
+    "fallbackAttr"
+  ],
+  "_isIncludedInRollout": [
+    "seed",
+    "eval_context",
+    "hashAttribute",
+    "fallbackAttribute",
+    "range",
+    "coverage",
+    "hashVersion"
+  ],
+  "_isFilteredOut": [
+    "filters",
+    "eval_context"
+  ],
+  "fnv1a32": [
+    "str"
+  ],
+  "inNamespace": [
+    "userId",
+    "namespace"
+  ],
+  "gbhash": [
+    "seed",
+    "value",
+    "version"
+  ],
+  "inRange": [
+    "n",
+    "range"
+  ],
+  "chooseVariation": [
+    "n",
+    "ranges"
+  ],
+  "getQueryStringOverride": [
+    "id",
+    "url",
+    "numVariations"
+  ],
+  "_urlIsValid": [
+    "url",
+    "pattern"
+  ],
+  "getEqualWeights": [
+    "numVariations"
+  ],
+  "getBucketRanges": [
+    "numVariations",
+    "coverage",
+    "weights"
+  ],
+  "eval_feature": [
+    "key",
+    "evalContext",
+    "callback_subscription",
+    "tracking_cb"
+  ],
+  "eval_prereqs": [
+    "parentConditions",
+    "evalContext"
+  ],
+  "_get_sticky_bucket_experiment_key": [
+    "experiment_key",
+    "bucket_version"
+  ],
+  "_get_sticky_bucket_assignments": [
+    "evalContext",
+    "attr",
+    "fallback"
+  ],
+  "_is_blocked": [
+    "assignments",
+    "experiment_key",
+    "min_bucket_version"
+  ],
+  "_get_sticky_bucket_variation": [
+    "experiment_key",
+    "evalContext",
+    "bucket_version",
+    "min_bucket_version",
+    "meta",
+    "hash_attribute",
+    "fallback_attribute"
+  ],
+  "run_experiment": [
+    "experiment",
+    "featureId",
+    "evalContext",
+    "tracking_cb"
+  ],
+  "_generate_sticky_bucket_assignment_doc": [
+    "attribute_name",
+    "attribute_value",
+    "assignments",
+    "evalContext"
+  ],
+  "_getExperimentResult": [
+    "experiment",
+    "evalContext",
+    "variationId",
+    "hashUsed",
+    "featureId",
+    "bucket",
+    "stickyBucketUsed"
+  ],
+  "__version__": [],
+  "VariationMeta": {},
+  "Filter": {},
+  "Experiment": {
+    "__init__": [
+      "self",
+      "key",
+      "variations",
+      "weights",
+      "active",
+      "status",
+      "coverage",
+      "condition",
+      "namespace",
+      "url",
+      "include",
+      "groups",
+      "force",
+      "hashAttribute",
+      "fallbackAttribute",
+      "hashVersion",
+      "ranges",
+      "meta",
+      "filters",
+      "seed",
+      "name",
+      "phase",
+      "disableStickyBucketing",
+      "bucketVersion",
+      "minBucketVersion",
+      "parentConditions"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "data"
+    ]
+  },
+  "Result": {
+    "__init__": [
+      "self",
+      "variationId",
+      "inExperiment",
+      "value",
+      "hashUsed",
+      "hashAttribute",
+      "hashValue",
+      "featureId",
+      "meta",
+      "bucket",
+      "stickyBucketUsed"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "FeatureResult": {
+    "__init__": [
+      "self",
+      "value",
+      "source",
+      "experiment",
+      "experimentResult",
+      "ruleId"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Feature": {
+    "__init__": [
+      "self",
+      "defaultValue",
+      "rules"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "FeatureRule": {
+    "__init__": [
+      "self",
+      "id",
+      "key",
+      "variations",
+      "weights",
+      "coverage",
+      "condition",
+      "namespace",
+      "force",
+      "hashAttribute",
+      "fallbackAttribute",
+      "hashVersion",
+      "range",
+      "ranges",
+      "meta",
+      "filters",
+      "seed",
+      "name",
+      "phase",
+      "disableStickyBucketing",
+      "bucketVersion",
+      "minBucketVersion",
+      "parentConditions"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "AbstractStickyBucketService": {
+    "get_assignments": [
+      "self",
+      "attributeName",
+      "attributeValue"
+    ],
+    "save_assignments": [
+      "self",
+      "doc"
+    ],
+    "get_key": [
+      "self",
+      "attributeName",
+      "attributeValue"
+    ],
+    "get_all_assignments": [
+      "self",
+      "attributes"
+    ]
+  },
+  "StackContext": {},
+  "FeatureRefreshStrategy": {
+    "STALE_WHILE_REVALIDATE": [],
+    "SERVER_SENT_EVENTS": []
+  },
+  "UserContext": {},
+  "Options": {},
+  "GlobalContext": {},
+  "EvaluationContext": {},
+  "SingletonMeta": {
+    "_lock": [],
+    "__call__": [
+      "cls"
+    ]
+  },
+  "BackoffStrategy": {
+    "__init__": [
+      "self",
+      "initial_delay",
+      "max_delay",
+      "multiplier",
+      "jitter"
+    ],
+    "next_delay": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "WeakRefWrapper": {
+    "__init__": [
+      "self",
+      "obj"
+    ]
+  },
+  "FeatureCache": {
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "features",
+      "saved_groups"
+    ],
+    "get_current_state": [
+      "self"
+    ]
+  },
+  "EnhancedFeatureRepository": {
+    "__init__": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "cache_ttl"
+    ],
+    "refresh_operation": [
+      "self"
+    ],
+    "_handle_feature_update": [
+      "self",
+      "data"
+    ],
+    "add_callback": [
+      "self",
+      "callback"
+    ],
+    "remove_callback": [
+      "self",
+      "callback"
+    ],
+    "_start_sse_refresh": [
+      "self"
+    ],
+    "_start_http_refresh": [
+      "self",
+      "interval"
+    ],
+    "start_feature_refresh": [
+      "self",
+      "strategy",
+      "callback"
+    ],
+    "stop_refresh": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "load_features_async": [
+      "self",
+      "api_host",
+      "client_key",
+      "decryption_key",
+      "ttl"
+    ]
+  },
+  "GrowthBookClient": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "_track": [
+      "self",
+      "experiment",
+      "result",
+      "user_context"
+    ],
+    "subscribe": [
+      "self",
+      "callback"
+    ],
+    "_fire_subscriptions": [
+      "self",
+      "experiment",
+      "result"
+    ],
+    "set_features": [
+      "self",
+      "features"
+    ],
+    "_refresh_sticky_buckets": [
+      "self",
+      "attributes"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "_feature_update_callback": [
+      "self",
+      "features_data"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "create_evaluation_context": [
+      "self",
+      "user_context"
+    ],
+    "eval_feature": [
+      "self",
+      "key",
+      "user_context"
+    ],
+    "is_on": [
+      "self",
+      "key",
+      "user_context"
+    ],
+    "is_off": [
+      "self",
+      "key",
+      "user_context"
+    ],
+    "get_feature_value": [
+      "self",
+      "key",
+      "fallback",
+      "user_context"
+    ],
+    "run": [
+      "self",
+      "experiment",
+      "user_context"
+    ],
+    "close": [
+      "self"
+    ],
+    "user_agent_suffix": [
+      "self",
+      "value"
+    ],
+    "_initialize_plugins": [
+      "self"
+    ],
+    "_cleanup_plugins": [
+      "self"
+    ]
+  },
+  "GrowthBookPlugin": {
+    "__init__": [
+      "self"
+    ],
+    "initialize": [
+      "self",
+      "gb_instance"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "is_initialized": [
+      "self"
+    ],
+    "_set_initialized": [
+      "self",
+      "gb_instance"
+    ],
+    "_get_option": [
+      "self",
+      "key",
+      "default"
+    ],
+    "_merge_attributes": [
+      "self",
+      "new_attributes"
+    ],
+    "_safe_execute": [
+      "self",
+      "func"
+    ]
+  },
+  "__all__": [],
+  "ClientSideAttributes": {
+    "__init__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "RequestContextPlugin": {
+    "__init__": [
+      "self",
+      "request_extractor",
+      "client_side_attributes",
+      "extract_utm",
+      "extract_user_agent"
+    ],
+    "initialize": [
+      "self",
+      "gb_instance"
+    ],
+    "get_extracted_attributes": [
+      "self"
+    ],
+    "_extract_all_attributes": [
+      "self"
+    ],
+    "_get_request_data": [
+      "self"
+    ],
+    "_normalize_request_object": [
+      "self",
+      "request_obj"
+    ],
+    "_extract_basic_info": [
+      "self",
+      "request_data"
+    ],
+    "_extract_utm_params": [
+      "self",
+      "request_data"
+    ],
+    "_extract_user_agent": [
+      "self",
+      "request_data"
+    ]
+  },
+  "set_request_context": [
+    "request_data"
+  ],
+  "clear_request_context": [],
+  "request_context_plugin": [],
+  "client_side_attributes": [],
+  "GrowthBookTrackingPlugin": {
+    "__init__": [
+      "self",
+      "ingestor_host",
+      "track_experiment_viewed",
+      "track_feature_evaluated",
+      "batch_size",
+      "batch_timeout",
+      "additional_callback"
+    ],
+    "initialize": [
+      "self",
+      "gb_instance"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "_setup_experiment_tracking": [
+      "self",
+      "gb_instance"
+    ],
+    "_setup_feature_tracking": [
+      "self",
+      "gb_instance"
+    ],
+    "_track_experiment_viewed": [
+      "self",
+      "experiment",
+      "result"
+    ],
+    "_track_feature_evaluated": [
+      "self",
+      "feature_key",
+      "result",
+      "gb_instance"
+    ],
+    "_add_event_to_batch": [
+      "self",
+      "event_data"
+    ],
+    "_start_flush_timer": [
+      "self"
+    ],
+    "_flush_events": [
+      "self"
+    ],
+    "_flush_batch_locked": [
+      "self"
+    ],
+    "_send_events": [
+      "self",
+      "events"
+    ],
+    "_get_sdk_version": [
+      "self"
+    ]
+  },
+  "growthbook_tracking_plugin": []
+}
