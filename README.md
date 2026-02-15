@@ -148,6 +148,7 @@ Designed to handle:
 
 - 100 packages per run
 - ~15,000 total packages
+- ~9,000 Available currently
 - Fully resumable
 - Safe for GitHub Actions limits
 
