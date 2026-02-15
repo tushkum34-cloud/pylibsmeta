@@ -12,7 +12,6 @@ A fully automated PyPI package introspection engine that:
   - Methods
   - Global variables
 - 🏷 Saves version-encoded structured JSON
-- 🔁 Supports resumable batch processing
 - 🤖 Fully automated via GitHub Actions
 
 ---
@@ -72,7 +71,6 @@ lib_db/
 - ✅ Version encoding
 - ✅ Skip existing versions
 - ✅ Resume progress
-- ✅ Batch processing
 - ✅ 5-hour safe exit
 - ✅ GitHub automation
 - ✅ Handles 15,000+ packages
@@ -88,13 +86,10 @@ progress.json
 ```
 
 Each run:
-- Processes 100 packages
+- Processes `n` packages
 - Saves progress
 - Stops safely before 6-hour GitHub limit
-- Continues next run from last index
 
-When all packages complete:
-- Progress resets to 0
 
 ---
 
@@ -103,7 +98,7 @@ When all packages complete:
 The workflow runs:
 
 - Manually (workflow_dispatch)
-- Weekly (Sunday 3 AM UTC)
+- Hourly (After every run to check for updates)
 
 You can modify schedule to hourly:
 
