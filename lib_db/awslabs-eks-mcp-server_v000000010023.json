@@ -1,0 +1,552 @@
+{
+  "__path__": [],
+  "AwsHelper": {
+    "_instance": [],
+    "get_aws_region": [],
+    "get_aws_profile": [],
+    "create_boto3_client": [
+      "cls",
+      "service_name",
+      "region_name"
+    ]
+  },
+  "CloudWatchHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_sensitive_data_access"
+    ],
+    "resolve_time_range": [
+      "self",
+      "start_time",
+      "end_time",
+      "minutes"
+    ],
+    "get_cloudwatch_logs": [
+      "self",
+      "ctx",
+      "resource_type",
+      "cluster_name",
+      "log_type",
+      "resource_name",
+      "minutes",
+      "start_time",
+      "end_time",
+      "limit",
+      "filter_pattern",
+      "fields"
+    ],
+    "get_cloudwatch_metrics": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "metric_name",
+      "namespace",
+      "dimensions",
+      "minutes",
+      "start_time",
+      "end_time",
+      "limit",
+      "period",
+      "stat"
+    ],
+    "_poll_query_results": [
+      "self",
+      "ctx",
+      "logs_client",
+      "query_id",
+      "resource_type",
+      "resource_name",
+      "max_attempts",
+      "initial_delay"
+    ],
+    "_build_log_entry": [
+      "self",
+      "result"
+    ],
+    "_format_nested_json": [
+      "self",
+      "obj"
+    ]
+  },
+  "EksStackHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "_ensure_stack_ownership": [
+      "self",
+      "ctx",
+      "stack_name",
+      "operation"
+    ],
+    "manage_eks_stacks": [
+      "self",
+      "ctx",
+      "operation",
+      "template_file",
+      "cluster_name"
+    ],
+    "_generate_template": [
+      "self",
+      "ctx",
+      "template_path",
+      "cluster_name"
+    ],
+    "_deploy_stack": [
+      "self",
+      "ctx",
+      "template_file",
+      "stack_name",
+      "cluster_name"
+    ],
+    "_describe_stack": [
+      "self",
+      "ctx",
+      "stack_name",
+      "cluster_name"
+    ],
+    "_remove_checkov_metadata": [
+      "self",
+      "resource"
+    ],
+    "_delete_stack": [
+      "self",
+      "ctx",
+      "stack_name",
+      "cluster_name"
+    ]
+  },
+  "VpcConfigHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_sensitive_data_access"
+    ],
+    "get_eks_vpc_config": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "vpc_id"
+    ],
+    "_get_vpc_id_for_cluster": [
+      "self",
+      "ctx",
+      "cluster_name"
+    ],
+    "_get_vpc_details": [
+      "self",
+      "ctx",
+      "vpc_id"
+    ],
+    "_get_subnet_information": [
+      "self",
+      "ctx",
+      "vpc_id"
+    ],
+    "_get_route_table_information": [
+      "self",
+      "ctx",
+      "vpc_id"
+    ],
+    "_get_remote_cidr_blocks": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "cluster_response"
+    ],
+    "_get_eks_vpc_config_impl": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "vpc_id"
+    ]
+  },
+  "EventItem": {},
+  "Operation": {
+    "CREATE": [],
+    "REPLACE": [],
+    "PATCH": [],
+    "DELETE": [],
+    "READ": []
+  },
+  "ApplyYamlData": {},
+  "KubernetesResourceData": {},
+  "ResourceSummary": {},
+  "KubernetesResourceListData": {},
+  "ApiVersionsData": {},
+  "GenerateAppManifestData": {},
+  "PodLogsData": {},
+  "EventsData": {},
+  "CloudWatchLogEntry": {},
+  "CloudWatchLogsData": {},
+  "CloudWatchDataPoint": {},
+  "CloudWatchMetricsData": {},
+  "StackSummary": {},
+  "ManageEksStacksData": {},
+  "PolicySummary": {},
+  "RoleDescriptionData": {},
+  "AddInlinePolicyData": {},
+  "MetricsGuidanceData": {},
+  "EksVpcConfigData": {},
+  "EksInsightStatus": {},
+  "EksInsightItem": {},
+  "EksInsightsData": {},
+  "GENERATE_OPERATION": [],
+  "DEPLOY_OPERATION": [],
+  "DESCRIBE_OPERATION": [],
+  "DELETE_OPERATION": [],
+  "CFN_STACK_NAME_TEMPLATE": [],
+  "CFN_CAPABILITY_IAM": [],
+  "CFN_ON_FAILURE_DELETE": [],
+  "CFN_CREATED_BY_TAG": [],
+  "CFN_STACK_TAG_KEY": [],
+  "CFN_STACK_TAG_VALUE": [],
+  "STACK_NOT_OWNED_ERROR_TEMPLATE": [],
+  "K8sHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write",
+      "allow_sensitive_data_access"
+    ],
+    "get_client": [
+      "self",
+      "cluster_name"
+    ],
+    "apply_yaml": [
+      "self",
+      "ctx",
+      "yaml_path",
+      "cluster_name",
+      "namespace",
+      "force"
+    ],
+    "filter_null_values": [
+      "self",
+      "data"
+    ],
+    "remove_managed_fields": [
+      "self",
+      "resource"
+    ],
+    "cleanup_resource_response": [
+      "self",
+      "resource"
+    ],
+    "manage_k8s_resource": [
+      "self",
+      "ctx",
+      "operation",
+      "cluster_name",
+      "kind",
+      "api_version",
+      "name",
+      "namespace",
+      "body"
+    ],
+    "list_k8s_resources": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "kind",
+      "api_version",
+      "namespace",
+      "label_selector",
+      "field_selector"
+    ],
+    "generate_app_manifest": [
+      "self",
+      "ctx",
+      "app_name",
+      "image_uri",
+      "output_dir",
+      "port",
+      "replicas",
+      "cpu",
+      "memory",
+      "namespace",
+      "load_balancer_scheme"
+    ],
+    "_remove_checkov_skip_annotations": [
+      "self",
+      "content"
+    ],
+    "_load_yaml_template": [
+      "self",
+      "template_files",
+      "values"
+    ],
+    "get_pod_logs": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "namespace",
+      "pod_name",
+      "container_name",
+      "since_seconds",
+      "tail_lines",
+      "limit_bytes",
+      "previous"
+    ],
+    "get_k8s_events": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "kind",
+      "name",
+      "namespace"
+    ],
+    "list_api_versions": [
+      "self",
+      "ctx",
+      "cluster_name"
+    ]
+  },
+  "__version__": [],
+  "LogLevel": {
+    "DEBUG": [],
+    "INFO": [],
+    "WARNING": [],
+    "ERROR": [],
+    "CRITICAL": []
+  },
+  "log_with_request_id": [
+    "ctx",
+    "level",
+    "message"
+  ],
+  "K8sApis": {
+    "__init__": [
+      "self",
+      "endpoint",
+      "token",
+      "ca_data"
+    ],
+    "_configure_proxy_settings": [
+      "self",
+      "config"
+    ],
+    "_patch_resource": [
+      "self",
+      "resource",
+      "body",
+      "name",
+      "namespace"
+    ],
+    "manage_resource": [
+      "self",
+      "operation",
+      "kind",
+      "api_version",
+      "name",
+      "namespace",
+      "body"
+    ],
+    "list_resources": [
+      "self",
+      "kind",
+      "api_version",
+      "namespace",
+      "label_selector",
+      "field_selector"
+    ],
+    "apply_from_yaml": [
+      "self",
+      "yaml_objects",
+      "namespace",
+      "force"
+    ],
+    "get_events": [
+      "self",
+      "kind",
+      "name",
+      "namespace"
+    ],
+    "get_pod_logs": [
+      "self",
+      "pod_name",
+      "namespace",
+      "container_name",
+      "since_seconds",
+      "tail_lines",
+      "limit_bytes",
+      "previous"
+    ],
+    "get_api_versions": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "API_ENDPOINT": [],
+  "AWS_REGION": [],
+  "AWS_SERVICE": [],
+  "EKSKnowledgeBaseHandler": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "search_eks_troubleshoot_guide": [
+      "self",
+      "query"
+    ]
+  },
+  "SERVER_INSTRUCTIONS": [],
+  "SERVER_DEPENDENCIES": [],
+  "mcp": [],
+  "create_server": [],
+  "main": [],
+  "ResourceType": {
+    "CLUSTER": [],
+    "NODE": [],
+    "POD": [],
+    "NAMESPACE": [],
+    "SERVICE": []
+  },
+  "CloudWatchMetricsHandler": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "_load_metrics_guidance": [
+      "self"
+    ],
+    "get_eks_metrics_guidance": [
+      "self",
+      "ctx",
+      "resource_type"
+    ]
+  },
+  "IAMHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "get_policies_for_role": [
+      "self",
+      "ctx",
+      "role_name"
+    ],
+    "add_inline_policy": [
+      "self",
+      "ctx",
+      "policy_name",
+      "role_name",
+      "permissions"
+    ],
+    "_get_managed_policies": [
+      "self",
+      "ctx",
+      "iam_client",
+      "role_name"
+    ],
+    "_get_inline_policies": [
+      "self",
+      "iam_client",
+      "role_name"
+    ],
+    "_create_inline_policy": [
+      "self",
+      "ctx",
+      "iam_client",
+      "role_name",
+      "policy_name",
+      "permissions"
+    ],
+    "_add_permissions_to_document": [
+      "self",
+      "policy_document",
+      "permissions"
+    ]
+  },
+  "URL_TIMEOUT": [],
+  "TOKEN_PREFIX": [],
+  "K8S_AWS_ID_HEADER": [],
+  "TOKEN_TTL": [],
+  "K8sClientCache": {
+    "_instance": [],
+    "__new__": [
+      "cls"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "_get_sts_client": [
+      "self"
+    ],
+    "_retrieve_k8s_aws_id": [
+      "self",
+      "params",
+      "context"
+    ],
+    "_inject_k8s_aws_id_header": [
+      "self",
+      "request"
+    ],
+    "_get_cluster_credentials": [
+      "self",
+      "cluster_name"
+    ],
+    "get_client": [
+      "self",
+      "cluster_name"
+    ]
+  },
+  "InsightsHandler": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_sensitive_data_access"
+    ],
+    "get_eks_insights": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "insight_id",
+      "category",
+      "next_token"
+    ],
+    "_get_eks_insights_impl": [
+      "self",
+      "ctx",
+      "cluster_name",
+      "insight_id",
+      "category",
+      "next_token"
+    ],
+    "_get_insight_detail": [
+      "self",
+      "ctx",
+      "eks_client",
+      "cluster_name",
+      "insight_id",
+      "next_token"
+    ],
+    "_list_insights": [
+      "self",
+      "ctx",
+      "eks_client",
+      "cluster_name",
+      "category",
+      "next_token"
+    ]
+  },
+  "logger": [],
+  "DOCS_URL": [],
+  "METRICS_FILE_PATH": [],
+  "fetch_documentation_page": [],
+  "parse_metrics_table": [
+    "html_content"
+  ],
+  "organize_metrics_by_resource_type": [
+    "metrics"
+  ],
+  "load_existing_metrics": [],
+  "save_metrics": [
+    "metrics_data"
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "__path__": [],
+  "remove_null_values": [
+    "d"
+  ],
+  "filter_by_prefixes": [
+    "strings",
+    "prefixes"
+  ],
+  "epoch_ms_to_utc_iso": [
+    "ms"
+  ],
+  "clean_up_pattern": [
+    "pattern_result"
+  ],
+  "get_aws_client": [
+    "service_name",
+    "region_name",
+    "profile_name"
+  ],
+  "__version__": [],
+  "MCP_SERVER_VERSION": [],
+  "mcp": [],
+  "main": [],
+  "LogGroupMetadata": {
+    "convert_to_iso8601": [
+      "cls",
+      "v"
+    ]
+  },
+  "SavedLogsInsightsQuery": {
+    "extract_prefixes": [
+      "cls",
+      "values"
+    ]
+  },
+  "LogsMetadata": {},
+  "LogAnomalyDetector": {},
+  "LogAnomaly": {
+    "convert_to_iso8601": [
+      "cls",
+      "v"
+    ],
+    "convert_histogram_to_iso8601": [
+      "cls",
+      "v"
+    ],
+    "convert_log_samples_to_iso8601": [
+      "cls",
+      "v"
+    ]
+  },
+  "LogAnomalyResults": {},
+  "LogsAnalysisResult": {},
+  "LogsQueryCancelResult": {},
+  "CloudWatchLogsTools": {
+    "__init__": [
+      "self"
+    ],
+    "_validate_log_group_parameters": [
+      "self",
+      "log_group_names",
+      "log_group_identifiers"
+    ],
+    "_convert_time_to_timestamp": [
+      "self",
+      "time_str"
+    ],
+    "_build_logs_query_params": [
+      "self",
+      "log_group_names",
+      "log_group_identifiers",
+      "start_time",
+      "end_time",
+      "query_string",
+      "limit"
+    ],
+    "_process_query_results": [
+      "self",
+      "response",
+      "query_id"
+    ],
+    "_poll_for_query_completion": [
+      "self",
+      "logs_client",
+      "query_id",
+      "max_timeout",
+      "ctx"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "describe_log_groups": [
+      "self",
+      "ctx",
+      "account_identifiers",
+      "include_linked_accounts",
+      "log_group_class",
+      "log_group_name_prefix",
+      "max_items",
+      "region",
+      "profile_name"
+    ],
+    "analyze_log_group": [
+      "self",
+      "ctx",
+      "log_group_arn",
+      "start_time",
+      "end_time",
+      "region",
+      "profile_name"
+    ],
+    "execute_log_insights_query": [
+      "self",
+      "ctx",
+      "log_group_names",
+      "log_group_identifiers",
+      "start_time",
+      "end_time",
+      "query_string",
+      "limit",
+      "max_timeout",
+      "region",
+      "profile_name"
+    ],
+    "get_logs_insight_query_results": [
+      "self",
+      "ctx",
+      "query_id",
+      "region",
+      "profile_name"
+    ],
+    "cancel_logs_insight_query": [
+      "self",
+      "ctx",
+      "query_id",
+      "region",
+      "profile_name"
+    ]
+  },
+  "logger": [],
+  "CloudFormationTemplateGenerator": {
+    "generate_metric_alarm_template": [
+      "self",
+      "alarm_data"
+    ],
+    "_is_anomaly_detection_alarm": [
+      "self",
+      "alarm_data"
+    ],
+    "_format_anomaly_detection_alarm_data": [
+      "self",
+      "alarm_data"
+    ],
+    "_generate_resource_key": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions"
+    ],
+    "_sanitize_resource_name": [
+      "self",
+      "name"
+    ]
+  },
+  "Trend": {
+    "POSITIVE": [],
+    "NEGATIVE": [],
+    "NONE": []
+  },
+  "SEASONALITY_ROUNDING_THRESHOLD": [],
+  "Seasonality": {
+    "NONE": [],
+    "FIFTEEN_MINUTES": [],
+    "ONE_HOUR": [],
+    "SIX_HOURS": [],
+    "ONE_DAY": [],
+    "ONE_WEEK": [],
+    "from_seconds": [
+      "cls",
+      "seconds"
+    ]
+  },
+  "DecompositionResult": {},
+  "SortOrder": {
+    "ASCENDING": [],
+    "DESCENDING": []
+  },
+  "Dimension": {},
+  "MetricDataPoint": {},
+  "MetricDataResult": {},
+  "GetMetricDataResponse": {},
+  "MetricMetadataIndexKey": {
+    "__init__": [
+      "self",
+      "namespace",
+      "metric_name"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MetricMetadata": {},
+  "AlarmRecommendationThreshold": {},
+  "StaticAlarmThreshold": {},
+  "AnomalyDetectionAlarmThreshold": {
+    "validate_sensitivity": [
+      "cls",
+      "v"
+    ]
+  },
+  "AlarmRecommendationDimension": {},
+  "AlarmRecommendation": {
+    "serialize_model": [
+      "self"
+    ]
+  },
+  "MetricData": {
+    "validate_metric_data": [
+      "self"
+    ]
+  },
+  "AlarmRecommendationResult": {},
+  "MetricAnalyzer": {
+    "__init__": [
+      "self"
+    ],
+    "analyze_metric_data": [
+      "self",
+      "metric_data"
+    ],
+    "_compute_seasonality_and_trend": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "density_ratio",
+      "publishing_period_seconds"
+    ],
+    "_compute_publishing_period": [
+      "self",
+      "timestamps_ms"
+    ],
+    "_get_closest_cloudwatch_period": [
+      "self",
+      "period_seconds"
+    ],
+    "_compute_density_ratio": [
+      "self",
+      "timestamps_ms",
+      "publishing_period_seconds"
+    ],
+    "_compute_statistics": [
+      "self",
+      "values"
+    ]
+  },
+  "MetricDataDecomposer": {
+    "SEASONALITY_STRENGTH_THRESHOLD": [],
+    "STATISTICAL_SIGNIFICANCE_THRESHOLD": [],
+    "detect_seasonality_and_trend": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "density_ratio",
+      "publishing_period_seconds"
+    ],
+    "_interpolate_to_regular_grid": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "period_seconds"
+    ],
+    "_detect_strongest_seasonality": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "period_seconds"
+    ],
+    "_calculate_seasonal_strength": [
+      "self",
+      "values",
+      "seasonal_period"
+    ],
+    "_compute_trend": [
+      "self",
+      "values"
+    ]
+  },
+  "SECONDS_PER_MINUTE": [],
+  "MINUTES_PER_HOUR": [],
+  "HOURS_PER_DAY": [],
+  "DAYS_PER_WEEK": [],
+  "DEFAULT_ANALYSIS_PERIOD_MINUTES": [],
+  "COMPARISON_OPERATOR_ANOMALY": [],
+  "NUMERICAL_STABILITY_THRESHOLD": [],
+  "CloudWatchMetricsTools": {
+    "__init__": [
+      "self"
+    ],
+    "_load_and_index_metadata": [
+      "self"
+    ],
+    "_lookup_metadata": [
+      "self",
+      "namespace",
+      "metric_name"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "get_metric_data": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "start_time",
+      "dimensions",
+      "end_time",
+      "statistic",
+      "target_datapoints",
+      "group_by_dimension",
+      "schema_dimension_keys",
+      "limit",
+      "sort_order",
+      "order_by_statistic",
+      "region",
+      "profile_name"
+    ],
+    "_prepare_time_parameters": [
+      "self",
+      "start_time",
+      "end_time",
+      "target_datapoints"
+    ],
+    "_build_metrics_insights_query": [
+      "self",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "statistic",
+      "period",
+      "group_by_dimension",
+      "schema_dimension_keys",
+      "order_by_statistic",
+      "sort_order",
+      "limit"
+    ],
+    "_build_standard_metric_query": [
+      "self",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "statistic",
+      "period"
+    ],
+    "_process_metric_data_response": [
+      "self",
+      "response"
+    ],
+    "_map_to_metrics_insights_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_validate_metrics_insights_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_map_to_cloudwatch_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_build_schema_string": [
+      "self",
+      "namespace",
+      "schema_dimension_keys"
+    ],
+    "_build_where_clause": [
+      "self",
+      "dimensions"
+    ],
+    "get_metric_metadata": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name"
+    ],
+    "get_recommended_metric_alarms": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "region",
+      "profile_name",
+      "statistic"
+    ],
+    "_alarm_matches_dimensions": [
+      "self",
+      "alarm_data",
+      "provided_dims"
+    ],
+    "_create_alarm_threshold": [
+      "self",
+      "threshold_data"
+    ],
+    "_parse_alarm_recommendation": [
+      "self",
+      "alarm_data"
+    ],
+    "_create_anomaly_detector_data": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions",
+      "seasonality"
+    ],
+    "_create_anomaly_detector_recommendation": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions",
+      "seasonality"
+    ],
+    "_parse_metric_dimensions": [
+      "self",
+      "alarm_data"
+    ],
+    "_parse_metric_data_response": [
+      "self",
+      "response",
+      "period_seconds"
+    ],
+    "analyze_metric": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "region",
+      "profile_name",
+      "statistic"
+    ]
+  },
+  "MetricAlarmSummary": {},
+  "CompositeAlarmSummary": {},
+  "ActiveAlarmsResponse": {},
+  "AlarmHistoryItem": {},
+  "AlarmDetails": {},
+  "TimeRangeSuggestion": {},
+  "AlarmHistoryResponse": {},
+  "CompositeAlarmComponentResponse": {},
+  "CloudWatchAlarmsTools": {
+    "__init__": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "get_active_alarms": [
+      "self",
+      "ctx",
+      "max_items",
+      "region",
+      "profile_name"
+    ],
+    "get_alarm_history": [
+      "self",
+      "ctx",
+      "alarm_name",
+      "start_time",
+      "end_time",
+      "history_item_type",
+      "max_items",
+      "include_component_alarms",
+      "region",
+      "profile_name"
+    ],
+    "_transform_metric_alarm": [
+      "self",
+      "alarm"
+    ],
+    "_transform_composite_alarm": [
+      "self",
+      "alarm"
+    ],
+    "_get_alarm_details": [
+      "self",
+      "cloudwatch_client",
+      "alarm_name"
+    ],
+    "_transform_history_item": [
+      "self",
+      "item"
+    ],
+    "_generate_time_range_suggestions": [
+      "self",
+      "history_items",
+      "alarm_details"
+    ],
+    "_handle_composite_alarm": [
+      "self",
+      "cloudwatch_client",
+      "alarm_details"
+    ],
+    "_parse_alarm_rule": [
+      "self",
+      "alarm_rule"
+    ]
+  }
+}

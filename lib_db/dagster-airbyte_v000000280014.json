@@ -1,0 +1,3132 @@
+{
+  "__version__": [],
+  "AIRBYTE_CLOUD_REST_API_BASE": [],
+  "AIRBYTE_CLOUD_REST_API_VERSION": [],
+  "AIRBYTE_CLOUD_REST_API_BASE_URL": [],
+  "AIRBYTE_CLOUD_CONFIGURATION_API_BASE": [],
+  "AIRBYTE_CLOUD_CONFIGURATION_API_VERSION": [],
+  "AIRBYTE_CLOUD_CONFIGURATION_API_BASE_URL": [],
+  "DEFAULT_POLL_INTERVAL_SECONDS": [],
+  "AIRBYTE_REFRESH_TIMEDELTA_SECONDS": [],
+  "AIRBYTE_RECONSTRUCTION_METADATA_KEY_PREFIX": [],
+  "AirbyteClient": {
+    "validate_authentication": [
+      "cls",
+      "values"
+    ],
+    "_log": [
+      "self"
+    ],
+    "all_additional_request_headers": [
+      "self"
+    ],
+    "authorization_request_headers": [
+      "self"
+    ],
+    "user_agent_request_headers": [
+      "self"
+    ],
+    "_refresh_access_token": [
+      "self"
+    ],
+    "_needs_refreshed_access_token": [
+      "self"
+    ],
+    "_get_session": [
+      "self",
+      "include_additional_request_headers"
+    ],
+    "_single_request": [
+      "self",
+      "method",
+      "url",
+      "data",
+      "params",
+      "include_additional_request_headers"
+    ],
+    "_paginated_request": [
+      "self",
+      "method",
+      "url",
+      "params",
+      "data",
+      "include_additional_request_params"
+    ],
+    "validate_workspace_id": [
+      "self"
+    ],
+    "get_connections": [
+      "self"
+    ],
+    "get_jobs_for_connection": [
+      "self",
+      "connection_id",
+      "created_after"
+    ],
+    "get_connection_details": [
+      "self",
+      "connection_id"
+    ],
+    "get_destination_details": [
+      "self",
+      "destination_id"
+    ],
+    "start_sync_job": [
+      "self",
+      "connection_id"
+    ],
+    "get_job_details": [
+      "self",
+      "job_id"
+    ],
+    "cancel_job": [
+      "self",
+      "job_id"
+    ],
+    "sync_and_poll": [
+      "self",
+      "connection_id"
+    ]
+  },
+  "BaseAirbyteWorkspace": {
+    "fetch_airbyte_workspace_data": [
+      "self"
+    ],
+    "load_asset_specs": [
+      "self",
+      "dagster_airbyte_translator",
+      "connection_selector_fn"
+    ],
+    "_generate_materialization": [
+      "self",
+      "airbyte_output",
+      "dagster_airbyte_translator"
+    ],
+    "sync_and_poll": [
+      "self",
+      "context"
+    ],
+    "process_config_and_initialize_cm_cached": [
+      "self"
+    ]
+  },
+  "AirbyteWorkspace": {
+    "get_client": [
+      "self"
+    ]
+  },
+  "AirbyteCloudWorkspace": {
+    "get_client": [
+      "self"
+    ]
+  },
+  "load_airbyte_asset_specs": [
+    "workspace",
+    "dagster_airbyte_translator",
+    "connection_selector_fn"
+  ],
+  "load_airbyte_cloud_asset_specs": [
+    "workspace",
+    "dagster_airbyte_translator",
+    "connection_selector_fn"
+  ],
+  "AirbyteWorkspaceDefsLoader": {
+    "defs_key": [
+      "self"
+    ],
+    "fetch_state": [
+      "self"
+    ],
+    "defs_from_state": [
+      "self",
+      "state"
+    ]
+  },
+  "airbyte_assets": [],
+  "DAGSTER_AIRBYTE_TRANSLATOR_METADATA_KEY": [],
+  "clean_name": [],
+  "get_airbyte_connection_table_name": [
+    "stream_prefix",
+    "stream_name"
+  ],
+  "generate_table_schema": [
+    "stream_schema_props"
+  ],
+  "is_basic_normalization_operation": [
+    "operation_def"
+  ],
+  "_materialization_for_stream": [
+    "name",
+    "stream_schema_props",
+    "stream_stats",
+    "asset_key_prefix"
+  ],
+  "_get_attempt": [
+    "attempt"
+  ],
+  "generate_materializations": [
+    "output",
+    "asset_key_prefix",
+    "stream_to_asset_map"
+  ],
+  "get_translator_from_airbyte_assets": [
+    "airbyte_assets"
+  ],
+  "_table_to_output_name_fn": [
+    "table"
+  ],
+  "_build_airbyte_asset_defn_metadata": [
+    "connection_id",
+    "destination_tables",
+    "destination_raw_table_names_by_table",
+    "destination_database",
+    "destination_schema",
+    "table_to_asset_key_fn",
+    "asset_key_prefix",
+    "normalization_tables",
+    "normalization_raw_table_names_by_table",
+    "upstream_assets",
+    "group_name",
+    "io_manager_key",
+    "schema_by_table_name",
+    "legacy_freshness_policy",
+    "auto_materialize_policy"
+  ],
+  "_build_airbyte_assets_from_metadata": [
+    "assets_defn_meta",
+    "resource_defs"
+  ],
+  "build_airbyte_assets": [
+    "connection_id",
+    "destination_tables",
+    "destination_database",
+    "destination_schema",
+    "asset_key_prefix",
+    "group_name",
+    "normalization_tables",
+    "deps",
+    "upstream_assets",
+    "schema_by_table_name",
+    "stream_to_asset_map"
+  ],
+  "_get_schema_types": [
+    "schema"
+  ],
+  "_get_sub_schemas": [
+    "schema"
+  ],
+  "_get_normalization_tables_for_schema": [
+    "key",
+    "schema",
+    "prefix"
+  ],
+  "AirbyteConnectionMetadata": {
+    "from_api_json": [
+      "cls",
+      "contents",
+      "operations",
+      "destination"
+    ],
+    "from_config": [
+      "cls",
+      "contents",
+      "destination"
+    ],
+    "parse_stream_tables": [
+      "self",
+      "return_normalization_tables"
+    ]
+  },
+  "_get_schema_by_table_name": [
+    "stream_table_metadata"
+  ],
+  "AirbyteCoreCacheableAssetsDefinition": {
+    "__init__": [
+      "self",
+      "key_prefix",
+      "create_assets_for_normalization_tables",
+      "connection_meta_to_group_fn",
+      "connection_to_io_manager_key_fn",
+      "connection_filter",
+      "connection_to_asset_key_fn",
+      "connection_to_freshness_policy_fn",
+      "connection_to_auto_materialize_policy_fn"
+    ],
+    "_get_connections": [
+      "self"
+    ],
+    "compute_cacheable_data": [
+      "self"
+    ],
+    "_build_definitions_with_resources": [
+      "self",
+      "data",
+      "resource_defs"
+    ],
+    "build_definitions": [
+      "self",
+      "data"
+    ]
+  },
+  "AirbyteInstanceCacheableAssetsDefinition": {
+    "__init__": [
+      "self",
+      "airbyte_resource_def",
+      "workspace_id",
+      "key_prefix",
+      "create_assets_for_normalization_tables",
+      "connection_meta_to_group_fn",
+      "connection_to_io_manager_key_fn",
+      "connection_filter",
+      "connection_to_asset_key_fn",
+      "connection_to_freshness_policy_fn",
+      "connection_to_auto_materialize_policy_fn"
+    ],
+    "_get_connections": [
+      "self"
+    ],
+    "build_definitions": [
+      "self",
+      "data"
+    ]
+  },
+  "AirbyteYAMLCacheableAssetsDefinition": {
+    "__init__": [
+      "self",
+      "project_dir",
+      "workspace_id",
+      "key_prefix",
+      "create_assets_for_normalization_tables",
+      "connection_meta_to_group_fn",
+      "connection_to_io_manager_key_fn",
+      "connection_filter",
+      "connection_directories",
+      "connection_to_asset_key_fn",
+      "connection_to_freshness_policy_fn",
+      "connection_to_auto_materialize_policy_fn"
+    ],
+    "_get_connections": [
+      "self"
+    ]
+  },
+  "load_assets_from_airbyte_instance": [
+    "airbyte",
+    "workspace_id",
+    "key_prefix",
+    "create_assets_for_normalization_tables",
+    "connection_to_group_fn",
+    "connection_meta_to_group_fn",
+    "io_manager_key",
+    "connection_to_io_manager_key_fn",
+    "connection_filter",
+    "connection_to_asset_key_fn",
+    "connection_to_freshness_policy_fn",
+    "connection_to_auto_materialize_policy_fn"
+  ],
+  "build_airbyte_assets_definitions": [],
+  "AirbyteJobStatusType": {
+    "RUNNING": [],
+    "SUCCEEDED": [],
+    "CANCELLED": [],
+    "PENDING": [],
+    "FAILED": [],
+    "ERROR": [],
+    "INCOMPLETE": []
+  },
+  "AirbyteState": {
+    "RUNNING": [],
+    "SUCCEEDED": [],
+    "CANCELLED": [],
+    "PENDING": [],
+    "FAILED": [],
+    "ERROR": [],
+    "INCOMPLETE": []
+  },
+  "AirbyteConnectionTableProps": {
+    "fully_qualified_table_name": [
+      "self"
+    ]
+  },
+  "AirbyteConnection": {
+    "from_connection_details": [
+      "cls",
+      "connection_details"
+    ]
+  },
+  "AirbyteDestination": {
+    "from_destination_details": [
+      "cls",
+      "destination_details"
+    ]
+  },
+  "AirbyteStream": {
+    "from_stream_details": [
+      "cls",
+      "stream_details"
+    ]
+  },
+  "AirbyteJob": {
+    "from_job_details": [
+      "cls",
+      "job_details"
+    ]
+  },
+  "AirbyteWorkspaceData": {
+    "to_airbyte_connection_table_props_data": [
+      "self"
+    ]
+  },
+  "AirbyteMetadataSet": {
+    "namespace": [
+      "cls"
+    ]
+  },
+  "DagsterAirbyteTranslator": {
+    "get_asset_spec": [
+      "self",
+      "props"
+    ]
+  },
+  "AirbyteResourceState": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "BaseAirbyteResource": {
+    "_is_dagster_maintained": [
+      "cls"
+    ],
+    "_log": [
+      "self"
+    ],
+    "api_base_url": [
+      "self"
+    ],
+    "all_additional_request_params": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "endpoint",
+      "data",
+      "method",
+      "include_additional_request_params"
+    ],
+    "start_sync": [
+      "self",
+      "connection_id"
+    ],
+    "get_connection_details": [
+      "self",
+      "connection_id"
+    ],
+    "get_job_status": [
+      "self",
+      "connection_id",
+      "job_id"
+    ],
+    "cancel_job": [
+      "self",
+      "job_id"
+    ],
+    "_should_forward_logs": [
+      "self"
+    ],
+    "sync_and_poll": [
+      "self",
+      "connection_id",
+      "poll_interval",
+      "poll_timeout"
+    ]
+  },
+  "AirbyteResource": {
+    "_state": [
+      "self"
+    ],
+    "_log": [
+      "self"
+    ],
+    "api_base_url": [
+      "self"
+    ],
+    "_should_forward_logs": [
+      "self"
+    ],
+    "cache_requests": [
+      "self"
+    ],
+    "clear_request_cache": [
+      "self"
+    ],
+    "make_request_cached": [
+      "self",
+      "endpoint",
+      "data"
+    ],
+    "all_additional_request_params": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "endpoint",
+      "data"
+    ],
+    "cancel_job": [
+      "self",
+      "job_id"
+    ],
+    "get_default_workspace": [
+      "self"
+    ],
+    "get_source_definition_by_name": [
+      "self",
+      "name"
+    ],
+    "get_destination_definition_by_name": [
+      "self",
+      "name"
+    ],
+    "get_source_catalog_id": [
+      "self",
+      "source_id"
+    ],
+    "get_source_schema": [
+      "self",
+      "source_id"
+    ],
+    "does_dest_support_normalization": [
+      "self",
+      "destination_definition_id",
+      "workspace_id"
+    ],
+    "get_job_status": [
+      "self",
+      "connection_id",
+      "job_id"
+    ],
+    "start_sync": [
+      "self",
+      "connection_id"
+    ],
+    "get_connection_details": [
+      "self",
+      "connection_id"
+    ],
+    "sync_and_poll": [
+      "self",
+      "connection_id",
+      "poll_interval",
+      "poll_timeout"
+    ]
+  },
+  "AirbyteCloudResource": {
+    "setup_for_execution": [
+      "self",
+      "context"
+    ],
+    "api_base_url": [
+      "self"
+    ],
+    "all_additional_request_params": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "endpoint",
+      "data",
+      "method",
+      "include_additional_request_params"
+    ],
+    "start_sync": [
+      "self",
+      "connection_id"
+    ],
+    "get_connection_details": [
+      "self",
+      "connection_id"
+    ],
+    "get_job_status": [
+      "self",
+      "connection_id",
+      "job_id"
+    ],
+    "cancel_job": [
+      "self",
+      "job_id"
+    ],
+    "_should_forward_logs": [
+      "self"
+    ],
+    "_refresh_access_token": [
+      "self"
+    ],
+    "_needs_refreshed_access_token": [
+      "self"
+    ]
+  },
+  "airbyte_cloud_resource": [
+    "context"
+  ],
+  "airbyte_resource": [
+    "context"
+  ],
+  "AirbyteSyncConfig": {},
+  "airbyte_sync_op": [
+    "context",
+    "config",
+    "airbyte"
+  ],
+  "AirbyteTableMetadata": {
+    "__init__": [
+      "self",
+      "raw_table_name",
+      "schema",
+      "normalization_tables"
+    ]
+  },
+  "AirbyteOutput": {},
+  "AirbyteScaffolderParams": {},
+  "AirbyteWorkspaceComponentScaffolder": {
+    "get_scaffold_params": [
+      "cls"
+    ],
+    "scaffold": [
+      "self",
+      "request"
+    ]
+  },
+  "BaseAirbyteWorkspaceModel": {},
+  "AirbyteWorkspaceModel": {},
+  "AirbyteCloudWorkspaceModel": {},
+  "AirbyteConnectionSelectorByName": {},
+  "AirbyteConnectionSelectorById": {},
+  "resolve_connection_selector": [
+    "context",
+    "model"
+  ],
+  "resolve_airbyte_workspace_type": [
+    "context",
+    "model"
+  ],
+  "AirbyteWorkspaceComponent": {
+    "defs_state_config": [
+      "self"
+    ],
+    "translator": [
+      "self"
+    ],
+    "_base_translator": [
+      "self"
+    ],
+    "get_asset_spec": [
+      "self",
+      "props"
+    ],
+    "execute": [
+      "self",
+      "context",
+      "airbyte"
+    ],
+    "_load_asset_specs": [
+      "self",
+      "state"
+    ],
+    "_get_airbyte_assets_def": [
+      "self",
+      "connection_name",
+      "specs"
+    ],
+    "write_state_to_path": [
+      "self",
+      "state_path"
+    ],
+    "build_defs_from_state": [
+      "self",
+      "context",
+      "state_path"
+    ]
+  },
+  "AirbyteCloudWorkspaceComponent": {},
+  "AirbyteComponentTranslator": {
+    "__init__": [
+      "self",
+      "component"
+    ],
+    "get_asset_spec": [
+      "self",
+      "props"
+    ]
+  },
+  "gen_configured_stream_json": [
+    "source_stream",
+    "user_stream_config"
+  ],
+  "_ignore_secrets_compare_fn": [
+    "k",
+    "_cv",
+    "dv"
+  ],
+  "_diff_configs": [
+    "config_dict",
+    "dst_dict",
+    "ignore_secrets"
+  ],
+  "diff_sources": [
+    "config_src",
+    "curr_src",
+    "ignore_secrets"
+  ],
+  "diff_destinations": [
+    "config_dst",
+    "curr_dst",
+    "ignore_secrets"
+  ],
+  "conn_dict": [
+    "conn"
+  ],
+  "OPTIONAL_STREAM_SETTINGS": [],
+  "_compare_stream_values": [
+    "k",
+    "cv",
+    "_dv"
+  ],
+  "diff_connections": [
+    "config_conn",
+    "curr_conn"
+  ],
+  "reconcile_sources": [
+    "res",
+    "config_sources",
+    "existing_sources",
+    "workspace_id",
+    "dry_run",
+    "should_delete",
+    "ignore_secrets"
+  ],
+  "reconcile_destinations": [
+    "res",
+    "config_destinations",
+    "existing_destinations",
+    "workspace_id",
+    "dry_run",
+    "should_delete",
+    "ignore_secrets"
+  ],
+  "reconcile_config": [
+    "res",
+    "objects",
+    "dry_run",
+    "should_delete",
+    "ignore_secrets"
+  ],
+  "reconcile_normalization": [
+    "res",
+    "existing_connection_id",
+    "destination",
+    "normalization_config",
+    "workspace_id"
+  ],
+  "reconcile_connections_pre": [
+    "res",
+    "config_connections",
+    "existing_sources",
+    "existing_destinations",
+    "workspace_id",
+    "dry_run",
+    "should_delete"
+  ],
+  "reconcile_connections_post": [
+    "res",
+    "config_connections",
+    "init_sources",
+    "init_dests",
+    "workspace_id",
+    "dry_run"
+  ],
+  "AirbyteManagedElementReconciler": {
+    "__init__": [
+      "self",
+      "airbyte",
+      "connections",
+      "delete_unmentioned_resources"
+    ],
+    "check": [
+      "self"
+    ],
+    "apply": [
+      "self"
+    ]
+  },
+  "AirbyteManagedElementCacheableAssetsDefinition": {
+    "__init__": [
+      "self",
+      "airbyte_resource_def",
+      "key_prefix",
+      "create_assets_for_normalization_tables",
+      "connection_meta_to_group_fn",
+      "connections",
+      "connection_to_io_manager_key_fn",
+      "connection_to_asset_key_fn",
+      "connection_to_freshness_policy_fn"
+    ],
+    "_get_connections": [
+      "self"
+    ]
+  },
+  "load_assets_from_connections": [
+    "airbyte",
+    "connections",
+    "key_prefix",
+    "create_assets_for_normalization_tables",
+    "connection_to_group_fn",
+    "connection_meta_to_group_fn",
+    "io_manager_key",
+    "connection_to_io_manager_key_fn",
+    "connection_to_asset_key_fn",
+    "connection_to_freshness_policy_fn"
+  ],
+  "MANAGED_ELEMENTS_DEPRECATION_MSG": [],
+  "AirbyteSyncMode": {
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__init__": [
+      "self",
+      "json_repr"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "json_repr"
+    ],
+    "full_refresh_append": [
+      "cls"
+    ],
+    "full_refresh_overwrite": [
+      "cls"
+    ],
+    "incremental_append": [
+      "cls",
+      "cursor_field"
+    ],
+    "incremental_append_dedup": [
+      "cls",
+      "cursor_field",
+      "primary_key"
+    ]
+  },
+  "AirbyteSource": {
+    "__init__": [
+      "self",
+      "name",
+      "source_type",
+      "source_configuration"
+    ],
+    "must_be_recreated": [
+      "self",
+      "other"
+    ]
+  },
+  "InitializedAirbyteSource": {
+    "__init__": [
+      "self",
+      "source",
+      "source_id",
+      "source_definition_id"
+    ],
+    "from_api_json": [
+      "cls",
+      "api_json"
+    ]
+  },
+  "InitializedAirbyteDestination": {
+    "__init__": [
+      "self",
+      "destination",
+      "destination_id",
+      "destination_definition_id"
+    ],
+    "from_api_json": [
+      "cls",
+      "api_json"
+    ]
+  },
+  "AirbyteDestinationNamespace": {
+    "SAME_AS_SOURCE": [],
+    "DESTINATION_DEFAULT": []
+  },
+  "InitializedAirbyteConnection": {
+    "__init__": [
+      "self",
+      "connection",
+      "connection_id"
+    ],
+    "from_api_json": [
+      "cls",
+      "api_dict",
+      "init_sources",
+      "init_dests"
+    ]
+  },
+  "_remove_none_values": [
+    "obj"
+  ],
+  "_dump_class": [
+    "obj"
+  ],
+  "GeneratedAirbyteSource": {
+    "__init__": [
+      "self",
+      "source_type",
+      "name"
+    ]
+  },
+  "GeneratedAirbyteDestination": {
+    "__init__": [
+      "self",
+      "source_type",
+      "name"
+    ]
+  },
+  "StravaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "athlete_id",
+      "start_date",
+      "auth_type"
+    ]
+  },
+  "AppsflyerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "app_id",
+      "api_token",
+      "start_date",
+      "timezone"
+    ]
+  },
+  "GoogleWorkspaceAdminReportsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials_json",
+      "email",
+      "lookback"
+    ]
+  },
+  "CartSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date"
+    ]
+  },
+  "LinkedinAdsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date",
+      "account_ids"
+    ]
+  },
+  "MongodbSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "user",
+      "password",
+      "auth_source",
+      "replica_set",
+      "ssl"
+    ]
+  },
+  "TimelySource": {
+    "__init__": [
+      "self",
+      "name",
+      "account_id",
+      "start_date",
+      "bearer_token"
+    ]
+  },
+  "StockTickerApiTutorialSource": {
+    "__init__": [
+      "self",
+      "name",
+      "stock_ticker",
+      "api_key"
+    ]
+  },
+  "WrikeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "wrike_instance",
+      "start_date"
+    ]
+  },
+  "CommercetoolsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "region",
+      "host",
+      "start_date",
+      "project_key",
+      "client_id",
+      "client_secret"
+    ]
+  },
+  "GutendexSource": {
+    "__init__": [
+      "self",
+      "name",
+      "author_year_start",
+      "author_year_end",
+      "copyright",
+      "languages",
+      "search",
+      "sort",
+      "topic"
+    ]
+  },
+  "IterableSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date"
+    ]
+  },
+  "QuickbooksSingerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "realm_id",
+      "user_agent",
+      "start_date",
+      "sandbox"
+    ]
+  },
+  "BigcommerceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "store_hash",
+      "access_token"
+    ]
+  },
+  "ShopifySource": {
+    "__init__": [
+      "self",
+      "name",
+      "shop",
+      "credentials",
+      "start_date"
+    ]
+  },
+  "AppstoreSingerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "key_id",
+      "private_key",
+      "issuer_id",
+      "vendor",
+      "start_date"
+    ]
+  },
+  "GreenhouseSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "ZoomSingerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "jwt"
+    ]
+  },
+  "TiktokMarketingSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date",
+      "end_date",
+      "report_granularity"
+    ]
+  },
+  "ZendeskChatSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "credentials",
+      "subdomain"
+    ]
+  },
+  "AwsCloudtrailSource": {
+    "__init__": [
+      "self",
+      "name",
+      "aws_key_id",
+      "aws_secret_key",
+      "aws_region_name",
+      "start_date"
+    ]
+  },
+  "OktaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "domain",
+      "start_date"
+    ]
+  },
+  "InsightlySource": {
+    "__init__": [
+      "self",
+      "name",
+      "token",
+      "start_date"
+    ]
+  },
+  "LinkedinPagesSource": {
+    "__init__": [
+      "self",
+      "name",
+      "org_id",
+      "credentials"
+    ]
+  },
+  "PersistiqSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "FreshcallerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain",
+      "api_key",
+      "start_date",
+      "requests_per_minute",
+      "sync_lag_minutes"
+    ]
+  },
+  "AppfollowSource": {
+    "__init__": [
+      "self",
+      "name",
+      "ext_id",
+      "cid",
+      "api_secret",
+      "country"
+    ]
+  },
+  "FacebookPagesSource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "page_id"
+    ]
+  },
+  "JiraSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "domain",
+      "email",
+      "projects",
+      "start_date",
+      "additional_fields",
+      "expand_issue_changelog",
+      "render_fields",
+      "enable_experimental_streams"
+    ]
+  },
+  "GoogleSheetsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "spreadsheet_id",
+      "credentials",
+      "row_batch_size"
+    ]
+  },
+  "DockerhubSource": {
+    "__init__": [
+      "self",
+      "name",
+      "docker_username"
+    ]
+  },
+  "UsCensusSource": {
+    "__init__": [
+      "self",
+      "name",
+      "query_path",
+      "api_key",
+      "query_params"
+    ]
+  },
+  "KustomerSingerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "start_date"
+    ]
+  },
+  "AzureTableSource": {
+    "__init__": [
+      "self",
+      "name",
+      "storage_account_name",
+      "storage_access_key",
+      "storage_endpoint_suffix"
+    ]
+  },
+  "ScaffoldJavaJdbcSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "replication_method",
+      "password",
+      "jdbc_url_params"
+    ]
+  },
+  "TidbSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "QualarooSource": {
+    "__init__": [
+      "self",
+      "name",
+      "token",
+      "key",
+      "start_date",
+      "survey_ids"
+    ]
+  },
+  "YahooFinancePriceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "tickers",
+      "interval",
+      "range"
+    ]
+  },
+  "GoogleAnalyticsV4Source": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date",
+      "view_id",
+      "custom_reports",
+      "window_in_days"
+    ]
+  },
+  "JdbcSource": {
+    "__init__": [
+      "self",
+      "name",
+      "username",
+      "jdbc_url",
+      "password",
+      "jdbc_url_params"
+    ]
+  },
+  "FakerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "count",
+      "seed",
+      "records_per_sync",
+      "records_per_slice"
+    ]
+  },
+  "TplcentralSource": {
+    "__init__": [
+      "self",
+      "name",
+      "url_base",
+      "client_id",
+      "client_secret",
+      "user_login_id",
+      "user_login",
+      "tpl_key",
+      "customer_id",
+      "facility_id",
+      "start_date"
+    ]
+  },
+  "ClickhouseSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "FreshserviceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain_name",
+      "api_key",
+      "start_date"
+    ]
+  },
+  "ZenloopSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "date_from",
+      "survey_id",
+      "survey_group_id"
+    ]
+  },
+  "OracleSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "connection_data",
+      "username",
+      "encryption",
+      "password",
+      "schemas",
+      "jdbc_url_params"
+    ]
+  },
+  "KlaviyoSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date"
+    ]
+  },
+  "GoogleDirectorySource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "InstagramSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "access_token"
+    ]
+  },
+  "ShortioSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain_id",
+      "secret_key",
+      "start_date"
+    ]
+  },
+  "SquareSource": {
+    "__init__": [
+      "self",
+      "name",
+      "is_sandbox",
+      "credentials",
+      "start_date",
+      "include_deleted_objects"
+    ]
+  },
+  "DelightedSource": {
+    "__init__": [
+      "self",
+      "name",
+      "since",
+      "api_key"
+    ]
+  },
+  "AmazonSqsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "queue_url",
+      "region",
+      "delete_messages",
+      "max_batch_size",
+      "max_wait_time",
+      "attributes_to_return",
+      "visibility_timeout",
+      "access_key",
+      "secret_key"
+    ]
+  },
+  "YoutubeAnalyticsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "ScaffoldSourcePythonSource": {
+    "__init__": [
+      "self",
+      "name",
+      "fix_me"
+    ]
+  },
+  "LookerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain",
+      "client_id",
+      "client_secret",
+      "run_look_ids"
+    ]
+  },
+  "GitlabSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_url",
+      "private_token",
+      "start_date",
+      "groups",
+      "projects"
+    ]
+  },
+  "ExchangeRatesSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "access_key",
+      "base",
+      "ignore_weekends"
+    ]
+  },
+  "AmazonAdsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "auth_type",
+      "region",
+      "report_wait_timeout",
+      "report_generation_max_retries",
+      "start_date",
+      "profiles",
+      "state_filter"
+    ]
+  },
+  "MixpanelSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "project_id",
+      "attribution_window",
+      "project_timezone",
+      "select_properties_by_default",
+      "start_date",
+      "end_date",
+      "region",
+      "date_window_size"
+    ]
+  },
+  "OrbitSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "workspace",
+      "start_date"
+    ]
+  },
+  "AmazonSellerPartnerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "lwa_app_id",
+      "lwa_client_secret",
+      "refresh_token",
+      "aws_access_key",
+      "aws_secret_key",
+      "role_arn",
+      "replication_start_date",
+      "aws_environment",
+      "region",
+      "app_id",
+      "auth_type",
+      "replication_end_date",
+      "period_in_days",
+      "report_options",
+      "max_wait_seconds"
+    ]
+  },
+  "CourierSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "CloseComSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date"
+    ]
+  },
+  "BingAdsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "refresh_token",
+      "developer_token",
+      "reports_start_date",
+      "auth_method",
+      "tenant_id",
+      "client_secret"
+    ]
+  },
+  "PrimetricSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret"
+    ]
+  },
+  "PivotalTrackerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token"
+    ]
+  },
+  "ElasticsearchSource": {
+    "__init__": [
+      "self",
+      "name",
+      "endpoint",
+      "authenticationMethod"
+    ]
+  },
+  "BigquerySource": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "credentials_json",
+      "dataset_id"
+    ]
+  },
+  "WoocommerceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "shop",
+      "start_date",
+      "api_key",
+      "api_secret",
+      "conversion_window_days"
+    ]
+  },
+  "SearchMetricsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "client_secret",
+      "country_code",
+      "start_date"
+    ]
+  },
+  "TypeformSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "token",
+      "form_ids"
+    ]
+  },
+  "WebflowSource": {
+    "__init__": [
+      "self",
+      "name",
+      "site_id",
+      "api_key"
+    ]
+  },
+  "FireboltSource": {
+    "__init__": [
+      "self",
+      "name",
+      "username",
+      "password",
+      "database",
+      "account",
+      "host",
+      "engine"
+    ]
+  },
+  "FaunaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain",
+      "port",
+      "scheme",
+      "secret",
+      "collection"
+    ]
+  },
+  "IntercomSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "access_token"
+    ]
+  },
+  "FreshsalesSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain_name",
+      "api_key"
+    ]
+  },
+  "AdjustSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "dimensions",
+      "ingest_start",
+      "metrics",
+      "additional_metrics",
+      "until_today"
+    ]
+  },
+  "BambooHrSource": {
+    "__init__": [
+      "self",
+      "name",
+      "subdomain",
+      "api_key",
+      "custom_reports_fields",
+      "custom_reports_include_default_fields"
+    ]
+  },
+  "GoogleAdsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "customer_id",
+      "start_date",
+      "end_date",
+      "custom_queries",
+      "login_customer_id",
+      "conversion_window_days"
+    ]
+  },
+  "HellobatonSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "company"
+    ]
+  },
+  "SendgridSource": {
+    "__init__": [
+      "self",
+      "name",
+      "apikey",
+      "start_time"
+    ]
+  },
+  "MondaySource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "DixaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "start_date",
+      "batch_size"
+    ]
+  },
+  "SalesforceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "is_sandbox",
+      "auth_type",
+      "start_date",
+      "streams_criteria"
+    ]
+  },
+  "PipedriveSource": {
+    "__init__": [
+      "self",
+      "name",
+      "authorization",
+      "replication_start_date"
+    ]
+  },
+  "FileSource": {
+    "__init__": [
+      "self",
+      "name",
+      "dataset_name",
+      "format",
+      "url",
+      "provider",
+      "reader_options"
+    ]
+  },
+  "GlassfrogSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "ChartmogulSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date",
+      "interval"
+    ]
+  },
+  "OrbSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date",
+      "lookback_window_days",
+      "string_event_properties_keys",
+      "numeric_event_properties_keys"
+    ]
+  },
+  "CockroachdbSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "ConfluenceSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token",
+      "domain_name",
+      "email"
+    ]
+  },
+  "PlaidSource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "api_key",
+      "client_id",
+      "plaid_env",
+      "start_date"
+    ]
+  },
+  "SnapchatMarketingSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "MicrosoftTeamsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "period",
+      "credentials"
+    ]
+  },
+  "LeverHiringSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date",
+      "environment"
+    ]
+  },
+  "TwilioSource": {
+    "__init__": [
+      "self",
+      "name",
+      "account_sid",
+      "auth_token",
+      "start_date",
+      "lookback_window"
+    ]
+  },
+  "StripeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "account_id",
+      "client_secret",
+      "start_date",
+      "lookback_window_days",
+      "slice_range"
+    ]
+  },
+  "Db2Source": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "db",
+      "username",
+      "password",
+      "encryption",
+      "jdbc_url_params"
+    ]
+  },
+  "SlackSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "lookback_window",
+      "join_channels",
+      "credentials",
+      "channel_filter"
+    ]
+  },
+  "RechargeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "access_token"
+    ]
+  },
+  "OpenweatherSource": {
+    "__init__": [
+      "self",
+      "name",
+      "lat",
+      "lon",
+      "appid",
+      "units",
+      "lang"
+    ]
+  },
+  "RetentlySource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "ScaffoldSourceHttpSource": {
+    "__init__": [
+      "self",
+      "name",
+      "TODO"
+    ]
+  },
+  "YandexMetricaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "auth_token",
+      "counter_id",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "TalkdeskExploreSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "auth_url",
+      "api_key",
+      "timezone"
+    ]
+  },
+  "ChargifySource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "domain"
+    ]
+  },
+  "RkiCovidSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date"
+    ]
+  },
+  "PostgresSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "ssl_mode",
+      "replication_method",
+      "tunnel_method",
+      "schemas",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "TrelloSource": {
+    "__init__": [
+      "self",
+      "name",
+      "token",
+      "key",
+      "start_date",
+      "board_ids"
+    ]
+  },
+  "PrestashopSource": {
+    "__init__": [
+      "self",
+      "name",
+      "url",
+      "access_key"
+    ]
+  },
+  "PaystackSource": {
+    "__init__": [
+      "self",
+      "name",
+      "secret_key",
+      "start_date",
+      "lookback_window_days"
+    ]
+  },
+  "S3Source": {
+    "__init__": [
+      "self",
+      "name",
+      "dataset",
+      "path_pattern",
+      "format",
+      "provider",
+      "schema"
+    ]
+  },
+  "SnowflakeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "host",
+      "role",
+      "warehouse",
+      "database",
+      "schema",
+      "jdbc_url_params"
+    ]
+  },
+  "AmplitudeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "secret_key",
+      "start_date"
+    ]
+  },
+  "PosthogSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "api_key",
+      "base_url"
+    ]
+  },
+  "PaypalTransactionSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "is_sandbox",
+      "client_id",
+      "client_secret",
+      "refresh_token"
+    ]
+  },
+  "MssqlSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "ssl_method",
+      "replication_method",
+      "schemas",
+      "password",
+      "jdbc_url_params"
+    ]
+  },
+  "ZohoCrmSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "dc_region",
+      "environment",
+      "edition",
+      "start_datetime"
+    ]
+  },
+  "RedshiftSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "schemas",
+      "jdbc_url_params"
+    ]
+  },
+  "AsanaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "SmartsheetsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "spreadsheet_id",
+      "start_datetime"
+    ]
+  },
+  "MailchimpSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "SentrySource": {
+    "__init__": [
+      "self",
+      "name",
+      "auth_token",
+      "organization",
+      "project",
+      "hostname",
+      "discover_fields"
+    ]
+  },
+  "MailgunSource": {
+    "__init__": [
+      "self",
+      "name",
+      "private_key",
+      "domain_region",
+      "start_date"
+    ]
+  },
+  "OnesignalSource": {
+    "__init__": [
+      "self",
+      "name",
+      "user_auth_key",
+      "start_date",
+      "outcome_names"
+    ]
+  },
+  "PythonHttpTutorialSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "base",
+      "access_key"
+    ]
+  },
+  "AirtableSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "base_id",
+      "tables"
+    ]
+  },
+  "MongodbV2Source": {
+    "__init__": [
+      "self",
+      "name",
+      "instance_type",
+      "database",
+      "user",
+      "password",
+      "auth_source"
+    ]
+  },
+  "FileSecureSource": {
+    "__init__": [
+      "self",
+      "name",
+      "dataset_name",
+      "format",
+      "url",
+      "provider",
+      "reader_options"
+    ]
+  },
+  "ZendeskSupportSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "subdomain",
+      "credentials"
+    ]
+  },
+  "TempoSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_token"
+    ]
+  },
+  "BraintreeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "merchant_id",
+      "public_key",
+      "private_key",
+      "environment",
+      "start_date"
+    ]
+  },
+  "SalesloftSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "start_date"
+    ]
+  },
+  "LinnworksSource": {
+    "__init__": [
+      "self",
+      "name",
+      "application_id",
+      "application_secret",
+      "token",
+      "start_date"
+    ]
+  },
+  "ChargebeeSource": {
+    "__init__": [
+      "self",
+      "name",
+      "site",
+      "site_api_key",
+      "start_date",
+      "product_catalog"
+    ]
+  },
+  "GoogleAnalyticsDataApiSource": {
+    "__init__": [
+      "self",
+      "name",
+      "property_id",
+      "credentials",
+      "date_ranges_start_date",
+      "custom_reports",
+      "window_in_days"
+    ]
+  },
+  "OutreachSource": {
+    "__init__": [
+      "self",
+      "name",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "redirect_uri",
+      "start_date"
+    ]
+  },
+  "LemlistSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "ApifyDatasetSource": {
+    "__init__": [
+      "self",
+      "name",
+      "datasetId",
+      "clean"
+    ]
+  },
+  "RecurlySource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "begin_time",
+      "end_time"
+    ]
+  },
+  "ZendeskTalkSource": {
+    "__init__": [
+      "self",
+      "name",
+      "subdomain",
+      "credentials",
+      "start_date"
+    ]
+  },
+  "SftpSource": {
+    "__init__": [
+      "self",
+      "name",
+      "user",
+      "host",
+      "port",
+      "credentials",
+      "file_types",
+      "folder_path",
+      "file_pattern"
+    ]
+  },
+  "WhiskyHunterSource": {
+    "__init__": [
+      "self",
+      "name"
+    ]
+  },
+  "FreshdeskSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain",
+      "api_key",
+      "requests_per_minute",
+      "start_date"
+    ]
+  },
+  "GocardlessSource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "gocardless_environment",
+      "gocardless_version",
+      "start_date"
+    ]
+  },
+  "ZuoraSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "tenant_endpoint",
+      "data_query",
+      "client_id",
+      "client_secret",
+      "window_in_days"
+    ]
+  },
+  "MarketoSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain_url",
+      "client_id",
+      "client_secret",
+      "start_date"
+    ]
+  },
+  "DriftSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials"
+    ]
+  },
+  "PokeapiSource": {
+    "__init__": [
+      "self",
+      "name",
+      "pokemon_name"
+    ]
+  },
+  "NetsuiteSource": {
+    "__init__": [
+      "self",
+      "name",
+      "realm",
+      "consumer_key",
+      "consumer_secret",
+      "token_key",
+      "token_secret",
+      "start_datetime",
+      "object_types",
+      "window_in_days"
+    ]
+  },
+  "HubplannerSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key"
+    ]
+  },
+  "Dv360Source": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "partner_id",
+      "start_date",
+      "end_date",
+      "filters"
+    ]
+  },
+  "NotionSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "credentials"
+    ]
+  },
+  "ZendeskSunshineSource": {
+    "__init__": [
+      "self",
+      "name",
+      "subdomain",
+      "start_date",
+      "credentials"
+    ]
+  },
+  "PinterestSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "credentials"
+    ]
+  },
+  "MetabaseSource": {
+    "__init__": [
+      "self",
+      "name",
+      "instance_api_url",
+      "username",
+      "password",
+      "session_token"
+    ]
+  },
+  "HubspotSource": {
+    "__init__": [
+      "self",
+      "name",
+      "start_date",
+      "credentials"
+    ]
+  },
+  "HarvestSource": {
+    "__init__": [
+      "self",
+      "name",
+      "account_id",
+      "replication_start_date",
+      "credentials"
+    ]
+  },
+  "GithubSource": {
+    "__init__": [
+      "self",
+      "name",
+      "credentials",
+      "start_date",
+      "repository",
+      "branch",
+      "page_size_for_large_streams"
+    ]
+  },
+  "E2eTestSource": {
+    "__init__": [
+      "self",
+      "name",
+      "max_messages",
+      "mock_catalog",
+      "type",
+      "seed",
+      "message_interval_ms"
+    ]
+  },
+  "MysqlSource": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "ssl_mode",
+      "replication_method",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "MyHoursSource": {
+    "__init__": [
+      "self",
+      "name",
+      "email",
+      "password",
+      "start_date",
+      "logs_batch_size"
+    ]
+  },
+  "KyribaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "domain",
+      "username",
+      "password",
+      "start_date",
+      "end_date"
+    ]
+  },
+  "GoogleSearchConsoleSource": {
+    "__init__": [
+      "self",
+      "name",
+      "site_urls",
+      "start_date",
+      "authorization",
+      "end_date",
+      "custom_reports"
+    ]
+  },
+  "FacebookMarketingSource": {
+    "__init__": [
+      "self",
+      "name",
+      "account_id",
+      "start_date",
+      "access_token",
+      "end_date",
+      "include_deleted",
+      "fetch_thumbnail_images",
+      "custom_insights",
+      "page_size",
+      "insights_lookback_window",
+      "max_batch_size"
+    ]
+  },
+  "SurveymonkeySource": {
+    "__init__": [
+      "self",
+      "name",
+      "access_token",
+      "start_date",
+      "survey_ids"
+    ]
+  },
+  "PardotSource": {
+    "__init__": [
+      "self",
+      "name",
+      "pardot_business_unit_id",
+      "client_id",
+      "client_secret",
+      "refresh_token",
+      "start_date",
+      "is_sandbox"
+    ]
+  },
+  "FlexportSource": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "start_date"
+    ]
+  },
+  "ZenefitsSource": {
+    "__init__": [
+      "self",
+      "name",
+      "token"
+    ]
+  },
+  "KafkaSource": {
+    "__init__": [
+      "self",
+      "name",
+      "MessageFormat",
+      "bootstrap_servers",
+      "subscription",
+      "protocol",
+      "test_topic",
+      "group_id",
+      "max_poll_records",
+      "polling_time",
+      "client_id",
+      "enable_auto_commit",
+      "auto_commit_interval_ms",
+      "client_dns_lookup",
+      "retry_backoff_ms",
+      "request_timeout_ms",
+      "receive_buffer_bytes",
+      "auto_offset_reset",
+      "repeated_calls",
+      "max_records_process"
+    ]
+  },
+  "DynamodbDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "dynamodb_table_name_prefix",
+      "dynamodb_region",
+      "access_key_id",
+      "secret_access_key",
+      "dynamodb_endpoint"
+    ]
+  },
+  "BigqueryDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "dataset_location",
+      "dataset_id",
+      "loading_method",
+      "credentials_json",
+      "transformation_priority",
+      "big_query_client_buffer_size_mb"
+    ]
+  },
+  "RabbitmqDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "routing_key",
+      "ssl",
+      "port",
+      "virtual_host",
+      "username",
+      "password",
+      "exchange"
+    ]
+  },
+  "KvdbDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "bucket_id",
+      "secret_key"
+    ]
+  },
+  "ClickhouseDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "jdbc_url_params",
+      "ssl"
+    ]
+  },
+  "AmazonSqsDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "queue_url",
+      "region",
+      "message_delay",
+      "access_key",
+      "secret_key",
+      "message_body_key",
+      "message_group_id"
+    ]
+  },
+  "MariadbColumnstoreDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "jdbc_url_params"
+    ]
+  },
+  "KinesisDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "endpoint",
+      "region",
+      "shardCount",
+      "accessKey",
+      "privateKey",
+      "bufferSize"
+    ]
+  },
+  "AzureBlobStorageDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "azure_blob_storage_account_name",
+      "azure_blob_storage_account_key",
+      "format",
+      "azure_blob_storage_endpoint_domain_name",
+      "azure_blob_storage_container_name",
+      "azure_blob_storage_output_buffer_size"
+    ]
+  },
+  "KafkaDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "bootstrap_servers",
+      "topic_pattern",
+      "protocol",
+      "acks",
+      "enable_idempotence",
+      "compression_type",
+      "batch_size",
+      "linger_ms",
+      "max_in_flight_requests_per_connection",
+      "client_dns_lookup",
+      "buffer_memory",
+      "max_request_size",
+      "retries",
+      "socket_connection_setup_timeout_ms",
+      "socket_connection_setup_timeout_max_ms",
+      "max_block_ms",
+      "request_timeout_ms",
+      "delivery_timeout_ms",
+      "send_buffer_bytes",
+      "receive_buffer_bytes",
+      "test_topic",
+      "sync_producer",
+      "client_id"
+    ]
+  },
+  "ElasticsearchDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "endpoint",
+      "authenticationMethod",
+      "upsert"
+    ]
+  },
+  "MysqlDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "ssl",
+      "jdbc_url_params"
+    ]
+  },
+  "SftpJsonDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "username",
+      "password",
+      "destination_path",
+      "port"
+    ]
+  },
+  "GcsDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "gcs_bucket_name",
+      "gcs_bucket_path",
+      "credential",
+      "format",
+      "gcs_bucket_region"
+    ]
+  },
+  "CassandraDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "keyspace",
+      "username",
+      "password",
+      "address",
+      "port",
+      "datacenter",
+      "replication"
+    ]
+  },
+  "FireboltDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "username",
+      "password",
+      "database",
+      "loading_method",
+      "account",
+      "host",
+      "engine"
+    ]
+  },
+  "GoogleSheetsDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "spreadsheet_id",
+      "credentials"
+    ]
+  },
+  "DatabricksDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "accept_terms",
+      "databricks_server_hostname",
+      "databricks_http_path",
+      "databricks_personal_access_token",
+      "data_source",
+      "databricks_port",
+      "database_schema",
+      "purge_staging_data"
+    ]
+  },
+  "BigqueryDenormalizedDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "dataset_id",
+      "loading_method",
+      "credentials_json",
+      "dataset_location",
+      "big_query_client_buffer_size_mb"
+    ]
+  },
+  "SqliteDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "destination_path"
+    ]
+  },
+  "MongodbDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "instance_type",
+      "database",
+      "auth_type"
+    ]
+  },
+  "RocksetDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "api_key",
+      "workspace",
+      "api_server"
+    ]
+  },
+  "OracleDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "sid",
+      "username",
+      "encryption",
+      "password",
+      "jdbc_url_params",
+      "schema"
+    ]
+  },
+  "CsvDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "destination_path"
+    ]
+  },
+  "S3Destination": {
+    "__init__": [
+      "self",
+      "name",
+      "s3_bucket_name",
+      "s3_bucket_path",
+      "s3_bucket_region",
+      "format",
+      "access_key_id",
+      "secret_access_key",
+      "s3_endpoint",
+      "s3_path_format",
+      "file_name_pattern"
+    ]
+  },
+  "AwsDatalakeDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "region",
+      "credentials",
+      "bucket_name",
+      "bucket_prefix",
+      "aws_account_id",
+      "lakeformation_database_name"
+    ]
+  },
+  "MssqlDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "schema",
+      "username",
+      "ssl_method",
+      "password",
+      "jdbc_url_params"
+    ]
+  },
+  "PubsubDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "topic_id",
+      "credentials_json"
+    ]
+  },
+  "R2Destination": {
+    "__init__": [
+      "self",
+      "name",
+      "account_id",
+      "access_key_id",
+      "secret_access_key",
+      "s3_bucket_name",
+      "s3_bucket_path",
+      "format",
+      "s3_path_format",
+      "file_name_pattern"
+    ]
+  },
+  "JdbcDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "username",
+      "jdbc_url",
+      "password",
+      "schema"
+    ]
+  },
+  "KeenDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "api_key",
+      "infer_timestamp"
+    ]
+  },
+  "TidbDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "ssl",
+      "jdbc_url_params"
+    ]
+  },
+  "FirestoreDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "project_id",
+      "credentials_json"
+    ]
+  },
+  "ScyllaDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "keyspace",
+      "username",
+      "password",
+      "address",
+      "port",
+      "replication"
+    ]
+  },
+  "RedisDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "username",
+      "password",
+      "cache_type"
+    ]
+  },
+  "MqttDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "broker_host",
+      "broker_port",
+      "use_tls",
+      "topic_pattern",
+      "publisher_sync",
+      "connect_timeout",
+      "automatic_reconnect",
+      "clean_session",
+      "message_retained",
+      "message_qos",
+      "username",
+      "password",
+      "topic_test",
+      "client"
+    ]
+  },
+  "RedshiftDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "username",
+      "password",
+      "database",
+      "schema",
+      "uploading_method",
+      "jdbc_url_params"
+    ]
+  },
+  "PulsarDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "brokers",
+      "use_tls",
+      "topic_type",
+      "topic_tenant",
+      "topic_namespace",
+      "topic_pattern",
+      "compression_type",
+      "send_timeout_ms",
+      "max_pending_messages",
+      "max_pending_messages_across_partitions",
+      "batching_enabled",
+      "batching_max_messages",
+      "batching_max_publish_delay",
+      "block_if_queue_full",
+      "topic_test",
+      "producer_name",
+      "producer_sync"
+    ]
+  },
+  "SnowflakeDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "role",
+      "warehouse",
+      "database",
+      "schema",
+      "username",
+      "credentials",
+      "loading_method",
+      "jdbc_url_params"
+    ]
+  },
+  "PostgresDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "port",
+      "database",
+      "schema",
+      "username",
+      "ssl_mode",
+      "password",
+      "ssl",
+      "jdbc_url_params"
+    ]
+  },
+  "ScaffoldDestinationPythonDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "TODO"
+    ]
+  },
+  "LocalJsonDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "destination_path"
+    ]
+  },
+  "MeilisearchDestination": {
+    "__init__": [
+      "self",
+      "name",
+      "host",
+      "api_key"
+    ]
+  }
+}

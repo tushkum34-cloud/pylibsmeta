@@ -1,0 +1,682 @@
+{
+  "StandardHeader": {
+    "DATA_MIN_LENGTH": [],
+    "USE_EXTENDED_HEADER_MASK": [],
+    "MSB_FIRST_MASK": [],
+    "WITH_ECU_ID_MASK": [],
+    "WITH_SESSION_ID_MASK": [],
+    "WITH_TIMESTAMP_MASK": [],
+    "VERSION_NUMBER_MASK": [],
+    "_VERSION_NUMBER_SHIFT": [],
+    "STRUCT_MIN_FORMAT": [],
+    "__init__": [
+      "self",
+      "use_extended_header",
+      "msb_first",
+      "version_number",
+      "message_counter",
+      "length",
+      "ecu_id",
+      "session_id",
+      "timestamp"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "header_type": [
+      "self"
+    ],
+    "with_ecu_id": [
+      "self"
+    ],
+    "with_session_id": [
+      "self"
+    ],
+    "with_timestamp": [
+      "self"
+    ]
+  },
+  "MessageType": {
+    "DLT_TYPE_LOG": [],
+    "DLT_TYPE_APP_TRACE": [],
+    "DLT_TYPE_NW_TRACE": [],
+    "DLT_TYPE_CONTROL": []
+  },
+  "MessageTypeInfo": {},
+  "MessageLogInfo": {
+    "DLT_LOG_FATAL": [],
+    "DLT_LOG_ERROR": [],
+    "DLT_LOG_WARN": [],
+    "DLT_LOG_INFO": [],
+    "DLT_LOG_DEBUG": [],
+    "DLT_LOG_VERBOSE": []
+  },
+  "MessageTraceInfo": {
+    "DLT_TRACE_VARIABLE": [],
+    "DLT_TRACE_FUNCTON_IN": [],
+    "DLT_TRACE_FUNCTON_OUT": [],
+    "DLT_TRACE_STATE": [],
+    "DLT_TRACE_VFB": []
+  },
+  "MessageBusInfo": {
+    "DLT_NW_TRACE_IPC": [],
+    "DLT_NW_TRACE_CAN": [],
+    "DLT_NW_TRACE_FLEXRAY": [],
+    "DLT_NW_TRACE_MOST": []
+  },
+  "MessageControlInfo": {
+    "DLT_CONTROL_REQUEST": [],
+    "DLT_CONTROL_RESPONSE": [],
+    "DLT_CONTROL_TIME": []
+  },
+  "ExtendedHeader": {
+    "DATA_LENGTH": [],
+    "VERBOSE_MASK": [],
+    "MESSAGE_TYPE_MASK": [],
+    "MESSAGE_TYPE_INFO_MASK": [],
+    "_MESSAGE_TYPE_SHIFT": [],
+    "_MESSAGE_TYPE_INFO_SHIFT": [],
+    "STRUCT_FORMAT": [],
+    "__init__": [
+      "self",
+      "verbose",
+      "message_type",
+      "message_type_info",
+      "number_of_arguments",
+      "application_id",
+      "context_id"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "message_log_info": [
+      "self"
+    ],
+    "message_trace_info": [
+      "self"
+    ],
+    "message_bus_info": [
+      "self"
+    ],
+    "message_control_info": [
+      "self"
+    ]
+  },
+  "StorageHeader": {
+    "DATA_LENGTH": [],
+    "DLT_PATTERN": [],
+    "STRUCT_FORMAT": [],
+    "__init__": [
+      "self",
+      "seconds",
+      "microseconds",
+      "ecu_id"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "bytes_length": [
+      "self"
+    ]
+  },
+  "_ascii_decode": [
+    "ascii"
+  ],
+  "_ascii_encode": [
+    "ascii"
+  ],
+  "_MESSAGE_TYPE_STR": [],
+  "_MESSAGE_LOG_INFO_STR": [],
+  "_MESSAGE_TRACE_INFO_STR": [],
+  "_MESSAGE_BUS_INFO_STR": [],
+  "_MESSAGE_CONTROL_INFO_STR": [],
+  "DltMessage": {
+    "__init__": [
+      "self",
+      "str_header",
+      "std_header",
+      "ext_header",
+      "payload"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "create_non_verbose_message": [
+      "cls",
+      "message_id",
+      "non_static_data",
+      "ext_header",
+      "timestamp",
+      "session_id",
+      "ecu_id",
+      "message_counter",
+      "version_number",
+      "msb_first",
+      "str_header"
+    ],
+    "create_verbose_message": [
+      "cls",
+      "arguments",
+      "message_type",
+      "message_type_info",
+      "application_id",
+      "context_id",
+      "timestamp",
+      "session_id",
+      "ecu_id",
+      "message_counter",
+      "version_number",
+      "msb_first",
+      "str_header"
+    ],
+    "_create_standard_header": [
+      "payload_length",
+      "ext_header",
+      "timestamp",
+      "session_id",
+      "ecu_id",
+      "message_counter",
+      "version_number",
+      "msb_first"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data",
+      "with_storage_header",
+      "encoding"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "verbose": [
+      "self"
+    ],
+    "non_verbose_payload": [
+      "self"
+    ],
+    "verbose_payload": [
+      "self"
+    ]
+  },
+  "Payload": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "to_bytes": [
+      "self",
+      "msb_first"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "_to_str": [
+      "self"
+    ]
+  },
+  "NonVerbosePayload": {
+    "_MESSAGE_ID_LENGTH": [],
+    "__init__": [
+      "self",
+      "message_id",
+      "non_static_data",
+      "msb_first"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data",
+      "msb_fitst"
+    ],
+    "to_bytes": [
+      "self",
+      "msb_first"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "_to_str": [
+      "self"
+    ]
+  },
+  "MASK_BASE_TYPE": [],
+  "MASK_TYPE_LENGTH": [],
+  "MASK_VARIABLE_INFO": [],
+  "MASK_FIXED_POINT": [],
+  "MASK_STRING_CODING": [],
+  "TypeInfo": {
+    "TYPE_LENGTH_8BIT": [],
+    "TYPE_LENGTH_16BIT": [],
+    "TYPE_LENGTH_32BIT": [],
+    "TYPE_LENGTH_64BIT": [],
+    "TYPE_LENGTH_128BIT": [],
+    "TYPE_BOOL": [],
+    "TYPE_SIGNED": [],
+    "TYPE_UNSIGNED": [],
+    "TYPE_FLOAT": [],
+    "TYPE_ARRAY": [],
+    "TYPE_STRING": [],
+    "TYPE_RAW": [],
+    "VARIABLE_INFO": [],
+    "FIXED_POINT": [],
+    "TRACE_INFO": [],
+    "TYPE_STRUCT": [],
+    "STRING_CODING_ASCII": [],
+    "STRING_CODING_UTF8": []
+  },
+  "Argument": {
+    "_TYPE_INFO_LENGTH": [],
+    "__init__": [
+      "self",
+      "msb_first"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "_type_info": [
+      "self"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data",
+      "msb_first",
+      "encoding"
+    ],
+    "to_bytes": [
+      "self",
+      "msb_first"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "_to_str": [
+      "self"
+    ],
+    "data_payload_length": [
+      "self"
+    ],
+    "data_payload_to_bytes": [
+      "self",
+      "msb_first"
+    ]
+  },
+  "ArgumentNumBase": {
+    "__init__": [
+      "self",
+      "data",
+      "msb_first"
+    ],
+    "_struct_format": [],
+    "_to_str": [
+      "self"
+    ],
+    "data_payload_numbase_length": [],
+    "from_data_payload": [
+      "cls",
+      "data_payload",
+      "msb_first"
+    ],
+    "data_payload_to_bytes": [
+      "self",
+      "msb_first"
+    ]
+  },
+  "ArgumentBool": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentUInt8": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentUInt16": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentUInt32": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentUInt64": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentSInt8": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentSInt16": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentSInt32": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentSInt64": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentFloat32": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentFloat64": {
+    "_type_info": [
+      "self"
+    ],
+    "_struct_format": [],
+    "data_payload_numbase_length": [],
+    "data_payload_length": [
+      "self"
+    ]
+  },
+  "ArgumentByteBase": {
+    "LENGTH_SIZE": [],
+    "data_payload_length": [
+      "self"
+    ],
+    "data_length": [
+      "self"
+    ],
+    "data_payload_to_bytes": [
+      "self",
+      "msb_first"
+    ],
+    "data_to_bytes": [
+      "self"
+    ]
+  },
+  "ArgumentString": {
+    "__init__": [
+      "self",
+      "data",
+      "is_utf8",
+      "msb_first",
+      "encoding"
+    ],
+    "_to_str": [
+      "self"
+    ],
+    "_type_info": [
+      "self"
+    ],
+    "from_data_payload": [
+      "cls",
+      "data_payload",
+      "is_utf8",
+      "msb_first",
+      "encoding"
+    ],
+    "data_length": [
+      "self"
+    ],
+    "data_to_bytes": [
+      "self"
+    ],
+    "_encoding_format": [
+      "is_utf8",
+      "encoding"
+    ]
+  },
+  "ArgumentRaw": {
+    "__init__": [
+      "self",
+      "data",
+      "msb_first"
+    ],
+    "_to_str": [
+      "self"
+    ],
+    "_type_info": [
+      "self"
+    ],
+    "from_data_payload": [
+      "cls",
+      "data_payload",
+      "msb_first"
+    ],
+    "data_length": [
+      "self"
+    ],
+    "data_to_bytes": [
+      "self"
+    ]
+  },
+  "VerbosePayload": {
+    "__init__": [
+      "self",
+      "arguments"
+    ],
+    "create_from_bytes": [
+      "cls",
+      "data",
+      "msb_first",
+      "number_of_arguments",
+      "encoding"
+    ],
+    "to_bytes": [
+      "self",
+      "msb_first"
+    ],
+    "bytes_length": [
+      "self"
+    ],
+    "_to_str": [
+      "self"
+    ]
+  },
+  "DltFileReader": {
+    "__init__": [
+      "self",
+      "path",
+      "encoding"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "close": [
+      "self"
+    ],
+    "closed": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "read_message": [
+      "self"
+    ],
+    "read_messages": [
+      "self"
+    ]
+  },
+  "DltFileWriter": {
+    "__init__": [
+      "self",
+      "path",
+      "append"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "close": [
+      "self"
+    ],
+    "closed": [
+      "self"
+    ],
+    "write_message": [
+      "self",
+      "message"
+    ],
+    "write_messages": [
+      "self",
+      "messages"
+    ]
+  },
+  "ServiceId": {
+    "SET_LOG_LEVEL": [],
+    "SET_TRACE_STATUS": [],
+    "GET_LOG_INFO": [],
+    "GET_DEFAULT_LOG_LEVEL": [],
+    "STORE_CONFIG": [],
+    "RESET_TO_FACTORY_DEFAULT": [],
+    "SET_COM_INTERFACE_STATUS": [],
+    "SET_COM_INTERFACE_MAX_BANDWIDTH": [],
+    "SET_VERBOSE_MODE": [],
+    "SET_MESSAGE_FILTERING": [],
+    "SET_TIMING_PACKETS": [],
+    "GET_LOCAL_TIME": [],
+    "SET_USE_ECU_ID": [],
+    "SET_USE_SESSION_ID": [],
+    "SET_USE_TIMESTAMP": [],
+    "SET_USE_EXTENDED_HEADER": [],
+    "SET_DEFAULT_LOG_LEVEL": [],
+    "SET_DEFAULT_TRACE_STATUS": [],
+    "GET_SOFTWARE_VERSION": [],
+    "MESSAGE_BUFFER_OVERFLOW": [],
+    "GET_DEFAULT_TRACE_STATUS": [],
+    "GET_COM_INTERFACE_STATUS": [],
+    "GET_COM_INTERFACE_NAMES": [],
+    "GET_COM_INTERFACE_MAX_BANDWIDTH": [],
+    "GET_VERBOSE_MODE_STATUS": [],
+    "GET_MESSAGE_FILTERING_STATUS": [],
+    "GET_USE_ECU_ID": [],
+    "GET_USE_SESSION_ID": [],
+    "GET_USE_TIMESTAMP": [],
+    "GET_USE_EXTENDED_HEADER": [],
+    "GET_TRACE_STATUS": [],
+    "SET_LOG_CHANNEL_ASSIGNMENT": [],
+    "SET_LOG_CHANNEL_THRESHOLD": [],
+    "GET_LOG_CHANNEL_THRESHOLD": [],
+    "GET_BUFFER_OVERFLOW_NOTIFICATION": [],
+    "SET_LOG_LEVEL_LONG": [],
+    "SET_TRACE_STATUS_LONG": [],
+    "GET_LOG_INFO_LONG": [],
+    "GET_TRACE_STATUS_LONG": [],
+    "SET_LOG_CHANNEL_ASSIGNMENT_LONG": [],
+    "CALL_SW_C_INJECTION_BEGIN": [],
+    "CALL_SW_C_INJECTION_END": []
+  }
+}

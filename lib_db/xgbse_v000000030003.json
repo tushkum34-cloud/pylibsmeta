@@ -1,0 +1,328 @@
+{
+  "EPS": [],
+  "get_time_bins": [
+    "T",
+    "E",
+    "size"
+  ],
+  "sort_and_add_zeros": [
+    "x",
+    "ind"
+  ],
+  "calculate_exp_boundary": [
+    "survival_func",
+    "V",
+    "z"
+  ],
+  "sample_time_bins": [
+    "surv_array",
+    "T_neighs",
+    "time_bins"
+  ],
+  "sort_times_and_events": [
+    "T",
+    "E"
+  ],
+  "calculate_survival_func": [
+    "E_sorted"
+  ],
+  "calculate_confidence_intervals": [
+    "E_sorted",
+    "survival_func",
+    "z"
+  ],
+  "calculate_kaplan_vectorized": [
+    "T",
+    "E",
+    "time_bins",
+    "z"
+  ],
+  "_get_conditional_probs_from_survival": [
+    "surv"
+  ],
+  "_get_point_probs_from_survival": [
+    "conditional_preds"
+  ],
+  "calculate_interval_failures": [
+    "surv"
+  ],
+  "concordance_index": [
+    "y_true",
+    "survival",
+    "risk_strategy",
+    "which_window"
+  ],
+  "_match_times_to_windows": [
+    "times",
+    "windows"
+  ],
+  "approx_brier_score": [
+    "y_true",
+    "survival",
+    "aggregate"
+  ],
+  "dist_calibration_score": [
+    "y_true",
+    "survival",
+    "n_bins",
+    "returns"
+  ],
+  "KM_PERCENTILES": [],
+  "_repeat_array": [
+    "x",
+    "n"
+  ],
+  "_build_multi_task_targets": [
+    "E",
+    "T",
+    "time_bins"
+  ],
+  "XGBSEDebiasedBCE": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "lr_params",
+      "n_jobs",
+      "enable_categorical"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "time_bins",
+      "validation_data",
+      "num_boost_round",
+      "early_stopping_rounds",
+      "verbose_eval",
+      "persist_train",
+      "index_id"
+    ],
+    "_fit_one_lr": [
+      "self",
+      "leaves_encoded",
+      "target"
+    ],
+    "_fit_all_lr": [
+      "self",
+      "leaves_encoded",
+      "targets"
+    ],
+    "_predict_from_lr_list": [
+      "self",
+      "lr_estimators",
+      "leaves_encoded",
+      "time_bins"
+    ],
+    "predict": [
+      "self",
+      "X",
+      "return_interval_probs"
+    ]
+  },
+  "XGBSEBaseEstimator": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "enable_categorical"
+    ],
+    "fit_feature_extractor": [
+      "self",
+      "X",
+      "y",
+      "time_bins",
+      "validation_data",
+      "num_boost_round",
+      "early_stopping_rounds",
+      "verbose_eval"
+    ],
+    "get_neighbors": [
+      "self",
+      "query_data",
+      "index_data",
+      "query_id",
+      "index_id",
+      "n_neighbors"
+    ]
+  },
+  "DummyLogisticRegression": {
+    "fit": [
+      "self",
+      "X",
+      "y"
+    ],
+    "predict": [
+      "self",
+      "X"
+    ],
+    "predict_proba": [
+      "self",
+      "X"
+    ]
+  },
+  "XGBSEStackedWeibull": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "weibull_params",
+      "enable_categorical"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "time_bins",
+      "validation_data",
+      "num_boost_round",
+      "early_stopping_rounds",
+      "verbose_eval",
+      "persist_train",
+      "index_id"
+    ],
+    "predict": [
+      "self",
+      "X",
+      "return_interval_probs"
+    ]
+  },
+  "__version__": [],
+  "__all__": [],
+  "convert_to_structured": [
+    "T",
+    "E"
+  ],
+  "convert_y": [
+    "y"
+  ],
+  "convert_data_to_xgb_format": [
+    "X",
+    "y",
+    "objective",
+    "enable_categorical"
+  ],
+  "build_xgb_aft_dmatrix": [
+    "X",
+    "T",
+    "E",
+    "enable_categorical"
+  ],
+  "build_xgb_cox_dmatrix": [
+    "X",
+    "T",
+    "E",
+    "enable_categorical"
+  ],
+  "hazard_to_survival": [
+    "interval"
+  ],
+  "extrapolate_constant_risk": [
+    "survival",
+    "final_time",
+    "intervals",
+    "lags"
+  ],
+  "FeatureExtractor": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "enable_categorical"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "time_bins",
+      "validation_data",
+      "num_boost_round",
+      "early_stopping_rounds",
+      "verbose_eval"
+    ],
+    "predict_leaves": [
+      "self",
+      "X"
+    ],
+    "predict_hazard": [
+      "self",
+      "X"
+    ]
+  },
+  "check_xgboost_parameters": [
+    "xgb_params",
+    "enable_categorical"
+  ],
+  "DEFAULT_PARAMS_TREE": [],
+  "XGBSEKaplanNeighbors": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "n_neighbors",
+      "radius",
+      "enable_categorical"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "time_bins",
+      "validation_data",
+      "num_boost_round",
+      "early_stopping_rounds",
+      "verbose_eval",
+      "persist_train",
+      "index_id"
+    ],
+    "predict": [
+      "self",
+      "X",
+      "time_bins",
+      "return_ci",
+      "ci_width",
+      "return_interval_probs"
+    ]
+  },
+  "_align_leaf_target": [
+    "neighs",
+    "target"
+  ],
+  "XGBSEKaplanTree": {
+    "__init__": [
+      "self",
+      "xgb_params",
+      "enable_categorical"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y",
+      "persist_train",
+      "index_id",
+      "time_bins",
+      "ci_width"
+    ],
+    "predict": [
+      "self",
+      "X",
+      "return_ci",
+      "return_interval_probs"
+    ]
+  },
+  "XGBSEBootstrapEstimator": {
+    "__init__": [
+      "self",
+      "base_estimator",
+      "n_estimators",
+      "random_state"
+    ],
+    "fit": [
+      "self",
+      "X",
+      "y"
+    ],
+    "predict": [
+      "self",
+      "X",
+      "return_ci",
+      "ci_width",
+      "return_interval_probs"
+    ]
+  }
+}

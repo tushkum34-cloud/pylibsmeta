@@ -1,0 +1,777 @@
+{
+  "TestSquash": {
+    "setUp": [
+      "self"
+    ],
+    "test_handle_case_when_no_image_is_provided": [
+      "self"
+    ],
+    "test_exit_if_no_output_path_provided_and_loading_is_disabled_too": [
+      "self"
+    ],
+    "test_should_not_cleanup_after_squashing": [
+      "self",
+      "v2_image"
+    ],
+    "test_should_cleanup_after_squashing": [
+      "self",
+      "v2_image"
+    ],
+    "test_should_handle_cleanup_error_while_getting_image_id": [
+      "self",
+      "v2_image"
+    ],
+    "test_should_handle_cleanup_error_when_removing_image": [
+      "self",
+      "v2_image"
+    ]
+  },
+  "TestSkippingFiles": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_skip_exact_files": [
+      "self"
+    ],
+    "test_should_not_skip_file_not_in_path_to_skip": [
+      "self"
+    ],
+    "test_should_not_skip_the_file_that_name_is_similar_to_skipped_path": [
+      "self"
+    ],
+    "test_should_skip_files_in_subdirectory": [
+      "self"
+    ],
+    "test_should_skip_files_in_other_layer": [
+      "self"
+    ]
+  },
+  "TestParseImageName": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_parse_name_name_with_proper_tag": [
+      "self"
+    ],
+    "test_should_parse_name_name_without_tag": [
+      "self"
+    ]
+  },
+  "TestPrepareTemporaryDirectory": {
+    "setUp": [
+      "self"
+    ],
+    "test_create_tmp_directory_if_not_provided": [
+      "self",
+      "mock_tempfile"
+    ],
+    "test_should_raise_if_directory_already_exists": [
+      "self",
+      "mock_path",
+      "mock_tempfile"
+    ],
+    "test_should_use_provided_tmp_dir": [
+      "self",
+      "mock_makedirs",
+      "mock_path"
+    ]
+  },
+  "TestPrepareLayersToSquash": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_generate_list_of_layers": [
+      "self"
+    ],
+    "test_should_not_fail_with_empty_list_of_layers": [
+      "self"
+    ],
+    "test_should_return_all_layers_if_from_layer_is_not_found": [
+      "self"
+    ]
+  },
+  "TestGenerateV1ImageId": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_generate_id": [
+      "self"
+    ],
+    "test_should_generate_id_that_is_not_integer_shen_shortened": [
+      "self",
+      "mock_random"
+    ]
+  },
+  "TestGenerateRepositoriesJSON": {
+    "setUp": [
+      "self"
+    ],
+    "test_generate_json": [
+      "self"
+    ],
+    "test_handle_empty_image_id": [
+      "self"
+    ],
+    "test_should_not_generate_repositories_if_name_and_tag_is_missing": [
+      "self"
+    ]
+  },
+  "TestMarkerFiles": {
+    "setUp": [
+      "self"
+    ],
+    "_tar_member": [
+      "self",
+      "ret_val"
+    ],
+    "test_should_find_all_marker_files": [
+      "self"
+    ],
+    "test_should_return_empty_dict_when_no_files_are_in_the_tar": [
+      "self"
+    ],
+    "test_should_return_empty_dict_when_no_marker_files_are_found": [
+      "self"
+    ]
+  },
+  "TestAddMarkers": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_not_fail_with_empty_list_of_markers_to_add": [
+      "self"
+    ],
+    "test_should_add_all_marker_files_to_empty_tar": [
+      "self"
+    ],
+    "test_should_add_all_marker_files_to_empty_tar_besides_what_should_be_skipped": [
+      "self"
+    ],
+    "test_should_skip_a_marker_file_if_file_is_in_unsquashed_layers": [
+      "self"
+    ],
+    "test_should_not_add_any_marker_files": [
+      "self"
+    ],
+    "test_should_add_marker_file_when_tar_has_prefixed_entries": [
+      "self"
+    ]
+  },
+  "TestReduceMarkers": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_not_reduce_any_marker_files": [
+      "self"
+    ],
+    "test_should_reduce_marker_files": [
+      "self"
+    ]
+  },
+  "TestPathHierarchy": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_prepare_path_hierarchy": [
+      "self"
+    ],
+    "test_should_handle_root": [
+      "self"
+    ],
+    "test_should_handle_empty": [
+      "self"
+    ],
+    "test_should_handle_windows_path": [
+      "self"
+    ]
+  },
+  "test_formatting": [
+    "monkeypatch"
+  ],
+  "TestReadingConfigFiles": {
+    "setUp": [
+      "self"
+    ],
+    "test_should_read_json_file": [
+      "self"
+    ]
+  },
+  "TestGeneratingMetadata": {
+    "setUp": [
+      "self"
+    ],
+    "test_generate_manifest": [
+      "self"
+    ],
+    "test_generate_image_metadata_without_any_layers_to_squash": [
+      "self"
+    ],
+    "test_generate_image_metadata": [
+      "self"
+    ],
+    "test_generate_squashed_layer_metadata": [
+      "self"
+    ],
+    "test_generate_squashed_layer_path_id": [
+      "self"
+    ]
+  },
+  "TestWritingMetadata": {
+    "setUp": [
+      "self"
+    ],
+    "test_write_image_metadata": [
+      "self",
+      "mock_method"
+    ],
+    "test_write_squashed_layer_metadata": [
+      "self",
+      "mock_method"
+    ],
+    "test_write_manifest_metadata": [
+      "self",
+      "mock_method"
+    ]
+  },
+  "ImageHelper": {
+    "top_layer_path": [
+      "tar"
+    ]
+  },
+  "IntegSquash": {
+    "BUSYBOX_IMAGE": [],
+    "log": [],
+    "handler": [],
+    "formatter": [],
+    "docker": [],
+    "build_image": [
+      "cls",
+      "dockerfile"
+    ],
+    "cleanup_image": [
+      "cls"
+    ]
+  },
+  "TestIntegSquash": {
+    "inject_fixtures": [
+      "self",
+      "caplog"
+    ],
+    "test_same_source_and_target_image_tag_should_not_be_deleted": [
+      "self"
+    ],
+    "test_all_files_should_be_in_squashed_layer": [
+      "self"
+    ],
+    "test_only_files_from_squashed_image_should_be_in_squashed_layer": [
+      "self"
+    ],
+    "test_there_should_be_a_marker_file_in_the_squashed_layer": [
+      "self"
+    ],
+    "test_there_should_be_a_marker_file_in_the_squashed_layer_even_more_complex": [
+      "self"
+    ],
+    "test_should_handle_removal_of_directories": [
+      "self"
+    ],
+    "test_should_skip_files_when_these_are_modified_and_removed_in_squashed_layer": [
+      "self"
+    ],
+    "test_should_skip_files_when_these_are_removed_and_modified_in_squashed_layer": [
+      "self"
+    ],
+    "test_should_handle_multiple_changes_to_files_in_squashed_layers": [
+      "self"
+    ],
+    "test_should_leave_whiteout_entries_as_is": [
+      "self"
+    ],
+    "test_docker_version_in_metadata_should_be_set_after_squashing": [
+      "self"
+    ],
+    "test_files_in_squashed_tar_not_prefixed_wth_dot": [
+      "self"
+    ],
+    "test_version_file_exists_in_squashed_layer": [
+      "self"
+    ],
+    "test_docker_size_in_metadata_should_be_upper_case": [
+      "self"
+    ],
+    "test_handle_correctly_squashing_layers_without_data": [
+      "self"
+    ],
+    "test_should_squash_exactly_2_layers_without_data": [
+      "self"
+    ],
+    "test_should_squash_exactly_3_layers_with_data": [
+      "self"
+    ],
+    "test_should_not_squash_if_only_one_layer_is_to_squash": [
+      "self"
+    ],
+    "test_should_squash_every_layer": [
+      "self"
+    ],
+    "test_remove_tmp_dir_after_failure": [
+      "self"
+    ],
+    "test_should_not_remove_tmp_dir_after_failure_if_development_mode_is_on": [
+      "self"
+    ],
+    "test_should_not_fail_with_hard_links": [
+      "self"
+    ],
+    "test_should_not_fail_with_hard_links_to_files_gh_99": [
+      "self"
+    ],
+    "test_build_without_tag": [
+      "self"
+    ],
+    "test_should_squash_correctly_hardlinks": [
+      "self"
+    ],
+    "test_should_handle_symlinks_to_nonexisting_locations": [
+      "self"
+    ],
+    "test_should_squash_every_layer_from_an_image_from_docker_hub": [
+      "self"
+    ],
+    "test_correct_symlinks_squashing": [
+      "self"
+    ],
+    "test_should_add_broken_symlinks_back": [
+      "self"
+    ],
+    "test_should_add_hard_hard_link_back_if_target_exists_in_moved_files": [
+      "self"
+    ],
+    "test_should_add_sym_link_back_if_it_was_broken_before": [
+      "self"
+    ],
+    "test_should_not_skip_sym_link": [
+      "self"
+    ],
+    "test_should_not_skip_hard_link": [
+      "self"
+    ],
+    "test_should_not_add_hard_link_if_exists_in_other_squashed_layer": [
+      "self"
+    ],
+    "test_should_handle_symlinks_to_directory": [
+      "self"
+    ],
+    "test_should_not_add_duplicate_files": [
+      "self"
+    ],
+    "test_should_not_add_marker_files_in_already_marked_directories": [
+      "self"
+    ],
+    "test_should_not_add_marker_files_in_already_marked_directories_multiple_removal": [
+      "self"
+    ],
+    "test_should_handle_opaque_dirs": [
+      "self"
+    ],
+    "test_should_handle_opaque_dirs_spec_example": [
+      "self"
+    ],
+    "test_without_io_failure": [
+      "self"
+    ]
+  },
+  "NumericValues": {
+    "setUpClass": [
+      "cls"
+    ],
+    "tearDownClass": [
+      "cls"
+    ],
+    "test_should_not_squash_more_layers_than_image_has": [
+      "self"
+    ],
+    "test_should_not_squash_negative_number_of_layers": [
+      "self"
+    ],
+    "test_should_not_squash_zero_number_of_layers": [
+      "self"
+    ],
+    "test_should_not_squash_single_layer": [
+      "self"
+    ],
+    "test_should_squash_n_layers": [
+      "self",
+      "number_of_layers"
+    ]
+  },
+  "version": [],
+  "Error": {},
+  "SquashError": {
+    "code": []
+  },
+  "SquashUnnecessaryError": {
+    "code": []
+  },
+  "V2Image": {
+    "FORMAT": [],
+    "_before_squashing": [
+      "self"
+    ],
+    "_squash": [
+      "self"
+    ],
+    "_write_image_metadata": [
+      "self",
+      "metadata"
+    ],
+    "_write_squashed_layer_metadata": [
+      "self",
+      "metadata"
+    ],
+    "_write_manifest_metadata": [
+      "self",
+      "manifest"
+    ],
+    "_generate_manifest_metadata": [
+      "self",
+      "image_id",
+      "image_name",
+      "image_tag",
+      "old_image_manifest",
+      "layer_paths_to_move",
+      "layer_path_id"
+    ],
+    "_read_json_file": [
+      "self",
+      "json_file"
+    ],
+    "_read_layer_paths": [
+      "self",
+      "old_image_config",
+      "old_image_manifest",
+      "layers_to_move"
+    ],
+    "_generate_chain_id": [
+      "self",
+      "chain_ids",
+      "diff_ids",
+      "parent_chain_id"
+    ],
+    "_generate_chain_ids": [
+      "self",
+      "diff_ids"
+    ],
+    "_generate_diff_ids": [
+      "self"
+    ],
+    "_compute_sha256": [
+      "self",
+      "layer_tar"
+    ],
+    "_generate_squashed_layer_path_id": [
+      "self"
+    ],
+    "_generate_last_layer_metadata": [
+      "self",
+      "layer_path_id",
+      "old_layer_path"
+    ],
+    "_generate_image_metadata": [
+      "self"
+    ],
+    "_get_manifest": [
+      "self"
+    ]
+  },
+  "Squash": {
+    "__init__": [
+      "self",
+      "log",
+      "image",
+      "docker",
+      "from_layer",
+      "tag",
+      "comment",
+      "tmp_dir",
+      "output_path",
+      "load_image",
+      "cleanup"
+    ],
+    "run": [
+      "self"
+    ],
+    "_cleanup": [
+      "self"
+    ],
+    "squash": [
+      "self",
+      "image"
+    ]
+  },
+  "V1Image": {
+    "FORMAT": [],
+    "_generate_image_id": [
+      "self"
+    ],
+    "_before_squashing": [
+      "self"
+    ],
+    "_squash": [
+      "self"
+    ],
+    "_update_squashed_layer_metadata": [
+      "self",
+      "old_json_file",
+      "squashed_dir"
+    ]
+  },
+  "__version__": [],
+  "SingleLevelFilter": {
+    "__init__": [
+      "self",
+      "passlevel",
+      "reject"
+    ],
+    "filter": [
+      "self",
+      "record"
+    ]
+  },
+  "MyParser": {
+    "str2bool": [
+      "self",
+      "v"
+    ],
+    "error": [
+      "self",
+      "message"
+    ]
+  },
+  "CLI": {
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "run": [],
+  "Chdir": {
+    "__init__": [
+      "self",
+      "new_path"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "etype",
+      "value",
+      "traceback"
+    ]
+  },
+  "Image": {
+    "FORMAT": [],
+    "__init__": [
+      "self",
+      "log",
+      "docker",
+      "image",
+      "from_layer",
+      "tmp_dir",
+      "tag",
+      "comment"
+    ],
+    "squash": [
+      "self"
+    ],
+    "_squash": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "_initialize_directories": [
+      "self"
+    ],
+    "_squash_id": [
+      "self",
+      "layer"
+    ],
+    "_validate_number_of_layers": [
+      "self",
+      "number_of_layers"
+    ],
+    "_before_squashing": [
+      "self"
+    ],
+    "_after_squashing": [
+      "self"
+    ],
+    "_dir_size": [
+      "self",
+      "directory"
+    ],
+    "layer_paths": [
+      "self"
+    ],
+    "export_tar_archive": [
+      "self",
+      "target_tar_file"
+    ],
+    "load_squashed_image": [
+      "self"
+    ],
+    "_files_in_layers": [
+      "self",
+      "layers"
+    ],
+    "_prepare_tmp_directory": [
+      "self",
+      "tmp_dir"
+    ],
+    "_load_image": [
+      "self",
+      "directory"
+    ],
+    "_tar_image": [
+      "self",
+      "target_tar_file",
+      "directory"
+    ],
+    "_layers_to_squash": [
+      "self",
+      "layers",
+      "from_layer"
+    ],
+    "_extract_tar": [
+      "self",
+      "fileobj",
+      "directory"
+    ],
+    "_save_image": [
+      "self",
+      "image_id",
+      "directory"
+    ],
+    "_unpack": [
+      "self",
+      "tar_file",
+      "directory"
+    ],
+    "_read_layers": [
+      "self",
+      "layers",
+      "image_id"
+    ],
+    "_parse_image_name": [
+      "self",
+      "image"
+    ],
+    "_dump_json": [
+      "self",
+      "data",
+      "new_line"
+    ],
+    "_generate_repositories_json": [
+      "self",
+      "repositories_file",
+      "image_id",
+      "name",
+      "tag"
+    ],
+    "_write_version_file": [
+      "self",
+      "squashed_dir"
+    ],
+    "_write_json_metadata": [
+      "self",
+      "metadata",
+      "metadata_file"
+    ],
+    "_read_old_metadata": [
+      "self",
+      "old_json_file"
+    ],
+    "_move_layers": [
+      "self",
+      "layers",
+      "src",
+      "dest"
+    ],
+    "_file_should_be_skipped": [
+      "self",
+      "file_name",
+      "file_paths"
+    ],
+    "_marker_files": [
+      "self",
+      "tar",
+      "members"
+    ],
+    "_add_markers": [
+      "self",
+      "markers",
+      "tar",
+      "files_in_layers",
+      "added_symlinks"
+    ],
+    "_normalize_path": [
+      "self",
+      "path"
+    ],
+    "_add_hardlinks": [
+      "self",
+      "squashed_tar",
+      "squashed_files",
+      "to_skip",
+      "skipped_hard_links"
+    ],
+    "_add_file": [
+      "self",
+      "member",
+      "content",
+      "squashed_tar",
+      "squashed_files",
+      "to_skip"
+    ],
+    "_add_symlinks": [
+      "self",
+      "squashed_tar",
+      "squashed_files",
+      "to_skip",
+      "skipped_sym_links"
+    ],
+    "_squash_layers": [
+      "self",
+      "layers_to_squash",
+      "layers_to_move"
+    ],
+    "_is_in_opaque_dir": [
+      "self",
+      "member",
+      "dirs"
+    ],
+    "_reduce": [
+      "self",
+      "markers"
+    ],
+    "_path_hierarchy": [
+      "self",
+      "path"
+    ],
+    "_extract_tar_name": [
+      "self",
+      "path"
+    ]
+  },
+  "DEFAULT_TIMEOUT_SECONDS": [],
+  "docker_client": [
+    "log"
+  ],
+  "valid_docker_connection": [
+    "client"
+  ]
+}

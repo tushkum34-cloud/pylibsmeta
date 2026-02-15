@@ -1,0 +1,855 @@
+{
+  "__version__": [],
+  "logger": [],
+  "AbortEdit": {},
+  "Repository": {
+    "open": [
+      "self",
+      "role"
+    ],
+    "close": [
+      "self",
+      "role",
+      "md"
+    ],
+    "targets_infos": [
+      "self"
+    ],
+    "snapshot_info": [
+      "self"
+    ],
+    "edit": [
+      "self",
+      "role"
+    ],
+    "edit_root": [
+      "self"
+    ],
+    "edit_timestamp": [
+      "self"
+    ],
+    "edit_snapshot": [
+      "self"
+    ],
+    "edit_targets": [
+      "self",
+      "rolename"
+    ],
+    "root": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "snapshot": [
+      "self"
+    ],
+    "targets": [
+      "self",
+      "rolename"
+    ],
+    "do_snapshot": [
+      "self",
+      "force"
+    ],
+    "do_timestamp": [
+      "self",
+      "force"
+    ]
+  },
+  "Updater": {
+    "__init__": [
+      "self",
+      "metadata_dir",
+      "metadata_base_url",
+      "target_dir",
+      "target_base_url",
+      "fetcher",
+      "config",
+      "bootstrap"
+    ],
+    "refresh": [
+      "self"
+    ],
+    "_generate_target_file_path": [
+      "self",
+      "targetinfo"
+    ],
+    "get_targetinfo": [
+      "self",
+      "target_path"
+    ],
+    "find_cached_target": [
+      "self",
+      "targetinfo",
+      "filepath"
+    ],
+    "download_target": [
+      "self",
+      "targetinfo",
+      "filepath",
+      "target_base_url"
+    ],
+    "_download_metadata": [
+      "self",
+      "rolename",
+      "length",
+      "version"
+    ],
+    "_load_local_metadata": [
+      "self",
+      "rolename"
+    ],
+    "_persist_metadata": [
+      "self",
+      "rolename",
+      "data"
+    ],
+    "_persist_root": [
+      "self",
+      "version",
+      "data"
+    ],
+    "_persist_file": [
+      "self",
+      "filename",
+      "data"
+    ],
+    "_update_root_symlink": [
+      "self"
+    ],
+    "_load_root": [
+      "self"
+    ],
+    "_load_timestamp": [
+      "self"
+    ],
+    "_load_snapshot": [
+      "self"
+    ],
+    "_load_targets": [
+      "self",
+      "role",
+      "parent_role"
+    ],
+    "_preorder_depth_first_walk": [
+      "self",
+      "target_filepath"
+    ]
+  },
+  "_ensure_trailing_slash": [
+    "url"
+  ],
+  "FetcherInterface": {
+    "_fetch": [
+      "self",
+      "url"
+    ],
+    "fetch": [
+      "self",
+      "url"
+    ],
+    "download_file": [
+      "self",
+      "url",
+      "max_length"
+    ],
+    "download_bytes": [
+      "self",
+      "url",
+      "max_length"
+    ]
+  },
+  "__all__": [],
+  "Urllib3Fetcher": {
+    "__init__": [
+      "self",
+      "socket_timeout",
+      "chunk_size",
+      "app_user_agent"
+    ],
+    "_fetch": [
+      "self",
+      "url"
+    ],
+    "_chunks": [
+      "self",
+      "response"
+    ]
+  },
+  "EnvelopeType": {
+    "METADATA": [],
+    "SIMPLE": []
+  },
+  "UpdaterConfig": {},
+  "RequestsFetcher": {
+    "__init__": [
+      "self",
+      "socket_timeout",
+      "chunk_size",
+      "app_user_agent"
+    ],
+    "_fetch": [
+      "self",
+      "url"
+    ],
+    "_chunks": [
+      "self",
+      "response"
+    ],
+    "_get_session": [
+      "self",
+      "url"
+    ]
+  },
+  "ProxyEnvironment": {
+    "__init__": [
+      "self"
+    ],
+    "_get_proxy": [
+      "self",
+      "scheme",
+      "host"
+    ],
+    "get_pool_manager": [
+      "self",
+      "scheme",
+      "host"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url"
+    ]
+  },
+  "Delegator": [],
+  "TrustedMetadataSet": {
+    "__init__": [
+      "self",
+      "root_data",
+      "envelope_type"
+    ],
+    "__getitem__": [
+      "self",
+      "role"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "root": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "snapshot": [
+      "self"
+    ],
+    "targets": [
+      "self"
+    ],
+    "update_root": [
+      "self",
+      "data"
+    ],
+    "update_timestamp": [
+      "self",
+      "data"
+    ],
+    "_check_final_timestamp": [
+      "self"
+    ],
+    "update_snapshot": [
+      "self",
+      "data",
+      "trusted"
+    ],
+    "_check_final_snapshot": [
+      "self"
+    ],
+    "update_targets": [
+      "self",
+      "data"
+    ],
+    "update_delegated_targets": [
+      "self",
+      "data",
+      "role_name",
+      "delegator_name"
+    ],
+    "_load_trusted_root": [
+      "self",
+      "data"
+    ]
+  },
+  "_load_from_metadata": [
+    "role",
+    "data",
+    "delegator",
+    "role_name"
+  ],
+  "_load_from_simple_envelope": [
+    "role",
+    "data",
+    "delegator",
+    "role_name"
+  ],
+  "Metadata": {
+    "__init__": [
+      "self",
+      "signed",
+      "signatures",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "signed_bytes": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "metadata"
+    ],
+    "from_file": [
+      "cls",
+      "filename",
+      "deserializer",
+      "storage_backend"
+    ],
+    "from_bytes": [
+      "cls",
+      "data",
+      "deserializer"
+    ],
+    "to_bytes": [
+      "self",
+      "serializer"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_file": [
+      "self",
+      "filename",
+      "serializer",
+      "storage_backend"
+    ],
+    "sign": [
+      "self",
+      "signer",
+      "append",
+      "signed_serializer"
+    ],
+    "verify_delegate": [
+      "self",
+      "delegated_role",
+      "delegated_metadata",
+      "signed_serializer"
+    ]
+  },
+  "SimpleEnvelope": {
+    "DEFAULT_PAYLOAD_TYPE": [],
+    "from_bytes": [
+      "cls",
+      "data"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "from_signed": [
+      "cls",
+      "signed"
+    ],
+    "get_signed": [
+      "self"
+    ]
+  },
+  "RepositoryError": {},
+  "UnsignedMetadataError": {},
+  "BadVersionNumberError": {},
+  "EqualVersionNumberError": {},
+  "ExpiredMetadataError": {},
+  "LengthOrHashMismatchError": {},
+  "DownloadError": {},
+  "DownloadLengthMismatchError": {},
+  "SlowRetrievalError": {},
+  "DownloadHTTPError": {
+    "__init__": [
+      "self",
+      "message",
+      "status_code"
+    ]
+  },
+  "_ROOT": [],
+  "_SNAPSHOT": [],
+  "_TARGETS": [],
+  "_TIMESTAMP": [],
+  "SPECIFICATION_VERSION": [],
+  "TOP_LEVEL_ROLE_NAMES": [],
+  "T": [],
+  "Signed": {
+    "_type": [
+      "self"
+    ],
+    "expires": [
+      "self",
+      "value"
+    ],
+    "__init__": [
+      "self",
+      "version",
+      "spec_version",
+      "expires",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "_common_fields_from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "_common_fields_to_dict": [
+      "self"
+    ],
+    "is_expired": [
+      "self",
+      "reference_time"
+    ]
+  },
+  "Role": {
+    "__init__": [
+      "self",
+      "keyids",
+      "threshold",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "role_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "VerificationResult": {
+    "__bool__": [
+      "self"
+    ],
+    "verified": [
+      "self"
+    ],
+    "missing": [
+      "self"
+    ]
+  },
+  "RootVerificationResult": {
+    "__bool__": [
+      "self"
+    ],
+    "verified": [
+      "self"
+    ],
+    "signed": [
+      "self"
+    ],
+    "unsigned": [
+      "self"
+    ]
+  },
+  "_DelegatorMixin": {
+    "get_delegated_role": [
+      "self",
+      "delegated_role"
+    ],
+    "get_key": [
+      "self",
+      "keyid"
+    ],
+    "get_verification_result": [
+      "self",
+      "delegated_role",
+      "payload",
+      "signatures"
+    ],
+    "verify_delegate": [
+      "self",
+      "delegated_role",
+      "payload",
+      "signatures"
+    ]
+  },
+  "Root": {
+    "type": [],
+    "__init__": [
+      "self",
+      "version",
+      "spec_version",
+      "expires",
+      "keys",
+      "roles",
+      "consistent_snapshot",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "add_key": [
+      "self",
+      "key",
+      "role"
+    ],
+    "revoke_key": [
+      "self",
+      "keyid",
+      "role"
+    ],
+    "get_delegated_role": [
+      "self",
+      "delegated_role"
+    ],
+    "get_key": [
+      "self",
+      "keyid"
+    ],
+    "get_root_verification_result": [
+      "self",
+      "previous",
+      "payload",
+      "signatures"
+    ]
+  },
+  "BaseFile": {
+    "_verify_hashes": [
+      "data",
+      "expected_hashes"
+    ],
+    "_verify_length": [
+      "data",
+      "expected_length"
+    ],
+    "_validate_hashes": [
+      "hashes"
+    ],
+    "_validate_length": [
+      "length"
+    ],
+    "_get_length_and_hashes": [
+      "data",
+      "hash_algorithms"
+    ]
+  },
+  "MetaFile": {
+    "__init__": [
+      "self",
+      "version",
+      "length",
+      "hashes",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "meta_dict"
+    ],
+    "from_data": [
+      "cls",
+      "version",
+      "data",
+      "hash_algorithms"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "verify_length_and_hashes": [
+      "self",
+      "data"
+    ]
+  },
+  "Timestamp": {
+    "type": [],
+    "__init__": [
+      "self",
+      "version",
+      "spec_version",
+      "expires",
+      "snapshot_meta",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Snapshot": {
+    "type": [],
+    "__init__": [
+      "self",
+      "version",
+      "spec_version",
+      "expires",
+      "meta",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "DelegatedRole": {
+    "__init__": [
+      "self",
+      "name",
+      "keyids",
+      "threshold",
+      "terminating",
+      "paths",
+      "path_hash_prefixes",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "role_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "_is_target_in_pathpattern": [
+      "targetpath",
+      "pathpattern"
+    ],
+    "is_delegated_path": [
+      "self",
+      "target_filepath"
+    ]
+  },
+  "SuccinctRoles": {
+    "__init__": [
+      "self",
+      "keyids",
+      "threshold",
+      "bit_length",
+      "name_prefix",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "role_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "get_role_for_target": [
+      "self",
+      "target_filepath"
+    ],
+    "get_roles": [
+      "self"
+    ],
+    "is_delegated_role": [
+      "self",
+      "role_name"
+    ]
+  },
+  "Delegations": {
+    "__init__": [
+      "self",
+      "keys",
+      "roles",
+      "succinct_roles",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "delegations_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "get_roles_for_target": [
+      "self",
+      "target_filepath"
+    ]
+  },
+  "TargetFile": {
+    "__init__": [
+      "self",
+      "length",
+      "hashes",
+      "path",
+      "unrecognized_fields"
+    ],
+    "custom": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "target_dict",
+      "path"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_file": [
+      "cls",
+      "target_file_path",
+      "local_path",
+      "hash_algorithms"
+    ],
+    "from_data": [
+      "cls",
+      "target_file_path",
+      "data",
+      "hash_algorithms"
+    ],
+    "verify_length_and_hashes": [
+      "self",
+      "data"
+    ],
+    "get_prefixed_paths": [
+      "self"
+    ]
+  },
+  "Targets": {
+    "type": [],
+    "__init__": [
+      "self",
+      "version",
+      "spec_version",
+      "expires",
+      "targets",
+      "delegations",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_dict": [
+      "cls",
+      "signed_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "add_key": [
+      "self",
+      "key",
+      "role"
+    ],
+    "revoke_key": [
+      "self",
+      "keyid",
+      "role"
+    ],
+    "get_delegated_role": [
+      "self",
+      "delegated_role"
+    ],
+    "get_key": [
+      "self",
+      "keyid"
+    ]
+  },
+  "SerializationError": {},
+  "DeserializationError": {},
+  "MetadataDeserializer": {
+    "deserialize": [
+      "self",
+      "raw_data"
+    ]
+  },
+  "MetadataSerializer": {
+    "serialize": [
+      "self",
+      "metadata_obj"
+    ]
+  },
+  "SignedSerializer": {
+    "serialize": [
+      "self",
+      "signed_obj"
+    ]
+  },
+  "JSONDeserializer": {
+    "deserialize": [
+      "self",
+      "raw_data"
+    ]
+  },
+  "JSONSerializer": {
+    "__init__": [
+      "self",
+      "compact",
+      "validate"
+    ],
+    "serialize": [
+      "self",
+      "metadata_obj"
+    ]
+  },
+  "CanonicalJSONSerializer": {
+    "serialize": [
+      "self",
+      "signed_obj"
+    ]
+  }
+}

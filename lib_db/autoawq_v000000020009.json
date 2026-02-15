@@ -1,0 +1,2339 @@
+{
+  "AUTOAWQ_VERSION": [],
+  "common_setup_kwargs": [],
+  "requirements": [],
+  "_FINAL_DEV_MESSAGE": [],
+  "__version__": [],
+  "AwqQuantizer": {
+    "__init__": [
+      "self",
+      "awq_model",
+      "model",
+      "tokenizer",
+      "w_bit",
+      "group_size",
+      "zero_point",
+      "version",
+      "calib_data",
+      "split",
+      "text_column",
+      "duo_scaling",
+      "modules_to_not_convert",
+      "export_compatible",
+      "apply_clip",
+      "n_parallel_calib_samples",
+      "max_calib_samples",
+      "max_calib_seq_len",
+      "max_chunk_memory"
+    ],
+    "pseudo_quantize_tensor": [
+      "self",
+      "w"
+    ],
+    "pseudo_dequantize_tensor": [
+      "self",
+      "w",
+      "scales",
+      "zeros"
+    ],
+    "quantize": [
+      "self"
+    ],
+    "pack": [
+      "self"
+    ],
+    "_apply_quant": [
+      "self",
+      "module",
+      "named_linears"
+    ],
+    "_module_forward": [
+      "self",
+      "x",
+      "module",
+      "module_kwargs"
+    ],
+    "_search_best_scale": [
+      "self",
+      "module",
+      "prev_op",
+      "layers",
+      "inp",
+      "module2inspect",
+      "kwargs"
+    ],
+    "_compute_best_scale": [
+      "self",
+      "x",
+      "w_mean",
+      "x_mean",
+      "module2inspect",
+      "linears2scale",
+      "fp16_output",
+      "kwargs"
+    ],
+    "_compute_loss": [
+      "self",
+      "fp16_output",
+      "int_w_output",
+      "device"
+    ],
+    "_search_best_clip": [
+      "self",
+      "layer",
+      "named_linears",
+      "input_feat"
+    ],
+    "_compute_best_clip": [
+      "self",
+      "w",
+      "input_feat",
+      "n_grid",
+      "max_shrink",
+      "n_sample_token"
+    ],
+    "init_quant": [
+      "self",
+      "n_samples",
+      "max_seq_len"
+    ],
+    "_get_input_feat": [
+      "self",
+      "layer",
+      "named_linears"
+    ],
+    "_sanitize_kwargs": [
+      "self",
+      "inputs_kwargs",
+      "module"
+    ]
+  },
+  "allowed_norms": [],
+  "allowed_act_fns": [],
+  "apply_clip": [
+    "module",
+    "clip_list"
+  ],
+  "apply_scale": [
+    "module",
+    "scales_list",
+    "input_feat_dict"
+  ],
+  "scale_ln_fcs": [
+    "ln",
+    "fcs",
+    "scales"
+  ],
+  "scale_fc_fc": [
+    "fc1",
+    "fc2",
+    "scales"
+  ],
+  "scale_fc_fcs": [
+    "fc1",
+    "fcs",
+    "scales"
+  ],
+  "scale_gelu_fc": [
+    "gelu",
+    "fc",
+    "scales"
+  ],
+  "get_calib_dataset": [
+    "data",
+    "tokenizer",
+    "n_samples",
+    "max_seq_len",
+    "split",
+    "text_column"
+  ],
+  "prepare_cache": [
+    "blocks",
+    "seqlen"
+  ],
+  "prepare_input_ids": [
+    "input_ids",
+    "last_forward_num_tokens"
+  ],
+  "fuse_qkv": [
+    "module",
+    "q_proj",
+    "k_proj",
+    "v_proj"
+  ],
+  "fuse_linears": [
+    "linears",
+    "device",
+    "dim",
+    "operation"
+  ],
+  "get_attention_shapes": [
+    "attention_shapes",
+    "n_heads",
+    "n_kv_heads",
+    "head_dim"
+  ],
+  "ipex_available": [],
+  "get_module_by_name_suffix": [
+    "model",
+    "module_name"
+  ],
+  "simple_dispatch_model": [
+    "model",
+    "device_map"
+  ],
+  "set_module_name": [
+    "model",
+    "name",
+    "value"
+  ],
+  "clear_memory": [
+    "weight"
+  ],
+  "compute_memory_used_pct": [
+    "device"
+  ],
+  "get_best_device": [],
+  "get_lowest_memory_device_index": [],
+  "try_import": [
+    "module_name"
+  ],
+  "get_named_linears": [
+    "module"
+  ],
+  "get_op_by_name": [
+    "module",
+    "op_name"
+  ],
+  "set_op_by_name": [
+    "layer",
+    "name",
+    "new_module"
+  ],
+  "get_op_name": [
+    "module",
+    "op"
+  ],
+  "append_str_prefix": [
+    "x",
+    "prefix"
+  ],
+  "exclude_layers_to_not_quantize": [
+    "linear_layers",
+    "modules_to_not_convert"
+  ],
+  "logger": [],
+  "IMAGE_FACTOR": [],
+  "MIN_PIXELS": [],
+  "MAX_PIXELS": [],
+  "MAX_RATIO": [],
+  "VIDEO_MIN_PIXELS": [],
+  "VIDEO_MAX_PIXELS": [],
+  "FRAME_FACTOR": [],
+  "FPS": [],
+  "FPS_MIN_FRAMES": [],
+  "FPS_MAX_FRAMES": [],
+  "VIDEO_TOTAL_PIXELS": [],
+  "round_by_factor": [
+    "number",
+    "factor"
+  ],
+  "ceil_by_factor": [
+    "number",
+    "factor"
+  ],
+  "floor_by_factor": [
+    "number",
+    "factor"
+  ],
+  "smart_resize": [
+    "height",
+    "width",
+    "factor",
+    "min_pixels",
+    "max_pixels"
+  ],
+  "to_rgb": [
+    "pil_image"
+  ],
+  "fetch_image": [
+    "ele",
+    "size_factor"
+  ],
+  "smart_nframes": [
+    "ele",
+    "total_frames",
+    "video_fps"
+  ],
+  "_read_video_torchvision": [
+    "ele"
+  ],
+  "is_decord_available": [],
+  "_read_video_decord": [
+    "ele"
+  ],
+  "VIDEO_READER_BACKENDS": [],
+  "FORCE_QWENVL_VIDEO_READER": [],
+  "get_video_reader_backend": [],
+  "fetch_video": [
+    "ele",
+    "image_factor",
+    "return_video_sample_fps"
+  ],
+  "extract_vision_info": [
+    "conversations"
+  ],
+  "process_vision_info": [
+    "conversations",
+    "return_video_kwargs"
+  ],
+  "AWQ_ORDER": [],
+  "AWQ_REVERSE_ORDER": [],
+  "unpack_awq": [
+    "qweight",
+    "qzeros",
+    "bits"
+  ],
+  "reverse_awq_order": [
+    "iweights",
+    "izeros",
+    "bits"
+  ],
+  "pack_exllama": [
+    "iweights",
+    "izeros",
+    "bits"
+  ],
+  "unpack_reorder_pack": [
+    "qweight",
+    "qzeros",
+    "bits"
+  ],
+  "dequantize_gemm": [
+    "qweight",
+    "qzeros",
+    "scales",
+    "bits",
+    "group_size"
+  ],
+  "Q_BITS": [],
+  "STORAGE_BITS": [],
+  "PACK_NUM": [],
+  "ORDINAL_PACK_ORDER": [],
+  "AWQ_PACK_ORDER": [],
+  "REVERSE_AWQ_PACK_ORDER": [],
+  "pack": [
+    "imatrix",
+    "direction"
+  ],
+  "unpack": [
+    "qmatrix",
+    "direction"
+  ],
+  "quantize": [
+    "fmatrix",
+    "scales",
+    "zeros",
+    "group_size"
+  ],
+  "dequantize": [
+    "imatrix",
+    "scales",
+    "zeros",
+    "group_size"
+  ],
+  "apply_order": [
+    "imatrix",
+    "direction",
+    "order"
+  ],
+  "awq_to_exllama": [
+    "qweight",
+    "qzeros"
+  ],
+  "auto_parallel": [
+    "args"
+  ],
+  "get_device": [],
+  "evaluate_perplexity": [
+    "model",
+    "tokenizer"
+  ],
+  "eval_librispeech": [
+    "model_id",
+    "num_samples",
+    "batch_size"
+  ],
+  "eval_mmlu": [
+    "model_path",
+    "num_fewshot",
+    "batch_size",
+    "device",
+    "task_use_pretrained"
+  ],
+  "eval_humaneval": [
+    "model",
+    "tokenizer",
+    "out_path",
+    "format_tabs"
+  ],
+  "generate_batch_completion": [
+    "model",
+    "tokenizer",
+    "prompt",
+    "batch_size"
+  ],
+  "check_correctness": [
+    "problem",
+    "completion",
+    "timeout",
+    "completion_id"
+  ],
+  "time_limit": [
+    "seconds"
+  ],
+  "swallow_io": [],
+  "create_tempdir": [],
+  "TimeoutException": {},
+  "WriteOnlyStringIO": {
+    "read": [
+      "self"
+    ],
+    "readline": [
+      "self"
+    ],
+    "readlines": [
+      "self"
+    ],
+    "readable": [
+      "self"
+    ]
+  },
+  "redirect_stdin": {
+    "_stream": []
+  },
+  "chdir": [
+    "root"
+  ],
+  "stream_jsonl": [
+    "filename"
+  ],
+  "estimate_pass_at_k": [
+    "num_samples",
+    "num_correct",
+    "k"
+  ],
+  "evaluate_functional_correctness": [
+    "sample_file",
+    "k",
+    "n_workers",
+    "timeout"
+  ],
+  "reliability_guard": [
+    "maximum_memory_bytes"
+  ],
+  "rel_entr": [
+    "x",
+    "y"
+  ],
+  "bin_conf": [
+    "p",
+    "n",
+    "z"
+  ],
+  "eval_kl_divergence": [
+    "ref_model",
+    "eval_model",
+    "tokenizer",
+    "seqlen"
+  ],
+  "Qwen2AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Qwen2Fuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "Qwen2_5_VLAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "modules_to_not_convert": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MistralAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MistralFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "CohereAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "CohereFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "GptBigCodeAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "YiAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "YiFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "GemmaAWQForCausalLM": {
+    "layer_type": [],
+    "max_new_tokens_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "GemmaFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "GPTNeoXAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "InternLM2AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "OptAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "AwqConfig": {
+    "config_file_name": [],
+    "from_dict": [
+      "cls",
+      "quant_config"
+    ],
+    "from_pretrained": [
+      "cls",
+      "save_dir"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_transformers_dict": [
+      "self"
+    ],
+    "from_transformers_dict": [
+      "self",
+      "transformers_dict"
+    ]
+  },
+  "TRANSFORMERS_AUTO_MAPPING_DICT": [],
+  "BaseAWQForCausalLM": {
+    "__init__": [
+      "self",
+      "model",
+      "model_type",
+      "is_quantized",
+      "config",
+      "quant_config",
+      "processor"
+    ],
+    "to": [
+      "self",
+      "device"
+    ],
+    "forward": [
+      "self"
+    ],
+    "generate": [
+      "self"
+    ],
+    "quantize": [
+      "self",
+      "tokenizer",
+      "quant_config",
+      "calib_data",
+      "split",
+      "text_column",
+      "duo_scaling",
+      "export_compatible",
+      "apply_clip",
+      "n_parallel_calib_samples",
+      "max_calib_samples",
+      "max_calib_seq_len",
+      "max_chunk_memory",
+      "quantizer_cls"
+    ],
+    "pack": [
+      "self"
+    ],
+    "fuse_layers": [
+      "model"
+    ],
+    "save_quantized": [
+      "self",
+      "save_dir",
+      "safetensors",
+      "shard_size"
+    ],
+    "from_pretrained": [
+      "self",
+      "model_path",
+      "model_type",
+      "torch_dtype",
+      "trust_remote_code",
+      "safetensors",
+      "device_map",
+      "download_kwargs",
+      "low_cpu_mem_usage",
+      "use_cache"
+    ],
+    "from_quantized": [
+      "self",
+      "model_path",
+      "model_type",
+      "model_filename",
+      "max_seq_len",
+      "torch_dtype",
+      "trust_remote_code",
+      "safetensors",
+      "fuse_layers",
+      "use_exllama",
+      "use_exllama_v2",
+      "use_ipex",
+      "device_map",
+      "max_memory",
+      "offload_folder",
+      "download_kwargs"
+    ],
+    "_load_config": [
+      "self",
+      "model_path",
+      "model_filename",
+      "safetensors",
+      "trust_remote_code",
+      "max_seq_len",
+      "download_kwargs"
+    ],
+    "_load_quantized_modules": [
+      "self",
+      "model",
+      "quant_config",
+      "version",
+      "use_exllama",
+      "use_exllama_v2",
+      "use_ipex"
+    ],
+    "_scale_activations": [
+      "self",
+      "layer"
+    ]
+  },
+  "BaichuanAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "BaichuanFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "GPTJAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MixtralAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "modules_to_not_convert": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MixtralFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "LlavaNextAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "LlavaNextFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "Gemma2AWQForCausalLM": {
+    "layer_type": [],
+    "max_new_tokens_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Qwen3MoeAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "AWQ_CAUSAL_LM_MODEL_MAP": [],
+  "check_and_get_model_type": [
+    "model_dir",
+    "trust_remote_code"
+  ],
+  "AutoAWQForCausalLM": {
+    "__init__": [
+      "self"
+    ],
+    "from_pretrained": [
+      "self",
+      "model_path",
+      "torch_dtype",
+      "trust_remote_code",
+      "safetensors",
+      "device_map",
+      "download_kwargs",
+      "low_cpu_mem_usage",
+      "use_cache"
+    ],
+    "from_quantized": [
+      "self",
+      "quant_path",
+      "quant_filename",
+      "max_seq_len",
+      "trust_remote_code",
+      "fuse_layers",
+      "use_exllama",
+      "use_exllama_v2",
+      "use_ipex",
+      "batch_size",
+      "safetensors",
+      "device_map",
+      "max_memory",
+      "offload_folder",
+      "download_kwargs"
+    ]
+  },
+  "QwenAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "AquilaAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "AquilaFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "ExaoneAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "LlamaFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "MiniCPMAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MiniCPM3AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Phi3VAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "modules_to_not_convert": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Phi3AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Phi3Fuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "LlamaAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "DeepseekV2AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "LlavaAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "LlavaFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "BloomAWQForCausalLM": {
+    "layer_type": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Qwen3AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Qwen3Fuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "FalconAWQForCausalLM": {
+    "layer_type": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "FalconFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "Qwen2VLAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "modules_to_not_convert": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Starcoder2AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "Starcoder2Fuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "Qwen2_5_OmniAWQForConditionalGeneration": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "modules_to_not_convert": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MptAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "MptFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "StableLmAWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "fuse_layers": [
+      "model"
+    ],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "StableLmFuser": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "fuse_transformer": [
+      "self"
+    ]
+  },
+  "DeepseekV3AWQForCausalLM": {
+    "layer_type": [],
+    "max_seq_len_key": [],
+    "get_model_layers": [
+      "model"
+    ],
+    "get_act_for_scaling": [
+      "module"
+    ],
+    "move_embed": [
+      "model",
+      "device"
+    ],
+    "get_layers_for_scaling": [
+      "module",
+      "input_feat",
+      "module_kwargs"
+    ]
+  },
+  "ScaledActivation": {
+    "__init__": [
+      "self",
+      "module",
+      "scales"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AWQ_TRITON_SUPPORTED_GROUP_SIZES": [],
+  "get_same_device_cm": [
+    "t"
+  ],
+  "awq_dequantize_kernel": [
+    "qweight_ptr",
+    "scales_ptr",
+    "zeros_ptr",
+    "group_size",
+    "result_ptr",
+    "num_cols",
+    "num_rows",
+    "BLOCK_SIZE_X",
+    "BLOCK_SIZE_Y"
+  ],
+  "awq_gemm_kernel": [
+    "a_ptr",
+    "b_ptr",
+    "c_ptr",
+    "zeros_ptr",
+    "scales_ptr",
+    "M",
+    "N",
+    "K",
+    "group_size",
+    "BLOCK_SIZE_M",
+    "BLOCK_SIZE_N",
+    "BLOCK_SIZE_K",
+    "SPLIT_K"
+  ],
+  "awq_dequantize_triton": [
+    "qweight",
+    "scales",
+    "zeros",
+    "block_size_x",
+    "block_size_y"
+  ],
+  "awq_gemm_triton": [
+    "input",
+    "qweight",
+    "scales",
+    "qzeros",
+    "split_k_iters",
+    "block_size_m",
+    "block_size_n",
+    "block_size_k"
+  ],
+  "FasterTransformerRMSNorm": {
+    "__init__": [
+      "self",
+      "weight",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "WindowedCache": {
+    "__init__": [
+      "self",
+      "cache_batch_size",
+      "n_heads",
+      "n_kv_heads",
+      "head_dim",
+      "max_seq_len",
+      "device"
+    ],
+    "get_kv": [
+      "self",
+      "batch_size",
+      "start_pos",
+      "seqlen"
+    ],
+    "update_kv": [
+      "self",
+      "values_store",
+      "keys_store",
+      "batch_size",
+      "start_pos",
+      "seqlen"
+    ],
+    "roll_kv_n_steps": [
+      "self",
+      "start_pos",
+      "n"
+    ],
+    "to": [
+      "self",
+      "device"
+    ],
+    "increase_batch_size": [
+      "self",
+      "to_bsz"
+    ],
+    "decrease_batch_size": [
+      "self",
+      "to_bsz"
+    ]
+  },
+  "QuantFusedMLP": {
+    "__init__": [
+      "self",
+      "gate_proj",
+      "down_proj",
+      "up_proj",
+      "activation"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "routing_weights"
+    ]
+  },
+  "QuantLlamaMLP": {
+    "__init__": [
+      "self",
+      "gate_proj",
+      "down_proj",
+      "up_proj"
+    ]
+  },
+  "HF_NEW_CACHE_FORMAT": [],
+  "RoPE": {
+    "__init__": [
+      "self",
+      "head_dim",
+      "max_seq_len",
+      "device",
+      "rope_theta"
+    ],
+    "precompute_freqs_cis": [
+      "dim",
+      "end",
+      "theta"
+    ],
+    "reshape_for_broadcast": [
+      "freqs_cis",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "xq",
+      "xk",
+      "start_pos",
+      "seqlen",
+      "partial"
+    ]
+  },
+  "ALiBi": {
+    "__init__": [
+      "self",
+      "n_heads",
+      "max_seq_len",
+      "device",
+      "alibi_bias_max"
+    ],
+    "gen_slopes": [
+      "n_heads",
+      "alibi_bias_max"
+    ],
+    "build_alibi_bias": [
+      "n_heads",
+      "seq_len",
+      "alibi_bias_max",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "scores",
+      "seqlen"
+    ]
+  },
+  "QuantAttentionFused": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "dev",
+      "max_seq_len",
+      "use_alibi",
+      "attention_shapes",
+      "rope_theta",
+      "partial_rotary_factor",
+      "head_dim",
+      "attn_logit_softcapping",
+      "q_norm",
+      "k_norm"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "MixtralModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "embedding",
+      "norm"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "LlamaLikeModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "embedding",
+      "norm"
+    ],
+    "embed_tokens": [
+      "self"
+    ],
+    "layers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "CohereModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "embedding",
+      "norm"
+    ],
+    "embed_tokens": [
+      "self"
+    ],
+    "layers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attn_bias",
+      "attention_mask",
+      "is_causal"
+    ]
+  },
+  "MPTModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "wte",
+      "norm_f"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "FalconModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "word_embeddings",
+      "ln_f"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "Phi3Model": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "embedding",
+      "norm"
+    ],
+    "embed_tokens": [
+      "self"
+    ],
+    "layers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "Gemma2LikeModel": {
+    "__init__": [
+      "self",
+      "vocab_size",
+      "blocks",
+      "embedding",
+      "norm",
+      "hidden_size"
+    ],
+    "embed_tokens": [
+      "self"
+    ],
+    "layers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "FusedSparseMoeBlock": {
+    "__init__": [
+      "self",
+      "top_k",
+      "gate",
+      "ws",
+      "w2s"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "apply_moe_weights": [
+    "w1",
+    "w2",
+    "x",
+    "gating_output",
+    "topk",
+    "renormalize"
+  ],
+  "moe_align_block_size": [
+    "topk_ids",
+    "block_size",
+    "num_experts"
+  ],
+  "fused_topk": [
+    "gating_output",
+    "topk",
+    "renormalize"
+  ],
+  "MixtralBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "moe",
+      "norm_1",
+      "norm_2",
+      "dev",
+      "max_seq_len",
+      "rope_theta"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "LlamaLikeBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "norm_1",
+      "norm_2",
+      "dev",
+      "max_seq_len",
+      "rope_theta",
+      "partial_rotary_factor",
+      "use_alibi",
+      "head_dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "QwenBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "norm_1",
+      "norm_2",
+      "dev",
+      "max_seq_len",
+      "rope_theta",
+      "partial_rotary_factor",
+      "use_alibi",
+      "head_dim",
+      "q_norm",
+      "k_norm"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "Gemma2LikeBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "norm_1",
+      "norm_2",
+      "norm_3",
+      "norm_4",
+      "dev",
+      "max_seq_len",
+      "rope_theta",
+      "partial_rotary_factor",
+      "use_alibi",
+      "head_dim",
+      "attn_logit_softcapping"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "CohereBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "norm_1",
+      "dev",
+      "max_seq_len",
+      "rope_theta",
+      "partial_rotary_factor",
+      "use_alibi",
+      "head_dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "MPTBlock": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "qkv_layer",
+      "o_proj",
+      "mpt_mlp",
+      "norm_1",
+      "norm_2",
+      "dev",
+      "max_seq_len"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "FalconDecoderLayer": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "dev",
+      "max_seq_len",
+      "input_layernorm",
+      "ln_attn",
+      "ln_mlp",
+      "new_decoder_arch"
+    ],
+    "_get_attention_shapes": [
+      "self",
+      "n_heads",
+      "max_seq_len",
+      "head_dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "Phi3Block": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "n_heads",
+      "n_kv_heads",
+      "qkv_layer",
+      "o_proj",
+      "mlp",
+      "norm_1",
+      "norm_2",
+      "dev",
+      "max_seq_len",
+      "rope_theta",
+      "rope_scaling",
+      "use_alibi",
+      "head_dim"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "WQLinear_IPEX": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev",
+      "training"
+    ],
+    "post_init": [
+      "self"
+    ],
+    "init_ipex_linear": [
+      "self"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "backward": [
+      "self",
+      "grad_output"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "ipex_post_init": [
+    "model"
+  ],
+  "none_tensor": [],
+  "WQLinear_Exllama": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev"
+    ],
+    "post_init": [
+      "self"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "exllama_post_init": [
+    "model"
+  ],
+  "make_divisible": [
+    "c",
+    "divisor"
+  ],
+  "calculate_zeros_width": [
+    "in_features",
+    "group_size",
+    "pack_num"
+  ],
+  "pack_intweight": [
+    "unpacked_qweight",
+    "interleave",
+    "kstride"
+  ],
+  "WQLinear_GEMVFast": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_get_perms": [],
+  "WQLinear_Marlin": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "post_init": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "marlin_post_init": [
+    "model"
+  ],
+  "WQLinear_GEMV": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "user_has_been_warned": [],
+  "WQLinearMMFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "qweight",
+      "qzeros",
+      "scales",
+      "w_bit",
+      "group_size",
+      "bias",
+      "out_features"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "WQLinear_GEMM": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev",
+      "training"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "WQLinear_ExllamaV2": {
+    "__init__": [
+      "self",
+      "w_bit",
+      "group_size",
+      "in_features",
+      "out_features",
+      "bias",
+      "dev"
+    ],
+    "post_init": [
+      "self",
+      "scratch_space"
+    ],
+    "from_linear": [
+      "cls",
+      "linear",
+      "w_bit",
+      "group_size",
+      "init_only",
+      "scales",
+      "zeros"
+    ],
+    "temp_dq_size": [
+      "self"
+    ],
+    "temp_fwd_size": [
+      "self",
+      "max_input_len",
+      "max_batch_size"
+    ],
+    "scratch_space_fixed": [
+      "self",
+      "max_input_len",
+      "max_batch_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ScratchSpace": {
+    "__init__": [
+      "self",
+      "scratch_bytes",
+      "dev"
+    ],
+    "get_slice": [
+      "self",
+      "size_bytes"
+    ]
+  },
+  "exllamav2_post_init": [
+    "model",
+    "max_input_len",
+    "max_batch_size"
+  ],
+  "next_multiple": [
+    "x",
+    "multiple"
+  ],
+  "in_features": [],
+  "out_features": [],
+  "w_bit": [],
+  "group_size": [],
+  "torch_dtype": [],
+  "MAX_INT32": [],
+  "MIN_INT32": [],
+  "qweight": [],
+  "qzeros": [],
+  "scales": [],
+  "test_per_channel_mean": [
+    "inp",
+    "max_chunk_memory",
+    "atol",
+    "rtol"
+  ],
+  "pseudo_quantize_tensor": [
+    "w",
+    "group_size",
+    "w_bit"
+  ],
+  "test_loss_computation": [
+    "fp16_output",
+    "int_w_output",
+    "max_chunk_memory",
+    "atol",
+    "rtol"
+  ],
+  "fp16_output": [],
+  "int_w_output": [],
+  "test_result": [],
+  "inp": []
+}

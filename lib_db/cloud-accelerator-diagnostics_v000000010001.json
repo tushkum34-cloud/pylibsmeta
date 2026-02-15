@@ -1,0 +1,108 @@
+{
+  "TensorboardTest": {
+    "testCreateInstanceWhenNoInstanceExist": [
+      "self",
+      "mock_tensorboard_list",
+      "mock_tensorboard_create"
+    ],
+    "testCreateInstanceWhenSameNameInstanceExist": [
+      "self",
+      "mock_tensorboard_list",
+      "mock_tensorboard_create",
+      "mock_tensorboard"
+    ],
+    "testCreateInstanceForUnsupportedRegion": [
+      "self"
+    ],
+    "testCreateInstanceWhenExceptionIsThrown": [
+      "self",
+      "mock_tensorboard_list",
+      "mock_tensorboard_create"
+    ],
+    "testCreateExperimentWhenTensorboardInstanceExist": [
+      "self",
+      "mock_experiment_create",
+      "mock_tensorboard_list",
+      "mock_tensorboard",
+      "mock_experiment_list"
+    ],
+    "testCreateExperimentWhenNoTensorboardInstanceExist": [
+      "self",
+      "mock_experiment_create",
+      "mock_tensorboard_list",
+      "mock_tensorboard_create",
+      "mock_experiment_list"
+    ],
+    "testCreateExperimentWhenTensorboardInstanceAndExperimentExist": [
+      "self",
+      "mock_experiment_create",
+      "mock_tensorboard_list",
+      "mock_tensorboard",
+      "mock_experiment_list",
+      "mock_experiment"
+    ],
+    "testCreateExperimentForUnsupportedRegion": [
+      "self"
+    ],
+    "testCreateExperimentWhenCreateInstanceFails": [
+      "self",
+      "mock_experiment_create",
+      "mock_tensorboard_list",
+      "mock_tensorboard_create"
+    ]
+  },
+  "UploaderTest": {
+    "testWhenUploadToTensorboardThenVertexUploaderIsCalled": [
+      "self",
+      "mock_aiplatform",
+      "mock_tensorboard"
+    ],
+    "testWhenNoTensorboardExistsThenVertexUploaderNotCalled": [
+      "self",
+      "mock_aiplatform",
+      "mock_tensorboard"
+    ],
+    "testWhenNoExperimentExistsThenVertexUploaderNotCalled": [
+      "self",
+      "mock_aiplatform",
+      "mock_tensorboard"
+    ],
+    "testWhenStopUploadToTensorboardIsCalledThenVertexUploadIsStopped": [
+      "self",
+      "mock_aiplatform"
+    ]
+  },
+  "logger": [],
+  "WEB_SERVER_URI": [],
+  "create_instance": [
+    "project",
+    "location",
+    "tensorboard_name"
+  ],
+  "create_experiment": [
+    "project",
+    "location",
+    "experiment_name",
+    "tensorboard_name"
+  ],
+  "get_instance_identifiers": [
+    "tensorboard_name"
+  ],
+  "get_experiment": [
+    "tensorboard_id",
+    "experiment_name"
+  ],
+  "start_upload_to_tensorboard": [
+    "project",
+    "location",
+    "experiment_name",
+    "tensorboard_name",
+    "logdir"
+  ],
+  "stop_upload_to_tensorboard": [],
+  "start_upload": [
+    "tensorboard_id",
+    "experiment_name",
+    "logdir"
+  ]
+}

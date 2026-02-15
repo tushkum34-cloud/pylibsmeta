@@ -1,0 +1,1502 @@
+{
+  "translate2d": [
+    "tx",
+    "ty"
+  ],
+  "scale2d": [
+    "sx",
+    "sy"
+  ],
+  "rotate2d": [
+    "theta"
+  ],
+  "KarrasAugmentationPipeline": {
+    "__init__": [
+      "self",
+      "a_prob",
+      "a_scale",
+      "a_aniso",
+      "a_trans",
+      "disable_all"
+    ],
+    "__call__": [
+      "self",
+      "image"
+    ]
+  },
+  "KarrasAugmentWrapper": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma",
+      "aug_cond",
+      "mapping_cond"
+    ],
+    "param_groups": [
+      "self"
+    ],
+    "set_skip_stages": [
+      "self",
+      "skip_stages"
+    ],
+    "set_patch_size": [
+      "self",
+      "patch_size"
+    ]
+  },
+  "InceptionV3FeatureExtractor": {
+    "__init__": [
+      "self",
+      "device"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CLIPFeatureExtractor": {
+    "__init__": [
+      "self",
+      "name",
+      "device"
+    ],
+    "available_models": [
+      "cls"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DINOv2FeatureExtractor": {
+    "__init__": [
+      "self",
+      "name",
+      "device"
+    ],
+    "available_models": [
+      "cls"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "compute_features": [
+    "accelerator",
+    "sample_fn",
+    "extractor_fn",
+    "n",
+    "batch_size"
+  ],
+  "polynomial_kernel": [
+    "x",
+    "y"
+  ],
+  "squared_mmd": [
+    "x",
+    "y",
+    "kernel"
+  ],
+  "kid": [
+    "x",
+    "y",
+    "max_size"
+  ],
+  "_MatrixSquareRootEig": {
+    "forward": [
+      "ctx",
+      "a"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "sqrtm_eig": [
+    "a"
+  ],
+  "fid": [
+    "x",
+    "y",
+    "eps"
+  ],
+  "append_zero": [
+    "x"
+  ],
+  "get_sigmas_karras": [
+    "n",
+    "sigma_min",
+    "sigma_max",
+    "rho",
+    "device"
+  ],
+  "get_sigmas_exponential": [
+    "n",
+    "sigma_min",
+    "sigma_max",
+    "device"
+  ],
+  "get_sigmas_polyexponential": [
+    "n",
+    "sigma_min",
+    "sigma_max",
+    "rho",
+    "device"
+  ],
+  "get_sigmas_vp": [
+    "n",
+    "beta_d",
+    "beta_min",
+    "eps_s",
+    "device"
+  ],
+  "to_d": [
+    "x",
+    "sigma",
+    "denoised"
+  ],
+  "get_ancestral_step": [
+    "sigma_from",
+    "sigma_to",
+    "eta"
+  ],
+  "default_noise_sampler": [
+    "x"
+  ],
+  "BatchedBrownianTree": {
+    "__init__": [
+      "self",
+      "x",
+      "t0",
+      "t1",
+      "seed"
+    ],
+    "sort": [
+      "a",
+      "b"
+    ],
+    "__call__": [
+      "self",
+      "t0",
+      "t1"
+    ]
+  },
+  "BrownianTreeNoiseSampler": {
+    "__init__": [
+      "self",
+      "x",
+      "sigma_min",
+      "sigma_max",
+      "seed",
+      "transform"
+    ],
+    "__call__": [
+      "self",
+      "sigma",
+      "sigma_next"
+    ]
+  },
+  "sample_euler": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "s_churn",
+    "s_tmin",
+    "s_tmax",
+    "s_noise"
+  ],
+  "sample_euler_ancestral": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler"
+  ],
+  "sample_heun": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "s_churn",
+    "s_tmin",
+    "s_tmax",
+    "s_noise"
+  ],
+  "sample_dpm_2": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "s_churn",
+    "s_tmin",
+    "s_tmax",
+    "s_noise"
+  ],
+  "sample_dpm_2_ancestral": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler"
+  ],
+  "linear_multistep_coeff": [
+    "order",
+    "t",
+    "i",
+    "j"
+  ],
+  "sample_lms": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "order"
+  ],
+  "log_likelihood": [
+    "model",
+    "x",
+    "sigma_min",
+    "sigma_max",
+    "extra_args",
+    "atol",
+    "rtol"
+  ],
+  "PIDStepSizeController": {
+    "__init__": [
+      "self",
+      "h",
+      "pcoeff",
+      "icoeff",
+      "dcoeff",
+      "order",
+      "accept_safety",
+      "eps"
+    ],
+    "limiter": [
+      "self",
+      "x"
+    ],
+    "propose_step": [
+      "self",
+      "error"
+    ]
+  },
+  "DPMSolver": {
+    "__init__": [
+      "self",
+      "model",
+      "extra_args",
+      "eps_callback",
+      "info_callback"
+    ],
+    "t": [
+      "self",
+      "sigma"
+    ],
+    "sigma": [
+      "self",
+      "t"
+    ],
+    "eps": [
+      "self",
+      "eps_cache",
+      "key",
+      "x",
+      "t"
+    ],
+    "dpm_solver_1_step": [
+      "self",
+      "x",
+      "t",
+      "t_next",
+      "eps_cache"
+    ],
+    "dpm_solver_2_step": [
+      "self",
+      "x",
+      "t",
+      "t_next",
+      "r1",
+      "eps_cache"
+    ],
+    "dpm_solver_3_step": [
+      "self",
+      "x",
+      "t",
+      "t_next",
+      "r1",
+      "r2",
+      "eps_cache"
+    ],
+    "dpm_solver_fast": [
+      "self",
+      "x",
+      "t_start",
+      "t_end",
+      "nfe",
+      "eta",
+      "s_noise",
+      "noise_sampler"
+    ],
+    "dpm_solver_adaptive": [
+      "self",
+      "x",
+      "t_start",
+      "t_end",
+      "order",
+      "rtol",
+      "atol",
+      "h_init",
+      "pcoeff",
+      "icoeff",
+      "dcoeff",
+      "accept_safety",
+      "eta",
+      "s_noise",
+      "noise_sampler"
+    ]
+  },
+  "sample_dpm_fast": [
+    "model",
+    "x",
+    "sigma_min",
+    "sigma_max",
+    "n",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler"
+  ],
+  "sample_dpm_adaptive": [
+    "model",
+    "x",
+    "sigma_min",
+    "sigma_max",
+    "extra_args",
+    "callback",
+    "disable",
+    "order",
+    "rtol",
+    "atol",
+    "h_init",
+    "pcoeff",
+    "icoeff",
+    "dcoeff",
+    "accept_safety",
+    "eta",
+    "s_noise",
+    "noise_sampler",
+    "return_info"
+  ],
+  "sample_dpmpp_2s_ancestral": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler"
+  ],
+  "sample_dpmpp_sde": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler",
+    "r"
+  ],
+  "sample_dpmpp_2m": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable"
+  ],
+  "sample_dpmpp_2m_sde": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler",
+    "solver_type"
+  ],
+  "sample_dpmpp_3m_sde": [
+    "model",
+    "x",
+    "sigmas",
+    "extra_args",
+    "callback",
+    "disable",
+    "eta",
+    "s_noise",
+    "noise_sampler"
+  ],
+  "from_pil_image": [
+    "x"
+  ],
+  "to_pil_image": [
+    "x"
+  ],
+  "hf_datasets_augs_helper": [
+    "examples",
+    "transform",
+    "image_key",
+    "mode"
+  ],
+  "append_dims": [
+    "x",
+    "target_dims"
+  ],
+  "n_params": [
+    "module"
+  ],
+  "download_file": [
+    "path",
+    "url",
+    "digest"
+  ],
+  "train_mode": [
+    "model",
+    "mode"
+  ],
+  "eval_mode": [
+    "model"
+  ],
+  "ema_update": [
+    "model",
+    "averaged_model",
+    "decay"
+  ],
+  "EMAWarmup": {
+    "__init__": [
+      "self",
+      "inv_gamma",
+      "power",
+      "min_value",
+      "max_value",
+      "start_at",
+      "last_epoch"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "get_value": [
+      "self"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "InverseLR": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "inv_gamma",
+      "power",
+      "warmup",
+      "min_lr",
+      "last_epoch",
+      "verbose"
+    ],
+    "get_lr": [
+      "self"
+    ],
+    "_get_closed_form_lr": [
+      "self"
+    ]
+  },
+  "ExponentialLR": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "num_steps",
+      "decay",
+      "warmup",
+      "min_lr",
+      "last_epoch",
+      "verbose"
+    ],
+    "get_lr": [
+      "self"
+    ],
+    "_get_closed_form_lr": [
+      "self"
+    ]
+  },
+  "ConstantLRWithWarmup": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "warmup",
+      "last_epoch",
+      "verbose"
+    ],
+    "get_lr": [
+      "self"
+    ],
+    "_get_closed_form_lr": [
+      "self"
+    ]
+  },
+  "stratified_uniform": [
+    "shape",
+    "group",
+    "groups",
+    "dtype",
+    "device"
+  ],
+  "stratified_settings": [],
+  "enable_stratified": [
+    "group",
+    "groups",
+    "disable"
+  ],
+  "enable_stratified_accelerate": [
+    "accelerator",
+    "disable"
+  ],
+  "stratified_with_settings": [
+    "shape",
+    "dtype",
+    "device"
+  ],
+  "rand_log_normal": [
+    "shape",
+    "loc",
+    "scale",
+    "device",
+    "dtype"
+  ],
+  "rand_log_logistic": [
+    "shape",
+    "loc",
+    "scale",
+    "min_value",
+    "max_value",
+    "device",
+    "dtype"
+  ],
+  "rand_log_uniform": [
+    "shape",
+    "min_value",
+    "max_value",
+    "device",
+    "dtype"
+  ],
+  "rand_v_diffusion": [
+    "shape",
+    "sigma_data",
+    "min_value",
+    "max_value",
+    "device",
+    "dtype"
+  ],
+  "rand_cosine_interpolated": [
+    "shape",
+    "image_d",
+    "noise_d_low",
+    "noise_d_high",
+    "sigma_data",
+    "min_value",
+    "max_value",
+    "device",
+    "dtype"
+  ],
+  "rand_split_log_normal": [
+    "shape",
+    "loc",
+    "scale_1",
+    "scale_2",
+    "device",
+    "dtype"
+  ],
+  "FolderOfImages": {
+    "IMG_EXTENSIONS": [],
+    "__init__": [
+      "self",
+      "root",
+      "transform"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ]
+  },
+  "CSVLogger": {
+    "__init__": [
+      "self",
+      "filename",
+      "columns"
+    ],
+    "write": [
+      "self"
+    ]
+  },
+  "tf32_mode": [
+    "cudnn",
+    "matmul"
+  ],
+  "get_safetensors_metadata": [
+    "path"
+  ],
+  "ema_update_dict": [
+    "values",
+    "updates",
+    "decay"
+  ],
+  "DDPGradientStatsHook": {
+    "__init__": [
+      "self",
+      "ddp_module"
+    ],
+    "_clear_state": [
+      "self"
+    ],
+    "_hook_fn": [
+      "self",
+      "bucket"
+    ],
+    "get_stats": [
+      "self"
+    ]
+  },
+  "GradientNoiseScale": {
+    "__init__": [
+      "self",
+      "beta",
+      "eps"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "update": [
+      "self",
+      "sq_norm_small_batch",
+      "sq_norm_large_batch",
+      "n_small_batch",
+      "n_large_batch"
+    ],
+    "get_gns": [
+      "self"
+    ],
+    "get_stats": [
+      "self"
+    ]
+  },
+  "VDenoiser": {
+    "__init__": [
+      "self",
+      "inner_model"
+    ],
+    "get_scalings": [
+      "self",
+      "sigma"
+    ],
+    "sigma_to_t": [
+      "self",
+      "sigma"
+    ],
+    "t_to_sigma": [
+      "self",
+      "t"
+    ],
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma"
+    ]
+  },
+  "DiscreteSchedule": {
+    "__init__": [
+      "self",
+      "sigmas",
+      "quantize"
+    ],
+    "sigma_min": [
+      "self"
+    ],
+    "sigma_max": [
+      "self"
+    ],
+    "get_sigmas": [
+      "self",
+      "n"
+    ],
+    "sigma_to_t": [
+      "self",
+      "sigma",
+      "quantize"
+    ],
+    "t_to_sigma": [
+      "self",
+      "t"
+    ]
+  },
+  "DiscreteEpsDDPMDenoiser": {
+    "__init__": [
+      "self",
+      "model",
+      "alphas_cumprod",
+      "quantize"
+    ],
+    "get_scalings": [
+      "self",
+      "sigma"
+    ],
+    "get_eps": [
+      "self"
+    ],
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma"
+    ]
+  },
+  "OpenAIDenoiser": {
+    "__init__": [
+      "self",
+      "model",
+      "diffusion",
+      "quantize",
+      "has_learned_sigmas",
+      "device"
+    ],
+    "get_eps": [
+      "self"
+    ]
+  },
+  "CompVisDenoiser": {
+    "__init__": [
+      "self",
+      "model",
+      "quantize",
+      "device"
+    ],
+    "get_eps": [
+      "self"
+    ]
+  },
+  "DiscreteVDDPMDenoiser": {
+    "__init__": [
+      "self",
+      "model",
+      "alphas_cumprod",
+      "quantize"
+    ],
+    "get_scalings": [
+      "self",
+      "sigma"
+    ],
+    "get_v": [
+      "self"
+    ],
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma"
+    ]
+  },
+  "CompVisVDenoiser": {
+    "__init__": [
+      "self",
+      "model",
+      "quantize",
+      "device"
+    ],
+    "get_v": [
+      "self",
+      "x",
+      "t",
+      "cond"
+    ]
+  },
+  "round_to_power_of_two": [
+    "x",
+    "tol"
+  ],
+  "load_config": [
+    "path_or_dict"
+  ],
+  "make_model": [
+    "config"
+  ],
+  "make_denoiser_wrapper": [
+    "config"
+  ],
+  "make_sample_density": [
+    "config"
+  ],
+  "dct": [
+    "x"
+  ],
+  "freq_weight_1d": [
+    "n",
+    "scales",
+    "dtype",
+    "device"
+  ],
+  "freq_weight_nd": [
+    "shape",
+    "scales",
+    "dtype",
+    "device"
+  ],
+  "Denoiser": {
+    "__init__": [
+      "self",
+      "inner_model",
+      "sigma_data",
+      "weighting",
+      "scales"
+    ],
+    "_weighting_soft_min_snr": [
+      "self",
+      "sigma"
+    ],
+    "_weighting_snr": [
+      "self",
+      "sigma"
+    ],
+    "get_scalings": [
+      "self",
+      "sigma"
+    ],
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma"
+    ]
+  },
+  "DenoiserWithVariance": {
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ]
+  },
+  "SimpleLossDenoiser": {
+    "loss": [
+      "self",
+      "input",
+      "noise",
+      "sigma"
+    ]
+  },
+  "ResidualBlock": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "ConditionedModule": {},
+  "UnconditionedModule": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "ConditionedSequential": {
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "ConditionedResidualBlock": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "AdaGN": {
+    "__init__": [
+      "self",
+      "feats_in",
+      "c_out",
+      "num_groups",
+      "eps",
+      "cond_key"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "SelfAttention2d": {
+    "__init__": [
+      "self",
+      "c_in",
+      "n_head",
+      "norm",
+      "dropout_rate"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "CrossAttention2d": {
+    "__init__": [
+      "self",
+      "c_dec",
+      "c_enc",
+      "n_head",
+      "norm_dec",
+      "dropout_rate",
+      "cond_key",
+      "cond_key_padding"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "_kernels": [],
+  "Downsample2d": {
+    "__init__": [
+      "self",
+      "kernel",
+      "pad_mode"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Upsample2d": {
+    "__init__": [
+      "self",
+      "kernel",
+      "pad_mode"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FourierFeatures": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "std"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "UNet": {
+    "__init__": [
+      "self",
+      "d_blocks",
+      "u_blocks",
+      "skip_stages"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond"
+    ]
+  },
+  "orthogonal_": [
+    "module"
+  ],
+  "ResConvBlock": {
+    "__init__": [
+      "self",
+      "feats_in",
+      "c_in",
+      "c_mid",
+      "c_out",
+      "group_size",
+      "dropout_rate"
+    ]
+  },
+  "DBlock": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "feats_in",
+      "c_in",
+      "c_mid",
+      "c_out",
+      "group_size",
+      "head_size",
+      "dropout_rate",
+      "downsample",
+      "self_attn",
+      "cross_attn",
+      "c_enc"
+    ],
+    "set_downsample": [
+      "self",
+      "downsample"
+    ]
+  },
+  "UBlock": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "feats_in",
+      "c_in",
+      "c_mid",
+      "c_out",
+      "group_size",
+      "head_size",
+      "dropout_rate",
+      "upsample",
+      "self_attn",
+      "cross_attn",
+      "c_enc"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "cond",
+      "skip"
+    ],
+    "set_upsample": [
+      "self",
+      "upsample"
+    ]
+  },
+  "MappingNet": {
+    "__init__": [
+      "self",
+      "feats_in",
+      "feats_out",
+      "n_layers"
+    ]
+  },
+  "ImageDenoiserModelV1": {
+    "__init__": [
+      "self",
+      "c_in",
+      "feats_in",
+      "depths",
+      "channels",
+      "self_attn_depths",
+      "cross_attn_depths",
+      "mapping_cond_dim",
+      "unet_cond_dim",
+      "cross_cond_dim",
+      "dropout_rate",
+      "patch_size",
+      "skip_stages",
+      "has_variance"
+    ],
+    "param_groups": [
+      "self",
+      "base_lr"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "sigma",
+      "mapping_cond",
+      "unet_cond",
+      "cross_cond",
+      "cross_cond_padding",
+      "return_variance"
+    ],
+    "set_skip_stages": [
+      "self",
+      "skip_stages"
+    ],
+    "set_patch_size": [
+      "self",
+      "patch_size"
+    ]
+  },
+  "rotate_half": [
+    "x"
+  ],
+  "apply_rotary_emb": [
+    "freqs",
+    "t",
+    "start_index",
+    "scale"
+  ],
+  "centers": [
+    "start",
+    "stop",
+    "num",
+    "dtype",
+    "device"
+  ],
+  "make_grid": [
+    "h_pos",
+    "w_pos"
+  ],
+  "bounding_box": [
+    "h",
+    "w",
+    "pixel_aspect_ratio"
+  ],
+  "make_axial_pos": [
+    "h",
+    "w",
+    "pixel_aspect_ratio",
+    "align_corners",
+    "dtype",
+    "device"
+  ],
+  "freqs_pixel": [
+    "max_freq"
+  ],
+  "freqs_pixel_log": [
+    "max_freq"
+  ],
+  "AxialRoPE": {
+    "__init__": [
+      "self",
+      "dim",
+      "n_heads",
+      "start_index",
+      "freqs_init"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "get_freqs": [
+      "self",
+      "pos"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pos"
+    ]
+  },
+  "zero_init": [
+    "layer"
+  ],
+  "checkpoint_helper": [
+    "function"
+  ],
+  "tag_param": [
+    "param",
+    "tag"
+  ],
+  "tag_module": [
+    "module",
+    "tag"
+  ],
+  "apply_wd": [
+    "module"
+  ],
+  "filter_params": [
+    "function",
+    "module"
+  ],
+  "scaled_dot_product_attention": [
+    "q",
+    "k",
+    "v",
+    "attn_mask",
+    "dropout_p"
+  ],
+  "geglu": [
+    "x"
+  ],
+  "rms_norm": [
+    "x",
+    "scale",
+    "eps"
+  ],
+  "GEGLU": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "param_shape",
+      "eps"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "QKNorm": {
+    "__init__": [
+      "self",
+      "n_heads",
+      "eps",
+      "max_scale"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "proj_": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaRMSNorm": {
+    "__init__": [
+      "self",
+      "features",
+      "cond_features",
+      "eps"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond"
+    ]
+  },
+  "SelfAttentionBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "d_head",
+      "dropout"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pos",
+      "attn_mask",
+      "cond"
+    ]
+  },
+  "FeedForwardBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "d_ff",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond"
+    ]
+  },
+  "TransformerBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "d_ff",
+      "d_head",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pos",
+      "attn_mask",
+      "cond"
+    ]
+  },
+  "Patching": {
+    "__init__": [
+      "self",
+      "features",
+      "patch_size"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "pixel_aspect_ratio"
+    ]
+  },
+  "Unpatching": {
+    "__init__": [
+      "self",
+      "features",
+      "patch_size"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "h",
+      "w"
+    ]
+  },
+  "MappingFeedForwardBlock": {
+    "__init__": [
+      "self",
+      "d_model",
+      "d_ff",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MappingNetwork": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "d_model",
+      "d_ff",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ImageTransformerDenoiserModelV1": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "d_model",
+      "d_ff",
+      "in_features",
+      "out_features",
+      "patch_size",
+      "num_classes",
+      "dropout",
+      "sigma_data"
+    ],
+    "proj_": [
+      "self"
+    ],
+    "param_groups": [
+      "self",
+      "base_lr",
+      "mapping_lr_scale"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "sigma",
+      "aug_cond",
+      "class_cond"
+    ]
+  },
+  "get_use_compile": [],
+  "get_use_flash_attention_2": [],
+  "state": [],
+  "checkpointing": [
+    "enable"
+  ],
+  "get_checkpointing": [],
+  "compile_wrap": {
+    "__init__": [
+      "self",
+      "function"
+    ],
+    "compiled_function": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  }
+}

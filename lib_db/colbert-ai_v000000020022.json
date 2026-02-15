@@ -1,0 +1,1845 @@
+{
+  "Trainer": {
+    "__init__": [
+      "self",
+      "triples",
+      "queries",
+      "collection",
+      "config"
+    ],
+    "configure": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "checkpoint"
+    ],
+    "best_checkpoint_path": [
+      "self"
+    ]
+  },
+  "DEVICE": [],
+  "SAVED_CHECKPOINTS": [],
+  "Indexer": {
+    "__init__": [
+      "self",
+      "checkpoint",
+      "config",
+      "verbose"
+    ],
+    "configure": [
+      "self"
+    ],
+    "get_index": [
+      "self"
+    ],
+    "erase": [
+      "self",
+      "force_silent"
+    ],
+    "index": [
+      "self",
+      "name",
+      "collection",
+      "overwrite"
+    ],
+    "__launch": [
+      "self",
+      "collection"
+    ]
+  },
+  "TextQueries": [],
+  "Searcher": {
+    "__init__": [
+      "self",
+      "index",
+      "checkpoint",
+      "collection",
+      "config",
+      "index_root",
+      "verbose"
+    ],
+    "configure": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text",
+      "full_length_search"
+    ],
+    "search": [
+      "self",
+      "text",
+      "k",
+      "filter_fn",
+      "full_length_search",
+      "pids"
+    ],
+    "search_all": [
+      "self",
+      "queries",
+      "k",
+      "filter_fn",
+      "full_length_search",
+      "qid_to_pids"
+    ],
+    "_search_all_Q": [
+      "self",
+      "queries",
+      "Q",
+      "k",
+      "filter_fn",
+      "qid_to_pids"
+    ],
+    "dense_search": [
+      "self",
+      "Q",
+      "k",
+      "filter_fn",
+      "pids"
+    ]
+  },
+  "DEFAULT_CHUNKSIZE": [],
+  "IndexUpdater": {
+    "__init__": [
+      "self",
+      "config",
+      "searcher",
+      "checkpoint"
+    ],
+    "remove": [
+      "self",
+      "pids"
+    ],
+    "create_embs_and_doclens": [
+      "self",
+      "passages",
+      "embs_path",
+      "doclens_path",
+      "persist"
+    ],
+    "update_searcher": [
+      "self",
+      "compressed_embs",
+      "doclens",
+      "curr_pid"
+    ],
+    "add": [
+      "self",
+      "passages"
+    ],
+    "persist_to_disk": [
+      "self"
+    ],
+    "_load_disk_ivf": [
+      "self"
+    ],
+    "_load_metadata": [
+      "self"
+    ],
+    "_load_chunk_doclens": [
+      "self",
+      "chunk_idx"
+    ],
+    "_load_chunk_codes": [
+      "self",
+      "chunk_idx"
+    ],
+    "_load_chunk_residuals": [
+      "self",
+      "chunk_idx"
+    ],
+    "_load_chunk_metadata": [
+      "self",
+      "chunk_idx"
+    ],
+    "_get_chunk_idx": [
+      "self",
+      "pid"
+    ],
+    "_check_pids": [
+      "self",
+      "pids"
+    ],
+    "_remove_pid_from_ivf": [
+      "self",
+      "pids"
+    ],
+    "_build_passage_partitions": [
+      "self",
+      "codes"
+    ],
+    "_add_pid_to_ivf": [
+      "self",
+      "partitions",
+      "pid",
+      "old_ivf",
+      "old_ivf_lengths"
+    ],
+    "_write_to_last_chunk": [
+      "self",
+      "pid_start",
+      "pid_end",
+      "emb_start",
+      "emb_end"
+    ],
+    "_write_to_new_chunk": [
+      "self",
+      "chunk_idx",
+      "pid_start",
+      "pid_end",
+      "emb_start",
+      "emb_end"
+    ],
+    "_remove_passage_from_disk": [
+      "self",
+      "pid"
+    ]
+  },
+  "train": [
+    "config",
+    "triples",
+    "queries",
+    "collection"
+  ],
+  "set_bert_grad": [
+    "colbert",
+    "value"
+  ],
+  "LazyBatcher": {
+    "__init__": [
+      "self",
+      "config",
+      "triples",
+      "queries",
+      "collection",
+      "rank",
+      "nranks"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "collate": [
+      "self",
+      "queries",
+      "passages",
+      "scores"
+    ]
+  },
+  "RerankBatcher": {
+    "__init__": [
+      "self",
+      "config",
+      "triples",
+      "queries",
+      "collection",
+      "rank",
+      "nranks"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "collate": [
+      "self",
+      "queries",
+      "passages",
+      "scores"
+    ]
+  },
+  "print_progress": [
+    "scores"
+  ],
+  "manage_checkpoints": [
+    "args",
+    "colbert",
+    "optimizer",
+    "batch_idx",
+    "savepath",
+    "consumed_all_triples"
+  ],
+  "EagerBatcher": {
+    "__init__": [
+      "self",
+      "args",
+      "rank",
+      "nranks"
+    ],
+    "_reset_triples": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "collate": [
+      "self",
+      "queries",
+      "positives",
+      "negatives"
+    ],
+    "skip_to_batch": [
+      "self",
+      "batch_idx",
+      "intended_batch_size"
+    ]
+  },
+  "BaseColBERT": {
+    "__init__": [
+      "self",
+      "name_or_path",
+      "colbert_config"
+    ],
+    "device": [
+      "self"
+    ],
+    "bert": [
+      "self"
+    ],
+    "linear": [
+      "self"
+    ],
+    "score_scaler": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "path"
+    ]
+  },
+  "XLMRobertaPreTrainedModel": {
+    "config_class": []
+  },
+  "base_class_mapping": [],
+  "model_object_mapping": [],
+  "transformers_module": [],
+  "find_class_names": [
+    "model_type",
+    "class_type"
+  ],
+  "class_factory": [
+    "name_or_path"
+  ],
+  "ColBERT": {
+    "__init__": [
+      "self",
+      "name",
+      "colbert_config"
+    ],
+    "try_load_torch_extensions": [
+      "cls",
+      "use_gpu"
+    ],
+    "forward": [
+      "self",
+      "Q",
+      "D"
+    ],
+    "compute_ib_loss": [
+      "self",
+      "Q",
+      "D",
+      "D_mask"
+    ],
+    "query": [
+      "self",
+      "input_ids",
+      "attention_mask"
+    ],
+    "doc": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "keep_dims"
+    ],
+    "score": [
+      "self",
+      "Q",
+      "D_padded",
+      "D_mask"
+    ],
+    "mask": [
+      "self",
+      "input_ids",
+      "skiplist"
+    ]
+  },
+  "colbert_score_reduce": [
+    "scores_padded",
+    "D_mask",
+    "config"
+  ],
+  "colbert_score": [
+    "Q",
+    "D_padded",
+    "D_mask",
+    "config"
+  ],
+  "colbert_score_packed": [
+    "Q",
+    "D_packed",
+    "D_lengths",
+    "config"
+  ],
+  "pool_embeddings_hierarchical": [
+    "p_embeddings",
+    "token_lengths",
+    "pool_factor",
+    "protected_tokens",
+    "showprogress"
+  ],
+  "Checkpoint": {
+    "__init__": [
+      "self",
+      "name",
+      "colbert_config",
+      "verbose"
+    ],
+    "query": [
+      "self"
+    ],
+    "doc": [
+      "self"
+    ],
+    "queryFromText": [
+      "self",
+      "queries",
+      "bsize",
+      "to_cpu",
+      "context",
+      "full_length_search"
+    ],
+    "docFromText": [
+      "self",
+      "docs",
+      "bsize",
+      "keep_dims",
+      "to_cpu",
+      "showprogress",
+      "return_tokens",
+      "pool_factor",
+      "protected_tokens",
+      "clustering_mode"
+    ],
+    "lazy_rank": [
+      "self",
+      "queries",
+      "docs"
+    ],
+    "score": [
+      "self",
+      "Q",
+      "D",
+      "mask",
+      "lengths"
+    ]
+  },
+  "_stack_3D_tensors": [
+    "groups"
+  ],
+  "RerankerTokenizer": {
+    "__init__": [
+      "self",
+      "total_maxlen",
+      "base"
+    ],
+    "tensorize": [
+      "self",
+      "questions",
+      "passages"
+    ]
+  },
+  "ElectraReranker": {
+    "_keys_to_ignore_on_load_unexpected": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "encoding"
+    ],
+    "save": [
+      "self",
+      "path"
+    ]
+  },
+  "DocTokenizer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "tokenize": [
+      "self",
+      "batch_text",
+      "add_special_tokens"
+    ],
+    "encode": [
+      "self",
+      "batch_text",
+      "add_special_tokens"
+    ],
+    "tensorize": [
+      "self",
+      "batch_text",
+      "bsize"
+    ]
+  },
+  "tensorize_triples": [
+    "query_tokenizer",
+    "doc_tokenizer",
+    "queries",
+    "passages",
+    "scores",
+    "bsize",
+    "nway"
+  ],
+  "_sort_by_length": [
+    "ids",
+    "mask",
+    "bsize"
+  ],
+  "_split_into_batches": [
+    "ids",
+    "mask",
+    "bsize"
+  ],
+  "_split_into_batches2": [
+    "scores",
+    "bsize"
+  ],
+  "_insert_prefix_token": [
+    "tensor",
+    "prefix_id"
+  ],
+  "QueryTokenizer": {
+    "__init__": [
+      "self",
+      "config",
+      "verbose"
+    ],
+    "tokenize": [
+      "self",
+      "batch_text",
+      "add_special_tokens"
+    ],
+    "encode": [
+      "self",
+      "batch_text",
+      "add_special_tokens"
+    ],
+    "tensorize": [
+      "self",
+      "batch_text",
+      "bsize",
+      "context",
+      "full_length_search"
+    ],
+    "max_len": [
+      "self",
+      "length"
+    ]
+  },
+  "IndexManager": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "save": [
+      "self",
+      "tensor",
+      "path_prefix"
+    ],
+    "save_bitarray": [
+      "self",
+      "bitarray",
+      "path_prefix"
+    ]
+  },
+  "load_index_part": [
+    "filename",
+    "verbose"
+  ],
+  "load_compressed_index_part": [
+    "filename",
+    "dim",
+    "bits"
+  ],
+  "optimize_ivf": [
+    "orig_ivf",
+    "orig_ivf_lengths",
+    "index_path",
+    "verbose"
+  ],
+  "encode": [
+    "config",
+    "collection",
+    "shared_lists",
+    "shared_queues",
+    "verbose"
+  ],
+  "CollectionIndexer": {
+    "__init__": [
+      "self",
+      "config",
+      "collection",
+      "verbose"
+    ],
+    "run": [
+      "self",
+      "shared_lists"
+    ],
+    "setup": [
+      "self"
+    ],
+    "_sample_pids": [
+      "self"
+    ],
+    "_sample_embeddings": [
+      "self",
+      "sampled_pids"
+    ],
+    "_try_load_plan": [
+      "self"
+    ],
+    "_save_plan": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "shared_lists"
+    ],
+    "_concatenate_and_split_sample": [
+      "self"
+    ],
+    "_train_kmeans": [
+      "self",
+      "sample",
+      "shared_lists"
+    ],
+    "_compute_avg_residual": [
+      "self",
+      "centroids",
+      "heldout"
+    ],
+    "index": [
+      "self"
+    ],
+    "finalize": [
+      "self"
+    ],
+    "_check_all_files_are_saved": [
+      "self"
+    ],
+    "_collect_embedding_id_offset": [
+      "self"
+    ],
+    "_build_ivf": [
+      "self"
+    ],
+    "_update_metadata": [
+      "self"
+    ]
+  },
+  "compute_faiss_kmeans": [
+    "dim",
+    "num_partitions",
+    "kmeans_niters",
+    "shared_lists",
+    "return_value_queue"
+  ],
+  "IndexSaver": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "save_codec": [
+      "self",
+      "codec"
+    ],
+    "load_codec": [
+      "self"
+    ],
+    "try_load_codec": [
+      "self"
+    ],
+    "check_chunk_exists": [
+      "self",
+      "chunk_idx"
+    ],
+    "thread": [
+      "self"
+    ],
+    "save_chunk": [
+      "self",
+      "chunk_idx",
+      "offset",
+      "embs",
+      "doclens"
+    ],
+    "_saver_thread": [
+      "self"
+    ],
+    "_write_chunk_to_disk": [
+      "self",
+      "chunk_idx",
+      "offset",
+      "compressed_embs",
+      "doclens"
+    ]
+  },
+  "get_parts": [
+    "directory"
+  ],
+  "load_doclens": [
+    "directory",
+    "flatten"
+  ],
+  "get_deltas": [
+    "directory"
+  ],
+  "CollectionEncoder": {
+    "__init__": [
+      "self",
+      "config",
+      "checkpoint"
+    ],
+    "encode_passages": [
+      "self",
+      "passages"
+    ]
+  },
+  "ResidualEmbeddings": {
+    "Strided": [],
+    "__init__": [
+      "self",
+      "codes",
+      "residuals"
+    ],
+    "load_chunks": [
+      "cls",
+      "index_path",
+      "chunk_idxs",
+      "num_embeddings",
+      "load_index_with_mmap"
+    ],
+    "load": [
+      "cls",
+      "index_path",
+      "chunk_idx"
+    ],
+    "load_codes": [
+      "self",
+      "index_path",
+      "chunk_idx"
+    ],
+    "load_residuals": [
+      "self",
+      "index_path",
+      "chunk_idx"
+    ],
+    "save": [
+      "self",
+      "path_prefix"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "get_dim_and_nbits": [
+    "index_path"
+  ],
+  "get_codes_size": [
+    "index_path",
+    "chunk_idx"
+  ],
+  "get_residuals_size": [
+    "index_path",
+    "chunk_idx"
+  ],
+  "ResidualCodec": {
+    "Embeddings": [],
+    "__init__": [
+      "self",
+      "config",
+      "centroids",
+      "avg_residual",
+      "bucket_cutoffs",
+      "bucket_weights"
+    ],
+    "try_load_torch_extensions": [
+      "cls",
+      "use_gpu"
+    ],
+    "load": [
+      "cls",
+      "index_path"
+    ],
+    "save": [
+      "self",
+      "index_path"
+    ],
+    "compress": [
+      "self",
+      "embs"
+    ],
+    "binarize": [
+      "self",
+      "residuals"
+    ],
+    "compress_into_codes": [
+      "self",
+      "embs",
+      "out_device"
+    ],
+    "lookup_centroids": [
+      "self",
+      "codes",
+      "out_device"
+    ],
+    "decompress": [
+      "self",
+      "compressed_embs"
+    ]
+  },
+  "ResidualEmbeddingsStrided": {
+    "__init__": [
+      "self",
+      "codec",
+      "embeddings",
+      "doclens"
+    ],
+    "lookup_pids": [
+      "self",
+      "passage_ids",
+      "out_device"
+    ],
+    "lookup_codes": [
+      "self",
+      "passage_ids"
+    ]
+  },
+  "Arguments": {
+    "__init__": [
+      "self",
+      "description"
+    ],
+    "add_model_parameters": [
+      "self"
+    ],
+    "add_model_training_parameters": [
+      "self"
+    ],
+    "add_model_inference_parameters": [
+      "self"
+    ],
+    "add_training_input": [
+      "self"
+    ],
+    "add_ranking_input": [
+      "self"
+    ],
+    "add_reranking_input": [
+      "self"
+    ],
+    "add_indexing_input": [
+      "self"
+    ],
+    "add_compressed_index_input": [
+      "self"
+    ],
+    "add_index_use_input": [
+      "self"
+    ],
+    "add_retrieval_input": [
+      "self"
+    ],
+    "add_argument": [
+      "self"
+    ],
+    "check_arguments": [
+      "self",
+      "args"
+    ],
+    "parse": [
+      "self"
+    ]
+  },
+  "ALREADY_INITALIZED": [],
+  "init": [
+    "rank"
+  ],
+  "barrier": [
+    "rank"
+  ],
+  "print_message": [],
+  "timestamp": [
+    "daydir"
+  ],
+  "file_tqdm": [
+    "file"
+  ],
+  "torch_load_dnn": [
+    "path"
+  ],
+  "save_checkpoint": [
+    "path",
+    "epoch_idx",
+    "mb_idx",
+    "model",
+    "optimizer",
+    "arguments"
+  ],
+  "load_checkpoint": [
+    "path",
+    "model",
+    "checkpoint",
+    "optimizer",
+    "do_print"
+  ],
+  "load_checkpoint_raw": [
+    "path"
+  ],
+  "create_directory": [
+    "path"
+  ],
+  "f7": [
+    "seq"
+  ],
+  "batch": [
+    "group",
+    "bsize",
+    "provide_offset"
+  ],
+  "dotdict": {
+    "__getattr__": [],
+    "__setattr__": [],
+    "__delattr__": []
+  },
+  "dotdict_lax": {
+    "__getattr__": [],
+    "__setattr__": [],
+    "__delattr__": []
+  },
+  "flatten": [
+    "L"
+  ],
+  "zipstar": [
+    "L",
+    "lazy"
+  ],
+  "zip_first": [
+    "L1",
+    "L2"
+  ],
+  "int_or_float": [
+    "val"
+  ],
+  "load_ranking": [
+    "path",
+    "types",
+    "lazy"
+  ],
+  "save_ranking": [
+    "ranking",
+    "path"
+  ],
+  "groupby_first_item": [
+    "lst"
+  ],
+  "process_grouped_by_first_item": [
+    "lst"
+  ],
+  "grouper": [
+    "iterable",
+    "n",
+    "fillvalue"
+  ],
+  "lengths2offsets": [
+    "lengths"
+  ],
+  "NullContextManager": {
+    "__init__": [
+      "self",
+      "dummy_resource"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "load_batch_backgrounds": [
+    "args",
+    "qids"
+  ],
+  "_RunManager": {
+    "__init__": [
+      "self"
+    ],
+    "init": [
+      "self",
+      "rank",
+      "root",
+      "experiment",
+      "name"
+    ],
+    "_generate_default_run_name": [
+      "self"
+    ],
+    "_get_script_name": [
+      "self"
+    ],
+    "context": [
+      "self",
+      "consider_failed_if_interrupted"
+    ]
+  },
+  "Run": [],
+  "Logger": {
+    "__init__": [
+      "self",
+      "rank",
+      "run"
+    ],
+    "_log_exception": [
+      "self",
+      "etype",
+      "value",
+      "tb"
+    ],
+    "_log_all_artifacts": [
+      "self"
+    ],
+    "_log_args": [
+      "self",
+      "args"
+    ],
+    "log_metric": [
+      "self",
+      "name",
+      "value",
+      "step",
+      "log_to_mlflow"
+    ],
+    "log_new_artifact": [
+      "self",
+      "path",
+      "content"
+    ],
+    "warn": [
+      "self"
+    ],
+    "info_all": [
+      "self"
+    ],
+    "info": [
+      "self"
+    ]
+  },
+  "MixedPrecisionManager": {
+    "__init__": [
+      "self",
+      "activated"
+    ],
+    "context": [
+      "self"
+    ],
+    "backward": [
+      "self",
+      "loss"
+    ],
+    "step": [
+      "self",
+      "colbert",
+      "optimizer",
+      "scheduler"
+    ]
+  },
+  "main": [
+    "args"
+  ],
+  "Metrics": {
+    "__init__": [
+      "self",
+      "mrr_depths",
+      "recall_depths",
+      "success_depths",
+      "total_queries"
+    ],
+    "add": [
+      "self",
+      "query_idx",
+      "query_key",
+      "ranking",
+      "gold_positives"
+    ],
+    "print_metrics": [
+      "self",
+      "query_idx"
+    ],
+    "log": [
+      "self",
+      "query_idx"
+    ],
+    "output_final_metrics": [
+      "self",
+      "path",
+      "query_idx",
+      "num_queries"
+    ]
+  },
+  "evaluate_recall": [
+    "qrels",
+    "queries",
+    "topK_pids"
+  ],
+  "load_model": [
+    "args",
+    "do_print"
+  ],
+  "load_queries": [
+    "queries_path"
+  ],
+  "load_qrels": [
+    "qrels_path"
+  ],
+  "load_topK": [
+    "topK_path"
+  ],
+  "load_topK_pids": [
+    "topK_path",
+    "qrels"
+  ],
+  "load_collection": [
+    "collection_path"
+  ],
+  "load_colbert": [
+    "args",
+    "do_print"
+  ],
+  "Launcher": {
+    "__init__": [
+      "self",
+      "callee",
+      "run_config",
+      "return_all"
+    ],
+    "launch": [
+      "self",
+      "custom_config"
+    ],
+    "launch_without_fork": [
+      "self",
+      "custom_config"
+    ]
+  },
+  "set_seed": [
+    "seed"
+  ],
+  "run_process_without_mp": [
+    "callee",
+    "config"
+  ],
+  "setup_new_process": [
+    "callee",
+    "port",
+    "return_value_queue",
+    "config"
+  ],
+  "print_memory_stats": [
+    "message"
+  ],
+  "Provenance": {
+    "__init__": [
+      "self"
+    ],
+    "stacktrace": [
+      "self"
+    ],
+    "toDict": [
+      "self"
+    ]
+  },
+  "RunSettings": {
+    "total_visible_gpus": [],
+    "gpus_": [
+      "self"
+    ],
+    "index_root_": [
+      "self"
+    ],
+    "script_name_": [
+      "self"
+    ],
+    "path_": [
+      "self"
+    ],
+    "device_": [
+      "self"
+    ]
+  },
+  "TokenizerSettings": {},
+  "ResourceSettings": {},
+  "DocSettings": {},
+  "QuerySettings": {},
+  "TrainingSettings": {},
+  "IndexingSettings": {
+    "index_path_": [
+      "self"
+    ]
+  },
+  "SearchSettings": {},
+  "RunConfig": {},
+  "ColBERTConfig": {},
+  "BaseConfig": {
+    "from_existing": [
+      "cls"
+    ],
+    "from_deprecated_args": [
+      "cls",
+      "args"
+    ],
+    "from_path": [
+      "cls",
+      "name"
+    ],
+    "load_from_checkpoint": [
+      "cls",
+      "checkpoint_path"
+    ],
+    "load_from_index": [
+      "cls",
+      "index_path"
+    ],
+    "save": [
+      "self",
+      "path",
+      "overwrite"
+    ],
+    "save_for_checkpoint": [
+      "self",
+      "checkpoint_path"
+    ]
+  },
+  "DefaultVal": {
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "CoreConfig": {
+    "__post_init__": [
+      "self"
+    ],
+    "assign_defaults": [
+      "self"
+    ],
+    "configure": [
+      "self",
+      "ignore_unrecognized"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value",
+      "ignore_unrecognized"
+    ],
+    "help": [
+      "self"
+    ],
+    "__export_value": [
+      "self",
+      "v"
+    ],
+    "export": [
+      "self"
+    ]
+  },
+  "Examples": {
+    "__init__": [
+      "self",
+      "path",
+      "data",
+      "nway",
+      "provenance"
+    ],
+    "provenance": [
+      "self"
+    ],
+    "toDict": [
+      "self"
+    ],
+    "_load_file": [
+      "self",
+      "path"
+    ],
+    "tolist": [
+      "self",
+      "rank",
+      "nranks"
+    ],
+    "save": [
+      "self",
+      "new_path"
+    ],
+    "cast": [
+      "cls",
+      "obj",
+      "nway"
+    ]
+  },
+  "Collection": {
+    "__init__": [
+      "self",
+      "path",
+      "data"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_load_file": [
+      "self",
+      "path"
+    ],
+    "_load_tsv": [
+      "self",
+      "path"
+    ],
+    "_load_jsonl": [
+      "self",
+      "path"
+    ],
+    "provenance": [
+      "self"
+    ],
+    "toDict": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "new_path"
+    ],
+    "enumerate": [
+      "self",
+      "rank"
+    ],
+    "enumerate_batches": [
+      "self",
+      "rank",
+      "chunksize"
+    ],
+    "get_chunksize": [
+      "self"
+    ],
+    "cast": [
+      "cls",
+      "obj"
+    ]
+  },
+  "Queries": {
+    "__init__": [
+      "self",
+      "path",
+      "data"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "provenance": [
+      "self"
+    ],
+    "toDict": [
+      "self"
+    ],
+    "_load_data": [
+      "self",
+      "data"
+    ],
+    "_load_file": [
+      "self",
+      "path"
+    ],
+    "qas": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "keys": [
+      "self"
+    ],
+    "values": [
+      "self"
+    ],
+    "items": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "new_path"
+    ],
+    "save_qas": [
+      "self",
+      "new_path"
+    ],
+    "_load_tsv": [
+      "self",
+      "path"
+    ],
+    "_load_jsonl": [
+      "self",
+      "path"
+    ],
+    "cast": [
+      "cls",
+      "obj"
+    ]
+  },
+  "Dataset": {
+    "__init__": [
+      "self"
+    ],
+    "select": [
+      "self",
+      "key"
+    ]
+  },
+  "numericize": [
+    "v"
+  ],
+  "Ranking": {
+    "__init__": [
+      "self",
+      "path",
+      "data",
+      "metrics",
+      "provenance"
+    ],
+    "provenance": [
+      "self"
+    ],
+    "toDict": [
+      "self"
+    ],
+    "_prepare_data": [
+      "self",
+      "data"
+    ],
+    "_load_file": [
+      "self",
+      "path"
+    ],
+    "todict": [
+      "self"
+    ],
+    "tolist": [
+      "self"
+    ],
+    "items": [
+      "self"
+    ],
+    "_load_tsv": [
+      "self",
+      "path"
+    ],
+    "_load_jsonl": [
+      "self",
+      "path"
+    ],
+    "save": [
+      "self",
+      "new_path"
+    ],
+    "cast": [
+      "cls",
+      "obj"
+    ]
+  },
+  "IndexScorer": {
+    "__init__": [
+      "self",
+      "index_path",
+      "use_gpu",
+      "load_index_with_mmap"
+    ],
+    "try_load_torch_extensions": [
+      "cls",
+      "use_gpu"
+    ],
+    "set_embeddings_strided": [
+      "self"
+    ],
+    "lookup_pids": [
+      "self",
+      "passage_ids",
+      "out_device",
+      "return_mask"
+    ],
+    "retrieve": [
+      "self",
+      "config",
+      "Q"
+    ],
+    "embedding_ids_to_pids": [
+      "self",
+      "embedding_ids"
+    ],
+    "rank": [
+      "self",
+      "config",
+      "Q",
+      "filter_fn",
+      "pids"
+    ],
+    "score_pids": [
+      "self",
+      "config",
+      "Q",
+      "pids",
+      "centroid_scores"
+    ]
+  },
+  "CandidateGeneration": {
+    "__init__": [
+      "self",
+      "use_gpu"
+    ],
+    "get_cells": [
+      "self",
+      "Q",
+      "ncells"
+    ],
+    "generate_candidate_eids": [
+      "self",
+      "Q",
+      "ncells"
+    ],
+    "generate_candidate_pids": [
+      "self",
+      "Q",
+      "ncells"
+    ],
+    "generate_candidate_scores": [
+      "self",
+      "Q",
+      "eids"
+    ],
+    "generate_candidates": [
+      "self",
+      "config",
+      "Q"
+    ]
+  },
+  "StridedTensor": {
+    "__init__": [
+      "self",
+      "packed_tensor",
+      "lengths",
+      "dim",
+      "use_gpu"
+    ],
+    "try_load_torch_extensions": [
+      "cls",
+      "use_gpu"
+    ],
+    "pad_packed": [
+      "cls",
+      "packed_tensor",
+      "lengths"
+    ],
+    "_prepare_lookup": [
+      "self",
+      "pids"
+    ],
+    "lookup": [
+      "self",
+      "pids",
+      "output"
+    ],
+    "lookup_staggered": [
+      "self",
+      "pids",
+      "output"
+    ],
+    "lookup_packed_unordered": [
+      "self",
+      "pids"
+    ],
+    "_lookup_with_stride": [
+      "self",
+      "stride",
+      "lengths",
+      "offsets"
+    ]
+  },
+  "IndexLoader": {
+    "__init__": [
+      "self",
+      "index_path",
+      "use_gpu",
+      "load_index_with_mmap"
+    ],
+    "_load_codec": [
+      "self"
+    ],
+    "_load_ivf": [
+      "self"
+    ],
+    "_load_doclens": [
+      "self"
+    ],
+    "_load_embeddings": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "num_chunks": [
+      "self"
+    ],
+    "num_embeddings": [
+      "self"
+    ]
+  },
+  "StridedTensorCore": {
+    "__init__": [
+      "self",
+      "packed_tensor",
+      "lengths",
+      "dim",
+      "use_gpu"
+    ],
+    "from_packed_tensor": [
+      "cls",
+      "tensor",
+      "lengths"
+    ],
+    "from_padded_tensor": [
+      "cls",
+      "tensor",
+      "mask"
+    ],
+    "from_nested_list": [
+      "cls",
+      "lst"
+    ],
+    "from_tensors_list": [
+      "cls",
+      "tensors"
+    ],
+    "as_packed_tensor": [
+      "self",
+      "return_offsets"
+    ],
+    "as_padded_tensor": [
+      "self"
+    ],
+    "as_tensors_list": [
+      "self"
+    ]
+  },
+  "_select_strides": [
+    "lengths",
+    "quantiles"
+  ],
+  "_get_quantiles": [
+    "lengths",
+    "quantiles"
+  ],
+  "_create_view": [
+    "tensor",
+    "stride",
+    "inner_dims"
+  ],
+  "_create_mask": [
+    "lengths",
+    "stride",
+    "like",
+    "use_gpu"
+  ],
+  "Format1": [],
+  "Format2": [],
+  "Format3": [],
+  "process_page": [
+    "inp"
+  ],
+  "load_collection_": [
+    "path",
+    "retain_titles"
+  ],
+  "load_qas_": [
+    "path"
+  ],
+  "Tokens": {
+    "TEXT": [],
+    "TEXT_WS": [],
+    "SPAN": [],
+    "POS": [],
+    "LEMMA": [],
+    "NER": [],
+    "__init__": [
+      "self",
+      "data",
+      "annotators",
+      "opts"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "slice": [
+      "self",
+      "i",
+      "j"
+    ],
+    "untokenize": [
+      "self"
+    ],
+    "words": [
+      "self",
+      "uncased"
+    ],
+    "offsets": [
+      "self"
+    ],
+    "pos": [
+      "self"
+    ],
+    "lemmas": [
+      "self"
+    ],
+    "entities": [
+      "self"
+    ],
+    "ngrams": [
+      "self",
+      "n",
+      "uncased",
+      "filter_fn",
+      "as_strings"
+    ],
+    "entity_groups": [
+      "self"
+    ]
+  },
+  "Tokenizer": {
+    "tokenize": [
+      "self",
+      "text"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "SimpleTokenizer": {
+    "ALPHA_NUM": [],
+    "NON_WS": [],
+    "__init__": [
+      "self"
+    ],
+    "tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "has_answer": [
+    "tokenized_answers",
+    "text"
+  ],
+  "locate_answers": [
+    "tokenized_answers",
+    "text"
+  ],
+  "STokenizer": [],
+  "DPR_tokenize": [
+    "text"
+  ],
+  "DPR_normalize": [
+    "text"
+  ],
+  "strip_accents": [
+    "text"
+  ],
+  "get_metadata_only": [],
+  "get_metadata": [
+    "args"
+  ],
+  "format_metadata": [
+    "metadata"
+  ],
+  "save_metadata": [
+    "path",
+    "args"
+  ],
+  "MAX_NUM_TRIPLES": [],
+  "sample_negatives": [
+    "negatives",
+    "num_sampled",
+    "biased"
+  ],
+  "sample_for_query": [
+    "qid",
+    "ranking",
+    "npositives",
+    "depth_positive",
+    "depth_negative",
+    "cutoff_negative"
+  ],
+  "evaluate_dataset": [
+    "query_type",
+    "dataset",
+    "split",
+    "k",
+    "data_rootdir",
+    "rankings_rootdir"
+  ],
+  "tokenize_all_answers": [
+    "args"
+  ],
+  "assign_label_to_passage": [
+    "args"
+  ],
+  "check_sizes": [
+    "qid2answers",
+    "qid2rankings"
+  ],
+  "compute_and_write_labels": [
+    "output_path",
+    "qid2answers",
+    "qid2rankings"
+  ]
+}

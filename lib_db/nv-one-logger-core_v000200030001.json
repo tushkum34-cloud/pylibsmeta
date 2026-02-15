@@ -1,0 +1,849 @@
+{
+  "_logger": [],
+  "LoggerExporter": {
+    "__init__": [
+      "self",
+      "logger"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "_format_log": [
+      "self",
+      "json_dict",
+      "prefix"
+    ],
+    "deserialize_log": [
+      "text"
+    ],
+    "_write": [
+      "self",
+      "json_dict"
+    ]
+  },
+  "FileExporter": {
+    "__init__": [
+      "self",
+      "file_path"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_open_file": [
+      "self"
+    ],
+    "_write": [
+      "self",
+      "json_dict"
+    ]
+  },
+  "ExporterConfigManager": {
+    "ENTRY_POINT_NAME": [],
+    "__init__": [
+      "self"
+    ],
+    "generate_export_config": [
+      "self",
+      "direct_config",
+      "config_file_path"
+    ],
+    "create_exporters_from_config": [
+      "self",
+      "exporters_config",
+      "training_telemetry_config"
+    ],
+    "_get_exporter_configs_from_entry_points": [
+      "self"
+    ],
+    "_get_package_configs": [
+      "self"
+    ],
+    "_get_file_config": [
+      "self",
+      "config_file_path"
+    ],
+    "_find_config_file": [
+      "self",
+      "config_file_path"
+    ],
+    "_merge_configs": [
+      "self",
+      "base",
+      "override"
+    ],
+    "_build_exporter_configs": [
+      "self",
+      "config_list"
+    ],
+    "_create_exporter_from_config": [
+      "self",
+      "exporter_config",
+      "training_telemetry_config"
+    ]
+  },
+  "ExportError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "Exporter": {
+    "initialize": [
+      "self"
+    ],
+    "export_start": [
+      "self",
+      "span"
+    ],
+    "export_stop": [
+      "self",
+      "span"
+    ],
+    "export_event": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_error": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_telemetry_data_error": [
+      "self",
+      "error"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BaseExporter": {
+    "__init__": [
+      "self"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "export_start": [
+      "self",
+      "span"
+    ],
+    "export_stop": [
+      "self",
+      "span"
+    ],
+    "export_event": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_error": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_telemetry_data_error": [
+      "self",
+      "error"
+    ],
+    "close": [
+      "self"
+    ],
+    "ready": [
+      "self"
+    ],
+    "closed": [
+      "self"
+    ],
+    "_check_state": [
+      "self"
+    ]
+  },
+  "ExporterConfig": {},
+  "BaseJsonExporter": {
+    "__init__": [
+      "self"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "export_start": [
+      "self",
+      "span"
+    ],
+    "export_stop": [
+      "self",
+      "span"
+    ],
+    "export_event": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_error": [
+      "self",
+      "event",
+      "span"
+    ],
+    "export_telemetry_data_error": [
+      "self",
+      "error"
+    ],
+    "close": [
+      "self"
+    ],
+    "_record_span": [
+      "self",
+      "span",
+      "record_type"
+    ],
+    "_export_json_dict": [
+      "self",
+      "json_dict"
+    ],
+    "_write": [
+      "self",
+      "json_dict"
+    ],
+    "_increment_record_count": [
+      "self"
+    ],
+    "_event_data_to_json": [
+      "self",
+      "event"
+    ]
+  },
+  "RecordType": {
+    "START": [],
+    "STOP": [],
+    "COMPLETE": [],
+    "EVENT": [],
+    "APPLICATION_ERROR": [],
+    "TELEMETRY_DATA_ERROR": []
+  },
+  "get_recorder": [],
+  "timed_span": [
+    "name",
+    "span_attributes",
+    "start_event_attributes"
+  ],
+  "logger": [],
+  "OneLoggerErrorHandlingStrategy": {
+    "PROPAGATE_EXCEPTIONS": [],
+    "DISABLE_QUIETLY_AND_REPORT_METRIC_ERROR": []
+  },
+  "LoggerConfig": {
+    "validate_config": [
+      "self"
+    ]
+  },
+  "OneLoggerConfig": {
+    "model_config": [],
+    "world_size": [
+      "self"
+    ],
+    "session_tag": [
+      "self"
+    ],
+    "is_baseline_run": [
+      "self"
+    ],
+    "apply_error_handling_defaults": [
+      "cls",
+      "data"
+    ],
+    "validate_config": [
+      "self"
+    ]
+  },
+  "ApplicationType": {
+    "TRAINING": [],
+    "VALIDATION": [],
+    "BATCH_INFERENCE": [],
+    "ONLINE_INFERENCE": [],
+    "DATA_PROCESSING": []
+  },
+  "TelemetryConfig": {
+    "is_train_iterations_enabled": [
+      "self"
+    ],
+    "is_validation_iterations_enabled": [
+      "self"
+    ],
+    "is_test_iterations_enabled": [
+      "self"
+    ],
+    "is_save_checkpoint_enabled": [
+      "self"
+    ],
+    "app_type": [
+      "self"
+    ],
+    "custom_metadata": [
+      "self"
+    ]
+  },
+  "OneLoggerProvider": {
+    "configure": [
+      "self",
+      "config",
+      "recorder"
+    ],
+    "recorder": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "one_logger_ready": [
+      "self"
+    ],
+    "one_logger_enabled": [
+      "self"
+    ],
+    "force_disable_logging": [
+      "self"
+    ]
+  },
+  "Recorder": {
+    "start": [
+      "self",
+      "span_name",
+      "span_attributes",
+      "start_event_attributes",
+      "start_time",
+      "parent_span"
+    ],
+    "stop": [
+      "self",
+      "span",
+      "stop_event_attributes",
+      "stop_time"
+    ],
+    "event": [
+      "self",
+      "span",
+      "event"
+    ],
+    "error": [
+      "self",
+      "span",
+      "error_message",
+      "exception"
+    ],
+    "telemetry_data_error": [
+      "self",
+      "error_message",
+      "attributes"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ExportCustomizationMode": {
+    "EXPORT_ALL_SPANS": [],
+    "WHITELIST_SPANS": [],
+    "BLACKLIST_SPANS": []
+  },
+  "_ExporterState": {},
+  "DefaultRecorder": {
+    "__init__": [
+      "self",
+      "exporters",
+      "export_customization_mode",
+      "span_name_filter"
+    ],
+    "start": [
+      "self",
+      "span_name",
+      "span_attributes",
+      "start_event_attributes",
+      "start_time",
+      "parent_span"
+    ],
+    "stop": [
+      "self",
+      "span",
+      "stop_event_attributes",
+      "stop_time"
+    ],
+    "event": [
+      "self",
+      "span",
+      "event"
+    ],
+    "error": [
+      "self",
+      "span",
+      "error_message",
+      "exception"
+    ],
+    "telemetry_data_error": [
+      "self",
+      "error_message",
+      "attributes"
+    ],
+    "_export_telemetry_data_error": [
+      "self",
+      "exporter",
+      "error_message",
+      "attributes"
+    ],
+    "_determine_telemetry_data_error_type": [
+      "self",
+      "exporter_state"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_active_spans_by_name": [
+      "self",
+      "span_name"
+    ],
+    "_should_export_span": [
+      "self",
+      "span"
+    ],
+    "_execute_export": [
+      "self",
+      "exporter",
+      "method"
+    ]
+  },
+  "Attribute": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "Attributes": {
+    "__init__": [
+      "self",
+      "dictionary"
+    ],
+    "add": [
+      "self",
+      "name",
+      "value"
+    ],
+    "add_attribute": [
+      "self",
+      "attribute"
+    ],
+    "add_attributes": [
+      "self",
+      "other_attributes"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "merge": [
+      "cls",
+      "attributes",
+      "other"
+    ],
+    "get_bool_value": [
+      "self",
+      "attribute_name"
+    ],
+    "get_int_value": [
+      "self",
+      "attribute_name"
+    ],
+    "get_float_value": [
+      "self",
+      "attribute_name"
+    ],
+    "get_str_value": [
+      "self",
+      "attribute_name"
+    ]
+  },
+  "StandardEventName": {
+    "SPAN_START": [],
+    "SPAN_STOP": [],
+    "ERROR": [],
+    "TELEMETRY_DATA_ERROR": []
+  },
+  "StandardEventAttributeName": {
+    "TIMESTAMP_MSEC": [],
+    "ERROR_MESSAGE": [],
+    "EXCEPTION_TYPE": [],
+    "EXCEPTION_MESSAGE": [],
+    "EXCEPTION_TRACEBACK": [],
+    "TELEMETRY_DATA_ERROR_TYPE": []
+  },
+  "Event": {
+    "__init__": [
+      "self",
+      "name",
+      "timestamp",
+      "attributes"
+    ],
+    "name": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "attributes": [
+      "self"
+    ],
+    "name_str": [
+      "self"
+    ],
+    "create": [
+      "cls",
+      "name",
+      "attributes",
+      "timestamp"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "ErrorEvent": {
+    "__init__": [
+      "self",
+      "timestamp",
+      "error_message",
+      "exception_type",
+      "exception_message",
+      "exception_traceback",
+      "attributes"
+    ],
+    "create": [
+      "cls",
+      "error_message",
+      "exception",
+      "exception_traceback"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "TelemetryDataError": {
+    "__init__": [
+      "self",
+      "timestamp",
+      "error_type",
+      "error_message",
+      "attributes"
+    ],
+    "create": [
+      "cls",
+      "error_type",
+      "error_message",
+      "attributes"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "TracingTimestamp": {
+    "seconds_since_epoch": [
+      "self"
+    ],
+    "milliseconds_since_epoch": [
+      "self"
+    ],
+    "perf_counter_seconds": [
+      "self"
+    ],
+    "now": [
+      "cls"
+    ],
+    "for_timestamp": [
+      "cls",
+      "timestamp_sec",
+      "perf_counter",
+      "validate_timestamp"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "Timer": {
+    "running": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "start_time"
+    ],
+    "stop": [
+      "self",
+      "reset"
+    ],
+    "reset": [
+      "self",
+      "start"
+    ]
+  },
+  "OneLoggerError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "assert_that": [
+    "condition",
+    "message"
+  ],
+  "StandardSpanName": {
+    "APPLICATION": []
+  },
+  "StandardSpanAttributeName": {
+    "DURATION_MSEC": [],
+    "NVTX_COLOR": []
+  },
+  "NVTXColor": {
+    "UNSET": [],
+    "GREEN": [],
+    "BLUE": [],
+    "YELLOW": [],
+    "PURPLE": [],
+    "RAPIDS": [],
+    "CYAN": [],
+    "RED": [],
+    "WHITE": [],
+    "DARK_GREEN": [],
+    "ORANGE": []
+  },
+  "Span": {
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "start_event",
+      "parent_span",
+      "span_attributes"
+    ],
+    "id": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "parent_span": [
+      "self"
+    ],
+    "events": [
+      "self"
+    ],
+    "attributes": [
+      "self"
+    ],
+    "updated_attributes": [
+      "self"
+    ],
+    "name_str": [
+      "self"
+    ],
+    "start_event": [
+      "self"
+    ],
+    "stop_event": [
+      "self"
+    ],
+    "active": [
+      "self"
+    ],
+    "create": [
+      "cls",
+      "name",
+      "parent_span",
+      "span_attributes",
+      "start_event_attributes",
+      "start_time"
+    ],
+    "stop": [
+      "self",
+      "stop_event_attributes",
+      "stop_time"
+    ],
+    "add_event": [
+      "self",
+      "event"
+    ],
+    "add_attribute": [
+      "self",
+      "name",
+      "value"
+    ],
+    "add_attributes": [
+      "self",
+      "attributes"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "duration_msec": [
+      "self"
+    ]
+  },
+  "_get_complete_span_duration_msec": [
+    "span"
+  ],
+  "find_pyproject": [
+    "start_dir"
+  ],
+  "get_version_from_pyproject": [],
+  "get_version": [
+    "pkg_name"
+  ],
+  "temporarily_modify_env": [
+    "var_name",
+    "new_var"
+  ],
+  "_T": [],
+  "evaluate_value": [
+    "value"
+  ],
+  "patch_function": [
+    "original_func"
+  ],
+  "patch_method": [
+    "original_method"
+  ],
+  "_get_logger": [],
+  "__telemetry_data_issue_already_logged": [],
+  "exception_guard": [
+    "func"
+  ],
+  "safely_execute": [
+    "func"
+  ],
+  "get_logger": [
+    "name"
+  ],
+  "T": [],
+  "SingletonMeta": {
+    "__call__": [
+      "cls"
+    ],
+    "instance": [
+      "cls"
+    ]
+  },
+  "MultiWindowTimer": {
+    "__init__": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "start_time"
+    ],
+    "stop": [
+      "self",
+      "stop_time"
+    ],
+    "reset": [
+      "self"
+    ],
+    "is_active": [
+      "self"
+    ],
+    "current_window_start": [
+      "self"
+    ],
+    "total_window_count": [
+      "self"
+    ],
+    "total_time_sec": [
+      "self"
+    ],
+    "min_window_duration_sec": [
+      "self"
+    ],
+    "max_window_duration_sec": [
+      "self"
+    ],
+    "avg_window_duration_sec": [
+      "self"
+    ],
+    "latest_window_duration_sec": [
+      "self"
+    ],
+    "first_window_start": [
+      "self"
+    ],
+    "latest_window_end": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "MetricSummarizer": {
+    "add_value": [
+      "self",
+      "value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  }
+}

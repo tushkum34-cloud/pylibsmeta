@@ -1,0 +1,478 @@
+{
+  "InferCFNaiveMelPE": {
+    "__init__": [
+      "self",
+      "args",
+      "state_dict"
+    ],
+    "forward": [
+      "self",
+      "wav",
+      "sr",
+      "decoder_mode",
+      "threshold"
+    ],
+    "infer": [
+      "self",
+      "wav",
+      "sr",
+      "decoder_mode",
+      "threshold",
+      "f0_min",
+      "f0_max",
+      "interp_uv",
+      "output_interp_target_length",
+      "retur_uv"
+    ],
+    "get_hop_size": [
+      "self"
+    ],
+    "get_hop_size_ms": [
+      "self"
+    ],
+    "get_model_sr": [
+      "self"
+    ],
+    "get_mel_config": [
+      "self"
+    ],
+    "get_device": [
+      "self"
+    ],
+    "get_model_f0_range": [
+      "self"
+    ]
+  },
+  "InferCFNaiveMelPEONNX": {
+    "__init__": [
+      "self",
+      "args",
+      "onnx_path",
+      "device"
+    ]
+  },
+  "spawn_bundled_infer_model": [
+    "device"
+  ],
+  "spawn_infer_model_from_onnx": [
+    "onnx_path",
+    "device"
+  ],
+  "spawn_infer_model_from_pt": [
+    "pt_path",
+    "device",
+    "bundled_model"
+  ],
+  "spawn_model": [
+    "args"
+  ],
+  "bundled_infer_model_unit_test": [
+    "wav_path"
+  ],
+  "ConformerNaiveEncoder": {
+    "__init__": [
+      "self",
+      "num_layers",
+      "num_heads",
+      "dim_model",
+      "use_norm",
+      "conv_only",
+      "conv_dropout",
+      "atten_dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ]
+  },
+  "CFNEncoderLayer": {
+    "__init__": [
+      "self",
+      "dim_model",
+      "num_heads",
+      "use_norm",
+      "conv_only",
+      "conv_dropout",
+      "atten_dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ]
+  },
+  "ConformerConvModule": {
+    "__init__": [
+      "self",
+      "dim",
+      "expansion_factor",
+      "kernel_size",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DepthWiseConv1d": {
+    "__init__": [
+      "self",
+      "chan_in",
+      "chan_out",
+      "kernel_size",
+      "padding",
+      "groups"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "calc_same_padding": [
+    "kernel_size"
+  ],
+  "Transpose": {
+    "__init__": [
+      "self",
+      "dims"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SelfAttention": {
+    "__init__": [
+      "self",
+      "dim",
+      "causal",
+      "heads",
+      "dim_head",
+      "local_heads",
+      "local_window_size",
+      "nb_features",
+      "feature_redraw_interval",
+      "generalized_attention",
+      "kernel_fn",
+      "qr_uniform_q",
+      "dropout",
+      "no_projection",
+      "use_norm"
+    ],
+    "redraw_projection_matrix": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "context",
+      "mask",
+      "context_mask",
+      "name",
+      "inference"
+    ]
+  },
+  "FastAttention": {
+    "__init__": [
+      "self",
+      "dim_heads",
+      "nb_features",
+      "ortho_scaling",
+      "causal",
+      "generalized_attention",
+      "kernel_fn",
+      "qr_uniform_q",
+      "no_projection",
+      "use_norm"
+    ],
+    "redraw_projection_matrix": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k",
+      "v"
+    ]
+  },
+  "linear_attention": [
+    "q",
+    "k",
+    "v"
+  ],
+  "softmax_kernel": [
+    "data"
+  ],
+  "gaussian_orthogonal_random_matrix": [
+    "nb_rows",
+    "nb_columns",
+    "scaling",
+    "qr_uniform_q",
+    "device"
+  ],
+  "orthogonal_matrix_chunk": [
+    "cols",
+    "qr_uniform_q",
+    "device"
+  ],
+  "default": [
+    "val",
+    "d"
+  ],
+  "exists": [
+    "val"
+  ],
+  "empty": [
+    "tensor"
+  ],
+  "CFNaiveMelPE": {
+    "__init__": [
+      "self",
+      "input_channels",
+      "out_dims",
+      "hidden_dims",
+      "n_layers",
+      "n_heads",
+      "f0_max",
+      "f0_min",
+      "use_fa_norm",
+      "conv_only",
+      "conv_dropout",
+      "atten_dropout",
+      "use_harmonic_emb"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "_h_emb"
+    ],
+    "latent2cents_decoder": [
+      "self",
+      "y",
+      "threshold",
+      "mask"
+    ],
+    "latent2cents_local_decoder": [
+      "self",
+      "y",
+      "threshold",
+      "mask"
+    ],
+    "gaussian_blurred_cent2latent": [
+      "self",
+      "cents"
+    ],
+    "infer": [
+      "self",
+      "mel",
+      "decoder",
+      "threshold"
+    ],
+    "train_and_loss": [
+      "self",
+      "mel",
+      "gt_f0",
+      "loss_scale"
+    ],
+    "cent_to_f0": [
+      "self",
+      "cent"
+    ],
+    "f0_to_cent": [
+      "self",
+      "f0"
+    ]
+  },
+  "torch_interp": [
+    "x",
+    "xp",
+    "fp"
+  ],
+  "batch_interp_with_replacement_detach": [
+    "uv",
+    "f0"
+  ],
+  "unit_text": [],
+  "mel": [],
+  "fft_frequencies": [],
+  "mel_frequencies": [
+    "n_mels"
+  ],
+  "hz_to_mel": [
+    "frequencies"
+  ],
+  "mel_to_hz": [
+    "mels"
+  ],
+  "normalize": [
+    "S"
+  ],
+  "tiny": [
+    "x"
+  ],
+  "dynamic_range_compression_torch": [
+    "x",
+    "C",
+    "clip_val"
+  ],
+  "HannWindow": {
+    "__init__": [
+      "self",
+      "win_size"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "MelModule": {
+    "__init__": [
+      "self",
+      "sr",
+      "n_mels",
+      "n_fft",
+      "win_size",
+      "hop_length",
+      "fmin",
+      "fmax",
+      "clip_val",
+      "out_stft"
+    ],
+    "__call__": [
+      "self",
+      "y",
+      "key_shift",
+      "speed",
+      "center",
+      "no_cache_window"
+    ]
+  },
+  "Wav2MelModule": {
+    "__init__": [
+      "self",
+      "sr",
+      "n_mels",
+      "n_fft",
+      "win_size",
+      "hop_length",
+      "fmin",
+      "fmax",
+      "clip_val",
+      "mel_type"
+    ],
+    "device": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "audio",
+      "sample_rate",
+      "keyshift",
+      "no_cache_window"
+    ]
+  },
+  "MelExtractor": {
+    "__init__": [
+      "self",
+      "sr",
+      "n_mels",
+      "n_fft",
+      "win_size",
+      "hop_length",
+      "fmin",
+      "fmax",
+      "clip_val",
+      "out_stft"
+    ],
+    "__call__": [
+      "self",
+      "y",
+      "key_shift",
+      "speed",
+      "center",
+      "no_cache_window"
+    ]
+  },
+  "Wav2Mel": {
+    "__init__": [
+      "self",
+      "sr",
+      "n_mels",
+      "n_fft",
+      "win_size",
+      "hop_length",
+      "fmin",
+      "fmax",
+      "clip_val",
+      "device",
+      "mel_type"
+    ],
+    "device": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "audio",
+      "sample_rate",
+      "keyshift",
+      "no_cache_window"
+    ]
+  },
+  "DotDict": {
+    "__getattr__": [],
+    "__setattr__": [],
+    "__delattr__": []
+  },
+  "spawn_wav2mel": [
+    "args",
+    "device"
+  ],
+  "catch_none_args_opti": [
+    "x",
+    "default",
+    "func_name",
+    "warning_str",
+    "level"
+  ],
+  "catch_none_args_must": [
+    "x",
+    "func_name",
+    "warning_str"
+  ],
+  "get_device": [
+    "device",
+    "func_name"
+  ],
+  "get_config_json_in_same_path": [
+    "path"
+  ],
+  "ConvNeXtBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "intermediate_dim",
+      "dilation",
+      "kernel_size",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvNeXt": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_layers",
+      "mlp_factor",
+      "dilation_cycle",
+      "kernel_size",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  }
+}

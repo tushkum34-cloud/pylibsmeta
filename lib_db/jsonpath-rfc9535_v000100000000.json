@@ -1,0 +1,991 @@
+{
+  "Parser": {
+    "PRECEDENCE_LOWEST": [],
+    "PRECEDENCE_LOGICAL_OR": [],
+    "PRECEDENCE_LOGICAL_AND": [],
+    "PRECEDENCE_RELATIONAL": [],
+    "PRECEDENCE_PREFIX": [],
+    "PRECEDENCES": [],
+    "BINARY_OPERATORS": [],
+    "COMPARISON_OPERATORS": [],
+    "__init__": [
+      "self"
+    ],
+    "parse": [
+      "self",
+      "stream"
+    ],
+    "parse_query": [
+      "self",
+      "stream"
+    ],
+    "parse_selectors": [
+      "self",
+      "stream"
+    ],
+    "parse_slice": [
+      "self",
+      "stream"
+    ],
+    "parse_bracketed_selection": [
+      "self",
+      "stream"
+    ],
+    "parse_filter_selector": [
+      "self",
+      "stream"
+    ],
+    "parse_boolean": [
+      "self",
+      "stream"
+    ],
+    "parse_null": [
+      "self",
+      "stream"
+    ],
+    "parse_string_literal": [
+      "self",
+      "stream"
+    ],
+    "parse_integer_literal": [
+      "self",
+      "stream"
+    ],
+    "parse_float_literal": [
+      "self",
+      "stream"
+    ],
+    "parse_prefix_expression": [
+      "self",
+      "stream"
+    ],
+    "parse_infix_expression": [
+      "self",
+      "stream",
+      "left"
+    ],
+    "parse_grouped_expression": [
+      "self",
+      "stream"
+    ],
+    "parse_root_query": [
+      "self",
+      "stream"
+    ],
+    "parse_relative_query": [
+      "self",
+      "stream"
+    ],
+    "parse_function_extension": [
+      "self",
+      "stream"
+    ],
+    "parse_filter_expression": [
+      "self",
+      "stream",
+      "precedence"
+    ],
+    "_decode_string_literal": [
+      "self",
+      "token"
+    ],
+    "_unescape_string": [
+      "self",
+      "value",
+      "token"
+    ],
+    "_decode_escape_sequence": [
+      "self",
+      "value",
+      "index",
+      "token"
+    ],
+    "_decode_hex_char": [
+      "self",
+      "value",
+      "index",
+      "token"
+    ],
+    "_parse_hex_digits": [
+      "self",
+      "digits",
+      "token"
+    ],
+    "_string_from_codepoint": [
+      "self",
+      "codepoint",
+      "token"
+    ],
+    "_is_high_surrogate": [
+      "self",
+      "codepoint"
+    ],
+    "_is_low_surrogate": [
+      "self",
+      "codepoint"
+    ],
+    "_raise_for_non_comparable_function": [
+      "self",
+      "expr",
+      "token"
+    ]
+  },
+  "RE_WHITESPACE": [],
+  "RE_PROPERTY": [],
+  "RE_INDEX": [],
+  "RE_INT": [],
+  "RE_FLOAT": [],
+  "RE_FUNCTION_NAME": [],
+  "ESCAPES": [],
+  "StateFn": [],
+  "Lexer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "query"
+    ],
+    "run": [
+      "self"
+    ],
+    "emit": [
+      "self",
+      "t"
+    ],
+    "next": [
+      "self"
+    ],
+    "ignore": [
+      "self"
+    ],
+    "backup": [
+      "self"
+    ],
+    "peek": [
+      "self"
+    ],
+    "accept": [
+      "self",
+      "s"
+    ],
+    "accept_match": [
+      "self",
+      "pattern"
+    ],
+    "accept_string_literal": [
+      "self",
+      "quote",
+      "token_type"
+    ],
+    "ignore_whitespace": [
+      "self"
+    ],
+    "error": [
+      "self",
+      "msg"
+    ],
+    "lex_root": [
+      "self"
+    ],
+    "lex_segment": [
+      "self"
+    ],
+    "lex_descendant_segment": [
+      "self"
+    ],
+    "lex_shorthand_selector": [
+      "self"
+    ],
+    "lex_inside_bracketed_segment": [
+      "self"
+    ],
+    "lex_inside_filter": [
+      "self"
+    ]
+  },
+  "lex": [
+    "query"
+  ],
+  "tokenize": [
+    "query"
+  ],
+  "JSONPathQuery": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "finditer": [
+      "self",
+      "value"
+    ],
+    "find": [
+      "self",
+      "value"
+    ],
+    "apply": [],
+    "find_one": [
+      "self",
+      "value"
+    ],
+    "singular_query": [
+      "self"
+    ],
+    "empty": [
+      "self"
+    ]
+  },
+  "Expression": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "PRECEDENCE_LOWEST": [],
+  "PRECEDENCE_LOGICAL_OR": [],
+  "PRECEDENCE_LOGICAL_AND": [],
+  "PRECEDENCE_PREFIX": [],
+  "FilterExpression": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "expression"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ],
+    "_canonical_string": [
+      "self",
+      "expression",
+      "parent_precedence"
+    ]
+  },
+  "LITERAL_T": [],
+  "FilterExpressionLiteral": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "_"
+    ]
+  },
+  "BooleanLiteral": {
+    "__slots__": []
+  },
+  "StringLiteral": {
+    "__slots__": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "IntegerLiteral": {
+    "__slots__": []
+  },
+  "FloatLiteral": {
+    "__slots__": []
+  },
+  "NullLiteral": {
+    "__slots__": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "PrefixExpression": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "operator",
+      "right"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "LogicalExpression": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "left",
+      "operator",
+      "right"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "ComparisonExpression": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "left",
+      "operator",
+      "right"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "FilterQuery": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "query"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "RelativeFilterQuery": {
+    "__slots__": [],
+    "__str__": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "RootFilterQuery": {
+    "__slots__": [],
+    "__str__": [
+      "self"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "FunctionExtension": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "token",
+      "name",
+      "args"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ],
+    "_unpack_node_lists": [
+      "self",
+      "func",
+      "args"
+    ]
+  },
+  "FilterContext": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Nothing": {
+    "__slots__": [],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "NOTHING": [],
+  "_is_truthy": [
+    "obj"
+  ],
+  "_compare": [
+    "left",
+    "operator",
+    "right"
+  ],
+  "_eq": [
+    "left",
+    "right"
+  ],
+  "_lt": [
+    "left",
+    "right"
+  ],
+  "__version__": [],
+  "TokenType": {
+    "EOF": [],
+    "ERROR": [],
+    "INIT": [],
+    "SHORTHAND_PROPERTY": [],
+    "COLON": [],
+    "COMMA": [],
+    "DOT": [],
+    "DOUBLE_DOT": [],
+    "FILTER": [],
+    "INDEX": [],
+    "LBRACKET": [],
+    "PROPERTY": [],
+    "RBRACKET": [],
+    "ROOT": [],
+    "WILD": [],
+    "AND": [],
+    "CURRENT": [],
+    "DOUBLE_QUOTE_STRING": [],
+    "EQ": [],
+    "FALSE": [],
+    "FLOAT": [],
+    "FUNCTION": [],
+    "GE": [],
+    "GT": [],
+    "INT": [],
+    "LE": [],
+    "LPAREN": [],
+    "LT": [],
+    "NE": [],
+    "NOT": [],
+    "NULL": [],
+    "OP": [],
+    "OR": [],
+    "RPAREN": [],
+    "SINGLE_QUOTE_STRING": [],
+    "TRUE": []
+  },
+  "Token": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "type_",
+      "value",
+      "index",
+      "query",
+      "message"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "position": [
+      "self"
+    ]
+  },
+  "TokenStream": {
+    "__init__": [
+      "self",
+      "token_iter"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "next_token": [
+      "self"
+    ],
+    "peek": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "tok"
+    ],
+    "close": [
+      "self"
+    ],
+    "expect": [
+      "self"
+    ],
+    "expect_peek": [
+      "self"
+    ],
+    "expect_peek_not": [
+      "self",
+      "typ",
+      "message"
+    ]
+  },
+  "__all__": [],
+  "DEFAULT_ENV": [],
+  "compile": [],
+  "finditer": [],
+  "find": [],
+  "find_one": [],
+  "INDENT": [],
+  "_EPILOG": [],
+  "DescriptionHelpFormatter": {},
+  "setup_parser": [],
+  "handle_path_command": [
+    "args"
+  ],
+  "main": [],
+  "JSONPathError": {
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "JSONPathSyntaxError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JSONPathTypeError": {},
+  "JSONPathIndexError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JSONPathNameError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JSONPathLexerError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JSONPathRecursionError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "JSONPathNode": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "value": [
+      "self",
+      "val"
+    ],
+    "path": [
+      "self"
+    ],
+    "new_child": [
+      "self",
+      "value",
+      "key",
+      "parent"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "JSONPathNodeList": {
+    "values": [
+      "self"
+    ],
+    "paths": [
+      "self"
+    ],
+    "items": [
+      "self"
+    ],
+    "empty": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "JSONValue": [],
+  "JSONPathEnvironment": {
+    "max_int_index": [],
+    "min_int_index": [],
+    "max_recursion_depth": [],
+    "nondeterministic": [],
+    "__init__": [
+      "self"
+    ],
+    "compile": [
+      "self",
+      "query"
+    ],
+    "finditer": [
+      "self",
+      "query",
+      "value"
+    ],
+    "find": [
+      "self",
+      "query",
+      "value"
+    ],
+    "find_one": [
+      "self",
+      "query",
+      "value"
+    ],
+    "setup_function_extensions": [
+      "self"
+    ],
+    "validate_function_extension_signature": [
+      "self",
+      "token",
+      "args"
+    ],
+    "check_well_typedness": [
+      "self",
+      "token",
+      "func",
+      "args"
+    ],
+    "_function_return_type": [
+      "self",
+      "expr"
+    ]
+  },
+  "JSONPathSelector": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "NameSelector": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "IndexSelector": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "_normalized_index": [
+      "self",
+      "obj"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "SliceSelector": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "_check_range": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "WildcardSelector": {
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "FilterSelector": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "node"
+    ]
+  },
+  "canonical_string": [
+    "value"
+  ],
+  "JSONPathSegment": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "resolve": [
+      "self",
+      "nodes"
+    ]
+  },
+  "JSONPathChildSegment": {
+    "resolve": [
+      "self",
+      "nodes"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "JSONPathRecursiveDescentSegment": {
+    "resolve": [
+      "self",
+      "nodes"
+    ],
+    "_visit": [
+      "self",
+      "node",
+      "depth"
+    ],
+    "_nondeterministic_visit": [
+      "self",
+      "root",
+      "depth"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "__value"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "_nondeterministic_children": [
+    "node"
+  ],
+  "HORIZONTAL_SEP": [],
+  "VERTICAL_SEP": [],
+  "BRANCH": [],
+  "TERMINAL_BRANCH": [],
+  "TERMINAL_INDENT": [],
+  "COLOR_CODES": [],
+  "AuxNode": {
+    "__init__": [
+      "self",
+      "depth",
+      "value",
+      "children"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "from_": [
+      "value"
+    ]
+  },
+  "pp_tree": [
+    "node",
+    "indent",
+    "buf"
+  ],
+  "pre_order_visit": [
+    "node"
+  ],
+  "breadth_first_visit": [
+    "node"
+  ],
+  "nondeterministic_visit": [
+    "root"
+  ],
+  "all_perms": [
+    "root"
+  ],
+  "Length": {
+    "arg_types": [],
+    "return_type": [],
+    "__call__": [
+      "self",
+      "obj"
+    ]
+  },
+  "Search": {
+    "arg_types": [],
+    "return_type": [],
+    "__call__": [
+      "self",
+      "string",
+      "pattern"
+    ]
+  },
+  "map_re": [
+    "pattern"
+  ],
+  "Value": {
+    "arg_types": [],
+    "return_type": [],
+    "__call__": [
+      "self",
+      "nodes"
+    ]
+  },
+  "Match": {
+    "arg_types": [],
+    "return_type": [],
+    "__call__": [
+      "self",
+      "string",
+      "pattern"
+    ]
+  },
+  "Count": {
+    "arg_types": [],
+    "return_type": [],
+    "__call__": [
+      "self",
+      "node_list"
+    ]
+  },
+  "ExpressionType": {
+    "VALUE": [],
+    "LOGICAL": [],
+    "NODES": []
+  },
+  "FilterFunction": {
+    "arg_types": [
+      "self"
+    ],
+    "return_type": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ]
+  }
+}

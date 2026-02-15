@@ -1,0 +1,592 @@
+{
+  "start_meshcat_visualizer": [
+    "robot",
+    "open"
+  ],
+  "custom_configuration_vector": [
+    "robot"
+  ],
+  "get_root_joint_dim": [
+    "model"
+  ],
+  "get_joint_idx": [
+    "model",
+    "joint_name"
+  ],
+  "VectorSpace": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "eye": [
+      "self"
+    ],
+    "ones": [
+      "self"
+    ],
+    "zeros": [
+      "self"
+    ]
+  },
+  "process_collision_pairs": [
+    "model",
+    "collision_model",
+    "srdf_path"
+  ],
+  "__version__": [],
+  "__all__": [],
+  "__compute_qp_objective": [
+    "configuration",
+    "tasks",
+    "damping",
+    "barriers"
+  ],
+  "__compute_qp_inequalities": [
+    "configuration",
+    "limits",
+    "dt",
+    "barriers"
+  ],
+  "__compute_qp_equalities": [
+    "configuration",
+    "constraints"
+  ],
+  "build_ik": [
+    "configuration",
+    "tasks",
+    "dt",
+    "damping",
+    "limits",
+    "barriers",
+    "constraints"
+  ],
+  "solve_ik": [
+    "configuration",
+    "tasks",
+    "dt",
+    "solver",
+    "damping",
+    "limits",
+    "barriers",
+    "constraints",
+    "safety_break"
+  ],
+  "PinkError": {},
+  "ConfigurationError": {},
+  "FrameNotFound": {
+    "__init__": [
+      "self",
+      "name",
+      "frames"
+    ]
+  },
+  "InvalidCollisionPairs": {},
+  "NegativeMinimumDistance": {},
+  "NoPositionLimitProvided": {},
+  "NoSolutionFound": {
+    "__init__": [
+      "self",
+      "problem",
+      "results"
+    ]
+  },
+  "NotWithinConfigurationLimits": {
+    "__init__": [
+      "self",
+      "joint",
+      "value",
+      "lower",
+      "upper"
+    ]
+  },
+  "TargetNotSet": {},
+  "TaskDefinitionError": {},
+  "TaskJacobianNotSet": {},
+  "Configuration": {
+    "__init__": [
+      "self",
+      "model",
+      "data",
+      "q",
+      "copy_data",
+      "forward_kinematics",
+      "collision_model",
+      "collision_data"
+    ],
+    "update": [
+      "self",
+      "q"
+    ],
+    "check_limits": [
+      "self",
+      "tol",
+      "safety_break"
+    ],
+    "get_frame_jacobian": [
+      "self",
+      "frame"
+    ],
+    "get_transform_frame_to_world": [
+      "self",
+      "frame"
+    ],
+    "get_transform": [
+      "self",
+      "source",
+      "dest"
+    ],
+    "integrate": [
+      "self",
+      "velocity",
+      "dt"
+    ],
+    "integrate_inplace": [
+      "self",
+      "velocity",
+      "dt"
+    ]
+  },
+  "PositionBarrier": {
+    "__init__": [
+      "self",
+      "frame",
+      "indices",
+      "p_min",
+      "p_max",
+      "gain",
+      "safe_displacement_gain"
+    ],
+    "compute_barrier": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ]
+  },
+  "SelfCollisionBarrier": {
+    "__init__": [
+      "self",
+      "n_collision_pairs",
+      "gain",
+      "safe_displacement_gain",
+      "d_min"
+    ],
+    "compute_barrier": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ]
+  },
+  "BodySphericalBarrier": {
+    "__init__": [
+      "self",
+      "frames",
+      "d_min",
+      "gain",
+      "safe_displacement_gain"
+    ],
+    "compute_barrier": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "_get_frame_positions": [
+      "self",
+      "configuration"
+    ],
+    "_get_frame_jacobians": [
+      "self",
+      "configuration"
+    ]
+  },
+  "Barrier": {
+    "__init__": [
+      "self",
+      "dim",
+      "gain",
+      "gain_function",
+      "safe_displacement_gain"
+    ],
+    "compute_barrier": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "compute_safe_displacement": [
+      "self",
+      "configuration"
+    ],
+    "compute_qp_objective": [
+      "self",
+      "configuration"
+    ],
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "VelocityLimit": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ]
+  },
+  "_as_velocity_vector": [
+    "values",
+    "label"
+  ],
+  "_find_base_frame": [
+    "model",
+    "base_frame"
+  ],
+  "FloatingBaseVelocityLimit": {
+    "__init__": [
+      "self",
+      "model",
+      "base_frame",
+      "max_linear_velocity",
+      "max_angular_velocity"
+    ],
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ]
+  },
+  "ConfigurationLimit": {
+    "__init__": [
+      "self",
+      "model",
+      "config_limit_gain"
+    ],
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ]
+  },
+  "Limit": {
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ]
+  },
+  "AccelerationLimit": {
+    "__init__": [
+      "self",
+      "model",
+      "acceleration_limit"
+    ],
+    "set_last_integration": [
+      "self",
+      "v_prev",
+      "dt"
+    ],
+    "compute_qp_inequalities": [
+      "self",
+      "configuration",
+      "dt"
+    ]
+  },
+  "RelativeFrameTask": {
+    "__init__": [
+      "self",
+      "frame",
+      "root",
+      "position_cost",
+      "orientation_cost",
+      "lm_damping",
+      "gain"
+    ],
+    "set_position_cost": [
+      "self",
+      "position_cost"
+    ],
+    "set_orientation_cost": [
+      "self",
+      "orientation_cost"
+    ],
+    "set_target": [
+      "self",
+      "transform_target_to_root"
+    ],
+    "set_target_from_configuration": [
+      "self",
+      "configuration"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "JointCouplingTask": {
+    "__init__": [
+      "self",
+      "joint_names",
+      "ratios",
+      "cost",
+      "configuration",
+      "lm_damping",
+      "gain"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Task": {
+    "__init__": [
+      "self",
+      "cost",
+      "gain",
+      "lm_damping"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "compute_qp_objective": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "RollingTask": {
+    "__init__": [
+      "self",
+      "hub_frame",
+      "floor_frame",
+      "wheel_radius",
+      "cost",
+      "gain",
+      "lm_damping"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PostureTask": {
+    "__init__": [
+      "self",
+      "cost",
+      "lm_damping",
+      "gain"
+    ],
+    "set_target": [
+      "self",
+      "target_q"
+    ],
+    "set_target_from_configuration": [
+      "self",
+      "configuration"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DampingTask": {
+    "__init__": [
+      "self",
+      "cost"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "OmniwheelTask": {
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "LowAccelerationTask": {
+    "__init__": [
+      "self",
+      "cost"
+    ],
+    "set_last_integration": [
+      "self",
+      "v_prev",
+      "dt"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "JointVelocityTask": {
+    "__init__": [
+      "self",
+      "cost"
+    ],
+    "set_target": [
+      "self",
+      "target_v",
+      "dt"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "FrameTask": {
+    "__init__": [
+      "self",
+      "frame",
+      "position_cost",
+      "orientation_cost",
+      "lm_damping",
+      "gain"
+    ],
+    "set_position_cost": [
+      "self",
+      "position_cost"
+    ],
+    "set_orientation_cost": [
+      "self",
+      "orientation_cost"
+    ],
+    "set_target": [
+      "self",
+      "transform_target_to_world"
+    ],
+    "set_target_from_configuration": [
+      "self",
+      "configuration"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "LinearHolonomicTask": {
+    "__init__": [
+      "self",
+      "A",
+      "b",
+      "q_0",
+      "cost",
+      "lm_damping",
+      "gain"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ComTask": {
+    "__init__": [
+      "self",
+      "cost",
+      "lm_damping",
+      "gain"
+    ],
+    "set_cost": [
+      "self",
+      "cost"
+    ],
+    "set_target": [
+      "self",
+      "target_com"
+    ],
+    "set_target_from_configuration": [
+      "self",
+      "configuration"
+    ],
+    "compute_error": [
+      "self",
+      "configuration"
+    ],
+    "compute_jacobian": [
+      "self",
+      "configuration"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  }
+}

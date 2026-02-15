@@ -1,0 +1,3648 @@
+{
+  "BackoffFunction": {
+    "__call__": [
+      "self",
+      "retries"
+    ]
+  },
+  "constant_backoff_function": [
+    "interval"
+  ],
+  "exponential_backoff_function": [],
+  "_build_user_agent": [
+    "application_name",
+    "application_version"
+  ],
+  "Client": {
+    "__init__": [
+      "self",
+      "token",
+      "api_endpoint",
+      "application_name",
+      "application_version",
+      "poll_interval",
+      "poll_max_retries",
+      "timeout"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url"
+    ]
+  },
+  "ClientBase": {
+    "__init__": [
+      "self",
+      "token"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url"
+    ],
+    "_read_response": [
+      "self",
+      "response"
+    ],
+    "_retry_policy": [
+      "self",
+      "exception"
+    ]
+  },
+  "__all__": [],
+  "HCloudException": {},
+  "APIException": {
+    "__init__": [
+      "self",
+      "code",
+      "message",
+      "details"
+    ]
+  },
+  "__version__": [],
+  "StorageBoxStatus": [],
+  "StorageBox": {
+    "STATUS_ACTIVE": [],
+    "STATUS_INITIALIZING": [],
+    "STATUS_LOCKED": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "storage_box_type",
+      "location",
+      "system",
+      "server",
+      "username",
+      "labels",
+      "protection",
+      "snapshot_plan",
+      "access_settings",
+      "stats",
+      "status",
+      "created"
+    ]
+  },
+  "StorageBoxAccessSettings": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "reachable_externally",
+      "samba_enabled",
+      "ssh_enabled",
+      "webdav_enabled",
+      "zfs_enabled"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "StorageBoxStats": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "size",
+      "size_data",
+      "size_snapshots"
+    ]
+  },
+  "StorageBoxSnapshotPlan": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "max_snapshots",
+      "hour",
+      "minute",
+      "day_of_week",
+      "day_of_month"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "CreateStorageBoxResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "storage_box",
+      "action"
+    ]
+  },
+  "DeleteStorageBoxResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "StorageBoxFoldersResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "folders"
+    ]
+  },
+  "StorageBoxSnapshot": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "is_automatic",
+      "labels",
+      "storage_box",
+      "created",
+      "stats"
+    ]
+  },
+  "StorageBoxSnapshotStats": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "size",
+      "size_filesystem"
+    ]
+  },
+  "CreateStorageBoxSnapshotResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "snapshot",
+      "action"
+    ]
+  },
+  "DeleteStorageBoxSnapshotResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "StorageBoxSubaccount": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "username",
+      "description",
+      "server",
+      "home_directory",
+      "access_settings",
+      "labels",
+      "storage_box",
+      "created"
+    ]
+  },
+  "StorageBoxSubaccountAccessSettings": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "reachable_externally",
+      "samba_enabled",
+      "ssh_enabled",
+      "webdav_enabled",
+      "readonly"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "CreateStorageBoxSubaccountResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "subaccount",
+      "action"
+    ]
+  },
+  "DeleteStorageBoxSubaccountResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "BoundStorageBox": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self"
+    ],
+    "get_actions": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "get_folders": [
+      "self"
+    ],
+    "change_protection": [
+      "self"
+    ],
+    "change_type": [
+      "self",
+      "storage_box_type"
+    ],
+    "reset_password": [
+      "self",
+      "password"
+    ],
+    "update_access_settings": [
+      "self",
+      "access_settings"
+    ],
+    "rollback_snapshot": [
+      "self",
+      "snapshot"
+    ],
+    "disable_snapshot_plan": [
+      "self"
+    ],
+    "enable_snapshot_plan": [
+      "self",
+      "snapshot_plan"
+    ],
+    "get_snapshot_by_id": [
+      "self",
+      "id"
+    ],
+    "get_snapshot_by_name": [
+      "self",
+      "name"
+    ],
+    "get_snapshot_list": [
+      "self"
+    ],
+    "get_snapshot_all": [
+      "self"
+    ],
+    "create_snapshot": [
+      "self"
+    ],
+    "get_subaccount_by_id": [
+      "self",
+      "id"
+    ],
+    "get_subaccount_by_name": [
+      "self",
+      "name"
+    ],
+    "get_subaccount_by_username": [
+      "self",
+      "username"
+    ],
+    "get_subaccount_list": [
+      "self"
+    ],
+    "get_subaccount_all": [
+      "self"
+    ],
+    "create_subaccount": [
+      "self"
+    ]
+  },
+  "BoundStorageBoxSnapshot": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "_get_self": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "BoundStorageBoxSubaccount": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "_get_self": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "change_home_directory": [
+      "self",
+      "home_directory"
+    ],
+    "reset_password": [
+      "self",
+      "password"
+    ],
+    "update_access_settings": [
+      "self",
+      "access_settings"
+    ]
+  },
+  "StorageBoxesPageResult": {},
+  "StorageBoxSnapshotsPageResult": {},
+  "StorageBoxSubaccountsPageResult": {},
+  "StorageBoxesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_list": [
+      "self"
+    ],
+    "get_all": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "storage_box"
+    ],
+    "delete": [
+      "self",
+      "storage_box"
+    ],
+    "get_folders": [
+      "self",
+      "storage_box"
+    ],
+    "get_actions_list": [
+      "self",
+      "storage_box"
+    ],
+    "get_actions": [
+      "self",
+      "storage_box"
+    ],
+    "change_protection": [
+      "self",
+      "storage_box"
+    ],
+    "change_type": [
+      "self",
+      "storage_box",
+      "storage_box_type"
+    ],
+    "reset_password": [
+      "self",
+      "storage_box",
+      "password"
+    ],
+    "update_access_settings": [
+      "self",
+      "storage_box",
+      "access_settings"
+    ],
+    "rollback_snapshot": [
+      "self",
+      "storage_box",
+      "snapshot"
+    ],
+    "disable_snapshot_plan": [
+      "self",
+      "storage_box"
+    ],
+    "enable_snapshot_plan": [
+      "self",
+      "storage_box",
+      "snapshot_plan"
+    ],
+    "get_snapshot_by_id": [
+      "self",
+      "storage_box",
+      "id"
+    ],
+    "get_snapshot_by_name": [
+      "self",
+      "storage_box",
+      "name"
+    ],
+    "get_snapshot_list": [
+      "self",
+      "storage_box"
+    ],
+    "get_snapshot_all": [
+      "self",
+      "storage_box"
+    ],
+    "create_snapshot": [
+      "self",
+      "storage_box"
+    ],
+    "update_snapshot": [
+      "self",
+      "snapshot"
+    ],
+    "delete_snapshot": [
+      "self",
+      "snapshot"
+    ],
+    "get_subaccount_by_id": [
+      "self",
+      "storage_box",
+      "id"
+    ],
+    "get_subaccount_by_name": [
+      "self",
+      "storage_box",
+      "name"
+    ],
+    "get_subaccount_by_username": [
+      "self",
+      "storage_box",
+      "username"
+    ],
+    "get_subaccount_list": [
+      "self",
+      "storage_box"
+    ],
+    "get_subaccount_all": [
+      "self",
+      "storage_box"
+    ],
+    "create_subaccount": [
+      "self",
+      "storage_box"
+    ],
+    "update_subaccount": [
+      "self",
+      "subaccount"
+    ],
+    "delete_subaccount": [
+      "self",
+      "subaccount"
+    ],
+    "change_subaccount_home_directory": [
+      "self",
+      "subaccount",
+      "home_directory"
+    ],
+    "reset_subaccount_password": [
+      "self",
+      "subaccount",
+      "password"
+    ],
+    "update_subaccount_access_settings": [
+      "self",
+      "subaccount",
+      "access_settings"
+    ]
+  },
+  "ActionStatus": [],
+  "Action": {
+    "STATUS_RUNNING": [],
+    "STATUS_SUCCESS": [],
+    "STATUS_ERROR": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "command",
+      "status",
+      "progress",
+      "started",
+      "finished",
+      "resources",
+      "error"
+    ]
+  },
+  "ActionResource": {},
+  "ActionError": {},
+  "ActionException": {
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "ActionFailedException": {},
+  "ActionTimeoutException": {},
+  "BoundAction": {
+    "model": [],
+    "wait_until_finished": [
+      "self",
+      "max_retries"
+    ]
+  },
+  "ActionSort": [],
+  "ActionsPageResult": {},
+  "ResourceClientBaseActionsMixin": {
+    "_get_action_by_id": [
+      "self",
+      "base_url",
+      "id"
+    ],
+    "_get_actions_list": [
+      "self",
+      "base_url",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ]
+  },
+  "ResourceActionsClient": {
+    "__init__": [
+      "self",
+      "client",
+      "resource"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "status",
+      "sort"
+    ]
+  },
+  "ActionsClient": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "status",
+      "sort"
+    ]
+  },
+  "LoadBalancer": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "public_net",
+      "private_net",
+      "location",
+      "algorithm",
+      "services",
+      "load_balancer_type",
+      "protection",
+      "labels",
+      "targets",
+      "created",
+      "outgoing_traffic",
+      "ingoing_traffic",
+      "included_traffic"
+    ],
+    "private_net_for": [
+      "self",
+      "network"
+    ]
+  },
+  "LoadBalancerProtection": {},
+  "LoadBalancerService": {
+    "__init__": [
+      "self",
+      "protocol",
+      "listen_port",
+      "destination_port",
+      "proxyprotocol",
+      "health_check",
+      "http"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "LoadBalancerServiceHttp": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "cookie_name",
+      "cookie_lifetime",
+      "certificates",
+      "redirect_http",
+      "sticky_sessions"
+    ]
+  },
+  "LoadBalancerHealthCheck": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "protocol",
+      "port",
+      "interval",
+      "timeout",
+      "retries",
+      "http"
+    ]
+  },
+  "LoadBalancerHealthCheckHttp": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "domain",
+      "path",
+      "response",
+      "status_codes",
+      "tls"
+    ]
+  },
+  "LoadBalancerHealtCheckHttp": {
+    "__init__": [
+      "self",
+      "domain",
+      "path",
+      "response",
+      "status_codes",
+      "tls"
+    ]
+  },
+  "LoadBalancerTarget": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "type",
+      "server",
+      "label_selector",
+      "ip",
+      "use_private_ip",
+      "health_status"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "LoadBalancerTargetHealthStatus": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "listen_port",
+      "status"
+    ]
+  },
+  "LoadBalancerTargetLabelSelector": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "selector"
+    ]
+  },
+  "LoadBalancerTargetIP": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ip"
+    ]
+  },
+  "LoadBalancerAlgorithm": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "type"
+    ]
+  },
+  "PublicNetwork": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ipv4",
+      "ipv6",
+      "enabled"
+    ]
+  },
+  "IPv4Address": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "IPv6Network": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "PrivateNet": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "network",
+      "ip"
+    ]
+  },
+  "CreateLoadBalancerResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "load_balancer",
+      "action"
+    ]
+  },
+  "MetricsType": [],
+  "GetMetricsResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "metrics"
+    ]
+  },
+  "BoundLoadBalancer": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "get_metrics": [
+      "self",
+      "type",
+      "start",
+      "end",
+      "step"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "add_service": [
+      "self",
+      "service"
+    ],
+    "update_service": [
+      "self",
+      "service"
+    ],
+    "delete_service": [
+      "self",
+      "service"
+    ],
+    "add_target": [
+      "self",
+      "target"
+    ],
+    "remove_target": [
+      "self",
+      "target"
+    ],
+    "change_algorithm": [
+      "self",
+      "algorithm"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ],
+    "attach_to_network": [
+      "self",
+      "network",
+      "ip",
+      "ip_range"
+    ],
+    "detach_from_network": [
+      "self",
+      "network"
+    ],
+    "enable_public_interface": [
+      "self"
+    ],
+    "disable_public_interface": [
+      "self"
+    ],
+    "change_type": [
+      "self",
+      "load_balancer_type"
+    ]
+  },
+  "LoadBalancersPageResult": {},
+  "LoadBalancersClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "label_selector"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "load_balancer_type",
+      "algorithm",
+      "services",
+      "targets",
+      "labels",
+      "location",
+      "network_zone",
+      "public_interface",
+      "network"
+    ],
+    "update": [
+      "self",
+      "load_balancer",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "load_balancer"
+    ],
+    "get_metrics": [
+      "self",
+      "load_balancer",
+      "type",
+      "start",
+      "end",
+      "step"
+    ],
+    "get_actions_list": [
+      "self",
+      "load_balancer",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "load_balancer",
+      "status",
+      "sort"
+    ],
+    "add_service": [
+      "self",
+      "load_balancer",
+      "service"
+    ],
+    "update_service": [
+      "self",
+      "load_balancer",
+      "service"
+    ],
+    "delete_service": [
+      "self",
+      "load_balancer",
+      "service"
+    ],
+    "add_target": [
+      "self",
+      "load_balancer",
+      "target"
+    ],
+    "remove_target": [
+      "self",
+      "load_balancer",
+      "target"
+    ],
+    "change_algorithm": [
+      "self",
+      "load_balancer",
+      "algorithm"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "load_balancer",
+      "ip",
+      "dns_ptr"
+    ],
+    "change_protection": [
+      "self",
+      "load_balancer",
+      "delete"
+    ],
+    "attach_to_network": [
+      "self",
+      "load_balancer",
+      "network",
+      "ip",
+      "ip_range"
+    ],
+    "detach_from_network": [
+      "self",
+      "load_balancer",
+      "network"
+    ],
+    "enable_public_interface": [
+      "self",
+      "load_balancer"
+    ],
+    "disable_public_interface": [
+      "self",
+      "load_balancer"
+    ],
+    "change_type": [
+      "self",
+      "load_balancer",
+      "load_balancer_type"
+    ]
+  },
+  "Firewall": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "labels",
+      "rules",
+      "applied_to",
+      "created"
+    ]
+  },
+  "FirewallRule": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "DIRECTION_IN": [],
+    "DIRECTION_OUT": [],
+    "PROTOCOL_UDP": [],
+    "PROTOCOL_ICMP": [],
+    "PROTOCOL_TCP": [],
+    "PROTOCOL_ESP": [],
+    "PROTOCOL_GRE": [],
+    "__init__": [
+      "self",
+      "direction",
+      "protocol",
+      "source_ips",
+      "port",
+      "destination_ips",
+      "description"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "FirewallResource": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "TYPE_SERVER": [],
+    "TYPE_LABEL_SELECTOR": [],
+    "__init__": [
+      "self",
+      "type",
+      "server",
+      "label_selector",
+      "applied_to_resources"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "FirewallResourceAppliedToResources": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "type",
+      "server"
+    ]
+  },
+  "FirewallResourceLabelSelector": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "selector"
+    ]
+  },
+  "CreateFirewallResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "firewall",
+      "actions"
+    ]
+  },
+  "BoundFirewall": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "set_rules": [
+      "self",
+      "rules"
+    ],
+    "apply_to_resources": [
+      "self",
+      "resources"
+    ],
+    "remove_from_resources": [
+      "self",
+      "resources"
+    ]
+  },
+  "FirewallsPageResult": {},
+  "FirewallsClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_actions_list": [
+      "self",
+      "firewall",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "firewall",
+      "status",
+      "sort"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "label_selector",
+      "page",
+      "per_page",
+      "name",
+      "sort"
+    ],
+    "get_all": [
+      "self",
+      "label_selector",
+      "name",
+      "sort"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "rules",
+      "labels",
+      "resources"
+    ],
+    "update": [
+      "self",
+      "firewall",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self",
+      "firewall"
+    ],
+    "set_rules": [
+      "self",
+      "firewall",
+      "rules"
+    ],
+    "apply_to_resources": [
+      "self",
+      "firewall",
+      "resources"
+    ],
+    "remove_from_resources": [
+      "self",
+      "firewall",
+      "resources"
+    ]
+  },
+  "TimeSeries": [],
+  "Metrics": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "start",
+      "end",
+      "step",
+      "time_series"
+    ]
+  },
+  "Iso": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "type",
+      "architecture",
+      "description",
+      "deprecated",
+      "deprecation"
+    ],
+    "deprecated": [
+      "self"
+    ]
+  },
+  "BoundIso": {
+    "model": []
+  },
+  "IsosPageResult": {},
+  "IsosClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "architecture",
+      "include_architecture_wildcard",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "architecture",
+      "include_architecture_wildcard"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ]
+  },
+  "StorageBoxType": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "snapshot_limit",
+      "automatic_snapshot_limit",
+      "subaccounts_limit",
+      "size",
+      "prices",
+      "deprecation"
+    ]
+  },
+  "BoundStorageBoxType": {
+    "model": []
+  },
+  "StorageBoxTypesPageResult": {},
+  "StorageBoxTypesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name"
+    ]
+  },
+  "LoadBalancerType": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "max_connections",
+      "max_services",
+      "max_targets",
+      "max_assigned_certificates",
+      "prices"
+    ]
+  },
+  "BoundLoadBalancerType": {
+    "model": []
+  },
+  "LoadBalancerTypesPageResult": {},
+  "LoadBalancerTypesClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ]
+  },
+  "PlacementGroup": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "TYPE_SPREAD": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "labels",
+      "servers",
+      "type",
+      "created"
+    ]
+  },
+  "CreatePlacementGroupResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "placement_group",
+      "action"
+    ]
+  },
+  "BoundPlacementGroup": {
+    "model": [],
+    "update": [
+      "self",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "PlacementGroupsPageResult": {},
+  "PlacementGroupsClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "label_selector",
+      "page",
+      "per_page",
+      "name",
+      "sort",
+      "type"
+    ],
+    "get_all": [
+      "self",
+      "label_selector",
+      "name",
+      "sort"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "type",
+      "labels"
+    ],
+    "update": [
+      "self",
+      "placement_group",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self",
+      "placement_group"
+    ]
+  },
+  "SSHKey": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "fingerprint",
+      "public_key",
+      "labels",
+      "created"
+    ]
+  },
+  "BoundSSHKey": {
+    "model": [],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ]
+  },
+  "SSHKeysPageResult": {},
+  "SSHKeysClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "fingerprint",
+      "label_selector",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "fingerprint",
+      "label_selector"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_by_fingerprint": [
+      "self",
+      "fingerprint"
+    ],
+    "create": [
+      "self",
+      "name",
+      "public_key",
+      "labels"
+    ],
+    "update": [
+      "self",
+      "ssh_key",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "ssh_key"
+    ]
+  },
+  "is_txt_record_quoted": [
+    "value"
+  ],
+  "format_txt_record": [
+    "value"
+  ],
+  "FloatingIP": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "type",
+      "description",
+      "ip",
+      "server",
+      "dns_ptr",
+      "home_location",
+      "blocked",
+      "protection",
+      "labels",
+      "created",
+      "name"
+    ]
+  },
+  "FloatingIPProtection": {},
+  "CreateFloatingIPResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "floating_ip",
+      "action"
+    ]
+  },
+  "BoundFloatingIP": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "description",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ],
+    "assign": [
+      "self",
+      "server"
+    ],
+    "unassign": [
+      "self"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "FloatingIPsPageResult": {},
+  "FloatingIPsClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_actions_list": [
+      "self",
+      "floating_ip",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "floating_ip",
+      "status",
+      "sort"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "label_selector",
+      "page",
+      "per_page",
+      "name"
+    ],
+    "get_all": [
+      "self",
+      "label_selector",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "type",
+      "description",
+      "labels",
+      "home_location",
+      "server",
+      "name"
+    ],
+    "update": [
+      "self",
+      "floating_ip",
+      "description",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self",
+      "floating_ip"
+    ],
+    "change_protection": [
+      "self",
+      "floating_ip",
+      "delete"
+    ],
+    "assign": [
+      "self",
+      "floating_ip",
+      "server"
+    ],
+    "unassign": [
+      "self",
+      "floating_ip"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "floating_ip",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "DeprecationInfo": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "announced",
+      "unavailable_after"
+    ]
+  },
+  "Image": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "type",
+      "created",
+      "description",
+      "image_size",
+      "disk_size",
+      "deprecated",
+      "bound_to",
+      "os_flavor",
+      "os_version",
+      "architecture",
+      "rapid_deploy",
+      "created_from",
+      "protection",
+      "labels",
+      "status"
+    ]
+  },
+  "ImageProtection": {},
+  "CreateImageResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action",
+      "image"
+    ]
+  },
+  "BoundImage": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "description",
+      "type",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ]
+  },
+  "ImagesPageResult": {},
+  "ImagesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_actions_list": [
+      "self",
+      "image",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "image",
+      "status",
+      "sort"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "bound_to",
+      "type",
+      "architecture",
+      "sort",
+      "page",
+      "per_page",
+      "status",
+      "include_deprecated"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "label_selector",
+      "bound_to",
+      "type",
+      "architecture",
+      "sort",
+      "status",
+      "include_deprecated"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "get_by_name_and_architecture": [
+      "self",
+      "name",
+      "architecture"
+    ],
+    "update": [
+      "self",
+      "image",
+      "description",
+      "type",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "image"
+    ],
+    "change_protection": [
+      "self",
+      "image",
+      "delete"
+    ]
+  },
+  "LabelValidator": {
+    "KEY_REGEX": [],
+    "VALUE_REGEX": [],
+    "validate": [
+      "labels"
+    ],
+    "validate_verbose": [
+      "labels"
+    ]
+  },
+  "PrimaryIP": {
+    "__properties__": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "type",
+      "ip",
+      "dns_ptr",
+      "datacenter",
+      "location",
+      "blocked",
+      "protection",
+      "labels",
+      "created",
+      "name",
+      "assignee_id",
+      "assignee_type",
+      "auto_delete"
+    ],
+    "datacenter": [
+      "self",
+      "value"
+    ]
+  },
+  "PrimaryIPProtection": {},
+  "CreatePrimaryIPResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "primary_ip",
+      "action"
+    ]
+  },
+  "BoundPrimaryIP": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "auto_delete",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ],
+    "assign": [
+      "self",
+      "assignee_id",
+      "assignee_type"
+    ],
+    "unassign": [
+      "self"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "PrimaryIPsPageResult": {},
+  "PrimaryIPsClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_actions_list": [
+      "self",
+      "primary_ip",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "primary_ip",
+      "status",
+      "sort"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "label_selector",
+      "page",
+      "per_page",
+      "name",
+      "ip"
+    ],
+    "get_all": [
+      "self",
+      "label_selector",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "type",
+      "name",
+      "datacenter",
+      "location",
+      "assignee_type",
+      "assignee_id",
+      "auto_delete",
+      "labels"
+    ],
+    "update": [
+      "self",
+      "primary_ip",
+      "auto_delete",
+      "labels",
+      "name"
+    ],
+    "delete": [
+      "self",
+      "primary_ip"
+    ],
+    "change_protection": [
+      "self",
+      "primary_ip",
+      "delete"
+    ],
+    "assign": [
+      "self",
+      "primary_ip",
+      "assignee_id",
+      "assignee_type"
+    ],
+    "unassign": [
+      "self",
+      "primary_ip"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "primary_ip",
+      "ip",
+      "dns_ptr"
+    ]
+  },
+  "Location": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "country",
+      "city",
+      "latitude",
+      "longitude",
+      "network_zone"
+    ]
+  },
+  "BoundLocation": {
+    "model": []
+  },
+  "LocationsPageResult": {},
+  "LocationsClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ]
+  },
+  "Volume": {
+    "STATUS_CREATING": [],
+    "STATUS_AVAILABLE": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "server",
+      "created",
+      "location",
+      "size",
+      "linux_device",
+      "format",
+      "protection",
+      "labels",
+      "status"
+    ]
+  },
+  "VolumeProtection": {},
+  "CreateVolumeResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "volume",
+      "action",
+      "next_actions"
+    ]
+  },
+  "BoundVolume": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "attach": [
+      "self",
+      "server",
+      "automount"
+    ],
+    "detach": [
+      "self"
+    ],
+    "resize": [
+      "self",
+      "size"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ]
+  },
+  "VolumesPageResult": {},
+  "VolumesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "page",
+      "per_page",
+      "status"
+    ],
+    "get_all": [
+      "self",
+      "label_selector",
+      "status"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "size",
+      "name",
+      "labels",
+      "location",
+      "server",
+      "automount",
+      "format"
+    ],
+    "get_actions_list": [
+      "self",
+      "volume",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "volume",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "volume",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "volume"
+    ],
+    "resize": [
+      "self",
+      "volume",
+      "size"
+    ],
+    "attach": [
+      "self",
+      "volume",
+      "server",
+      "automount"
+    ],
+    "detach": [
+      "self",
+      "volume"
+    ],
+    "change_protection": [
+      "self",
+      "volume",
+      "delete"
+    ]
+  },
+  "Network": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "created",
+      "ip_range",
+      "subnets",
+      "routes",
+      "expose_routes_to_vswitch",
+      "servers",
+      "protection",
+      "labels"
+    ]
+  },
+  "NetworkProtection": {},
+  "NetworkSubnet": {
+    "TYPE_SERVER": [
+      "self"
+    ],
+    "TYPE_CLOUD": [],
+    "TYPE_VSWITCH": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ip_range",
+      "type",
+      "network_zone",
+      "gateway",
+      "vswitch_id"
+    ]
+  },
+  "NetworkRoute": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "destination",
+      "gateway"
+    ]
+  },
+  "CreateNetworkResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "network",
+      "action"
+    ]
+  },
+  "BoundNetwork": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "update": [
+      "self",
+      "name",
+      "expose_routes_to_vswitch",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "add_subnet": [
+      "self",
+      "subnet"
+    ],
+    "delete_subnet": [
+      "self",
+      "subnet"
+    ],
+    "add_route": [
+      "self",
+      "route"
+    ],
+    "delete_route": [
+      "self",
+      "route"
+    ],
+    "change_ip_range": [
+      "self",
+      "ip_range"
+    ],
+    "change_protection": [
+      "self",
+      "delete"
+    ]
+  },
+  "NetworksPageResult": {},
+  "NetworksClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "label_selector"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "ip_range",
+      "subnets",
+      "routes",
+      "expose_routes_to_vswitch",
+      "labels"
+    ],
+    "update": [
+      "self",
+      "network",
+      "name",
+      "expose_routes_to_vswitch",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "network"
+    ],
+    "get_actions_list": [
+      "self",
+      "network",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "network",
+      "status",
+      "sort"
+    ],
+    "add_subnet": [
+      "self",
+      "network",
+      "subnet"
+    ],
+    "delete_subnet": [
+      "self",
+      "network",
+      "subnet"
+    ],
+    "add_route": [
+      "self",
+      "network",
+      "route"
+    ],
+    "delete_route": [
+      "self",
+      "network",
+      "route"
+    ],
+    "change_ip_range": [
+      "self",
+      "network",
+      "ip_range"
+    ],
+    "change_protection": [
+      "self",
+      "network",
+      "delete"
+    ]
+  },
+  "Server": {
+    "STATUS_RUNNING": [],
+    "STATUS_INIT": [],
+    "STATUS_STARTING": [],
+    "STATUS_STOPPING": [],
+    "STATUS_OFF": [],
+    "STATUS_DELETING": [],
+    "STATUS_MIGRATING": [],
+    "STATUS_REBUILDING": [],
+    "STATUS_UNKNOWN": [],
+    "__properties__": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "status",
+      "created",
+      "public_net",
+      "server_type",
+      "datacenter",
+      "location",
+      "image",
+      "iso",
+      "rescue_enabled",
+      "locked",
+      "backup_window",
+      "outgoing_traffic",
+      "ingoing_traffic",
+      "included_traffic",
+      "protection",
+      "labels",
+      "volumes",
+      "private_net",
+      "primary_disk_size",
+      "placement_group"
+    ],
+    "private_net_for": [
+      "self",
+      "network"
+    ],
+    "datacenter": [
+      "self",
+      "value"
+    ]
+  },
+  "ServerProtection": {},
+  "CreateServerResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "server",
+      "action",
+      "next_actions",
+      "root_password"
+    ]
+  },
+  "ResetPasswordResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action",
+      "root_password"
+    ]
+  },
+  "EnableRescueResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action",
+      "root_password"
+    ]
+  },
+  "RequestConsoleResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action",
+      "wss_url",
+      "password"
+    ]
+  },
+  "RebuildResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action",
+      "root_password"
+    ]
+  },
+  "PublicNetworkFirewall": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "STATUS_APPLIED": [],
+    "STATUS_PENDING": [],
+    "__init__": [
+      "self",
+      "firewall",
+      "status"
+    ]
+  },
+  "ServerCreatePublicNetwork": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "ipv4",
+      "ipv6",
+      "enable_ipv4",
+      "enable_ipv6"
+    ]
+  },
+  "BoundServer": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "get_metrics": [
+      "self",
+      "type",
+      "start",
+      "end",
+      "step"
+    ],
+    "delete": [
+      "self"
+    ],
+    "power_off": [
+      "self"
+    ],
+    "power_on": [
+      "self"
+    ],
+    "reboot": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "reset_password": [
+      "self"
+    ],
+    "enable_rescue": [
+      "self",
+      "type",
+      "ssh_keys"
+    ],
+    "disable_rescue": [
+      "self"
+    ],
+    "create_image": [
+      "self",
+      "description",
+      "type",
+      "labels"
+    ],
+    "rebuild": [
+      "self",
+      "image",
+      "user_data"
+    ],
+    "change_type": [
+      "self",
+      "server_type",
+      "upgrade_disk"
+    ],
+    "enable_backup": [
+      "self"
+    ],
+    "disable_backup": [
+      "self"
+    ],
+    "attach_iso": [
+      "self",
+      "iso"
+    ],
+    "detach_iso": [
+      "self"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "ip",
+      "dns_ptr"
+    ],
+    "change_protection": [
+      "self",
+      "delete",
+      "rebuild"
+    ],
+    "request_console": [
+      "self"
+    ],
+    "attach_to_network": [
+      "self",
+      "network",
+      "ip",
+      "alias_ips",
+      "ip_range"
+    ],
+    "detach_from_network": [
+      "self",
+      "network"
+    ],
+    "change_alias_ips": [
+      "self",
+      "network",
+      "alias_ips"
+    ],
+    "add_to_placement_group": [
+      "self",
+      "placement_group"
+    ],
+    "remove_from_placement_group": [
+      "self"
+    ]
+  },
+  "ServersPageResult": {},
+  "ServersClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "page",
+      "per_page",
+      "status"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "label_selector",
+      "status"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "server_type",
+      "image",
+      "ssh_keys",
+      "volumes",
+      "firewalls",
+      "networks",
+      "user_data",
+      "labels",
+      "location",
+      "datacenter",
+      "start_after_create",
+      "automount",
+      "placement_group",
+      "public_net"
+    ],
+    "get_actions_list": [
+      "self",
+      "server",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "server",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "server",
+      "name",
+      "labels"
+    ],
+    "get_metrics": [
+      "self",
+      "server",
+      "type",
+      "start",
+      "end",
+      "step"
+    ],
+    "delete": [
+      "self",
+      "server"
+    ],
+    "power_off": [
+      "self",
+      "server"
+    ],
+    "power_on": [
+      "self",
+      "server"
+    ],
+    "reboot": [
+      "self",
+      "server"
+    ],
+    "reset": [
+      "self",
+      "server"
+    ],
+    "shutdown": [
+      "self",
+      "server"
+    ],
+    "reset_password": [
+      "self",
+      "server"
+    ],
+    "change_type": [
+      "self",
+      "server",
+      "server_type",
+      "upgrade_disk"
+    ],
+    "enable_rescue": [
+      "self",
+      "server",
+      "type",
+      "ssh_keys"
+    ],
+    "disable_rescue": [
+      "self",
+      "server"
+    ],
+    "create_image": [
+      "self",
+      "server",
+      "description",
+      "type",
+      "labels"
+    ],
+    "rebuild": [
+      "self",
+      "server",
+      "image",
+      "user_data"
+    ],
+    "enable_backup": [
+      "self",
+      "server"
+    ],
+    "disable_backup": [
+      "self",
+      "server"
+    ],
+    "attach_iso": [
+      "self",
+      "server",
+      "iso"
+    ],
+    "detach_iso": [
+      "self",
+      "server"
+    ],
+    "change_dns_ptr": [
+      "self",
+      "server",
+      "ip",
+      "dns_ptr"
+    ],
+    "change_protection": [
+      "self",
+      "server",
+      "delete",
+      "rebuild"
+    ],
+    "request_console": [
+      "self",
+      "server"
+    ],
+    "attach_to_network": [
+      "self",
+      "server",
+      "network",
+      "ip",
+      "alias_ips",
+      "ip_range"
+    ],
+    "detach_from_network": [
+      "self",
+      "server",
+      "network"
+    ],
+    "change_alias_ips": [
+      "self",
+      "server",
+      "network",
+      "alias_ips"
+    ],
+    "add_to_placement_group": [
+      "self",
+      "server",
+      "placement_group"
+    ],
+    "remove_from_placement_group": [
+      "self",
+      "server"
+    ]
+  },
+  "Datacenter": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "location",
+      "server_types"
+    ]
+  },
+  "DatacenterServerTypes": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "available",
+      "supported",
+      "available_for_migration"
+    ]
+  },
+  "BoundDatacenter": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data"
+    ]
+  },
+  "DatacentersPageResult": {},
+  "DatacentersClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ]
+  },
+  "DNSPtr": {},
+  "BaseDomain": {
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "_parse_datetime": [
+      "self",
+      "value"
+    ]
+  },
+  "DomainIdentityMixin": {
+    "id_or_name": [
+      "self"
+    ],
+    "has_id_or_name": [
+      "self",
+      "id_or_name"
+    ]
+  },
+  "Pagination": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "page",
+      "per_page",
+      "previous_page",
+      "next_page",
+      "last_page",
+      "total_entries"
+    ]
+  },
+  "Meta": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "pagination"
+    ],
+    "parse_meta": [
+      "cls",
+      "response"
+    ]
+  },
+  "T": [],
+  "ResourceClientBase": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "_iter_pages": [
+      "self",
+      "list_function"
+    ],
+    "_get_first_by": [
+      "self",
+      "list_function"
+    ]
+  },
+  "ClientEntityBase": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "Domain": [],
+  "BoundModelBase": {
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "_get_self": [
+      "self"
+    ],
+    "reload": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "Certificate": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "TYPE_UPLOADED": [],
+    "TYPE_MANAGED": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "certificate",
+      "not_valid_before",
+      "not_valid_after",
+      "domain_names",
+      "fingerprint",
+      "created",
+      "labels",
+      "type",
+      "status"
+    ]
+  },
+  "ManagedCertificateStatus": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "issuance",
+      "renewal",
+      "error"
+    ]
+  },
+  "ManagedCertificateError": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "code",
+      "message"
+    ]
+  },
+  "CreateManagedCertificateResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "certificate",
+      "action"
+    ]
+  },
+  "BoundCertificate": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "get_actions_list": [
+      "self",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "status",
+      "sort"
+    ],
+    "update": [
+      "self",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self"
+    ],
+    "retry_issuance": [
+      "self"
+    ]
+  },
+  "CertificatesPageResult": {},
+  "CertificatesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "label_selector",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name",
+      "label_selector"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "certificate",
+      "private_key",
+      "labels"
+    ],
+    "create_managed": [
+      "self",
+      "name",
+      "domain_names",
+      "labels"
+    ],
+    "update": [
+      "self",
+      "certificate",
+      "name",
+      "labels"
+    ],
+    "delete": [
+      "self",
+      "certificate"
+    ],
+    "get_actions_list": [
+      "self",
+      "certificate",
+      "status",
+      "sort",
+      "page",
+      "per_page"
+    ],
+    "get_actions": [
+      "self",
+      "certificate",
+      "status",
+      "sort"
+    ],
+    "retry_issuance": [
+      "self",
+      "certificate"
+    ]
+  },
+  "ServerType": {
+    "__properties__": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "description",
+      "category",
+      "cores",
+      "memory",
+      "disk",
+      "prices",
+      "storage_type",
+      "cpu_type",
+      "architecture",
+      "deprecated",
+      "deprecation",
+      "included_traffic",
+      "locations"
+    ],
+    "deprecated": [
+      "self",
+      "value"
+    ],
+    "deprecation": [
+      "self",
+      "value"
+    ],
+    "included_traffic": [
+      "self",
+      "value"
+    ]
+  },
+  "ServerTypeLocation": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "BoundServerType": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ]
+  },
+  "ServerTypesPageResult": {},
+  "ServerTypesClient": {
+    "_base_url": [],
+    "get_by_id": [
+      "self",
+      "id"
+    ],
+    "get_list": [
+      "self",
+      "name",
+      "page",
+      "per_page"
+    ],
+    "get_all": [
+      "self",
+      "name"
+    ],
+    "get_by_name": [
+      "self",
+      "name"
+    ]
+  },
+  "ZoneMode": [],
+  "ZoneStatus": [],
+  "ZoneRegistrar": [],
+  "Zone": {
+    "MODE_PRIMARY": [],
+    "MODE_SECONDARY": [],
+    "STATUS_OK": [],
+    "STATUS_UPDATING": [],
+    "STATUS_ERROR": [],
+    "REGISTRAR_HETZNER": [],
+    "REGISTRAR_OTHER": [],
+    "REGISTRAR_UNKNOWN": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "id",
+      "name",
+      "created",
+      "mode",
+      "ttl",
+      "labels",
+      "protection",
+      "status",
+      "record_count",
+      "registrar",
+      "primary_nameservers",
+      "authoritative_nameservers"
+    ]
+  },
+  "ZonePrimaryNameserverTSIGAlgorithm": [],
+  "ZonePrimaryNameserver": {
+    "TSIG_ALGORITHM_HMAC_MD5": [],
+    "TSIG_ALGORITHM_HMAC_SHA1": [],
+    "TSIG_ALGORITHM_HMAC_SHA256": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "address",
+      "port",
+      "tsig_algorithm",
+      "tsig_key"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "ZoneAuthoritativeNameserversDelegationStatus": [],
+  "ZoneAuthoritativeNameservers": {
+    "DELEGATION_STATUS_VALID": [],
+    "DELEGATION_STATUS_PARTIALLY_VALID": [],
+    "DELEGATION_STATUS_INVALID": [],
+    "DELEGATION_STATUS_LAME": [],
+    "DELEGATION_STATUS_UNREGISTERED": [],
+    "DELEGATION_STATUS_UNKNOWN": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "assigned",
+      "delegated",
+      "delegation_last_check",
+      "delegation_status"
+    ]
+  },
+  "ZoneProtection": {},
+  "CreateZoneResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "zone",
+      "action"
+    ]
+  },
+  "DeleteZoneResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "ExportZonefileResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "zonefile"
+    ]
+  },
+  "ZoneRRSetType": [],
+  "ZoneRRSet": {
+    "TYPE_A": [],
+    "TYPE_AAAA": [],
+    "TYPE_CAA": [],
+    "TYPE_CNAME": [],
+    "TYPE_DS": [],
+    "TYPE_HINFO": [],
+    "TYPE_HTTPS": [],
+    "TYPE_MX": [],
+    "TYPE_NS": [],
+    "TYPE_PTR": [],
+    "TYPE_RP": [],
+    "TYPE_SOA": [],
+    "TYPE_SRV": [],
+    "TYPE_SVCB": [],
+    "TYPE_TLSA": [],
+    "TYPE_TXT": [],
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "name",
+      "type",
+      "ttl",
+      "labels",
+      "protection",
+      "records",
+      "id",
+      "zone"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "ZoneRRSetProtection": {},
+  "ZoneRecord": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "value",
+      "comment"
+    ],
+    "to_payload": [
+      "self"
+    ]
+  },
+  "CreateZoneRRSetResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "rrset",
+      "action"
+    ]
+  },
+  "DeleteZoneRRSetResponse": {
+    "__api_properties__": [],
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "action"
+    ]
+  },
+  "BoundZone": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "update": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "export_zonefile": [
+      "self"
+    ],
+    "get_actions_list": [
+      "self"
+    ],
+    "get_actions": [
+      "self"
+    ],
+    "import_zonefile": [
+      "self",
+      "zonefile"
+    ],
+    "change_protection": [
+      "self"
+    ],
+    "change_ttl": [
+      "self",
+      "ttl"
+    ],
+    "change_primary_nameservers": [
+      "self",
+      "primary_nameservers"
+    ],
+    "get_rrset": [
+      "self",
+      "name",
+      "type"
+    ],
+    "get_rrset_list": [
+      "self"
+    ],
+    "get_rrset_all": [
+      "self"
+    ],
+    "create_rrset": [
+      "self"
+    ],
+    "update_rrset": [
+      "self",
+      "rrset"
+    ],
+    "delete_rrset": [
+      "self",
+      "rrset"
+    ],
+    "change_rrset_protection": [
+      "self",
+      "rrset"
+    ],
+    "change_rrset_ttl": [
+      "self",
+      "rrset",
+      "ttl"
+    ],
+    "add_rrset_records": [
+      "self",
+      "rrset",
+      "records",
+      "ttl"
+    ],
+    "update_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ],
+    "remove_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ],
+    "set_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ]
+  },
+  "BoundZoneRRSet": {
+    "model": [],
+    "__init__": [
+      "self",
+      "client",
+      "data",
+      "complete"
+    ],
+    "_get_self": [
+      "self"
+    ],
+    "update_rrset": [
+      "self"
+    ],
+    "delete_rrset": [
+      "self"
+    ],
+    "change_rrset_protection": [
+      "self"
+    ],
+    "change_rrset_ttl": [
+      "self",
+      "ttl"
+    ],
+    "add_rrset_records": [
+      "self",
+      "records",
+      "ttl"
+    ],
+    "update_rrset_records": [
+      "self",
+      "records"
+    ],
+    "remove_rrset_records": [
+      "self",
+      "records"
+    ],
+    "set_rrset_records": [
+      "self",
+      "records"
+    ]
+  },
+  "ZonesPageResult": {},
+  "ZoneRRSetsPageResult": {},
+  "ZonesClient": {
+    "_base_url": [],
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "get": [
+      "self",
+      "id_or_name"
+    ],
+    "get_list": [
+      "self"
+    ],
+    "get_all": [
+      "self"
+    ],
+    "create": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "zone"
+    ],
+    "delete": [
+      "self",
+      "zone"
+    ],
+    "export_zonefile": [
+      "self",
+      "zone"
+    ],
+    "get_actions_list": [
+      "self",
+      "zone"
+    ],
+    "get_actions": [
+      "self",
+      "zone"
+    ],
+    "import_zonefile": [
+      "self",
+      "zone",
+      "zonefile"
+    ],
+    "change_protection": [
+      "self",
+      "zone"
+    ],
+    "change_ttl": [
+      "self",
+      "zone",
+      "ttl"
+    ],
+    "change_primary_nameservers": [
+      "self",
+      "zone",
+      "primary_nameservers"
+    ],
+    "get_rrset": [
+      "self",
+      "zone",
+      "name",
+      "type"
+    ],
+    "get_rrset_list": [
+      "self",
+      "zone"
+    ],
+    "get_rrset_all": [
+      "self",
+      "zone"
+    ],
+    "create_rrset": [
+      "self",
+      "zone"
+    ],
+    "update_rrset": [
+      "self",
+      "rrset"
+    ],
+    "delete_rrset": [
+      "self",
+      "rrset"
+    ],
+    "change_rrset_protection": [
+      "self",
+      "rrset"
+    ],
+    "change_rrset_ttl": [
+      "self",
+      "rrset",
+      "ttl"
+    ],
+    "add_rrset_records": [
+      "self",
+      "rrset",
+      "records",
+      "ttl"
+    ],
+    "update_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ],
+    "remove_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ],
+    "set_rrset_records": [
+      "self",
+      "rrset",
+      "records"
+    ]
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "SubjectIdentifierFactory": {
+    "create_public_identifier": [
+      "self",
+      "user_id"
+    ],
+    "create_pairwise_identifier": [
+      "self",
+      "user_id",
+      "sector_identifier"
+    ]
+  },
+  "HashBasedSubjectIdentifierFactory": {
+    "__init__": [
+      "self",
+      "hash_salt"
+    ],
+    "create_public_identifier": [
+      "self",
+      "user_id"
+    ],
+    "create_pairwise_identifier": [
+      "self",
+      "user_id",
+      "sector_identifier"
+    ],
+    "_hash": [
+      "self",
+      "data"
+    ]
+  },
+  "_AESCipher": {
+    "__init__": [
+      "self",
+      "key"
+    ],
+    "encrypt": [
+      "self",
+      "raw"
+    ],
+    "decrypt": [
+      "self",
+      "enc"
+    ],
+    "_pad": [
+      "self",
+      "b"
+    ],
+    "_unpad": [
+      "b"
+    ]
+  },
+  "logger": [],
+  "authorization_request_verify": [
+    "authentication_request"
+  ],
+  "client_id_is_known": [
+    "provider",
+    "authentication_request"
+  ],
+  "redirect_uri_is_in_registered_redirect_uris": [
+    "provider",
+    "authentication_request"
+  ],
+  "response_type_is_in_registered_response_types": [
+    "provider",
+    "authentication_request"
+  ],
+  "userinfo_claims_only_specified_when_access_token_is_issued": [
+    "authentication_request"
+  ],
+  "requested_scope_is_supported": [
+    "provider",
+    "authentication_request"
+  ],
+  "registration_request_verify": [
+    "registration_request"
+  ],
+  "client_preferences_match_provider_capabilities": [
+    "provider",
+    "registration_request"
+  ],
+  "rand_str": [],
+  "AuthorizationState": {
+    "KEY_AUTHORIZATION_REQUEST": [],
+    "KEY_USER_INFO": [],
+    "KEY_EXTRA_ID_TOKEN_CLAIMS": [],
+    "__init__": [
+      "self",
+      "subject_identifier_factory",
+      "authorization_code_db",
+      "access_token_db",
+      "refresh_token_db",
+      "subject_identifier_db"
+    ],
+    "create_authorization_code": [
+      "self",
+      "authorization_request",
+      "subject_identifier",
+      "scope",
+      "user_info",
+      "extra_id_token_claims"
+    ],
+    "create_access_token": [
+      "self",
+      "authorization_request",
+      "subject_identifier",
+      "scope",
+      "user_info"
+    ],
+    "_create_access_token": [
+      "self",
+      "subject_identifier",
+      "auth_req",
+      "granted_scope",
+      "current_scope",
+      "user_info"
+    ],
+    "exchange_code_for_token": [
+      "self",
+      "authorization_code"
+    ],
+    "introspect_access_token": [
+      "self",
+      "access_token_value"
+    ],
+    "create_refresh_token": [
+      "self",
+      "access_token_value"
+    ],
+    "use_refresh_token": [
+      "self",
+      "refresh_token",
+      "scope"
+    ],
+    "get_subject_identifier": [
+      "self",
+      "subject_type",
+      "user_id",
+      "sector_identifier"
+    ],
+    "_is_valid_subject_identifier": [
+      "self",
+      "sub"
+    ],
+    "get_user_id_for_subject_identifier": [
+      "self",
+      "subject_identifier"
+    ],
+    "get_user_info_for_code": [
+      "self",
+      "authorization_code"
+    ],
+    "get_extra_id_token_claims_for_code": [
+      "self",
+      "authorization_code"
+    ],
+    "get_user_info_for_access_token": [
+      "self",
+      "access_token"
+    ],
+    "get_authorization_request_for_code": [
+      "self",
+      "authorization_code"
+    ],
+    "get_authorization_request_for_access_token": [
+      "self",
+      "access_token_value"
+    ],
+    "get_subject_identifier_for_code": [
+      "self",
+      "authorization_code"
+    ],
+    "delete_state_for_subject_identifier": [
+      "self",
+      "subject_identifier"
+    ]
+  },
+  "AccessToken": {
+    "BEARER_TOKEN_TYPE": [],
+    "__init__": [
+      "self",
+      "value",
+      "expires_in",
+      "typ"
+    ]
+  },
+  "extract_bearer_token_from_http_request": [
+    "parsed_request",
+    "authz_header"
+  ],
+  "StorageBase": {
+    "_ttl": [],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "pack": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ],
+    "pop": [
+      "self",
+      "key",
+      "default"
+    ],
+    "from_uri": [
+      "cls",
+      "db_uri",
+      "collection",
+      "db_name",
+      "ttl"
+    ],
+    "type": [
+      "cls",
+      "db_uri"
+    ],
+    "ttl": [
+      "self"
+    ]
+  },
+  "MongoWrapper": {
+    "__init__": [
+      "self",
+      "db_uri",
+      "db_name",
+      "collection",
+      "ttl",
+      "extra_options"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "pack": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ]
+  },
+  "RedisWrapper": {
+    "__init__": [
+      "self",
+      "db_uri"
+    ],
+    "_make_key": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "pack": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ]
+  },
+  "StatelessWrapper": {
+    "__init__": [
+      "self",
+      "collection",
+      "encryption_key",
+      "alg"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "pack": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "items": [
+      "self"
+    ],
+    "_unpack": [
+      "self",
+      "value"
+    ]
+  },
+  "MongoDB": {
+    "__init__": [
+      "self",
+      "db_uri",
+      "db_name",
+      "connection_factory"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "sanitized_uri": [
+      "self"
+    ],
+    "get_connection": [
+      "self"
+    ],
+    "get_database": [
+      "self",
+      "database_name",
+      "username",
+      "password"
+    ],
+    "get_collection": [
+      "self",
+      "collection",
+      "database_name",
+      "username",
+      "password"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_format_mongodb_uri": [
+    "parsed_uri"
+  ],
+  "should_fragment_encode": [
+    "authentication_request"
+  ],
+  "is_allowed_response_type": [
+    "response_type",
+    "supported_response_types"
+  ],
+  "find_common_values": [
+    "preference_values",
+    "supported_values"
+  ],
+  "requested_scope_is_allowed": [
+    "requested_scope",
+    "allowed_scope"
+  ],
+  "AccessTokenRequest": {
+    "c_param": []
+  },
+  "AuthorizationRequest": {
+    "c_param": [],
+    "c_allowed_values": []
+  },
+  "OAuthError": {
+    "__init__": [
+      "self",
+      "message",
+      "oauth_error"
+    ]
+  },
+  "InvalidAuthorizationCode": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InvalidRefreshToken": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InvalidAccessToken": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InvalidScope": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InvalidClientAuthentication": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "InvalidSubjectIdentifier": {},
+  "InvalidRequestError": {
+    "__init__": [
+      "self",
+      "message",
+      "parsed_request",
+      "oauth_error"
+    ]
+  },
+  "InvalidAuthenticationRequest": {
+    "__init__": [
+      "self",
+      "message",
+      "parsed_request",
+      "oauth_error"
+    ],
+    "to_error_url": [
+      "self"
+    ]
+  },
+  "InvalidRedirectURI": {
+    "to_error_url": [
+      "self"
+    ]
+  },
+  "InvalidTokenRequest": {
+    "__init__": [
+      "self",
+      "message",
+      "parsed_request",
+      "oauth_error"
+    ]
+  },
+  "InvalidClientRegistrationRequest": {
+    "__init__": [
+      "self",
+      "message",
+      "parsed_request",
+      "oauth_error"
+    ],
+    "to_json": [
+      "self"
+    ]
+  },
+  "BearerTokenError": {},
+  "AuthorizationError": {},
+  "Provider": {
+    "__init__": [
+      "self",
+      "signing_key",
+      "configuration_information",
+      "authz_state",
+      "clients",
+      "userinfo"
+    ],
+    "provider_configuration": [
+      "self"
+    ],
+    "jwks": [
+      "self"
+    ],
+    "parse_authentication_request": [
+      "self",
+      "request_body",
+      "http_headers"
+    ],
+    "authorize": [
+      "self",
+      "authentication_request",
+      "user_id",
+      "extra_id_token_claims"
+    ],
+    "_add_access_token_to_response": [
+      "self",
+      "response",
+      "access_token"
+    ],
+    "_create_subject_identifier": [
+      "self",
+      "user_id",
+      "client_id",
+      "redirect_uri"
+    ],
+    "_get_requested_claims_in": [
+      "self",
+      "authentication_request",
+      "response_method"
+    ],
+    "_create_signed_id_token": [
+      "self",
+      "client_id",
+      "sub",
+      "user_claims",
+      "nonce",
+      "authorization_code",
+      "access_token_value",
+      "extra_id_token_claims"
+    ],
+    "_check_subject_identifier_matches_requested": [
+      "self",
+      "authentication_request",
+      "sub"
+    ],
+    "handle_token_request": [
+      "self",
+      "request_body",
+      "http_headers",
+      "extra_id_token_claims"
+    ],
+    "_PKCE_verify": [
+      "self",
+      "token_request",
+      "authentication_request"
+    ],
+    "_verify_code_exchange_req": [
+      "self",
+      "token_request",
+      "authentication_request"
+    ],
+    "_do_code_exchange": [
+      "self",
+      "request",
+      "extra_id_token_claims"
+    ],
+    "_do_token_refresh": [
+      "self",
+      "request"
+    ],
+    "_verify_client_authentication": [
+      "self",
+      "request_body",
+      "http_headers"
+    ],
+    "handle_userinfo_request": [
+      "self",
+      "request",
+      "http_headers"
+    ],
+    "_issue_new_client": [
+      "self"
+    ],
+    "match_client_preferences_with_provider_capabilities": [
+      "self",
+      "client_preferences"
+    ],
+    "handle_client_registration_request": [
+      "self",
+      "request",
+      "http_headers"
+    ],
+    "logout_user": [
+      "self",
+      "subject_identifier",
+      "end_session_request"
+    ],
+    "do_post_logout_redirect": [
+      "self",
+      "end_session_request"
+    ]
+  },
+  "verify_client_authentication": [
+    "clients",
+    "parsed_request",
+    "authz_header"
+  ],
+  "Userinfo": {
+    "__init__": [
+      "self",
+      "db"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "get_claims_for": [
+      "self",
+      "user_id",
+      "requested_claims",
+      "userinfo"
+    ]
+  }
+}

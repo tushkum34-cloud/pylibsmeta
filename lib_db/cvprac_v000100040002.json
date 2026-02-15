@@ -1,0 +1,907 @@
+{
+  "__version__": [],
+  "__author__": [],
+  "CvpClient": {
+    "NUM_RETRY_REQUESTS": [],
+    "LATEST_API_VERSION": [],
+    "__init__": [
+      "self",
+      "logger",
+      "syslog",
+      "filename",
+      "log_level"
+    ],
+    "last_used_node": [
+      "self"
+    ],
+    "set_log_level": [
+      "self",
+      "log_level"
+    ],
+    "set_version": [
+      "self",
+      "version"
+    ],
+    "connect": [
+      "self",
+      "nodes",
+      "username",
+      "password",
+      "connect_timeout",
+      "request_timeout",
+      "protocol",
+      "port",
+      "cert",
+      "is_cvaas",
+      "tenant",
+      "api_token",
+      "cvaas_token",
+      "proxies"
+    ],
+    "_create_session": [
+      "self",
+      "all_nodes"
+    ],
+    "_reset_session": [
+      "self"
+    ],
+    "_is_good_response": [
+      "self",
+      "response",
+      "prefix"
+    ],
+    "_check_response_status": [
+      "self",
+      "response",
+      "prefix"
+    ],
+    "_login": [
+      "self"
+    ],
+    "_login_on_prem": [
+      "self"
+    ],
+    "_set_headers_api_token": [
+      "self"
+    ],
+    "logout": [
+      "self"
+    ],
+    "_make_request": [
+      "self",
+      "req_type",
+      "url",
+      "timeout",
+      "data",
+      "files"
+    ],
+    "_send_request": [
+      "self",
+      "req_type",
+      "full_url",
+      "timeout",
+      "data",
+      "files"
+    ],
+    "get": [
+      "self",
+      "url",
+      "timeout"
+    ],
+    "post": [
+      "self",
+      "url",
+      "data",
+      "files",
+      "timeout"
+    ],
+    "delete": [
+      "self",
+      "url",
+      "data",
+      "timeout"
+    ],
+    "_finditem": [
+      "self",
+      "obj",
+      "key"
+    ]
+  },
+  "json_decoder": [
+    "data"
+  ],
+  "OPERATOR_DICT": [],
+  "sanitize_warnings": [
+    "data"
+  ],
+  "CvpApi": {
+    "__init__": [
+      "self",
+      "clnt",
+      "request_timeout"
+    ],
+    "cvp_version_compare": [
+      "self",
+      "opr",
+      "version",
+      "msg"
+    ],
+    "get_cvp_info": [
+      "self"
+    ],
+    "add_user": [
+      "self",
+      "username",
+      "password",
+      "role",
+      "status",
+      "first_name",
+      "last_name",
+      "email",
+      "user_type"
+    ],
+    "update_user": [
+      "self",
+      "username",
+      "password",
+      "role",
+      "status",
+      "first_name",
+      "last_name",
+      "email",
+      "user_type"
+    ],
+    "get_user": [
+      "self",
+      "username"
+    ],
+    "get_users": [
+      "self",
+      "query",
+      "start",
+      "end"
+    ],
+    "delete_user": [
+      "self",
+      "username"
+    ],
+    "get_task_by_id": [
+      "self",
+      "task_id"
+    ],
+    "get_tasks_by_status": [
+      "self",
+      "status",
+      "start",
+      "end"
+    ],
+    "get_tasks": [
+      "self",
+      "start",
+      "end"
+    ],
+    "get_logs_by_id": [
+      "self",
+      "task_id",
+      "start",
+      "end"
+    ],
+    "get_audit_logs_by_id": [
+      "self",
+      "cc_id",
+      "stage_id",
+      "data_size"
+    ],
+    "add_note_to_task": [
+      "self",
+      "task_id",
+      "note"
+    ],
+    "execute_task": [
+      "self",
+      "task_id"
+    ],
+    "cancel_task": [
+      "self",
+      "task_id"
+    ],
+    "get_configlets": [
+      "self",
+      "start",
+      "end"
+    ],
+    "get_configlets_and_mappers": [
+      "self"
+    ],
+    "get_configlet_builder": [
+      "self",
+      "c_id"
+    ],
+    "search_configlets": [
+      "self",
+      "query",
+      "start",
+      "end"
+    ],
+    "get_configlet_by_name": [
+      "self",
+      "name"
+    ],
+    "get_configlets_by_container_id": [
+      "self",
+      "c_id",
+      "start",
+      "end"
+    ],
+    "get_configlets_by_netelement_id": [
+      "self",
+      "d_id",
+      "start",
+      "end"
+    ],
+    "get_image_bundle_by_container_id": [
+      "self",
+      "container_id",
+      "start",
+      "end",
+      "scope"
+    ],
+    "get_configlet_history": [
+      "self",
+      "key",
+      "start",
+      "end"
+    ],
+    "get_inventory": [
+      "self",
+      "start",
+      "end",
+      "query",
+      "provisioned"
+    ],
+    "add_devices_to_inventory": [
+      "self",
+      "device_list",
+      "wait",
+      "move_to_container"
+    ],
+    "add_device_to_inventory": [
+      "self",
+      "device_ip",
+      "parent_name",
+      "parent_key",
+      "wait",
+      "move_to_container"
+    ],
+    "retry_add_to_inventory": [
+      "self",
+      "dev_mac",
+      "device_ip",
+      "username",
+      "password"
+    ],
+    "delete_device": [
+      "self",
+      "dev_mac"
+    ],
+    "delete_devices": [
+      "self",
+      "dev_macs"
+    ],
+    "delete_devices_by_serial": [
+      "self",
+      "devices"
+    ],
+    "get_non_connected_device_count": [
+      "self"
+    ],
+    "save_inventory": [
+      "self"
+    ],
+    "get_devices_in_container": [
+      "self",
+      "name"
+    ],
+    "get_device_by_name": [
+      "self",
+      "fqdn",
+      "search_by_hostname"
+    ],
+    "get_device_by_mac": [
+      "self",
+      "dev_mac"
+    ],
+    "get_device_by_serial": [
+      "self",
+      "device_serial"
+    ],
+    "get_device_configuration": [
+      "self",
+      "dev_mac"
+    ],
+    "get_device_image_info": [
+      "self",
+      "dev_mac"
+    ],
+    "get_containers": [
+      "self",
+      "start",
+      "end"
+    ],
+    "get_container_by_name": [
+      "self",
+      "name"
+    ],
+    "get_container_by_id": [
+      "self",
+      "key"
+    ],
+    "get_configlets_by_device_id": [
+      "self",
+      "mac",
+      "start",
+      "end"
+    ],
+    "add_configlet_builder": [
+      "self",
+      "name",
+      "config",
+      "draft",
+      "form"
+    ],
+    "add_configlet": [
+      "self",
+      "name",
+      "config"
+    ],
+    "delete_configlet": [
+      "self",
+      "name",
+      "key"
+    ],
+    "update_configlet": [
+      "self",
+      "config",
+      "key",
+      "name",
+      "wait_task_ids"
+    ],
+    "update_configlet_builder": [
+      "self",
+      "name",
+      "key",
+      "config",
+      "draft",
+      "wait_for_task",
+      "form"
+    ],
+    "update_reconcile_configlet": [
+      "self",
+      "dev_mac",
+      "config",
+      "key",
+      "name",
+      "reconciled"
+    ],
+    "add_note_to_configlet": [
+      "self",
+      "key",
+      "note"
+    ],
+    "validate_config_for_device": [
+      "self",
+      "dev_mac",
+      "config"
+    ],
+    "validate_config": [
+      "self",
+      "dev_mac",
+      "config"
+    ],
+    "get_all_temp_actions": [
+      "self",
+      "start",
+      "end"
+    ],
+    "_add_temp_action": [
+      "self",
+      "data"
+    ],
+    "_save_topology_v2": [
+      "self",
+      "data"
+    ],
+    "apply_configlets_to_device": [
+      "self",
+      "app_name",
+      "dev",
+      "new_configlets",
+      "create_task",
+      "reorder_configlets",
+      "validate"
+    ],
+    "remove_configlets_from_device": [
+      "self",
+      "app_name",
+      "dev",
+      "del_configlets",
+      "create_task",
+      "validate"
+    ],
+    "apply_configlets_to_container": [
+      "self",
+      "app_name",
+      "container",
+      "new_configlets",
+      "create_task"
+    ],
+    "remove_configlets_from_container": [
+      "self",
+      "app_name",
+      "container",
+      "del_configlets",
+      "create_task"
+    ],
+    "validate_configlets_for_device": [
+      "self",
+      "mac",
+      "configlet_keys",
+      "page_type"
+    ],
+    "get_applied_devices": [
+      "self",
+      "configlet_name",
+      "start",
+      "end"
+    ],
+    "get_applied_containers": [
+      "self",
+      "configlet_name",
+      "start",
+      "end"
+    ],
+    "_container_op": [
+      "self",
+      "container_name",
+      "container_key",
+      "parent_name",
+      "parent_key",
+      "operation"
+    ],
+    "add_container": [
+      "self",
+      "container_name",
+      "parent_name",
+      "parent_key"
+    ],
+    "delete_container": [
+      "self",
+      "container_name",
+      "container_key",
+      "parent_name",
+      "parent_key"
+    ],
+    "get_parent_container_for_device": [
+      "self",
+      "dev_mac"
+    ],
+    "move_device_to_container": [
+      "self",
+      "app_name",
+      "device",
+      "container",
+      "create_task"
+    ],
+    "search_topology": [
+      "self",
+      "query",
+      "start",
+      "end"
+    ],
+    "filter_topology": [
+      "self",
+      "node_id",
+      "fmt",
+      "start",
+      "end"
+    ],
+    "check_compliance": [
+      "self",
+      "node_key",
+      "node_type"
+    ],
+    "get_event_by_id": [
+      "self",
+      "e_id"
+    ],
+    "get_default_snapshot_template": [
+      "self"
+    ],
+    "capture_container_level_snapshot": [
+      "self",
+      "template_key",
+      "container_key"
+    ],
+    "add_image": [
+      "self",
+      "filepath"
+    ],
+    "cancel_image": [
+      "self",
+      "image_name"
+    ],
+    "get_images": [
+      "self",
+      "start",
+      "end"
+    ],
+    "get_image_bundles": [
+      "self",
+      "start",
+      "end"
+    ],
+    "get_image_bundle_by_name": [
+      "self",
+      "name"
+    ],
+    "delete_image_bundle": [
+      "self",
+      "image_key",
+      "image_name"
+    ],
+    "save_image_bundle": [
+      "self",
+      "name",
+      "images",
+      "certified"
+    ],
+    "update_image_bundle": [
+      "self",
+      "bundle_id",
+      "name",
+      "images",
+      "certified"
+    ],
+    "apply_image_to_device": [
+      "self",
+      "image",
+      "device",
+      "create_task"
+    ],
+    "apply_image_to_container": [
+      "self",
+      "image",
+      "container",
+      "create_task"
+    ],
+    "apply_image_to_element": [
+      "self",
+      "image",
+      "element",
+      "name",
+      "id_type",
+      "create_task"
+    ],
+    "remove_image_from_device": [
+      "self",
+      "image",
+      "device"
+    ],
+    "remove_image_from_container": [
+      "self",
+      "image",
+      "container"
+    ],
+    "remove_image_from_element": [
+      "self",
+      "image",
+      "element",
+      "name",
+      "id_type"
+    ],
+    "get_change_controls": [
+      "self",
+      "query",
+      "start",
+      "end"
+    ],
+    "change_control_available_tasks": [
+      "self",
+      "query",
+      "start",
+      "end"
+    ],
+    "create_change_control": [
+      "self",
+      "name",
+      "change_control_tasks",
+      "timezone",
+      "country_id",
+      "date_time",
+      "snapshot_template_key",
+      "change_control_type",
+      "stop_on_error"
+    ],
+    "create_change_control_v3": [
+      "self",
+      "cc_id",
+      "name",
+      "tasks",
+      "sequential"
+    ],
+    "add_notes_to_change_control": [
+      "self",
+      "cc_id",
+      "notes"
+    ],
+    "execute_change_controls": [
+      "self",
+      "cc_ids"
+    ],
+    "approve_change_control": [
+      "self",
+      "cc_id",
+      "timestamp"
+    ],
+    "delete_change_control_approval": [
+      "self",
+      "cc_id"
+    ],
+    "cancel_change_controls": [
+      "self",
+      "cc_ids"
+    ],
+    "delete_change_controls": [
+      "self",
+      "cc_ids"
+    ],
+    "get_change_control_info": [
+      "self",
+      "cc_id"
+    ],
+    "get_change_control_status": [
+      "self",
+      "cc_id"
+    ],
+    "reset_device": [
+      "self",
+      "app_name",
+      "device",
+      "create_task"
+    ],
+    "deploy_device": [
+      "self",
+      "device",
+      "container",
+      "configlets",
+      "image_bundle",
+      "create_task",
+      "app_name"
+    ],
+    "create_enroll_token": [
+      "self",
+      "duration",
+      "devices"
+    ],
+    "get_all_tags": [
+      "self",
+      "element_type",
+      "workspace_id"
+    ],
+    "get_tag_edits": [
+      "self",
+      "workspace_id"
+    ],
+    "get_tag_assignment_edits": [
+      "self",
+      "workspace_id"
+    ],
+    "tag_config": [
+      "self",
+      "element_type",
+      "workspace_id",
+      "tag_label",
+      "tag_value",
+      "remove"
+    ],
+    "tag_assignment_config": [
+      "self",
+      "element_type",
+      "workspace_id",
+      "tag_label",
+      "tag_value",
+      "device_id",
+      "interface_id",
+      "remove"
+    ],
+    "get_all_workspaces": [
+      "self"
+    ],
+    "get_workspace": [
+      "self",
+      "workspace_id"
+    ],
+    "workspace_config": [
+      "self",
+      "workspace_id",
+      "display_name",
+      "description",
+      "request",
+      "request_id"
+    ],
+    "workspace_build_status": [
+      "self",
+      "workspace_id",
+      "build_id"
+    ],
+    "change_control_get_one": [
+      "self",
+      "cc_id",
+      "cc_time"
+    ],
+    "change_control_get_all": [
+      "self"
+    ],
+    "change_control_approval_get_one": [
+      "self",
+      "cc_id",
+      "cc_time"
+    ],
+    "change_control_approval_get_all": [
+      "self"
+    ],
+    "change_control_approve": [
+      "self",
+      "cc_id",
+      "notes",
+      "approve"
+    ],
+    "change_control_delete": [
+      "self",
+      "cc_id"
+    ],
+    "change_control_create_with_custom_stages": [
+      "self",
+      "custom_cc"
+    ],
+    "change_control_create_for_tasks": [
+      "self",
+      "cc_id",
+      "name",
+      "tasks",
+      "series"
+    ],
+    "change_control_start": [
+      "self",
+      "cc_id",
+      "notes"
+    ],
+    "change_control_stop": [
+      "self",
+      "cc_id",
+      "notes"
+    ],
+    "change_control_schedule": [
+      "self",
+      "cc_id",
+      "schedule_time",
+      "notes"
+    ],
+    "device_decommissioning": [
+      "self",
+      "device_id",
+      "request_id"
+    ],
+    "device_decommissioning_status_get_one": [
+      "self",
+      "request_id"
+    ],
+    "device_decommissioning_status_get_all": [
+      "self",
+      "status"
+    ],
+    "add_role": [
+      "self",
+      "name",
+      "description",
+      "moduleList"
+    ],
+    "update_role": [
+      "self",
+      "rolekey",
+      "name",
+      "description",
+      "moduleList"
+    ],
+    "get_role": [
+      "self",
+      "rolekey"
+    ],
+    "get_roles": [
+      "self"
+    ],
+    "delete_role": [
+      "self",
+      "rolekey"
+    ],
+    "delete_roles": [
+      "self",
+      "rolekeys"
+    ],
+    "svc_account_token_get_all": [
+      "self"
+    ],
+    "svc_account_token_get_one": [
+      "self",
+      "token_id"
+    ],
+    "svc_account_token_delete": [
+      "self",
+      "token_id"
+    ],
+    "svc_account_token_set": [
+      "self",
+      "username",
+      "duration",
+      "description"
+    ],
+    "svc_account_get_all": [
+      "self"
+    ],
+    "svc_account_get_one": [
+      "self",
+      "username"
+    ],
+    "_get_valid_role_ids": [
+      "self",
+      "roles"
+    ],
+    "svc_account_set": [
+      "self",
+      "username",
+      "description",
+      "roles",
+      "status"
+    ],
+    "svc_account_delete": [
+      "self",
+      "username"
+    ],
+    "svc_account_delete_expired_tokens": [
+      "self"
+    ]
+  },
+  "CvpClientError": {
+    "__init__": [
+      "self",
+      "msg"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "CvpApiError": {
+    "__init__": [
+      "self",
+      "msg"
+    ]
+  },
+  "CvpLoginError": {
+    "__init__": [
+      "self",
+      "msg"
+    ]
+  },
+  "CvpRequestError": {
+    "__init__": [
+      "self",
+      "msg"
+    ]
+  },
+  "CvpSessionLogOutError": {
+    "__init__": [
+      "self",
+      "msg"
+    ]
+  }
+}

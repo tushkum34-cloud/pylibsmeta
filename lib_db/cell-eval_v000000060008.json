@@ -1,0 +1,574 @@
+{
+  "logger": [],
+  "MetricsEvaluator": {
+    "__init__": [
+      "self",
+      "adata_pred",
+      "adata_real",
+      "de_pred",
+      "de_real",
+      "control_pert",
+      "pert_col",
+      "de_method",
+      "num_threads",
+      "batch_size",
+      "outdir",
+      "allow_discrete",
+      "prefix",
+      "pdex_kwargs",
+      "skip_de"
+    ],
+    "compute": [
+      "self",
+      "profile",
+      "metric_configs",
+      "skip_metrics",
+      "basename",
+      "write_csv",
+      "break_on_error"
+    ]
+  },
+  "_build_anndata_pair": [
+    "real",
+    "pred",
+    "control_pert",
+    "pert_col",
+    "allow_discrete"
+  ],
+  "_convert_to_normlog": [
+    "adata",
+    "which",
+    "allow_discrete"
+  ],
+  "_build_de_comparison": [
+    "anndata_pair",
+    "de_pred",
+    "de_real",
+    "de_method",
+    "num_threads",
+    "batch_size",
+    "allow_discrete",
+    "outdir",
+    "prefix",
+    "pdex_kwargs"
+  ],
+  "_build_pdex_kwargs": [
+    "reference",
+    "groupby_key",
+    "num_workers",
+    "batch_size",
+    "metric",
+    "allow_discrete",
+    "pdex_kwargs"
+  ],
+  "_load_or_build_de": [
+    "mode",
+    "de_path",
+    "anndata_pair",
+    "de_method",
+    "num_threads",
+    "batch_size",
+    "outdir",
+    "prefix",
+    "allow_discrete",
+    "pdex_kwargs"
+  ],
+  "build_base_mean_adata": [
+    "adata",
+    "counts_df",
+    "pert_col",
+    "control_pert",
+    "counts_col",
+    "as_delta",
+    "allow_discrete",
+    "output_path",
+    "output_de_path",
+    "batch_size",
+    "num_threads",
+    "de_method",
+    "pdex_kwargs"
+  ],
+  "_load_counts_df": [
+    "counts_df",
+    "pert_col",
+    "control_pert",
+    "counts_col"
+  ],
+  "_build_counts_df_from_adata": [
+    "adata",
+    "pert_col",
+    "control_pert",
+    "counts_col"
+  ],
+  "_build_pert_baseline": [
+    "adata",
+    "pert_col",
+    "control_pert",
+    "as_delta"
+  ],
+  "guess_is_lognorm": [
+    "adata",
+    "epsilon",
+    "max_threshold",
+    "validate"
+  ],
+  "split_anndata_on_celltype": [
+    "adata",
+    "celltype_col"
+  ],
+  "__all__": [],
+  "score_agg_metrics": [
+    "results_user",
+    "results_base",
+    "output",
+    "comparison_statistic"
+  ],
+  "_calc_norm_by_zero": [
+    "user",
+    "base"
+  ],
+  "_calc_norm_by_one": [
+    "user",
+    "base"
+  ],
+  "PERT_COL": [],
+  "CELLTYPE_COL": [],
+  "CONTROL_VAR": [],
+  "N_CELLS": [],
+  "N_GENES": [],
+  "N_PERTS": [],
+  "N_CELLTYPES": [],
+  "MAX_UMI": [],
+  "NORM_TOTAL": [],
+  "RANDOM_SEED": [],
+  "OUTDIR": [],
+  "build_random_anndata": [
+    "n_cells",
+    "n_genes",
+    "n_perts",
+    "n_celltypes",
+    "pert_col",
+    "celltype_col",
+    "control_var",
+    "random_state",
+    "as_sparse",
+    "normlog",
+    "normtotal"
+  ],
+  "downsample_cells": [
+    "adata",
+    "fraction"
+  ],
+  "get_args": [],
+  "main": [],
+  "PerturbationAnndataPair": {
+    "__post_init__": [
+      "self"
+    ],
+    "_bulk_anndata": [
+      "adata",
+      "groupby_key",
+      "embed_key"
+    ],
+    "pert_mask": [
+      "perts"
+    ],
+    "get_perts": [
+      "self",
+      "include_control"
+    ],
+    "_initialize_bulk_arrays": [
+      "self",
+      "embed_key"
+    ],
+    "build_bulk_array": [
+      "self",
+      "pert",
+      "embed_key"
+    ],
+    "build_cell_array": [
+      "self",
+      "pert",
+      "embed_key"
+    ],
+    "iter_bulk_arrays": [
+      "self",
+      "embed_key"
+    ],
+    "iter_cell_arrays": [
+      "self",
+      "embed_key"
+    ],
+    "ctrl_matrix": [
+      "self",
+      "which",
+      "embed_key"
+    ]
+  },
+  "BulkArrays": {
+    "perturbation_effect": [
+      "self",
+      "which",
+      "abs"
+    ]
+  },
+  "CellArrays": {},
+  "initialize_de_comparison": [
+    "real",
+    "pred",
+    "target_col",
+    "feature_col",
+    "fold_change_col",
+    "log2_fold_change_col",
+    "abs_log2_fold_change_col",
+    "pvalue_col",
+    "fdr_col"
+  ],
+  "DEResults": {
+    "__post_init__": [
+      "self"
+    ],
+    "get_perts": [
+      "self"
+    ],
+    "get_significant_genes": [
+      "self",
+      "pert",
+      "fdr_threshold"
+    ],
+    "filter_to_significant": [
+      "self",
+      "fdr_threshold"
+    ],
+    "get_top_genes": [
+      "self",
+      "sort_by",
+      "fdr_threshold"
+    ]
+  },
+  "DEComparison": {
+    "__post_init__": [
+      "self"
+    ],
+    "iter_perturbations": [
+      "self"
+    ],
+    "get_perts": [
+      "self",
+      "include_control"
+    ],
+    "compute_overlap": [
+      "self",
+      "k",
+      "metric",
+      "fdr_threshold",
+      "sort_by"
+    ]
+  },
+  "DESortBy": {
+    "FOLD_CHANGE": [],
+    "ABS_FOLD_CHANGE": [],
+    "PVALUE": [],
+    "FDR": []
+  },
+  "MetricType": {
+    "DE": [],
+    "ANNDATA_PAIR": []
+  },
+  "MetricBestValue": {
+    "ZERO": [],
+    "ONE": [],
+    "NONE": []
+  },
+  "Metric": {
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "MetricResult": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "MetricInfo": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "pearson_delta": [
+    "data",
+    "embed_key"
+  ],
+  "mse": [
+    "data",
+    "embed_key"
+  ],
+  "mae": [
+    "data",
+    "embed_key"
+  ],
+  "mse_delta": [
+    "data",
+    "embed_key"
+  ],
+  "mae_delta": [
+    "data",
+    "embed_key"
+  ],
+  "edistance": [
+    "data",
+    "embed_key",
+    "metric"
+  ],
+  "discrimination_score": [
+    "data",
+    "metric",
+    "embed_key",
+    "exclude_target_gene"
+  ],
+  "_generic_evaluation": [
+    "data",
+    "func",
+    "use_delta",
+    "embed_key"
+  ],
+  "ClusteringAgreement": {
+    "__init__": [
+      "self",
+      "embed_key",
+      "real_resolution",
+      "pred_resolutions",
+      "metric",
+      "n_neighbors"
+    ],
+    "_score": [
+      "labels_real",
+      "labels_pred",
+      "metric"
+    ],
+    "_cluster_leiden": [
+      "adata",
+      "resolution",
+      "key_added",
+      "n_neighbors"
+    ],
+    "_centroid_ann": [
+      "adata",
+      "category_key",
+      "control_pert",
+      "embed_key"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "metrics_registry": [],
+  "METRIC_FUNC_ADATA_KWARGS": [],
+  "METRIC_FUNC_ADATA": [],
+  "METRIC_FUNC_DE_KWARGS": [],
+  "METRIC_FUNC_DE": [],
+  "METRIC_FUNC": [],
+  "MetricRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "name",
+      "metric_type",
+      "description",
+      "func",
+      "best_value",
+      "is_class",
+      "kwargs"
+    ],
+    "update_metric_kwargs": [
+      "self",
+      "name",
+      "kwargs"
+    ],
+    "get_metric": [
+      "self",
+      "name"
+    ],
+    "list_metrics": [
+      "self",
+      "metric_type"
+    ],
+    "compute": [
+      "self",
+      "name",
+      "data",
+      "kwargs"
+    ]
+  },
+  "de_overlap_metric": [
+    "data",
+    "k",
+    "metric",
+    "fdr_threshold",
+    "sort_by"
+  ],
+  "DESpearmanSignificant": {
+    "__init__": [
+      "self",
+      "fdr_threshold"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "DEDirectionMatch": {
+    "__init__": [
+      "self",
+      "fdr_threshold"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "DESpearmanLFC": {
+    "__init__": [
+      "self",
+      "fdr_threshold"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "DESigGenesRecall": {
+    "__init__": [
+      "self",
+      "fdr_threshold"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "DENsigCounts": {
+    "__init__": [
+      "self",
+      "fdr_threshold"
+    ],
+    "__call__": [
+      "self",
+      "data"
+    ]
+  },
+  "compute_pr_auc": [
+    "data"
+  ],
+  "compute_roc_auc": [
+    "data"
+  ],
+  "compute_generic_auc": [
+    "data",
+    "method"
+  ],
+  "parse_args_baseline": [
+    "parser"
+  ],
+  "run_baseline": [
+    "args"
+  ],
+  "parse_args_run": [
+    "parser"
+  ],
+  "build_outdir": [
+    "outdir"
+  ],
+  "run_evaluation": [
+    "args"
+  ],
+  "VALID_ENCODINGS": [],
+  "EXPECTED_GENE_DIM": [],
+  "MAX_CELL_DIM": [],
+  "parse_args_prep": [
+    "parser"
+  ],
+  "strip_anndata": [
+    "adata",
+    "output_path",
+    "genelist",
+    "pert_col",
+    "celltype_col",
+    "output_pert_col",
+    "output_celltype_col",
+    "ntc_name",
+    "encoding",
+    "allow_discrete",
+    "max_cell_dim",
+    "exp_gene_dim"
+  ],
+  "_validate_tools_in_path": [],
+  "run_prep": [
+    "args"
+  ],
+  "parse_args_score": [
+    "parser"
+  ],
+  "run_score": [
+    "args"
+  ],
+  "DEFAULT_PERT_COL": [],
+  "DEFAULT_CTRL": [],
+  "DEFAULT_COUNTS_COL": [],
+  "DEFAULT_CELLTYPE_COL": [],
+  "DEFAULT_NTC_NAME": [],
+  "DEFAULT_OUTDIR": [],
+  "MINIMAL_METRICS": [],
+  "VCC_METRICS": [],
+  "KNOWN_PROFILES": [],
+  "MetricPipeline": {
+    "__init__": [
+      "self",
+      "profile",
+      "metric_configs",
+      "break_on_error"
+    ],
+    "add_metrics": [
+      "self",
+      "metrics",
+      "configs"
+    ],
+    "add_metric": [
+      "self",
+      "name",
+      "metric_type",
+      "description",
+      "func",
+      "best_value",
+      "is_class",
+      "kwargs"
+    ],
+    "skip_metrics": [
+      "self",
+      "to_skip"
+    ],
+    "_compute_metric": [
+      "self",
+      "name",
+      "data"
+    ],
+    "compute_de_metrics": [
+      "self",
+      "data"
+    ],
+    "compute_anndata_metrics": [
+      "self",
+      "data"
+    ],
+    "get_results": [
+      "self"
+    ],
+    "get_agg_results": [
+      "self"
+    ]
+  }
+}

@@ -1,0 +1,2127 @@
+{
+  "IAPIFactory": {
+    "__call__": [
+      "environ"
+    ]
+  },
+  "IAPI": {
+    "authenticate": [],
+    "challenge": [
+      "status",
+      "app_headers"
+    ],
+    "remember": [
+      "identity"
+    ],
+    "forget": [
+      "identity"
+    ],
+    "login": [
+      "credentials",
+      "identifier_name"
+    ],
+    "logout": [
+      "identifier_name"
+    ]
+  },
+  "IPlugin": {},
+  "IRequestClassifier": {
+    "__call__": [
+      "environ"
+    ]
+  },
+  "IChallengeDecider": {
+    "__call__": [
+      "environ",
+      "status",
+      "headers"
+    ]
+  },
+  "IIdentifier": {
+    "identify": [
+      "environ"
+    ],
+    "remember": [
+      "environ",
+      "identity"
+    ],
+    "forget": [
+      "environ",
+      "identity"
+    ]
+  },
+  "IAuthenticator": {
+    "authenticate": [
+      "environ",
+      "identity"
+    ]
+  },
+  "IChallenger": {
+    "challenge": [
+      "environ",
+      "status",
+      "app_headers",
+      "forget_headers"
+    ]
+  },
+  "IMetadataProvider": {
+    "add_metadata": [
+      "environ",
+      "identity"
+    ]
+  },
+  "_DAV_METHODS": [],
+  "_DAV_USERAGENTS": [],
+  "default_request_classifier": [
+    "environ"
+  ],
+  "default_challenge_decider": [
+    "environ",
+    "status",
+    "headers"
+  ],
+  "passthrough_challenge_decider": [
+    "environ",
+    "status",
+    "headers"
+  ],
+  "authenticated_predicate": [],
+  "PredicateRestriction": {
+    "__init__": [
+      "self",
+      "app",
+      "predicate",
+      "enabled"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "make_authenticated_restriction": [
+    "app",
+    "global_config",
+    "enabled"
+  ],
+  "make_predicate_restriction": [
+    "app",
+    "global_config",
+    "predicate",
+    "enabled"
+  ],
+  "resolveDotted": [
+    "dotted_or_ep"
+  ],
+  "get_api": [
+    "environ"
+  ],
+  "APIFactory": {
+    "__init__": [
+      "self",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "mdproviders",
+      "request_classifier",
+      "challenge_decider",
+      "remote_user_key",
+      "logger"
+    ],
+    "__call__": [
+      "self",
+      "environ"
+    ]
+  },
+  "verify": [
+    "plugin",
+    "iface"
+  ],
+  "make_registries": [
+    "identifiers",
+    "authenticators",
+    "challengers",
+    "mdproviders"
+  ],
+  "match_classification": [
+    "iface",
+    "plugins",
+    "classification"
+  ],
+  "API": {
+    "__init__": [
+      "self",
+      "environ",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "mdproviders",
+      "request_classifier",
+      "challenge_decider",
+      "remote_user_key",
+      "logger"
+    ],
+    "authenticate": [
+      "self"
+    ],
+    "challenge": [
+      "self",
+      "status",
+      "app_headers"
+    ],
+    "remember": [
+      "self",
+      "identity"
+    ],
+    "forget": [
+      "self",
+      "identity"
+    ],
+    "login": [
+      "self",
+      "credentials",
+      "identifier_name"
+    ],
+    "logout": [
+      "self",
+      "identifier_name"
+    ],
+    "_identify": [
+      "self"
+    ],
+    "_authenticate": [
+      "self",
+      "identities"
+    ],
+    "_add_metadata": [
+      "self",
+      "identity"
+    ]
+  },
+  "Identity": {
+    "__repr__": [
+      "self"
+    ],
+    "__str__": []
+  },
+  "_resolve": [
+    "name"
+  ],
+  "WhoConfig": {
+    "__init__": [
+      "self",
+      "here"
+    ],
+    "_makePlugin": [
+      "self",
+      "name",
+      "iface",
+      "options"
+    ],
+    "_getPlugin": [
+      "self",
+      "name",
+      "iface"
+    ],
+    "_parsePluginSequence": [
+      "self",
+      "attr",
+      "proptext",
+      "iface"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ]
+  },
+  "NullHandler": {
+    "emit": [
+      "self",
+      "record"
+    ]
+  },
+  "_LEVELS": [],
+  "make_api_factory_with_config": [
+    "global_conf",
+    "config_file",
+    "remote_user_key",
+    "logger"
+  ],
+  "make_middleware_with_config": [
+    "app",
+    "global_conf",
+    "config_file",
+    "log_file",
+    "log_level"
+  ],
+  "encodestring": [
+    "value"
+  ],
+  "REQUEST_METHOD": [
+    "environ"
+  ],
+  "CONTENT_TYPE": [
+    "environ"
+  ],
+  "USER_AGENT": [
+    "environ"
+  ],
+  "AUTHORIZATION": [
+    "environ"
+  ],
+  "get_cookies": [
+    "environ"
+  ],
+  "construct_url": [
+    "environ"
+  ],
+  "header_value": [
+    "environ",
+    "key"
+  ],
+  "must_decode": [
+    "value"
+  ],
+  "must_encode": [
+    "value"
+  ],
+  "_STARTED": [],
+  "_ENDED": [],
+  "PluggableAuthenticationMiddleware": {
+    "__init__": [
+      "self",
+      "app",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "mdproviders",
+      "request_classifier",
+      "challenge_decider",
+      "log_stream",
+      "log_level",
+      "remote_user_key",
+      "classifier"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "_no_op": [],
+  "wrap_generator": [
+    "result"
+  ],
+  "StartResponseWrapper": {
+    "__init__": [
+      "self",
+      "start_response"
+    ],
+    "wrap_start_response": [
+      "self",
+      "status",
+      "headers",
+      "exc_info"
+    ],
+    "finish_response": [
+      "self",
+      "extra_headers"
+    ]
+  },
+  "make_test_middleware": [
+    "app",
+    "global_conf"
+  ],
+  "DEFAULT_DIGEST": [],
+  "_exclude_separator": [
+    "separator",
+    "value",
+    "fieldname"
+  ],
+  "AuthTicket": {
+    "__init__": [
+      "self",
+      "secret",
+      "userid",
+      "ip",
+      "tokens",
+      "user_data",
+      "time",
+      "cookie_name",
+      "secure",
+      "digest_algo"
+    ],
+    "digest": [
+      "self"
+    ],
+    "cookie_value": [
+      "self"
+    ],
+    "cookie": [
+      "self"
+    ]
+  },
+  "BadTicket": {
+    "__init__": [
+      "self",
+      "msg",
+      "expected"
+    ]
+  },
+  "parse_ticket": [
+    "secret",
+    "ticket",
+    "ip",
+    "digest_algo"
+  ],
+  "calculate_digest": [
+    "ip",
+    "timestamp",
+    "secret",
+    "userid",
+    "tokens",
+    "user_data",
+    "digest_algo"
+  ],
+  "encode_ip_timestamp": [
+    "ip",
+    "timestamp"
+  ],
+  "maybe_encode": [
+    "s",
+    "encoding"
+  ],
+  "TestMiddleware": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "app",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "request_classifier",
+      "mdproviders",
+      "challenge_decider",
+      "log_stream",
+      "log_level",
+      "remote_user_key"
+    ],
+    "_makeEnviron": [
+      "self",
+      "kw"
+    ],
+    "test_ctor_positional_args": [
+      "self"
+    ],
+    "test_ctor_wo_request_classifier_or_classifier_raises": [
+      "self"
+    ],
+    "test_ctor_w_request_classifier_and_classifier_raises": [
+      "self"
+    ],
+    "test_ctor_wo_challenge_decider_raises": [
+      "self"
+    ],
+    "test_ctor_w_classifier": [
+      "self"
+    ],
+    "test_ctor_accepts_logger": [
+      "self"
+    ],
+    "test_call_remoteuser_already_set": [
+      "self"
+    ],
+    "test_call_200_no_plugins": [
+      "self"
+    ],
+    "test_call_401_no_challengers": [
+      "self"
+    ],
+    "test_call_200_no_challengers": [
+      "self"
+    ],
+    "test_call_200_no_challengers_app_calls_forget": [
+      "self"
+    ],
+    "test_call_401_no_identifiers": [
+      "self"
+    ],
+    "test_call_401_challenger_and_identifier_no_authenticator": [
+      "self"
+    ],
+    "test_call_401_challenger_and_identifier_and_authenticator": [
+      "self"
+    ],
+    "test_call_200_challenger_and_identifier_and_authenticator": [
+      "self"
+    ],
+    "test_call_200_identity_reset": [
+      "self"
+    ],
+    "test_call_200_with_metadata": [
+      "self"
+    ],
+    "test_call_ingress_plugin_replaces_application": [
+      "self"
+    ],
+    "test_call_app_doesnt_call_start_response": [
+      "self"
+    ],
+    "test_call_w_challenge_closes_iterable": [
+      "self"
+    ],
+    "test_call_w_challenge_but_no_challenger_still_closes_iterable": [
+      "self"
+    ]
+  },
+  "TestStartResponseWrapper": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_ctor": [
+      "self"
+    ],
+    "test_finish_response": [
+      "self"
+    ]
+  },
+  "WrapGeneratorTests": {
+    "_callFUT": [
+      "self",
+      "iterable"
+    ],
+    "test_w_generator": [
+      "self"
+    ],
+    "test_w_empty_generator": [
+      "self"
+    ],
+    "test_w_iterator_having_close": [
+      "self"
+    ]
+  },
+  "TestMakeTestMiddleware": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_getFactory": [
+      "self"
+    ],
+    "test_it_no_WHO_LOG_in_environ": [
+      "self"
+    ],
+    "test_it_w_WHO_LOG_in_environ": [
+      "self"
+    ]
+  },
+  "DummyApp": {
+    "environ": [],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyWorkingApp": {
+    "__init__": [
+      "self",
+      "status",
+      "headers"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyLogoutApp": {
+    "__init__": [
+      "self",
+      "status"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyGeneratorApp": {
+    "__init__": [
+      "self",
+      "status",
+      "headers"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyIterableWithClose": {
+    "_closed": [],
+    "__init__": [
+      "self",
+      "iterable"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DummyIterableWithCloseApp": {
+    "__init__": [
+      "self",
+      "status",
+      "headers"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyIdentityResetApp": {
+    "__init__": [
+      "self",
+      "status",
+      "headers",
+      "new_identity"
+    ],
+    "__call__": [
+      "self",
+      "environ",
+      "start_response"
+    ]
+  },
+  "DummyChallenger": {
+    "__init__": [
+      "self",
+      "app"
+    ],
+    "challenge": [
+      "self",
+      "environ",
+      "status",
+      "app_headers",
+      "forget_headers"
+    ]
+  },
+  "DummyIdentifier": {
+    "forgotten": [],
+    "remembered": [],
+    "__init__": [
+      "self",
+      "credentials",
+      "remember_headers",
+      "forget_headers",
+      "replace_app"
+    ],
+    "identify": [
+      "self",
+      "environ"
+    ],
+    "forget": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "remember": [
+      "self",
+      "environ",
+      "identity"
+    ]
+  },
+  "DummyAuthenticator": {
+    "authenticate": [
+      "self",
+      "environ",
+      "credentials"
+    ]
+  },
+  "DummyRequestClassifier": {
+    "__call__": [
+      "self",
+      "environ"
+    ]
+  },
+  "DummyChallengeDecider": {
+    "__call__": [
+      "self",
+      "environ",
+      "status",
+      "headers"
+    ]
+  },
+  "DummyStartResponse": {
+    "__call__": [
+      "self",
+      "status",
+      "headers",
+      "exc_info"
+    ]
+  },
+  "DummyMDProvider": {
+    "__init__": [
+      "self",
+      "metadata"
+    ],
+    "add_metadata": [
+      "self",
+      "environ",
+      "identity"
+    ]
+  },
+  "AuthTicketTests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_ctor_defaults": [
+      "self"
+    ],
+    "test_ctor_w_userid_w_embedded_bang": [
+      "self"
+    ],
+    "test_ctor_w_token_w_embedded_bang": [
+      "self"
+    ],
+    "test_ctor_w_token_w_embedded_comma": [
+      "self"
+    ],
+    "test_ctor_w_user_data_w_embedded_bang": [
+      "self"
+    ],
+    "test_ctor_explicit": [
+      "self"
+    ],
+    "test_ctor_string_algorithm": [
+      "self"
+    ],
+    "test_digest": [
+      "self"
+    ],
+    "test_cookie_value_wo_tokens_or_userdata": [
+      "self"
+    ],
+    "test_cookie_value_w_tokens_and_userdata": [
+      "self"
+    ],
+    "test_cookie_not_secure_wo_tokens_or_userdata": [
+      "self"
+    ],
+    "test_cookie_secure_w_tokens_and_userdata": [
+      "self"
+    ]
+  },
+  "BadTicketTests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_wo_expected": [
+      "self"
+    ],
+    "test_w_expected": [
+      "self"
+    ]
+  },
+  "Test_parse_ticket": {
+    "_callFUT": [
+      "self",
+      "secret",
+      "ticket",
+      "ip",
+      "digest"
+    ],
+    "test_bad_timestamp": [
+      "self"
+    ],
+    "test_no_bang_after_userid": [
+      "self"
+    ],
+    "test_wo_tokens_or_data_bad_digest": [
+      "self"
+    ],
+    "test_wo_tokens_or_data_ok_digest": [
+      "self"
+    ],
+    "test_w_tokens_and_data_ok_digest": [
+      "self"
+    ],
+    "test_w_tokens_and_data_ok_alternate_digest": [
+      "self"
+    ]
+  },
+  "Test_helpers": {
+    "test_ints_to_bytes": [
+      "self"
+    ],
+    "test_encode_ip_timestamp": [
+      "self"
+    ],
+    "test_maybe_encode_bytes": [
+      "self"
+    ],
+    "test_maybe_encode_native_string": [
+      "self"
+    ],
+    "test_maybe_encode_unicode": [
+      "self"
+    ]
+  },
+  "_WHEN": [],
+  "_Timemod": {
+    "time": []
+  },
+  "_Monkey": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "AuthenticatedPredicateTests": {
+    "_getFUT": [
+      "self"
+    ],
+    "test___call___no_identity_returns_False": [
+      "self"
+    ],
+    "test___call___w_REMOTE_AUTH_returns_True": [
+      "self"
+    ],
+    "test___call___w_repoze_who_identity_returns_True": [
+      "self"
+    ]
+  },
+  "MakeAuthenticatedRestrictionTests": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_enabled": [
+      "self"
+    ]
+  },
+  "PredicateRestrictionTests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "app"
+    ],
+    "test___call___disabled_predicate_false_calls_app_not_predicate": [
+      "self"
+    ],
+    "test___call___enabled_predicate_false_returns_401": [
+      "self"
+    ],
+    "test___call___enabled_predicate_true_calls_app": [
+      "self"
+    ]
+  },
+  "MakePredicateRestrictionTests": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_non_string_predicate_no_args": [
+      "self"
+    ],
+    "test_disabled_non_string_predicate_w_args": [
+      "self"
+    ],
+    "test_enabled_string_predicate_w_args": [
+      "self"
+    ]
+  },
+  "DummyPredicate": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "CompatTests": {
+    "test_REQUEST_METHOD_miss": [
+      "self"
+    ],
+    "test_REQUEST_METHOD_hit": [
+      "self"
+    ],
+    "test_CONTENT_TYPE_miss": [
+      "self"
+    ],
+    "test_CONTENT_TYPE_hit": [
+      "self"
+    ],
+    "test_USER_AGENT_miss": [
+      "self"
+    ],
+    "test_USER_AGENT_hit": [
+      "self"
+    ],
+    "test_AUTHORIZATION_miss": [
+      "self"
+    ],
+    "test_AUTHORIZATION_hit": [
+      "self"
+    ],
+    "test_get_cookies_no_cache_ok_header_value": [
+      "self"
+    ],
+    "test_get_cookies_w_cache_miss": [
+      "self"
+    ],
+    "test_get_cookies_w_cache_hit": [
+      "self"
+    ],
+    "test_construct_url": [
+      "self"
+    ],
+    "test_header_value_miss": [
+      "self"
+    ],
+    "test_header_value_simple": [
+      "self"
+    ],
+    "test_must_decode_non_string": [
+      "self"
+    ],
+    "test_must_decode_unicode": [
+      "self"
+    ],
+    "test_must_decode_utf8": [
+      "self"
+    ],
+    "test_must_decode_latin1": [
+      "self"
+    ],
+    "test_must_encode_non_string": [
+      "self"
+    ],
+    "test_must_encode_unicode": [
+      "self"
+    ],
+    "test_must_encode_utf8": [
+      "self"
+    ],
+    "test_must_encode_latin1": [
+      "self"
+    ]
+  },
+  "TestWhoConfig": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "here"
+    ],
+    "_getDummyPluginClass": [
+      "self",
+      "iface"
+    ],
+    "test_defaults_before_parse": [
+      "self"
+    ],
+    "test_parse_empty_string": [
+      "self"
+    ],
+    "test_parse_empty_file": [
+      "self"
+    ],
+    "test_parse_plugins": [
+      "self"
+    ],
+    "test_parse_general_empty": [
+      "self"
+    ],
+    "test_parse_general_only": [
+      "self"
+    ],
+    "test_parse_general_with_plugins": [
+      "self"
+    ],
+    "test_parse_identifiers_only": [
+      "self"
+    ],
+    "test_parse_identifiers_with_plugins": [
+      "self"
+    ],
+    "test_parse_authenticators_only": [
+      "self"
+    ],
+    "test_parse_authenticators_with_plugins": [
+      "self"
+    ],
+    "test_parse_challengers_only": [
+      "self"
+    ],
+    "test_parse_challengers_with_plugins": [
+      "self"
+    ],
+    "test_parse_mdproviders_only": [
+      "self"
+    ],
+    "test_parse_mdproviders_with_plugins": [
+      "self"
+    ],
+    "test_parse_make_plugin_names": [
+      "self"
+    ]
+  },
+  "DummyPlugin": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "PLUGINS_ONLY": [],
+  "GENERAL_ONLY": [],
+  "GENERAL_WITH_PLUGINS": [],
+  "IDENTIFIERS_ONLY": [],
+  "IDENTIFIERS_WITH_PLUGINS": [],
+  "AUTHENTICATORS_ONLY": [],
+  "AUTHENTICATORS_WITH_PLUGINS": [],
+  "CHALLENGERS_ONLY": [],
+  "CHALLENGERS_WITH_PLUGINS": [],
+  "MDPROVIDERS_ONLY": [],
+  "MDPROVIDERS_WITH_PLUGINS": [],
+  "MAKE_PLUGIN_ARG_NAMES": [],
+  "TestConfigMiddleware": {
+    "_tempdir": [],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_getFactory": [
+      "self"
+    ],
+    "_getTempfile": [
+      "self",
+      "text"
+    ],
+    "test_sample_config": [
+      "self"
+    ],
+    "test_sample_config_no_log_level": [
+      "self"
+    ],
+    "test_sample_config_w_log_file": [
+      "self"
+    ],
+    "test_sample_config_wo_log_file": [
+      "self"
+    ]
+  },
+  "NullHandlerTests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_inheritance": [
+      "self"
+    ],
+    "test_emit_doesnt_raise_NotImplementedError": [
+      "self"
+    ]
+  },
+  "Test_make_api_factory_with_config": {
+    "_tempdir": [],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_getFactory": [
+      "self"
+    ],
+    "_getTempfile": [
+      "self",
+      "text"
+    ],
+    "test_bad_config_filename": [
+      "self"
+    ],
+    "test_bad_config_content": [
+      "self"
+    ],
+    "test_sample_config_no_logger": [
+      "self"
+    ],
+    "test_sample_config_w_remote_user_key": [
+      "self"
+    ],
+    "test_sample_config_w_logger": [
+      "self"
+    ]
+  },
+  "SAMPLE_CONFIG": [],
+  "TestDefaultRequestClassifier": {
+    "_getFUT": [
+      "self"
+    ],
+    "_makeEnviron": [
+      "self",
+      "kw"
+    ],
+    "test_conforms_to_IRequestClassifier": [
+      "self"
+    ],
+    "test_classify_dav_method": [
+      "self"
+    ],
+    "test_classify_dav_useragent": [
+      "self"
+    ],
+    "test_classify_xmlpost": [
+      "self"
+    ],
+    "test_classify_xmlpost_uppercase": [
+      "self"
+    ],
+    "test_classify_rich_xmlpost": [
+      "self"
+    ],
+    "test_classify_browser": [
+      "self"
+    ]
+  },
+  "TestDefaultChallengeDecider": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_conforms_to_IChallengeDecider": [
+      "self"
+    ],
+    "test_challenges_on_401": [
+      "self"
+    ],
+    "test_doesnt_challenges_on_non_401": [
+      "self"
+    ]
+  },
+  "TestPassthroughChallengeDecider": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_conforms_to_IChallengeDecider": [
+      "self"
+    ],
+    "test_challenges_on_bare_401": [
+      "self"
+    ],
+    "test_doesnt_challenges_on_non_401": [
+      "self"
+    ],
+    "test_doesnt_challenges_on_401_with_WWW_Authenticate": [
+      "self"
+    ],
+    "test_doesnt_challenges_on_401_with_text_html": [
+      "self"
+    ]
+  },
+  "Test_get_api": {
+    "_callFUT": [
+      "self",
+      "environ"
+    ],
+    "test___call___empty_environ": [
+      "self"
+    ],
+    "test___call___w_api_in_environ": [
+      "self"
+    ]
+  },
+  "APIFactoryTests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "plugins",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "mdproviders",
+      "request_classifier",
+      "challenge_decider",
+      "remote_user_key",
+      "logger"
+    ],
+    "test_class_conforms_to_IAPIFactory": [
+      "self"
+    ],
+    "test_instance_conforms_to_IAPIFactory": [
+      "self"
+    ],
+    "test_ctor_defaults": [
+      "self"
+    ],
+    "test___call___empty_environ": [
+      "self"
+    ],
+    "test___call___w_api_in_environ": [
+      "self"
+    ]
+  },
+  "TestMakeRegistries": {
+    "_callFUT": [
+      "self",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "mdproviders"
+    ],
+    "test_empty": [
+      "self"
+    ],
+    "test_brokenimpl": [
+      "self"
+    ],
+    "test_ok": [
+      "self"
+    ]
+  },
+  "TestMatchClassification": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_match_classification": [
+      "self"
+    ]
+  },
+  "APITests": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "environ",
+      "identifiers",
+      "authenticators",
+      "challengers",
+      "request_classifier",
+      "mdproviders",
+      "challenge_decider",
+      "remote_user_key",
+      "logger"
+    ],
+    "_makeEnviron": [
+      "self"
+    ],
+    "test_class_conforms_to_IAPI": [
+      "self"
+    ],
+    "test_ctor_accepts_logger_instance": [
+      "self"
+    ],
+    "test_authenticate_no_identities": [
+      "self"
+    ],
+    "test_authenticate_w_identities_no_authenticators": [
+      "self"
+    ],
+    "test_authenticate_w_identities_w_authenticators_hit": [
+      "self"
+    ],
+    "test_challenge_noidentifier_noapp": [
+      "self"
+    ],
+    "test_challenge_noidentifier_with_app": [
+      "self"
+    ],
+    "test_challenge_identifier_no_app_no_forget_headers": [
+      "self"
+    ],
+    "test_challenge_identifier_app_no_forget_headers": [
+      "self"
+    ],
+    "test_challenge_identifier_no_app_forget_headers": [
+      "self"
+    ],
+    "test_multi_challenge_firstwins": [
+      "self"
+    ],
+    "test_multi_challenge_skipnomatch_findimplicit": [
+      "self"
+    ],
+    "test_multi_challenge_skipnomatch_findexplicit": [
+      "self"
+    ],
+    "test_remember_identifier_plugin_returns_none": [
+      "self"
+    ],
+    "test_remember_no_identity_passed_or_in_environ": [
+      "self"
+    ],
+    "test_remember_no_identity_passed_but_in_environ": [
+      "self"
+    ],
+    "test_remember_w_identity_passed_no_identifier": [
+      "self"
+    ],
+    "test_remember_w_identity_passed_w_identifier": [
+      "self"
+    ],
+    "test_forget_identifier_plugin_returns_none": [
+      "self"
+    ],
+    "test_forget_no_identity_passed_or_in_environ": [
+      "self"
+    ],
+    "test_forget_no_identity_passed_but_in_environ": [
+      "self"
+    ],
+    "test_forget_w_identity_passed_no_identifier": [
+      "self"
+    ],
+    "test_forget_w_identity_passed_w_identifier": [
+      "self"
+    ],
+    "test_login_w_identifier_name_hit": [
+      "self"
+    ],
+    "test_login_wo_identifier_name_hit": [
+      "self"
+    ],
+    "test_login_w_identifier_name_miss": [
+      "self"
+    ],
+    "test_logout_wo_identifier_name_miss": [
+      "self"
+    ],
+    "test_logout_w_identifier_name": [
+      "self"
+    ],
+    "test_logout_wo_identifier_name": [
+      "self"
+    ],
+    "test_logout_removes_repoze_who_identity": [
+      "self"
+    ],
+    "test__identify_success": [
+      "self"
+    ],
+    "test__identify_success_empty_identity": [
+      "self"
+    ],
+    "test__identify_fail": [
+      "self"
+    ],
+    "test__identify_success_skip_noresults": [
+      "self"
+    ],
+    "test__identify_success_multiresults": [
+      "self"
+    ],
+    "test__identify_find_implicit_classifier": [
+      "self"
+    ],
+    "test__identify_find_explicit_classifier": [
+      "self"
+    ],
+    "test__authenticate_success": [
+      "self"
+    ],
+    "test__authenticate_fail": [
+      "self"
+    ],
+    "test__authenticate_success_skip_fail": [
+      "self"
+    ],
+    "test__authenticate_success_multiresult": [
+      "self"
+    ],
+    "test__authenticate_find_implicit_classifier": [
+      "self"
+    ],
+    "test__authenticate_find_explicit_classifier": [
+      "self"
+    ],
+    "test__authenticate_user_null_but_not_none": [
+      "self"
+    ],
+    "test__add_metadata": [
+      "self"
+    ],
+    "test__add_metadata_w_classification": [
+      "self"
+    ]
+  },
+  "TestIdentityDict": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_str": [
+      "self"
+    ],
+    "test_repr": [
+      "self"
+    ]
+  },
+  "DummyNoResultsIdentifier": {
+    "identify": [
+      "self",
+      "environ"
+    ],
+    "remember": [
+      "self"
+    ],
+    "forget": [
+      "self"
+    ]
+  },
+  "DummyFailAuthenticator": {
+    "authenticate": [
+      "self",
+      "environ",
+      "credentials"
+    ]
+  },
+  "DummyMultiPlugin": {},
+  "DummyLogger": {
+    "_info": [],
+    "_debug": [],
+    "info": [
+      "self",
+      "msg"
+    ],
+    "debug": [
+      "self",
+      "msg"
+    ]
+  },
+  "default_password_compare": [
+    "cleartext_password",
+    "stored_password_hash"
+  ],
+  "make_psycopg_conn_factory": [],
+  "SQLAuthenticatorPlugin": {
+    "__init__": [
+      "self",
+      "query",
+      "conn_factory",
+      "compare_fn"
+    ],
+    "authenticate": [
+      "self",
+      "environ",
+      "identity"
+    ]
+  },
+  "SQLMetadataProviderPlugin": {
+    "__init__": [
+      "self",
+      "name",
+      "query",
+      "conn_factory",
+      "filter"
+    ],
+    "add_metadata": [
+      "self",
+      "environ",
+      "identity"
+    ]
+  },
+  "make_authenticator_plugin": [
+    "query",
+    "conn_factory",
+    "compare_fn"
+  ],
+  "make_metadata_plugin": [
+    "name",
+    "query",
+    "conn_factory",
+    "filter"
+  ],
+  "RedirectorPlugin": {
+    "__init__": [
+      "self",
+      "login_url",
+      "came_from_param",
+      "reason_param",
+      "reason_header"
+    ],
+    "challenge": [
+      "self",
+      "environ",
+      "status",
+      "app_headers",
+      "forget_headers"
+    ]
+  },
+  "make_plugin": [
+    "login_url",
+    "came_from_param",
+    "reason_param",
+    "reason_header"
+  ],
+  "BasicAuthPlugin": {
+    "__init__": [
+      "self",
+      "realm"
+    ],
+    "identify": [
+      "self",
+      "environ"
+    ],
+    "remember": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "_get_wwwauth": [
+      "self"
+    ],
+    "forget": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "challenge": [
+      "self",
+      "environ",
+      "status",
+      "app_headers",
+      "forget_headers"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_UTCNOW": [],
+  "_utcnow": [],
+  "AuthTktCookiePlugin": {
+    "userid_typename": [],
+    "userid_type_decoders": [],
+    "userid_type_encoders": [],
+    "__init__": [
+      "self",
+      "secret",
+      "cookie_name",
+      "secure",
+      "include_ip",
+      "timeout",
+      "reissue_time",
+      "userid_checker",
+      "digest_algo",
+      "samesite"
+    ],
+    "identify": [
+      "self",
+      "environ"
+    ],
+    "forget": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "remember": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "authenticate": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "_get_cookies": [
+      "self",
+      "environ",
+      "value",
+      "max_age"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_bool": [
+    "value"
+  ],
+  "_padding_for_file_lines": [],
+  "HTPasswdPlugin": {
+    "__init__": [
+      "self",
+      "filename",
+      "check"
+    ],
+    "authenticate": [
+      "self",
+      "environ",
+      "identity"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PADDING": [],
+  "_same_string": [
+    "x",
+    "y"
+  ],
+  "crypt_check": [
+    "password",
+    "hashed"
+  ],
+  "sha1_check": [
+    "password",
+    "hashed"
+  ],
+  "plain_check": [
+    "password",
+    "hashed"
+  ],
+  "TestHTPasswdPlugin": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "_makeEnviron": [
+      "self"
+    ],
+    "test_implements": [
+      "self"
+    ],
+    "test_authenticate_nocreds": [
+      "self"
+    ],
+    "test_authenticate_nolines": [
+      "self"
+    ],
+    "test_authenticate_nousermatch": [
+      "self"
+    ],
+    "test_authenticate_match": [
+      "self"
+    ],
+    "test_authenticate_badline": [
+      "self"
+    ],
+    "test_authenticate_filename": [
+      "self"
+    ],
+    "test_authenticate_bad_filename_logs_to_repoze_who_logger": [
+      "self"
+    ],
+    "test_crypt_check_hit": [
+      "self"
+    ],
+    "test_crypt_check_miss": [
+      "self"
+    ],
+    "test_crypt_check_gone": [
+      "self"
+    ],
+    "test_sha1_check_w_password_str": [
+      "self"
+    ],
+    "test_sha1_check_w_password_bytes": [
+      "self"
+    ],
+    "test_plain_check": [
+      "self"
+    ],
+    "test_factory_no_filename_raises": [
+      "self"
+    ],
+    "test_factory_no_check_fn_raises": [
+      "self"
+    ],
+    "test_factory": [
+      "self"
+    ]
+  },
+  "TestSQLAuthenticatorPlugin": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "_makeEnviron": [
+      "self"
+    ],
+    "test_implements": [
+      "self"
+    ],
+    "test_authenticate_noresults": [
+      "self"
+    ],
+    "test_authenticate_comparefail": [
+      "self"
+    ],
+    "test_authenticate_comparesuccess": [
+      "self"
+    ],
+    "test_authenticate_nologin": [
+      "self"
+    ]
+  },
+  "TestDefaultPasswordCompare": {
+    "_getFUT": [
+      "self"
+    ],
+    "_get_sha_hex_digest": [
+      "self",
+      "clear"
+    ],
+    "test_shaprefix_success": [
+      "self"
+    ],
+    "test_shaprefix_w_unicode_cleartext": [
+      "self"
+    ],
+    "test_shaprefix_fail": [
+      "self"
+    ],
+    "test_noprefix_success": [
+      "self"
+    ],
+    "test_noprefix_fail": [
+      "self"
+    ]
+  },
+  "TestSQLMetadataProviderPlugin": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "test_implements": [
+      "self"
+    ],
+    "test_add_metadata": [
+      "self"
+    ]
+  },
+  "TestMakeSQLAuthenticatorPlugin": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_noquery": [
+      "self"
+    ],
+    "test_no_connfactory": [
+      "self"
+    ],
+    "test_bad_connfactory": [
+      "self"
+    ],
+    "test_connfactory_specd": [
+      "self"
+    ],
+    "test_comparefunc_specd": [
+      "self"
+    ]
+  },
+  "TestMakeSQLMetadataProviderPlugin": {
+    "_getFUT": [
+      "self"
+    ],
+    "test_no_name": [
+      "self"
+    ],
+    "test_no_query": [
+      "self"
+    ],
+    "test_no_connfactory": [
+      "self"
+    ],
+    "test_bad_connfactory": [
+      "self"
+    ],
+    "test_connfactory_specd": [
+      "self"
+    ],
+    "test_comparefn_specd": [
+      "self"
+    ]
+  },
+  "DummyConnectionFactory": {
+    "closed": [],
+    "query": [],
+    "__init__": [
+      "self",
+      "results"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "cursor": [
+      "self"
+    ],
+    "execute": [
+      "self",
+      "query"
+    ],
+    "fetchall": [
+      "self"
+    ],
+    "fetchone": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "compare_fail": [
+    "cleartext",
+    "stored"
+  ],
+  "compare_succeed": [
+    "cleartext",
+    "stored"
+  ],
+  "_DummyConnFactory": {},
+  "DummyConnFactory": [],
+  "make_dummy_connfactory": [],
+  "TestRedirectorPlugin": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self",
+      "login_url",
+      "came_from_param",
+      "reason_param",
+      "reason_header"
+    ],
+    "_makeEnviron": [
+      "self",
+      "path_info",
+      "identifier"
+    ],
+    "test_class_conforms_to_IChallenger": [
+      "self"
+    ],
+    "test_instance_conforms_to_IChallenger": [
+      "self"
+    ],
+    "test_ctor_w_reason_param_wo_reason_header": [
+      "self"
+    ],
+    "test_ctor_wo_reason_param_w_reason_header": [
+      "self"
+    ],
+    "test_challenge": [
+      "self"
+    ],
+    "test_challenge_with_reason_header": [
+      "self"
+    ],
+    "test_challenge_with_custom_reason_header": [
+      "self"
+    ],
+    "test_challenge_w_reason_no_reason_param_no_came_from_param": [
+      "self"
+    ],
+    "test_challenge_w_reason_no_reason_param_w_came_from_param": [
+      "self"
+    ],
+    "test_challenge_with_reason_and_custom_reason_param": [
+      "self"
+    ],
+    "test_challenge_wo_reason_w_came_from_param": [
+      "self"
+    ],
+    "test_challenge_with_setcookie_from_app": [
+      "self"
+    ]
+  },
+  "Test_make_redirecting_plugin": {
+    "_callFUT": [
+      "self"
+    ],
+    "test_no_login_url_raises": [
+      "self"
+    ],
+    "test_defaults": [
+      "self"
+    ],
+    "test_explicit_came_from_param": [
+      "self"
+    ],
+    "test_explicit_reason_param": [
+      "self"
+    ],
+    "test_explicit_reason_header_param_no_reason_param_raises": [
+      "self"
+    ],
+    "test_explicit_reason_header_param": [
+      "self"
+    ]
+  },
+  "encode_multipart_formdata": [],
+  "TestBasicAuthPlugin": {
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeOne": [
+      "self"
+    ],
+    "_makeEnviron": [
+      "self",
+      "kw"
+    ],
+    "test_implements": [
+      "self"
+    ],
+    "test_challenge": [
+      "self"
+    ],
+    "test_identify_noauthinfo": [
+      "self"
+    ],
+    "test_identify_nonbasic": [
+      "self"
+    ],
+    "test_identify_basic_badencoding": [
+      "self"
+    ],
+    "test_identify_basic_badrepr": [
+      "self"
+    ],
+    "test_identify_basic_ok": [
+      "self"
+    ],
+    "test_identify_basic_ok_utf8_values": [
+      "self"
+    ],
+    "test_identify_basic_ok_latin1_values": [
+      "self"
+    ],
+    "test_remember": [
+      "self"
+    ],
+    "test_forget": [
+      "self"
+    ],
+    "test_challenge_forgetheaders_includes": [
+      "self"
+    ],
+    "test_challenge_forgetheaders_omits": [
+      "self"
+    ],
+    "test_factory": [
+      "self"
+    ]
+  },
+  "TestAuthTktCookiePlugin": {
+    "tempdir": [],
+    "_now_testing": [],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_getTargetClass": [
+      "self"
+    ],
+    "_makeEnviron": [
+      "self",
+      "kw"
+    ],
+    "_makeOne": [
+      "self",
+      "secret"
+    ],
+    "_makeTicket": [
+      "self",
+      "userid",
+      "remote_addr",
+      "tokens",
+      "userdata",
+      "cookie_name",
+      "secure",
+      "time",
+      "digest_algo"
+    ],
+    "_setNowTesting": [
+      "self",
+      "value"
+    ],
+    "test_class_conforms_to_IIdentifier": [
+      "self"
+    ],
+    "test_instance_conforms_to_IIdentifier": [
+      "self"
+    ],
+    "test_class_conforms_to_IAuthenticator": [
+      "self"
+    ],
+    "test_instance_conforms_to_IAuthenticator": [
+      "self"
+    ],
+    "test_timeout_no_reissue": [
+      "self"
+    ],
+    "test_timeout_lower_than_reissue": [
+      "self"
+    ],
+    "test_identify_nocookie": [
+      "self"
+    ],
+    "test_identify_good_cookie_include_ip": [
+      "self"
+    ],
+    "test_identify_good_cookie_dont_include_ip": [
+      "self"
+    ],
+    "test_identify_good_cookie_int_useridtype": [
+      "self"
+    ],
+    "test_identify_good_cookie_unknown_useridtype": [
+      "self"
+    ],
+    "test_identify_bad_cookie": [
+      "self"
+    ],
+    "test_identify_bad_cookie_expired": [
+      "self"
+    ],
+    "test_identify_with_checker_and_existing_account": [
+      "self"
+    ],
+    "test_identify_with_alternate_hash": [
+      "self"
+    ],
+    "test_identify_bad_cookie_with_alternate_hash": [
+      "self"
+    ],
+    "test_remember_creds_same": [
+      "self"
+    ],
+    "test_remember_creds_same_alternate_hash": [
+      "self"
+    ],
+    "test_remember_creds_hash_mismatch": [
+      "self"
+    ],
+    "test_remember_creds_secure_alternate_hash": [
+      "self"
+    ],
+    "test_remember_creds_secure": [
+      "self"
+    ],
+    "test_remember_creds_samesite": [
+      "self"
+    ],
+    "test_remember_creds_different": [
+      "self"
+    ],
+    "test_remember_creds_different_strips_port": [
+      "self"
+    ],
+    "test_remember_creds_different_include_ip": [
+      "self"
+    ],
+    "test_remember_creds_different_bad_old_cookie": [
+      "self"
+    ],
+    "test_remember_creds_different_with_tokens": [
+      "self"
+    ],
+    "test_remember_creds_different_with_tuple_tokens": [
+      "self"
+    ],
+    "test_remember_creds_different_int_userid": [
+      "self"
+    ],
+    "test_remember_creds_different_unicode_userid": [
+      "self"
+    ],
+    "test_remember_creds_reissue": [
+      "self"
+    ],
+    "test_remember_creds_reissue_alternate_hash": [
+      "self"
+    ],
+    "test_l10n_sane_cookie_date": [
+      "self"
+    ],
+    "test_remember_max_age": [
+      "self"
+    ],
+    "test_forget": [
+      "self"
+    ],
+    "test_authenticate_non_auth_tkt_credentials": [
+      "self"
+    ],
+    "test_authenticate_without_checker": [
+      "self"
+    ],
+    "test_authenticate_with_checker_and_non_existing_account": [
+      "self"
+    ],
+    "test_authenticate_with_checker_and_existing_account": [
+      "self"
+    ],
+    "test_factory_wo_secret_wo_secretfile_raises_ValueError": [
+      "self"
+    ],
+    "test_factory_w_secret_w_secretfile_raises_ValueError": [
+      "self"
+    ],
+    "test_factory_w_bad_secretfile_raises_ValueError": [
+      "self"
+    ],
+    "test_factory_w_secret": [
+      "self"
+    ],
+    "test_factory_w_secretfile": [
+      "self"
+    ],
+    "test_factory_with_timeout_and_reissue_time": [
+      "self"
+    ],
+    "test_factory_with_userid_checker": [
+      "self"
+    ],
+    "test_factory_with_alternate_hash": [
+      "self"
+    ],
+    "test_factory_with_alternate_hash_func": [
+      "self"
+    ],
+    "test_factory_with_bogus_hash": [
+      "self"
+    ],
+    "test_remember_max_age_unicode": [
+      "self"
+    ]
+  },
+  "dummy_userid_checker": [
+    "userid"
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "BaseTransportHandler": {
+    "get_max_payload_bytes": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "payload"
+    ],
+    "__call__": [
+      "self",
+      "payload"
+    ]
+  },
+  "UnknownEncoding": {},
+  "SimpleHTTPTransport": {
+    "__init__": [
+      "self",
+      "address",
+      "port"
+    ],
+    "get_max_payload_bytes": [
+      "self"
+    ],
+    "_get_path_content_type": [
+      "self",
+      "payload"
+    ],
+    "send": [
+      "self",
+      "payload"
+    ]
+  },
+  "log": [],
+  "get_thread_local_zipkin_attrs": [],
+  "get_thread_local_span_storage": [],
+  "get_zipkin_attrs": [],
+  "pop_zipkin_attrs": [],
+  "push_zipkin_attrs": [
+    "zipkin_attr"
+  ],
+  "ZipkinError": {},
+  "B3JSON": {},
+  "_parse_single_header": [
+    "b3_header"
+  ],
+  "_parse_multi_header": [
+    "headers"
+  ],
+  "extract_zipkin_attrs_from_headers": [
+    "headers",
+    "sample_rate",
+    "use_128bit_trace_id"
+  ],
+  "create_http_headers": [
+    "context_stack",
+    "tracer",
+    "new_span_id"
+  ],
+  "LOGGING_END_KEY": [],
+  "TransportHandler": [],
+  "ZipkinLoggingContext": {
+    "__init__": [
+      "self",
+      "zipkin_attrs",
+      "endpoint",
+      "span_name",
+      "transport_handler",
+      "report_root_timestamp",
+      "get_tracer",
+      "service_name",
+      "binary_annotations",
+      "add_logging_annotation",
+      "client_context",
+      "max_span_batch_size",
+      "firehose_handler",
+      "encoding",
+      "annotations"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "emit_spans": [
+      "self"
+    ],
+    "_emit_spans_with_span_sender": [
+      "self",
+      "span_sender"
+    ]
+  },
+  "ZipkinBatchSender": {
+    "MAX_PORTION_SIZE": [],
+    "__init__": [
+      "self",
+      "transport_handler",
+      "max_portion_size",
+      "encoder"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "_exc_type",
+      "_exc_value",
+      "_exc_traceback"
+    ],
+    "_reset_queue": [
+      "self"
+    ],
+    "add_span": [
+      "self",
+      "internal_span"
+    ],
+    "flush": [
+      "self"
+    ]
+  },
+  "_thread_local_tracer": [],
+  "_get_thread_local_tracer": [],
+  "_set_thread_local_tracer": [
+    "tracer"
+  ],
+  "_get_contextvars_tracer": [],
+  "_set_contextvars_tracer": [
+    "tracer"
+  ],
+  "Tracer": {
+    "__init__": [
+      "self"
+    ],
+    "get_zipkin_attrs": [
+      "self"
+    ],
+    "push_zipkin_attrs": [
+      "self",
+      "ctx"
+    ],
+    "pop_zipkin_attrs": [
+      "self"
+    ],
+    "add_span": [
+      "self",
+      "span"
+    ],
+    "get_spans": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "set_transport_configured": [
+      "self",
+      "configured"
+    ],
+    "is_transport_configured": [
+      "self"
+    ],
+    "zipkin_span": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ]
+  },
+  "Stack": {
+    "__init__": [
+      "self",
+      "storage"
+    ],
+    "_storage": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "item"
+    ],
+    "pop": [
+      "self"
+    ],
+    "get": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ]
+  },
+  "ThreadLocalStack": {
+    "__init__": [
+      "self"
+    ],
+    "_storage": [
+      "self"
+    ]
+  },
+  "SpanStorage": {},
+  "default_span_storage": [],
+  "has_default_tracer": [],
+  "get_default_tracer": [],
+  "set_default_tracer": [
+    "tracer"
+  ],
+  "ERROR_KEY": [],
+  "F": [],
+  "zipkin_span": {
+    "__init__": [
+      "self",
+      "service_name",
+      "span_name",
+      "zipkin_attrs",
+      "transport_handler",
+      "max_span_batch_size",
+      "annotations",
+      "binary_annotations",
+      "port",
+      "sample_rate",
+      "include",
+      "add_logging_annotation",
+      "report_root_timestamp",
+      "use_128bit_trace_id",
+      "host",
+      "context_stack",
+      "span_storage",
+      "firehose_handler",
+      "kind",
+      "timestamp",
+      "duration",
+      "encoding",
+      "_tracer"
+    ],
+    "__call__": [
+      "self",
+      "f"
+    ],
+    "get_tracer": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "_generate_kind": [
+      "self",
+      "kind",
+      "include"
+    ],
+    "_get_current_context": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "_exc_type",
+      "_exc_value",
+      "_exc_traceback"
+    ],
+    "stop": [
+      "self",
+      "_exc_type",
+      "_exc_value",
+      "_exc_traceback"
+    ],
+    "update_binary_annotations": [
+      "self",
+      "extra_annotations"
+    ],
+    "add_annotation": [
+      "self",
+      "value",
+      "timestamp"
+    ],
+    "add_sa_binary_annotation": [
+      "self",
+      "port",
+      "service_name",
+      "host"
+    ],
+    "override_span_name": [
+      "self",
+      "name"
+    ]
+  },
+  "_validate_args": [
+    "kwargs"
+  ],
+  "zipkin_client_span": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "zipkin_server_span": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "create_http_headers_for_new_span": [
+    "context_stack",
+    "tracer"
+  ],
+  "ZipkinAttrs": {},
+  "generate_random_64bit_string": [],
+  "generate_random_128bit_string": [],
+  "unsigned_hex_to_signed_int": [
+    "hex_string"
+  ],
+  "signed_int_to_unsigned_hex": [
+    "signed_int"
+  ],
+  "_should_sample": [
+    "sample_rate"
+  ],
+  "create_attrs_for_span": [
+    "sample_rate",
+    "trace_id",
+    "span_id",
+    "use_128bit_trace_id",
+    "flags"
+  ],
+  "MockTransportHandler": {
+    "__init__": [
+      "self",
+      "max_payload_bytes"
+    ],
+    "send": [
+      "self",
+      "payload"
+    ],
+    "get_max_payload_bytes": [
+      "self"
+    ],
+    "get_payloads": [
+      "self"
+    ]
+  },
+  "_orig_Thread_start": [],
+  "_orig_Thread_run": [],
+  "_Thread_pre_start": [
+    "self"
+  ],
+  "_Thread_wrap_run": [
+    "self",
+    "actual_run_fn"
+  ],
+  "patch_threading": [],
+  "unpatch_threading": [],
+  "_V2_ATTRIBUTES": [],
+  "detect_span_version_and_encoding": [
+    "message"
+  ],
+  "convert_spans": [
+    "spans",
+    "output_encoding",
+    "input_encoding"
+  ],
+  "Encoding": {
+    "V1_THRIFT": [],
+    "V1_JSON": [],
+    "V2_JSON": [],
+    "V2_PROTO3": []
+  },
+  "Kind": {
+    "CLIENT": [],
+    "SERVER": [],
+    "PRODUCER": [],
+    "CONSUMER": [],
+    "LOCAL": []
+  },
+  "get_encoder": [
+    "encoding"
+  ],
+  "IEncoder": {
+    "fits": [
+      "self",
+      "current_count",
+      "current_size",
+      "max_size",
+      "new_span"
+    ],
+    "encode_span": [
+      "self",
+      "span"
+    ],
+    "encode_queue": [
+      "self",
+      "queue"
+    ]
+  },
+  "JSONEndpoint": {},
+  "_is_str_list": [
+    "any_str_list"
+  ],
+  "_BaseJSONEncoder": {
+    "fits": [
+      "self",
+      "current_count",
+      "current_size",
+      "max_size",
+      "new_span"
+    ],
+    "_create_json_endpoint": [
+      "self",
+      "endpoint",
+      "is_v1"
+    ],
+    "encode_queue": [
+      "self",
+      "queue"
+    ]
+  },
+  "JSONv1BinaryAnnotation": {},
+  "JSONv1Annotation": {},
+  "JSONv1Span": {},
+  "_V1JSONEncoder": {
+    "encode_remote_endpoint": [
+      "self",
+      "remote_endpoint",
+      "kind",
+      "binary_annotations"
+    ],
+    "encode_span": [
+      "self",
+      "v2_span"
+    ]
+  },
+  "JSONv2Annotation": {},
+  "JSONv2Span": {},
+  "_is_dict_str_float": [
+    "mapping"
+  ],
+  "_V2JSONEncoder": {
+    "encode_span": [
+      "self",
+      "span"
+    ]
+  },
+  "_is_bytes_list": [
+    "any_str_list"
+  ],
+  "_V2ProtobufEncoder": {
+    "fits": [
+      "self",
+      "current_count",
+      "current_size",
+      "max_size",
+      "new_span"
+    ],
+    "encode_span": [
+      "self",
+      "span"
+    ],
+    "encode_queue": [
+      "self",
+      "queue"
+    ]
+  },
+  "Endpoint": {},
+  "_V1Span": {},
+  "Span": {
+    "__init__": [
+      "self",
+      "trace_id",
+      "name",
+      "parent_id",
+      "span_id",
+      "kind",
+      "timestamp",
+      "duration",
+      "local_endpoint",
+      "remote_endpoint",
+      "debug",
+      "shared",
+      "annotations",
+      "tags"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__cmp__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "build_v1_span": [
+      "self"
+    ]
+  },
+  "create_endpoint": [
+    "port",
+    "service_name",
+    "host",
+    "use_defaults"
+  ],
+  "copy_endpoint_with_new_service_name": [
+    "endpoint",
+    "new_service_name"
+  ],
+  "get_decoder": [
+    "encoding"
+  ],
+  "IDecoder": {
+    "decode_spans": [
+      "self",
+      "spans"
+    ]
+  },
+  "_sym_db": [],
+  "DESCRIPTOR": [],
+  "_SPAN": [],
+  "_SPAN_TAGSENTRY": [],
+  "_ENDPOINT": [],
+  "_ANNOTATION": [],
+  "_LISTOFSPANS": [],
+  "_REPORTRESPONSE": [],
+  "_SPAN_KIND": [],
+  "Annotation": [],
+  "ListOfSpans": [],
+  "ReportResponse": [],
+  "_SPANSERVICE": [],
+  "installed": [],
+  "encode_pb_list": [
+    "pb_spans"
+  ],
+  "ProtobufSpanArgsDict": {},
+  "_is_dict_str_str": [
+    "mapping"
+  ],
+  "create_protobuf_span": [
+    "span"
+  ],
+  "_hex_to_bytes": [
+    "hex_id"
+  ],
+  "_get_protobuf_kind": [
+    "kind"
+  ],
+  "_convert_endpoint": [
+    "endpoint"
+  ],
+  "_convert_annotations": [
+    "annotations"
+  ]
+}

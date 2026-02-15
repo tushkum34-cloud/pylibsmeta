@@ -1,0 +1,421 @@
+{
+  "__version__": [],
+  "ALIASES": [],
+  "LANG_CODES": [],
+  "KPipeline": {
+    "__init__": [
+      "self",
+      "lang_code",
+      "repo_id",
+      "model",
+      "trf",
+      "en_callable",
+      "device"
+    ],
+    "load_single_voice": [
+      "self",
+      "voice"
+    ],
+    "load_voice": [
+      "self",
+      "voice",
+      "delimiter"
+    ],
+    "tokens_to_ps": [
+      "tokens"
+    ],
+    "waterfall_last": [
+      "tokens",
+      "next_count",
+      "waterfall",
+      "bumps"
+    ],
+    "tokens_to_text": [
+      "tokens"
+    ],
+    "en_tokenize": [
+      "self",
+      "tokens"
+    ],
+    "infer": [
+      "model",
+      "ps",
+      "pack",
+      "speed"
+    ],
+    "generate_from_tokens": [
+      "self",
+      "tokens",
+      "voice",
+      "speed",
+      "model"
+    ],
+    "join_timestamps": [
+      "tokens",
+      "pred_dur"
+    ],
+    "__call__": [
+      "self",
+      "text",
+      "voice",
+      "speed",
+      "split_pattern",
+      "model"
+    ]
+  },
+  "CustomSTFT": {
+    "__init__": [
+      "self",
+      "filter_length",
+      "hop_length",
+      "win_length",
+      "window",
+      "center",
+      "pad_mode"
+    ],
+    "transform": [
+      "self",
+      "waveform"
+    ],
+    "inverse": [
+      "self",
+      "magnitude",
+      "phase",
+      "length"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "KModel": {
+    "MODEL_NAMES": [],
+    "__init__": [
+      "self",
+      "repo_id",
+      "config",
+      "model",
+      "disable_complex"
+    ],
+    "device": [
+      "self"
+    ],
+    "forward_with_tokens": [
+      "self",
+      "input_ids",
+      "ref_s",
+      "speed"
+    ],
+    "forward": [
+      "self",
+      "phonemes",
+      "ref_s",
+      "speed",
+      "return_output"
+    ]
+  },
+  "KModelForONNX": {
+    "__init__": [
+      "self",
+      "kmodel"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "ref_s",
+      "speed"
+    ]
+  },
+  "init_weights": [
+    "m",
+    "mean",
+    "std"
+  ],
+  "get_padding": [
+    "kernel_size",
+    "dilation"
+  ],
+  "AdaIN1d": {
+    "__init__": [
+      "self",
+      "style_dim",
+      "num_features"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "s"
+    ]
+  },
+  "AdaINResBlock1": {
+    "__init__": [
+      "self",
+      "channels",
+      "kernel_size",
+      "dilation",
+      "style_dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "s"
+    ]
+  },
+  "TorchSTFT": {
+    "__init__": [
+      "self",
+      "filter_length",
+      "hop_length",
+      "win_length",
+      "window"
+    ],
+    "transform": [
+      "self",
+      "input_data"
+    ],
+    "inverse": [
+      "self",
+      "magnitude",
+      "phase"
+    ],
+    "forward": [
+      "self",
+      "input_data"
+    ]
+  },
+  "SineGen": {
+    "__init__": [
+      "self",
+      "samp_rate",
+      "upsample_scale",
+      "harmonic_num",
+      "sine_amp",
+      "noise_std",
+      "voiced_threshold",
+      "flag_for_pulse"
+    ],
+    "_f02uv": [
+      "self",
+      "f0"
+    ],
+    "_f02sine": [
+      "self",
+      "f0_values"
+    ],
+    "forward": [
+      "self",
+      "f0"
+    ]
+  },
+  "SourceModuleHnNSF": {
+    "__init__": [
+      "self",
+      "sampling_rate",
+      "upsample_scale",
+      "harmonic_num",
+      "sine_amp",
+      "add_noise_std",
+      "voiced_threshod"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Generator": {
+    "__init__": [
+      "self",
+      "style_dim",
+      "resblock_kernel_sizes",
+      "upsample_rates",
+      "upsample_initial_channel",
+      "resblock_dilation_sizes",
+      "upsample_kernel_sizes",
+      "gen_istft_n_fft",
+      "gen_istft_hop_size",
+      "disable_complex"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "s",
+      "f0"
+    ]
+  },
+  "UpSample1d": {
+    "__init__": [
+      "self",
+      "layer_type"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdainResBlk1d": {
+    "__init__": [
+      "self",
+      "dim_in",
+      "dim_out",
+      "style_dim",
+      "actv",
+      "upsample",
+      "dropout_p"
+    ],
+    "_build_weights": [
+      "self",
+      "dim_in",
+      "dim_out",
+      "style_dim"
+    ],
+    "_shortcut": [
+      "self",
+      "x"
+    ],
+    "_residual": [
+      "self",
+      "x",
+      "s"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "s"
+    ]
+  },
+  "Decoder": {
+    "__init__": [
+      "self",
+      "dim_in",
+      "style_dim",
+      "dim_out",
+      "resblock_kernel_sizes",
+      "upsample_rates",
+      "upsample_initial_channel",
+      "resblock_dilation_sizes",
+      "upsample_kernel_sizes",
+      "gen_istft_n_fft",
+      "gen_istft_hop_size",
+      "disable_complex"
+    ],
+    "forward": [
+      "self",
+      "asr",
+      "F0_curve",
+      "N",
+      "s"
+    ]
+  },
+  "languages": [],
+  "generate_audio": [
+    "text",
+    "kokoro_language",
+    "voice",
+    "speed"
+  ],
+  "generate_and_save_audio": [
+    "output_file",
+    "text",
+    "kokoro_language",
+    "voice",
+    "speed"
+  ],
+  "main": [],
+  "LinearNorm": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim",
+      "bias",
+      "w_init_gain"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm": {
+    "__init__": [
+      "self",
+      "channels",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TextEncoder": {
+    "__init__": [
+      "self",
+      "channels",
+      "kernel_size",
+      "depth",
+      "n_symbols",
+      "actv"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "input_lengths",
+      "m"
+    ]
+  },
+  "AdaLayerNorm": {
+    "__init__": [
+      "self",
+      "style_dim",
+      "channels",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "s"
+    ]
+  },
+  "ProsodyPredictor": {
+    "__init__": [
+      "self",
+      "style_dim",
+      "d_hid",
+      "nlayers",
+      "max_dur",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "texts",
+      "style",
+      "text_lengths",
+      "alignment",
+      "m"
+    ],
+    "F0Ntrain": [
+      "self",
+      "x",
+      "s"
+    ]
+  },
+  "DurationEncoder": {
+    "__init__": [
+      "self",
+      "sty_dim",
+      "d_model",
+      "nlayers",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "style",
+      "text_lengths",
+      "m"
+    ]
+  },
+  "CustomAlbert": {
+    "forward": [
+      "self"
+    ]
+  }
+}

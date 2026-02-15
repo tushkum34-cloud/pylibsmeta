@@ -1,0 +1,898 @@
+{
+  "_canonical_string_encoder": [
+    "string"
+  ],
+  "_encode_canonical": [
+    "object",
+    "output_function"
+  ],
+  "encode_canonical": [
+    "object",
+    "output_function"
+  ],
+  "__version__": [],
+  "logger": [],
+  "StorageBackendInterface": {
+    "get": [
+      "self",
+      "filepath"
+    ],
+    "put": [
+      "self",
+      "fileobj",
+      "filepath",
+      "restrict"
+    ],
+    "remove": [
+      "self",
+      "filepath"
+    ],
+    "getsize": [
+      "self",
+      "filepath"
+    ],
+    "create_folder": [
+      "self",
+      "filepath"
+    ],
+    "list_folder": [
+      "self",
+      "filepath"
+    ]
+  },
+  "FilesystemBackend": {
+    "_instance": [],
+    "__new__": [
+      "cls"
+    ],
+    "get": [
+      "self",
+      "filepath"
+    ],
+    "put": [
+      "self",
+      "fileobj",
+      "filepath",
+      "restrict"
+    ],
+    "remove": [
+      "self",
+      "filepath"
+    ],
+    "getsize": [
+      "self",
+      "filepath"
+    ],
+    "create_folder": [
+      "self",
+      "filepath"
+    ],
+    "list_folder": [
+      "self",
+      "filepath"
+    ]
+  },
+  "Envelope": {
+    "__init__": [
+      "self",
+      "payload",
+      "payload_type",
+      "signatures"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "pae": [
+      "self"
+    ],
+    "sign": [
+      "self",
+      "signer"
+    ],
+    "verify": [
+      "self",
+      "keys",
+      "threshold"
+    ]
+  },
+  "Error": {},
+  "FormatError": {},
+  "UnsupportedAlgorithmError": {},
+  "UnsupportedLibraryError": {},
+  "StorageError": {},
+  "UnverifiedSignatureError": {},
+  "VerificationError": {},
+  "DEFAULT_CHUNK_SIZE": [],
+  "DEFAULT_HASH_ALGORITHM": [],
+  "DEFAULT_HASH_LIBRARY": [],
+  "SUPPORTED_LIBRARIES": [],
+  "digest": [
+    "algorithm",
+    "hash_library"
+  ],
+  "digest_fileobject": [
+    "file_object",
+    "algorithm",
+    "hash_library",
+    "normalize_line_endings"
+  ],
+  "digest_filename": [
+    "filename",
+    "algorithm",
+    "hash_library",
+    "normalize_line_endings",
+    "storage_backend"
+  ],
+  "compute_default_keyid": [
+    "keytype",
+    "scheme",
+    "keyval"
+  ],
+  "AZURE_IMPORT_ERROR": [],
+  "UnsupportedKeyType": {},
+  "AzureSigner": {
+    "SCHEME": [],
+    "__init__": [
+      "self",
+      "az_key_uri",
+      "public_key"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "_get_key_vault_key": [
+      "cred",
+      "vault_name",
+      "key_name"
+    ],
+    "_create_crypto_client": [
+      "cred",
+      "kv_key"
+    ],
+    "_get_keytype_and_scheme": [
+      "crv"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "import_": [
+      "cls",
+      "az_vault_name",
+      "az_key_name"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "AWS_IMPORT_ERROR": [],
+  "AWSSigner": {
+    "SCHEME": [],
+    "aws_algos": [],
+    "__init__": [
+      "self",
+      "aws_key_id",
+      "public_key"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "_get_default_scheme": [
+      "cls",
+      "supported_by_key"
+    ],
+    "_get_keytype_for_scheme": [
+      "scheme"
+    ],
+    "import_": [
+      "cls",
+      "aws_key_id",
+      "local_scheme"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "Signature": {
+    "__init__": [
+      "self",
+      "keyid",
+      "sig",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "signature_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "SPX_IMPORT_ERROR": [],
+  "_SHAKE_SEED_LEN": [],
+  "generate_spx_key_pair": [],
+  "SpxKey": {
+    "DEFAULT_KEY_TYPE": [],
+    "DEFAULT_SCHEME": [],
+    "from_dict": [
+      "cls",
+      "keyid",
+      "key_dict"
+    ],
+    "from_bytes": [
+      "cls",
+      "public"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "verify_signature": [
+      "self",
+      "signature",
+      "data"
+    ]
+  },
+  "SpxSigner": {
+    "__init__": [
+      "self",
+      "private",
+      "public"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "CRYPTO_IMPORT_ERROR": [],
+  "_RSASignArgs": {},
+  "_ECDSASignArgs": {},
+  "_NoSignArgs": {},
+  "_ECDSA_KEYTYPES": [],
+  "_get_rsa_padding": [
+    "name",
+    "hash_algorithm"
+  ],
+  "CryptoSigner": {
+    "SCHEME": [],
+    "PREFIX_ENV_VAR": [],
+    "__init__": [
+      "self",
+      "private_key",
+      "public_key"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "private_bytes": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "generate_ed25519": [
+      "keyid"
+    ],
+    "generate_rsa": [
+      "keyid",
+      "scheme",
+      "size"
+    ],
+    "generate_ecdsa": [
+      "keyid"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "SecretsHandler": [],
+  "Signer": {
+    "sign": [
+      "self",
+      "payload"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "public_key": [
+      "self"
+    ]
+  },
+  "VAULT_IMPORT_ERROR": [],
+  "VaultSigner": {
+    "SCHEME": [],
+    "__init__": [
+      "self",
+      "hv_key_name",
+      "public_key",
+      "hv_key_version"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "import_": [
+      "cls",
+      "hv_key_name"
+    ]
+  },
+  "Key": {
+    "__init__": [
+      "self",
+      "keyid",
+      "keytype",
+      "scheme",
+      "keyval",
+      "unrecognized_fields"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "keyid",
+      "key_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "_to_dict": [
+      "self"
+    ],
+    "_from_dict": [
+      "key_dict"
+    ],
+    "verify_signature": [
+      "self",
+      "signature",
+      "data"
+    ]
+  },
+  "SSlibKey": {
+    "__init__": [
+      "self",
+      "keyid",
+      "keytype",
+      "scheme",
+      "keyval",
+      "unrecognized_fields"
+    ],
+    "get_hash_algorithm_name": [
+      "self"
+    ],
+    "get_padding_name": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "keyid",
+      "key_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "_crypto_key": [
+      "self"
+    ],
+    "_from_crypto": [
+      "public_key"
+    ],
+    "from_crypto": [
+      "cls",
+      "public_key",
+      "keyid",
+      "scheme"
+    ],
+    "_get_rsa_padding": [
+      "name",
+      "hash_algorithm"
+    ],
+    "_verify_ed25519_fallback": [
+      "self",
+      "signature",
+      "data"
+    ],
+    "_verify": [
+      "self",
+      "signature",
+      "data"
+    ],
+    "verify_signature": [
+      "self",
+      "signature",
+      "data"
+    ]
+  },
+  "_KEY_TYPE_ECDSA": [],
+  "PYKCS11_IMPORT_ERROR": [],
+  "ASN1_IMPORT_ERROR": [],
+  "_PYKCS11LIB": [],
+  "PYKCS11LIB": [],
+  "HSMSigner": {
+    "SCHEME_KEYID": [],
+    "SCHEME": [],
+    "SECRETS_HANDLER_MSG": [],
+    "__init__": [
+      "self",
+      "hsm_keyid",
+      "token_filter",
+      "public_key",
+      "pin_handler"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "_find_pkcs_slot": [
+      "filters"
+    ],
+    "_get_session": [
+      "filters"
+    ],
+    "_find_key": [
+      "cls",
+      "session",
+      "keyid",
+      "key_type"
+    ],
+    "_find_key_values": [
+      "cls",
+      "session",
+      "keyid"
+    ],
+    "_build_token_filter": [
+      "cls"
+    ],
+    "import_": [
+      "cls",
+      "hsm_keyid",
+      "token_filter"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "IMPORT_ERROR": [],
+  "SigstoreKey": {
+    "DEFAULT_KEY_TYPE": [],
+    "DEFAULT_SCHEME": [],
+    "__init__": [
+      "self",
+      "keyid",
+      "keytype",
+      "scheme",
+      "keyval",
+      "unrecognized_fields"
+    ],
+    "from_dict": [
+      "cls",
+      "keyid",
+      "key_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "verify_signature": [
+      "self",
+      "signature",
+      "data"
+    ]
+  },
+  "SigstoreSigner": {
+    "SCHEME": [],
+    "__init__": [
+      "self",
+      "token",
+      "public_key"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "_get_uri": [
+      "cls",
+      "ambient"
+    ],
+    "import_": [
+      "cls",
+      "identity",
+      "issuer",
+      "ambient"
+    ],
+    "import_via_auth": [
+      "cls"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ],
+    "import_github_actions": [
+      "cls",
+      "project",
+      "workflow_path",
+      "ref"
+    ]
+  },
+  "get_hash_algorithm": [
+    "name"
+  ],
+  "GCP_IMPORT_ERROR": [],
+  "GCPSigner": {
+    "SCHEME": [],
+    "__init__": [
+      "self",
+      "gcp_keyid",
+      "public_key"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "import_": [
+      "cls",
+      "gcp_keyid"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "GPGKey": {
+    "from_dict": [
+      "cls",
+      "keyid",
+      "key_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "verify_signature": [
+      "self",
+      "signature",
+      "data"
+    ]
+  },
+  "GPGSigner": {
+    "SCHEME": [],
+    "__init__": [
+      "self",
+      "public_key",
+      "homedir"
+    ],
+    "public_key": [
+      "self"
+    ],
+    "from_priv_key_uri": [
+      "cls",
+      "priv_key_uri",
+      "public_key",
+      "secrets_handler"
+    ],
+    "_sig_to_legacy_dict": [
+      "sig"
+    ],
+    "_sig_from_legacy_dict": [
+      "sig_dict"
+    ],
+    "_key_to_legacy_dict": [
+      "key"
+    ],
+    "_key_from_legacy_dict": [
+      "key_dict"
+    ],
+    "import_": [
+      "cls",
+      "keyid",
+      "homedir"
+    ],
+    "sign": [
+      "self",
+      "payload"
+    ]
+  },
+  "log": [],
+  "parse_pubkey_payload": [
+    "data"
+  ],
+  "parse_pubkey_bundle": [
+    "data"
+  ],
+  "_assign_certified_key_info": [
+    "bundle"
+  ],
+  "_get_verified_subkeys": [
+    "bundle"
+  ],
+  "get_pubkey_bundle": [
+    "data",
+    "keyid"
+  ],
+  "parse_signature_packet": [
+    "data",
+    "supported_signature_types",
+    "supported_hash_algorithms",
+    "include_info"
+  ],
+  "CRYPTO": [],
+  "NO_CRYPTO_MSG": [],
+  "ED25519_PUBLIC_KEY_OID": [],
+  "ED25519_PUBLIC_KEY_LENGTH": [],
+  "ED25519_PUBLIC_KEY_PREFIX": [],
+  "ED25519_SIG_LENGTH": [],
+  "get_pubkey_params": [
+    "data"
+  ],
+  "get_signature_params": [
+    "data"
+  ],
+  "create_pubkey": [
+    "pubkey_info"
+  ],
+  "verify_signature": [
+    "signature_object",
+    "pubkey_info",
+    "content",
+    "hash_algorithm_id"
+  ],
+  "get_mpi_length": [
+    "data"
+  ],
+  "hash_object": [
+    "headers",
+    "algorithm",
+    "content"
+  ],
+  "parse_packet_header": [
+    "data",
+    "expected_type"
+  ],
+  "compute_keyid": [
+    "pubkey_packet_data"
+  ],
+  "parse_subpacket_header": [
+    "data"
+  ],
+  "parse_subpackets": [
+    "data"
+  ],
+  "get_hashing_class": [
+    "hash_algorithm_id"
+  ],
+  "PacketParsingError": {},
+  "KeyNotFoundError": {},
+  "PacketVersionNotSupportedError": {},
+  "SignatureAlgorithmNotSupportedError": {},
+  "KeyExpirationError": {
+    "__init__": [
+      "self",
+      "key"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "GPG_TIMEOUT": [],
+  "is_available_gnupg": [
+    "gnupg",
+    "timeout"
+  ],
+  "GPG_ENV_COMMAND": [],
+  "GPG2_COMMAND": [],
+  "GPG1_COMMAND": [],
+  "gpg_command": [],
+  "have_gpg": [],
+  "gpg_version_command": [],
+  "FULLY_SUPPORTED_MIN_VERSION": [],
+  "NO_GPG_MSG": [],
+  "gpg_sign_command": [
+    "keyarg",
+    "homearg"
+  ],
+  "gpg_export_pubkey_command": [
+    "homearg",
+    "keyid"
+  ],
+  "PACKET_TYPE_SIGNATURE": [],
+  "PACKET_TYPE_PRIMARY_KEY": [],
+  "PACKET_TYPE_USER_ID": [],
+  "PACKET_TYPE_USER_ATTR": [],
+  "PACKET_TYPE_SUB_KEY": [],
+  "SUPPORTED_SIGNATURE_PACKET_VERSIONS": [],
+  "SUPPORTED_PUBKEY_PACKET_VERSIONS": [],
+  "SHA1": [],
+  "SHA256": [],
+  "SHA512": [],
+  "SIGNATURE_TYPE_BINARY": [],
+  "SIGNATURE_TYPE_SUB_KEY_BINDING": [],
+  "SIGNATURE_TYPE_CERTIFICATES": [],
+  "SIG_CREATION_SUBPACKET": [],
+  "PARTIAL_KEYID_SUBPACKET": [],
+  "KEY_EXPIRATION_SUBPACKET": [],
+  "PRIMARY_USERID_SUBPACKET": [],
+  "FULL_KEYID_SUBPACKET": [],
+  "GPG_HASH_ALGORITHM_STRING": [],
+  "SUPPORTED_SIGNATURE_ALGORITHMS": [],
+  "SIGNATURE_HANDLERS": [],
+  "create_signature": [
+    "content",
+    "keyid",
+    "homedir",
+    "timeout"
+  ],
+  "export_pubkey": [
+    "keyid",
+    "homedir",
+    "timeout"
+  ],
+  "export_pubkeys": [
+    "keyids",
+    "homedir",
+    "timeout"
+  ],
+  "b64enc": [
+    "data"
+  ],
+  "b64dec": [
+    "string"
+  ],
+  "b": [],
+  "q": [],
+  "l": [],
+  "H": [
+    "m"
+  ],
+  "pow2": [
+    "x",
+    "p"
+  ],
+  "inv": [
+    "z"
+  ],
+  "d": [],
+  "I": [],
+  "xrecover": [
+    "y"
+  ],
+  "By": [],
+  "Bx": [],
+  "B": [],
+  "ident": [],
+  "edwards_add": [
+    "P",
+    "Q"
+  ],
+  "edwards_double": [
+    "P"
+  ],
+  "scalarmult": [
+    "P",
+    "e"
+  ],
+  "Bpow": [],
+  "make_Bpow": [],
+  "scalarmult_B": [
+    "e"
+  ],
+  "encodeint": [
+    "y"
+  ],
+  "encodepoint": [
+    "P"
+  ],
+  "bit": [
+    "h",
+    "i"
+  ],
+  "publickey_unsafe": [
+    "sk"
+  ],
+  "Hint": [
+    "m"
+  ],
+  "signature_unsafe": [
+    "m",
+    "sk",
+    "pk"
+  ],
+  "isoncurve": [
+    "P"
+  ],
+  "decodeint": [
+    "s"
+  ],
+  "decodepoint": [
+    "s"
+  ],
+  "SignatureMismatch": {},
+  "checkvalid": [
+    "s",
+    "m",
+    "pk"
+  ],
+  "seed": [],
+  "data": [],
+  "private_key": [],
+  "public_key": [],
+  "signature": [],
+  "ed25519_known_answers": [],
+  "test_ed25519_kat": [
+    "secret_key",
+    "public_key",
+    "message",
+    "signed",
+    "signature"
+  ],
+  "test_checkparams": []
+}

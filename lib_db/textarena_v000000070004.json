@@ -1,0 +1,7189 @@
+{
+  "ObservationType": {
+    "PROMPT": [],
+    "PLAYER_ACTION": [],
+    "GAME_ACTION_DESCRIPTION": [],
+    "GAME_MESSAGE": [],
+    "GAME_BOARD": [],
+    "GAME_ADMIN": []
+  },
+  "GAME_ID": [],
+  "Message": [],
+  "Observations": [],
+  "Rewards": [],
+  "Info": [],
+  "State": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns"
+    ],
+    "check_turn_limit": [
+      "self"
+    ],
+    "update_current_player_id": [
+      "self",
+      "player_id"
+    ],
+    "standard_resets": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "add_observation": [
+      "self",
+      "message",
+      "observation_type",
+      "from_id",
+      "to_id"
+    ],
+    "get_current_player_observation": [
+      "self"
+    ],
+    "step": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "Env": {
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "Wrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ],
+    "is_wrapped_with": [
+      "self",
+      "wrapper_class"
+    ]
+  },
+  "ObservationWrapper": {
+    "get_observation": [
+      "self"
+    ],
+    "observation": [
+      "self"
+    ]
+  },
+  "RenderWrapper": {
+    "step": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "reset_render": [
+      "self"
+    ]
+  },
+  "ActionWrapper": {
+    "step": [
+      "self",
+      "action"
+    ],
+    "action": [
+      "self",
+      "action"
+    ]
+  },
+  "Agent": {
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "AgentWrapper": {
+    "__init__": [
+      "self",
+      "agent"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "SinglePlayerState": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "step": [
+      "self"
+    ],
+    "set_outcome": [
+      "self",
+      "reward",
+      "reason"
+    ],
+    "set_invalid_move": [
+      "self",
+      "reason",
+      "reward"
+    ]
+  },
+  "TwoPlayerState": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "step": [
+      "self",
+      "rotate_player"
+    ],
+    "manually_set_current_player_id": [
+      "self",
+      "new_player_id"
+    ],
+    "set_winner": [
+      "self",
+      "player_id",
+      "reason"
+    ],
+    "set_winners": [
+      "self",
+      "player_ids",
+      "reason"
+    ],
+    "set_draw": [
+      "self",
+      "reason"
+    ],
+    "set_invalid_move": [
+      "self",
+      "reason"
+    ]
+  },
+  "FFAMultiPlayerState": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "step": [
+      "self",
+      "rotate_player"
+    ],
+    "manually_set_current_player_id": [
+      "self",
+      "new_player_id",
+      "force"
+    ],
+    "add_elimination": [
+      "self",
+      "pid"
+    ],
+    "is_player_alive": [
+      "self",
+      "pid"
+    ],
+    "next_alive_player": [
+      "self",
+      "predicate"
+    ],
+    "set_game_outcome": [
+      "self",
+      "reward_dict",
+      "reason"
+    ],
+    "set_winners": [
+      "self",
+      "player_ids",
+      "reason"
+    ],
+    "set_draw": [
+      "self",
+      "reason"
+    ],
+    "set_invalid_move": [
+      "self",
+      "reason"
+    ]
+  },
+  "TeamMultiPlayerState": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "step": [
+      "self",
+      "rotate_player"
+    ],
+    "manually_set_current_player_id": [
+      "self",
+      "new_player_id"
+    ],
+    "set_winners": [
+      "self",
+      "player_ids",
+      "reason"
+    ],
+    "set_draw": [
+      "self",
+      "reason"
+    ],
+    "set_invalid_move": [
+      "self",
+      "reason"
+    ]
+  },
+  "MinimalMultiPlayerState": {
+    "__init__": [
+      "self",
+      "num_players",
+      "seed",
+      "max_turns",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "game_state",
+      "player_prompt_function",
+      "role_mapping",
+      "secret_roles"
+    ],
+    "step": [
+      "self",
+      "rotate_player"
+    ],
+    "manually_set_current_player_id": [
+      "self",
+      "new_player_id",
+      "force"
+    ],
+    "set_game_outcome": [
+      "self",
+      "reward_dict",
+      "reason"
+    ],
+    "set_winners": [
+      "self",
+      "player_ids",
+      "reason"
+    ],
+    "set_draw": [
+      "self",
+      "reason"
+    ],
+    "set_invalid_move": [
+      "self",
+      "reason"
+    ]
+  },
+  "MATCHMAKING_WS_URI": [],
+  "MATCHMAKING_HTTP_URI": [],
+  "NAME_TO_ID_DICT": [],
+  "strip_env_variant": [
+    "env_id"
+  ],
+  "DynamicWrapperProxy": {
+    "__init__": [
+      "self",
+      "base_env",
+      "env_id_to_wrappers_map"
+    ],
+    "_apply_wrappers_for_env": [
+      "self",
+      "env_id"
+    ],
+    "_get_active_env": [
+      "self"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "OnlineEnvWrapper": {
+    "__init__": [
+      "self",
+      "env_ids",
+      "env_id_names",
+      "model_name",
+      "model_token"
+    ],
+    "_message_receiver": [
+      "self"
+    ],
+    "_matchmaking_receiver": [
+      "self"
+    ],
+    "_action_sender": [
+      "self"
+    ],
+    "_ping_sender": [
+      "self"
+    ],
+    "_get_env_name_from_id": [
+      "self",
+      "env_id"
+    ],
+    "_process_matchmaking_message": [
+      "self",
+      "message_str"
+    ],
+    "connect_to_matchmaking": [
+      "self"
+    ],
+    "connect_to_game_server": [
+      "self"
+    ],
+    "connect": [
+      "self"
+    ],
+    "_process_message": [
+      "self",
+      "message_str"
+    ],
+    "update_loop": [
+      "self"
+    ],
+    "async_get_observation": [
+      "self"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "async_step": [
+      "self",
+      "action"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "async_reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "async_close": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "extract_agent_attributes": [
+    "agent"
+  ],
+  "get_deterministic_model_token": [
+    "email",
+    "model_name",
+    "agent_attributes"
+  ],
+  "register_model": [
+    "model_name",
+    "description",
+    "email",
+    "agent_obj"
+  ],
+  "make_online": [
+    "env_id",
+    "model_name",
+    "model_token",
+    "model_description",
+    "email",
+    "agent"
+  ],
+  "MGC_NAME_TO_ID_DICT": [],
+  "register_mgc_model": [
+    "model_name",
+    "description",
+    "email",
+    "agent_obj",
+    "small_category"
+  ],
+  "make_mgc_online": [
+    "track",
+    "model_name",
+    "model_token",
+    "model_description",
+    "team_hash",
+    "agent",
+    "small_category"
+  ],
+  "__all__": [],
+  "__version__": [],
+  "ClassicalReasoningEvalsObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "LLMObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "DiplomacyObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_get_history_conversation": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "FirstLastObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "GameBoardObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "GameMessagesObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "GameMessagesAndCurrentBoardObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "SingleTurnObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "SettlersOfCatanObservationWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "_convert_obs_to_str": [
+      "self",
+      "player_id"
+    ],
+    "observation": [
+      "self",
+      "player_id",
+      "observation"
+    ]
+  },
+  "SimpleRenderWrapper": {
+    "__init__": [
+      "self",
+      "env",
+      "player_names",
+      "render_mode"
+    ],
+    "_render": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ClipWordsActionWrapper": {
+    "__init__": [
+      "self",
+      "env",
+      "max_num_words"
+    ],
+    "action": [
+      "self",
+      "action"
+    ]
+  },
+  "ClipCharactersActionWrapper": {
+    "__init__": [
+      "self",
+      "env",
+      "max_num_characters"
+    ],
+    "action": [
+      "self",
+      "action"
+    ]
+  },
+  "ActionFormattingWrapper": {
+    "__init__": [
+      "self",
+      "env"
+    ],
+    "action": [
+      "self",
+      "action"
+    ]
+  },
+  "STANDARD_GAME_PROMPT": [],
+  "HumanAgent": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "OpenRouterAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "verbose"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "_retry_request": [
+      "self",
+      "observation",
+      "retries",
+      "delay"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "GeminiAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "verbose",
+      "generation_config"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "_retry_request": [
+      "self",
+      "observation",
+      "retries",
+      "delay"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "OpenAIAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "verbose",
+      "api_key",
+      "base_url"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "_retry_request": [
+      "self",
+      "observation",
+      "retries",
+      "delay"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "HFLocalAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "device",
+      "quantize",
+      "max_new_tokens",
+      "hf_kwargs"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "CerebrasAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "AWSBedrockAgent": {
+    "__init__": [
+      "self",
+      "model_id",
+      "region_name",
+      "system_prompt",
+      "verbose"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "AnthropicAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "max_tokens",
+      "temperature",
+      "verbose"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "_retry_request": [
+      "self",
+      "observation",
+      "retries",
+      "delay"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "GroqAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "verbose"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "_retry_request": [
+      "self",
+      "observation",
+      "retries",
+      "delay"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "OllamaAgent": {
+    "__init__": [
+      "self",
+      "model_name",
+      "system_prompt",
+      "host",
+      "verbose"
+    ],
+    "_make_request": [
+      "self",
+      "observation"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "LlamaCppAgent": {
+    "__init__": [
+      "self",
+      "model_path",
+      "system_prompt",
+      "n_ctx",
+      "n_threads",
+      "chat_format",
+      "verbose"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "AnswerTokenAgentWrapper": {
+    "__init__": [
+      "self",
+      "agent",
+      "answer_token",
+      "debugging"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "ThoughtAgentWrapper": {
+    "__init__": [
+      "self",
+      "agent",
+      "thought_prompt",
+      "answer_prompt",
+      "debugging"
+    ],
+    "__call__": [
+      "self",
+      "observation"
+    ]
+  },
+  "DEFAULT_WRAPPERS": [],
+  "BOARDGAME_WRAPPERS": [],
+  "CONVERSATIONAL_WRAPPERS": [],
+  "EnvSpec": {
+    "make": [
+      "self"
+    ]
+  },
+  "register": [
+    "id",
+    "entry_point",
+    "default_wrappers"
+  ],
+  "register_with_versions": [
+    "id",
+    "entry_point",
+    "wrappers"
+  ],
+  "pprint_registry_detailed": [],
+  "check_env_exists": [
+    "env_id"
+  ],
+  "make": [
+    "env_id"
+  ],
+  "TwoRoomsAndABoomEnv": {
+    "target_pattern": [],
+    "reveal_keyword_pattern": [],
+    "MAX_REVEALS_PER_PLAYER": [],
+    "MAX_MESSAGE_HISTORY": [],
+    "MAX_RECURSION_DEPTH": [],
+    "__init__": [
+      "self",
+      "num_rounds",
+      "cards_per_room",
+      "discussion_rounds"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_validate_game_state": [
+      "self"
+    ],
+    "_assign_roles_and_rooms": [
+      "self",
+      "num_players"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_phase_transition_player_prompts": [
+      "self",
+      "new_phase"
+    ],
+    "_transition_current_pid": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_role_reveal_selection": [
+      "self",
+      "current_pid",
+      "action"
+    ],
+    "_handle_discussion": [
+      "self",
+      "current_pid",
+      "action"
+    ],
+    "_handle_leader_selection": [
+      "self",
+      "current_pid",
+      "action"
+    ]
+  },
+  "create_board_str": [
+    "board"
+  ],
+  "SudokuEnv": {
+    "__init__": [
+      "self",
+      "clues",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_generate_full_grid": [
+      "self"
+    ],
+    "_fill_grid": [
+      "self",
+      "grid"
+    ],
+    "_find_empty": [
+      "self",
+      "grid"
+    ],
+    "is_safe": [
+      "self",
+      "grid",
+      "row",
+      "col",
+      "num"
+    ],
+    "_remove_cells": [
+      "self",
+      "grid",
+      "clues"
+    ],
+    "_solve_sudoku": [
+      "self",
+      "grid"
+    ],
+    "_count_solutions": [
+      "self",
+      "grid",
+      "solutions",
+      "limit"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_grid_string_with_indices": [
+      "self",
+      "game_board"
+    ],
+    "_is_move_correct": [
+      "self",
+      "row",
+      "col",
+      "num"
+    ],
+    "_is_puzzle_complete": [
+      "self"
+    ],
+    "_is_move_correct_complete": [
+      "self",
+      "row",
+      "col",
+      "num"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "CrosswordsEnv": {
+    "__init__": [
+      "self",
+      "hardcore",
+      "max_turns",
+      "num_words"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_load_words": [
+      "self",
+      "words_path",
+      "hardcore"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observer_current_board": [
+      "self"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_determine_initial_grid_size": [
+      "self",
+      "words"
+    ],
+    "_create_empty_grid": [
+      "self",
+      "size"
+    ],
+    "_can_place_word": [
+      "self",
+      "grid",
+      "word",
+      "direction",
+      "row",
+      "col"
+    ],
+    "_place_word_on_grid": [
+      "self",
+      "grid",
+      "word",
+      "direction",
+      "row",
+      "col"
+    ],
+    "_find_overlaps": [
+      "self",
+      "word",
+      "grid",
+      "placed_words",
+      "directions"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_hide_letters": [
+      "self",
+      "grid"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_is_game_over": [
+      "self"
+    ],
+    "_clue_generator": [
+      "self",
+      "string_format"
+    ]
+  },
+  "client": [],
+  "get_clue_examples": [
+    "word"
+  ],
+  "main": [
+    "num_words"
+  ],
+  "Phase": {
+    "NIGHT_MAFIA": [],
+    "NIGHT_DOCTOR": [],
+    "NIGHT_DETECTIVE": [],
+    "DAY_DISCUSSION": [],
+    "DAY_VOTING": []
+  },
+  "Role": {
+    "get_prompt": [
+      "self",
+      "player_id",
+      "player_roles",
+      "num_players",
+      "num_discussion_rounds"
+    ]
+  },
+  "Villager": {
+    "name": [],
+    "team": [],
+    "description": [],
+    "get_prompt": [
+      "self",
+      "player_id",
+      "player_roles",
+      "num_players",
+      "num_discussion_rounds"
+    ]
+  },
+  "Mafia": {
+    "name": [],
+    "team": [],
+    "description": [],
+    "get_prompt": [
+      "self",
+      "player_id",
+      "player_roles",
+      "num_players",
+      "num_discussion_rounds"
+    ]
+  },
+  "Doctor": {
+    "name": [],
+    "team": [],
+    "description": [],
+    "get_prompt": [
+      "self",
+      "player_id",
+      "player_roles",
+      "num_players",
+      "num_discussion_rounds"
+    ]
+  },
+  "Detective": {
+    "name": [],
+    "team": [],
+    "description": [],
+    "get_prompt": [
+      "self",
+      "player_id",
+      "player_roles",
+      "num_players",
+      "num_discussion_rounds"
+    ]
+  },
+  "VoteHandler": {
+    "parse": [
+      "text"
+    ],
+    "tally": [
+      "votes"
+    ]
+  },
+  "SecretMafiaEnv": {
+    "voting_pattern": [],
+    "_ROLE_FACTORY": [],
+    "__init__": [
+      "self",
+      "mafia_ratio",
+      "discussion_rounds"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_assign_roles": [
+      "self",
+      "num_players"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_after_player_action": [
+      "self"
+    ],
+    "_compute_next_phase": [
+      "self"
+    ],
+    "_send_phase_prompts": [
+      "self"
+    ],
+    "_handle_discussion": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_handle_day_vote": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_handle_mafia_vote": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_handle_doctor_action": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_handle_detective_action": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_record_vote": [
+      "self",
+      "pid",
+      "action"
+    ],
+    "_mark_invalid": [
+      "self",
+      "pid",
+      "reason"
+    ],
+    "_resolve_day_votes": [
+      "self"
+    ],
+    "_store_mafia_target": [
+      "self"
+    ],
+    "_resolve_night_outcome": [
+      "self"
+    ],
+    "_eliminate_player": [
+      "self",
+      "pid",
+      "reason"
+    ],
+    "_check_win": [
+      "self"
+    ]
+  },
+  "LiarsDiceEnv": {
+    "__init__": [
+      "self",
+      "num_dice"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_roll_new_dice": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_invalid_move": [
+      "self",
+      "reason"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_apply_die_loss": [
+      "self",
+      "loser_id",
+      "message"
+    ],
+    "_is_valid_bid": [
+      "self",
+      "new_quantity",
+      "new_face_value",
+      "current_bid"
+    ],
+    "_set_outcome": [
+      "self"
+    ]
+  },
+  "_get_choice_letters": [
+    "issue_choices"
+  ],
+  "_get_issue_choices": [
+    "issue"
+  ],
+  "_calculate_score": [
+    "player_id",
+    "proposal"
+  ],
+  "NewRecruitEnv": {
+    "__init__": [
+      "self",
+      "max_turns",
+      "error_allowance"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_process_action": [
+      "self",
+      "action"
+    ],
+    "_proposal_to_str": [
+      "self",
+      "proposal"
+    ],
+    "_accept_proposal": [
+      "self"
+    ],
+    "_reject_proposal": [
+      "self"
+    ],
+    "_calculate_score": [
+      "self",
+      "player_id",
+      "proposal"
+    ],
+    "_parse_letter_sequence": [
+      "self",
+      "letter_sequence"
+    ],
+    "_end_game_with_zero_points": [
+      "self",
+      "reason"
+    ]
+  },
+  "test_init": [],
+  "test_reset": [],
+  "test_proposal_format": [],
+  "test_lowercase_proposal": [],
+  "test_spaced_proposal": [],
+  "test_invalid_letters": [],
+  "test_non_letter_proposal": [],
+  "test_missing_keywords": [],
+  "test_accept_reject_no_proposal": [],
+  "test_continuous_rejection": [],
+  "test_continuous_proposals": [],
+  "test_information_visibility": [],
+  "test_max_turns_reached": [],
+  "test_error_allowance": [],
+  "test_proposal_with_rationale": [],
+  "test_accept_proposal": [],
+  "test_step_function": [],
+  "test_get_board_str": [],
+  "SimpleTakEnv": {
+    "__init__": [
+      "self",
+      "board_size"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_win": [
+      "self",
+      "symbol"
+    ]
+  },
+  "WordChainsEnv": {
+    "__init__": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "CryptarithmEnv": {
+    "_ACTION_RE": [],
+    "__init__": [
+      "self",
+      "equation",
+      "max_turns"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_word_value": [
+      "self",
+      "word"
+    ],
+    "_equation_holds": [
+      "self"
+    ],
+    "_progress": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe": [
+      "self"
+    ]
+  },
+  "IteratedMatchingPenniesEnv": {
+    "__init__": [
+      "self",
+      "num_rounds"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_make_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "WordLadderEnv": {
+    "__init__": [
+      "self",
+      "min_distance",
+      "max_distance",
+      "max_turns"
+    ],
+    "_load_universal_word_list": [
+      "self"
+    ],
+    "_one_letter_diff": [
+      "w1",
+      "w2"
+    ],
+    "_build_neighbor_map": [
+      "words_of_same_len"
+    ],
+    "_find_valid_pairs": [
+      "self",
+      "neighbours",
+      "min_steps",
+      "max_steps"
+    ],
+    "_sample_start_target": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_render_text": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_is_one_alphabet_different": [
+      "self",
+      "next_word"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "IteratedRockPaperScissorsEnv": {
+    "__init__": [
+      "self",
+      "num_rounds"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_parse_action": [
+      "self",
+      "action"
+    ],
+    "_resolve_round": [
+      "self",
+      "p0",
+      "p1"
+    ]
+  },
+  "_NUMBERS": [],
+  "_COLORS": [],
+  "_FILLS": [],
+  "_SHAPES": [],
+  "_is_set": [
+    "cards"
+  ],
+  "_get_missing_card": [
+    "cards"
+  ],
+  "_has_set": [
+    "cards"
+  ],
+  "SetEnv": {
+    "__init__": [
+      "self",
+      "seed"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_parse_action": [
+      "self",
+      "action"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_observe_state": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "BlackjackEnv": {
+    "__init__": [
+      "self",
+      "num_hands"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_draw_card": [
+      "self"
+    ],
+    "_deal_initial_cards": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_hand_score": [
+      "self",
+      "hand"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_hit": [
+      "self"
+    ],
+    "_handle_stand": [
+      "self"
+    ],
+    "_advance_or_finish": [
+      "self",
+      "outcome"
+    ],
+    "_observe_state": [
+      "self"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "StrategoEnv": {
+    "__init__": [
+      "self"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_populate_board": [
+      "self"
+    ],
+    "_render_board": [
+      "self",
+      "player_id",
+      "full_board"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_validate_move": [
+      "self",
+      "player_id",
+      "src_row",
+      "src_col",
+      "dest_row",
+      "dest_col"
+    ],
+    "_check_winner": [
+      "self"
+    ]
+  },
+  "UltimateTicTacToeEnv": {
+    "__init__": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_make_move": [
+      "self",
+      "macro",
+      "row",
+      "col"
+    ],
+    "_check_winner": [
+      "self",
+      "board"
+    ],
+    "_is_draw": [
+      "self"
+    ],
+    "_is_valid_move": [
+      "self",
+      "micro_board",
+      "row",
+      "col"
+    ],
+    "_board_is_full": [
+      "self",
+      "board"
+    ]
+  },
+  "FILES": [],
+  "RANKS": [],
+  "coord_to_rc": [
+    "coord"
+  ],
+  "rc_to_coord": [
+    "r",
+    "c"
+  ],
+  "CrusadeEnv": {
+    "BOARD_N": [],
+    "MAX_MOVES": [],
+    "SCORE_PER_CAPTURE": [],
+    "__init__": [
+      "self"
+    ],
+    "_legal_moves_for_player": [
+      "self",
+      "pid"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe_current_state": [
+      "self",
+      "player_id"
+    ],
+    "_txt_to_cell": [
+      "self",
+      "txt"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_after_move": [
+      "self"
+    ]
+  },
+  "GameOfPureStrategyEnv": {
+    "__init__": [
+      "self"
+    ],
+    "_face_to_val": [
+      "face"
+    ],
+    "_val_to_face": [
+      "v"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_start_round": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "Game2048Env": {
+    "DEFAULT_BOARD_SIZE": [],
+    "CELL_W": [],
+    "ACTIONS": [],
+    "_BRACKET_GROUP_RE": [],
+    "_VALID_DIRECTIONS": [],
+    "__init__": [
+      "self",
+      "target_tile",
+      "board_size"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_min_score_to_reach_tile": [
+      "tile"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_parse_action": [
+      "self",
+      "action"
+    ],
+    "_apply_move": [
+      "self",
+      "dir_idx"
+    ],
+    "_compress_and_merge": [
+      "self",
+      "line"
+    ],
+    "_spawn_tile": [
+      "self",
+      "board"
+    ],
+    "_max_tile": [
+      "self"
+    ],
+    "_check_status": [
+      "self"
+    ]
+  },
+  "UsedCarNegotiationEnv": {
+    "__init__": [
+      "self",
+      "max_rounds",
+      "batna"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_reward_func": [
+      "self",
+      "price",
+      "role"
+    ],
+    "_load_instruction": [
+      "self",
+      "role",
+      "batna"
+    ]
+  },
+  "test_valid_moves": [],
+  "test_move_validation": [],
+  "test_build_validation": [],
+  "test_move_execution": [],
+  "test_invalid_moves": [],
+  "test_win_conditions": [],
+  "test_game_flow": [],
+  "test_random_play": [],
+  "SantoriniBaseFixedWorkerEnv": {
+    "INITIAL_POSITIONS": [],
+    "PLAYER_COLORS": [],
+    "__init__": [
+      "self",
+      "is_open",
+      "show_valid",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_get_valid_moves": [
+      "self",
+      "player_id"
+    ],
+    "_is_valid_move": [
+      "self",
+      "from_row",
+      "from_col",
+      "to_row",
+      "to_col"
+    ],
+    "_is_valid_build": [
+      "self",
+      "board",
+      "worker_row",
+      "worker_col",
+      "build_row",
+      "build_col"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_execute_player_move": [
+      "self",
+      "action"
+    ],
+    "_check_gameover": [
+      "self"
+    ]
+  },
+  "ChopsticksEnv": {
+    "__init__": [
+      "self",
+      "max_turns"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "TestBabyAIByBot": {
+    "test_baby_ai_text_gold_path": [
+      "self"
+    ]
+  },
+  "BabyAiTextEnv": {
+    "__init__": [
+      "self",
+      "env_name",
+      "max_turns",
+      "seed"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "gold_path": [
+      "self"
+    ],
+    "get_inventory": [
+      "self"
+    ]
+  },
+  "IteratedTwoThirdsAverageEnv": {
+    "__init__": [
+      "self",
+      "num_rounds",
+      "min_guess",
+      "max_guess"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "PegJumpEnv": {
+    "ACTION_RE": [],
+    "BOARD_SIZE": [],
+    "__init__": [
+      "self",
+      "initial_empty"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_over": [
+      "self",
+      "frm",
+      "to"
+    ],
+    "_has_move": [
+      "self"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "Suit": {
+    "WHITE": [],
+    "YELLOW": [],
+    "GREEN": [],
+    "BLUE": [],
+    "RED": []
+  },
+  "Card": {
+    "__init__": [
+      "self",
+      "suit",
+      "rank"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "HanabiEnv": {
+    "__init__": [
+      "self",
+      "info_tokens",
+      "fuse_tokens"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_initial_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_state_description": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_discard": [
+      "self",
+      "action"
+    ],
+    "_handle_play": [
+      "self",
+      "action"
+    ],
+    "_handle_reveal": [
+      "self",
+      "action"
+    ],
+    "check_valid_move": [
+      "self",
+      "card_index",
+      "color",
+      "player",
+      "rank"
+    ],
+    "_parse_hint": [
+      "action"
+    ],
+    "_play": [
+      "self",
+      "card"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_check_game_end": [
+      "self"
+    ],
+    "_completed_fireworks": [
+      "self"
+    ],
+    "_calculate_scores": [
+      "self"
+    ],
+    "_generate_deck": [],
+    "generate_hand": [
+      "self",
+      "deck"
+    ],
+    "_draw_card": [
+      "deck"
+    ]
+  },
+  "AlquerqueEnv": {
+    "BOARD_N": [],
+    "MAX_MOVES": [],
+    "SCORE_PER_CAPTURE": [],
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_txt_to_cell": [
+      "self",
+      "txt"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_after_move": [
+      "self"
+    ],
+    "_has_legal_move": [
+      "self",
+      "pid"
+    ]
+  },
+  "BriscolaEnv": {
+    "__init__": [
+      "self"
+    ],
+    "_create_deck": [
+      "self"
+    ],
+    "_get_card_points": [
+      "self",
+      "rank"
+    ],
+    "_get_card_power": [
+      "self",
+      "rank"
+    ],
+    "_card_to_string": [
+      "self",
+      "card"
+    ],
+    "_find_action_token": [
+      "self",
+      "message"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_init_game": [
+      "self"
+    ],
+    "_announce_game_start": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_player_hand": [
+      "self",
+      "player_id"
+    ],
+    "_render_current_trick": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_next_player_in_trick": [
+      "self"
+    ],
+    "_resolve_trick": [
+      "self"
+    ],
+    "_determine_trick_winner": [
+      "self",
+      "trick",
+      "trump_suit"
+    ],
+    "_deal_new_cards": [
+      "self"
+    ],
+    "_is_game_over": [
+      "self"
+    ],
+    "_end_game": [
+      "self"
+    ],
+    "_announce_turn": [
+      "self",
+      "player_id"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "IndianPokerEnv": {
+    "__init__": [
+      "self",
+      "max_rounds",
+      "starting_chips"
+    ],
+    "_rank": [
+      "card"
+    ],
+    "_rank_to_str": [
+      "card"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_init_round": [
+      "self"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_find_token": [
+      "self",
+      "msg"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_announce_actions": [
+      "self",
+      "to_pid"
+    ],
+    "_end_round": [
+      "self",
+      "winner",
+      "reason"
+    ],
+    "_showdown": [
+      "self"
+    ]
+  },
+  "LightsOutEnv": {
+    "__init__": [
+      "self",
+      "size",
+      "max_turns"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_toggle_lights": [
+      "self",
+      "grid",
+      "row",
+      "col"
+    ],
+    "_grid_to_string": [
+      "self",
+      "grid"
+    ],
+    "_is_solved": [
+      "self",
+      "grid"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_show_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_resolve_win": [
+      "self"
+    ],
+    "_resolve_loss": [
+      "self"
+    ]
+  },
+  "LinesOfActionEnv": {
+    "BOARD_N": [],
+    "FILES": [],
+    "RANKS": [],
+    "MOVE_RE": [],
+    "coord_to_rc": [
+      "cls",
+      "coord"
+    ],
+    "rc_to_coord": [
+      "cls",
+      "r",
+      "c"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_initial_board": [
+      "self"
+    ],
+    "_count_pieces_on_line": [
+      "self",
+      "r",
+      "c",
+      "dr",
+      "dc"
+    ],
+    "_connected": [
+      "self",
+      "side"
+    ],
+    "_pos_hash": [
+      "self"
+    ],
+    "_update_repetition_hash": [
+      "self"
+    ]
+  },
+  "CharacterConclaveEnv": {
+    "__init__": [
+      "self",
+      "character_budget"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_rotate_player": [
+      "self",
+      "can_take_turn",
+      "on_exhausted"
+    ],
+    "_attempt_player_rotation_discussion": [
+      "self"
+    ],
+    "_attempt_player_rotation_voting": [
+      "self"
+    ],
+    "_end_discussion_phase": [
+      "self"
+    ],
+    "_validate_player_vote": [
+      "self",
+      "action"
+    ],
+    "_check_and_evaluate_outcome": [
+      "self"
+    ]
+  },
+  "MinesweeperEnv": {
+    "__init__": [
+      "self",
+      "rows",
+      "cols",
+      "num_mines",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_was_in_initial_safe_zone": [
+      "self",
+      "row",
+      "col"
+    ],
+    "_would_be_revealed_initially": [
+      "self",
+      "target_row",
+      "target_col",
+      "start_row",
+      "start_col"
+    ],
+    "setup_mines": [
+      "self",
+      "safe_row",
+      "safe_col"
+    ],
+    "calculate_adjacent_numbers": [
+      "self"
+    ],
+    "clear_all_flags": [
+      "self"
+    ],
+    "_is_solved": [
+      "self"
+    ]
+  },
+  "render_game_state": [
+    "current_proposal",
+    "total_amount",
+    "negotiation_history",
+    "max_history_items"
+  ],
+  "render_negotiation_summary": [
+    "negotiation_history",
+    "player_proposal_history",
+    "total_amount"
+  ],
+  "render_final_results": [
+    "final_amounts",
+    "player_roles",
+    "total_amount"
+  ],
+  "TwoDollarEnv": {
+    "__init__": [
+      "self",
+      "player_roles",
+      "total_amount",
+      "max_rounds",
+      "error_allowance"
+    ],
+    "_load_available_roles": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_assign_random_roles": [
+      "self"
+    ],
+    "_assign_specific_roles": [
+      "self",
+      "role_names"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_is_valid_action": [
+      "self",
+      "action"
+    ],
+    "_is_valid_proposal": [
+      "self",
+      "action"
+    ],
+    "_extract_proposal_amount": [
+      "self",
+      "action"
+    ],
+    "_validate_role_specific_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_valid_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_proposal": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_accept": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_reject": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_record_action": [
+      "self",
+      "player_id",
+      "action_type",
+      "amount",
+      "message"
+    ],
+    "_check_deal_accepted": [
+      "self"
+    ],
+    "_end_game": [
+      "self"
+    ],
+    "_finalize_accepted_deal": [
+      "self"
+    ],
+    "_handle_no_deal": [
+      "self"
+    ],
+    "_set_final_rewards": [
+      "self"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "TestTwoDollarValidation": {
+    "fresh_env": [
+      "self"
+    ],
+    "env_with_proposal": [
+      "self"
+    ],
+    "test_accept_without_proposal_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_reject_without_proposal_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_accept_own_proposal_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_reject_own_proposal_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_no_bracketed_action_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_free_text_before_action_valid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_other_brackets_ignored": [
+      "self",
+      "fresh_env"
+    ],
+    "test_multiple_actions_invalid": [
+      "self",
+      "env_with_proposal"
+    ],
+    "test_multiple_actions_propose_accept_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_negative_amount_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_amount_over_limit_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_propose_zero_valid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_propose_exact_limit_valid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_decimal_amounts_valid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_non_decimal_amounts_valid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_missing_dollar_sign_invalid": [
+      "self",
+      "fresh_env"
+    ],
+    "test_dollar_sign_after_number_invalid": [
+      "self",
+      "fresh_env"
+    ]
+  },
+  "TestTwoDollarGameFlow": {
+    "fresh_env": [
+      "self"
+    ],
+    "test_turn_alternation": [
+      "self",
+      "fresh_env"
+    ],
+    "test_round_counter_increments": [
+      "self",
+      "fresh_env"
+    ],
+    "test_deal_acceptance_ends_game": [
+      "self",
+      "fresh_env"
+    ],
+    "test_max_rounds_ends_game": [
+      "self",
+      "fresh_env"
+    ],
+    "test_final_rewards_scaling": [
+      "self",
+      "fresh_env"
+    ]
+  },
+  "TestTwoDollarRoles": {
+    "test_say_little_role_word_limit": [
+      "self"
+    ],
+    "test_say_little_role_within_limit": [
+      "self"
+    ],
+    "test_high_tension_role_concession_limit": [
+      "self"
+    ],
+    "test_threshold_role_enforcement": [
+      "self"
+    ]
+  },
+  "TestTwoDollarIntegration": {
+    "test_successful_negotiation": [
+      "self"
+    ],
+    "test_failed_negotiation": [
+      "self"
+    ],
+    "test_error_recovery": [
+      "self"
+    ],
+    "test_three_strikes_elimination": [
+      "self"
+    ]
+  },
+  "TestTwoDollarEdgeCases": {
+    "test_boundary_values": [
+      "self"
+    ],
+    "test_whitespace_handling": [
+      "self"
+    ],
+    "test_case_sensitivity": [
+      "self"
+    ],
+    "test_role_assignment_random": [
+      "self"
+    ],
+    "test_role_assignment_specific": [
+      "self"
+    ]
+  },
+  "PokerEnv": {
+    "_CHECK_RE": [],
+    "_FOLD_RE": [],
+    "_CALL_RE": [],
+    "_BET_RE": [],
+    "_RAISE_RE": [],
+    "__init__": [
+      "self",
+      "num_rounds",
+      "starting_chips",
+      "small_blind",
+      "big_blind"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_check_and_eliminate": [
+      "self",
+      "pid"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_create_deck": [
+      "self"
+    ],
+    "_reset_round": [
+      "self"
+    ],
+    "_observe_current_pot": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_parse_action": [
+      "self",
+      "action"
+    ],
+    "_process_betting_action": [
+      "self",
+      "action",
+      "player_id"
+    ],
+    "_apply_action": [
+      "self",
+      "pid",
+      "a_type",
+      "bet_amt"
+    ],
+    "_next_player_would_be_after_last_bettor": [
+      "self",
+      "pid"
+    ],
+    "_get_first_active_player_of_round": [
+      "self"
+    ],
+    "_player_comes_after": [
+      "self",
+      "pid",
+      "ref"
+    ],
+    "_get_next_active_player": [
+      "self",
+      "cur"
+    ],
+    "_is_hand_over": [
+      "self"
+    ],
+    "_is_betting_round_complete": [
+      "self"
+    ],
+    "_advance_game_phase": [
+      "self"
+    ],
+    "_eliminate_busted_players": [
+      "self"
+    ],
+    "_handle_hand_completion": [
+      "self"
+    ],
+    "_handle_post_hand_or_game_end": [
+      "self"
+    ],
+    "_handle_showdown": [
+      "self"
+    ],
+    "_evaluate_hand": [
+      "self",
+      "cards"
+    ],
+    "_check_straight": [
+      "self",
+      "sorted_ranks"
+    ],
+    "determine_winner": [
+      "self"
+    ],
+    "_set_outcome": [
+      "self"
+    ]
+  },
+  "card_block": [
+    "rank",
+    "suit"
+  ],
+  "render_card_row": [
+    "cards"
+  ],
+  "KlondikeGame": {
+    "__init__": [
+      "self",
+      "seed",
+      "draw_count"
+    ],
+    "setup_game": [
+      "self"
+    ],
+    "print_board": [
+      "self"
+    ],
+    "draw": [
+      "self"
+    ],
+    "can_move_to_foundation_pile": [
+      "self",
+      "card",
+      "f_index"
+    ],
+    "find_foundation_dest_for_card": [
+      "self",
+      "card"
+    ],
+    "can_move_to_foundation": [
+      "self",
+      "card"
+    ],
+    "move_from_waste_to_foundation": [
+      "self"
+    ],
+    "move_from_waste_to_foundation_at": [
+      "self",
+      "dest_index"
+    ],
+    "move_from_tableau_to_foundation": [
+      "self",
+      "pile_index"
+    ],
+    "move_from_tableau_to_foundation_at": [
+      "self",
+      "src_index",
+      "dest_index"
+    ],
+    "can_place_on_tableau": [
+      "self",
+      "dest_top",
+      "card"
+    ],
+    "move_waste_to_tableau": [
+      "self",
+      "dest_index"
+    ],
+    "move_tableau_to_tableau": [
+      "self",
+      "src_index",
+      "count",
+      "dest_index"
+    ],
+    "is_won": [
+      "self"
+    ],
+    "auto_play": [
+      "self",
+      "verbose"
+    ],
+    "interactive_play": [
+      "self"
+    ]
+  },
+  "WordleEnv": {
+    "__init__": [
+      "self",
+      "word_length",
+      "num_guesses",
+      "hardcore"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_check_word": [
+      "self",
+      "word"
+    ],
+    "_load_word_list": [
+      "self",
+      "hardcore"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_evaluate_guess": [
+      "self",
+      "guess"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_render_player_view": [
+      "self",
+      "player_id"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "WildTicTacToeEnv": {
+    "__init__": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observer_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_winner": [
+      "self",
+      "mark"
+    ]
+  },
+  "ThreePlayerIPDEnv": {
+    "__init__": [
+      "self",
+      "num_rounds",
+      "communication_turns",
+      "cooperate_reward",
+      "defect_reward",
+      "sucker_reward",
+      "mutual_defect_reward"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_clean_message": [
+      "self",
+      "msg"
+    ],
+    "_conversation_phase": [
+      "self",
+      "msg"
+    ],
+    "_decision_phase": [
+      "self",
+      "msg"
+    ],
+    "_pair_payoff": [
+      "self",
+      "a",
+      "b"
+    ],
+    "_resolve_round": [
+      "self"
+    ],
+    "_end_game": [
+      "self"
+    ]
+  },
+  "ScenarioPlanningEnv": {
+    "__init__": [
+      "self",
+      "jury_class",
+      "jury_size",
+      "scenarios_path"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_load_scenarios": [
+      "self",
+      "scenarios_path"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_evaluate_strategies": [
+      "self"
+    ]
+  },
+  "GuessTheNumberEnv": {
+    "__init__": [
+      "self",
+      "min_number",
+      "max_number",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "KuhnPokerEnv": {
+    "__init__": [
+      "self",
+      "max_rounds"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_init_round": [
+      "self"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_set_round_winner": [
+      "self",
+      "player_id",
+      "reason"
+    ],
+    "_rank_to_str": [
+      "self",
+      "rank"
+    ],
+    "_handle_showdown": [
+      "self"
+    ]
+  },
+  "GermanWhistEnv": {
+    "__init__": [
+      "self"
+    ],
+    "_create_deck": [
+      "self"
+    ],
+    "_get_card_power": [
+      "self",
+      "rank"
+    ],
+    "_card_to_string": [
+      "self",
+      "card"
+    ],
+    "_find_action_token": [
+      "self",
+      "message"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_init_game_state": [
+      "self"
+    ],
+    "_announce_game_start": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_player_hand": [
+      "self",
+      "player_id"
+    ],
+    "_render_current_trick": [
+      "self"
+    ],
+    "_render_next_card_info": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_is_valid_play": [
+      "self",
+      "player_id",
+      "played_card"
+    ],
+    "_next_player_in_trick": [
+      "self"
+    ],
+    "_resolve_trick": [
+      "self"
+    ],
+    "_handle_learning_phase_cards": [
+      "self",
+      "winner_id",
+      "loser_id"
+    ],
+    "_determine_trick_winner": [
+      "self",
+      "trick",
+      "trump_suit"
+    ],
+    "_is_game_over": [
+      "self"
+    ],
+    "_end_game": [
+      "self"
+    ],
+    "_announce_turn": [
+      "self",
+      "player_id"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "TicTacToeEnv": {
+    "__init__": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observer_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_winner": [
+      "self"
+    ]
+  },
+  "IteratedPrisonersDilemmaEnv": {
+    "__init__": [
+      "self",
+      "num_rounds",
+      "communication_turns",
+      "cooperate_reward",
+      "defect_reward",
+      "sucker_reward",
+      "mutual_defect_reward"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_conversation_phase": [
+      "self",
+      "action"
+    ],
+    "_handle_decision_phase": [
+      "self",
+      "action"
+    ],
+    "_resolve_round": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ]
+  },
+  "RESOURCE_ORDER": [],
+  "render_hand_cards_table": [
+    "board",
+    "eliminated_pids",
+    "pids_from_roles"
+  ],
+  "HexCoord": [],
+  "CornerID": [],
+  "EdgeID": [],
+  "InterCoord": [],
+  "EdgeCoord": [],
+  "CORNER_DIR_PAIRS": [],
+  "Terrain": {
+    "BRICK": [],
+    "WOOD": [],
+    "ORE": [],
+    "WHEAT": [],
+    "SHEEP": [],
+    "DESERT": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Piece": {
+    "ROAD": [],
+    "SETTLEMENT": [],
+    "CITY": []
+  },
+  "Color": {
+    "BLUE": [],
+    "ORANGE": [],
+    "WHITE": [],
+    "RED": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_SafeDict": {
+    "__missing__": [
+      "self",
+      "k"
+    ]
+  },
+  "Hex": {
+    "produces": [
+      "self"
+    ]
+  },
+  "Corner": {},
+  "Edge": {},
+  "Player": {
+    "add_cards": [
+      "self",
+      "terrain",
+      "qty"
+    ],
+    "can_pay": [
+      "self",
+      "cost"
+    ],
+    "pay": [
+      "self",
+      "cost"
+    ]
+  },
+  "COST_ROAD": [],
+  "COST_SETTLEMENT": [],
+  "COST_CITY": [],
+  "_desc_re": [],
+  "corner_ids_of_tile": [
+    "q",
+    "r"
+  ],
+  "_parse_hex_descriptor": [
+    "text"
+  ],
+  "_corner_descr": [
+    "cid",
+    "board"
+  ],
+  "_encode": [
+    "n"
+  ],
+  "_corner_key_core": [
+    "triple"
+  ],
+  "edge_key": [
+    "eid",
+    "suffix"
+  ],
+  "Move": [],
+  "Action": [],
+  "_mk_action": [
+    "kind",
+    "payload"
+  ],
+  "Board": {
+    "__init__": [
+      "self"
+    ],
+    "build_settlement": [
+      "self",
+      "cid",
+      "player"
+    ],
+    "build_road": [
+      "self",
+      "eid",
+      "player"
+    ],
+    "_adjacent_edges": [
+      "self",
+      "cid"
+    ],
+    "_adjacent_corners": [
+      "self",
+      "cid"
+    ],
+    "_corner_from_triplet": [
+      "self",
+      "descriptors"
+    ],
+    "build_standard": [
+      "cls"
+    ],
+    "roll_dice": [
+      "self"
+    ],
+    "player_build_road": [
+      "self",
+      "player",
+      "eid"
+    ],
+    "player_build_settlement": [
+      "self",
+      "player",
+      "cid"
+    ],
+    "player_build_city": [
+      "self",
+      "player",
+      "cid"
+    ],
+    "player_build_settlement_by_triplet": [
+      "self",
+      "player",
+      "triplet"
+    ],
+    "player_build_city_by_triplet": [
+      "self",
+      "player",
+      "triplet"
+    ],
+    "get_scores": [
+      "self"
+    ],
+    "_viable_moves": [
+      "self",
+      "player"
+    ],
+    "render_player_view": [
+      "self",
+      "colour"
+    ],
+    "execute_action": [
+      "self",
+      "player",
+      "action"
+    ],
+    "str_to_enum": [
+      "self",
+      "color_str"
+    ]
+  },
+  "_TEMPLATE": [],
+  "coord_key": [
+    "q",
+    "r"
+  ],
+  "corner_key": [
+    "triple",
+    "suffix"
+  ],
+  "render_board": [
+    "board"
+  ],
+  "_NEGO_ACCEPT_RE": [],
+  "_NEGO_DENY_RE": [],
+  "_NEGO_DONE_RE": [],
+  "_NEGO_OFFER_RE": [],
+  "_RESOURCE_PAIR_RE": [],
+  "_RESOURCE_CANON": [],
+  "_C2_RES_NAMES": [],
+  "_to_terrain": [
+    "name"
+  ],
+  "_parse_resource_list": [
+    "text"
+  ],
+  "_parse_offer_body": [
+    "body"
+  ],
+  "_has_resources": [
+    "player_inv",
+    "costs"
+  ],
+  "SettlersOfCatanEnv": {
+    "roles": [],
+    "pids_from_roles": [],
+    "__init__": [
+      "self",
+      "player_move_allowance",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_roll_dice": [
+      "self"
+    ],
+    "_render_board_state": [
+      "self"
+    ],
+    "_handle_invalid": [
+      "self",
+      "reason"
+    ],
+    "_rotate_players": [
+      "self",
+      "force"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_negotiation_partner_selection": [
+      "self",
+      "action"
+    ],
+    "_negotiation_step": [
+      "self",
+      "action"
+    ],
+    "_negotiation_response_step": [
+      "self",
+      "action"
+    ],
+    "_execute_trade_accept": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ]
+  },
+  "BanditEnv": {
+    "__init__": [
+      "self",
+      "buttons",
+      "p_gap",
+      "num_turns",
+      "include_summary"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_statistics": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_regret": [
+      "self",
+      "button"
+    ]
+  },
+  "SlitherlinkEnv": {
+    "_ACTION_RE": [],
+    "__init__": [
+      "self",
+      "rows",
+      "cols",
+      "max_turns"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_puzzle": [
+      "self",
+      "seed"
+    ],
+    "_generate_random_loop": [
+      "self",
+      "h_edges",
+      "v_edges"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_valid_edge": [
+      "self",
+      "kind",
+      "r",
+      "c"
+    ],
+    "_toggle_edge": [
+      "self",
+      "kind",
+      "r",
+      "c"
+    ],
+    "_progress": [
+      "self"
+    ],
+    "_cell_edge_count": [
+      "self",
+      "r",
+      "c"
+    ],
+    "_is_solved": [
+      "self"
+    ],
+    "_neighbors_with_edge": [
+      "self",
+      "dot"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe": [
+      "self"
+    ]
+  },
+  "TabooEnv": {
+    "__init__": [
+      "self",
+      "categories",
+      "max_rounds",
+      "max_attempts_per_player",
+      "data_path"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "_load_data": [
+      "self",
+      "data_path"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_get_team_members": [
+      "self",
+      "player_id"
+    ],
+    "_get_guessers": [
+      "self"
+    ],
+    "_get_current_team_clue_givers": [
+      "self",
+      "player_id"
+    ],
+    "_get_team_id": [
+      "self",
+      "player_id"
+    ],
+    "_get_next_team": [
+      "self",
+      "current_team"
+    ],
+    "_rotate_player_by_logic": [
+      "self",
+      "rotate_within_team",
+      "start_from_first_in_team",
+      "move_to_next_team",
+      "force_rotation"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_new_word_selected": [
+      "self"
+    ],
+    "_is_end_of_round": [
+      "self"
+    ],
+    "_advance_to_next_word": [
+      "self",
+      "team_id"
+    ],
+    "_switch_to_next_team": [
+      "self"
+    ],
+    "_update_word_for_team": [
+      "self",
+      "team_id"
+    ],
+    "_notify_clue_givers_new_word": [
+      "self",
+      "team_message"
+    ],
+    "_notify_team_switch": [
+      "self",
+      "next_team"
+    ],
+    "_handle_correct_guess": [
+      "self"
+    ],
+    "_handle_incorrect_guess": [
+      "self"
+    ],
+    "_handle_clue_giver_invalid_move": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "increment_score": [
+      "self"
+    ],
+    "_get_current_word_for_team": [
+      "self",
+      "team_id"
+    ]
+  },
+  "_parse_affix_rules": [
+    "file_content"
+  ],
+  "_parse_condition": [
+    "condition"
+  ],
+  "_split": [
+    "line"
+  ],
+  "EnglishDictionary": {
+    "__init__": [
+      "self",
+      "keep_proper_nouns",
+      "include_nltk",
+      "keep_non_alpha"
+    ],
+    "_filter": [
+      "self",
+      "word_set"
+    ],
+    "_load_dic": [
+      "self",
+      "filename",
+      "acc_filename"
+    ],
+    "_load_nltk": [
+      "self",
+      "basic"
+    ],
+    "is_english_word": [
+      "self",
+      "word"
+    ],
+    "get_all_words": [
+      "self"
+    ],
+    "get_basic_words": [
+      "self"
+    ]
+  },
+  "default_models": [],
+  "JUROR_SYSTEM_PROMPT": [],
+  "OpenRouterJury": {
+    "__init__": [
+      "self",
+      "options",
+      "jury_size",
+      "model_names"
+    ],
+    "_create_juror_prompt": [
+      "self",
+      "context"
+    ],
+    "evaluate": [
+      "self",
+      "context"
+    ]
+  },
+  "BattleshipEnv": {
+    "__init__": [
+      "self",
+      "grid_size"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_place_ship_on_board": [
+      "self",
+      "grid",
+      "ship_name",
+      "length"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_render_player_view": [
+      "self",
+      "player_id"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_win": [
+      "self",
+      "player_id"
+    ]
+  },
+  "MemoryGameEnv": {
+    "__init__": [
+      "self",
+      "grid_size",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "GuessWhoEnv": {
+    "__init__": [
+      "self",
+      "max_turns"
+    ],
+    "_load_characters": [
+      "self",
+      "characters_path"
+    ],
+    "get_gamemaster_response": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_characters_to_string": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "SpiteAndMaliceEnv": {
+    "__init__": [
+      "self"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_initialize_players": [
+      "self"
+    ],
+    "_draw_cards": [
+      "self",
+      "player_id"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self",
+      "player_id"
+    ],
+    "_play_card": [
+      "self",
+      "player_id",
+      "card",
+      "center_index"
+    ],
+    "_can_play_on_center": [
+      "self",
+      "card",
+      "pile"
+    ],
+    "_card_rank": [
+      "self",
+      "card"
+    ],
+    "_discard_card": [
+      "self",
+      "player_id",
+      "card",
+      "discard_index"
+    ],
+    "_check_win": [
+      "self",
+      "player_id"
+    ],
+    "_is_deadlock": [
+      "self"
+    ],
+    "_player_has_valid_moves": [
+      "self",
+      "player_id"
+    ],
+    "_handle_game_end_check": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_render_board": [
+      "self",
+      "player_id"
+    ]
+  },
+  "_DIR_DELTAS": [],
+  "_step_from_str": [
+    "move"
+  ],
+  "Snake": {
+    "__init__": [
+      "self",
+      "positions"
+    ],
+    "head": [
+      "self"
+    ]
+  },
+  "SnakeEnv": {
+    "__init__": [
+      "self",
+      "width",
+      "height",
+      "num_apples",
+      "max_turns"
+    ],
+    "_generate_spawn_positions": [
+      "self",
+      "k"
+    ],
+    "_random_free_cell": [
+      "self",
+      "snakes",
+      "apples"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_get_board_string": [
+      "self",
+      "snakes",
+      "apples"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_turn_limit": [
+      "self"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_finalise_rewards": [
+      "self",
+      "reason"
+    ],
+    "_apply_simultaneous_moves": [
+      "self"
+    ]
+  },
+  "create_game_str": [
+    "game_state"
+  ],
+  "create_simple_game_str": [
+    "game_state"
+  ],
+  "ColonelBlottoEnv": {
+    "__init__": [
+      "self",
+      "num_fields",
+      "num_total_units",
+      "num_rounds"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_render_game_state": [
+      "self"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_execute_player_move": [
+      "self",
+      "action"
+    ],
+    "_parse_allocation_input": [
+      "self",
+      "action_string"
+    ],
+    "_validate_allocation": [
+      "self",
+      "allocation_dict"
+    ],
+    "_resolve_battle": [
+      "self"
+    ],
+    "_check_gameover": [
+      "self"
+    ]
+  },
+  "DebateEnv": {
+    "__init__": [
+      "self",
+      "max_turns",
+      "jury_class",
+      "jury_size",
+      "topics_path"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_load_topics": [
+      "self",
+      "topics_path"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_evaluate_debate": [
+      "self",
+      "topic",
+      "debate_transcript"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_determine_debate_winner": [
+      "self"
+    ]
+  },
+  "SimpleBlindAuctionEnv": {
+    "__init__": [
+      "self",
+      "starting_capital",
+      "num_items",
+      "conversation_rounds",
+      "base_item_values"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_transition_to_bidding_phase": [
+      "self"
+    ],
+    "_handle_bidding_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_determine_auction_results": [
+      "self"
+    ],
+    "_announce_auction_results": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ]
+  },
+  "render_deal_with_scores_and_votes": [
+    "deal_state",
+    "issues",
+    "player_scores",
+    "player_name",
+    "player_votes",
+    "player_configs"
+  ],
+  "render_game_issues": [
+    "issues"
+  ],
+  "ScorableGamesEnv": {
+    "__init__": [
+      "self",
+      "game_config",
+      "max_rounds",
+      "required_votes",
+      "veto_roles",
+      "unanimity_bonus_role",
+      "starting_role",
+      "invalid_move_default",
+      "error_allowance"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_load_game_configuration": [
+      "self"
+    ],
+    "_parse_issues_from_global_instructions": [
+      "self"
+    ],
+    "_load_player_configurations": [
+      "self",
+      "config_file"
+    ],
+    "_get_player_by_role": [
+      "self",
+      "role"
+    ],
+    "_load_player_data": [
+      "self"
+    ],
+    "_load_player_scores": [
+      "self",
+      "scores_file"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_fill_scores_in_instructions": [
+      "self",
+      "player_id"
+    ],
+    "_generate_voting_rules_text": [
+      "self",
+      "player_id"
+    ],
+    "_extract_scenario_from_global_instructions": [
+      "self",
+      "agent_name"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_is_valid_action": [
+      "self",
+      "action"
+    ],
+    "_is_valid_proposal": [
+      "self",
+      "action"
+    ],
+    "_process_valid_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_proposal": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_process_vote": [
+      "self",
+      "player_id",
+      "action",
+      "vote"
+    ],
+    "_handle_invalid_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_apply_default_action": [
+      "self",
+      "player_id"
+    ],
+    "_generate_optimal_proposal": [
+      "self",
+      "player_id"
+    ],
+    "_check_deal_accepted": [
+      "self"
+    ],
+    "_check_simple_majority": [
+      "self"
+    ],
+    "_check_unanimity": [
+      "self"
+    ],
+    "_end_game": [
+      "self"
+    ],
+    "_finalize_accepted_deal": [
+      "self"
+    ],
+    "_handle_no_deal": [
+      "self"
+    ],
+    "_calculate_player_score": [
+      "self",
+      "player_id",
+      "deal"
+    ],
+    "get_observation": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "agents": [],
+  "env": [],
+  "done": [],
+  "TestScorableGamesEnv": {
+    "env": [
+      "self"
+    ],
+    "reset_env": [
+      "self",
+      "env"
+    ],
+    "test_init": [
+      "self"
+    ],
+    "test_reset": [
+      "self",
+      "env"
+    ],
+    "test_reset_wrong_player_count": [
+      "self",
+      "env"
+    ],
+    "test_game_configuration_loading": [
+      "self",
+      "reset_env"
+    ],
+    "test_missing_bracketed_keyword": [
+      "self",
+      "reset_env"
+    ],
+    "test_multiple_bracketed_keywords": [
+      "self",
+      "reset_env"
+    ],
+    "test_multiple_proposals": [
+      "self",
+      "reset_env"
+    ],
+    "test_rationale_before_and_after_keyword": [
+      "self",
+      "reset_env"
+    ],
+    "test_bracketed_but_not_keyword": [
+      "self",
+      "reset_env"
+    ],
+    "test_random_inputs_become_invalid": [
+      "self",
+      "reset_env"
+    ],
+    "test_malformed_proposals": [
+      "self",
+      "reset_env"
+    ],
+    "test_valid_proposal_formats": [
+      "self",
+      "reset_env"
+    ],
+    "test_get_score_as_expected": [
+      "self",
+      "reset_env"
+    ],
+    "test_get_threshold_score_if_deal_not_reached": [
+      "self",
+      "reset_env"
+    ],
+    "test_score_calculation_different_deals": [
+      "self",
+      "reset_env"
+    ],
+    "test_unanimity_bonus_application": [
+      "self",
+      "reset_env"
+    ],
+    "test_can_only_see_own_preferences": [
+      "self",
+      "reset_env"
+    ],
+    "test_observation_content_validation": [
+      "self",
+      "reset_env"
+    ],
+    "test_game_state_visibility": [
+      "self",
+      "reset_env"
+    ],
+    "test_deal_acceptance_with_required_votes": [
+      "self",
+      "reset_env"
+    ],
+    "test_veto_power_blocking_deals": [
+      "self",
+      "reset_env"
+    ],
+    "test_maximum_rounds_reached": [
+      "self",
+      "reset_env"
+    ],
+    "test_winner_determination_logic": [
+      "self",
+      "reset_env"
+    ],
+    "test_invalid_action_escalation": [
+      "self",
+      "reset_env"
+    ],
+    "test_default_action_application": [
+      "self",
+      "reset_env"
+    ],
+    "test_auto_proposal_generation": [
+      "self",
+      "reset_env"
+    ],
+    "test_error_count_reset_after_default": [
+      "self",
+      "reset_env"
+    ],
+    "test_step_function_valid_action": [
+      "self",
+      "reset_env"
+    ],
+    "test_step_function_invalid_action": [
+      "self",
+      "reset_env"
+    ],
+    "test_complete_game_scenario": [
+      "self",
+      "reset_env"
+    ],
+    "test_proposal_with_rationale_processing": [
+      "self",
+      "reset_env"
+    ],
+    "test_identical_proposal_handling": [
+      "self",
+      "reset_env"
+    ],
+    "test_voting_without_current_proposal": [
+      "self",
+      "reset_env"
+    ],
+    "test_different_required_votes_settings": [
+      "self"
+    ],
+    "test_different_veto_roles_configurations": [
+      "self"
+    ],
+    "test_different_starting_role_configurations": [
+      "self"
+    ],
+    "test_custom_invalid_move_default": [
+      "self"
+    ],
+    "test_empty_and_whitespace_actions": [
+      "self",
+      "reset_env"
+    ],
+    "test_actions_with_excessive_whitespace": [
+      "self",
+      "reset_env"
+    ],
+    "test_case_sensitivity_in_keywords": [
+      "self",
+      "reset_env"
+    ],
+    "test_unicode_and_special_character_handling": [
+      "self",
+      "reset_env"
+    ],
+    "test_game_state_persistence_across_actions": [
+      "self",
+      "reset_env"
+    ],
+    "test_player_turn_management": [
+      "self",
+      "reset_env"
+    ],
+    "test_history_tracking_accuracy": [
+      "self",
+      "reset_env"
+    ],
+    "test_observation_consistency": [
+      "self",
+      "reset_env"
+    ],
+    "test_large_number_of_rounds": [
+      "self"
+    ],
+    "test_rapid_action_sequences": [
+      "self",
+      "reset_env"
+    ],
+    "test_memory_usage_with_long_histories": [
+      "self",
+      "reset_env"
+    ],
+    "test_game1_configuration": [
+      "self"
+    ],
+    "test_base_7players_configuration": [
+      "self"
+    ],
+    "test_full_negotiation_workflow": [
+      "self",
+      "reset_env"
+    ]
+  },
+  "WordSearchEnv": {
+    "__init__": [
+      "self",
+      "hardcore",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_generate_word_search": [
+      "self"
+    ],
+    "_determine_initial_grid_size": [
+      "self",
+      "words"
+    ],
+    "_create_empty_grid": [
+      "self",
+      "size"
+    ],
+    "_can_place_word": [
+      "self",
+      "grid",
+      "word",
+      "direction",
+      "row",
+      "col"
+    ],
+    "_place_word_on_grid": [
+      "self",
+      "grid",
+      "word",
+      "direction",
+      "row",
+      "col"
+    ],
+    "_find_overlaps": [
+      "self",
+      "word",
+      "grid",
+      "directions"
+    ],
+    "_fill_empty_cells": [
+      "self",
+      "grid"
+    ],
+    "_validate_and_replace_unintended_words": [
+      "self",
+      "grid",
+      "words"
+    ],
+    "_find_and_replace_unintended_words": [
+      "self",
+      "grid",
+      "string",
+      "word_set",
+      "index",
+      "is_row"
+    ],
+    "_replace_unintended_word": [
+      "self",
+      "grid",
+      "positions"
+    ],
+    "_is_valid_word": [
+      "self",
+      "word"
+    ],
+    "_get_positions": [
+      "self"
+    ],
+    "_render_board": [
+      "self",
+      "grid",
+      "show_words"
+    ],
+    "_check_word": [
+      "self",
+      "grid",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "_highlight_word": [
+      "self",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "_extract_word": [
+      "self",
+      "grid",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "_matches_position": [
+      "self",
+      "word",
+      "row",
+      "col",
+      "direction",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_map_coordinate_to_word": [
+      "self",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "NimEnv": {
+    "__init__": [
+      "self",
+      "piles"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_execute_move": [
+      "self",
+      "action"
+    ],
+    "_check_game_over": [
+      "self"
+    ],
+    "_render_piles": [
+      "self"
+    ]
+  },
+  "_Player": {
+    "__init__": [
+      "self",
+      "pos"
+    ]
+  },
+  "SurroundEnv": {
+    "MAX_PLAYERS": [],
+    "__init__": [
+      "self",
+      "width",
+      "height",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_ascii_board": [
+      "self",
+      "board",
+      "players"
+    ],
+    "_random_free_cell": [
+      "self",
+      "occupied"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_spawn_positions": [
+      "self",
+      "k"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_apply_simultaneous_moves": [
+      "self"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_check_turn_limit": [
+      "self"
+    ],
+    "_finalise_rewards": [
+      "self",
+      "reason"
+    ]
+  },
+  "BlindAuctionEnv": {
+    "broadcast_pattern": [],
+    "whisper_pattern": [],
+    "bid_pattern": [],
+    "__init__": [
+      "self",
+      "starting_capital",
+      "num_items",
+      "conversation_rounds",
+      "base_item_values"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_conversation_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_handle_bidding_action": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_transition_to_bidding_phase": [
+      "self"
+    ],
+    "_determine_auction_results": [
+      "self"
+    ],
+    "_announce_auction_results": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ],
+    "_parse_broadcasts": [
+      "self",
+      "text"
+    ],
+    "_parse_whispers": [
+      "self",
+      "text"
+    ]
+  },
+  "GolfEnv": {
+    "__init__": [
+      "self",
+      "num_cards",
+      "num_columns"
+    ],
+    "_create_deck": [
+      "self"
+    ],
+    "_get_card_value": [
+      "self",
+      "rank"
+    ],
+    "_card_to_string": [
+      "self",
+      "card"
+    ],
+    "_find_action_token": [
+      "self",
+      "message"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_init_game_state": [
+      "self",
+      "num_players"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_player_hand": [
+      "self",
+      "player_id"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_draw_phase": [
+      "self",
+      "player_id",
+      "action_name",
+      "params"
+    ],
+    "_handle_action_phase": [
+      "self",
+      "player_id",
+      "action_name",
+      "params"
+    ],
+    "_handle_swap": [
+      "self",
+      "player_id",
+      "params"
+    ],
+    "_handle_discard_drawn": [
+      "self",
+      "player_id"
+    ],
+    "_handle_knock": [
+      "self",
+      "player_id"
+    ],
+    "_handle_peek": [
+      "self",
+      "player_id",
+      "params"
+    ],
+    "_player_has_all_cards_revealed": [
+      "self",
+      "player_id"
+    ],
+    "_trigger_final_round": [
+      "self",
+      "triggering_player",
+      "reason"
+    ],
+    "_next_turn": [
+      "self"
+    ],
+    "_announce_turn_options": [
+      "self",
+      "player_id"
+    ],
+    "_end_game": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ]
+  },
+  "LeTrucEnv": {
+    "order": [],
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_deal_hand": [
+      "self"
+    ],
+    "_rank_idx": [
+      "self",
+      "card"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "BreakthroughEnv": {
+    "__init__": [
+      "self",
+      "is_open",
+      "board_size"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_build_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_execute_player_move": [
+      "self",
+      "action"
+    ],
+    "_is_valid_move": [
+      "self",
+      "player_id",
+      "start_row",
+      "start_col",
+      "end_row",
+      "end_col"
+    ],
+    "_is_on_board": [
+      "self",
+      "row",
+      "col"
+    ],
+    "_check_winner": [
+      "self"
+    ],
+    "_augment_observations": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ]
+  },
+  "FrozenLakeEnv": {
+    "__init__": [
+      "self",
+      "size",
+      "num_holes",
+      "randomize_start_goal"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_grid": [
+      "self",
+      "randomize_start_goal"
+    ],
+    "_has_valid_path": [
+      "self",
+      "grid",
+      "start",
+      "goal"
+    ],
+    "_create_fallback_grid": [
+      "self",
+      "num_holes"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_execute_move": [
+      "self",
+      "action_name"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_bfs_distance_ignoring_holes": [
+      "self",
+      "start",
+      "target",
+      "grid"
+    ]
+  },
+  "LogicPuzzleEnv": {
+    "__init__": [
+      "self",
+      "difficulty",
+      "max_turns"
+    ],
+    "_load_puzzle_data": [
+      "self",
+      "puzzle_path"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_load_game_board": [
+      "self"
+    ],
+    "_create_game_board": [
+      "self",
+      "solution"
+    ],
+    "_render_board": [
+      "self",
+      "game_board"
+    ],
+    "_return_clues": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ],
+    "_is_within_bounds": [
+      "self",
+      "row",
+      "col"
+    ],
+    "_is_repeated_mark": [
+      "self",
+      "row",
+      "col",
+      "mark"
+    ],
+    "_mark_item": [
+      "self",
+      "row",
+      "col",
+      "mark"
+    ],
+    "_is_solved": [
+      "self"
+    ]
+  },
+  "SimpleNegotiationEnv": {
+    "__init__": [
+      "self",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_and_execute_existing_offer": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_attempt_to_execute_trade": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_check_if_sufficient_resources": [
+      "self",
+      "trade_resources",
+      "player_resources"
+    ],
+    "_check_for_new_offer": [
+      "self",
+      "player_id",
+      "action"
+    ],
+    "_parse_offer": [
+      "self",
+      "offer_str"
+    ],
+    "_parse_resource_list": [
+      "self",
+      "resource_str"
+    ],
+    "_offer_to_str": [
+      "self",
+      "parsed_offer"
+    ],
+    "_determine_winner": [
+      "self"
+    ],
+    "_update_inventory_values": [
+      "self"
+    ],
+    "_calculate_player_inventory_value": [
+      "self",
+      "player_id",
+      "game_state"
+    ]
+  },
+  "char_display_width": [
+    "ch"
+  ],
+  "text_display_width": [
+    "text"
+  ],
+  "pad_line": [
+    "content",
+    "box_width"
+  ],
+  "wrap_display": [
+    "text",
+    "width"
+  ],
+  "MarketEntryGameEnv": {
+    "__init__": [
+      "self",
+      "num_rounds",
+      "communication_turns",
+      "market_capacity",
+      "entry_profit",
+      "overcrowding_penalty",
+      "safe_payoff",
+      "default_num_players"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_extract_public_message": [
+      "self",
+      "action"
+    ],
+    "_handle_conversation_phase": [
+      "self",
+      "action"
+    ],
+    "_handle_decision_phase": [
+      "self",
+      "action"
+    ],
+    "_resolve_round": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ]
+  },
+  "TwentyQuestionsEnv": {
+    "__init__": [
+      "self",
+      "hardcore",
+      "max_turns"
+    ],
+    "_load_words": [
+      "self",
+      "words_path"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "get_gamemaster_response": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "TruthAndDeceptionEnv": {
+    "__init__": [
+      "self",
+      "max_turns",
+      "data_path"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_load_facts": [
+      "self",
+      "data_path"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "DontSayItEnv": {
+    "__init__": [
+      "self",
+      "max_turns",
+      "hardcore"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "SecretaryEnv": {
+    "__init__": [
+      "self",
+      "N"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_show_next_value": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_resolve": [
+      "self",
+      "accepted_at"
+    ]
+  },
+  "MastermindEnv": {
+    "__init__": [
+      "self",
+      "code_length",
+      "num_numbers",
+      "max_turns",
+      "duplicate_numbers"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_evaluate_guess": [
+      "self",
+      "player_guess"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "base_prompt": [],
+  "base_reprompt": [],
+  "GamePhase": {
+    "Play": [],
+    "QueryWhichToKeep": [],
+    "QueryForBlockOrChallenge": [],
+    "QueryToChallengeTheBlocker": []
+  },
+  "CoupActionType": {
+    "Income": [],
+    "Coup": [],
+    "ForeignAid": [],
+    "Tax": [],
+    "Assassinate": [],
+    "Exchange": [],
+    "Steal": [],
+    "Keep": [],
+    "PASS": [],
+    "BULLSHIT": [],
+    "BlockForeignAid": [],
+    "BlockStealAmbassador": [],
+    "BlockStealCaptain": [],
+    "BlockAssassinate": []
+  },
+  "ActionMetadata": {},
+  "CountdownEnv": {
+    "_ACTION_RE": [],
+    "_OPS": [],
+    "__init__": [
+      "self",
+      "numbers",
+      "target",
+      "max_turns"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_parse_action": [
+      "self",
+      "action"
+    ],
+    "_validate_indices": [
+      "self",
+      "i",
+      "j"
+    ],
+    "_execute_operation": [
+      "self",
+      "i",
+      "j",
+      "op"
+    ],
+    "_update_state": [
+      "self",
+      "i",
+      "j",
+      "op",
+      "result"
+    ],
+    "_find_closest_value": [
+      "self"
+    ],
+    "_calculate_progress": [
+      "self"
+    ],
+    "_get_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_add_board_observation": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ]
+  },
+  "QuantumTicTacToeEnv": {
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observer_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_resolve_cycles": [
+      "self"
+    ],
+    "_collapse_superpositions": [
+      "self",
+      "move_ids"
+    ],
+    "_check_winner": [
+      "self",
+      "symbol"
+    ]
+  },
+  "ConnectFourEnv": {
+    "__init__": [
+      "self",
+      "is_open",
+      "num_rows",
+      "num_cols"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_validate_action": [
+      "self",
+      "action"
+    ],
+    "_get_available_row": [
+      "self",
+      "col"
+    ],
+    "_check_win": [
+      "self",
+      "row",
+      "col"
+    ],
+    "_check_direction": [
+      "self",
+      "board",
+      "row",
+      "col",
+      "delta_row",
+      "delta_col",
+      "disc"
+    ],
+    "_check_draw": [
+      "self"
+    ]
+  },
+  "HangmanEnv": {
+    "__init__": [
+      "self",
+      "hardcore"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_render_current_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_reveal_letter": [
+      "self",
+      "letter"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "PublicGoodsGameEnv": {
+    "__init__": [
+      "self",
+      "num_rounds",
+      "communication_turns",
+      "endowment",
+      "multiplication_factor",
+      "num_players"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_extract_public_message": [
+      "self",
+      "action"
+    ],
+    "_handle_conversation_phase": [
+      "self",
+      "action"
+    ],
+    "_handle_decision_phase": [
+      "self",
+      "action"
+    ],
+    "_resolve_round": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self"
+    ]
+  },
+  "FifteenPuzzleEnv": {
+    "__init__": [
+      "self",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_render_board": [
+      "self",
+      "board"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_is_solved": [
+      "self"
+    ],
+    "_move": [
+      "self",
+      "direction"
+    ],
+    "_get_empty_position": [
+      "self"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "PigDiceEnv": {
+    "__init__": [
+      "self",
+      "winning_score",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_add_current_board_observation": [
+      "self"
+    ],
+    "_determine_winner": [
+      "self",
+      "scores"
+    ],
+    "_rotate_to_next_player": [
+      "self"
+    ],
+    "_perform_roll": [
+      "self",
+      "player_id"
+    ],
+    "_perform_hold": [
+      "self",
+      "player_id"
+    ]
+  },
+  "TowerOfHanoiEnv": {
+    "__init__": [
+      "self",
+      "num_disks",
+      "max_turns"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "TakEnv": {
+    "__init__": [
+      "self",
+      "board_size",
+      "stones",
+      "capstones"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_board": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_format_stack": [
+      "self",
+      "stack"
+    ],
+    "_pad_cell": [
+      "self",
+      "content",
+      "cell_width"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_win": [
+      "self",
+      "player_id"
+    ],
+    "_update_pieces": [
+      "self",
+      "player_id",
+      "piece"
+    ],
+    "extract_values": [
+      "self",
+      "matched_groups"
+    ],
+    "_is_valid_placement": [
+      "self",
+      "allocation"
+    ],
+    "_apply_placement": [
+      "self",
+      "allocation",
+      "player_id"
+    ],
+    "_is_valid_movement": [
+      "self",
+      "source",
+      "allocation"
+    ],
+    "_apply_movement": [
+      "self",
+      "source",
+      "allocation"
+    ],
+    "_convert_to_dict": [
+      "self",
+      "input_str"
+    ]
+  },
+  "CHANGE_COORDINATES": [],
+  "is_deadlock_position": [
+    "room_structure",
+    "position"
+  ],
+  "detect_frozen_deadlocks": [
+    "room_state",
+    "room_structure"
+  ],
+  "is_player_reachable": [
+    "room_state",
+    "target_pos"
+  ],
+  "check_initial_deadlocks": [
+    "room_state",
+    "room_structure"
+  ],
+  "generate_room": [
+    "dim",
+    "p_change_directions",
+    "num_steps",
+    "num_boxes",
+    "tries",
+    "second_player",
+    "seed"
+  ],
+  "place_boxes_and_player_safe": [
+    "room",
+    "num_boxes",
+    "second_player",
+    "rng_objects"
+  ],
+  "place_boxes_and_player": [
+    "room",
+    "num_boxes",
+    "second_player",
+    "rng_objects"
+  ],
+  "room_topology_generation": [
+    "dim",
+    "p_change_directions",
+    "num_steps",
+    "rng_objects"
+  ],
+  "explored_states": [],
+  "num_boxes": [],
+  "best_room_score": [],
+  "best_room": [],
+  "best_box_mapping": [],
+  "reverse_playing": [
+    "room_state",
+    "room_structure",
+    "search_depth"
+  ],
+  "depth_first_search": [
+    "room_state",
+    "room_structure",
+    "box_mapping",
+    "box_swaps",
+    "last_pull",
+    "ttl"
+  ],
+  "reverse_move": [
+    "room_state",
+    "room_structure",
+    "box_mapping",
+    "last_pull",
+    "action"
+  ],
+  "box_displacement_score": [
+    "box_mapping"
+  ],
+  "SokobanEnv": {
+    "__init__": [
+      "self",
+      "dim_room",
+      "max_turns",
+      "num_boxes"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_observe_current_state": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "create_board_str": [
+      "self",
+      "board_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_would_collide_with_wall": [
+      "self",
+      "action"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed",
+      "max_retries"
+    ],
+    "_push": [
+      "self",
+      "action"
+    ],
+    "_move": [
+      "self",
+      "action"
+    ],
+    "_check_if_all_boxes_on_target": [
+      "self"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "en_uk_dict": [],
+  "LetterAuctionEnv": {
+    "__init__": [
+      "self",
+      "starting_coins",
+      "max_turns"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_pass_bid": [
+      "self",
+      "player_id"
+    ],
+    "_place_bid": [
+      "self",
+      "player_id",
+      "bid_amount"
+    ],
+    "_assign_letter": [
+      "self",
+      "player_id",
+      "letter",
+      "bid_amount"
+    ],
+    "_turn_manager": [
+      "self",
+      "next_round",
+      "next_player"
+    ],
+    "_calculate_word_value": [
+      "self",
+      "player_id",
+      "word"
+    ],
+    "_check_game_done": [
+      "self"
+    ],
+    "render_text": [
+      "self"
+    ]
+  },
+  "HighSocietyEnv": {
+    "__init__": [
+      "self"
+    ],
+    "_intlist_to_str": [
+      "lst"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_next_auction": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_end_match": [
+      "self"
+    ]
+  },
+  "SpellingBeeEnv": {
+    "__init__": [
+      "self",
+      "num_letters"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_generate_allowed_letters": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "Season": {
+    "SPRING": [],
+    "FALL": [],
+    "WINTER": []
+  },
+  "PhaseType": {
+    "MOVEMENT": [],
+    "RETREATS": [],
+    "ADJUSTMENTS": []
+  },
+  "UnitType": {
+    "ARMY": [],
+    "FLEET": []
+  },
+  "TerrainType": {
+    "LAND": [],
+    "SEA": [],
+    "COAST": []
+  },
+  "OrderType": {
+    "HOLD": [],
+    "MOVE": [],
+    "SUPPORT": [],
+    "CONVOY": [],
+    "RETREAT": [],
+    "BUILD": [],
+    "DISBAND": [],
+    "WAIVE": []
+  },
+  "Region": {
+    "__init__": [
+      "self",
+      "name",
+      "terrain_type",
+      "is_supply_center"
+    ],
+    "add_adjacency": [
+      "self",
+      "other_region",
+      "unit_types"
+    ],
+    "is_adjacent": [
+      "self",
+      "unit_type",
+      "other_region"
+    ],
+    "place_unit": [
+      "self",
+      "unit"
+    ],
+    "remove_unit": [
+      "self"
+    ],
+    "dislodge_unit": [
+      "self"
+    ],
+    "set_owner": [
+      "self",
+      "power"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Unit": {
+    "__init__": [
+      "self",
+      "unit_type",
+      "power"
+    ],
+    "place_in_region": [
+      "self",
+      "region"
+    ],
+    "move_to_region": [
+      "self",
+      "region"
+    ],
+    "dislodge": [
+      "self"
+    ],
+    "retreat": [
+      "self",
+      "region"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Order": {
+    "__init__": [
+      "self",
+      "power",
+      "unit_type",
+      "location",
+      "order_type",
+      "target",
+      "secondary_target"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "parse": [
+      "cls",
+      "order_str",
+      "power"
+    ]
+  },
+  "Power": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "add_unit": [
+      "self",
+      "unit"
+    ],
+    "remove_unit": [
+      "self",
+      "unit"
+    ],
+    "add_center": [
+      "self",
+      "center"
+    ],
+    "remove_center": [
+      "self",
+      "center"
+    ],
+    "clear_orders": [
+      "self"
+    ],
+    "set_orders": [
+      "self",
+      "orders"
+    ],
+    "check_elimination": [
+      "self"
+    ],
+    "get_buildable_locations": [
+      "self",
+      "game_map"
+    ],
+    "count_needed_builds": [
+      "self"
+    ]
+  },
+  "Map": {
+    "__init__": [
+      "self"
+    ],
+    "add_region": [
+      "self",
+      "name",
+      "terrain_type",
+      "is_supply_center",
+      "home_for"
+    ],
+    "add_adjacency": [
+      "self",
+      "region1",
+      "region2",
+      "unit_types"
+    ],
+    "get_region": [
+      "self",
+      "name"
+    ],
+    "get_all_regions": [
+      "self"
+    ],
+    "get_supply_centers": [
+      "self"
+    ],
+    "get_home_centers": [
+      "self",
+      "power"
+    ],
+    "create_standard_map": [
+      "cls"
+    ]
+  },
+  "DiplomacyGameEngine": {
+    "__init__": [
+      "self",
+      "rules",
+      "max_turns"
+    ],
+    "_initialize_powers": [
+      "self"
+    ],
+    "setup_game": [
+      "self",
+      "num_players"
+    ],
+    "get_state": [
+      "self"
+    ],
+    "get_orderable_locations": [
+      "self",
+      "power_name"
+    ],
+    "get_possible_orders": [
+      "self",
+      "power_name"
+    ],
+    "validate_order": [
+      "self",
+      "order"
+    ],
+    "_find_unit": [
+      "self",
+      "power_name",
+      "unit_type",
+      "location"
+    ],
+    "_has_possible_convoy_path": [
+      "self",
+      "start",
+      "end"
+    ],
+    "resolve_orders": [
+      "self",
+      "orders_by_power"
+    ],
+    "_record_game_state": [
+      "self"
+    ],
+    "_resolve_movement": [
+      "self",
+      "valid_orders"
+    ],
+    "_is_valid_support": [
+      "self",
+      "supporting_unit",
+      "supported_unit",
+      "target",
+      "valid_orders"
+    ],
+    "_resolve_convoy_disruptions": [
+      "self",
+      "convoys",
+      "attacking_strength",
+      "supports"
+    ],
+    "_resolve_movements": [
+      "self",
+      "attack_strength",
+      "move_orders",
+      "disrupted_convoys"
+    ],
+    "_update_supply_centers": [
+      "self"
+    ],
+    "_prepare_retreats": [
+      "self"
+    ],
+    "_resolve_retreats": [
+      "self",
+      "valid_orders"
+    ],
+    "_resolve_adjustments": [
+      "self",
+      "valid_orders"
+    ],
+    "_select_units_to_disband": [
+      "self",
+      "power",
+      "count"
+    ],
+    "_calculate_distance": [
+      "self",
+      "start",
+      "end"
+    ],
+    "_advance_phase": [
+      "self"
+    ],
+    "_check_victory": [
+      "self"
+    ],
+    "get_ascii_map": [
+      "self"
+    ],
+    "get_ascii_map_v1": [
+      "self"
+    ],
+    "get_ascii_map_v2": [
+      "self"
+    ],
+    "get_ascii_map_v3": [
+      "self"
+    ],
+    "get_ascii_map_v4": [
+      "self"
+    ],
+    "get_ascii_map_v5": [
+      "self"
+    ]
+  },
+  "DiplomacyEnv": {
+    "broadcast_pattern": [],
+    "whisper_pattern": [],
+    "submit_orders_pattern": [],
+    "__init__": [
+      "self",
+      "max_turns",
+      "negotiations_per_phase"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_power_map",
+      "player_id",
+      "game_state",
+      "start_of_game"
+    ],
+    "format_power_units_and_centers": [
+      "self",
+      "player_id"
+    ],
+    "format_possible_orders": [
+      "self",
+      "possible_orders"
+    ],
+    "get_prompt": [
+      "self",
+      "player_id",
+      "history_text"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_process_player_action": [
+      "self",
+      "player_id",
+      "power_name",
+      "action"
+    ],
+    "_rotate_players": [
+      "self"
+    ],
+    "_handle_orders_submission": [
+      "self",
+      "player_id",
+      "power_name",
+      "orders_text"
+    ],
+    "_process_orders": [
+      "self"
+    ],
+    "_advance_negotiation_round": [
+      "self"
+    ],
+    "_announce_game_state": [
+      "self"
+    ],
+    "_announce_order_results": [
+      "self"
+    ],
+    "_announce_game_result": [
+      "self"
+    ],
+    "add_observation": [
+      "self",
+      "from_id",
+      "to_id",
+      "message"
+    ],
+    "get_game_state": [
+      "self"
+    ],
+    "get_conversation_history": [
+      "self"
+    ],
+    "get_order_history": [
+      "self"
+    ],
+    "get_game_state_history": [
+      "self"
+    ],
+    "expand_phase_info": [
+      "self"
+    ],
+    "generate_phase_summary": [
+      "self",
+      "phase_history"
+    ]
+  },
+  "DIPLOMACY_MAP_TEMPLATE": [],
+  "load_prompt": [
+    "filename"
+  ],
+  "get_state_specific_prompt": [
+    "state"
+  ],
+  "DIRS": [],
+  "OthelloEnv": {
+    "__init__": [
+      "self",
+      "board_size",
+      "show_valid"
+    ],
+    "_in_bounds": [
+      "self",
+      "r",
+      "c"
+    ],
+    "_counts": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_skip": [
+      "self",
+      "pid",
+      "piece",
+      "opp"
+    ],
+    "_valid_moves": [
+      "self",
+      "piece"
+    ],
+    "_would_flip": [
+      "self",
+      "r",
+      "c",
+      "piece"
+    ],
+    "_place_and_flip": [
+      "self",
+      "r",
+      "c",
+      "piece"
+    ],
+    "_game_over": [
+      "self"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_push_gamestate": [
+      "self"
+    ],
+    "_declare_winner": [
+      "self"
+    ]
+  },
+  "_Vehicle": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "vid",
+      "row",
+      "col",
+      "length",
+      "horizontal"
+    ],
+    "cells": [
+      "self"
+    ],
+    "front": [
+      "self",
+      "forward"
+    ],
+    "move": [
+      "self",
+      "forward"
+    ],
+    "copy": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "RushHourEnv": {
+    "BOARD_SIZE": [],
+    "ACTION_RE": [],
+    "__init__": [
+      "self",
+      "difficulty"
+    ],
+    "_generate_random_puzzle": [
+      "self"
+    ],
+    "_is_vehicle_valid": [
+      "self",
+      "vehicle",
+      "existing_vehicles"
+    ],
+    "_remove_overlapping_vehicles": [
+      "self",
+      "vehicles"
+    ],
+    "_scramble_puzzle": [
+      "self",
+      "vehicles",
+      "num_moves"
+    ],
+    "_can_move": [
+      "self",
+      "vehicles",
+      "vehicle",
+      "forward"
+    ],
+    "_get_state_hash": [
+      "self",
+      "vehicles"
+    ],
+    "_is_solvable": [
+      "self",
+      "vehicles"
+    ],
+    "_is_solved_state": [
+      "self",
+      "vehicles"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observe_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_occupied": [
+      "self"
+    ],
+    "_try_move": [
+      "self",
+      "car",
+      "forward"
+    ],
+    "_is_solved": [
+      "self"
+    ],
+    "_get_percentage_completion": [
+      "self"
+    ]
+  },
+  "ThreeCardMonteEnv": {
+    "_ACTION_RE": [],
+    "__init__": [
+      "self",
+      "num_cups",
+      "steps"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_show_cups": [
+      "self",
+      "prompt"
+    ]
+  },
+  "ThreePlayerGOPSEnv": {
+    "__init__": [
+      "self"
+    ],
+    "_face_to_val": [
+      "face"
+    ],
+    "_val_to_face": [
+      "v"
+    ],
+    "_handle_invalid": [
+      "self",
+      "reason"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_start_round": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "ThreePlayerTicTacToeEnv": {
+    "__init__": [
+      "self"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_render_board": [
+      "self"
+    ],
+    "_observer_current_state": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_check_winner": [
+      "self",
+      "symbol"
+    ]
+  },
+  "NegotiationEnv": {
+    "broadcast_pattern": [],
+    "whisper_pattern": [],
+    "offer_pattern": [],
+    "accept_pattern": [],
+    "deny_pattern": [],
+    "__init__": [
+      "self",
+      "turn_multiple"
+    ],
+    "terminal_render_keys": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_parse_broadcast": [
+      "self",
+      "text"
+    ],
+    "_parse_whisper": [
+      "self",
+      "text"
+    ],
+    "_process_broadcasts": [
+      "self",
+      "from_pid",
+      "action"
+    ],
+    "_process_private_messages": [
+      "self",
+      "from_pid",
+      "action"
+    ],
+    "_process_offers": [
+      "self",
+      "from_pid",
+      "action"
+    ],
+    "_process_accepts_and_denies": [
+      "self",
+      "current_pid",
+      "action"
+    ],
+    "_attempt_accept_offer": [
+      "self",
+      "current_pid",
+      "offer_id"
+    ],
+    "_deny_offer": [
+      "self",
+      "current_pid",
+      "offer_id"
+    ],
+    "_check_sufficient_resources": [
+      "self",
+      "pid",
+      "needed",
+      "all_resources"
+    ],
+    "_exchange_resources": [
+      "self",
+      "from_pid",
+      "to_pid",
+      "offered",
+      "requested"
+    ],
+    "_parse_resource_list": [
+      "self",
+      "resource_str"
+    ],
+    "_offer_to_str": [
+      "self",
+      "offered",
+      "requested"
+    ],
+    "_determine_winner": [
+      "self"
+    ],
+    "_calculate_inventory_value": [
+      "self",
+      "pid",
+      "game_state"
+    ]
+  },
+  "CodenamesEnv": {
+    "__init__": [
+      "self",
+      "hardcore",
+      "max_turns"
+    ],
+    "_load_word_list": [
+      "self",
+      "hardcore"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_render_player_view": [
+      "self"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_rotate_player_by_logic": [
+      "self",
+      "done_guessing",
+      "skip_guessing"
+    ],
+    "_resolve_game": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ]
+  },
+  "LeducHoldemEnv": {
+    "__init__": [
+      "self",
+      "starting_bank",
+      "max_rounds"
+    ],
+    "_rank_to_str": [
+      "r"
+    ],
+    "_legal": [
+      "self",
+      "gs"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "_deal_new_hand": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_commit_chips": [
+      "self",
+      "pid",
+      "amount"
+    ],
+    "_announce_legal": [
+      "self",
+      "to_pid"
+    ],
+    "_next_round_or_showdown": [
+      "self"
+    ],
+    "_rank_strength": [
+      "self",
+      "private",
+      "board"
+    ],
+    "_showdown": [
+      "self"
+    ],
+    "_split_pot": [
+      "self",
+      "reason"
+    ],
+    "_award": [
+      "self",
+      "winner",
+      "reason"
+    ],
+    "_declare_match_winner": [
+      "self",
+      "reason"
+    ]
+  },
+  "BOARD_WIDTH": [],
+  "fmt_line": [
+    "content"
+  ],
+  "IteratedUltimatumGameEnv": {
+    "__init__": [
+      "self",
+      "pool",
+      "max_turns",
+      "alternate_roles"
+    ],
+    "get_board_str": [
+      "self"
+    ],
+    "_generate_player_prompt": [
+      "self",
+      "player_id",
+      "game_state"
+    ],
+    "reset": [
+      "self",
+      "num_players",
+      "seed"
+    ],
+    "step": [
+      "self",
+      "action"
+    ],
+    "_handle_proposer_action": [
+      "self",
+      "action"
+    ],
+    "_handle_responder_action": [
+      "self",
+      "action"
+    ],
+    "_execute_accepted_offer": [
+      "self"
+    ],
+    "_execute_rejected_offer": [
+      "self"
+    ],
+    "_advance_to_next_round": [
+      "self"
+    ],
+    "_determine_final_winner": [
+      "self"
+    ]
+  }
+}

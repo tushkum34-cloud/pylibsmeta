@@ -1,0 +1,506 @@
+{
+  "SniTunError": {},
+  "SniTunChallengeError": {},
+  "SniTunInvalidPeer": {},
+  "ParseSNIError": {},
+  "ParseSNIIncompleteError": {},
+  "MultiplexerTransportError": {},
+  "MultiplexerTransportClose": {},
+  "MultiplexerTransportDecrypt": {},
+  "SniTunConnectionError": {},
+  "CryptoTransport": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "key",
+      "iv"
+    ],
+    "encrypt": [
+      "self",
+      "data"
+    ],
+    "decrypt": [
+      "self",
+      "data"
+    ]
+  },
+  "_LOGGER": [],
+  "PEER_TCP_TIMEOUT": [],
+  "Multiplexer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "crypto",
+      "reader",
+      "writer",
+      "new_connections",
+      "throttling"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "wait": [
+      "self"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "_graceful_channel_shutdown": [
+      "self"
+    ],
+    "ping": [
+      "self"
+    ],
+    "_runner": [
+      "self"
+    ],
+    "_write_message": [
+      "self",
+      "message"
+    ],
+    "_read_message": [
+      "self",
+      "header"
+    ],
+    "_process_message": [
+      "self",
+      "message"
+    ],
+    "create_channel": [
+      "self",
+      "ip_address"
+    ],
+    "delete_channel": [
+      "self",
+      "channel"
+    ]
+  },
+  "MultiplexerChannel": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "output",
+      "ip_address",
+      "channel_id",
+      "throttling"
+    ],
+    "id": [
+      "self"
+    ],
+    "ip_address": [
+      "self"
+    ],
+    "healthy": [
+      "self"
+    ],
+    "closing": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "write": [
+      "self",
+      "data"
+    ],
+    "read": [
+      "self"
+    ],
+    "init_close": [
+      "self"
+    ],
+    "init_new": [
+      "self"
+    ],
+    "message_transport": [
+      "self",
+      "message"
+    ]
+  },
+  "CHANNEL_FLOW_NEW": [],
+  "CHANNEL_FLOW_DATA": [],
+  "CHANNEL_FLOW_CLOSE": [],
+  "CHANNEL_FLOW_PING": [],
+  "CHANNEL_FLOW_ALL": [],
+  "MultiplexerChannelId": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "MultiplexerMessage": {},
+  "SniTunClientAioHttp": {
+    "__init__": [
+      "self",
+      "runner",
+      "context",
+      "snitun_server",
+      "snitun_port"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "whitelist": [
+      "self"
+    ],
+    "wait": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "whitelist",
+      "endpoint_connection_error_callback"
+    ],
+    "stop": [
+      "self"
+    ],
+    "connect": [
+      "self",
+      "fernet_key",
+      "aes_key",
+      "aes_iv",
+      "throttling"
+    ],
+    "disconnect": [
+      "self"
+    ]
+  },
+  "_async_waitfor_socket_closed": [
+    "sock"
+  ],
+  "bytes_to_ip_address": [
+    "data"
+  ],
+  "ip_address_to_bytes": [
+    "ip_address"
+  ],
+  "generate_aes_keyset": [],
+  "MAX_READ_SIZE": [],
+  "MAX_BUFFER_SIZE": [],
+  "generate_client_token": [
+    "tokens",
+    "valid_delta",
+    "hostname",
+    "aes_key",
+    "aes_iv"
+  ],
+  "ServerWorker": {
+    "__init__": [
+      "self",
+      "fernet_keys",
+      "throttling"
+    ],
+    "peer_size": [
+      "self"
+    ],
+    "is_responsible_peer": [
+      "self",
+      "sni"
+    ],
+    "_async_init": [
+      "self"
+    ],
+    "_event_stream": [
+      "self",
+      "peer",
+      "event"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "handover_connection": [
+      "self",
+      "con",
+      "data",
+      "sni"
+    ],
+    "run": [
+      "self"
+    ],
+    "_async_new_connection": [
+      "self",
+      "con",
+      "data",
+      "sni"
+    ]
+  },
+  "CHECK_VALID_EXPIRE": [],
+  "PeerListener": {
+    "__init__": [
+      "self",
+      "peer_manager",
+      "host",
+      "port"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "handle_connection": [
+      "self",
+      "reader",
+      "writer",
+      "data"
+    ]
+  },
+  "TCP_SESSION_TIMEOUT": [],
+  "SNIProxy": {
+    "__init__": [
+      "self",
+      "peer_manager",
+      "host",
+      "port"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "handle_connection": [
+      "self",
+      "reader",
+      "writer",
+      "data",
+      "sni"
+    ],
+    "_proxy_peer": [
+      "self",
+      "multiplexer",
+      "client_hello",
+      "reader",
+      "writer"
+    ]
+  },
+  "PeerManagerEvent": {
+    "CONNECTED": [],
+    "DISCONNECTED": []
+  },
+  "PeerManager": {
+    "__init__": [
+      "self",
+      "fernet_tokens",
+      "throttling",
+      "event_callback"
+    ],
+    "connections": [
+      "self"
+    ],
+    "create_peer": [
+      "self",
+      "fernet_data"
+    ],
+    "add_peer": [
+      "self",
+      "peer"
+    ],
+    "remove_peer": [
+      "self",
+      "peer"
+    ],
+    "peer_available": [
+      "self",
+      "hostname"
+    ],
+    "get_peer": [
+      "self",
+      "hostname"
+    ],
+    "close_connections": [
+      "self",
+      "timeout"
+    ]
+  },
+  "TLS_HEADER_LEN": [],
+  "TLS_HANDSHAKE_CONTENT_TYPE": [],
+  "TLS_HANDSHAKE_TYPE_CLIENT_HELLO": [],
+  "payload_reader": [
+    "reader"
+  ],
+  "parse_tls_sni": [
+    "data"
+  ],
+  "_parse_extension": [
+    "data",
+    "pos",
+    "data_size"
+  ],
+  "_parse_host_name": [
+    "data",
+    "pos",
+    "data_size"
+  ],
+  "Peer": {
+    "__init__": [
+      "self",
+      "hostname",
+      "valid",
+      "aes_key",
+      "aes_iv",
+      "throttling",
+      "alias"
+    ],
+    "hostname": [
+      "self"
+    ],
+    "alias": [
+      "self"
+    ],
+    "all_hostnames": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "is_valid": [
+      "self"
+    ],
+    "multiplexer": [
+      "self"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "init_multiplexer_challenge": [
+      "self",
+      "reader",
+      "writer"
+    ],
+    "wait_disconnect": [
+      "self"
+    ]
+  },
+  "WORKER_STALE_MAX": [],
+  "SniTunServer": {
+    "__init__": [
+      "self",
+      "fernet_keys",
+      "sni_port",
+      "sni_host",
+      "peer_port",
+      "peer_host",
+      "throttling"
+    ],
+    "peers": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "SniTunServerSingle": {
+    "__init__": [
+      "self",
+      "fernet_keys",
+      "host",
+      "port",
+      "throttling"
+    ],
+    "peers": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_handler": [
+      "self",
+      "reader",
+      "writer"
+    ]
+  },
+  "Connection": {
+    "fileno": [
+      "self"
+    ],
+    "soft_close": [
+      "self"
+    ],
+    "close_socket": [
+      "self",
+      "shutdown"
+    ]
+  },
+  "SniTunServerWorker": {
+    "__init__": [
+      "self",
+      "fernet_keys",
+      "host",
+      "port",
+      "worker_size",
+      "throttling"
+    ],
+    "peer_counter": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "_process": [
+      "self",
+      "client",
+      "workers_lb"
+    ]
+  },
+  "Connector": {
+    "__init__": [
+      "self",
+      "end_host",
+      "end_port",
+      "whitelist",
+      "endpoint_connection_error_callback"
+    ],
+    "whitelist": [
+      "self"
+    ],
+    "_whitelist_policy": [
+      "self",
+      "ip_address"
+    ],
+    "handler": [
+      "self",
+      "multiplexer",
+      "channel"
+    ]
+  },
+  "CONNECTION_TIMEOUT": [],
+  "ClientPeer": {
+    "__init__": [
+      "self",
+      "snitun_host",
+      "snitun_port"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "wait": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "connector",
+      "fernet_token",
+      "aes_key",
+      "aes_iv",
+      "throttling"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_handler": [
+      "self"
+    ]
+  }
+}

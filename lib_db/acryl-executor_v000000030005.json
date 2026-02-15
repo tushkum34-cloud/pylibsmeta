@@ -1,0 +1,948 @@
+{
+  "parse_bool_env": [
+    "env_var",
+    "default"
+  ],
+  "setup_memory_limit": [],
+  "validate_venv": [
+    "venv_path"
+  ],
+  "activate_venv": [
+    "venv_path"
+  ],
+  "register_secrets": [],
+  "check_report_to_support": [
+    "datahub_binary"
+  ],
+  "main": [],
+  "check_test_connection_support": [
+    "datahub_binary"
+  ],
+  "create_unsupported_report": [
+    "report_out_file"
+  ],
+  "__package_name__": [],
+  "__version__": [],
+  "is_dev_mode": [],
+  "nice_version_name": [],
+  "FakeDataHubGraph": {
+    "__init__": [
+      "self",
+      "file_name"
+    ],
+    "test_connection": [
+      "self"
+    ],
+    "emit_mcp": [
+      "self",
+      "mcp"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "setup": [],
+  "__all__": [],
+  "generate_execution_id": [],
+  "ExecutionContext": {
+    "__init__": [
+      "self",
+      "request"
+    ],
+    "get_execution_id": [
+      "self"
+    ],
+    "get_report": [
+      "self"
+    ],
+    "get_task_name": [
+      "self"
+    ]
+  },
+  "ExecutorContext": {
+    "__init__": [
+      "self",
+      "executor_id",
+      "secret_stores"
+    ],
+    "get_secret_stores": [
+      "self"
+    ]
+  },
+  "Type": {
+    "SUCCESS": [],
+    "FAILURE": [],
+    "TIMEOUT": [],
+    "CANCELLED": [],
+    "RUNNING": []
+  },
+  "ExecutionResult": {
+    "__init__": [
+      "self",
+      "ctx",
+      "type"
+    ],
+    "end_time_ms": [
+      "self"
+    ],
+    "set_result_type": [
+      "self",
+      "type"
+    ],
+    "get_summary": [
+      "self"
+    ],
+    "get_structured_report": [
+      "self"
+    ],
+    "pretty_print_summary": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "MUTATION_QUERY": [],
+  "CloudCopierLocation": {
+    "send_location": [
+      "self",
+      "bucket",
+      "base_path",
+      "execution_id"
+    ],
+    "_send_location": [
+      "self",
+      "bucket",
+      "base_path",
+      "execution_id"
+    ]
+  },
+  "LIST_EXECUTOR_CONFIGS_QUERY": [],
+  "ExecutorCredentials": {
+    "__init__": [
+      "self",
+      "graph"
+    ],
+    "_parse_executor_configs_response": [
+      "self",
+      "response_data",
+      "executor_pool_id"
+    ],
+    "get_executor_credentials": [
+      "self"
+    ]
+  },
+  "CloudCopier": {
+    "upload": [
+      "self",
+      "source_local_file",
+      "target_file"
+    ]
+  },
+  "S3CloudCopier": {
+    "log": [],
+    "__init__": [
+      "self",
+      "bucket",
+      "base_path",
+      "aws_access_key_id",
+      "aws_secret_access_key",
+      "aws_session_token",
+      "region_name"
+    ],
+    "upload": [
+      "self",
+      "source_local_file",
+      "target_cloud_file"
+    ]
+  },
+  "DATAHUB_CLOUD_LOG_PATH_ENV_VAR": [],
+  "DATAHUB_CLOUD_LOG_BUCKET_ENV_VAR": [],
+  "DEFAULT_GMS_PAYLOAD_MAX_LENGTH": [],
+  "string_to_bool": [
+    "string"
+  ],
+  "get_executor_pool_id": [],
+  "get_payload_max_length": [],
+  "get_bundled_venv_path": [],
+  "get_dependency_resolution_enabled": [],
+  "get_cloud_log_bucket": [],
+  "get_cloud_log_path": [],
+  "is_datahub_hosted": [],
+  "TaskConfig": {},
+  "TaskError": {},
+  "Task": {
+    "create": [
+      "cls",
+      "config",
+      "ctx"
+    ],
+    "execute": [
+      "self",
+      "args",
+      "ctx"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ARTIFACTS_DIR_NAME": [],
+  "SubProcessIngestionTaskConfig": {},
+  "SubProcessIngestionTaskArgs": {
+    "model_config": [],
+    "normalize_debug_mode": [
+      "cls",
+      "v"
+    ]
+  },
+  "SubProcessIngestionTask": {
+    "create": [
+      "cls",
+      "config",
+      "ctx"
+    ],
+    "__init__": [
+      "self",
+      "config",
+      "ctx"
+    ],
+    "_temporary_log_level": [
+      "self",
+      "level"
+    ],
+    "create_tar_from_dir": [
+      "self",
+      "dir_path"
+    ],
+    "create_tar_archives": [
+      "self",
+      "artifacts_path",
+      "cloud_copier"
+    ],
+    "_setup_directories": [
+      "self",
+      "exec_id"
+    ],
+    "_prepare_subprocess_environment": [
+      "self",
+      "validated_args",
+      "exec_out_dir",
+      "artifact_output_dir",
+      "secret_names"
+    ],
+    "_setup_venv": [
+      "self",
+      "validated_args",
+      "plugin",
+      "exec_out_dir",
+      "shared_logs"
+    ],
+    "_create_subprocess": [
+      "self",
+      "validated_args",
+      "plugin",
+      "recipe_file_path",
+      "report_out_file",
+      "subprocess_env",
+      "exec_out_dir",
+      "shared_logs"
+    ],
+    "execute": [
+      "self",
+      "args",
+      "ctx"
+    ],
+    "_execute_with_debug": [
+      "self",
+      "validated_args",
+      "ctx",
+      "exec_id"
+    ],
+    "_monitor_subprocess": [
+      "self",
+      "ingest_process",
+      "exec_id",
+      "ctx",
+      "shared_logs",
+      "full_log_file"
+    ],
+    "_should_upload_logs_to_s3": [
+      "self",
+      "graph"
+    ],
+    "_upload_logs_to_s3": [
+      "self",
+      "recipe",
+      "ctx",
+      "artifact_output_dir"
+    ],
+    "_handle_subprocess_completion": [
+      "self",
+      "ingest_process",
+      "ctx",
+      "report_out_file",
+      "artifact_output_dir",
+      "recipe",
+      "exec_out_dir",
+      "shared_logs",
+      "secrets_to_cleanup"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "DefaultExecutorConfig": {},
+  "DefaultExecutor": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "register_task": [
+      "self",
+      "task"
+    ],
+    "execute": [
+      "self",
+      "request"
+    ],
+    "execute_task": [
+      "self",
+      "request",
+      "executor_context"
+    ],
+    "signal": [
+      "self",
+      "request"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "_create_secret_stores": [
+      "self",
+      "config"
+    ],
+    "_create_secret_store": [
+      "self",
+      "config"
+    ]
+  },
+  "InMemoryIngestionTaskConfig": {},
+  "InMemoryIngestionTaskArgs": {
+    "model_config": []
+  },
+  "InMemoryIngestionTask": {
+    "create": [
+      "cls",
+      "config",
+      "ctx"
+    ],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "execute": [
+      "self",
+      "args",
+      "ctx"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "SubProcessTestConnectionTaskConfig": {},
+  "SubProcessTestConnectionTaskArgs": {},
+  "SubProcessTestConnectionTask": {
+    "create": [
+      "cls",
+      "config",
+      "ctx"
+    ],
+    "__init__": [
+      "self",
+      "config",
+      "ctx"
+    ],
+    "execute": [
+      "self",
+      "args",
+      "ctx"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "VENV_VERSION_LATEST": [],
+  "VENV_VERSION_BUNDLED": [],
+  "VENV_VERSION_NATIVE": [],
+  "is_bundled_version": [
+    "version"
+  ],
+  "should_use_bundled_venv": [
+    "version"
+  ],
+  "get_venv_name": [
+    "plugin",
+    "version",
+    "extra_pip_requirements",
+    "extra_pip_plugins"
+  ],
+  "get_venv_path": [
+    "venv_name",
+    "tmp_dir"
+  ],
+  "should_use_bundled_venv_by_name": [
+    "venv_name"
+  ],
+  "IgnoreExecutor": {
+    "__init__": [
+      "self",
+      "id"
+    ],
+    "execute": [
+      "self",
+      "request"
+    ],
+    "signal": [
+      "self",
+      "request"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "get_id": [
+      "self"
+    ]
+  },
+  "SubProcessTaskUtil": {
+    "MAX_LOG_LINES": [],
+    "SUBPROCESS_BUFFER_SIZE": [],
+    "MAX_LOG_SIZE_BYTES": [],
+    "MAX_BYTES_PER_LINE": [],
+    "format_subprocess_error": [
+      "e"
+    ],
+    "_format_log_lines": [
+      "lines"
+    ],
+    "_resolve_secrets": [
+      "secret_names",
+      "ctx"
+    ],
+    "_warn_on_bad_secret_value": [
+      "ctx",
+      "key",
+      "val"
+    ],
+    "_resolve_recipe": [
+      "recipe",
+      "execution_ctx",
+      "executor_ctx"
+    ],
+    "_get_plugin_from_recipe": [
+      "recipe"
+    ],
+    "_write_recipe_to_file": [
+      "dir_path",
+      "recipe",
+      "file_name"
+    ],
+    "_remove_directory": [
+      "dir_path"
+    ]
+  },
+  "SubProcessRecipeTaskArgs": {
+    "parse_json_list_fields": [
+      "cls",
+      "v"
+    ],
+    "parse_json_dict_field": [
+      "cls",
+      "v"
+    ],
+    "get_venv_name": [
+      "self",
+      "plugin"
+    ],
+    "should_use_bundled_venv": [
+      "self"
+    ],
+    "get_combined_env_vars": [
+      "self"
+    ]
+  },
+  "_is_importable": [
+    "path"
+  ],
+  "import_path": [
+    "path"
+  ],
+  "TaskRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "_get_registered_type": [
+      "self"
+    ],
+    "_check_cls": [
+      "self",
+      "cls"
+    ],
+    "_register": [
+      "self",
+      "key",
+      "tp",
+      "override"
+    ],
+    "register": [
+      "self",
+      "key",
+      "cls",
+      "override"
+    ],
+    "register_lazy": [
+      "self",
+      "key",
+      "import_path"
+    ],
+    "register_disabled": [
+      "self",
+      "key",
+      "reason",
+      "override"
+    ],
+    "_ensure_not_lazy": [
+      "self",
+      "key"
+    ],
+    "is_enabled": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "DATAHUB_EXECUTION_REQUEST_ENTITY_NAME": [],
+  "DATAHUB_EXECUTION_REQUEST_RESULT_ASPECT_NAME": [],
+  "REPORTS_TO_EMIT_MAX_SIZE": [],
+  "ReportingExecutorConfig": {
+    "model_config": [],
+    "check_graph_connection": [
+      "cls",
+      "v"
+    ]
+  },
+  "ReportingExecutor": {
+    "__init__": [
+      "self",
+      "exec_config"
+    ],
+    "execute": [
+      "self",
+      "request"
+    ],
+    "signal": [
+      "self",
+      "request"
+    ],
+    "_make_progress_callback": [
+      "self",
+      "exec_request"
+    ],
+    "_shared_system_metadata": [
+      "self"
+    ],
+    "_build_kickoff_mcp": [
+      "self",
+      "exec_request"
+    ],
+    "_build_progress_mcp": [
+      "self",
+      "exec_request",
+      "start_time_ms",
+      "partial_report"
+    ],
+    "_build_completion_mcp": [
+      "self",
+      "exec_result"
+    ],
+    "_build_empty_cancel_mcp": [
+      "self",
+      "exec_id"
+    ],
+    "_build_execution_request_key_aspect": [
+      "self",
+      "execution_request_id"
+    ],
+    "_build_execution_request_result_aspect": [
+      "self",
+      "status",
+      "start_time_ms",
+      "duration_ms",
+      "report",
+      "structured_report",
+      "exec_request"
+    ],
+    "_emit_completion_mcp": [
+      "self",
+      "exec_id",
+      "mcp"
+    ]
+  },
+  "Executor": {
+    "execute": [
+      "self",
+      "request"
+    ],
+    "signal": [
+      "self",
+      "request"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "get_id": [
+      "self"
+    ]
+  },
+  "_DEFAULT_MAX_LOG_LINES": [],
+  "_DEFAULT_MAX_BYTES_PER_LINE": [],
+  "_DEFAULT_MAX_LOG_SIZE_BYTES": [],
+  "VENV_NO_DATAHUB": [],
+  "BUNDLED_VENV_PATH_ENV": [],
+  "_find_uv": [],
+  "LogHolder": {
+    "__init__": [
+      "self",
+      "max_log_lines",
+      "max_bytes_per_line",
+      "max_log_size_bytes",
+      "echo_to_stdout_prefix"
+    ],
+    "clear": [
+      "self"
+    ],
+    "append": [
+      "self",
+      "partial_line"
+    ],
+    "changed_echo_prefix": [
+      "self",
+      "new_prefix"
+    ],
+    "set_command": [
+      "self",
+      "command"
+    ],
+    "force_new_line": [
+      "self"
+    ],
+    "get_logs": [
+      "self",
+      "skip_lines"
+    ],
+    "get_lines": [
+      "self"
+    ]
+  },
+  "pydantic_parse_json": [
+    "v"
+  ],
+  "VenvConfig": {
+    "set_main_plugin": [
+      "self",
+      "plugin"
+    ],
+    "get_stable_venv_name": [
+      "self"
+    ],
+    "get_acryl_datahub_requirement_line": [
+      "self"
+    ]
+  },
+  "VenvReference": {
+    "command": [
+      "self",
+      "cmd"
+    ],
+    "extra_envs": [
+      "self"
+    ]
+  },
+  "collapse_excgroups": [],
+  "SubprocessRunner": {
+    "__init__": [
+      "self",
+      "logs"
+    ],
+    "logs": [
+      "self"
+    ],
+    "pid": [
+      "self"
+    ],
+    "execute": [
+      "self",
+      "command",
+      "env",
+      "cwd"
+    ],
+    "_read_logs": [
+      "self"
+    ],
+    "kill": [
+      "self",
+      "graceful_wait_sec"
+    ]
+  },
+  "setup_venv": [
+    "venv_config",
+    "runner",
+    "tmp_dir",
+    "bundled_venv_path"
+  ],
+  "validate_dependency_resolution_enabled": [
+    "version"
+  ],
+  "format_report_line": [
+    "line_type",
+    "message"
+  ],
+  "ExecutionReport": {
+    "__init__": [
+      "self",
+      "exec_id"
+    ],
+    "report_info": [
+      "self",
+      "message",
+      "log"
+    ],
+    "report_error": [
+      "self",
+      "message",
+      "log"
+    ],
+    "set_logs": [
+      "self",
+      "logs"
+    ],
+    "get_logs": [
+      "self"
+    ],
+    "set_structured_report": [
+      "self",
+      "report_content"
+    ],
+    "get_structured_report": [
+      "self"
+    ]
+  },
+  "ExecutionProgressCallback": [],
+  "ExecutionRequest": {
+    "start_time_ms": [
+      "self"
+    ]
+  },
+  "SignalRequest": {},
+  "FileSecretStoreConfig": {},
+  "FileSecretStore": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_secret_values": [
+      "self",
+      "secret_names"
+    ],
+    "get_secret_value": [
+      "self",
+      "secret_name"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "create": [
+      "cls",
+      "config"
+    ]
+  },
+  "DataHubSecretsClient": {
+    "__init__": [
+      "self",
+      "graph"
+    ],
+    "get_secret_values": [
+      "self",
+      "secret_names"
+    ]
+  },
+  "DataHubSecretStoreConfig": {
+    "model_config": [],
+    "check_graph_connection": [
+      "cls",
+      "v"
+    ]
+  },
+  "DataHubSecretStore": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_secret_values": [
+      "self",
+      "secret_names"
+    ],
+    "get_secret_value": [
+      "self",
+      "secret_name"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "create": [
+      "cls",
+      "config"
+    ]
+  },
+  "SecretStoreConfig": {},
+  "SecretStore": {
+    "create": [
+      "cls",
+      "configs"
+    ],
+    "get_secret_values": [
+      "self",
+      "secret_names"
+    ],
+    "get_secret_value": [
+      "self",
+      "secret_name"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "EnvironmentSecretStore": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_secret_values": [
+      "self",
+      "secret_names"
+    ],
+    "get_secret_value": [
+      "self",
+      "secret_name"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "create": [
+      "cls",
+      "config"
+    ]
+  },
+  "SecretStoreRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "_register_defaults": [
+      "self"
+    ],
+    "_get_registered_type": [
+      "self"
+    ],
+    "_check_cls": [
+      "self",
+      "cls"
+    ],
+    "_register": [
+      "self",
+      "key",
+      "tp",
+      "override"
+    ],
+    "register": [
+      "self",
+      "key",
+      "cls",
+      "override"
+    ],
+    "register_lazy": [
+      "self",
+      "key",
+      "import_path"
+    ],
+    "register_disabled": [
+      "self",
+      "key",
+      "reason",
+      "override"
+    ],
+    "_ensure_not_lazy": [
+      "self",
+      "key"
+    ],
+    "is_enabled": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "dispatch_async": [
+    "executor",
+    "request",
+    "close_callback"
+  ],
+  "dispatch_signal_async": [
+    "executor",
+    "request",
+    "close_callback"
+  ],
+  "DefaultDispatcher": {
+    "__init__": [
+      "self",
+      "executors"
+    ],
+    "dispatch": [
+      "self",
+      "request"
+    ],
+    "dispatch_signal": [
+      "self",
+      "request"
+    ],
+    "shutdown": [
+      "self"
+    ]
+  },
+  "Dispatcher": {
+    "dispatch": [
+      "self",
+      "request"
+    ],
+    "dispatch_signal": [
+      "self",
+      "request"
+    ]
+  }
+}

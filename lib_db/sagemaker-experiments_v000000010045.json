@@ -1,0 +1,916 @@
+{
+  "sagemaker_client": [],
+  "boto_session": [],
+  "suffix": [],
+  "name": [
+    "prefix"
+  ],
+  "get_or_create_default_bucket": [
+    "boto_session",
+    "default_bucket_prefix"
+  ],
+  "get_module": [
+    "module_name"
+  ],
+  "TrainingJob": {
+    "search": [
+      "cls",
+      "search_expression",
+      "sort_by",
+      "sort_order",
+      "max_results",
+      "sagemaker_boto_client"
+    ]
+  },
+  "METRICS_DIR": [],
+  "logger": [],
+  "SageMakerFileMetricsWriter": {
+    "__init__": [
+      "self",
+      "metrics_file_path"
+    ],
+    "log_metric": [
+      "self",
+      "metric_name",
+      "value",
+      "timestamp",
+      "iteration_number"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_get_metrics_file_path": [
+      "self"
+    ]
+  },
+  "SageMakerMetricsWriterException": {
+    "__init__": [
+      "self",
+      "message",
+      "errors"
+    ]
+  },
+  "_RawMetricData": {
+    "MetricName": [],
+    "Value": [],
+    "Timestamp": [],
+    "IterationNumber": [],
+    "__init__": [
+      "self",
+      "metric_name",
+      "value",
+      "timestamp",
+      "iteration_number"
+    ],
+    "to_record": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Tracker": {
+    "trial_component": [],
+    "_metrics_writer": [],
+    "_in_sagemaker_job": [],
+    "_artifact_uploader": [],
+    "__init__": [
+      "self",
+      "trial_component",
+      "metrics_writer",
+      "artifact_uploader",
+      "lineage_artifact_tracker"
+    ],
+    "load": [
+      "cls",
+      "trial_component_name",
+      "artifact_bucket",
+      "artifact_prefix",
+      "boto3_session",
+      "sagemaker_boto_client",
+      "training_job_name",
+      "processing_job_name"
+    ],
+    "create": [
+      "cls",
+      "base_trial_component_name",
+      "display_name",
+      "artifact_bucket",
+      "artifact_prefix",
+      "boto3_session",
+      "sagemaker_boto_client"
+    ],
+    "log_parameter": [
+      "self",
+      "name",
+      "value"
+    ],
+    "log_parameters": [
+      "self",
+      "parameters"
+    ],
+    "log_input": [
+      "self",
+      "name",
+      "value",
+      "media_type"
+    ],
+    "log_output": [
+      "self",
+      "name",
+      "value",
+      "media_type"
+    ],
+    "log_artifacts": [
+      "self",
+      "directory",
+      "media_type"
+    ],
+    "log_artifact": [
+      "self",
+      "file_path",
+      "name",
+      "media_type"
+    ],
+    "log_output_artifact": [
+      "self",
+      "file_path",
+      "name",
+      "media_type"
+    ],
+    "log_input_artifact": [
+      "self",
+      "file_path",
+      "name",
+      "media_type"
+    ],
+    "log_metric": [
+      "self",
+      "metric_name",
+      "value",
+      "timestamp",
+      "iteration_number"
+    ],
+    "log_table": [
+      "self",
+      "title",
+      "values",
+      "data_frame",
+      "output_artifact"
+    ],
+    "log_precision_recall": [
+      "self",
+      "y_true",
+      "predicted_probabilities",
+      "positive_label",
+      "title",
+      "output_artifact",
+      "no_skill"
+    ],
+    "log_roc_curve": [
+      "self",
+      "y_true",
+      "y_score",
+      "title",
+      "output_artifact"
+    ],
+    "log_confusion_matrix": [
+      "self",
+      "y_true",
+      "y_pred",
+      "title",
+      "output_artifact"
+    ],
+    "_log_graph_artifact": [
+      "self",
+      "name",
+      "data",
+      "graph_type",
+      "output_artifact"
+    ],
+    "_is_input_valid": [
+      "self",
+      "input_type",
+      "field_name",
+      "field_value"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "exc_traceback"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_resolve_artifact_name": [
+    "file_path"
+  ],
+  "_ArtifactUploader": {
+    "__init__": [
+      "self",
+      "trial_component_name",
+      "artifact_bucket",
+      "artifact_prefix",
+      "boto_session"
+    ],
+    "upload_artifact": [
+      "self",
+      "file_path"
+    ],
+    "upload_object_artifact": [
+      "self",
+      "artifact_name",
+      "obj",
+      "file_extension"
+    ],
+    "_try_get_etag": [
+      "self",
+      "key"
+    ]
+  },
+  "_guess_media_type": [
+    "file_path"
+  ],
+  "_LineageArtifactTracker": {
+    "__init__": [
+      "self",
+      "trial_component_arn",
+      "sagemaker_client"
+    ],
+    "add_input_artifact": [
+      "self",
+      "name",
+      "source_uri",
+      "etag",
+      "artifact_type"
+    ],
+    "add_output_artifact": [
+      "self",
+      "name",
+      "source_uri",
+      "etag",
+      "artifact_type"
+    ],
+    "save": [
+      "self"
+    ]
+  },
+  "_LineageArtifact": {
+    "__init__": [
+      "self",
+      "name",
+      "source_uri",
+      "etag",
+      "source_arn",
+      "dest_arn",
+      "artifact_type"
+    ],
+    "create_artifact": [
+      "self",
+      "sagemaker_client"
+    ],
+    "add_association": [
+      "self",
+      "sagemaker_client"
+    ]
+  },
+  "_ArtifactConverter": {
+    "convert_dict_to_fields": [
+      "cls",
+      "values"
+    ],
+    "convert_data_frame_to_values": [
+      "cls",
+      "data_frame"
+    ],
+    "convert_data_frame_to_fields": [
+      "cls",
+      "data_frame"
+    ],
+    "convert_df_type_to_simple_type": [
+      "cls",
+      "data_frame_type"
+    ]
+  },
+  "ApiObject": {
+    "_custom_boto_names": [],
+    "_custom_boto_types": [],
+    "__init__": [
+      "self"
+    ],
+    "_boto_ignore": [
+      "cls"
+    ],
+    "from_boto": [
+      "cls",
+      "boto_dict"
+    ],
+    "to_boto": [
+      "cls",
+      "obj"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Record": {
+    "_boto_update_method": [],
+    "_boto_delete_method": [],
+    "_boto_list_method": [],
+    "_boto_update_members": [],
+    "_boto_delete_members": [],
+    "__init__": [
+      "self",
+      "sagemaker_boto_client"
+    ],
+    "_list": [
+      "cls",
+      "boto_list_method",
+      "list_item_factory",
+      "boto_list_items_name",
+      "boto_next_token_name",
+      "sagemaker_boto_client"
+    ],
+    "_search": [
+      "cls",
+      "search_resource",
+      "search_item_factory",
+      "boto_next_token_name",
+      "sagemaker_boto_client"
+    ],
+    "_construct": [
+      "cls",
+      "boto_method_name",
+      "sagemaker_boto_client"
+    ],
+    "with_boto": [
+      "self",
+      "boto_dict"
+    ],
+    "_invoke_api": [
+      "self",
+      "boto_method",
+      "boto_method_members"
+    ]
+  },
+  "to_camel_case": [
+    "snake_case"
+  ],
+  "to_snake_case": [
+    "name"
+  ],
+  "from_boto": [
+    "boto_dict",
+    "boto_name_to_member_name",
+    "member_name_to_type"
+  ],
+  "to_boto": [
+    "member_vars",
+    "member_name_to_boto_name",
+    "member_name_to_type"
+  ],
+  "__version__": [],
+  "ExperimentSummary": {
+    "experiment_arn": [],
+    "experiment_name": [],
+    "creation_time": [],
+    "last_modified_time": [],
+    "__init__": [
+      "self",
+      "experiment_name",
+      "experiment_arn"
+    ]
+  },
+  "TrialComponentMetricSummary": {
+    "metric_name": [],
+    "source_arn": [],
+    "time_stamp": [],
+    "logical_time": [],
+    "max": [],
+    "min": [],
+    "last": [],
+    "count": [],
+    "avg": [],
+    "std_dev": [],
+    "__init__": [
+      "self",
+      "metric_name",
+      "source_arn"
+    ]
+  },
+  "TrialSummary": {
+    "trial_arn": [],
+    "trial_name": [],
+    "creation_time": [],
+    "last_modified_time": [],
+    "__init__": [
+      "self",
+      "trial_name",
+      "trial_arn"
+    ]
+  },
+  "TrialComponentParameterValue": {
+    "string_value": [],
+    "number_value": [],
+    "__init__": [
+      "self",
+      "string_value",
+      "number_value"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "TrialComponentParameters": {
+    "from_boto": [
+      "cls",
+      "boto_dict"
+    ],
+    "to_boto": [
+      "self",
+      "parameters"
+    ]
+  },
+  "TrialComponentArtifact": {
+    "media_type": [],
+    "value": [],
+    "__init__": [
+      "self",
+      "value",
+      "media_type"
+    ]
+  },
+  "TrialComponentStatus": {
+    "primary_status": [],
+    "message": [],
+    "__init__": [
+      "self",
+      "primary_status",
+      "message"
+    ]
+  },
+  "TrialComponentSummary": {
+    "_custom_boto_types": [],
+    "trial_component_name": [],
+    "trial_component_arn": [],
+    "display_name": [],
+    "source_arn": [],
+    "status": [],
+    "start_time": [],
+    "end_time": [],
+    "creation_time": [],
+    "created_by": [],
+    "last_modified_time": [],
+    "last_modified_by": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "ExperimentSource": {
+    "source_arn": [],
+    "__init__": [
+      "self",
+      "source_arn"
+    ]
+  },
+  "TrialSource": {
+    "source_arn": [],
+    "__init__": [
+      "self",
+      "source_arn"
+    ]
+  },
+  "TrialComponentSource": {
+    "source_arn": [],
+    "__init__": [
+      "self",
+      "source_arn"
+    ]
+  },
+  "BatchPutMetricsError": {
+    "code": [],
+    "message": [],
+    "metric_index": [],
+    "__init__": [
+      "self",
+      "code",
+      "message",
+      "metric_index"
+    ]
+  },
+  "TrainingJobSearchResult": {
+    "training_job_name": [],
+    "training_job_arn": [],
+    "tuning_job_arn": [],
+    "labeling_job_arn": [],
+    "autoML_job_arn": [],
+    "model_artifacts": [],
+    "training_job_status": [],
+    "hyper_parameters": [],
+    "algorithm_specification": [],
+    "input_data_config": [],
+    "output_data_config": [],
+    "resource_config": [],
+    "debug_hook_config": [],
+    "experiment_config": [],
+    "debug_rule_config": [],
+    "__init__": [
+      "self",
+      "training_job_arn",
+      "training_job_name",
+      "tuning_job_arn",
+      "labeling_job_arn",
+      "autoML_job_arn",
+      "model_artifacts",
+      "training_job_status",
+      "hyper_parameters",
+      "algorithm_specification",
+      "input_data_config",
+      "output_data_config",
+      "resource_config",
+      "debug_hook_config",
+      "experiment_config",
+      "debug_rule_config"
+    ]
+  },
+  "ExperimentSearchResult": {
+    "experiment_arn": [],
+    "experiment_name": [],
+    "display_name": [],
+    "source": [],
+    "tags": [],
+    "__init__": [
+      "self",
+      "experiment_arn",
+      "experiment_name",
+      "display_name",
+      "source",
+      "tags"
+    ]
+  },
+  "TrialSearchResult": {
+    "trial_arn": [],
+    "trial_name": [],
+    "display_name": [],
+    "source": [],
+    "tags": [],
+    "trial_component_summaries": [],
+    "__init__": [
+      "self",
+      "trial_arn",
+      "trial_name",
+      "display_name",
+      "source",
+      "tags",
+      "trial_component_summaries"
+    ]
+  },
+  "TrialComponentSearchResult": {
+    "trial_component_arn": [],
+    "trial_component_name": [],
+    "display_name": [],
+    "source": [],
+    "status": [],
+    "parameters": [],
+    "input_artifacts": [],
+    "output_artifacts": [],
+    "metrics": [],
+    "source_detail": [],
+    "tags": [],
+    "parents": [],
+    "__init__": [
+      "self",
+      "trial_component_arn",
+      "trial_component_name",
+      "start_time",
+      "end_time",
+      "display_name",
+      "source",
+      "status",
+      "parameters",
+      "input_artifacts",
+      "output_artifacts",
+      "metrics",
+      "source_detail",
+      "tags",
+      "parents"
+    ]
+  },
+  "Operator": {
+    "EQUALS": [],
+    "NOT_EQUALS": [],
+    "GREATER_THAN": [],
+    "GREATER_THAN_OR_EQUAL": [],
+    "LESS_THAN": [],
+    "LESS_THAN_OR_EQUAL": [],
+    "CONTAINS": [],
+    "EXISTS": [],
+    "NOT_EXISTS": []
+  },
+  "BooleanOperator": {
+    "AND": [],
+    "OR": []
+  },
+  "SearchObject": {
+    "to_boto": [
+      "self"
+    ]
+  },
+  "Filter": {
+    "name": [],
+    "operator": [],
+    "value": [],
+    "__init__": [
+      "self",
+      "name",
+      "operator",
+      "value"
+    ]
+  },
+  "NestedFilter": {
+    "nested_property_name": [],
+    "filters": [],
+    "__init__": [
+      "self",
+      "property_name",
+      "filters"
+    ]
+  },
+  "SearchExpression": {
+    "filters": [],
+    "nested_filters": [],
+    "operator": [],
+    "sub_expressions": [],
+    "__init__": [
+      "self",
+      "filters",
+      "nested_filters",
+      "sub_expressions",
+      "boolean_operator"
+    ]
+  },
+  "TrialComponent": {
+    "trial_component_name": [],
+    "trial_component_arn": [],
+    "display_name": [],
+    "source": [],
+    "status": [],
+    "start_time": [],
+    "end_time": [],
+    "creation_time": [],
+    "created_by": [],
+    "last_modified_time": [],
+    "last_modified_by": [],
+    "parameters": [],
+    "input_artifacts": [],
+    "output_artifacts": [],
+    "metrics": [],
+    "parameters_to_remove": [],
+    "input_artifacts_to_remove": [],
+    "output_artifacts_to_remove": [],
+    "tags": [],
+    "_boto_load_method": [],
+    "_boto_create_method": [],
+    "_boto_update_method": [],
+    "_boto_delete_method": [],
+    "_custom_boto_types": [],
+    "_boto_update_members": [],
+    "_boto_delete_members": [],
+    "_boto_ignore": [
+      "cls"
+    ],
+    "save": [
+      "self"
+    ],
+    "delete": [
+      "self",
+      "force_disassociate"
+    ],
+    "list_trials": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "trial_component_name",
+      "sagemaker_boto_client"
+    ],
+    "create": [
+      "cls",
+      "trial_component_name",
+      "display_name",
+      "tags",
+      "sagemaker_boto_client"
+    ],
+    "list": [
+      "cls",
+      "source_arn",
+      "created_before",
+      "created_after",
+      "sort_by",
+      "sort_order",
+      "sagemaker_boto_client",
+      "trial_name",
+      "experiment_name",
+      "max_results",
+      "next_token"
+    ],
+    "search": [
+      "cls",
+      "search_expression",
+      "sort_by",
+      "sort_order",
+      "max_results",
+      "sagemaker_boto_client"
+    ]
+  },
+  "Trial": {
+    "trial_name": [],
+    "experiment_name": [],
+    "tags": [],
+    "_boto_create_method": [],
+    "_boto_load_method": [],
+    "_boto_delete_method": [],
+    "_boto_update_method": [],
+    "_boto_update_members": [],
+    "_boto_delete_members": [],
+    "MAX_DELETE_ALL_ATTEMPTS": [],
+    "_boto_ignore": [
+      "cls"
+    ],
+    "save": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "trial_name",
+      "sagemaker_boto_client"
+    ],
+    "create": [
+      "cls",
+      "experiment_name",
+      "trial_name",
+      "sagemaker_boto_client",
+      "trial_components",
+      "tags"
+    ],
+    "list": [
+      "cls",
+      "experiment_name",
+      "trial_component_name",
+      "created_before",
+      "created_after",
+      "sort_by",
+      "sort_order",
+      "sagemaker_boto_client"
+    ],
+    "search": [
+      "cls",
+      "search_expression",
+      "sort_by",
+      "sort_order",
+      "max_results",
+      "sagemaker_boto_client"
+    ],
+    "add_trial_component": [
+      "self",
+      "tc"
+    ],
+    "remove_trial_component": [
+      "self",
+      "tc"
+    ],
+    "list_trial_components": [
+      "self",
+      "created_before",
+      "created_after",
+      "sort_by",
+      "sort_order",
+      "max_results",
+      "next_token"
+    ],
+    "delete_all": [
+      "self",
+      "action"
+    ]
+  },
+  "Experiment": {
+    "experiment_name": [],
+    "description": [],
+    "tags": [],
+    "_boto_create_method": [],
+    "_boto_load_method": [],
+    "_boto_update_method": [],
+    "_boto_delete_method": [],
+    "_boto_update_members": [],
+    "_boto_delete_members": [],
+    "MAX_DELETE_ALL_ATTEMPTS": [],
+    "save": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "experiment_name",
+      "sagemaker_boto_client"
+    ],
+    "create": [
+      "cls",
+      "experiment_name",
+      "description",
+      "tags",
+      "sagemaker_boto_client"
+    ],
+    "list": [
+      "cls",
+      "created_before",
+      "created_after",
+      "sort_by",
+      "sort_order",
+      "sagemaker_boto_client"
+    ],
+    "search": [
+      "cls",
+      "search_expression",
+      "sort_by",
+      "sort_order",
+      "max_results",
+      "sagemaker_boto_client"
+    ],
+    "list_trials": [
+      "self",
+      "created_before",
+      "created_after",
+      "sort_by",
+      "sort_order"
+    ],
+    "create_trial": [
+      "self",
+      "trial_name",
+      "trial_name_prefix"
+    ],
+    "delete_all": [
+      "self",
+      "action"
+    ]
+  },
+  "TRAINING_JOB_ARN_ENV": [],
+  "PROCESSING_JOB_CONFIG_PATH": [],
+  "EnvironmentType": {
+    "SageMakerTrainingJob": [],
+    "SageMakerProcessingJob": []
+  },
+  "TrialComponentEnvironment": {
+    "environment_type": [],
+    "source_arn": [],
+    "__init__": [
+      "self",
+      "environment_type",
+      "source_arn"
+    ],
+    "load": [
+      "cls",
+      "training_job_arn_env",
+      "processing_job_config_path"
+    ],
+    "get_trial_component": [
+      "self",
+      "sagemaker_boto_client"
+    ]
+  }
+}

@@ -1,0 +1,2283 @@
+{
+  "OWM": {
+    "__init__": [
+      "self",
+      "api_key",
+      "config"
+    ],
+    "configuration": [
+      "self"
+    ],
+    "version": [
+      "self"
+    ],
+    "supported_languages": [
+      "self"
+    ],
+    "agro_manager": [
+      "self"
+    ],
+    "airpollution_manager": [
+      "self"
+    ],
+    "alert_manager": [
+      "self"
+    ],
+    "city_id_registry": [
+      "self"
+    ],
+    "stations_manager": [
+      "self"
+    ],
+    "tile_manager": [
+      "self",
+      "layer_name"
+    ],
+    "uvindex_manager": [
+      "self"
+    ],
+    "weather_manager": [
+      "self"
+    ],
+    "geocoding_manager": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DEFAULT_CONFIG": [],
+  "AGRO_API_VERSION": [],
+  "AIRPOLLUTION_API_VERSION": [],
+  "ALERT_API_VERSION": [],
+  "GEOCODING_API_VERSION": [],
+  "STATIONS_API_VERSION": [],
+  "UVINDEX_API_VERSION": [],
+  "WEATHER_API_VERSION": [],
+  "LANGUAGES": [],
+  "ROOT_STATIONS_API_URL": [],
+  "STATIONS_URI": [],
+  "NAMED_STATION_URI": [],
+  "MEASUREMENTS_URI": [],
+  "Station": {
+    "__init__": [
+      "self",
+      "id",
+      "created_at",
+      "updated_at",
+      "external_id",
+      "name",
+      "lon",
+      "lat",
+      "alt",
+      "rank"
+    ],
+    "_format_micros": [
+      "self",
+      "datestring"
+    ],
+    "creation_time": [
+      "self",
+      "timeformat"
+    ],
+    "last_update_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PersistenceBackend": {
+    "__metaclass__": [],
+    "load_to_buffer": [
+      "self"
+    ],
+    "persist_buffer": [
+      "self",
+      "buffer"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "JSONPersistenceBackend": {
+    "_file_path": [],
+    "_station_id": [],
+    "__init__": [
+      "self",
+      "json_file_path",
+      "station_id"
+    ],
+    "load_to_buffer": [
+      "self"
+    ],
+    "persist_buffer": [
+      "self",
+      "buffer"
+    ]
+  },
+  "StationsManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "stations_api_version": [
+      "self"
+    ],
+    "get_stations": [
+      "self"
+    ],
+    "get_station": [
+      "self",
+      "id"
+    ],
+    "create_station": [
+      "self",
+      "external_id",
+      "name",
+      "lat",
+      "lon",
+      "alt"
+    ],
+    "update_station": [
+      "self",
+      "station"
+    ],
+    "delete_station": [
+      "self",
+      "station"
+    ],
+    "send_measurement": [
+      "self",
+      "measurement"
+    ],
+    "send_measurements": [
+      "self",
+      "list_of_measurements"
+    ],
+    "get_measurements": [
+      "self",
+      "station_id",
+      "aggregated_on",
+      "from_timestamp",
+      "to_timestamp",
+      "limit"
+    ],
+    "send_buffer": [
+      "self",
+      "buffer"
+    ],
+    "_structure_dict": [
+      "self",
+      "measurement"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AggregatedMeasurement": {
+    "ALLOWED_AGGREGATION_TIME_FRAMES": [],
+    "__init__": [
+      "self",
+      "station_id",
+      "timestamp",
+      "aggregated_on",
+      "temp",
+      "humidity",
+      "wind",
+      "pressure",
+      "precipitation"
+    ],
+    "creation_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Measurement": {
+    "__init__": [
+      "self",
+      "station_id",
+      "timestamp",
+      "temperature",
+      "wind_speed",
+      "wind_gust",
+      "wind_deg",
+      "pressure",
+      "humidity",
+      "rain_1h",
+      "rain_6h",
+      "rain_24h",
+      "snow_1h",
+      "snow_6h",
+      "snow_24h",
+      "dew_point",
+      "humidex",
+      "heat_index",
+      "visibility_distance",
+      "visibility_prefix",
+      "clouds_distance",
+      "clouds_condition",
+      "clouds_cumulus",
+      "weather_precipitation",
+      "weather_descriptor",
+      "weather_intensity",
+      "weather_proximity",
+      "weather_obscuration",
+      "weather_other"
+    ],
+    "creation_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_JSON": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Buffer": {
+    "station_id": [],
+    "created_at": [],
+    "measurements": [],
+    "__init__": [
+      "self",
+      "station_id"
+    ],
+    "creation_time": [
+      "self",
+      "timeformat"
+    ],
+    "append": [
+      "self",
+      "measurement"
+    ],
+    "append_from_dict": [
+      "self",
+      "the_dict"
+    ],
+    "append_from_json": [
+      "self",
+      "json_string"
+    ],
+    "empty": [
+      "self"
+    ],
+    "sort_chronologically": [
+      "self"
+    ],
+    "sort_reverse_chronologically": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__contains__": [
+      "self",
+      "measurement"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Tile": {
+    "__init__": [
+      "self",
+      "x",
+      "y",
+      "zoom",
+      "map_layer",
+      "image"
+    ],
+    "persist": [
+      "self",
+      "path_to_file"
+    ],
+    "bounding_polygon": [
+      "self"
+    ],
+    "tile_coords_for_point": [
+      "cls",
+      "geopoint",
+      "zoom"
+    ],
+    "geoocoords_to_tile_coords": [
+      "cls",
+      "lon",
+      "lat",
+      "zoom"
+    ],
+    "tile_coords_to_bbox": [
+      "cls",
+      "x",
+      "y",
+      "zoom"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ROOT_GEOCODING_API_URL": [],
+  "DIRECT_GEOCODING_URI": [],
+  "REVERSE_GEOCODING_URI": [],
+  "CITY_ID_DB_PATH": [],
+  "CityIDRegistry": {
+    "MATCHINGS": [],
+    "__init__": [
+      "self",
+      "sqlite_db_path"
+    ],
+    "get_instance": [
+      "cls"
+    ],
+    "__decompress_db_to_memory": [
+      "self",
+      "sqlite_db_path"
+    ],
+    "__query": [
+      "self",
+      "sql_query"
+    ],
+    "ids_for": [
+      "self",
+      "city_name",
+      "country",
+      "state",
+      "matching"
+    ],
+    "locations_for": [
+      "self",
+      "city_name",
+      "country",
+      "state",
+      "matching"
+    ],
+    "geopoints_for": [
+      "self",
+      "city_name",
+      "country",
+      "state",
+      "matching"
+    ]
+  },
+  "SubscriptionType": {
+    "__init__": [
+      "self",
+      "name",
+      "subdomain",
+      "is_paid"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ImageType": {
+    "__init__": [
+      "self",
+      "name",
+      "mime_type"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Satellite": {
+    "__init__": [
+      "self",
+      "name",
+      "symbol"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SubscriptionTypeEnum": {
+    "FREE": [],
+    "STARTUP": [],
+    "DEVELOPER": [],
+    "PROFESSIONAL": [],
+    "ENTERPRISE": [],
+    "lookup_by_name": [
+      "cls",
+      "name"
+    ],
+    "items": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ImageTypeEnum": {
+    "PNG": [],
+    "GEOTIFF": [],
+    "lookup_by_mime_type": [
+      "cls",
+      "mime_type"
+    ],
+    "lookup_by_name": [
+      "cls",
+      "name"
+    ],
+    "items": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PyOWMError": {},
+  "ConfigurationError": {},
+  "ConfigurationNotFoundError": {},
+  "ConfigurationParseError": {},
+  "APIRequestError": {},
+  "BadGatewayError": {},
+  "TimeoutError": {},
+  "InvalidSSLCertificateError": {},
+  "APIResponseError": {},
+  "NotFoundError": {},
+  "UnauthorizedError": {},
+  "ParseAPIResponseError": {},
+  "HttpRequestBuilder": {
+    "URL_TEMPLATE_WITH_SUBDOMAINS": [],
+    "URL_TEMPLATE_WITHOUT_SUBDOMAINS": [],
+    "__init__": [
+      "self",
+      "root_uri_token",
+      "api_key",
+      "config",
+      "has_subdomains"
+    ],
+    "_set_schema": [
+      "self"
+    ],
+    "_set_subdomain": [
+      "self"
+    ],
+    "_set_proxies": [
+      "self"
+    ],
+    "with_path": [
+      "self",
+      "path_uri_token"
+    ],
+    "with_headers": [
+      "self",
+      "headers"
+    ],
+    "with_header": [
+      "self",
+      "key",
+      "value"
+    ],
+    "with_query_params": [
+      "self",
+      "query_params"
+    ],
+    "with_api_key": [
+      "self"
+    ],
+    "with_language": [
+      "self"
+    ],
+    "build": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "HttpClient": {
+    "__init__": [
+      "self",
+      "api_key",
+      "config",
+      "root_uri",
+      "admits_subdomains"
+    ],
+    "get_json": [
+      "self",
+      "path",
+      "params",
+      "headers"
+    ],
+    "get_png": [
+      "self",
+      "path",
+      "params",
+      "headers"
+    ],
+    "get_geotiff": [
+      "self",
+      "path",
+      "params",
+      "headers"
+    ],
+    "post": [
+      "self",
+      "path",
+      "params",
+      "data",
+      "headers"
+    ],
+    "put": [
+      "self",
+      "path",
+      "params",
+      "data",
+      "headers"
+    ],
+    "delete": [
+      "self",
+      "path",
+      "params",
+      "data",
+      "headers"
+    ],
+    "check_status_code": [
+      "cls",
+      "status_code",
+      "payload"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Image": {
+    "__init__": [
+      "self",
+      "data",
+      "image_type"
+    ],
+    "persist": [
+      "self",
+      "path_to_file"
+    ],
+    "load": [
+      "cls",
+      "path_to_file"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "now": [
+    "timeformat"
+  ],
+  "next_hour": [
+    "date"
+  ],
+  "last_hour": [
+    "date"
+  ],
+  "next_three_hours": [
+    "date"
+  ],
+  "last_three_hours": [
+    "date"
+  ],
+  "tomorrow": [
+    "hour",
+    "minute"
+  ],
+  "yesterday": [
+    "hour",
+    "minute"
+  ],
+  "next_week": [
+    "date"
+  ],
+  "last_week": [
+    "date"
+  ],
+  "last_month": [
+    "date"
+  ],
+  "next_month": [
+    "date"
+  ],
+  "last_year": [
+    "date"
+  ],
+  "next_year": [
+    "date"
+  ],
+  "_timedelta_hours": [
+    "offset",
+    "date"
+  ],
+  "_timedelta_days": [
+    "offset",
+    "date"
+  ],
+  "_timedelta_months": [
+    "offset",
+    "date"
+  ],
+  "_timedelta_years": [
+    "offset",
+    "date"
+  ],
+  "millis_offset_between_epochs": [
+    "reference_epoch",
+    "target_epoch"
+  ],
+  "EARTH_RADIUS_KM": [],
+  "assert_is_lat": [
+    "val"
+  ],
+  "assert_is_lon": [
+    "val"
+  ],
+  "Geometry": {
+    "geojson": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Point": {
+    "__init__": [
+      "self",
+      "lon",
+      "lat"
+    ],
+    "lon": [
+      "self"
+    ],
+    "lat": [
+      "self"
+    ],
+    "bounding_square_polygon": [
+      "self",
+      "inscribed_circle_radius_km"
+    ],
+    "geojson": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MultiPoint": {
+    "__init__": [
+      "self",
+      "list_of_tuples"
+    ],
+    "from_points": [
+      "cls",
+      "iterable_of_points"
+    ],
+    "longitudes": [
+      "self"
+    ],
+    "latitudes": [
+      "self"
+    ],
+    "geojson": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ]
+  },
+  "Polygon": {
+    "__init__": [
+      "self",
+      "list_of_lists"
+    ],
+    "geojson": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "points": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "from_points": [
+      "cls",
+      "list_of_lists"
+    ]
+  },
+  "MultiPolygon": {
+    "__init__": [
+      "self",
+      "iterable_of_list_of_lists"
+    ],
+    "geojson": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "from_polygons": [
+      "cls",
+      "iterable_of_polygons"
+    ]
+  },
+  "GeometryBuilder": {
+    "build": [
+      "cls",
+      "the_dict"
+    ]
+  },
+  "KELVIN_OFFSET": [],
+  "FAHRENHEIT_OFFSET": [],
+  "FAHRENHEIT_DEGREE_SCALE": [],
+  "MILES_PER_HOUR_FOR_ONE_METER_PER_SEC": [],
+  "KM_PER_HOUR_FOR_ONE_METER_PER_SEC": [],
+  "KNOTS_FOR_ONE_METER_PER_SEC": [],
+  "HPA_FOR_ONE_INHG": [],
+  "MILE_FOR_ONE_METER": [],
+  "KMS_FOR_ONE_METER": [],
+  "ROUNDED_TO": [],
+  "kelvin_dict_to": [
+    "d",
+    "target_temperature_unit"
+  ],
+  "kelvin_to_celsius": [
+    "kelvintemp"
+  ],
+  "kelvin_to_fahrenheit": [
+    "kelvintemp"
+  ],
+  "metric_wind_dict_to_imperial": [
+    "d"
+  ],
+  "metric_wind_dict_to_km_h": [
+    "d"
+  ],
+  "metric_wind_dict_to_knots": [
+    "d"
+  ],
+  "metric_wind_dict_to_beaufort": [
+    "d"
+  ],
+  "metric_pressure_dict_to_inhg": [
+    "d"
+  ],
+  "visibility_distance_to": [
+    "v",
+    "target_visibility_unit"
+  ],
+  "get_config_from": [
+    "path_to_file"
+  ],
+  "get_default_config": [],
+  "get_default_config_for_subscription_type": [
+    "name"
+  ],
+  "get_default_config_for_proxy": [
+    "http_url",
+    "https_url"
+  ],
+  "ZERO": [],
+  "UTC": {
+    "utcoffset": [
+      "self",
+      "dt"
+    ],
+    "tzname": [
+      "self",
+      "dt"
+    ],
+    "dst": [
+      "self",
+      "dt"
+    ]
+  },
+  "timeformat": [
+    "timeobject",
+    "timeformat"
+  ],
+  "to_date": [
+    "timeobject"
+  ],
+  "to_ISO8601": [
+    "timeobject"
+  ],
+  "to_UNIXtime": [
+    "timeobject"
+  ],
+  "ISO8601_to_UNIXtime": [
+    "iso"
+  ],
+  "datetime_to_UNIXtime": [
+    "date"
+  ],
+  "obfuscate_API_key": [
+    "API_key"
+  ],
+  "class_from_dotted_path": [
+    "dotted_path"
+  ],
+  "deprecated": [
+    "will_be",
+    "on_version",
+    "name"
+  ],
+  "status_is": [
+    "weather",
+    "status",
+    "weather_code_registry"
+  ],
+  "any_status_is": [
+    "weather_list",
+    "status",
+    "weather_code_registry"
+  ],
+  "filter_by_status": [
+    "weather_list",
+    "status",
+    "weather_code_registry"
+  ],
+  "is_in_coverage": [
+    "unixtime",
+    "weathers_list"
+  ],
+  "find_closest_weather": [
+    "weathers_list",
+    "unixtime"
+  ],
+  "ROOT_ALERT_API_URL": [],
+  "TRIGGERS_URI": [],
+  "NAMED_TRIGGER_URI": [],
+  "ALERTS_URI": [],
+  "NAMED_ALERT_URI": [],
+  "Condition": {
+    "__init__": [
+      "self",
+      "weather_param",
+      "operator",
+      "amount",
+      "id"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "WeatherParametersEnum": {
+    "TEMPERATURE": [],
+    "PRESSURE": [],
+    "HUMIDITY": [],
+    "WIND_SPEED": [],
+    "WIND_DIRECTION": [],
+    "CLOUDS": [],
+    "items": [
+      "cls"
+    ]
+  },
+  "OperatorsEnum": {
+    "GREATER_THAN": [],
+    "GREATER_THAN_EQUAL": [],
+    "LESS_THAN": [],
+    "LESS_THAN_EQUAL": [],
+    "EQUAL": [],
+    "NOT_EQUAL": [],
+    "items": [
+      "cls"
+    ]
+  },
+  "AlertChannelsEnum": {
+    "OWM_API_POLLING": [],
+    "items": [
+      "cls"
+    ]
+  },
+  "AlertManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "alert_api_version": [
+      "self"
+    ],
+    "create_trigger": [
+      "self",
+      "start",
+      "end",
+      "conditions",
+      "area",
+      "alert_channels"
+    ],
+    "get_triggers": [
+      "self"
+    ],
+    "get_trigger": [
+      "self",
+      "trigger_id"
+    ],
+    "update_trigger": [
+      "self",
+      "trigger"
+    ],
+    "delete_trigger": [
+      "self",
+      "trigger"
+    ],
+    "get_alerts_for": [
+      "self",
+      "trigger"
+    ],
+    "get_alert": [
+      "self",
+      "alert_id",
+      "trigger"
+    ],
+    "delete_all_alerts_for": [
+      "self",
+      "trigger"
+    ],
+    "delete_alert": [
+      "self",
+      "alert"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AlertChannel": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Alert": {
+    "__init__": [
+      "self",
+      "id",
+      "trigger_id",
+      "met_conditions",
+      "coordinates",
+      "last_update"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Trigger": {
+    "__init__": [
+      "self",
+      "start_after_millis",
+      "end_after_millis",
+      "conditions",
+      "area",
+      "alerts",
+      "alert_channels",
+      "id"
+    ],
+    "get_alerts": [
+      "self"
+    ],
+    "get_alert": [
+      "self",
+      "alert_id"
+    ],
+    "get_alerts_since": [
+      "self",
+      "timestamp"
+    ],
+    "get_alerts_on": [
+      "self",
+      "weather_param"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ROOT_POLLUTION_API_URL": [],
+  "CO_INDEX_URL": [],
+  "OZONE_URL": [],
+  "NO2_INDEX_URL": [],
+  "SO2_INDEX_URL": [],
+  "NEW_ROOT_POLLUTION_API_URL": [],
+  "AIR_POLLUTION_URL": [],
+  "AIR_POLLUTION_FORECAST_URL": [],
+  "AIR_POLLUTION_HISTORY_URL": [],
+  "NO2Index": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "interval",
+      "no2_samples",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "get_sample_by_label": [
+      "self",
+      "label"
+    ],
+    "is_forecast": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SO2Index": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "interval",
+      "so2_samples",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "is_forecast": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Ozone": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "interval",
+      "du_value",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "is_forecast": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AirPollutionHttpClient": {
+    "__init__": [
+      "self",
+      "API_key",
+      "httpclient"
+    ],
+    "_trim_to": [
+      "self",
+      "date_object",
+      "interval"
+    ],
+    "get_coi": [
+      "self",
+      "params_dict"
+    ],
+    "get_o3": [
+      "self",
+      "params_dict"
+    ],
+    "get_no2": [
+      "self",
+      "params_dict"
+    ],
+    "get_so2": [
+      "self",
+      "params_dict"
+    ],
+    "get_air_pollution": [
+      "self",
+      "params_dict"
+    ],
+    "get_forecast_air_pollution": [
+      "self",
+      "params_dict"
+    ],
+    "get_historical_air_pollution": [
+      "self",
+      "params_dict"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AirPollutionManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "airpollution_api_version": [
+      "self"
+    ],
+    "coindex_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "interval"
+    ],
+    "ozone_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "interval"
+    ],
+    "no2index_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "interval"
+    ],
+    "so2index_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "interval"
+    ],
+    "air_quality_at_coords": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "air_quality_forecast_at_coords": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "air_quality_history_at_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "end"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "COIndex": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "interval",
+      "co_samples",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "sample_with_highest_vmr": [
+      "self"
+    ],
+    "sample_with_lowest_vmr": [
+      "self"
+    ],
+    "is_forecast": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AirStatus": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "air_quality_data",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ROOT_UV_API_URL": [],
+  "UV_INDEX_URL": [],
+  "UV_INDEX_FORECAST_URL": [],
+  "UV_INDEX_HISTORY_URL": [],
+  "UltraVioletHttpClient": {
+    "__init__": [
+      "self",
+      "API_key",
+      "httpclient"
+    ],
+    "_trim_to": [
+      "self",
+      "date_object",
+      "interval"
+    ],
+    "get_uvi": [
+      "self",
+      "params_dict"
+    ],
+    "get_uvi_forecast": [
+      "self",
+      "params_dict"
+    ],
+    "get_uvi_history": [
+      "self",
+      "params_dict"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "uv_intensity_to_exposure_risk": [
+    "uv_intensity"
+  ],
+  "UVIndex": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "location",
+      "value",
+      "reception_time"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "get_exposure_risk": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "UVIndexManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "uvindex_api_version": [
+      "self"
+    ],
+    "uvindex_around_coords": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "uvindex_forecast_around_coords": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "uvindex_history_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "start",
+      "end"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ROOT_TILE_URL": [],
+  "NAMED_MAP_LAYER_URL": [],
+  "TileManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "map_layer",
+      "config"
+    ],
+    "get_tile": [
+      "self",
+      "x",
+      "y",
+      "zoom"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MapLayerEnum": {
+    "PRECIPITATION": [],
+    "WIND": [],
+    "TEMPERATURE": [],
+    "PRESSURE": []
+  },
+  "ROOT_AGRO_API": [],
+  "ROOT_DOWNLOAD_PNG_API": [],
+  "ROOT_DOWNLOAD_GEOTIFF_API": [],
+  "POLYGONS_URI": [],
+  "NAMED_POLYGON_URI": [],
+  "SOIL_URI": [],
+  "SATELLITE_IMAGERY_SEARCH_URI": [],
+  "SatelliteImagerySearchResultSet": {
+    "__init__": [
+      "self",
+      "polygon_id",
+      "list_of_dict",
+      "query_timestamp"
+    ],
+    "issued_on": [
+      "self",
+      "timeformat"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "all": [
+      "self"
+    ],
+    "with_img_type": [
+      "self",
+      "image_type"
+    ],
+    "with_preset": [
+      "self",
+      "preset"
+    ],
+    "with_img_type_and_preset": [
+      "self",
+      "image_type",
+      "preset"
+    ]
+  },
+  "Soil": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "surface_temp",
+      "ten_cm_temp",
+      "moisture",
+      "polygon_id"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "surface_temp": [
+      "self",
+      "unit"
+    ],
+    "ten_cm_temp": [
+      "self",
+      "unit"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AgroManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "agro_api_version": [
+      "self"
+    ],
+    "create_polygon": [
+      "self",
+      "geopolygon",
+      "name"
+    ],
+    "get_polygons": [
+      "self"
+    ],
+    "get_polygon": [
+      "self",
+      "polygon_id"
+    ],
+    "update_polygon": [
+      "self",
+      "polygon"
+    ],
+    "delete_polygon": [
+      "self",
+      "polygon"
+    ],
+    "soil_data": [
+      "self",
+      "polygon"
+    ],
+    "search_satellite_imagery": [
+      "self",
+      "polygon_id",
+      "acquired_from",
+      "acquired_to",
+      "img_type",
+      "preset",
+      "min_resolution",
+      "max_resolution",
+      "acquired_by",
+      "min_cloud_coverage",
+      "max_cloud_coverage",
+      "min_valid_data_coverage",
+      "max_valid_data_coverage"
+    ],
+    "download_satellite_image": [
+      "self",
+      "metaimage",
+      "x",
+      "y",
+      "zoom",
+      "palette"
+    ],
+    "stats_for_satellite_image": [
+      "self",
+      "metaimage"
+    ],
+    "_fill_url": [
+      "self",
+      "url_template",
+      "x",
+      "y",
+      "zoom"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MetaImage": {
+    "image_type": [],
+    "__init__": [
+      "self",
+      "url",
+      "preset",
+      "satellite_name",
+      "acquisition_time",
+      "valid_data_percentage",
+      "cloud_coverage_percentage",
+      "sun_azimuth",
+      "sun_elevation",
+      "polygon_id",
+      "stats_url"
+    ],
+    "acquisition_time": [
+      "self",
+      "timeformat"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MetaPNGImage": {
+    "image_type": []
+  },
+  "MetaTile": {
+    "image_type": []
+  },
+  "MetaGeoTiffImage": {
+    "image_type": []
+  },
+  "SatelliteImage": {
+    "__init__": [
+      "self",
+      "metadata",
+      "data",
+      "downloaded_on",
+      "palette"
+    ],
+    "downloaded_on": [
+      "self",
+      "timeformat"
+    ],
+    "persist": [
+      "self",
+      "path_to_file"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PresetEnum": {
+    "TRUE_COLOR": [],
+    "FALSE_COLOR": [],
+    "NDVI": [],
+    "EVI": [],
+    "items": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SatelliteEnum": {
+    "LANDSAT_8": [],
+    "SENTINEL_2": [],
+    "items": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "PaletteEnum": {
+    "GREEN": [],
+    "BLACK_AND_WHITE": [],
+    "CONTRAST_SHIFTED": [],
+    "CONTRAST_CONTINUOUS": [],
+    "items": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ROOT_WEATHER_API": [],
+  "OBSERVATION_URI": [],
+  "GROUP_OBSERVATIONS_URI": [],
+  "STATION_URI": [],
+  "FIND_OBSERVATIONS_URI": [],
+  "FIND_STATION_URI": [],
+  "BBOX_STATION_URI": [],
+  "BBOX_CITY_URI": [],
+  "THREE_HOURS_FORECAST_URI": [],
+  "DAILY_FORECAST_URI": [],
+  "STATION_WEATHER_HISTORY_URI": [],
+  "ONE_CALL_URI": [],
+  "ONE_CALL_HISTORICAL_URI": [],
+  "ONE_CALL_ROOT_URI": [],
+  "ICONS_BASE_URI": [],
+  "StationHistory": {
+    "__init__": [
+      "self",
+      "station_id",
+      "interval",
+      "reception_time",
+      "measurements"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "d"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Forecast": {
+    "__init__": [
+      "self",
+      "interval",
+      "reception_time",
+      "location",
+      "weathers"
+    ],
+    "get": [
+      "self",
+      "index"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "actualize": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Forecaster": {
+    "__init__": [
+      "self",
+      "forecast"
+    ],
+    "when_starts": [
+      "self",
+      "timeformat"
+    ],
+    "when_ends": [
+      "self",
+      "timeformat"
+    ],
+    "will_have_rain": [
+      "self"
+    ],
+    "will_have_clear": [
+      "self"
+    ],
+    "will_have_fog": [
+      "self"
+    ],
+    "will_have_clouds": [
+      "self"
+    ],
+    "will_have_snow": [
+      "self"
+    ],
+    "will_have_storm": [
+      "self"
+    ],
+    "will_have_tornado": [
+      "self"
+    ],
+    "will_have_hurricane": [
+      "self"
+    ],
+    "when_rain": [
+      "self"
+    ],
+    "when_clear": [
+      "self"
+    ],
+    "when_fog": [
+      "self"
+    ],
+    "when_clouds": [
+      "self"
+    ],
+    "when_snow": [
+      "self"
+    ],
+    "when_storm": [
+      "self"
+    ],
+    "when_tornado": [
+      "self"
+    ],
+    "when_hurricane": [
+      "self"
+    ],
+    "_will_be": [
+      "self",
+      "timeobject",
+      "weather_condition"
+    ],
+    "will_be_rainy_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_clear_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_snowy_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_cloudy_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_foggy_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_stormy_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_tornado_at": [
+      "self",
+      "timeobject"
+    ],
+    "will_be_hurricane_at": [
+      "self",
+      "timeobject"
+    ],
+    "get_weather_at": [
+      "self",
+      "timeobject"
+    ],
+    "most_hot": [
+      "self"
+    ],
+    "most_cold": [
+      "self"
+    ],
+    "most_humid": [
+      "self"
+    ],
+    "most_rainy": [
+      "self"
+    ],
+    "most_snowy": [
+      "self"
+    ],
+    "most_windy": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "WeatherManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "weather_api_version": [
+      "self"
+    ],
+    "weather_at_place": [
+      "self",
+      "name"
+    ],
+    "weather_at_coords": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "weather_at_zip_code": [
+      "self",
+      "zipcode",
+      "country"
+    ],
+    "weather_at_id": [
+      "self",
+      "id"
+    ],
+    "weather_at_ids": [
+      "self",
+      "ids_list"
+    ],
+    "weather_at_places": [
+      "self",
+      "pattern",
+      "searchtype",
+      "limit"
+    ],
+    "weather_at_places_in_bbox": [
+      "self",
+      "lon_left",
+      "lat_bottom",
+      "lon_right",
+      "lat_top",
+      "zoom",
+      "cluster"
+    ],
+    "weather_around_coords": [
+      "self",
+      "lat",
+      "lon",
+      "limit"
+    ],
+    "forecast_at_place": [
+      "self",
+      "name",
+      "interval",
+      "limit"
+    ],
+    "forecast_at_coords": [
+      "self",
+      "lat",
+      "lon",
+      "interval",
+      "limit"
+    ],
+    "forecast_at_id": [
+      "self",
+      "id",
+      "interval",
+      "limit"
+    ],
+    "station_tick_history": [
+      "self",
+      "station_ID",
+      "limit"
+    ],
+    "station_hour_history": [
+      "self",
+      "station_ID",
+      "limit"
+    ],
+    "station_day_history": [
+      "self",
+      "station_ID",
+      "limit"
+    ],
+    "_retrieve_station_history": [
+      "self",
+      "station_ID",
+      "limit",
+      "interval"
+    ],
+    "one_call": [
+      "self",
+      "lat",
+      "lon"
+    ],
+    "one_call_history": [
+      "self",
+      "lat",
+      "lon",
+      "dt"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "OneCall": {
+    "__init__": [
+      "self",
+      "lat",
+      "lon",
+      "timezone",
+      "current",
+      "forecast_minutely",
+      "forecast_hourly",
+      "forecast_daily",
+      "national_weather_alerts"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "to_geopoint": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ]
+  },
+  "Historian": {
+    "__init__": [
+      "self",
+      "station_history"
+    ],
+    "temperature_series": [
+      "self",
+      "unit"
+    ],
+    "humidity_series": [
+      "self"
+    ],
+    "pressure_series": [
+      "self"
+    ],
+    "rain_series": [
+      "self"
+    ],
+    "wind_series": [
+      "self"
+    ],
+    "max_temperature": [
+      "self",
+      "unit"
+    ],
+    "min_temperature": [
+      "self",
+      "unit"
+    ],
+    "average_temperature": [
+      "self",
+      "unit"
+    ],
+    "max_humidity": [
+      "self"
+    ],
+    "min_humidity": [
+      "self"
+    ],
+    "average_humidity": [
+      "self"
+    ],
+    "max_pressure": [
+      "self"
+    ],
+    "min_pressure": [
+      "self"
+    ],
+    "average_pressure": [
+      "self"
+    ],
+    "max_rain": [
+      "self"
+    ],
+    "min_rain": [
+      "self"
+    ],
+    "average_rain": [
+      "self"
+    ],
+    "_purge_none_samples": [
+      "self",
+      "list_of_tuples"
+    ],
+    "_average": [
+      "self",
+      "list_of_tuples"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "WEATHER_CODES_INTERVALS": [],
+  "WeatherCodeRegistry": {
+    "__init__": [
+      "self",
+      "code_ranges_dict"
+    ],
+    "status_for": [
+      "self",
+      "code"
+    ],
+    "get_instance": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Observation": {
+    "__init__": [
+      "self",
+      "reception_time",
+      "location",
+      "weather"
+    ],
+    "reception_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "from_dict_of_lists": [
+      "self",
+      "the_dict"
+    ]
+  },
+  "Location": {
+    "__init__": [
+      "self",
+      "name",
+      "lon",
+      "lat",
+      "_id",
+      "country"
+    ],
+    "to_geopoint": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "Weather": {
+    "__init__": [
+      "self",
+      "reference_time",
+      "sunset_time",
+      "sunrise_time",
+      "clouds",
+      "rain",
+      "snow",
+      "wind",
+      "humidity",
+      "pressure",
+      "temperature",
+      "status",
+      "detailed_status",
+      "weather_code",
+      "weather_icon_name",
+      "visibility_distance",
+      "dewpoint",
+      "humidex",
+      "heat_index",
+      "utc_offset",
+      "uvi",
+      "precipitation_probability"
+    ],
+    "reference_time": [
+      "self",
+      "timeformat"
+    ],
+    "sunset_time": [
+      "self",
+      "timeformat"
+    ],
+    "sunrise_time": [
+      "self",
+      "timeformat"
+    ],
+    "wind": [
+      "self",
+      "unit"
+    ],
+    "temperature": [
+      "self",
+      "unit"
+    ],
+    "barometric_pressure": [
+      "self",
+      "unit"
+    ],
+    "visibility": [
+      "self",
+      "unit"
+    ],
+    "weather_icon_url": [
+      "self",
+      "size"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "from_dict_of_lists": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "NationalWeatherAlert": {
+    "__init__": [
+      "self",
+      "sender",
+      "title",
+      "description",
+      "start_time",
+      "end_time",
+      "tags"
+    ],
+    "start_time": [
+      "self",
+      "timeformat"
+    ],
+    "end_time": [
+      "self",
+      "timeformat"
+    ],
+    "from_dict": [
+      "cls",
+      "the_dict"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "GeocodingManager": {
+    "__init__": [
+      "self",
+      "API_key",
+      "config"
+    ],
+    "geocoding_api_version": [
+      "self"
+    ],
+    "geocode": [
+      "self",
+      "toponym",
+      "country",
+      "state_code",
+      "limit"
+    ],
+    "reverse_geocode": [
+      "self",
+      "lat",
+      "lon",
+      "limit"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  }
+}

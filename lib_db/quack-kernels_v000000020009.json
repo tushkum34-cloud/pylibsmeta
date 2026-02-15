@@ -1,0 +1,3160 @@
+{
+  "StaticTypes": [],
+  "load_cubin_module_data_og": [],
+  "cute_compile_og": [],
+  "torch2cute_dtype_map": [],
+  "get_max_active_clusters": [
+    "cluster_size"
+  ],
+  "get_device_capacity": [
+    "device"
+  ],
+  "ParamsBase": {
+    "__extract_mlir_values__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "ArgumentsBase": {
+    "__c_pointers__": [
+      "self"
+    ],
+    "__get_mlir_types__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "CrossEntropy": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "online_softmax"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mTarget",
+      "mTargetLogit",
+      "mLoss",
+      "mLSE",
+      "mdX",
+      "ignore_index",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mTarget",
+      "mTargetLogit",
+      "mLoss",
+      "mLSE",
+      "mdX",
+      "ignore_index",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "cross_entropy_fwd_out": [
+    "x",
+    "target",
+    "target_logit",
+    "loss",
+    "lse",
+    "dx",
+    "ignore_index"
+  ],
+  "cross_entropy_fwd": [
+    "x",
+    "target",
+    "target_logit",
+    "ignore_index",
+    "return_lse",
+    "return_dx",
+    "inplace_backward"
+  ],
+  "CrossEntropyBackward": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_get_tiled_copy": [
+      "self",
+      "vecsize"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mTarget",
+      "mDLoss",
+      "mdX",
+      "mLSE",
+      "ignore_index",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mTarget",
+      "mDLoss",
+      "mdX",
+      "mLSE",
+      "ignore_index",
+      "shape",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_cross_entropy_backward": [
+    "x",
+    "target",
+    "dloss",
+    "lse",
+    "dx",
+    "ignore_index"
+  ],
+  "cross_entropy_bwd_out": [
+    "x",
+    "target",
+    "dloss",
+    "lse",
+    "dx",
+    "ignore_index"
+  ],
+  "cross_entropy_bwd": [
+    "x",
+    "target",
+    "dloss",
+    "lse",
+    "ignore_index",
+    "inplace_backward"
+  ],
+  "CrossEntropyFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "target",
+      "lse_partial",
+      "ignore_index",
+      "inplace_backward"
+    ],
+    "backward": [
+      "ctx",
+      "dloss"
+    ]
+  },
+  "cross_entropy": [
+    "x",
+    "target",
+    "lse_partial",
+    "ignore_index",
+    "reduction",
+    "inplace_backward"
+  ],
+  "FastDivmod": {
+    "__init__": [
+      "self",
+      "divisor",
+      "is_power_of_2"
+    ],
+    "__extract_mlir_values__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "make_smem_layout": [
+    "dtype",
+    "layout",
+    "tile",
+    "stage"
+  ],
+  "make_smem_layout_epi": [],
+  "partition_for_epilogue": [
+    "cT",
+    "epi_tile",
+    "tiled_copy",
+    "tidx",
+    "reference_src"
+  ],
+  "gemm": [
+    "tiled_mma",
+    "acc",
+    "tCrA",
+    "tCrB",
+    "zero_init",
+    "wg_wait",
+    "swap_AB"
+  ],
+  "gemm_zero_init": [
+    "tiled_mma",
+    "shape",
+    "tCrA",
+    "tCrB",
+    "A_idx",
+    "B_idx",
+    "wg_wait",
+    "swap_AB"
+  ],
+  "gemm_w_idx": [
+    "tiled_mma",
+    "acc",
+    "tCrA",
+    "tCrB",
+    "zero_init",
+    "A_idx",
+    "B_idx",
+    "wg_wait",
+    "swap_AB"
+  ],
+  "partition_fragment_ABC": [
+    "thr_mma",
+    "shape_mnk",
+    "sA",
+    "sB",
+    "swap_AB"
+  ],
+  "ReductionBase": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "stage",
+      "reduction_dtype"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_num_threads": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "_get_tiled_copy": [
+      "self",
+      "vecsize"
+    ],
+    "_get_reduction_buffer_layout": [
+      "self",
+      "tv_layout",
+      "cluster_n"
+    ],
+    "_allocate_reduction_buffer_and_mbar": [
+      "self",
+      "smem",
+      "tv_layout",
+      "is_persistent"
+    ],
+    "_initialize_cluster": [
+      "self",
+      "tidx",
+      "mbar_ptr",
+      "num_warps",
+      "is_persistent"
+    ]
+  },
+  "make_fake_tensor": [
+    "dtype",
+    "shape",
+    "divisibility",
+    "leading_dim"
+  ],
+  "TopK": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "k",
+      "softmax"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_get_tiled_copy": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mValues",
+      "mIndices",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mValues",
+      "mIndices",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_topk_fwd": [
+    "x",
+    "k",
+    "softmax",
+    "values",
+    "indices"
+  ],
+  "topk_fwd": [
+    "x",
+    "k",
+    "softmax"
+  ],
+  "TopKBackward": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "k",
+      "softmax"
+    ],
+    "_num_threads": [
+      "self"
+    ],
+    "_get_tiled_copy": [
+      "self",
+      "N",
+      "vecsize"
+    ],
+    "__call__": [
+      "self",
+      "mdValues",
+      "mValues",
+      "mIndices",
+      "mdX",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mdValues",
+      "mValues",
+      "mIndices",
+      "mdX",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_topk_bwd": [
+    "dvalues",
+    "values",
+    "indices",
+    "k",
+    "softmax",
+    "dx"
+  ],
+  "topk_bwd": [
+    "dvalues",
+    "values",
+    "indices",
+    "N",
+    "softmax"
+  ],
+  "TopKFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "k",
+      "softmax"
+    ],
+    "backward": [
+      "ctx",
+      "dvalues",
+      "dindices_"
+    ]
+  },
+  "topk": [
+    "x",
+    "k",
+    "softmax"
+  ],
+  "GemmConfig": {},
+  "get_all_configs": [
+    "device_capacity",
+    "epilogue",
+    "tune_coop"
+  ],
+  "elem_pointer": [
+    "x",
+    "coord"
+  ],
+  "load_scalar_or_pointer": [
+    "x"
+  ],
+  "set_block_rank": [
+    "smem_ptr",
+    "peer_cta_rank_in_cluster"
+  ],
+  "store_shared_remote": [
+    "val",
+    "smem_ptr",
+    "mbar_ptr",
+    "peer_cta_rank_in_cluster"
+  ],
+  "store_shared_remote_x4": [
+    "val0",
+    "val1",
+    "val2",
+    "val3",
+    "smem_ptr",
+    "mbar_ptr",
+    "peer_cta_rank_in_cluster"
+  ],
+  "fmin": [
+    "a",
+    "b"
+  ],
+  "sqrt": [
+    "a"
+  ],
+  "ceil": [
+    "a"
+  ],
+  "fill_oob": [
+    "tXsX",
+    "tXpX",
+    "fill_value"
+  ],
+  "f32x2_to_i64": [
+    "a",
+    "b"
+  ],
+  "i64_to_f32x2": [
+    "c"
+  ],
+  "warp_prefix_sum": [
+    "val",
+    "lane"
+  ],
+  "atomic_inc_i32": [
+    "a",
+    "gmem_ptr"
+  ],
+  "atomic_add_i32": [
+    "a",
+    "gmem_ptr"
+  ],
+  "issue_clc_query_nomulticast": [
+    "mbar_ptr",
+    "clc_response_ptr",
+    "loc",
+    "ip"
+  ],
+  "F32_or_F32x2": [],
+  "sub_packed_f32x2": [],
+  "tanh": [
+    "a"
+  ],
+  "sigmoid": [
+    "x"
+  ],
+  "dsigmoid_from_output": [
+    "out",
+    "dout"
+  ],
+  "relu": [
+    "x"
+  ],
+  "drelu": [
+    "x",
+    "dout"
+  ],
+  "relu_sq": [
+    "x"
+  ],
+  "drelu_sq": [
+    "x",
+    "dout"
+  ],
+  "gelu_tanh_approx": [
+    "x"
+  ],
+  "dgelu_tanh_approx": [
+    "x",
+    "dout"
+  ],
+  "softplus": [
+    "x"
+  ],
+  "dsoftplus_from_output": [
+    "out",
+    "dout"
+  ],
+  "silu": [
+    "x"
+  ],
+  "swiglu": [
+    "x",
+    "y"
+  ],
+  "dswiglu": [
+    "x",
+    "y",
+    "dout"
+  ],
+  "swiglu_oai": [
+    "x",
+    "y",
+    "alpha"
+  ],
+  "dswiglu_oai": [
+    "x",
+    "y",
+    "dout",
+    "alpha"
+  ],
+  "glu": [
+    "x",
+    "y"
+  ],
+  "dglu": [
+    "x",
+    "y",
+    "dout"
+  ],
+  "reglu": [
+    "x",
+    "y"
+  ],
+  "dreglu": [
+    "x",
+    "y",
+    "dout"
+  ],
+  "geglu": [
+    "x",
+    "y"
+  ],
+  "dgeglu": [
+    "x",
+    "y",
+    "dout"
+  ],
+  "GemmDefaultEpiMixin": {
+    "epi_to_underlying_arguments": [
+      "self",
+      "args"
+    ],
+    "epi_begin": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "epi_tile",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tidx"
+    ],
+    "epi_begin_loop": [
+      "self",
+      "params",
+      "epi_tensors",
+      "epi_coord"
+    ],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ],
+    "epi_smem_bytes_per_stage": [
+      "args",
+      "cta_tile_shape_mnk",
+      "epi_tile"
+    ],
+    "epi_get_smem_struct": [
+      "self",
+      "params"
+    ],
+    "epi_get_smem_tensors": [
+      "self",
+      "params",
+      "storage"
+    ]
+  },
+  "GemmDefaultSm90": {},
+  "GemmDefaultSm100": {},
+  "mlp_func": [
+    "x",
+    "weight1",
+    "weight2",
+    "activation",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "MLP": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "out_features",
+      "bias1",
+      "bias2",
+      "activation",
+      "device",
+      "dtype",
+      "fuse_grad_accum",
+      "tuned"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "block_reduce": [
+    "val",
+    "op",
+    "reduction_buffer",
+    "init_val"
+  ],
+  "cluster_reduce": [
+    "val",
+    "op",
+    "reduction_buffer",
+    "mbar_ptr",
+    "init_val",
+    "phase"
+  ],
+  "block_or_cluster_reduce": [
+    "val",
+    "op",
+    "reduction_buffer",
+    "mbar_ptr",
+    "phase",
+    "init_val"
+  ],
+  "row_reduce": [
+    "x",
+    "op",
+    "threads_per_row",
+    "reduction_buffer",
+    "mbar_ptr",
+    "phase",
+    "init_val",
+    "hook_fn"
+  ],
+  "online_softmax_reduce": [
+    "x",
+    "threads_per_row",
+    "reduction_buffer",
+    "mbar_ptr",
+    "hook_fn",
+    "phase",
+    "return_exp_x"
+  ],
+  "sum_swap_shuffle": [
+    "X",
+    "elem_per_lane",
+    "subwarp_size",
+    "warp_size"
+  ],
+  "act_to_pytorch_fn_map": [],
+  "gated_to_pytorch_fn_map": [],
+  "default_device_capacity": [],
+  "default_config": [
+    "device"
+  ],
+  "prune_invalid_gemm_configs": [
+    "configs",
+    "named_args"
+  ],
+  "gemm_tuned": [
+    "A",
+    "B",
+    "out",
+    "C",
+    "bias",
+    "alpha",
+    "beta",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "add_to_output",
+    "dynamic_scheduler",
+    "config"
+  ],
+  "gemm_act_tuned": [
+    "A",
+    "B",
+    "preact_out",
+    "postact_out",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "config"
+  ],
+  "gemm_dact_tuned": [
+    "A",
+    "B",
+    "PreAct",
+    "dx_out",
+    "postact_out",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "config"
+  ],
+  "gemm_out": [
+    "A",
+    "B",
+    "out",
+    "bias",
+    "alpha",
+    "alpha_tensor",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_ref": [
+    "A",
+    "B",
+    "out",
+    "bias",
+    "alpha",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "out_dtype"
+  ],
+  "gemm_add": [
+    "A",
+    "B",
+    "C",
+    "out",
+    "alpha",
+    "beta",
+    "out_dtype",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_add_out": [
+    "A",
+    "B",
+    "C",
+    "out",
+    "alpha",
+    "beta",
+    "alpha_tensor",
+    "beta_tensor",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "add_to_output",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_add_ref": [
+    "A",
+    "B",
+    "C",
+    "bias",
+    "out",
+    "alpha",
+    "beta",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "out_dtype"
+  ],
+  "gemm_add_inplace": [
+    "A",
+    "B",
+    "out",
+    "alpha",
+    "beta",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_add_inplace_op": [
+    "A",
+    "B",
+    "out",
+    "alpha",
+    "beta",
+    "alpha_tensor",
+    "beta_tensor",
+    "cu_seqlens_m",
+    "cu_seqlens_k",
+    "A_idx",
+    "batch_idx_permute",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_act": [
+    "A",
+    "B",
+    "C",
+    "bias",
+    "activation",
+    "preact_out",
+    "postact_out",
+    "out_dtype",
+    "postact_dtype",
+    "cu_seqlens_m",
+    "A_idx",
+    "store_preact",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_act_out": [
+    "A",
+    "B",
+    "preact_out",
+    "postact_out",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_act_ref": [
+    "A",
+    "B",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "out_dtype",
+    "postact_dtype",
+    "store_preact"
+  ],
+  "gemm_dact": [
+    "A",
+    "B",
+    "PreAct",
+    "activation",
+    "dx_out",
+    "postact_out",
+    "out_dtype",
+    "postact_dtype",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_dact_out": [
+    "A",
+    "B",
+    "PreAct",
+    "dx_out",
+    "postact_out",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_dact_ref": [
+    "A",
+    "B",
+    "PreAct",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "out_dtype",
+    "postact_dtype"
+  ],
+  "gemm_gated_ref": [
+    "A",
+    "B",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "out_dtype",
+    "postact_dtype",
+    "store_preact"
+  ],
+  "gemm_dgated_ref": [
+    "A",
+    "B",
+    "PreAct",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "out_dtype",
+    "postact_dtype"
+  ],
+  "gemm_symmetric_out": [
+    "A",
+    "B",
+    "out",
+    "C",
+    "dynamic_scheduler",
+    "alpha",
+    "beta"
+  ],
+  "gemm_symmetric": [
+    "A",
+    "B",
+    "C",
+    "out",
+    "out_dtype",
+    "dynamic_scheduler",
+    "alpha",
+    "beta"
+  ],
+  "gemm_gated_tuned": [
+    "A",
+    "B",
+    "preact_out",
+    "postact_out",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "config"
+  ],
+  "prune_invalid_gemm_dgated_configs": [
+    "configs",
+    "named_args"
+  ],
+  "gemm_dgated_tuned": [
+    "A",
+    "B",
+    "PreAct",
+    "dx_out",
+    "postact_out",
+    "colvec_scale",
+    "activation",
+    "colvec_reduce",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "config"
+  ],
+  "gemm_gated": [
+    "A",
+    "B",
+    "C",
+    "bias",
+    "activation",
+    "preact_out",
+    "postact_out",
+    "out_dtype",
+    "postact_dtype",
+    "cu_seqlens_m",
+    "A_idx",
+    "store_preact",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_gated_out": [
+    "A",
+    "B",
+    "preact_out",
+    "postact_out",
+    "C",
+    "bias",
+    "activation",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_dgated": [
+    "A",
+    "B",
+    "PreAct",
+    "colvec_scale",
+    "activation",
+    "dx_out",
+    "postact_out",
+    "out_dtype",
+    "postact_dtype",
+    "colvec_reduce",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_dgated_out": [
+    "A",
+    "B",
+    "PreAct",
+    "dx_out",
+    "postact_out",
+    "colvec_scale",
+    "activation",
+    "colvec_reduce",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "gemm_dgated_out_fake": [
+    "A",
+    "B",
+    "PreAct",
+    "dx_out",
+    "postact_out",
+    "colvec_scale",
+    "activation",
+    "colvec_reduce",
+    "cu_seqlens_m",
+    "A_idx",
+    "dynamic_scheduler",
+    "tuned"
+  ],
+  "cvt_copy": [
+    "tiled_copy",
+    "src",
+    "dst"
+  ],
+  "load_s2r": [
+    "src"
+  ],
+  "load_s2r_retile": [
+    "tiled_copy",
+    "src",
+    "dst_shape"
+  ],
+  "get_copy_atom": [
+    "dtype",
+    "num_copy_elems",
+    "is_async"
+  ],
+  "copy": [
+    "src",
+    "dst"
+  ],
+  "tiled_copy_1d": [
+    "dtype",
+    "num_threads",
+    "num_copy_elems",
+    "is_async"
+  ],
+  "tiled_copy_2d": [
+    "dtype",
+    "threads_per_row",
+    "num_threads",
+    "num_copy_elems",
+    "is_async"
+  ],
+  "predicate_k": [
+    "tAcA",
+    "limit"
+  ],
+  "parse_swizzle_from_pointer": [
+    "ptr"
+  ],
+  "swizzle_int": [
+    "ptr_int",
+    "b",
+    "m",
+    "s"
+  ],
+  "swizzle_ptr": [
+    "ptr"
+  ],
+  "as_position_independent_swizzle_tensor": [
+    "tensor"
+  ],
+  "partition_D_position_independent": [
+    "thr_copy",
+    "tensor"
+  ],
+  "partition_S_position_independent": [
+    "thr_copy",
+    "tensor"
+  ],
+  "sm90_get_smem_load_op": [
+    "layout_c",
+    "elem_ty_c"
+  ],
+  "get_smem_store_atom": [
+    "arch",
+    "element_type",
+    "transpose"
+  ],
+  "get_smem_load_atom": [
+    "arch",
+    "element_type",
+    "transpose"
+  ],
+  "get_smem_store_C": [
+    "tiled_mma",
+    "sC",
+    "tidx",
+    "arch",
+    "transpose",
+    "position_independent"
+  ],
+  "get_smem_load_C": [
+    "tiled_mma",
+    "sC",
+    "tidx",
+    "arch",
+    "transpose",
+    "position_independent"
+  ],
+  "epilog_smem_copy_atom": [
+    "tiled_mma",
+    "epi_tile",
+    "transpose"
+  ],
+  "get_smem_store_epi": [
+    "tiled_mma",
+    "epi_tile",
+    "sC",
+    "tidx",
+    "arch",
+    "transpose",
+    "position_independent"
+  ],
+  "get_smem_store_A": [
+    "tiled_mma",
+    "sA",
+    "tidx",
+    "arch",
+    "position_independent"
+  ],
+  "get_smem_load_A": [
+    "tiled_mma",
+    "sA",
+    "tidx",
+    "arch",
+    "with_dst_tensor",
+    "position_independent"
+  ],
+  "cpasync_reduce_bulk_add_f32": [
+    "smem_ptr",
+    "gmem_ptr",
+    "store_bytes"
+  ],
+  "cpasync_bulk_get_copy_fn": [
+    "src_tensor",
+    "dst_tensor",
+    "single_stage"
+  ],
+  "tma_get_copy_fn": [
+    "atom",
+    "cta_coord",
+    "cta_layout",
+    "src_tensor",
+    "dst_tensor",
+    "filter_zeros",
+    "single_stage"
+  ],
+  "tma_producer_copy_fn": [
+    "copy",
+    "pipeline"
+  ],
+  "gather_m_get_copy_fn": [
+    "thr_copy_A",
+    "mA",
+    "sA",
+    "gsAIdx",
+    "limit_m",
+    "limit_k"
+  ],
+  "gather_k_get_copy_fn": [
+    "thr_copy_A",
+    "mA",
+    "sA",
+    "gsAIdx",
+    "limit_m",
+    "limit_k"
+  ],
+  "__version__": [],
+  "__all__": [],
+  "NamedBarrierGemm": {
+    "Epilogue": [],
+    "EpilogueLoad": [],
+    "MmaWG0": [],
+    "MmaWG1": [],
+    "EpiWG0": [],
+    "EpiWG1": [],
+    "TmemPtr": []
+  },
+  "GemmSm90": {
+    "arch": [],
+    "EpilogueArguments": [],
+    "EpilogueParams": [],
+    "__init__": [
+      "self",
+      "acc_dtype",
+      "a_dtype",
+      "tile_shape_mn",
+      "cluster_shape_mnk",
+      "pingpong",
+      "is_persistent",
+      "fp8_fast_accum",
+      "gather_A"
+    ],
+    "_setup_attributes": [
+      "self",
+      "epilogue_args"
+    ],
+    "__call__": [
+      "self",
+      "mA",
+      "mB",
+      "mD",
+      "mC",
+      "epilogue_args",
+      "scheduler_args",
+      "varlen_args",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "tiled_mma",
+      "tma_atom_a",
+      "mA_mkl",
+      "tma_atom_b",
+      "mB_nkl",
+      "tma_atom_d",
+      "mD_mnl",
+      "tma_atom_c",
+      "mC_mnl",
+      "epilogue_params",
+      "varlen_params",
+      "cluster_layout_mnk",
+      "a_smem_layout",
+      "b_smem_layout",
+      "epi_smem_layout",
+      "epi_c_smem_layout",
+      "tile_sched_params",
+      "TileSchedulerCls"
+    ],
+    "load_AB": [
+      "self",
+      "ab_pipeline",
+      "ab_producer_state",
+      "copy_A",
+      "copy_B",
+      "k_tile_cnt",
+      "copy_SFA",
+      "copy_SFB"
+    ],
+    "load_AB_gather_A": [
+      "self",
+      "ab_pipeline",
+      "ab_producer_state",
+      "copy_A",
+      "prefetch_A",
+      "copy_B",
+      "k_tile_cnt",
+      "varlen_m"
+    ],
+    "mma": [
+      "self",
+      "ab_pipeline",
+      "ab_read_state",
+      "mma_fn",
+      "acc",
+      "acc_slow",
+      "k_tile_cnt",
+      "warp_group_idx"
+    ],
+    "epilogue": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "tma_desc_epi_ptrs",
+      "epi_pipeline",
+      "epi_store_pipeline",
+      "epi_read_state",
+      "epi_producer_state",
+      "epi_tile",
+      "load_acc_subtile",
+      "tRS_rD",
+      "tRS_rC",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tRS_sD",
+      "tiled_copy_s2r",
+      "tSR_rC",
+      "tSR_sC",
+      "copy_D",
+      "copy_C",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tile_scheduler",
+      "tidx",
+      "is_tma_warp"
+    ],
+    "get_scheduler_class": [
+      "self",
+      "varlen_m"
+    ],
+    "get_scheduler_arguments": [
+      "self",
+      "mA",
+      "mB",
+      "mD",
+      "scheduler_args",
+      "varlen_args"
+    ],
+    "epi_load_acc_subtile": [
+      "self",
+      "tRS_rAcc",
+      "tRS_rD",
+      "epi_idx"
+    ],
+    "epi_begin": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "epi_tile",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tidx"
+    ],
+    "epi_begin_loop": [
+      "self",
+      "params",
+      "epi_tensors",
+      "epi_coord"
+    ],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ],
+    "epi_visit_acc": [
+      "self",
+      "params",
+      "acc",
+      "tiled_mma",
+      "tile_coord_mnkl",
+      "tidx"
+    ],
+    "epi_end": [
+      "self",
+      "params",
+      "epi_tensors",
+      "epi_tile",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "tidx"
+    ],
+    "epi_to_underlying_arguments": [
+      "self",
+      "args"
+    ],
+    "epi_get_tma_atoms": [
+      "self",
+      "params"
+    ],
+    "epi_get_tensormap_update_shapes_orders": [
+      "self",
+      "params",
+      "cu_seqlens_m",
+      "batch_idx"
+    ],
+    "epi_smem_bytes_per_stage": [
+      "args",
+      "cta_tile_shape_mnk",
+      "epi_tile"
+    ],
+    "epi_get_smem_struct": [
+      "self",
+      "params"
+    ],
+    "epi_get_smem_tensors": [
+      "self",
+      "params",
+      "storage"
+    ],
+    "pingpong_barrier_sync": [
+      "self",
+      "warp_group_idx",
+      "stage"
+    ],
+    "pingpong_barrier_arrive": [
+      "self",
+      "warp_group_idx",
+      "stage"
+    ],
+    "epilog_smem_copy_atom": [
+      "self",
+      "tiled_mma"
+    ],
+    "epilog_smem_store_and_partition": [
+      "self",
+      "tiled_mma",
+      "d_layout",
+      "dtype",
+      "sD",
+      "tidx"
+    ],
+    "epilog_smem_load_and_partition": [
+      "self",
+      "tiled_mma",
+      "c_layout",
+      "dtype",
+      "sC",
+      "tRS_rD_layout",
+      "tidx"
+    ],
+    "epilog_gmem_copy_and_partition": [
+      "self",
+      "atom",
+      "mD_mn",
+      "tile_shape_mn",
+      "epi_tile",
+      "sD",
+      "tile_coord_mnkl",
+      "tma_desc_ptr"
+    ],
+    "make_ab_pipeline": [
+      "self",
+      "tiled_mma",
+      "cluster_layout_vmnk",
+      "ab_pipeline_mbar_ptr"
+    ],
+    "make_epi_pipeline": [
+      "self",
+      "c_smem_layout",
+      "epi_pipeline_mbar_ptr"
+    ],
+    "make_epi_store_pipeline": [
+      "self"
+    ],
+    "make_sched_pipeline": [
+      "self",
+      "cluster_layout_mnk",
+      "sched_pipeline_mbar_ptr",
+      "varlen_k"
+    ],
+    "_compute_stages": [
+      "cls",
+      "cta_tile_shape_mnk",
+      "epi_tile",
+      "a_dtype",
+      "b_dtype",
+      "d_dtype",
+      "c_dtype",
+      "epilogue_args",
+      "smem_capacity",
+      "occupancy"
+    ],
+    "_sm90_compute_tile_shape_or_override": [
+      "cta_tile_shape_mnk",
+      "atom_layout_mnk",
+      "element_type",
+      "epi_tile_override"
+    ],
+    "_make_smem_layouts": [
+      "cta_tile_shape_mnk",
+      "epi_tile",
+      "a_dtype",
+      "a_layout",
+      "b_dtype",
+      "b_layout",
+      "ab_stage",
+      "d_dtype",
+      "d_layout",
+      "epi_stage",
+      "c_dtype",
+      "c_layout",
+      "epi_c_stage"
+    ],
+    "_make_tma_epi_atoms_and_tensors": [
+      "tensor_d",
+      "epi_smem_layout_staged",
+      "epi_tile",
+      "op_type"
+    ],
+    "_make_tma_atoms_and_tensors": [
+      "tensor",
+      "smem_layout",
+      "smem_tile",
+      "mcast_dim"
+    ],
+    "_make_gmem_tiled_copy_A": [
+      "self",
+      "dtype",
+      "major_mode",
+      "num_threads",
+      "copy_bits"
+    ],
+    "is_valid_dtypes": [
+      "a_dtype",
+      "b_dtype",
+      "acc_dtype",
+      "d_dtype",
+      "a_major",
+      "b_major"
+    ]
+  },
+  "PipelineStateWAdvance": {
+    "advance_iters": [
+      "self",
+      "num_iterations"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "make_pipeline_state": [
+    "type",
+    "stages"
+  ],
+  "PipelineTmaCpAsync": {
+    "create": [],
+    "producer_acquire": [
+      "self",
+      "state",
+      "try_acquire_token",
+      "is_tma_warp"
+    ],
+    "producer_cpasync_commit": [
+      "self",
+      "state"
+    ]
+  },
+  "MbarrierArrayWDropCount": {
+    "__init__": [
+      "self",
+      "barrier_storage",
+      "num_stages",
+      "agent",
+      "tx_count",
+      "drop_count"
+    ],
+    "__extract_mlir_values__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "PipelineTmaCpAsyncUmma": {
+    "create": [],
+    "producer_acquire": [
+      "self",
+      "state",
+      "try_acquire_token",
+      "is_tma_warp"
+    ],
+    "producer_cpasync_commit": [
+      "self",
+      "state"
+    ]
+  },
+  "vec_op": [
+    "tCrC",
+    "tCrVec",
+    "op",
+    "is_colvec"
+  ],
+  "GemmDActMixin": {
+    "EpilogueArguments": [],
+    "EpilogueParams": [],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ]
+  },
+  "GemmDActSm90": {},
+  "GemmDActSm100": {},
+  "dact_fn_map": [],
+  "GemmDGatedMixin": {
+    "epi_to_underlying_arguments": [
+      "self",
+      "args"
+    ],
+    "epi_begin": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "epi_tile",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tidx"
+    ],
+    "epi_begin_loop": [
+      "self",
+      "params",
+      "epi_tensors",
+      "epi_coord"
+    ],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ],
+    "epi_end": [
+      "self",
+      "params",
+      "epi_tensors",
+      "epi_tile",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "tidx"
+    ]
+  },
+  "GemmDGatedSm90": {},
+  "GemmDGatedSm100": {},
+  "dgate_fn_map": [],
+  "Softmax": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "online_softmax"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mO",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mO",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_softmax_fwd": [
+    "x",
+    "out"
+  ],
+  "softmax_fwd": [
+    "x"
+  ],
+  "SoftmaxBackward": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "_num_threads": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mdY",
+      "mY",
+      "mdX",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mdY",
+      "mY",
+      "mdX",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_softmax_backward": [
+    "dy",
+    "y",
+    "dx"
+  ],
+  "softmax_bwd": [
+    "dy",
+    "y"
+  ],
+  "SoftmaxFunction": {
+    "forward": [
+      "ctx",
+      "x"
+    ],
+    "backward": [
+      "ctx",
+      "dy"
+    ]
+  },
+  "softmax": [
+    "x"
+  ],
+  "VarlenArguments": {},
+  "VarlenManager": {
+    "bytes_per_tensormap": [],
+    "__init__": [
+      "self",
+      "params",
+      "tensormap_manager",
+      "tensormap_a_ptr",
+      "tensormap_b_ptr",
+      "tensormap_d_ptr",
+      "tensormap_epi_ptrs",
+      "len_m_static",
+      "len_k_static",
+      "last_batch_idx",
+      "is_group_changed"
+    ],
+    "to_underlying_arguments": [
+      "args"
+    ],
+    "create": [
+      "params",
+      "has_D",
+      "num_epi_tensormaps",
+      "len_m_static",
+      "len_k_static",
+      "pingpong",
+      "warp_idx"
+    ],
+    "len_m": [
+      "self",
+      "batch_idx"
+    ],
+    "len_k": [
+      "self",
+      "batch_idx"
+    ],
+    "offset_batch_A": [
+      "self",
+      "mA_mkl",
+      "batch_idx"
+    ],
+    "offset_batch_AIdx": [
+      "self",
+      "batch_idx"
+    ],
+    "offset_batch_B": [
+      "self",
+      "mB_nkl",
+      "batch_idx"
+    ],
+    "offset_batch_epi": [
+      "self",
+      "mD_mnl",
+      "batch_idx"
+    ],
+    "init_tensormap_AB": [
+      "self",
+      "tma_atom_a",
+      "tma_atom_b",
+      "is_manager_warp"
+    ],
+    "init_tensormap_epi": [
+      "self",
+      "tma_atom_d",
+      "tma_atoms_epi",
+      "is_manager_warp"
+    ],
+    "fence_tensormap_init": [
+      "self"
+    ],
+    "update_tensormap_AB": [
+      "self",
+      "batch_idx",
+      "a_layout",
+      "b_layout",
+      "is_manager_warp"
+    ],
+    "update_tensormap_epi": [
+      "self",
+      "batch_idx",
+      "d_layout",
+      "epi_shapes",
+      "epi_orders",
+      "is_manager_warp"
+    ],
+    "fence_tensormap_update_AB": [
+      "self",
+      "is_manager_warp"
+    ],
+    "fence_tensormap_update_epi": [
+      "self",
+      "is_manager_warp"
+    ],
+    "get_tma_desc_a_ptr": [
+      "self"
+    ],
+    "get_tma_desc_b_ptr": [
+      "self"
+    ],
+    "get_tma_desc_d_ptr": [
+      "self"
+    ],
+    "get_tma_desc_epi_ptrs": [
+      "self"
+    ],
+    "__extract_mlir_values__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "PACKAGE_NAME": [],
+  "VERSION": [],
+  "get_home_dir": [],
+  "default_cache_dir": [],
+  "FileCacheManager": {
+    "__init__": [
+      "self",
+      "key"
+    ]
+  },
+  "_base32": [
+    "key"
+  ],
+  "Autotuner": {
+    "__init__": [
+      "self",
+      "fn",
+      "key",
+      "configs",
+      "restore_value",
+      "prune_configs_by",
+      "do_bench",
+      "cache_results"
+    ],
+    "do_bench": [
+      "self"
+    ],
+    "_bench": [
+      "self"
+    ],
+    "check_disk_cache": [
+      "self",
+      "tuning_key",
+      "configs",
+      "bench_fn"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "prune_configs": [
+      "self",
+      "kwargs"
+    ]
+  },
+  "AutotuneConfig": {
+    "__init__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "all_kwargs": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "autotune": [
+    "configs",
+    "key",
+    "prune_configs_by",
+    "restore_value",
+    "do_bench",
+    "cache_results"
+  ],
+  "make_smem_layout_cpasync_a": [
+    "tiled_mma",
+    "mma_tiler_mnk",
+    "a_dtype",
+    "num_stages"
+  ],
+  "CUTE_DSL_PTXAS_PATH": [],
+  "VERBOSE": [],
+  "_original_load_cuda_library": [],
+  "_user_wanted_ptx": [],
+  "_log": [
+    "msg"
+  ],
+  "_get_ptx": [
+    "compiled_func"
+  ],
+  "_compile_ptx": [
+    "ptx_path",
+    "ptx_content"
+  ],
+  "_patched_load_cuda_library": [
+    "self"
+  ],
+  "patch": [],
+  "GemmActMixin": {
+    "epi_to_underlying_arguments": [
+      "self",
+      "args"
+    ],
+    "epi_get_tma_atoms": [
+      "self",
+      "params"
+    ],
+    "epi_get_tensormap_update_shapes_orders": [
+      "self",
+      "params",
+      "cu_seqlens_m",
+      "batch_idx"
+    ],
+    "epi_smem_bytes_per_stage": [
+      "args",
+      "cta_tile_shape_mnk",
+      "epi_tile"
+    ],
+    "epi_get_smem_struct": [
+      "self",
+      "params"
+    ],
+    "epi_get_smem_tensors": [
+      "self",
+      "params",
+      "storage"
+    ],
+    "epilogue": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "tma_desc_epi_ptrs",
+      "epi_pipeline",
+      "epi_store_pipeline",
+      "epi_read_state",
+      "epi_producer_state",
+      "epi_tile",
+      "load_acc_subtile",
+      "tRS_rD",
+      "tRS_rC",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tRS_sD",
+      "tiled_copy_s2r",
+      "tSR_rC",
+      "tSR_sC",
+      "copy_D",
+      "copy_C",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tile_scheduler",
+      "tidx",
+      "is_tma_warp"
+    ],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ]
+  },
+  "GemmActSm90": {},
+  "GemmActSm100": {},
+  "act_fn_map": [],
+  "GemmGatedMixin": {
+    "epi_to_underlying_arguments": [
+      "self",
+      "args"
+    ],
+    "epi_smem_bytes_per_stage": [
+      "args",
+      "cta_tile_shape_mnk",
+      "epi_tile"
+    ],
+    "epi_visit_subtile": [
+      "self",
+      "params",
+      "epi_loop_tensors",
+      "tRS_rD",
+      "tRS_rC"
+    ]
+  },
+  "GemmGatedSm90": {},
+  "GemmGatedSm100": {},
+  "gate_fn_map": [],
+  "linear_cross_entropy_func": [
+    "x",
+    "weight",
+    "bias",
+    "target",
+    "ignore_index",
+    "reduction",
+    "inplace_backward"
+  ],
+  "linear_cross_entropy_func_ref": [
+    "x",
+    "weight",
+    "bias",
+    "target",
+    "ignore_index",
+    "reduction"
+  ],
+  "chunked_linear_cross_entropy_fwd": [
+    "x",
+    "weight",
+    "target",
+    "chunk_size",
+    "ignore_index",
+    "tuned"
+  ],
+  "ChunkedLinearCrossEntropyFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "weight",
+      "target",
+      "ignore_index",
+      "reduction",
+      "chunk_size",
+      "tuned"
+    ],
+    "backward": [
+      "ctx",
+      "dloss"
+    ]
+  },
+  "chunked_linear_cross_entropy": [
+    "x",
+    "weight",
+    "target",
+    "chunk_size",
+    "ignore_index",
+    "reduction",
+    "tuned"
+  ],
+  "LinearCrossEntropy": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias",
+      "ignore_index",
+      "reduction",
+      "chunk_size",
+      "inplace_backward",
+      "tuned",
+      "device",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "linear_fwd_convert_type": [],
+  "linear_fwd_postprocess": [
+    "ctx",
+    "x",
+    "weight",
+    "weight_og",
+    "needs_x_w_grad"
+  ],
+  "linear_bwd_compute_input_grad": [
+    "ctx",
+    "dout",
+    "weight",
+    "matmul_fn"
+  ],
+  "linear_bwd_compute_weight_grad": [
+    "ctx",
+    "dout",
+    "x",
+    "weight_og",
+    "matmul_fn",
+    "matmul_inplace_fn"
+  ],
+  "LinearFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "x",
+      "weight",
+      "bias",
+      "fuse_grad_accum"
+    ],
+    "backward": [
+      "cls",
+      "ctx",
+      "dout"
+    ]
+  },
+  "LinearUntunedFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": []
+  },
+  "linear_func": [
+    "x",
+    "weight",
+    "bias",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "LinearActFunc": {
+    "matmul_fwd_fn": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "x",
+      "weight",
+      "activation",
+      "bias",
+      "store_preact",
+      "fuse_grad_accum"
+    ]
+  },
+  "LinearActUntunedFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": []
+  },
+  "linear_act_func": [
+    "x",
+    "weight",
+    "activation",
+    "bias",
+    "store_preact",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "DActLinearFunc": {
+    "matmul_bwd_dx": [],
+    "forward": [
+      "cls",
+      "ctx",
+      "preact",
+      "weight",
+      "x",
+      "activation",
+      "fuse_grad_accum"
+    ],
+    "backward": [
+      "cls",
+      "ctx",
+      "dout"
+    ]
+  },
+  "DActLinearUntunedFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": []
+  },
+  "act_linear_func": [
+    "preact",
+    "weight",
+    "x",
+    "activation",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "LinearGatedFunc": {
+    "matmul_fwd_fn": []
+  },
+  "LinearGatedUntunedFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": []
+  },
+  "linear_gated_func": [
+    "x",
+    "weight",
+    "activation",
+    "bias",
+    "store_preact",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "DGatedLinearFunc": {
+    "matmul_bwd_dx": []
+  },
+  "DGatedLinearUntunedFunc": {
+    "matmul_fwd_fn": [],
+    "matmul_bwd_dx": [],
+    "matmul_bwd_dw": [],
+    "matmul_bwd_dw_inplace": []
+  },
+  "gated_linear_func": [
+    "preact",
+    "weight",
+    "x",
+    "activation",
+    "fuse_grad_accum",
+    "tuned"
+  ],
+  "Linear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias",
+      "device",
+      "dtype",
+      "fuse_grad_accum"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "RasterOrderOption": {
+    "AlongM": [],
+    "AlongN": [],
+    "Heuristic": []
+  },
+  "RasterOrder": {
+    "AlongM": [],
+    "AlongN": []
+  },
+  "PersistenceMode": {
+    "NONE": [],
+    "STATIC": [],
+    "DYNAMIC": [],
+    "CLC": []
+  },
+  "get_raster_order_from_option": [
+    "raster_order_option",
+    "problem_shape_ncluster_mn",
+    "group_size"
+  ],
+  "TileSchedulerOptions": {},
+  "TileSchedulerArguments": {},
+  "TileScheduler": {
+    "__init__": [
+      "self",
+      "current_work_idx",
+      "num_tiles_executed",
+      "current_batch_idx",
+      "num_work_idx_before_cur_batch",
+      "sched_smem",
+      "scheduler_pipeline",
+      "pipeline_state",
+      "params"
+    ],
+    "to_underlying_arguments": [
+      "args"
+    ],
+    "_init_clc_mbarrier": [
+      "sched_smem"
+    ],
+    "_cluster_idx_to_work_idx_batch": [
+      "params",
+      "cluster_idx"
+    ],
+    "create": [
+      "params",
+      "sched_smem",
+      "scheduler_pipeline",
+      "is_scheduler_warp"
+    ],
+    "get_grid_shape": [
+      "params",
+      "max_active_clusters"
+    ],
+    "_swizzle_cta": [
+      "self",
+      "cluster_id_in_problem"
+    ],
+    "_cluster_id_to_cta_id": [
+      "self",
+      "cid_m",
+      "cid_n"
+    ],
+    "_delinearize_work_idx": [
+      "self",
+      "work_idx",
+      "bidz",
+      "is_valid"
+    ],
+    "get_current_work": [
+      "self"
+    ],
+    "initial_work_tile_info": [
+      "self"
+    ],
+    "_fetch_next_work_idx": [
+      "self"
+    ],
+    "write_work_tile_to_smem": [
+      "self",
+      "work_tile_info"
+    ],
+    "advance_to_next_work": [
+      "self",
+      "is_scheduler_warp"
+    ],
+    "producer_tail": [
+      "self"
+    ],
+    "__extract_mlir_values__": [
+      "self"
+    ],
+    "__new_from_mlir_values__": [
+      "self",
+      "values"
+    ]
+  },
+  "triangular_idx_to_coord": [
+    "idx"
+  ],
+  "TriangularTileScheduler": {
+    "to_underlying_arguments": [
+      "args"
+    ],
+    "create": [
+      "params",
+      "sched_smem",
+      "scheduler_pipeline",
+      "is_scheduler_warp"
+    ],
+    "get_grid_shape": [
+      "params",
+      "max_active_clusters"
+    ],
+    "_swizzle_cta": [
+      "self",
+      "cluster_id_in_problem"
+    ],
+    "_delinearize_work_idx": [
+      "self",
+      "work_idx",
+      "bidz",
+      "is_valid"
+    ]
+  },
+  "VarlenMTileSchedulerArguments": {},
+  "VarlenMTileScheduler": {
+    "__init__": [
+      "self",
+      "current_work_idx",
+      "num_tiles_executed",
+      "current_batch_idx",
+      "num_work_idx_before_cur_batch",
+      "sched_smem",
+      "scheduler_pipeline",
+      "pipeline_state",
+      "params"
+    ],
+    "to_underlying_arguments": [
+      "args"
+    ],
+    "_cluster_idx_to_work_idx_batch": [
+      "params",
+      "cluster_idx"
+    ],
+    "create": [
+      "params",
+      "sched_smem",
+      "scheduler_pipeline",
+      "is_scheduler_warp"
+    ],
+    "get_grid_shape": [
+      "params",
+      "max_active_clusters"
+    ],
+    "_swizzle_cta": [
+      "self",
+      "cluster_id_in_problem",
+      "num_clusters_m"
+    ],
+    "_get_num_m_blocks": [
+      "self",
+      "lane",
+      "bidb_start",
+      "block_size"
+    ],
+    "_delinearize_work_idx": [
+      "self",
+      "work_idx",
+      "bidz",
+      "is_valid_"
+    ]
+  },
+  "TensorMapManagerSm90": {
+    "init_tensormap_from_atom": [
+      "self",
+      "copy_atom",
+      "dst_ptr",
+      "is_manager_warp"
+    ],
+    "update_tensormap": [
+      "self",
+      "tensor_gmem",
+      "tma_copy_atom",
+      "tensormap_gmem_ptr",
+      "is_manager_warp",
+      "tensormap_smem_ptr"
+    ],
+    "update_tensormap_shape": [
+      "self",
+      "tensormap_gmem_ptr",
+      "is_manager_warp",
+      "tensormap_smem_ptr",
+      "shapes",
+      "orders"
+    ]
+  },
+  "GemmSm100": {
+    "arch": [],
+    "num_epi_tensormaps": [],
+    "EpilogueArguments": [],
+    "EpilogueParams": [],
+    "__init__": [
+      "self",
+      "acc_dtype",
+      "a_dtype",
+      "mma_tiler_mn",
+      "cluster_shape_mnk",
+      "sf_vec_size",
+      "gather_A"
+    ],
+    "_setup_attributes": [
+      "self",
+      "epilogue_args",
+      "varlen_args"
+    ],
+    "__call__": [
+      "self",
+      "mA",
+      "mB",
+      "mD",
+      "mC",
+      "epilogue_args",
+      "scheduler_args",
+      "varlen_args",
+      "stream",
+      "mSFA",
+      "mSFB"
+    ],
+    "kernel": [
+      "self",
+      "tiled_mma",
+      "tiled_mma_sfb",
+      "tma_atom_a",
+      "mA_mkl",
+      "tma_atom_b",
+      "mB_nkl",
+      "tma_atom_sfa",
+      "mSFA_mkl",
+      "tma_atom_sfb",
+      "mSFB_nkl",
+      "tma_atom_d",
+      "mD_mnl",
+      "tma_atom_c",
+      "mC_mnl",
+      "epilogue_params",
+      "varlen_params",
+      "cluster_layout_vmnk",
+      "cluster_layout_sfb_vmnk",
+      "a_smem_layout",
+      "a_smem_load_layout",
+      "b_smem_layout",
+      "sfa_smem_layout",
+      "sfb_smem_layout",
+      "epi_smem_layout",
+      "epi_c_smem_layout",
+      "epi_tile",
+      "tile_sched_params",
+      "TileSchedulerCls"
+    ],
+    "load_A_gather_A": [
+      "self",
+      "a_pipeline",
+      "a_producer_state",
+      "a_prefetch_consumer_state",
+      "copy_A",
+      "prefetch_A",
+      "k_tile_cnt"
+    ],
+    "mma": [
+      "self",
+      "ab_pipeline",
+      "acc_pipeline",
+      "ab_consumer_state",
+      "acc_producer_state",
+      "tiled_mma",
+      "tCrA",
+      "tCrB",
+      "acc",
+      "k_tile_cnt",
+      "is_leader_cta",
+      "cta_rank_in_cluster",
+      "tCtSFA",
+      "tCtSFB",
+      "tiled_copy_s2t_sfa",
+      "tiled_copy_s2t_sfb",
+      "tCsSFA_compact_s2t",
+      "tCsSFB_compact_s2t",
+      "tCtSFA_compact_s2t",
+      "tCtSFB_compact_s2t"
+    ],
+    "epi_load_acc_subtile": [
+      "self",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tTR_tAcc",
+      "tTR_rAcc",
+      "tRS_rD",
+      "epi_idx",
+      "clear_acc"
+    ],
+    "mainloop_s2t_copy_and_partition": [
+      "self",
+      "sSF",
+      "tSF"
+    ],
+    "epilog_tmem_copy_and_partition": [
+      "self",
+      "tidx",
+      "tAcc",
+      "epi_tile",
+      "use_2cta_instrs"
+    ],
+    "epilog_smem_store_and_partition": [
+      "self",
+      "tiled_copy_t2r",
+      "d_layout",
+      "dtype",
+      "tTR_rD",
+      "sD",
+      "tidx"
+    ],
+    "epilog_smem_load_and_partition": [
+      "self",
+      "tiled_copy_t2r",
+      "c_layout",
+      "dtype",
+      "sC",
+      "tRS_rD_layout",
+      "tidx"
+    ],
+    "make_ab_pipeline": [
+      "self",
+      "tiled_mma",
+      "cluster_layout_vmnk",
+      "ab_pipeline_mbar_ptr",
+      "is_leader_cta"
+    ],
+    "make_acc_pipeline": [
+      "self",
+      "cluster_layout_vmnk",
+      "acc_pipeline_mbar_ptr"
+    ],
+    "make_sched_pipeline": [
+      "self",
+      "cluster_layout_mnk",
+      "sched_pipeline_mbar_ptr",
+      "has_C"
+    ],
+    "make_a_prefetch_pipeline": [
+      "self",
+      "a_prefetch_pipeline_mbar_ptr"
+    ],
+    "_compute_stages": [
+      "cls",
+      "tiled_mma",
+      "mma_tiler_mnk",
+      "cta_tile_shape_mnk",
+      "epi_tile",
+      "a_dtype",
+      "b_dtype",
+      "sf_dtype",
+      "sf_vec_size",
+      "d_dtype",
+      "c_dtype",
+      "d_layout",
+      "c_layout",
+      "epilogue_args",
+      "prefetch_A_idx",
+      "smem_capacity",
+      "occupancy"
+    ],
+    "_compute_num_tmem_alloc_cols": [
+      "tiled_mma",
+      "mma_tiler",
+      "num_acc_stage"
+    ],
+    "is_valid_dtypes": [
+      "a_dtype",
+      "b_dtype",
+      "acc_dtype",
+      "d_dtype",
+      "a_major",
+      "b_major"
+    ],
+    "is_valid_dtypes_and_scale_factor_vec_size": [
+      "ab_dtype",
+      "sf_dtype",
+      "sf_vec_size",
+      "d_dtype"
+    ],
+    "is_valid_mma_tiler_and_cluster_shape": [
+      "mma_tiler_mn",
+      "cluster_shape_mn",
+      "blockscaled"
+    ],
+    "is_valid_tensor_alignment": [
+      "m",
+      "n",
+      "k",
+      "l",
+      "ab_dtype",
+      "d_dtype",
+      "a_major",
+      "b_major",
+      "d_major"
+    ],
+    "can_implement": [
+      "ab_dtype",
+      "acc_dtype",
+      "d_dtype",
+      "mma_tiler_mn",
+      "cluster_shape_mn",
+      "m",
+      "n",
+      "k",
+      "l",
+      "a_major",
+      "b_major",
+      "d_major"
+    ]
+  },
+  "run": [
+    "mnkl",
+    "ab_dtype",
+    "d_dtype",
+    "c_dtype",
+    "acc_dtype",
+    "a_major",
+    "b_major",
+    "d_major",
+    "c_major",
+    "mma_tiler_mn",
+    "cluster_shape_mn",
+    "tolerance",
+    "warmup_iterations",
+    "iterations",
+    "skip_ref_check",
+    "dynamic_persistent"
+  ],
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N",
+      "is_layernorm"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mW",
+      "mB",
+      "mRes",
+      "mO",
+      "mResO",
+      "mRstd",
+      "mMean",
+      "eps",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mW",
+      "mB",
+      "mRes",
+      "mO",
+      "mResO",
+      "mRstd",
+      "mMean",
+      "eps",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_rmsnorm_fwd": [
+    "x",
+    "weight",
+    "out",
+    "bias",
+    "rstd",
+    "mean",
+    "residual",
+    "residual_out",
+    "eps",
+    "is_layernorm"
+  ],
+  "rmsnorm_fwd": [
+    "x",
+    "weight",
+    "bias",
+    "residual",
+    "out_dtype",
+    "residual_dtype",
+    "eps",
+    "store_rstd"
+  ],
+  "rmsnorm_ref": [
+    "x",
+    "w",
+    "bias",
+    "residual",
+    "eps"
+  ],
+  "rmsnorm_bwd_ref": [
+    "x",
+    "w",
+    "dout",
+    "rstd",
+    "eps"
+  ],
+  "RMSNormBackward": {
+    "__init__": [
+      "self",
+      "dtype",
+      "N"
+    ],
+    "_num_threads": [
+      "self"
+    ],
+    "_threads_per_row": [
+      "self"
+    ],
+    "_set_cluster_n": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "mX",
+      "mW",
+      "mdO",
+      "mdResO",
+      "mRstd",
+      "mdX",
+      "mdW",
+      "mdRes",
+      "mdB",
+      "sm_count",
+      "stream"
+    ],
+    "kernel": [
+      "self",
+      "mX",
+      "mW",
+      "mdO",
+      "mdResO",
+      "mRstd",
+      "mdX",
+      "mdW",
+      "mdB",
+      "mdRes",
+      "tiler_mn",
+      "tiled_copy",
+      "threads_per_row"
+    ]
+  },
+  "_get_sm_count": [
+    "N",
+    "device"
+  ],
+  "_rmsnorm_bwd": [
+    "x",
+    "weight",
+    "dout",
+    "rstd",
+    "dx",
+    "dw_partial",
+    "db_partial",
+    "dresidual_out",
+    "dresidual",
+    "sm_count"
+  ],
+  "rmsnorm_bwd": [
+    "x",
+    "weight",
+    "dout",
+    "rstd",
+    "dresidual_out",
+    "has_bias",
+    "has_residual"
+  ],
+  "RMSNormFunction": {
+    "forward": [
+      "ctx",
+      "x",
+      "weight",
+      "bias",
+      "residual",
+      "out_dtype",
+      "residual_dtype",
+      "eps",
+      "prenorm"
+    ],
+    "backward": [
+      "ctx",
+      "dout"
+    ]
+  },
+  "rmsnorm": [
+    "x",
+    "weight",
+    "bias",
+    "residual",
+    "out_dtype",
+    "residual_dtype",
+    "eps",
+    "prenorm"
+  ],
+  "QuackRMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps",
+      "elementwise_affine",
+      "device",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "layernorm_fwd": [
+    "x",
+    "weight",
+    "bias",
+    "eps",
+    "return_rstd",
+    "return_mean"
+  ],
+  "layernorm_ref": [
+    "x",
+    "w",
+    "eps"
+  ],
+  "layernorm_rstd_ref": [
+    "x",
+    "eps"
+  ],
+  "layernorm_mean_ref": [
+    "x"
+  ],
+  "transpose_view": [
+    "a"
+  ],
+  "select": [
+    "a",
+    "mode"
+  ],
+  "expand": [
+    "a",
+    "dim",
+    "size"
+  ],
+  "permute_gated_Cregs_b16": [
+    "t"
+  ],
+  "permute_Cregs_b32_for_stsm": [
+    "t"
+  ],
+  "permute_Cregs_b32_for_ldsm": [
+    "t"
+  ],
+  "concat_layout": [],
+  "convert_layout_acc_mn": [
+    "acc_layout",
+    "transpose"
+  ],
+  "make_acc_tensor_mn_view": [
+    "acc",
+    "transpose"
+  ],
+  "reshape_acc_to_mn": [
+    "acc",
+    "transpose"
+  ],
+  "convert_layout_acc_frgA": [
+    "acc_layout"
+  ],
+  "reshape_acc_to_frgA": [
+    "acc"
+  ],
+  "convert_layout_zero_stride": [
+    "input",
+    "ref_layout"
+  ],
+  "mma_partition_C_vec": [
+    "sVec",
+    "thr_mma",
+    "expand_shape",
+    "is_colvec"
+  ],
+  "mma_partition_A_vec": [
+    "sVec",
+    "thr_mma",
+    "expand_shape",
+    "is_colvec"
+  ],
+  "GemmTensorInfo": {},
+  "GemmWrapperBase": {
+    "validate_tensor": [
+      "tensor",
+      "name",
+      "ndim"
+    ],
+    "validate_shape": [
+      "tensor",
+      "expected_shape",
+      "name"
+    ],
+    "get_major_order": [
+      "tensor",
+      "dims"
+    ],
+    "create_cute_tensor": [
+      "tensor",
+      "major",
+      "dims",
+      "assumed_align"
+    ],
+    "validate_and_prepare_tensors": [
+      "A",
+      "B",
+      "D",
+      "C",
+      "additional_tensors",
+      "cu_seqlens_m",
+      "cu_seqlens_k",
+      "A_idx"
+    ],
+    "permute_tensors": [
+      "tensors",
+      "varlen_m",
+      "varlen_k"
+    ],
+    "extract_dtypes": [
+      "tensors"
+    ],
+    "determine_major_orders": [
+      "tensors",
+      "major_configs"
+    ],
+    "create_cute_tensors": [
+      "tensors",
+      "major_configs"
+    ],
+    "create_scheduler_args": [
+      "max_active_clusters",
+      "tile_count_semaphore",
+      "batch_idx_permute",
+      "max_swizzle_size"
+    ],
+    "create_varlen_args": [
+      "cu_seqlens_m",
+      "cu_seqlens_k",
+      "A_idx",
+      "max_active_clusters",
+      "cluster_shape_mnk",
+      "tensors",
+      "num_epi_tensormaps",
+      "pingpong"
+    ],
+    "get_compile_key": [
+      "tensors",
+      "activation",
+      "tile_shape_mn",
+      "cluster_shape_mnk",
+      "pingpong",
+      "persistent",
+      "has_semaphore"
+    ]
+  },
+  "GemmSymmetricMixin": {
+    "get_scheduler_class": [
+      "self",
+      "varlen_m"
+    ],
+    "epilogue": [
+      "self",
+      "params",
+      "epi_smem_tensors",
+      "tma_desc_epi_ptrs",
+      "epi_pipeline",
+      "epi_store_pipeline",
+      "epi_read_state",
+      "epi_producer_state",
+      "epi_tile",
+      "load_acc_subtile",
+      "tRS_rD",
+      "tRS_rC",
+      "tiled_copy_t2r",
+      "tiled_copy_r2s",
+      "tRS_sD",
+      "tiled_copy_s2r",
+      "tSR_rC",
+      "tSR_sC",
+      "copy_D",
+      "copy_C",
+      "tile_coord_mnkl",
+      "varlen_manager",
+      "epilogue_barrier",
+      "tile_scheduler",
+      "tidx",
+      "is_tma_warp"
+    ]
+  },
+  "GemmSymmetricSm90": {},
+  "GemmSymmetricSm100": {},
+  "bitonic_merge": [
+    "arr",
+    "n",
+    "start",
+    "ascending"
+  ],
+  "bitonic_sort": [
+    "arr",
+    "n",
+    "start",
+    "ascending"
+  ],
+  "bitonic_topk_merge": [
+    "arr0",
+    "arr1",
+    "k",
+    "start0",
+    "start1",
+    "ascending"
+  ],
+  "bitonic_topk": [
+    "arr",
+    "k",
+    "ascending",
+    "warp_width"
+  ],
+  "networks": [],
+  "optimal_sort": [
+    "arr",
+    "n",
+    "start",
+    "ascending"
+  ],
+  "compare_and_swap": [
+    "arr",
+    "i",
+    "j",
+    "ascending",
+    "use_selection"
+  ],
+  "NETWORK_STRINGS": [],
+  "parse_network_string": [
+    "network_str"
+  ],
+  "calculate_network_stats": [
+    "layers"
+  ],
+  "add_network_from_string": [
+    "size",
+    "network_str",
+    "description"
+  ],
+  "generate_networks_dict": [
+    "networks_data"
+  ],
+  "generate_optimal_sort_function": [],
+  "generate_sorting_networks_file": [
+    "max_size"
+  ],
+  "initialize_networks": [],
+  "main": []
+}
