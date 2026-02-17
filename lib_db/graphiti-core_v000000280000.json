@@ -1,0 +1,6963 @@
+{
+  "GraphitiError": {},
+  "EdgeNotFoundError": {
+    "__init__": [
+      "self",
+      "uuid"
+    ]
+  },
+  "EdgesNotFoundError": {
+    "__init__": [
+      "self",
+      "uuids"
+    ]
+  },
+  "GroupsEdgesNotFoundError": {
+    "__init__": [
+      "self",
+      "group_ids"
+    ]
+  },
+  "GroupsNodesNotFoundError": {
+    "__init__": [
+      "self",
+      "group_ids"
+    ]
+  },
+  "NodeNotFoundError": {
+    "__init__": [
+      "self",
+      "uuid"
+    ]
+  },
+  "SearchRerankerError": {
+    "__init__": [
+      "self",
+      "text"
+    ]
+  },
+  "EntityTypeValidationError": {
+    "__init__": [
+      "self",
+      "entity_type",
+      "entity_type_attribute"
+    ]
+  },
+  "GroupIdValidationError": {
+    "__init__": [
+      "self",
+      "group_id"
+    ]
+  },
+  "USE_PARALLEL_RUNTIME": [],
+  "SEMAPHORE_LIMIT": [],
+  "DEFAULT_PAGE_LIMIT": [],
+  "CHUNK_TOKEN_SIZE": [],
+  "CHUNK_OVERLAP_TOKENS": [],
+  "CHUNK_MIN_TOKENS": [],
+  "CHUNK_DENSITY_THRESHOLD": [],
+  "parse_db_date": [
+    "input_date"
+  ],
+  "get_default_group_id": [
+    "provider"
+  ],
+  "lucene_sanitize": [
+    "query"
+  ],
+  "normalize_l2": [
+    "embedding"
+  ],
+  "semaphore_gather": [],
+  "validate_group_id": [
+    "group_id"
+  ],
+  "validate_excluded_entity_types": [
+    "excluded_entity_types",
+    "entity_types"
+  ],
+  "NEO4J_TO_FALKORDB_MAPPING": [],
+  "INDEX_TO_LABEL_KUZU_MAPPING": [],
+  "get_range_indices": [
+    "provider"
+  ],
+  "get_fulltext_indices": [
+    "provider"
+  ],
+  "get_nodes_query": [
+    "name",
+    "query",
+    "limit",
+    "provider"
+  ],
+  "get_vector_cosine_func_query": [
+    "vec1",
+    "vec2",
+    "provider"
+  ],
+  "get_relationships_query": [
+    "name",
+    "limit",
+    "provider"
+  ],
+  "logger": [],
+  "AddEpisodeResults": {},
+  "AddBulkEpisodeResults": {},
+  "AddTripletResults": {},
+  "Graphiti": {
+    "__init__": [
+      "self",
+      "uri",
+      "user",
+      "password",
+      "llm_client",
+      "embedder",
+      "cross_encoder",
+      "store_raw_episode_content",
+      "graph_driver",
+      "max_coroutines",
+      "tracer",
+      "trace_span_prefix"
+    ],
+    "_capture_initialization_telemetry": [
+      "self"
+    ],
+    "token_tracker": [
+      "self"
+    ],
+    "_get_provider_type": [
+      "self",
+      "client"
+    ],
+    "close": [
+      "self"
+    ],
+    "_get_or_create_saga": [
+      "self",
+      "saga_name",
+      "group_id",
+      "now"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "_extract_and_resolve_nodes": [
+      "self",
+      "episode",
+      "previous_episodes",
+      "entity_types",
+      "excluded_entity_types"
+    ],
+    "_extract_and_resolve_edges": [
+      "self",
+      "episode",
+      "extracted_nodes",
+      "previous_episodes",
+      "edge_type_map",
+      "group_id",
+      "edge_types",
+      "nodes",
+      "uuid_map",
+      "custom_extraction_instructions"
+    ],
+    "_process_episode_data": [
+      "self",
+      "episode",
+      "nodes",
+      "entity_edges",
+      "now",
+      "group_id",
+      "saga",
+      "saga_previous_episode_uuid"
+    ],
+    "_extract_and_dedupe_nodes_bulk": [
+      "self",
+      "episode_context",
+      "edge_type_map",
+      "edge_types",
+      "entity_types",
+      "excluded_entity_types",
+      "custom_extraction_instructions"
+    ],
+    "_resolve_nodes_and_edges_bulk": [
+      "self",
+      "nodes_by_episode",
+      "edges_by_episode",
+      "episode_context",
+      "entity_types",
+      "edge_types",
+      "edge_type_map",
+      "episodes"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "driver",
+      "saga"
+    ],
+    "add_episode": [
+      "self",
+      "name",
+      "episode_body",
+      "source_description",
+      "reference_time",
+      "source",
+      "group_id",
+      "uuid",
+      "update_communities",
+      "entity_types",
+      "excluded_entity_types",
+      "previous_episode_uuids",
+      "edge_types",
+      "edge_type_map",
+      "custom_extraction_instructions",
+      "saga",
+      "saga_previous_episode_uuid"
+    ],
+    "add_episode_bulk": [
+      "self",
+      "bulk_episodes",
+      "group_id",
+      "entity_types",
+      "excluded_entity_types",
+      "edge_types",
+      "edge_type_map",
+      "custom_extraction_instructions",
+      "saga"
+    ],
+    "build_communities": [
+      "self",
+      "group_ids",
+      "driver"
+    ],
+    "search": [
+      "self",
+      "query",
+      "center_node_uuid",
+      "group_ids",
+      "num_results",
+      "search_filter",
+      "driver"
+    ],
+    "_search": [
+      "self",
+      "query",
+      "config",
+      "group_ids",
+      "center_node_uuid",
+      "bfs_origin_node_uuids",
+      "search_filter"
+    ],
+    "search_": [
+      "self",
+      "query",
+      "config",
+      "group_ids",
+      "center_node_uuid",
+      "bfs_origin_node_uuids",
+      "search_filter",
+      "driver"
+    ],
+    "get_nodes_and_edges_by_episode": [
+      "self",
+      "episode_uuids"
+    ],
+    "add_triplet": [
+      "self",
+      "source_node",
+      "edge",
+      "target_node"
+    ],
+    "remove_episode": [
+      "self",
+      "episode_uuid"
+    ]
+  },
+  "__all__": [],
+  "EpisodeType": {
+    "message": [],
+    "json": [],
+    "text": [],
+    "from_str": [
+      "episode_type"
+    ]
+  },
+  "Node": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "delete": [
+      "self",
+      "driver"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "delete_by_group_id": [
+      "cls",
+      "driver",
+      "group_id",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "cls",
+      "driver",
+      "uuids",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ]
+  },
+  "EpisodicNode": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "cls",
+      "driver",
+      "entity_node_uuid"
+    ]
+  },
+  "EntityNode": {
+    "generate_name_embedding": [
+      "self",
+      "embedder"
+    ],
+    "load_name_embedding": [
+      "self",
+      "driver"
+    ],
+    "save": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor",
+      "with_embeddings"
+    ]
+  },
+  "CommunityNode": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "generate_name_embedding": [
+      "self",
+      "embedder"
+    ],
+    "load_name_embedding": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "SagaNode": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "delete": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "get_episodic_node_from_record": [
+    "record"
+  ],
+  "get_entity_node_from_record": [
+    "record",
+    "provider"
+  ],
+  "get_community_node_from_record": [
+    "record"
+  ],
+  "get_saga_node_from_record": [
+    "record"
+  ],
+  "create_entity_node_embeddings": [
+    "embedder",
+    "nodes"
+  ],
+  "GraphitiClients": {
+    "model_config": []
+  },
+  "F": [],
+  "handle_multiple_group_ids": [
+    "func"
+  ],
+  "get_parameter_position": [
+    "func",
+    "param_name"
+  ],
+  "Edge": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "delete": [
+      "self",
+      "driver"
+    ],
+    "delete_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ]
+  },
+  "EpisodicEdge": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "EntityEdge": {
+    "generate_embedding": [
+      "self",
+      "embedder"
+    ],
+    "load_fact_embedding": [
+      "self",
+      "driver"
+    ],
+    "save": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_between_nodes": [
+      "cls",
+      "driver",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor",
+      "with_embeddings"
+    ],
+    "get_by_node_uuid": [
+      "cls",
+      "driver",
+      "node_uuid"
+    ]
+  },
+  "CommunityEdge": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "HasEpisodeEdge": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "delete": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NextEpisodeEdge": {
+    "save": [
+      "self",
+      "driver"
+    ],
+    "delete": [
+      "self",
+      "driver"
+    ],
+    "get_by_uuid": [
+      "cls",
+      "driver",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "cls",
+      "driver",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "get_episodic_edge_from_record": [
+    "record"
+  ],
+  "get_entity_edge_from_record": [
+    "record",
+    "provider"
+  ],
+  "get_community_edge_from_record": [
+    "record"
+  ],
+  "get_has_episode_edge_from_record": [
+    "record"
+  ],
+  "get_next_episode_edge_from_record": [
+    "record"
+  ],
+  "create_entity_edge_embeddings": [
+    "embedder",
+    "edges"
+  ],
+  "TracerSpan": {
+    "add_attributes": [
+      "self",
+      "attributes"
+    ],
+    "set_status": [
+      "self",
+      "status",
+      "description"
+    ],
+    "record_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "Tracer": {
+    "start_span": [
+      "self",
+      "name"
+    ]
+  },
+  "NoOpSpan": {
+    "add_attributes": [
+      "self",
+      "attributes"
+    ],
+    "set_status": [
+      "self",
+      "status",
+      "description"
+    ],
+    "record_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "NoOpTracer": {
+    "start_span": [
+      "self",
+      "name"
+    ]
+  },
+  "OpenTelemetrySpan": {
+    "__init__": [
+      "self",
+      "span"
+    ],
+    "add_attributes": [
+      "self",
+      "attributes"
+    ],
+    "set_status": [
+      "self",
+      "status",
+      "description"
+    ],
+    "record_exception": [
+      "self",
+      "exception"
+    ]
+  },
+  "OpenTelemetryTracer": {
+    "__init__": [
+      "self",
+      "tracer",
+      "span_prefix"
+    ],
+    "start_span": [
+      "self",
+      "name"
+    ]
+  },
+  "create_tracer": [
+    "otel_tracer",
+    "span_prefix"
+  ],
+  "POSTHOG_API_KEY": [],
+  "POSTHOG_HOST": [],
+  "TELEMETRY_ENV_VAR": [],
+  "CACHE_DIR": [],
+  "ANON_ID_FILE": [],
+  "is_telemetry_enabled": [],
+  "get_anonymous_id": [],
+  "get_graphiti_version": [],
+  "initialize_posthog": [],
+  "capture_event": [
+    "event_name",
+    "properties"
+  ],
+  "DEFAULT_SIZE": [],
+  "ENTITY_INDEX_NAME": [],
+  "EPISODE_INDEX_NAME": [],
+  "COMMUNITY_INDEX_NAME": [],
+  "ENTITY_EDGE_INDEX_NAME": [],
+  "GraphProvider": {
+    "NEO4J": [],
+    "FALKORDB": [],
+    "KUZU": [],
+    "NEPTUNE": []
+  },
+  "GraphDriverSession": {
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "run": [
+      "self",
+      "query"
+    ],
+    "close": [
+      "self"
+    ],
+    "execute_write": [
+      "self",
+      "func"
+    ]
+  },
+  "GraphDriver": {
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ],
+    "session": [
+      "self",
+      "database"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_all_indexes": [
+      "self"
+    ],
+    "with_database": [
+      "self",
+      "database"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "clone": [
+      "self",
+      "database"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ],
+    "transaction": [
+      "self"
+    ],
+    "entity_node_ops": [
+      "self"
+    ],
+    "episode_node_ops": [
+      "self"
+    ],
+    "community_node_ops": [
+      "self"
+    ],
+    "saga_node_ops": [
+      "self"
+    ],
+    "entity_edge_ops": [
+      "self"
+    ],
+    "episodic_edge_ops": [
+      "self"
+    ],
+    "community_edge_ops": [
+      "self"
+    ],
+    "has_episode_edge_ops": [
+      "self"
+    ],
+    "next_episode_edge_ops": [
+      "self"
+    ],
+    "search_ops": [
+      "self"
+    ],
+    "graph_ops": [
+      "self"
+    ]
+  },
+  "_SessionTransaction": {
+    "__init__": [
+      "self",
+      "session"
+    ],
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "Transaction": {
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "QueryExecutor": {
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ]
+  },
+  "FalkorDriverSession": {
+    "provider": [],
+    "__init__": [
+      "self",
+      "graph"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "close": [
+      "self"
+    ],
+    "execute_write": [
+      "self",
+      "func"
+    ],
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "FalkorDriver": {
+    "provider": [],
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "username",
+      "password",
+      "falkor_db",
+      "database"
+    ],
+    "entity_node_ops": [
+      "self"
+    ],
+    "episode_node_ops": [
+      "self"
+    ],
+    "community_node_ops": [
+      "self"
+    ],
+    "saga_node_ops": [
+      "self"
+    ],
+    "entity_edge_ops": [
+      "self"
+    ],
+    "episodic_edge_ops": [
+      "self"
+    ],
+    "community_edge_ops": [
+      "self"
+    ],
+    "has_episode_edge_ops": [
+      "self"
+    ],
+    "next_episode_edge_ops": [
+      "self"
+    ],
+    "search_ops": [
+      "self"
+    ],
+    "graph_ops": [
+      "self"
+    ],
+    "_get_graph": [
+      "self",
+      "graph_name"
+    ],
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ],
+    "session": [
+      "self",
+      "database"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_all_indexes": [
+      "self"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "clone": [
+      "self",
+      "database"
+    ],
+    "health_check": [
+      "self"
+    ],
+    "convert_datetimes_to_strings": [
+      "obj"
+    ],
+    "sanitize": [
+      "self",
+      "query"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "SCHEMA_QUERIES": [],
+  "KuzuDriver": {
+    "__init__": [
+      "self",
+      "db",
+      "max_concurrent_queries"
+    ],
+    "entity_node_ops": [
+      "self"
+    ],
+    "episode_node_ops": [
+      "self"
+    ],
+    "community_node_ops": [
+      "self"
+    ],
+    "saga_node_ops": [
+      "self"
+    ],
+    "entity_edge_ops": [
+      "self"
+    ],
+    "episodic_edge_ops": [
+      "self"
+    ],
+    "community_edge_ops": [
+      "self"
+    ],
+    "has_episode_edge_ops": [
+      "self"
+    ],
+    "next_episode_edge_ops": [
+      "self"
+    ],
+    "search_ops": [
+      "self"
+    ],
+    "graph_ops": [
+      "self"
+    ],
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ],
+    "session": [
+      "self",
+      "_database"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "database_"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "setup_schema": [
+      "self"
+    ]
+  },
+  "KuzuDriverSession": {
+    "provider": [],
+    "__init__": [
+      "self",
+      "driver"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "close": [
+      "self"
+    ],
+    "execute_write": [
+      "self",
+      "func"
+    ],
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "Neo4jDriver": {
+    "provider": [],
+    "__init__": [
+      "self",
+      "uri",
+      "user",
+      "password",
+      "database"
+    ],
+    "entity_node_ops": [
+      "self"
+    ],
+    "episode_node_ops": [
+      "self"
+    ],
+    "community_node_ops": [
+      "self"
+    ],
+    "saga_node_ops": [
+      "self"
+    ],
+    "entity_edge_ops": [
+      "self"
+    ],
+    "episodic_edge_ops": [
+      "self"
+    ],
+    "community_edge_ops": [
+      "self"
+    ],
+    "has_episode_edge_ops": [
+      "self"
+    ],
+    "next_episode_edge_ops": [
+      "self"
+    ],
+    "search_ops": [
+      "self"
+    ],
+    "graph_ops": [
+      "self"
+    ],
+    "transaction": [
+      "self"
+    ],
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ],
+    "session": [
+      "self",
+      "database"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete_all_indexes": [
+      "self"
+    ],
+    "_execute_index_query": [
+      "self",
+      "query"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "health_check": [
+      "self"
+    ]
+  },
+  "_Neo4jTransaction": {
+    "__init__": [
+      "self",
+      "tx"
+    ],
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "aoss_indices": [],
+  "NeptuneDriver": {
+    "__init__": [
+      "self",
+      "host",
+      "aoss_host",
+      "port",
+      "aoss_port"
+    ],
+    "entity_node_ops": [
+      "self"
+    ],
+    "episode_node_ops": [
+      "self"
+    ],
+    "community_node_ops": [
+      "self"
+    ],
+    "saga_node_ops": [
+      "self"
+    ],
+    "entity_edge_ops": [
+      "self"
+    ],
+    "episodic_edge_ops": [
+      "self"
+    ],
+    "community_edge_ops": [
+      "self"
+    ],
+    "has_episode_edge_ops": [
+      "self"
+    ],
+    "next_episode_edge_ops": [
+      "self"
+    ],
+    "search_ops": [
+      "self"
+    ],
+    "graph_ops": [
+      "self"
+    ],
+    "_sanitize_parameters": [
+      "self",
+      "query",
+      "params"
+    ],
+    "execute_query": [
+      "self",
+      "cypher_query_"
+    ],
+    "_run_query": [
+      "self",
+      "cypher_query_",
+      "params"
+    ],
+    "session": [
+      "self",
+      "database"
+    ],
+    "close": [
+      "self"
+    ],
+    "_delete_all_data": [
+      "self"
+    ],
+    "delete_all_indexes": [
+      "self"
+    ],
+    "delete_all_indexes_impl": [
+      "self"
+    ],
+    "create_aoss_indices": [
+      "self"
+    ],
+    "delete_aoss_indices": [
+      "self"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "delete_existing"
+    ],
+    "run_aoss_query": [
+      "self",
+      "name",
+      "query_text",
+      "limit"
+    ],
+    "save_to_aoss": [
+      "self",
+      "name",
+      "data"
+    ]
+  },
+  "NeptuneDriverSession": {
+    "provider": [],
+    "__init__": [
+      "self",
+      "driver"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "close": [
+      "self"
+    ],
+    "execute_write": [
+      "self",
+      "func"
+    ],
+    "run": [
+      "self",
+      "query"
+    ]
+  },
+  "entity_node_from_record": [
+    "record"
+  ],
+  "entity_edge_from_record": [
+    "record"
+  ],
+  "episodic_node_from_record": [
+    "record"
+  ],
+  "community_node_from_record": [
+    "record"
+  ],
+  "KuzuEntityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "KuzuCommunityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "executor",
+      "node"
+    ]
+  },
+  "MAX_QUERY_LENGTH": [],
+  "_build_kuzu_fulltext_query": [
+    "query",
+    "group_ids",
+    "max_query_length"
+  ],
+  "KuzuSearchOperations": {
+    "node_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "search_filter",
+      "max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "edge_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "KuzuEpisodeNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "executor",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "executor",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "_saga_node_from_record": [
+    "record"
+  ],
+  "KuzuSagaNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "KuzuEntityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "executor",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "executor",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "_has_episode_edge_from_record": [
+    "record"
+  ],
+  "KuzuHasEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "KuzuGraphMaintenanceOperations": {
+    "clear_data": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "executor",
+      "delete_existing"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "executor"
+    ],
+    "get_community_clusters": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "executor"
+    ],
+    "determine_entity_community": [
+      "self",
+      "executor",
+      "entity"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "executor",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "executor",
+      "nodes"
+    ]
+  },
+  "_next_episode_edge_from_record": [
+    "record"
+  ],
+  "KuzuNextEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "_episodic_edge_from_record": [
+    "record"
+  ],
+  "KuzuEpisodicEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "parse_kuzu_entity_node": [
+    "record"
+  ],
+  "parse_kuzu_entity_edge": [
+    "record"
+  ],
+  "_community_edge_from_record": [
+    "record"
+  ],
+  "KuzuCommunityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "EntityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "CommunityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "executor",
+      "node"
+    ]
+  },
+  "SearchOperations": {
+    "node_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "search_filter",
+      "max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "edge_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "EpisodeNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "executor",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "executor",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "SagaNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "EntityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "executor",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "executor",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "HasEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "GraphMaintenanceOperations": {
+    "clear_data": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "executor",
+      "delete_existing"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "executor"
+    ],
+    "get_community_clusters": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "executor"
+    ],
+    "determine_entity_community": [
+      "self",
+      "executor",
+      "entity"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "executor",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "executor",
+      "nodes"
+    ]
+  },
+  "Neighbor": {},
+  "label_propagation": [
+    "projection"
+  ],
+  "NextEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "EpisodicEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "CommunityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "Neo4jEntityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "Neo4jCommunityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "executor",
+      "node"
+    ]
+  },
+  "_build_neo4j_fulltext_query": [
+    "query",
+    "group_ids",
+    "max_query_length"
+  ],
+  "Neo4jSearchOperations": {
+    "node_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "search_filter",
+      "max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "edge_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "Neo4jEpisodeNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "executor",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "executor",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "Neo4jSagaNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "Neo4jEntityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "executor",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "executor",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "Neo4jHasEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "Neo4jGraphMaintenanceOperations": {
+    "clear_data": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "executor",
+      "delete_existing"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "executor"
+    ],
+    "get_community_clusters": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "executor"
+    ],
+    "determine_entity_community": [
+      "self",
+      "executor",
+      "entity"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "executor",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "executor",
+      "nodes"
+    ]
+  },
+  "Neo4jNextEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "Neo4jEpisodicEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "Neo4jCommunityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NeptuneEntityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "NeptuneCommunityNodeOperations": {
+    "__init__": [
+      "self",
+      "driver"
+    ],
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "executor",
+      "node"
+    ]
+  },
+  "NeptuneSearchOperations": {
+    "__init__": [
+      "self",
+      "driver"
+    ],
+    "node_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "search_filter",
+      "max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "edge_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "NeptuneEpisodeNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "executor",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "executor",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "NeptuneSagaNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NeptuneEntityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "executor",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "executor",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "NeptuneHasEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NeptuneGraphMaintenanceOperations": {
+    "__init__": [
+      "self",
+      "driver"
+    ],
+    "clear_data": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "executor",
+      "delete_existing"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "executor"
+    ],
+    "get_community_clusters": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "executor"
+    ],
+    "determine_entity_community": [
+      "self",
+      "executor",
+      "entity"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "executor",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "executor",
+      "nodes"
+    ]
+  },
+  "NeptuneNextEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NeptuneEpisodicEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NeptuneCommunityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "SearchInterface": {
+    "edge_fulltext_search": [
+      "self",
+      "driver",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "driver",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_fulltext_search": [
+      "self",
+      "driver",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "driver",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "driver",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "driver",
+      "bfs_origin_node_uuids",
+      "bfs_max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_bfs_search": [
+      "self",
+      "driver",
+      "bfs_origin_node_uuids",
+      "search_filter",
+      "bfs_max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "driver",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "driver",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "get_embeddings_for_communities": [
+      "self",
+      "driver",
+      "communities"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "driver",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "driver",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ]
+  },
+  "STOPWORDS": [],
+  "FalkorEntityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "FalkorCommunityNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "executor",
+      "node"
+    ]
+  },
+  "_SEPARATOR_MAP": [],
+  "_sanitize": [
+    "query"
+  ],
+  "_build_falkor_fulltext_query": [
+    "query",
+    "group_ids",
+    "max_query_length"
+  ],
+  "FalkorSearchOperations": {
+    "node_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "node_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "search_filter",
+      "max_depth",
+      "group_ids",
+      "limit"
+    ],
+    "edge_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "edge_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "source_node_uuid",
+      "target_node_uuid",
+      "search_filter",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "edge_bfs_search": [
+      "self",
+      "executor",
+      "origin_uuids",
+      "max_depth",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "episode_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "search_filter",
+      "group_ids",
+      "limit"
+    ],
+    "community_fulltext_search": [
+      "self",
+      "executor",
+      "query",
+      "group_ids",
+      "limit"
+    ],
+    "community_similarity_search": [
+      "self",
+      "executor",
+      "search_vector",
+      "group_ids",
+      "limit",
+      "min_score"
+    ],
+    "node_distance_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "center_node_uuid",
+      "min_score"
+    ],
+    "episode_mentions_reranker": [
+      "self",
+      "executor",
+      "node_uuids",
+      "min_score"
+    ],
+    "build_node_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_edge_search_filters": [
+      "self",
+      "search_filters"
+    ],
+    "build_fulltext_query": [
+      "self",
+      "query",
+      "group_ids",
+      "max_query_length"
+    ]
+  },
+  "FalkorEpisodeNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "executor",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "executor",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "FalkorSagaNodeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "executor",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "FalkorEntityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "executor",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "executor",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "executor",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "FalkorHasEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "FalkorGraphMaintenanceOperations": {
+    "clear_data": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "build_indices_and_constraints": [
+      "self",
+      "executor",
+      "delete_existing"
+    ],
+    "delete_all_indexes": [
+      "self",
+      "executor"
+    ],
+    "get_community_clusters": [
+      "self",
+      "executor",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "executor"
+    ],
+    "determine_entity_community": [
+      "self",
+      "executor",
+      "entity"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "executor",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "executor",
+      "nodes"
+    ]
+  },
+  "FalkorNextEpisodeEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "FalkorEpisodicEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "executor",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "FalkorCommunityEdgeOperations": {
+    "save": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "executor",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "executor",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "executor",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "executor",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "executor",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "GraphOperationsInterface": {
+    "node_save": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "node_delete": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "node_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "nodes",
+      "batch_size"
+    ],
+    "node_delete_by_group_id": [
+      "self",
+      "_cls",
+      "driver",
+      "group_id",
+      "batch_size"
+    ],
+    "node_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id",
+      "batch_size"
+    ],
+    "node_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "node_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "node_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "node_load_embeddings": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "node_load_embeddings_bulk": [
+      "self",
+      "driver",
+      "nodes",
+      "batch_size"
+    ],
+    "episodic_node_save": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "episodic_node_delete": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "episodic_node_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "nodes",
+      "batch_size"
+    ],
+    "episodic_edge_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "episodic_edges",
+      "batch_size"
+    ],
+    "episodic_node_delete_by_group_id": [
+      "self",
+      "_cls",
+      "driver",
+      "group_id",
+      "batch_size"
+    ],
+    "episodic_node_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id",
+      "batch_size"
+    ],
+    "episodic_node_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "episodic_node_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "episodic_node_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "driver",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ],
+    "community_node_save": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "community_node_delete": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "community_node_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "nodes",
+      "batch_size"
+    ],
+    "community_node_delete_by_group_id": [
+      "self",
+      "_cls",
+      "driver",
+      "group_id",
+      "batch_size"
+    ],
+    "community_node_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id",
+      "batch_size"
+    ],
+    "community_node_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "community_node_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "community_node_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "saga_node_save": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "saga_node_delete": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "saga_node_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "nodes",
+      "batch_size"
+    ],
+    "saga_node_delete_by_group_id": [
+      "self",
+      "_cls",
+      "driver",
+      "group_id",
+      "batch_size"
+    ],
+    "saga_node_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id",
+      "batch_size"
+    ],
+    "saga_node_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "saga_node_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "saga_node_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "edge_save": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "edge_delete": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "edge_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "edges",
+      "batch_size"
+    ],
+    "edge_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id"
+    ],
+    "edge_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "edge_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "edge_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "edge_load_embeddings": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "edge_load_embeddings_bulk": [
+      "self",
+      "driver",
+      "edges",
+      "batch_size"
+    ],
+    "episodic_edge_save": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "episodic_edge_delete": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "episodic_edge_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id"
+    ],
+    "episodic_edge_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "episodic_edge_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "episodic_edge_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "community_edge_save": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "community_edge_delete": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "community_edge_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id"
+    ],
+    "community_edge_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "community_edge_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "community_edge_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "has_episode_edge_save": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "has_episode_edge_delete": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "has_episode_edge_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "edges",
+      "batch_size"
+    ],
+    "has_episode_edge_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id"
+    ],
+    "has_episode_edge_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "has_episode_edge_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "has_episode_edge_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "next_episode_edge_save": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "next_episode_edge_delete": [
+      "self",
+      "edge",
+      "driver"
+    ],
+    "next_episode_edge_save_bulk": [
+      "self",
+      "_cls",
+      "driver",
+      "transaction",
+      "edges",
+      "batch_size"
+    ],
+    "next_episode_edge_delete_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids",
+      "group_id"
+    ],
+    "next_episode_edge_get_by_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "uuid"
+    ],
+    "next_episode_edge_get_by_uuids": [
+      "self",
+      "_cls",
+      "driver",
+      "uuids"
+    ],
+    "next_episode_edge_get_by_group_ids": [
+      "self",
+      "_cls",
+      "driver",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_mentioned_nodes": [
+      "self",
+      "driver",
+      "episodes"
+    ],
+    "get_communities_by_nodes": [
+      "self",
+      "driver",
+      "nodes"
+    ],
+    "clear_data": [
+      "self",
+      "driver",
+      "group_ids"
+    ],
+    "get_community_clusters": [
+      "self",
+      "driver",
+      "group_ids"
+    ],
+    "remove_communities": [
+      "self",
+      "driver"
+    ],
+    "determine_entity_community": [
+      "self",
+      "driver",
+      "entity"
+    ],
+    "episodic_node_get_by_entity_node_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "entity_node_uuid"
+    ],
+    "community_node_load_name_embedding": [
+      "self",
+      "node",
+      "driver"
+    ],
+    "edge_get_between_nodes": [
+      "self",
+      "_cls",
+      "driver",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "edge_get_by_node_uuid": [
+      "self",
+      "_cls",
+      "driver",
+      "node_uuid"
+    ]
+  },
+  "NodeDuplicate": {},
+  "NodeResolutions": {},
+  "Prompt": {},
+  "Versions": {},
+  "node": [
+    "context"
+  ],
+  "nodes": [
+    "context"
+  ],
+  "node_list": [
+    "context"
+  ],
+  "summary_instructions": [],
+  "Message": {},
+  "PromptVersion": {
+    "__call__": [
+      "self",
+      "context"
+    ]
+  },
+  "PromptFunction": [],
+  "QueryExpansion": {},
+  "QAResponse": {},
+  "EvalResponse": {},
+  "EvalAddEpisodeResults": {},
+  "query_expansion": [
+    "context"
+  ],
+  "qa_prompt": [
+    "context"
+  ],
+  "eval_prompt": [
+    "context"
+  ],
+  "eval_add_episode_results": [
+    "context"
+  ],
+  "ExtractedEdges": {},
+  "edge": [
+    "context"
+  ],
+  "extract_attributes": [
+    "context"
+  ],
+  "PromptLibrary": {},
+  "PromptLibraryImpl": {},
+  "VersionWrapper": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "__call__": [
+      "self",
+      "context"
+    ]
+  },
+  "PromptTypeWrapper": {
+    "__init__": [
+      "self",
+      "versions"
+    ]
+  },
+  "PromptLibraryWrapper": {
+    "__init__": [
+      "self",
+      "library"
+    ]
+  },
+  "EdgeDuplicate": {},
+  "resolve_edge": [
+    "context"
+  ],
+  "ExtractedEntity": {},
+  "ExtractedEntities": {},
+  "EntitySummary": {},
+  "SummarizedEntity": {},
+  "SummarizedEntities": {},
+  "extract_message": [
+    "context"
+  ],
+  "extract_json": [
+    "context"
+  ],
+  "extract_text": [
+    "context"
+  ],
+  "classify_nodes": [
+    "context"
+  ],
+  "extract_summary": [
+    "context"
+  ],
+  "extract_summaries_batch": [
+    "context"
+  ],
+  "DO_NOT_ESCAPE_UNICODE": [],
+  "to_prompt_json": [
+    "data",
+    "ensure_ascii",
+    "indent"
+  ],
+  "Summary": {},
+  "SummaryDescription": {},
+  "summarize_pair": [
+    "context"
+  ],
+  "summarize_context": [
+    "context"
+  ],
+  "summary_description": [
+    "context"
+  ],
+  "CHUNK_SIZE": [],
+  "_build_directed_uuid_map": [
+    "pairs"
+  ],
+  "RawEpisode": {},
+  "retrieve_previous_episodes_bulk": [
+    "driver",
+    "episodes"
+  ],
+  "add_nodes_and_edges_bulk": [
+    "driver",
+    "episodic_nodes",
+    "episodic_edges",
+    "entity_nodes",
+    "entity_edges",
+    "embedder"
+  ],
+  "add_nodes_and_edges_bulk_tx": [
+    "tx",
+    "episodic_nodes",
+    "episodic_edges",
+    "entity_nodes",
+    "entity_edges",
+    "embedder",
+    "driver"
+  ],
+  "extract_nodes_and_edges_bulk": [
+    "clients",
+    "episode_tuples",
+    "edge_type_map",
+    "entity_types",
+    "excluded_entity_types",
+    "edge_types",
+    "custom_extraction_instructions"
+  ],
+  "dedupe_nodes_bulk": [
+    "clients",
+    "extracted_nodes",
+    "episode_tuples",
+    "entity_types"
+  ],
+  "dedupe_edges_bulk": [
+    "clients",
+    "extracted_edges",
+    "episode_tuples",
+    "_entities",
+    "edge_types",
+    "_edge_type_map"
+  ],
+  "UnionFind": {
+    "__init__": [
+      "self",
+      "elements"
+    ],
+    "find": [
+      "self",
+      "x"
+    ],
+    "union": [
+      "self",
+      "a",
+      "b"
+    ]
+  },
+  "compress_uuid_map": [
+    "duplicate_pairs"
+  ],
+  "E": [],
+  "resolve_edge_pointers": [
+    "edges",
+    "uuid_map"
+  ],
+  "MAX_SUMMARY_CHARS": [],
+  "truncate_at_sentence": [
+    "text",
+    "max_chars"
+  ],
+  "CHARS_PER_TOKEN": [],
+  "estimate_tokens": [
+    "text"
+  ],
+  "_tokens_to_chars": [
+    "tokens"
+  ],
+  "should_chunk": [
+    "content",
+    "episode_type"
+  ],
+  "_estimate_high_density": [
+    "content",
+    "episode_type",
+    "tokens"
+  ],
+  "_json_likely_dense": [
+    "content",
+    "tokens"
+  ],
+  "_count_json_keys": [
+    "data",
+    "max_depth",
+    "current_depth"
+  ],
+  "_text_likely_dense": [
+    "content",
+    "tokens"
+  ],
+  "chunk_json_content": [
+    "content",
+    "chunk_size_tokens",
+    "overlap_tokens"
+  ],
+  "_chunk_json_array": [
+    "data",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_get_overlap_elements": [
+    "elements",
+    "overlap_chars"
+  ],
+  "_chunk_json_object": [
+    "data",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_get_overlap_dict": [
+    "data",
+    "keys",
+    "overlap_chars"
+  ],
+  "chunk_text_content": [
+    "content",
+    "chunk_size_tokens",
+    "overlap_tokens"
+  ],
+  "_chunk_by_sentences": [
+    "text",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_chunk_by_size": [
+    "text",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_get_overlap_text": [
+    "text",
+    "overlap_chars"
+  ],
+  "chunk_message_content": [
+    "content",
+    "chunk_size_tokens",
+    "overlap_tokens"
+  ],
+  "_chunk_message_array": [
+    "messages",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_chunk_speaker_messages": [
+    "content",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "_get_overlap_messages": [
+    "messages",
+    "overlap_chars"
+  ],
+  "_chunk_by_lines": [
+    "content",
+    "chunk_size_chars",
+    "overlap_chars"
+  ],
+  "T": [],
+  "MAX_COMBINATIONS_TO_EVALUATE": [],
+  "_random_combination": [
+    "n",
+    "k"
+  ],
+  "generate_covering_chunks": [
+    "items",
+    "k"
+  ],
+  "utc_now": [],
+  "ensure_utc": [
+    "dt"
+  ],
+  "convert_datetimes_to_strings": [
+    "obj"
+  ],
+  "MAX_NODES": [],
+  "NodeSummaryFilter": [],
+  "extract_nodes": [
+    "clients",
+    "episode",
+    "previous_episodes",
+    "entity_types",
+    "excluded_entity_types",
+    "custom_extraction_instructions"
+  ],
+  "_build_entity_types_context": [
+    "entity_types"
+  ],
+  "_extract_nodes_single": [
+    "llm_client",
+    "episode",
+    "context"
+  ],
+  "_call_extraction_llm": [
+    "llm_client",
+    "episode",
+    "context"
+  ],
+  "_create_entity_nodes": [
+    "extracted_entities",
+    "entity_types_context",
+    "excluded_entity_types",
+    "episode"
+  ],
+  "_collect_candidate_nodes": [
+    "clients",
+    "extracted_nodes",
+    "existing_nodes_override"
+  ],
+  "_resolve_with_llm": [
+    "llm_client",
+    "extracted_nodes",
+    "indexes",
+    "state",
+    "episode",
+    "previous_episodes",
+    "entity_types"
+  ],
+  "resolve_extracted_nodes": [
+    "clients",
+    "extracted_nodes",
+    "episode",
+    "previous_episodes",
+    "entity_types",
+    "existing_nodes_override"
+  ],
+  "_build_edges_by_node": [
+    "edges"
+  ],
+  "extract_attributes_from_nodes": [
+    "clients",
+    "nodes",
+    "episode",
+    "previous_episodes",
+    "entity_types",
+    "should_summarize_node",
+    "edges"
+  ],
+  "_extract_entity_attributes": [
+    "llm_client",
+    "node",
+    "episode",
+    "previous_episodes",
+    "entity_type"
+  ],
+  "_extract_entity_summaries_batch": [
+    "llm_client",
+    "nodes",
+    "episode",
+    "previous_episodes",
+    "should_summarize_node",
+    "edges_by_node"
+  ],
+  "_process_summary_flight": [
+    "llm_client",
+    "nodes",
+    "episode",
+    "previous_episodes"
+  ],
+  "_build_episode_context": [
+    "node_data",
+    "episode",
+    "previous_episodes"
+  ],
+  "build_episodic_edges": [
+    "entity_nodes",
+    "episode_uuid",
+    "created_at"
+  ],
+  "build_community_edges": [
+    "entity_nodes",
+    "community_node",
+    "created_at"
+  ],
+  "extract_edges": [
+    "clients",
+    "episode",
+    "nodes",
+    "previous_episodes",
+    "edge_type_map",
+    "group_id",
+    "edge_types",
+    "custom_extraction_instructions"
+  ],
+  "resolve_extracted_edges": [
+    "clients",
+    "extracted_edges",
+    "episode",
+    "entities",
+    "edge_types",
+    "edge_type_map"
+  ],
+  "resolve_edge_contradictions": [
+    "resolved_edge",
+    "invalidation_candidates"
+  ],
+  "resolve_extracted_edge": [
+    "llm_client",
+    "extracted_edge",
+    "related_edges",
+    "existing_edges",
+    "episode",
+    "edge_type_candidates"
+  ],
+  "filter_existing_duplicate_of_edges": [
+    "driver",
+    "duplicates_node_tuples"
+  ],
+  "MAX_COMMUNITY_BUILD_CONCURRENCY": [],
+  "get_community_clusters": [
+    "driver",
+    "group_ids"
+  ],
+  "generate_summary_description": [
+    "llm_client",
+    "summary"
+  ],
+  "build_community": [
+    "llm_client",
+    "community_cluster"
+  ],
+  "build_communities": [
+    "driver",
+    "llm_client",
+    "group_ids"
+  ],
+  "remove_communities": [
+    "driver"
+  ],
+  "determine_entity_community": [
+    "driver",
+    "entity"
+  ],
+  "update_community": [
+    "driver",
+    "llm_client",
+    "embedder",
+    "entity"
+  ],
+  "EPISODE_WINDOW_LEN": [],
+  "clear_data": [
+    "driver",
+    "group_ids"
+  ],
+  "retrieve_episodes": [
+    "driver",
+    "reference_time",
+    "last_n",
+    "group_ids",
+    "source",
+    "saga"
+  ],
+  "_NAME_ENTROPY_THRESHOLD": [],
+  "_MIN_NAME_LENGTH": [],
+  "_MIN_TOKEN_COUNT": [],
+  "_FUZZY_JACCARD_THRESHOLD": [],
+  "_MINHASH_PERMUTATIONS": [],
+  "_MINHASH_BAND_SIZE": [],
+  "_normalize_string_exact": [
+    "name"
+  ],
+  "_normalize_name_for_fuzzy": [
+    "name"
+  ],
+  "_name_entropy": [
+    "normalized_name"
+  ],
+  "_has_high_entropy": [
+    "normalized_name"
+  ],
+  "_shingles": [
+    "normalized_name"
+  ],
+  "_hash_shingle": [
+    "shingle",
+    "seed"
+  ],
+  "_minhash_signature": [
+    "shingles"
+  ],
+  "_lsh_bands": [
+    "signature"
+  ],
+  "_jaccard_similarity": [
+    "a",
+    "b"
+  ],
+  "_cached_shingles": [
+    "name"
+  ],
+  "DedupCandidateIndexes": {},
+  "DedupResolutionState": {},
+  "_build_candidate_indexes": [
+    "existing_nodes"
+  ],
+  "_resolve_with_similarity": [
+    "extracted_nodes",
+    "indexes",
+    "state"
+  ],
+  "validate_entity_types": [
+    "entity_types"
+  ],
+  "RateLimitError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "RefusalError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "EmptyResponseError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "generate_embedding": [
+    "embedder",
+    "text"
+  ],
+  "DEFAULT_MODEL": [],
+  "DEFAULT_SMALL_MODEL": [],
+  "DEFAULT_REASONING": [],
+  "DEFAULT_VERBOSITY": [],
+  "BaseOpenAIClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache",
+      "max_tokens",
+      "reasoning",
+      "verbosity"
+    ],
+    "_create_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model"
+    ],
+    "_create_structured_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model",
+      "reasoning",
+      "verbosity"
+    ],
+    "_convert_messages_to_openai_format": [
+      "self",
+      "messages"
+    ],
+    "_get_model_for_size": [
+      "self",
+      "model_size"
+    ],
+    "_handle_structured_response": [
+      "self",
+      "response"
+    ],
+    "_handle_json_response": [
+      "self",
+      "response"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size",
+      "group_id",
+      "prompt_name"
+    ]
+  },
+  "GEMINI_MODEL_MAX_TOKENS": [],
+  "DEFAULT_GEMINI_MAX_TOKENS": [],
+  "GeminiClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache",
+      "max_tokens",
+      "thinking_config",
+      "client"
+    ],
+    "_check_safety_blocks": [
+      "self",
+      "response"
+    ],
+    "_check_prompt_blocks": [
+      "self",
+      "response"
+    ],
+    "_get_model_for_size": [
+      "self",
+      "model_size"
+    ],
+    "_get_max_tokens_for_model": [
+      "self",
+      "model"
+    ],
+    "_resolve_max_tokens": [
+      "self",
+      "requested_max_tokens",
+      "model"
+    ],
+    "salvage_json": [
+      "self",
+      "raw_output"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size",
+      "group_id",
+      "prompt_name"
+    ]
+  },
+  "DEFAULT_TEMPERATURE": [],
+  "DEFAULT_CACHE_DIR": [],
+  "get_extraction_language_instruction": [
+    "group_id"
+  ],
+  "is_server_or_retry_error": [
+    "exception"
+  ],
+  "LLMClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache"
+    ],
+    "set_tracer": [
+      "self",
+      "tracer"
+    ],
+    "_clean_input": [
+      "self",
+      "input"
+    ],
+    "_generate_response_with_retry": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "_get_cache_key": [
+      "self",
+      "messages"
+    ],
+    "generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size",
+      "group_id",
+      "prompt_name"
+    ],
+    "_get_provider_type": [
+      "self"
+    ],
+    "_get_failed_generation_log": [
+      "self",
+      "messages",
+      "output"
+    ]
+  },
+  "DEFAULT_MAX_TOKENS": [],
+  "ModelSize": {
+    "small": [],
+    "medium": []
+  },
+  "LLMConfig": {
+    "__init__": [
+      "self",
+      "api_key",
+      "model",
+      "base_url",
+      "temperature",
+      "max_tokens",
+      "small_model"
+    ]
+  },
+  "OpenAIGenericClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache",
+      "client",
+      "max_tokens"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size",
+      "group_id",
+      "prompt_name"
+    ]
+  },
+  "AnthropicModel": [],
+  "ANTHROPIC_MODEL_MAX_TOKENS": [],
+  "DEFAULT_ANTHROPIC_MAX_TOKENS": [],
+  "AnthropicClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache",
+      "client",
+      "max_tokens"
+    ],
+    "_extract_json_from_text": [
+      "self",
+      "text"
+    ],
+    "_create_tool": [
+      "self",
+      "response_model"
+    ],
+    "_get_max_tokens_for_model": [
+      "self",
+      "model"
+    ],
+    "_resolve_max_tokens": [
+      "self",
+      "requested_max_tokens",
+      "model"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ],
+    "generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size",
+      "group_id",
+      "prompt_name"
+    ]
+  },
+  "AzureOpenAILLMClient": {
+    "__init__": [
+      "self",
+      "azure_client",
+      "config",
+      "max_tokens",
+      "reasoning",
+      "verbosity"
+    ],
+    "_create_structured_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model",
+      "reasoning",
+      "verbosity"
+    ],
+    "_create_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model"
+    ],
+    "_handle_structured_response": [
+      "self",
+      "response"
+    ],
+    "_supports_reasoning_features": [
+      "model"
+    ]
+  },
+  "OpenAIClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache",
+      "client",
+      "max_tokens",
+      "reasoning",
+      "verbosity"
+    ],
+    "_create_structured_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model",
+      "reasoning",
+      "verbosity"
+    ],
+    "_create_completion": [
+      "self",
+      "model",
+      "messages",
+      "temperature",
+      "max_tokens",
+      "response_model",
+      "reasoning",
+      "verbosity"
+    ]
+  },
+  "TokenUsage": {
+    "total_tokens": [
+      "self"
+    ]
+  },
+  "PromptTokenUsage": {
+    "total_tokens": [
+      "self"
+    ],
+    "avg_input_tokens": [
+      "self"
+    ],
+    "avg_output_tokens": [
+      "self"
+    ]
+  },
+  "TokenUsageTracker": {
+    "__init__": [
+      "self"
+    ],
+    "record": [
+      "self",
+      "prompt_name",
+      "input_tokens",
+      "output_tokens"
+    ],
+    "get_usage": [
+      "self"
+    ],
+    "get_total_usage": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "print_summary": [
+      "self",
+      "sort_by"
+    ]
+  },
+  "GroqClient": {
+    "__init__": [
+      "self",
+      "config",
+      "cache"
+    ],
+    "_generate_response": [
+      "self",
+      "messages",
+      "response_model",
+      "max_tokens",
+      "model_size"
+    ]
+  },
+  "GeminiRerankerClient": {
+    "__init__": [
+      "self",
+      "config",
+      "client"
+    ],
+    "rank": [
+      "self",
+      "query",
+      "passages"
+    ]
+  },
+  "BGERerankerClient": {
+    "__init__": [
+      "self"
+    ],
+    "rank": [
+      "self",
+      "query",
+      "passages"
+    ]
+  },
+  "CrossEncoderClient": {
+    "rank": [
+      "self",
+      "query",
+      "passages"
+    ]
+  },
+  "OpenAIRerankerClient": {
+    "__init__": [
+      "self",
+      "config",
+      "client"
+    ],
+    "rank": [
+      "self",
+      "query",
+      "passages"
+    ]
+  },
+  "RELEVANT_SCHEMA_LIMIT": [],
+  "DEFAULT_MIN_SCORE": [],
+  "DEFAULT_MMR_LAMBDA": [],
+  "MAX_SEARCH_DEPTH": [],
+  "calculate_cosine_similarity": [
+    "vector1",
+    "vector2"
+  ],
+  "fulltext_query": [
+    "query",
+    "group_ids",
+    "driver"
+  ],
+  "get_episodes_by_mentions": [
+    "driver",
+    "nodes",
+    "edges",
+    "limit"
+  ],
+  "get_mentioned_nodes": [
+    "driver",
+    "episodes"
+  ],
+  "get_communities_by_nodes": [
+    "driver",
+    "nodes"
+  ],
+  "edge_fulltext_search": [
+    "driver",
+    "query",
+    "search_filter",
+    "group_ids",
+    "limit"
+  ],
+  "edge_similarity_search": [
+    "driver",
+    "search_vector",
+    "source_node_uuid",
+    "target_node_uuid",
+    "search_filter",
+    "group_ids",
+    "limit",
+    "min_score"
+  ],
+  "edge_bfs_search": [
+    "driver",
+    "bfs_origin_node_uuids",
+    "bfs_max_depth",
+    "search_filter",
+    "group_ids",
+    "limit"
+  ],
+  "node_fulltext_search": [
+    "driver",
+    "query",
+    "search_filter",
+    "group_ids",
+    "limit"
+  ],
+  "node_similarity_search": [
+    "driver",
+    "search_vector",
+    "search_filter",
+    "group_ids",
+    "limit",
+    "min_score"
+  ],
+  "node_bfs_search": [
+    "driver",
+    "bfs_origin_node_uuids",
+    "search_filter",
+    "bfs_max_depth",
+    "group_ids",
+    "limit"
+  ],
+  "episode_fulltext_search": [
+    "driver",
+    "query",
+    "_search_filter",
+    "group_ids",
+    "limit"
+  ],
+  "community_fulltext_search": [
+    "driver",
+    "query",
+    "group_ids",
+    "limit"
+  ],
+  "community_similarity_search": [
+    "driver",
+    "search_vector",
+    "group_ids",
+    "limit",
+    "min_score"
+  ],
+  "hybrid_node_search": [
+    "queries",
+    "embeddings",
+    "driver",
+    "search_filter",
+    "group_ids",
+    "limit"
+  ],
+  "get_relevant_nodes": [
+    "driver",
+    "nodes",
+    "search_filter",
+    "min_score",
+    "limit"
+  ],
+  "get_relevant_edges": [
+    "driver",
+    "edges",
+    "search_filter",
+    "min_score",
+    "limit"
+  ],
+  "get_edge_invalidation_candidates": [
+    "driver",
+    "edges",
+    "search_filter",
+    "min_score",
+    "limit"
+  ],
+  "rrf": [
+    "results",
+    "rank_const",
+    "min_score"
+  ],
+  "node_distance_reranker": [
+    "driver",
+    "node_uuids",
+    "center_node_uuid",
+    "min_score"
+  ],
+  "episode_mentions_reranker": [
+    "driver",
+    "node_uuids",
+    "min_score"
+  ],
+  "maximal_marginal_relevance": [
+    "query_vector",
+    "candidates",
+    "mmr_lambda",
+    "min_score"
+  ],
+  "get_embeddings_for_nodes": [
+    "driver",
+    "nodes"
+  ],
+  "get_embeddings_for_communities": [
+    "driver",
+    "communities"
+  ],
+  "get_embeddings_for_edges": [
+    "driver",
+    "edges"
+  ],
+  "COMBINED_HYBRID_SEARCH_RRF": [],
+  "COMBINED_HYBRID_SEARCH_MMR": [],
+  "COMBINED_HYBRID_SEARCH_CROSS_ENCODER": [],
+  "EDGE_HYBRID_SEARCH_RRF": [],
+  "EDGE_HYBRID_SEARCH_MMR": [],
+  "EDGE_HYBRID_SEARCH_NODE_DISTANCE": [],
+  "EDGE_HYBRID_SEARCH_EPISODE_MENTIONS": [],
+  "EDGE_HYBRID_SEARCH_CROSS_ENCODER": [],
+  "NODE_HYBRID_SEARCH_RRF": [],
+  "NODE_HYBRID_SEARCH_MMR": [],
+  "NODE_HYBRID_SEARCH_NODE_DISTANCE": [],
+  "NODE_HYBRID_SEARCH_EPISODE_MENTIONS": [],
+  "NODE_HYBRID_SEARCH_CROSS_ENCODER": [],
+  "COMMUNITY_HYBRID_SEARCH_RRF": [],
+  "COMMUNITY_HYBRID_SEARCH_MMR": [],
+  "COMMUNITY_HYBRID_SEARCH_CROSS_ENCODER": [],
+  "search": [
+    "clients",
+    "query",
+    "group_ids",
+    "config",
+    "search_filter",
+    "center_node_uuid",
+    "bfs_origin_node_uuids",
+    "query_vector",
+    "driver"
+  ],
+  "edge_search": [
+    "driver",
+    "cross_encoder",
+    "query",
+    "query_vector",
+    "group_ids",
+    "config",
+    "search_filter",
+    "center_node_uuid",
+    "bfs_origin_node_uuids",
+    "limit",
+    "reranker_min_score"
+  ],
+  "node_search": [
+    "driver",
+    "cross_encoder",
+    "query",
+    "query_vector",
+    "group_ids",
+    "config",
+    "search_filter",
+    "center_node_uuid",
+    "bfs_origin_node_uuids",
+    "limit",
+    "reranker_min_score"
+  ],
+  "episode_search": [
+    "driver",
+    "cross_encoder",
+    "query",
+    "_query_vector",
+    "group_ids",
+    "config",
+    "search_filter",
+    "limit",
+    "reranker_min_score"
+  ],
+  "community_search": [
+    "driver",
+    "cross_encoder",
+    "query",
+    "query_vector",
+    "group_ids",
+    "config",
+    "limit",
+    "reranker_min_score"
+  ],
+  "ComparisonOperator": {
+    "equals": [],
+    "not_equals": [],
+    "greater_than": [],
+    "less_than": [],
+    "greater_than_equal": [],
+    "less_than_equal": [],
+    "is_null": [],
+    "is_not_null": []
+  },
+  "DateFilter": {},
+  "PropertyFilter": {},
+  "SearchFilters": {},
+  "cypher_to_opensearch_operator": [
+    "op"
+  ],
+  "node_search_filter_query_constructor": [
+    "filters",
+    "provider"
+  ],
+  "date_filter_query_constructor": [
+    "value_name",
+    "param_name",
+    "operator"
+  ],
+  "edge_search_filter_query_constructor": [
+    "filters",
+    "provider"
+  ],
+  "DEFAULT_SEARCH_LIMIT": [],
+  "EdgeSearchMethod": {
+    "cosine_similarity": [],
+    "bm25": [],
+    "bfs": []
+  },
+  "NodeSearchMethod": {
+    "cosine_similarity": [],
+    "bm25": [],
+    "bfs": []
+  },
+  "EpisodeSearchMethod": {
+    "bm25": []
+  },
+  "CommunitySearchMethod": {
+    "cosine_similarity": [],
+    "bm25": []
+  },
+  "EdgeReranker": {
+    "rrf": [],
+    "node_distance": [],
+    "episode_mentions": [],
+    "mmr": [],
+    "cross_encoder": []
+  },
+  "NodeReranker": {
+    "rrf": [],
+    "node_distance": [],
+    "episode_mentions": [],
+    "mmr": [],
+    "cross_encoder": []
+  },
+  "EpisodeReranker": {
+    "rrf": [],
+    "cross_encoder": []
+  },
+  "CommunityReranker": {
+    "rrf": [],
+    "mmr": [],
+    "cross_encoder": []
+  },
+  "EdgeSearchConfig": {},
+  "NodeSearchConfig": {},
+  "EpisodeSearchConfig": {},
+  "CommunitySearchConfig": {},
+  "SearchConfig": {},
+  "SearchResults": {
+    "merge": [
+      "cls",
+      "results_list"
+    ]
+  },
+  "format_edge_date_range": [
+    "edge"
+  ],
+  "search_results_to_context_string": [
+    "search_results"
+  ],
+  "EntityNodeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops",
+      "embedder"
+    ],
+    "save": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_embeddings": [
+      "self",
+      "node"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "nodes",
+      "batch_size"
+    ]
+  },
+  "EpisodeNodeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_by_entity_node_uuid": [
+      "self",
+      "entity_node_uuid"
+    ],
+    "retrieve_episodes": [
+      "self",
+      "reference_time",
+      "last_n",
+      "group_ids",
+      "source",
+      "saga"
+    ]
+  },
+  "CommunityNodeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops",
+      "embedder"
+    ],
+    "save": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "load_name_embedding": [
+      "self",
+      "node"
+    ]
+  },
+  "SagaNodeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "nodes",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "node",
+      "tx"
+    ],
+    "delete_by_group_id": [
+      "self",
+      "group_id",
+      "tx",
+      "batch_size"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx",
+      "batch_size"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NodeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "embedder"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "EntityEdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops",
+      "embedder"
+    ],
+    "save": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ],
+    "get_between_nodes": [
+      "self",
+      "source_node_uuid",
+      "target_node_uuid"
+    ],
+    "get_by_node_uuid": [
+      "self",
+      "node_uuid"
+    ],
+    "load_embeddings": [
+      "self",
+      "edge"
+    ],
+    "load_embeddings_bulk": [
+      "self",
+      "edges",
+      "batch_size"
+    ]
+  },
+  "EpisodicEdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "CommunityEdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "HasEpisodeEdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "NextEpisodeEdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "ops"
+    ],
+    "save": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "save_bulk": [
+      "self",
+      "edges",
+      "tx",
+      "batch_size"
+    ],
+    "delete": [
+      "self",
+      "edge",
+      "tx"
+    ],
+    "delete_by_uuids": [
+      "self",
+      "uuids",
+      "tx"
+    ],
+    "get_by_uuid": [
+      "self",
+      "uuid"
+    ],
+    "get_by_uuids": [
+      "self",
+      "uuids"
+    ],
+    "get_by_group_ids": [
+      "self",
+      "group_ids",
+      "limit",
+      "uuid_cursor"
+    ]
+  },
+  "EdgeNamespace": {
+    "__init__": [
+      "self",
+      "driver",
+      "embedder"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "DEFAULT_EMBEDDING_MODEL": [],
+  "DEFAULT_BATCH_SIZE": [],
+  "GeminiEmbedderConfig": {},
+  "GeminiEmbedder": {
+    "__init__": [
+      "self",
+      "config",
+      "client",
+      "batch_size"
+    ],
+    "create": [
+      "self",
+      "input_data"
+    ],
+    "create_batch": [
+      "self",
+      "input_data_list"
+    ]
+  },
+  "AzureOpenAIEmbedderClient": {
+    "__init__": [
+      "self",
+      "azure_client",
+      "model"
+    ],
+    "create": [
+      "self",
+      "input_data"
+    ],
+    "create_batch": [
+      "self",
+      "input_data_list"
+    ]
+  },
+  "EMBEDDING_DIM": [],
+  "EmbedderConfig": {},
+  "EmbedderClient": {
+    "create": [
+      "self",
+      "input_data"
+    ],
+    "create_batch": [
+      "self",
+      "input_data_list"
+    ]
+  },
+  "OpenAIEmbedderConfig": {},
+  "OpenAIEmbedder": {
+    "__init__": [
+      "self",
+      "config",
+      "client"
+    ],
+    "create": [
+      "self",
+      "input_data"
+    ],
+    "create_batch": [
+      "self",
+      "input_data_list"
+    ]
+  },
+  "VoyageAIEmbedderConfig": {},
+  "VoyageAIEmbedder": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "create": [
+      "self",
+      "input_data"
+    ],
+    "create_batch": [
+      "self",
+      "input_data_list"
+    ]
+  },
+  "EPISODIC_EDGE_SAVE": [],
+  "get_episodic_edge_save_bulk_query": [
+    "provider"
+  ],
+  "EPISODIC_EDGE_RETURN": [],
+  "get_entity_edge_save_query": [
+    "provider",
+    "has_aoss"
+  ],
+  "get_entity_edge_save_bulk_query": [
+    "provider",
+    "has_aoss"
+  ],
+  "get_entity_edge_return_query": [
+    "provider"
+  ],
+  "get_community_edge_save_query": [
+    "provider"
+  ],
+  "COMMUNITY_EDGE_RETURN": [],
+  "HAS_EPISODE_EDGE_SAVE": [],
+  "HAS_EPISODE_EDGE_RETURN": [],
+  "NEXT_EPISODE_EDGE_SAVE": [],
+  "NEXT_EPISODE_EDGE_RETURN": [],
+  "get_episode_node_save_query": [
+    "provider"
+  ],
+  "get_episode_node_save_bulk_query": [
+    "provider"
+  ],
+  "EPISODIC_NODE_RETURN": [],
+  "EPISODIC_NODE_RETURN_NEPTUNE": [],
+  "get_entity_node_save_query": [
+    "provider",
+    "labels",
+    "has_aoss"
+  ],
+  "get_entity_node_save_bulk_query": [
+    "provider",
+    "nodes",
+    "has_aoss"
+  ],
+  "get_entity_node_return_query": [
+    "provider"
+  ],
+  "get_community_node_save_query": [
+    "provider"
+  ],
+  "COMMUNITY_NODE_RETURN": [],
+  "COMMUNITY_NODE_RETURN_NEPTUNE": [],
+  "get_saga_node_save_query": [
+    "provider"
+  ],
+  "SAGA_NODE_RETURN": [],
+  "SAGA_NODE_RETURN_NEPTUNE": []
+}
