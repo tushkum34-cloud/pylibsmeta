@@ -1,0 +1,3350 @@
+{
+  "logger": [],
+  "api_version": [],
+  "lib_version": [],
+  "log": [],
+  "_get_client_id": [
+    "presence"
+  ],
+  "_is_anonymous_or_wildcard": [
+    "presence"
+  ],
+  "RealtimePresence": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "enter": [
+      "self",
+      "data"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "leave": [
+      "self",
+      "data"
+    ],
+    "enter_client": [
+      "self",
+      "client_id",
+      "data"
+    ],
+    "update_client": [
+      "self",
+      "client_id",
+      "data"
+    ],
+    "leave_client": [
+      "self",
+      "client_id",
+      "data"
+    ],
+    "_enter_or_update_client": [
+      "self",
+      "id",
+      "client_id",
+      "data",
+      "action"
+    ],
+    "_leave_client": [
+      "self",
+      "client_id",
+      "data"
+    ],
+    "_send_presence": [
+      "self",
+      "presence_messages"
+    ],
+    "_queue_presence": [
+      "self",
+      "wire_msg"
+    ],
+    "get": [
+      "self",
+      "wait_for_sync",
+      "client_id",
+      "connection_id"
+    ],
+    "_wait_for_sync": [
+      "self"
+    ],
+    "subscribe": [
+      "self"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "set_presence": [
+      "self",
+      "presence_set",
+      "is_sync",
+      "sync_channel_serial"
+    ],
+    "on_attached": [
+      "self",
+      "has_presence"
+    ],
+    "_ensure_my_members_present": [
+      "self"
+    ],
+    "_reenter_member": [
+      "self",
+      "msg_id",
+      "client_id",
+      "data"
+    ],
+    "_send_pending_presence": [
+      "self"
+    ],
+    "_synthesize_leaves": [
+      "self",
+      "members"
+    ],
+    "act_on_channel_state": [
+      "self",
+      "state",
+      "has_presence",
+      "error"
+    ],
+    "_fail_pending_presence": [
+      "self",
+      "error"
+    ]
+  },
+  "_action_name_impl": [
+    "action"
+  ],
+  "RealtimeAnnotations": {
+    "__init__": [
+      "self",
+      "channel",
+      "connection_manager"
+    ],
+    "__send_annotation": [
+      "self",
+      "annotation",
+      "params"
+    ],
+    "publish": [
+      "self",
+      "msg_or_serial",
+      "annotation",
+      "params"
+    ],
+    "delete": [
+      "self",
+      "msg_or_serial",
+      "annotation",
+      "params"
+    ],
+    "subscribe": [
+      "self"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "_process_incoming": [
+      "self",
+      "incoming_annotations"
+    ],
+    "get": [
+      "self",
+      "msg_or_serial",
+      "params"
+    ]
+  },
+  "Connection": {
+    "__init__": [
+      "self",
+      "realtime"
+    ],
+    "connect": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "ping": [
+      "self"
+    ],
+    "_when_state": [
+      "self",
+      "state"
+    ],
+    "_on_state_update": [
+      "self",
+      "state_change"
+    ],
+    "_on_connection_update": [
+      "self",
+      "state_change"
+    ],
+    "state": [
+      "self",
+      "value"
+    ],
+    "error_reason": [
+      "self"
+    ],
+    "connection_manager": [
+      "self"
+    ],
+    "connection_details": [
+      "self"
+    ]
+  },
+  "AblyRealtime": {
+    "__init__": [
+      "self",
+      "key",
+      "loop"
+    ],
+    "connect": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "connection": [
+      "self"
+    ],
+    "channels": [
+      "self"
+    ]
+  },
+  "PendingMessage": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "PendingMessageQueue": {
+    "__init__": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "pending_message"
+    ],
+    "count": [
+      "self"
+    ],
+    "complete_messages": [
+      "self",
+      "serial",
+      "count",
+      "res",
+      "err"
+    ],
+    "complete_all_messages": [
+      "self",
+      "err"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "ConnectionManager": {
+    "__init__": [
+      "self",
+      "realtime",
+      "initial_state"
+    ],
+    "enact_state_change": [
+      "self",
+      "state",
+      "reason"
+    ],
+    "check_connection": [
+      "self"
+    ],
+    "get_state_error": [
+      "self"
+    ],
+    "__get_transport_params": [
+      "self"
+    ],
+    "close_impl": [
+      "self"
+    ],
+    "send_protocol_message": [
+      "self",
+      "protocol_message"
+    ],
+    "_send_protocol_message_on_connected_state": [
+      "self",
+      "pending_message"
+    ],
+    "send_queued_messages": [
+      "self"
+    ],
+    "requeue_pending_messages": [
+      "self"
+    ],
+    "fail_queued_messages": [
+      "self",
+      "err"
+    ],
+    "ping": [
+      "self"
+    ],
+    "on_connected": [
+      "self",
+      "connection_details",
+      "connection_id",
+      "reason"
+    ],
+    "on_disconnected": [
+      "self",
+      "exception"
+    ],
+    "on_token_error": [
+      "self",
+      "exception"
+    ],
+    "on_error": [
+      "self",
+      "msg",
+      "exception"
+    ],
+    "on_error_from_authorize": [
+      "self",
+      "exception"
+    ],
+    "on_closed": [
+      "self"
+    ],
+    "on_channel_message": [
+      "self",
+      "msg"
+    ],
+    "on_heartbeat": [
+      "self",
+      "id"
+    ],
+    "on_ack": [
+      "self",
+      "serial",
+      "count",
+      "res"
+    ],
+    "on_nack": [
+      "self",
+      "serial",
+      "count",
+      "err"
+    ],
+    "deactivate_transport": [
+      "self",
+      "reason"
+    ],
+    "request_state": [
+      "self",
+      "state",
+      "force"
+    ],
+    "start_connect": [
+      "self"
+    ],
+    "connect_with_fallback_hosts": [
+      "self",
+      "fallback_hosts"
+    ],
+    "connect_base": [
+      "self"
+    ],
+    "try_host": [
+      "self",
+      "host"
+    ],
+    "notify_state": [
+      "self",
+      "state",
+      "reason",
+      "retry_immediately"
+    ],
+    "start_transition_timer": [
+      "self",
+      "state",
+      "fail_state"
+    ],
+    "cancel_transition_timer": [
+      "self"
+    ],
+    "start_suspend_timer": [
+      "self"
+    ],
+    "check_suspend_timer": [
+      "self",
+      "state"
+    ],
+    "cancel_suspend_timer": [
+      "self"
+    ],
+    "start_retry_timer": [
+      "self",
+      "interval"
+    ],
+    "cancel_retry_timer": [
+      "self"
+    ],
+    "disconnect_transport": [
+      "self"
+    ],
+    "on_auth_updated": [
+      "self",
+      "token_details"
+    ],
+    "ably": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "connection_details": [
+      "self"
+    ]
+  },
+  "RealtimeChannel": {
+    "__init__": [
+      "self",
+      "realtime",
+      "name",
+      "channel_options"
+    ],
+    "set_options": [
+      "self",
+      "channel_options"
+    ],
+    "set_options_without_reattach": [
+      "self",
+      "channel_options"
+    ],
+    "attach": [
+      "self"
+    ],
+    "_attach_impl": [
+      "self"
+    ],
+    "detach": [
+      "self"
+    ],
+    "_detach_impl": [
+      "self"
+    ],
+    "subscribe": [
+      "self"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "publish": [
+      "self"
+    ],
+    "_throw_if_unpublishable_state": [
+      "self"
+    ],
+    "_send_update": [
+      "self",
+      "message",
+      "action",
+      "operation",
+      "params"
+    ],
+    "update_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "delete_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "append_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "get_message": [
+      "self",
+      "serial_or_message",
+      "timeout"
+    ],
+    "get_message_versions": [
+      "self",
+      "serial_or_message",
+      "params"
+    ],
+    "_on_message": [
+      "self",
+      "proto_msg"
+    ],
+    "_request_state": [
+      "self",
+      "state"
+    ],
+    "_notify_state": [
+      "self",
+      "state",
+      "reason",
+      "resumed",
+      "has_presence"
+    ],
+    "_send_message": [
+      "self",
+      "msg"
+    ],
+    "_check_pending_state": [
+      "self"
+    ],
+    "__start_state_timer": [
+      "self"
+    ],
+    "__clear_state_timer": [
+      "self"
+    ],
+    "__timeout_pending_state": [
+      "self"
+    ],
+    "__start_retry_timer": [
+      "self"
+    ],
+    "__cancel_retry_timer": [
+      "self"
+    ],
+    "__on_retry_timer_expire": [
+      "self"
+    ],
+    "should_reattach_to_set_options": [
+      "self",
+      "new_options"
+    ],
+    "name": [
+      "self"
+    ],
+    "state": [
+      "self",
+      "state"
+    ],
+    "error_reason": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "presence": [
+      "self"
+    ],
+    "annotations": [
+      "self"
+    ],
+    "modes": [
+      "self"
+    ],
+    "_start_decode_failure_recovery": [
+      "self",
+      "error"
+    ],
+    "_encode_flags": [
+      "self"
+    ]
+  },
+  "Channels": {
+    "get": [
+      "self",
+      "name",
+      "options"
+    ],
+    "release": [
+      "self",
+      "name"
+    ],
+    "_on_channel_message": [
+      "self",
+      "msg"
+    ],
+    "_propagate_connection_interruption": [
+      "self",
+      "state",
+      "reason"
+    ],
+    "_on_connected": [
+      "self"
+    ],
+    "_initialize_channels": [
+      "self"
+    ]
+  },
+  "_is_newer": [
+    "item",
+    "existing"
+  ],
+  "PresenceMap": {
+    "__init__": [
+      "self",
+      "member_key_fn",
+      "is_newer_fn",
+      "logger_instance"
+    ],
+    "sync_in_progress": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "remove": [
+      "self",
+      "item"
+    ],
+    "values": [
+      "self"
+    ],
+    "list": [
+      "self",
+      "client_id",
+      "connection_id"
+    ],
+    "start_sync": [
+      "self"
+    ],
+    "end_sync": [
+      "self"
+    ],
+    "wait_sync": [
+      "self",
+      "callback"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "ProtocolMessageAction": {
+    "HEARTBEAT": [],
+    "ACK": [],
+    "NACK": [],
+    "CONNECT": [],
+    "CONNECTED": [],
+    "DISCONNECT": [],
+    "DISCONNECTED": [],
+    "CLOSE": [],
+    "CLOSED": [],
+    "ERROR": [],
+    "ATTACH": [],
+    "ATTACHED": [],
+    "DETACH": [],
+    "DETACHED": [],
+    "PRESENCE": [],
+    "MESSAGE": [],
+    "SYNC": [],
+    "AUTH": [],
+    "ACTIVATE": [],
+    "OBJECT": [],
+    "OBJECT_SYNC": [],
+    "ANNOTATION": []
+  },
+  "WebSocketTransport": {
+    "__init__": [
+      "self",
+      "connection_manager",
+      "host",
+      "params"
+    ],
+    "connect": [
+      "self"
+    ],
+    "on_ws_connect_done": [
+      "self",
+      "task"
+    ],
+    "ws_connect": [
+      "self",
+      "ws_url",
+      "headers"
+    ],
+    "_handle_websocket_connection": [
+      "self",
+      "ws_url",
+      "websocket"
+    ],
+    "on_protocol_message": [
+      "self",
+      "msg"
+    ],
+    "ws_read_loop": [
+      "self"
+    ],
+    "decode_raw_websocket_frame": [
+      "self",
+      "raw"
+    ],
+    "on_protcol_message_handled": [
+      "self",
+      "task"
+    ],
+    "on_read_loop_done": [
+      "self",
+      "task"
+    ],
+    "dispose": [
+      "self"
+    ],
+    "_cleanup_tasks": [
+      "self",
+      "tasks"
+    ],
+    "close": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "message"
+    ],
+    "set_idle_timer": [
+      "self",
+      "timeout"
+    ],
+    "on_idle_timer_expire": [
+      "self"
+    ],
+    "on_activity": [
+      "self"
+    ],
+    "disconnect": [
+      "self",
+      "reason"
+    ]
+  },
+  "Defaults": {
+    "protocol_version": [],
+    "connectivity_check_url": [],
+    "endpoint": [],
+    "port": [],
+    "tls_port": [],
+    "connect_timeout": [],
+    "disconnect_timeout": [],
+    "suspended_timeout": [],
+    "comet_recv_timeout": [],
+    "comet_send_timeout": [],
+    "realtime_request_timeout": [],
+    "channel_retry_timeout": [],
+    "disconnected_retry_timeout": [],
+    "connection_state_ttl": [],
+    "suspended_retry_timeout": [],
+    "transports": [],
+    "http_max_retry_count": [],
+    "fallback_retry_timeout": [],
+    "get_port": [
+      "options"
+    ],
+    "get_scheme": [
+      "options"
+    ],
+    "get_hostname": [
+      "endpoint"
+    ],
+    "get_fallback_hosts": [
+      "endpoint"
+    ]
+  },
+  "AblyVCDiffDecoder": {
+    "__init__": [
+      "self"
+    ],
+    "decode": [
+      "self",
+      "delta",
+      "base"
+    ]
+  },
+  "__all__": [],
+  "_ms_since_epoch": [
+    "dt"
+  ],
+  "_dt_from_ms_epoch": [
+    "ms"
+  ],
+  "PresenceAction": {
+    "ABSENT": [],
+    "PRESENT": [],
+    "ENTER": [],
+    "LEAVE": [],
+    "UPDATE": []
+  },
+  "PresenceMessage": {
+    "__init__": [
+      "self",
+      "id",
+      "action",
+      "client_id",
+      "connection_id",
+      "data",
+      "encoding",
+      "timestamp",
+      "member_key",
+      "extras"
+    ],
+    "id": [
+      "self"
+    ],
+    "action": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "connection_id": [
+      "self"
+    ],
+    "data": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "member_key": [
+      "self"
+    ],
+    "extras": [
+      "self"
+    ],
+    "is_synthesized": [
+      "self"
+    ],
+    "parse_id": [
+      "self"
+    ],
+    "encrypt": [
+      "self",
+      "channel_cipher"
+    ],
+    "to_encoded": [
+      "self",
+      "binary"
+    ],
+    "from_encoded": [
+      "obj",
+      "cipher",
+      "context"
+    ],
+    "from_encoded_array": [
+      "encoded_array",
+      "cipher",
+      "context"
+    ]
+  },
+  "Presence": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "_path_with_qs": [
+      "self",
+      "rel_path",
+      "qs"
+    ],
+    "get": [
+      "self",
+      "limit"
+    ],
+    "history": [
+      "self",
+      "limit",
+      "direction",
+      "start",
+      "end"
+    ]
+  },
+  "make_presence_response_handler": [
+    "cipher"
+  ],
+  "TokenDetails": {
+    "DEFAULTS": [],
+    "TOKEN_EXPIRY_BUFFER": [],
+    "__init__": [
+      "self",
+      "token",
+      "expires",
+      "issued",
+      "capability",
+      "client_id"
+    ],
+    "token": [
+      "self"
+    ],
+    "expires": [
+      "self"
+    ],
+    "issued": [
+      "self"
+    ],
+    "capability": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ],
+    "from_json": [
+      "data"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "ChannelState": {
+    "INITIALIZED": [],
+    "ATTACHING": [],
+    "ATTACHED": [],
+    "DETACHING": [],
+    "DETACHED": [],
+    "SUSPENDED": [],
+    "FAILED": []
+  },
+  "ChannelStateChange": {},
+  "MessageOperation": {
+    "__init__": [
+      "self",
+      "client_id",
+      "description",
+      "metadata"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "description": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "PublishResult": {
+    "__init__": [
+      "self",
+      "serials"
+    ],
+    "serials": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "UpdateDeleteResult": {
+    "__init__": [
+      "self",
+      "version_serial"
+    ],
+    "version_serial": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "DevicePushTransportType": [],
+  "DevicePlatform": [],
+  "DeviceFormFactor": [],
+  "DeviceDetails": {
+    "__init__": [
+      "self",
+      "id",
+      "client_id",
+      "form_factor",
+      "metadata",
+      "platform",
+      "push",
+      "update_token",
+      "app_id",
+      "device_identity_token",
+      "modified",
+      "device_secret"
+    ],
+    "id": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "form_factor": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "platform": [
+      "self"
+    ],
+    "push": [
+      "self"
+    ],
+    "update_token": [
+      "self"
+    ],
+    "app_id": [
+      "self"
+    ],
+    "device_identity_token": [
+      "self"
+    ],
+    "modified": [
+      "self"
+    ],
+    "device_secret": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "obj"
+    ],
+    "from_array": [
+      "cls",
+      "array"
+    ],
+    "factory": [
+      "cls",
+      "device"
+    ]
+  },
+  "device_details_response_processor": [
+    "response"
+  ],
+  "Stats": {
+    "__init__": [
+      "self",
+      "entries",
+      "unit",
+      "interval_id",
+      "in_progress",
+      "app_id",
+      "schema"
+    ],
+    "from_dict": [
+      "cls",
+      "stats_dict"
+    ],
+    "from_array": [
+      "cls",
+      "stats_array"
+    ],
+    "to_interval_id": [
+      "date_time",
+      "granularity"
+    ]
+  },
+  "stats_response_processor": [
+    "response"
+  ],
+  "INTERVALS_FMT": [],
+  "granularity_from_interval_id": [
+    "interval_id"
+  ],
+  "interval_from_interval_id": [
+    "interval_id"
+  ],
+  "ChannelMode": {
+    "PRESENCE": [],
+    "PUBLISH": [],
+    "SUBSCRIBE": [],
+    "PRESENCE_SUBSCRIBE": [],
+    "ANNOTATION_PUBLISH": [],
+    "ANNOTATION_SUBSCRIBE": []
+  },
+  "encode_channel_mode": [
+    "modes"
+  ],
+  "decode_channel_mode": [
+    "flags"
+  ],
+  "ConnectionErrors": [],
+  "AuthOptions": {
+    "__init__": [
+      "self",
+      "auth_callback",
+      "auth_url",
+      "auth_method",
+      "auth_token",
+      "auth_headers",
+      "auth_params",
+      "key_name",
+      "key_secret",
+      "key",
+      "query_time",
+      "token_details",
+      "use_token_auth",
+      "default_token_params"
+    ],
+    "set_key": [
+      "self",
+      "key"
+    ],
+    "replace": [
+      "self",
+      "auth_options"
+    ],
+    "auth_options": [
+      "self",
+      "value"
+    ],
+    "auth_callback": [
+      "self",
+      "value"
+    ],
+    "auth_url": [
+      "self",
+      "value"
+    ],
+    "auth_method": [
+      "self",
+      "value"
+    ],
+    "key_name": [
+      "self",
+      "value"
+    ],
+    "key_secret": [
+      "self",
+      "value"
+    ],
+    "auth_token": [
+      "self",
+      "value"
+    ],
+    "auth_headers": [
+      "self",
+      "value"
+    ],
+    "auth_params": [
+      "self",
+      "value"
+    ],
+    "query_time": [
+      "self",
+      "value"
+    ],
+    "token_details": [
+      "self",
+      "value"
+    ],
+    "use_token_auth": [
+      "self",
+      "value"
+    ],
+    "default_token_params": [
+      "self",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ChannelOptions": {
+    "__init__": [
+      "self",
+      "cipher",
+      "params",
+      "modes"
+    ],
+    "cipher": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "modes": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "options_dict"
+    ]
+  },
+  "_UNSET": [],
+  "AnnotationAction": {
+    "ANNOTATION_CREATE": [],
+    "ANNOTATION_DELETE": []
+  },
+  "Annotation": {
+    "__init__": [
+      "self",
+      "action",
+      "serial",
+      "message_serial",
+      "type",
+      "name",
+      "count",
+      "data",
+      "encoding",
+      "id",
+      "client_id",
+      "connection_id",
+      "timestamp",
+      "extras"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "action": [
+      "self"
+    ],
+    "serial": [
+      "self"
+    ],
+    "message_serial": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "data": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "extras": [
+      "self"
+    ],
+    "id": [
+      "self"
+    ],
+    "connection_id": [
+      "self"
+    ],
+    "as_dict": [
+      "self",
+      "binary"
+    ],
+    "from_encoded": [
+      "obj",
+      "cipher",
+      "context"
+    ],
+    "from_encoded_array": [
+      "obj_array",
+      "cipher",
+      "context"
+    ],
+    "from_values": [
+      "values"
+    ],
+    "__update_empty_fields": [
+      "proto_msg",
+      "annotation",
+      "annotation_index"
+    ],
+    "update_inner_annotation_fields": [
+      "proto_msg"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_copy_with": [
+      "self",
+      "action",
+      "serial",
+      "message_serial",
+      "type",
+      "name",
+      "count",
+      "data",
+      "encoding",
+      "id",
+      "client_id",
+      "connection_id",
+      "timestamp",
+      "extras"
+    ]
+  },
+  "make_annotation_response_handler": [
+    "cipher"
+  ],
+  "make_single_annotation_response_handler": [
+    "cipher"
+  ],
+  "MessageAnnotations": {
+    "__init__": [
+      "self",
+      "summary"
+    ],
+    "summary": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "MessageVersion": {
+    "__init__": [
+      "self",
+      "serial",
+      "timestamp",
+      "client_id",
+      "description",
+      "metadata"
+    ],
+    "serial": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "description": [
+      "self"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "MessageAction": {
+    "MESSAGE_CREATE": [],
+    "MESSAGE_UPDATE": [],
+    "MESSAGE_DELETE": [],
+    "META": [],
+    "MESSAGE_SUMMARY": [],
+    "MESSAGE_APPEND": []
+  },
+  "Message": {
+    "__init__": [
+      "self",
+      "name",
+      "data",
+      "client_id",
+      "id",
+      "connection_id",
+      "connection_key",
+      "encoding",
+      "timestamp",
+      "extras",
+      "serial",
+      "action",
+      "version",
+      "annotations"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "name": [
+      "self"
+    ],
+    "data": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "id": [
+      "self",
+      "value"
+    ],
+    "connection_id": [
+      "self"
+    ],
+    "connection_key": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "extras": [
+      "self"
+    ],
+    "version": [
+      "self"
+    ],
+    "serial": [
+      "self"
+    ],
+    "action": [
+      "self"
+    ],
+    "annotations": [
+      "self"
+    ],
+    "encrypt": [
+      "self",
+      "channel_cipher"
+    ],
+    "decrypt_data": [
+      "channel_cipher",
+      "data"
+    ],
+    "decrypt": [
+      "self",
+      "channel_cipher"
+    ],
+    "as_dict": [
+      "self",
+      "binary"
+    ],
+    "from_encoded": [
+      "obj",
+      "cipher",
+      "context"
+    ],
+    "__update_empty_fields": [
+      "proto_msg",
+      "msg",
+      "msg_index"
+    ],
+    "update_inner_message_fields": [
+      "proto_msg"
+    ]
+  },
+  "make_message_response_handler": [
+    "cipher"
+  ],
+  "make_single_message_response_handler": [
+    "cipher"
+  ],
+  "PushChannelSubscription": {
+    "__init__": [
+      "self",
+      "channel",
+      "device_id",
+      "client_id",
+      "app_id"
+    ],
+    "channel": [
+      "self"
+    ],
+    "device_id": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "app_id": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "obj"
+    ],
+    "from_array": [
+      "cls",
+      "array"
+    ],
+    "factory": [
+      "cls",
+      "subscription"
+    ]
+  },
+  "channel_subscriptions_response_processor": [
+    "response"
+  ],
+  "channels_response_processor": [
+    "response"
+  ],
+  "TokenRequest": {
+    "__init__": [
+      "self",
+      "key_name",
+      "client_id",
+      "nonce",
+      "mac",
+      "capability",
+      "ttl",
+      "timestamp"
+    ],
+    "sign_request": [
+      "self",
+      "key_secret"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "data"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "key_name": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "nonce": [
+      "self"
+    ],
+    "mac": [
+      "self",
+      "mac"
+    ],
+    "capability": [
+      "self"
+    ],
+    "ttl": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ]
+  },
+  "ChannelDetails": {
+    "__init__": [
+      "self",
+      "channel_id",
+      "status"
+    ],
+    "channel_id": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "ChannelStatus": {
+    "__init__": [
+      "self",
+      "is_active",
+      "occupancy"
+    ],
+    "is_active": [
+      "self"
+    ],
+    "occupancy": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "ChannelOccupancy": {
+    "__init__": [
+      "self",
+      "metrics"
+    ],
+    "metrics": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "ChannelMetrics": {
+    "__init__": [
+      "self",
+      "connections",
+      "presence_connections",
+      "presence_members",
+      "presence_subscribers",
+      "publishers",
+      "subscribers"
+    ],
+    "connections": [
+      "self"
+    ],
+    "presence_connections": [
+      "self"
+    ],
+    "presence_members": [
+      "self"
+    ],
+    "presence_subscribers": [
+      "self"
+    ],
+    "publishers": [
+      "self"
+    ],
+    "subscribers": [
+      "self"
+    ],
+    "from_dict": [
+      "obj"
+    ]
+  },
+  "Capability": {
+    "__init__": [
+      "self",
+      "capability"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "setdefault": [
+      "self",
+      "key",
+      "default"
+    ],
+    "add_resource": [
+      "self",
+      "resource",
+      "operations"
+    ],
+    "add_operation_to_resource": [
+      "self",
+      "operation",
+      "resource"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "c14n": [
+      "capability"
+    ]
+  },
+  "Flag": {
+    "HAS_PRESENCE": [],
+    "HAS_BACKLOG": [],
+    "RESUMED": [],
+    "TRANSIENT": [],
+    "ATTACH_RESUME": [],
+    "PRESENCE": [],
+    "PUBLISH": [],
+    "SUBSCRIBE": [],
+    "PRESENCE_SUBSCRIBE": [],
+    "ANNOTATION_PUBLISH": [],
+    "ANNOTATION_SUBSCRIBE": []
+  },
+  "has_flag": [
+    "message_flags",
+    "flag"
+  ],
+  "ConnectionState": {
+    "INITIALIZED": [],
+    "CONNECTING": [],
+    "CONNECTED": [],
+    "DISCONNECTED": [],
+    "CLOSING": [],
+    "CLOSED": [],
+    "FAILED": [],
+    "SUSPENDED": []
+  },
+  "ConnectionEvent": {
+    "INITIALIZED": [],
+    "CONNECTING": [],
+    "CONNECTED": [],
+    "DISCONNECTED": [],
+    "CLOSING": [],
+    "CLOSED": [],
+    "FAILED": [],
+    "SUSPENDED": [],
+    "UPDATE": []
+  },
+  "ConnectionStateChange": {},
+  "DataType": {
+    "NONE": [],
+    "TRUE": [],
+    "FALSE": [],
+    "INT32": [],
+    "INT64": [],
+    "DOUBLE": [],
+    "STRING": [],
+    "BUFFER": [],
+    "JSONARRAY": [],
+    "JSONOBJECT": []
+  },
+  "Limits": {
+    "INT32_MAX": [],
+    "INT32_MIN": [],
+    "INT64_MAX": [],
+    "INT64_MIN": []
+  },
+  "_decoders": [],
+  "TypedBuffer": {
+    "__init__": [
+      "self",
+      "buffer",
+      "type"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "from_obj": [
+      "obj"
+    ],
+    "buffer": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ],
+    "decode": [
+      "self"
+    ]
+  },
+  "ENC_VCDIFF": [],
+  "DeltaExtras": {
+    "__init__": [
+      "self",
+      "extras"
+    ]
+  },
+  "DecodingContext": {
+    "__init__": [
+      "self",
+      "base_payload",
+      "last_message_id",
+      "vcdiff_decoder"
+    ]
+  },
+  "EncodeDataMixin": {
+    "__init__": [
+      "self",
+      "encoding"
+    ],
+    "encoding": [
+      "self",
+      "encoding"
+    ],
+    "decode": [
+      "data",
+      "encoding",
+      "cipher",
+      "context"
+    ],
+    "from_encoded_array": [
+      "cls",
+      "objs",
+      "cipher",
+      "context"
+    ]
+  },
+  "ConnectionDetails": {
+    "__init__": [
+      "self",
+      "connection_state_ttl",
+      "max_idle_interval",
+      "connection_key",
+      "client_id"
+    ],
+    "from_dict": [
+      "json_dict"
+    ]
+  },
+  "VCDiffDecoder": {
+    "decode": [
+      "self",
+      "delta",
+      "base"
+    ]
+  },
+  "Options": {
+    "__init__": [
+      "self",
+      "client_id",
+      "log_level",
+      "tls",
+      "rest_host",
+      "realtime_host",
+      "port",
+      "tls_port",
+      "use_binary_protocol",
+      "queue_messages",
+      "recover",
+      "endpoint",
+      "environment",
+      "http_open_timeout",
+      "http_request_timeout",
+      "realtime_request_timeout",
+      "http_max_retry_count",
+      "http_max_retry_duration",
+      "fallback_hosts",
+      "fallback_retry_timeout",
+      "disconnected_retry_timeout",
+      "idempotent_rest_publishing",
+      "loop",
+      "auto_connect",
+      "suspended_retry_timeout",
+      "connectivity_check_url",
+      "channel_retry_timeout",
+      "add_request_ids",
+      "vcdiff_decoder",
+      "transport_params"
+    ],
+    "client_id": [
+      "self",
+      "value"
+    ],
+    "log_level": [
+      "self",
+      "value"
+    ],
+    "tls": [
+      "self",
+      "value"
+    ],
+    "port": [
+      "self",
+      "value"
+    ],
+    "tls_port": [
+      "self",
+      "value"
+    ],
+    "use_binary_protocol": [
+      "self",
+      "value"
+    ],
+    "queue_messages": [
+      "self",
+      "value"
+    ],
+    "recover": [
+      "self",
+      "value"
+    ],
+    "endpoint": [
+      "self"
+    ],
+    "http_open_timeout": [
+      "self",
+      "value"
+    ],
+    "http_request_timeout": [
+      "self",
+      "value"
+    ],
+    "realtime_request_timeout": [
+      "self"
+    ],
+    "http_max_retry_count": [
+      "self",
+      "value"
+    ],
+    "http_max_retry_duration": [
+      "self",
+      "value"
+    ],
+    "fallback_hosts": [
+      "self"
+    ],
+    "fallback_retry_timeout": [
+      "self"
+    ],
+    "disconnected_retry_timeout": [
+      "self"
+    ],
+    "channel_retry_timeout": [
+      "self"
+    ],
+    "idempotent_rest_publishing": [
+      "self"
+    ],
+    "loop": [
+      "self"
+    ],
+    "auto_connect": [
+      "self"
+    ],
+    "connection_state_ttl": [
+      "self",
+      "value"
+    ],
+    "suspended_retry_timeout": [
+      "self"
+    ],
+    "connectivity_check_url": [
+      "self"
+    ],
+    "fallback_host": [
+      "self",
+      "value"
+    ],
+    "add_request_ids": [
+      "self"
+    ],
+    "vcdiff_decoder": [
+      "self"
+    ],
+    "transport_params": [
+      "self"
+    ],
+    "__get_hosts": [
+      "self"
+    ],
+    "get_hosts": [
+      "self"
+    ],
+    "get_host": [
+      "self"
+    ],
+    "get_fallback_hosts": [
+      "self"
+    ]
+  },
+  "format_time_param": [
+    "t"
+  ],
+  "format_params": [
+    "params",
+    "direction",
+    "start",
+    "end",
+    "limit"
+  ],
+  "PaginatedResult": {
+    "__init__": [
+      "self",
+      "http",
+      "items",
+      "content_type",
+      "rel_first",
+      "rel_next",
+      "response_processor",
+      "response"
+    ],
+    "items": [
+      "self"
+    ],
+    "has_first": [
+      "self"
+    ],
+    "has_next": [
+      "self"
+    ],
+    "is_last": [
+      "self"
+    ],
+    "first": [
+      "self"
+    ],
+    "next": [
+      "self"
+    ],
+    "__get_rel": [
+      "self",
+      "rel_req"
+    ],
+    "paginated_query": [
+      "cls",
+      "http",
+      "method",
+      "url",
+      "version",
+      "body",
+      "headers",
+      "response_processor",
+      "raise_on_error"
+    ],
+    "paginated_query_with_request": [
+      "cls",
+      "http",
+      "request",
+      "response_processor",
+      "raise_on_error"
+    ]
+  },
+  "HttpPaginatedResponse": {
+    "status_code": [
+      "self"
+    ],
+    "success": [
+      "self"
+    ],
+    "error_code": [
+      "self"
+    ],
+    "error_message": [
+      "self"
+    ],
+    "headers": [
+      "self"
+    ]
+  },
+  "HttpUtils": {
+    "default_format": [],
+    "mime_types": [],
+    "default_get_headers": [
+      "binary",
+      "version"
+    ],
+    "default_post_headers": [
+      "binary",
+      "version"
+    ],
+    "get_host_header": [
+      "host"
+    ],
+    "default_headers": [
+      "version"
+    ],
+    "get_query_params": [
+      "options"
+    ]
+  },
+  "reauth_if_expired": [
+    "func"
+  ],
+  "Request": {
+    "__init__": [
+      "self",
+      "method",
+      "url",
+      "version",
+      "headers",
+      "body",
+      "skip_auth",
+      "raise_on_error"
+    ],
+    "with_relative_url": [
+      "self",
+      "relative_url"
+    ],
+    "method": [
+      "self"
+    ],
+    "url": [
+      "self"
+    ],
+    "headers": [
+      "self"
+    ],
+    "body": [
+      "self"
+    ],
+    "skip_auth": [
+      "self"
+    ],
+    "version": [
+      "self"
+    ]
+  },
+  "Response": {
+    "__init__": [
+      "self",
+      "response"
+    ],
+    "to_native": [
+      "self"
+    ],
+    "response": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "attr"
+    ]
+  },
+  "Http": {
+    "CONNECTION_RETRY_DEFAULTS": [],
+    "__init__": [
+      "self",
+      "ably",
+      "options"
+    ],
+    "close": [
+      "self"
+    ],
+    "dump_body": [
+      "self",
+      "body"
+    ],
+    "get_hosts": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "method",
+      "path",
+      "version",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout",
+      "raise_on_error"
+    ],
+    "delete": [
+      "self",
+      "url",
+      "headers",
+      "skip_auth",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "url",
+      "headers",
+      "skip_auth",
+      "timeout"
+    ],
+    "patch": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "post": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "put": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "auth": [
+      "self",
+      "value"
+    ],
+    "options": [
+      "self"
+    ],
+    "preferred_host": [
+      "self"
+    ],
+    "preferred_port": [
+      "self"
+    ],
+    "preferred_scheme": [
+      "self"
+    ],
+    "http_open_timeout": [
+      "self"
+    ],
+    "http_request_timeout": [
+      "self"
+    ],
+    "http_max_retry_count": [
+      "self"
+    ],
+    "http_max_retry_duration": [
+      "self"
+    ]
+  },
+  "rename_classes": [],
+  "_TOKEN_REPLACE": [],
+  "_IMPORTS_REPLACE": [],
+  "_STRING_REPLACE": [],
+  "_CLASS_RENAME": [],
+  "Rule": {
+    "__init__": [
+      "self",
+      "fromdir",
+      "todir",
+      "output_file_prefix",
+      "additional_replacements"
+    ],
+    "_match": [
+      "self",
+      "filepath"
+    ],
+    "_unasync_file": [
+      "self",
+      "filepath"
+    ],
+    "_unasync_tokens": [
+      "self",
+      "tokens"
+    ],
+    "_replace_import": [
+      "self",
+      "tokens",
+      "token_counter",
+      "new_tokens"
+    ],
+    "_class_rename": [
+      "self",
+      "name"
+    ],
+    "_unasync_name": [
+      "self",
+      "name"
+    ]
+  },
+  "unasync_files": [
+    "fpath_list",
+    "rules"
+  ],
+  "find_files": [
+    "dir_path",
+    "file_name_regex"
+  ],
+  "run": [],
+  "CipherParams": {
+    "__init__": [
+      "self",
+      "algorithm",
+      "mode",
+      "secret_key",
+      "iv"
+    ],
+    "algorithm": [
+      "self"
+    ],
+    "secret_key": [
+      "self"
+    ],
+    "iv": [
+      "self"
+    ],
+    "key_length": [
+      "self"
+    ],
+    "mode": [
+      "self"
+    ]
+  },
+  "CbcChannelCipher": {
+    "__init__": [
+      "self",
+      "cipher_params"
+    ],
+    "__pad": [
+      "self",
+      "data"
+    ],
+    "__unpad": [
+      "self",
+      "data"
+    ],
+    "__random": [
+      "self",
+      "length"
+    ],
+    "encrypt": [
+      "self",
+      "plaintext"
+    ],
+    "decrypt": [
+      "self",
+      "ciphertext"
+    ],
+    "secret_key": [
+      "self"
+    ],
+    "iv": [
+      "self"
+    ],
+    "cipher_type": [
+      "self"
+    ]
+  },
+  "CipherData": {
+    "ENCODING_ID": [],
+    "__init__": [
+      "self",
+      "buffer",
+      "type",
+      "cipher_type"
+    ],
+    "encoding_str": [
+      "self"
+    ]
+  },
+  "DEFAULT_KEYLENGTH": [],
+  "DEFAULT_BLOCKLENGTH": [],
+  "generate_random_key": [
+    "length"
+  ],
+  "get_default_params": [
+    "params"
+  ],
+  "get_cipher": [
+    "params"
+  ],
+  "validate_cipher_params": [
+    "cipher_params"
+  ],
+  "_all_event": [],
+  "_is_named_event_args": [],
+  "_is_all_event_args": [],
+  "EventEmitter": {
+    "__init__": [
+      "self"
+    ],
+    "on": [
+      "self"
+    ],
+    "once": [
+      "self"
+    ],
+    "off": [
+      "self"
+    ],
+    "once_async": [
+      "self",
+      "state"
+    ],
+    "_emit": [
+      "self"
+    ]
+  },
+  "AblyException": {
+    "__new__": [
+      "cls",
+      "message",
+      "status_code",
+      "code",
+      "cause"
+    ],
+    "__init__": [
+      "self",
+      "message",
+      "status_code",
+      "code",
+      "cause"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "is_server_error": [
+      "self"
+    ],
+    "raise_for_response": [
+      "response"
+    ],
+    "decode_error_response": [
+      "response"
+    ],
+    "from_exception": [
+      "e"
+    ],
+    "from_dict": [
+      "value"
+    ]
+  },
+  "catch_all": [
+    "func"
+  ],
+  "AblyAuthException": {},
+  "IncompatibleClientIdException": {},
+  "InstallPycrypto": {
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "AES": [],
+  "Random": [],
+  "get_random_id": [],
+  "is_callable_or_coroutine": [
+    "value"
+  ],
+  "unix_time_ms": [],
+  "is_token_error": [
+    "exception"
+  ],
+  "extract_url_params": [
+    "url"
+  ],
+  "Timer": {
+    "__init__": [
+      "self",
+      "timeout",
+      "callback"
+    ],
+    "_job": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ]
+  },
+  "validate_message_size": [
+    "encoded_messages",
+    "use_binary_protocol",
+    "max_message_size"
+  ],
+  "to_text": [
+    "value"
+  ],
+  "encode_data": [
+    "data",
+    "encoding_array",
+    "binary"
+  ],
+  "first_cap_re": [],
+  "all_cap_re": [],
+  "camel_to_snake": [
+    "name"
+  ],
+  "snake_to_camel": [
+    "name"
+  ],
+  "serial_from_msg_or_serial": [
+    "msg_or_serial"
+  ],
+  "construct_validate_annotation": [
+    "msg_or_serial",
+    "annotation"
+  ],
+  "RestAnnotations": {
+    "__init__": [
+      "self",
+      "channel"
+    ],
+    "__base_path_for_serial": [
+      "self",
+      "serial"
+    ],
+    "__send_annotation": [
+      "self",
+      "annotation",
+      "params"
+    ],
+    "publish": [
+      "self",
+      "msg_or_serial",
+      "annotation",
+      "params"
+    ],
+    "delete": [
+      "self",
+      "msg_or_serial",
+      "annotation",
+      "params"
+    ],
+    "get": [
+      "self",
+      "msg_or_serial",
+      "params"
+    ]
+  },
+  "Push": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "admin": [
+      "self"
+    ]
+  },
+  "PushAdmin": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "ably": [
+      "self"
+    ],
+    "device_registrations": [
+      "self"
+    ],
+    "channel_subscriptions": [
+      "self"
+    ],
+    "publish": [
+      "self",
+      "recipient",
+      "data",
+      "timeout"
+    ]
+  },
+  "PushDeviceRegistrations": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "ably": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "device_id"
+    ],
+    "list": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "device"
+    ],
+    "remove": [
+      "self",
+      "device_id"
+    ],
+    "remove_where": [
+      "self"
+    ]
+  },
+  "PushChannelSubscriptions": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "ably": [
+      "self"
+    ],
+    "list": [
+      "self"
+    ],
+    "list_channels": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "subscription"
+    ],
+    "remove": [
+      "self",
+      "subscription"
+    ],
+    "remove_where": [
+      "self"
+    ]
+  },
+  "Channel": {
+    "__init__": [
+      "self",
+      "ably",
+      "name",
+      "options"
+    ],
+    "history": [
+      "self",
+      "direction",
+      "limit",
+      "start",
+      "end"
+    ],
+    "__publish_request_body": [
+      "self",
+      "messages"
+    ],
+    "_publish": [
+      "self",
+      "arg"
+    ],
+    "publish_message": [
+      "self",
+      "message",
+      "params",
+      "timeout"
+    ],
+    "publish_messages": [
+      "self",
+      "messages",
+      "params",
+      "timeout"
+    ],
+    "publish_name_data": [
+      "self",
+      "name",
+      "data",
+      "timeout"
+    ],
+    "publish": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "_send_update": [
+      "self",
+      "message",
+      "action",
+      "operation",
+      "params"
+    ],
+    "update_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "delete_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "append_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "get_message": [
+      "self",
+      "serial_or_message",
+      "timeout"
+    ],
+    "get_message_versions": [
+      "self",
+      "serial_or_message",
+      "params"
+    ],
+    "ably": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "base_path": [
+      "self"
+    ],
+    "cipher": [
+      "self"
+    ],
+    "options": [
+      "self",
+      "options"
+    ],
+    "presence": [
+      "self"
+    ],
+    "annotations": [
+      "self"
+    ]
+  },
+  "Auth": {
+    "__init__": [
+      "self",
+      "ably",
+      "options"
+    ],
+    "get_auth_transport_param": [
+      "self"
+    ],
+    "__authorize_when_necessary": [
+      "self",
+      "token_params",
+      "auth_options",
+      "force"
+    ],
+    "_ensure_valid_auth_credentials": [
+      "self",
+      "token_params",
+      "auth_options",
+      "force"
+    ],
+    "token_details_has_expired": [
+      "self"
+    ],
+    "authorize": [
+      "self",
+      "token_params",
+      "auth_options"
+    ],
+    "request_token": [
+      "self",
+      "token_params",
+      "key_name",
+      "key_secret",
+      "auth_callback",
+      "auth_url",
+      "auth_method",
+      "auth_headers",
+      "auth_params",
+      "query_time"
+    ],
+    "create_token_request": [
+      "self",
+      "token_params",
+      "key_name",
+      "key_secret",
+      "query_time"
+    ],
+    "ably": [
+      "self"
+    ],
+    "auth_mechanism": [
+      "self"
+    ],
+    "auth_options": [
+      "self"
+    ],
+    "auth_params": [
+      "self"
+    ],
+    "basic_credentials": [
+      "self"
+    ],
+    "token_credentials": [
+      "self"
+    ],
+    "token_details": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "time_offset": [
+      "self"
+    ],
+    "_configure_client_id": [
+      "self",
+      "new_client_id"
+    ],
+    "can_assume_client_id": [
+      "self",
+      "assumed_client_id"
+    ],
+    "_get_auth_headers": [
+      "self"
+    ],
+    "_timestamp": [
+      "self"
+    ],
+    "_random_nonce": [
+      "self"
+    ],
+    "token_request_from_auth_url": [
+      "self",
+      "method",
+      "url",
+      "token_params",
+      "headers",
+      "auth_params"
+    ]
+  },
+  "AblyRest": {
+    "__init__": [
+      "self",
+      "key",
+      "token",
+      "token_details"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "stats": [
+      "self",
+      "direction",
+      "start",
+      "end",
+      "params",
+      "limit",
+      "paginated",
+      "unit",
+      "timeout"
+    ],
+    "time": [
+      "self",
+      "timeout"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "channels": [
+      "self"
+    ],
+    "auth": [
+      "self"
+    ],
+    "http": [
+      "self"
+    ],
+    "options": [
+      "self"
+    ],
+    "push": [
+      "self"
+    ],
+    "request": [
+      "self",
+      "method",
+      "path",
+      "version",
+      "params",
+      "body",
+      "headers"
+    ],
+    "__aexit__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ChannelsSync": {
+    "get": [
+      "self",
+      "name",
+      "options"
+    ],
+    "release": [
+      "self",
+      "name"
+    ],
+    "_on_channel_message": [
+      "self",
+      "msg"
+    ],
+    "_propagate_connection_interruption": [
+      "self",
+      "state",
+      "reason"
+    ],
+    "_on_connected": [
+      "self"
+    ],
+    "_initialize_channels": [
+      "self"
+    ]
+  },
+  "PaginatedResultSync": {
+    "__init__": [
+      "self",
+      "http",
+      "items",
+      "content_type",
+      "rel_first",
+      "rel_next",
+      "response_processor",
+      "response"
+    ],
+    "items": [
+      "self"
+    ],
+    "has_first": [
+      "self"
+    ],
+    "has_next": [
+      "self"
+    ],
+    "is_last": [
+      "self"
+    ],
+    "first": [
+      "self"
+    ],
+    "next": [
+      "self"
+    ],
+    "__get_rel": [
+      "self",
+      "rel_req"
+    ],
+    "paginated_query": [
+      "cls",
+      "http",
+      "method",
+      "url",
+      "version",
+      "body",
+      "headers",
+      "response_processor",
+      "raise_on_error"
+    ],
+    "paginated_query_with_request": [
+      "cls",
+      "http",
+      "request",
+      "response_processor",
+      "raise_on_error"
+    ]
+  },
+  "HttpPaginatedResponseSync": {
+    "status_code": [
+      "self"
+    ],
+    "success": [
+      "self"
+    ],
+    "error_code": [
+      "self"
+    ],
+    "error_message": [
+      "self"
+    ],
+    "headers": [
+      "self"
+    ]
+  },
+  "HttpSync": {
+    "CONNECTION_RETRY_DEFAULTS": [],
+    "__init__": [
+      "self",
+      "ably",
+      "options"
+    ],
+    "close": [
+      "self"
+    ],
+    "dump_body": [
+      "self",
+      "body"
+    ],
+    "get_hosts": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "method",
+      "path",
+      "version",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout",
+      "raise_on_error"
+    ],
+    "delete": [
+      "self",
+      "url",
+      "headers",
+      "skip_auth",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "url",
+      "headers",
+      "skip_auth",
+      "timeout"
+    ],
+    "patch": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "post": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "put": [
+      "self",
+      "url",
+      "headers",
+      "body",
+      "skip_auth",
+      "timeout"
+    ],
+    "auth": [
+      "self",
+      "value"
+    ],
+    "options": [
+      "self"
+    ],
+    "preferred_host": [
+      "self"
+    ],
+    "preferred_port": [
+      "self"
+    ],
+    "preferred_scheme": [
+      "self"
+    ],
+    "http_open_timeout": [
+      "self"
+    ],
+    "http_request_timeout": [
+      "self"
+    ],
+    "http_max_retry_count": [
+      "self"
+    ],
+    "http_max_retry_duration": [
+      "self"
+    ]
+  },
+  "PushSync": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "admin": [
+      "self"
+    ]
+  },
+  "PushAdminSync": {
+    "__init__": [
+      "self",
+      "ably"
+    ],
+    "ably": [
+      "self"
+    ],
+    "device_registrations": [
+      "self"
+    ],
+    "channel_subscriptions": [
+      "self"
+    ],
+    "publish": [
+      "self",
+      "recipient",
+      "data",
+      "timeout"
+    ]
+  },
+  "ChannelSync": {
+    "__init__": [
+      "self",
+      "ably",
+      "name",
+      "options"
+    ],
+    "history": [
+      "self",
+      "direction",
+      "limit",
+      "start",
+      "end"
+    ],
+    "__publish_request_body": [
+      "self",
+      "messages"
+    ],
+    "_publish": [
+      "self",
+      "arg"
+    ],
+    "publish_message": [
+      "self",
+      "message",
+      "params",
+      "timeout"
+    ],
+    "publish_messages": [
+      "self",
+      "messages",
+      "params",
+      "timeout"
+    ],
+    "publish_name_data": [
+      "self",
+      "name",
+      "data",
+      "timeout"
+    ],
+    "publish": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "_send_update": [
+      "self",
+      "message",
+      "action",
+      "operation",
+      "params"
+    ],
+    "update_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "delete_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "append_message": [
+      "self",
+      "message",
+      "operation",
+      "params"
+    ],
+    "get_message": [
+      "self",
+      "serial_or_message",
+      "timeout"
+    ],
+    "get_message_versions": [
+      "self",
+      "serial_or_message",
+      "params"
+    ],
+    "ably": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "base_path": [
+      "self"
+    ],
+    "cipher": [
+      "self"
+    ],
+    "options": [
+      "self",
+      "options"
+    ],
+    "presence": [
+      "self"
+    ],
+    "annotations": [
+      "self"
+    ]
+  },
+  "AuthSync": {
+    "__init__": [
+      "self",
+      "ably",
+      "options"
+    ],
+    "get_auth_transport_param": [
+      "self"
+    ],
+    "__authorize_when_necessary": [
+      "self",
+      "token_params",
+      "auth_options",
+      "force"
+    ],
+    "_ensure_valid_auth_credentials": [
+      "self",
+      "token_params",
+      "auth_options",
+      "force"
+    ],
+    "token_details_has_expired": [
+      "self"
+    ],
+    "authorize": [
+      "self",
+      "token_params",
+      "auth_options"
+    ],
+    "request_token": [
+      "self",
+      "token_params",
+      "key_name",
+      "key_secret",
+      "auth_callback",
+      "auth_url",
+      "auth_method",
+      "auth_headers",
+      "auth_params",
+      "query_time"
+    ],
+    "create_token_request": [
+      "self",
+      "token_params",
+      "key_name",
+      "key_secret",
+      "query_time"
+    ],
+    "ably": [
+      "self"
+    ],
+    "auth_mechanism": [
+      "self"
+    ],
+    "auth_options": [
+      "self"
+    ],
+    "auth_params": [
+      "self"
+    ],
+    "basic_credentials": [
+      "self"
+    ],
+    "token_credentials": [
+      "self"
+    ],
+    "token_details": [
+      "self"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "time_offset": [
+      "self"
+    ],
+    "_configure_client_id": [
+      "self",
+      "new_client_id"
+    ],
+    "can_assume_client_id": [
+      "self",
+      "assumed_client_id"
+    ],
+    "_get_auth_headers": [
+      "self"
+    ],
+    "_timestamp": [
+      "self"
+    ],
+    "_random_nonce": [
+      "self"
+    ],
+    "token_request_from_auth_url": [
+      "self",
+      "method",
+      "url",
+      "token_params",
+      "headers",
+      "auth_params"
+    ]
+  },
+  "AblyRestSync": {
+    "__init__": [
+      "self",
+      "key",
+      "token",
+      "token_details"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "stats": [
+      "self",
+      "direction",
+      "start",
+      "end",
+      "params",
+      "limit",
+      "paginated",
+      "unit",
+      "timeout"
+    ],
+    "time": [
+      "self",
+      "timeout"
+    ],
+    "client_id": [
+      "self"
+    ],
+    "channels": [
+      "self"
+    ],
+    "auth": [
+      "self"
+    ],
+    "http": [
+      "self"
+    ],
+    "options": [
+      "self"
+    ],
+    "push": [
+      "self"
+    ],
+    "request": [
+      "self",
+      "method",
+      "path",
+      "version",
+      "params",
+      "body",
+      "headers"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  }
+}
