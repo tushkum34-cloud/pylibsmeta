@@ -1,0 +1,637 @@
+{
+  "LanguageModels": {
+    "CLAUDE_OPUS_V1": [],
+    "CLAUDE_SONNET_V1": [],
+    "CLAUDE_HAIKU_V1": [],
+    "CLAUDE_SONNET_V2": [],
+    "CLAUDE_SONNET_37": [],
+    "NOVA_PRO": [],
+    "NOVA_LITE": []
+  },
+  "EmbeddingModels": {
+    "TITAN_EMBED_MM_V1": []
+  },
+  "logger": [],
+  "DocAnalysis": {
+    "validate_system_prompt": [
+      "self"
+    ],
+    "_initialize_large_doc_processor": [
+      "self"
+    ],
+    "_process_with_sliding_window": [
+      "self",
+      "message",
+      "output_schema"
+    ],
+    "_combine_window_results": [
+      "self",
+      "results"
+    ],
+    "_synthesize_window_results": [
+      "self",
+      "results",
+      "original_message",
+      "output_schema"
+    ],
+    "validate_model": [
+      "cls",
+      "values"
+    ],
+    "history": [
+      "self"
+    ],
+    "_get_user_prompt": [
+      "self",
+      "message",
+      "sys_prompt",
+      "output_schema",
+      "history"
+    ],
+    "run": [
+      "self",
+      "message",
+      "output_schema",
+      "history"
+    ],
+    "run_stream": [
+      "self",
+      "message",
+      "history"
+    ],
+    "run_entity": [
+      "self",
+      "message",
+      "entities"
+    ],
+    "generate_schema": [
+      "self",
+      "message",
+      "assistive_rephrase"
+    ]
+  },
+  "__version__": [],
+  "__all__": [],
+  "DocClassification": {
+    "validate_model": [
+      "cls",
+      "values"
+    ],
+    "_parse_s3_path": [
+      "self",
+      "s3_path"
+    ],
+    "_validate_manifest": [
+      "self",
+      "manifest_path"
+    ],
+    "run_sampling": [
+      "self",
+      "manifest_path",
+      "update_sample_id"
+    ],
+    "view_sample": [
+      "self",
+      "sample_id"
+    ],
+    "run_classify": [
+      "self",
+      "sample_id",
+      "file_path",
+      "pages",
+      "similarity_metric",
+      "top_n",
+      "unknown_threshold"
+    ]
+  },
+  "VideoAnalysis": {
+    "validate_system_prompt": [
+      "self"
+    ],
+    "validate_model": [
+      "cls",
+      "values"
+    ],
+    "history": [
+      "self"
+    ],
+    "_parse_s3_path": [
+      "self",
+      "s3_path"
+    ],
+    "_get_video_format": [
+      "self"
+    ],
+    "_get_request_body": [
+      "self",
+      "message",
+      "max_tokens",
+      "temperature",
+      "top_p",
+      "top_k",
+      "output_schema"
+    ],
+    "run": [
+      "self",
+      "message",
+      "max_tokens",
+      "temperature",
+      "top_p",
+      "top_k",
+      "output_schema"
+    ],
+    "run_stream": [
+      "self",
+      "message",
+      "max_tokens",
+      "temperature",
+      "top_p",
+      "top_k"
+    ]
+  },
+  "ImageValidator": {
+    "__init__": [
+      "self",
+      "file_bytes"
+    ],
+    "_get_image_size_and_format": [
+      "self"
+    ],
+    "validate_image": [
+      "self"
+    ]
+  },
+  "LargeDocumentProcessor": {
+    "__init__": [
+      "self",
+      "file_path",
+      "s3_client"
+    ],
+    "_get_total_pages": [
+      "self"
+    ],
+    "get_current_window_pages": [
+      "self"
+    ],
+    "move_to_next_window": [
+      "self",
+      "overlap"
+    ],
+    "move_to_previous_window": [
+      "self",
+      "overlap"
+    ],
+    "move_to_specific_window": [
+      "self",
+      "start_page"
+    ],
+    "get_window_info": [
+      "self"
+    ],
+    "get_pages_as_base64": [
+      "self"
+    ],
+    "get_pages_as_bytes": [
+      "self"
+    ],
+    "process_document": [
+      "self",
+      "processor_func",
+      "use_converse_api",
+      "overlap"
+    ]
+  },
+  "FileConverter": {
+    "__init__": [
+      "self",
+      "file_path",
+      "pages",
+      "s3_client"
+    ],
+    "_get_file_bytes_and_mime_type": [
+      "self"
+    ],
+    "_get_mime_type": [
+      "self",
+      "file_bytes"
+    ],
+    "_parse_s3_path": [
+      "self",
+      "s3_path"
+    ],
+    "convert_to_base64": [
+      "self"
+    ],
+    "convert_to_bytes": [
+      "self"
+    ]
+  },
+  "BedrockService": {
+    "__init__": [
+      "self",
+      "session",
+      "model_id"
+    ],
+    "_initialize_bedrock_client": [
+      "self"
+    ],
+    "get_inference_profile": [
+      "self"
+    ]
+  },
+  "SubParameter": {
+    "json_type": [
+      "self"
+    ]
+  },
+  "Parameter": {
+    "json_type": [
+      "self"
+    ]
+  },
+  "ToolsSyndicate": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "_validate_signature": [
+      "self"
+    ],
+    "_parse_type": [
+      "self",
+      "type_str"
+    ],
+    "_parse_docstring": [
+      "self"
+    ],
+    "_generate_schema": [
+      "self"
+    ],
+    "generate_tool_config": [
+      "cls",
+      "functions_list"
+    ]
+  },
+  "SystemPrompts": {
+    "__init__": [
+      "self",
+      "entities",
+      "streaming"
+    ],
+    "DefaultSysPrompt": [
+      "self"
+    ],
+    "SchemaSysPrompt": [
+      "self"
+    ],
+    "ChatSysPrompt": [
+      "self"
+    ],
+    "SummarySysPrompt": [
+      "self"
+    ],
+    "FigureSysPrompt": [
+      "self"
+    ],
+    "NERSysPrompt": [
+      "self"
+    ],
+    "SchemaGenSysPrompt": [
+      "self"
+    ],
+    "SchemaGenSysPromptWithRephrase": [
+      "self"
+    ],
+    "ClassificationSysPrompt": [
+      "self"
+    ],
+    "MultiClassificationSysPrompt": [
+      "self"
+    ]
+  },
+  "VIDEO_ANALYSIS_PROMPT": [],
+  "GlobalConfig": {
+    "update_config": [
+      "cls"
+    ],
+    "get_instance": [
+      "cls"
+    ]
+  },
+  "SchemaFactory": {
+    "BASE_DIR": [],
+    "__getattribute__": [
+      "self",
+      "name"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "Entities": {
+    "ADDRESS": [],
+    "AGE": [],
+    "AWS_ACCESS_KEY": [],
+    "AWS_SECRET_KEY": [],
+    "CREDIT_DEBIT_CVV": [],
+    "CREDIT_DEBIT_EXPIRY": [],
+    "CREDIT_DEBIT_NUMBER": [],
+    "DATE_TIME": [],
+    "DRIVER_ID": [],
+    "EMAIL": [],
+    "INTERNATIONAL_BANK_ACCOUNT_NUMBER": [],
+    "IP_ADDRESS": [],
+    "LICENSE_PLATE": [],
+    "MAC_ADDRESS": [],
+    "NAME": [],
+    "PASSWORD": [],
+    "PHONE": [],
+    "PIN": [],
+    "SWIFT_CODE": [],
+    "URL": [],
+    "USERNAME": [],
+    "VEHICLE_IDENTIFICATION_NUMBER": [],
+    "CA_HEALTH_NUMBER": [],
+    "CA_SOCIAL_INSURANCE_NUMBER": [],
+    "IN_AADHAAR": [],
+    "IN_NREGA": [],
+    "IN_PERMANENT_ACCOUNT_NUMBER": [],
+    "IN_VOTER_NUMBER": [],
+    "UK_NATIONAL_HEALTH_SERVICE_NUMBER": [],
+    "UK_NATIONAL_INSURANCE_NUMBER": [],
+    "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER": [],
+    "BANK_ACCOUNT_NUMBER": [],
+    "BANK_ROUTING": [],
+    "PASSPORT_NUMBER": [],
+    "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER": [],
+    "SSN": [],
+    "ES_NIF": [],
+    "IT_VAT_CODE": [],
+    "PL_PESEL_NUMBER": [],
+    "SG_NRIC_FIN": [],
+    "AU_BUSINESS_NUMBER": [],
+    "AU_COMPANY_NUMBER": [],
+    "AU_TAX_FILE_NUMBER": [],
+    "AU_MEDICARE": [],
+    "COMMERCIAL_ITEM": [],
+    "EVENT": [],
+    "ORGANIZATION": [],
+    "PERSON": [],
+    "QUANTITY": [],
+    "TITLE": []
+  },
+  "DefaultModel": {
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "core_schema",
+      "handler"
+    ]
+  },
+  "ChatModel": {},
+  "FigureModel": {
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "core_schema",
+      "handler"
+    ]
+  },
+  "ClassificationModel": {
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "core_schema",
+      "handler"
+    ]
+  },
+  "MultiClassModel": {
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "core_schema",
+      "handler"
+    ]
+  },
+  "NERModel": {
+    "__get_pydantic_json_schema__": [
+      "cls",
+      "core_schema",
+      "handler"
+    ]
+  },
+  "S3Utility": {
+    "__init__": [
+      "self",
+      "s3_client"
+    ],
+    "read_file": [
+      "self",
+      "s3_path"
+    ],
+    "save_file": [
+      "self",
+      "s3_path",
+      "data"
+    ],
+    "upload_file": [
+      "self",
+      "local_path",
+      "s3_path"
+    ],
+    "delete_file": [
+      "self",
+      "s3_path"
+    ],
+    "check_file_exists": [
+      "self",
+      "s3_path"
+    ],
+    "_parse_s3_path": [
+      "self",
+      "s3_path"
+    ]
+  },
+  "VectorSampler": {
+    "__init__": [
+      "self",
+      "bucket_name",
+      "bedrock_client",
+      "s3_client",
+      "modelID",
+      "session"
+    ],
+    "_save_to_s3": [
+      "self",
+      "json_data",
+      "file_name"
+    ],
+    "_upload_to_s3": [
+      "self",
+      "file_path",
+      "s3_key"
+    ],
+    "_check_valid_classifier": [
+      "self",
+      "object_path"
+    ],
+    "_generate_unique_id": [
+      "self"
+    ],
+    "_embeddings_to_pq": [
+      "self",
+      "data",
+      "update"
+    ],
+    "_gen_embedding": [
+      "self",
+      "body"
+    ],
+    "_gen_embeddings": [
+      "self",
+      "base64_list",
+      "update"
+    ],
+    "_convert_to_base64": [
+      "self",
+      "file_path",
+      "page"
+    ],
+    "_batch_convert_to_base64": [
+      "self",
+      "manifest_content"
+    ],
+    "run_sampler": [
+      "self",
+      "manifest_data",
+      "update_classifier"
+    ],
+    "view_classifier": [
+      "self",
+      "classifier_id"
+    ]
+  },
+  "Classification": {
+    "validate_model": [
+      "cls",
+      "values"
+    ],
+    "_convert_to_base64": [
+      "self",
+      "pages"
+    ],
+    "_gen_embedding": [
+      "self",
+      "body"
+    ],
+    "_gen_embeddings_for_pages": [
+      "self",
+      "base64_list"
+    ],
+    "_get_sample_embeddings_v2": [
+      "self"
+    ],
+    "_euclidian_distance_v2": [
+      "self",
+      "page_vector",
+      "class_vectors"
+    ],
+    "_cosine_similarity_v2": [
+      "self",
+      "page_vector",
+      "class_vectors"
+    ],
+    "classify_doc": [
+      "self"
+    ]
+  },
+  "retry_with_backoff": [
+    "bedrock_client",
+    "max_retries",
+    "initial_backoff"
+  ],
+  "Invocations": {
+    "__init__": [
+      "self",
+      "body",
+      "bedrock_client",
+      "boto3_session",
+      "model_id",
+      "use_converse_api",
+      "enable_cri",
+      "output_schema"
+    ],
+    "_get_inference_profile": [
+      "self"
+    ],
+    "_reprompt_for_proper_json": [
+      "self"
+    ],
+    "_validate_output_schema": [
+      "self",
+      "data",
+      "response_text"
+    ],
+    "_extract_json_from_markdown": [
+      "self",
+      "response_text"
+    ],
+    "message_history": [
+      "self"
+    ],
+    "_invoke_model_json": [
+      "self"
+    ],
+    "_invoke_model_stream": [
+      "self"
+    ],
+    "invoke_embedding": [
+      "self"
+    ],
+    "_converse_model_json": [
+      "self"
+    ],
+    "_converse_model_stream": [
+      "self"
+    ],
+    "run_inference": [
+      "self"
+    ],
+    "run_inference_stream": [
+      "self"
+    ]
+  },
+  "UserMessages": {
+    "__init__": [
+      "self",
+      "file_path",
+      "s3_client",
+      "system_prompt",
+      "message",
+      "max_tokens",
+      "temperature",
+      "pages",
+      "use_converse_api",
+      "output_schema",
+      "message_history",
+      "modelId"
+    ],
+    "_get_pages_from_doc": [
+      "self"
+    ],
+    "_validate_if_schema": [
+      "self"
+    ],
+    "_construct_messages_with_history": [
+      "self"
+    ],
+    "_construct_invoke_messages": [
+      "self",
+      "base64_pages"
+    ],
+    "_construct_converse_messages": [
+      "self",
+      "byte_pages"
+    ],
+    "messages": [
+      "self"
+    ]
+  }
+}

@@ -1,0 +1,8508 @@
+{
+  "get_meta_lib": [],
+  "register_meta": [
+    "op_name",
+    "overload_name"
+  ],
+  "calc_conv_nd_return_shape": [
+    "input_tensor",
+    "weight_size",
+    "stride",
+    "padding",
+    "dilation",
+    "is_transposed",
+    "groups",
+    "output_padding"
+  ],
+  "is_channels_last": [
+    "ten"
+  ],
+  "is_channels_last_3d": [
+    "ten"
+  ],
+  "meta_reshape_and_cache": [
+    "key",
+    "value",
+    "key_cache",
+    "value_cache",
+    "slot_mapping",
+    "kv_cache_dtype",
+    "k_scale",
+    "v_scale"
+  ],
+  "meta_single_query_cached_kv_attention": [
+    "output",
+    "query",
+    "key_cache",
+    "value_cache",
+    "head_mapping",
+    "scale",
+    "block_tables",
+    "context_lens",
+    "block_size",
+    "max_context_len",
+    "alibi_slopes",
+    "window_size",
+    "k_scale",
+    "v_scale",
+    "softcap"
+  ],
+  "meta_flash_attn_varlen_func": [
+    "output",
+    "query",
+    "k_cache",
+    "v_cache",
+    "cu_seq_lens_q",
+    "cu_seq_lens_kv",
+    "max_seq_len_q",
+    "max_seq_len_kv",
+    "scale",
+    "is_causal",
+    "block_table",
+    "alibi_slopes",
+    "window_size_left",
+    "window_size_right",
+    "kv_cache_dtype",
+    "k_scale",
+    "v_scale",
+    "softcap"
+  ],
+  "meta_convolution_forward": [
+    "input",
+    "weight",
+    "bias",
+    "W_prepack",
+    "kernel_size",
+    "padding",
+    "stride",
+    "dilation",
+    "weight_channels_last"
+  ],
+  "meta_convolution_backward": [
+    "input",
+    "weight",
+    "bias",
+    "grad_output",
+    "out_mask",
+    "W_prepack",
+    "weight_channels_last"
+  ],
+  "meta_conv_transpose": [
+    "input",
+    "weight",
+    "bias_opt",
+    "W_prepack",
+    "weight_size",
+    "padding",
+    "output_padding",
+    "stride",
+    "dilation",
+    "groups",
+    "weight_channels_last"
+  ],
+  "meta_conv_transpose_backward": [
+    "input",
+    "weight",
+    "bias",
+    "grad_output",
+    "out_mask",
+    "W_prepack",
+    "weight_channels_last"
+  ],
+  "meta_ipex_linear": [
+    "input",
+    "weight",
+    "bias",
+    "W_prepack",
+    "out_features"
+  ],
+  "meta_linear_backward": [
+    "input",
+    "weight",
+    "bias",
+    "grad_output",
+    "out_mask",
+    "W_prepack"
+  ],
+  "meta_ipex_MKLSGEMM": [
+    "input",
+    "weight",
+    "bias",
+    "W_prepack",
+    "out_features"
+  ],
+  "meta_ipex_linear_eltwise": [
+    "input",
+    "weight",
+    "bias",
+    "eltwise",
+    "W_prepack",
+    "out_features"
+  ],
+  "meta_linear_eltwise_backward": [
+    "input",
+    "weight",
+    "bias",
+    "output",
+    "eltwise",
+    "grad_output",
+    "out_mask",
+    "W_prepack"
+  ],
+  "meta_embedding_bag": [
+    "weight",
+    "indices",
+    "offsets",
+    "sparse",
+    "include_last_offset"
+  ],
+  "meta_ipex_lstm": [
+    "input",
+    "hx",
+    "params",
+    "has_biases",
+    "num_layers",
+    "dropout_p",
+    "train",
+    "bidirectional",
+    "batch_first"
+  ],
+  "meta_ROIAlign_forward": [
+    "input",
+    "rois",
+    "spatial_scale",
+    "pooled_height",
+    "pooled_width",
+    "sampling_ratio",
+    "aligned"
+  ],
+  "meta_ROIAlign_backward": [
+    "grad",
+    "rois",
+    "spatial_scale",
+    "pooled_height",
+    "pooled_width",
+    "batch_size",
+    "channels",
+    "height",
+    "width",
+    "sampling_ratio",
+    "aligned",
+    "is_channels_last"
+  ],
+  "meta_batch_norm_forward": [
+    "input",
+    "weight",
+    "bias",
+    "running_mean",
+    "running_var",
+    "train",
+    "momentum",
+    "eps"
+  ],
+  "meta_batch_norm_backward": [
+    "grad_output",
+    "input",
+    "weight",
+    "save_mean",
+    "save_var",
+    "train",
+    "eps",
+    "grad_input_mask"
+  ],
+  "meta_bmm_add": [
+    "input",
+    "batch1",
+    "batch2",
+    "alpha"
+  ],
+  "meta_add_softmax_": [
+    "input1",
+    "input2"
+  ],
+  "meta_cumsum": [
+    "input",
+    "dim",
+    "dtype"
+  ],
+  "meta_tpp_linear": [
+    "input",
+    "weight",
+    "out_features"
+  ],
+  "meta_tpp_linear_bias": [
+    "input",
+    "weight",
+    "bias",
+    "out_features"
+  ],
+  "meta_choose_tpp_linear_weight": [
+    "x",
+    "weight",
+    "weight_for_large_batch"
+  ],
+  "meta_tpp_linear_gelu": [
+    "input",
+    "weight",
+    "bias",
+    "out_features"
+  ],
+  "meta_tpp_linear_add_add": [
+    "input",
+    "input1",
+    "input2",
+    "weight",
+    "bias",
+    "scale",
+    "out_features"
+  ],
+  "meta_tpp_linear_relu": [
+    "input",
+    "weight",
+    "bias",
+    "out_features"
+  ],
+  "meta_tpp_linear_silu": [
+    "input",
+    "weight",
+    "bias",
+    "out_features"
+  ],
+  "meta_tpp_linear_add": [
+    "input",
+    "input1",
+    "weight",
+    "bias",
+    "scale",
+    "out_features"
+  ],
+  "meta_tpp_linear_mul": [
+    "input",
+    "input1",
+    "weight",
+    "bias",
+    "out_features"
+  ],
+  "meta_tpp_fused_gate_up_proj": [
+    "t_in",
+    "t_wt_gate",
+    "t_bias_gate",
+    "t_wt_up",
+    "t_bias_up",
+    "out_features"
+  ],
+  "meta_masked_multihead_self_attention": [
+    "query",
+    "key",
+    "value",
+    "key_cache",
+    "value_cache",
+    "beam_idx",
+    "seq_info",
+    "scale_attn",
+    "max_positions",
+    "head_mask",
+    "attention_mask",
+    "add_casual_mask"
+  ],
+  "meta_prepare_4d_causal_attention_mask": [
+    "attention_mask",
+    "inputs_embeds",
+    "past_kv_len",
+    "finfo_min",
+    "sliding_window"
+  ],
+  "meta_rotary_position_embedding": [
+    "t_in",
+    "t_emb_pos",
+    "t_pos",
+    "N",
+    "H",
+    "offset",
+    "rotary_ndims"
+  ],
+  "meta_rmsnorm": [
+    "input",
+    "weight",
+    "eps"
+  ],
+  "meta_bgmv_shrink": [
+    "out",
+    "input",
+    "weights",
+    "indicies",
+    "scale"
+  ],
+  "meta_bgmv_expand": [
+    "out",
+    "input",
+    "weights",
+    "indicies",
+    "add_inputs"
+  ],
+  "meta_bgmv_expand_slice": [
+    "out",
+    "input",
+    "weights",
+    "indicies",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "meta_sgmv_shrink": [
+    "out",
+    "inputs",
+    "weights",
+    "indicies",
+    "seq_lens",
+    "scale"
+  ],
+  "meta_sgmv_expand": [
+    "out",
+    "input",
+    "weights",
+    "indicies",
+    "seq_lens",
+    "add_inputs"
+  ],
+  "meta_sgmv_expand_slice": [
+    "out",
+    "input",
+    "weights",
+    "indicies",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "_copy_model_and_optimizer": [
+    "model",
+    "optimizer"
+  ],
+  "auto_channels_last_flag": {
+    "AUTO": [],
+    "DISABLE": [],
+    "ENABLE": []
+  },
+  "auto_channels_last": [],
+  "enable_auto_channels_last": [],
+  "disable_auto_channels_last": [],
+  "_Properties": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_O0": {
+    "__call__": [
+      "self",
+      "properties"
+    ]
+  },
+  "_O1": {
+    "__call__": [
+      "self",
+      "properties"
+    ]
+  },
+  "opt_levels": [],
+  "optimize": [
+    "model",
+    "dtype",
+    "optimizer",
+    "level",
+    "inplace",
+    "conv_bn_folding",
+    "linear_bn_folding",
+    "weights_prepack",
+    "replace_dropout_with_identity",
+    "optimize_lstm",
+    "split_master_weight_for_bf16",
+    "fuse_update_step",
+    "auto_kernel_selection",
+    "sample_input",
+    "graph_mode",
+    "concat_linear"
+  ],
+  "_convert_convNd_deconvNd_weight_memory_format": [
+    "module"
+  ],
+  "FP32MathMode": {
+    "FP32": [],
+    "TF32": [],
+    "BF32": []
+  },
+  "set_fp32_math_mode": [
+    "mode",
+    "device"
+  ],
+  "get_fp32_math_mode": [
+    "device"
+  ],
+  "init_parser": [],
+  "mixed_print_help": [
+    "f1",
+    "f2",
+    "f3"
+  ],
+  "main": [],
+  "torch_version": [],
+  "ipex_version": [],
+  "matches": [],
+  "cmake_prefix_path": [],
+  "version": [],
+  "OnDevice": {
+    "_orig_torch_empty": [],
+    "_orig_torch_zeros": [],
+    "_orig_torch_ones": [],
+    "_orig_torch_full": [],
+    "__init__": [
+      "self",
+      "dtype",
+      "device",
+      "enabled"
+    ],
+    "fp_tensor_constructor": [
+      "self",
+      "fn",
+      "target_fp_dtype"
+    ],
+    "get_new_tensor_fn_for_dtype": [
+      "self",
+      "dtype"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ]
+  },
+  "__version__": [],
+  "__ipex_gitrev__": [],
+  "__torch_gitrev__": [],
+  "__gpu_onednn_gitrev__": [],
+  "__cpu_ideep_gitrev__": [],
+  "__build_type__": [],
+  "need_to_disable_check_trace_for_XPU": [],
+  "jit_trace_wrapper": [
+    "f"
+  ],
+  "convert_functions": [
+    "m",
+    "target_m",
+    "new_function_name",
+    "new_function"
+  ],
+  "convert_function": [
+    "m",
+    "func_name",
+    "new_function"
+  ],
+  "convert_class": [
+    "m",
+    "target_m",
+    "new_class",
+    "config",
+    "distributed"
+  ],
+  "lowering_class_cpu": [
+    "m",
+    "target_m",
+    "new_class",
+    "config",
+    "tpp",
+    "woq"
+  ],
+  "distributed": [],
+  "is_deepspeed": [],
+  "is_distributed": [
+    "m",
+    "ds_layers"
+  ],
+  "_set_optimized_model_for_generation": [
+    "model",
+    "optimized_model",
+    "first_token_optimized_model"
+  ],
+  "check_transformers_for_llm_support": [],
+  "model_convert_reference": [
+    "_model"
+  ],
+  "get_dummy_input": [
+    "_model",
+    "return_dict"
+  ],
+  "ipex_quantization_flow": [
+    "_model",
+    "dtype",
+    "sample_inputs",
+    "qconfig",
+    "static_qconfig_file"
+  ],
+  "attach_extra_weight_for_large_batch_inference": [
+    "model"
+  ],
+  "model_convert_lowering": [
+    "_model",
+    "device",
+    "dtype",
+    "sample_inputs",
+    "deployment_mode",
+    "is_quantization",
+    "woq",
+    "cache_weight_for_large_batch"
+  ],
+  "validate_device_avaliable": [
+    "device"
+  ],
+  "optimize_transformers": [
+    "model",
+    "optimizer",
+    "dtype",
+    "inplace",
+    "device",
+    "quantization_config",
+    "qconfig_summary_file",
+    "low_precision_checkpoint",
+    "sample_inputs",
+    "deployment_mode"
+  ],
+  "GreedySearchOutput": [],
+  "_greedy_search": [
+    "self",
+    "input_ids",
+    "logits_processor",
+    "stopping_criteria",
+    "max_length",
+    "pad_token_id",
+    "eos_token_id",
+    "output_attentions",
+    "output_hidden_states",
+    "output_scores",
+    "return_dict_in_generate",
+    "synced_gpus",
+    "streamer"
+  ],
+  "_model_forward": [
+    "self",
+    "batch_size",
+    "num_beams",
+    "model_kwargs",
+    "input_ids",
+    "output_attentions",
+    "output_hidden_states"
+  ],
+  "GenerateBeamOutput": [],
+  "_beam_sample": [
+    "self",
+    "input_ids",
+    "logits_processor",
+    "stopping_criteria",
+    "generation_config",
+    "synced_gpus"
+  ],
+  "_beam_sample_legacy": [
+    "self",
+    "input_ids",
+    "beam_scorer",
+    "logits_processor",
+    "stopping_criteria",
+    "logits_warper",
+    "max_length",
+    "pad_token_id",
+    "eos_token_id",
+    "output_attentions",
+    "output_hidden_states",
+    "output_scores",
+    "return_dict_in_generate",
+    "synced_gpus"
+  ],
+  "trans_version": [],
+  "_extract_past_from_model_output": [
+    "self",
+    "outputs",
+    "standardize_cache_format"
+  ],
+  "_update_model_kwargs_for_generation": [
+    "self",
+    "outputs",
+    "model_kwargs",
+    "is_encoder_decoder",
+    "standardize_cache_format",
+    "num_new_tokens"
+  ],
+  "_get_attr_from_logit_processors": [
+    "logits_processor",
+    "logit_processor_class",
+    "attribute_name"
+  ],
+  "_pad_to_max_length": [
+    "current_segments",
+    "pad_token_id",
+    "device",
+    "padding_side",
+    "padding",
+    "bos_token_tensor",
+    "cut_off_length",
+    "return_token_timestamps",
+    "force_unique_generate_call"
+  ],
+  "whisper_generate": [
+    "self",
+    "input_features",
+    "generation_config",
+    "logits_processor",
+    "stopping_criteria",
+    "prefix_allowed_tokens_fn",
+    "synced_gpus",
+    "return_timestamps",
+    "task",
+    "language",
+    "is_multilingual",
+    "prompt_ids",
+    "prompt_condition_type",
+    "condition_on_prev_tokens",
+    "temperature",
+    "compression_ratio_threshold",
+    "logprob_threshold",
+    "no_speech_threshold",
+    "num_segment_frames",
+    "attention_mask",
+    "time_precision",
+    "time_precision_features",
+    "return_token_timestamps",
+    "return_segments",
+    "return_dict_in_generate",
+    "force_unique_generate_call"
+  ],
+  "is_torchdynamo_compiling": [],
+  "_prepare_generation_config": [
+    "self",
+    "generation_config",
+    "use_model_defaults"
+  ],
+  "BeamSearchOutput": [],
+  "_beam_search": [
+    "self",
+    "input_ids",
+    "logits_processor",
+    "stopping_criteria",
+    "generation_config",
+    "synced_gpus"
+  ],
+  "_beam_search_legacy": [
+    "self",
+    "input_ids",
+    "beam_scorer",
+    "logits_processor",
+    "stopping_criteria",
+    "max_length",
+    "pad_token_id",
+    "eos_token_id",
+    "output_attentions",
+    "output_hidden_states",
+    "output_scores",
+    "return_dict_in_generate",
+    "synced_gpus"
+  ],
+  "DISABLE_IPEX_SAMPLE": [],
+  "SampleOutput": [],
+  "softmax_multinomial": [
+    "probs",
+    "num_samples"
+  ],
+  "_sample": [
+    "self",
+    "input_ids",
+    "logits_processor",
+    "stopping_criteria",
+    "logits_warper",
+    "max_length",
+    "pad_token_id",
+    "eos_token_id",
+    "output_attentions",
+    "output_hidden_states",
+    "output_scores",
+    "return_dict_in_generate",
+    "synced_gpus",
+    "streamer"
+  ],
+  "IGNORE_INDEX": [],
+  "IMAGE_TOKEN_INDEX": [],
+  "__HEAD_MASK_WARNING_MSG": [],
+  "GPTJModel_forward": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "token_type_ids",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GPTJForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "token_type_ids",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "LlamaModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "LlamaForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "MllamaTextModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "cross_attention_states",
+    "cross_attention_mask",
+    "full_text_row_masked_out_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position"
+  ],
+  "MllamaForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "cross_attention_states",
+    "cross_attention_mask",
+    "full_text_row_masked_out_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "num_logits_to_keep"
+  ],
+  "LlavaForConditionalGeneration_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "pixel_values",
+    "inputs_embeds",
+    "vision_feature_layer",
+    "vision_feature_select_strategy",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "num_logits_to_keep"
+  ],
+  "_prepare_cross_attention_mask": [
+    "cross_attention_mask",
+    "num_vision_tokens",
+    "dtype"
+  ],
+  "MllamaForConditionalGeneration_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "cross_attention_mask",
+    "pixel_values",
+    "aspect_ratio_mask",
+    "aspect_ratio_ids",
+    "cross_attention_states",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "num_logits_to_keep"
+  ],
+  "GPTNeoXModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "past_key_values",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GPTNeoXForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "head_mask",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "OPTDecoder_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "head_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "position_ids"
+  ],
+  "OPTForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "BloomModel_forward": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "head_mask",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "BloomForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "build_alibi_tensor": [
+    "attention_mask",
+    "num_heads",
+    "dtype"
+  ],
+  "FalconModel_forward": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "FalconForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "CodeGenModel_forward": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "token_type_ids",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "CodeGenForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "token_type_ids",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "BaichuanForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "ChatGLMModel_forward": [
+    "self",
+    "input_ids",
+    "position_ids",
+    "attention_mask",
+    "full_attention_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GLMTransformer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "rotary_pos_emb",
+    "kv_caches",
+    "use_cache",
+    "output_hidden_states"
+  ],
+  "ChatGLMForConditionalGeneration_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "return_last_logit",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GPTBigCodeModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "token_type_ids",
+    "head_mask",
+    "inputs_embeds",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GPTBigCodeForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "token_type_ids",
+    "head_mask",
+    "inputs_embeds",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "T5ForConditionalGeneration_forward": [
+    "self",
+    "decoder_input_ids",
+    "attention_mask",
+    "past_key_values",
+    "encoder_outputs",
+    "input_ids",
+    "decoder_attention_mask",
+    "head_mask",
+    "decoder_head_mask",
+    "cross_attn_head_mask",
+    "inputs_embeds",
+    "decoder_inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "T5DenseGatedActDense_forward": [
+    "self",
+    "hidden_states"
+  ],
+  "T5DenseActDense_forward": [
+    "self",
+    "hidden_states"
+  ],
+  "T5Stack_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "inputs_embeds",
+    "head_mask",
+    "cross_attn_head_mask",
+    "past_key_values",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "MistralModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "MistralForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "MptForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "MixtralForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "output_router_logits",
+    "return_dict"
+  ],
+  "MixtralModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "output_router_logits",
+    "return_dict"
+  ],
+  "StableLMEpochModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "StableLMEpochForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "QWenModel_forward": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "token_type_ids",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "QWen2Model_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "Qwen3MoeModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "output_router_logits",
+    "return_dict",
+    "cache_position"
+  ],
+  "QWenLMHeadModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "token_type_ids",
+    "head_mask",
+    "inputs_embeds",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "Qwen2ForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "load_balancing_loss_func": [
+    "gate_logits",
+    "num_experts",
+    "top_k",
+    "attention_mask"
+  ],
+  "Qwen3MoeForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "output_router_logits",
+    "return_dict",
+    "cache_position",
+    "logits_to_keep"
+  ],
+  "GitEncoder_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "head_mask",
+    "past_key_values",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "pixel_values_present",
+    "return_dict"
+  ],
+  "GitForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "pixel_values",
+    "position_ids",
+    "head_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GitVisionEncoder_forward": [
+    "self",
+    "inputs_embeds",
+    "attention_mask",
+    "causal_attention_mask",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "GitModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "pixel_values",
+    "head_mask",
+    "inputs_embeds",
+    "past_key_values",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "CLIPEncoder_forward": [
+    "self",
+    "inputs_embeds",
+    "attention_mask",
+    "causal_attention_mask",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "LlavaLlamaForCausalLM_forward": [
+    "self",
+    "inputs_embeds",
+    "attention_mask",
+    "past_key_values",
+    "images",
+    "labels",
+    "input_ids",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "YuanForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "YuanModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "PhiForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "num_logits_to_keep",
+    "return_dict"
+  ],
+  "PhiModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "Phi3Model_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "WhisperDecoderLayer_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "encoder_hidden_states",
+    "head_mask",
+    "cross_attn_head_mask",
+    "past_key_values",
+    "inputs_embeds",
+    "position_ids",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "WhisperModel_forward": [
+    "self",
+    "input_features",
+    "attention_mask",
+    "decoder_input_ids",
+    "decoder_attention_mask",
+    "head_mask",
+    "decoder_head_mask",
+    "cross_attn_head_mask",
+    "encoder_outputs",
+    "past_key_values",
+    "decoder_inputs_embeds",
+    "decoder_position_ids",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "WhisperForConditionalGeneration_forward": [
+    "self",
+    "decoder_input_ids",
+    "past_key_values",
+    "encoder_outputs",
+    "input_features",
+    "attention_mask",
+    "decoder_attention_mask",
+    "head_mask",
+    "decoder_head_mask",
+    "cross_attn_head_mask",
+    "decoder_inputs_embeds",
+    "decoder_position_ids",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "JambaModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "output_router_logits",
+    "return_dict",
+    "cache_position"
+  ],
+  "causal_conv1d_fn": [
+    "hidden_states",
+    "convolution",
+    "activation"
+  ],
+  "JambaMambaMixer_forward": [
+    "self",
+    "hidden_states",
+    "cache_params",
+    "attention_mask"
+  ],
+  "JambaForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "output_router_logits",
+    "num_logits_to_keep",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position"
+  ],
+  "_IPEXDeepSeekV3MoEGate": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "distributed"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "DeepseekV2Model_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "DeepseekV2ForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "InputMode": {
+    "LANGUAGE": [],
+    "VISION": [],
+    "SPEECH": [],
+    "VISION_SPEECH": []
+  },
+  "PhiOForCausalLM_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "position_ids",
+    "input_mode",
+    "input_image_embeds",
+    "image_sizes",
+    "image_attention_mask",
+    "input_audio_embeds",
+    "audio_embed_sizes",
+    "audio_attention_mask",
+    "inputs_embeds",
+    "labels",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position",
+    "num_logits_to_keep"
+  ],
+  "ConformerEncoder_forward": [
+    "self",
+    "xs_pad",
+    "masks"
+  ],
+  "_IMAGE_SPECIAL_TOKEN_ID": [],
+  "_AUDIO_SPECIAL_TOKEN_ID": [],
+  "PhiOImageEmbedding_forward": [
+    "self",
+    "input_ids",
+    "input_embeds",
+    "image_sizes"
+  ],
+  "SiglipVisionTransformer_forward": [
+    "self",
+    "pixel_values",
+    "patch_attention_mask",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict"
+  ],
+  "PhiOAudioEmbedding_forward": [
+    "self",
+    "input_ids",
+    "input_embeds",
+    "audio_embed_sizes",
+    "audio_attention_mask",
+    "audio_projection_mode"
+  ],
+  "PhiOModel_forward": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "position_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "input_image_embeds",
+    "image_sizes",
+    "image_attention_mask",
+    "input_audio_embeds",
+    "audio_embed_sizes",
+    "audio_attention_mask",
+    "audio_projection_mode",
+    "use_cache",
+    "output_attentions",
+    "output_hidden_states",
+    "return_dict",
+    "cache_position"
+  ],
+  "LoraLinear_forward": [
+    "self",
+    "x"
+  ],
+  "detect_language": [
+    "self",
+    "input_features",
+    "encoder_outputs",
+    "generation_config",
+    "num_segment_frames"
+  ],
+  "output_hook": [
+    "module",
+    "args",
+    "kwargs",
+    "outputs"
+  ],
+  "IPEX_LLM_Model_Return": {
+    "__init__": [
+      "self",
+      "model",
+      "optimized_model"
+    ],
+    "forward": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "path"
+    ]
+  },
+  "prepare_inputs_for_generation": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask"
+  ],
+  "prepare_inputs_for_generation_gptj": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "inputs_embeds"
+  ],
+  "prepare_inputs_for_generation_chatglm": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "position_ids",
+    "use_cache",
+    "is_first_forward"
+  ],
+  "prepare_inputs_for_generation_opt_mpt": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds"
+  ],
+  "prepare_inputs_for_generation_t5": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "head_mask",
+    "decoder_head_mask",
+    "decoder_attention_mask",
+    "cross_attn_head_mask",
+    "use_cache",
+    "encoder_outputs"
+  ],
+  "prepare_inputs_for_generation_llama": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds"
+  ],
+  "prepare_inputs_for_generation_mllama": [
+    "self",
+    "input_ids",
+    "inputs_embeds",
+    "attention_mask",
+    "position_ids",
+    "pixel_values",
+    "aspect_ratio_ids",
+    "aspect_ratio_mask",
+    "cross_attention_mask",
+    "past_key_values",
+    "use_cache",
+    "cache_position",
+    "num_logits_to_keep"
+  ],
+  "prepare_inputs_for_generation_gptbigcode": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "inputs_embeds"
+  ],
+  "prepare_inputs_labels_for_multimodal_llavallama": [
+    "self",
+    "input_ids",
+    "attention_mask",
+    "past_key_values",
+    "images",
+    "labels"
+  ],
+  "prepare_inputs_for_generation_gptneox": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds"
+  ],
+  "prepare_inputs_for_generation_git": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "use_cache"
+  ],
+  "prepare_inputs_for_generation_llava": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "inputs_embeds",
+    "pixel_values",
+    "attention_mask"
+  ],
+  "_postprocess_outputs_whisper": [
+    "self",
+    "seek_outputs",
+    "decoder_input_ids",
+    "return_token_timestamps",
+    "generation_config",
+    "is_shortform"
+  ],
+  "_prepare_encoder_decoder_kwargs_for_generation": [
+    "self",
+    "inputs_tensor",
+    "model_kwargs",
+    "model_input_name",
+    "generation_config"
+  ],
+  "_update_causal_mask": [
+    "self",
+    "attention_mask",
+    "input_tensor",
+    "past_key_values"
+  ],
+  "prepare_inputs_for_generation_jamba": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds",
+    "output_router_logits",
+    "cache_position"
+  ],
+  "prepare_inputs_for_generation_phi3": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds",
+    "cache_position",
+    "position_ids",
+    "use_cache",
+    "num_logits_to_keep"
+  ],
+  "prepare_inputs_for_generation_phio": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "attention_mask",
+    "inputs_embeds",
+    "input_image_embeds",
+    "image_sizes",
+    "image_attention_mask",
+    "input_audio_embeds",
+    "audio_embed_sizes",
+    "audio_attention_mask",
+    "input_mode",
+    "cache_position",
+    "position_ids",
+    "use_cache",
+    "num_logits_to_keep"
+  ],
+  "prepare_inputs_for_generation_whisper": [
+    "self",
+    "decoder_input_ids",
+    "past_key_values",
+    "use_cache",
+    "encoder_outputs",
+    "attention_mask",
+    "decoder_attention_mask",
+    "cache_position"
+  ],
+  "_IPEXlinearSiluRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearAddRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "_IPEXlinearAddAddRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  "_IPEXlinearMulRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "_IPEXlinearNewGeluRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearGeluRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearReluRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXConcatLinearRef": {
+    "__init__": [
+      "self",
+      "linear_list"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "_IPEXlinearSiluMulRef": {
+    "__init__": [
+      "self",
+      "module_s",
+      "module_m"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "longrope": [
+    "inv_freq",
+    "max_seq_len_cached",
+    "max_position_embeddings",
+    "sin_cos",
+    "sin_cached",
+    "cos_cached",
+    "sin_cos_long",
+    "sin_cached_long",
+    "cos_cached_long",
+    "seq_len",
+    "rope_type"
+  ],
+  "yarn_find_correction_dim": [
+    "num_rotations",
+    "dim",
+    "base",
+    "max_position_embeddings"
+  ],
+  "yarn_linear_ramp_mask": [
+    "min",
+    "max",
+    "dim"
+  ],
+  "yarn_get_mscale": [
+    "scale",
+    "mscale"
+  ],
+  "yarn_find_correction_range": [
+    "low_rot",
+    "high_rot",
+    "dim",
+    "base",
+    "max_position_embeddings"
+  ],
+  "RotaryEmbedding": {
+    "__init__": [
+      "self",
+      "max_position_embeddings",
+      "dim",
+      "backbone",
+      "base",
+      "kwargs"
+    ],
+    "forward": [
+      "self",
+      "seq_len"
+    ]
+  },
+  "_IPEXRopeRef": {
+    "__init__": [
+      "self",
+      "max_position_embeddings",
+      "pos_embd_dim",
+      "base",
+      "backbone",
+      "kwargs"
+    ],
+    "rotate_every_two": [
+      "self",
+      "x"
+    ],
+    "apply_rotary_pos_emb_gptj": [
+      "self",
+      "tensor",
+      "sin",
+      "cos"
+    ],
+    "rotate_half": [
+      "self",
+      "x"
+    ],
+    "apply_rotary_pos_emb_llama": [
+      "self",
+      "x",
+      "cos",
+      "sin",
+      "position_ids"
+    ],
+    "apply_rotary_pos_emb_gptneox": [
+      "self",
+      "x",
+      "cos",
+      "sin",
+      "position_ids"
+    ],
+    "apply_rotary_pos_emb_baichuan": [
+      "self",
+      "x",
+      "cos",
+      "sin",
+      "position_ids"
+    ],
+    "apply_ref_rope": [
+      "self",
+      "x",
+      "position_ids",
+      "num_head",
+      "head_dim",
+      "offset",
+      "rotary_ndims",
+      "seq_len"
+    ],
+    "forward": [
+      "self",
+      "concat_x",
+      "position_ids",
+      "num_head",
+      "head_dim",
+      "offset",
+      "rotary_ndims",
+      "seq_len",
+      "num_concats"
+    ]
+  },
+  "_IPEXScaleDotProductRef": {
+    "__init__": [
+      "self",
+      "module",
+      "config"
+    ],
+    "_repeat_kv": [
+      "self",
+      "hidden_states",
+      "n_rep"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "scale_attn",
+      "layer_past",
+      "head_mask",
+      "attention_mask",
+      "alibi",
+      "add_casual_mask",
+      "seq_info",
+      "cutoff",
+      "vision"
+    ]
+  },
+  "_IPEXRMSNormRef": {
+    "__init__": [
+      "self",
+      "module"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "_IPEXPagedAttentionRef": {
+    "reshape_and_cache": [
+      "cls",
+      "key",
+      "value",
+      "key_cache",
+      "value_cache",
+      "slot_mapping"
+    ],
+    "single_query_cached_kv_attention": [
+      "cls",
+      "output",
+      "query",
+      "key_cache",
+      "value_cache",
+      "head_mapping",
+      "scale",
+      "block_tables",
+      "context_lens",
+      "block_size",
+      "max_context_len",
+      "alibi_slopes"
+    ]
+  },
+  "_GPTJAttention_forward": [
+    "self",
+    "hidden_states",
+    "layer_past",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_repeat_kv": [
+    "hidden_states",
+    "n_rep"
+  ],
+  "_LlamaAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_GPTNeoXAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "layer_past",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_OPTAttention_forward": [
+    "self",
+    "hidden_states",
+    "key_value_states",
+    "past_key_value",
+    "attention_mask",
+    "layer_head_mask",
+    "output_attentions"
+  ],
+  "_FalconAttention_forward": [
+    "self",
+    "hidden_states",
+    "alibi",
+    "attention_mask",
+    "layer_past",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_BloomAttention_forward": [
+    "self",
+    "hidden_states",
+    "residual",
+    "alibi",
+    "attention_mask",
+    "layer_past",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_CodeGenAttention_forward": [
+    "self",
+    "hidden_states",
+    "layer_past",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_BaichuanAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "past_key_value",
+    "position_ids",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_GLM2Attention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "rotary_pos_emb",
+    "kv_cache",
+    "use_cache"
+  ],
+  "_GPTBigCodeAttention_forward": [
+    "self",
+    "hidden_states",
+    "layer_past",
+    "attention_mask",
+    "head_mask",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_MistralAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_MixtralAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_MptAttention_forward": [
+    "self",
+    "hidden_states",
+    "position_bias",
+    "past_key_value",
+    "attention_mask"
+  ],
+  "_PhiOAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache",
+    "cache_position"
+  ],
+  "_relative_position_bucket": [
+    "self",
+    "relative_position",
+    "bidirectional",
+    "num_buckets",
+    "max_distance"
+  ],
+  "_T5Attention_forward": [
+    "self",
+    "hidden_states",
+    "mask",
+    "key_value_states",
+    "position_bias",
+    "past_key_value",
+    "layer_head_mask",
+    "query_length",
+    "use_cache",
+    "output_attentions"
+  ],
+  "_StableLMEpochAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_QWen3Attention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_QWen2Attention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_QWenAttention_forward": [
+    "self",
+    "hidden_states",
+    "rotary_pos_emb_list",
+    "layer_past",
+    "attention_mask",
+    "head_mask",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_GitSelfAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "head_mask",
+    "past_key_value",
+    "output_attentions",
+    "pixel_values_present"
+  ],
+  "_GitVisionAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "output_attentions"
+  ],
+  "_CLIPAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "causal_attention_mask",
+    "output_attentions"
+  ],
+  "_YuanAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_PhiAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "repeat_kv": [
+    "hidden_states",
+    "n_rep"
+  ],
+  "_Phi3Attention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_WhisperAttention_forward": [
+    "self",
+    "hidden_states",
+    "key_value_states",
+    "past_key_value",
+    "attention_mask",
+    "layer_head_mask",
+    "output_attentions"
+  ],
+  "_JambaAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_DeepseekV2Attention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_create_attention_mask_for_git": [
+    "self",
+    "tgt",
+    "memory",
+    "tgt_mask",
+    "past_key_values_length",
+    "memory_key_padding_mask"
+  ],
+  "_MllamaTextCrossAttention_forward": [
+    "self",
+    "hidden_states",
+    "cross_attention_states",
+    "past_key_value",
+    "attention_mask",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_SiglipAttention_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "output_attentions"
+  ],
+  "_ConformerAttention_forward": [
+    "self",
+    "hidden_states",
+    "pos_k",
+    "pos_v",
+    "mask",
+    "relative_attention_bias"
+  ],
+  "_IPEXAttentionRef": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "sdp_module_ref",
+      "distributed"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_past",
+      "past_key_value",
+      "key_value_states",
+      "kv_caches",
+      "attention_mask",
+      "layer_head_mask",
+      "position_ids",
+      "head_mask",
+      "use_cache",
+      "output_attentions",
+      "alibi",
+      "residual",
+      "rotary_pos_emb",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "position_bias",
+      "query_length",
+      "mask",
+      "pixel_values_present",
+      "vision",
+      "cross_attention_states",
+      "cache_position"
+    ]
+  },
+  "_reorder_cache": [
+    "self",
+    "past_key_values",
+    "beam_idx"
+  ],
+  "_convert_cache_to_standard_format": [
+    "self",
+    "past_key_value",
+    "batch_size"
+  ],
+  "_convert_to_rw_cache": [
+    "self",
+    "past_key_value"
+  ],
+  "_make_causal_mask": [
+    "input_ids_shape",
+    "dtype",
+    "device",
+    "past_key_values_length"
+  ],
+  "_expand_mask": [
+    "mask",
+    "dtype",
+    "tgt_len"
+  ],
+  "_prepare_decoder_attention_mask": [
+    "self",
+    "attention_mask",
+    "input_shape",
+    "inputs_embeds",
+    "past_key_values_length"
+  ],
+  "_make_causal_mask_falcon": [
+    "input_ids_shape",
+    "device",
+    "past_key_values_length"
+  ],
+  "_expand_mask_falcon": [
+    "mask",
+    "past_key_values_length"
+  ],
+  "_prepare_attn_mask_falcon": [
+    "self",
+    "attention_mask",
+    "input_shape",
+    "past_key_values_length"
+  ],
+  "_get_interleave": [
+    "n"
+  ],
+  "_gen_baichuan_alibi_mask": [
+    "n_head",
+    "max_pos"
+  ],
+  "GLM2_get_masks": [
+    "self",
+    "input_ids",
+    "past_key_values",
+    "padding_mask"
+  ],
+  "_to_4d": [
+    "self",
+    "attention_mask_2d",
+    "query_length",
+    "key_value_length",
+    "dtype"
+  ],
+  "LlamaDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "MllamaVisionEncoderLayer_forward": [
+    "self",
+    "hidden_state",
+    "attention_mask",
+    "output_attentions"
+  ],
+  "SiglipEncoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "output_attentions"
+  ],
+  "ConformerEncoderLayer_forward": [
+    "self",
+    "x",
+    "pos_k",
+    "pos_v",
+    "mask",
+    "relative_attention_bias"
+  ],
+  "OPTDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "layer_head_mask",
+    "output_attentions",
+    "use_cache",
+    "past_key_value"
+  ],
+  "GPTJBlock_forward": [
+    "self",
+    "hidden_states",
+    "layer_past",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "FalconDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "alibi",
+    "attention_mask",
+    "layer_past",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "BloomBlock_forward": [
+    "self",
+    "hidden_states",
+    "alibi",
+    "attention_mask",
+    "layer_past",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "BaichuanDecoder_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "GLMBlock_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "rotary_pos_emb",
+    "kv_caches",
+    "use_cache"
+  ],
+  "GPTBigCodeBlock_forward": [
+    "self",
+    "hidden_states",
+    "layer_past",
+    "attention_mask",
+    "head_mask",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "T5Block_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_bias",
+    "encoder_hidden_states",
+    "encoder_attention_mask",
+    "encoder_decoder_position_bias",
+    "layer_head_mask",
+    "cross_attn_layer_head_mask",
+    "past_key_value",
+    "use_cache",
+    "output_attentions",
+    "return_dict"
+  ],
+  "MistralDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "MixtralDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "output_router_logits",
+    "use_cache"
+  ],
+  "MptBlock_forward": [
+    "self",
+    "hidden_states",
+    "position_bias",
+    "attention_mask",
+    "layer_past",
+    "use_cache",
+    "output_attentions"
+  ],
+  "StableLMEpochDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "QWenBlock_forward": [
+    "self",
+    "hidden_states",
+    "rotary_pos_emb_list",
+    "layer_past",
+    "attention_mask",
+    "head_mask",
+    "use_cache",
+    "output_attentions"
+  ],
+  "Qwen2DecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "GitLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "head_mask",
+    "past_key_value",
+    "output_attentions",
+    "pixel_values_present"
+  ],
+  "GitVisionEncoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "output_attentions"
+  ],
+  "CLIPEncoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "causal_attention_mask",
+    "output_attentions"
+  ],
+  "YuanDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "PhiDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "output_attentions",
+    "use_cache",
+    "past_key_value"
+  ],
+  "Phi3DecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "output_attentions",
+    "use_cache",
+    "past_key_value"
+  ],
+  "PhiODecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache",
+    "cache_position"
+  ],
+  "WhisperEncoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "layer_head_mask",
+    "output_attentions"
+  ],
+  "MllamaCrossAttentionDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "cross_attention_states",
+    "cross_attention_mask",
+    "attention_mask",
+    "full_text_row_masked_out_mask",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "GPTNeoXLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "head_mask",
+    "use_cache",
+    "layer_past",
+    "output_attentions"
+  ],
+  "Maira2ViTDecoderLayer_forward": [
+    "self",
+    "x"
+  ],
+  "Maira2MultiModalProjector_forward": [
+    "self",
+    "x"
+  ],
+  "JambaAttentionDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "output_router_logits",
+    "use_cache",
+    "cache_position"
+  ],
+  "JambaMambaDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "output_router_logits",
+    "use_cache",
+    "cache_position"
+  ],
+  "Qwen3MoeDecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "output_router_logits",
+    "use_cache"
+  ],
+  "moe_infer": [
+    "self",
+    "x",
+    "topk_ids",
+    "topk_weight"
+  ],
+  "DeepseekV2DecoderLayer_forward": [
+    "self",
+    "hidden_states",
+    "attention_mask",
+    "position_ids",
+    "past_key_value",
+    "output_attentions",
+    "use_cache"
+  ],
+  "_IPEXDecoderLayerRef": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "distributed"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "cross_attention_states",
+      "cross_attention_mask",
+      "full_text_row_masked_out_mask",
+      "layer_past",
+      "attention_mask",
+      "layer_head_mask",
+      "kv_cache",
+      "position_ids",
+      "head_mask",
+      "use_cache",
+      "output_attentions",
+      "past_key_value",
+      "alibi",
+      "rotary_pos_emb",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "position_bias",
+      "encoder_decoder_position_bias",
+      "cross_attn_layer_head_mask",
+      "output_router_logits",
+      "pixel_values_present",
+      "vision",
+      "cache_position"
+    ]
+  },
+  "_IPEXEncoderLayerRef": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "distributed"
+    ],
+    "forward": [
+      "self",
+      "hidden_state",
+      "attention_mask",
+      "output_attentions"
+    ]
+  },
+  "_IPEXlinearFusionCPU": {
+    "__init__": [
+      "self",
+      "linear",
+      "tpp",
+      "woq"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "_IPEXlinearSiluCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearReluCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearMulCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "_IPEXlinearAddCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "_IPEXlinearAddAddCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  "_IPEXlinearNewGeluCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearGeluCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXConcatLinearCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearSiluMulCPU": {
+    "__init__": [
+      "self",
+      "module_s",
+      "module_m",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXlinearSiluAndMulCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "_IPEXGatedMLPMOECPU": {
+    "__init__": [
+      "self",
+      "W13",
+      "W2",
+      "W3",
+      "use_prepack"
+    ],
+    "grouped_topk": [
+      "self",
+      "hidden_states",
+      "gating_output",
+      "topk",
+      "renormalize",
+      "num_expert_group",
+      "topk_group",
+      "scoring_func",
+      "e_score_correction_bias"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "use_grouped_topk",
+      "top_k",
+      "router_logits",
+      "renormalize",
+      "topk_group",
+      "num_expert_group",
+      "custom_routing_function",
+      "scoring_func",
+      "e_score_correction_bias"
+    ]
+  },
+  "_IPEXRopeCPU": {
+    "__init__": [
+      "self",
+      "max_position_embeddings",
+      "pos_embd_dim",
+      "base",
+      "backbone",
+      "kwargs"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "position_ids",
+      "num_head",
+      "head_dim",
+      "offset",
+      "rotary_ndims",
+      "seq_len",
+      "num_concats"
+    ],
+    "rotary_embedding": [
+      "cls",
+      "query",
+      "key",
+      "sin",
+      "cos",
+      "rotary_dim",
+      "rotary_half",
+      "position_ids"
+    ]
+  },
+  "_IPEXScaleDotProductCPU": {
+    "__init__": [
+      "self",
+      "text_max_length"
+    ],
+    "apply_function": [
+      "cls",
+      "query",
+      "key",
+      "value",
+      "scale_attn",
+      "layer_past",
+      "head_mask",
+      "attention_mask",
+      "alibi",
+      "add_casual_mask",
+      "seq_info",
+      "text_max_length",
+      "cutoff",
+      "vision",
+      "cache_type"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "scale_attn",
+      "layer_past",
+      "head_mask",
+      "attention_mask",
+      "alibi",
+      "add_casual_mask",
+      "seq_info",
+      "cutoff",
+      "vision",
+      "cache_type"
+    ]
+  },
+  "_IPEXRMSNormCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "tpp",
+      "woq"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "apply_function": [
+      "cls",
+      "hidden_states",
+      "weight",
+      "eps"
+    ]
+  },
+  "_IPEXFastLayerNormCPU": {
+    "__init__": [
+      "self",
+      "normalized_shape",
+      "eps",
+      "weight",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "apply_function": [
+      "cls",
+      "hidden_states",
+      "normalized_shape",
+      "weight",
+      "bias",
+      "eps"
+    ]
+  },
+  "_IPEXPagedAttentionCPU": {
+    "reshape_and_cache": [
+      "cls",
+      "key",
+      "value",
+      "key_cache",
+      "value_cache",
+      "slot_mapping",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale"
+    ],
+    "reshape_and_cache_flash": [
+      "cls",
+      "key",
+      "value",
+      "key_cache",
+      "value_cache",
+      "slot_mapping",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale"
+    ],
+    "single_query_cached_kv_attention": [
+      "cls",
+      "output",
+      "query",
+      "key_cache",
+      "value_cache",
+      "head_mapping",
+      "scale",
+      "block_tables",
+      "context_lens",
+      "block_size",
+      "max_context_len",
+      "alibi_slopes",
+      "window_size",
+      "k_scale",
+      "v_scale",
+      "softcap"
+    ],
+    "flash_attn_varlen_func": [
+      "cls",
+      "output",
+      "query",
+      "k_cache",
+      "v_cache",
+      "cu_seq_lens_q",
+      "cu_seq_lens_kv",
+      "max_seq_len_q",
+      "max_seq_len_kv",
+      "scale",
+      "is_causal",
+      "block_table",
+      "alibi_slopes",
+      "window_size_left",
+      "window_size_right",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale",
+      "softcap"
+    ]
+  },
+  "_IPEXVarlenScaledDotProductCPU": {
+    "__init__": [
+      "self"
+    ],
+    "repeat_kv": [
+      "cls",
+      "x",
+      "n_rep"
+    ],
+    "apply_function": [
+      "cls",
+      "query",
+      "key",
+      "value",
+      "out",
+      "seqlen_q",
+      "seqlen_k",
+      "alibi_slopes",
+      "max_seqlen_q",
+      "max_seqlen_k",
+      "pdropout",
+      "softmax_scale",
+      "zero_tensors",
+      "is_causal",
+      "return_softmax",
+      "gen_",
+      "window_size_left",
+      "window_size_right",
+      "softcap"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "out",
+      "seqlen_q",
+      "seqlen_k",
+      "alibi_slopes",
+      "max_seqlen_q",
+      "max_seqlen_k",
+      "pdropout",
+      "softmax_scale",
+      "zero_tensors",
+      "is_causal",
+      "return_softmax",
+      "gen_",
+      "window_size_left",
+      "window_size_right",
+      "softcap"
+    ]
+  },
+  "_IPEXMambaMixerCPU": {
+    "causal_conv1d_fn": [
+      "cls",
+      "x",
+      "weight",
+      "bias",
+      "initial_states",
+      "return_final_states",
+      "final_states_out",
+      "activation"
+    ],
+    "causal_conv1d_update": [
+      "cls",
+      "x",
+      "conv_state",
+      "weight",
+      "bias",
+      "activation",
+      "cache_seqlens"
+    ],
+    "selective_state_update": [
+      "cls",
+      "state",
+      "x",
+      "dt",
+      "A",
+      "B",
+      "C",
+      "D",
+      "z",
+      "dt_bias",
+      "dt_softplus"
+    ],
+    "selective_scan_fn": [
+      "cls",
+      "u",
+      "delta",
+      "A",
+      "B",
+      "C",
+      "D",
+      "z",
+      "delta_bias",
+      "delta_softplus",
+      "return_last_state"
+    ]
+  },
+  "add_rms_norm_cpu": [
+    "add",
+    "x",
+    "weight",
+    "bias",
+    "eps",
+    "add_back"
+  ],
+  "add_layer_norm_cpu": [
+    "add",
+    "x",
+    "weight",
+    "bias",
+    "eps",
+    "add_back"
+  ],
+  "silu_mul_cpu": [
+    "x",
+    "y",
+    "out"
+  ],
+  "gelu_mul_cpu": [
+    "x",
+    "y",
+    "out",
+    "approximate"
+  ],
+  "bgmv_shrink_cpu": [
+    "inputs",
+    "lora_a_weights",
+    "output_tensor",
+    "lora_indices_tensor",
+    "scaling"
+  ],
+  "bgmv_expand_cpu": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "lora_indices_tensor",
+    "add_inputs"
+  ],
+  "bgmv_expand_slice_cpu": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "lora_indices_tensor",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "sgmv_shrink_cpu": [
+    "inputs",
+    "lora_a_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "scaling"
+  ],
+  "sgmv_expand_cpu": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "add_inputs"
+  ],
+  "sgmv_expand_slice_cpu": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "get_int_from_env": [
+    "env_keys",
+    "default"
+  ],
+  "USE_SHM_ALLREDUCE": [],
+  "all_reduce_cpu": [
+    "t",
+    "op",
+    "group",
+    "async_op"
+  ],
+  "all_gather_cpu": [
+    "t_list",
+    "t",
+    "group",
+    "async_op"
+  ],
+  "all_gather_into_tensor_cpu": [
+    "output_tensor",
+    "input_tensor",
+    "group",
+    "async_op"
+  ],
+  "_IPEXAttentionCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "tpp",
+      "woq"
+    ]
+  },
+  "woq_quant_and_pack": [
+    "weight",
+    "group_size",
+    "dtype",
+    "lowp_mode",
+    "sym_quant_weight"
+  ],
+  "woq_pack": [
+    "plain_qweight",
+    "plain_scales",
+    "plain_zp",
+    "group_size",
+    "dtype",
+    "lowp_mode"
+  ],
+  "_IPEXDecoderLayerCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "tpp",
+      "woq"
+    ]
+  },
+  "_IPEXEncoderLayerCPU": {
+    "__init__": [
+      "self",
+      "module",
+      "config",
+      "tpp",
+      "woq"
+    ]
+  },
+  "concat_linear": [
+    "model",
+    "inplace"
+  ],
+  "_concat_linear": [
+    "model",
+    "inplace"
+  ],
+  "_get_device_from_graph_module": [
+    "graph_module"
+  ],
+  "ipex": [
+    "graph_module",
+    "example_inputs"
+  ],
+  "IPEX_WEIGHT_PREPACK_MODULE_CPU": [],
+  "IPEX_GEMM_MODULE_CPU": [],
+  "IPEX_WEIGHT_CONVERT_MODULE_CPU": [
+    "inference",
+    "dtype"
+  ],
+  "_should_prepack": [
+    "module",
+    "is_training",
+    "is_xpu"
+  ],
+  "get_shared_parameter_status": [
+    "module",
+    "shared_p"
+  ],
+  "remove_empty_tensor": [
+    "out"
+  ],
+  "found_wrapper": [
+    "parameter",
+    "params_attr"
+  ],
+  "patch_state_dict": [
+    "model",
+    "params_attr",
+    "mode"
+  ],
+  "ParameterWrapper": {
+    "__init__": [
+      "self"
+    ],
+    "can_cast_inference": [
+      "self",
+      "dtype"
+    ],
+    "cast_for_inference": [
+      "self",
+      "dtype"
+    ],
+    "can_cast_training": [
+      "self",
+      "dtype"
+    ],
+    "cast_for_training": [
+      "self",
+      "dtype",
+      "split"
+    ],
+    "_training_cast_to_fp32": [
+      "self"
+    ],
+    "_unpack_cast_to_fp32": [
+      "self"
+    ],
+    "can_prepack": [
+      "self",
+      "module",
+      "is_training"
+    ],
+    "prepack": [
+      "self",
+      "module",
+      "is_training"
+    ],
+    "pack_weight": [
+      "self",
+      "use_dnnl"
+    ],
+    "conv_prepack": [
+      "self",
+      "module"
+    ],
+    "conv_transpose_prepack": [
+      "self",
+      "module"
+    ],
+    "linear_prepack": [
+      "self",
+      "module",
+      "is_training"
+    ],
+    "load_cast_and_prepack": [
+      "self",
+      "module",
+      "param"
+    ],
+    "load_cast": [
+      "self",
+      "param"
+    ],
+    "load": [
+      "self",
+      "module",
+      "param"
+    ]
+  },
+  "logger": [],
+  "USE_LOW_PREC_PARAMS": [],
+  "TPPLinear_weight_prepack": [
+    "m",
+    "bk",
+    "bc",
+    "layer_dtype"
+  ],
+  "fallback_ic_shape_list": [],
+  "fallback_oc_shape_list": [],
+  "Apply_TPPLinear_weight_prepack": [
+    "m",
+    "dtype",
+    "device"
+  ],
+  "block": [
+    "model"
+  ],
+  "may_import_deepspeed_modules": [],
+  "installed_pkg": [],
+  "_all_reduce_and_bias_add": [
+    "mp_group",
+    "original_bias",
+    "output"
+  ],
+  "_pre_ipex_gemm": [
+    "input",
+    "world_size",
+    "rank"
+  ],
+  "_ipex_module_load_from_state_dict_": [
+    "self",
+    "state_dict",
+    "prefix"
+  ],
+  "_IPEXPrepackModule": {
+    "_get_forward_weight": [
+      "self"
+    ],
+    "_get_forward_bias": [
+      "self"
+    ]
+  },
+  "_IPEXConvNd": {
+    "__constants__": [],
+    "__init__": [
+      "self"
+    ],
+    "_save_to_state_dict": [
+      "self",
+      "destination",
+      "prefix",
+      "keep_vars"
+    ],
+    "_load_from_state_dict": [
+      "self",
+      "state_dict",
+      "prefix",
+      "local_metadata",
+      "strict",
+      "missing_keys",
+      "unexpected_keys",
+      "error_msgs"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXConv1d": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_IPEXConv2d": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_IPEXConv3d": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "choose_tpp_linear_weight": [
+    "x",
+    "weight",
+    "weight_for_large_batch"
+  ],
+  "_IPEXLinear": {
+    "__init__": [
+      "self"
+    ],
+    "maybe_block_params": [
+      "self"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ],
+    "post_ipex_gemm": [
+      "self",
+      "output"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "_save_to_state_dict": [
+      "self",
+      "destination",
+      "prefix",
+      "keep_vars"
+    ],
+    "_load_from_state_dict": [
+      "self",
+      "state_dict",
+      "prefix",
+      "local_metadata",
+      "strict",
+      "missing_keys",
+      "unexpected_keys",
+      "error_msgs"
+    ]
+  },
+  "_IPEXLinearAllreduce": {
+    "__init__": [
+      "self"
+    ],
+    "post_ipex_gemm": [
+      "self",
+      "output"
+    ]
+  },
+  "_IPEXLmHeadLinearAllreduce": {
+    "__init__": [
+      "self"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ],
+    "post_ipex_gemm": [
+      "self",
+      "output"
+    ]
+  },
+  "_IPEXConvTransposeNd": {
+    "__constants__": [],
+    "__init__": [
+      "self"
+    ],
+    "_save_to_state_dict": [
+      "self",
+      "destination",
+      "prefix",
+      "keep_vars"
+    ],
+    "_load_from_state_dict": [
+      "self",
+      "state_dict",
+      "prefix",
+      "local_metadata",
+      "strict",
+      "missing_keys",
+      "unexpected_keys",
+      "error_msgs"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_IPEXConvTranspose2d": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_IPEXConvTranspose3d": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "is_with_hook_on_weight_or_bias": [
+    "module"
+  ],
+  "weight_prepack_with_ipex": [
+    "model",
+    "optimizer",
+    "params_attr",
+    "device_type"
+  ],
+  "record_input_shape_for_prepack": [
+    "module",
+    "sample_input"
+  ],
+  "weight_dtype_convert_with_ipex": [
+    "model",
+    "optimizer",
+    "params_attr",
+    "master_weight_split",
+    "dtype"
+  ],
+  "_LSTM": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "hx"
+    ]
+  },
+  "replace_params_in_optimizer": [
+    "optimizer",
+    "param_dict"
+  ],
+  "replace_lstm_with_ipex_lstm": [
+    "model",
+    "optimizer"
+  ],
+  "replace_customized_linear_with_linear": [
+    "model"
+  ],
+  "replace_dropout_with_identity": [
+    "model"
+  ],
+  "convert_model_data_type": [
+    "model",
+    "dtype"
+  ],
+  "awq_reverse_reorder_int_tensor": [
+    "int_tensor",
+    "bits"
+  ],
+  "_convert_awq_scales_qzeros": [
+    "scales",
+    "qzeros",
+    "bits"
+  ],
+  "unpack_awq_weight": [
+    "awq_qweight",
+    "awq_qzeros",
+    "awq_scales",
+    "bits",
+    "group_size"
+  ],
+  "prepack_awq_weight": [
+    "awq_qweight",
+    "awq_qzeros",
+    "awq_scales",
+    "bits",
+    "group_size"
+  ],
+  "_convert_gptq_scales_qzeros": [
+    "scales",
+    "qzeros",
+    "inplace"
+  ],
+  "_convert_optimum_format_to_desired": [
+    "qweight",
+    "scales",
+    "qzeros",
+    "inplace"
+  ],
+  "_numpy": [
+    "x",
+    "force"
+  ],
+  "__format__": [
+    "self",
+    "format_spec"
+  ],
+  "WoqWeightFormat": {
+    "PLAIN_FORMAT": [],
+    "GPTQ_FORMAT": [],
+    "AWQ_FORMAT": []
+  },
+  "WeightOnlyQuantizedLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias_",
+      "dtype"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ],
+    "post_ipex_gemm": [
+      "self",
+      "output"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "_get_name": [
+      "self"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "from_float": [
+      "cls",
+      "mod",
+      "scales",
+      "zero_points"
+    ],
+    "from_float_and_qweight": [
+      "cls",
+      "mod",
+      "qweight",
+      "dtype",
+      "scales",
+      "zero_points",
+      "bias",
+      "group_size",
+      "g_idx",
+      "weight_format"
+    ],
+    "from_float_and_int4_weight": [
+      "cls",
+      "mod",
+      "qweight",
+      "scales",
+      "zero_points",
+      "bias",
+      "group_size",
+      "g_idx",
+      "weight_format"
+    ],
+    "from_int4_weight": [
+      "cls",
+      "qweight",
+      "scales",
+      "zero_points",
+      "in_features",
+      "out_features",
+      "quant_method",
+      "qconfig",
+      "bias",
+      "group_size",
+      "g_idx"
+    ],
+    "from_weight": [
+      "cls",
+      "qweight",
+      "scales",
+      "zero_points",
+      "in_features",
+      "out_features",
+      "qconfig",
+      "bias",
+      "group_size",
+      "g_idx",
+      "quant_method",
+      "dtype"
+    ],
+    "_init_cls": [
+      "cls",
+      "mod",
+      "dtype",
+      "qweight",
+      "scales",
+      "zero_points",
+      "bias",
+      "g_idx",
+      "group_size",
+      "lowp_mode",
+      "act_quant_mode",
+      "cache_weight_for_large_batch",
+      "is_from_int4_weight",
+      "weight_format"
+    ]
+  },
+  "IpexWoqLinearAllreduce": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "mp_group",
+      "bias_value",
+      "bias_",
+      "dtype"
+    ],
+    "_get_name": [
+      "self"
+    ],
+    "_init_from_mod": [
+      "cls",
+      "mod",
+      "dtype"
+    ],
+    "_init_cls": [
+      "cls",
+      "mod",
+      "dtype",
+      "qweight",
+      "scales",
+      "zero_points",
+      "bias",
+      "g_idx",
+      "group_size",
+      "lowp_mode",
+      "act_quant_mode",
+      "cache_weight_for_large_batch",
+      "is_from_int4_weight",
+      "weight_format"
+    ],
+    "post_ipex_gemm": [
+      "self",
+      "output"
+    ]
+  },
+  "IpexWoqLmHeadLinearAllreduce": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "mp_group",
+      "rank",
+      "world_size",
+      "bias_value",
+      "bias_",
+      "dtype"
+    ],
+    "_get_name": [
+      "self"
+    ],
+    "_init_from_mod": [
+      "cls",
+      "mod",
+      "dtype"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ]
+  },
+  "PoolingMode": {
+    "SUM": [],
+    "MEAN": []
+  },
+  "SGDArgs": {},
+  "AdaGradArgs": {},
+  "EmbeddingSpec": {},
+  "merged_embeddingbag": [
+    "weights",
+    "indices",
+    "offsets",
+    "pooling_mode",
+    "include_last_offset"
+  ],
+  "merged_embeddingbag_with_cat": [
+    "weights",
+    "indices",
+    "offsets",
+    "dense_feature"
+  ],
+  "merged_embeddingbag_sgd": [
+    "weights",
+    "indices",
+    "offsets",
+    "pooling_mode",
+    "include_last_offset",
+    "sgd_args"
+  ],
+  "merged_embeddingbag_adagrad": [
+    "weights",
+    "indices",
+    "offsets",
+    "pooling_mode",
+    "include_last_offset",
+    "adagrad_args"
+  ],
+  "MergedEmbeddingBagFunc": {
+    "forward": [
+      "ctx",
+      "indices",
+      "offsets",
+      "pooling_mode",
+      "include_last_offset"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "MergedEmbeddingBagSGDFunc": {
+    "forward": [
+      "ctx",
+      "indices",
+      "offsets",
+      "pooling_mode",
+      "include_last_offset",
+      "sgd_args"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "MergedEmbeddingBagAdaGradFunc": {
+    "forward": [
+      "ctx",
+      "indices",
+      "offsets",
+      "pooling_mode",
+      "include_last_offset",
+      "adagrad_args"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "MergedEmbeddingBag": {
+    "__init__": [
+      "self",
+      "embedding_specs"
+    ],
+    "from_embeddingbag_list": [
+      "cls",
+      "tables"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "offsets"
+    ]
+  },
+  "MergedEmbeddingBagWithSGD": {
+    "__init__": [
+      "self",
+      "embedding_specs",
+      "lr",
+      "weight_decay"
+    ],
+    "init_sgd_args": [
+      "self",
+      "lr",
+      "weight_decay",
+      "bf16_trail"
+    ],
+    "to_bfloat16_train": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "offsets"
+    ],
+    "from_embeddingbag_list": [
+      "cls",
+      "tables",
+      "lr",
+      "weight_decay"
+    ]
+  },
+  "MergedEmbeddingBagWithAdaGrad": {
+    "__init__": [
+      "self",
+      "embedding_specs",
+      "lr",
+      "eps"
+    ],
+    "init_adagrad_args": [
+      "self",
+      "lr",
+      "eps",
+      "bf16_trail",
+      "hessian"
+    ],
+    "to_bfloat16_train": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "offsets"
+    ],
+    "from_embeddingbag_list": [
+      "cls",
+      "tables",
+      "lr",
+      "eps"
+    ]
+  },
+  "MergedEmbeddingBagWithCat": {
+    "__init__": [
+      "self",
+      "embedding_specs"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "offsets",
+      "dense_feature"
+    ]
+  },
+  "sparse_all2all": [
+    "world_size",
+    "send_idx",
+    "send_buf",
+    "send_ofs"
+  ],
+  "DistMergeEmbeddingBagFunc": {
+    "forward": [
+      "ctx",
+      "weight",
+      "row_offset",
+      "indices",
+      "offsets",
+      "rank",
+      "world_size",
+      "include_last_offsets",
+      "adagrad_args"
+    ],
+    "backward": [
+      "ctx",
+      "grad"
+    ]
+  },
+  "DistMergeEmbeddingBagWithAdaGrad": {
+    "__init__": [
+      "self",
+      "embedding_specs",
+      "lr",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "offset"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "_get_function_from_device": [
+    "device_type",
+    "f"
+  ],
+  "init_process_group": [
+    "backend",
+    "init_method",
+    "timeout",
+    "world_size",
+    "rank",
+    "store",
+    "group_name",
+    "pg_options",
+    "device_id"
+  ],
+  "all_reduce": [
+    "tensor",
+    "op",
+    "group",
+    "async_op"
+  ],
+  "all_gather": [
+    "tensor_list",
+    "tensor",
+    "group",
+    "async_op"
+  ],
+  "all_gather_into_tensor": [
+    "output_tensor",
+    "input_tensor",
+    "group",
+    "async_op"
+  ],
+  "GPTQ_LOWP_CHECKPOINT_CONFIG": [],
+  "AWQ_LOWP_CHECKPOINT_CONFIG": [],
+  "RTN_LOWP_CHECKPOINT_CONFIG": [],
+  "FP8_LOWP_CHECKPOINT_CONFIG": [],
+  "INT8_LOWP_CHECKPOINT_CONFIG": [],
+  "_is_woq_qconfig": [
+    "qconfig_mapping"
+  ],
+  "_woq_enable_weight_cache_for_large_batch": [
+    "qconfig_mapping"
+  ],
+  "_gptq_lowp_checkpoint_config": [],
+  "_awq_lowp_checkpoint_config": [],
+  "_fp8_lowp_checkpoint_config": [],
+  "_get_keys_from_config": [
+    "checkpoint_config"
+  ],
+  "_get_linear_parameters": [
+    "attr_name",
+    "state_dict",
+    "checkpoint_config",
+    "quant_config"
+  ],
+  "_convert_woq_with_low_precision_checkpoint": [
+    "model",
+    "qconfig_mapping",
+    "low_precision_checkpoint",
+    "quant_config",
+    "inplace"
+  ],
+  "_is_syngraph_available": [],
+  "format_str": [],
+  "WarningType": {
+    "NotSupported": [],
+    "MissingDependency": [],
+    "MissingArgument": [],
+    "WrongArgument": [],
+    "DeprecatedArgument": [],
+    "AmbiguousArgument": []
+  },
+  "UserFixWarning": [],
+  "WarningType2Prefix": [],
+  "_Logger": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "warning": [
+      "self",
+      "msg"
+    ]
+  },
+  "warn_if_user_explicitly_set": [
+    "user_have_set",
+    "msg"
+  ],
+  "warning_once": [
+    "self"
+  ],
+  "set_logging_level": [
+    "level"
+  ],
+  "tensor_to_channels_last_1d": [
+    "t"
+  ],
+  "to_channels_last_1d": [
+    "t"
+  ],
+  "is_contiguous_channels_last_1d": [
+    "input"
+  ],
+  "Lamb": {
+    "__init__": [
+      "self",
+      "params",
+      "lr",
+      "betas",
+      "eps",
+      "weight_decay",
+      "fused"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "create_optimizer_lars": [
+    "model",
+    "lr",
+    "momentum",
+    "weight_decay",
+    "bn_bias_separately",
+    "epsilon"
+  ],
+  "Lars": {
+    "__init__": [
+      "self",
+      "params",
+      "lr",
+      "momentum",
+      "eeta",
+      "weight_decay",
+      "epsilon"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "BN_CLS": [],
+  "get_parameters_from_cls": [
+    "module",
+    "cls_"
+  ],
+  "get_norm_parameters": [
+    "module"
+  ],
+  "get_bias_parameters": [
+    "module",
+    "exclude_func"
+  ],
+  "get_norm_bias_parameters": [
+    "module"
+  ],
+  "get_common_parameters": [
+    "module",
+    "exclude_func"
+  ],
+  "IPEX_FUSED_OPTIMIZER_LIST_CPU": [],
+  "IPEX_FUSED_OPTIMIZER_LIST_XPU": [],
+  "OPTIMIZER_FUSED_STEP_MAPPING_CPU": [],
+  "OPTIMIZER_FUSED_STEP_MAPPING_XPU": [],
+  "patch_zero_grad_for_master_weight_training": [
+    "optimizer"
+  ],
+  "patch_step_for_master_weight_training": [
+    "optimizer"
+  ],
+  "pack_state": [
+    "state",
+    "state_key",
+    "state_value",
+    "attr"
+  ],
+  "patch_load_state_dict": [
+    "optimizer"
+  ],
+  "pack_optimizer_states": [
+    "optimizer",
+    "param",
+    "attr"
+  ],
+  "optimizer_fusion": [
+    "optimizer",
+    "device_type",
+    "user_explict_fuse"
+  ],
+  "is_master_weight": [
+    "param",
+    "params_attr"
+  ],
+  "get_bf16_grad": [
+    "param",
+    "params_attr"
+  ],
+  "get_param2": [
+    "param",
+    "params_attr"
+  ],
+  "_make_sparse": [
+    "grad",
+    "grad_indices",
+    "values"
+  ],
+  "_single_tensor_adagrad": [
+    "params",
+    "params2",
+    "grads",
+    "state_sums",
+    "state_steps"
+  ],
+  "_multi_tensor_adagrad": [
+    "params",
+    "params2",
+    "grads",
+    "state_sums",
+    "state_steps"
+  ],
+  "adagrad": [
+    "params",
+    "params2",
+    "grads",
+    "state_sums",
+    "state_steps",
+    "has_sparse_grad",
+    "foreach"
+  ],
+  "adagrad_step": [
+    "self",
+    "closure"
+  ],
+  "_sgd_non_fused_micro_step": [
+    "param",
+    "grad",
+    "momentum_buffer",
+    "momentum",
+    "lr",
+    "weight_decay",
+    "dampening",
+    "nesterov"
+  ],
+  "_single_tensor_sgd": [
+    "params",
+    "params2",
+    "grads",
+    "momentum_buffer_list"
+  ],
+  "_single_tensor_lars": [
+    "params",
+    "params2",
+    "grads",
+    "momentum_buffer_list"
+  ],
+  "_multi_tensor_sgd": [
+    "params",
+    "params2",
+    "grads",
+    "momentum_buffer_list"
+  ],
+  "sgd": [
+    "params",
+    "params2",
+    "d_p_list",
+    "momentum_buffer_list",
+    "has_sparse_grad",
+    "foreach"
+  ],
+  "sgd_step": [
+    "self",
+    "closure"
+  ],
+  "lars": [
+    "params",
+    "params2",
+    "d_p_list",
+    "momentum_buffer_list",
+    "has_sparse_grad",
+    "foreach"
+  ],
+  "lars_step": [
+    "self",
+    "closure"
+  ],
+  "_lamb_fused_impl": [
+    "params",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "attr",
+    "state_steps",
+    "beta1",
+    "beta2",
+    "lr",
+    "weight_decay",
+    "eps"
+  ],
+  "_lamb_impl": [
+    "params",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "state_steps",
+    "beta1",
+    "beta2",
+    "lr",
+    "weight_decay",
+    "eps"
+  ],
+  "lamb_step": [
+    "self",
+    "closure"
+  ],
+  "adam_step": [
+    "self",
+    "closure"
+  ],
+  "adam": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps",
+    "foreach"
+  ],
+  "_single_tensor_adam": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps"
+  ],
+  "_multi_tensor_adam": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps"
+  ],
+  "adamw": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps",
+    "foreach"
+  ],
+  "_single_tensor_adamw": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps"
+  ],
+  "_multi_tensor_adamw": [
+    "params",
+    "params2",
+    "grads",
+    "exp_avgs",
+    "exp_avg_sqs",
+    "max_exp_avg_sqs",
+    "state_steps"
+  ],
+  "adamw_step": [
+    "self",
+    "closure"
+  ],
+  "lowering_overrides": [],
+  "_register_lowering": [
+    "aten_fn",
+    "decomp_fn",
+    "broadcast",
+    "type_promotion_kind",
+    "convert_input_to_bool"
+  ],
+  "register_lowering": [
+    "aten_fn",
+    "broadcast",
+    "type_promotion_kind",
+    "convert_input_to_bool"
+  ],
+  "patch_lowering": [],
+  "patterns": [],
+  "_ipex_fusion_passes": [
+    "gm"
+  ],
+  "ipex_compile_fx_inner": [
+    "gm",
+    "example_inputs",
+    "cudagraphs",
+    "static_input_idxs",
+    "is_backward",
+    "graph_id",
+    "cpp_wrapper",
+    "aot_mode",
+    "is_inference",
+    "boxed_forward_device_index",
+    "layout_opt",
+    "extern_node_serializer"
+  ],
+  "patch_codegen": [],
+  "patch_functions": [],
+  "compile_fx": [
+    "model",
+    "example_inputs",
+    "mode",
+    "options"
+  ],
+  "_compiler_backend": [],
+  "_get_compiler_backend": [],
+  "_set_compiler_backend": [
+    "backend"
+  ],
+  "compile": [
+    "model",
+    "example_inputs",
+    "mode",
+    "options"
+  ],
+  "decomposition_overrides": [],
+  "register_decomposition": [
+    "ops"
+  ],
+  "get_decompositions": [],
+  "IpexCppScheduling": {
+    "__init__": [
+      "self",
+      "scheduler"
+    ]
+  },
+  "_initialized": [],
+  "_tls": [],
+  "_initialization_lock": [],
+  "_queued_calls": [],
+  "_is_in_bad_fork": [],
+  "_LazySeedTracker": {
+    "__init__": [
+      "self"
+    ],
+    "queue_seed_all": [
+      "self",
+      "cb",
+      "traceback"
+    ],
+    "queue_seed": [
+      "self",
+      "cb",
+      "traceback"
+    ],
+    "get_calls": [
+      "self"
+    ]
+  },
+  "_lazy_seed_tracker": [],
+  "is_initialized": [],
+  "DeferredXPUCallError": {},
+  "_lazy_init": [],
+  "_lazy_call": [
+    "callable"
+  ],
+  "Stream": {
+    "__new__": [
+      "cls",
+      "device",
+      "priority"
+    ],
+    "_as_parameter_": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "o"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "wait_event": [
+      "self",
+      "event"
+    ],
+    "wait_stream": [
+      "self",
+      "stream"
+    ],
+    "record_event": [
+      "self",
+      "event"
+    ],
+    "synchronize": [
+      "self"
+    ]
+  },
+  "Event": {
+    "__new__": [
+      "cls"
+    ],
+    "record": [
+      "self",
+      "stream"
+    ],
+    "wait": [
+      "self",
+      "stream"
+    ],
+    "query": [
+      "self"
+    ],
+    "elapsed_time": [
+      "self",
+      "end_event"
+    ],
+    "synchronize": [
+      "self"
+    ],
+    "_as_parameter_": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "from_usm": [
+    "src",
+    "dtype",
+    "shape",
+    "stride",
+    "device_id"
+  ],
+  "to_usm": [
+    "src"
+  ],
+  "has_onemkl": [],
+  "has_multi_context": [],
+  "has_channels_last_1d": [],
+  "has_fp64_dtype": [
+    "device"
+  ],
+  "has_2d_block_array": [
+    "device"
+  ],
+  "OnOff": {
+    "__init__": [
+      "self",
+      "checker",
+      "enable",
+      "disable"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "EnumBase": {
+    "convert": [
+      "cls",
+      "value"
+    ],
+    "has_value": [
+      "cls",
+      "value"
+    ],
+    "get_value": [
+      "cls",
+      "get_func"
+    ],
+    "set_value": [
+      "cls",
+      "set_func",
+      "value"
+    ]
+  },
+  "VerbLevel": {
+    "OFF": [],
+    "ON": []
+  },
+  "get_verbose_level": [],
+  "set_verbose_level": [
+    "level"
+  ],
+  "OnednnVerbLevel": {
+    "OFF": [],
+    "ON": [],
+    "ON_DETAIL": []
+  },
+  "set_onednn_verbose": [
+    "level"
+  ],
+  "onednn_verbose": {
+    "__init__": [
+      "self",
+      "level"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "OnemklVerbLevel": {
+    "OFF": [],
+    "ON": [],
+    "ON_SYNC": []
+  },
+  "set_onemkl_verbose": [
+    "level"
+  ],
+  "onemkl_verbose": {
+    "__init__": [
+      "self",
+      "level"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "fp32_math_mode": {
+    "__init__": [
+      "self",
+      "mode"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "using_sync_mode": [],
+  "enable_sync_mode": [],
+  "disable_sync_mode": [],
+  "sync_mode": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "using_tile_as_device": [],
+  "enable_tile_as_device": [],
+  "disable_tile_as_device": [],
+  "has_jit_quantization_save": [],
+  "using_onednn_layout": [],
+  "is_onednn_layout": [
+    "tensor"
+  ],
+  "enable_onednn_layout": [],
+  "disable_onednn_layout": [],
+  "onednn_layout": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "XPUComputeEng": {
+    "RECOMMEND": [],
+    "BASIC": [],
+    "ONEDNN": [],
+    "ONEMKL": [],
+    "XETLA": []
+  },
+  "get_compute_eng": [],
+  "set_compute_eng": [
+    "eng"
+  ],
+  "compute_eng": {
+    "__init__": [
+      "self",
+      "eng"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "using_simple_trace": [],
+  "enable_simple_trace": [],
+  "disable_simple_trace": [],
+  "simple_trace": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "override_tensor_totype": [],
+  "override_assert_equal": [],
+  "_streams": [],
+  "override_get_stream": [],
+  "override_recursive_to": [],
+  "WrapAPI": {
+    "user_defined_src_dtype": [],
+    "user_defined_dst_dtype": [],
+    "only_device": [],
+    "wrap_api_to": [
+      "cls",
+      "api"
+    ],
+    "wrap_api_create_size": [
+      "cls",
+      "api"
+    ],
+    "wrap_api_create_tensor": [
+      "cls",
+      "api"
+    ]
+  },
+  "convert_default_dtype": [
+    "src_dtype",
+    "dst_dtype",
+    "only_device"
+  ],
+  "_device_t": [],
+  "init": [],
+  "device_count": [],
+  "is_available": [],
+  "getDeviceIdListForCard": [
+    "card_id"
+  ],
+  "device": {
+    "__init__": [
+      "self",
+      "device"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "device_of": {
+    "__init__": [
+      "self",
+      "obj"
+    ]
+  },
+  "set_device": [
+    "device"
+  ],
+  "get_device_name": [
+    "device"
+  ],
+  "get_device_capability": [
+    "device"
+  ],
+  "get_device_properties": [
+    "device"
+  ],
+  "current_device": [],
+  "synchronize": [
+    "device"
+  ],
+  "StreamContext": {
+    "__init__": [
+      "self",
+      "stream"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ]
+  },
+  "stream": [
+    "stream"
+  ],
+  "set_stream": [
+    "stream"
+  ],
+  "current_stream": [
+    "device"
+  ],
+  "_lazy_new": [
+    "cls"
+  ],
+  "_XPUBase": {
+    "is_xpu": [],
+    "is_sparse": [],
+    "type": [
+      "self"
+    ],
+    "__new__": []
+  },
+  "_XPULegacyStorage": {
+    "from_buffer": [
+      "cls"
+    ],
+    "_new_with_weak_ptr": [
+      "cls"
+    ],
+    "_new_shared_filename": [
+      "cls",
+      "manager",
+      "obj",
+      "size"
+    ]
+  },
+  "ByteStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "DoubleStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "FloatStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "HalfStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "LongStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "IntStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "ShortStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "CharStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "BoolStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "BFloat16Storage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "ComplexDoubleStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "ComplexFloatStorage": {
+    "dtype": [
+      "self"
+    ]
+  },
+  "_xpu_tag": [
+    "obj"
+  ],
+  "validate_xpu_device": [
+    "location"
+  ],
+  "current_module": [],
+  "_xpu": [
+    "self",
+    "device",
+    "non_blocking"
+  ],
+  "_xpu_deserialize": [
+    "obj",
+    "location"
+  ],
+  "get_device_type": [],
+  "Generator": {
+    "__new__": [
+      "cls",
+      "device"
+    ]
+  },
+  "apply_monkey_patch": [
+    "args"
+  ],
+  "Launcher": {
+    "__init__": [
+      "self"
+    ],
+    "launch": [
+      "self",
+      "args"
+    ],
+    "logger_env": [
+      "self",
+      "env_name"
+    ],
+    "set_env": [
+      "self",
+      "env_name",
+      "env_value"
+    ]
+  },
+  "XPUDefaultLauncher": {
+    "launch": [
+      "self",
+      "args"
+    ]
+  },
+  "run_main_with_args": [
+    "args"
+  ],
+  "empty_cache": [],
+  "memory_stats": [
+    "device"
+  ],
+  "memory_stats_as_nested_dict": [
+    "device"
+  ],
+  "reset_accumulated_memory_stats": [
+    "device"
+  ],
+  "reset_peak_memory_stats": [
+    "device"
+  ],
+  "memory_allocated": [
+    "device"
+  ],
+  "max_memory_allocated": [
+    "device"
+  ],
+  "memory_reserved": [
+    "device"
+  ],
+  "max_memory_reserved": [
+    "device"
+  ],
+  "memory_snapshot": [],
+  "memory_summary": [
+    "device",
+    "abbreviated"
+  ],
+  "_proxy_module": [
+    "name"
+  ],
+  "_register_proxy": [
+    "module"
+  ],
+  "_register_proxy_ops": [
+    "module"
+  ],
+  "proxy_math_mode": {
+    "FP32": [],
+    "TF32": [],
+    "BF32": []
+  },
+  "proxy_compute_eng": {
+    "RECOMMEND": [],
+    "BASIC": [],
+    "ONEDNN": [],
+    "ONEMKL": [],
+    "XETLA": []
+  },
+  "IS_WINDOWS": [],
+  "IS_MACOS": [],
+  "IS_LINUX": [],
+  "LIB_EXT": [],
+  "EXEC_EXT": [],
+  "CLIB_PREFIX": [],
+  "CLIB_EXT": [],
+  "SHARED_FLAG": [],
+  "MINIMUM_GCC_VERSION": [],
+  "MINIMUM_MSVC_VERSION": [],
+  "COMMON_MSVC_FLAGS": [],
+  "COMMON_DPCPP_FLAGS": [],
+  "TORCH_LIB_PATH": [],
+  "JIT_EXTENSION_VERSIONER": [],
+  "_nt_quote_args": [
+    "args"
+  ],
+  "get_default_build_root": [],
+  "_get_exec_path": [
+    "module_name",
+    "path"
+  ],
+  "get_dpcpp_complier": [],
+  "get_icx_complier": [],
+  "is_ninja_available": [],
+  "verify_ninja_availability": [],
+  "_is_cpp_file": [
+    "path"
+  ],
+  "_is_c_file": [
+    "path"
+  ],
+  "DpcppBuildExtension": {
+    "with_options": [
+      "cls"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "finalize_options": [
+      "self"
+    ],
+    "build_extensions": [
+      "self"
+    ],
+    "_add_compile_flag": [
+      "self",
+      "extension",
+      "flag"
+    ],
+    "_define_torch_extension_name": [
+      "self",
+      "extension"
+    ],
+    "_add_gnu_cpp_abi_flag": [
+      "self",
+      "extension"
+    ]
+  },
+  "SUBPROCESS_DECODE_ARGS": [],
+  "ABI_INCOMPATIBILITY_WARNING": [],
+  "WRONG_COMPILER_WARNING": [],
+  "BUILT_FROM_SOURCE_VERSION_PATTERN": [],
+  "_is_binary_build": [],
+  "_accepted_compilers_for_platform": [],
+  "check_compiler_ok_for_platform": [
+    "compiler"
+  ],
+  "check_compiler_abi_compatibility": [
+    "compiler"
+  ],
+  "get_compiler_abi_compatibility_and_version": [
+    "compiler"
+  ],
+  "_write_ninja_file_and_compile_objects": [
+    "sources",
+    "objects",
+    "cflags",
+    "post_cflags",
+    "build_directory",
+    "verbose"
+  ],
+  "_write_ninja_file_and_build_library": [
+    "name",
+    "sources",
+    "extra_cflags",
+    "extra_ldflags",
+    "extra_include_paths",
+    "build_directory",
+    "verbose",
+    "is_standalone"
+  ],
+  "get_one_api_help": [],
+  "include_paths": [],
+  "library_paths": [],
+  "_prepare_compile_flags": [
+    "extra_compile_args"
+  ],
+  "_prepare_ldflags": [
+    "extra_ldflags",
+    "verbose",
+    "is_standalone"
+  ],
+  "PLAT_TO_VCVARS": [],
+  "_get_num_workers": [
+    "verbose"
+  ],
+  "_run_ninja_build": [
+    "build_directory",
+    "verbose",
+    "error_prefix"
+  ],
+  "_get_build_directory": [
+    "name",
+    "verbose"
+  ],
+  "_import_module_from_library": [
+    "module_name",
+    "path",
+    "is_python_module"
+  ],
+  "_write_ninja_file_to_build_library": [
+    "path",
+    "name",
+    "sources",
+    "extra_cflags",
+    "extra_ldflags",
+    "extra_include_paths",
+    "is_standalone"
+  ],
+  "_jit_compile": [
+    "name",
+    "sources",
+    "extra_cflags",
+    "extra_ldflags",
+    "extra_include_paths",
+    "build_directory",
+    "verbose",
+    "is_python_module",
+    "is_standalone",
+    "keep_intermediates"
+  ],
+  "load": [
+    "name",
+    "sources",
+    "extra_cflags",
+    "extra_ldflags",
+    "extra_include_paths",
+    "build_directory",
+    "verbose",
+    "is_python_module",
+    "is_standalone",
+    "keep_intermediates"
+  ],
+  "_write_ninja_file": [
+    "path",
+    "cflags",
+    "post_cflags",
+    "sources",
+    "objects",
+    "ldflags",
+    "library_target"
+  ],
+  "_get_dpcpp_root": [],
+  "_get_onemkl_root": [],
+  "_get_onednn_root": [],
+  "_one_api_help": {
+    "__dpcpp_root": [],
+    "__onemkl_root": [],
+    "__onednn_root": [],
+    "__default_root": [],
+    "__init__": [
+      "self"
+    ],
+    "check_onemkl_cfg": [
+      "self"
+    ],
+    "check_onednn_cfg": [
+      "self"
+    ],
+    "check_dpcpp_cfg": [
+      "self"
+    ],
+    "get_default_include_dir": [
+      "self"
+    ],
+    "get_default_lib_dir": [
+      "self"
+    ],
+    "get_dpcpp_include_dir": [
+      "self"
+    ],
+    "get_onemkl_include_dir": [
+      "self"
+    ],
+    "get_onednn_include_dir": [
+      "self"
+    ],
+    "get_onednn_lib_dir": [
+      "self"
+    ],
+    "is_onemkl_ready": [
+      "self"
+    ],
+    "is_onednn_ready": [
+      "self"
+    ],
+    "get_library_dirs": [
+      "self"
+    ],
+    "get_include_dirs": [
+      "self"
+    ],
+    "get_onemkl_libraries": [
+      "self"
+    ]
+  },
+  "get_pytorch_include_dir": [],
+  "get_pytorch_lib_dir": [],
+  "DPCPPExtension": [
+    "name",
+    "sources"
+  ],
+  "single_card_dist": {
+    "__init__": [
+      "self",
+      "model",
+      "train_dataset"
+    ],
+    "multi_process_spawn": [
+      "fn",
+      "args"
+    ],
+    "get_localrank": [
+      "self"
+    ],
+    "get_ddp_model": [
+      "self"
+    ],
+    "get_train_sampler": [
+      "self"
+    ]
+  },
+  "__all__": [],
+  "get_rng_state": [
+    "device"
+  ],
+  "get_rng_state_all": [],
+  "set_rng_state": [
+    "new_state",
+    "device"
+  ],
+  "set_rng_state_all": [
+    "new_states"
+  ],
+  "manual_seed": [
+    "seed"
+  ],
+  "manual_seed_all": [
+    "seed"
+  ],
+  "seed": [],
+  "seed_all": [],
+  "initial_seed": [],
+  "_fork_rng_warned_already": [],
+  "fork_rng": [
+    "devices",
+    "enabled",
+    "_caller",
+    "_devices_kw"
+  ],
+  "get_autocast_xpu_dtype": [],
+  "is_autocast_xpu_enabled": [],
+  "set_autocast_xpu_enabled": [
+    "enabled"
+  ],
+  "set_autocast_xpu_dtype": [
+    "dtype"
+  ],
+  "autocast": {
+    "__init__": [
+      "self",
+      "enabled",
+      "dtype",
+      "cache_enabled"
+    ]
+  },
+  "MulAdd": [
+    "input",
+    "other",
+    "accumu",
+    "alpha"
+  ],
+  "nms": [
+    "dets",
+    "scores",
+    "iou_threshold"
+  ],
+  "locations_to_boxes": [
+    "locations",
+    "priors",
+    "center_variance",
+    "size_variance"
+  ],
+  "check_roi_boxes_shape": [
+    "boxes"
+  ],
+  "convert_boxes_to_roi_format": [
+    "boxes"
+  ],
+  "roi_align": [
+    "input",
+    "boxes",
+    "output_size",
+    "spatial_scale",
+    "sampling_ratio",
+    "aligned"
+  ],
+  "InteractionFuncion": {
+    "forward": [
+      "ctx",
+      "input_mlp",
+      "input_emb"
+    ]
+  },
+  "Interaction": [],
+  "_get_relative_imports": [
+    "module_file"
+  ],
+  "_gradient_checkpointing_enable": [
+    "self",
+    "gradient_checkpointing_kwargs"
+  ],
+  "_gradient_checkpointing_disable": [
+    "self"
+  ],
+  "_get_cached_module_file": [
+    "pretrained_model_name_or_path",
+    "module_file",
+    "cache_dir",
+    "force_download",
+    "resume_download",
+    "proxies",
+    "token",
+    "revision",
+    "local_files_only",
+    "repo_type",
+    "_commit_hash"
+  ],
+  "_get_imports": [
+    "filename"
+  ],
+  "_get_class_from_dynamic_module": [
+    "class_reference",
+    "pretrained_model_name_or_path",
+    "cache_dir",
+    "force_download",
+    "resume_download",
+    "proxies",
+    "token",
+    "revision",
+    "local_files_only",
+    "repo_type",
+    "code_revision"
+  ],
+  "_pad": [
+    "self",
+    "encoded_inputs",
+    "padding",
+    "max_length",
+    "pad_to_multiple_of",
+    "padding_side",
+    "return_attention_mask",
+    "return_tensors",
+    "verbose"
+  ],
+  "_preprocess_deepseek_v3_checkpoint": [
+    "checkpoint",
+    "quant_config"
+  ],
+  "load_low_precision_checkpoint": [
+    "pathname",
+    "rank",
+    "world_size"
+  ],
+  "shard_low_precision_checkpoint": [
+    "low_precision_checkpoint",
+    "model_config",
+    "rank",
+    "world_size",
+    "quantization_method",
+    "tp_grain_size",
+    "desc_act",
+    "bits"
+  ],
+  "hf_greedy_search": [],
+  "hf_beam_search": [],
+  "hf_sample": [],
+  "hf_beam_sample": [],
+  "IPEXWeightOnlyQuantizedLinear": {
+    "__init__": [
+      "self",
+      "woq_linear_impl"
+    ],
+    "module_mapping": [],
+    "impl_name": [],
+    "from_weight": [
+      "cls",
+      "qweight",
+      "scales",
+      "zero_points",
+      "in_features",
+      "out_features",
+      "qconfig",
+      "bias",
+      "group_size",
+      "g_idx",
+      "quant_method",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "QuantMethod": {
+    "GPTQ_GEMM": [],
+    "AWQ_GEMM": []
+  },
+  "QuantDtype": {
+    "INT4": []
+  },
+  "rotary_embedding": [
+    "query",
+    "key",
+    "sin",
+    "cos",
+    "rotary_dim",
+    "rotary_half",
+    "position_ids"
+  ],
+  "rms_norm": [
+    "hidden_states",
+    "weight",
+    "eps"
+  ],
+  "fast_layer_norm": [
+    "hidden_states",
+    "normalized_shape",
+    "weight",
+    "bias",
+    "eps"
+  ],
+  "indirect_access_kv_cache_attention": [
+    "query",
+    "key",
+    "value",
+    "scale_attn",
+    "layer_past",
+    "head_mask",
+    "attention_mask",
+    "alibi",
+    "add_casual_mask",
+    "seq_info",
+    "text_max_length"
+  ],
+  "varlen_attention": [
+    "query",
+    "key",
+    "value",
+    "out",
+    "seqlen_q",
+    "seqlen_k",
+    "alibi_slopes",
+    "max_seqlen_q",
+    "max_seqlen_k",
+    "pdropout",
+    "softmax_scale",
+    "zero_tensors",
+    "is_causal",
+    "return_softmax",
+    "gen_",
+    "window_size_left",
+    "window_size_right",
+    "softcap"
+  ],
+  "silu_mul": [
+    "x",
+    "y",
+    "out"
+  ],
+  "gelu_mul": [
+    "x",
+    "y",
+    "out",
+    "approximate"
+  ],
+  "add_rms_norm": [
+    "residual",
+    "x",
+    "weight",
+    "bias",
+    "eps",
+    "add_back"
+  ],
+  "add_layer_norm": [
+    "residual",
+    "x",
+    "weight",
+    "bias",
+    "eps",
+    "add_back"
+  ],
+  "bgmv_shrink": [
+    "input",
+    "lora_weights",
+    "output",
+    "token_lora_mapping",
+    "scaling"
+  ],
+  "bgmv_expand": [
+    "input",
+    "lora_weights",
+    "output",
+    "token_lora_mapping",
+    "add_inputs"
+  ],
+  "bgmv_expand_slice": [
+    "input",
+    "lora_weights",
+    "output",
+    "token_lora_mapping",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "sgmv_shrink": [
+    "inputs",
+    "lora_a_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "scaling"
+  ],
+  "sgmv_expand": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "add_inputs"
+  ],
+  "sgmv_expand_slice": [
+    "inputs",
+    "lora_b_weights",
+    "output_tensor",
+    "b_seq_start_loc",
+    "seq_len_tensor",
+    "lora_indices_tensor",
+    "batches",
+    "max_seq_length",
+    "slice_offset",
+    "slice_size",
+    "add_inputs"
+  ],
+  "IPEXCustomOpType": {},
+  "CPU_fusion_modules": [],
+  "IPEXRuntimeCustomOps": {
+    "__init__": [
+      "self"
+    ],
+    "get_module_from_device": [
+      "self",
+      "device_type",
+      "ops",
+      "is_instance"
+    ]
+  },
+  "IPEXLinearFusion": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "init_on_device": [
+      "self",
+      "x",
+      "op_type"
+    ]
+  },
+  "IPEXLinear2Fusion": {
+    "__init__": [
+      "self",
+      "linear_1",
+      "linear_2"
+    ],
+    "init_on_device": [
+      "self",
+      "x",
+      "op_type"
+    ]
+  },
+  "LinearSilu": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Linear2SiluMul": {
+    "__init__": [
+      "self",
+      "linear_s",
+      "linear_m"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LinearRelu": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LinearNewGelu": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LinearGelu": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LinearSiluMul": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "LinearMul": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "LinearAdd": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "LinearAddAdd": {
+    "__init__": [
+      "self",
+      "linear"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  "GatedMLPMOE": {
+    "__init__": [
+      "self",
+      "W13",
+      "W2",
+      "W3",
+      "use_prepack"
+    ],
+    "init_on_device": [
+      "self",
+      "x",
+      "op_type"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "use_grouped_topk",
+      "top_k",
+      "router_logits",
+      "renormalize",
+      "topk_group",
+      "num_expert_group",
+      "custom_routing_function",
+      "scoring_func",
+      "e_score_correction_bias"
+    ]
+  },
+  "FastLayerNorm": {
+    "__init__": [
+      "self",
+      "normalized_shape",
+      "eps",
+      "weight",
+      "bias"
+    ],
+    "apply_function": [
+      "cls",
+      "hidden_states",
+      "normalized_shape",
+      "weight",
+      "bias",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "weight"
+    ],
+    "apply_function": [
+      "cls",
+      "hidden_states",
+      "weight",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VarlenAttention": {
+    "__init__": [
+      "self"
+    ],
+    "apply_function": [
+      "cls",
+      "query",
+      "key",
+      "value",
+      "out",
+      "seqlen_q",
+      "seqlen_k",
+      "alibi_slopes",
+      "max_seqlen_q",
+      "max_seqlen_k",
+      "pdropout",
+      "softmax_scale",
+      "zero_tensors",
+      "is_causal",
+      "return_softmax",
+      "gen_",
+      "window_size_left",
+      "window_size_right",
+      "softcap"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "out",
+      "seqlen_q",
+      "seqlen_k",
+      "alibi_slopes",
+      "max_seqlen_q",
+      "max_seqlen_k",
+      "pdropout",
+      "softmax_scale",
+      "zero_tensors",
+      "is_causal",
+      "return_softmax",
+      "gen_",
+      "window_size_left",
+      "window_size_right",
+      "softcap"
+    ]
+  },
+  "PagedAttention": {
+    "reshape_and_cache": [
+      "cls",
+      "key",
+      "value",
+      "key_cache",
+      "value_cache",
+      "slot_mapping",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale"
+    ],
+    "reshape_and_cache_flash": [
+      "cls",
+      "key",
+      "value",
+      "key_cache",
+      "value_cache",
+      "slot_mapping",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale"
+    ],
+    "single_query_cached_kv_attention": [
+      "cls",
+      "output",
+      "query",
+      "key_cache",
+      "value_cache",
+      "head_mapping",
+      "scale",
+      "block_tables",
+      "context_lens",
+      "block_size",
+      "max_context_len",
+      "alibi_slopes",
+      "window_size",
+      "k_scale",
+      "v_scale",
+      "softcap"
+    ],
+    "flash_attn_varlen_func": [
+      "cls",
+      "output",
+      "query",
+      "key_cache",
+      "value_cache",
+      "cu_seqlens_q",
+      "cu_seqlens_kv",
+      "max_seqlen_q",
+      "max_seqlen_kv",
+      "scale",
+      "is_cusal",
+      "block_tables",
+      "alibi_slopes",
+      "window_size_left",
+      "window_size_right",
+      "kv_cache_dtype",
+      "k_scale",
+      "v_scale",
+      "softcap"
+    ]
+  },
+  "IndirectAccessKVCacheAttention": {
+    "__init__": [
+      "self",
+      "text_max_length"
+    ],
+    "apply_function": [
+      "cls",
+      "query",
+      "key",
+      "value",
+      "scale_attn",
+      "layer_past",
+      "head_mask",
+      "attention_mask",
+      "alibi",
+      "add_casual_mask",
+      "seq_info",
+      "text_max_length"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "scale_attn",
+      "layer_past",
+      "head_mask",
+      "attention_mask",
+      "alibi",
+      "add_casual_mask",
+      "seq_info"
+    ]
+  },
+  "MambaMixer": {
+    "causal_conv1d_fn": [
+      "cls",
+      "x",
+      "weight",
+      "bias",
+      "initial_states",
+      "return_final_states",
+      "final_states_out",
+      "activation"
+    ],
+    "causal_conv1d_update": [
+      "cls",
+      "x",
+      "conv_state",
+      "weight",
+      "bias",
+      "activation",
+      "cache_seqlens"
+    ],
+    "selective_state_update": [
+      "cls",
+      "state",
+      "x",
+      "dt",
+      "A",
+      "B",
+      "C",
+      "D",
+      "z",
+      "dt_bias",
+      "dt_softplus"
+    ],
+    "selective_scan_fn": [
+      "cls",
+      "u",
+      "delta",
+      "A",
+      "B",
+      "C",
+      "D",
+      "z",
+      "delta_bias",
+      "delta_softplus",
+      "return_last_state"
+    ]
+  },
+  "add_and_mul_ops": [],
+  "quantized_modules_has_weights": [],
+  "int8_int8_ops": [],
+  "OpQuantizeabilityType": {
+    "QUANTIZEABLE": [],
+    "NOT_QUANTIZEABLE": []
+  },
+  "FuncOutputObsType": {
+    "NONE": [],
+    "NEW_OBS": [],
+    "REUSES_FIRST_INPUT_OBS": []
+  },
+  "is_leaf": [
+    "m"
+  ],
+  "get_fqn_valid_for_module_dict_key": [
+    "fqn"
+  ],
+  "HookType": {
+    "OP_HOOKS": [],
+    "MODULE_IO_HOOKS": [],
+    "ARG_DEQUANTS": [],
+    "NONE": []
+  },
+  "get_torch_function_hook_type": [
+    "parent_module",
+    "func"
+  ],
+  "get_module_hook_type": [
+    "parent_module",
+    "cur_module"
+  ],
+  "attach_scale_zp_values_to_model": [
+    "module"
+  ],
+  "_check_observer_has_run": [
+    "observer"
+  ],
+  "check_model_obsever_has_run": [
+    "module"
+  ],
+  "attach_op_convert_info_to_model": [
+    "module"
+  ],
+  "Node": {
+    "__init__": [
+      "self",
+      "op_infos",
+      "input_scale_zero",
+      "weight_scale_zero",
+      "output_scale_zero",
+      "qconfig"
+    ]
+  },
+  "ParentNode": [],
+  "convert_quant_state_map_to_nodes": [
+    "quant_state_map"
+  ],
+  "sync_pool_and_lstm_input_output_scale_zp": [
+    "quant_state_map",
+    "nodes"
+  ],
+  "_check_after_nodes_all_quantized_give_node": [
+    "node"
+  ],
+  "set_node_output_quantized": [
+    "nodes"
+  ],
+  "qscheme_dict": [],
+  "dtype_dict": [],
+  "IPEX_OBSERVERS": [],
+  "_get_observer_setting": [
+    "observer"
+  ],
+  "_create_observer": [
+    "setting"
+  ],
+  "save_quant_state": [
+    "quant_state_map",
+    "configure_file"
+  ],
+  "load_qconf_summary_to_model": [
+    "model",
+    "qconf_summary"
+  ],
+  "_lstm_forward": [
+    "module",
+    "input",
+    "hx",
+    "weights"
+  ],
+  "module_call_to_function_call": [
+    "module",
+    "args",
+    "weights"
+  ],
+  "_attach_smooth_quant_scaling_factor_to_model": [
+    "module"
+  ],
+  "_map_smooth_quant_info_to_idx": [
+    "module"
+  ],
+  "add_inplace_ops": [],
+  "add_ops": [],
+  "elt_wise_q_ops": [],
+  "elt_wise_noq_ops": [],
+  "conv_gemm_ops": [],
+  "conv_ops": [],
+  "rnn_ops": [],
+  "s8_s8_symmetric_ops": [],
+  "conv_gemm_fs": [],
+  "_default_recipe_init": [
+    "nodes"
+  ],
+  "_find_fused_node_with_cur_elt_wise": [
+    "node",
+    "ops"
+  ],
+  "_find_fused_node_with_cur_add": [
+    "node",
+    "ops"
+  ],
+  "_find_conv_or_gemm_swish_fusion_node": [
+    "node"
+  ],
+  "_check_has_quantizable_node_before_node": [
+    "node"
+  ],
+  "_check_has_quantizable_node_after_node": [
+    "node"
+  ],
+  "_add_recipe": [
+    "node"
+  ],
+  "get_default_recipe": [
+    "nodes"
+  ],
+  "_nn_sequential_patched_forward": [
+    "cls",
+    "input"
+  ],
+  "_convert_PackedSequence_to_tuple_lstm": [
+    "args"
+  ],
+  "_convert_tuple_to_PackedSequence_lstm": [
+    "args"
+  ],
+  "auto_prepare": [
+    "model",
+    "configure",
+    "example_inputs",
+    "example_kwarg_inputs"
+  ],
+  "copy_prepared_model": [
+    "model"
+  ],
+  "auto_convert": [
+    "module"
+  ],
+  "NF4_QUANT_TABLE": [],
+  "NF4_DEQUANT_TABLE": [],
+  "NF4_TO_INT8_TABLE": [],
+  "map_float_tensor_to_nf4": [
+    "t",
+    "dtype"
+  ],
+  "map_nf4_tensor_to_float": [
+    "t",
+    "dtype"
+  ],
+  "map_nf4_tensor_to_int8": [
+    "t",
+    "dtype"
+  ],
+  "is_4bit": [
+    "dtype"
+  ],
+  "is_sym_quant": [
+    "dtype"
+  ],
+  "quantize_per_channel": [
+    "t",
+    "dtype",
+    "scales",
+    "zero_points",
+    "sym_quant"
+  ],
+  "dequantize_per_channel": [
+    "qt",
+    "scales",
+    "zps",
+    "dtype",
+    "weight_shape",
+    "dequant_nf4_via_int8"
+  ],
+  "quantize_per_block": [
+    "input",
+    "dtype",
+    "group_size",
+    "scales",
+    "zero_points",
+    "sym_quant"
+  ],
+  "dequantize_per_block": [
+    "qt",
+    "scales",
+    "zps",
+    "dtype",
+    "group_size",
+    "weight_shape",
+    "dequant_nf4_via_int8"
+  ],
+  "OpConvertInfo": [],
+  "AutoQuantizationState": {
+    "__init__": [
+      "self",
+      "fqn",
+      "qconfig"
+    ],
+    "get_extra_state": [
+      "self"
+    ],
+    "set_extra_state": [
+      "self",
+      "state"
+    ],
+    "has_at_least_one_seen_q_op_info": [
+      "self"
+    ],
+    "validate_is_at_last_seen_idx": [
+      "self"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "_get_cur_seen_q_op_info": [
+      "self"
+    ],
+    "get_cur_output_inf_dtype": [
+      "self"
+    ],
+    "reset_to_new_call": [
+      "self"
+    ],
+    "cur_op_needs_hooks": [
+      "self",
+      "cur_op"
+    ],
+    "validate_cur_op": [
+      "self",
+      "cur_op"
+    ],
+    "mark_cur_op_complete": [
+      "self",
+      "cur_op"
+    ],
+    "first_call_outputs_prepare_hook": [
+      "self",
+      "outputs",
+      "qtensor_id"
+    ],
+    "outputs_prepare_hook": [
+      "self",
+      "outputs"
+    ],
+    "outputs_convert_hook": [
+      "self",
+      "outputs"
+    ],
+    "first_call_op_prepare_before_hook": [
+      "self",
+      "op",
+      "args",
+      "kwargs",
+      "qtensor_id",
+      "fqn",
+      "root_module",
+      "op_quantizeability_type"
+    ],
+    "op_prepare_before_hook": [
+      "self",
+      "op",
+      "args",
+      "kwargs"
+    ],
+    "first_call_op_prepare_after_hook": [
+      "self",
+      "op",
+      "output",
+      "args",
+      "qtensor_id",
+      "op_quantizeability_type"
+    ],
+    "op_prepare_after_hook": [
+      "self",
+      "op",
+      "outputs",
+      "args",
+      "global_op_idx"
+    ],
+    "op_convert_before_hook": [
+      "self",
+      "op",
+      "args",
+      "kwargs",
+      "root_module"
+    ],
+    "op_weight_convert_before_hook": [
+      "self",
+      "op"
+    ],
+    "op_convert_after_hook": [
+      "self",
+      "op",
+      "outputs"
+    ],
+    "get_op_convert_info": [
+      "self",
+      "op"
+    ],
+    "get_op_weight_convert_info": [
+      "self",
+      "op"
+    ],
+    "calculate_op_convert_info": [
+      "self",
+      "seen_q_op_info"
+    ],
+    "calculate_op_weight_convert_info": [
+      "self",
+      "seen_q_op_info"
+    ],
+    "_get_packed_param_name": [
+      "self",
+      "seen_q_op_info"
+    ],
+    "_first_call_assign_qtensor_infos_to_mod_outputs_tensor": [
+      "self",
+      "output",
+      "qtensor_id"
+    ],
+    "_first_call_assign_qtensor_infos_to_mod_outputs": [
+      "self",
+      "outputs",
+      "qtensor_id"
+    ],
+    "_first_call_op_prepare_before_hook_create_subgraphs_tensor": [
+      "self",
+      "op",
+      "arg",
+      "arg_tensor_infos",
+      "arg_tensor_force_inf_dtype",
+      "qtensor_id"
+    ],
+    "_first_call_op_prepare_before_hook_create_subgraphs": [
+      "self",
+      "op",
+      "args",
+      "kwargs",
+      "qtensor_id",
+      "fqn",
+      "root_module",
+      "op_quantizeability_type"
+    ],
+    "_first_call_op_prepare_after_hook_adjust_subgraphs": [
+      "self",
+      "op",
+      "outputs",
+      "args",
+      "qtensor_id",
+      "op_quantizeability_type"
+    ],
+    "_maybe_insert_input_observers": [
+      "self",
+      "seen_q_op_info"
+    ],
+    "_maybe_insert_output_observers": [
+      "self",
+      "seen_q_op_info",
+      "root_module"
+    ],
+    "insert_observers": [
+      "self",
+      "root_module"
+    ],
+    "get_output_observer_from_fqn": [
+      "self",
+      "fqn"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AutoQuantizationStateModuleDict": {},
+  "init_model_quant_state": [
+    "model",
+    "module_id_to_fqn",
+    "configure"
+  ],
+  "_get_qconfig_dtypes": [
+    "qconfig"
+  ],
+  "_op_is_int8_dynamically_quantized": [
+    "qconfig"
+  ],
+  "_swap_child_modules": [
+    "module",
+    "fqn_qconfig",
+    "dynamic_mappings",
+    "parent_fqn"
+  ],
+  "swap_child_modules": [
+    "module",
+    "dynamic_mappings"
+  ],
+  "_default_weight_observer": [],
+  "default_static_qconfig": [],
+  "default_static_qconfig_mapping": [],
+  "default_dynamic_qconfig": [],
+  "default_dynamic_qconfig_mapping": [],
+  "QConfigSmoothQuant": [],
+  "get_smooth_quant_qconfig_mapping": [
+    "alpha",
+    "act_observer",
+    "act_ic_observer",
+    "wei_observer",
+    "wei_ic_observer",
+    "share_weight_observers"
+  ],
+  "WoqLowpMode": {
+    "NONE": [],
+    "FP16": [],
+    "BF16": [],
+    "INT8": []
+  },
+  "WOQ_LOWP_MODE_TO_STR": [],
+  "WoqActQuantMode": {
+    "NONE": [],
+    "PER_TENSOR": [],
+    "PER_IC_BLOCK": [],
+    "PER_BATCH": [],
+    "PER_BATCH_IC_BLOCK": [],
+    "PER_TENSOR_SYM": [],
+    "PER_IC_BLOCK_SYM": [],
+    "PER_BATCH_SYM": [],
+    "PER_BATCH_IC_BLOCK_SYM": []
+  },
+  "WOQ_ACT_QUANT_MODE_TO_STR": [],
+  "WoqWeightDtype": {
+    "INT8": [],
+    "INT4": [],
+    "NF4": [],
+    "FP8": []
+  },
+  "WOQ_DTYPE_TO_STR": [],
+  "WoqWeightQScheme": {
+    "UNDEFINED": [],
+    "ASYMMETRIC": [],
+    "SYMMETRIC": []
+  },
+  "WOQ_QSCHEME_TO_STR": [],
+  "QConfigWoq": [],
+  "get_weight_only_quant_qconfig_mapping": [],
+  "prepare": [
+    "model",
+    "configure",
+    "example_inputs",
+    "inplace",
+    "bn_folding",
+    "example_kwarg_inputs"
+  ],
+  "_may_insert_deepspeed_modules": [
+    "torch_modules",
+    "q_linear_layer_module",
+    "q_linear_all_reduce_module",
+    "q_lm_head_linear_all_reduce_module"
+  ],
+  "IPEX_DYNAMIC_QUANTIZATION_MODULE_CPU": [],
+  "IPEX_WEIGHT_ONLY_QUANTIZATION_MODULE_CPU": [],
+  "_IPEXDynamicQuantizedLinear": {
+    "from_float": [
+      "cls",
+      "mod"
+    ]
+  },
+  "DynamicQuantizedLinearLayer": {
+    "_init_cls": [
+      "cls",
+      "mod",
+      "dtype",
+      "qweight"
+    ],
+    "_float_module": [
+      "cls"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DynamicQuantizedLinearAllreduce": {
+    "_init_cls": [
+      "cls",
+      "mod",
+      "dtype",
+      "qweight"
+    ],
+    "_float_module": [
+      "cls"
+    ],
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "mp_group",
+      "bias_value",
+      "bias_",
+      "dtype"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DynamicQuantizedLmHeadLinearAllreduce": {
+    "_float_module": [
+      "cls"
+    ],
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "mp_group",
+      "rank",
+      "world_size",
+      "bias_value",
+      "bias_",
+      "dtype"
+    ],
+    "_init_cls": [
+      "cls",
+      "mod",
+      "dtype",
+      "qweight"
+    ],
+    "pre_ipex_gemm": [
+      "self",
+      "input"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "may_quantize_deepspeed_modules": [
+    "IPEX_QUANTIZATION_MODULE",
+    "q_config",
+    "module_mappings",
+    "qconfig_spec"
+  ],
+  "convert": [
+    "model",
+    "inplace"
+  ],
+  "functions_supported_by_quantization": [],
+  "functions_supported_by_quantization_ipex": [],
+  "module_types_supported_by_quantization": [],
+  "may_inplace_module": [],
+  "a_related_to_b": [],
+  "conv_linear_ops": [],
+  "conv_linear_modules": [],
+  "embedding_op": [],
+  "op_needs_quantization": [
+    "op"
+  ],
+  "ops_are_related": [
+    "cur_op",
+    "expected_op_type",
+    "type_is_module"
+  ],
+  "_raise_obs_not_found_error": [
+    "func"
+  ],
+  "_raise_obs_op_mismatch": [
+    "func",
+    "prev_op"
+  ],
+  "QTensorInfo": {},
+  "SeenQOpInfo": {
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SeenNonQOpInfo": {},
+  "get_input_observed_arg_idxs": [
+    "op_type",
+    "op_type_is_module"
+  ],
+  "get_weight_arg_idx": [
+    "op"
+  ],
+  "set_tensor_info_dtype": [
+    "tensor_info",
+    "observer"
+  ],
+  "iterate_and_apply": [
+    "args",
+    "flattened_tensor_infos",
+    "func",
+    "flattened_tensor_infos_idx"
+  ],
+  "iterate_and_apply_convert": [
+    "args",
+    "quant_infos",
+    "quant_or_dequant_needed",
+    "op",
+    "flattened_tensor_infos_idx"
+  ],
+  "get_input_args_quant_dequant_info": [
+    "seen_q_op_info",
+    "tensor_id_to_scale_zp"
+  ],
+  "get_weight_args_quant_dequant_info": [
+    "seen_q_op_info",
+    "weight_tensor_id_to_scale_zp"
+  ],
+  "autotune": [
+    "model",
+    "calib_dataloader",
+    "calib_func",
+    "eval_func",
+    "op_type_dict",
+    "sampling_sizes",
+    "accuracy_criterion",
+    "tuning_time"
+  ],
+  "SmoothQuantActivationObserver": {
+    "__init__": [
+      "self",
+      "act_observer",
+      "act_ic_observer",
+      "smooth_quant_enabled",
+      "dtype",
+      "qscheme",
+      "reduce_range",
+      "quant_min",
+      "quant_max",
+      "alpha",
+      "factory_kwargs",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x_orig"
+    ],
+    "calculate_qparams": [
+      "self"
+    ],
+    "get_scaling_factors": [
+      "self"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "SmoothQuantWeightObserver": {
+    "__init__": [
+      "self",
+      "wei_observer",
+      "wei_ic_observer",
+      "smooth_quant_enabled",
+      "dtype",
+      "qscheme",
+      "reduce_range",
+      "quant_min",
+      "quant_max",
+      "alpha",
+      "factory_kwargs",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x_orig"
+    ],
+    "calculate_qparams": [
+      "self"
+    ],
+    "get_scaling_factors": [
+      "self"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "_FP8_ENABLED": [],
+  "_FP8_RECIPE": [],
+  "_FP8_CALIBRATION": [],
+  "_FP8_DEVICE": [],
+  "get_default_fp8_recipe": [],
+  "get_fp8_dtype": [
+    "fp8_recipe",
+    "fprop_tensor"
+  ],
+  "is_fp8_enabled": [],
+  "get_fp8_recipe": [],
+  "is_fp8_calibration": [],
+  "get_fp8_device_type": [],
+  "update_amax_history": [
+    "amax_history"
+  ],
+  "_default_get_amax": [
+    "amax_history",
+    "amax_compute_algo"
+  ],
+  "_default_sf_compute": [
+    "amax",
+    "scale",
+    "fp8_max",
+    "margin"
+  ],
+  "default_amax_and_scale_update": [
+    "amax_history",
+    "scale",
+    "fp8_max",
+    "margin",
+    "amax_compute_algo"
+  ],
+  "amax_and_scale_update": [
+    "fp8_meta",
+    "fwd_update"
+  ],
+  "fp8_autocast": [
+    "enabled",
+    "calibrating",
+    "fp8_recipe",
+    "device"
+  ],
+  "Fp8BaseModule": {
+    "__init__": [
+      "self"
+    ],
+    "set_meta_tensor": [
+      "self",
+      "fwd"
+    ],
+    "init_fp8_meta_tensors": [
+      "self"
+    ],
+    "fp8_init": [
+      "self",
+      "num_gemms"
+    ],
+    "prepare_forward": [
+      "self",
+      "num_gemms"
+    ],
+    "get_extra_state": [
+      "self"
+    ],
+    "set_extra_state": [
+      "self",
+      "state"
+    ]
+  },
+  "prepare_backward": [
+    "fp8_meta",
+    "num_gemms"
+  ],
+  "cast_if_needed": [
+    "tensor",
+    "dtype"
+  ],
+  "cast_to_fp8": [
+    "inp",
+    "fp8_meta_tensor",
+    "fp8_tensor",
+    "otype"
+  ],
+  "cast_from_fp8": [
+    "inp",
+    "fp8_meta_tensor",
+    "fp8_tensor",
+    "itype",
+    "otype"
+  ],
+  "convert_rec": [
+    "m",
+    "optimizer",
+    "device"
+  ],
+  "prepare_fp8": [
+    "m",
+    "optimizer",
+    "device"
+  ],
+  "_FormatHelper": {},
+  "Format": {
+    "E4M3": [],
+    "E5M2": [],
+    "HYBRID": []
+  },
+  "DelayedScaling": {},
+  "_FP8Linear": {
+    "forward": [
+      "ctx",
+      "input_",
+      "weight_",
+      "bias_",
+      "fp8_meta",
+      "use_bias",
+      "activation_dtype",
+      "is_grad_enabled",
+      "fp8_calibration"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "FP8Linear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias",
+      "device",
+      "params_dtype",
+      "activation_dtype"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "gptq": [
+    "model",
+    "dataloader",
+    "group_size",
+    "wbits",
+    "sym",
+    "percdamp",
+    "act_order",
+    "nsamples",
+    "use_max_length",
+    "pad_max_length",
+    "layer_wise",
+    "compression_dtype",
+    "compression_dim",
+    "scale_dtype",
+    "save_dir"
+  ],
+  "gptq_quantize": [
+    "model",
+    "weight_config",
+    "dataloader",
+    "nsamples",
+    "use_max_length",
+    "pad_max_length",
+    "device",
+    "layer_wise",
+    "model_path"
+  ],
+  "gptq_export": [
+    "model",
+    "weight_config",
+    "gptq_config",
+    "compression_dtype",
+    "compression_dim",
+    "scale_dtype"
+  ],
+  "fetch_module": [
+    "model",
+    "op_name"
+  ],
+  "set_module": [
+    "model",
+    "op_name",
+    "new_module"
+  ],
+  "quant_weight_w_scale": [
+    "weight",
+    "scale",
+    "zp",
+    "group_size"
+  ],
+  "WeightOnlyLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bits",
+      "groupsize",
+      "dtype",
+      "zp",
+      "bias",
+      "scale_dtype",
+      "compression_dtype",
+      "compression_dim",
+      "g_idx",
+      "device",
+      "use_optimum_format"
+    ],
+    "pack": [
+      "self",
+      "int_weight",
+      "scale",
+      "zp",
+      "bias",
+      "g_idx"
+    ],
+    "recover": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "move_input_to_device": [
+    "input",
+    "device"
+  ],
+  "trace_gptq_target_blocks": [
+    "module",
+    "module_types"
+  ],
+  "find_layers": [
+    "module",
+    "layers",
+    "name"
+  ],
+  "find_layers_name": [
+    "module",
+    "layers",
+    "name"
+  ],
+  "log_quantizable_layers_per_transformer": [
+    "transformer_blocks",
+    "layers"
+  ],
+  "quantize": [
+    "x",
+    "scale",
+    "zero",
+    "maxq"
+  ],
+  "DEBUG": [],
+  "GPTQuantizer": {
+    "__init__": [
+      "self",
+      "model",
+      "weight_config",
+      "dataloader",
+      "nsamples",
+      "use_max_length",
+      "pad_max_length",
+      "device",
+      "layer_wise"
+    ],
+    "prepare_dataloader": [
+      "self"
+    ],
+    "obtain_first_n_samples": [
+      "self",
+      "seed"
+    ],
+    "obtain_first_n_samples_fulllength": [
+      "self",
+      "seed"
+    ],
+    "get_full_layer_name": [
+      "self",
+      "sub_layer_name",
+      "block_idx"
+    ],
+    "check_layer_config": [
+      "self"
+    ],
+    "get_layer_config": [
+      "self",
+      "layer_name"
+    ],
+    "track_hidden_states": [
+      "self",
+      "data"
+    ],
+    "pre_quantization": [
+      "self"
+    ],
+    "gather_single_batch_from_dict": [
+      "self",
+      "data_dict",
+      "idx"
+    ],
+    "gather_single_batch_from_list": [
+      "self",
+      "data_list",
+      "idx"
+    ],
+    "update_blockwise_hidden_states": [
+      "self",
+      "outs"
+    ],
+    "find_true_sequential_config": [
+      "self"
+    ],
+    "find_lm_head_config": [
+      "self"
+    ],
+    "analyze_true_sequential": [
+      "self",
+      "module",
+      "inputs"
+    ],
+    "execute_quantization": [
+      "self",
+      "means",
+      "stds",
+      "model_path"
+    ]
+  },
+  "GPTQ": {
+    "__init__": [
+      "self",
+      "layer",
+      "W",
+      "device"
+    ],
+    "add_batch": [
+      "self",
+      "inp",
+      "out"
+    ],
+    "fasterquant": [
+      "self",
+      "W",
+      "blocksize",
+      "percdamp",
+      "groupsize",
+      "act_order",
+      "static_groups"
+    ],
+    "free": [
+      "self"
+    ]
+  },
+  "Quantizer": {
+    "__init__": [
+      "self",
+      "shape"
+    ],
+    "configure": [
+      "self",
+      "bits",
+      "perchannel",
+      "sym",
+      "mse",
+      "norm",
+      "grid",
+      "maxshrink",
+      "trits"
+    ],
+    "find_params": [
+      "self",
+      "x",
+      "weight"
+    ],
+    "ready": [
+      "self"
+    ]
+  },
+  "_use_dnnl": [],
+  "_enable_dnnl": [],
+  "_disable_dnnl": [],
+  "_using_dnnl": [],
+  "_use_tpp": [],
+  "_enable_tpp": [],
+  "_disable_tpp": [],
+  "_using_tpp": [],
+  "_exec": [
+    "args"
+  ],
+  "add_auto_ipex_params": [
+    "parser",
+    "auto_ipex_default_enabled"
+  ],
+  "parse_args": [],
+  "enable_onednn_fusion": [
+    "enabled"
+  ],
+  "RunMethods": {
+    "JIT": [],
+    "TorchDynamo": [],
+    "EagerInfer": [],
+    "EagerTrain": []
+  },
+  "GraphCapture": {
+    "__init__": [
+      "self",
+      "model",
+      "train",
+      "dtype",
+      "weights_prepack"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ]
+  },
+  "Tensor": [],
+  "_embedding_bag_fast_path_sum": [
+    "weights",
+    "indices",
+    "offsets",
+    "mode",
+    "scale_grad_by_freq",
+    "per_sample_weights",
+    "padding_idx"
+  ],
+  "torch_embedding_bag": [],
+  "patch_emb_bag_cpu_only": [
+    "func"
+  ],
+  "_embeddingbag": [
+    "weights",
+    "indices",
+    "offsets",
+    "scale_grad_by_freq",
+    "mode",
+    "sparse",
+    "per_sample_weights",
+    "include_last_offset",
+    "padding_idx"
+  ],
+  "EltwiseType": {
+    "NotFused": [],
+    "ReLU": [],
+    "Sigmoid": []
+  },
+  "IPEXLinearEltwise": {
+    "__init__": [
+      "self",
+      "ipex_linear_module",
+      "eltwise"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FrozenBatchNorm2d": {
+    "__init__": [
+      "self",
+      "num_features",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "_cat": [
+    "tensors",
+    "dim"
+  ],
+  "_convert_boxes_to_roi_format": [
+    "boxes"
+  ],
+  "_check_roi_boxes_shape": [
+    "boxes"
+  ],
+  "RoIAlign": {
+    "__init__": [
+      "self",
+      "output_size",
+      "spatial_scale",
+      "sampling_ratio",
+      "aligned"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "rois"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "interaction": [],
+  "InteractionFunc": {
+    "forward": [
+      "ctx"
+    ],
+    "backward": [
+      "ctx",
+      "grad_out"
+    ]
+  },
+  "linear_bn_fuse": [
+    "model",
+    "inplace"
+  ],
+  "check_avx2_support": [],
+  "check_minimal_isa_support": [],
+  "VERBOSE_OFF": [],
+  "VERBOSE_ON": [],
+  "VERBOSE_ON_CREATION": [],
+  "verbose": {
+    "__init__": [
+      "self",
+      "level"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "override_is_leaf_module": [],
+  "USE_BF16_PARAMS": [],
+  "layer_use_bf16": [],
+  "unpad": [],
+  "print_cou": [],
+  "print_grad_hook": [
+    "var",
+    "name"
+  ],
+  "generate_mask": [
+    "attention_mask"
+  ],
+  "PadInput": {
+    "forward": [
+      "ctx",
+      "input",
+      "msk",
+      "padded_shape"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "UnpadInput": {
+    "forward": [
+      "ctx",
+      "input",
+      "msk"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "DummyLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "DummyLayerNorm": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "BertSelfAttentionFunction": {
+    "forward": [
+      "ctx",
+      "p",
+      "training",
+      "need_attention_output"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "BertSelfAttention": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "maybe_block_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions",
+      "seq_offsets",
+      "seq_sqr_offsets"
+    ]
+  },
+  "BertOutputBaseFunction": {
+    "forward": [
+      "ctx",
+      "p",
+      "eps",
+      "training"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "BertOutputBase": {
+    "__init__": [
+      "self",
+      "config",
+      "selfOutput"
+    ],
+    "maybe_block_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "BertSelfOutput": {
+    "__init__": [
+      "self",
+      "config"
+    ]
+  },
+  "BertOutput": {
+    "__init__": [
+      "self",
+      "config"
+    ]
+  },
+  "BertIntermediateFunction": {
+    "forward": [
+      "ctx",
+      "input",
+      "weight",
+      "bias",
+      "act",
+      "training"
+    ],
+    "backward": [
+      "ctx",
+      "grad_out"
+    ]
+  },
+  "BertIntermediate": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "maybe_block_params": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "BertEmbeddingsFunction": {
+    "forward": [
+      "ctx",
+      "training",
+      "prob",
+      "eps",
+      "head_size",
+      "pad_id"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "BertEmbeddings": {
+    "__init__": [
+      "self",
+      "config",
+      "position_ids_persistent"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "inputs_embeds",
+      "past_key_values_length"
+    ]
+  },
+  "BertAttention": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "prune_heads": [
+      "self",
+      "heads"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions",
+      "seq_offsets",
+      "seq_sqr_offsets"
+    ]
+  },
+  "BertLayer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions",
+      "seq_offsets",
+      "seq_sqr_offsets"
+    ],
+    "feed_forward_chunk": [
+      "self",
+      "attention_output"
+    ]
+  },
+  "BertEncoder": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "BertPooler": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "BertPredictionHeadTransform": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "BertLMPredictionHead": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "fast_bert": [
+    "model",
+    "dtype",
+    "optimizer",
+    "unpad"
+  ],
+  "SGD": {
+    "__init__": [
+      "self",
+      "params",
+      "lr",
+      "momentum",
+      "dampening",
+      "weight_decay",
+      "nesterov"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "AdamW": {
+    "__init__": [
+      "self",
+      "params",
+      "lr",
+      "betas",
+      "eps",
+      "weight_decay",
+      "correct_bias"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "clip_grad_norm_": [
+    "parameters",
+    "max_norm",
+    "norm_type",
+    "grad_list"
+  ],
+  "DistLamb": {
+    "__init__": [
+      "self",
+      "params",
+      "lr",
+      "betas",
+      "eps",
+      "weight_decay",
+      "adam",
+      "bias_correction",
+      "block_size",
+      "perform_allreduce",
+      "fused_param_norm"
+    ],
+    "_one_time_setup": [
+      "self"
+    ],
+    "clip_grad_norm_": [
+      "self",
+      "max_norm",
+      "norm_type"
+    ],
+    "sync_params": [
+      "self"
+    ],
+    "sync_grads": [
+      "self"
+    ],
+    "acc_and_zero_grad": [
+      "self"
+    ],
+    "merge_acc_grad": [
+      "self",
+      "avg"
+    ],
+    "zero_grad": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "_prod": [
+    "myList"
+  ],
+  "get_vnni_blocking": [
+    "dtype"
+  ],
+  "BlockingManager": {
+    "__init__": [
+      "self",
+      "orig_shape",
+      "blocking_factors",
+      "permute"
+    ],
+    "block": [
+      "self",
+      "input"
+    ],
+    "unblock": [
+      "self",
+      "input"
+    ]
+  },
+  "get_blocking_signature": [
+    "plain_layout_str",
+    "blocked_layout_str"
+  ],
+  "_get_block_sizes": [
+    "blocked_shape",
+    "blocking_signeture",
+    "dim"
+  ],
+  "_get_plain_size": [
+    "blocked_shape",
+    "blocking_signeture",
+    "dim"
+  ],
+  "_get_plain_shape": [
+    "blocked_shape",
+    "blocking_signeture"
+  ],
+  "_get_permute_list": [
+    "blocking_signeture"
+  ],
+  "BlockedTensor": {
+    "__init__": [
+      "self",
+      "data",
+      "blocking_signeture",
+      "plain_dtype"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "get_plain_shape": [
+      "self",
+      "dim"
+    ],
+    "get_permute_list": [
+      "self"
+    ],
+    "get_blocked_dim": [
+      "self"
+    ],
+    "get_plain_dim": [
+      "self"
+    ],
+    "get_plain_size": [
+      "self",
+      "dim"
+    ],
+    "get_plain_dtype": [
+      "self"
+    ],
+    "get_block_sizes": [
+      "self",
+      "dim"
+    ],
+    "blocked_tensor": [
+      "self"
+    ],
+    "unblocked_tensor": [
+      "self"
+    ],
+    "get_signature": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__getattr__": [
+      "self",
+      "attr"
+    ],
+    "__torch_function__": [
+      "self",
+      "func",
+      "types",
+      "args",
+      "kwargs"
+    ]
+  },
+  "BlockedParameter": {
+    "__new__": [
+      "cls",
+      "data",
+      "requires_grad"
+    ],
+    "__init__": [
+      "self",
+      "data",
+      "requires_grad"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "set_blocking_param": [
+      "self",
+      "blocking_param"
+    ],
+    "is_blocked": [
+      "self"
+    ],
+    "block": [
+      "self"
+    ],
+    "unblock": [
+      "self"
+    ],
+    "__tensor_flatten__": [
+      "self"
+    ],
+    "__tensor_unflatten__": [
+      "inner_tensors",
+      "ctx",
+      "outer_size",
+      "outer_stride"
+    ],
+    "__torch_dispatch__": [
+      "cls",
+      "func",
+      "types",
+      "args",
+      "kwargs"
+    ],
+    "__metadata_guard__": [
+      "cls",
+      "orig_data",
+      "other"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "BlockedModule": {
+    "_save_to_state_dict": [
+      "self",
+      "destination",
+      "prefix",
+      "keep_vars"
+    ],
+    "_load_from_state_dict": [
+      "self",
+      "state_dict",
+      "prefix",
+      "local_metadata",
+      "strict",
+      "missing_keys",
+      "unexpected_keys",
+      "error_msgs"
+    ],
+    "default_blocking_factors": [
+      "S"
+    ],
+    "get_blocked_tensor": [
+      "tensor",
+      "signature",
+      "blocking_factors"
+    ]
+  },
+  "block_model_params": [
+    "model"
+  ],
+  "TestModule": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "MultiObjective": {
+    "__init__": [
+      "self",
+      "program",
+      "program_args",
+      "tune_launcher"
+    ],
+    "evaluate": [
+      "self",
+      "cfg"
+    ],
+    "deprecate_config": [
+      "self",
+      "cfg",
+      "deprecated",
+      "new",
+      "default"
+    ],
+    "decode_launcer_cfg": [
+      "self",
+      "cfg"
+    ],
+    "extract_usr_objectives": [
+      "self",
+      "output"
+    ]
+  },
+  "Hypertune": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "tune": [
+      "self"
+    ]
+  },
+  "inference": [
+    "model",
+    "data"
+  ],
+  "GridTuneStrategy": {
+    "__init__": [
+      "self",
+      "conf"
+    ],
+    "next_tune_cfg": [
+      "self"
+    ]
+  },
+  "modules": [],
+  "STRATEGIES": [],
+  "strategy_registry": [
+    "cls"
+  ],
+  "TuneStrategy": {
+    "__init__": [
+      "self",
+      "conf"
+    ],
+    "next_tune_cfg": [
+      "self"
+    ],
+    "traverse": [
+      "self"
+    ],
+    "_compare": [
+      "self",
+      "higher_is_better",
+      "src",
+      "dst"
+    ],
+    "_update_best_tune_result": [
+      "self",
+      "curr_tune_result",
+      "curr_tune_cfg"
+    ],
+    "_record_tune_result": [
+      "self",
+      "curr_tune_result",
+      "curr_tune_cfg"
+    ],
+    "_stop": [
+      "self",
+      "trials_count"
+    ],
+    "_print_best_result": [
+      "self"
+    ]
+  },
+  "RandomTuneStrategy": {
+    "__init__": [
+      "self",
+      "conf"
+    ],
+    "next_tune_cfg": [
+      "self"
+    ]
+  },
+  "DotDict": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "d"
+    ]
+  },
+  "tuning_default": [],
+  "_valid_strategy": [
+    "data"
+  ],
+  "tuning_schema": [],
+  "output_dir_default": [],
+  "output_dir_schema": [],
+  "objective_schema": [],
+  "launcher_hyperparam_default_val": [],
+  "cpuinfo": [],
+  "is_hyperthreading_enabled": [],
+  "launcher_hyperparam_default_search_space": [],
+  "_valid_launcher_schema": [
+    "key",
+    "scope",
+    "error"
+  ],
+  "input_str_to_list_int": [
+    "data"
+  ],
+  "launcher_schema": [],
+  "hyperparams_default": [],
+  "hyperparams_schema": [],
+  "schema": [],
+  "Conf": {
+    "__init__": [
+      "self",
+      "conf_fpath",
+      "program_fpath",
+      "program_args"
+    ],
+    "_read_conf": [
+      "self",
+      "conf_fpath"
+    ],
+    "_convert_conf": [
+      "self",
+      "src",
+      "dst"
+    ],
+    "_extract_usr_objectives": [
+      "self",
+      "program_fpath"
+    ]
+  },
+  "DistributedTrainingLauncher": {
+    "add_params": [
+      "self",
+      "parser"
+    ],
+    "get_pin_domain_affinity": [
+      "self",
+      "cpu_pools",
+      "ccl_worker_count",
+      "logical_cores_for_ccl"
+    ],
+    "launch": [
+      "self",
+      "args"
+    ]
+  },
+  "MultiInstancesLauncher": {
+    "__init__": [
+      "self",
+      "logger",
+      "lscpu_txt"
+    ],
+    "add_params": [
+      "self",
+      "parser"
+    ],
+    "is_command_available": [
+      "self",
+      "cmd"
+    ],
+    "set_multi_task_manager": [
+      "self",
+      "multi_task_manager",
+      "skip_list"
+    ],
+    "execution_command_builder": [
+      "self",
+      "args",
+      "omp_runtime",
+      "task_mgr",
+      "environ",
+      "cpu_pools",
+      "index"
+    ],
+    "launch": [
+      "self",
+      "args"
+    ]
+  },
+  "add_deprecated_params": [
+    "parser"
+  ],
+  "process_deprecated_params": [
+    "args",
+    "logger"
+  ],
+  "ArgumentTypesDefaultsHelpFormatter": {
+    "_fill_text": [
+      "self",
+      "text",
+      "width",
+      "indent"
+    ],
+    "_split_lines": [
+      "self",
+      "text",
+      "width"
+    ],
+    "_get_help_string": [
+      "self",
+      "action"
+    ]
+  },
+  "CoreInfo": {
+    "__init__": [
+      "self",
+      "lscpu_txt",
+      "headers"
+    ],
+    "parse_raw": [
+      "self",
+      "cols",
+      "headers"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "CPUPool": {
+    "__init__": [
+      "self"
+    ],
+    "get_ranges": [
+      "self",
+      "l"
+    ],
+    "get_pool_txt": [
+      "self",
+      "return_mode"
+    ]
+  },
+  "CPUPoolList": {
+    "__init__": [
+      "self",
+      "logger",
+      "lscpu_txt"
+    ],
+    "verbose": [
+      "self",
+      "level",
+      "msg",
+      "warning_type"
+    ],
+    "gen_pools_ondemand": [
+      "self",
+      "ninstances",
+      "ncores_per_instance",
+      "use_logical_cores",
+      "use_e_cores",
+      "bind_numa_node",
+      "nodes_list",
+      "cores_list",
+      "strategy",
+      "return_mode"
+    ]
+  },
+  "Task": {
+    "__init__": [
+      "self",
+      "module",
+      "cpu_pool"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "run_sync": [
+      "self"
+    ]
+  },
+  "MultiStreamModuleHint": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "default_multi_stream_module_split_hint": [],
+  "default_multi_stream_module_concat_hint": [],
+  "get_default_num_streams": [
+    "cpu_pool"
+  ],
+  "MultiStreamModule": {
+    "__init__": [
+      "self",
+      "model",
+      "num_streams",
+      "cpu_pool",
+      "concat_output",
+      "input_split_hint",
+      "output_concat_hint"
+    ],
+    "reset_forward_status": [
+      "self"
+    ],
+    "update_split_idx": [
+      "self",
+      "stream_id"
+    ],
+    "init_forward_status": [
+      "self",
+      "split_size",
+      "stream_id"
+    ],
+    "_do_get_input_for_each_stream": [
+      "self",
+      "hint_object",
+      "input_object",
+      "stream_input_object",
+      "idx_or_key",
+      "stream_id"
+    ],
+    "_get_input_for_each_stream": [
+      "self",
+      "multi_stream_module_split_hint"
+    ],
+    "_do_generate_outputs": [
+      "self",
+      "hint_object",
+      "output_object",
+      "stream_output_object",
+      "idx_or_key",
+      "stream_id"
+    ],
+    "_generate_outputs": [
+      "self",
+      "stream_output_object",
+      "stream_id"
+    ],
+    "_do_concat_output_for_each_stream": [
+      "self",
+      "hint_object",
+      "output_object",
+      "idx_or_key"
+    ],
+    "_concat_output_for_each_stream": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ],
+    "get_stream_number": [
+      "self"
+    ]
+  },
+  "_MultiStreamBenchmarkModule": {
+    "__init__": [
+      "self",
+      "model",
+      "num_streams",
+      "cpu_pool"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "pin": {
+    "__init__": [
+      "self",
+      "cpu_pool"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ]
+  },
+  "is_runtime_ext_enabled": [],
+  "get_num_nodes": [],
+  "get_num_cores_per_node": [],
+  "get_core_list_of_node_id": [
+    "node_id"
+  ],
+  "_MultiDeviceReplicator": {
+    "__init__": [
+      "self",
+      "master_tensor"
+    ],
+    "get": [
+      "self",
+      "device"
+    ]
+  },
+  "OptState": {
+    "READY": [],
+    "UNSCALED": [],
+    "STEPPED": []
+  },
+  "_refresh_per_optimizer_state": [],
+  "GradScaler": {
+    "__init__": [
+      "self",
+      "init_scale",
+      "growth_factor",
+      "backoff_factor",
+      "growth_interval",
+      "enabled"
+    ],
+    "_check_scale_growth_tracker": [
+      "self",
+      "funcname"
+    ],
+    "_lazy_init_scale_growth_tracker": [
+      "self",
+      "dev"
+    ],
+    "scale": [
+      "self",
+      "outputs"
+    ],
+    "_unscale_grads_": [
+      "self",
+      "optimizer",
+      "inv_scale",
+      "found_inf",
+      "allow_fp16"
+    ],
+    "unscale_": [
+      "self",
+      "optimizer"
+    ],
+    "_maybe_opt_step": [
+      "self",
+      "optimizer",
+      "optimizer_state"
+    ],
+    "step": [
+      "self",
+      "optimizer"
+    ],
+    "update": [
+      "self",
+      "new_scale"
+    ],
+    "get_scale": [
+      "self"
+    ],
+    "get_growth_factor": [
+      "self"
+    ],
+    "set_growth_factor": [
+      "self",
+      "new_factor"
+    ],
+    "get_backoff_factor": [
+      "self"
+    ],
+    "set_backoff_factor": [
+      "self",
+      "new_factor"
+    ],
+    "get_growth_interval": [
+      "self"
+    ],
+    "set_growth_interval": [
+      "self",
+      "new_interval"
+    ],
+    "_get_growth_tracker": [
+      "self"
+    ],
+    "is_enabled": [
+      "self"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "_check_inf_per_device": [
+      "self",
+      "optimizer"
+    ],
+    "_found_inf_per_device": [
+      "self",
+      "optimizer"
+    ]
+  }
+}

@@ -1,0 +1,4924 @@
+{
+  "InstructionDesignator": [],
+  "RetType": [],
+  "_invalidates_cached_properties": [
+    "func"
+  ],
+  "Program": {
+    "__init__": [
+      "self"
+    ],
+    "calibrations": [
+      "self"
+    ],
+    "measure_calibrations": [
+      "self"
+    ],
+    "waveforms": [
+      "self"
+    ],
+    "frames": [
+      "self"
+    ],
+    "declarations": [
+      "self"
+    ],
+    "copy_everything_except_instructions": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "defined_gates": [
+      "self"
+    ],
+    "instructions": [
+      "self",
+      "instructions"
+    ],
+    "inst": [
+      "self"
+    ],
+    "control_flow_graph": [
+      "self"
+    ],
+    "with_loop": [
+      "self",
+      "num_iterations",
+      "iteration_count_reference",
+      "start_label",
+      "end_label"
+    ],
+    "resolve_placeholders": [
+      "self"
+    ],
+    "resolve_placeholders_with_custom_resolvers": [
+      "self"
+    ],
+    "resolve_qubit_placeholders": [
+      "self"
+    ],
+    "resolve_qubit_placeholders_with_mapping": [
+      "self",
+      "qubit_mapping"
+    ],
+    "resolve_label_placeholders": [
+      "self"
+    ],
+    "_add_instruction": [
+      "self",
+      "instruction"
+    ],
+    "filter_instructions": [
+      "self",
+      "predicate"
+    ],
+    "remove_quil_t_instructions": [
+      "self"
+    ],
+    "gate": [
+      "self",
+      "name",
+      "params",
+      "qubits"
+    ],
+    "defgate": [
+      "self",
+      "name",
+      "matrix",
+      "parameters"
+    ],
+    "define_noisy_gate": [
+      "self",
+      "name",
+      "qubit_indices",
+      "kraus_ops"
+    ],
+    "define_noisy_readout": [
+      "self",
+      "qubit",
+      "p00",
+      "p11"
+    ],
+    "no_noise": [
+      "self"
+    ],
+    "measure": [
+      "self",
+      "qubit",
+      "classical_reg"
+    ],
+    "reset": [
+      "self",
+      "qubit_index"
+    ],
+    "measure_all": [
+      "self"
+    ],
+    "prepend_instructions": [
+      "self",
+      "instructions"
+    ],
+    "while_do": [
+      "self",
+      "classical_reg",
+      "q_program"
+    ],
+    "if_then": [
+      "self",
+      "classical_reg",
+      "if_program",
+      "else_program"
+    ],
+    "declare": [
+      "self",
+      "name",
+      "memory_type",
+      "memory_size",
+      "shared_region",
+      "offsets"
+    ],
+    "wrap_in_numshots_loop": [
+      "self",
+      "shots"
+    ],
+    "out": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "match_calibrations": [
+      "self",
+      "instr"
+    ],
+    "get_calibration": [
+      "self",
+      "instr"
+    ],
+    "calibrate": [
+      "self",
+      "instruction",
+      "previously_calibrated_instructions"
+    ],
+    "is_protoquil": [
+      "self",
+      "quilt"
+    ],
+    "is_supported_on_qpu": [
+      "self"
+    ],
+    "dagger": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__iadd__": [
+      "self",
+      "other"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_all_instructions": [
+      "self"
+    ]
+  },
+  "merge_with_pauli_noise": [
+    "prog_list",
+    "probabilities",
+    "qubits"
+  ],
+  "get_classical_addresses_from_program": [
+    "program"
+  ],
+  "address_qubits": [
+    "program",
+    "qubit_mapping"
+  ],
+  "_get_label": [
+    "placeholder",
+    "label_mapping",
+    "label_i"
+  ],
+  "instantiate_labels": [
+    "instructions"
+  ],
+  "percolate_declares": [
+    "program"
+  ],
+  "merge_programs": [
+    "prog_list"
+  ],
+  "validate_protoquil": [
+    "program",
+    "quilt"
+  ],
+  "validate_supported_quil": [
+    "program"
+  ],
+  "_InstructionMeta": {
+    "__init__": [
+      "self"
+    ],
+    "__instancecheck__": [
+      "self",
+      "__instance"
+    ]
+  },
+  "AbstractInstruction": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "_T": [],
+  "_add_reduce_method": [
+    "cls"
+  ],
+  "_convert_to_rs_instruction": [
+    "instr"
+  ],
+  "_convert_to_rs_instructions": [
+    "instrs"
+  ],
+  "_convert_to_py_instruction": [
+    "instr"
+  ],
+  "_convert_to_py_instructions": [
+    "instrs"
+  ],
+  "Gate": {
+    "__new__": [
+      "cls",
+      "name",
+      "params",
+      "qubits",
+      "modifiers"
+    ],
+    "_from_rs_gate": [
+      "cls",
+      "gate"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "qubits": [
+      "self",
+      "qubits"
+    ],
+    "params": [
+      "self",
+      "params"
+    ],
+    "modifiers": [
+      "self",
+      "modifiers"
+    ],
+    "_to_rs_gate_modifier": [
+      "self",
+      "modifier"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "controlled": [
+      "self",
+      "control_qubit"
+    ],
+    "forked": [
+      "self",
+      "fork_qubit",
+      "alt_params"
+    ],
+    "dagger": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "_update_super": [
+      "self",
+      "gate"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "_strip_modifiers": [
+    "gate",
+    "limit"
+  ],
+  "Measurement": {
+    "__new__": [
+      "cls",
+      "qubit",
+      "classical_reg"
+    ],
+    "_reg_to_target": [
+      "cls",
+      "classical_reg"
+    ],
+    "_from_rs_measurement": [
+      "cls",
+      "measurement"
+    ],
+    "qubit": [
+      "self",
+      "qubit"
+    ],
+    "classical_reg": [
+      "self",
+      "classical_reg"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Reset": {
+    "__new__": [
+      "cls",
+      "qubit"
+    ],
+    "_from_rs_reset": [
+      "cls",
+      "reset"
+    ],
+    "out": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "qubit": [
+      "self",
+      "qubit"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ResetQubit": {
+    "__new__": [
+      "cls",
+      "qubit"
+    ],
+    "_from_rs_reset": [
+      "cls",
+      "reset"
+    ]
+  },
+  "DefGate": {
+    "__new__": [
+      "cls",
+      "name",
+      "matrix",
+      "parameters"
+    ],
+    "_from_rs_gate_definition": [
+      "cls",
+      "gate_definition"
+    ],
+    "_convert_to_matrix_specification": [
+      "matrix"
+    ],
+    "_validate_matrix": [
+      "matrix",
+      "contains_parameters"
+    ],
+    "out": [
+      "self"
+    ],
+    "get_constructor": [
+      "self"
+    ],
+    "num_args": [
+      "self"
+    ],
+    "matrix": [
+      "self",
+      "matrix"
+    ],
+    "parameters": [
+      "self",
+      "parameters"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DefPermutationGate": {
+    "__new__": [
+      "cls",
+      "name",
+      "permutation"
+    ],
+    "_convert_to_permutation_specification": [
+      "permutation"
+    ],
+    "permutation": [
+      "self",
+      "permutation"
+    ],
+    "num_args": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "DefGateByPaulis": {
+    "__new__": [
+      "cls",
+      "gate_name",
+      "parameters",
+      "arguments",
+      "body"
+    ],
+    "_convert_to_pauli_specification": [
+      "body",
+      "arguments"
+    ],
+    "arguments": [
+      "self",
+      "arguments"
+    ],
+    "body": [
+      "self",
+      "body"
+    ],
+    "num_args": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "JumpTarget": {
+    "__new__": [
+      "cls",
+      "label"
+    ],
+    "_from_rs_label": [
+      "cls",
+      "label"
+    ],
+    "label": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "JumpWhen": {
+    "__new__": [
+      "cls",
+      "target",
+      "condition"
+    ],
+    "_from_rs_jump_when": [
+      "cls",
+      "jump_when"
+    ],
+    "out": [
+      "self"
+    ],
+    "condition": [
+      "self",
+      "condition"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "JumpUnless": {
+    "__new__": [
+      "cls",
+      "target",
+      "condition"
+    ],
+    "_from_rs_jump_unless": [
+      "cls",
+      "jump_unless"
+    ],
+    "out": [
+      "self"
+    ],
+    "condition": [
+      "self",
+      "condition"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "SimpleInstruction": {
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Halt": {
+    "instruction": []
+  },
+  "Wait": {
+    "instruction": []
+  },
+  "Nop": {
+    "instruction": []
+  },
+  "UnaryClassicalInstruction": {
+    "__new__": [
+      "cls",
+      "target"
+    ],
+    "_from_rs_unary_logic": [
+      "cls",
+      "unary_logic"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalNeg": {
+    "op": []
+  },
+  "ClassicalNot": {
+    "op": []
+  },
+  "LogicalBinaryOp": {
+    "__new__": [
+      "cls",
+      "left",
+      "right"
+    ],
+    "_from_rs_binary_logic": [
+      "cls",
+      "binary_logic"
+    ],
+    "_to_rs_binary_operand": [
+      "operand"
+    ],
+    "_to_py_binary_operand": [
+      "operand"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalAnd": {
+    "op": []
+  },
+  "ClassicalInclusiveOr": {
+    "op": []
+  },
+  "ClassicalExclusiveOr": {
+    "op": []
+  },
+  "ArithmeticBinaryOp": {
+    "__new__": [
+      "cls",
+      "left",
+      "right"
+    ],
+    "_from_rs_arithmetic": [
+      "cls",
+      "arithmetic"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalAdd": {
+    "op": []
+  },
+  "ClassicalSub": {
+    "op": []
+  },
+  "ClassicalMul": {
+    "op": []
+  },
+  "ClassicalDiv": {
+    "op": []
+  },
+  "ClassicalMove": {
+    "__new__": [
+      "cls",
+      "left",
+      "right"
+    ],
+    "_from_rs_move": [
+      "cls",
+      "move"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalExchange": {
+    "__new__": [
+      "cls",
+      "left",
+      "right"
+    ],
+    "_from_rs_exchange": [
+      "cls",
+      "exchange"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalConvert": {
+    "__new__": [
+      "cls",
+      "left",
+      "right"
+    ],
+    "_from_rs_convert": [
+      "cls",
+      "convert"
+    ],
+    "left": [
+      "self",
+      "memory_reference"
+    ],
+    "right": [
+      "self",
+      "memory_reference"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalLoad": {
+    "__new__": [
+      "cls",
+      "target",
+      "left",
+      "right"
+    ],
+    "_from_rs_load": [
+      "cls",
+      "load"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "_to_rs_arithmetic_operand": [
+    "operand"
+  ],
+  "_to_py_arithmetic_operand": [
+    "operand"
+  ],
+  "ClassicalStore": {
+    "__new__": [
+      "cls",
+      "target",
+      "left",
+      "right"
+    ],
+    "_from_rs_store": [
+      "cls",
+      "store"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalComparison": {
+    "__new__": [
+      "cls",
+      "target",
+      "left",
+      "right"
+    ],
+    "_from_rs_comparison": [
+      "cls",
+      "comparison"
+    ],
+    "_to_comparison_operand": [
+      "operand"
+    ],
+    "_to_py_operand": [
+      "operand"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "left": [
+      "self",
+      "left"
+    ],
+    "right": [
+      "self",
+      "right"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ClassicalEqual": {
+    "op": []
+  },
+  "ClassicalLessThan": {
+    "op": []
+  },
+  "ClassicalLessEqual": {
+    "op": []
+  },
+  "ClassicalGreaterThan": {
+    "op": []
+  },
+  "ClassicalGreaterEqual": {
+    "op": []
+  },
+  "Jump": {
+    "__new__": [
+      "cls",
+      "target"
+    ],
+    "_from_rs_jump": [
+      "cls",
+      "jump"
+    ],
+    "target": [
+      "self",
+      "target"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Pragma": {
+    "__new__": [
+      "cls",
+      "command",
+      "args",
+      "freeform_string"
+    ],
+    "_from_rs_pragma": [
+      "cls",
+      "pragma"
+    ],
+    "_to_pragma_arguments": [
+      "args"
+    ],
+    "_to_py_arguments": [
+      "args"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "command": [
+      "self",
+      "command"
+    ],
+    "args": [
+      "self",
+      "args"
+    ],
+    "freeform_string": [
+      "self",
+      "freeform_string"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Declare": {
+    "__new__": [
+      "cls",
+      "name",
+      "memory_type",
+      "memory_size",
+      "shared_region",
+      "offsets"
+    ],
+    "_from_rs_declaration": [
+      "cls",
+      "declaration"
+    ],
+    "_memory_type_to_scalar_type": [
+      "memory_type"
+    ],
+    "_to_rs_offsets": [
+      "offsets"
+    ],
+    "memory_type": [
+      "self",
+      "memory_type"
+    ],
+    "memory_size": [
+      "self",
+      "memory_size"
+    ],
+    "shared_region": [
+      "self",
+      "shared_region"
+    ],
+    "offsets": [
+      "self",
+      "offsets"
+    ],
+    "asdict": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Include": {
+    "out": [
+      "self"
+    ],
+    "_from_rs_include": [
+      "cls",
+      "include"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Pulse": {
+    "__new__": [
+      "cls",
+      "frame",
+      "waveform",
+      "nonblocking"
+    ],
+    "_from_rs_pulse": [
+      "cls",
+      "pulse"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "waveform": [
+      "self",
+      "waveform"
+    ],
+    "nonblocking": [
+      "self",
+      "nonblocking"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "SetFrequency": {
+    "__new__": [
+      "cls",
+      "frame",
+      "freq"
+    ],
+    "_from_rs_set_frequency": [
+      "cls",
+      "set_frequency"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "freq": [
+      "self",
+      "freq"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ShiftFrequency": {
+    "__new__": [
+      "cls",
+      "frame",
+      "freq"
+    ],
+    "_from_rs_shift_frequency": [
+      "cls",
+      "shift_frequency"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "freq": [
+      "self",
+      "freq"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "SetPhase": {
+    "__new__": [
+      "cls",
+      "frame",
+      "phase"
+    ],
+    "_from_rs_set_phase": [
+      "cls",
+      "set_phase"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "phase": [
+      "self",
+      "phase"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "ShiftPhase": {
+    "__new__": [
+      "cls",
+      "frame",
+      "phase"
+    ],
+    "_from_rs_shift_phase": [
+      "cls",
+      "shift_phase"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "phase": [
+      "self",
+      "phase"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "SwapPhases": {
+    "__new__": [
+      "cls",
+      "frameA",
+      "frameB"
+    ],
+    "_from_rs_swap_phases": [
+      "cls",
+      "swap_phases"
+    ],
+    "frameA": [
+      "self",
+      "frame"
+    ],
+    "frameB": [
+      "self",
+      "frame"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "SetScale": {
+    "__new__": [
+      "cls",
+      "frame",
+      "scale"
+    ],
+    "_from_rs_set_scale": [
+      "cls",
+      "set_scale"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "scale": [
+      "self",
+      "scale"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Call": {
+    "_from_rs_call": [
+      "cls",
+      "call"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Capture": {
+    "__new__": [
+      "cls",
+      "frame",
+      "kernel",
+      "memory_region",
+      "nonblocking"
+    ],
+    "_from_rs_capture": [
+      "cls",
+      "capture"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "kernel": [
+      "self",
+      "kernel"
+    ],
+    "memory_region": [
+      "self",
+      "memory_region"
+    ],
+    "nonblocking": [
+      "self",
+      "nonblocking"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "RawCapture": {
+    "__new__": [
+      "cls",
+      "frame",
+      "duration",
+      "memory_region",
+      "nonblocking"
+    ],
+    "_from_rs_raw_capture": [
+      "cls",
+      "raw_capture"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "duration": [
+      "self",
+      "duration"
+    ],
+    "memory_region": [
+      "self",
+      "memory_region"
+    ],
+    "nonblocking": [
+      "self",
+      "nonblocking"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_qubits": [
+      "self",
+      "indices"
+    ],
+    "get_qubit_indices": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "Delay": {
+    "__new__": [
+      "cls",
+      "frames",
+      "qubits",
+      "duration"
+    ],
+    "_from_rs_delay": [
+      "cls",
+      "delay"
+    ],
+    "_join_frame_qubits": [
+      "frames",
+      "qubits"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "qubits": [
+      "self",
+      "qubits"
+    ],
+    "frames": [
+      "self",
+      "frames"
+    ],
+    "duration": [
+      "self",
+      "duration"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DelayFrames": {
+    "__new__": [
+      "cls",
+      "frames",
+      "duration"
+    ],
+    "_from_rs_delay": [
+      "cls",
+      "delay"
+    ]
+  },
+  "DelayQubits": {
+    "__new__": [
+      "cls",
+      "qubits",
+      "duration"
+    ],
+    "_from_rs_delay": [
+      "cls",
+      "delay"
+    ]
+  },
+  "Fence": {
+    "__new__": [
+      "cls",
+      "qubits"
+    ],
+    "_from_rs_fence": [
+      "cls",
+      "fence"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "qubits": [
+      "self",
+      "qubits"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "FenceAll": {
+    "__new__": [
+      "cls"
+    ]
+  },
+  "DefWaveform": {
+    "__new__": [
+      "cls",
+      "name",
+      "parameters",
+      "entries"
+    ],
+    "_from_rs_waveform_definition": [
+      "cls",
+      "waveform_definition"
+    ],
+    "_build_rs_waveform": [
+      "parameters",
+      "entries"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "parameters": [
+      "self",
+      "parameters"
+    ],
+    "entries": [
+      "self",
+      "entries"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DefCircuit": {
+    "__new__": [
+      "cls",
+      "name",
+      "parameters",
+      "qubits",
+      "instructions"
+    ],
+    "_from_rs_circuit_definition": [
+      "cls",
+      "circuit_definition"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "parameters": [
+      "self",
+      "parameters"
+    ],
+    "qubit_variables": [
+      "self",
+      "qubits"
+    ],
+    "instructions": [
+      "self",
+      "instructions"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DefCalibration": {
+    "__new__": [
+      "cls",
+      "name",
+      "parameters",
+      "qubits",
+      "instrs",
+      "modifiers"
+    ],
+    "_from_rs_calibration": [
+      "cls",
+      "calibration"
+    ],
+    "parameters": [
+      "self",
+      "parameters"
+    ],
+    "qubits": [
+      "self",
+      "qubits"
+    ],
+    "instrs": [
+      "self",
+      "instrs"
+    ],
+    "instructions": [
+      "self",
+      "instructions"
+    ],
+    "name": [
+      "self",
+      "name"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DefMeasureCalibration": {
+    "__new__": [
+      "cls",
+      "qubit",
+      "memory_reference",
+      "instrs"
+    ],
+    "_from_rs_measure_calibration_definition": [
+      "cls",
+      "calibration"
+    ],
+    "qubit": [
+      "self",
+      "qubit"
+    ],
+    "memory_reference": [
+      "self",
+      "memory_reference"
+    ],
+    "instrs": [
+      "self",
+      "instrs"
+    ],
+    "instructions": [
+      "self",
+      "instructions"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "DefFrame": {
+    "__new__": [
+      "cls",
+      "frame",
+      "direction",
+      "initial_frequency",
+      "hardware_object",
+      "sample_rate",
+      "center_frequency",
+      "enable_raw_capture",
+      "channel_delay"
+    ],
+    "_from_rs_frame_definition": [
+      "cls",
+      "def_frame"
+    ],
+    "_from_rs_attribute_values": [
+      "cls",
+      "frame",
+      "attributes"
+    ],
+    "_to_attribute_value": [
+      "value"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "frame": [
+      "self",
+      "frame"
+    ],
+    "set_attribute": [
+      "self",
+      "name",
+      "value"
+    ],
+    "get_attribute": [
+      "self",
+      "name"
+    ],
+    "__getitem__": [
+      "self",
+      "name"
+    ],
+    "__setitem__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "direction": [
+      "self",
+      "direction"
+    ],
+    "initial_frequency": [
+      "self",
+      "initial_frequency"
+    ],
+    "hardware_object": [
+      "self",
+      "hardware_object"
+    ],
+    "sample_rate": [
+      "self",
+      "sample_rate"
+    ],
+    "center_frequency": [
+      "self",
+      "center_frequency"
+    ],
+    "channel_delay": [
+      "self",
+      "channel_delay"
+    ],
+    "__copy__": [
+      "self"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memo"
+    ]
+  },
+  "FlatWaveform": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "iq",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "iq": [],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "GaussianWaveform": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "fwhm",
+      "t0",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "fwhm": [],
+    "t0": [],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "DragGaussianWaveform": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "fwhm",
+      "t0",
+      "anh",
+      "alpha",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "fwhm": [],
+    "t0": [],
+    "anh": [],
+    "alpha": [],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "HrmGaussianWaveform": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "fwhm",
+      "t0",
+      "anh",
+      "alpha",
+      "second_order_hrm_coeff",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "fwhm": [],
+    "t0": [],
+    "anh": [],
+    "alpha": [],
+    "second_order_hrm_coeff": [],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "ErfSquareWaveform": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "risetime",
+      "pad_left",
+      "pad_right",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "risetime": [],
+    "pad_left": [],
+    "pad_right": [],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "BoxcarAveragerKernel": {
+    "NAME": [],
+    "__new__": [
+      "cls",
+      "duration",
+      "scale",
+      "phase",
+      "detuning"
+    ],
+    "scale": [],
+    "phase": [],
+    "detuning": [],
+    "samples": [
+      "self",
+      "rate"
+    ]
+  },
+  "unpack_reg_val_pair": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "prepare_ternary_operands": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "I": [
+    "qubit"
+  ],
+  "X": [
+    "qubit"
+  ],
+  "Y": [
+    "qubit"
+  ],
+  "Z": [
+    "qubit"
+  ],
+  "H": [
+    "qubit"
+  ],
+  "S": [
+    "qubit"
+  ],
+  "T": [
+    "qubit"
+  ],
+  "RX": [
+    "angle",
+    "qubit"
+  ],
+  "RY": [
+    "angle",
+    "qubit"
+  ],
+  "RZ": [
+    "angle",
+    "qubit"
+  ],
+  "U": [
+    "theta",
+    "phi",
+    "lam",
+    "qubit"
+  ],
+  "PHASE": [
+    "angle",
+    "qubit"
+  ],
+  "CZ": [
+    "control",
+    "target"
+  ],
+  "CNOT": [
+    "control",
+    "target"
+  ],
+  "CCNOT": [
+    "control1",
+    "control2",
+    "target"
+  ],
+  "CPHASE00": [
+    "angle",
+    "control",
+    "target"
+  ],
+  "CPHASE01": [
+    "angle",
+    "control",
+    "target"
+  ],
+  "CPHASE10": [
+    "angle",
+    "control",
+    "target"
+  ],
+  "CPHASE": [
+    "angle",
+    "control",
+    "target"
+  ],
+  "SWAP": [
+    "q1",
+    "q2"
+  ],
+  "CSWAP": [
+    "control",
+    "target_1",
+    "target_2"
+  ],
+  "ISWAP": [
+    "q1",
+    "q2"
+  ],
+  "PSWAP": [
+    "angle",
+    "q1",
+    "q2"
+  ],
+  "XY": [
+    "angle",
+    "q1",
+    "q2"
+  ],
+  "SQISW": [
+    "q1",
+    "q2"
+  ],
+  "FSIM": [
+    "theta",
+    "phi",
+    "q1",
+    "q2"
+  ],
+  "PHASEDFSIM": [
+    "theta",
+    "zeta",
+    "chi",
+    "gamma",
+    "phi",
+    "q1",
+    "q2"
+  ],
+  "RZZ": [
+    "phi",
+    "q1",
+    "q2"
+  ],
+  "RXX": [
+    "phi",
+    "q1",
+    "q2"
+  ],
+  "RYY": [
+    "phi",
+    "q1",
+    "q2"
+  ],
+  "WAIT": [],
+  "RESET": [
+    "qubit_index"
+  ],
+  "NOP": [],
+  "HALT": [],
+  "DECLARE": [
+    "name",
+    "memory_type",
+    "memory_size",
+    "shared_region",
+    "offsets"
+  ],
+  "MEASURE": [
+    "qubit",
+    "classical_reg"
+  ],
+  "NEG": [
+    "classical_reg"
+  ],
+  "NOT": [
+    "classical_reg"
+  ],
+  "AND": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "IOR": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "XOR": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "MOVE": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "EXCHANGE": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "LOAD": [
+    "target_reg",
+    "region_name",
+    "offset_reg"
+  ],
+  "STORE": [
+    "region_name",
+    "offset_reg",
+    "source"
+  ],
+  "CONVERT": [
+    "classical_reg1",
+    "classical_reg2"
+  ],
+  "ADD": [
+    "classical_reg",
+    "right"
+  ],
+  "SUB": [
+    "classical_reg",
+    "right"
+  ],
+  "MUL": [
+    "classical_reg",
+    "right"
+  ],
+  "DIV": [
+    "classical_reg",
+    "right"
+  ],
+  "EQ": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "LT": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "LE": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "GT": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "GE": [
+    "classical_reg1",
+    "classical_reg2",
+    "classical_reg3"
+  ],
+  "PULSE": [
+    "frame",
+    "waveform",
+    "nonblocking"
+  ],
+  "SET_FREQUENCY": [
+    "frame",
+    "freq"
+  ],
+  "SHIFT_FREQUENCY": [
+    "frame",
+    "freq"
+  ],
+  "SET_PHASE": [
+    "frame",
+    "phase"
+  ],
+  "SHIFT_PHASE": [
+    "frame",
+    "phase"
+  ],
+  "SWAP_PHASES": [
+    "frameA",
+    "frameB"
+  ],
+  "SWAP_PHASE": [
+    "frameA",
+    "frameB"
+  ],
+  "SET_SCALE": [
+    "frame",
+    "scale"
+  ],
+  "CAPTURE": [
+    "frame",
+    "kernel",
+    "memory_region",
+    "nonblocking"
+  ],
+  "RAW_CAPTURE": [
+    "frame",
+    "duration",
+    "memory_region",
+    "nonblocking"
+  ],
+  "DELAY": [],
+  "FENCE": [],
+  "STANDARD_GATES": [],
+  "__all__": [],
+  "get_report": [],
+  "OCTETS_PER_DOUBLE_FLOAT": [],
+  "OCTETS_PER_COMPLEX_DOUBLE": [],
+  "Wavefunction": {
+    "__init__": [
+      "self",
+      "amplitude_vector"
+    ],
+    "zeros": [
+      "qubit_num"
+    ],
+    "from_bit_packed_string": [
+      "coef_string"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "probabilities": [
+      "self"
+    ],
+    "get_outcome_probs": [
+      "self"
+    ],
+    "pretty_print_probabilities": [
+      "self",
+      "decimal_digits"
+    ],
+    "pretty_print": [
+      "self",
+      "decimal_digits"
+    ],
+    "plot": [
+      "self",
+      "qubit_subset"
+    ],
+    "sample_bitstrings": [
+      "self",
+      "n_samples"
+    ]
+  },
+  "get_bitstring_from_index": [
+    "index",
+    "qubit_num"
+  ],
+  "_octet_bits": [
+    "o"
+  ],
+  "CalibrationError": {},
+  "CalibrationDoesntMatch": {},
+  "CalibrationMatch": {},
+  "_convert_to_calibration_match": [
+    "instruction",
+    "calibration"
+  ],
+  "match_calibration": [
+    "instr",
+    "cal"
+  ],
+  "__version__": [],
+  "log": [],
+  "_one_q_sic_prep": [
+    "index",
+    "qubit"
+  ],
+  "_one_q_pauli_prep": [
+    "label",
+    "index",
+    "qubit"
+  ],
+  "_one_q_state_prep": [
+    "oneq_state"
+  ],
+  "_local_pauli_eig_meas": [
+    "op",
+    "idx"
+  ],
+  "_generate_experiment_programs": [
+    "tomo_experiment",
+    "active_reset"
+  ],
+  "measure_observables": [
+    "qc",
+    "tomo_experiment",
+    "progress_callback",
+    "calibrate_readout"
+  ],
+  "_ops_bool_to_prog": [
+    "ops_bool",
+    "qubits"
+  ],
+  "_stats_from_measurements": [
+    "bs_results",
+    "qubit_index_map",
+    "setting",
+    "n_shots",
+    "coeff"
+  ],
+  "_calibration_program": [
+    "qc",
+    "tomo_experiment",
+    "setting"
+  ],
+  "PauliTargetDesignator": [],
+  "PauliDesignator": [],
+  "PAULI_OPS": [],
+  "PAULI_PROD": [],
+  "PAULI_COEFF": [],
+  "UnequalLengthWarning": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "integer_types": [],
+  "HASH_PRECISION": [],
+  "_valid_qubit": [
+    "index"
+  ],
+  "PauliTerm": {
+    "__init__": [
+      "self",
+      "op",
+      "index",
+      "coefficient"
+    ],
+    "_from_rs_pauli_term": [
+      "cls",
+      "term"
+    ],
+    "_to_rs_pauli_term": [
+      "self"
+    ],
+    "id": [
+      "self",
+      "sort_ops"
+    ],
+    "operations_as_set": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "copy": [
+      "self"
+    ],
+    "program": [
+      "self"
+    ],
+    "get_qubits": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "i"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "_multiply_factor": [
+      "self",
+      "factor",
+      "index"
+    ],
+    "__mul__": [
+      "self",
+      "term"
+    ],
+    "__rmul__": [
+      "self",
+      "other"
+    ],
+    "__pow__": [
+      "self",
+      "power"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__radd__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__rsub__": [
+      "self",
+      "other"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "compact_str": [
+      "self"
+    ],
+    "from_list": [
+      "cls",
+      "terms_list",
+      "coefficient"
+    ],
+    "from_compact_str": [
+      "cls",
+      "str_pauli_term"
+    ],
+    "pauli_string": [
+      "self",
+      "qubits"
+    ]
+  },
+  "ID": [],
+  "ZERO": [],
+  "sI": [
+    "q"
+  ],
+  "sX": [
+    "q"
+  ],
+  "sY": [
+    "q"
+  ],
+  "sZ": [
+    "q"
+  ],
+  "term_with_coeff": [
+    "term",
+    "coeff"
+  ],
+  "PauliSum": {
+    "__init__": [
+      "self",
+      "terms"
+    ],
+    "_from_rs_pauli_sum": [
+      "cls",
+      "pauli_sum"
+    ],
+    "_to_rs_pauli_sum": [
+      "self",
+      "arguments"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__rmul__": [
+      "self",
+      "other"
+    ],
+    "__pow__": [
+      "self",
+      "power"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__radd__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__rsub__": [
+      "self",
+      "other"
+    ],
+    "get_qubits": [
+      "self"
+    ],
+    "simplify": [
+      "self"
+    ],
+    "get_programs": [
+      "self"
+    ],
+    "compact_str": [
+      "self"
+    ],
+    "from_compact_str": [
+      "cls",
+      "str_pauli_sum"
+    ]
+  },
+  "simplify_pauli_sum": [
+    "pauli_sum"
+  ],
+  "check_commutation": [
+    "pauli_list",
+    "pauli_two"
+  ],
+  "commuting_sets": [
+    "pauli_terms"
+  ],
+  "is_identity": [
+    "term"
+  ],
+  "exponentiate": [
+    "term"
+  ],
+  "exponential_map": [
+    "term"
+  ],
+  "exponentiate_commuting_pauli_sum": [
+    "pauli_sum"
+  ],
+  "exponentiate_pauli_sum": [
+    "pauli_sum"
+  ],
+  "_exponentiate_general_case": [
+    "pauli_term",
+    "param"
+  ],
+  "suzuki_trotter": [
+    "trotter_order",
+    "trotter_steps"
+  ],
+  "is_zero": [
+    "pauli_object"
+  ],
+  "trotterize": [
+    "first_pauli_term",
+    "second_pauli_term",
+    "trotter_order",
+    "trotter_steps"
+  ],
+  "QuilAtom": {
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "Qubit": {
+    "__init__": [
+      "self",
+      "index"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "FormalArgument": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "out": [
+      "self"
+    ],
+    "index": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "QubitPlaceholder": {
+    "__init__": [
+      "self",
+      "placeholder"
+    ],
+    "register": [
+      "n"
+    ],
+    "out": [
+      "self"
+    ],
+    "index": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "QubitDesignator": [],
+  "_convert_to_rs_qubit": [
+    "qubit"
+  ],
+  "_convert_to_rs_qubits": [
+    "qubits"
+  ],
+  "_convert_to_py_qubit": [
+    "qubit"
+  ],
+  "_convert_to_py_qubits": [
+    "qubits"
+  ],
+  "unpack_qubit": [
+    "qubit"
+  ],
+  "qubit_index": [
+    "qubit"
+  ],
+  "MemoryReferenceDesignator": [],
+  "unpack_classical_reg": [
+    "c"
+  ],
+  "Label": {
+    "__init__": [
+      "self",
+      "label_name"
+    ],
+    "_from_rs_target": [
+      "target"
+    ],
+    "out": [
+      "self"
+    ],
+    "name": [
+      "self",
+      "label_name"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "LabelPlaceholder": {
+    "__init__": [
+      "self",
+      "prefix"
+    ],
+    "_from_rs_target": [
+      "target"
+    ],
+    "prefix": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "ParameterDesignator": [],
+  "_convert_to_rs_expression": [
+    "parameter"
+  ],
+  "_convert_to_rs_expressions": [
+    "parameters"
+  ],
+  "format_parameter": [
+    "element"
+  ],
+  "ExpressionValueDesignator": [],
+  "ExpressionDesignator": [],
+  "_convert_to_py_expression": [
+    "expression"
+  ],
+  "_convert_to_py_expressions": [
+    "expressions"
+  ],
+  "Expression": {
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__radd__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__rsub__": [
+      "self",
+      "other"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__rmul__": [
+      "self",
+      "other"
+    ],
+    "__div__": [
+      "self",
+      "other"
+    ],
+    "__truediv__": [],
+    "__rdiv__": [
+      "self",
+      "other"
+    ],
+    "__rtruediv__": [],
+    "__pow__": [
+      "self",
+      "other"
+    ],
+    "__rpow__": [
+      "self",
+      "other"
+    ],
+    "__neg__": [
+      "self"
+    ],
+    "_substitute": [
+      "self",
+      "d"
+    ],
+    "_evaluate": [
+      "self"
+    ],
+    "__float__": [
+      "self"
+    ],
+    "__array__": [
+      "self",
+      "dtype"
+    ]
+  },
+  "ParameterSubstitutionsMapDesignator": [],
+  "substitute": [
+    "expr",
+    "d"
+  ],
+  "substitute_array": [
+    "a",
+    "d"
+  ],
+  "Parameter": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "out": [
+      "self"
+    ],
+    "_substitute": [
+      "self",
+      "d"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "Function": {
+    "__init__": [
+      "self",
+      "name",
+      "expression",
+      "fn"
+    ],
+    "_from_rs_function_call": [
+      "cls",
+      "function_call"
+    ],
+    "_substitute": [
+      "self",
+      "d"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__neq__": [
+      "self",
+      "other"
+    ]
+  },
+  "quil_sin": [
+    "expression"
+  ],
+  "quil_cos": [
+    "expression"
+  ],
+  "quil_sqrt": [
+    "expression"
+  ],
+  "quil_exp": [
+    "expression"
+  ],
+  "quil_cis": [
+    "expression"
+  ],
+  "BinaryExp": {
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ],
+    "_from_rs_infix_expression": [
+      "cls",
+      "infix_expression"
+    ],
+    "_substitute": [
+      "self",
+      "d"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__neq__": [
+      "self",
+      "other"
+    ]
+  },
+  "Add": {
+    "operator": [],
+    "precedence": [],
+    "associates": [],
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ]
+  },
+  "Sub": {
+    "operator": [],
+    "precedence": [],
+    "associates": [],
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ]
+  },
+  "Mul": {
+    "operator": [],
+    "precedence": [],
+    "associates": [],
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ]
+  },
+  "Div": {
+    "operator": [],
+    "precedence": [],
+    "associates": [],
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ]
+  },
+  "Pow": {
+    "operator": [],
+    "precedence": [],
+    "associates": [],
+    "fn": [
+      "a",
+      "b"
+    ],
+    "__init__": [
+      "self",
+      "op1",
+      "op2"
+    ]
+  },
+  "_expression_to_string": [
+    "expression"
+  ],
+  "_contained_parameters": [
+    "expression"
+  ],
+  "_check_for_pi": [
+    "element"
+  ],
+  "MemoryReference": {
+    "__init__": [
+      "self",
+      "name",
+      "offset",
+      "declared_size"
+    ],
+    "_from_rs_memory_reference": [
+      "cls",
+      "memory_reference"
+    ],
+    "_from_parameter_str": [
+      "cls",
+      "memory_reference_str"
+    ],
+    "_to_rs_memory_reference": [
+      "self"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "offset"
+    ],
+    "_substitute": [
+      "self",
+      "d"
+    ]
+  },
+  "_contained_mrefs": [
+    "expression"
+  ],
+  "Frame": {
+    "__new__": [
+      "cls",
+      "qubits",
+      "name"
+    ],
+    "_from_rs_frame_identifier": [
+      "cls",
+      "frame"
+    ],
+    "qubits": [
+      "self",
+      "qubits"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "WaveformInvocation": {
+    "__new__": [
+      "cls",
+      "name",
+      "parameters"
+    ],
+    "parameters": [
+      "self",
+      "parameters"
+    ],
+    "out": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "WaveformReference": {
+    "__new__": [
+      "cls",
+      "name"
+    ]
+  },
+  "_template_waveform_property": [
+    "name"
+  ],
+  "TemplateWaveform": {
+    "__new__": [
+      "cls",
+      "name"
+    ],
+    "out": [
+      "self"
+    ],
+    "get_parameter": [
+      "self",
+      "name"
+    ],
+    "set_parameter": [
+      "self",
+      "name",
+      "value"
+    ],
+    "duration": [],
+    "num_samples": [
+      "self",
+      "rate"
+    ],
+    "samples": [
+      "self",
+      "rate"
+    ],
+    "_from_rs_waveform_invocation": [
+      "cls",
+      "waveform"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_update_envelope": [
+    "iqs",
+    "rate",
+    "scale",
+    "phase",
+    "detuning"
+  ],
+  "Waveform": [],
+  "_convert_to_py_waveform": [
+    "waveform"
+  ],
+  "BasicBlock": {
+    "_from_rs": [
+      "cls",
+      "block"
+    ],
+    "instructions": [
+      "self"
+    ],
+    "terminator": [
+      "self"
+    ]
+  },
+  "ControlFlowGraph": {
+    "_from_rs": [
+      "cls",
+      "graph"
+    ],
+    "basic_blocks": [
+      "self"
+    ]
+  },
+  "_log": [],
+  "THETA": [],
+  "_get_qvm_noise_supported_gates": [
+    "isa"
+  ],
+  "_transform_rpcq_qubit_gate_info_to_qvm_noise_supported_gate": [
+    "qubit_id",
+    "gate"
+  ],
+  "_transform_rpcq_edge_gate_info_to_qvm_noise_supported_gates": [
+    "edge"
+  ],
+  "QUIL_TO_NUMPY_DTYPE": [],
+  "AbstractQuantumSimulator": {
+    "__init__": [
+      "self",
+      "n_qubits",
+      "rs"
+    ],
+    "do_gate": [
+      "self",
+      "gate"
+    ],
+    "do_gate_matrix": [
+      "self",
+      "matrix",
+      "qubits"
+    ],
+    "do_program": [
+      "self",
+      "program"
+    ],
+    "do_measurement": [
+      "self",
+      "qubit"
+    ],
+    "expectation": [
+      "self",
+      "operator"
+    ],
+    "reset": [
+      "self"
+    ],
+    "sample_bitstrings": [
+      "self",
+      "n_samples"
+    ],
+    "do_post_gate_noise": [
+      "self",
+      "noise_type",
+      "noise_prob",
+      "qubits"
+    ]
+  },
+  "PyQVM": {
+    "__init__": [
+      "self",
+      "n_qubits",
+      "quantum_simulator_type",
+      "seed",
+      "post_gate_noise_probabilities"
+    ],
+    "_extract_defined_gates": [
+      "self"
+    ],
+    "execute_with_memory_map_batch": [
+      "self",
+      "executable",
+      "memory_maps"
+    ],
+    "execute": [
+      "self",
+      "executable",
+      "memory_map"
+    ],
+    "get_result": [
+      "self",
+      "execute_response"
+    ],
+    "read_memory": [
+      "self"
+    ],
+    "find_label": [
+      "self",
+      "label"
+    ],
+    "transition": [
+      "self"
+    ],
+    "_execute_program": [
+      "self"
+    ],
+    "execute_once": [
+      "self",
+      "program"
+    ]
+  },
+  "INFINITY": [],
+  "_KrausModel": [],
+  "KrausModel": {
+    "unpack_kraus_matrix": [
+      "m"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "d"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "_NoiseModel": [],
+  "NoiseModel": {
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "d"
+    ],
+    "gates_by_name": [
+      "self",
+      "name"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "_check_kraus_ops": [
+    "n",
+    "kraus_ops"
+  ],
+  "_create_kraus_pragmas": [
+    "name",
+    "qubit_indices",
+    "kraus_ops"
+  ],
+  "append_kraus_to_gate": [
+    "kraus_ops",
+    "gate_matrix"
+  ],
+  "pauli_kraus_map": [
+    "probabilities"
+  ],
+  "damping_kraus_map": [
+    "p"
+  ],
+  "dephasing_kraus_map": [
+    "p"
+  ],
+  "tensor_kraus_maps": [
+    "k1",
+    "k2"
+  ],
+  "combine_kraus_maps": [
+    "k1",
+    "k2"
+  ],
+  "damping_after_dephasing": [
+    "T1",
+    "T2",
+    "gate_time"
+  ],
+  "NO_NOISE": [],
+  "ANGLE_TOLERANCE": [],
+  "NoisyGateUndefined": {},
+  "get_noisy_gate": [
+    "gate_name",
+    "params"
+  ],
+  "_get_program_gates": [
+    "prog"
+  ],
+  "_decoherence_noise_model": [
+    "gates",
+    "T1",
+    "T2",
+    "gate_time_1q",
+    "gate_time_2q",
+    "ro_fidelity"
+  ],
+  "decoherence_noise_with_asymmetric_ro": [
+    "isa",
+    "p00",
+    "p11"
+  ],
+  "_noise_model_program_header": [
+    "noise_model"
+  ],
+  "apply_noise_model": [
+    "prog",
+    "noise_model"
+  ],
+  "add_decoherence_noise": [
+    "prog",
+    "T1",
+    "T2",
+    "gate_time_1q",
+    "gate_time_2q",
+    "ro_fidelity"
+  ],
+  "_bitstring_probs_by_qubit": [
+    "p"
+  ],
+  "estimate_bitstring_probs": [
+    "results"
+  ],
+  "_CHARS": [],
+  "_apply_local_transforms": [
+    "p",
+    "ts"
+  ],
+  "corrupt_bitstring_probs": [
+    "p",
+    "assignment_probabilities"
+  ],
+  "correct_bitstring_probs": [
+    "p",
+    "assignment_probabilities"
+  ],
+  "bitstring_probs_to_z_moments": [
+    "p"
+  ],
+  "estimate_assignment_probs": [
+    "q",
+    "trials",
+    "qc",
+    "p0"
+  ],
+  "_run": [
+    "qc",
+    "program"
+  ],
+  "pyquil_version": [],
+  "pyquil_docs_version": [],
+  "DOCS_URL": [],
+  "SymmetrizationLevel": {
+    "EXHAUSTIVE": [],
+    "NONE": [],
+    "OA_STRENGTH_1": [],
+    "OA_STRENGTH_2": [],
+    "OA_STRENGTH_3": []
+  },
+  "euler_angles_RX": [
+    "theta"
+  ],
+  "euler_angles_RY": [
+    "theta"
+  ],
+  "P_X": [],
+  "P_Y": [],
+  "P_Z": [],
+  "M_X": [],
+  "M_Y": [],
+  "M_Z": [],
+  "pauli_term_to_euler_memory_map": [
+    "term"
+  ],
+  "pauli_term_to_preparation_memory_map": [
+    "term",
+    "label"
+  ],
+  "pauli_term_to_measurement_memory_map": [
+    "term",
+    "label"
+  ],
+  "merge_memory_map_lists": [
+    "mml1",
+    "mml2"
+  ],
+  "_abbrev_program": [
+    "program",
+    "max_len"
+  ],
+  "_remove_reset_from_program": [
+    "program"
+  ],
+  "Experiment": {
+    "__init__": [
+      "self",
+      "settings",
+      "program"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__reversed__": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "append": [
+      "self",
+      "expts"
+    ],
+    "count": [
+      "self",
+      "expt"
+    ],
+    "index": [
+      "self",
+      "expt",
+      "start",
+      "stop"
+    ],
+    "extend": [
+      "self",
+      "expts"
+    ],
+    "insert": [
+      "self",
+      "index",
+      "expt"
+    ],
+    "pop": [
+      "self",
+      "index"
+    ],
+    "remove": [
+      "self",
+      "expt"
+    ],
+    "reverse": [
+      "self"
+    ],
+    "sort": [
+      "self",
+      "key",
+      "reverse"
+    ],
+    "setting_strings": [
+      "self"
+    ],
+    "settings_string": [
+      "self",
+      "abbrev_after"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "serializable": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "get_meas_qubits": [
+      "self"
+    ],
+    "get_meas_registers": [
+      "self",
+      "qubits"
+    ],
+    "generate_experiment_program": [
+      "self"
+    ],
+    "build_setting_memory_map": [
+      "self",
+      "setting"
+    ],
+    "build_symmetrization_memory_maps": [
+      "self",
+      "qubits",
+      "label"
+    ],
+    "generate_calibration_experiment": [
+      "self"
+    ]
+  },
+  "_pauli_to_product_state": [
+    "in_state"
+  ],
+  "OperatorEncoder": {
+    "default": [
+      "self",
+      "o"
+    ]
+  },
+  "to_json": [
+    "fn",
+    "obj"
+  ],
+  "_operator_object_hook": [
+    "obj"
+  ],
+  "read_json": [
+    "fn"
+  ],
+  "ExperimentResult": {
+    "__init__": [
+      "self",
+      "setting",
+      "expectation",
+      "total_counts",
+      "std_err",
+      "raw_expectation",
+      "raw_std_err",
+      "calibration_expectation",
+      "calibration_std_err",
+      "calibration_counts",
+      "additional_results"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "serializable": [
+      "self"
+    ]
+  },
+  "bitstrings_to_expectations": [
+    "bitstrings",
+    "joint_expectations"
+  ],
+  "correct_experiment_result": [
+    "result",
+    "calibration"
+  ],
+  "ratio_variance": [
+    "a",
+    "var_a",
+    "b",
+    "var_b"
+  ],
+  "_OneQState": {
+    "__str__": [
+      "self"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ]
+  },
+  "TensorProductState": {
+    "__init__": [
+      "self",
+      "states"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "qubit"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "states_as_set": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ]
+  },
+  "SIC0": [
+    "q"
+  ],
+  "SIC1": [
+    "q"
+  ],
+  "SIC2": [
+    "q"
+  ],
+  "SIC3": [
+    "q"
+  ],
+  "plusX": [
+    "q"
+  ],
+  "minusX": [
+    "q"
+  ],
+  "plusY": [
+    "q"
+  ],
+  "minusY": [
+    "q"
+  ],
+  "plusZ": [
+    "q"
+  ],
+  "minusZ": [
+    "q"
+  ],
+  "zeros_state": [
+    "qubits"
+  ],
+  "ExperimentSetting": {
+    "__init__": [
+      "self",
+      "in_state",
+      "out_operator",
+      "additional_expectations"
+    ],
+    "_in_operator": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "serializable": [
+      "self"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ]
+  },
+  "parameterized_euler_rotations": [
+    "qubits"
+  ],
+  "parameterized_single_qubit_state_preparation": [
+    "qubits",
+    "label"
+  ],
+  "parameterized_single_qubit_measurement_basis": [
+    "qubits",
+    "label"
+  ],
+  "parameterized_readout_symmetrization": [
+    "qubits",
+    "label"
+  ],
+  "measure_qubits": [
+    "qubits"
+  ],
+  "get_results_by_qubit_groups": [
+    "results",
+    "qubit_groups"
+  ],
+  "merge_disjoint_experiments": [
+    "experiments",
+    "group_merged_settings"
+  ],
+  "construct_tpb_graph": [
+    "experiments"
+  ],
+  "group_settings_clique_removal": [
+    "experiments"
+  ],
+  "_max_weight_operator": [
+    "ops"
+  ],
+  "_max_weight_state": [
+    "states"
+  ],
+  "_max_tpb_overlap": [
+    "tomo_expt"
+  ],
+  "group_settings_greedy": [
+    "tomo_expt"
+  ],
+  "group_settings": [
+    "experiments",
+    "method"
+  ],
+  "CalibrationMethod": {
+    "PLUS_EIGENSTATE": [],
+    "NONE": [],
+    "MINUS_EIGENSTATE": []
+  },
+  "JsonValue": [],
+  "Operator": {
+    "__post_init__": [
+      "self"
+    ],
+    "_dict": [
+      "self"
+    ],
+    "dict": [
+      "self"
+    ],
+    "_parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_obj": [
+      "cls",
+      "dictionary"
+    ]
+  },
+  "MeasureInfo": {
+    "__post_init__": [
+      "self"
+    ],
+    "_dict": [
+      "self"
+    ],
+    "dict": [
+      "self"
+    ],
+    "_parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_obj": [
+      "cls",
+      "dictionary"
+    ]
+  },
+  "GateInfo": {
+    "_dict": [
+      "self"
+    ],
+    "dict": [
+      "self"
+    ],
+    "_parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_obj": [
+      "cls",
+      "dictionary"
+    ]
+  },
+  "_parse_operator": [
+    "dictionary"
+  ],
+  "Edge": {
+    "_dict": [
+      "self"
+    ],
+    "dict": [
+      "self"
+    ],
+    "_parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_obj": [
+      "cls",
+      "dictionary"
+    ]
+  },
+  "CompilerISA": {
+    "_dict": [
+      "self",
+      "by_alias"
+    ],
+    "dict": [
+      "self",
+      "by_alias"
+    ],
+    "_parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_obj": [
+      "cls",
+      "dictionary"
+    ],
+    "parse_file": [
+      "cls",
+      "filename"
+    ]
+  },
+  "add_qubit": [
+    "quantum_processor",
+    "node_id"
+  ],
+  "get_qubit": [
+    "quantum_processor",
+    "node_id"
+  ],
+  "make_edge_id": [
+    "qubit1",
+    "qubit2"
+  ],
+  "add_edge": [
+    "quantum_processor",
+    "qubit1",
+    "qubit2"
+  ],
+  "get_edge": [
+    "quantum_processor",
+    "qubit1",
+    "qubit2"
+  ],
+  "compiler_isa_to_target_quantum_processor": [
+    "compiler_isa"
+  ],
+  "Supported1QGate": {
+    "I": [],
+    "RX": [],
+    "RZ": [],
+    "MEASURE": [],
+    "WILDCARD": []
+  },
+  "Supported2QGate": {
+    "WILDCARD": [],
+    "CZ": [],
+    "ISWAP": [],
+    "CPHASE": [],
+    "XY": []
+  },
+  "NxQuantumProcessor": {
+    "__init__": [
+      "self",
+      "topology",
+      "gates_1q",
+      "gates_2q"
+    ],
+    "qubit_topology": [
+      "self"
+    ],
+    "to_compiler_isa": [
+      "self"
+    ],
+    "qubits": [
+      "self"
+    ],
+    "edges": [
+      "self"
+    ]
+  },
+  "AbstractQuantumProcessor": {
+    "qubits": [
+      "self"
+    ],
+    "qubit_topology": [
+      "self"
+    ],
+    "to_compiler_isa": [
+      "self"
+    ]
+  },
+  "QCSQuantumProcessor": {
+    "__init__": [
+      "self",
+      "quantum_processor_id",
+      "isa",
+      "noise_model"
+    ],
+    "qubits": [
+      "self"
+    ],
+    "qubit_topology": [
+      "self"
+    ],
+    "to_compiler_isa": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "get_qcs_quantum_processor": [
+    "quantum_processor_id",
+    "client_configuration",
+    "timeout"
+  ],
+  "CompilerQuantumProcessor": {
+    "__init__": [
+      "self",
+      "isa"
+    ],
+    "qubit_topology": [
+      "self"
+    ],
+    "to_compiler_isa": [
+      "self"
+    ],
+    "qubits": [
+      "self"
+    ]
+  },
+  "QCSISAParseError": {},
+  "qcs_isa_to_compiler_isa": [
+    "isa"
+  ],
+  "PERFECT_FIDELITY": [],
+  "PERFECT_DURATION": [],
+  "_operation_names_to_compiler_fidelity_default": [],
+  "_operation_names_to_compiler_duration_default": [],
+  "_make_measure_gates": [
+    "node_id",
+    "characteristics"
+  ],
+  "_make_rx_gates": [
+    "node_id",
+    "benchmarks"
+  ],
+  "_make_rz_gates": [
+    "node_id"
+  ],
+  "_get_frb_sim_1q": [
+    "node_id",
+    "benchmarks"
+  ],
+  "_make_wildcard_1q_gates": [
+    "node_id"
+  ],
+  "_transform_qubit_operation_to_gates": [
+    "operation_name",
+    "node_id",
+    "characteristics",
+    "benchmarks"
+  ],
+  "_make_cz_gates": [
+    "characteristics"
+  ],
+  "_make_iswap_gates": [
+    "characteristics"
+  ],
+  "_make_cphase_gates": [
+    "characteristics"
+  ],
+  "_make_xy_gates": [
+    "characteristics"
+  ],
+  "_make_wildcard_2q_gates": [],
+  "_transform_edge_operation_to_gates": [
+    "operation_name",
+    "characteristics"
+  ],
+  "qcs_isa_to_graph": [
+    "isa"
+  ],
+  "DEFAULT_1Q_GATES": [],
+  "DEFAULT_2Q_GATES": [],
+  "graph_to_compiler_isa": [
+    "graph",
+    "gates_1q",
+    "gates_2q"
+  ],
+  "compiler_isa_to_graph": [
+    "compiler_isa"
+  ],
+  "GraphGateError": {},
+  "_make_i_gates": [],
+  "targeted_einsum": [
+    "gate",
+    "wf",
+    "wf_target_inds"
+  ],
+  "targeted_tensordot": [
+    "gate",
+    "wf",
+    "wf_target_inds"
+  ],
+  "get_measure_probabilities": [
+    "wf",
+    "qubit"
+  ],
+  "_get_gate_tensor_and_qubits": [
+    "gate"
+  ],
+  "_term_expectation": [
+    "wf",
+    "term"
+  ],
+  "NumpyWavefunctionSimulator": {
+    "__init__": [
+      "self",
+      "n_qubits",
+      "rs"
+    ],
+    "sample_bitstrings": [
+      "self",
+      "n_samples"
+    ],
+    "do_measurement": [
+      "self",
+      "qubit"
+    ],
+    "do_gate": [
+      "self",
+      "gate"
+    ],
+    "do_gate_matrix": [
+      "self",
+      "matrix",
+      "qubits"
+    ],
+    "expectation": [
+      "self",
+      "operator"
+    ],
+    "reset": [
+      "self"
+    ],
+    "do_post_gate_noise": [
+      "self",
+      "noise_type",
+      "noise_prob",
+      "qubits"
+    ]
+  },
+  "_is_valid_quantum_state": [
+    "state_matrix",
+    "rtol",
+    "atol"
+  ],
+  "ReferenceWavefunctionSimulator": {
+    "__init__": [
+      "self",
+      "n_qubits",
+      "rs"
+    ],
+    "sample_bitstrings": [
+      "self",
+      "n_samples"
+    ],
+    "do_gate": [
+      "self",
+      "gate"
+    ],
+    "do_gate_matrix": [
+      "self",
+      "matrix",
+      "qubits"
+    ],
+    "do_measurement": [
+      "self",
+      "qubit"
+    ],
+    "expectation": [
+      "self",
+      "operator"
+    ],
+    "reset": [
+      "self"
+    ],
+    "do_post_gate_noise": [
+      "self",
+      "noise_type",
+      "noise_prob",
+      "qubits"
+    ]
+  },
+  "zero_state_matrix": [
+    "n_qubits"
+  ],
+  "ReferenceDensitySimulator": {
+    "__init__": [
+      "self",
+      "n_qubits",
+      "rs"
+    ],
+    "set_initial_state": [
+      "self",
+      "state_matrix"
+    ],
+    "sample_bitstrings": [
+      "self",
+      "n_samples",
+      "tol_factor"
+    ],
+    "do_gate": [
+      "self",
+      "gate"
+    ],
+    "do_gate_matrix": [
+      "self",
+      "matrix",
+      "qubits"
+    ],
+    "do_measurement": [
+      "self",
+      "qubit"
+    ],
+    "expectation": [
+      "self",
+      "operator"
+    ],
+    "reset": [
+      "self"
+    ],
+    "do_post_gate_noise": [
+      "self",
+      "noise_type",
+      "noise_prob",
+      "qubits"
+    ]
+  },
+  "P0": [],
+  "P1": [],
+  "BARENCO": [
+    "alpha",
+    "phi",
+    "theta"
+  ],
+  "QUANTUM_GATES": [],
+  "relaxation_operators": [
+    "p"
+  ],
+  "dephasing_operators": [
+    "p"
+  ],
+  "depolarizing_operators": [
+    "p"
+  ],
+  "phase_flip_operators": [
+    "p"
+  ],
+  "bit_flip_operators": [
+    "p"
+  ],
+  "bitphase_flip_operators": [
+    "p"
+  ],
+  "KRAUS_OPS": [],
+  "STATES": [],
+  "all_bitstrings": [
+    "n_bits"
+  ],
+  "qubit_adjacent_lifted_gate": [
+    "i",
+    "matrix",
+    "n_qubits"
+  ],
+  "two_swap_helper": [
+    "j",
+    "k",
+    "num_qubits",
+    "qubit_map"
+  ],
+  "permutation_arbitrary": [
+    "qubit_inds",
+    "n_qubits"
+  ],
+  "lifted_gate_matrix": [
+    "matrix",
+    "qubit_inds",
+    "n_qubits"
+  ],
+  "lifted_gate": [
+    "gate",
+    "n_qubits"
+  ],
+  "program_unitary": [
+    "program",
+    "n_qubits"
+  ],
+  "lifted_pauli": [
+    "pauli_sum",
+    "qubits"
+  ],
+  "tensor_up": [
+    "pauli_sum",
+    "qubits"
+  ],
+  "lifted_state_operator": [
+    "state",
+    "qubits"
+  ],
+  "scale_out_phase": [
+    "unitary1",
+    "unitary2"
+  ],
+  "unitary_equal": [
+    "A",
+    "B"
+  ],
+  "QPUCompilerNotRunning": {},
+  "parse_mref": [
+    "val"
+  ],
+  "_collect_memory_descriptors": [
+    "program"
+  ],
+  "QPUCompiler": {
+    "__init__": [
+      "self"
+    ],
+    "native_quil_to_executable": [
+      "self",
+      "nq_program"
+    ],
+    "_fetch_calibration_program": [
+      "self"
+    ],
+    "get_calibration_program": [
+      "self",
+      "force_refresh"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "QVMCompiler": {
+    "__init__": [
+      "self"
+    ],
+    "native_quil_to_executable": [
+      "self",
+      "nq_program"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "IncompatibleBackendForQuantumProcessorIDWarning": {},
+  "select_backend_for_quantum_processor_id": [
+    "quantum_processor_id",
+    "backend"
+  ],
+  "CompileToNativeQuilRequest": {},
+  "NativeQuilMetadataResponse": {},
+  "CompileToNativeQuilResponse": {},
+  "CompilerClient": {
+    "__init__": [
+      "self"
+    ],
+    "get_version": [
+      "self"
+    ],
+    "compile_to_native_quil": [
+      "self",
+      "request"
+    ],
+    "conjugate_pauli_by_clifford": [
+      "self",
+      "request"
+    ],
+    "generate_randomized_benchmarking_sequence": [
+      "self",
+      "request"
+    ]
+  },
+  "QAMError": {},
+  "MemoryMap": [],
+  "QAMExecutionResult": {
+    "get_register_map": [
+      "self"
+    ],
+    "get_raw_readout_data": [
+      "self"
+    ],
+    "get_memory_values": [
+      "self"
+    ],
+    "readout_data": [
+      "self"
+    ],
+    "execution_duration_microseconds": [
+      "self"
+    ]
+  },
+  "QAM": {
+    "execute": [
+      "self",
+      "executable",
+      "memory_map"
+    ],
+    "execute_with_memory_map_batch": [
+      "self",
+      "executable",
+      "memory_maps"
+    ],
+    "get_result": [
+      "self",
+      "execute_response"
+    ],
+    "run": [
+      "self",
+      "executable",
+      "memory_map"
+    ]
+  },
+  "BenchmarkConnection": {
+    "__init__": [
+      "self"
+    ],
+    "apply_clifford_to_pauli": [
+      "self",
+      "clifford",
+      "pauli_in"
+    ],
+    "generate_rb_sequence": [
+      "self",
+      "depth",
+      "gateset",
+      "seed",
+      "interleaver"
+    ]
+  },
+  "QVMVersionMismatch": {},
+  "QVMNotRunning": {},
+  "check_qvm_version": [
+    "version"
+  ],
+  "QVMExecuteResponse": {
+    "memory": [
+      "self"
+    ]
+  },
+  "QVM": {
+    "__init__": [
+      "self",
+      "noise_model",
+      "gate_noise",
+      "measurement_noise",
+      "random_seed",
+      "timeout",
+      "client"
+    ],
+    "connect": [
+      "self"
+    ],
+    "execute_with_memory_map_batch": [
+      "self",
+      "executable",
+      "memory_maps"
+    ],
+    "execute": [
+      "self",
+      "executable",
+      "memory_map"
+    ],
+    "get_result": [
+      "self",
+      "execute_response"
+    ],
+    "get_version_info": [
+      "self"
+    ]
+  },
+  "validate_noise_probabilities": [
+    "noise_parameter"
+  ],
+  "validate_qubit_list": [
+    "qubit_list"
+  ],
+  "level": [],
+  "logger": [],
+  "QuantumComputer": {
+    "__init__": [
+      "self"
+    ],
+    "quantum_processor": [
+      "self"
+    ],
+    "qubits": [
+      "self"
+    ],
+    "qubit_topology": [
+      "self"
+    ],
+    "to_compiler_isa": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "executable",
+      "memory_map"
+    ],
+    "run_with_memory_map_batch": [
+      "self",
+      "executable",
+      "memory_maps"
+    ],
+    "calibrate": [
+      "self",
+      "experiment"
+    ],
+    "run_experiment": [
+      "self",
+      "experiment",
+      "memory_map"
+    ],
+    "run_symmetrized_readout": [
+      "self",
+      "program",
+      "trials",
+      "symm_type",
+      "meas_qubits"
+    ],
+    "compile": [
+      "self",
+      "program",
+      "to_native_gates",
+      "optimize"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "list_quantum_computers": [
+    "qpus",
+    "qvms",
+    "timeout",
+    "client_configuration"
+  ],
+  "_parse_name": [
+    "name",
+    "as_qvm",
+    "noisy"
+  ],
+  "_canonicalize_name": [
+    "prefix",
+    "qvm_type",
+    "noisy"
+  ],
+  "_get_qvm_or_pyqvm": [],
+  "_get_qvm_qc": [],
+  "_get_qvm_with_topology": [],
+  "_get_9q_square_qvm": [],
+  "_get_unrestricted_qvm": [],
+  "_get_qvm_based_on_real_quantum_processor": [],
+  "get_qc": [
+    "name"
+  ],
+  "_port_used": [
+    "host",
+    "port"
+  ],
+  "local_forest_runtime": [],
+  "_flip_array_to_prog": [
+    "flip_array",
+    "qubits"
+  ],
+  "_symmetrization": [
+    "program",
+    "meas_qubits",
+    "symm_type"
+  ],
+  "_consolidate_symmetrization_outputs": [
+    "outputs",
+    "flip_arrays"
+  ],
+  "_measure_bitstrings": [
+    "qc",
+    "programs",
+    "meas_qubits",
+    "num_shots"
+  ],
+  "_construct_orthogonal_array": [
+    "num_qubits",
+    "strength"
+  ],
+  "_next_power_of_2": [
+    "x"
+  ],
+  "hadamard": [
+    "n",
+    "dtype"
+  ],
+  "_construct_strength_three_orthogonal_array": [
+    "num_qubits"
+  ],
+  "_construct_strength_two_orthogonal_array": [
+    "num_qubits"
+  ],
+  "_check_min_num_trials_for_symmetrized_readout": [
+    "num_qubits",
+    "trials",
+    "symm_type"
+  ],
+  "WavefunctionSimulator": {
+    "__init__": [
+      "self"
+    ],
+    "wavefunction": [
+      "self",
+      "quil_program",
+      "memory_map"
+    ],
+    "expectation": [
+      "self",
+      "prep_prog",
+      "pauli_terms",
+      "memory_map"
+    ],
+    "run_and_measure": [
+      "self",
+      "quil_program",
+      "qubits",
+      "trials",
+      "memory_map"
+    ],
+    "augment_program_with_memory_values": [
+      "quil_program",
+      "memory_map"
+    ]
+  },
+  "QuilcVersionMismatch": {},
+  "QuilcNotRunning": {},
+  "EncryptedProgram": {
+    "copy": [
+      "self"
+    ],
+    "__post_init__": [
+      "self"
+    ],
+    "recalculation_table": [
+      "self",
+      "value"
+    ]
+  },
+  "QuantumExecutable": [],
+  "AbstractCompiler": {
+    "__init__": [
+      "self"
+    ],
+    "get_version_info": [
+      "self"
+    ],
+    "quil_to_native_quil": [
+      "self",
+      "program"
+    ],
+    "_compile_with_quilc": [
+      "self",
+      "input",
+      "options"
+    ],
+    "_connect": [
+      "self"
+    ],
+    "transpile_qasm_2": [
+      "self",
+      "qasm"
+    ],
+    "native_quil_to_executable": [
+      "self",
+      "nq_program"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_check_quilc_version": [
+    "version"
+  ],
+  "AbstractBenchmarker": {
+    "apply_clifford_to_pauli": [
+      "self",
+      "clifford",
+      "pauli_in"
+    ],
+    "generate_rb_sequence": [
+      "self",
+      "depth",
+      "gateset",
+      "seed",
+      "interleaver"
+    ]
+  },
+  "decode_buffer": [
+    "buffer"
+  ],
+  "_extract_memory_regions": [
+    "memory_descriptors",
+    "ro_sources",
+    "buffers"
+  ],
+  "QPUExecuteResponse": {},
+  "QPU": {
+    "__init__": [
+      "self"
+    ],
+    "quantum_processor_id": [
+      "self"
+    ],
+    "execute": [
+      "self",
+      "executable",
+      "memory_map",
+      "execution_options"
+    ],
+    "execute_with_memory_map_batch": [
+      "self",
+      "executable",
+      "memory_maps",
+      "execution_options"
+    ],
+    "cancel": [
+      "self",
+      "execute_response"
+    ],
+    "get_result": [
+      "self",
+      "execute_response"
+    ]
+  },
+  "to_latex": [
+    "circuit",
+    "settings"
+  ],
+  "header": [],
+  "footer": [],
+  "body": [
+    "circuit",
+    "settings"
+  ],
+  "display": [
+    "circuit",
+    "settings"
+  ],
+  "DiagramSettings": {},
+  "PRAGMA_BEGIN_GROUP": [],
+  "PRAGMA_END_GROUP": [],
+  "UNSUPPORTED_INSTRUCTION_CLASSES": [],
+  "TIKZ_LEFT_KET": [
+    "qubit"
+  ],
+  "TIKZ_CONTROL": [
+    "control",
+    "offset"
+  ],
+  "TIKZ_CNOT_TARGET": [],
+  "TIKZ_CPHASE_TARGET": [],
+  "TIKZ_SWAP": [
+    "source",
+    "offset"
+  ],
+  "TIKZ_SWAP_TARGET": [],
+  "TIKZ_NOP": [],
+  "TIKZ_MEASURE": [],
+  "_format_parameter": [
+    "param",
+    "settings"
+  ],
+  "_format_parameters": [
+    "params",
+    "settings"
+  ],
+  "TIKZ_GATE": [
+    "name",
+    "size",
+    "params",
+    "dagger",
+    "settings"
+  ],
+  "TIKZ_GATE_GROUP": [
+    "qubits",
+    "width",
+    "label"
+  ],
+  "SOURCE_TARGET_OP": [],
+  "DiagramState": {
+    "__init__": [
+      "self",
+      "qubits"
+    ],
+    "extend_lines_to_common_edge": [
+      "self",
+      "qubits",
+      "offset"
+    ],
+    "width": [
+      "self",
+      "qubit"
+    ],
+    "append": [
+      "self",
+      "qubit",
+      "op"
+    ],
+    "append_diagram": [
+      "self",
+      "diagram",
+      "group"
+    ],
+    "interval": [
+      "self",
+      "low",
+      "high"
+    ],
+    "is_interval": [
+      "self",
+      "qubits"
+    ]
+  },
+  "split_on_terminal_measures": [
+    "program"
+  ],
+  "DiagramBuilder": {
+    "__init__": [
+      "self",
+      "circuit",
+      "settings"
+    ],
+    "build": [
+      "self"
+    ],
+    "_build_group": [
+      "self"
+    ],
+    "_build_measure": [
+      "self"
+    ],
+    "_build_custom_source_target_op": [
+      "self"
+    ],
+    "_build_1q_unitary": [
+      "self"
+    ],
+    "_build_generic_unitary": [
+      "self"
+    ]
+  },
+  "qubit_indices": [
+    "instr"
+  ]
+}

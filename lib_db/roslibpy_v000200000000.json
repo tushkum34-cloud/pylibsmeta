@@ -1,0 +1,843 @@
+{
+  "__all__": [],
+  "EventEmitterException": {},
+  "EventEmitterMixin": {
+    "__init__": [
+      "self"
+    ],
+    "on": [
+      "self",
+      "event",
+      "f"
+    ],
+    "_add_event_handler": [
+      "self",
+      "event",
+      "k",
+      "v"
+    ],
+    "emit": [
+      "self",
+      "event"
+    ],
+    "once": [
+      "self",
+      "event",
+      "f"
+    ],
+    "off": [
+      "self",
+      "event",
+      "f"
+    ],
+    "remove_listener": [
+      "self",
+      "event",
+      "f"
+    ],
+    "remove_all_listeners": [
+      "self",
+      "event"
+    ],
+    "listeners": [
+      "self",
+      "event"
+    ]
+  },
+  "LOGGER": [],
+  "Message": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "Header": {
+    "__init__": [
+      "self",
+      "seq",
+      "stamp",
+      "frame_id"
+    ]
+  },
+  "Time": {
+    "__init__": [
+      "self",
+      "secs",
+      "nsecs"
+    ],
+    "_ensure_int": [
+      "self",
+      "n"
+    ],
+    "secs": [
+      "self"
+    ],
+    "nsecs": [
+      "self"
+    ],
+    "is_zero": [
+      "self"
+    ],
+    "to_nsec": [
+      "self"
+    ],
+    "to_sec": [
+      "self"
+    ],
+    "from_sec": [
+      "float_secs"
+    ],
+    "now": []
+  },
+  "ServiceRequest": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "ServiceResponse": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "Result": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "Feedback": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "GoalStatus": {
+    "UNKNOWN": [],
+    "ACCEPTED": [],
+    "EXECUTING": [],
+    "CANCELING": [],
+    "SUCCEEDED": [],
+    "CANCELED": [],
+    "ABORTED": []
+  },
+  "Goal": {
+    "__init__": [
+      "self",
+      "values"
+    ]
+  },
+  "MessageEncoder": {
+    "default": [
+      "self",
+      "o"
+    ]
+  },
+  "Topic": {
+    "SUPPORTED_COMPRESSION_TYPES": [],
+    "__init__": [
+      "self",
+      "ros",
+      "name",
+      "message_type",
+      "compression",
+      "latch",
+      "throttle_rate",
+      "queue_size",
+      "queue_length",
+      "reconnect_on_close"
+    ],
+    "is_advertised": [
+      "self"
+    ],
+    "is_subscribed": [
+      "self"
+    ],
+    "subscribe": [
+      "self",
+      "callback"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "publish": [
+      "self",
+      "message"
+    ],
+    "advertise": [
+      "self"
+    ],
+    "_reset_advertise_id": [
+      "self",
+      "_proto"
+    ],
+    "_connect_topic": [
+      "self",
+      "message"
+    ],
+    "_reconnect_topic": [
+      "self",
+      "_proto"
+    ],
+    "unadvertise": [
+      "self"
+    ]
+  },
+  "ServiceException": {},
+  "Service": {
+    "__init__": [
+      "self",
+      "ros",
+      "name",
+      "service_type",
+      "reconnect_on_close"
+    ],
+    "is_advertised": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "request",
+      "callback",
+      "errback",
+      "timeout"
+    ],
+    "advertise": [
+      "self",
+      "callback"
+    ],
+    "_reset_advertise_id": [
+      "self",
+      "_proto"
+    ],
+    "_connect_service": [
+      "self",
+      "message"
+    ],
+    "_reconnect_service": [
+      "self",
+      "_proto"
+    ],
+    "unadvertise": [
+      "self"
+    ],
+    "_service_response_handler": [
+      "self",
+      "request"
+    ]
+  },
+  "ActionClient": {
+    "__init__": [
+      "self",
+      "ros",
+      "name",
+      "action_type",
+      "reconnect_on_close"
+    ],
+    "send_goal": [
+      "self",
+      "goal",
+      "resultback",
+      "feedback",
+      "errback"
+    ],
+    "cancel_goal": [
+      "self",
+      "goal_id"
+    ],
+    "wait_goal": [
+      "self",
+      "goal_id",
+      "timeout"
+    ]
+  },
+  "Param": {
+    "__init__": [
+      "self",
+      "ros",
+      "name"
+    ],
+    "get": [
+      "self",
+      "callback",
+      "errback",
+      "timeout"
+    ],
+    "set": [
+      "self",
+      "value",
+      "callback",
+      "errback",
+      "timeout"
+    ],
+    "delete": [
+      "self",
+      "callback",
+      "errback",
+      "timeout"
+    ]
+  },
+  "CONNECTION_TIMEOUT": [],
+  "ROSAPI_TIMEOUT": [],
+  "set_rosapi_timeout": [
+    "timeout"
+  ],
+  "Ros": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "is_secure",
+      "headers"
+    ],
+    "id_counter": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "connect": [
+      "self"
+    ],
+    "close": [
+      "self",
+      "timeout"
+    ],
+    "run": [
+      "self",
+      "timeout"
+    ],
+    "run_forever": [
+      "self"
+    ],
+    "run_event_loop": [
+      "self"
+    ],
+    "call_in_thread": [
+      "self",
+      "callback"
+    ],
+    "call_later": [
+      "self",
+      "delay",
+      "callback"
+    ],
+    "terminate": [
+      "self"
+    ],
+    "on": [
+      "self",
+      "event_name",
+      "callback"
+    ],
+    "off": [
+      "self",
+      "event_name",
+      "callback"
+    ],
+    "emit": [
+      "self",
+      "event_name"
+    ],
+    "on_ready": [
+      "self",
+      "callback",
+      "run_in_thread"
+    ],
+    "send_on_ready": [
+      "self",
+      "message"
+    ],
+    "blocking_call_from_thread": [
+      "self",
+      "callback",
+      "timeout"
+    ],
+    "get_service_request_callback": [
+      "self",
+      "message"
+    ],
+    "call_sync_service": [
+      "self",
+      "message",
+      "timeout"
+    ],
+    "call_async_service": [
+      "self",
+      "message",
+      "callback",
+      "errback"
+    ],
+    "call_async_action": [
+      "self",
+      "message",
+      "resultback",
+      "feedback",
+      "errback"
+    ],
+    "set_status_level": [
+      "self",
+      "level",
+      "identifier"
+    ],
+    "get_time": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_topics": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_topic_type": [
+      "self",
+      "topic",
+      "callback",
+      "errback"
+    ],
+    "get_topics_for_type": [
+      "self",
+      "topic_type",
+      "callback",
+      "errback"
+    ],
+    "get_services": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_service_type": [
+      "self",
+      "service_name",
+      "callback",
+      "errback"
+    ],
+    "get_services_for_type": [
+      "self",
+      "service_type",
+      "callback",
+      "errback"
+    ],
+    "get_service_request_details": [
+      "self",
+      "type",
+      "callback",
+      "errback"
+    ],
+    "get_service_response_details": [
+      "self",
+      "type",
+      "callback",
+      "errback"
+    ],
+    "get_message_details": [
+      "self",
+      "message_type",
+      "callback",
+      "errback"
+    ],
+    "get_params": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_param": [
+      "self",
+      "name",
+      "callback",
+      "errback"
+    ],
+    "set_param": [
+      "self",
+      "name",
+      "value",
+      "callback",
+      "errback"
+    ],
+    "delete_param": [
+      "self",
+      "name",
+      "callback",
+      "errback"
+    ],
+    "get_action_servers": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_nodes": [
+      "self",
+      "callback",
+      "errback"
+    ],
+    "get_node_details": [
+      "self",
+      "node",
+      "callback",
+      "errback"
+    ],
+    "authenticate": [
+      "self",
+      "mac",
+      "client",
+      "dest",
+      "rand",
+      "t",
+      "level",
+      "end"
+    ]
+  },
+  "TFClient": {
+    "__init__": [
+      "self",
+      "ros",
+      "fixed_frame",
+      "angular_threshold",
+      "translation_threshold",
+      "rate",
+      "update_delay",
+      "topic_timeout",
+      "server_name",
+      "repub_service_name"
+    ],
+    "_process_tf_array": [
+      "self",
+      "tf"
+    ],
+    "update_goal": [
+      "self"
+    ],
+    "_process_error": [
+      "self",
+      "response"
+    ],
+    "_process_response": [
+      "self",
+      "response"
+    ],
+    "_normalize_frame_id": [
+      "self",
+      "frame_id"
+    ],
+    "subscribe": [
+      "self",
+      "frame_id",
+      "callback"
+    ],
+    "unsubscribe": [
+      "self",
+      "frame_id",
+      "callback"
+    ],
+    "dispose": [
+      "self"
+    ]
+  },
+  "__title__": [],
+  "__description__": [],
+  "__url__": [],
+  "__version__": [],
+  "__author__": [],
+  "__author_email__": [],
+  "__license__": [],
+  "__copyright__": [],
+  "rostopic_list": [
+    "ros"
+  ],
+  "rostopic_type": [
+    "ros",
+    "topic"
+  ],
+  "rostopic_find": [
+    "ros",
+    "type"
+  ],
+  "rosmsg_info": [
+    "ros",
+    "type"
+  ],
+  "rosservice_list": [
+    "ros"
+  ],
+  "rosservice_type": [
+    "ros",
+    "service"
+  ],
+  "rosservice_find": [
+    "ros",
+    "type"
+  ],
+  "rossrv_info": [
+    "ros",
+    "type"
+  ],
+  "rosservice_info": [
+    "ros",
+    "service"
+  ],
+  "rosparam_list": [
+    "ros"
+  ],
+  "rosparam_set": [
+    "ros",
+    "param",
+    "value"
+  ],
+  "rosparam_get": [
+    "ros",
+    "param"
+  ],
+  "rosparam_delete": [
+    "ros",
+    "param"
+  ],
+  "_print_typedef": [
+    "typedef",
+    "def_map",
+    "level"
+  ],
+  "_print_type": [
+    "typedata"
+  ],
+  "main": [],
+  "RosBridgeException": {
+    "__init__": [
+      "self",
+      "message",
+      "cause"
+    ]
+  },
+  "RosBridgeProtocol": {
+    "__init__": [
+      "self"
+    ],
+    "on_message": [
+      "self",
+      "payload"
+    ],
+    "send_ros_message": [
+      "self",
+      "message"
+    ],
+    "register_message_handlers": [
+      "self",
+      "operation",
+      "handler"
+    ],
+    "send_ros_service_request": [
+      "self",
+      "message",
+      "callback",
+      "errback"
+    ],
+    "_handle_publish": [
+      "self",
+      "message"
+    ],
+    "_handle_service_response": [
+      "self",
+      "message"
+    ],
+    "_handle_service_request": [
+      "self",
+      "message"
+    ],
+    "send_ros_action_goal": [
+      "self",
+      "message",
+      "resultback",
+      "feedback",
+      "errback"
+    ],
+    "_handle_action_request": [
+      "self",
+      "message"
+    ],
+    "_handle_action_cancel": [
+      "self",
+      "message"
+    ],
+    "_handle_action_feedback": [
+      "self",
+      "message"
+    ],
+    "_handle_action_result": [
+      "self",
+      "message"
+    ]
+  },
+  "AutobahnRosBridgeProtocol": {
+    "__init__": [
+      "self"
+    ],
+    "onConnect": [
+      "self",
+      "response"
+    ],
+    "onOpen": [
+      "self"
+    ],
+    "onMessage": [
+      "self",
+      "payload",
+      "isBinary"
+    ],
+    "onClose": [
+      "self",
+      "wasClean",
+      "code",
+      "reason"
+    ],
+    "send_message": [
+      "self",
+      "payload"
+    ],
+    "send_close": [
+      "self"
+    ]
+  },
+  "AutobahnRosBridgeClientFactory": {
+    "protocol": [],
+    "__init__": [
+      "self"
+    ],
+    "connect": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "on_ready": [
+      "self",
+      "callback"
+    ],
+    "ready": [
+      "self",
+      "proto"
+    ],
+    "startedConnecting": [
+      "self",
+      "connector"
+    ],
+    "clientConnectionLost": [
+      "self",
+      "connector",
+      "reason"
+    ],
+    "clientConnectionFailed": [
+      "self",
+      "connector",
+      "reason"
+    ],
+    "manager": [
+      "self"
+    ],
+    "create_url": [
+      "cls",
+      "host",
+      "port",
+      "is_secure"
+    ],
+    "set_max_delay": [
+      "cls",
+      "max_delay"
+    ],
+    "set_initial_delay": [
+      "cls",
+      "initial_delay"
+    ],
+    "set_max_retries": [
+      "cls",
+      "max_retries"
+    ]
+  },
+  "TwistedEventLoopManager": {
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_forever": [
+      "self"
+    ],
+    "call_later": [
+      "self",
+      "delay",
+      "callback"
+    ],
+    "call_in_thread": [
+      "self",
+      "callback"
+    ],
+    "blocking_call_from_thread": [
+      "self",
+      "callback",
+      "timeout"
+    ],
+    "raise_timeout_exception": [
+      "self",
+      "_result",
+      "_timeout"
+    ],
+    "get_inner_callback": [
+      "self",
+      "result_placeholder"
+    ],
+    "get_inner_errback": [
+      "self",
+      "result_placeholder"
+    ],
+    "terminate": [
+      "self"
+    ]
+  },
+  "DEFAULT_CONNECTION_TIMEOUT": [],
+  "_is_earlier": [
+    "t1",
+    "t2"
+  ],
+  "SimpleActionServer": {
+    "STATUS_PUBLISH_INTERVAL": [],
+    "__init__": [
+      "self",
+      "ros",
+      "server_name",
+      "action_name"
+    ],
+    "start": [
+      "self",
+      "action_callback"
+    ],
+    "_publish_status": [
+      "self"
+    ],
+    "_periodic_publish_status": [
+      "self"
+    ],
+    "_on_goal_message": [
+      "self",
+      "message"
+    ],
+    "_on_cancel_message": [
+      "self",
+      "message"
+    ],
+    "is_preempt_requested": [
+      "self"
+    ],
+    "set_succeeded": [
+      "self",
+      "result"
+    ],
+    "send_feedback": [
+      "self",
+      "feedback"
+    ],
+    "set_preempted": [
+      "self"
+    ]
+  }
+}

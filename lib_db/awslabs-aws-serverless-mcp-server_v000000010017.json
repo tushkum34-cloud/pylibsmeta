@@ -1,0 +1,834 @@
+{
+  "BackendConfiguration": {},
+  "FrontendConfiguration": {},
+  "DeployWebAppRequest": {},
+  "__version__": [],
+  "schemas_client": [],
+  "mcp": [],
+  "streaming_infrastructure_setup": [],
+  "natural_language_detection": [],
+  "template_list": [],
+  "template_details": [
+    "template_name"
+  ],
+  "deployment_list": [],
+  "deployment_details": [
+    "project_name"
+  ],
+  "main": [],
+  "KAFKA_ESM_POLICY_TEMPLATE": [],
+  "SELF_MANAGED_KAFKA_ESM_POLICY_TEMPLATE": [],
+  "SQS_ESM_POLICY_TEMPLATE": [],
+  "KINESIS_ESM_POLICY_TEMPLATE": [],
+  "DYNAMODB_ESM_POLICY_TEMPLATE": [],
+  "SecurePolicyGenerator": {
+    "validate_aws_parameters": [
+      "region",
+      "account"
+    ],
+    "generate_kafka_esm_policy": [
+      "region",
+      "account",
+      "cluster_name",
+      "cluster_uuid",
+      "function_name",
+      "topic_pattern",
+      "consumer_group_pattern",
+      "partition"
+    ],
+    "generate_sqs_esm_policy": [
+      "region",
+      "account",
+      "queue_name",
+      "function_name",
+      "partition"
+    ],
+    "generate_kinesis_esm_policy": [
+      "region",
+      "account",
+      "stream_name",
+      "function_name",
+      "partition"
+    ],
+    "generate_dynamodb_esm_policy": [
+      "region",
+      "account",
+      "table_name",
+      "function_name",
+      "partition"
+    ]
+  },
+  "__all__": [],
+  "get_jinja_filters": [],
+  "get_jinja_tests": [],
+  "render_template": [
+    "request"
+  ],
+  "DeploymentTypes": {
+    "BACKEND": [],
+    "FRONTEND": [],
+    "FULLSTACK": []
+  },
+  "Template": {
+    "__init__": [
+      "self",
+      "name",
+      "path",
+      "type_",
+      "framework"
+    ]
+  },
+  "get_templates_path": [],
+  "get_template_for_deployment": [
+    "deployment_type",
+    "framework"
+  ],
+  "discover_templates": [],
+  "run_command": [
+    "cmd_list",
+    "cwd"
+  ],
+  "DeploymentStatus": {
+    "IN_PROGRESS": [],
+    "DEPLOYED": [],
+    "FAILED": [],
+    "NOT_FOUND": []
+  },
+  "initialize_deployment_status": [
+    "project_name",
+    "deployment_type",
+    "framework",
+    "region"
+  ],
+  "store_deployment_metadata": [
+    "project_name",
+    "metadata"
+  ],
+  "store_deployment_error": [
+    "project_name",
+    "error"
+  ],
+  "get_deployment_status": [
+    "project_name"
+  ],
+  "list_deployments": [
+    "limit",
+    "sort_by",
+    "sort_order",
+    "filter_status"
+  ],
+  "fetch_github_content": [
+    "url",
+    "headers"
+  ],
+  "get_aws_client": [
+    "service_name",
+    "region"
+  ],
+  "DataScrubber": {
+    "SENSITIVE_PATTERNS": [],
+    "SENSITIVE_FIELD_NAMES": [],
+    "REPLACEMENTS": [],
+    "scrub_text": [
+      "cls",
+      "text"
+    ],
+    "scrub_dict": [
+      "cls",
+      "data",
+      "deep_copy"
+    ],
+    "_scrub_dict_recursive": [
+      "cls",
+      "data"
+    ],
+    "_is_sensitive_field_name": [
+      "cls",
+      "field_name"
+    ],
+    "scrub_lambda_config": [
+      "cls",
+      "config"
+    ],
+    "scrub_esm_config": [
+      "cls",
+      "config"
+    ],
+    "_looks_like_sensitive_value": [
+      "cls",
+      "value"
+    ],
+    "_has_high_entropy": [
+      "cls",
+      "value"
+    ],
+    "scrub_aws_response": [
+      "cls",
+      "response"
+    ]
+  },
+  "get_stack_info": [
+    "stack_name",
+    "region"
+  ],
+  "map_cloudformation_status": [
+    "cf_status"
+  ],
+  "AWS_REGION": [],
+  "DEPLOYMENT_STATUS_DIR": [],
+  "handle_deployments_list": [],
+  "handle_template_details": [
+    "template_name"
+  ],
+  "handle_deployment_details": [
+    "project_name"
+  ],
+  "handle_template_list": [],
+  "BaseTool": {
+    "__init__": [
+      "self",
+      "allow_write",
+      "allow_sensitive_data_access"
+    ],
+    "checkToolAccess": [
+      "self"
+    ],
+    "require_user_confirmation": [
+      "operation_description",
+      "resources_affected"
+    ],
+    "scrub_response_data": [
+      "response"
+    ]
+  },
+  "DescribeSchemaTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "schemas_client"
+    ],
+    "describe_schema_impl": [
+      "self",
+      "ctx",
+      "registry_name",
+      "schema_name",
+      "schema_version"
+    ]
+  },
+  "ListRegistriesTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "schemas_client"
+    ],
+    "list_registries_impl": [
+      "self",
+      "ctx",
+      "registry_name_prefix",
+      "scope",
+      "limit",
+      "next_token"
+    ]
+  },
+  "SearchSchemaTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "schemas_client"
+    ],
+    "search_schema_impl": [
+      "self",
+      "ctx",
+      "keywords",
+      "registry_name",
+      "limit",
+      "next_token"
+    ]
+  },
+  "EsmDiagnosisTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "esm_kafka_diagnosis_tool": [
+      "self",
+      "ctx"
+    ],
+    "esm_kafka_resolution_tool": [
+      "self",
+      "ctx",
+      "issue_type"
+    ]
+  },
+  "EsmRecommendTool": {
+    "EVENT_SOURCE_RESTRICTIONS": [],
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "_initialize_lambda_client": [
+      "self"
+    ],
+    "_get_esm_configs": [
+      "self",
+      "uuid",
+      "event_source_arn",
+      "function_name"
+    ],
+    "_get_esm_limits_from_aws": [
+      "self"
+    ],
+    "esm_get_config_tradeoff_tool": [
+      "self",
+      "ctx",
+      "optimization_targets"
+    ],
+    "esm_validate_configs_tool": [
+      "self",
+      "ctx",
+      "event_source",
+      "configs"
+    ]
+  },
+  "EsmGuidanceTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "esm_guidance_tool": [
+      "self",
+      "ctx",
+      "event_source"
+    ],
+    "_validate_aws_parameters": [
+      "self",
+      "region",
+      "account",
+      "cluster_name",
+      "cluster_uuid",
+      "partition"
+    ],
+    "esm_msk_policy_tool": [
+      "self",
+      "ctx",
+      "region",
+      "account",
+      "cluster_name",
+      "cluster_uuid",
+      "partition"
+    ],
+    "esm_msk_security_group_tool": [
+      "self",
+      "ctx",
+      "security_group_id"
+    ],
+    "esm_deployment_precheck_tool": [
+      "self",
+      "ctx",
+      "prompt",
+      "project_directory"
+    ]
+  },
+  "IaCToolInfo": {
+    "__init__": [
+      "self",
+      "name",
+      "description",
+      "best_for",
+      "pros",
+      "cons",
+      "getting_started",
+      "example_code"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ComparisonTable": {
+    "__init__": [
+      "self",
+      "headers",
+      "rows"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ToolSpecificGuidance": {
+    "__init__": [
+      "self",
+      "title",
+      "description",
+      "setup_steps",
+      "deployment_steps",
+      "common_commands"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "GetIaCGuidanceTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "get_iac_guidance_tool": [
+      "self",
+      "ctx",
+      "iac_tool",
+      "include_examples"
+    ]
+  },
+  "EVENT_SOURCE_SCHEMAS": [],
+  "GetLambdaEventSchemasTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "get_lambda_event_schemas": [
+      "self",
+      "ctx",
+      "event_source",
+      "runtime"
+    ]
+  },
+  "ApplicationType": {
+    "EVENT_DRIVEN": [],
+    "BACKEND": [],
+    "FULLSTACK": []
+  },
+  "DeployServerlessAppHelpTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "deploy_serverless_app_help_tool": [
+      "self",
+      "ctx",
+      "application_type"
+    ]
+  },
+  "WhenToUseScenario": {
+    "__init__": [
+      "self",
+      "scenario",
+      "description",
+      "examples"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "WhenNotToUseScenario": {
+    "__init__": [
+      "self",
+      "scenario",
+      "description",
+      "alternatives"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "DecisionCriterion": {
+    "__init__": [
+      "self",
+      "criterion",
+      "description"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "UseCaseSpecificGuidance": {
+    "__init__": [
+      "self",
+      "title",
+      "suitability",
+      "description",
+      "best_practices",
+      "limitations",
+      "alternatives"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "GetLambdaGuidanceTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "get_lambda_guidance": [
+      "self",
+      "ctx",
+      "use_case",
+      "include_examples"
+    ]
+  },
+  "GetServerlessTemplatesTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "get_serverless_templates": [
+      "self",
+      "ctx",
+      "template_type",
+      "runtime"
+    ]
+  },
+  "SamLogsTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_sensitive_data_access"
+    ],
+    "handle_sam_logs": [
+      "self",
+      "ctx",
+      "resource_name",
+      "stack_name",
+      "start_time",
+      "end_time",
+      "region",
+      "profile",
+      "cw_log_group",
+      "config_env",
+      "config_file",
+      "save_params"
+    ]
+  },
+  "SamLocalInvokeTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "handle_sam_local_invoke": [
+      "self",
+      "ctx",
+      "project_directory",
+      "resource_name",
+      "template_file",
+      "event_file",
+      "event_data",
+      "environment_variables_file",
+      "docker_network",
+      "container_env_vars",
+      "parameter",
+      "log_file",
+      "layer_cache_basedir",
+      "region",
+      "profile"
+    ]
+  },
+  "SamInitTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "handle_sam_init": [
+      "self",
+      "ctx",
+      "project_name",
+      "runtime",
+      "project_directory",
+      "dependency_manager",
+      "architecture",
+      "package_type",
+      "application_template",
+      "application_insights",
+      "no_application_insights",
+      "base_image",
+      "config_env",
+      "config_file",
+      "debug",
+      "extra_content",
+      "location",
+      "save_params",
+      "tracing",
+      "no_tracing"
+    ]
+  },
+  "SamDeployTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "handle_sam_deploy": [
+      "self",
+      "ctx",
+      "application_name",
+      "project_directory",
+      "template_file",
+      "s3_bucket",
+      "s3_prefix",
+      "region",
+      "profile",
+      "parameter_overrides",
+      "capabilities",
+      "config_file",
+      "config_env",
+      "metadata",
+      "tags",
+      "resolve_s3",
+      "debug"
+    ]
+  },
+  "SamBuildTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "handle_sam_build": [
+      "self",
+      "ctx",
+      "project_directory",
+      "template_file",
+      "base_dir",
+      "build_dir",
+      "use_container",
+      "no_use_container",
+      "parallel",
+      "container_env_vars",
+      "container_env_var_file",
+      "build_image",
+      "debug",
+      "manifest",
+      "parameter_overrides",
+      "region",
+      "save_params",
+      "profile"
+    ]
+  },
+  "SecureEsmGuidanceTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "secure_esm_msk_policy_tool": [
+      "self",
+      "ctx",
+      "region",
+      "account",
+      "cluster_name",
+      "cluster_uuid",
+      "function_name",
+      "topic_pattern",
+      "consumer_group_pattern",
+      "partition"
+    ],
+    "secure_esm_sqs_policy_tool": [
+      "self",
+      "ctx",
+      "region",
+      "account",
+      "queue_name",
+      "function_name",
+      "partition"
+    ],
+    "secure_esm_kinesis_policy_tool": [
+      "self",
+      "ctx",
+      "region",
+      "account",
+      "stream_name",
+      "function_name",
+      "partition"
+    ],
+    "secure_esm_dynamodb_policy_tool": [
+      "self",
+      "ctx",
+      "region",
+      "account",
+      "table_name",
+      "function_name",
+      "partition"
+    ]
+  },
+  "ConfigureDomainTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "configure_domain": [
+      "self",
+      "ctx",
+      "project_name",
+      "domain_name",
+      "create_certificate",
+      "create_route53_record",
+      "region"
+    ],
+    "_create_acm_certificate": [
+      "self",
+      "acm_client",
+      "domain_name"
+    ],
+    "_wait_for_certificate_validation": [
+      "self",
+      "acm_client",
+      "certificate_arn"
+    ],
+    "_find_existing_certificate": [
+      "self",
+      "acm_client",
+      "domain_name"
+    ],
+    "_update_cloudfront_distribution": [
+      "self",
+      "cloudfront_client",
+      "project_name",
+      "domain_name",
+      "certificate_arn"
+    ],
+    "_create_route53_record": [
+      "self",
+      "route53_client",
+      "domain_name",
+      "distribution_id"
+    ]
+  },
+  "DeployWebAppTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "deploy_webapp": [
+      "self",
+      "ctx",
+      "deployment_type",
+      "project_name",
+      "project_root",
+      "region",
+      "backend_configuration",
+      "frontend_configuration"
+    ],
+    "check_dependencies_installed": [
+      "built_artifacts_path",
+      "runtime"
+    ],
+    "check_destructive_deployment_change": [
+      "project_name",
+      "new_type"
+    ]
+  },
+  "UpdateFrontendTool": {
+    "__init__": [
+      "self",
+      "mcp",
+      "allow_write"
+    ],
+    "update_webapp_frontend_tool": [
+      "self",
+      "ctx",
+      "project_name",
+      "project_root",
+      "built_assets_path",
+      "invalidate_cache",
+      "region"
+    ],
+    "_get_all_files": [
+      "self",
+      "dir_path",
+      "array_of_files",
+      "base_path"
+    ],
+    "_upload_file_to_s3": [
+      "self",
+      "s3_client",
+      "file_path",
+      "bucket_name",
+      "base_path"
+    ],
+    "_sync_directory_to_s3": [
+      "self",
+      "s3_client",
+      "directory_path",
+      "bucket_name"
+    ]
+  },
+  "GetMetricsTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "get_metrics": [
+      "self",
+      "ctx",
+      "project_name",
+      "start_time",
+      "end_time",
+      "period",
+      "resources",
+      "function_name",
+      "distribution_id",
+      "region",
+      "stage"
+    ],
+    "get_unit_for_metric": [
+      "label"
+    ]
+  },
+  "WebappDeploymentHelpTool": {
+    "__init__": [
+      "self",
+      "mcp"
+    ],
+    "webapp_deployment_help_tool": [
+      "self",
+      "ctx",
+      "deployment_type"
+    ]
+  },
+  "EntryPointNotFoundError": {
+    "__init__": [
+      "self",
+      "entry_point",
+      "built_artifacts_path"
+    ]
+  },
+  "generate_startup_script": [
+    "runtime",
+    "entry_point",
+    "built_artifacts_path",
+    "startup_script_name",
+    "additional_env"
+  ],
+  "get_default_startup_script_name": [
+    "runtime"
+  ],
+  "generate_script_content": [
+    "runtime",
+    "entry_point",
+    "additional_env"
+  ],
+  "upload_frontend_assets": [
+    "configuration",
+    "deploy_result"
+  ],
+  "upload_to_s3": [
+    "source_path",
+    "bucket_name",
+    "region"
+  ],
+  "deploy_application": [
+    "request"
+  ],
+  "generate_sam_template": [
+    "project_root",
+    "configuration"
+  ],
+  "build_and_deploy_application": [
+    "project_root",
+    "configuration"
+  ],
+  "get_stack_outputs": [
+    "stack_name",
+    "region"
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "MiddlewareSystemTestCase": {
+    "test_basic_middleware": [
+      "self"
+    ],
+    "test_middleware_dispatcher": [
+      "self"
+    ],
+    "test_base_middleware": [
+      "self"
+    ],
+    "test_multiple_middleware": [
+      "self"
+    ],
+    "test_automatic_middleware": [
+      "self"
+    ],
+    "test_event_decorator": [
+      "self"
+    ],
+    "test_event_decorator_no_event_property": [
+      "self"
+    ],
+    "test_middleware_inheritance_override": [
+      "self"
+    ],
+    "test_middleware_inheritance_super": [
+      "self"
+    ],
+    "test_middleware_inheritance_multiple_middleware": [
+      "self"
+    ],
+    "test_unregistered_dispatch": [
+      "self"
+    ]
+  },
+  "EventSystemTestCase": {
+    "test_emit_event_no_handlers": [
+      "self"
+    ],
+    "test_emit_event_observing_handler": [
+      "self"
+    ],
+    "test_emit_event_intercepting_handler": [
+      "self"
+    ],
+    "test_emit_event_implementing_handler": [
+      "self"
+    ],
+    "test_emit_event_observe_precedes_intercept": [
+      "self"
+    ],
+    "test_emit_event_observe_follows_intercept": [
+      "self"
+    ],
+    "test_emit_event_intercept_follows_intercept": [
+      "self"
+    ],
+    "test_emit_event_implement_follows_intercept": [
+      "self"
+    ],
+    "test_emit_event_implement_precedes_intercept": [
+      "self"
+    ],
+    "test_subscribe_event_duplicate_priority": [
+      "self"
+    ],
+    "test_subscribe_event_duplicate_wildcard_priority": [
+      "self"
+    ],
+    "test_subscribe_event_duplicate_wildcard_priority_allowed": [
+      "self"
+    ],
+    "test_subscribe_multiple_events": [
+      "self"
+    ],
+    "test_subscribe_wildcard": [
+      "self"
+    ],
+    "test_subscribe_after_emit": [
+      "self"
+    ],
+    "test_unubscribe": [
+      "self"
+    ]
+  },
+  "EventDispatcher": {
+    "__metaclass__": [],
+    "observe": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "intercept": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "dispatch": [
+      "self",
+      "sender",
+      "event"
+    ],
+    "subscribe": [
+      "self",
+      "event_handler"
+    ],
+    "unsubscribe": [
+      "self",
+      "event_handler"
+    ],
+    "get_handlers_for_event": [
+      "self",
+      "event"
+    ]
+  },
+  "EventHandler": {
+    "__metaclass__": [],
+    "event_pattern": [
+      "self"
+    ],
+    "priority": [
+      "self"
+    ],
+    "callback": [
+      "self"
+    ],
+    "invoke": [
+      "self",
+      "event_args"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "dispatcher": [
+      "self"
+    ]
+  },
+  "Middleware": {
+    "__metaclass__": [],
+    "install": [
+      "self",
+      "provider"
+    ],
+    "uninstall": [
+      "self",
+      "provider"
+    ]
+  },
+  "MiddlewareManager": {
+    "__metaclass__": [],
+    "events": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "middleware"
+    ],
+    "remove": [
+      "self",
+      "middleware"
+    ]
+  },
+  "HandlerException": {},
+  "log": [],
+  "BaseEventHandler": {
+    "__init__": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "_get_next_handler": [
+      "self",
+      "event"
+    ],
+    "event_pattern": [
+      "self"
+    ],
+    "priority": [
+      "self"
+    ],
+    "callback": [
+      "self",
+      "value"
+    ],
+    "dispatcher": [
+      "self",
+      "value"
+    ],
+    "unsubscribe": [
+      "self"
+    ]
+  },
+  "InterceptingEventHandler": {
+    "__init__": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "invoke": [
+      "self",
+      "event_args"
+    ]
+  },
+  "ObservingEventHandler": {
+    "__init__": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "invoke": [
+      "self",
+      "event_args"
+    ]
+  },
+  "ImplementingEventHandler": {
+    "__init__": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "invoke": [
+      "self",
+      "event_args"
+    ]
+  },
+  "PlaceHoldingEventHandler": {
+    "__init__": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback",
+      "handler_class"
+    ]
+  },
+  "SimpleEventDispatcher": {
+    "__init__": [
+      "self"
+    ],
+    "get_handlers_for_event": [
+      "self",
+      "event"
+    ],
+    "_create_handler_cache": [
+      "self",
+      "event"
+    ],
+    "_invalidate_cache": [
+      "self",
+      "event_pattern"
+    ],
+    "subscribe": [
+      "self",
+      "event_handler"
+    ],
+    "unsubscribe": [
+      "self",
+      "event_handler"
+    ],
+    "observe": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "intercept": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "implement": [
+      "self",
+      "event_pattern",
+      "priority",
+      "callback"
+    ],
+    "dispatch": [
+      "self",
+      "sender",
+      "event"
+    ]
+  },
+  "__version__": [],
+  "intercept": [
+    "event_pattern",
+    "priority"
+  ],
+  "observe": [
+    "event_pattern",
+    "priority"
+  ],
+  "implement": [
+    "event_pattern",
+    "priority"
+  ],
+  "_deepgetattr": [
+    "obj",
+    "name",
+    "default"
+  ],
+  "dispatch": [
+    "event",
+    "priority",
+    "dispatcher_attr"
+  ],
+  "SimpleMiddlewareManager": {
+    "__init__": [
+      "self",
+      "event_manager"
+    ],
+    "events": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "middleware"
+    ],
+    "remove": [
+      "self",
+      "middleware"
+    ]
+  },
+  "BaseMiddleware": {
+    "__init__": [
+      "self"
+    ],
+    "install": [
+      "self",
+      "event_manager"
+    ],
+    "add_handlers": [
+      "self",
+      "handlers"
+    ],
+    "uninstall": [
+      "self"
+    ],
+    "discover_handlers": [
+      "class_or_obj"
+    ]
+  },
+  "AutoDiscoveredMiddleware": {
+    "__init__": [
+      "self",
+      "class_or_obj"
+    ],
+    "install": [
+      "self",
+      "event_manager"
+    ]
+  }
+}

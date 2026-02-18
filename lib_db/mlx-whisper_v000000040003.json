@@ -1,0 +1,558 @@
+{
+  "__version__": [],
+  "ModelDimensions": {},
+  "sinusoids": [
+    "length",
+    "channels",
+    "max_timescale"
+  ],
+  "MultiHeadAttention": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head"
+    ],
+    "__call__": [
+      "self",
+      "x",
+      "xa",
+      "mask",
+      "kv_cache"
+    ],
+    "qkv_attention": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask"
+    ]
+  },
+  "ResidualAttentionBlock": {
+    "__init__": [
+      "self",
+      "n_state",
+      "n_head",
+      "cross_attention"
+    ],
+    "__call__": [
+      "self",
+      "x",
+      "xa",
+      "mask",
+      "kv_cache"
+    ]
+  },
+  "AudioEncoder": {
+    "__init__": [
+      "self",
+      "n_mels",
+      "n_ctx",
+      "n_state",
+      "n_head",
+      "n_layer",
+      "dtype"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "TextDecoder": {
+    "__init__": [
+      "self",
+      "n_vocab",
+      "n_ctx",
+      "n_state",
+      "n_head",
+      "n_layer",
+      "dtype"
+    ],
+    "__call__": [
+      "self",
+      "x",
+      "xa",
+      "kv_cache"
+    ]
+  },
+  "Whisper": {
+    "__init__": [
+      "self",
+      "dims",
+      "dtype"
+    ],
+    "set_alignment_heads": [
+      "self",
+      "dump"
+    ],
+    "embed_audio": [
+      "self",
+      "mel"
+    ],
+    "logits": [
+      "self",
+      "tokens",
+      "audio_features"
+    ],
+    "forward_with_cross_qk": [
+      "self",
+      "mel",
+      "tokens"
+    ],
+    "__call__": [
+      "self",
+      "mel",
+      "tokens"
+    ],
+    "is_multilingual": [
+      "self"
+    ],
+    "num_languages": [
+      "self"
+    ],
+    "detect_language": [],
+    "decode": []
+  },
+  "SAMPLE_RATE": [],
+  "N_FFT": [],
+  "HOP_LENGTH": [],
+  "CHUNK_LENGTH": [],
+  "N_SAMPLES": [],
+  "N_FRAMES": [],
+  "N_SAMPLES_PER_TOKEN": [],
+  "FRAMES_PER_SECOND": [],
+  "TOKENS_PER_SECOND": [],
+  "load_audio": [
+    "file",
+    "sr",
+    "from_stdin"
+  ],
+  "pad_or_trim": [
+    "array",
+    "length"
+  ],
+  "mel_filters": [
+    "n_mels"
+  ],
+  "hanning": [
+    "size"
+  ],
+  "stft": [
+    "x",
+    "window",
+    "nperseg",
+    "noverlap",
+    "nfft",
+    "axis",
+    "pad_mode"
+  ],
+  "log_mel_spectrogram": [
+    "audio",
+    "n_mels",
+    "padding"
+  ],
+  "median_filter": [
+    "x",
+    "filter_width"
+  ],
+  "backtrace": [
+    "trace"
+  ],
+  "dtw_cpu": [
+    "x"
+  ],
+  "dtw": [
+    "x"
+  ],
+  "WordTiming": {},
+  "find_alignment": [
+    "model",
+    "tokenizer",
+    "text_tokens",
+    "mel",
+    "num_frames"
+  ],
+  "merge_punctuations": [
+    "alignment",
+    "prepended",
+    "appended"
+  ],
+  "add_word_timestamps": [],
+  "LANGUAGES": [],
+  "TO_LANGUAGE_CODE": [],
+  "Tokenizer": {
+    "__post_init__": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "text"
+    ],
+    "decode": [
+      "self",
+      "token_ids"
+    ],
+    "decode_with_timestamps": [
+      "self",
+      "token_ids"
+    ],
+    "eot": [
+      "self"
+    ],
+    "transcribe": [
+      "self"
+    ],
+    "translate": [
+      "self"
+    ],
+    "sot": [
+      "self"
+    ],
+    "sot_lm": [
+      "self"
+    ],
+    "sot_prev": [
+      "self"
+    ],
+    "no_speech": [
+      "self"
+    ],
+    "no_timestamps": [
+      "self"
+    ],
+    "timestamp_begin": [
+      "self"
+    ],
+    "language_token": [
+      "self"
+    ],
+    "to_language_token": [
+      "self",
+      "language"
+    ],
+    "all_language_tokens": [
+      "self"
+    ],
+    "all_language_codes": [
+      "self"
+    ],
+    "sot_sequence_including_notimestamps": [
+      "self"
+    ],
+    "non_speech_tokens": [
+      "self"
+    ],
+    "split_to_word_tokens": [
+      "self",
+      "tokens"
+    ],
+    "split_tokens_on_unicode": [
+      "self",
+      "tokens"
+    ],
+    "split_tokens_on_spaces": [
+      "self",
+      "tokens"
+    ]
+  },
+  "get_encoding": [
+    "name",
+    "num_languages"
+  ],
+  "get_tokenizer": [
+    "multilingual"
+  ],
+  "build_parser": [],
+  "main": [],
+  "format_timestamp": [
+    "seconds",
+    "always_include_hours",
+    "decimal_marker"
+  ],
+  "get_start": [
+    "segments"
+  ],
+  "ResultWriter": {
+    "__init__": [
+      "self",
+      "output_dir"
+    ],
+    "__call__": [
+      "self",
+      "result",
+      "output_name",
+      "options"
+    ],
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "WriteTXT": {
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "SubtitlesWriter": {
+    "iterate_result": [
+      "self",
+      "result",
+      "options"
+    ],
+    "format_timestamp": [
+      "self",
+      "seconds"
+    ]
+  },
+  "WriteVTT": {
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "WriteSRT": {
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "WriteTSV": {
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "WriteJSON": {
+    "write_result": [
+      "self",
+      "result",
+      "file",
+      "options"
+    ]
+  },
+  "get_writer": [
+    "output_format",
+    "output_dir"
+  ],
+  "LayerNorm": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Linear": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Conv1d": {
+    "_conv_forward": [
+      "self",
+      "x",
+      "weight",
+      "bias"
+    ]
+  },
+  "compression_ratio": [
+    "text"
+  ],
+  "detect_language": [
+    "model",
+    "mel",
+    "tokenizer"
+  ],
+  "DecodingOptions": {},
+  "DecodingResult": {},
+  "Inference": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "logits": [
+      "self",
+      "tokens",
+      "audio_features"
+    ],
+    "rearrange_kv_cache": [
+      "self",
+      "source_indices"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "SequenceRanker": {
+    "rank": [
+      "self",
+      "tokens",
+      "sum_logprobs"
+    ]
+  },
+  "MaximumLikelihoodRanker": {
+    "__init__": [
+      "self",
+      "length_penalty"
+    ],
+    "rank": [
+      "self",
+      "tokens",
+      "sum_logprobs"
+    ]
+  },
+  "TokenDecoder": {
+    "reset": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "tokens",
+      "logits",
+      "sum_logprobs"
+    ],
+    "finalize": [
+      "self",
+      "tokens",
+      "sum_logprobs"
+    ]
+  },
+  "categorical": [
+    "logits",
+    "temp"
+  ],
+  "GreedyDecoder": {
+    "__init__": [
+      "self",
+      "temperature",
+      "eot"
+    ],
+    "update": [
+      "self",
+      "tokens",
+      "logits",
+      "sum_logprobs"
+    ],
+    "finalize": [
+      "self",
+      "tokens",
+      "sum_logprobs"
+    ]
+  },
+  "LogitFilter": {
+    "apply": [
+      "self",
+      "logits",
+      "tokens"
+    ]
+  },
+  "SuppressBlank": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "sample_begin",
+      "n_vocab"
+    ],
+    "apply": [
+      "self",
+      "logits",
+      "tokens"
+    ]
+  },
+  "SuppressTokens": {
+    "__init__": [
+      "self",
+      "suppress_tokens",
+      "n_vocab"
+    ],
+    "apply": [
+      "self",
+      "logits",
+      "tokens"
+    ]
+  },
+  "ApplyTimestampRules": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "sample_begin",
+      "max_initial_timestamp_index"
+    ],
+    "apply": [
+      "self",
+      "logits",
+      "tokens"
+    ]
+  },
+  "DecodingTask": {
+    "__init__": [
+      "self",
+      "model",
+      "options"
+    ],
+    "_verify_options": [
+      "self",
+      "options"
+    ],
+    "_get_initial_tokens": [
+      "self"
+    ],
+    "_get_suppress_tokens": [
+      "self"
+    ],
+    "_get_audio_features": [
+      "self",
+      "mel"
+    ],
+    "_detect_language": [
+      "self",
+      "audio_features",
+      "tokens"
+    ],
+    "_main_loop": [
+      "self",
+      "audio_features",
+      "tokens"
+    ],
+    "run": [
+      "self",
+      "mel"
+    ]
+  },
+  "decode": [
+    "model",
+    "mel",
+    "options"
+  ],
+  "load_model": [
+    "path_or_hf_repo",
+    "dtype"
+  ],
+  "_format_timestamp": [
+    "seconds"
+  ],
+  "_get_end": [
+    "segments"
+  ],
+  "ModelHolder": {
+    "model": [],
+    "model_path": [],
+    "get_model": [
+      "cls",
+      "model_path",
+      "dtype"
+    ]
+  },
+  "transcribe": [
+    "audio"
+  ]
+}

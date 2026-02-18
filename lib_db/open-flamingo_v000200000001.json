@@ -1,0 +1,694 @@
+{
+  "random_seed": [
+    "seed",
+    "rank"
+  ],
+  "custom_collate_fn": [
+    "batch"
+  ],
+  "compute_effective_num_shots": [
+    "num_shots",
+    "model_type"
+  ],
+  "sample_batch_demos_from_query_set": [
+    "query_set",
+    "num_samples",
+    "batch_size"
+  ],
+  "get_query_set": [
+    "train_dataset",
+    "query_set_size"
+  ],
+  "prepare_eval_samples": [
+    "test_dataset",
+    "num_samples",
+    "batch_size"
+  ],
+  "get_indices_of_unique": [
+    "x"
+  ],
+  "unwrap_model": [
+    "model"
+  ],
+  "get_predicted_classnames": [
+    "logprobs",
+    "k",
+    "class_id_to_name"
+  ],
+  "get_cast_dtype": [
+    "precision"
+  ],
+  "get_autocast": [
+    "precision"
+  ],
+  "CaptionDataset": {
+    "__init__": [
+      "self",
+      "image_train_dir_path",
+      "annotations_path",
+      "is_train",
+      "dataset_name",
+      "image_val_dir_path"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "VQADataset": {
+    "__init__": [
+      "self",
+      "image_dir_path",
+      "question_path",
+      "annotations_path",
+      "is_train",
+      "dataset_name"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "get_img_path": [
+      "self",
+      "question"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "ImageNetDataset": {
+    "__init__": [
+      "self",
+      "root"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "HatefulMemesDataset": {
+    "__init__": [
+      "self",
+      "image_dir_path",
+      "annotations_path"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "_MANUAL_MATCHES": [],
+  "OKVQAStemmer": {
+    "__init__": [
+      "self"
+    ],
+    "stem": [
+      "self",
+      "input_string"
+    ]
+  },
+  "stemmer": [],
+  "postprocess_ok_vqa_generation": [
+    "predictions"
+  ],
+  "VQA": {
+    "__init__": [
+      "self",
+      "annotation_file",
+      "question_file"
+    ],
+    "createIndex": [
+      "self"
+    ],
+    "info": [
+      "self"
+    ],
+    "getQuesIds": [
+      "self",
+      "imgIds",
+      "quesTypes",
+      "ansTypes"
+    ],
+    "getImgIds": [
+      "self",
+      "quesIds",
+      "quesTypes",
+      "ansTypes"
+    ],
+    "loadQA": [
+      "self",
+      "ids"
+    ],
+    "showQA": [
+      "self",
+      "anns"
+    ],
+    "loadRes": [
+      "self",
+      "resFile",
+      "quesFile"
+    ]
+  },
+  "VQAEval": {
+    "__init__": [
+      "self",
+      "vqa",
+      "vqaRes",
+      "n"
+    ],
+    "evaluate": [
+      "self",
+      "quesIds"
+    ],
+    "processPunctuation": [
+      "self",
+      "inText"
+    ],
+    "processDigitArticle": [
+      "self",
+      "inText"
+    ],
+    "setAccuracy": [
+      "self",
+      "accQA",
+      "accQuesType",
+      "accAnsType"
+    ],
+    "setEvalQA": [
+      "self",
+      "quesId",
+      "acc"
+    ],
+    "setEvalQuesType": [
+      "self",
+      "quesId",
+      "quesType",
+      "acc"
+    ],
+    "setEvalAnsType": [
+      "self",
+      "quesId",
+      "ansType",
+      "acc"
+    ],
+    "updateProgress": [
+      "self",
+      "progress"
+    ]
+  },
+  "compute_vqa_accuracy": [
+    "result_json_path",
+    "question_json_path",
+    "annotation_json_path"
+  ],
+  "postprocess_vqa_generation": [
+    "predictions"
+  ],
+  "compute_cider": [
+    "result_path",
+    "annotations_path"
+  ],
+  "postprocess_captioning_generation": [
+    "predictions"
+  ],
+  "parser": [],
+  "main": [],
+  "evaluate_captioning": [
+    "args",
+    "eval_model",
+    "seed",
+    "min_generation_length",
+    "max_generation_length",
+    "num_beams",
+    "length_penalty",
+    "num_shots",
+    "dataset_name",
+    "cached_features"
+  ],
+  "evaluate_vqa": [
+    "args",
+    "eval_model",
+    "seed",
+    "min_generation_length",
+    "max_generation_length",
+    "num_beams",
+    "length_penalty",
+    "num_shots",
+    "dataset_name",
+    "cached_features"
+  ],
+  "evaluate_classification": [
+    "args",
+    "eval_model",
+    "seed",
+    "num_shots",
+    "dataset_name",
+    "cached_features",
+    "no_kv_caching",
+    "use_prompt_ensembling"
+  ],
+  "IMAGENET_CLASSNAMES": [],
+  "HM_CLASSNAMES": [],
+  "BaseEvalModel": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "init_distributed": [
+      "self"
+    ],
+    "set_device": [
+      "self",
+      "device"
+    ],
+    "get_outputs": [
+      "self",
+      "batch_text",
+      "batch_images",
+      "min_generation_length",
+      "max_generation_length",
+      "num_beams",
+      "length_penalty"
+    ],
+    "vqa_prompt": [
+      "self",
+      "question",
+      "answer"
+    ],
+    "caption_prompt": [
+      "self",
+      "caption"
+    ],
+    "get_rank_classifications": [
+      "self",
+      "batch_text",
+      "batch_images",
+      "all_class_names",
+      "use_cache",
+      "normalize_length"
+    ]
+  },
+  "RICES": {
+    "__init__": [
+      "self",
+      "dataset",
+      "device",
+      "batch_size",
+      "vision_encoder_path",
+      "vision_encoder_pretrained",
+      "cached_features"
+    ],
+    "_precompute_features": [
+      "self"
+    ],
+    "find": [
+      "self",
+      "batch",
+      "num_examples"
+    ]
+  },
+  "create_model_and_transforms": [
+    "clip_vision_encoder_path",
+    "clip_vision_encoder_pretrained",
+    "lang_encoder_path",
+    "tokenizer_path",
+    "cross_attn_every_n_layers",
+    "use_local_files",
+    "decoder_layers_attr_name",
+    "freeze_lm_embeddings"
+  ],
+  "_infer_decoder_layers_attr_name": [
+    "model"
+  ],
+  "__KNOWN_DECODER_LAYERS_ATTR_NAMES": [],
+  "Flamingo": {
+    "__init__": [
+      "self",
+      "vision_encoder",
+      "lang_encoder",
+      "eoc_token_id",
+      "media_token_id",
+      "vis_dim",
+      "cross_attn_every_n_layers",
+      "gradient_checkpointing"
+    ],
+    "forward": [
+      "self",
+      "vision_x",
+      "lang_x",
+      "attention_mask",
+      "labels",
+      "clear_conditioned_layers",
+      "past_key_values",
+      "use_cache"
+    ],
+    "generate": [
+      "self",
+      "vision_x",
+      "lang_x",
+      "attention_mask"
+    ],
+    "_encode_vision_x": [
+      "self",
+      "vision_x"
+    ],
+    "wrap_fsdp": [
+      "self",
+      "wrapper_kwargs",
+      "device_id"
+    ],
+    "_condition_media_locations": [
+      "self",
+      "input_ids"
+    ],
+    "cache_media": [
+      "self",
+      "input_ids",
+      "vision_x"
+    ],
+    "uncache_media": [
+      "self"
+    ]
+  },
+  "extend_instance": [
+    "obj",
+    "mixin"
+  ],
+  "getattr_recursive": [
+    "obj",
+    "att"
+  ],
+  "setattr_recursive": [
+    "obj",
+    "att",
+    "val"
+  ],
+  "apply_with_stopping_condition": [
+    "module",
+    "apply_fn",
+    "apply_condition",
+    "stopping_condition"
+  ],
+  "exists": [
+    "val"
+  ],
+  "FeedForward": [
+    "dim",
+    "mult"
+  ],
+  "PerceiverAttention": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "latents"
+    ]
+  },
+  "PerceiverResampler": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MaskedCrossAttention": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "media",
+      "media_locations",
+      "use_cached_media"
+    ]
+  },
+  "GatedCrossAttentionBlock": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "media",
+      "media_locations",
+      "use_cached_media"
+    ]
+  },
+  "FlamingoLayer": {
+    "__init__": [
+      "self",
+      "gated_cross_attn_layer",
+      "decoder_layer",
+      "gradient_checkpointing"
+    ],
+    "is_conditioned": [
+      "self"
+    ],
+    "condition_vis_x": [
+      "self",
+      "vis_x"
+    ],
+    "condition_media_locations": [
+      "self",
+      "media_locations"
+    ],
+    "condition_use_cached_media": [
+      "self",
+      "use_cached_media"
+    ],
+    "forward": [
+      "self",
+      "lang_x",
+      "attention_mask"
+    ]
+  },
+  "FlamingoLMMixin": {
+    "set_decoder_layers_attr_name": [
+      "self",
+      "decoder_layers_attr_name"
+    ],
+    "_get_decoder_layers": [
+      "self"
+    ],
+    "_set_decoder_layers": [
+      "self",
+      "value"
+    ],
+    "init_flamingo": [
+      "self",
+      "media_token_id",
+      "lang_hidden_size",
+      "vis_hidden_size",
+      "cross_attn_every_n_layers",
+      "gradient_checkpointing"
+    ],
+    "init_flamingo_layers": [
+      "self",
+      "gradient_checkpointing"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask"
+    ],
+    "is_conditioned": [
+      "self"
+    ],
+    "clear_conditioned_layers": [
+      "self"
+    ]
+  },
+  "is_global_master": [
+    "args"
+  ],
+  "is_local_master": [
+    "args"
+  ],
+  "is_master": [
+    "args",
+    "local"
+  ],
+  "is_using_horovod": [],
+  "is_using_distributed": [],
+  "world_info_from_env": [],
+  "init_distributed_device": [
+    "args"
+  ],
+  "get_mp_policy_dtype": [
+    "precision"
+  ],
+  "train_one_epoch": [
+    "args",
+    "model",
+    "epoch",
+    "laion_loader",
+    "mmc4_loader",
+    "tokenizer",
+    "optimizer",
+    "lr_scheduler",
+    "device_id",
+    "wandb"
+  ],
+  "AverageMeter": {
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "val",
+      "n"
+    ]
+  },
+  "filter_state_dict_to_trainable": [
+    "model",
+    "state_dict"
+  ],
+  "save_checkpoint": [
+    "model",
+    "optimizer",
+    "lr_scheduler",
+    "epoch",
+    "args"
+  ],
+  "N_CHANNELS": [],
+  "MIN_KB": [],
+  "_SHARD_SHUFFLE_SIZE": [],
+  "_SHARD_SHUFFLE_INITIAL": [],
+  "_SAMPLE_SHUFFLE_SIZE": [],
+  "_SAMPLE_SHUFFLE_INITIAL": [],
+  "preprocess_image": [
+    "sample",
+    "image_processor"
+  ],
+  "filter_no_caption_or_no_image": [
+    "sample"
+  ],
+  "preprocess_laion_text": [
+    "sample",
+    "tokenizer",
+    "max_tokens"
+  ],
+  "preprocess_gpt_interleaved": [
+    "info",
+    "tokenizer",
+    "clip_processor",
+    "min_num_images",
+    "max_num_images",
+    "max_tokens"
+  ],
+  "preprocess_interleaved": [
+    "sample",
+    "tokenizer",
+    "clip_processor",
+    "sim_threshold",
+    "min_num_images",
+    "max_num_images",
+    "max_tokens"
+  ],
+  "get_mmc4_dataset": [
+    "args",
+    "image_processor",
+    "tokenizer",
+    "epoch",
+    "floor"
+  ],
+  "get_laion_dataset": [
+    "args",
+    "image_processor",
+    "tokenizer",
+    "epoch",
+    "floor"
+  ],
+  "get_dataset_fn": [
+    "dataset_type"
+  ],
+  "get_data": [
+    "args",
+    "image_processor",
+    "tokenizer",
+    "dataset_type",
+    "epoch"
+  ],
+  "SharedEpoch": {
+    "__init__": [
+      "self",
+      "epoch"
+    ],
+    "set_value": [
+      "self",
+      "epoch"
+    ],
+    "get_value": [
+      "self"
+    ]
+  },
+  "DataInfo": {
+    "set_epoch": [
+      "self",
+      "epoch"
+    ]
+  },
+  "get_dataset_size": [
+    "shards"
+  ],
+  "count_samples": [
+    "dataloader"
+  ],
+  "log_and_continue": [
+    "exn"
+  ],
+  "group_by_keys_nothrow": [
+    "data",
+    "keys",
+    "lcase",
+    "suffixes",
+    "handler"
+  ],
+  "tarfile_to_samples_nothrow": [
+    "src",
+    "handler"
+  ],
+  "pytorch_worker_seed": [
+    "increment"
+  ],
+  "detshuffle2": {
+    "__init__": [
+      "self",
+      "bufsize",
+      "initial",
+      "seed",
+      "epoch"
+    ],
+    "run": [
+      "self",
+      "src"
+    ]
+  },
+  "ResampledShards2": {
+    "__init__": [
+      "self",
+      "urls",
+      "nshards",
+      "worker_seed",
+      "deterministic",
+      "epoch"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  }
+}

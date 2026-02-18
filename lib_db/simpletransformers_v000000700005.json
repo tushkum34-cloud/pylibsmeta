@@ -1,0 +1,3566 @@
+{
+  "name": [],
+  "TransformerModel": [],
+  "logger": [],
+  "add_titles_to_passages": [
+    "dataset"
+  ],
+  "load_hf_dataset": [
+    "data",
+    "context_tokenizer",
+    "query_tokenizer",
+    "args",
+    "evaluate",
+    "teacher_tokenizer",
+    "clustered_training"
+  ],
+  "preprocess_quartet_batch_for_hf_dataset": [
+    "dataset",
+    "context_tokenizer",
+    "query_tokenizer",
+    "args",
+    "evaluate",
+    "teacher_tokenizer",
+    "n_hard_negatives"
+  ],
+  "preprocess_batch_for_hf_dataset": [
+    "dataset",
+    "context_tokenizer",
+    "query_tokenizer",
+    "args",
+    "evaluate",
+    "teacher_tokenizer",
+    "n_hard_negatives"
+  ],
+  "get_output_embeddings": [
+    "embeddings",
+    "concatenate_embeddings",
+    "n_cls_tokens",
+    "use_pooler_output",
+    "args",
+    "query_embeddings",
+    "return_all_embeddings",
+    "input_mask"
+  ],
+  "embed": [
+    "documents",
+    "rank",
+    "encoder",
+    "tokenizer",
+    "concatenate_embeddings",
+    "extra_cls_token_count",
+    "device",
+    "fp16",
+    "amp",
+    "pretokenized",
+    "cluster_concatenated",
+    "passage_column",
+    "args",
+    "autoencoder"
+  ],
+  "add_hard_negatives_to_evaluation_dataset": [
+    "dataset"
+  ],
+  "get_evaluation_passage_dataset": [
+    "eval_data",
+    "additional_passages",
+    "encoder",
+    "tokenizer",
+    "context_config",
+    "args",
+    "device",
+    "passage_dataset"
+  ],
+  "get_prediction_passage_dataset": [
+    "prediction_passages",
+    "encoder",
+    "tokenizer",
+    "context_config",
+    "args",
+    "device",
+    "autoencoder"
+  ],
+  "DPRIndex": {
+    "__init__": [
+      "self",
+      "dataset",
+      "vector_size"
+    ],
+    "get_doc_dicts": [
+      "self",
+      "doc_ids"
+    ],
+    "get_top_docs": [
+      "self",
+      "question_hidden_states",
+      "n_docs",
+      "passages_only",
+      "return_indices"
+    ],
+    "get_top_doc_ids": [
+      "self",
+      "question_hidden_states",
+      "n_docs",
+      "reranking_query_outputs"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "PrecomputedEmbeddingsDataset": {
+    "__init__": [
+      "self",
+      "embeddings_path"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "mean_reciprocal_rank_at_k": [
+    "rs",
+    "k",
+    "return_individual_scores"
+  ],
+  "get_recall_at_k": [
+    "rs",
+    "rt",
+    "k"
+  ],
+  "ClusteredDataset": {
+    "__init__": [
+      "self",
+      "clusters",
+      "length"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "get_relevant_labels": [
+    "context_ids_all",
+    "current_context_ids"
+  ],
+  "get_relevant_labels_with_ids": [
+    "passage_ids_all",
+    "current_passage_ids"
+  ],
+  "get_relevant_labels_batched": [
+    "context_ids_all",
+    "context_ids_batch"
+  ],
+  "dataset_map_multiprocessed": [
+    "batch_dataset"
+  ],
+  "batch_generator": [
+    "passage_dataset",
+    "batches"
+  ],
+  "get_clustered_passage_dataset": [
+    "passage_dataset",
+    "train_batch_size",
+    "encoder",
+    "tokenizer",
+    "args",
+    "device",
+    "teacher_model",
+    "teacher_tokenizer",
+    "clustered_batch_randomize_percentage",
+    "epoch_number"
+  ],
+  "load_trec_file": [
+    "file_name",
+    "data_dir",
+    "header",
+    "loading_qrels",
+    "data_format"
+  ],
+  "load_trec_format": [
+    "data_dir",
+    "collection_path",
+    "queries_path",
+    "qrels_path",
+    "collection_header",
+    "queries_header",
+    "qrels_header",
+    "qrels_name",
+    "data_format",
+    "skip_passages"
+  ],
+  "convert_beir_columns_to_trec_format": [
+    "collection",
+    "queries",
+    "qrels",
+    "include_titles",
+    "skip_passages"
+  ],
+  "explode": [
+    "batch"
+  ],
+  "embed_passages_trec_format": [
+    "passage_dataset",
+    "encoder",
+    "tokenizer",
+    "args",
+    "context_config",
+    "device",
+    "autoencoder"
+  ],
+  "compute_rerank_similarity": [
+    "query_embeddings",
+    "doc_dicts",
+    "passage_column"
+  ],
+  "RetrievalOutput": {
+    "__init__": [
+      "self",
+      "loss",
+      "context_outputs",
+      "query_outputs",
+      "correct_predictions_count",
+      "correct_predictions_percentage",
+      "nll_loss",
+      "teacher_correct_predictions_percentage",
+      "margine_mse_loss",
+      "kl_div_loss",
+      "quartet_loss"
+    ]
+  },
+  "pairwise_dot_score": [
+    "a",
+    "b"
+  ],
+  "pairwise_cosine_score": [
+    "a",
+    "b"
+  ],
+  "MarginMSELoss": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query_output",
+      "context_output",
+      "hard_negative_output",
+      "margins",
+      "positive_scores",
+      "negative_scores"
+    ]
+  },
+  "QuartetLossV1": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query_output_a",
+      "context_output_a",
+      "query_output_b",
+      "context_output_b",
+      "teacher_scores",
+      "similarity_function"
+    ]
+  },
+  "QuartetLossV2": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query_output_a",
+      "context_output_a",
+      "query_output_b",
+      "context_output_b",
+      "predicted_scores",
+      "softmax_scores",
+      "teacher_scores",
+      "similarity_function"
+    ]
+  },
+  "QuartetLossV3": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query_output_a",
+      "context_output_a",
+      "query_output_b",
+      "context_output_b",
+      "predicted_scores",
+      "log_softmax_scores",
+      "teacher_scores",
+      "similarity_function"
+    ]
+  },
+  "MultiNegativesLoss": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "predicted_scores",
+      "labels"
+    ]
+  },
+  "KLDivLossForTriplets": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query_output",
+      "context_output",
+      "hard_negative_output",
+      "true_p_scores",
+      "true_n_scores"
+    ]
+  },
+  "colbert_score": [
+    "teacher_model",
+    "query_inputs",
+    "context_inputs",
+    "device"
+  ],
+  "cross_encoder_score": [
+    "teacher_model",
+    "query_inputs",
+    "context_inputs",
+    "device"
+  ],
+  "get_tas_dataset": [
+    "passage_dataset",
+    "train_batch_size",
+    "encoder",
+    "tokenizer",
+    "args",
+    "device"
+  ],
+  "MovingLossAverage": {
+    "__init__": [
+      "self",
+      "window_size"
+    ],
+    "add_loss": [
+      "self",
+      "loss"
+    ],
+    "get_average_loss": [
+      "self"
+    ],
+    "size": [
+      "self"
+    ]
+  },
+  "get_faiss_index": [
+    "args"
+  ],
+  "calculate_mrr": [
+    "qrels",
+    "results",
+    "k_values"
+  ],
+  "convert_predictions_to_pytrec_format": [
+    "predicted_doc_ids",
+    "query_dataset",
+    "id_column",
+    "predicted_scores"
+  ],
+  "convert_qrels_dataset_to_pytrec_format": [
+    "qrels_dataset"
+  ],
+  "convert_metric_dict_to_scores_list": [
+    "metric_dict"
+  ],
+  "BeirRetrievalModel": {
+    "__init__": [
+      "self",
+      "context_encoder",
+      "query_encoder",
+      "context_tokenizer",
+      "query_tokenizer",
+      "context_config",
+      "query_config",
+      "args",
+      "reranking_model"
+    ],
+    "encode_queries": [
+      "self",
+      "queries"
+    ],
+    "encode_corpus": [
+      "self",
+      "corpus"
+    ]
+  },
+  "generate_latex_row": [
+    "results",
+    "all_metrics",
+    "all_model_names",
+    "dataset_name",
+    "dataset_name_map",
+    "experiment_dir"
+  ],
+  "generate_flipped_latex_row": [
+    "results",
+    "all_metrics",
+    "all_dataset_names",
+    "model_name",
+    "model_name_map",
+    "experiment_dir"
+  ],
+  "generate_latex_table": [
+    "results",
+    "all_metrics",
+    "all_model_names",
+    "dataset_names",
+    "caption",
+    "model_name_map",
+    "dataset_name_map",
+    "metric_name_map",
+    "experiment_dir",
+    "table_label",
+    "table_star",
+    "fontsize",
+    "tabcolsep",
+    "dataset_order"
+  ],
+  "generate_flipped_latex_table": [
+    "results",
+    "all_metrics",
+    "all_model_names",
+    "dataset_names",
+    "caption",
+    "model_name_map",
+    "dataset_name_map",
+    "metric_name_map",
+    "experiment_dir",
+    "table_label",
+    "table_star",
+    "fontsize",
+    "tabcolsep"
+  ],
+  "analyze_experiment": [
+    "experiment_dir",
+    "model_name_map",
+    "dataset_name_map",
+    "skip_models",
+    "keep_named_only",
+    "metrics_to_show",
+    "metric_name_map",
+    "table_label",
+    "table_caption",
+    "table_star",
+    "fontsize",
+    "tabcolsep",
+    "dataset_order",
+    "flip_table"
+  ],
+  "get_per_metric_results": [
+    "experiment_dir",
+    "model_name_map",
+    "dataset_name_map",
+    "skip_models",
+    "keep_named_only",
+    "metrics_to_show",
+    "metric_name_map"
+  ],
+  "calculate_significance": [
+    "run_a",
+    "run_b"
+  ],
+  "convert_trec_queries_to_beir_format": [
+    "trec_queries_path",
+    "beir_queries_path",
+    "save"
+  ],
+  "convert_trec_qrels_to_beir_format": [
+    "trec_qrels_path",
+    "beir_qrels_path",
+    "save"
+  ],
+  "MODEL_CLASSES": [],
+  "RetrievalModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "context_encoder_name",
+      "query_encoder_name",
+      "context_encoder_tokenizer",
+      "query_encoder_tokenizer",
+      "reranking_model_name",
+      "prediction_passages",
+      "teacher_model_name",
+      "teacher_tokenizer_name",
+      "autoencoder_model",
+      "clustering_model",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "additional_eval_passages",
+      "relevant_docs",
+      "clustered_training",
+      "top_k_values",
+      "verbose",
+      "eval_set",
+      "eval_dataset_names"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "additional_eval_passages",
+      "relevant_docs",
+      "clustered_training",
+      "train_data",
+      "top_k_values",
+      "verbose",
+      "eval_set"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "evaluate_with_all_passages",
+      "additional_passages",
+      "relevant_docs",
+      "top_k_values",
+      "retrieve_n_docs",
+      "return_doc_dicts",
+      "passage_dataset",
+      "qa_evaluation",
+      "output_dir",
+      "verbose",
+      "silent",
+      "evaluating_during_training",
+      "pytrec_eval_metrics",
+      "save_as_experiment",
+      "experiment_name",
+      "dataset_name",
+      "model_name",
+      "eval_set"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "gold_passages",
+      "evaluate_with_all_passages",
+      "passage_dataset",
+      "relevant_docs",
+      "qa_evaluation",
+      "top_k_values",
+      "return_doc_dicts",
+      "output_dir",
+      "verbose",
+      "silent",
+      "retrieve_n_docs"
+    ],
+    "evaluate_beir": [
+      "self",
+      "eval_data",
+      "eval_set"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "prediction_passages",
+      "retrieve_n_docs",
+      "passages_only",
+      "doc_ids_only",
+      "is_training",
+      "id_to_vec_dataset"
+    ],
+    "compute_metrics": [
+      "self",
+      "gold_passages",
+      "doc_texts",
+      "relevant_docs",
+      "args",
+      "qa_evaluation",
+      "top_k_values"
+    ],
+    "retrieve_docs_from_query_embeddings": [
+      "self",
+      "query_embeddings",
+      "passage_dataset",
+      "retrieve_n_docs",
+      "return_doc_dicts",
+      "passages_only",
+      "doc_ids_only",
+      "reranking_query_outputs"
+    ],
+    "get_hard_negatives": [
+      "self",
+      "queries",
+      "passage_dataset",
+      "retrieve_n_docs",
+      "passages_only"
+    ],
+    "build_hard_negatives": [
+      "self",
+      "queries",
+      "passage_dataset",
+      "retrieve_n_docs",
+      "write_to_disk",
+      "hard_negatives_save_file_path"
+    ],
+    "add_hard_negatives_for_ance": [
+      "self",
+      "train_data",
+      "passage_dataset"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent",
+      "clustered_training",
+      "additional_eval_passages",
+      "clustered_batch_randomize_percentage",
+      "epoch_number",
+      "dataset"
+    ],
+    "get_optimizer_parameters": [
+      "self",
+      "context_model",
+      "query_model",
+      "args",
+      "reranking_model"
+    ],
+    "get_scheduler": [
+      "self",
+      "optimizer",
+      "args",
+      "t_total"
+    ],
+    "get_updated_prediction_passages": [
+      "self",
+      "prediction_passages"
+    ],
+    "_calculate_loss": [
+      "self",
+      "context_model",
+      "query_model",
+      "context_inputs",
+      "query_inputs",
+      "labels",
+      "teacher_scores"
+    ],
+    "_get_teacher_scores": [
+      "self",
+      "reranking_input",
+      "query_inputs",
+      "context_inputs"
+    ],
+    "_get_loss": [
+      "self",
+      "similarity_score",
+      "softmax_score",
+      "labels",
+      "label_scores",
+      "query_outputs",
+      "context_outputs",
+      "teacher_scores"
+    ],
+    "_get_running_stats": [
+      "self",
+      "softmax_score",
+      "nll_labels",
+      "label_scores"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch",
+      "evaluate"
+    ],
+    "_create_training_progress_scores": [
+      "self",
+      "calculate_recall",
+      "top_k_values"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "context_model",
+      "query_model",
+      "results"
+    ],
+    "_move_model_to_device": [
+      "self",
+      "is_evaluating"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ],
+    "get_multi_head_predictions": [
+      "self",
+      "doc_ids",
+      "scores",
+      "all_query_embeddings",
+      "id_to_vec_dataset",
+      "num_heads",
+      "head_dim"
+    ]
+  },
+  "compute_multi_head_similarity": [
+    "query_outputs",
+    "context_outputs",
+    "strategy"
+  ],
+  "MAX_LENGTH": [],
+  "LanguageGenerationModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "generate": [
+      "self",
+      "prompt",
+      "args",
+      "verbose"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "PADDING_TEXT": [],
+  "prepare_ctrl_input": [
+    "args",
+    "_",
+    "tokenizer",
+    "prompt_text"
+  ],
+  "prepare_xlm_input": [
+    "args",
+    "model",
+    "tokenizer",
+    "prompt_text"
+  ],
+  "prepare_xlnet_input": [
+    "args",
+    "_",
+    "tokenizer",
+    "prompt_text"
+  ],
+  "prepare_transfoxl_input": [
+    "args",
+    "_",
+    "tokenizer",
+    "prompt_text"
+  ],
+  "PREPROCESSING_FUNCTIONS": [],
+  "TverskyLoss": {
+    "__init__": [
+      "self",
+      "alpha",
+      "beta",
+      "gamma",
+      "scale",
+      "reduction",
+      "ignore_index",
+      "eps",
+      "smooth"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "DiceLoss": {
+    "__init__": [
+      "self",
+      "gamma",
+      "scale",
+      "reduction",
+      "ignore_index",
+      "eps",
+      "smooth"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "FocalLoss": {
+    "__init__": [
+      "self",
+      "alpha",
+      "gamma",
+      "reduction",
+      "ignore_index"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "init_loss": [
+    "weight",
+    "device",
+    "args"
+  ],
+  "preprocess_data": [
+    "data"
+  ],
+  "T5Dataset": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "args",
+      "data",
+      "mode"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "convert_beir_to_monot5_format": [
+    "data",
+    "run_dict",
+    "top_k",
+    "include_title",
+    "save_path"
+  ],
+  "chunks": [
+    "lst",
+    "n"
+  ],
+  "T5Model": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "args",
+      "tokenizer",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "qrels",
+      "run_dict",
+      "eval_name",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "qrels",
+      "run_dict",
+      "eval_name",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "reranking_eval"
+    ],
+    "rerank": [
+      "self",
+      "eval_data",
+      "qrels",
+      "run_dict",
+      "beir_format"
+    ],
+    "_evaluate_during_training": [
+      "self",
+      "eval_data",
+      "qrels",
+      "run_dict",
+      "eval_name",
+      "verbose",
+      "silent"
+    ],
+    "_decode": [
+      "self",
+      "output_id"
+    ],
+    "compute_metrics": [
+      "self",
+      "labels",
+      "preds"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent",
+      "tokenize_targets",
+      "reranking"
+    ],
+    "_create_training_progress_scores": [
+      "self",
+      "eval_name"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "model",
+      "results"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ],
+    "_get_reranking_outputs": [
+      "self",
+      "outputs",
+      "true_token_idx",
+      "false_token_idx"
+    ]
+  },
+  "QuestionAnsweringModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "examples",
+      "evaluate",
+      "no_cache",
+      "output_examples"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "output_dir",
+      "verbose",
+      "verbose_logging"
+    ],
+    "evaluate": [
+      "self",
+      "eval_data",
+      "output_dir",
+      "verbose_logging"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "n_best_size"
+    ],
+    "calculate_results": [
+      "self",
+      "truth",
+      "predictions"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "model",
+      "results"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "InputExample": {
+    "__init__": [
+      "self",
+      "qas_id",
+      "question_text",
+      "doc_tokens",
+      "orig_answer_text",
+      "start_position",
+      "end_position",
+      "is_impossible"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "to_list": [
+    "tensor"
+  ],
+  "InputFeatures": {
+    "__init__": [
+      "self",
+      "unique_id",
+      "example_index",
+      "doc_span_index",
+      "tokens",
+      "token_to_orig_map",
+      "token_is_max_context",
+      "input_ids",
+      "input_mask",
+      "segment_ids",
+      "cls_index",
+      "p_mask",
+      "paragraph_len",
+      "start_position",
+      "end_position",
+      "is_impossible"
+    ]
+  },
+  "get_examples": [
+    "examples_to_process",
+    "is_training",
+    "version_2_with_negative"
+  ],
+  "convert_example_to_feature": [
+    "example_row"
+  ],
+  "squad_convert_examples_to_features": [
+    "examples",
+    "tokenizer",
+    "max_seq_length",
+    "doc_stride",
+    "max_query_length",
+    "is_training",
+    "padding_strategy",
+    "return_dataset",
+    "threads",
+    "tqdm_enabled",
+    "args"
+  ],
+  "convert_examples_to_features": [
+    "examples",
+    "tokenizer",
+    "max_seq_length",
+    "doc_stride",
+    "max_query_length",
+    "is_training",
+    "cls_token_at_end",
+    "cls_token",
+    "sep_token",
+    "pad_token",
+    "sequence_a_segment_id",
+    "sequence_b_segment_id",
+    "cls_token_segment_id",
+    "pad_token_segment_id",
+    "mask_padding_with_zero",
+    "sequence_a_is_doc",
+    "silent",
+    "args"
+  ],
+  "_improve_answer_span": [
+    "doc_tokens",
+    "input_start",
+    "input_end",
+    "tokenizer",
+    "orig_answer_text"
+  ],
+  "_check_is_max_context": [
+    "doc_spans",
+    "cur_span_index",
+    "position"
+  ],
+  "RawResult": [],
+  "write_predictions": [
+    "all_examples",
+    "all_features",
+    "all_results",
+    "n_best_size",
+    "max_answer_length",
+    "do_lower_case",
+    "output_prediction_file",
+    "output_nbest_file",
+    "output_null_log_odds_file",
+    "verbose_logging",
+    "version_2_with_negative",
+    "null_score_diff_threshold"
+  ],
+  "RawResultExtended": [],
+  "write_predictions_extended": [
+    "all_examples",
+    "all_features",
+    "all_results",
+    "n_best_size",
+    "max_answer_length",
+    "output_prediction_file",
+    "output_nbest_file",
+    "output_null_log_odds_file",
+    "orig_data_file",
+    "start_n_top",
+    "end_n_top",
+    "version_2_with_negative",
+    "tokenizer",
+    "verbose_logging"
+  ],
+  "get_best_predictions": [
+    "all_examples",
+    "all_features",
+    "all_results",
+    "n_best_size",
+    "max_answer_length",
+    "do_lower_case",
+    "verbose_logging",
+    "version_2_with_negative",
+    "null_score_diff_threshold"
+  ],
+  "get_best_predictions_extended": [
+    "all_examples",
+    "all_features",
+    "all_results",
+    "n_best_size",
+    "max_answer_length",
+    "start_n_top",
+    "end_n_top",
+    "version_2_with_negative",
+    "tokenizer",
+    "verbose_logging"
+  ],
+  "find_all_best_thresh_v2": [
+    "main_eval",
+    "preds",
+    "exact_raw",
+    "f1_raw",
+    "na_probs",
+    "qid_to_has_ans"
+  ],
+  "find_best_thresh_v2": [
+    "preds",
+    "scores",
+    "na_probs",
+    "qid_to_has_ans"
+  ],
+  "make_qid_to_has_ans": [
+    "dataset"
+  ],
+  "get_raw_scores": [
+    "dataset",
+    "preds"
+  ],
+  "compute_exact": [
+    "a_gold",
+    "a_pred"
+  ],
+  "compute_f1": [
+    "a_gold",
+    "a_pred"
+  ],
+  "get_tokens": [
+    "s"
+  ],
+  "normalize_answer": [
+    "s"
+  ],
+  "get_final_text": [
+    "pred_text",
+    "orig_text",
+    "do_lower_case",
+    "verbose_logging"
+  ],
+  "_get_best_indexes": [
+    "logits",
+    "n_best_size"
+  ],
+  "_compute_softmax": [
+    "scores"
+  ],
+  "build_examples": [
+    "to_predict"
+  ],
+  "LazyQuestionAnsweringDataset": {
+    "__init__": [
+      "self",
+      "data_file",
+      "tokenizer",
+      "args"
+    ],
+    "_get_n_lines": [
+      "data_file"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "ClassificationModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "num_labels",
+      "weight",
+      "sliding_window",
+      "args",
+      "use_cuda"
+    ],
+    "train_model": [
+      "self",
+      "train_df",
+      "multi_label",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_df"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_df"
+    ],
+    "eval_model": [
+      "self",
+      "eval_df",
+      "multi_label",
+      "output_dir",
+      "verbose"
+    ],
+    "evaluate": [
+      "self",
+      "eval_df",
+      "output_dir",
+      "multi_label",
+      "prefix"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "examples",
+      "evaluate",
+      "no_cache",
+      "multi_label"
+    ],
+    "compute_metrics": [
+      "self",
+      "preds",
+      "labels",
+      "eval_examples",
+      "multi_label"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "multi_label"
+    ],
+    "_threshold": [
+      "self",
+      "x",
+      "threshold"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ]
+  },
+  "MultiLabelClassificationModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "num_labels",
+      "pos_weight",
+      "args",
+      "use_cuda"
+    ],
+    "train_model": [
+      "self",
+      "train_df",
+      "multi_label",
+      "eval_df",
+      "output_dir",
+      "show_running_loss",
+      "args"
+    ],
+    "eval_model": [
+      "self",
+      "eval_df",
+      "multi_label",
+      "output_dir",
+      "verbose"
+    ],
+    "evaluate": [
+      "self",
+      "eval_df",
+      "output_dir",
+      "multi_label",
+      "prefix"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "examples",
+      "evaluate",
+      "no_cache",
+      "multi_label"
+    ],
+    "compute_metrics": [
+      "self",
+      "preds",
+      "labels",
+      "eval_examples",
+      "multi_label"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "multi_label"
+    ]
+  },
+  "convert_example_to_feature_sliding_window": [
+    "example_row",
+    "pad_token",
+    "sequence_a_segment_id",
+    "sequence_b_segment_id",
+    "cls_token_segment_id",
+    "pad_token_segment_id",
+    "mask_padding_with_zero",
+    "sep_token_extra"
+  ],
+  "_truncate_seq_pair": [
+    "tokens_a",
+    "tokens_b",
+    "max_length"
+  ],
+  "AlbertForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight",
+      "sliding_window"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "XLNetForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight",
+      "sliding_window"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "mems",
+      "perm_mask",
+      "target_mapping",
+      "token_type_ids",
+      "input_mask",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "RobertaForSequenceClassification": {
+    "config_class": [],
+    "pretrained_model_archive_map": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config",
+      "weight",
+      "sliding_window"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "BertForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight",
+      "sliding_window"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "CamembertForSequenceClassification": {
+    "config_class": [],
+    "pretrained_model_archive_map": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config",
+      "weight",
+      "sliding_window"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "XLMForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "langs",
+      "token_type_ids",
+      "position_ids",
+      "lengths",
+      "cache",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "DistilBertForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "PERSONACHAT_URL": [],
+  "HF_FINETUNED_MODEL": [],
+  "download_pretrained_model": [],
+  "tokenize_multi": [
+    "data"
+  ],
+  "get_dataset": [
+    "tokenizer",
+    "dataset_path",
+    "dataset_cache",
+    "process_count",
+    "proxies",
+    "evaluate",
+    "interact",
+    "no_cache",
+    "args"
+  ],
+  "AttrDict": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "SPECIAL_TOKENS": [],
+  "ATTR_TO_SPECIAL_TOKEN": [],
+  "MODEL_INPUTS": [],
+  "PADDED_INPUTS": [],
+  "ConvAIModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_file",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_file",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataloader",
+      "output_dir",
+      "show_running_loss",
+      "eval_dataloader",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_file",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_file",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "dataset_path",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent"
+    ],
+    "compute_metrics": [
+      "self",
+      "mc_preds",
+      "mc_labels",
+      "lm_logits",
+      "labels"
+    ],
+    "interact": [
+      "self",
+      "personality"
+    ],
+    "interact_single": [
+      "self",
+      "message",
+      "history",
+      "personality",
+      "encode_history"
+    ],
+    "_threshold": [
+      "self",
+      "x",
+      "threshold"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "model",
+      "results"
+    ],
+    "add_special_tokens_": [
+      "self",
+      "model",
+      "tokenizer"
+    ],
+    "build_input_from_segments": [
+      "self",
+      "persona",
+      "history",
+      "reply",
+      "tokenizer",
+      "labels",
+      "with_eos"
+    ],
+    "pad_dataset": [
+      "self",
+      "dataset",
+      "padding"
+    ],
+    "top_filtering": [
+      "self",
+      "logits",
+      "top_k",
+      "top_p",
+      "threshold",
+      "filter_value"
+    ],
+    "sample_sequence": [
+      "self",
+      "personality",
+      "history",
+      "tokenizer",
+      "model",
+      "args",
+      "current_output"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "get_default_process_count": [],
+  "get_special_tokens": [],
+  "ModelArgs": {
+    "update_from_dict": [
+      "self",
+      "new_values"
+    ],
+    "get_args_for_saving": [
+      "self"
+    ],
+    "save": [
+      "self",
+      "output_dir"
+    ],
+    "load": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "ClassificationArgs": {},
+  "MultiLabelClassificationArgs": {},
+  "NERArgs": {},
+  "QuestionAnsweringArgs": {},
+  "T5Args": {},
+  "GenerationArgs": {
+    "get_dict": [
+      "self"
+    ]
+  },
+  "LanguageModelingArgs": {
+    "save": [
+      "self",
+      "output_dir"
+    ],
+    "load": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "Seq2SeqArgs": {
+    "save": [
+      "self",
+      "output_dir"
+    ],
+    "load": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "RetrievalArgs": {},
+  "LanguageGenerationArgs": {},
+  "ConvAIArgs": {},
+  "MultiModalClassificationArgs": {},
+  "global_args": [],
+  "sweep_config_to_sweep_values": [
+    "sweep_config"
+  ],
+  "read_examples_from_file": [
+    "data_file",
+    "mode",
+    "bbox"
+  ],
+  "get_examples_from_df": [
+    "data",
+    "bbox"
+  ],
+  "convert_examples_with_multiprocessing": [
+    "examples"
+  ],
+  "get_labels": [
+    "path"
+  ],
+  "LazyNERDataset": {
+    "__init__": [
+      "self",
+      "data_file",
+      "tokenizer",
+      "args"
+    ],
+    "_get_examples": [
+      "data_file",
+      "lazy_loading_start_line"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "flatten_results": [
+    "results",
+    "parent_key",
+    "sep"
+  ],
+  "NystromformerTokenizer": {
+    "_backends": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "MODELS_WITHOUT_CLASS_WEIGHTS_SUPPORT": [],
+  "MODELS_WITH_EXTRA_SEP_TOKEN": [],
+  "NERModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "labels",
+      "weight",
+      "args",
+      "use_cuda",
+      "cuda_device",
+      "onnx_execution_provider"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "test_data",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "output_dir",
+      "verbose",
+      "silent",
+      "wandb_log"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "output_dir",
+      "verbose",
+      "silent",
+      "wandb_log"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "split_on_space"
+    ],
+    "_convert_tokens_to_word_logits": [
+      "self",
+      "input_ids",
+      "label_ids",
+      "attention_mask",
+      "logits"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "evaluate",
+      "no_cache",
+      "to_predict"
+    ],
+    "convert_to_onnx": [
+      "self",
+      "output_dir",
+      "set_onnx_arg"
+    ],
+    "_calculate_loss": [
+      "self",
+      "model",
+      "inputs",
+      "loss_fct",
+      "num_labels",
+      "args"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "model",
+      "results"
+    ],
+    "_save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "ChunkSampler": {
+    "__init__": [
+      "self",
+      "data_source",
+      "chunk_size",
+      "batch_size"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "MODELS_WITH_ADD_PREFIX_SPACE": [],
+  "MODELS_WITHOUT_SLIDING_WINDOW_SUPPORT": [],
+  "MultiModalClassificationModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "multi_label",
+      "label_list",
+      "num_labels",
+      "pos_weight",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "files_list",
+      "image_path",
+      "text_label",
+      "labels_label",
+      "images_label",
+      "image_type_extension",
+      "data_type_extension",
+      "auto_weights",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "files_list",
+      "image_path",
+      "text_label",
+      "labels_label",
+      "images_label",
+      "image_type_extension",
+      "data_type_extension",
+      "show_running_loss",
+      "eval_data",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "files_list",
+      "image_path",
+      "text_label",
+      "labels_label",
+      "images_label",
+      "image_type_extension",
+      "data_type_extension",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "output_dir",
+      "prefix",
+      "verbose",
+      "silent"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "files_list",
+      "image_path",
+      "text_label",
+      "labels_label",
+      "images_label",
+      "image_type_extension",
+      "data_type_extension",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent"
+    ],
+    "compute_metrics": [
+      "self",
+      "preds",
+      "labels"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "image_path",
+      "image_type_extension"
+    ],
+    "calculate_weights": [
+      "self",
+      "train_dataset"
+    ],
+    "_threshold": [
+      "self",
+      "x",
+      "threshold"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "_create_training_progress_scores": [
+      "self",
+      "multi_label"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "model",
+      "results"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "preprocess_data_multiprocessing": [
+    "data"
+  ],
+  "build_classification_dataset": [
+    "data",
+    "tokenizer",
+    "args",
+    "mode",
+    "multi_label",
+    "output_mode",
+    "no_cache",
+    "global_attention_fn"
+  ],
+  "ClassificationDataset": {
+    "__init__": [
+      "self",
+      "data",
+      "tokenizer",
+      "args",
+      "mode",
+      "multi_label",
+      "output_mode",
+      "no_cache",
+      "global_attention_fn"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "map_labels_to_numeric": [
+    "example",
+    "multi_label",
+    "args"
+  ],
+  "POOLING_BREAKDOWN": [],
+  "ImageEncoder": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "JsonlDataset": {
+    "__init__": [
+      "self",
+      "data_path",
+      "tokenizer",
+      "transforms",
+      "labels",
+      "max_seq_length",
+      "files_list",
+      "image_path",
+      "text_label",
+      "labels_label",
+      "images_label",
+      "image_type_extension",
+      "data_type_extension",
+      "multi_label"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "get_label_frequencies": [
+      "self"
+    ]
+  },
+  "collate_fn": [
+    "batch"
+  ],
+  "get_image_transforms": [],
+  "LazyClassificationDataset": {
+    "__init__": [
+      "self",
+      "data_file",
+      "tokenizer",
+      "args"
+    ],
+    "_get_n_lines": [
+      "data_file",
+      "start_row"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "convert_beir_to_cross_encoder_format": [
+    "data",
+    "run_dict",
+    "top_k",
+    "include_titles",
+    "save_path",
+    "bm25_format"
+  ],
+  "ElectraForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "MobileBertForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels",
+      "output_attentions",
+      "output_hidden_states"
+    ]
+  },
+  "MMBTForClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "transformer",
+      "encoder"
+    ],
+    "forward": [
+      "self",
+      "input_modal",
+      "input_ids",
+      "modal_start_tokens",
+      "modal_end_tokens",
+      "attention_mask",
+      "token_type_ids",
+      "modal_token_type_ids",
+      "position_ids",
+      "modal_position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "XLMRobertaForSequenceClassification": {
+    "config_class": [],
+    "pretrained_model_archive_map": []
+  },
+  "FlaubertForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "langs",
+      "token_type_ids",
+      "position_ids",
+      "lengths",
+      "cache",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "LongformerForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "global_attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "inputs_embeds",
+      "labels",
+      "output_attentions",
+      "output_hidden_states"
+    ]
+  },
+  "LayoutLMForSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "bbox",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "Seq2SeqDataset": {
+    "__init__": [
+      "self",
+      "encoder_tokenizer",
+      "decoder_tokenizer",
+      "args",
+      "data",
+      "mode"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "preprocess_data_bart": [
+    "data"
+  ],
+  "preprocess_data_mbart": [
+    "data"
+  ],
+  "SimpleSummarizationDataset": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "args",
+      "data",
+      "mode"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "split_text": [
+    "text",
+    "n",
+    "character"
+  ],
+  "split_documents": [
+    "documents",
+    "split_text_n",
+    "split_text_character",
+    "include_title"
+  ],
+  "generate_faiss_index_dataset": [
+    "data",
+    "ctx_encoder_name",
+    "args",
+    "device"
+  ],
+  "add_faiss_index_to_dataset": [
+    "dataset"
+  ],
+  "Seq2SeqModel": {
+    "__init__": [
+      "self",
+      "encoder_type",
+      "encoder_name",
+      "decoder_name",
+      "encoder_decoder_type",
+      "encoder_decoder_name",
+      "additional_special_tokens_encoder",
+      "additional_special_tokens_decoder",
+      "index_name",
+      "knowledge_dataset",
+      "index_path",
+      "dpr_ctx_encoder_model_name",
+      "rag_question_encoder_model_name",
+      "config",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "predict": [
+      "self",
+      "to_predict"
+    ],
+    "_decode": [
+      "self",
+      "output_id"
+    ],
+    "compute_metrics": [
+      "self",
+      "labels",
+      "preds"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "model",
+      "results"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "DPRContextEncoderOutput": {},
+  "DPRContextEncoderEnhanced": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "DPRContextEncoderUnifiedRR": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "DPRQuestionEncoderOutput": {},
+  "DPRQuestionEncoderEnhanced": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "DPRQuestionEncoderUnifiedRR": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "BertForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "LayoutLMForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "bbox",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "RemBertForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "RobertaForMultiLabelSequenceClassification": {
+    "config_class": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "BertweetForMultiLabelSequenceClassification": {
+    "base_model_prefix": []
+  },
+  "CamembertForMultiLabelSequenceClassification": {
+    "config_class": [],
+    "base_model_prefix": []
+  },
+  "XLNetForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "mems",
+      "perm_mask",
+      "target_mapping",
+      "token_type_ids",
+      "input_mask",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "XLMForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "langs",
+      "token_type_ids",
+      "position_ids",
+      "lengths",
+      "cache",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "DistilBertPreTrainedModel": {
+    "config_class": [],
+    "load_tf_weights": [],
+    "base_model_prefix": [],
+    "_init_weights": [
+      "self",
+      "module"
+    ]
+  },
+  "DistilBertForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "AlbertForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "FlaubertForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "langs",
+      "token_type_ids",
+      "position_ids",
+      "lengths",
+      "cache",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "LongformerForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "global_attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "XLMRobertaForMultiLabelSequenceClassification": {
+    "config_class": []
+  },
+  "ElectraPooler": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "ElectraForLanguageModelingModel": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "tie_generator_and_discriminator_embeddings": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inputs",
+      "labels",
+      "attention_mask",
+      "token_type_ids"
+    ]
+  },
+  "ElectraForMultiLabelSequenceClassification": {
+    "config_class": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "labels"
+    ]
+  },
+  "ElectraForQuestionAnswering": {
+    "config_class": [],
+    "base_model_prefix": [],
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "start_positions",
+      "end_positions"
+    ]
+  },
+  "XLMRobertaForQuestionAnswering": {
+    "config_class": []
+  },
+  "BigBirdForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "NystromformerForMultiLabelSequenceClassification": {
+    "__init__": [
+      "self",
+      "config",
+      "pos_weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "labels"
+    ]
+  },
+  "DualEncoderModel": {
+    "__init__": [
+      "self",
+      "context_encoder",
+      "question_encoder",
+      "context_config",
+      "question_config"
+    ]
+  },
+  "ColBERTModel": {
+    "__init__": [
+      "self",
+      "config",
+      "query_maxlen",
+      "doc_maxlen",
+      "mask_punctuation",
+      "dim",
+      "similarity_metric",
+      "device"
+    ],
+    "forward": [
+      "self",
+      "Q",
+      "D"
+    ],
+    "query": [
+      "self",
+      "input_ids",
+      "attention_mask"
+    ],
+    "doc": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "keep_dims"
+    ],
+    "score": [
+      "self",
+      "Q",
+      "D"
+    ],
+    "mask": [
+      "self",
+      "input_ids"
+    ]
+  },
+  "RobertaWithAutoEncoderForMaskedLM": {
+    "_tied_weights_keys": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_output_embeddings": [
+      "self"
+    ],
+    "set_output_embeddings": [
+      "self",
+      "new_embeddings"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "labels",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ]
+  },
+  "Autoencoder": {
+    "__init__": [
+      "self",
+      "max_position_embeddings",
+      "hidden_size"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "x"
+    ],
+    "init_weights": [
+      "self"
+    ]
+  },
+  "PretrainRetrievalContextEncoder": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "indexing"
+    ]
+  },
+  "STESpanSelect": {
+    "forward": [
+      "ctx",
+      "start_logits",
+      "span_lengths",
+      "input_ids",
+      "attention_mask"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "SpanPredictionLayerOutput": {
+    "query_input_ids": [],
+    "query_attention_mask": [],
+    "span_lengths": [],
+    "average_span_length": []
+  },
+  "RerankingModel": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "inputs_embeds",
+      "attention_mask",
+      "token_type_ids"
+    ]
+  },
+  "EET5": {
+    "__init__": [
+      "self",
+      "config",
+      "max_seq_length"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "past_key_values",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "labels",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict"
+    ],
+    "_tie_weights": [
+      "self"
+    ],
+    "_prepare_encoder_decoder_kwargs_for_generation": [
+      "self",
+      "inputs_tensor",
+      "model_kwargs",
+      "model_input_name"
+    ]
+  },
+  "encode": [
+    "data"
+  ],
+  "encode_sliding_window": [
+    "data"
+  ],
+  "chunk_sequence": [
+    "sequence",
+    "max_length"
+  ],
+  "preprocess_and_chunk_batch_for_hf_dataset": [
+    "dataset",
+    "tokenizer",
+    "max_seq_length",
+    "chunk_text"
+  ],
+  "SimpleDataset": {
+    "__init__": [
+      "self",
+      "tokenizer",
+      "args",
+      "file_path",
+      "mode",
+      "block_size",
+      "special_tokens_count",
+      "sliding_window"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ]
+  },
+  "mask_tokens": [
+    "inputs",
+    "tokenizer",
+    "args"
+  ],
+  "apply_chat_template_to_inputs": [
+    "to_predict",
+    "user_role",
+    "system_role",
+    "system_prompt",
+    "tokenizer"
+  ],
+  "LanguageModelingModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "generator_name",
+      "discriminator_name",
+      "train_files",
+      "args",
+      "use_cuda",
+      "retrieval_model",
+      "adapter_name",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_file",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_file",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_file",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_file",
+      "output_dir",
+      "evaluate_generated_text",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "output_dir",
+      "prefix",
+      "verbose",
+      "silent"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "generation_args",
+      "rag_queries",
+      "knowledge_dataset",
+      "user_role",
+      "system_role",
+      "system_prompt",
+      "apply_chat_template"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "file_path",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent"
+    ],
+    "train_tokenizer": [
+      "self",
+      "train_files",
+      "tokenizer_name",
+      "output_dir",
+      "use_trained_tokenizer"
+    ],
+    "save_discriminator": [
+      "self",
+      "output_dir"
+    ],
+    "save_generator": [
+      "self",
+      "output_dir"
+    ],
+    "_threshold": [
+      "self",
+      "x",
+      "threshold"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "model",
+      "results"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "is_world_master": [
+      "self"
+    ],
+    "get_optimizer_parameters": [
+      "self",
+      "model",
+      "args"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "ENTITY_WRAPPER": [],
+  "ENTITY_LABEL_WRAPPER": [],
+  "format_word": [
+    "word",
+    "entity",
+    "entity_checkboxes",
+    "entity_color_map"
+  ],
+  "get_prediction": [
+    "model",
+    "input_text"
+  ],
+  "ner_viewer": [
+    "model"
+  ],
+  "QA_ANSWER_WRAPPER": [],
+  "QA_EMPTY_ANSWER_WRAPPER": [],
+  "get_states": [
+    "model",
+    "session_state"
+  ],
+  "qa_viewer": [
+    "model"
+  ],
+  "classification_viewer": [
+    "model",
+    "model_class"
+  ],
+  "t5_viewer": [
+    "model"
+  ],
+  "cache_on_button_press": [
+    "label"
+  ],
+  "SessionState": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "get": [],
+  "simple_transformers_model": [
+    "model"
+  ],
+  "get_color": [
+    "i"
+  ],
+  "transformers_logger": [],
+  "model_class_map": [],
+  "load_model": [
+    "selected_dir",
+    "model_class",
+    "model_type",
+    "model_name",
+    "num_labels",
+    "weight",
+    "args",
+    "use_cuda",
+    "cuda_device"
+  ],
+  "create_model": [
+    "model_class",
+    "model_type",
+    "model_name",
+    "num_labels",
+    "weight",
+    "args",
+    "use_cuda",
+    "cuda_device"
+  ],
+  "find_all_models": [
+    "current_dir",
+    "model_list"
+  ],
+  "manual_model_load": [
+    "model_class",
+    "model_type",
+    "model_name"
+  ],
+  "streamlit_runner": [
+    "selected_dir",
+    "model_class",
+    "model_type",
+    "model_name",
+    "num_labels",
+    "weight",
+    "args",
+    "use_cuda",
+    "cuda_device"
+  ],
+  "PretrainRetrievalModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "context_encoder_name",
+      "query_encoder_name",
+      "context_encoder_tokenizer",
+      "query_encoder_tokenizer",
+      "prediction_passages",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "train_model": [
+      "self",
+      "train_data",
+      "output_dir",
+      "show_running_loss",
+      "args",
+      "eval_data",
+      "additional_eval_passages",
+      "clustered_training",
+      "verbose"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "output_dir",
+      "show_running_loss",
+      "eval_data",
+      "additional_eval_passages",
+      "clustered_training",
+      "train_data",
+      "verbose"
+    ],
+    "eval_model": [
+      "self",
+      "eval_data",
+      "evaluate_with_all_passages",
+      "additional_passages",
+      "top_k_values",
+      "retrieve_n_docs",
+      "return_doc_dicts",
+      "passage_dataset",
+      "qa_evaluation",
+      "output_dir",
+      "verbose",
+      "silent"
+    ],
+    "evaluate": [
+      "self",
+      "eval_dataset",
+      "gold_passages",
+      "evaluate_with_all_passages",
+      "passage_dataset",
+      "qa_evaluation",
+      "top_k_values",
+      "return_doc_dicts",
+      "output_dir",
+      "verbose",
+      "silent",
+      "retrieve_n_docs"
+    ],
+    "predict": [
+      "self",
+      "to_predict",
+      "prediction_passages",
+      "retrieve_n_docs",
+      "passages_only"
+    ],
+    "compute_metrics": [
+      "self",
+      "gold_passages",
+      "doc_texts",
+      "args",
+      "qa_evaluation",
+      "top_k_values"
+    ],
+    "retrieve_docs_from_query_embeddings": [
+      "self",
+      "query_embeddings",
+      "passage_dataset",
+      "retrieve_n_docs",
+      "return_doc_dicts",
+      "passages_only"
+    ],
+    "build_hard_negatives": [
+      "self",
+      "queries",
+      "passage_dataset",
+      "retrieve_n_docs",
+      "write_to_disk",
+      "hard_negatives_save_file_path"
+    ],
+    "load_and_cache_examples": [
+      "self",
+      "data",
+      "evaluate",
+      "no_cache",
+      "verbose",
+      "silent",
+      "clustered_training"
+    ],
+    "get_optimizer_parameters": [
+      "self",
+      "context_model",
+      "query_model",
+      "args"
+    ],
+    "get_scheduler": [
+      "self",
+      "optimizer",
+      "args",
+      "t_total"
+    ],
+    "get_updated_prediction_passages": [
+      "self",
+      "prediction_passages"
+    ],
+    "_calculate_loss": [
+      "self",
+      "context_model",
+      "query_model",
+      "context_inputs",
+      "labels",
+      "criterion",
+      "current_span_length_target"
+    ],
+    "_get_inputs_dict": [
+      "self",
+      "batch",
+      "evaluate"
+    ],
+    "_create_training_progress_scores": [
+      "self"
+    ],
+    "_get_last_metrics": [
+      "self",
+      "metric_values"
+    ],
+    "save_model": [
+      "self",
+      "output_dir",
+      "optimizer",
+      "scheduler",
+      "context_model",
+      "query_model",
+      "results"
+    ],
+    "_move_model_to_device": [
+      "self"
+    ],
+    "save_model_args": [
+      "self",
+      "output_dir"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ],
+    "get_named_parameters": [
+      "self"
+    ]
+  },
+  "mean_across_all_tokens": [
+    "token_vectors"
+  ],
+  "concat_all_tokens": [
+    "token_vectors"
+  ],
+  "select_a_token": [
+    "token_vectors",
+    "token_index"
+  ],
+  "get_all_tokens": [
+    "token_vectors"
+  ],
+  "batch_iterable": [
+    "iterable",
+    "batch_size"
+  ],
+  "RepresentationModel": {
+    "__init__": [
+      "self",
+      "model_type",
+      "model_name",
+      "args",
+      "use_cuda",
+      "cuda_device"
+    ],
+    "_tokenize": [
+      "self",
+      "text_list"
+    ],
+    "encode_sentences": [
+      "self",
+      "text_list",
+      "combine_strategy",
+      "batch_size"
+    ],
+    "_load_model_args": [
+      "self",
+      "input_dir"
+    ]
+  },
+  "BertForTextRepresentation": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask"
+    ]
+  },
+  "GPT2ForTextRepresentation": {
+    "__init__": [
+      "self",
+      "config",
+      "weight"
+    ],
+    "resize_token_embeddings": [
+      "self",
+      "new_len"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask"
+    ]
+  }
+}

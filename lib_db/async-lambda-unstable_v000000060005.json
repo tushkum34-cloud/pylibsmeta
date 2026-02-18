@@ -1,0 +1,647 @@
+{
+  "PayloadEncoder": {
+    "default": [
+      "self",
+      "o"
+    ]
+  },
+  "logger": [],
+  "BaseEventT": [],
+  "APIEventT": [],
+  "ManagedSQSEventT": [],
+  "ManagedSQSBatchEventT": [],
+  "UnmanagedSQSEventT": [],
+  "ScheduledEventT": [],
+  "DynamoDBEventT": [],
+  "BatchInvokeException": {
+    "__init__": [
+      "self",
+      "msg",
+      "failed_payloads"
+    ]
+  },
+  "AsyncLambdaController": {
+    "__init__": [
+      "self",
+      "is_sub",
+      "lane_count",
+      "propagate_lane_assignment",
+      "propagate_message_group_id",
+      "middleware",
+      "delete_s3_payloads",
+      "controller_name"
+    ],
+    "_batched": [
+      "items",
+      "batch_size"
+    ],
+    "_build_send_to_all_async_lambda_queues_policies": [
+      "cls",
+      "managed_tasks_resources",
+      "policy_batch_size"
+    ],
+    "add_middleware": [
+      "self",
+      "event_types",
+      "func"
+    ],
+    "get_middleware_for_event": [
+      "self",
+      "event"
+    ],
+    "add_task": [
+      "self",
+      "task"
+    ],
+    "add_external_task": [
+      "self",
+      "external_task_id"
+    ],
+    "get_lane_count": [
+      "self"
+    ],
+    "should_propagate_lane_assignment": [
+      "self"
+    ],
+    "should_propagate_message_group_id": [
+      "self"
+    ],
+    "get_task": [
+      "self",
+      "task_id"
+    ],
+    "set_dlq_task_id": [
+      "self",
+      "task_id"
+    ],
+    "get_dlq_task": [
+      "self"
+    ],
+    "generate_sam_template": [
+      "self",
+      "module",
+      "config_dict",
+      "stage"
+    ],
+    "_dlq_extra_logical_id": [
+      "self",
+      "index"
+    ],
+    "_dlq_extras_replace_references": [
+      "self",
+      "extra"
+    ],
+    "set_current_task_id": [
+      "self",
+      "task_id"
+    ],
+    "set_current_lane": [
+      "self",
+      "lane"
+    ],
+    "get_current_lane": [
+      "self"
+    ],
+    "set_current_invocation_id": [
+      "self",
+      "invocation_id"
+    ],
+    "set_current_event_context": [
+      "self",
+      "context"
+    ],
+    "get_current_event_context": [
+      "self"
+    ],
+    "set_current_message_group_id": [
+      "self",
+      "message_group_id"
+    ],
+    "get_current_message_group_id": [
+      "self"
+    ],
+    "handle_invocation": [
+      "self",
+      "event",
+      "context",
+      "task_id"
+    ],
+    "send_async_invoke_payload": [
+      "self",
+      "destination_task_id",
+      "sqs_payload",
+      "delay",
+      "force_sync",
+      "lane",
+      "message_group_id"
+    ],
+    "send_async_invoke_payload_batch": [
+      "self",
+      "destination_task_id",
+      "sqs_payloads",
+      "delay",
+      "message_group_id",
+      "force_sync",
+      "lane",
+      "index"
+    ],
+    "new_payload": [
+      "self",
+      "payload",
+      "destination_task_id",
+      "force_sync"
+    ],
+    "add_controller": [
+      "self",
+      "controller"
+    ],
+    "async_invoke": [
+      "self",
+      "task_id",
+      "payload",
+      "delay",
+      "force_sync",
+      "lane",
+      "message_group_id"
+    ],
+    "async_invoke_batch": [
+      "self",
+      "task_id",
+      "payloads",
+      "delay",
+      "message_group_id",
+      "force_sync",
+      "lane"
+    ],
+    "async_lambda_handler": [
+      "self",
+      "event",
+      "context"
+    ],
+    "async_task": [
+      "self",
+      "task_id",
+      "max_receive_count",
+      "dlq_task_id",
+      "is_dlq_task",
+      "lane_count",
+      "propagate_lane_assignment",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ],
+    "async_batch_task": [
+      "self",
+      "task_id",
+      "max_receive_count",
+      "dlq_task_id",
+      "is_dlq_task",
+      "lane_count",
+      "propagate_lane_assignment",
+      "batch_size",
+      "max_batching_window",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ],
+    "sqs_task": [
+      "self",
+      "task_id",
+      "queue_arn",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ],
+    "scheduled_task": [
+      "self",
+      "task_id",
+      "schedule_expression",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ],
+    "api_task": [
+      "self",
+      "task_id",
+      "path",
+      "method",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ],
+    "dynamodb_task": [
+      "self",
+      "task_id"
+    ],
+    "pure_task": [
+      "self",
+      "task_id",
+      "timeout",
+      "memory",
+      "ephemeral_storage"
+    ]
+  },
+  "__version__": [],
+  "cli": [
+    "debug"
+  ],
+  "import_module": [
+    "module_name"
+  ],
+  "import_module_get_controller": [
+    "module_name",
+    "config",
+    "stage"
+  ],
+  "build": [
+    "module",
+    "output",
+    "stage",
+    "extras"
+  ],
+  "ls": [
+    "module",
+    "stage"
+  ],
+  "invoke": [
+    "module",
+    "task_id",
+    "body",
+    "query_string",
+    "header",
+    "stage"
+  ],
+  "web_server": [
+    "module",
+    "port",
+    "host",
+    "stage"
+  ],
+  "version": [],
+  "make_default_tags": [],
+  "AsyncLambdaBuildConfig": {
+    "new": [
+      "cls",
+      "config"
+    ],
+    "merge": [
+      "self",
+      "other"
+    ],
+    "function_properties": [
+      "self"
+    ]
+  },
+  "get_build_config_for_stage": [
+    "config",
+    "stage"
+  ],
+  "get_build_config_for_task": [
+    "config",
+    "task_id",
+    "stage"
+  ],
+  "get_override_build_config_for_task": [
+    "config",
+    "task_id",
+    "stage"
+  ],
+  "Clients": {
+    "reset": [
+      "self"
+    ]
+  },
+  "clients": [],
+  "get_client_kwargs": [],
+  "get_s3_client": [],
+  "get_sqs_client": [],
+  "get_sts_client": [],
+  "AsyncLambdaConfig": {},
+  "config": [],
+  "config_set_name": [
+    "name"
+  ],
+  "config_set_runtime": [
+    "runtime"
+  ],
+  "config_set_s3_payload_retention": [
+    "days"
+  ],
+  "config_set_default_task_memory": [
+    "memory"
+  ],
+  "config_set_default_task_ephemeral_storage": [
+    "ephemeral_storage"
+  ],
+  "make_cf_tags": [
+    "tags"
+  ],
+  "nested_update": [
+    "d",
+    "u"
+  ],
+  "T": [],
+  "P": [],
+  "Defer": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "value": [
+      "self"
+    ],
+    "execute": [
+      "self"
+    ]
+  },
+  "AWSConfig": {
+    "aws_region": [
+      "self"
+    ],
+    "account_id": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "aws_config": [],
+  "reset": [],
+  "is_build_mode": [],
+  "get_aws_region": [],
+  "get_aws_account_id": [],
+  "get_payload_bucket": [],
+  "get_current_task_id": [],
+  "is_cloud": [],
+  "enable_force_sync_mode": [],
+  "disable_force_sync_mode": [],
+  "get_force_sync_mode": [],
+  "get_batch_failure_retry_count": [],
+  "MET": [],
+  "RT": [],
+  "MiddlewareFunction": [],
+  "MiddlewareRegistration": [],
+  "MiddlewareStackExecutor": {
+    "__init__": [
+      "self",
+      "middleware",
+      "final"
+    ],
+    "call_next": [
+      "self",
+      "event"
+    ]
+  },
+  "V": [],
+  "CaseInsensitiveDict": {
+    "__init__": [
+      "self",
+      "data"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "lower_items": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "copy": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "TaskTriggerType": {
+    "MANAGED_SQS": [],
+    "MANAGED_SQS_BATCH": [],
+    "UNMANAGED_SQS": [],
+    "SCHEDULED_EVENT": [],
+    "API_EVENT": [],
+    "DYNAMODB_EVENT": [],
+    "BASE_EVENT": []
+  },
+  "MANAGED_SQS_TASK_TYPES": [],
+  "EventType": [],
+  "AsyncLambdaTask": {
+    "__init__": [
+      "self",
+      "controller",
+      "executable",
+      "task_id",
+      "trigger_type",
+      "trigger_config",
+      "timeout",
+      "memory",
+      "ephemeral_storage",
+      "maximum_concurrency",
+      "init_tasks"
+    ],
+    "_run_init_tasks": [
+      "self"
+    ],
+    "validate_task_id": [
+      "task_id"
+    ],
+    "get_lane_count": [
+      "self"
+    ],
+    "should_propagate_lane_assignment": [
+      "self"
+    ],
+    "get_managed_queue_name": [
+      "self",
+      "lane"
+    ],
+    "get_function_name": [
+      "self"
+    ],
+    "get_managed_queue_arn": [
+      "self",
+      "lane"
+    ],
+    "get_managed_queue_url": [
+      "self",
+      "lane"
+    ],
+    "get_function_logical_id": [
+      "self"
+    ],
+    "get_managed_queue_logical_id": [
+      "self",
+      "lane"
+    ],
+    "get_managed_queue_extra_logical_id": [
+      "self",
+      "index",
+      "lane"
+    ],
+    "get_managed_queue_event_logical_id": [
+      "self",
+      "lane"
+    ],
+    "get_template_events": [
+      "self"
+    ],
+    "get_policy_sqs_resources": [
+      "self"
+    ],
+    "get_policy_external_task_resources": [
+      "cls",
+      "external_task_id"
+    ],
+    "get_sam_template": [
+      "self",
+      "task_ref_policy_ids",
+      "config_dict",
+      "stage"
+    ],
+    "_managed_queue_extras_replace_references": [
+      "self",
+      "extra",
+      "lane"
+    ],
+    "get_dlq_task": [
+      "self"
+    ],
+    "execute": [
+      "self",
+      "event"
+    ]
+  },
+  "Response": {
+    "__init__": [
+      "self",
+      "status_code",
+      "headers",
+      "body"
+    ],
+    "__async_lambda_response__": [
+      "self"
+    ]
+  },
+  "JSONResponse": {
+    "__init__": [
+      "self",
+      "body",
+      "status_code",
+      "headers",
+      "encoder"
+    ]
+  },
+  "UnmanagedSQSEvent": {
+    "_hydrate_event": [
+      "self"
+    ],
+    "json": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ManagedSQSBatchEvent": {
+    "_hydrate_event": [
+      "self"
+    ]
+  },
+  "BaseEvent": {
+    "__init__": [
+      "self",
+      "event",
+      "context",
+      "task"
+    ],
+    "_hydrate_event": [
+      "self"
+    ],
+    "get_raw_event": [
+      "self"
+    ],
+    "get_raw_context": [
+      "self"
+    ],
+    "event": [
+      "self"
+    ],
+    "context": [
+      "self"
+    ]
+  },
+  "ScheduledEvent": {},
+  "DynamoDBRecord": {
+    "_hydrate_event": [
+      "self"
+    ]
+  },
+  "DynamoDBEvent": {
+    "__iter__": [
+      "self"
+    ]
+  },
+  "ManagedSQSEvent": {
+    "_hydrate_event": [
+      "self"
+    ],
+    "_hydrate_payload": [
+      "self",
+      "payload"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "APIEvent": {
+    "_hydrate_event": [
+      "self"
+    ]
+  },
+  "MockSQSLambdaEvent": [
+    "body",
+    "source_queue_arn",
+    "message_group_id"
+  ],
+  "MockSQSLambdaEventFromSQSMessage": [
+    "message",
+    "source_queue_arn"
+  ],
+  "MockSQSBatchLambdaEvent": [
+    "bodies",
+    "source_queue_arn"
+  ],
+  "MockAPILambdaEvent": [
+    "path",
+    "method",
+    "body",
+    "query_string",
+    "headers"
+  ],
+  "MockLambdaContext": {
+    "__init__": [
+      "self",
+      "function_name"
+    ],
+    "get_remaining_time_in_millis": [
+      "self"
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "__path__": [],
+  "MUTATING_KEYWORDS": [],
+  "MUTATING_PATTERN": [],
+  "SUSPICIOUS_PATTERNS": [],
+  "detect_mutating_keywords": [
+    "sql_text"
+  ],
+  "check_sql_injection_risk": [
+    "sql"
+  ],
+  "__user_agent__": [],
+  "db_connection_map": [],
+  "async_job_status_lock": [],
+  "client_error_code_key": [],
+  "unexpected_error_key": [],
+  "write_query_prohibited_key": [],
+  "query_comment_prohibited_key": [],
+  "query_injection_risk_key": [],
+  "readonly_query": [],
+  "DummyCtx": {
+    "error": [
+      "self",
+      "message"
+    ]
+  },
+  "extract_cell": [
+    "cell"
+  ],
+  "parse_execute_response": [
+    "response"
+  ],
+  "mcp": [],
+  "run_query": [
+    "sql",
+    "ctx",
+    "connection_method",
+    "cluster_identifier",
+    "db_endpoint",
+    "database",
+    "query_parameters"
+  ],
+  "get_table_schema": [
+    "connection_method",
+    "cluster_identifier",
+    "db_endpoint",
+    "database",
+    "table_name",
+    "ctx"
+  ],
+  "connect_to_database": [
+    "region",
+    "database_type",
+    "connection_method",
+    "cluster_identifier",
+    "db_endpoint",
+    "port",
+    "database"
+  ],
+  "is_database_connected": [
+    "cluster_identifier",
+    "db_endpoint",
+    "database"
+  ],
+  "get_database_connection_info": [],
+  "create_cluster": [
+    "region",
+    "cluster_identifier",
+    "database",
+    "engine_version"
+  ],
+  "get_job_status": [
+    "job_id"
+  ],
+  "create_cluster_worker": [
+    "job_id",
+    "region",
+    "database_type",
+    "connection_method",
+    "cluster_identifier",
+    "engine_version",
+    "database"
+  ],
+  "internal_connect_to_database": [
+    "region",
+    "database_type",
+    "connection_method",
+    "cluster_identifier",
+    "db_endpoint",
+    "port",
+    "database"
+  ],
+  "main": [],
+  "AbstractDBConnection": {
+    "__init__": [
+      "self",
+      "readonly"
+    ],
+    "readonly_query": [
+      "self"
+    ],
+    "execute_query": [
+      "self",
+      "sql",
+      "parameters"
+    ],
+    "close": [
+      "self"
+    ],
+    "check_connection_health": [
+      "self"
+    ]
+  },
+  "DatabaseType": {
+    "APG": [],
+    "RPG": []
+  },
+  "ConnectionMethod": {
+    "RDS_API": [],
+    "PG_WIRE_PROTOCOL": [],
+    "PG_WIRE_IAM_PROTOCOL": []
+  },
+  "DBConnectionMap": {
+    "__init__": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "method",
+      "cluster_identifier",
+      "db_endpoint",
+      "database",
+      "port"
+    ],
+    "set": [
+      "self",
+      "method",
+      "cluster_identifier",
+      "db_endpoint",
+      "database",
+      "conn",
+      "port"
+    ],
+    "remove": [
+      "self",
+      "method",
+      "cluster_identifier",
+      "db_endpoint",
+      "database",
+      "port"
+    ],
+    "get_keys_json": [
+      "self"
+    ],
+    "close_all": [
+      "self"
+    ]
+  },
+  "RDSDataAPIConnection": {
+    "__init__": [
+      "self",
+      "cluster_arn",
+      "secret_arn",
+      "database",
+      "region",
+      "readonly",
+      "is_test"
+    ],
+    "execute_query": [
+      "self",
+      "sql",
+      "parameters"
+    ],
+    "_execute_readonly_query": [
+      "self",
+      "query",
+      "parameters"
+    ],
+    "close": [
+      "self"
+    ],
+    "check_connection_health": [
+      "self"
+    ]
+  },
+  "PsycopgPoolConnection": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "database",
+      "readonly",
+      "secret_arn",
+      "db_user",
+      "region",
+      "is_iam_auth",
+      "pool_expiry_min",
+      "min_size",
+      "max_size",
+      "is_test"
+    ],
+    "initialize_pool": [
+      "self"
+    ],
+    "_get_connection": [
+      "self"
+    ],
+    "check_expiry": [
+      "self"
+    ],
+    "execute_query": [
+      "self",
+      "sql",
+      "parameters"
+    ],
+    "_convert_parameters": [
+      "self",
+      "parameters"
+    ],
+    "_get_credentials_from_secret": [
+      "self",
+      "secret_arn",
+      "region",
+      "is_test"
+    ],
+    "close": [
+      "self"
+    ],
+    "check_connection_health": [
+      "self"
+    ],
+    "get_pool_stats": [
+      "self"
+    ],
+    "get_iam_auth_token": [
+      "self"
+    ]
+  },
+  "internal_create_rds_client": [
+    "region"
+  ],
+  "internal_get_instance_properties": [
+    "target_endpoint",
+    "region"
+  ],
+  "internal_get_cluster_properties": [
+    "cluster_identifier",
+    "region"
+  ],
+  "internal_create_serverless_cluster": [
+    "region",
+    "cluster_identifier",
+    "engine_version",
+    "database_name",
+    "master_username",
+    "min_capacity",
+    "max_capacity",
+    "enable_cloudwatch_logs"
+  ],
+  "setup_aurora_iam_policy_for_current_user": [
+    "db_user",
+    "cluster_resource_id",
+    "cluster_region"
+  ]
+}

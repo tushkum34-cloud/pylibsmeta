@@ -1,0 +1,862 @@
+{
+  "Client": {
+    "__init__": [
+      "self",
+      "provider_configs",
+      "extra_param_mode"
+    ],
+    "_initialize_providers": [
+      "self"
+    ],
+    "_validate_provider_key": [
+      "self",
+      "provider_key"
+    ],
+    "configure": [
+      "self",
+      "provider_configs"
+    ],
+    "chat": [
+      "self"
+    ],
+    "audio": [
+      "self"
+    ]
+  },
+  "Chat": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "completions": [
+      "self"
+    ]
+  },
+  "Completions": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "_process_mcp_configs": [
+      "self",
+      "tools"
+    ],
+    "_extract_thinking_content": [
+      "self",
+      "response"
+    ],
+    "_tool_runner": [
+      "self",
+      "provider",
+      "model_name",
+      "messages",
+      "tools",
+      "max_turns"
+    ],
+    "create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "Audio": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "transcriptions": [
+      "self"
+    ]
+  },
+  "Transcriptions": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "create": [
+      "self"
+    ]
+  },
+  "LLMError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "ASRError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "Provider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "ProviderFactory": {
+    "PROVIDERS_DIR": [],
+    "create_provider": [
+      "cls",
+      "provider_key",
+      "config"
+    ],
+    "get_supported_providers": [
+      "cls"
+    ]
+  },
+  "json_schema_to_python_type": [
+    "schema"
+  ],
+  "mcp_schema_to_annotations": [
+    "input_schema"
+  ],
+  "create_function_signature": [
+    "func_name",
+    "annotations",
+    "docstring"
+  ],
+  "extract_parameter_descriptions": [
+    "input_schema"
+  ],
+  "build_docstring": [
+    "tool_description",
+    "parameter_descriptions"
+  ],
+  "__all__": [],
+  "MCPClient": {
+    "__init__": [
+      "self",
+      "command",
+      "args",
+      "env",
+      "server_url",
+      "headers",
+      "timeout",
+      "name"
+    ],
+    "from_config": [
+      "cls",
+      "config"
+    ],
+    "get_tools_from_config": [
+      "config"
+    ],
+    "_connect": [
+      "self"
+    ],
+    "_async_connect": [
+      "self"
+    ],
+    "_parse_sse_response": [
+      "self",
+      "response",
+      "request_id"
+    ],
+    "_send_http_request": [
+      "self",
+      "method",
+      "params"
+    ],
+    "_send_notification": [
+      "self",
+      "method",
+      "params"
+    ],
+    "_async_connect_http": [
+      "self"
+    ],
+    "list_tools": [
+      "self"
+    ],
+    "get_callable_tools": [
+      "self",
+      "allowed_tools",
+      "use_tool_prefix"
+    ],
+    "get_tool": [
+      "self",
+      "tool_name"
+    ],
+    "call_tool": [
+      "self",
+      "tool_name",
+      "arguments"
+    ],
+    "_async_call_tool": [
+      "self",
+      "tool_name",
+      "arguments"
+    ],
+    "_async_call_tool_http": [
+      "self",
+      "tool_name",
+      "arguments"
+    ],
+    "close": [
+      "self"
+    ],
+    "_async_close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MCPConfig": {},
+  "DEFAULT_TIMEOUT_SECONDS": [],
+  "DEFAULT_RESPONSE_BYTES_CAP": [],
+  "DEFAULT_USE_TOOL_PREFIX": [],
+  "DEFAULT_LAZY_CONNECT": [],
+  "validate_mcp_config": [
+    "config"
+  ],
+  "is_mcp_config": [
+    "obj"
+  ],
+  "get_transport_type": [
+    "config"
+  ],
+  "MCPToolWrapper": {
+    "__init__": [
+      "self",
+      "mcp_client",
+      "tool_name",
+      "tool_schema"
+    ],
+    "_create_signature": [
+      "self",
+      "input_schema"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "create_mcp_tool_wrapper": [
+    "mcp_client",
+    "tool_name",
+    "tool_schema"
+  ],
+  "Utils": {
+    "spew": [
+      "obj"
+    ]
+  },
+  "Tools": {
+    "__init__": [
+      "self",
+      "tools"
+    ],
+    "_add_tool": [
+      "self",
+      "func",
+      "param_model"
+    ],
+    "tools": [
+      "self",
+      "format"
+    ],
+    "_unwrap_optional": [
+      "self",
+      "field_type"
+    ],
+    "_convert_to_tool_spec": [
+      "self",
+      "func",
+      "param_model"
+    ],
+    "__extract_param_descriptions": [
+      "self",
+      "func"
+    ],
+    "_convert_mcp_schema_to_tool_spec": [
+      "self",
+      "func"
+    ],
+    "_create_pydantic_model_from_mcp_schema": [
+      "self",
+      "func"
+    ],
+    "__infer_from_signature": [
+      "self",
+      "func"
+    ],
+    "__convert_to_openai_format": [
+      "self"
+    ],
+    "results_to_messages": [
+      "self",
+      "results",
+      "message"
+    ],
+    "execute": [
+      "self",
+      "tool_calls"
+    ],
+    "execute_tool": [
+      "self",
+      "tool_calls"
+    ]
+  },
+  "DeepgramProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "DeepgramAudio": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "DEFAULT_MAX_TOKENS": [],
+  "AnthropicMessageConverter": {
+    "ROLE_USER": [],
+    "ROLE_ASSISTANT": [],
+    "ROLE_TOOL": [],
+    "ROLE_SYSTEM": [],
+    "FINISH_REASON_MAPPING": [],
+    "convert_request": [
+      "self",
+      "messages"
+    ],
+    "convert_response": [
+      "self",
+      "response"
+    ],
+    "_convert_single_message": [
+      "self",
+      "msg"
+    ],
+    "_convert_dict_message": [
+      "self",
+      "msg"
+    ],
+    "_convert_message_object": [
+      "self",
+      "msg"
+    ],
+    "_create_tool_result_message": [
+      "self",
+      "tool_call_id",
+      "content"
+    ],
+    "_create_assistant_tool_message": [
+      "self",
+      "content",
+      "tool_calls"
+    ],
+    "_extract_system_message": [
+      "self",
+      "messages"
+    ],
+    "_get_finish_reason": [
+      "self",
+      "response"
+    ],
+    "_get_completion_usage": [
+      "self",
+      "response"
+    ],
+    "_get_message": [
+      "self",
+      "response"
+    ],
+    "convert_response_with_tool_use": [
+      "self",
+      "response"
+    ],
+    "convert_tool_spec": [
+      "self",
+      "openai_tools"
+    ]
+  },
+  "AnthropicProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "_prepare_kwargs": [
+      "self",
+      "kwargs"
+    ]
+  },
+  "WatsonxProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "normalize_response": [
+      "self",
+      "response"
+    ]
+  },
+  "LmstudioProvider": {
+    "_CHAT_COMPLETION_ENDPOINT": [],
+    "_CONNECT_ERROR_MESSAGE": [],
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "_normalize_response": [
+      "self",
+      "response_data"
+    ]
+  },
+  "FireworksMessageConverter": {
+    "convert_request": [
+      "messages"
+    ],
+    "convert_response": [
+      "resp_json"
+    ]
+  },
+  "FireworksProvider": {
+    "BASE_URL": [],
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "_normalize_response": [
+      "self",
+      "response_data"
+    ]
+  },
+  "OpenAICompliantMessageConverter": {
+    "tool_results_as_strings": [],
+    "convert_request": [
+      "messages"
+    ],
+    "convert_response": [
+      "self",
+      "response_data"
+    ],
+    "get_completion_usage": [
+      "self",
+      "usage_data"
+    ]
+  },
+  "HuggingfaceProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "transform_from_message": [
+      "self",
+      "message"
+    ],
+    "transform_to_message": [
+      "self",
+      "message_dict"
+    ],
+    "_normalize_response": [
+      "self",
+      "response_data"
+    ]
+  },
+  "HuggingfaceAudio": {
+    "__init__": [
+      "self",
+      "token",
+      "timeout"
+    ]
+  },
+  "CerebrasMessageConverter": {},
+  "CerebrasProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "XaiMessageConverter": {},
+  "XaiProvider": {
+    "BASE_URL": [],
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "OpenaiProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "OpenAIAudio": {
+    "__init__": [
+      "self",
+      "client"
+    ]
+  },
+  "OllamaProvider": {
+    "_CHAT_COMPLETION_ENDPOINT": [],
+    "_CONNECT_ERROR_MESSAGE": [],
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "_normalize_response": [
+      "self",
+      "response_data"
+    ]
+  },
+  "BedrockConfig": {
+    "INFERENCE_PARAMETERS": [],
+    "__init__": [
+      "self"
+    ],
+    "create_client": [
+      "self"
+    ]
+  },
+  "BedrockMessageConverter": {
+    "convert_request": [
+      "messages"
+    ],
+    "convert_response_tool_call": [
+      "response"
+    ],
+    "convert_tool_result": [
+      "message"
+    ],
+    "convert_assistant": [
+      "message"
+    ],
+    "convert_response": [
+      "response"
+    ],
+    "get_completion_usage": [
+      "usage_data"
+    ]
+  },
+  "AwsProvider": {
+    "__init__": [
+      "self"
+    ],
+    "convert_response": [
+      "self",
+      "response"
+    ],
+    "_convert_tool_spec": [
+      "self",
+      "kwargs"
+    ],
+    "_prepare_request_config": [
+      "self",
+      "kwargs"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "GroqMessageConverter": {},
+  "GroqProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "AzureMessageConverter": {
+    "convert_request": [
+      "messages"
+    ],
+    "convert_response": [
+      "resp_json"
+    ]
+  },
+  "AzureProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "TogetherMessageConverter": {},
+  "TogetherProvider": {
+    "BASE_URL": [],
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "DEFAULT_TEMPERATURE": [],
+  "ENABLE_DEBUG_MESSAGES": [],
+  "GoogleMessageConverter": {
+    "convert_user_role_message": [
+      "message"
+    ],
+    "convert_assistant_role_message": [
+      "message"
+    ],
+    "convert_tool_role_message": [
+      "message"
+    ],
+    "convert_request": [
+      "messages"
+    ],
+    "convert_response": [
+      "response"
+    ]
+  },
+  "GoogleProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ],
+    "speech_client": [
+      "self"
+    ]
+  },
+  "GoogleAudio": {
+    "__init__": [
+      "self",
+      "provider"
+    ]
+  },
+  "SambanovaMessageConverter": {},
+  "SambanovaProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "BASE_URL": [],
+  "NebiusProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "DeepseekProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "CohereMessageConverter": {
+    "convert_request": [
+      "self",
+      "messages"
+    ],
+    "_convert_tool_content": [
+      "self",
+      "content"
+    ],
+    "convert_response": [
+      "response_data"
+    ]
+  },
+  "CohereProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "InceptionProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "MistralMessageConverter": {
+    "convert_response": [
+      "self",
+      "response_data"
+    ]
+  },
+  "MistralProvider": {
+    "__init__": [
+      "self"
+    ],
+    "chat_completions_create": [
+      "self",
+      "model",
+      "messages"
+    ]
+  },
+  "ProviderInterface": {
+    "chat_completion_create": [
+      "self",
+      "messages",
+      "model",
+      "temperature"
+    ]
+  },
+  "Function": {},
+  "ChatCompletionMessageToolCall": {},
+  "Message": {},
+  "CompletionTokensDetails": {},
+  "PromptTokensDetails": {},
+  "CompletionUsage": {},
+  "Word": {},
+  "Segment": {},
+  "Alternative": {},
+  "Channel": {},
+  "TranscriptionResult": {},
+  "StreamingTranscriptionChunk": {},
+  "StreamingTranscriptionResponse": [],
+  "TranscriptionResponse": [],
+  "TranscriptionOptions": {
+    "__post_init__": [
+      "self"
+    ],
+    "has_any_parameters": [
+      "self"
+    ],
+    "get_set_parameters": [
+      "self"
+    ]
+  },
+  "logger": [],
+  "GOOGLE_LANGUAGE_MAP": [],
+  "ParamValidator": {
+    "__init__": [
+      "self",
+      "extra_param_mode"
+    ],
+    "validate_and_map": [
+      "self",
+      "provider_key",
+      "params"
+    ],
+    "_transform_value": [
+      "self",
+      "provider_key",
+      "param_key",
+      "value"
+    ],
+    "_handle_unknown": [
+      "self",
+      "provider_key",
+      "unknown_params"
+    ]
+  },
+  "ParameterMapper": {
+    "OPENAI_MAPPING": [],
+    "DEEPGRAM_MAPPING": [],
+    "GOOGLE_MAPPING": [],
+    "map_to_openai": [
+      "cls",
+      "options"
+    ],
+    "map_to_deepgram": [
+      "cls",
+      "options"
+    ],
+    "map_to_google": [
+      "cls",
+      "options"
+    ],
+    "_apply_custom_parameters": [
+      "cls",
+      "params",
+      "custom_params",
+      "provider"
+    ]
+  },
+  "ChatCompletionResponse": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "Choice": {
+    "__init__": [
+      "self"
+    ]
+  }
+}

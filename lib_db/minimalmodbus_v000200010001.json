@@ -1,0 +1,405 @@
+{
+  "__author__": [],
+  "__license__": [],
+  "__url__": [],
+  "__version__": [],
+  "_NUMBER_OF_BYTES_BEFORE_REGISTERDATA": [],
+  "_NUMBER_OF_BYTES_PER_REGISTER": [],
+  "_MAX_NUMBER_OF_REGISTERS_TO_WRITE": [],
+  "_MAX_NUMBER_OF_REGISTERS_TO_READ": [],
+  "_MAX_NUMBER_OF_BITS_TO_WRITE": [],
+  "_MAX_NUMBER_OF_BITS_TO_READ": [],
+  "_MAX_NUMBER_OF_DECIMALS": [],
+  "_MAX_BYTEORDER_VALUE": [],
+  "_SECONDS_TO_MILLISECONDS": [],
+  "_BITS_PER_BYTE": [],
+  "_ASCII_HEADER": [],
+  "_ASCII_FOOTER": [],
+  "_BYTEPOSITION_FOR_ASCII_HEADER": [],
+  "_BYTEPOSITION_FOR_SLAVEADDRESS": [],
+  "_BYTEPOSITION_FOR_FUNCTIONCODE": [],
+  "_BYTEPOSITION_FOR_SLAVE_ERROR_CODE": [],
+  "_BITNUMBER_FUNCTIONCODE_ERRORINDICATION": [],
+  "_SLAVEADDRESS_BROADCAST": [],
+  "_Payloadformat": {
+    "BIT": [],
+    "BITS": [],
+    "FLOAT": [],
+    "LONG": [],
+    "REGISTER": [],
+    "REGISTERS": [],
+    "STRING": []
+  },
+  "Instrument": {
+    "__init__": [
+      "self",
+      "port",
+      "slaveaddress",
+      "mode",
+      "close_port_after_each_call",
+      "debug"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "roundtrip_time": [
+      "self"
+    ],
+    "_print_debug": [
+      "self",
+      "text"
+    ],
+    "read_bit": [
+      "self",
+      "registeraddress",
+      "functioncode"
+    ],
+    "write_bit": [
+      "self",
+      "registeraddress",
+      "value",
+      "functioncode"
+    ],
+    "read_bits": [
+      "self",
+      "registeraddress",
+      "number_of_bits",
+      "functioncode"
+    ],
+    "write_bits": [
+      "self",
+      "registeraddress",
+      "values"
+    ],
+    "read_register": [
+      "self",
+      "registeraddress",
+      "number_of_decimals",
+      "functioncode",
+      "signed"
+    ],
+    "write_register": [
+      "self",
+      "registeraddress",
+      "value",
+      "number_of_decimals",
+      "functioncode",
+      "signed"
+    ],
+    "read_long": [
+      "self",
+      "registeraddress",
+      "functioncode",
+      "signed",
+      "byteorder",
+      "number_of_registers"
+    ],
+    "write_long": [
+      "self",
+      "registeraddress",
+      "value",
+      "signed",
+      "byteorder",
+      "number_of_registers"
+    ],
+    "read_float": [
+      "self",
+      "registeraddress",
+      "functioncode",
+      "number_of_registers",
+      "byteorder"
+    ],
+    "write_float": [
+      "self",
+      "registeraddress",
+      "value",
+      "number_of_registers",
+      "byteorder"
+    ],
+    "read_string": [
+      "self",
+      "registeraddress",
+      "number_of_registers",
+      "functioncode"
+    ],
+    "write_string": [
+      "self",
+      "registeraddress",
+      "textstring",
+      "number_of_registers"
+    ],
+    "read_registers": [
+      "self",
+      "registeraddress",
+      "number_of_registers",
+      "functioncode"
+    ],
+    "write_registers": [
+      "self",
+      "registeraddress",
+      "values"
+    ],
+    "_generic_command": [
+      "self",
+      "functioncode",
+      "registeraddress",
+      "value",
+      "number_of_decimals",
+      "number_of_registers",
+      "number_of_bits",
+      "signed",
+      "byteorder",
+      "payloadformat"
+    ],
+    "_perform_command": [
+      "self",
+      "functioncode",
+      "payload_to_slave"
+    ],
+    "_communicate": [
+      "self",
+      "request",
+      "number_of_bytes_to_read"
+    ]
+  },
+  "ModbusException": {},
+  "SlaveReportedException": {},
+  "SlaveDeviceBusyError": {},
+  "NegativeAcknowledgeError": {},
+  "IllegalRequestError": {},
+  "MasterReportedException": {},
+  "NoResponseError": {},
+  "LocalEchoError": {},
+  "InvalidResponseError": {},
+  "_create_payload": [
+    "functioncode",
+    "registeraddress",
+    "value",
+    "number_of_decimals",
+    "number_of_registers",
+    "number_of_bits",
+    "signed",
+    "byteorder",
+    "payloadformat"
+  ],
+  "_parse_payload": [
+    "payload",
+    "functioncode",
+    "registeraddress",
+    "value",
+    "number_of_decimals",
+    "number_of_registers",
+    "number_of_bits",
+    "signed",
+    "byteorder",
+    "payloadformat"
+  ],
+  "_embed_payload": [
+    "slaveaddress",
+    "mode",
+    "functioncode",
+    "payloaddata"
+  ],
+  "_extract_payload": [
+    "response",
+    "slaveaddress",
+    "mode",
+    "functioncode"
+  ],
+  "_predict_response_size": [
+    "mode",
+    "functioncode",
+    "payload_to_slave"
+  ],
+  "_calculate_minimum_silent_period": [
+    "baudrate"
+  ],
+  "_num_to_one_byte": [
+    "inputvalue"
+  ],
+  "_num_to_two_bytes": [
+    "value",
+    "number_of_decimals",
+    "lsb_first",
+    "signed"
+  ],
+  "_two_bytes_to_num": [
+    "inputbytes",
+    "number_of_decimals",
+    "signed"
+  ],
+  "_long_to_bytes": [
+    "value",
+    "signed",
+    "number_of_registers",
+    "byteorder"
+  ],
+  "_bytes_to_long": [
+    "inputbytes",
+    "signed",
+    "number_of_registers",
+    "byteorder"
+  ],
+  "_float_to_bytes": [
+    "value",
+    "number_of_registers",
+    "byteorder"
+  ],
+  "_bytes_to_float": [
+    "inputbytes",
+    "number_of_registers",
+    "byteorder"
+  ],
+  "_textstring_to_bytes": [
+    "inputstring",
+    "number_of_registers"
+  ],
+  "_bytes_to_textstring": [
+    "inputbytes",
+    "number_of_registers"
+  ],
+  "_valuelist_to_bytes": [
+    "valuelist",
+    "number_of_registers"
+  ],
+  "_bytes_to_valuelist": [
+    "inputbytes",
+    "number_of_registers"
+  ],
+  "_pack_bytes": [
+    "formatstring",
+    "value"
+  ],
+  "_unpack_bytes": [
+    "formatstring",
+    "packed_bytes"
+  ],
+  "_swap": [
+    "inputbytes"
+  ],
+  "_hexencode": [
+    "inputbytes",
+    "insert_spaces"
+  ],
+  "_hexdecode": [
+    "hexbytes"
+  ],
+  "_describe_bytes": [
+    "inputbytes"
+  ],
+  "_calculate_number_of_bytes_for_bits": [
+    "number_of_bits"
+  ],
+  "_bit_to_bytes": [
+    "value"
+  ],
+  "_bits_to_bytes": [
+    "valuelist"
+  ],
+  "_bytes_to_bits": [
+    "inputbytes",
+    "number_of_bits"
+  ],
+  "_twos_complement": [
+    "x",
+    "bits"
+  ],
+  "_from_twos_complement": [
+    "x",
+    "bits"
+  ],
+  "_set_bit_on": [
+    "x",
+    "bit_num"
+  ],
+  "_check_bit": [
+    "x",
+    "bit_num"
+  ],
+  "_CRC16TABLE": [],
+  "_is_serial_object": [
+    "obj"
+  ],
+  "_calculate_crc": [
+    "inputbytes"
+  ],
+  "_calculate_lrc": [
+    "inputbytes"
+  ],
+  "_check_mode": [
+    "mode"
+  ],
+  "_check_functioncode": [
+    "functioncode",
+    "list_of_allowed_values"
+  ],
+  "_check_slaveaddress": [
+    "slaveaddress"
+  ],
+  "_check_registeraddress": [
+    "registeraddress"
+  ],
+  "_check_response_payload": [
+    "payload",
+    "functioncode",
+    "registeraddress",
+    "value",
+    "number_of_decimals",
+    "number_of_registers",
+    "number_of_bits",
+    "signed",
+    "byteorder",
+    "payloadformat"
+  ],
+  "_check_response_slaveerrorcode": [
+    "response"
+  ],
+  "_check_response_bytecount": [
+    "payload"
+  ],
+  "_check_response_registeraddress": [
+    "payload",
+    "registeraddress"
+  ],
+  "_check_response_number_of_registers": [
+    "payload",
+    "number_of_registers"
+  ],
+  "_check_response_writedata": [
+    "payload",
+    "writedata"
+  ],
+  "_check_bytes": [
+    "inputbytes",
+    "description",
+    "minlength",
+    "maxlength",
+    "exception_type"
+  ],
+  "_check_string": [
+    "inputstring",
+    "description",
+    "minlength",
+    "maxlength",
+    "force_ascii",
+    "exception_type"
+  ],
+  "_check_int": [
+    "inputvalue",
+    "minvalue",
+    "maxvalue",
+    "description"
+  ],
+  "_check_numerical": [
+    "inputvalue",
+    "minvalue",
+    "maxvalue",
+    "description"
+  ],
+  "_check_bool": [
+    "inputvalue",
+    "description"
+  ],
+  "_get_diagnostic_string": [],
+  "_getDiagnosticString": []
+}

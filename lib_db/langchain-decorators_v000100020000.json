@@ -1,0 +1,1254 @@
+{
+  "LlmSelector": {
+    "__init__": [
+      "self",
+      "generation_min_tokens",
+      "prompt_to_generation_ratio"
+    ],
+    "with_llm": [
+      "self",
+      "llm",
+      "llm_selector_rule_key"
+    ],
+    "with_llm_rule": [
+      "self",
+      "llm",
+      "max_tokens",
+      "llm_selector_rule_key"
+    ],
+    "get_model_window": [
+      "self",
+      "model_name"
+    ],
+    "get_llm": [
+      "self",
+      "prompt",
+      "function_schemas",
+      "expected_generated_tokens",
+      "streaming",
+      "llm_selector_rule_key"
+    ],
+    "get_expected_total_tokens": [
+      "self",
+      "prompt",
+      "function_schemas",
+      "estimate",
+      "expected_generated_tokens"
+    ],
+    "get_token_count": [
+      "self",
+      "prompt",
+      "function_schemas",
+      "estimate"
+    ]
+  },
+  "GlobalSettings": {
+    "get_default_llm": [
+      "cls"
+    ],
+    "define_settings": [
+      "cls",
+      "settings_type",
+      "default_llm",
+      "logging_level",
+      "verbose",
+      "llm_selector"
+    ],
+    "get_current_settings": [
+      "cls"
+    ],
+    "switch_settings": [
+      "cls",
+      "project_name"
+    ]
+  },
+  "LogColors": {
+    "WHITE_BOLD": [],
+    "RED": [],
+    "GREEN": [],
+    "YELLOW": [],
+    "BLUE": [],
+    "MAGENTA": [],
+    "CYAN": [],
+    "DARK_GRAY": [],
+    "WHITE": [],
+    "BLACK_AND_WHITE": [],
+    "RESET": []
+  },
+  "print_log": [
+    "log_object",
+    "log_level",
+    "color"
+  ],
+  "PromptTypeSettings": {
+    "__init__": [
+      "self",
+      "llm",
+      "color",
+      "log_level",
+      "capture_stream",
+      "llm_selector",
+      "llm_protocol",
+      "supports_structured_output"
+    ],
+    "llm_protocol": [
+      "self"
+    ],
+    "as_verbose": [
+      "self"
+    ]
+  },
+  "PromptTypes": {},
+  "get_type_from_annotation": [
+    "annotation",
+    "with_args"
+  ],
+  "get_func_return_type": [
+    "func",
+    "with_args"
+  ],
+  "get_function_docs": [
+    "func"
+  ],
+  "get_function_full_name": [
+    "func"
+  ],
+  "make_llm_streamable": [
+    "llm"
+  ],
+  "count_tokens": [
+    "prompt",
+    "llm"
+  ],
+  "deprecated": [
+    "reason"
+  ],
+  "MODEL_LIMITS": [],
+  "register_prompt_template": [],
+  "parse_prompts_from_docs": [
+    "docs"
+  ],
+  "PromptTemplateDraft": {
+    "finalize_template": [
+      "self",
+      "input_variable_values"
+    ]
+  },
+  "build_template_drafts": [
+    "template",
+    "format",
+    "role"
+  ],
+  "PromptDecoratorTemplate": {
+    "OutputType": [
+      "self"
+    ],
+    "build": [
+      "cls",
+      "template_string",
+      "template_name",
+      "template_format",
+      "output_parser",
+      "optional_variables",
+      "default_values",
+      "format_instructions_parameter_key",
+      "template_version",
+      "prompt_type",
+      "original_kwargs",
+      "return_type"
+    ],
+    "from_func": [
+      "cls",
+      "func",
+      "template_name",
+      "template_version",
+      "output_parser",
+      "template_format",
+      "format_instructions_parameter_key",
+      "prompt_type",
+      "original_kwargs"
+    ],
+    "get_final_template": [
+      "self"
+    ],
+    "format_prompt": [
+      "self"
+    ],
+    "_format_chat_messages": [
+      "self",
+      "messages",
+      "kwargs"
+    ],
+    "format": [
+      "self"
+    ],
+    "on_prompt_formatted": [
+      "self",
+      "formatted"
+    ]
+  },
+  "register_llm_protocol": [
+    "llm_name",
+    "handler"
+  ],
+  "BaseAttachmentMixin": {
+    "get_attachment_inputs": [
+      "self",
+      "kwargs"
+    ],
+    "encode_attachment_to_content_dict": [
+      "self",
+      "attachment"
+    ],
+    "decode_content_dict_to_attachment": [
+      "self",
+      "content_dict"
+    ]
+  },
+  "BaseTemplateBuilderMixin": {
+    "build_template": [
+      "self",
+      "template_parts",
+      "kwargs"
+    ],
+    "process_prompt_template_string": [
+      "prompt"
+    ]
+  },
+  "OpenAIAttachmentMixin": {
+    "encode_attachment_to_content_dict": [
+      "self",
+      "attachment"
+    ],
+    "decode_content_dict_to_attachment": [
+      "self",
+      "content_dict"
+    ],
+    "replace_prompt_input_partially": [
+      "self",
+      "string",
+      "replacements"
+    ],
+    "_get_attachments": [
+      "self",
+      "kwargs",
+      "attachment_inputs"
+    ],
+    "process_prompt_template_string": [
+      "self",
+      "prompt",
+      "kwargs"
+    ]
+  },
+  "OpenAITemplateBuilderMixin": {
+    "_get_class_by_role": [
+      "self",
+      "role"
+    ],
+    "build_template": [
+      "self",
+      "template_parts",
+      "kwargs"
+    ]
+  },
+  "LlmProtocolBase": {
+    "__init__": [
+      "self"
+    ],
+    "get_for_llm": [
+      "cls",
+      "llm"
+    ]
+  },
+  "OpenAILlmProtocol": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "LlmChatSession": {
+    "_context": [],
+    "__init__": [
+      "self",
+      "tools",
+      "message_history",
+      "copy_parent_context",
+      "suppress_output_parser",
+      "on_stream_token",
+      "context",
+      "_messages_memory_arg_name"
+    ],
+    "get_prompt_context": [
+      "self"
+    ],
+    "with_stream": [
+      "self",
+      "on_stream_token"
+    ],
+    "suppress_structured_output": [
+      "self",
+      "suppress"
+    ],
+    "get_current_session": [
+      "cls"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "last_response_tool_calls": [
+      "self"
+    ],
+    "is_calling_tool": [
+      "self",
+      "tool"
+    ],
+    "aexecute_tool_calls": [
+      "self",
+      "error_handling",
+      "custom_error_handler"
+    ],
+    "execute_tool_calls": [
+      "self",
+      "error_handling",
+      "custom_error_handler"
+    ],
+    "add_message": [
+      "self",
+      "message",
+      "message_type",
+      "ignore_duplicates"
+    ]
+  },
+  "StreamingContext": {
+    "context_var": [],
+    "__init__": [
+      "self",
+      "callback",
+      "stream_to_stdout"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "get_context": [
+      "cls"
+    ],
+    "on_new_token": [
+      "self",
+      "token"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ]
+  },
+  "ErrorCodes": {
+    "UNSPECIFIED": [],
+    "INVALID_FORMAT": [],
+    "INVALID_JSON": [],
+    "DATA_VALIDATION_ERROR": []
+  },
+  "OutputParserExceptionWithOriginal": {
+    "__init__": [
+      "self",
+      "message",
+      "original",
+      "original_prompt_needed_on_retry",
+      "error_code"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ListOutputParser": {
+    "_type": [
+      "self"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ],
+    "get_format_instructions": [
+      "self"
+    ]
+  },
+  "BooleanOutputParser": {
+    "_type": [
+      "self"
+    ],
+    "__init__": [
+      "self",
+      "pattern"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ],
+    "get_format_instructions": [
+      "self"
+    ]
+  },
+  "JsonOutputParser": {
+    "_type": [
+      "self"
+    ],
+    "find_json_block": [
+      "self",
+      "text",
+      "raise_if_not_found"
+    ],
+    "replace_json_block": [
+      "self",
+      "text",
+      "replace_func"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ],
+    "get_format_instructions": [
+      "self"
+    ]
+  },
+  "T": [],
+  "PydanticOutputParser": {
+    "__init__": [
+      "self",
+      "model",
+      "instructions_as_json_example",
+      "as_list"
+    ],
+    "_type": [
+      "self"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ],
+    "get_json_example_description": [
+      "self",
+      "model",
+      "indentation_level"
+    ],
+    "get_format_instructions": [
+      "self"
+    ]
+  },
+  "OpenAIFunctionsPydanticOutputParser": {
+    "_type": [
+      "self"
+    ],
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "parse": [
+      "self",
+      "function_call_arguments"
+    ],
+    "get_format_instructions": [
+      "self"
+    ],
+    "build_llm_function": [
+      "self"
+    ]
+  },
+  "MarkdownStructureParser": {
+    "__init__": [
+      "self",
+      "model",
+      "sections_parsers",
+      "level"
+    ],
+    "_type": [
+      "self"
+    ],
+    "get_instructions_for_sections": [
+      "self",
+      "model",
+      "sections_parsers"
+    ],
+    "parse": [
+      "self",
+      "text"
+    ],
+    "get_format_instructions": [
+      "self"
+    ]
+  },
+  "_get_str_field_description": [
+    "field_info",
+    "ignore_nullable",
+    "default"
+  ],
+  "describe_field_schema": [
+    "field_schema"
+  ],
+  "MessageAttachment": {
+    "validate_input": [
+      "cls",
+      "v"
+    ],
+    "__init__": [
+      "self",
+      "data",
+      "type",
+      "source_type",
+      "mime_type",
+      "file_name",
+      "extra"
+    ]
+  },
+  "PydanticListTypeWrapper": {
+    "__class_getitem__": [
+      "cls",
+      "item_type"
+    ]
+  },
+  "FunctionsProvider": [],
+  "LLMDecoratorChain": {
+    "__init__": [
+      "self",
+      "name",
+      "prompt",
+      "llm",
+      "capture_stream",
+      "expected_gen_tokens",
+      "llm_selector",
+      "llm_selector_rule_key",
+      "prompt_type",
+      "default_call_kwargs",
+      "allow_retries",
+      "format_instructions_parameter_key",
+      "with_structured_output",
+      "tools_provider",
+      "return_type",
+      "default_config",
+      "tags"
+    ],
+    "__call__": [
+      "self",
+      "inputs",
+      "config"
+    ],
+    "invoke": [
+      "self",
+      "inputs",
+      "config"
+    ],
+    "ainvoke": [
+      "self",
+      "inputs",
+      "config"
+    ],
+    "find_and_apply_on_llm": [
+      "self",
+      "runnable",
+      "func"
+    ],
+    "_prepare_execution": [
+      "self",
+      "inputs",
+      "config"
+    ],
+    "_bind_tools_to_llm": [
+      "self",
+      "llm",
+      "tools_provider",
+      "inputs",
+      "tool_choice"
+    ],
+    "select_llm": [
+      "self",
+      "prompt",
+      "inputs"
+    ],
+    "_additional_llm_selector_args": [
+      "self",
+      "inputs"
+    ],
+    "process_llm_output": [
+      "self",
+      "llm_result"
+    ]
+  },
+  "FollowupHandle": {
+    "__init__": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "bind_to_chain": [
+      "self",
+      "chain"
+    ],
+    "is_bound": [
+      "self"
+    ],
+    "ignore_llm": [
+      "self"
+    ],
+    "ignore_chain": [
+      "self"
+    ],
+    "ignore_agent": [
+      "self"
+    ],
+    "ignore_retriever": [
+      "self"
+    ],
+    "ignore_chat_model": [
+      "self"
+    ],
+    "on_llm_end": [
+      "self",
+      "response"
+    ],
+    "_prepare_followup_chain_with_args": [
+      "self",
+      "followup_content",
+      "with_tools"
+    ],
+    "followup": [
+      "self",
+      "followup_content",
+      "with_tools",
+      "with_output_parser"
+    ],
+    "afollowup": [
+      "self",
+      "followup_content",
+      "with_tools",
+      "with_output_parser"
+    ]
+  },
+  "log_results": [
+    "result_data",
+    "result",
+    "is_function_call",
+    "verbose",
+    "prompt_type"
+  ],
+  "SPECIAL_KWARGS": [],
+  "llm_prompt": [
+    "prompt_type"
+  ],
+  "is_llm_prompt": [
+    "func"
+  ],
+  "__version__": [],
+  "get_field_type": [
+    "field_info"
+  ],
+  "is_field_nullable": [
+    "field_info"
+  ],
+  "get_field_item_type": [
+    "field_info"
+  ],
+  "align_fields_with_model": [
+    "data",
+    "model"
+  ],
+  "humanize_pydantic_validation_error": [
+    "validation_error"
+  ],
+  "sanitize_pydantic_schema": [
+    "schema"
+  ],
+  "get_arguments_as_pydantic_fields": [
+    "func"
+  ],
+  "ToolsProvider": {
+    "__init__": [
+      "self",
+      "tools"
+    ],
+    "add_tool": [
+      "self",
+      "tool",
+      "alias"
+    ],
+    "add_function": [
+      "self",
+      "function",
+      "alias"
+    ],
+    "__contains__": [
+      "self",
+      "function"
+    ],
+    "get_function_schemas": [
+      "self",
+      "inputs",
+      "_index"
+    ],
+    "get_function_schema": [
+      "self",
+      "function",
+      "inputs"
+    ],
+    "get_function": [
+      "self",
+      "function_name"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "index": [
+      "self",
+      "function"
+    ],
+    "get_tool_by_name": [
+      "self",
+      "function_name",
+      "raise_errors"
+    ]
+  },
+  "OutputWithFunctionCall": {
+    "_result_generated": [],
+    "is_function_call": [
+      "self"
+    ],
+    "support_async": [
+      "self"
+    ],
+    "support_sync": [
+      "self"
+    ],
+    "execute_async": [
+      "self",
+      "augment_args"
+    ],
+    "_get_final_func_args": [
+      "self",
+      "augment_args"
+    ],
+    "execute": [
+      "self",
+      "augment_args"
+    ],
+    "function_call_message": [
+      "self"
+    ],
+    "to_function_message": [
+      "self",
+      "result"
+    ],
+    "function_output_to_message": [
+      "self",
+      "function_output"
+    ]
+  },
+  "ToolCall": {
+    "__init__": [
+      "self"
+    ],
+    "invoke": [
+      "self"
+    ],
+    "ainvoke": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "_serialize_result": [
+      "self",
+      "tool_results"
+    ],
+    "set_result": [
+      "self",
+      "result"
+    ],
+    "set_error_result": [
+      "self",
+      "error"
+    ],
+    "to_tool_message": [
+      "self",
+      "result"
+    ]
+  },
+  "DocstringsFormat": {
+    "AUTO": [],
+    "GOOGLE": [],
+    "SPHINX": [],
+    "NUMPY": []
+  },
+  "get_function_schema": [
+    "func",
+    "schema_template_args"
+  ],
+  "is_dynamic_llm_func": [
+    "func"
+  ],
+  "get_dynamic_function_template_args": [
+    "func"
+  ],
+  "DotDict": {
+    "__init__": [
+      "self",
+      "dictionary"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ]
+  },
+  "llm_function": [
+    "function_name",
+    "validate_docstrings",
+    "docstring_format",
+    "arguments_schema",
+    "dynamic_schema",
+    "func_description"
+  ],
+  "LllFunctionWithModifiedSchema": {
+    "__init__": [
+      "self",
+      "func",
+      "modified_schema"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "get_function_schema": [
+      "self"
+    ]
+  },
+  "build_func_schema": [
+    "func",
+    "function_name",
+    "format",
+    "validate_docstrings",
+    "arguments_schema",
+    "func_description",
+    "schema_template_parameters",
+    "as_pydantic_model"
+  ],
+  "format_str_extra": [
+    "template"
+  ],
+  "get_template_args": [
+    "template"
+  ],
+  "parse_function_description_from_docstrings": [
+    "docstring"
+  ],
+  "find_and_parse_params_from_docstrings": [
+    "docstring",
+    "format"
+  ],
+  "parse_enum_from_docstring_param": [
+    "type",
+    "description"
+  ],
+  "PromptRegisterBase": {
+    "register_prompt": [
+      "self",
+      "prompt_id",
+      "prompt"
+    ],
+    "get_prompt": [
+      "self",
+      "prompt_id"
+    ]
+  },
+  "AVAILABLE_PROMPT_REGISTERS": [],
+  "register_prompt_register": [
+    "name",
+    "register"
+  ],
+  "LangSmithPromptRegister": {
+    "register_prompt": [
+      "self",
+      "prompt_id",
+      "prompt"
+    ],
+    "get_prompt": [
+      "self",
+      "prompt_id"
+    ]
+  },
+  "TState": [],
+  "SequentialGraphMeta": {
+    "__getitem__": [
+      "cls",
+      "state_schema"
+    ]
+  },
+  "_GraphBuilder": {
+    "__init__": [
+      "self",
+      "state_graph",
+      "graph_state_schema"
+    ],
+    "_path_to_key_and_action": [
+      "self",
+      "action"
+    ],
+    "_then": [
+      "self",
+      "from_node_key",
+      "next_node_or_nodes"
+    ],
+    "_then_route": [
+      "self",
+      "from_node_key",
+      "routes",
+      "default"
+    ],
+    "compile": [
+      "self"
+    ]
+  },
+  "SequentialGraph": {
+    "start": [
+      "cls"
+    ]
+  },
+  "StagedGraphStateMin": {},
+  "StagedGraphMeta": {
+    "_get_graph_schema": [
+      "cls",
+      "state_type"
+    ],
+    "__getitem__": [
+      "cls",
+      "state_type"
+    ]
+  },
+  "StagedGraph": {
+    "CMD_NEXT": [],
+    "cmd_next_with_update": [
+      "cls",
+      "update"
+    ],
+    "_resume": [
+      "cls",
+      "state",
+      "config"
+    ],
+    "_next": [
+      "cls",
+      "state",
+      "config"
+    ],
+    "_compile": [
+      "cls",
+      "cursor"
+    ],
+    "start": [
+      "cls"
+    ]
+  },
+  "SequentialGraphBuilderCursor": {
+    "__init__": [
+      "self",
+      "graph",
+      "last_node_key"
+    ],
+    "then": [
+      "self",
+      "next",
+      "after"
+    ],
+    "then_route": [
+      "self",
+      "routes",
+      "default",
+      "after"
+    ],
+    "then_if": [
+      "self",
+      "condition",
+      "stage_action",
+      "else_key"
+    ],
+    "_update_pending_route": [
+      "self",
+      "paths"
+    ],
+    "_flush_pending": [
+      "self",
+      "next_key"
+    ],
+    "compile": [
+      "self"
+    ]
+  },
+  "StagedGraphBuilderCursor": {
+    "__init__": [
+      "self",
+      "graph"
+    ],
+    "then": [
+      "self",
+      "stage_action"
+    ],
+    "then_if": [
+      "self",
+      "condition",
+      "stage_action"
+    ],
+    "compile": [
+      "self"
+    ]
+  },
+  "NodeInfo": {},
+  "NodeDecorator": {
+    "after": [
+      "self",
+      "node_name_or_names"
+    ],
+    "__call__": [
+      "self",
+      "func"
+    ],
+    "_create_with_name": [
+      "self",
+      "name",
+      "after",
+      "store_output_as"
+    ],
+    "_create_after_decorator": [
+      "self",
+      "name"
+    ],
+    "_decorate": [
+      "self",
+      "func",
+      "name",
+      "after",
+      "store_output_as"
+    ]
+  },
+  "node": [],
+  "is_graph_node": [
+    "func"
+  ],
+  "get_node_info": [
+    "func"
+  ],
+  "Node": [],
+  "LlmNodeDescriptor": {},
+  "_as_node_call": [
+    "func",
+    "default",
+    "llm_node_class"
+  ],
+  "LlmNodeBase": {
+    "state": [
+      "self"
+    ],
+    "config": [
+      "self"
+    ],
+    "get_node_args": [
+      "self",
+      "func_name"
+    ],
+    "ainvoke": [
+      "cls",
+      "state",
+      "config"
+    ],
+    "invoke": [
+      "cls",
+      "state",
+      "config"
+    ],
+    "call_prompt": [
+      "self",
+      "prompt_node",
+      "prompt_call",
+      "kwargs"
+    ],
+    "acall_prompt": [
+      "self",
+      "prompt_node",
+      "prompt_call",
+      "kwargs"
+    ],
+    "_get_previous_llm_node": [
+      "cls",
+      "state"
+    ],
+    "_handle_prompt_response": [
+      "self",
+      "prompt_name",
+      "response",
+      "ai_message"
+    ],
+    "get_llm_node_tools": [
+      "self",
+      "prompt_node"
+    ],
+    "_get_tools_for_node": [
+      "self",
+      "prompt_node"
+    ],
+    "get_all_available_tools": [
+      "cls"
+    ],
+    "get_additional_tools": [
+      "cls"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "__init__": [
+      "self",
+      "state",
+      "config"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "get_input_schema": [
+      "cls"
+    ],
+    "_describe": [
+      "cls"
+    ],
+    "get_description": [
+      "cls"
+    ],
+    "compile": [
+      "cls",
+      "state_type",
+      "checkpointer"
+    ],
+    "add_to_graph": [
+      "cls",
+      "graph"
+    ]
+  },
+  "Router": {
+    "__getattr__": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key",
+      "default"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "__getkey__": [
+      "self",
+      "key"
+    ],
+    "__init__": [
+      "self",
+      "state"
+    ],
+    "invoke": [
+      "cls",
+      "state",
+      "config"
+    ],
+    "_declare": [
+      "name",
+      "routes",
+      "default"
+    ],
+    "as_runnable": [
+      "cls"
+    ],
+    "add_edges_to_graph": [
+      "cls",
+      "graph",
+      "source",
+      "routes",
+      "default"
+    ]
+  },
+  "BoundedToolNode": {
+    "__init__": [
+      "self",
+      "tools"
+    ],
+    "_inject_self_node": [
+      "self",
+      "tool_call",
+      "state"
+    ],
+    "inject_tool_args": [
+      "self",
+      "tool_call",
+      "input",
+      "store"
+    ],
+    "_inject_runtime": [
+      "self",
+      "tool_call",
+      "tool_runtime"
+    ]
+  },
+  "conditional_transition": [
+    "after"
+  ],
+  "is_node_transition": [
+    "func"
+  ],
+  "get_conditional_transition_edges": [
+    "func"
+  ],
+  "NodeTool": {
+    "__init__": [
+      "self",
+      "func",
+      "name",
+      "description",
+      "args_schema",
+      "node_class",
+      "require_confirmation",
+      "bind_to_prompt_nodes",
+      "response_format"
+    ],
+    "maybe_ask_for_approval": [
+      "self",
+      "input"
+    ],
+    "invoke": [
+      "self",
+      "input"
+    ],
+    "ainvoke": [
+      "self",
+      "input"
+    ],
+    "postprocess": [
+      "self",
+      "result",
+      "input"
+    ],
+    "_to_args_and_kwargs": [
+      "self",
+      "tool_input",
+      "tool_call_id"
+    ]
+  },
+  "node_tool": [
+    "func"
+  ]
+}

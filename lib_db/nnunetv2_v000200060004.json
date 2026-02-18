@@ -1,0 +1,3144 @@
+{
+  "nnUNet_raw": [],
+  "nnUNet_preprocessed": [],
+  "nnUNet_results": [],
+  "default_num_processes": [],
+  "ANISO_THRESHOLD": [],
+  "default_n_proc_DA": [],
+  "average_probabilities": [
+    "list_of_files"
+  ],
+  "merge_files": [
+    "list_of_files",
+    "output_filename_truncated",
+    "output_file_ending",
+    "image_reader_writer",
+    "label_manager",
+    "save_probabilities"
+  ],
+  "ensemble_folders": [
+    "list_of_input_folders",
+    "output_folder",
+    "save_merged_probabilities",
+    "num_processes",
+    "dataset_json_file_or_dict",
+    "plans_json_file_or_dict"
+  ],
+  "entry_point_ensemble_folders": [],
+  "ensemble_crossvalidations": [
+    "list_of_trained_model_folders",
+    "output_folder",
+    "folds",
+    "num_processes",
+    "overwrite"
+  ],
+  "merge": [
+    "dict1",
+    "dict2"
+  ],
+  "collect_results": [
+    "trainers",
+    "datasets",
+    "output_file",
+    "configurations",
+    "folds"
+  ],
+  "summarize": [
+    "input_file",
+    "output_file",
+    "folds",
+    "configs",
+    "datasets",
+    "trainers"
+  ],
+  "dice_score": [
+    "y_true",
+    "y_pred"
+  ],
+  "run_tests_and_exit_on_failure": [],
+  "BaseReaderWriter": {
+    "_check_all_same": [
+      "input_list"
+    ],
+    "_check_all_same_array": [
+      "input_list"
+    ],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "Tiff3DIO": {
+    "supported_file_endings": [],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ]
+  },
+  "SimpleITKIO": {
+    "supported_file_endings": [],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "SimpleITKIOWithReorient": {
+    "read_images": [
+      "self",
+      "image_fnames",
+      "orientation"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "LIST_OF_IO_CLASSES": [],
+  "determine_reader_writer_from_dataset_json": [
+    "dataset_json_content",
+    "example_file",
+    "allow_nonmatching_filename",
+    "verbose"
+  ],
+  "determine_reader_writer_from_file_ending": [
+    "file_ending",
+    "example_file",
+    "allow_nonmatching_filename",
+    "verbose"
+  ],
+  "recursive_find_reader_writer_by_name": [
+    "rw_class_name"
+  ],
+  "NaturalImage2DIO": {
+    "supported_file_endings": [],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "NibabelIO": {
+    "supported_file_endings": [],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "NibabelIOWithReorient": {
+    "supported_file_endings": [],
+    "read_images": [
+      "self",
+      "image_fnames"
+    ],
+    "read_seg": [
+      "self",
+      "seg_fname"
+    ],
+    "write_seg": [
+      "self",
+      "seg",
+      "output_fname",
+      "properties"
+    ]
+  },
+  "DC_and_CE_loss": {
+    "__init__": [
+      "self",
+      "soft_dice_kwargs",
+      "ce_kwargs",
+      "weight_ce",
+      "weight_dice",
+      "ignore_label",
+      "dice_class"
+    ],
+    "forward": [
+      "self",
+      "net_output",
+      "target"
+    ]
+  },
+  "DC_and_BCE_loss": {
+    "__init__": [
+      "self",
+      "bce_kwargs",
+      "soft_dice_kwargs",
+      "weight_ce",
+      "weight_dice",
+      "use_ignore_label",
+      "dice_class"
+    ],
+    "forward": [
+      "self",
+      "net_output",
+      "target"
+    ]
+  },
+  "DC_and_topk_loss": {
+    "__init__": [
+      "self",
+      "soft_dice_kwargs",
+      "ce_kwargs",
+      "weight_ce",
+      "weight_dice",
+      "ignore_label"
+    ],
+    "forward": [
+      "self",
+      "net_output",
+      "target"
+    ]
+  },
+  "DeepSupervisionWrapper": {
+    "__init__": [
+      "self",
+      "loss",
+      "weight_factors"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "SoftDiceLoss": {
+    "__init__": [
+      "self",
+      "apply_nonlin",
+      "batch_dice",
+      "do_bg",
+      "smooth",
+      "ddp",
+      "clip_tp"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y",
+      "loss_mask"
+    ]
+  },
+  "MemoryEfficientSoftDiceLoss": {
+    "__init__": [
+      "self",
+      "apply_nonlin",
+      "batch_dice",
+      "do_bg",
+      "smooth",
+      "ddp"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y",
+      "loss_mask"
+    ]
+  },
+  "get_tp_fp_fn_tn": [
+    "net_output",
+    "gt",
+    "axes",
+    "mask",
+    "square"
+  ],
+  "RobustCrossEntropyLoss": {
+    "forward": [
+      "self",
+      "input",
+      "target"
+    ]
+  },
+  "TopKLoss": {
+    "__init__": [
+      "self",
+      "weight",
+      "ignore_index",
+      "k",
+      "label_smoothing"
+    ],
+    "forward": [
+      "self",
+      "inp",
+      "target"
+    ]
+  },
+  "nnUNetTrainer": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "initialize": [
+      "self"
+    ],
+    "_do_i_compile": [
+      "self"
+    ],
+    "_save_debug_information": [
+      "self"
+    ],
+    "build_network_architecture": [
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ],
+    "_get_deep_supervision_scales": [
+      "self"
+    ],
+    "_set_batch_size_and_oversample": [
+      "self"
+    ],
+    "_build_loss": [
+      "self"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ],
+    "print_to_log_file": [
+      "self"
+    ],
+    "print_plans": [
+      "self"
+    ],
+    "configure_optimizers": [
+      "self"
+    ],
+    "plot_network_architecture": [
+      "self"
+    ],
+    "do_split": [
+      "self"
+    ],
+    "get_tr_and_val_datasets": [
+      "self"
+    ],
+    "get_dataloaders": [
+      "self"
+    ],
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ],
+    "get_validation_transforms": [
+      "deep_supervision_scales",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ],
+    "set_deep_supervision_enabled": [
+      "self",
+      "enabled"
+    ],
+    "on_train_start": [
+      "self"
+    ],
+    "on_train_end": [
+      "self"
+    ],
+    "on_train_epoch_start": [
+      "self"
+    ],
+    "train_step": [
+      "self",
+      "batch"
+    ],
+    "on_train_epoch_end": [
+      "self",
+      "train_outputs"
+    ],
+    "on_validation_epoch_start": [
+      "self"
+    ],
+    "validation_step": [
+      "self",
+      "batch"
+    ],
+    "on_validation_epoch_end": [
+      "self",
+      "val_outputs"
+    ],
+    "on_epoch_start": [
+      "self"
+    ],
+    "on_epoch_end": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "filename"
+    ],
+    "load_checkpoint": [
+      "self",
+      "filename_or_checkpoint"
+    ],
+    "perform_actual_validation": [
+      "self",
+      "save_probabilities"
+    ],
+    "run_training": [
+      "self"
+    ]
+  },
+  "AbstractPrimus": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "build_network_architecture": [
+      "self",
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ],
+    "configure_optimizers": [
+      "self",
+      "stage"
+    ],
+    "train_step": [
+      "self",
+      "batch"
+    ],
+    "set_deep_supervision_enabled": [
+      "self",
+      "enabled"
+    ]
+  },
+  "nnUNet_Primus_S_Trainer": {
+    "build_network_architecture": [
+      "self",
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ]
+  },
+  "nnUNet_Primus_B_Trainer": {
+    "build_network_architecture": [
+      "self",
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ]
+  },
+  "nnUNet_Primus_M_Trainer": {
+    "build_network_architecture": [
+      "self",
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ]
+  },
+  "nnUNet_Primus_M_Trainer_BS8": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNet_Primus_M_Trainer_BS8_2e4": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNet_Trainer_BS8": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNet_Primus_L_Trainer": {
+    "build_network_architecture": [
+      "self",
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ]
+  },
+  "_Primus_S_96_BS1": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "_Primus_B_96_BS1": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "_Primus_M_96_BS1": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "_Primus_L_48_BS1": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerTopk10Loss": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerTopk10LossLS01": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerDiceTopK10Loss": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerDiceLoss": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerDiceCELoss_noSmooth": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerCELoss": {
+    "_build_loss": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerCELoss_5epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerNoDeepSupervision": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerBN": {
+    "build_network_architecture": [
+      "architecture_class_name",
+      "arch_init_kwargs",
+      "arch_init_kwargs_req_import",
+      "num_input_channels",
+      "num_output_channels",
+      "enable_deep_supervision"
+    ]
+  },
+  "nnUNetTrainerNoMirroring": {
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_onlyMirror01": {
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_onlyMirror01_1500ep": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_onlyMirror01_DASegOrd0": {
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ]
+  },
+  "nnUNetTrainerDA5": {
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ],
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ],
+    "get_validation_transforms": [
+      "deep_supervision_scales",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ],
+    "get_dataloaders": [
+      "self"
+    ],
+    "validation_step": [
+      "self",
+      "batch"
+    ]
+  },
+  "nnUNetTrainerDA5ord0": {
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ]
+  },
+  "_brightnessadditive_localgamma_transform_scale": [
+    "x",
+    "y"
+  ],
+  "_brightness_gradient_additive_max_strength": [
+    "_x",
+    "_y"
+  ],
+  "_local_gamma_gamma": [],
+  "nnUNetTrainerDA5Segord0": {
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ]
+  },
+  "nnUNetTrainerDA5_10epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_noDummy2DDA": {
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerNoDA": {
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_DASegOrd0": {
+    "get_training_transforms": [
+      "patch_size",
+      "rotation_for_DA",
+      "deep_supervision_scales",
+      "mirror_axes",
+      "do_dummy_2d_data_aug",
+      "use_mask_for_norm",
+      "is_cascaded",
+      "foreground_labels",
+      "regions",
+      "ignore_label"
+    ]
+  },
+  "nnUNetTrainer_DASegOrd0_NoMirroring": {
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerBenchmark_5epochs_noDataLoading": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "get_dataloaders": [
+      "self"
+    ],
+    "run_training": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerBenchmark_5epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "perform_actual_validation": [
+      "self",
+      "save_probabilities"
+    ],
+    "save_checkpoint": [
+      "self",
+      "filename"
+    ],
+    "run_training": [
+      "self"
+    ],
+    "on_train_end": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_warmup": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "configure_optimizers": [
+      "self",
+      "stage"
+    ],
+    "on_train_epoch_start": [
+      "self"
+    ],
+    "load_checkpoint": [
+      "self",
+      "filename_or_checkpoint"
+    ]
+  },
+  "nnUNetTrainerCosAnneal": {
+    "configure_optimizers": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerAdan": {
+    "configure_optimizers": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerAdan1en3": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerAdan3en4": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerAdan1en1": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerAdanCosAnneal": {
+    "configure_optimizers": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerAdam": {
+    "configure_optimizers": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerVanillaAdam": {
+    "configure_optimizers": [
+      "self"
+    ]
+  },
+  "nnUNetTrainerVanillaAdam1en3": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerVanillaAdam3en4": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerAdam1en3": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainerAdam3en4": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_5epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_1epoch": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_10epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_20epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_50epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_100epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_250epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_500epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_750epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_2000epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_4000epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_8000epochs": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_250epochs_NoMirroring": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_2000epochs_NoMirroring": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_4000epochs_NoMirroring": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_8000epochs_NoMirroring": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "configure_rotation_dummyDA_mirroring_and_inital_patch_size": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_onlyMirror01_DA5": {},
+  "nnUNetTrainer_probabilisticOversampling": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ],
+    "_set_batch_size_and_oversample": [
+      "self"
+    ]
+  },
+  "nnUNetTrainer_probabilisticOversampling_033": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "nnUNetTrainer_probabilisticOversampling_010": {
+    "__init__": [
+      "self",
+      "plans",
+      "configuration",
+      "fold",
+      "dataset_json",
+      "device"
+    ]
+  },
+  "get_patch_size": [
+    "final_patch_size",
+    "rot_x",
+    "rot_y",
+    "rot_z",
+    "scale_range"
+  ],
+  "ConvertSegmentationToRegionsTransform": {
+    "__init__": [
+      "self",
+      "regions",
+      "seg_key",
+      "output_key",
+      "seg_channel"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "MaskTransform": {
+    "__init__": [
+      "self",
+      "apply_to_channels",
+      "mask_idx_in_seg",
+      "set_outside_to",
+      "data_key",
+      "seg_key"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "MoveSegAsOneHotToData": {
+    "__init__": [
+      "self",
+      "index_in_origin",
+      "all_labels",
+      "key_origin",
+      "key_target",
+      "remove_from_origin"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "RemoveRandomConnectedComponentFromOneHotEncodingTransform": {
+    "__init__": [
+      "self",
+      "channel_idx",
+      "key",
+      "p_per_sample",
+      "fill_with_other_class_p",
+      "dont_do_if_covers_more_than_x_percent",
+      "p_per_label"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "ApplyRandomBinaryOperatorTransform": {
+    "__init__": [
+      "self",
+      "channel_idx",
+      "p_per_sample",
+      "any_of_these",
+      "key",
+      "strel_size",
+      "p_per_label"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "DownsampleSegForDSTransform2": {
+    "__init__": [
+      "self",
+      "ds_scales",
+      "order",
+      "input_key",
+      "output_key",
+      "axes"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "Convert3DTo2DTransform": {
+    "__init__": [
+      "self",
+      "apply_to_keys"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "Convert2DTo3DTransform": {
+    "__init__": [
+      "self",
+      "apply_to_keys"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "Lin_incr_LRScheduler": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "max_lr",
+      "max_steps",
+      "current_step"
+    ],
+    "step": [
+      "self",
+      "current_step"
+    ]
+  },
+  "Lin_incr_offset_LRScheduler": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "max_lr",
+      "max_steps",
+      "start_step",
+      "current_step"
+    ],
+    "step": [
+      "self",
+      "current_step"
+    ]
+  },
+  "PolyLRScheduler_offset": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "initial_lr",
+      "max_steps",
+      "start_step",
+      "exponent",
+      "current_step"
+    ],
+    "step": [
+      "self",
+      "current_step"
+    ]
+  },
+  "CosineAnnealingLR_offset": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "T_max",
+      "eta_min",
+      "last_epoch",
+      "verbose",
+      "offset"
+    ],
+    "_get_closed_form_lr": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "epoch"
+    ]
+  },
+  "PolyLRScheduler": {
+    "__init__": [
+      "self",
+      "optimizer",
+      "initial_lr",
+      "max_steps",
+      "exponent",
+      "current_step"
+    ],
+    "step": [
+      "self",
+      "current_step"
+    ],
+    "get_last_lr": [
+      "self"
+    ]
+  },
+  "nnUNetDataLoader": {
+    "__init__": [
+      "self",
+      "data",
+      "batch_size",
+      "patch_size",
+      "final_patch_size",
+      "label_manager",
+      "oversample_foreground_percent",
+      "sampling_probabilities",
+      "pad_sides",
+      "probabilistic_oversampling",
+      "transforms"
+    ],
+    "_oversample_last_XX_percent": [
+      "self",
+      "sample_idx"
+    ],
+    "_probabilistic_oversampling": [
+      "self",
+      "sample_idx"
+    ],
+    "determine_shapes": [
+      "self"
+    ],
+    "get_bbox": [
+      "self",
+      "data_shape",
+      "force_fg",
+      "class_locations",
+      "overwrite_class",
+      "verbose"
+    ],
+    "generate_train_batch": [
+      "self"
+    ]
+  },
+  "_convert_to_npy": [
+    "npz_file",
+    "unpack_segmentation",
+    "overwrite_existing",
+    "verify_npy",
+    "fail_ctr"
+  ],
+  "unpack_dataset": [
+    "folder",
+    "unpack_segmentation",
+    "overwrite_existing",
+    "num_processes",
+    "verify"
+  ],
+  "nnUNetBaseDataset": {
+    "__init__": [
+      "self",
+      "folder",
+      "identifiers",
+      "folder_with_segs_from_previous_stage"
+    ],
+    "__getitem__": [
+      "self",
+      "identifier"
+    ],
+    "load_case": [
+      "self",
+      "identifier"
+    ],
+    "save_case": [
+      "data",
+      "seg",
+      "properties",
+      "output_filename_truncated"
+    ],
+    "get_identifiers": [
+      "folder"
+    ],
+    "unpack_dataset": [
+      "folder",
+      "overwrite_existing",
+      "num_processes",
+      "verify"
+    ]
+  },
+  "nnUNetDatasetNumpy": {
+    "load_case": [
+      "self",
+      "identifier"
+    ],
+    "save_case": [
+      "data",
+      "seg",
+      "properties",
+      "output_filename_truncated"
+    ],
+    "save_seg": [
+      "seg",
+      "output_filename_truncated"
+    ],
+    "get_identifiers": [
+      "folder"
+    ],
+    "unpack_dataset": [
+      "folder",
+      "overwrite_existing",
+      "num_processes",
+      "verify"
+    ]
+  },
+  "nnUNetDatasetBlosc2": {
+    "__init__": [
+      "self",
+      "folder",
+      "identifiers",
+      "folder_with_segs_from_previous_stage"
+    ],
+    "__getitem__": [
+      "self",
+      "identifier"
+    ],
+    "load_case": [
+      "self",
+      "identifier"
+    ],
+    "save_case": [
+      "data",
+      "seg",
+      "properties",
+      "output_filename_truncated",
+      "chunks",
+      "blocks",
+      "chunks_seg",
+      "blocks_seg",
+      "clevel",
+      "codec"
+    ],
+    "save_seg": [
+      "seg",
+      "output_filename_truncated",
+      "chunks_seg",
+      "blocks_seg"
+    ],
+    "get_identifiers": [
+      "folder"
+    ],
+    "unpack_dataset": [
+      "folder",
+      "overwrite_existing",
+      "num_processes",
+      "verify"
+    ],
+    "comp_blosc2_params": [
+      "image_size",
+      "patch_size",
+      "bytes_per_pixel",
+      "l1_cache_size_per_core_in_bytes",
+      "l3_cache_size_per_core_in_bytes",
+      "safety_factor"
+    ]
+  },
+  "file_ending_dataset_mapping": [],
+  "infer_dataset_class": [
+    "folder"
+  ],
+  "nnUNetLogger": {
+    "__init__": [
+      "self",
+      "verbose"
+    ],
+    "log": [
+      "self",
+      "key",
+      "value",
+      "epoch"
+    ],
+    "plot_progress_png": [
+      "self",
+      "output_folder"
+    ],
+    "get_checkpoint": [
+      "self"
+    ],
+    "load_checkpoint": [
+      "self",
+      "checkpoint"
+    ]
+  },
+  "remove_all_but_largest_component_from_segmentation": [
+    "segmentation",
+    "labels_or_regions",
+    "background_label"
+  ],
+  "apply_postprocessing": [
+    "segmentation",
+    "pp_fns",
+    "pp_fn_kwargs"
+  ],
+  "load_postprocess_save": [
+    "segmentation_file",
+    "output_fname",
+    "image_reader_writer",
+    "pp_fns",
+    "pp_fn_kwargs"
+  ],
+  "determine_postprocessing": [
+    "folder_predictions",
+    "folder_ref",
+    "plans_file_or_dict",
+    "dataset_json_file_or_dict",
+    "num_processes",
+    "keep_postprocessed_files"
+  ],
+  "apply_postprocessing_to_folder": [
+    "input_folder",
+    "output_folder",
+    "pp_fns",
+    "pp_fn_kwargs",
+    "plans_file_or_dict",
+    "dataset_json_file_or_dict",
+    "num_processes"
+  ],
+  "entry_point_determine_postprocessing_folder": [],
+  "entry_point_apply_postprocessing": [],
+  "verify_labels": [
+    "label_file",
+    "readerclass",
+    "expected_labels"
+  ],
+  "check_cases": [
+    "image_files",
+    "label_file",
+    "expected_num_channels",
+    "readerclass"
+  ],
+  "verify_dataset_integrity": [
+    "folder",
+    "num_processes"
+  ],
+  "extract_fingerprint_entry": [],
+  "plan_experiment_entry": [],
+  "preprocess_entry": [],
+  "plan_and_preprocess_entry": [],
+  "extract_fingerprint_dataset": [
+    "dataset_id",
+    "fingerprint_extractor_class",
+    "num_processes",
+    "check_dataset_integrity",
+    "clean",
+    "verbose"
+  ],
+  "extract_fingerprints": [
+    "dataset_ids",
+    "fingerprint_extractor_class_name",
+    "num_processes",
+    "check_dataset_integrity",
+    "clean",
+    "verbose"
+  ],
+  "plan_experiment_dataset": [
+    "dataset_id",
+    "experiment_planner_class",
+    "gpu_memory_target_in_gb",
+    "preprocess_class_name",
+    "overwrite_target_spacing",
+    "overwrite_plans_name"
+  ],
+  "plan_experiments": [
+    "dataset_ids",
+    "experiment_planner_class_name",
+    "gpu_memory_target_in_gb",
+    "preprocess_class_name",
+    "overwrite_target_spacing",
+    "overwrite_plans_name"
+  ],
+  "preprocess_dataset": [
+    "dataset_id",
+    "plans_identifier",
+    "configurations",
+    "num_processes",
+    "verbose"
+  ],
+  "preprocess": [
+    "dataset_ids",
+    "plans_identifier",
+    "configurations",
+    "num_processes",
+    "verbose"
+  ],
+  "DatasetFingerprintExtractor": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "num_processes",
+      "verbose"
+    ],
+    "collect_foreground_intensities": [
+      "segmentation",
+      "images",
+      "seed",
+      "num_samples"
+    ],
+    "analyze_case": [
+      "image_files",
+      "segmentation_file",
+      "reader_writer_class",
+      "num_samples"
+    ],
+    "run": [
+      "self",
+      "overwrite_existing"
+    ]
+  },
+  "ExperimentPlanner": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "determine_reader_writer": [
+      "self"
+    ],
+    "static_estimate_VRAM_usage": [
+      "patch_size",
+      "input_channels",
+      "output_channels",
+      "arch_class_name",
+      "arch_kwargs",
+      "arch_kwargs_req_import"
+    ],
+    "determine_resampling": [
+      "self"
+    ],
+    "determine_segmentation_softmax_export_fn": [
+      "self"
+    ],
+    "determine_fullres_target_spacing": [
+      "self"
+    ],
+    "determine_normalization_scheme_and_whether_mask_is_used_for_norm": [
+      "self"
+    ],
+    "determine_transpose": [
+      "self"
+    ],
+    "get_plans_for_configuration": [
+      "self",
+      "spacing",
+      "median_shape",
+      "data_identifier",
+      "approximate_n_voxels_dataset",
+      "_cache"
+    ],
+    "plan_experiment": [
+      "self"
+    ],
+    "save_plans": [
+      "self",
+      "plans"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "load_plans": [
+      "self",
+      "fname"
+    ]
+  },
+  "_maybe_copy_splits_file": [
+    "splits_file",
+    "target_fname"
+  ],
+  "ResEncUNetPlanner": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "get_plans_for_configuration": [
+      "self",
+      "spacing",
+      "median_shape",
+      "data_identifier",
+      "approximate_n_voxels_dataset",
+      "_cache"
+    ]
+  },
+  "get_shape_must_be_divisible_by": [
+    "net_numpool_per_axis"
+  ],
+  "pad_shape": [
+    "shape",
+    "must_be_divisible_by"
+  ],
+  "get_pool_and_conv_props": [
+    "spacing",
+    "patch_size",
+    "min_feature_map_size",
+    "max_numpool"
+  ],
+  "nnUNetPlannerResEncM": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ]
+  },
+  "nnUNetPlannerResEncL": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ]
+  },
+  "nnUNetPlannerResEncXL": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ]
+  },
+  "nnUNetPlannerResEncL_noResampling": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "determine_resampling": [
+      "self"
+    ],
+    "determine_segmentation_softmax_export_fn": [
+      "self"
+    ]
+  },
+  "nnUNetPlannerResEncL_torchres": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "determine_resampling": [
+      "self"
+    ],
+    "determine_segmentation_softmax_export_fn": [
+      "self"
+    ]
+  },
+  "nnUNetPlannerResEncL_torchres_sepz": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "determine_resampling": [
+      "self"
+    ],
+    "determine_segmentation_softmax_export_fn": [
+      "self"
+    ]
+  },
+  "nnUNetPlanner_torchres": {
+    "__init__": [
+      "self",
+      "dataset_name_or_id",
+      "gpu_memory_target_in_gb",
+      "preprocessor_name",
+      "plans_name",
+      "overwrite_target_spacing",
+      "suppress_transpose"
+    ],
+    "generate_data_identifier": [
+      "self",
+      "configuration_name"
+    ],
+    "determine_resampling": [
+      "self"
+    ],
+    "determine_segmentation_softmax_export_fn": [
+      "self"
+    ]
+  },
+  "move_plans_between_datasets": [
+    "source_dataset_name_or_id",
+    "target_dataset_name_or_id",
+    "source_plans_identifier",
+    "target_plans_identifier"
+  ],
+  "entry_point_move_plans_between_datasets": [],
+  "find_candidate_datasets": [
+    "dataset_id"
+  ],
+  "convert_id_to_dataset_name": [
+    "dataset_id"
+  ],
+  "convert_dataset_name_to_id": [
+    "dataset_name"
+  ],
+  "maybe_convert_to_dataset_name": [
+    "dataset_name_or_id"
+  ],
+  "recursive_find_python_class": [
+    "folder",
+    "class_name",
+    "current_module"
+  ],
+  "InitWeights_He": {
+    "__init__": [
+      "self",
+      "neg_slope"
+    ],
+    "__call__": [
+      "self",
+      "module"
+    ]
+  },
+  "get_identifiers_from_splitted_dataset_folder": [
+    "folder",
+    "file_ending"
+  ],
+  "create_paths_fn": [
+    "folder",
+    "files",
+    "file_ending",
+    "f"
+  ],
+  "create_lists_from_splitted_dataset_folder": [
+    "folder",
+    "file_ending",
+    "identifiers",
+    "num_processes"
+  ],
+  "get_filenames_of_train_images_and_targets": [
+    "raw_dataset_folder",
+    "dataset_json"
+  ],
+  "softmax_helper_dim0": [
+    "x"
+  ],
+  "softmax_helper_dim1": [
+    "x"
+  ],
+  "empty_cache": [
+    "device"
+  ],
+  "dummy_context": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "color_cycle": [],
+  "hex_to_rgb": [
+    "hex"
+  ],
+  "generate_overlay": [
+    "input_image",
+    "segmentation",
+    "mapping",
+    "color_cycle",
+    "overlay_intensity"
+  ],
+  "select_slice_to_plot": [
+    "image",
+    "segmentation"
+  ],
+  "select_slice_to_plot2": [
+    "image",
+    "segmentation"
+  ],
+  "plot_overlay": [
+    "image_file",
+    "segmentation_file",
+    "image_reader_writer",
+    "output_file",
+    "overlay_intensity"
+  ],
+  "plot_overlay_preprocessed": [
+    "dataset",
+    "k",
+    "output_folder",
+    "overlay_intensity",
+    "channel_idx"
+  ],
+  "multiprocessing_plot_overlay": [
+    "list_of_image_files",
+    "list_of_seg_files",
+    "image_reader_writer",
+    "list_of_output_files",
+    "overlay_intensity",
+    "num_processes"
+  ],
+  "multiprocessing_plot_overlay_preprocessed": [
+    "dataset",
+    "output_folder",
+    "overlay_intensity",
+    "num_processes",
+    "channel_idx"
+  ],
+  "generate_overlays_from_raw": [
+    "dataset_name_or_id",
+    "output_folder",
+    "num_processes",
+    "channel_idx",
+    "overlay_intensity"
+  ],
+  "generate_overlays_from_preprocessed": [
+    "dataset_name_or_id",
+    "output_folder",
+    "num_processes",
+    "channel_idx",
+    "configuration",
+    "plans_identifier",
+    "overlay_intensity"
+  ],
+  "entry_point_generate_overlay": [],
+  "get_allowed_n_proc_DA": [],
+  "collate_outputs": [
+    "outputs"
+  ],
+  "get_network_from_plans": [
+    "arch_class_name",
+    "arch_kwargs",
+    "arch_kwargs_req_import",
+    "input_channels",
+    "output_channels",
+    "allow_init",
+    "deep_supervision"
+  ],
+  "generate_crossval_split": [
+    "train_identifiers",
+    "seed",
+    "n_splits"
+  ],
+  "recursive_fix_for_json_export": [
+    "my_dict"
+  ],
+  "fix_types_iterable": [
+    "iterable",
+    "output_type"
+  ],
+  "convert_trainer_plans_config_to_identifier": [
+    "trainer_name",
+    "plans_identifier",
+    "configuration"
+  ],
+  "convert_identifier_to_trainer_plans_config": [
+    "identifier"
+  ],
+  "get_output_folder": [
+    "dataset_name_or_id",
+    "trainer_name",
+    "plans_identifier",
+    "configuration",
+    "fold"
+  ],
+  "parse_dataset_trainer_plans_configuration_from_path": [
+    "path"
+  ],
+  "get_ensemble_name": [
+    "model1_folder",
+    "model2_folder",
+    "folds"
+  ],
+  "get_ensemble_name_from_d_tr_c": [
+    "dataset",
+    "tr1",
+    "p1",
+    "c1",
+    "tr2",
+    "p2",
+    "c2",
+    "folds"
+  ],
+  "convert_ensemble_folder_to_model_identifiers_and_folds": [
+    "ensemble_folder"
+  ],
+  "folds_tuple_to_string": [
+    "folds"
+  ],
+  "folds_string_to_tuple": [
+    "folds_string"
+  ],
+  "check_workers_alive_and_busy": [
+    "export_pool",
+    "worker_list",
+    "results_list",
+    "allowed_num_queued"
+  ],
+  "print_if_rank0": [],
+  "AllGatherGrad": {
+    "forward": [
+      "ctx",
+      "tensor",
+      "group"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "ConfigurationManager": {
+    "__init__": [
+      "self",
+      "configuration_dict"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "data_identifier": [
+      "self"
+    ],
+    "preprocessor_name": [
+      "self"
+    ],
+    "preprocessor_class": [
+      "self"
+    ],
+    "batch_size": [
+      "self"
+    ],
+    "patch_size": [
+      "self"
+    ],
+    "median_image_size_in_voxels": [
+      "self"
+    ],
+    "spacing": [
+      "self"
+    ],
+    "normalization_schemes": [
+      "self"
+    ],
+    "use_mask_for_norm": [
+      "self"
+    ],
+    "network_arch_class_name": [
+      "self"
+    ],
+    "network_arch_init_kwargs": [
+      "self"
+    ],
+    "network_arch_init_kwargs_req_import": [
+      "self"
+    ],
+    "pool_op_kernel_sizes": [
+      "self"
+    ],
+    "resampling_fn_data": [
+      "self"
+    ],
+    "resampling_fn_probabilities": [
+      "self"
+    ],
+    "resampling_fn_seg": [
+      "self"
+    ],
+    "batch_dice": [
+      "self"
+    ],
+    "next_stage_names": [
+      "self"
+    ],
+    "previous_stage_name": [
+      "self"
+    ]
+  },
+  "PlansManager": {
+    "__init__": [
+      "self",
+      "plans_file_or_dict"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_internal_resolve_configuration_inheritance": [
+      "self",
+      "configuration_name",
+      "visited"
+    ],
+    "get_configuration": [
+      "self",
+      "configuration_name"
+    ],
+    "dataset_name": [
+      "self"
+    ],
+    "plans_name": [
+      "self"
+    ],
+    "original_median_spacing_after_transp": [
+      "self"
+    ],
+    "original_median_shape_after_transp": [
+      "self"
+    ],
+    "image_reader_writer_class": [
+      "self"
+    ],
+    "transpose_forward": [
+      "self"
+    ],
+    "transpose_backward": [
+      "self"
+    ],
+    "available_configurations": [
+      "self"
+    ],
+    "experiment_planner_class": [
+      "self"
+    ],
+    "experiment_planner_name": [
+      "self"
+    ],
+    "label_manager_class": [
+      "self"
+    ],
+    "get_label_manager": [
+      "self",
+      "dataset_json"
+    ],
+    "foreground_intensity_properties_per_channel": [
+      "self"
+    ]
+  },
+  "LabelManager": {
+    "__init__": [
+      "self",
+      "label_dict",
+      "regions_class_order",
+      "force_use_labels",
+      "inference_nonlin"
+    ],
+    "_sanity_check": [
+      "self",
+      "label_dict"
+    ],
+    "_get_all_labels": [
+      "self"
+    ],
+    "_get_regions": [
+      "self"
+    ],
+    "_determine_ignore_label": [
+      "self"
+    ],
+    "has_regions": [
+      "self"
+    ],
+    "has_ignore_label": [
+      "self"
+    ],
+    "all_regions": [
+      "self"
+    ],
+    "all_labels": [
+      "self"
+    ],
+    "ignore_label": [
+      "self"
+    ],
+    "apply_inference_nonlin": [
+      "self",
+      "logits"
+    ],
+    "convert_probabilities_to_segmentation": [
+      "self",
+      "predicted_probabilities"
+    ],
+    "convert_logits_to_segmentation": [
+      "self",
+      "predicted_logits"
+    ],
+    "revert_cropping_on_probabilities": [
+      "self",
+      "predicted_probabilities",
+      "bbox",
+      "original_shape"
+    ],
+    "filter_background": [
+      "classes_or_regions"
+    ],
+    "foreground_regions": [
+      "self"
+    ],
+    "foreground_labels": [
+      "self"
+    ],
+    "num_segmentation_heads": [
+      "self"
+    ]
+  },
+  "get_labelmanager_class_from_plans": [
+    "plans"
+  ],
+  "convert_labelmap_to_one_hot": [
+    "segmentation",
+    "all_labels",
+    "output_dtype"
+  ],
+  "determine_num_input_channels": [
+    "plans_manager",
+    "configuration_or_config_manager",
+    "dataset_json"
+  ],
+  "read_csv": [
+    "csv_file"
+  ],
+  "convert_mnms": [
+    "src_data_folder",
+    "csv_file_name",
+    "dataset_id"
+  ],
+  "save_cardiac_phases": [
+    "patients",
+    "patient_info",
+    "out_dir",
+    "labels_dir"
+  ],
+  "save_extracted_nifti_slice": [
+    "image",
+    "ed_frame",
+    "es_frame",
+    "out_dir",
+    "patient"
+  ],
+  "create_custom_splits": [
+    "src_data_folder",
+    "csv_file",
+    "dataset_id",
+    "num_val_patients"
+  ],
+  "get_vendor_split": [
+    "patients",
+    "num_val_patients"
+  ],
+  "convert_amos_task2": [
+    "amos_base_dir",
+    "nnunet_dataset_id"
+  ],
+  "convert_kits2023": [
+    "kits_base_dir",
+    "nnunet_dataset_id"
+  ],
+  "generate_dataset_json": [
+    "output_folder",
+    "channel_names",
+    "labels",
+    "num_training_cases",
+    "file_ending",
+    "citation",
+    "regions_class_order",
+    "dataset_name",
+    "reference",
+    "release",
+    "description",
+    "overwrite_image_reader_writer",
+    "license",
+    "converted_by"
+  ],
+  "split_4d_nifti": [
+    "filename",
+    "output_folder"
+  ],
+  "convert_msd_dataset": [
+    "source_folder",
+    "overwrite_target_id",
+    "num_processes"
+  ],
+  "entry_point": [],
+  "copy_BraTS_segmentation_and_convert_labels_to_nnUNet": [
+    "in_file",
+    "out_file"
+  ],
+  "convert_labels_back_to_BraTS": [
+    "seg"
+  ],
+  "load_convert_labels_back_to_BraTS": [
+    "filename",
+    "input_folder",
+    "output_folder"
+  ],
+  "convert_folder_with_preds_back_to_BraTS_labeling_convention": [
+    "input_folder",
+    "output_folder",
+    "num_processes"
+  ],
+  "mapping_DS119": [],
+  "mapping_DS120": [],
+  "mapping_DS121": [],
+  "load_json": [
+    "json_file"
+  ],
+  "write_json": [
+    "json_file",
+    "data",
+    "indent"
+  ],
+  "image_to_nifi": [
+    "input_path",
+    "output_path"
+  ],
+  "label_mapping": [
+    "input_path",
+    "output_path",
+    "mapping"
+  ],
+  "process_images": [
+    "files",
+    "img_dir_in",
+    "img_dir_out",
+    "n_processes"
+  ],
+  "process_labels": [
+    "files",
+    "lbl_dir_in",
+    "lbl_dir_out",
+    "mapping",
+    "n_processes"
+  ],
+  "process_ds": [
+    "root",
+    "input_ds",
+    "output_ds",
+    "mapping",
+    "image_link"
+  ],
+  "convert_amos_task1": [
+    "amos_base_dir",
+    "nnunet_dataset_id"
+  ],
+  "load_and_convert_case": [
+    "input_image",
+    "input_seg",
+    "output_image",
+    "output_seg",
+    "min_component_size"
+  ],
+  "copy_files": [
+    "src_data_dir",
+    "src_test_dir",
+    "train_dir",
+    "labels_dir",
+    "test_dir"
+  ],
+  "convert_emidec": [
+    "src_data_dir",
+    "src_test_dir",
+    "dataset_id"
+  ],
+  "make_out_dirs": [
+    "dataset_id",
+    "task_name"
+  ],
+  "create_ACDC_split": [
+    "labelsTr_folder",
+    "seed"
+  ],
+  "convert_acdc": [
+    "src_data_folder",
+    "dataset_id"
+  ],
+  "convert_autopet": [
+    "autopet_base_dir",
+    "nnunet_dataset_id"
+  ],
+  "convert": [
+    "source_folder",
+    "target_dataset_name"
+  ],
+  "convert_entry_point": [],
+  "sparsify_segmentation": [
+    "seg",
+    "label_manager",
+    "percent_of_slices"
+  ],
+  "label_or_region_to_key": [
+    "label_or_region"
+  ],
+  "key_to_label_or_region": [
+    "key"
+  ],
+  "save_summary_json": [
+    "results",
+    "output_file"
+  ],
+  "load_summary_json": [
+    "filename"
+  ],
+  "labels_to_list_of_regions": [
+    "labels"
+  ],
+  "region_or_label_to_mask": [
+    "segmentation",
+    "region_or_label"
+  ],
+  "compute_tp_fp_fn_tn": [
+    "mask_ref",
+    "mask_pred",
+    "ignore_mask"
+  ],
+  "compute_metrics": [
+    "reference_file",
+    "prediction_file",
+    "image_reader_writer",
+    "labels_or_regions",
+    "ignore_label"
+  ],
+  "compute_metrics_on_folder": [
+    "folder_ref",
+    "folder_pred",
+    "output_file",
+    "image_reader_writer",
+    "file_ending",
+    "regions_or_labels",
+    "ignore_label",
+    "num_processes",
+    "chill"
+  ],
+  "compute_metrics_on_folder2": [
+    "folder_ref",
+    "folder_pred",
+    "dataset_json_file",
+    "plans_file",
+    "output_file",
+    "num_processes",
+    "chill"
+  ],
+  "compute_metrics_on_folder_simple": [
+    "folder_ref",
+    "folder_pred",
+    "labels",
+    "output_file",
+    "num_processes",
+    "ignore_label",
+    "chill"
+  ],
+  "evaluate_folder_entry_point": [],
+  "evaluate_simple_entry_point": [],
+  "accumulate_cv_results": [
+    "trained_model_folder",
+    "merged_output_folder",
+    "folds",
+    "num_processes",
+    "overwrite"
+  ],
+  "default_trained_models": [],
+  "filter_available_models": [
+    "model_dict",
+    "dataset_name_or_id"
+  ],
+  "generate_inference_command": [
+    "dataset_name_or_id",
+    "configuration_name",
+    "plans_identifier",
+    "trainer_name",
+    "folds",
+    "folder_with_segs_from_prev_stage",
+    "input_folder",
+    "output_folder",
+    "save_npz"
+  ],
+  "find_best_configuration": [
+    "dataset_name_or_id",
+    "allowed_trained_models",
+    "allow_ensembling",
+    "num_processes",
+    "overwrite",
+    "folds",
+    "strict"
+  ],
+  "print_inference_instructions": [
+    "inference_info_dict",
+    "instructions_file"
+  ],
+  "dumb_trainer_config_plans_to_trained_models_dict": [
+    "trainers",
+    "configs",
+    "plans"
+  ],
+  "find_best_configuration_entry_point": [],
+  "accumulate_crossval_results_entry_point": [],
+  "install_model_from_zip_file": [
+    "zip_file"
+  ],
+  "export_pretrained_model": [
+    "dataset_name_or_id",
+    "output_file",
+    "configurations",
+    "trainer",
+    "plans_identifier",
+    "folds",
+    "strict",
+    "save_checkpoints",
+    "export_crossval_predictions"
+  ],
+  "print_license_warning": [],
+  "download_by_url": [],
+  "install_from_zip_entry_point": [],
+  "export_pretrained_model_entry": [],
+  "download_and_install_from_url": [
+    "url"
+  ],
+  "download_file": [
+    "url",
+    "local_filename",
+    "chunk_size"
+  ],
+  "compute_gaussian": [
+    "tile_size",
+    "sigma_scale",
+    "value_scaling_factor",
+    "dtype",
+    "device"
+  ],
+  "compute_steps_for_sliding_window": [
+    "image_size",
+    "tile_size",
+    "tile_step_size"
+  ],
+  "preprocess_fromfiles_save_to_queue": [
+    "list_of_lists",
+    "list_of_segs_from_prev_stage_files",
+    "output_filenames_truncated",
+    "plans_manager",
+    "dataset_json",
+    "configuration_manager",
+    "target_queue",
+    "done_event",
+    "abort_event",
+    "verbose"
+  ],
+  "preprocessing_iterator_fromfiles": [
+    "list_of_lists",
+    "list_of_segs_from_prev_stage_files",
+    "output_filenames_truncated",
+    "plans_manager",
+    "dataset_json",
+    "configuration_manager",
+    "num_processes",
+    "pin_memory",
+    "verbose"
+  ],
+  "PreprocessAdapter": {
+    "__init__": [
+      "self",
+      "list_of_lists",
+      "list_of_segs_from_prev_stage_files",
+      "preprocessor",
+      "output_filenames_truncated",
+      "plans_manager",
+      "dataset_json",
+      "configuration_manager",
+      "num_threads_in_multithreaded"
+    ],
+    "generate_train_batch": [
+      "self"
+    ]
+  },
+  "PreprocessAdapterFromNpy": {
+    "__init__": [
+      "self",
+      "list_of_images",
+      "list_of_segs_from_prev_stage",
+      "list_of_image_properties",
+      "truncated_ofnames",
+      "plans_manager",
+      "dataset_json",
+      "configuration_manager",
+      "num_threads_in_multithreaded",
+      "verbose"
+    ],
+    "generate_train_batch": [
+      "self"
+    ]
+  },
+  "preprocess_fromnpy_save_to_queue": [
+    "list_of_images",
+    "list_of_segs_from_prev_stage",
+    "list_of_image_properties",
+    "truncated_ofnames",
+    "plans_manager",
+    "dataset_json",
+    "configuration_manager",
+    "target_queue",
+    "done_event",
+    "abort_event",
+    "verbose"
+  ],
+  "preprocessing_iterator_fromnpy": [
+    "list_of_images",
+    "list_of_segs_from_prev_stage",
+    "list_of_image_properties",
+    "truncated_ofnames",
+    "plans_manager",
+    "dataset_json",
+    "configuration_manager",
+    "num_processes",
+    "pin_memory",
+    "verbose"
+  ],
+  "convert_predicted_logits_to_segmentation_with_correct_shape": [
+    "predicted_logits",
+    "plans_manager",
+    "configuration_manager",
+    "label_manager",
+    "properties_dict",
+    "return_probabilities",
+    "num_threads_torch"
+  ],
+  "export_prediction_from_logits": [
+    "predicted_array_or_file",
+    "properties_dict",
+    "configuration_manager",
+    "plans_manager",
+    "dataset_json_dict_or_file",
+    "output_file_truncated",
+    "save_probabilities",
+    "num_threads_torch"
+  ],
+  "resample_and_save": [
+    "predicted",
+    "target_shape",
+    "output_file",
+    "plans_manager",
+    "configuration_manager",
+    "properties_dict",
+    "dataset_json_dict_or_file",
+    "num_threads_torch",
+    "dataset_class"
+  ],
+  "export_prediction_from_logits_singleFiles": [
+    "predicted_array_or_file",
+    "properties_dict",
+    "configuration_manager",
+    "plans_manager",
+    "dataset_json_dict_or_file",
+    "output_file_truncated",
+    "save_probabilities"
+  ],
+  "JHUPredictor": {
+    "predict_from_data_iterator": [
+      "self",
+      "data_iterator",
+      "save_probabilities",
+      "num_processes_segmentation_export"
+    ]
+  },
+  "nnUNetPredictor": {
+    "__init__": [
+      "self",
+      "tile_step_size",
+      "use_gaussian",
+      "use_mirroring",
+      "perform_everything_on_device",
+      "device",
+      "verbose",
+      "verbose_preprocessing",
+      "allow_tqdm"
+    ],
+    "initialize_from_trained_model_folder": [
+      "self",
+      "model_training_output_dir",
+      "use_folds",
+      "checkpoint_name"
+    ],
+    "manual_initialization": [
+      "self",
+      "network",
+      "plans_manager",
+      "configuration_manager",
+      "parameters",
+      "dataset_json",
+      "trainer_name",
+      "inference_allowed_mirroring_axes"
+    ],
+    "auto_detect_available_folds": [
+      "model_training_output_dir",
+      "checkpoint_name"
+    ],
+    "_manage_input_and_output_lists": [
+      "self",
+      "list_of_lists_or_source_folder",
+      "output_folder_or_list_of_truncated_output_files",
+      "folder_with_segs_from_prev_stage",
+      "overwrite",
+      "part_id",
+      "num_parts",
+      "save_probabilities"
+    ],
+    "predict_from_files": [
+      "self",
+      "list_of_lists_or_source_folder",
+      "output_folder_or_list_of_truncated_output_files",
+      "save_probabilities",
+      "overwrite",
+      "num_processes_preprocessing",
+      "num_processes_segmentation_export",
+      "folder_with_segs_from_prev_stage",
+      "num_parts",
+      "part_id"
+    ],
+    "_internal_get_data_iterator_from_lists_of_filenames": [
+      "self",
+      "input_list_of_lists",
+      "seg_from_prev_stage_files",
+      "output_filenames_truncated",
+      "num_processes"
+    ],
+    "get_data_iterator_from_raw_npy_data": [
+      "self",
+      "image_or_list_of_images",
+      "segs_from_prev_stage_or_list_of_segs_from_prev_stage",
+      "properties_or_list_of_properties",
+      "truncated_ofname",
+      "num_processes"
+    ],
+    "predict_from_list_of_npy_arrays": [
+      "self",
+      "image_or_list_of_images",
+      "segs_from_prev_stage_or_list_of_segs_from_prev_stage",
+      "properties_or_list_of_properties",
+      "truncated_ofname",
+      "num_processes",
+      "save_probabilities",
+      "num_processes_segmentation_export"
+    ],
+    "predict_from_data_iterator": [
+      "self",
+      "data_iterator",
+      "save_probabilities",
+      "num_processes_segmentation_export"
+    ],
+    "predict_single_npy_array": [
+      "self",
+      "input_image",
+      "image_properties",
+      "segmentation_previous_stage",
+      "output_file_truncated",
+      "save_or_return_probabilities"
+    ],
+    "predict_logits_from_preprocessed_data": [
+      "self",
+      "data"
+    ],
+    "_internal_get_sliding_window_slicers": [
+      "self",
+      "image_size"
+    ],
+    "_internal_maybe_mirror_and_predict": [
+      "self",
+      "x"
+    ],
+    "_internal_predict_sliding_window_return_logits": [
+      "self",
+      "data",
+      "slicers",
+      "do_on_device"
+    ],
+    "predict_sliding_window_return_logits": [
+      "self",
+      "input_image"
+    ],
+    "predict_from_files_sequential": [
+      "self",
+      "list_of_lists_or_source_folder",
+      "output_folder_or_list_of_truncated_output_files",
+      "save_probabilities",
+      "overwrite",
+      "folder_with_segs_from_prev_stage"
+    ]
+  },
+  "_getDefaultValue": [
+    "env",
+    "dtype",
+    "default"
+  ],
+  "predict_entry_point_modelfolder": [],
+  "predict_entry_point": [],
+  "channel_name_to_normalization_mapping": [],
+  "get_normalization_scheme": [
+    "channel_name"
+  ],
+  "ImageNormalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "__init__": [
+      "self",
+      "use_mask_for_norm",
+      "intensityproperties",
+      "target_dtype"
+    ],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "ZScoreNormalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "CTNormalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "NoNormalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "RescaleTo01Normalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "RGBTo01Normalization": {
+    "leaves_pixels_outside_mask_at_zero_if_use_mask_for_norm_is_true": [],
+    "run": [
+      "self",
+      "image",
+      "seg"
+    ]
+  },
+  "DefaultPreprocessor": {
+    "__init__": [
+      "self",
+      "verbose"
+    ],
+    "run_case_npy": [
+      "self",
+      "data",
+      "seg",
+      "properties",
+      "plans_manager",
+      "configuration_manager",
+      "dataset_json"
+    ],
+    "run_case": [
+      "self",
+      "image_files",
+      "seg_file",
+      "plans_manager",
+      "configuration_manager",
+      "dataset_json"
+    ],
+    "run_case_save": [
+      "self",
+      "output_filename_truncated",
+      "image_files",
+      "seg_file",
+      "plans_manager",
+      "configuration_manager",
+      "dataset_json"
+    ],
+    "_sample_foreground_locations": [
+      "seg",
+      "classes_or_regions",
+      "seed",
+      "verbose",
+      "min_num_samples",
+      "min_percent_coverage"
+    ],
+    "_normalize": [
+      "self",
+      "data",
+      "seg",
+      "configuration_manager",
+      "foreground_intensity_properties_per_channel"
+    ],
+    "run": [
+      "self",
+      "dataset_name_or_id",
+      "configuration_name",
+      "plans_identifier",
+      "num_processes"
+    ],
+    "modify_seg_fn": [
+      "self",
+      "seg",
+      "plans_manager",
+      "dataset_json",
+      "configuration_manager"
+    ]
+  },
+  "example_test_case_preprocessing": [],
+  "_verify_class_locations": [
+    "shape",
+    "outfile",
+    "class_locs"
+  ],
+  "no_resampling_hack": [
+    "data",
+    "new_shape",
+    "current_spacing",
+    "new_spacing"
+  ],
+  "resample_torch_simple": [
+    "data",
+    "new_shape",
+    "is_seg",
+    "num_threads",
+    "device",
+    "memefficient_seg_resampling",
+    "mode"
+  ],
+  "resample_torch_fornnunet": [
+    "data",
+    "new_shape",
+    "current_spacing",
+    "new_spacing",
+    "is_seg",
+    "num_threads",
+    "device",
+    "memefficient_seg_resampling",
+    "force_separate_z",
+    "separate_z_anisotropy_threshold",
+    "mode",
+    "aniso_axis_mode"
+  ],
+  "recursive_find_resampling_fn_by_name": [
+    "resampling_fn"
+  ],
+  "get_do_separate_z": [
+    "spacing",
+    "anisotropy_threshold"
+  ],
+  "get_lowres_axis": [
+    "new_spacing"
+  ],
+  "compute_new_shape": [
+    "old_shape",
+    "old_spacing",
+    "new_spacing"
+  ],
+  "determine_do_sep_z_and_axis": [
+    "force_separate_z",
+    "current_spacing",
+    "new_spacing",
+    "separate_z_anisotropy_threshold"
+  ],
+  "resample_data_or_seg_to_spacing": [
+    "data",
+    "current_spacing",
+    "new_spacing",
+    "is_seg",
+    "order",
+    "order_z",
+    "force_separate_z",
+    "separate_z_anisotropy_threshold"
+  ],
+  "resample_data_or_seg_to_shape": [
+    "data",
+    "new_shape",
+    "current_spacing",
+    "new_spacing",
+    "is_seg",
+    "order",
+    "order_z",
+    "force_separate_z",
+    "separate_z_anisotropy_threshold"
+  ],
+  "resample_data_or_seg": [
+    "data",
+    "new_shape",
+    "is_seg",
+    "axis",
+    "order",
+    "do_separate_z",
+    "order_z",
+    "dtype_out"
+  ],
+  "create_nonzero_mask": [
+    "data"
+  ],
+  "crop_to_nonzero": [
+    "data",
+    "seg",
+    "nonzero_label"
+  ],
+  "load_pretrained_weights": [
+    "network",
+    "fname",
+    "verbose"
+  ],
+  "find_free_network_port": [],
+  "get_trainer_from_args": [
+    "dataset_name_or_id",
+    "configuration",
+    "fold",
+    "trainer_name",
+    "plans_identifier",
+    "device"
+  ],
+  "maybe_load_checkpoint": [
+    "nnunet_trainer",
+    "continue_training",
+    "validation_only",
+    "pretrained_weights_file"
+  ],
+  "setup_ddp": [
+    "rank",
+    "world_size"
+  ],
+  "cleanup_ddp": [],
+  "run_ddp": [
+    "rank",
+    "dataset_name_or_id",
+    "configuration",
+    "fold",
+    "tr",
+    "p",
+    "disable_checkpointing",
+    "c",
+    "val",
+    "pretrained_weights",
+    "npz",
+    "val_with_best",
+    "world_size"
+  ],
+  "run_training": [
+    "dataset_name_or_id",
+    "configuration",
+    "fold",
+    "trainer_class_name",
+    "plans_identifier",
+    "pretrained_weights",
+    "num_gpus",
+    "export_validation_probabilities",
+    "continue_training",
+    "only_run_validation",
+    "disable_checkpointing",
+    "val_with_best",
+    "device"
+  ],
+  "run_training_entry": []
+}

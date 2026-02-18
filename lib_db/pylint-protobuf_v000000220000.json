@@ -1,0 +1,1456 @@
+{
+  "test_typeerror_conformance": [
+    "typenames",
+    "py_valid",
+    "py_invalid",
+    "proto_builder",
+    "module_builder",
+    "linter_factory"
+  ],
+  "truncated_pb2": [
+    "module_builder"
+  ],
+  "test_invalid_module_no_syntax_error": [
+    "linter_factory",
+    "truncated_pb2"
+  ],
+  "using_truncated": [
+    "module_builder",
+    "truncated_pb2"
+  ],
+  "test_using_invalid_module_no_syntax_error": [
+    "linter_factory",
+    "using_truncated"
+  ],
+  "non_protobuf": [
+    "module_builder"
+  ],
+  "test_regular_python_code": [
+    "linter_factory",
+    "non_protobuf"
+  ],
+  "oneof_scalar_pb2": [
+    "proto_builder"
+  ],
+  "oneof_composite_pb2": [
+    "proto_builder"
+  ],
+  "TestProtobufOneofFields": {
+    "CHECKER_CLASS": [],
+    "test_no_oneof_warnings": [
+      "self",
+      "oneof_scalar_pb2"
+    ],
+    "test_assignment_to_composite_field": [
+      "self",
+      "oneof_composite_pb2"
+    ],
+    "test_scalar_assignment_to_composite_field": [
+      "self",
+      "oneof_composite_pb2"
+    ],
+    "test_composite_field_warnings": [
+      "self",
+      "oneof_composite_pb2"
+    ]
+  },
+  "composite_warnings_mod": [
+    "oneof_composite_pb2",
+    "module_builder"
+  ],
+  "test_no_E1101_on_oneof_fields": [
+    "composite_warnings_mod",
+    "linter_factory"
+  ],
+  "child_mod": [
+    "proto_builder",
+    "request"
+  ],
+  "parent_mod": [
+    "proto_builder",
+    "child_mod"
+  ],
+  "wkt_mod": [
+    "proto_builder"
+  ],
+  "TestImportedProtoDefinitions": {
+    "CHECKER_CLASS": [],
+    "test_issue9_imported_message_no_attribute_error": [
+      "self",
+      "parent_mod"
+    ],
+    "test_issue10_imported_message_warns": [
+      "self",
+      "parent_mod"
+    ],
+    "test_issue18_renamed_from_import_no_assertion_error": [
+      "self",
+      "parent_mod"
+    ],
+    "test_imports_of_wellknown_types": [
+      "self",
+      "wkt_mod"
+    ]
+  },
+  "test_missing_member_on_module_should_only_raise_nomember": [
+    "child_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "kwarg_mod": [
+    "proto_builder"
+  ],
+  "no_warnings_mod": [
+    "kwarg_mod",
+    "module_builder"
+  ],
+  "test_no_E1123_on_expected_kwargs": [
+    "no_warnings_mod",
+    "linter_factory"
+  ],
+  "warnings_mod": [
+    "kwarg_mod",
+    "module_builder"
+  ],
+  "test_E1123_on_unexpected_kwargs": [
+    "warnings_mod",
+    "linter_factory"
+  ],
+  "test_warn_typeerror_on_positional_args": [
+    "kwarg_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_warn_starargs_no_posargs": [
+    "kwarg_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "unknown_kwarg_mod": [
+    "kwarg_mod",
+    "module_builder"
+  ],
+  "no_transform": [],
+  "test_without_checker_has_false_negative": [
+    "unknown_kwarg_mod",
+    "linter_factory"
+  ],
+  "test_with_checker_fixes_false_negative": [
+    "unknown_kwarg_mod",
+    "linter_factory"
+  ],
+  "TestReservedFields": {
+    "CHECKER_CLASS": [],
+    "test_reserved_fields_should_appear_undefined": [
+      "self",
+      "proto_builder"
+    ]
+  },
+  "keyword_pb2": [
+    "proto_builder"
+  ],
+  "test_issue46_field_matching_keyword_should_not_error": [
+    "keyword_pb2",
+    "module_builder",
+    "linter_factory"
+  ],
+  "map_mod": [
+    "proto_builder"
+  ],
+  "test_membership_on_map_types": [
+    "warnings_mod",
+    "linter_factory"
+  ],
+  "motorcycle_mod": [
+    "proto_builder"
+  ],
+  "issue26_mod": [
+    "motorcycle_mod",
+    "module_builder"
+  ],
+  "EXPECTED_MSGS": [],
+  "test_no_E1101_on_returned_values": [
+    "issue26_mod",
+    "linter_factory"
+  ],
+  "error_on_missing_modules": [
+    "request"
+  ],
+  "_safe_name": [
+    "request"
+  ],
+  "proto_builder": [
+    "tmpdir",
+    "monkeypatch",
+    "request"
+  ],
+  "module_builder": [
+    "tmpdir",
+    "monkeypatch"
+  ],
+  "linter_factory": [],
+  "SAMPLE_WKTS": [],
+  "TestWellKnownTypes": {
+    "CHECKER_CLASS": [],
+    "test_import_wkt_no_warnings": [
+      "self",
+      "module",
+      "wkt",
+      "fields",
+      "error_on_missing_modules"
+    ],
+    "test_import_wkt_as_module_no_warnings": [
+      "self",
+      "module",
+      "wkt",
+      "fields",
+      "error_on_missing_modules"
+    ],
+    "test_wkt_should_still_warn": [
+      "self",
+      "module",
+      "wkt",
+      "_",
+      "error_on_missing_modules"
+    ],
+    "test_wkt_kwargs_should_still_warn": [
+      "self",
+      "module",
+      "wkt",
+      "_",
+      "error_on_missing_modules"
+    ]
+  },
+  "mod_template": [
+    "module_builder"
+  ],
+  "test_issue37_wkt_no_E1101": [
+    "module",
+    "wkt",
+    "fields",
+    "mod_template",
+    "linter_factory"
+  ],
+  "test_issue45_nested_msg_acts_like_wkt": [
+    "proto_builder",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue45_forward_decl_of_wkt_acts_like_wkt": [
+    "proto_builder",
+    "module_builder",
+    "linter_factory"
+  ],
+  "enum_mod": [
+    "proto_builder"
+  ],
+  "nested_enum_mod": [
+    "proto_builder"
+  ],
+  "package_nested_enum_mod": [
+    "proto_builder"
+  ],
+  "innerclass_dict_mod": [
+    "proto_builder"
+  ],
+  "TestEnumDefinitions": {
+    "CHECKER_CLASS": [],
+    "test_import_enum_types_no_errors": [
+      "self",
+      "enum_mod"
+    ],
+    "test_import_enum_values_no_errors": [
+      "self",
+      "enum_mod"
+    ],
+    "test_import_enum_attributes_no_errors": [
+      "self",
+      "enum_mod"
+    ],
+    "test_import_enum_missing_attributes_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_import_enum_by_value_no_errors": [
+      "self",
+      "enum_mod"
+    ],
+    "test_star_import_enum_no_errors": [
+      "self",
+      "enum_mod"
+    ],
+    "test_star_import_enum_should_warn": [
+      "self",
+      "enum_mod"
+    ],
+    "test_import_enum_missing_attribute_by_value_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_missing_value_inference_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_missing_value_uniferable_no_error": [
+      "self",
+      "enum_mod"
+    ],
+    "test_missing_attribute_by_value_indirect_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_looks_like_enum_value_should_not_warn": [
+      "self",
+      "enum_mod"
+    ],
+    "test_missing_value_on_nested_enum_warns": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_issue16_nested_enum_definition_direct_reference_no_errors": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_issue16_nested_enum_definition_no_errors": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_fixme_issue16_nested_enum_definition_no_errors": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_issue16_package_nested_enum_definition_warns": [
+      "self",
+      "package_nested_enum_mod"
+    ],
+    "test_issue16_nested_enum_definition_warns": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_issue21_nested_enum_annassign": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_issue21_missing_field_on_nested_enum": [
+      "self",
+      "nested_enum_mod"
+    ],
+    "test_nested_enum_dict": [
+      "self",
+      "innerclass_dict_mod"
+    ],
+    "test_issue31_name_from_value_no_warnings": [
+      "self",
+      "enum_mod"
+    ],
+    "test_name_from_invalid_value_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_names_are_not_values": [
+      "self",
+      "enum_mod"
+    ],
+    "test_name_from_inferable_warns": [
+      "self",
+      "enum_mod"
+    ],
+    "test_name_from_uninferable_no_warn": [
+      "self",
+      "enum_mod"
+    ],
+    "test_enums_do_not_have_message_fields": [
+      "self",
+      "enum_mod"
+    ],
+    "test_messages_do_not_have_enum_fields": [
+      "self",
+      "nested_enum_mod"
+    ]
+  },
+  "test_issue16_toplevel_enum": [
+    "nested_enum_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue16_missing_toplevel_enum": [
+    "request",
+    "nested_enum_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue16_package_missing_toplevel_enum": [
+    "package_nested_enum_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "nested_mod": [
+    "proto_builder"
+  ],
+  "nested_plus_enum_mod": [
+    "proto_builder"
+  ],
+  "TestNestedMessages": {
+    "CHECKER_CLASS": [],
+    "test_nested_message_definition_does_not_warn": [
+      "self",
+      "nested_mod"
+    ],
+    "test_nested_message_with_unrelated_enum_does_not_warn": [
+      "self",
+      "nested_plus_enum_mod"
+    ]
+  },
+  "package_mod": [
+    "proto_builder"
+  ],
+  "issue19_mod": [
+    "package_mod",
+    "module_builder"
+  ],
+  "test_no_E1101_on_modules_within_packages": [
+    "issue19_mod",
+    "linter_factory"
+  ],
+  "fake_pb2": [
+    "proto_builder"
+  ],
+  "first_alias": [
+    "proto_builder"
+  ],
+  "second_alias": [
+    "proto_builder"
+  ],
+  "TestNestedScopes": {
+    "CHECKER_CLASS": [],
+    "test_many_imports_no_aliasing": [
+      "self",
+      "first_alias",
+      "second_alias"
+    ],
+    "test_many_imports_with_aliasing": [
+      "self",
+      "first_alias",
+      "second_alias"
+    ],
+    "test_aliasing_by_inner_class_does_not_warn": [
+      "self",
+      "fake_pb2",
+      "error_on_missing_modules"
+    ],
+    "test_class_scope_closure_restores_warnings": [
+      "self",
+      "fake_pb2",
+      "error_on_missing_modules"
+    ],
+    "test_alias_by_function_scope_does_not_warn": [
+      "self",
+      "fake_pb2",
+      "error_on_missing_modules"
+    ],
+    "test_function_scope_closure_restores_warnings": [
+      "self",
+      "fake_pb2",
+      "error_on_missing_modules"
+    ]
+  },
+  "complexfield_pb2": [
+    "proto_builder"
+  ],
+  "innerclass_pb2": [
+    "proto_builder"
+  ],
+  "extern_pb2": [
+    "proto_builder"
+  ],
+  "mutual_pb2": [
+    "proto_builder"
+  ],
+  "double_pb2": [
+    "proto_builder"
+  ],
+  "no_package_pb2": [
+    "proto_builder"
+  ],
+  "TestComplexMessageDefinitions": {
+    "CHECKER_CLASS": [],
+    "test_complex_field": [
+      "self",
+      "complexfield_pb2"
+    ],
+    "test_complex_field_no_warnings": [
+      "self",
+      "complexfield_pb2"
+    ],
+    "test_issue12_field_defaults_no_errors": [
+      "self",
+      "complexfield_pb2"
+    ],
+    "test_inner_class_no_warnings": [
+      "self",
+      "innerclass_pb2"
+    ],
+    "test_inner_class_no_assignment": [
+      "self",
+      "innerclass_pb2"
+    ],
+    "test_inner_class_warns": [
+      "self",
+      "innerclass_pb2"
+    ],
+    "test_mutually_recursive_warns": [
+      "self",
+      "mutual_pb2"
+    ],
+    "test_external_nested_class_warns": [
+      "self",
+      "extern_pb2"
+    ],
+    "test_double_nested_class_warns": [
+      "self",
+      "double_pb2"
+    ],
+    "test_no_toplevel_package_no_error": [
+      "self",
+      "no_package_pb2"
+    ]
+  },
+  "proto2_example": [
+    "proto_builder"
+  ],
+  "TestMessageApiProto2": {
+    "CHECKER_CLASS": [],
+    "test_hasfield": [
+      "self",
+      "field",
+      "field_to_check",
+      "message_id",
+      "message_args",
+      "proto2_example"
+    ],
+    "test_clearfield": [
+      "self",
+      "field",
+      "field_to_check",
+      "message_id",
+      "message_args",
+      "proto2_example"
+    ]
+  },
+  "proto3_example": [
+    "proto_builder",
+    "request"
+  ],
+  "TestMessageApiProto3": {
+    "CHECKER_CLASS": [],
+    "test_hasfield": [
+      "self",
+      "field",
+      "field_to_check",
+      "message_id",
+      "message_args",
+      "proto3_example"
+    ],
+    "test_clearfield": [
+      "self",
+      "field",
+      "field_to_check",
+      "message_id",
+      "message_args",
+      "proto3_example"
+    ]
+  },
+  "test_inline_proto_compilation": [
+    "proto_builder"
+  ],
+  "foo_mod": [
+    "proto_builder"
+  ],
+  "TestAutoBuilder": {
+    "CHECKER_CLASS": [],
+    "test_missing_field": [
+      "self",
+      "foo_mod"
+    ]
+  },
+  "TestGroupFields": {
+    "CHECKER_CLASS": [],
+    "test_nonrepeated_groups_are_like_nested_messages": [
+      "self",
+      "proto_builder"
+    ],
+    "test_repeated_groups_are_like_repeated_messages": [
+      "self",
+      "proto_builder"
+    ]
+  },
+  "make_message": [
+    "message",
+    "node",
+    "target",
+    "attr"
+  ],
+  "CheckerTestCase": {
+    "assert_no_messages": [
+      "self",
+      "node"
+    ],
+    "assert_adds_messages": [
+      "self",
+      "node"
+    ],
+    "extract_node": [
+      "source"
+    ],
+    "make_message": [
+      "self",
+      "msg_id",
+      "node",
+      "args"
+    ],
+    "undefined_attribute_msg": [],
+    "enum_value_msg": [],
+    "type_error_msg": [],
+    "no_posargs_msg": [],
+    "no_assignment_msg": [],
+    "no_repeated_membership_msg": [],
+    "no_proto3_membership_msg": [],
+    "wrong_extension_scope_msg": []
+  },
+  "inner_mod": [
+    "proto_builder"
+  ],
+  "outer_mod": [
+    "inner_mod",
+    "module_builder"
+  ],
+  "TestReexportedNames": {
+    "CHECKER_CLASS": [],
+    "test_reexported_protobuf_message_definition_warns": [
+      "self",
+      "outer_mod"
+    ]
+  },
+  "test_issue51": [],
+  "person_pb2": [
+    "proto_builder"
+  ],
+  "TestSimpleTypeError": {
+    "CHECKER_CLASS": [],
+    "test_inferred_assignattr_warns": [
+      "self",
+      "person_pb2"
+    ],
+    "test_uninferable_assignattr_no_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue40_type_constructor_warns": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue40_float_constructor_warns": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue40_int_constructor_no_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue40_int_from_float_warns": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue41_float_from_float_no_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue41_float_from_int_no_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue41_float_from_int_constructor_no_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue42_kwargs_none_should_not_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_issue42_assignattr_none_should_warn": [
+      "self",
+      "person_pb2"
+    ]
+  },
+  "typeerror_mod": [
+    "person_pb2",
+    "module_builder"
+  ],
+  "test_E5903_on_scalar_assignment": [
+    "typeerror_mod",
+    "linter_factory"
+  ],
+  "typeerror_kwargs_mod": [
+    "person_pb2",
+    "module_builder"
+  ],
+  "test_multiple_E5903_on_same_line": [
+    "typeerror_kwargs_mod",
+    "linter_factory"
+  ],
+  "composite_pb2": [
+    "proto_builder"
+  ],
+  "composite_kwarg_mod": [
+    "composite_pb2",
+    "module_builder"
+  ],
+  "test_no_warnings_on_composite_kwarg": [
+    "composite_kwarg_mod",
+    "linter_factory"
+  ],
+  "composite_bad_kwarg_mod": [
+    "composite_pb2",
+    "module_builder"
+  ],
+  "test_warnings_on_composite_kwarg": [
+    "composite_bad_kwarg_mod",
+    "linter_factory"
+  ],
+  "composite_kwarg_with_bad_composite_mod": [
+    "composite_pb2",
+    "module_builder"
+  ],
+  "test_warnings_on_mismatched_composite_kwarg": [
+    "composite_kwarg_with_bad_composite_mod",
+    "linter_factory"
+  ],
+  "scalar_bad_kwarg_mod": [
+    "composite_pb2",
+    "module_builder"
+  ],
+  "test_warnings_of_composite_on_scalar_kwarg": [
+    "scalar_bad_kwarg_mod",
+    "linter_factory"
+  ],
+  "test_issue40_no_warnings": [
+    "person_pb2",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue40_with_warnings": [
+    "person_pb2",
+    "module_builder",
+    "linter_factory"
+  ],
+  "repeated_scalar_pb2": [
+    "proto_builder"
+  ],
+  "repeated_composite_pb2": [
+    "proto_builder"
+  ],
+  "TestRepeatedTypeError": {
+    "CHECKER_CLASS": [],
+    "test_issue43_no_typeerror_on_repeated_scalar_no_warn": [
+      "self",
+      "repeated_scalar_pb2"
+    ],
+    "test_issue43_no_typeerror_on_iter_no_warn": [
+      "self",
+      "repeated_scalar_pb2"
+    ],
+    "test_issue43_typeerror_on_repeated_scalar_warns": [
+      "self",
+      "repeated_scalar_pb2"
+    ],
+    "test_issue43_typeerror_on_iter_repeated_scalar_warns": [
+      "self",
+      "repeated_scalar_pb2"
+    ],
+    "test_issue43_no_typeerror_on_repeated_composite_no_warn": [
+      "self",
+      "repeated_composite_pb2"
+    ],
+    "test_issue43_typeerror_on_repeated_composite_warns": [
+      "self",
+      "repeated_composite_pb2"
+    ],
+    "test_issue43_typeerror_on_inner_warns": [
+      "self",
+      "repeated_composite_pb2"
+    ]
+  },
+  "test_issue48_bytes_field": [
+    "proto_builder",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue49_star_kwargs": [
+    "proto_builder",
+    "module_builder",
+    "linter_factory"
+  ],
+  "child_pb2": [
+    "proto_builder"
+  ],
+  "pb2_package": [
+    "module_builder",
+    "innerclass_pb2",
+    "child_pb2"
+  ],
+  "TestProtobufDescriptorChecker": {
+    "CHECKER_CLASS": [],
+    "test_unaliased_module_happy_path_should_not_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_star_import_no_errors": [
+      "self",
+      "person_pb2"
+    ],
+    "test_unaliased_module_happy_path_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_star_import_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_annassign_happy_path_should_not_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_annassign_attr_happy_path_should_not_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_annassign_should_warn_if_necessary": [
+      "self",
+      "person_pb2"
+    ],
+    "test_unaliased_module_import_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_annassign_invalid_field_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_annassign_attribute_invalid_field_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_module_import_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_module_import_as_self_should_warn": [
+      "self",
+      "person_pb2"
+    ],
+    "test_importfrom_should_warn": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_importfrom_with_aliasing_should_warn": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_importfrom_with_multiple_aliasing": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_importfrom_with_aliasing_no_warning": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_does_not_throw": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_list": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_dict": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_uninferable_should_not_warn": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_nested_lists": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_indirection_class_renaming": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_instance_renaming": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_multiple_assignment": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_bad_fields_in_multiple_assignment_multiple_messages": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_indirection_getitem": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_getitem_list_indirection": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_aliasing_via_tuple_unpacking": [
+      "self",
+      "fake_pb2"
+    ],
+    "test_issue5_inferenceerror_should_not_propagate": [
+      "self"
+    ],
+    "test_issue6_importing_a_missing_module": [
+      "self",
+      "error_on_missing_modules"
+    ],
+    "test_issue6_importing_a_missing_module_as_alias": [
+      "self",
+      "error_on_missing_modules"
+    ],
+    "test_issue6_from_importing_a_missing_module": [
+      "self",
+      "error_on_missing_modules"
+    ],
+    "test_issue7_indexerror_on_slice_inference": [
+      "self"
+    ],
+    "test_issue7_indexerror_on_correct_slice_inference": [
+      "self"
+    ],
+    "test_lookup_on_nonetype_should_not_raise": [
+      "self"
+    ],
+    "test_implicit_attrs_issue8": [
+      "self",
+      "attr",
+      "person_pb2"
+    ],
+    "test_issue13_importing_a_module_from_package": [
+      "self",
+      "innerclass_pb2"
+    ],
+    "test_issue13_importing_a_module_with_alias_from_package": [
+      "self",
+      "innerclass_pb2"
+    ],
+    "test_issue13_importing_many_modules_from_package_no_errors": [
+      "self",
+      "pb2_package"
+    ],
+    "test_issue13_importing_many_modules_with_aliases_from_package": [
+      "self",
+      "pb2_package"
+    ],
+    "test_module_import_renaming_still_warns": [
+      "self",
+      "person_pb2"
+    ],
+    "test_typeerror_on_attrassign": [
+      "self",
+      "person_pb2"
+    ]
+  },
+  "simple_mod": [
+    "proto_builder"
+  ],
+  "inference_mod": [
+    "simple_mod",
+    "module_builder"
+  ],
+  "test_no_E1101_on_node_inference": [
+    "inference_mod",
+    "linter_factory"
+  ],
+  "issue44_pb2": [
+    "proto_builder"
+  ],
+  "test_issue44_no_warnings_if_any_matches": [
+    "issue44_pb2",
+    "module_builder",
+    "linter_factory"
+  ],
+  "test_issue44_package_no_warnings_if_any_matches": [
+    "issue44_pb2",
+    "module_builder",
+    "linter_factory"
+  ],
+  "repeated_scalar_mod": [
+    "proto_builder"
+  ],
+  "repeated_composite_mod": [
+    "proto_builder"
+  ],
+  "repeated_external_composite_mod": [
+    "proto_builder"
+  ],
+  "TestProtobufRepeatedFields": {
+    "CHECKER_CLASS": [],
+    "test_no_warnings": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_repeated_attrassign": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_repeated_attrassign_no_typeerror": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_repeated_scalar_assign_no_typeerror": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_typeerror": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_append_bad_usage_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_extend_warns_on_each": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_extend_indirect_warns": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_extend_bad_usage_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_list_extend_bad_usage_no_error": [
+      "self"
+    ],
+    "test_nonscalar_append_bad_usage_no_error": [
+      "self"
+    ],
+    "test_scalar_append_uninferable_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_extend_uninferable_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_scalar_indirect_extend_uninferable_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_nonscalar_append_uninferable_no_error": [
+      "self"
+    ],
+    "test_indirect_access_no_error": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_not_a_repeated_field_no_typeerror": [
+      "self",
+      "repeated_scalar_mod"
+    ],
+    "test_missing_field_on_repeated_inner_warns": [
+      "self",
+      "repeated_composite_mod"
+    ],
+    "test_missing_field_on_repeated_warns": [
+      "self",
+      "repeated_external_composite_mod"
+    ],
+    "test_repeated_composite_supports_append": [
+      "self",
+      "repeated_composite_mod"
+    ],
+    "test_no_posargs_on_repeated_add": [
+      "self",
+      "repeated_composite_mod"
+    ],
+    "test_typeerror_on_repeated_kwargs": [
+      "self",
+      "repeated_composite_mod"
+    ]
+  },
+  "scalar_warnings_mod": [
+    "repeated_scalar_mod",
+    "module_builder"
+  ],
+  "test_no_E1101_on_repeated_fields": [
+    "scalar_warnings_mod",
+    "linter_factory"
+  ],
+  "test_E1123_on_repeated_add": [
+    "repeated_composite_mod",
+    "module_builder",
+    "linter_factory"
+  ],
+  "e1101_mod": [
+    "module_builder",
+    "person_pb2"
+  ],
+  "test_no_E1101_on_protobuf_classes": [
+    "e1101_mod",
+    "linter_factory"
+  ],
+  "variable_pb2": [
+    "proto_builder"
+  ],
+  "e1101_enum": [
+    "module_builder",
+    "variable_pb2"
+  ],
+  "test_no_E1101_on_protobuf_enums": [
+    "e1101_enum",
+    "linter_factory"
+  ],
+  "heavily_nested_mod": [
+    "proto_builder"
+  ],
+  "test_no_E1101_on_superinner_types": [
+    "no_warnings_mod",
+    "linter_factory"
+  ],
+  "extension_pb2": [
+    "proto_builder"
+  ],
+  "nested_extension_pb2": [
+    "proto_builder"
+  ],
+  "TestExtensionFields": {
+    "CHECKER_CLASS": [],
+    "test_extensions_no_warnings": [
+      "self",
+      "extension_pb2"
+    ],
+    "test_extensions_are_not_attributes": [
+      "self",
+      "extension_pb2"
+    ],
+    "test_extensions_are_scoped": [
+      "self",
+      "extension_pb2"
+    ],
+    "test_extensions_typeerror_on_initial_field": [
+      "self",
+      "extension_pb2"
+    ],
+    "test_extensions_typeerror_on_extension_field": [
+      "self",
+      "extension_pb2"
+    ],
+    "test_nested_extensions_belong_to_a_scope": [
+      "self",
+      "nested_extension_pb2"
+    ],
+    "test_nested_extensions_in_scope_should_not_warn": [
+      "self",
+      "nested_extension_pb2"
+    ],
+    "test_nested_extensions_out_of_scope_should_warn": [
+      "self",
+      "nested_extension_pb2"
+    ],
+    "test_why_are_fields_also_extensions": [
+      "self",
+      "nested_extension_pb2"
+    ]
+  },
+  "_MISSING_IMPORT_IS_ERROR": [],
+  "BASE_ID": [],
+  "MESSAGES": [],
+  "Node": [],
+  "_get_inferred_values": [
+    "node"
+  ],
+  "_get_protobuf_descriptor": [
+    "node"
+  ],
+  "_scalar_typecheck": [
+    "val",
+    "val_type"
+  ],
+  "_resolve_builtin": [
+    "inst"
+  ],
+  "ProtobufDescriptorChecker": {
+    "__implements__": [],
+    "msgs": [],
+    "name": [],
+    "priority": [],
+    "__init__": [
+      "self",
+      "linter"
+    ],
+    "visit_import": [
+      "self",
+      "node"
+    ],
+    "visit_importfrom": [
+      "self",
+      "node"
+    ],
+    "_check_import": [
+      "self",
+      "node",
+      "modname"
+    ],
+    "visit_call": [
+      "self",
+      "node"
+    ],
+    "_check_enum_values": [
+      "self",
+      "node"
+    ],
+    "_check_init_posargs": [
+      "self",
+      "node"
+    ],
+    "_check_init_kwargs": [
+      "self",
+      "node"
+    ],
+    "_check_repeated_composite": [
+      "self",
+      "node"
+    ],
+    "_check_posargs": [
+      "self",
+      "desc",
+      "node"
+    ],
+    "_check_kwargs": [
+      "self",
+      "desc",
+      "node"
+    ],
+    "_check_composite_keyword": [
+      "self",
+      "arg_name",
+      "arg_type",
+      "fd",
+      "node",
+      "val_node",
+      "desc_name"
+    ],
+    "_check_noncomposite_keyword": [
+      "self",
+      "arg_name",
+      "arg_type",
+      "node",
+      "val_node",
+      "desc_name"
+    ],
+    "_check_repeated_scalar": [
+      "self",
+      "node"
+    ],
+    "_check_hasfield": [
+      "self",
+      "node"
+    ],
+    "visit_assignattr": [
+      "self",
+      "node"
+    ],
+    "visit_attribute": [
+      "self",
+      "node"
+    ],
+    "_assignattr": [
+      "self",
+      "node"
+    ],
+    "_check_type_error": [
+      "self",
+      "node",
+      "desc"
+    ],
+    "_check_no_assign": [
+      "self",
+      "node",
+      "desc"
+    ],
+    "visit_subscript": [
+      "self",
+      "node"
+    ],
+    "_check_extension_getitem": [
+      "self",
+      "node"
+    ]
+  },
+  "register": [
+    "linter"
+  ],
+  "PROTOBUF_IMPLICIT_ATTRS": [],
+  "PROTOBUF_ENUM_IMPLICIT_ATTRS": [],
+  "is_repeated": [
+    "fd"
+  ],
+  "is_composite": [
+    "fd"
+  ],
+  "is_map_field": [
+    "fd"
+  ],
+  "is_optional": [
+    "fd"
+  ],
+  "is_oneof": [
+    "fd"
+  ],
+  "TODO": {},
+  "FIELD_TYPES": [],
+  "to_pytype": [
+    "fd"
+  ],
+  "field_type_path": [
+    "fd"
+  ],
+  "full_name": [
+    "fd"
+  ],
+  "_nonprotected_members": [
+    "cls"
+  ],
+  "SimpleDescriptor": {
+    "__init__": [
+      "self",
+      "desc"
+    ],
+    "is_nested": [
+      "self",
+      "fd"
+    ],
+    "is_typeof_field": [
+      "self",
+      "fd"
+    ],
+    "is_extended_by": [
+      "self",
+      "fd"
+    ],
+    "proto3": [
+      "self"
+    ],
+    "identifier": [
+      "self"
+    ],
+    "is_enum": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "full_name": [
+      "self"
+    ],
+    "options": [
+      "self"
+    ],
+    "extensions_by_name": [
+      "self"
+    ],
+    "fields": [
+      "self"
+    ],
+    "field_names": [
+      "self"
+    ],
+    "fields_by_name": [
+      "self"
+    ],
+    "values": [
+      "self"
+    ],
+    "names": [
+      "self"
+    ],
+    "values_by_name": [
+      "self"
+    ],
+    "message_fields": [
+      "self"
+    ],
+    "enum_types": [
+      "self"
+    ],
+    "nested_types": [
+      "self"
+    ],
+    "inner_nonrepeated_fields": [
+      "self"
+    ],
+    "external_fields": [
+      "self"
+    ],
+    "repeated_fields": [
+      "self"
+    ]
+  },
+  "DescriptorRegistry": [],
+  "_template_enum": [
+    "desc",
+    "descriptor_registry"
+  ],
+  "_get_descriptor_id": [
+    "cls_def"
+  ],
+  "transform_enum": [
+    "desc",
+    "descriptor_registry"
+  ],
+  "_template_composite_field": [
+    "parent_name",
+    "name",
+    "field_type",
+    "is_nested"
+  ],
+  "_to_module_name": [
+    "fn"
+  ],
+  "_template_message": [
+    "desc",
+    "descriptor_registry"
+  ],
+  "transform_message": [
+    "desc",
+    "desc_registry"
+  ],
+  "transform_descriptor_to_class": [
+    "cls"
+  ],
+  "_exec_module": [
+    "mod"
+  ],
+  "mod_node_to_class": [
+    "mod",
+    "name"
+  ],
+  "resolve_imports": [
+    "mod"
+  ],
+  "transform_module": [
+    "mod"
+  ],
+  "is_some_protobuf_module": [
+    "node"
+  ]
+}

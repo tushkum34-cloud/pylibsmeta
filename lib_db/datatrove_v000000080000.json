@@ -1,0 +1,7985 @@
+{
+  "OutputFileManager": {
+    "__init__": [
+      "self",
+      "fs",
+      "mode",
+      "compression"
+    ],
+    "get_file": [
+      "self",
+      "filename"
+    ],
+    "get_open_files": [
+      "self"
+    ],
+    "pop": [
+      "self",
+      "filename"
+    ],
+    "write": [
+      "self",
+      "filename",
+      "data"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "DataFolder": {
+    "__init__": [
+      "self",
+      "path",
+      "fs",
+      "auto_mkdir"
+    ],
+    "list_files": [
+      "self",
+      "subdirectory",
+      "recursive",
+      "glob_pattern",
+      "include_directories"
+    ],
+    "get_shard": [
+      "self",
+      "rank",
+      "world_size"
+    ],
+    "resolve_paths": [
+      "self",
+      "paths"
+    ],
+    "get_output_file_manager": [
+      "self"
+    ],
+    "open_files": [
+      "self",
+      "paths",
+      "mode"
+    ],
+    "open": [
+      "self",
+      "path",
+      "mode"
+    ],
+    "is_local": [
+      "self"
+    ]
+  },
+  "get_datafolder": [
+    "data"
+  ],
+  "get_fs_with_filepath": [
+    "data"
+  ],
+  "open_file": [
+    "file",
+    "mode"
+  ],
+  "file_exists": [
+    "path"
+  ],
+  "file_is_local": [
+    "path"
+  ],
+  "download_file": [
+    "remote_path",
+    "local_path",
+    "progress"
+  ],
+  "safely_create_file": [
+    "file_to_lock",
+    "do_processing",
+    "completed_file"
+  ],
+  "cached_asset_path_or_download": [
+    "remote_path",
+    "progress",
+    "namespace",
+    "subfolder",
+    "desc"
+  ],
+  "get_shard_from_paths_file": [
+    "paths_file",
+    "rank",
+    "world_size"
+  ],
+  "_get_true_fs": [
+    "fs"
+  ],
+  "MediaType": {
+    "IMAGE": [],
+    "VIDEO": [],
+    "AUDIO": [],
+    "DOCUMENT": []
+  },
+  "Media": {},
+  "Document": {},
+  "DocumentsPipeline": [],
+  "RankWorker": {
+    "get_node_ip": [
+      "self"
+    ],
+    "run_for_rank": [
+      "self",
+      "executor_ref",
+      "ranks",
+      "node_ips",
+      "node_idx"
+    ]
+  },
+  "convert_remote_options_to_bundle": [
+    "remote_options"
+  ],
+  "TaskGroup": {},
+  "TimeoutManager": {
+    "__init__": [
+      "self",
+      "timeout_seconds"
+    ],
+    "add_task": [
+      "self",
+      "task"
+    ],
+    "remove_task": [
+      "self",
+      "task"
+    ],
+    "check_timeouts": [
+      "self"
+    ]
+  },
+  "RayTaskManager": {
+    "__init__": [
+      "self",
+      "nodes_per_task",
+      "timeout_manager"
+    ],
+    "submit_task": [
+      "self",
+      "executor_ref",
+      "ranks_to_submit",
+      "remote_options"
+    ],
+    "wait": [
+      "self",
+      "tasks",
+      "timeout",
+      "num_returns"
+    ],
+    "task_done": [
+      "self",
+      "task"
+    ],
+    "kill_task_group": [
+      "self",
+      "task"
+    ],
+    "clean_up": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "RayPipelineExecutor": {
+    "__init__": [
+      "self",
+      "pipeline",
+      "tasks",
+      "workers",
+      "depends",
+      "skip_completed",
+      "logging_dir",
+      "randomize_start_duration",
+      "cpus_per_task",
+      "mem_per_cpu_gb",
+      "gpus_per_task",
+      "nodes_per_task",
+      "ray_remote_kwargs",
+      "log_first",
+      "tasks_per_job",
+      "time"
+    ],
+    "get_distributed_env": [
+      "self",
+      "node_rank"
+    ],
+    "world_size": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "_run_for_rank": [
+      "self",
+      "rank",
+      "local_rank",
+      "node_rank"
+    ]
+  },
+  "DistributedEnvVars": {},
+  "PipelineExecutor": {
+    "__init__": [
+      "self",
+      "pipeline",
+      "logging_dir",
+      "skip_completed",
+      "randomize_start_duration"
+    ],
+    "run": [
+      "self"
+    ],
+    "world_size": [
+      "self"
+    ],
+    "get_distributed_env": [
+      "self",
+      "node_rank"
+    ],
+    "_set_distributed_environment": [
+      "self",
+      "node_rank"
+    ],
+    "_run_for_rank": [
+      "self",
+      "rank",
+      "local_rank",
+      "node_rank"
+    ],
+    "is_rank_completed": [
+      "self",
+      "rank"
+    ],
+    "mark_rank_as_completed": [
+      "self",
+      "rank"
+    ],
+    "get_incomplete_ranks": [
+      "self",
+      "ranks",
+      "skip_completed"
+    ],
+    "to_json": [
+      "self",
+      "indent"
+    ],
+    "save_executor_as_json": [
+      "self",
+      "indent"
+    ]
+  },
+  "ExecutorJSONEncoder": {
+    "default": [
+      "self",
+      "o"
+    ]
+  },
+  "LocalPipelineExecutor": {
+    "__init__": [
+      "self",
+      "pipeline",
+      "tasks",
+      "workers",
+      "logging_dir",
+      "depends",
+      "skip_completed",
+      "start_method",
+      "local_tasks",
+      "local_rank_offset",
+      "randomize_start_duration"
+    ],
+    "_launch_run_for_rank": [
+      "self",
+      "rank",
+      "ranks_q",
+      "completed",
+      "completed_lock"
+    ],
+    "run": [
+      "self"
+    ],
+    "get_distributed_env": [
+      "self",
+      "node_rank"
+    ],
+    "world_size": [
+      "self"
+    ]
+  },
+  "expand_slurm_nodelist": [
+    "nodelist"
+  ],
+  "requeue_handler": [
+    "signum",
+    "_frame"
+  ],
+  "SlurmPipelineExecutor": {
+    "__init__": [
+      "self",
+      "pipeline",
+      "tasks",
+      "time",
+      "partition",
+      "cpus_per_task",
+      "mem_per_cpu_gb",
+      "gpus_per_task",
+      "nodes_per_task",
+      "workers",
+      "job_name",
+      "qos",
+      "env_command",
+      "condaenv",
+      "venv_path",
+      "sbatch_args",
+      "max_array_size",
+      "depends",
+      "depends_job_id",
+      "job_id_position",
+      "job_id_retriever",
+      "logging_dir",
+      "skip_completed",
+      "slurm_logs_folder",
+      "max_array_launch_parallel",
+      "stagger_max_array_jobs",
+      "run_on_dependency_fail",
+      "randomize_start_duration",
+      "requeue_signals",
+      "mail_type",
+      "mail_user",
+      "requeue",
+      "srun_args",
+      "tasks_per_job",
+      "with_srun"
+    ],
+    "run": [
+      "self"
+    ],
+    "launch_merge_stats": [
+      "self"
+    ],
+    "dependency": [
+      "self"
+    ],
+    "launch_job": [
+      "self"
+    ],
+    "get_sbatch_args": [
+      "self",
+      "max_array"
+    ],
+    "get_launch_file_contents": [
+      "self",
+      "sbatch_args",
+      "run_script"
+    ],
+    "get_distributed_env": [
+      "self",
+      "node_rank"
+    ],
+    "world_size": [
+      "self"
+    ]
+  },
+  "launch_slurm_job": [
+    "launch_file_contents",
+    "job_id_retriever"
+  ],
+  "default_job_id_retriever": [
+    "process_output",
+    "job_id_position"
+  ],
+  "iter_pages": [
+    "document"
+  ],
+  "Languages": {
+    "arifama_miniafia": [],
+    "arifama_miniafia__latn": [],
+    "ankave": [],
+    "ankave__latn": [],
+    "abau": [],
+    "abau__latn": [],
+    "amarasi": [],
+    "amarasi__latn": [],
+    "abe": [],
+    "abe__latn": [],
+    "abidji": [],
+    "abidji__latn": [],
+    "abkhazian": [],
+    "abkhazian__cyrl": [],
+    "abua": [],
+    "abua__latn": [],
+    "abaza": [],
+    "abaza__cyrl": [],
+    "ambonese_malay": [],
+    "ambonese_malay__latn": [],
+    "ambulas": [],
+    "ambulas__latn": [],
+    "inabaknon": [],
+    "inabaknon__latn": [],
+    "aneme_wake": [],
+    "aneme_wake__latn": [],
+    "abui": [],
+    "abui__latn": [],
+    "achagua": [],
+    "achagua__latn": [],
+    "gikyode": [],
+    "gikyode__latn": [],
+    "achinese": [],
+    "achinese__latn": [],
+    "achinese__arab": [],
+    "saint_lucian_creole_french": [],
+    "saint_lucian_creole_french__latn": [],
+    "acoli": [],
+    "acoli__latn": [],
+    "mesopotamian_arabic": [],
+    "mesopotamian_arabic__arab": [],
+    "achang": [],
+    "achang__latn": [],
+    "achi": [],
+    "achi__latn": [],
+    "achuar_shiwiar": [],
+    "achuar_shiwiar__latn": [],
+    "adangme": [],
+    "adangme__latn": [],
+    "adele": [],
+    "adele__latn": [],
+    "adhola": [],
+    "adhola__latn": [],
+    "adi": [],
+    "adi__latn": [],
+    "adioukrou": [],
+    "adioukrou__latn": [],
+    "galo": [],
+    "galo__latn": [],
+    "adyghe": [],
+    "adyghe__cyrl": [],
+    "adzera": [],
+    "adzera__latn": [],
+    "tunisian_arabic": [],
+    "tunisian_arabic__arab": [],
+    "eastern_arrernte": [],
+    "eastern_arrernte__latn": [],
+    "akeu": [],
+    "akeu__latn": [],
+    "amele": [],
+    "amele__latn": [],
+    "afrikaans": [],
+    "afrikaans__latn": [],
+    "agarabi": [],
+    "agarabi__latn": [],
+    "angor": [],
+    "angor__latn": [],
+    "angaataha": [],
+    "angaataha__latn": [],
+    "agutaynen": [],
+    "agutaynen__latn": [],
+    "aguaruna": [],
+    "aguaruna__latn": [],
+    "central_cagayan_agta": [],
+    "central_cagayan_agta__latn": [],
+    "aguacateco": [],
+    "aguacateco__latn": [],
+    "kahua": [],
+    "kahua__latn": [],
+    "aghul": [],
+    "aghul__cyrl": [],
+    "ahanta": [],
+    "ahanta__latn": [],
+    "akha": [],
+    "akha__latn": [],
+    "arosi": [],
+    "arosi__latn": [],
+    "assyrian_neo_aramaic": [],
+    "assyrian_neo_aramaic__syrc": [],
+    "aimol": [],
+    "aimol__latn": [],
+    "ainu_japan": [],
+    "ainu_japan__latn": [],
+    "aja_benin": [],
+    "aja_benin__latn": [],
+    "ajie": [],
+    "ajie__latn": [],
+    "amri_karbi": [],
+    "amri_karbi__latn": [],
+    "akan": [],
+    "akan__latn": [],
+    "batak_angkola": [],
+    "batak_angkola__latn": [],
+    "akawaio": [],
+    "akawaio__latn": [],
+    "angal_heneng": [],
+    "angal_heneng__latn": [],
+    "siwu": [],
+    "siwu__latn": [],
+    "alladian": [],
+    "alladian__latn": [],
+    "alangan": [],
+    "alangan__latn": [],
+    "gheg_albanian": [],
+    "gheg_albanian__latn": [],
+    "alune": [],
+    "alune__latn": [],
+    "algonquin": [],
+    "algonquin__latn": [],
+    "tosk_albanian": [],
+    "tosk_albanian__latn": [],
+    "southern_altai": [],
+    "southern_altai__cyrl": [],
+    "alyawarr": [],
+    "alyawarr__latn": [],
+    "alur": [],
+    "alur__latn": [],
+    "yanesha_": [],
+    "yanesha___latn": [],
+    "hamer_banna": [],
+    "hamer_banna__latn": [],
+    "amharic": [],
+    "amharic__ethi": [],
+    "amis": [],
+    "amis__latn": [],
+    "ambai": [],
+    "ambai__latn": [],
+    "ama_papua_new_guinea": [],
+    "ama_papua_new_guinea__latn": [],
+    "amanab": [],
+    "amanab__latn": [],
+    "alamblak": [],
+    "alamblak__latn": [],
+    "amarakaeri": [],
+    "amarakaeri__latn": [],
+    "guerrero_amuzgo": [],
+    "guerrero_amuzgo__latn": [],
+    "anmatyerre": [],
+    "anmatyerre__latn": [],
+    "old_english_ca_450_1100": [],
+    "old_english_ca_450_1100__latn": [],
+    "anal": [],
+    "anal__latn": [],
+    "obolo": [],
+    "obolo__latn": [],
+    "angika": [],
+    "angika__deva": [],
+    "denya": [],
+    "denya__latn": [],
+    "anyin": [],
+    "anyin__latn": [],
+    "anindilyakwa": [],
+    "anindilyakwa__latn": [],
+    "mufian": [],
+    "mufian__latn": [],
+    "omie": [],
+    "omie__latn": [],
+    "uab_meto": [],
+    "uab_meto__latn": [],
+    "sa_a": [],
+    "sa_a__latn": [],
+    "levantine_arabic": [],
+    "levantine_arabic__arab": [],
+    "bukiyip": [],
+    "bukiyip__latn": [],
+    "apinaye": [],
+    "apinaye__latn": [],
+    "arop_lokep": [],
+    "arop_lokep__latn": [],
+    "apatani": [],
+    "apatani__latn": [],
+    "apurina": [],
+    "apurina__latn": [],
+    "western_apache": [],
+    "western_apache__latn": [],
+    "apalai": [],
+    "apalai__latn": [],
+    "safeyoka": [],
+    "safeyoka__latn": [],
+    "akuntsu": [],
+    "akuntsu__latn": [],
+    "arabic": [],
+    "arabic__arab": [],
+    "arabic__latn": [],
+    "standard_arabic": [],
+    "standard_arabic__arab": [],
+    "standard_arabic__latn": [],
+    "western_arrarnta": [],
+    "western_arrarnta__latn": [],
+    "aragonese": [],
+    "aragonese__latn": [],
+    "arabela": [],
+    "arabela__latn": [],
+    "mapudungun": [],
+    "mapudungun__latn": [],
+    "arapaho": [],
+    "arapaho__latn": [],
+    "algerian_arabic": [],
+    "algerian_arabic__arab": [],
+    "karo_brazil": [],
+    "karo_brazil__latn": [],
+    "najdi_arabic": [],
+    "najdi_arabic__arab": [],
+    "moroccan_arabic": [],
+    "moroccan_arabic__arab": [],
+    "egyptian_arabic": [],
+    "egyptian_arabic__arab": [],
+    "cishingini": [],
+    "cishingini__latn": [],
+    "assamese": [],
+    "assamese__beng": [],
+    "assamese__latn": [],
+    "dano": [],
+    "dano__latn": [],
+    "asturian": [],
+    "asturian__latn": [],
+    "pele_ata": [],
+    "pele_ata__latn": [],
+    "zaiwa": [],
+    "zaiwa__latn": [],
+    "ata_manobo": [],
+    "ata_manobo__latn": [],
+    "ivbie_north_okpela_arhe": [],
+    "ivbie_north_okpela_arhe__latn": [],
+    "attie": [],
+    "attie__latn": [],
+    "atikamekw": [],
+    "atikamekw__latn": [],
+    "aralle_tabulahan": [],
+    "aralle_tabulahan__latn": [],
+    "pamplona_atta": [],
+    "pamplona_atta__latn": [],
+    "waorani": [],
+    "waorani__latn": [],
+    "anuki": [],
+    "anuki__latn": [],
+    "awiyaana": [],
+    "awiyaana__latn": [],
+    "avaric": [],
+    "avaric__cyrl": [],
+    "kotava": [],
+    "kotava__latn": [],
+    "avatime": [],
+    "avatime__latn": [],
+    "au": [],
+    "au__latn": [],
+    "avokaya": [],
+    "avokaya__latn": [],
+    "awadhi": [],
+    "awadhi__deva": [],
+    "awa_papua_new_guinea": [],
+    "awa_papua_new_guinea__latn": [],
+    "aekyom": [],
+    "aekyom__latn": [],
+    "awara": [],
+    "awara__latn": [],
+    "aymara": [],
+    "aymara__latn": [],
+    "ayoreo": [],
+    "ayoreo__latn": [],
+    "north_mesopotamian_arabic": [],
+    "north_mesopotamian_arabic__arab": [],
+    "central_aymara": [],
+    "central_aymara__latn": [],
+    "south_azerbaijani": [],
+    "south_azerbaijani__arab": [],
+    "azerbaijani": [],
+    "azerbaijani__latn": [],
+    "azerbaijani__arab": [],
+    "azerbaijani__cyrl": [],
+    "san_pedro_amuzgos_amuzgo": [],
+    "san_pedro_amuzgos_amuzgo__latn": [],
+    "north_azerbaijani": [],
+    "north_azerbaijani__latn": [],
+    "north_azerbaijani__cyrl": [],
+    "highland_puebla_nahuatl": [],
+    "highland_puebla_nahuatl__latn": [],
+    "bashkir": [],
+    "bashkir__cyrl": [],
+    "baluchi": [],
+    "baluchi__arab": [],
+    "bambara": [],
+    "bambara__latn": [],
+    "balinese": [],
+    "balinese__latn": [],
+    "waimaha": [],
+    "waimaha__latn": [],
+    "bavarian": [],
+    "bavarian__latn": [],
+    "basa_cameroon": [],
+    "basa_cameroon__latn": [],
+    "vengo": [],
+    "vengo__latn": [],
+    "baatonum": [],
+    "baatonum__latn": [],
+    "barai": [],
+    "barai__latn": [],
+    "batak_toba": [],
+    "batak_toba__latn": [],
+    "ghomala_": [],
+    "ghomala___latn": [],
+    "babanki": [],
+    "babanki__latn": [],
+    "northern_bobo_madare": [],
+    "northern_bobo_madare__latn": [],
+    "girawa": [],
+    "girawa__latn": [],
+    "southern_balochi": [],
+    "southern_balochi__arab": [],
+    "bariai": [],
+    "bariai__latn": [],
+    "baoule": [],
+    "baoule__latn": [],
+    "central_bikol": [],
+    "central_bikol__latn": [],
+    "kaluli": [],
+    "kaluli__latn": [],
+    "bana": [],
+    "bana__latn": [],
+    "bunama": [],
+    "bunama__latn": [],
+    "baka_south_sudan": [],
+    "baka_south_sudan__latn": [],
+    "bahnar": [],
+    "bahnar__latn": [],
+    "beaver": [],
+    "beaver__latn": [],
+    "benabena": [],
+    "benabena__latn": [],
+    "belarusian": [],
+    "belarusian__cyrl": [],
+    "bemba_zambia": [],
+    "bemba_zambia__latn": [],
+    "bengali": [],
+    "bengali__beng": [],
+    "bengali__latn": [],
+    "beembe": [],
+    "beembe__latn": [],
+    "betawi": [],
+    "betawi__latn": [],
+    "jur_modo": [],
+    "jur_modo__latn": [],
+    "bafut": [],
+    "bafut__latn": [],
+    "malba_birifor": [],
+    "malba_birifor__latn": [],
+    "bawm_chin": [],
+    "bawm_chin__latn": [],
+    "tagabawa": [],
+    "tagabawa__latn": [],
+    "bughotu": [],
+    "bughotu__latn": [],
+    "banggai": [],
+    "banggai__latn": [],
+    "binandere": [],
+    "binandere__latn": [],
+    "bimin": [],
+    "bimin__latn": [],
+    "bhojpuri": [],
+    "bhojpuri__deva": [],
+    "bima": [],
+    "bima__latn": [],
+    "biak": [],
+    "biak__latn": [],
+    "bada_indonesia": [],
+    "bada_indonesia__latn": [],
+    "bissa": [],
+    "bissa__latn": [],
+    "biangai": [],
+    "biangai__latn": [],
+    "bikol": [],
+    "bikol__latn": [],
+    "bimoba": [],
+    "bimoba__latn": [],
+    "bini": [],
+    "bini__latn": [],
+    "bislama": [],
+    "bislama__latn": [],
+    "biete": [],
+    "biete__latn": [],
+    "southern_birifor": [],
+    "southern_birifor__latn": [],
+    "banjar": [],
+    "banjar__latn": [],
+    "banjar__arab": [],
+    "fanamaket": [],
+    "fanamaket__latn": [],
+    "binumarien": [],
+    "binumarien__latn": [],
+    "bedjond": [],
+    "bedjond__latn": [],
+    "binukid": [],
+    "binukid__latn": [],
+    "berik": [],
+    "berik__latn": [],
+    "bakairi": [],
+    "bakairi__latn": [],
+    "buhid": [],
+    "buhid__latn": [],
+    "bekwarra": [],
+    "bekwarra__latn": [],
+    "siksika": [],
+    "siksika__latn": [],
+    "kuwaa": [],
+    "kuwaa__latn": [],
+    "pa_o_karen": [],
+    "pa_o_karen__mymr": [],
+    "tai_dam": [],
+    "tai_dam__latn": [],
+    "balangao": [],
+    "balangao__latn": [],
+    "balantak": [],
+    "balantak__latn": [],
+    "kein": [],
+    "kein__latn": [],
+    "ghayavi": [],
+    "ghayavi__latn": [],
+    "bomu": [],
+    "bomu__latn": [],
+    "muinane": [],
+    "muinane__latn": [],
+    "somba_siawari": [],
+    "somba_siawari__latn": [],
+    "bum": [],
+    "bum__latn": [],
+    "bontok": [],
+    "bontok__latn": [],
+    "eastern_tawbuid": [],
+    "eastern_tawbuid__latn": [],
+    "bantoanon": [],
+    "bantoanon__latn": [],
+    "bola": [],
+    "bola__latn": [],
+    "bora": [],
+    "bora__latn": [],
+    "tibetan": [],
+    "tibetan__tibt": [],
+    "anjam": [],
+    "anjam__latn": [],
+    "berom": [],
+    "berom__latn": [],
+    "bine": [],
+    "bine__latn": [],
+    "bororo": [],
+    "bororo__latn": [],
+    "bosnian": [],
+    "bosnian__latn": [],
+    "tuwuli": [],
+    "tuwuli__latn": [],
+    "buamu": [],
+    "buamu__latn": [],
+    "koronadal_blaan": [],
+    "koronadal_blaan__latn": [],
+    "sarangani_blaan": [],
+    "sarangani_blaan__latn": [],
+    "bishnupriya": [],
+    "bishnupriya__beng": [],
+    "boko_benin": [],
+    "boko_benin__latn": [],
+    "bandial": [],
+    "bandial__latn": [],
+    "busa": [],
+    "busa__latn": [],
+    "breton": [],
+    "breton__latn": [],
+    "brahui": [],
+    "brahui__arab": [],
+    "eastern_bru": [],
+    "eastern_bru__latn": [],
+    "bodo_india": [],
+    "bodo_india__latn": [],
+    "bodo_india__deva": [],
+    "bassari": [],
+    "bassari__latn": [],
+    "barasana_eduria": [],
+    "barasana_eduria__latn": [],
+    "baga_sitemu": [],
+    "baga_sitemu__latn": [],
+    "bassa": [],
+    "bassa__latn": [],
+    "akoose": [],
+    "akoose__latn": [],
+    "batak_dairi": [],
+    "batak_dairi__latn": [],
+    "biatah_bidayuh": [],
+    "biatah_bidayuh__latn": [],
+    "batak_simalungun": [],
+    "batak_simalungun__latn": [],
+    "bete_bendi": [],
+    "bete_bendi__latn": [],
+    "batak_karo": [],
+    "batak_karo__latn": [],
+    "buriat": [],
+    "buriat__cyrl": [],
+    "ntcham": [],
+    "ntcham__latn": [],
+    "buginese": [],
+    "buginese__latn": [],
+    "bugawac": [],
+    "bugawac__latn": [],
+    "bulgarian": [],
+    "bulgarian__cyrl": [],
+    "bulu_cameroon": [],
+    "bulu_cameroon__latn": [],
+    "bokobaru": [],
+    "bokobaru__latn": [],
+    "baelelea": [],
+    "baelelea__latn": [],
+    "baeggu": [],
+    "baeggu__latn": [],
+    "burarra": [],
+    "burarra__latn": [],
+    "bauzi": [],
+    "bauzi__latn": [],
+    "bwaidoka": [],
+    "bwaidoka__latn": [],
+    "baniwa": [],
+    "baniwa__latn": [],
+    "southern_bobo_madare": [],
+    "southern_bobo_madare__latn": [],
+    "buli_ghana": [],
+    "buli_ghana__latn": [],
+    "buhutu": [],
+    "buhutu__latn": [],
+    "russia_buriat": [],
+    "russia_buriat__cyrl": [],
+    "baruya": [],
+    "baruya__latn": [],
+    "medumba": [],
+    "medumba__latn": [],
+    "qaqet": [],
+    "qaqet__latn": [],
+    "bribri": [],
+    "bribri__latn": [],
+    "mapos_buang": [],
+    "mapos_buang__latn": [],
+    "bisu": [],
+    "bisu__thai": [],
+    "belize_kriol_english": [],
+    "belize_kriol_english__latn": [],
+    "chorti": [],
+    "chorti__latn": [],
+    "garifuna": [],
+    "garifuna__latn": [],
+    "chuj": [],
+    "chuj__latn": [],
+    "southern_carrier": [],
+    "southern_carrier__latn": [],
+    "nivacle": [],
+    "nivacle__latn": [],
+    "kaqchikel": [],
+    "kaqchikel__latn": [],
+    "chacobo": [],
+    "chacobo__latn": [],
+    "chipaya": [],
+    "chipaya__latn": [],
+    "car_nicobarese": [],
+    "car_nicobarese__latn": [],
+    "galibi_carib": [],
+    "galibi_carib__latn": [],
+    "tsimane": [],
+    "tsimane__latn": [],
+    "catalan": [],
+    "catalan__latn": [],
+    "cavinena": [],
+    "cavinena__latn": [],
+    "chiquitano": [],
+    "chiquitano__latn": [],
+    "carapana": [],
+    "carapana__latn": [],
+    "chachi": [],
+    "chachi__latn": [],
+    "chavacano": [],
+    "chavacano__latn": [],
+    "cashibo_cacataibo": [],
+    "cashibo_cacataibo__latn": [],
+    "cashinahua": [],
+    "cashinahua__latn": [],
+    "chayahuita": [],
+    "chayahuita__latn": [],
+    "candoshi_shapra": [],
+    "candoshi_shapra__latn": [],
+    "cacua": [],
+    "cacua__latn": [],
+    "chopi": [],
+    "chopi__latn": [],
+    "comaltepec_chinantec": [],
+    "comaltepec_chinantec__latn": [],
+    "chakma": [],
+    "chakma__latn": [],
+    "chiru": [],
+    "chiru__latn": [],
+    "cebuano": [],
+    "cebuano__latn": [],
+    "chamacoco": [],
+    "chamacoco__latn": [],
+    "eastern_khumi_chin": [],
+    "eastern_khumi_chin__latn": [],
+    "czech": [],
+    "czech__latn": [],
+    "falam_chin": [],
+    "falam_chin__latn": [],
+    "kagayanen": [],
+    "kagayanen__latn": [],
+    "chiga": [],
+    "chiga__latn": [],
+    "chamorro": [],
+    "chamorro__latn": [],
+    "highland_oaxaca_chontal": [],
+    "highland_oaxaca_chontal__latn": [],
+    "chechen": [],
+    "chechen__cyrl": [],
+    "tabasco_chontal": [],
+    "tabasco_chontal__latn": [],
+    "ojitlan_chinantec": [],
+    "ojitlan_chinantec__latn": [],
+    "chuukese": [],
+    "chuukese__latn": [],
+    "mari_russia": [],
+    "mari_russia__cyrl": [],
+    "choctaw": [],
+    "choctaw__latn": [],
+    "quiotepec_chinantec": [],
+    "quiotepec_chinantec__latn": [],
+    "cherokee": [],
+    "cherokee__cher": [],
+    "cherokee__latn": [],
+    "church_slavic": [],
+    "church_slavic__cyrl": [],
+    "chuvash": [],
+    "chuvash__cyrl": [],
+    "chuwabu": [],
+    "chuwabu__latn": [],
+    "ozumacin_chinantec": [],
+    "ozumacin_chinantec__latn": [],
+    "chokwe": [],
+    "chokwe__latn": [],
+    "asheninka_pajonal": [],
+    "asheninka_pajonal__latn": [],
+    "cabecar": [],
+    "cabecar__latn": [],
+    "shor": [],
+    "shor__cyrl": [],
+    "chuave": [],
+    "chuave__latn": [],
+    "central_kurdish": [],
+    "central_kurdish__arab": [],
+    "chakavian": [],
+    "chakavian__latn": [],
+    "anufo": [],
+    "anufo__latn": [],
+    "chukot": [],
+    "chukot__cyrl": [],
+    "lealao_chinantec": [],
+    "lealao_chinantec__latn": [],
+    "caluyanun": [],
+    "caluyanun__latn": [],
+    "eastern_highland_chatino": [],
+    "eastern_highland_chatino__latn": [],
+    "cerma": [],
+    "cerma__latn": [],
+    "mandarin_chinese": [],
+    "mandarin_chinese__hani": [],
+    "central_mnong": [],
+    "central_mnong__latn": [],
+    "central_mnong__khmr": [],
+    "mro_khimi_chin": [],
+    "mro_khimi_chin__latn": [],
+    "hakha_chin": [],
+    "hakha_chin__latn": [],
+    "ashaninka": [],
+    "ashaninka__latn": [],
+    "khumi_chin": [],
+    "khumi_chin__latn": [],
+    "lalana_chinantec": [],
+    "lalana_chinantec__latn": [],
+    "montenegrin": [],
+    "montenegrin__latn": [],
+    "tepetotutla_chinantec": [],
+    "tepetotutla_chinantec__latn": [],
+    "ngawn_chin": [],
+    "ngawn_chin__latn": [],
+    "koreguaje": [],
+    "koreguaje__latn": [],
+    "colorado": [],
+    "colorado__latn": [],
+    "santa_teresa_cora": [],
+    "santa_teresa_cora__latn": [],
+    "cofan": [],
+    "cofan__latn": [],
+    "coptic": [],
+    "coptic__copt": [],
+    "cornish": [],
+    "cornish__latn": [],
+    "corsican": [],
+    "corsican__latn": [],
+    "caquinte": [],
+    "caquinte__latn": [],
+    "wamey": [],
+    "wamey__latn": [],
+    "palantla_chinantec": [],
+    "palantla_chinantec__latn": [],
+    "ucayali_yurua_asheninka": [],
+    "ucayali_yurua_asheninka__latn": [],
+    "ajyininka_apurucayali": [],
+    "ajyininka_apurucayali__latn": [],
+    "pichis_asheninka": [],
+    "pichis_asheninka__latn": [],
+    "south_ucayali_asheninka": [],
+    "south_ucayali_asheninka__latn": [],
+    "cree": [],
+    "cree__cans": [],
+    "cree__latn": [],
+    "crimean_tatar": [],
+    "crimean_tatar__latn": [],
+    "crimean_tatar__cyrl": [],
+    "saotomense": [],
+    "saotomense__latn": [],
+    "southern_east_cree": [],
+    "southern_east_cree__cans": [],
+    "plains_cree": [],
+    "plains_cree__latn": [],
+    "plains_cree__cans": [],
+    "northern_east_cree": [],
+    "northern_east_cree__cans": [],
+    "moose_cree": [],
+    "moose_cree__cans": [],
+    "el_nayar_cora": [],
+    "el_nayar_cora__latn": [],
+    "seselwa_creole_french": [],
+    "seselwa_creole_french__latn": [],
+    "iyojwa_ja_chorote": [],
+    "iyojwa_ja_chorote__latn": [],
+    "carrier": [],
+    "carrier__latn": [],
+    "kashubian": [],
+    "kashubian__latn": [],
+    "jola_kasa": [],
+    "jola_kasa__latn": [],
+    "sochiapam_chinantec": [],
+    "sochiapam_chinantec__latn": [],
+    "swampy_cree": [],
+    "swampy_cree__latn": [],
+    "siyin_chin": [],
+    "siyin_chin__latn": [],
+    "tataltepec_chatino": [],
+    "tataltepec_chatino__latn": [],
+    "tedim_chin": [],
+    "tedim_chin__latn": [],
+    "embera_catio": [],
+    "embera_catio__latn": [],
+    "western_highland_chatino": [],
+    "western_highland_chatino__latn": [],
+    "chol": [],
+    "chol__latn": [],
+    "cubeo": [],
+    "cubeo__latn": [],
+    "usila_chinantec": [],
+    "usila_chinantec__latn": [],
+    "cuiba": [],
+    "cuiba__latn": [],
+    "san_blas_kuna": [],
+    "san_blas_kuna__latn": [],
+    "culina": [],
+    "culina__latn": [],
+    "teutila_cuicatec": [],
+    "teutila_cuicatec__latn": [],
+    "tepeuxila_cuicatec": [],
+    "tepeuxila_cuicatec__latn": [],
+    "woods_cree": [],
+    "woods_cree__cans": [],
+    "kwere": [],
+    "kwere__latn": [],
+    "kuwaataay": [],
+    "kuwaataay__latn": [],
+    "nopala_chatino": [],
+    "nopala_chatino__latn": [],
+    "welsh": [],
+    "welsh__latn": [],
+    "zotung_chin": [],
+    "zotung_chin__latn": [],
+    "dangaleat": [],
+    "dangaleat__latn": [],
+    "marik": [],
+    "marik__latn": [],
+    "dagbani": [],
+    "dagbani__latn": [],
+    "gwahatike": [],
+    "gwahatike__latn": [],
+    "dakota": [],
+    "dakota__latn": [],
+    "danish": [],
+    "danish__latn": [],
+    "dargwa": [],
+    "dargwa__cyrl": [],
+    "daba": [],
+    "daba__latn": [],
+    "fataluku": [],
+    "fataluku__latn": [],
+    "dendi_benin": [],
+    "dendi_benin__latn": [],
+    "dedua": [],
+    "dedua__latn": [],
+    "desano": [],
+    "desano__latn": [],
+    "german": [],
+    "german__latn": [],
+    "southern_dagaare": [],
+    "southern_dagaare__latn": [],
+    "casiguran_dumagat_agta": [],
+    "casiguran_dumagat_agta__latn": [],
+    "northern_dagara": [],
+    "northern_dagara__latn": [],
+    "tlicho": [],
+    "tlicho__latn": [],
+    "daga": [],
+    "daga__latn": [],
+    "dhangu_djangu": [],
+    "dhangu_djangu__latn": [],
+    "zemba": [],
+    "zemba__latn": [],
+    "dehu": [],
+    "dehu__latn": [],
+    "didinga": [],
+    "didinga__latn": [],
+    "digo": [],
+    "digo__latn": [],
+    "southwestern_dinka": [],
+    "southwestern_dinka__latn": [],
+    "dinka": [],
+    "dinka__latn": [],
+    "northeastern_dinka": [],
+    "northeastern_dinka__latn": [],
+    "dimli_individual_language": [],
+    "dimli_individual_language__latn": [],
+    "dimasa": [],
+    "dimasa__latn": [],
+    "diriku": [],
+    "diriku__latn": [],
+    "dhivehi": [],
+    "dhivehi__thaa": [],
+    "zarma": [],
+    "zarma__latn": [],
+    "eastern_maroon_creole": [],
+    "eastern_maroon_creole__latn": [],
+    "djambarrpuyngu": [],
+    "djambarrpuyngu__latn": [],
+    "southeastern_dinka": [],
+    "southeastern_dinka__latn": [],
+    "darlong": [],
+    "darlong__latn": [],
+    "dungan": [],
+    "dungan__cyrl": [],
+    "dan": [],
+    "dan__latn": [],
+    "western_dani": [],
+    "western_dani__latn": [],
+    "dobu": [],
+    "dobu__latn": [],
+    "dogri_macrolanguage": [],
+    "dogri_macrolanguage__deva": [],
+    "lukpa": [],
+    "lukpa__latn": [],
+    "dogose": [],
+    "dogose__latn": [],
+    "doyayo": [],
+    "doyayo__latn": [],
+    "rungus": [],
+    "rungus__latn": [],
+    "rukai": [],
+    "rukai__latn": [],
+    "lower_sorbian": [],
+    "lower_sorbian__latn": [],
+    "daasanach": [],
+    "daasanach__latn": [],
+    "labuk_kinabatangan_kadazan": [],
+    "labuk_kinabatangan_kadazan__latn": [],
+    "kadazan_dusun": [],
+    "kadazan_dusun__latn": [],
+    "toro_so_dogon": [],
+    "toro_so_dogon__latn": [],
+    "dotyali": [],
+    "dotyali__deva": [],
+    "duala": [],
+    "duala__latn": [],
+    "umiray_dumaget_agta": [],
+    "umiray_dumaget_agta__latn": [],
+    "duruma": [],
+    "duruma__latn": [],
+    "dupaninan_agta": [],
+    "dupaninan_agta__latn": [],
+    "dii": [],
+    "dii__latn": [],
+    "dawro": [],
+    "dawro__latn": [],
+    "dawawa": [],
+    "dawawa__latn": [],
+    "djimini_senoufo": [],
+    "djimini_senoufo__latn": [],
+    "jola_fonyi": [],
+    "jola_fonyi__latn": [],
+    "dyula": [],
+    "dyula__latn": [],
+    "dzongkha": [],
+    "dzongkha__tibt": [],
+    "eastern_bontok": [],
+    "eastern_bontok__latn": [],
+    "efik": [],
+    "efik__latn": [],
+    "ekajuk": [],
+    "ekajuk__latn": [],
+    "standard_estonian": [],
+    "standard_estonian__latn": [],
+    "koti": [],
+    "koti__latn": [],
+    "modern_greek_1453_": [],
+    "modern_greek_1453___grek": [],
+    "emerillon": [],
+    "emerillon__latn": [],
+    "mussau_emira": [],
+    "mussau_emira__latn": [],
+    "northern_embera": [],
+    "northern_embera__latn": [],
+    "markweeta": [],
+    "markweeta__latn": [],
+    "english": [],
+    "english__latn": [],
+    "enlhet": [],
+    "enlhet__latn": [],
+    "middle_english_1100_1500": [],
+    "middle_english_1100_1500__latn": [],
+    "enga": [],
+    "enga__latn": [],
+    "enxet": [],
+    "enxet__latn": [],
+    "esperanto": [],
+    "esperanto__latn": [],
+    "ogea": [],
+    "ogea__latn": [],
+    "ese_ejja": [],
+    "ese_ejja__latn": [],
+    "north_alaskan_inupiatun": [],
+    "north_alaskan_inupiatun__latn": [],
+    "northwest_alaska_inupiatun": [],
+    "northwest_alaska_inupiatun__latn": [],
+    "central_siberian_yupik": [],
+    "central_siberian_yupik__latn": [],
+    "estonian": [],
+    "estonian__latn": [],
+    "central_yupik": [],
+    "central_yupik__latn": [],
+    "eton_cameroon": [],
+    "eton_cameroon__latn": [],
+    "edolo": [],
+    "edolo__latn": [],
+    "ejagham": [],
+    "ejagham__latn": [],
+    "basque": [],
+    "basque__latn": [],
+    "even": [],
+    "even__cyrl": [],
+    "ewe": [],
+    "ewe__latn": [],
+    "ewondo": [],
+    "ewondo__latn": [],
+    "extremaduran": [],
+    "extremaduran__latn": [],
+    "ezaa": [],
+    "ezaa__latn": [],
+    "fasu": [],
+    "fasu__latn": [],
+    "wagi": [],
+    "wagi__latn": [],
+    "faiwol": [],
+    "faiwol__latn": [],
+    "south_fali": [],
+    "south_fali__latn": [],
+    "fang_equatorial_guinea": [],
+    "fang_equatorial_guinea__latn": [],
+    "faroese": [],
+    "faroese__latn": [],
+    "fataleka": [],
+    "fataleka__latn": [],
+    "persian": [],
+    "persian__arab": [],
+    "fanti": [],
+    "fanti__latn": [],
+    "maasina_fulfulde": [],
+    "maasina_fulfulde__latn": [],
+    "fijian": [],
+    "fijian__latn": [],
+    "filipino": [],
+    "filipino__latn": [],
+    "finnish": [],
+    "finnish__latn": [],
+    "tornedalen_finnish": [],
+    "tornedalen_finnish__latn": [],
+    "kven_finnish": [],
+    "kven_finnish__latn": [],
+    "far_western_muria": [],
+    "far_western_muria__deva": [],
+    "fon": [],
+    "fon__latn": [],
+    "fore": [],
+    "fore__latn": [],
+    "french": [],
+    "french__latn": [],
+    "fordata": [],
+    "fordata__latn": [],
+    "old_french_842_ca_1400": [],
+    "old_french_842_ca_1400__latn": [],
+    "arpitan": [],
+    "arpitan__latn": [],
+    "northern_frisian": [],
+    "northern_frisian__latn": [],
+    "western_frisian": [],
+    "western_frisian__latn": [],
+    "adamawa_fulfulde": [],
+    "adamawa_fulfulde__latn": [],
+    "east_futuna": [],
+    "east_futuna__latn": [],
+    "borgu_fulfulde": [],
+    "borgu_fulfulde__latn": [],
+    "pular": [],
+    "pular__latn": [],
+    "western_niger_fulfulde": [],
+    "western_niger_fulfulde__latn": [],
+    "fulah": [],
+    "fulah__latn": [],
+    "fulah__arab": [],
+    "central_eastern_niger_fulfulde": [],
+    "central_eastern_niger_fulfulde__latn": [],
+    "friulian": [],
+    "friulian__latn": [],
+    "nigerian_fulfulde": [],
+    "nigerian_fulfulde__latn": [],
+    "nigerian_fulfulde__arab": [],
+    "ga": [],
+    "ga__latn": [],
+    "gagauz": [],
+    "gagauz__latn": [],
+    "gagauz__cyrl": [],
+    "alekano": [],
+    "alekano__latn": [],
+    "borei": [],
+    "borei__latn": [],
+    "kandawo": [],
+    "kandawo__latn": [],
+    "nobonob": [],
+    "nobonob__latn": [],
+    "west_central_oromo": [],
+    "west_central_oromo__latn": [],
+    "gbaya_central_african_republic": [],
+    "gbaya_central_african_republic__latn": [],
+    "galela": [],
+    "galela__latn": [],
+    "northern_grebo": [],
+    "northern_grebo__latn": [],
+    "gbagyi": [],
+    "gbagyi__latn": [],
+    "guadeloupean_creole_french": [],
+    "guadeloupean_creole_french__latn": [],
+    "guianese_creole_french": [],
+    "guianese_creole_french__latn": [],
+    "gude": [],
+    "gude__latn": [],
+    "ga_dang": [],
+    "ga_dang__latn": [],
+    "umanakaina": [],
+    "umanakaina__latn": [],
+    "wipi": [],
+    "wipi__latn": [],
+    "kire": [],
+    "kire__latn": [],
+    "gen": [],
+    "gen__latn": [],
+    "patpatar": [],
+    "patpatar__latn": [],
+    "southern_ghale": [],
+    "southern_ghale__deva": [],
+    "guhu_samane": [],
+    "guhu_samane__latn": [],
+    "gidar": [],
+    "gidar__latn": [],
+    "gilbertese": [],
+    "gilbertese__latn": [],
+    "south_giziga": [],
+    "south_giziga__latn": [],
+    "gonja": [],
+    "gonja__latn": [],
+    "gokana": [],
+    "gokana__latn": [],
+    "scottish_gaelic": [],
+    "scottish_gaelic__latn": [],
+    "irish": [],
+    "irish__latn": [],
+    "galician": [],
+    "galician__latn": [],
+    "gilaki": [],
+    "gilaki__arab": [],
+    "manx": [],
+    "manx__latn": [],
+    "middle_high_german_ca_1050_1500": [],
+    "middle_high_german_ca_1050_1500__latn": [],
+    "gamo": [],
+    "gamo__latn": [],
+    "gamo__ethi": [],
+    "kaansa": [],
+    "kaansa__latn": [],
+    "gangte": [],
+    "gangte__latn": [],
+    "zulgo_gemzek": [],
+    "zulgo_gemzek__latn": [],
+    "ngangam": [],
+    "ngangam__latn": [],
+    "gumatj": [],
+    "gumatj__latn": [],
+    "western_bolivian_guarani": [],
+    "western_bolivian_guarani__latn": [],
+    "guro": [],
+    "guro__latn": [],
+    "gofa": [],
+    "gofa__latn": [],
+    "gofa__ethi": [],
+    "gogo": [],
+    "gogo__latn": [],
+    "old_high_german_ca_750_1050": [],
+    "old_high_german_ca_750_1050__latn": [],
+    "goan_konkani": [],
+    "goan_konkani__latn": [],
+    "goan_konkani__deva": [],
+    "gondi": [],
+    "gondi__telu": [],
+    "gorontalo": [],
+    "gorontalo__latn": [],
+    "gronings": [],
+    "gronings__latn": [],
+    "gothic": [],
+    "gothic__latn": [],
+    "gothic__goth": [],
+    "gor": [],
+    "gor__latn": [],
+    "grebo": [],
+    "grebo__latn": [],
+    "ancient_greek_to_1453": [],
+    "ancient_greek_to_1453__grek": [],
+    "guarani": [],
+    "guarani__latn": [],
+    "garo": [],
+    "garo__beng": [],
+    "southwest_gbaya": [],
+    "southwest_gbaya__latn": [],
+    "swiss_german": [],
+    "swiss_german__latn": [],
+    "guajajara": [],
+    "guajajara__latn": [],
+    "wayuu": [],
+    "wayuu__latn": [],
+    "yocoboue_dida": [],
+    "yocoboue_dida__latn": [],
+    "paraguayan_guarani": [],
+    "paraguayan_guarani__latn": [],
+    "guahibo": [],
+    "guahibo__latn": [],
+    "eastern_bolivian_guarani": [],
+    "eastern_bolivian_guarani__latn": [],
+    "gujarati": [],
+    "gujarati__gujr": [],
+    "gujarati__latn": [],
+    "gumuz": [],
+    "gumuz__ethi": [],
+    "sea_island_creole_english": [],
+    "sea_island_creole_english__latn": [],
+    "guambiano": [],
+    "guambiano__latn": [],
+    "mbya_guarani": [],
+    "mbya_guarani__latn": [],
+    "guayabero": [],
+    "guayabero__latn": [],
+    "ache": [],
+    "ache__latn": [],
+    "farefare": [],
+    "farefare__latn": [],
+    "yanomamo": [],
+    "yanomamo__latn": [],
+    "gun": [],
+    "gun__latn": [],
+    "gourmanchema": [],
+    "gourmanchema__latn": [],
+    "gusii": [],
+    "gusii__latn": [],
+    "guanano": [],
+    "guanano__latn": [],
+    "golin": [],
+    "golin__latn": [],
+    "gulay": [],
+    "gulay__latn": [],
+    "kuku_yalanji": [],
+    "kuku_yalanji__latn": [],
+    "gwich\u02bcin": [],
+    "gwich\u02bcin__latn": [],
+    "gwere": [],
+    "gwere__latn": [],
+    "northwest_gbaya": [],
+    "northwest_gbaya__latn": [],
+    "ngabere": [],
+    "ngabere__latn": [],
+    "guarayu": [],
+    "guarayu__latn": [],
+    "gurani": [],
+    "gurani__arab": [],
+    "eastern_oromo": [],
+    "eastern_oromo__latn": [],
+    "hanga": [],
+    "hanga__latn": [],
+    "hakka_chinese": [],
+    "hakka_chinese__hani": [],
+    "hakka_chinese__latn": [],
+    "haitian": [],
+    "haitian__latn": [],
+    "hausa": [],
+    "hausa__latn": [],
+    "havu": [],
+    "havu__latn": [],
+    "hawaiian": [],
+    "hawaiian__latn": [],
+    "haya": [],
+    "haya__latn": [],
+    "ancient_hebrew": [],
+    "ancient_hebrew__hebr": [],
+    "serbo_croatian": [],
+    "serbo_croatian__latn": [],
+    "serbo_croatian__cyrl": [],
+    "huichol": [],
+    "huichol__latn": [],
+    "hebrew": [],
+    "hebrew__hebr": [],
+    "helong": [],
+    "helong__latn": [],
+    "hehe": [],
+    "hehe__latn": [],
+    "herero": [],
+    "herero__latn": [],
+    "fiji_hindi": [],
+    "fiji_hindi__latn": [],
+    "kamwe": [],
+    "kamwe__latn": [],
+    "hiligaynon": [],
+    "hiligaynon__latn": [],
+    "hindi": [],
+    "hindi__deva": [],
+    "hindi__latn": [],
+    "hixkaryana": [],
+    "hixkaryana__latn": [],
+    "halia": [],
+    "halia__latn": [],
+    "matu_chin": [],
+    "matu_chin__latn": [],
+    "hmong": [],
+    "hmong__latn": [],
+    "hiri_motu": [],
+    "hiri_motu__latn": [],
+    "hmar": [],
+    "hmar__latn": [],
+    "chhattisgarhi": [],
+    "chhattisgarhi__deva": [],
+    "hmong_njua": [],
+    "hmong_njua__latn": [],
+    "hanunoo": [],
+    "hanunoo__latn": [],
+    "caribbean_hindustani": [],
+    "caribbean_hindustani__latn": [],
+    "ho": [],
+    "ho__latn": [],
+    "ho__wara": [],
+    "hopi": [],
+    "hopi__latn": [],
+    "hote": [],
+    "hote__latn": [],
+    "hrangkhol": [],
+    "hrangkhol__latn": [],
+    "croatian": [],
+    "croatian__latn": [],
+    "hunsrik": [],
+    "hunsrik__latn": [],
+    "upper_sorbian": [],
+    "upper_sorbian__latn": [],
+    "minica_huitoto": [],
+    "minica_huitoto__latn": [],
+    "huambisa": [],
+    "huambisa__latn": [],
+    "huli": [],
+    "huli__latn": [],
+    "hungarian": [],
+    "hungarian__latn": [],
+    "huastec": [],
+    "huastec__latn": [],
+    "murui_huitoto": [],
+    "murui_huitoto__latn": [],
+    "san_mateo_del_mar_huave": [],
+    "san_mateo_del_mar_huave__latn": [],
+    "sabu": [],
+    "sabu__latn": [],
+    "hawai_i_creole_english": [],
+    "hawai_i_creole_english__latn": [],
+    "armenian": [],
+    "armenian__armn": [],
+    "western_armenian": [],
+    "western_armenian__armn": [],
+    "iatmul": [],
+    "iatmul__latn": [],
+    "iban": [],
+    "iban__latn": [],
+    "ibanag": [],
+    "ibanag__latn": [],
+    "igbo": [],
+    "igbo__latn": [],
+    "islander_creole_english": [],
+    "islander_creole_english__latn": [],
+    "ido": [],
+    "ido__latn": [],
+    "idoma": [],
+    "idoma__latn": [],
+    "amganad_ifugao": [],
+    "amganad_ifugao__latn": [],
+    "batad_ifugao": [],
+    "batad_ifugao__latn": [],
+    "ife": [],
+    "ife__latn": [],
+    "tuwali_ifugao": [],
+    "tuwali_ifugao__latn": [],
+    "mayoyao_ifugao": [],
+    "mayoyao_ifugao__latn": [],
+    "keley_i_kallahan": [],
+    "keley_i_kallahan__latn": [],
+    "igede": [],
+    "igede__latn": [],
+    "ignaciano": [],
+    "ignaciano__latn": [],
+    "eastern_canadian_inuktitut": [],
+    "eastern_canadian_inuktitut__cans": [],
+    "ika": [],
+    "ika__latn": [],
+    "inuinnaqtun": [],
+    "inuinnaqtun__latn": [],
+    "inuktitut": [],
+    "inuktitut__cans": [],
+    "inuktitut__latn": [],
+    "ikwere": [],
+    "ikwere__latn": [],
+    "ila": [],
+    "ila__latn": [],
+    "interlingue": [],
+    "interlingue__latn": [],
+    "iloko": [],
+    "iloko__latn": [],
+    "imbongu": [],
+    "imbongu__latn": [],
+    "interlingua_international_auxiliary_language_association": [],
+    "interlingua_international_auxiliary_language_association__latn": [],
+    "inga": [],
+    "inga__latn": [],
+    "indonesian": [],
+    "indonesian__latn": [],
+    "ingush": [],
+    "ingush__cyrl": [],
+    "inoke_yate": [],
+    "inoke_yate__latn": [],
+    "tuma_irumu": [],
+    "tuma_irumu__latn": [],
+    "ipili": [],
+    "ipili__latn": [],
+    "inupiaq": [],
+    "inupiaq__latn": [],
+    "ikwo": [],
+    "ikwo__latn": [],
+    "rigwe": [],
+    "rigwe__latn": [],
+    "iraqw": [],
+    "iraqw__latn": [],
+    "iraya": [],
+    "iraya__latn": [],
+    "isnag": [],
+    "isnag__latn": [],
+    "esan": [],
+    "esan__latn": [],
+    "icelandic": [],
+    "icelandic__latn": [],
+    "isoko": [],
+    "isoko__latn": [],
+    "italian": [],
+    "italian__latn": [],
+    "itelmen": [],
+    "itelmen__cyrl": [],
+    "itawit": [],
+    "itawit__latn": [],
+    "iu_mien": [],
+    "iu_mien__latn": [],
+    "ibatan": [],
+    "ibatan__latn": [],
+    "ivatan": [],
+    "ivatan__latn": [],
+    "sepik_iwam": [],
+    "sepik_iwam__latn": [],
+    "ixil": [],
+    "ixil__latn": [],
+    "izere": [],
+    "izere__latn": [],
+    "izii": [],
+    "izii__latn": [],
+    "jamamadi": [],
+    "jamamadi__latn": [],
+    "popti_": [],
+    "popti___latn": [],
+    "yabem": [],
+    "yabem__latn": [],
+    "jamaican_creole_english": [],
+    "jamaican_creole_english__latn": [],
+    "javanese": [],
+    "javanese__latn": [],
+    "javanese__java": [],
+    "lojban": [],
+    "lojban__latn": [],
+    "jukun_takum": [],
+    "jukun_takum__latn": [],
+    "tol": [],
+    "tol__latn": [],
+    "shuar": [],
+    "shuar__latn": [],
+    "machame": [],
+    "machame__latn": [],
+    "japanese": [],
+    "japanese__jpan": [],
+    "jarai": [],
+    "jarai__latn": [],
+    "juang": [],
+    "juang__orya": [],
+    "caribbean_javanese": [],
+    "caribbean_javanese__latn": [],
+    "kara_kalpak": [],
+    "kara_kalpak__cyrl": [],
+    "kara_kalpak__latn": [],
+    "kabyle": [],
+    "kabyle__latn": [],
+    "kachin": [],
+    "kachin__latn": [],
+    "kalanguya": [],
+    "kalanguya__latn": [],
+    "kalaallisut": [],
+    "kalaallisut__latn": [],
+    "kamba_kenya": [],
+    "kamba_kenya__latn": [],
+    "kannada": [],
+    "kannada__knda": [],
+    "kannada__latn": [],
+    "xaasongaxango": [],
+    "xaasongaxango__latn": [],
+    "bezhta": [],
+    "bezhta__cyrl": [],
+    "capanahua": [],
+    "capanahua__latn": [],
+    "kashmiri": [],
+    "kashmiri__deva": [],
+    "kashmiri__latn": [],
+    "kashmiri__arab": [],
+    "georgian": [],
+    "georgian__geor": [],
+    "kanuri": [],
+    "kanuri__arab": [],
+    "kanuri__latn": [],
+    "kazakh": [],
+    "kazakh__cyrl": [],
+    "kadiweu": [],
+    "kadiweu__latn": [],
+    "kabardian": [],
+    "kabardian__cyrl": [],
+    "camsa": [],
+    "camsa__latn": [],
+    "iwal": [],
+    "iwal__latn": [],
+    "keliko": [],
+    "keliko__latn": [],
+    "kabiye": [],
+    "kabiye__latn": [],
+    "kamano": [],
+    "kamano__latn": [],
+    "kafa": [],
+    "kafa__latn": [],
+    "manga_kanuri": [],
+    "manga_kanuri__latn": [],
+    "khanty": [],
+    "khanty__cyrl": [],
+    "tyap": [],
+    "tyap__latn": [],
+    "kalanga": [],
+    "kalanga__latn": [],
+    "kutu": [],
+    "kutu__latn": [],
+    "makonde": [],
+    "makonde__latn": [],
+    "tem": [],
+    "tem__latn": [],
+    "kumam": [],
+    "kumam__latn": [],
+    "karamojong": [],
+    "karamojong__latn": [],
+    "tsikimba": [],
+    "tsikimba__latn": [],
+    "kaningdon_nindem": [],
+    "kaningdon_nindem__latn": [],
+    "karaim": [],
+    "karaim__latn": [],
+    "kabuverdianu": [],
+    "kabuverdianu__latn": [],
+    "kei": [],
+    "kei__latn": [],
+    "kekchi": [],
+    "kekchi__latn": [],
+    "kenyang": [],
+    "kenyang__latn": [],
+    "kakwa": [],
+    "kakwa__latn": [],
+    "kera": [],
+    "kera__latn": [],
+    "west_kewa": [],
+    "west_kewa__latn": [],
+    "kukna": [],
+    "kukna__deva": [],
+    "kukele": [],
+    "kukele__latn": [],
+    "koya": [],
+    "koya__telu": [],
+    "kube": [],
+    "kube__latn": [],
+    "kaiwa": [],
+    "kaiwa__latn": [],
+    "kaingang": [],
+    "kaingang__latn": [],
+    "abun": [],
+    "abun__latn": [],
+    "khasi": [],
+    "khasi__latn": [],
+    "halh_mongolian": [],
+    "halh_mongolian__cyrl": [],
+    "khmer": [],
+    "khmer__khmr": [],
+    "koyra_chiini_songhay": [],
+    "koyra_chiini_songhay__latn": [],
+    "kasua": [],
+    "kasua__latn": [],
+    "kele_democratic_republic_of_congo": [],
+    "kele_democratic_republic_of_congo__latn": [],
+    "keapara": [],
+    "keapara__latn": [],
+    "kim": [],
+    "kim__latn": [],
+    "kilivila": [],
+    "kilivila__latn": [],
+    "kikuyu": [],
+    "kikuyu__latn": [],
+    "kinyarwanda": [],
+    "kinyarwanda__latn": [],
+    "kirghiz": [],
+    "kirghiz__cyrl": [],
+    "kirmanjki_individual_language": [],
+    "kirmanjki_individual_language__latn": [],
+    "khiamniungan_naga": [],
+    "khiamniungan_naga__latn": [],
+    "q_anjob_al": [],
+    "q_anjob_al__latn": [],
+    "kisar": [],
+    "kisar__latn": [],
+    "khakas": [],
+    "khakas__cyrl": [],
+    "east_kewa": [],
+    "east_kewa__latn": [],
+    "odoodee": [],
+    "odoodee__latn": [],
+    "kagulu": [],
+    "kagulu__latn": [],
+    "kako": [],
+    "kako__latn": [],
+    "kosarek_yale": [],
+    "kosarek_yale__latn": [],
+    "kulung_nepal": [],
+    "kulung_nepal__deva": [],
+    "kalenjin": [],
+    "kalenjin__latn": [],
+    "nukna": [],
+    "nukna__latn": [],
+    "maskelynes": [],
+    "maskelynes__latn": [],
+    "konni": [],
+    "konni__latn": [],
+    "kimbundu": [],
+    "kimbundu__latn": [],
+    "majukayang_kalinga": [],
+    "majukayang_kalinga__latn": [],
+    "kate": [],
+    "kate__latn": [],
+    "kalam": [],
+    "kalam__latn": [],
+    "limos_kalinga": [],
+    "limos_kalinga__latn": [],
+    "kom_india": [],
+    "kom_india__latn": [],
+    "kwoma": [],
+    "kwoma__latn": [],
+    "northern_kurdish": [],
+    "northern_kurdish__latn": [],
+    "northern_kurdish__cyrl": [],
+    "kamasau": [],
+    "kamasau__latn": [],
+    "kanite": [],
+    "kanite__latn": [],
+    "koma": [],
+    "koma__latn": [],
+    "central_kanuri": [],
+    "central_kanuri__arab": [],
+    "central_kanuri__latn": [],
+    "kankanaey": [],
+    "kankanaey__latn": [],
+    "mankanya": [],
+    "mankanya__latn": [],
+    "koongo": [],
+    "koongo__latn": [],
+    "western_kanjobal": [],
+    "western_kanjobal__latn": [],
+    "kuranko": [],
+    "kuranko__latn": [],
+    "kono_sierra_leone": [],
+    "kono_sierra_leone__latn": [],
+    "tabo": [],
+    "tabo__latn": [],
+    "kendayan": [],
+    "kendayan__latn": [],
+    "kanyok": [],
+    "kanyok__latn": [],
+    "cogui": [],
+    "cogui__latn": [],
+    "komi_permyak": [],
+    "komi_permyak__cyrl": [],
+    "konkani_macrolanguage__latn": [],
+    "konkani_macrolanguage": [],
+    "konkani_macrolanguage__deva": [],
+    "komi": [],
+    "komi__cyrl": [],
+    "kongo": [],
+    "kongo__latn": [],
+    "konzo": [],
+    "konzo__latn": [],
+    "korean": [],
+    "korean__hang": [],
+    "kosraean": [],
+    "kosraean__latn": [],
+    "kpelle": [],
+    "kpelle__latn": [],
+    "komba": [],
+    "komba__latn": [],
+    "kapingamarangi": [],
+    "kapingamarangi__latn": [],
+    "karaja": [],
+    "karaja__latn": [],
+    "korupun_sela": [],
+    "korupun_sela__latn": [],
+    "korafe_yegha": [],
+    "korafe_yegha__latn": [],
+    "komi_zyrian": [],
+    "komi_zyrian__cyrl": [],
+    "kobon": [],
+    "kobon__latn": [],
+    "mountain_koiali": [],
+    "mountain_koiali__latn": [],
+    "kupsabiny": [],
+    "kupsabiny__latn": [],
+    "mum": [],
+    "mum__latn": [],
+    "doromu_koki": [],
+    "doromu_koki__latn": [],
+    "kalagan": [],
+    "kalagan__latn": [],
+    "kakabai": [],
+    "kakabai__latn": [],
+    "kyenele": [],
+    "kyenele__latn": [],
+    "kaonde": [],
+    "kaonde__latn": [],
+    "eastern_krahn": [],
+    "eastern_krahn__latn": [],
+    "kimre": [],
+    "kimre__latn": [],
+    "northern_kissi": [],
+    "northern_kissi__latn": [],
+    "kandas": [],
+    "kandas__latn": [],
+    "koorete": [],
+    "koorete__ethi": [],
+    "karachay_balkar": [],
+    "karachay_balkar__cyrl": [],
+    "krio": [],
+    "krio__latn": [],
+    "kinaray_a": [],
+    "kinaray_a__latn": [],
+    "karelian": [],
+    "karelian__latn": [],
+    "kurukh": [],
+    "kurukh__deva": [],
+    "karon": [],
+    "karon__latn": [],
+    "shambala": [],
+    "shambala__latn": [],
+    "southern_kalinga": [],
+    "southern_kalinga__latn": [],
+    "kuanua": [],
+    "kuanua__latn": [],
+    "bafia": [],
+    "bafia__latn": [],
+    "kolsch": [],
+    "kolsch__latn": [],
+    "uare": [],
+    "uare__latn": [],
+    "kaba": [],
+    "kaba__latn": [],
+    "borong": [],
+    "borong__latn": [],
+    "southern_kisi": [],
+    "southern_kisi__latn": [],
+    "s_gaw_karen": [],
+    "s_gaw_karen__mymr": [],
+    "kambaata": [],
+    "kambaata__ethi": [],
+    "plapo_krumen": [],
+    "plapo_krumen__latn": [],
+    "kurti": [],
+    "kurti__latn": [],
+    "kuot": [],
+    "kuot__latn": [],
+    "kituba_democratic_republic_of_congo": [],
+    "kituba_democratic_republic_of_congo__latn": [],
+    "ju\u01c0\u02bchoan": [],
+    "ju\u01c0\u02bchoan__latn": [],
+    "kuanyama": [],
+    "kuanyama__latn": [],
+    "kutep": [],
+    "kutep__latn": [],
+    "auhelawa": [],
+    "auhelawa__latn": [],
+    "kuman_papua_new_guinea": [],
+    "kuman_papua_new_guinea__latn": [],
+    "kuria": [],
+    "kuria__latn": [],
+    "kumyk": [],
+    "kumyk__cyrl": [],
+    "kunimaipa": [],
+    "kunimaipa__latn": [],
+    "kurdish": [],
+    "kurdish__arab": [],
+    "kurdish__latn": [],
+    "kurdish__cyrl": [],
+    "kusaal": [],
+    "kusaal__latn": [],
+    "kuni_boazi": [],
+    "kuni_boazi__latn": [],
+    "psikye": [],
+    "psikye__latn": [],
+    "border_kuna": [],
+    "border_kuna__latn": [],
+    "kwaio": [],
+    "kwaio__latn": [],
+    "kwara_ae": [],
+    "kwara_ae__latn": [],
+    "awa_cuaiquer": [],
+    "awa_cuaiquer__latn": [],
+    "kwanga": [],
+    "kwanga__latn": [],
+    "kwangali": [],
+    "kwangali__latn": [],
+    "san_salvador_kongo": [],
+    "san_salvador_kongo__latn": [],
+    "konso": [],
+    "konso__ethi": [],
+    "northern_khmer": [],
+    "northern_khmer__thai": [],
+    "konai": [],
+    "konai__latn": [],
+    "kyaka": [],
+    "kyaka__latn": [],
+    "kouya": [],
+    "kouya__latn": [],
+    "keyagana": [],
+    "keyagana__latn": [],
+    "kenga": [],
+    "kenga__latn": [],
+    "western_kayah": [],
+    "western_kayah__latn": [],
+    "western_kayah__kali": [],
+    "western_kayah__mymr": [],
+    "kayabi": [],
+    "kayabi__latn": [],
+    "kosena": [],
+    "kosena__latn": [],
+    "da_a_kaili": [],
+    "da_a_kaili__latn": [],
+    "kokola": [],
+    "kokola__latn": [],
+    "lacandon": [],
+    "lacandon__latn": [],
+    "ladino": [],
+    "ladino__latn": [],
+    "ladino__hebr": [],
+    "lahnda": [],
+    "lahnda__arab": [],
+    "lambya": [],
+    "lambya__latn": [],
+    "lango_uganda": [],
+    "lango_uganda__latn": [],
+    "lamba": [],
+    "lamba__latn": [],
+    "lao": [],
+    "lao__laoo": [],
+    "laka_chad": [],
+    "laka_chad__latn": [],
+    "lama_togo": [],
+    "lama_togo__latn": [],
+    "latin": [],
+    "latin__latn": [],
+    "latvian": [],
+    "latvian__latn": [],
+    "lauje": [],
+    "lauje__latn": [],
+    "label": [],
+    "label__latn": [],
+    "lak": [],
+    "lak__cyrl": [],
+    "ladakhi": [],
+    "ladakhi__tibt": [],
+    "central_bontok": [],
+    "central_bontok__latn": [],
+    "tungag": [],
+    "tungag__latn": [],
+    "western_lawa": [],
+    "western_lawa__thai": [],
+    "laari": [],
+    "laari__latn": [],
+    "laadan": [],
+    "laadan__latn": [],
+    "lega_shabunda": [],
+    "lega_shabunda__latn": [],
+    "lendu": [],
+    "lendu__latn": [],
+    "lyele": [],
+    "lyele__latn": [],
+    "lelemi": [],
+    "lelemi__latn": [],
+    "lenje": [],
+    "lenje__latn": [],
+    "nomaande": [],
+    "nomaande__latn": [],
+    "kara_papua_new_guinea": [],
+    "kara_papua_new_guinea__latn": [],
+    "ledo_kaili": [],
+    "ledo_kaili__latn": [],
+    "luang": [],
+    "luang__latn": [],
+    "lezghian": [],
+    "lezghian__cyrl": [],
+    "lingua_franca_nova": [],
+    "lingua_franca_nova__latn": [],
+    "lingua_franca_nova__cyrl": [],
+    "lugbara": [],
+    "lugbara__latn": [],
+    "wala": [],
+    "wala__latn": [],
+    "lega_mwenga": [],
+    "lega_mwenga__latn": [],
+    "lahu_shi": [],
+    "lahu_shi__latn": [],
+    "lahu": [],
+    "lahu__latn": [],
+    "west_central_limba": [],
+    "west_central_limba__latn": [],
+    "nyindrou": [],
+    "nyindrou__latn": [],
+    "limbu": [],
+    "limbu__deva": [],
+    "limbu__limb": [],
+    "ligurian": [],
+    "ligurian__latn": [],
+    "limburgan": [],
+    "limburgan__latn": [],
+    "lingala": [],
+    "lingala__latn": [],
+    "sekpele": [],
+    "sekpele__latn": [],
+    "lisu": [],
+    "lisu__lisu": [],
+    "lithuanian": [],
+    "lithuanian__latn": [],
+    "liv": [],
+    "liv__latn": [],
+    "lampung_api": [],
+    "lampung_api__latn": [],
+    "laki": [],
+    "laki__arab": [],
+    "lolo": [],
+    "lolo__latn": [],
+    "ladin": [],
+    "ladin__latn": [],
+    "lole": [],
+    "lole__latn": [],
+    "lele_chad": [],
+    "lele_chad__latn": [],
+    "lamkang": [],
+    "lamkang__latn": [],
+    "lombard": [],
+    "lombard__latn": [],
+    "limbum": [],
+    "limbum__latn": [],
+    "lundayeh": [],
+    "lundayeh__latn": [],
+    "lobi": [],
+    "lobi__latn": [],
+    "saluan": [],
+    "saluan__latn": [],
+    "logo": [],
+    "logo__latn": [],
+    "loko": [],
+    "loko__latn": [],
+    "mongo": [],
+    "mongo__latn": [],
+    "loma_liberia": [],
+    "loma_liberia__latn": [],
+    "lobala": [],
+    "lobala__latn": [],
+    "lozi": [],
+    "lozi__latn": [],
+    "northern_luri": [],
+    "northern_luri__arab": [],
+    "lashi": [],
+    "lashi__latn": [],
+    "saamia": [],
+    "saamia__latn": [],
+    "latgalian": [],
+    "latgalian__latn": [],
+    "luxembourgish": [],
+    "luxembourgish__latn": [],
+    "luba_lulua": [],
+    "luba_lulua__latn": [],
+    "luba_katanga": [],
+    "luba_katanga__latn": [],
+    "aringa": [],
+    "aringa__latn": [],
+    "ludian": [],
+    "ludian__latn": [],
+    "luvale": [],
+    "luvale__latn": [],
+    "ganda": [],
+    "ganda__latn": [],
+    "lunda": [],
+    "lunda__latn": [],
+    "luo_kenya_and_tanzania": [],
+    "luo_kenya_and_tanzania__latn": [],
+    "lushai": [],
+    "lushai__latn": [],
+    "luyia": [],
+    "luyia__latn": [],
+    "standard_latvian": [],
+    "standard_latvian__latn": [],
+    "wanga": [],
+    "wanga__latn": [],
+    "luwo": [],
+    "luwo__latn": [],
+    "lewo": [],
+    "lewo__latn": [],
+    "literary_chinese": [],
+    "literary_chinese__hani": [],
+    "san_jeronimo_tecoatl_mazatec": [],
+    "san_jeronimo_tecoatl_mazatec__latn": [],
+    "madurese": [],
+    "madurese__latn": [],
+    "mafa": [],
+    "mafa__latn": [],
+    "magahi": [],
+    "magahi__deva": [],
+    "marshallese": [],
+    "marshallese__latn": [],
+    "maithili": [],
+    "maithili__deva": [],
+    "jalapa_de_diaz_mazatec": [],
+    "jalapa_de_diaz_mazatec__latn": [],
+    "makasar": [],
+    "makasar__latn": [],
+    "malayalam": [],
+    "malayalam__mlym": [],
+    "malayalam__latn": [],
+    "mam": [],
+    "mam__latn": [],
+    "mandingo": [],
+    "mandingo__latn": [],
+    "chiquihuitlan_mazatec": [],
+    "chiquihuitlan_mazatec__latn": [],
+    "marathi": [],
+    "marathi__deva": [],
+    "marathi__latn": [],
+    "masai": [],
+    "masai__latn": [],
+    "huautla_mazatec": [],
+    "huautla_mazatec__latn": [],
+    "satere_mawe": [],
+    "satere_mawe__latn": [],
+    "mampruli": [],
+    "mampruli__latn": [],
+    "north_moluccan_malay": [],
+    "north_moluccan_malay__latn": [],
+    "central_mazahua": [],
+    "central_mazahua__latn": [],
+    "western_bukidnon_manobo": [],
+    "western_bukidnon_manobo__latn": [],
+    "macushi": [],
+    "macushi__latn": [],
+    "dibabawon_manobo": [],
+    "dibabawon_manobo__latn": [],
+    "baba_malay": [],
+    "baba_malay__latn": [],
+    "mangseng": [],
+    "mangseng__latn": [],
+    "ilianen_manobo": [],
+    "ilianen_manobo__latn": [],
+    "nadeb": [],
+    "nadeb__latn": [],
+    "maxakali": [],
+    "maxakali__latn": [],
+    "sarangani_manobo": [],
+    "sarangani_manobo__latn": [],
+    "matigsalug_manobo": [],
+    "matigsalug_manobo__latn": [],
+    "maca": [],
+    "maca__latn": [],
+    "machiguenga": [],
+    "machiguenga__latn": [],
+    "sharanahua": [],
+    "sharanahua__latn": [],
+    "matses": [],
+    "matses__latn": [],
+    "mbunda": [],
+    "mbunda__latn": [],
+    "masana": [],
+    "masana__latn": [],
+    "coatlan_mixe": [],
+    "coatlan_mixe__latn": [],
+    "makaa": [],
+    "makaa__latn": [],
+    "ese": [],
+    "ese__latn": [],
+    "cameroon_mambila": [],
+    "cameroon_mambila__latn": [],
+    "mada_nigeria": [],
+    "mada_nigeria__latn": [],
+    "moksha": [],
+    "moksha__cyrl": [],
+    "male_ethiopia": [],
+    "male_ethiopia__ethi": [],
+    "melpa": [],
+    "melpa__latn": [],
+    "mengen": [],
+    "mengen__latn": [],
+    "meyah": [],
+    "meyah__latn": [],
+    "mekeo": [],
+    "mekeo__latn": [],
+    "mende_sierra_leone": [],
+    "mende_sierra_leone__latn": [],
+    "merey": [],
+    "merey__latn": [],
+    "meru": [],
+    "meru__latn": [],
+    "mato": [],
+    "mato__latn": [],
+    "motu": [],
+    "motu__latn": [],
+    "mano": [],
+    "mano__latn": [],
+    "morisyen": [],
+    "morisyen__latn": [],
+    "mogofin": [],
+    "mogofin__latn": [],
+    "matal": [],
+    "matal__latn": [],
+    "wandala": [],
+    "wandala__latn": [],
+    "north_mofu": [],
+    "north_mofu__latn": [],
+    "moba": [],
+    "moba__latn": [],
+    "mayo": [],
+    "mayo__latn": [],
+    "mabaan": [],
+    "mabaan__latn": [],
+    "morokodo": [],
+    "morokodo__latn": [],
+    "makhuwa_meetto": [],
+    "makhuwa_meetto__latn": [],
+    "mambae": [],
+    "mambae__latn": [],
+    "meta_": [],
+    "meta___latn": [],
+    "mambwe_lungu": [],
+    "mambwe_lungu__latn": [],
+    "ma_di": [],
+    "ma_di__latn": [],
+    "mauwake": [],
+    "mauwake__latn": [],
+    "eastern_mari": [],
+    "eastern_mari__cyrl": [],
+    "mbukushu": [],
+    "mbukushu__latn": [],
+    "maru": [],
+    "maru__latn": [],
+    "ma_anyan": [],
+    "ma_anyan__latn": [],
+    "atatlahuca_mixtec": [],
+    "atatlahuca_mixtec__latn": [],
+    "mi_kmaq": [],
+    "mi_kmaq__latn": [],
+    "ocotepec_mixtec": [],
+    "ocotepec_mixtec__latn": [],
+    "mofu_gudur": [],
+    "mofu_gudur__latn": [],
+    "san_miguel_el_grande_mixtec": [],
+    "san_miguel_el_grande_mixtec__latn": [],
+    "chayuco_mixtec": [],
+    "chayuco_mixtec__latn": [],
+    "penoles_mixtec": [],
+    "penoles_mixtec__latn": [],
+    "alacatlatzala_mixtec": [],
+    "alacatlatzala_mixtec__latn": [],
+    "minangkabau": [],
+    "minangkabau__latn": [],
+    "minangkabau__arab": [],
+    "pinotepa_nacional_mixtec": [],
+    "pinotepa_nacional_mixtec__latn": [],
+    "apasco_apoala_mixtec": [],
+    "apasco_apoala_mixtec__latn": [],
+    "miskito": [],
+    "miskito__latn": [],
+    "isthmus_mixe": [],
+    "isthmus_mixe__latn": [],
+    "southern_puebla_mixtec": [],
+    "southern_puebla_mixtec__latn": [],
+    "ayutla_mixtec": [],
+    "ayutla_mixtec__latn": [],
+    "coatzospan_mixtec": [],
+    "coatzospan_mixtec__latn": [],
+    "san_juan_colorado_mixtec": [],
+    "san_juan_colorado_mixtec__latn": [],
+    "karbi": [],
+    "karbi__latn": [],
+    "macedonian": [],
+    "macedonian__cyrl": [],
+    "mokole": [],
+    "mokole__latn": [],
+    "kupang_malay": [],
+    "kupang_malay__latn": [],
+    "silacayoapan_mixtec": [],
+    "silacayoapan_mixtec__latn": [],
+    "makasae": [],
+    "makasae__latn": [],
+    "malagasy": [],
+    "malagasy__latn": [],
+    "mape": [],
+    "mape__latn": [],
+    "bargam": [],
+    "bargam__latn": [],
+    "maltese": [],
+    "maltese__latn": [],
+    "to_abaita": [],
+    "to_abaita__latn": [],
+    "mamanwa": [],
+    "mamanwa__latn": [],
+    "mangga_buang": [],
+    "mangga_buang__latn": [],
+    "madak": [],
+    "madak__latn": [],
+    "mbula": [],
+    "mbula__latn": [],
+    "muna": [],
+    "muna__latn": [],
+    "mundani": [],
+    "mundani__latn": [],
+    "manipuri": [],
+    "manipuri__latn": [],
+    "manipuri__beng": [],
+    "manipuri__mtei": [],
+    "mandinka": [],
+    "mandinka__latn": [],
+    "mansi": [],
+    "mansi__cyrl": [],
+    "mon": [],
+    "mon__mymr": [],
+    "manikion": [],
+    "manikion__latn": [],
+    "manyawa": [],
+    "manyawa__latn": [],
+    "mwan": [],
+    "mwan__latn": [],
+    "mocovi": [],
+    "mocovi__latn": [],
+    "mongondow": [],
+    "mongondow__latn": [],
+    "mohawk": [],
+    "mohawk__latn": [],
+    "mongolian": [],
+    "mongolian__cyrl": [],
+    "mopan_maya": [],
+    "mopan_maya__latn": [],
+    "moro": [],
+    "moro__latn": [],
+    "mossi": [],
+    "mossi__latn": [],
+    "molima": [],
+    "molima__latn": [],
+    "marba": [],
+    "marba__latn": [],
+    "maung": [],
+    "maung__latn": [],
+    "yosondua_mixtec": [],
+    "yosondua_mixtec__latn": [],
+    "migabac": [],
+    "migabac__latn": [],
+    "dadibi": [],
+    "dadibi__latn": [],
+    "mian": [],
+    "mian__latn": [],
+    "misima_panaeati": [],
+    "misima_panaeati__latn": [],
+    "mbuko": [],
+    "mbuko__latn": [],
+    "mamasa": [],
+    "mamasa__latn": [],
+    "manggarai": [],
+    "manggarai__latn": [],
+    "mising": [],
+    "mising__latn": [],
+    "maori": [],
+    "maori__latn": [],
+    "western_mari": [],
+    "western_mari__cyrl": [],
+    "north_marquesan": [],
+    "north_marquesan__latn": [],
+    "mangareva": [],
+    "mangareva__latn": [],
+    "maranao": [],
+    "maranao__latn": [],
+    "malay_macrolanguage": [],
+    "malay_macrolanguage__latn": [],
+    "malay_macrolanguage__arab": [],
+    "malay_macrolanguage__thai": [],
+    "masbatenyo": [],
+    "masbatenyo__latn": [],
+    "sankaran_maninka": [],
+    "sankaran_maninka__latn": [],
+    "musey": [],
+    "musey__latn": [],
+    "mansaka": [],
+    "mansaka__latn": [],
+    "agusan_manobo": [],
+    "agusan_manobo__latn": [],
+    "aruamu": [],
+    "aruamu__latn": [],
+    "cotabato_manobo": [],
+    "cotabato_manobo__latn": [],
+    "una": [],
+    "una__latn": [],
+    "maiwa_papua_new_guinea": [],
+    "maiwa_papua_new_guinea__latn": [],
+    "moskona": [],
+    "moskona__latn": [],
+    "totontepec_mixe": [],
+    "totontepec_mixe__latn": [],
+    "wichi_lhamtes_nocten": [],
+    "wichi_lhamtes_nocten__latn": [],
+    "mundang": [],
+    "mundang__latn": [],
+    "musgu": [],
+    "musgu__latn": [],
+    "mundu": [],
+    "mundu__latn": [],
+    "musi": [],
+    "musi__latn": [],
+    "malvi": [],
+    "malvi__deva": [],
+    "murle": [],
+    "murle__latn": [],
+    "creek": [],
+    "creek__latn": [],
+    "bo_ung": [],
+    "bo_ung__latn": [],
+    "muyang": [],
+    "muyang__latn": [],
+    "manam": [],
+    "manam__latn": [],
+    "minaveha": [],
+    "minaveha__latn": [],
+    "duri": [],
+    "duri__latn": [],
+    "are": [],
+    "are__latn": [],
+    "murrinh_patha": [],
+    "murrinh_patha__latn": [],
+    "mirandese": [],
+    "mirandese__latn": [],
+    "sar": [],
+    "sar__latn": [],
+    "nyamwanga": [],
+    "nyamwanga__latn": [],
+    "kala_lagaw_ya": [],
+    "kala_lagaw_ya__latn": [],
+    "mun_chin": [],
+    "mun_chin__latn": [],
+    "mentawai": [],
+    "mentawai__latn": [],
+    "hmong_daw": [],
+    "hmong_daw__latn": [],
+    "tezoatlan_mixtec": [],
+    "tezoatlan_mixtec__latn": [],
+    "tlahuitoltepec_mixe": [],
+    "tlahuitoltepec_mixe__latn": [],
+    "juquila_mixe": [],
+    "juquila_mixe__latn": [],
+    "jamiltepec_mixtec": [],
+    "jamiltepec_mixtec__latn": [],
+    "metlatonoc_mixtec": [],
+    "metlatonoc_mixtec__latn": [],
+    "burmese": [],
+    "burmese__mymr": [],
+    "mbay": [],
+    "mbay__latn": [],
+    "mamara_senoufo": [],
+    "mamara_senoufo__latn": [],
+    "munduruku": [],
+    "munduruku__latn": [],
+    "erzya": [],
+    "erzya__cyrl": [],
+    "muyuw": [],
+    "muyuw__latn": [],
+    "masaaba": [],
+    "masaaba__latn": [],
+    "macuna": [],
+    "macuna__latn": [],
+    "santa_maria_zacatepec_mixtec": [],
+    "santa_maria_zacatepec_mixtec__latn": [],
+    "wichi_lhamtes_guisnay": [],
+    "wichi_lhamtes_guisnay__latn": [],
+    "nigeria_mambila": [],
+    "nigeria_mambila__latn": [],
+    "mazatlan_mixe": [],
+    "mazatlan_mixe__latn": [],
+    "mumuye": [],
+    "mumuye__latn": [],
+    "mazanderani": [],
+    "mazanderani__arab": [],
+    "deg": [],
+    "deg__latn": [],
+    "maiadomu": [],
+    "maiadomu__latn": [],
+    "southern_nambikuara": [],
+    "southern_nambikuara__latn": [],
+    "nabak": [],
+    "nabak__latn": [],
+    "nakanai": [],
+    "nakanai__latn": [],
+    "min_nan_chinese": [],
+    "min_nan_chinese__hani": [],
+    "min_nan_chinese__latn": [],
+    "neapolitan": [],
+    "neapolitan__latn": [],
+    "khoekhoe": [],
+    "khoekhoe__latn": [],
+    "naasioi": [],
+    "naasioi__latn": [],
+    "navajo": [],
+    "navajo__latn": [],
+    "nawuri": [],
+    "nawuri__latn": [],
+    "nyemba": [],
+    "nyemba__latn": [],
+    "chang_naga": [],
+    "chang_naga__latn": [],
+    "konyak_naga": [],
+    "konyak_naga__latn": [],
+    "south_ndebele": [],
+    "south_ndebele__latn": [],
+    "nggem": [],
+    "nggem__latn": [],
+    "rongmei_naga": [],
+    "rongmei_naga__latn": [],
+    "iyo": [],
+    "iyo__latn": [],
+    "central_huasteca_nahuatl": [],
+    "central_huasteca_nahuatl__latn": [],
+    "northern_puebla_nahuatl": [],
+    "northern_puebla_nahuatl__latn": [],
+    "michoacan_nahuatl": [],
+    "michoacan_nahuatl__latn": [],
+    "northern_katang": [],
+    "northern_katang__laoo": [],
+    "chothe_naga": [],
+    "chothe_naga__latn": [],
+    "chumburung": [],
+    "chumburung__latn": [],
+    "central_puebla_nahuatl": [],
+    "central_puebla_nahuatl__latn": [],
+    "ndau": [],
+    "ndau__latn": [],
+    "north_ndebele": [],
+    "north_ndebele__latn": [],
+    "ndali": [],
+    "ndali__latn": [],
+    "samba_leko": [],
+    "samba_leko__latn": [],
+    "ndamba": [],
+    "ndamba__latn": [],
+    "ndonga": [],
+    "ndonga__latn": [],
+    "ndo": [],
+    "ndo__latn": [],
+    "low_german": [],
+    "low_german__latn": [],
+    "lutos": [],
+    "lutos__latn": [],
+    "ndogo": [],
+    "ndogo__latn": [],
+    "toura_cote_d_ivoire": [],
+    "toura_cote_d_ivoire__latn": [],
+    "nepali_macrolanguage": [],
+    "nepali_macrolanguage__deva": [],
+    "nepali_macrolanguage__latn": [],
+    "newari": [],
+    "newari__deva": [],
+    "dhao": [],
+    "dhao__latn": [],
+    "nafaanra": [],
+    "nafaanra__latn": [],
+    "northern_ngbandi": [],
+    "northern_ngbandi__latn": [],
+    "ngombe_democratic_republic_of_congo": [],
+    "ngombe_democratic_republic_of_congo__latn": [],
+    "lomwe": [],
+    "lomwe__latn": [],
+    "ngulu": [],
+    "ngulu__latn": [],
+    "guerrero_nahuatl": [],
+    "guerrero_nahuatl__latn": [],
+    "chiripa": [],
+    "chiripa__latn": [],
+    "eastern_huasteca_nahuatl": [],
+    "eastern_huasteca_nahuatl__latn": [],
+    "tetelcingo_nahuatl": [],
+    "tetelcingo_nahuatl__latn": [],
+    "zacatlan_ahuacatlan_tepetzintla_nahuatl": [],
+    "zacatlan_ahuacatlan_tepetzintla_nahuatl__latn": [],
+    "isthmus_cosoleacaque_nahuatl": [],
+    "isthmus_cosoleacaque_nahuatl__latn": [],
+    "takuu": [],
+    "takuu__latn": [],
+    "naro": [],
+    "naro__latn": [],
+    "noone": [],
+    "noone__latn": [],
+    "western_huasteca_nahuatl": [],
+    "western_huasteca_nahuatl__latn": [],
+    "isthmus_mecayapan_nahuatl": [],
+    "isthmus_mecayapan_nahuatl__latn": [],
+    "northern_oaxaca_nahuatl": [],
+    "northern_oaxaca_nahuatl__latn": [],
+    "nias": [],
+    "nias__latn": [],
+    "nek": [],
+    "nek__latn": [],
+    "nii": [],
+    "nii__latn": [],
+    "ngaju": [],
+    "ngaju__latn": [],
+    "nilamba": [],
+    "nilamba__latn": [],
+    "ninzo": [],
+    "ninzo__latn": [],
+    "nganasan": [],
+    "nganasan__cyrl": [],
+    "nandi": [],
+    "nandi__latn": [],
+    "niuean": [],
+    "niuean__latn": [],
+    "ngiti": [],
+    "ngiti__latn": [],
+    "nocte_naga": [],
+    "nocte_naga__latn": [],
+    "angami_naga": [],
+    "angami_naga__latn": [],
+    "liangmai_naga": [],
+    "liangmai_naga__latn": [],
+    "ao_naga": [],
+    "ao_naga__latn": [],
+    "nyishi": [],
+    "nyishi__latn": [],
+    "inpui_naga": [],
+    "inpui_naga__latn": [],
+    "thangal_naga": [],
+    "thangal_naga__latn": [],
+    "nkonya": [],
+    "nkonya__latn": [],
+    "ngombale": [],
+    "ngombale__latn": [],
+    "nalca": [],
+    "nalca__latn": [],
+    "dutch": [],
+    "dutch__latn": [],
+    "gela": [],
+    "gela__latn": [],
+    "maram_naga": [],
+    "maram_naga__latn": [],
+    "tangkhul_naga_india": [],
+    "tangkhul_naga_india__latn": [],
+    "monsang_naga": [],
+    "monsang_naga__latn": [],
+    "moyon_naga": [],
+    "moyon_naga__latn": [],
+    "nimoa": [],
+    "nimoa__latn": [],
+    "nawdm": [],
+    "nawdm__latn": [],
+    "nande": [],
+    "nande__latn": [],
+    "maring_naga": [],
+    "maring_naga__latn": [],
+    "ngiemboon": [],
+    "ngiemboon__latn": [],
+    "northern_rengma_naga": [],
+    "northern_rengma_naga__latn": [],
+    "norwegian_nynorsk": [],
+    "norwegian_nynorsk__latn": [],
+    "wancho_naga": [],
+    "wancho_naga__latn": [],
+    "ngindo": [],
+    "ngindo__latn": [],
+    "southern_nuni": [],
+    "southern_nuni__latn": [],
+    "woun_meu": [],
+    "woun_meu__latn": [],
+    "norwegian_bokmal": [],
+    "norwegian_bokmal__latn": [],
+    "northern_thai": [],
+    "northern_thai__thai": [],
+    "nogai": [],
+    "nogai__cyrl": [],
+    "old_norse": [],
+    "old_norse__latn": [],
+    "numanggang": [],
+    "numanggang__latn": [],
+    "norwegian": [],
+    "norwegian__latn": [],
+    "nomatsiguenga": [],
+    "nomatsiguenga__latn": [],
+    "ewage_notu": [],
+    "ewage_notu__latn": [],
+    "novial": [],
+    "novial__latn": [],
+    "phom_naga": [],
+    "phom_naga__latn": [],
+    "nepali_individual_language": [],
+    "nepali_individual_language__deva": [],
+    "nepali_individual_language__latn": [],
+    "southeastern_puebla_nahuatl": [],
+    "southeastern_puebla_nahuatl__latn": [],
+    "pochuri_naga": [],
+    "pochuri_naga__latn": [],
+    "napu": [],
+    "napu__latn": [],
+    "n_ko": [],
+    "n_ko__nkoo": [],
+    "southern_rengma_naga": [],
+    "southern_rengma_naga__latn": [],
+    "jerriais": [],
+    "jerriais__latn": [],
+    "chokri_naga": [],
+    "chokri_naga__latn": [],
+    "narom": [],
+    "narom__latn": [],
+    "sangtam_naga": [],
+    "sangtam_naga__latn": [],
+    "nsenga": [],
+    "nsenga__latn": [],
+    "sumi_naga": [],
+    "sumi_naga__latn": [],
+    "nehan": [],
+    "nehan__latn": [],
+    "pedi": [],
+    "pedi__latn": [],
+    "nali": [],
+    "nali__latn": [],
+    "tase_naga": [],
+    "tase_naga__latn": [],
+    "sierra_negra_nahuatl": [],
+    "sierra_negra_nahuatl__latn": [],
+    "northern_tepehuan": [],
+    "northern_tepehuan__latn": [],
+    "delo": [],
+    "delo__latn": [],
+    "natugu": [],
+    "natugu__latn": [],
+    "nyole": [],
+    "nyole__latn": [],
+    "nuer": [],
+    "nuer__latn": [],
+    "nunggubuyu": [],
+    "nunggubuyu__latn": [],
+    "tlamacazapa_nahuatl": [],
+    "tlamacazapa_nahuatl__latn": [],
+    "namiae": [],
+    "namiae__latn": [],
+    "nyabwa": [],
+    "nyabwa__latn": [],
+    "southwest_tanna": [],
+    "southwest_tanna__latn": [],
+    "middle_newar": [],
+    "middle_newar__deva": [],
+    "ngando_democratic_republic_of_congo": [],
+    "ngando_democratic_republic_of_congo__latn": [],
+    "nyanja": [],
+    "nyanja__latn": [],
+    "giryama": [],
+    "giryama__latn": [],
+    "nyaneka": [],
+    "nyaneka__latn": [],
+    "nyankole": [],
+    "nyankole__latn": [],
+    "nyoro": [],
+    "nyoro__latn": [],
+    "nyungwe": [],
+    "nyungwe__latn": [],
+    "nyakyusa_ngonde": [],
+    "nyakyusa_ngonde__latn": [],
+    "tigon_mbembe": [],
+    "tigon_mbembe__latn": [],
+    "nzima": [],
+    "nzima__latn": [],
+    "zeme_naga": [],
+    "zeme_naga__latn": [],
+    "obo_manobo": [],
+    "obo_manobo__latn": [],
+    "occitan_post_1500": [],
+    "occitan_post_1500__latn": [],
+    "khana": [],
+    "khana__latn": [],
+    "northwestern_ojibwa": [],
+    "northwestern_ojibwa__latn": [],
+    "northwestern_ojibwa__cans": [],
+    "ojibwa": [],
+    "ojibwa__latn": [],
+    "ojibwa__cans": [],
+    "okpe_southwestern_edo": [],
+    "okpe_southwestern_edo__latn": [],
+    "oku": [],
+    "oku__latn": [],
+    "orokaiva": [],
+    "orokaiva__latn": [],
+    "mochi": [],
+    "mochi__latn": [],
+    "livvi": [],
+    "livvi__latn": [],
+    "east_ambae": [],
+    "east_ambae__latn": [],
+    "south_tairora": [],
+    "south_tairora__latn": [],
+    "olo": [],
+    "olo__latn": [],
+    "ono": [],
+    "ono__latn": [],
+    "tohono_o_odham": [],
+    "tohono_o_odham__latn": [],
+    "oksapmin": [],
+    "oksapmin__latn": [],
+    "oriya_macrolanguage": [],
+    "oriya_macrolanguage__orya": [],
+    "oriya_macrolanguage__latn": [],
+    "oromo": [],
+    "oromo__latn": [],
+    "old_russian": [],
+    "old_russian__cyrl": [],
+    "odia": [],
+    "odia__orya": [],
+    "odia__latn": [],
+    "ossetian": [],
+    "ossetian__cyrl": [],
+    "ottoman_turkish_1500_1928": [],
+    "ottoman_turkish_1500_1928__arab": [],
+    "ot_danum": [],
+    "ot_danum__latn": [],
+    "mezquital_otomi": [],
+    "mezquital_otomi__latn": [],
+    "eastern_highland_otomi": [],
+    "eastern_highland_otomi__latn": [],
+    "tenango_otomi": [],
+    "tenango_otomi__latn": [],
+    "queretaro_otomi": [],
+    "queretaro_otomi__latn": [],
+    "estado_de_mexico_otomi": [],
+    "estado_de_mexico_otomi__latn": [],
+    "ottawa": [],
+    "ottawa__latn": [],
+    "wayampi": [],
+    "wayampi__latn": [],
+    "koonzime": [],
+    "koonzime__latn": [],
+    "parecis": [],
+    "parecis__latn": [],
+    "paumari": [],
+    "paumari__latn": [],
+    "pangasinan": [],
+    "pangasinan__latn": [],
+    "tenharim": [],
+    "tenharim__latn": [],
+    "pampanga": [],
+    "pampanga__latn": [],
+    "panjabi": [],
+    "panjabi__guru": [],
+    "panjabi__latn": [],
+    "northern_paiute": [],
+    "northern_paiute__latn": [],
+    "papiamento": [],
+    "papiamento__latn": [],
+    "palauan": [],
+    "palauan__latn": [],
+    "paez": [],
+    "paez__latn": [],
+    "patamona": [],
+    "patamona__latn": [],
+    "parkwa": [],
+    "parkwa__latn": [],
+    "southern_pashto": [],
+    "southern_pashto__arab": [],
+    "picard": [],
+    "picard__latn": [],
+    "paite_chin": [],
+    "paite_chin__latn": [],
+    "nigerian_pidgin": [],
+    "nigerian_pidgin__latn": [],
+    "pennsylvania_german": [],
+    "pennsylvania_german__latn": [],
+    "plautdietsch": [],
+    "plautdietsch__latn": [],
+    "phende": [],
+    "phende__latn": [],
+    "pere": [],
+    "pere__latn": [],
+    "pfaelzisch": [],
+    "pfaelzisch__latn": [],
+    "phimbi": [],
+    "phimbi__latn": [],
+    "yine": [],
+    "yine__latn": [],
+    "piapoco": [],
+    "piapoco__latn": [],
+    "piratapuyo": [],
+    "piratapuyo__latn": [],
+    "pijin": [],
+    "pijin__latn": [],
+    "pitjantjatjara": [],
+    "pitjantjatjara__latn": [],
+    "pokomo": [],
+    "pokomo__latn": [],
+    "pilaga": [],
+    "pilaga__latn": [],
+    "san_marcos_tlacoyalco_popoloca": [],
+    "san_marcos_tlacoyalco_popoloca__latn": [],
+    "plateau_malagasy": [],
+    "plateau_malagasy__latn": [],
+    "palikur": [],
+    "palikur__latn": [],
+    "brooke_s_point_palawano": [],
+    "brooke_s_point_palawano__latn": [],
+    "paama": [],
+    "paama__latn": [],
+    "pamona": [],
+    "pamona__latn": [],
+    "northern_pame": [],
+    "northern_pame__latn": [],
+    "piemontese": [],
+    "piemontese__latn": [],
+    "poumei_naga": [],
+    "poumei_naga__latn": [],
+    "western_panjabi": [],
+    "western_panjabi__arab": [],
+    "western_penan": [],
+    "western_penan__latn": [],
+    "pontic": [],
+    "pontic__grek": [],
+    "pinyin": [],
+    "pinyin__latn": [],
+    "san_juan_atzingo_popoloca": [],
+    "san_juan_atzingo_popoloca__latn": [],
+    "poqomchi_": [],
+    "poqomchi___latn": [],
+    "highland_popoluca": [],
+    "highland_popoluca__latn": [],
+    "polish": [],
+    "polish__latn": [],
+    "pohnpeian": [],
+    "pohnpeian__latn": [],
+    "portuguese": [],
+    "portuguese__latn": [],
+    "sayula_popoluca": [],
+    "sayula_popoluca__latn": [],
+    "potawatomi": [],
+    "potawatomi__latn": [],
+    "upper_guinea_crioulo": [],
+    "upper_guinea_crioulo__latn": [],
+    "pogolo": [],
+    "pogolo__latn": [],
+    "uma": [],
+    "uma__latn": [],
+    "folopa": [],
+    "folopa__latn": [],
+    "san_luis_temalacayuca_popoloca": [],
+    "san_luis_temalacayuca_popoloca__latn": [],
+    "paranan": [],
+    "paranan__latn": [],
+    "prussian": [],
+    "prussian__latn": [],
+    "paici": [],
+    "paici__latn": [],
+    "asheninka_perene": [],
+    "asheninka_perene__latn": [],
+    "central_malay": [],
+    "central_malay__latn": [],
+    "kaulong": [],
+    "kaulong__latn": [],
+    "patep": [],
+    "patep__latn": [],
+    "bambam": [],
+    "bambam__latn": [],
+    "western_highland_purepecha": [],
+    "western_highland_purepecha__latn": [],
+    "puinave": [],
+    "puinave__latn": [],
+    "pushto": [],
+    "pushto__arab": [],
+    "gapapaiwa": [],
+    "gapapaiwa__latn": [],
+    "paiwan": [],
+    "paiwan__latn": [],
+    "pwo_northern_karen": [],
+    "pwo_northern_karen__thai": [],
+    "quetzaltepec_mixe": [],
+    "quetzaltepec_mixe__latn": [],
+    "huallaga_huanuco_quechua": [],
+    "huallaga_huanuco_quechua__latn": [],
+    "k_iche_": [],
+    "k_iche___latn": [],
+    "quechua": [],
+    "quechua__latn": [],
+    "lambayeque_quechua": [],
+    "lambayeque_quechua__latn": [],
+    "chimborazo_highland_quichua": [],
+    "chimborazo_highland_quichua__latn": [],
+    "south_bolivian_quechua": [],
+    "south_bolivian_quechua__latn": [],
+    "north_bolivian_quechua": [],
+    "north_bolivian_quechua__latn": [],
+    "southern_pastaza_quechua": [],
+    "southern_pastaza_quechua__latn": [],
+    "santiago_del_estero_quichua": [],
+    "santiago_del_estero_quichua__latn": [],
+    "tena_lowland_quichua": [],
+    "tena_lowland_quichua__latn": [],
+    "ayacucho_quechua": [],
+    "ayacucho_quechua__latn": [],
+    "cusco_quechua": [],
+    "cusco_quechua__latn": [],
+    "ambo_pasco_quechua": [],
+    "ambo_pasco_quechua__latn": [],
+    "cajamarca_quechua": [],
+    "cajamarca_quechua__latn": [],
+    "eastern_apurimac_quechua": [],
+    "eastern_apurimac_quechua__latn": [],
+    "huamalies_dos_de_mayo_huanuco_quechua": [],
+    "huamalies_dos_de_mayo_huanuco_quechua__latn": [],
+    "imbabura_highland_quichua": [],
+    "imbabura_highland_quichua__latn": [],
+    "margos_yarowilca_lauricocha_quechua": [],
+    "margos_yarowilca_lauricocha_quechua__latn": [],
+    "north_junin_quechua": [],
+    "north_junin_quechua__latn": [],
+    "napo_lowland_quechua": [],
+    "napo_lowland_quechua__latn": [],
+    "san_martin_quechua": [],
+    "san_martin_quechua__latn": [],
+    "huaylla_wanca_quechua": [],
+    "huaylla_wanca_quechua__latn": [],
+    "northern_pastaza_quichua": [],
+    "northern_pastaza_quichua__latn": [],
+    "huaylas_ancash_quechua": [],
+    "huaylas_ancash_quechua__latn": [],
+    "panao_huanuco_quechua": [],
+    "panao_huanuco_quechua__latn": [],
+    "salasaca_highland_quichua": [],
+    "salasaca_highland_quichua__latn": [],
+    "northern_conchucos_ancash_quechua": [],
+    "northern_conchucos_ancash_quechua__latn": [],
+    "southern_conchucos_ancash_quechua": [],
+    "southern_conchucos_ancash_quechua__latn": [],
+    "canar_highland_quichua": [],
+    "canar_highland_quichua__latn": [],
+    "rade": [],
+    "rade__latn": [],
+    "ramoaaina": [],
+    "ramoaaina__latn": [],
+    "rajasthani": [],
+    "rajasthani__deva": [],
+    "rapanui": [],
+    "rapanui__latn": [],
+    "rarotongan": [],
+    "rarotongan__latn": [],
+    "sampang": [],
+    "sampang__deva": [],
+    "rawang": [],
+    "rawang__latn": [],
+    "reunion_creole_french": [],
+    "reunion_creole_french__latn": [],
+    "rejang": [],
+    "rejang__latn": [],
+    "rendille": [],
+    "rendille__latn": [],
+    "ringgou": [],
+    "ringgou__latn": [],
+    "rohingya": [],
+    "rohingya__latn": [],
+    "riang_india": [],
+    "riang_india__latn": [],
+    "nyaturu": [],
+    "nyaturu__latn": [],
+    "rajbanshi": [],
+    "rajbanshi__deva": [],
+    "rikbaktsa": [],
+    "rikbaktsa__latn": [],
+    "carpathian_romani": [],
+    "carpathian_romani__latn": [],
+    "angloromani": [],
+    "angloromani__latn": [],
+    "baltic_romani": [],
+    "baltic_romani__latn": [],
+    "balkan_romani": [],
+    "balkan_romani__latn": [],
+    "balkan_romani__grek": [],
+    "balkan_romani__cyrl": [],
+    "sinte_romani": [],
+    "sinte_romani__latn": [],
+    "calo": [],
+    "calo__latn": [],
+    "vlax_romani": [],
+    "vlax_romani__latn": [],
+    "vlax_romani__cyrl": [],
+    "ruund": [],
+    "ruund__latn": [],
+    "ronga": [],
+    "ronga__latn": [],
+    "ranglong": [],
+    "ranglong__latn": [],
+    "romansh": [],
+    "romansh__latn": [],
+    "romany": [],
+    "romany__latn": [],
+    "romany__cyrl": [],
+    "romany__grek": [],
+    "romanian": [],
+    "romanian__latn": [],
+    "romanian__cyrl": [],
+    "rotokas": [],
+    "rotokas__latn": [],
+    "kriol": [],
+    "kriol__latn": [],
+    "dela_oenale": [],
+    "dela_oenale__latn": [],
+    "waima": [],
+    "waima__latn": [],
+    "rotuman": [],
+    "rotuman__latn": [],
+    "gungu": [],
+    "gungu__latn": [],
+    "rusyn": [],
+    "rusyn__cyrl": [],
+    "luguru": [],
+    "luguru__latn": [],
+    "roviana": [],
+    "roviana__latn": [],
+    "rundi": [],
+    "rundi__latn": [],
+    "macedo_romanian": [],
+    "macedo_romanian__latn": [],
+    "russian": [],
+    "russian__cyrl": [],
+    "rawa": [],
+    "rawa__latn": [],
+    "buglere": [],
+    "buglere__latn": [],
+    "sango": [],
+    "sango__latn": [],
+    "yakut": [],
+    "yakut__cyrl": [],
+    "sahu": [],
+    "sahu__latn": [],
+    "sanskrit__latn": [],
+    "sanskrit": [],
+    "sanskrit__deva": [],
+    "sasak": [],
+    "sasak__latn": [],
+    "santali": [],
+    "santali__olck": [],
+    "santali__latn": [],
+    "saya": [],
+    "saya__latn": [],
+    "ngambay": [],
+    "ngambay__latn": [],
+    "southern_samo": [],
+    "southern_samo__latn": [],
+    "saliba": [],
+    "saliba__latn": [],
+    "botolan_sambal": [],
+    "botolan_sambal__latn": [],
+    "subiya": [],
+    "subiya__latn": [],
+    "soli": [],
+    "soli__latn": [],
+    "sadri": [],
+    "sadri__deva": [],
+    "sicilian": [],
+    "sicilian__latn": [],
+    "scots": [],
+    "scots__latn": [],
+    "toraja_sa_dan": [],
+    "toraja_sa_dan__latn": [],
+    "sassarese_sardinian": [],
+    "sassarese_sardinian__latn": [],
+    "southern_kurdish": [],
+    "southern_kurdish__arab": [],
+    "bukar_sadung_bidayuh": [],
+    "bukar_sadung_bidayuh__latn": [],
+    "semandang": [],
+    "semandang__latn": [],
+    "sena": [],
+    "sena__latn": [],
+    "selkup": [],
+    "selkup__cyrl": [],
+    "koyraboro_senni_songhai": [],
+    "koyraboro_senni_songhai__latn": [],
+    "secoya": [],
+    "secoya__latn": [],
+    "sehwi": [],
+    "sehwi__latn": [],
+    "mag_antsi_ayta": [],
+    "mag_antsi_ayta__latn": [],
+    "kipsigis": [],
+    "kipsigis__latn": [],
+    "shughni": [],
+    "shughni__cyrl": [],
+    "samogitian": [],
+    "samogitian__latn": [],
+    "sebat_bet_gurage": [],
+    "sebat_bet_gurage__ethi": [],
+    "sursurunga": [],
+    "sursurunga__latn": [],
+    "tachelhit": [],
+    "tachelhit__latn": [],
+    "shilluk": [],
+    "shilluk__latn": [],
+    "shan": [],
+    "shan__mymr": [],
+    "shipibo_conibo": [],
+    "shipibo_conibo__latn": [],
+    "shi": [],
+    "shi__latn": [],
+    "chadian_arabic": [],
+    "chadian_arabic__arab": [],
+    "sidamo": [],
+    "sidamo__latn": [],
+    "paasaal": [],
+    "paasaal__latn": [],
+    "tumulung_sisaala": [],
+    "tumulung_sisaala__latn": [],
+    "mende_papua_new_guinea": [],
+    "mende_papua_new_guinea__latn": [],
+    "sinhala": [],
+    "sinhala__sinh": [],
+    "epena": [],
+    "epena__latn": [],
+    "xibe": [],
+    "xibe__mong": [],
+    "ume_sami": [],
+    "ume_sami__latn": [],
+    "sakalava_malagasy": [],
+    "sakalava_malagasy__latn": [],
+    "saraiki": [],
+    "saraiki__arab": [],
+    "sissala": [],
+    "sissala__latn": [],
+    "slovak": [],
+    "slovak__latn": [],
+    "salt_yui": [],
+    "salt_yui__latn": [],
+    "slovenian": [],
+    "slovenian__latn": [],
+    "southern_sami": [],
+    "southern_sami__latn": [],
+    "northern_sami": [],
+    "northern_sami__latn": [],
+    "lule_sami": [],
+    "lule_sami__latn": [],
+    "bolinao": [],
+    "bolinao__latn": [],
+    "central_sama": [],
+    "central_sama__latn": [],
+    "inari_sami": [],
+    "inari_sami__latn": [],
+    "samoan": [],
+    "samoan__latn": [],
+    "skolt_sami": [],
+    "skolt_sami__latn": [],
+    "simte": [],
+    "simte__latn": [],
+    "shona": [],
+    "shona__latn": [],
+    "sinaugoro": [],
+    "sinaugoro__latn": [],
+    "sindhi": [],
+    "sindhi__arab": [],
+    "sindhi__latn": [],
+    "sindhi__deva": [],
+    "noon": [],
+    "noon__latn": [],
+    "siona": [],
+    "siona__latn": [],
+    "siane": [],
+    "siane__latn": [],
+    "selee": [],
+    "selee__latn": [],
+    "saniyo_hiyewe": [],
+    "saniyo_hiyewe__latn": [],
+    "songomeno": [],
+    "songomeno__latn": [],
+    "somali": [],
+    "somali__latn": [],
+    "songe": [],
+    "songe__latn": [],
+    "kanasi": [],
+    "kanasi__latn": [],
+    "southern_sotho": [],
+    "southern_sotho__latn": [],
+    "miyobe": [],
+    "miyobe__latn": [],
+    "spanish": [],
+    "spanish__latn": [],
+    "selepet": [],
+    "selepet__latn": [],
+    "akukem": [],
+    "akukem__latn": [],
+    "supyire_senoufo": [],
+    "supyire_senoufo__latn": [],
+    "saposa": [],
+    "saposa__latn": [],
+    "sabaot": [],
+    "sabaot__latn": [],
+    "albanian": [],
+    "albanian__latn": [],
+    "sardinian": [],
+    "sardinian__latn": [],
+    "siriano": [],
+    "siriano__latn": [],
+    "saramaccan": [],
+    "saramaccan__latn": [],
+    "sranan_tongo": [],
+    "sranan_tongo__latn": [],
+    "serbian": [],
+    "serbian__cyrl": [],
+    "serbian__latn": [],
+    "siriono": [],
+    "siriono__latn": [],
+    "serer": [],
+    "serer__latn": [],
+    "siroi": [],
+    "siroi__latn": [],
+    "seimat": [],
+    "seimat__latn": [],
+    "swati": [],
+    "swati__latn": [],
+    "samberigi": [],
+    "samberigi__latn": [],
+    "owa": [],
+    "owa__latn": [],
+    "southeastern_tepehuan": [],
+    "southeastern_tepehuan__latn": [],
+    "saterfriesisch": [],
+    "saterfriesisch__latn": [],
+    "sulka": [],
+    "sulka__latn": [],
+    "western_subanon": [],
+    "western_subanon__latn": [],
+    "suena": [],
+    "suena__latn": [],
+    "sukuma": [],
+    "sukuma__latn": [],
+    "sundanese": [],
+    "sundanese__latn": [],
+    "mwaghavul": [],
+    "mwaghavul__latn": [],
+    "susu": [],
+    "susu__latn": [],
+    "susu__arab": [],
+    "sunwar": [],
+    "sunwar__deva": [],
+    "swahili_macrolanguage": [],
+    "swahili_macrolanguage__latn": [],
+    "maore_comorian": [],
+    "maore_comorian__latn": [],
+    "congo_swahili": [],
+    "congo_swahili__latn": [],
+    "swedish": [],
+    "swedish__latn": [],
+    "swabian": [],
+    "swabian__latn": [],
+    "swahili_individual_language": [],
+    "swahili_individual_language__latn": [],
+    "malawi_sena": [],
+    "malawi_sena__latn": [],
+    "suau": [],
+    "suau__latn": [],
+    "suba": [],
+    "suba__latn": [],
+    "sangir": [],
+    "sangir__latn": [],
+    "central_subanen": [],
+    "central_subanen__latn": [],
+    "classical_syriac": [],
+    "classical_syriac__syrc": [],
+    "sylheti": [],
+    "sylheti__latn": [],
+    "sylheti__beng": [],
+    "syriac": [],
+    "syriac__syrc": [],
+    "ngalum": [],
+    "ngalum__latn": [],
+    "silesian": [],
+    "silesian__latn": [],
+    "sakizaya": [],
+    "sakizaya__latn": [],
+    "tabassaran": [],
+    "tabassaran__cyrl": [],
+    "lowland_tarahumara": [],
+    "lowland_tarahumara__latn": [],
+    "tahitian": [],
+    "tahitian__latn": [],
+    "eastern_tamang": [],
+    "eastern_tamang__deva": [],
+    "tamil": [],
+    "tamil__taml": [],
+    "tamil__latn": [],
+    "taabwa": [],
+    "taabwa__latn": [],
+    "tamasheq": [],
+    "tamasheq__latn": [],
+    "tamasheq__tfng": [],
+    "central_tarahumara": [],
+    "central_tarahumara__latn": [],
+    "tatar": [],
+    "tatar__cyrl": [],
+    "tatar__latn": [],
+    "tatuyo": [],
+    "tatuyo__latn": [],
+    "tai": [],
+    "tai__latn": [],
+    "atayal": [],
+    "atayal__latn": [],
+    "takia": [],
+    "takia__latn": [],
+    "north_tairora": [],
+    "north_tairora__latn": [],
+    "calamian_tagbanwa": [],
+    "calamian_tagbanwa__latn": [],
+    "tboli": [],
+    "tboli__latn": [],
+    "tawala": [],
+    "tawala__latn": [],
+    "tagbanwa": [],
+    "tagbanwa__latn": [],
+    "tabaru": [],
+    "tabaru__latn": [],
+    "ditammari": [],
+    "ditammari__latn": [],
+    "ticuna": [],
+    "ticuna__latn": [],
+    "datooga": [],
+    "datooga__latn": [],
+    "malinaltepec_me_phaa": [],
+    "malinaltepec_me_phaa__latn": [],
+    "torres_strait_creole": [],
+    "torres_strait_creole__latn": [],
+    "tulu": [],
+    "tulu__knda": [],
+    "thado_chin": [],
+    "thado_chin__latn": [],
+    "tetun_dili": [],
+    "tetun_dili__latn": [],
+    "tandroy_mahafaly_malagasy": [],
+    "tandroy_mahafaly_malagasy__latn": [],
+    "tepo_krumen": [],
+    "tepo_krumen__latn": [],
+    "huehuetla_tepehua": [],
+    "huehuetla_tepehua__latn": [],
+    "telugu": [],
+    "telugu__telu": [],
+    "telugu__latn": [],
+    "timne": [],
+    "timne__latn": [],
+    "teso": [],
+    "teso__latn": [],
+    "tereno": [],
+    "tereno__latn": [],
+    "tetum": [],
+    "tetum__latn": [],
+    "tewa_usa": [],
+    "tewa_usa__latn": [],
+    "teribe": [],
+    "teribe__latn": [],
+    "tajik": [],
+    "tajik__cyrl": [],
+    "sudest": [],
+    "sudest__latn": [],
+    "tangoa": [],
+    "tangoa__latn": [],
+    "thai": [],
+    "thai__thai": [],
+    "tharaka": [],
+    "tharaka__latn": [],
+    "dangaura_tharu": [],
+    "dangaura_tharu__deva": [],
+    "tahaggart_tamahaq": [],
+    "tahaggart_tamahaq__latn": [],
+    "tifal": [],
+    "tifal__latn": [],
+    "tigre": [],
+    "tigre__ethi": [],
+    "timugon_murut": [],
+    "timugon_murut__latn": [],
+    "tikar": [],
+    "tikar__latn": [],
+    "timbe": [],
+    "timbe__latn": [],
+    "tigrinya": [],
+    "tigrinya__ethi": [],
+    "tiv": [],
+    "tiv__latn": [],
+    "tiruray": [],
+    "tiruray__latn": [],
+    "takwane": [],
+    "takwane__latn": [],
+    "tokelau": [],
+    "tokelau__latn": [],
+    "tsakhur": [],
+    "tsakhur__cyrl": [],
+    "upper_necaxa_totonac": [],
+    "upper_necaxa_totonac__latn": [],
+    "tobelo": [],
+    "tobelo__latn": [],
+    "telefol": [],
+    "telefol__latn": [],
+    "klingon": [],
+    "klingon__latn": [],
+    "talinga_bwisi": [],
+    "talinga_bwisi__latn": [],
+    "tetela": [],
+    "tetela__latn": [],
+    "talysh": [],
+    "talysh__latn": [],
+    "tumak": [],
+    "tumak__latn": [],
+    "haruai": [],
+    "haruai__latn": [],
+    "tamashek": [],
+    "tamashek__latn": [],
+    "tamashek__tfng": [],
+    "tacana": [],
+    "tacana__latn": [],
+    "tanimuca_retuara": [],
+    "tanimuca_retuara__latn": [],
+    "kwamera": [],
+    "kwamera__latn": [],
+    "north_tanna": [],
+    "north_tanna__latn": [],
+    "whitesands": [],
+    "whitesands__latn": [],
+    "menik": [],
+    "menik__latn": [],
+    "toba": [],
+    "toba__latn": [],
+    "coyutla_totonac": [],
+    "coyutla_totonac__latn": [],
+    "toma": [],
+    "toma__latn": [],
+    "tonga_nyasa": [],
+    "tonga_nyasa__latn": [],
+    "gitonga": [],
+    "gitonga__latn": [],
+    "tonga_zambia": [],
+    "tonga_zambia__latn": [],
+    "tojolabal": [],
+    "tojolabal__latn": [],
+    "toki_pona": [],
+    "toki_pona__latn": [],
+    "tonga_tonga_islands": [],
+    "tonga_tonga_islands__latn": [],
+    "xicotepec_de_juarez_totonac": [],
+    "xicotepec_de_juarez_totonac__latn": [],
+    "papantla_totonac": [],
+    "papantla_totonac__latn": [],
+    "highland_totonac": [],
+    "highland_totonac__latn": [],
+    "taupota": [],
+    "taupota__latn": [],
+    "tok_pisin": [],
+    "tok_pisin__latn": [],
+    "tampulma": [],
+    "tampulma__latn": [],
+    "tupinamba": [],
+    "tupinamba__latn": [],
+    "pisaflores_tepehua": [],
+    "pisaflores_tepehua__latn": [],
+    "tlachichilco_tepehua": [],
+    "tlachichilco_tepehua__latn": [],
+    "tinputz": [],
+    "tinputz__latn": [],
+    "toaripi": [],
+    "toaripi__latn": [],
+    "copala_triqui": [],
+    "copala_triqui__latn": [],
+    "trinitario": [],
+    "trinitario__latn": [],
+    "tarao_naga": [],
+    "tarao_naga__latn": [],
+    "kok_borok": [],
+    "kok_borok__latn": [],
+    "san_martin_itunyoso_triqui": [],
+    "san_martin_itunyoso_triqui__latn": [],
+    "chicahuaxtla_triqui": [],
+    "chicahuaxtla_triqui__latn": [],
+    "sediq": [],
+    "sediq__latn": [],
+    "tswa": [],
+    "tswa__latn": [],
+    "tausug": [],
+    "tausug__latn": [],
+    "tswana": [],
+    "tswana__latn": [],
+    "tsonga": [],
+    "tsonga__latn": [],
+    "tsishingini": [],
+    "tsishingini__latn": [],
+    "purepecha": [],
+    "purepecha__latn": [],
+    "tektiteko": [],
+    "tektiteko__latn": [],
+    "bwanabwana": [],
+    "bwanabwana__latn": [],
+    "tooro": [],
+    "tooro__latn": [],
+    "tawallammat_tamajaq": [],
+    "tawallammat_tamajaq__latn": [],
+    "tawallammat_tamajaq__tfng": [],
+    "mutu": [],
+    "mutu__latn": [],
+    "tuyuca": [],
+    "tuyuca__latn": [],
+    "central_tunebo": [],
+    "central_tunebo__latn": [],
+    "tupuri": [],
+    "tupuri__latn": [],
+    "turkmen": [],
+    "turkmen__latn": [],
+    "turkmen__cyrl": [],
+    "turkmen__arab": [],
+    "tula": [],
+    "tula__latn": [],
+    "tumbuka": [],
+    "tumbuka__latn": [],
+    "tucano": [],
+    "tucano__latn": [],
+    "turkish": [],
+    "turkish__latn": [],
+    "turkana": [],
+    "turkana__latn": [],
+    "southeast_ambrym": [],
+    "southeast_ambrym__latn": [],
+    "tuvalu": [],
+    "tuvalu__latn": [],
+    "western_tawbuid": [],
+    "western_tawbuid__latn": [],
+    "twi": [],
+    "twi__latn": [],
+    "termanu": [],
+    "termanu__latn": [],
+    "tewe": [],
+    "tewe__latn": [],
+    "tii": [],
+    "tii__latn": [],
+    "kayapo": [],
+    "kayapo__latn": [],
+    "tuvinian": [],
+    "tuvinian__cyrl": [],
+    "tzeltal": [],
+    "tzeltal__latn": [],
+    "tz_utujil": [],
+    "tz_utujil__latn": [],
+    "talossan": [],
+    "talossan__latn": [],
+    "central_atlas_tamazight": [],
+    "central_atlas_tamazight__tfng": [],
+    "tzotzil": [],
+    "tzotzil__latn": [],
+    "ubir": [],
+    "ubir__latn": [],
+    "umbu_ungu": [],
+    "umbu_ungu__latn": [],
+    "udmurt": [],
+    "udmurt__cyrl": [],
+    "uduk": [],
+    "uduk__latn": [],
+    "uighur": [],
+    "uighur__arab": [],
+    "uighur__latn": [],
+    "uighur__cyrl": [],
+    "ukrainian": [],
+    "ukrainian__cyrl": [],
+    "umbundu": [],
+    "umbundu__latn": [],
+    "undetermined": [],
+    "undetermined__mult": [],
+    "undetermined__bamu": [],
+    "undetermined__kana": [],
+    "undetermined__tang": [],
+    "undetermined__cyrl": [],
+    "undetermined__xsux": [],
+    "undetermined__kits": [],
+    "undetermined__yiii": [],
+    "undetermined__grek": [],
+    "undetermined__hira": [],
+    "undetermined__syrc": [],
+    "undetermined__lina": [],
+    "undetermined__samr": [],
+    "undetermined__copt": [],
+    "undetermined__shrd": [],
+    "undetermined__cans": [],
+    "undetermined__egyp": [],
+    "undetermined__hluw": [],
+    "undetermined__mroo": [],
+    "undetermined__laoo": [],
+    "undetermined__linb": [],
+    "undetermined__brai": [],
+    "undetermined__runr": [],
+    "undetermined__hung": [],
+    "undetermined__modi": [],
+    "undetermined__nkoo": [],
+    "undetermined__mend": [],
+    "undetermined__sgnw": [],
+    "undetermined__lana": [],
+    "undetermined__bali": [],
+    "undetermined__bopo": [],
+    "undetermined__ethi": [],
+    "undetermined__mong": [],
+    "undetermined__nshu": [],
+    "undetermined__adlm": [],
+    "undetermined__mtei": [],
+    "undetermined__dupl": [],
+    "undetermined__cpmn": [],
+    "undetermined__vaii": [],
+    "undetermined__orkh": [],
+    "undetermined__glag": [],
+    "undetermined__geor": [],
+    "undetermined__thai": [],
+    "undetermined__hebr": [],
+    "undetermined__dsrt": [],
+    "undetermined__tibt": [],
+    "undetermined__telu": [],
+    "undetermined__lepc": [],
+    "undetermined__sinh": [],
+    "undetermined__armn": [],
+    "undetermined__saur": [],
+    "undetermined__khmr": [],
+    "undetermined__deva": [],
+    "undetermined__hmnp": [],
+    "undetermined__thaa": [],
+    "undetermined__orya": [],
+    "undetermined__lisu": [],
+    "undetermined__cher": [],
+    "undetermined__mymr": [],
+    "undetermined__merc": [],
+    "undetermined__bhks": [],
+    "undetermined__plrd": [],
+    "undetermined__brah": [],
+    "undetermined__gran": [],
+    "undetermined__hmng": [],
+    "undetermined__khar": [],
+    "undetermined__cprt": [],
+    "undetermined__mlym": [],
+    "undetermined__taml": [],
+    "undetermined__tnsa": [],
+    "undetermined__aghb": [],
+    "undetermined__mani": [],
+    "undetermined__gonm": [],
+    "undetermined__vith": [],
+    "undetermined__ahom": [],
+    "undetermined__newa": [],
+    "undetermined__kali": [],
+    "undetermined__beng": [],
+    "undetermined__limb": [],
+    "undetermined__phnx": [],
+    "undetermined__medf": [],
+    "undetermined__phag": [],
+    "undetermined__cari": [],
+    "undetermined__gujr": [],
+    "undetermined__java": [],
+    "undetermined__osge": [],
+    "undetermined__diak": [],
+    "undetermined__talu": [],
+    "undetermined__nagm": [],
+    "undetermined__sidd": [],
+    "undetermined__marc": [],
+    "undetermined__wcho": [],
+    "undetermined__avst": [],
+    "undetermined__sora": [],
+    "undetermined__armi": [],
+    "undetermined__wara": [],
+    "undetermined__rohg": [],
+    "undetermined__sund": [],
+    "undetermined__xpeo": [],
+    "undetermined__tirh": [],
+    "undetermined__khoj": [],
+    "undetermined__knda": [],
+    "undetermined__palm": [],
+    "undetermined__kthi": [],
+    "undetermined__ital": [],
+    "undetermined__ougr": [],
+    "undetermined__takr": [],
+    "undetermined__soyo": [],
+    "undetermined__lyci": [],
+    "undetermined__zanb": [],
+    "undetermined__dogr": [],
+    "undetermined__tavt": [],
+    "undetermined__gong": [],
+    "undetermined__cham": [],
+    "undetermined__elba": [],
+    "undetermined__bass": [],
+    "undetermined__yezi": [],
+    "undetermined__toto": [],
+    "undetermined__ogam": [],
+    "undetermined__pauc": [],
+    "undetermined__tfng": [],
+    "undetermined__cakm": [],
+    "undetermined__kawi": [],
+    "undetermined__guru": [],
+    "undetermined__tale": [],
+    "undetermined__osma": [],
+    "undetermined__sylo": [],
+    "undetermined__sind": [],
+    "undetermined__nand": [],
+    "undetermined__sogo": [],
+    "undetermined__nbat": [],
+    "undetermined__batk": [],
+    "undetermined__phli": [],
+    "undetermined__mahj": [],
+    "undetermined__sogd": [],
+    "undetermined__shaw": [],
+    "undetermined__rjng": [],
+    "undetermined__tglg": [],
+    "undetermined__lydi": [],
+    "undetermined__mand": [],
+    "undetermined__goth": [],
+    "undetermined__hatr": [],
+    "undetermined__mero": [],
+    "undetermined__phlp": [],
+    "undetermined__chrs": [],
+    "undetermined__sarb": [],
+    "undetermined__prti": [],
+    "undetermined__olck": [],
+    "undetermined__bugi": [],
+    "undetermined__narb": [],
+    "undetermined__tagb": [],
+    "undetermined__hano": [],
+    "undetermined__ugar": [],
+    "undetermined__maka": [],
+    "undetermined__perm": [],
+    "undetermined__buhd": [],
+    "undetermined__elym": [],
+    "uripiv_wala_rano_atchin": [],
+    "uripiv_wala_rano_atchin__latn": [],
+    "urarina": [],
+    "urarina__latn": [],
+    "urubu_kaapor": [],
+    "urubu_kaapor__latn": [],
+    "urdu": [],
+    "urdu__arab": [],
+    "urdu__latn": [],
+    "urhobo": [],
+    "urhobo__latn": [],
+    "urim": [],
+    "urim__latn": [],
+    "urak_lawoi_": [],
+    "urak_lawoi___thai": [],
+    "urat": [],
+    "urat__latn": [],
+    "sop": [],
+    "sop__latn": [],
+    "orya": [],
+    "orya__latn": [],
+    "usarufa": [],
+    "usarufa__latn": [],
+    "uspanteco": [],
+    "uspanteco__latn": [],
+    "ut_hun": [],
+    "ut_hun__latn": [],
+    "uri": [],
+    "uri__latn": [],
+    "lote": [],
+    "lote__latn": [],
+    "uzbek": [],
+    "uzbek__latn": [],
+    "uzbek__cyrl": [],
+    "uzbek__arab": [],
+    "northern_uzbek": [],
+    "northern_uzbek__latn": [],
+    "northern_uzbek__cyrl": [],
+    "southern_uzbek": [],
+    "southern_uzbek__arab": [],
+    "vagla": [],
+    "vagla__latn": [],
+    "vaiphei": [],
+    "vaiphei__latn": [],
+    "huarijio": [],
+    "huarijio__latn": [],
+    "venetian": [],
+    "venetian__latn": [],
+    "venda": [],
+    "venda__latn": [],
+    "veps": [],
+    "veps__latn": [],
+    "vidunda": [],
+    "vidunda__latn": [],
+    "vietnamese": [],
+    "vietnamese__latn": [],
+    "iduna": [],
+    "iduna__latn": [],
+    "vlaams": [],
+    "vlaams__latn": [],
+    "makhuwa_shirima": [],
+    "makhuwa_shirima__latn": [],
+    "makhuwa": [],
+    "makhuwa__latn": [],
+    "ayautla_mazatec": [],
+    "ayautla_mazatec__latn": [],
+    "volapuk": [],
+    "volapuk__latn": [],
+    "votic": [],
+    "votic__latn": [],
+    "voro": [],
+    "voro__latn": [],
+    "vunjo": [],
+    "vunjo__latn": [],
+    "vute": [],
+    "vute__latn": [],
+    "waffa": [],
+    "waffa__latn": [],
+    "wolaytta": [],
+    "wolaytta__latn": [],
+    "wolaytta__ethi": [],
+    "wapishana": [],
+    "wapishana__latn": [],
+    "waray_philippines": [],
+    "waray_philippines__latn": [],
+    "kaninuwa": [],
+    "kaninuwa__latn": [],
+    "wayana": [],
+    "wayana__latn": [],
+    "warao": [],
+    "warao__latn": [],
+    "wa": [],
+    "wa__latn": [],
+    "warlpiri": [],
+    "warlpiri__latn": [],
+    "wedau": [],
+    "wedau__latn": [],
+    "weri": [],
+    "weri__latn": [],
+    "cameroon_pidgin": [],
+    "cameroon_pidgin__latn": [],
+    "wejewa": [],
+    "wejewa__latn": [],
+    "north_wahgi": [],
+    "north_wahgi__latn": [],
+    "wahau_kenyah": [],
+    "wahau_kenyah__latn": [],
+    "southern_toussian": [],
+    "southern_toussian__latn": [],
+    "wik_mungkan": [],
+    "wik_mungkan__latn": [],
+    "wiru": [],
+    "wiru__latn": [],
+    "walloon": [],
+    "walloon__latn": [],
+    "wallisian": [],
+    "wallisian__latn": [],
+    "wichi_lhamtes_vejoz": [],
+    "wichi_lhamtes_vejoz__latn": [],
+    "wali_ghana": [],
+    "wali_ghana__latn": [],
+    "walmajarri": [],
+    "walmajarri__latn": [],
+    "mwani": [],
+    "mwani__latn": [],
+    "wantoat": [],
+    "wantoat__latn": [],
+    "usan": [],
+    "usan__latn": [],
+    "we_northern": [],
+    "we_northern__latn": [],
+    "wolof": [],
+    "wolof__latn": [],
+    "hanga_hundi": [],
+    "hanga_hundi__latn": [],
+    "garrwa": [],
+    "garrwa__latn": [],
+    "waris": [],
+    "waris__latn": [],
+    "adilabad_gondi": [],
+    "adilabad_gondi__telu": [],
+    "waskia": [],
+    "waskia__latn": [],
+    "wu_chinese": [],
+    "wu_chinese__hani": [],
+    "wuvulu_aua": [],
+    "wuvulu_aua__latn": [],
+    "waama": [],
+    "waama__latn": [],
+    "kalmyk": [],
+    "kalmyk__cyrl": [],
+    "xavante": [],
+    "xavante__latn": [],
+    "kombio": [],
+    "kombio__latn": [],
+    "kambera": [],
+    "kambera__latn": [],
+    "hdi": [],
+    "hdi__latn": [],
+    "xhosa": [],
+    "xhosa__latn": [],
+    "kamula": [],
+    "kamula__latn": [],
+    "mingrelian": [],
+    "mingrelian__geor": [],
+    "manado_malay": [],
+    "manado_malay__latn": [],
+    "antankarana_malagasy": [],
+    "antankarana_malagasy__latn": [],
+    "northern_kankanay": [],
+    "northern_kankanay__latn": [],
+    "soga": [],
+    "soga__latn": [],
+    "konkomba": [],
+    "konkomba__latn": [],
+    "eastern_karaboro": [],
+    "eastern_karaboro__latn": [],
+    "sambal": [],
+    "sambal__latn": [],
+    "sio": [],
+    "sio__latn": [],
+    "kasem": [],
+    "kasem__latn": [],
+    "sherpa": [],
+    "sherpa__deva": [],
+    "sanuma": [],
+    "sanuma__latn": [],
+    "diuxi_tilantongo_mixtec": [],
+    "diuxi_tilantongo_mixtec__latn": [],
+    "magdalena_penasco_mixtec": [],
+    "magdalena_penasco_mixtec__latn": [],
+    "northern_tlaxiaco_mixtec": [],
+    "northern_tlaxiaco_mixtec__latn": [],
+    "umbrian": [],
+    "umbrian__latn": [],
+    "kuo": [],
+    "kuo__latn": [],
+    "yaminahua": [],
+    "yaminahua__latn": [],
+    "yagua": [],
+    "yagua__latn": [],
+    "yalunka": [],
+    "yalunka__latn": [],
+    "yamba": [],
+    "yamba__latn": [],
+    "mayangna": [],
+    "mayangna__latn": [],
+    "yao": [],
+    "yao__latn": [],
+    "yapese": [],
+    "yapese__latn": [],
+    "yaqui": [],
+    "yaqui__latn": [],
+    "nugunu_cameroon": [],
+    "nugunu_cameroon__latn": [],
+    "yambeta": [],
+    "yambeta__latn": [],
+    "lokaa": [],
+    "lokaa__latn": [],
+    "yemba": [],
+    "yemba__latn": [],
+    "yaweyuha": [],
+    "yaweyuha__latn": [],
+    "yucuna": [],
+    "yucuna__latn": [],
+    "eastern_yiddish": [],
+    "eastern_yiddish__hebr": [],
+    "yiddish": [],
+    "yiddish__hebr": [],
+    "yimchungru_naga": [],
+    "yimchungru_naga__latn": [],
+    "yakan": [],
+    "yakan__latn": [],
+    "yele": [],
+    "yele__latn": [],
+    "angguruk_yali": [],
+    "angguruk_yali__latn": [],
+    "iamalele": [],
+    "iamalele__latn": [],
+    "yombe": [],
+    "yombe__latn": [],
+    "yongkom": [],
+    "yongkom__latn": [],
+    "yoruba": [],
+    "yoruba__latn": [],
+    "yareba": [],
+    "yareba__latn": [],
+    "yaoure": [],
+    "yaoure__latn": [],
+    "nenets": [],
+    "nenets__cyrl": [],
+    "nhengatu": [],
+    "nhengatu__latn": [],
+    "yessan_mayo": [],
+    "yessan_mayo__latn": [],
+    "yucateco": [],
+    "yucateco__latn": [],
+    "yue_chinese": [],
+    "yue_chinese__hani": [],
+    "karkar_yuri": [],
+    "karkar_yuri__latn": [],
+    "yukpa": [],
+    "yukpa__latn": [],
+    "yopno": [],
+    "yopno__latn": [],
+    "yau_morobe_province": [],
+    "yau_morobe_province__latn": [],
+    "yuracare": [],
+    "yuracare__latn": [],
+    "yawa": [],
+    "yawa__latn": [],
+    "sierra_de_juarez_zapotec": [],
+    "sierra_de_juarez_zapotec__latn": [],
+    "western_tlacolula_valley_zapotec": [],
+    "western_tlacolula_valley_zapotec__latn": [],
+    "ocotlan_zapotec": [],
+    "ocotlan_zapotec__latn": [],
+    "cajonos_zapotec": [],
+    "cajonos_zapotec__latn": [],
+    "yareni_zapotec": [],
+    "yareni_zapotec__latn": [],
+    "isthmus_zapotec": [],
+    "isthmus_zapotec__latn": [],
+    "miahuatlan_zapotec": [],
+    "miahuatlan_zapotec__latn": [],
+    "ozolotepec_zapotec": [],
+    "ozolotepec_zapotec__latn": [],
+    "zapotec": [],
+    "zapotec__latn": [],
+    "rincon_zapotec": [],
+    "rincon_zapotec__latn": [],
+    "santo_domingo_albarradas_zapotec": [],
+    "santo_domingo_albarradas_zapotec__latn": [],
+    "tabaa_zapotec": [],
+    "tabaa_zapotec__latn": [],
+    "yatzachi_zapotec": [],
+    "yatzachi_zapotec__latn": [],
+    "mitla_zapotec": [],
+    "mitla_zapotec__latn": [],
+    "coatecas_altas_zapotec": [],
+    "coatecas_altas_zapotec__latn": [],
+    "ngazidja_comorian": [],
+    "ngazidja_comorian__latn": [],
+    "zeeuws": [],
+    "zeeuws__latn": [],
+    "standard_moroccan_tamazight": [],
+    "standard_moroccan_tamazight__tfng": [],
+    "zhuang": [],
+    "zhuang__latn": [],
+    "chinese": [],
+    "chinese__hani": [],
+    "chinese__latn": [],
+    "zia": [],
+    "zia__latn": [],
+    "zigula": [],
+    "zigula__latn": [],
+    "zande_individual_language": [],
+    "zande_individual_language__latn": [],
+    "copainala_zoque": [],
+    "copainala_zoque__latn": [],
+    "zou": [],
+    "zou__latn": [],
+    "francisco_leon_zoque": [],
+    "francisco_leon_zoque__latn": [],
+    "lachiguiri_zapotec": [],
+    "lachiguiri_zapotec__latn": [],
+    "choapan_zapotec": [],
+    "choapan_zapotec__latn": [],
+    "guevea_de_humboldt_zapotec": [],
+    "guevea_de_humboldt_zapotec__latn": [],
+    "santa_maria_quiegolani_zapotec": [],
+    "santa_maria_quiegolani_zapotec__latn": [],
+    "quiavicuzas_zapotec": [],
+    "quiavicuzas_zapotec__latn": [],
+    "lachixio_zapotec": [],
+    "lachixio_zapotec__latn": [],
+    "mixtepec_zapotec": [],
+    "mixtepec_zapotec__latn": [],
+    "amatlan_zapotec": [],
+    "amatlan_zapotec__latn": [],
+    "zoogocho_zapotec": [],
+    "zoogocho_zapotec__latn": [],
+    "san_vicente_coatlan_zapotec": [],
+    "san_vicente_coatlan_zapotec__latn": [],
+    "yalalag_zapotec": [],
+    "yalalag_zapotec__latn": [],
+    "chichicapan_zapotec": [],
+    "chichicapan_zapotec__latn": [],
+    "texmelucan_zapotec": [],
+    "texmelucan_zapotec__latn": [],
+    "standard_malay": [],
+    "standard_malay__latn": [],
+    "standard_malay__arab": [],
+    "southern_rincon_zapotec": [],
+    "southern_rincon_zapotec__latn": [],
+    "quioquitani_quieri_zapotec": [],
+    "quioquitani_quieri_zapotec__latn": [],
+    "yatee_zapotec": [],
+    "yatee_zapotec__latn": [],
+    "zulu": [],
+    "zulu__latn": [],
+    "no_linguistic_content": [],
+    "no_linguistic_content__latn": [],
+    "no_linguistic_content__zzzz": [],
+    "no_linguistic_content__arab": [],
+    "yongbei_zhuang": [],
+    "yongbei_zhuang__latn": [],
+    "zyphe_chin": [],
+    "zyphe_chin__latn": [],
+    "zaza": [],
+    "zaza__latn": []
+  },
+  "StatHints": {
+    "total": [],
+    "dropped": [],
+    "forwarded": []
+  },
+  "ExtensionHelperSD": {
+    "stage_1_signature": [],
+    "stage_2_duplicates": [],
+    "stage_2_counts": [],
+    "index": []
+  },
+  "ExtensionHelperES": {
+    "stage_1_sequence": [],
+    "stage_1_sequence_size": [],
+    "stage_2_big_sequence": [],
+    "stage_2_bytes_offset": [],
+    "stage_3_bytes_ranges": []
+  },
+  "INDENT": [],
+  "MetricStatsDict": {
+    "__init__": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "topk": [
+      "self",
+      "k"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "Stats": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__add__": [
+      "self",
+      "stat"
+    ],
+    "__repr__": [
+      "self",
+      "total_time"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "save_to_disk": [
+      "self",
+      "file"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "PipelineStats": {
+    "__init__": [
+      "self",
+      "stats"
+    ],
+    "__add__": [
+      "self",
+      "pipestat"
+    ],
+    "total_time": [
+      "self"
+    ],
+    "total_std_dev": [
+      "self"
+    ],
+    "get_repr": [
+      "self",
+      "text"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "save_to_disk": [
+      "self",
+      "file"
+    ]
+  },
+  "MetricStats": {
+    "update": [
+      "self",
+      "x",
+      "unit"
+    ],
+    "variance": [
+      "self"
+    ],
+    "standard_deviation": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "TimingStats": {
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "__post_init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "x",
+      "unit"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "_get_time_frac": [
+      "self",
+      "total_time"
+    ],
+    "get_repr": [
+      "self",
+      "total_time"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "DEFAULT_CONFIG": [],
+  "create_tokenizer": [
+    "split_mode"
+  ],
+  "JapaneseTokenizer": {
+    "__init__": [
+      "self",
+      "vocab",
+      "split_mode"
+    ],
+    "__reduce__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "text"
+    ],
+    "_get_dtokens": [
+      "self",
+      "sudachipy_tokens",
+      "need_sub_tokens"
+    ],
+    "_get_sub_tokens": [
+      "self",
+      "sudachipy_tokens"
+    ],
+    "score": [
+      "self",
+      "examples"
+    ],
+    "_get_config": [
+      "self"
+    ],
+    "_set_config": [
+      "self",
+      "config"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "from_bytes": [
+      "self",
+      "data"
+    ],
+    "to_disk": [
+      "self",
+      "path"
+    ],
+    "from_disk": [
+      "self",
+      "path"
+    ]
+  },
+  "JapaneseDefaults": {
+    "config": [],
+    "stop_words": [],
+    "syntax_iterators": [],
+    "writing_system": []
+  },
+  "Japanese": {
+    "lang": [],
+    "Defaults": []
+  },
+  "DetailedToken": [],
+  "try_sudachi_import": [
+    "split_mode"
+  ],
+  "resolve_pos": [
+    "orth",
+    "tag",
+    "next_tag"
+  ],
+  "get_dtokens_and_spaces": [
+    "dtokens",
+    "text",
+    "gap_tag"
+  ],
+  "__all__": [],
+  "read_tuples_from_file": [
+    "file"
+  ],
+  "read_np_from_file": [
+    "file",
+    "dtype",
+    "is_local_file"
+  ],
+  "seek_to_start": [
+    "f",
+    "start_hash",
+    "line_format",
+    "hash_format"
+  ],
+  "ASSETS_PATH": [],
+  "check_required_dependencies": [
+    "step_name",
+    "required_dependencies"
+  ],
+  "_raise_error_for_missing_dependencies": [
+    "step_name",
+    "dependencies"
+  ],
+  "_is_package_available": [
+    "package_name"
+  ],
+  "is_rich_available": [],
+  "is_pyarrow_available": [],
+  "is_tokenizers_available": [],
+  "is_fasteners_available": [],
+  "_is_distribution_available": [
+    "distribution_name"
+  ],
+  "is_boto3_available": [],
+  "is_s3fs_available": [],
+  "is_moto_available": [],
+  "is_torch_available": [],
+  "is_dnspython_available": [],
+  "HashConfig": {
+    "__post_init__": [
+      "self"
+    ],
+    "np_dtype": [
+      "self"
+    ],
+    "np_descr": [
+      "self"
+    ],
+    "struct_format": [
+      "self"
+    ],
+    "max": [
+      "self"
+    ],
+    "min": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "create_hash_func": [
+    "config",
+    "input_type"
+  ],
+  "get_env_bool": [
+    "name",
+    "default"
+  ],
+  "DATATROVE_COLORIZE_LOGS": [],
+  "DATATROVE_COLORIZE_LOG_FILES": [],
+  "get_timestamp": [],
+  "get_random_str": [
+    "length"
+  ],
+  "add_task_logger": [
+    "logging_dir",
+    "rank",
+    "local_rank",
+    "node_rank"
+  ],
+  "close_task_logger": [
+    "logfile"
+  ],
+  "setup_default_logger": [],
+  "log_pipeline": [
+    "pipeline"
+  ],
+  "LID": {
+    "__init__": [
+      "self",
+      "languages"
+    ],
+    "predict": [
+      "self",
+      "doc"
+    ]
+  },
+  "FastTextLID": {
+    "MODEL_URL": [],
+    "MODEL_SUBFOLDER": [],
+    "__init__": [
+      "self",
+      "languages",
+      "k"
+    ],
+    "model": [
+      "self"
+    ],
+    "predict": [
+      "self",
+      "doc"
+    ]
+  },
+  "FT176LID": {
+    "MODEL_URL": [],
+    "MODEL_SUBFOLDER": []
+  },
+  "GlotLID": {
+    "MODEL_SUBFOLDER": [],
+    "__init__": [
+      "self",
+      "languages",
+      "k",
+      "version"
+    ]
+  },
+  "batched": [
+    "iterable",
+    "n"
+  ],
+  "PUNCTUATION": [],
+  "TERMINAL_PUNCTUATION": [],
+  "PUNCTUATION_SET": [],
+  "PUNCTUATION_TRANS": [],
+  "TextNormConfig": {},
+  "DEF_TEXT_NORM_CONFIG": [],
+  "NUMBERS_PATTERN": [],
+  "WHITESPACE_PATTERN": [],
+  "WEEKDAYS_PATTERN": [],
+  "MONTHS_PATTERN": [],
+  "simplify_text": [
+    "text",
+    "config"
+  ],
+  "ngrams": [
+    "sequence",
+    "n"
+  ],
+  "SPLIT_TEXT_DOCUMENTS": [],
+  "SPLIT_TEXT_SENTENCES": [],
+  "SPLIT_TEXT_PARAGRAPHS": [],
+  "SPLIT_TEXT_WORDS": [],
+  "split_into_parts": [
+    "text",
+    "mode",
+    "language"
+  ],
+  "split_into_words": [
+    "text",
+    "language"
+  ],
+  "split_into_sentences": [
+    "text",
+    "language"
+  ],
+  "split_into_paragraphs": [
+    "text",
+    "language"
+  ],
+  "strip_strings": [
+    "els"
+  ],
+  "simple_span_tokenize": [
+    "text",
+    "sents"
+  ],
+  "chunk_text_on_bytes": [
+    "text",
+    "max_chunk_size"
+  ],
+  "WordTokenizer": {
+    "__init__": [
+      "self",
+      "language"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "NLTKTokenizer": {
+    "__init__": [
+      "self",
+      "language"
+    ],
+    "tokenizer": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "SpaCyTokenizer": {
+    "__init__": [
+      "self",
+      "language",
+      "config"
+    ],
+    "tokenizer": [
+      "self"
+    ],
+    "_do_tokenize": [
+      "self",
+      "text"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "StanzaTokenizer": {
+    "__init__": [
+      "self",
+      "language"
+    ],
+    "tokenizer": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "ThaiTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "IndicNLPTokenizer": {
+    "__init__": [
+      "self",
+      "language"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "KiwiTokenizer": {
+    "__init__": [
+      "self",
+      "model_type"
+    ],
+    "tokenizer": [
+      "self"
+    ],
+    "preprocess": [
+      "self",
+      "text"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "KhmerTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "LaoTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "TibetanTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "wt": [
+      "self"
+    ],
+    "_try_tokenize": [
+      "self",
+      "text"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "WhitespaceTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "_spacy_xx": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ],
+    "sent_tokenize": [
+      "self",
+      "text"
+    ],
+    "span_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "BurmeseTokenizer": {
+    "__init__": [
+      "self"
+    ],
+    "word_tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "load_tokenizer_assignments": [],
+  "load_word_tokenizer": [
+    "language_or_tok"
+  ],
+  "MODEL_REPO": [],
+  "SentencePiece": {
+    "__init__": [
+      "self",
+      "model_dataset",
+      "model_name"
+    ],
+    "model": [
+      "self"
+    ],
+    "tokenize": [
+      "self",
+      "text"
+    ]
+  },
+  "KenlmModel": {
+    "unicode_punct_re": [],
+    "non_printing_chars_re": [],
+    "__init__": [
+      "self",
+      "model_dataset",
+      "language"
+    ],
+    "model": [
+      "self"
+    ],
+    "tokenizer": [
+      "self"
+    ],
+    "from_pretrained": [
+      "cls",
+      "model_dataset",
+      "language"
+    ],
+    "pp": [
+      "self",
+      "log_score",
+      "length"
+    ],
+    "get_perplexity": [
+      "self",
+      "doc",
+      "normalize_cc_net"
+    ],
+    "normalize": [
+      "self",
+      "text"
+    ],
+    "replace_unicode_punct": [
+      "self",
+      "text"
+    ],
+    "remove_non_printing_char": [
+      "self",
+      "text"
+    ]
+  },
+  "load_tokenizer": [
+    "name_or_path"
+  ],
+  "chunk_doc_ends": [
+    "doc_ends",
+    "shuffle_chunk_size"
+  ],
+  "PipelineStepWithTokenizer": {
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "tokenizer_name_or_path",
+      "eos_token",
+      "post_processor"
+    ],
+    "token_size": [
+      "self"
+    ],
+    "token_format": [
+      "self"
+    ],
+    "tokenizer": [
+      "self"
+    ]
+  },
+  "is_local_job_complete": [
+    "logging_dir"
+  ],
+  "get_running_slurm_jobs": [
+    "partition"
+  ],
+  "get_num_slurm_jobs": [
+    "partition"
+  ],
+  "sha1_hash32": [
+    "data"
+  ],
+  "sha1_hash32_bytes": [
+    "data"
+  ],
+  "sha1_hash64": [
+    "data"
+  ],
+  "sha1_hash64_bytes": [
+    "data"
+  ],
+  "xxhash32": [
+    "data"
+  ],
+  "xxhash64": [
+    "data"
+  ],
+  "PipelineStep": {
+    "__new__": [
+      "cls"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "stat_update": [
+      "self"
+    ],
+    "update_media_stats": [
+      "self",
+      "media"
+    ],
+    "update_doc_stats": [
+      "self",
+      "document"
+    ],
+    "track_time": [
+      "self",
+      "unit"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ],
+    "__call__": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "SamplerFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "rate",
+      "seed",
+      "exclusion_writer"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_n_grams": [
+    "words",
+    "n"
+  ],
+  "find_duplicates": [
+    "x"
+  ],
+  "find_top_duplicate": [
+    "x"
+  ],
+  "find_all_duplicate": [
+    "words",
+    "n"
+  ],
+  "GopherRepetitionFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "dup_line_frac",
+      "dup_para_frac",
+      "dup_line_char_frac",
+      "dup_para_char_frac",
+      "top_n_grams",
+      "dup_n_grams",
+      "exclusion_writer",
+      "language"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "normalizer": [],
+  "normalize": [
+    "text",
+    "replace"
+  ],
+  "parse_list": [
+    "line",
+    "do_normalize"
+  ],
+  "get_list": [
+    "abs_path",
+    "file_name",
+    "extra",
+    "do_normalize"
+  ],
+  "URLFilter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "soft_word_threshold",
+      "extra_domains",
+      "extra_urls",
+      "banned_words",
+      "banned_subwords",
+      "soft_banned_words",
+      "use_integrated_lists",
+      "exclusion_writer"
+    ],
+    "download_data": [
+      "self"
+    ],
+    "filter": [
+      "self",
+      "document"
+    ]
+  },
+  "STOP_WORDS": [],
+  "GopherQualityFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "min_doc_words",
+      "max_doc_words",
+      "min_avg_word_length",
+      "max_avg_word_length",
+      "max_symbol_word_ratio",
+      "max_bullet_lines_ratio",
+      "max_ellipsis_lines_ratio",
+      "max_non_alpha_words_ratio",
+      "min_stop_words",
+      "stop_words",
+      "exclusion_writer",
+      "language"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_filter_result": [
+    "res"
+  ],
+  "BaseFilter": {
+    "type": [],
+    "__init__": [
+      "self",
+      "exclusion_writer",
+      "batch_size"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ],
+    "filter_batch": [
+      "self",
+      "batch"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "LambdaFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "filter_function",
+      "exclusion_writer"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "FineWebQualityFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "exclusion_writer",
+      "line_punct_thr",
+      "line_punct_exclude_zero",
+      "stop_chars",
+      "short_line_thr",
+      "short_line_length",
+      "char_duplicates_ratio",
+      "new_line_ratio",
+      "language"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "FastTextClassifierFilter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "model_url",
+      "keep_labels",
+      "remove_labels",
+      "save_labels_in_metadata",
+      "exclusion_writer",
+      "newline_replacement",
+      "filter_mode"
+    ],
+    "model": [
+      "self"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "UNIGRAM_DOWNLOAD": [],
+  "UnigramLogProbFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "logprobs_threshold",
+      "exclusion_writer",
+      "language"
+    ],
+    "get_frequencies": [
+      "self"
+    ],
+    "get_logprob": [
+      "self",
+      "doc"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "LanguageFilter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "languages",
+      "language_threshold",
+      "exclusion_writer",
+      "backend",
+      "label_only",
+      "keep_top_pairs_threshold"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "CITATION_REGEX": [],
+  "END_PUNCTUATION": [],
+  "ELLIPSIS": [],
+  "POLICY_SUBSTRINGS": [],
+  "C4QualityFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "exclusion_writer",
+      "split_paragraph",
+      "remove_citations",
+      "filter_no_terminal_punct",
+      "min_num_sentences",
+      "min_words_per_line",
+      "max_word_length",
+      "filter_lorem_ipsum",
+      "filter_javascript",
+      "filter_curly_bracket",
+      "filter_policy",
+      "language"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "C4ParagraphFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "exclusion_writer"
+    ],
+    "paragraph_filter": [
+      "self",
+      "page"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "_EN_BADWORDS_URL": [],
+  "_BADWORDS_URL": [],
+  "_BADWORDS_LANGS": [],
+  "_BADWORDS_ALLOWLIST": [],
+  "C4BadWordsFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "keep_fraction",
+      "fail_on_missing_language",
+      "seed",
+      "default_language",
+      "exclusion_writer"
+    ],
+    "_get_badwords": [
+      "self",
+      "lang"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "RegexFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "regex_exp",
+      "exclusion_writer"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "SentDedupConfig": {},
+  "HashSig": {
+    "is_from_index": [
+      "self"
+    ]
+  },
+  "SentenceDedupSignature": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "finder_workers",
+      "config",
+      "language"
+    ],
+    "save_hashes": [
+      "self",
+      "rank",
+      "signatures"
+    ],
+    "get_hashes": [
+      "self",
+      "doc",
+      "doc_idx"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "read_sigs": [
+    "file",
+    "file_id",
+    "config",
+    "index_file",
+    "lines_to_buffer"
+  ],
+  "SentenceFindDedups": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "output_folder",
+      "index_folder",
+      "config",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "SentenceDedupFilter": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "config",
+      "exclusion_writer",
+      "language"
+    ],
+    "read_duplicates": [
+      "self",
+      "file"
+    ],
+    "remove_dup_sentences": [
+      "self",
+      "doc",
+      "du_lines"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "SentenceDedupBuildIndex": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "output_folder",
+      "index_name",
+      "config",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ExactDedupConfig": {},
+  "get_sig_dtype": [
+    "config"
+  ],
+  "ExactDedupSignature": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "config",
+      "finder_workers"
+    ],
+    "save_hashes": [
+      "self",
+      "rank",
+      "signatures"
+    ],
+    "get_hashes": [
+      "self",
+      "doc",
+      "doc_idx"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ExactFindDedups": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "output_folder",
+      "config",
+      "save_cluster_size",
+      "index_folder",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ExactDedupFilter": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "config",
+      "exclusion_writer"
+    ],
+    "read_duplicates": [
+      "self",
+      "file",
+      "dup_dtype"
+    ],
+    "read_duplicate_counts": [
+      "self",
+      "file",
+      "dup_dtype"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ExactDedupBuildIndex": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "output_folder",
+      "index_name",
+      "config",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "SEPARATOR_BYTES": [],
+  "prepare_doc": [
+    "tokenizer",
+    "doc",
+    "rank",
+    "doc_id"
+  ],
+  "ESDatasetToSequence": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "tokenizer_name_or_path"
+    ],
+    "save_sizes": [
+      "self",
+      "doc_lens",
+      "rank"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ESMergeSequences": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "tasks_stage_1",
+      "bytes_per_batch"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "read_bytes": [
+    "x"
+  ],
+  "sequence_reader": [
+    "file",
+    "size_file"
+  ],
+  "ESRangeRemover": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "sequence_folder",
+      "tokenizer_name_or_path",
+      "min_doc_words",
+      "language"
+    ],
+    "reset": [
+      "self"
+    ],
+    "get_sequence_bytes_offset": [
+      "self"
+    ],
+    "get_bytearange": [
+      "self",
+      "bytes_range_file"
+    ],
+    "get_all_files": [
+      "self",
+      "rank",
+      "world_size"
+    ],
+    "normalize_range": [
+      "self",
+      "a",
+      "b",
+      "bytes_len"
+    ],
+    "get_duplicate_range": [
+      "self",
+      "bytes_len"
+    ],
+    "remove_duplicate": [
+      "self",
+      "doc",
+      "bytes_content"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "_mersenne_prime": [],
+  "SENTINEL": [],
+  "MinhashConfig": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "MinhashDedupSignature": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "config",
+      "language",
+      "skip_existing_sigs"
+    ],
+    "parameters": [
+      "self"
+    ],
+    "get_signature": [
+      "self",
+      "shingles"
+    ],
+    "get_shingles": [
+      "self",
+      "text"
+    ],
+    "check_can_skip_sig_writing": [
+      "self",
+      "rank"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "MinhashDedupBuckets": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "index_folder",
+      "config",
+      "only_dedup_in_index",
+      "create_index_name",
+      "lines_to_buffer"
+    ],
+    "get_worker_hash_range": [
+      "self",
+      "sig_files",
+      "rank",
+      "world_size"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "MinhashDedupCluster": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "config",
+      "save_cluster_id",
+      "save_cluster_size",
+      "ignore_index_matches",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "_",
+      "world_size"
+    ]
+  },
+  "MinhashDedupFilter": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "exclusion_writer",
+      "load_cluster_ids",
+      "load_cluster_sizes",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "MinhashBuildIndex": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "index_name",
+      "config",
+      "lines_to_buffer"
+    ],
+    "run": [
+      "self",
+      "data",
+      "bucket",
+      "world_size"
+    ]
+  },
+  "MAX_HASH": [],
+  "BloomFilterConfig": {
+    "m": [
+      "self"
+    ],
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "get_optimal_k": [
+    "size_in_bytes",
+    "expected_elements"
+  ],
+  "get_false_positive_prob": [
+    "size_in_bytes",
+    "n",
+    "k"
+  ],
+  "SingleBloomFilter": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "config",
+      "save_bloom_filter",
+      "exclusion_writer",
+      "language"
+    ],
+    "parameters": [
+      "self"
+    ],
+    "get_shingles": [
+      "self",
+      "text"
+    ],
+    "get_indexes": [
+      "self",
+      "shingles"
+    ],
+    "update_bf": [
+      "self",
+      "indexes"
+    ],
+    "query": [
+      "self",
+      "indexes"
+    ],
+    "step": [
+      "self",
+      "doc"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "CsvReader": {
+    "name": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "compression",
+      "limit",
+      "skip",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ]
+  },
+  "CSVReader": [],
+  "JsonlReader": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "compression",
+      "limit",
+      "skip",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ]
+  },
+  "BaseReader": {
+    "type": [],
+    "__init__": [
+      "self",
+      "limit",
+      "skip",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata"
+    ],
+    "_default_adapter": [
+      "self",
+      "data",
+      "path",
+      "id_in_file"
+    ],
+    "get_document_from_dict": [
+      "self",
+      "data",
+      "source_file",
+      "id_in_file"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "BaseDiskReader": {
+    "type": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "limit",
+      "skip",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "get_document_from_dict": [
+      "self",
+      "data",
+      "source_file",
+      "id_in_file"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ],
+    "read_files_shard": [
+      "self",
+      "shard"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "WarcReader": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "compression",
+      "limit",
+      "skip",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ]
+  },
+  "process_record": [
+    "record"
+  ],
+  "ParquetReader": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "limit",
+      "skip",
+      "batch_size",
+      "read_metadata",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ]
+  },
+  "IpcReader": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "paths_file",
+      "limit",
+      "skip",
+      "stream",
+      "file_progress",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "recursive",
+      "glob_pattern",
+      "shuffle_files"
+    ],
+    "_iter_file_batches": [
+      "self",
+      "filepath"
+    ],
+    "_iter_stream_batches": [
+      "self",
+      "filepath"
+    ],
+    "read_file": [
+      "self",
+      "filepath"
+    ]
+  },
+  "HuggingFaceDatasetReader": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "dataset",
+      "dataset_options",
+      "streaming",
+      "limit",
+      "skip",
+      "batch_size",
+      "doc_progress",
+      "adapter",
+      "text_key",
+      "id_key",
+      "default_metadata",
+      "shuffle_files",
+      "load_from_disk"
+    ],
+    "get_document_from_dict": [
+      "self",
+      "data",
+      "source_file",
+      "id_in_file"
+    ],
+    "_get_dataset_shard": [
+      "self",
+      "dst",
+      "rank",
+      "world_size"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "JsonlWriter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "output_filename",
+      "compression",
+      "adapter",
+      "expand_metadata",
+      "max_file_size",
+      "save_media_bytes"
+    ],
+    "_write": [
+      "self",
+      "document",
+      "file_handler",
+      "_filename"
+    ]
+  },
+  "DEFAULT_CDC_OPTIONS": [],
+  "ParquetWriter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "output_filename",
+      "compression",
+      "adapter",
+      "batch_size",
+      "expand_metadata",
+      "max_file_size",
+      "schema",
+      "save_media_bytes",
+      "use_content_defined_chunking",
+      "write_page_index"
+    ],
+    "close_file": [
+      "self",
+      "filename"
+    ],
+    "_write_batch": [
+      "self",
+      "filename"
+    ],
+    "_write": [
+      "self",
+      "document",
+      "file_handler",
+      "filename"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "MAX_RETRIES": [],
+  "BASE_DELAY": [],
+  "HuggingFaceDatasetWriter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "dataset",
+      "private",
+      "local_working_dir",
+      "output_filename",
+      "compression",
+      "adapter",
+      "cleanup",
+      "expand_metadata",
+      "max_file_size",
+      "schema",
+      "revision",
+      "save_media_bytes"
+    ],
+    "upload_files": [
+      "self"
+    ],
+    "close": [
+      "self",
+      "rank"
+    ],
+    "_on_file_switch": [
+      "self",
+      "original_name",
+      "old_filename",
+      "new_filename"
+    ]
+  },
+  "DiskWriter": {
+    "type": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "output_filename",
+      "compression",
+      "adapter",
+      "mode",
+      "expand_metadata",
+      "max_file_size",
+      "save_media_bytes"
+    ],
+    "_default_adapter": [
+      "self",
+      "document"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_get_output_filename": [
+      "self",
+      "document",
+      "rank"
+    ],
+    "_write": [
+      "self",
+      "document",
+      "file_handler",
+      "filename"
+    ],
+    "_on_file_switch": [
+      "self",
+      "_original_name",
+      "old_filename",
+      "_new_filename"
+    ],
+    "close_file": [
+      "self",
+      "filename"
+    ],
+    "_get_filename_with_file_id": [
+      "self",
+      "filename"
+    ],
+    "write": [
+      "self",
+      "document",
+      "rank"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "MimeTypeFilter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "mime_types"
+    ],
+    "filter": [
+      "self",
+      "media"
+    ]
+  },
+  "BaseMediaContentFilter": {
+    "type": [],
+    "__init__": [
+      "self"
+    ],
+    "filter": [
+      "self",
+      "media"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "HTTPFetchReader": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "retry_codes",
+      "timeout",
+      "workers",
+      "retry_delay",
+      "max_retries",
+      "download_timeout",
+      "max_size",
+      "dns_port",
+      "pool_size",
+      "pool_connections",
+      "custom_agent"
+    ],
+    "scraper": [
+      "self"
+    ],
+    "check_robots_txt": [
+      "self",
+      "url"
+    ],
+    "fetch_media": [
+      "self",
+      "media"
+    ],
+    "process_record_result": [
+      "self",
+      "record",
+      "media_results"
+    ],
+    "log_info": [
+      "self",
+      "queue_size"
+    ],
+    "setup_dns_resolution": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "BaseMediaWriter": {
+    "type": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "output_filename",
+      "mode",
+      "max_file_size"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "_get_output_filename": [
+      "self",
+      "media",
+      "rank"
+    ],
+    "_write": [
+      "self",
+      "media",
+      "file_handler",
+      "filename"
+    ],
+    "_on_file_switch": [
+      "self",
+      "_original_name",
+      "old_filename",
+      "_new_filename"
+    ],
+    "_get_filename_with_file_id": [
+      "self",
+      "filename"
+    ],
+    "write": [
+      "self",
+      "media",
+      "rank"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ZstdWriter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "output_filename",
+      "max_file_size",
+      "compression_level"
+    ],
+    "compressor": [
+      "self"
+    ],
+    "_write": [
+      "self",
+      "media",
+      "file_handler",
+      "filename"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BinaryReaderThreaded": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "workers",
+      "preserve_order"
+    ],
+    "_read_media_record_wrapper": [
+      "self",
+      "document",
+      "task_index"
+    ],
+    "read_media_record": [
+      "self",
+      "media"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "LimitedReader": {
+    "__init__": [
+      "self",
+      "fp",
+      "max_bytes"
+    ],
+    "read": [
+      "self",
+      "size"
+    ],
+    "close": [
+      "self"
+    ],
+    "seek": [
+      "self",
+      "offset",
+      "whence"
+    ],
+    "tell": [
+      "self"
+    ]
+  },
+  "ZstdReader": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "data_folder",
+      "block_size",
+      "workers",
+      "offset_byte_size",
+      "preserve_order"
+    ],
+    "_init_thread_local": [
+      "self"
+    ],
+    "_close_thread_local_fp": [
+      "self"
+    ],
+    "_read_without_length": [
+      "self",
+      "zstd_decompressor_reader",
+      "media_id",
+      "offset",
+      "current_thread_name",
+      "fp"
+    ],
+    "_read_with_length": [
+      "self",
+      "zstd_decompressor_reader",
+      "offset",
+      "length",
+      "fp"
+    ],
+    "read_media_record": [
+      "self",
+      "media"
+    ]
+  },
+  "WarcReaderFast": {
+    "type": [],
+    "name": [],
+    "read_media_record": [
+      "self",
+      "media"
+    ]
+  },
+  "NGramsDecontConfig": {},
+  "NGramsDecontIndexer": {
+    "type": [],
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "lighteval_tasks",
+      "custom_lighteval_tasks",
+      "config",
+      "language"
+    ],
+    "compute_hashes": [
+      "self",
+      "label",
+      "query"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "NGramsDecontFilter": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "index_folder",
+      "config",
+      "exclusion_writer",
+      "language"
+    ],
+    "load_index_hashes": [
+      "self"
+    ],
+    "filter": [
+      "self",
+      "doc"
+    ]
+  },
+  "FTFYFormatter": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "unescape_html",
+      "remove_terminal_escapes",
+      "fix_encoding",
+      "restore_byte_a0",
+      "replace_lossy_sequences",
+      "decode_inconsistent_utf8",
+      "fix_c1_controls",
+      "fix_latin_ligatures",
+      "fix_character_width",
+      "uncurl_quotes",
+      "fix_line_breaks",
+      "fix_surrogates",
+      "remove_control_chars",
+      "normalization"
+    ],
+    "format": [
+      "self",
+      "text"
+    ]
+  },
+  "BaseFormatter": {
+    "type": [],
+    "__init__": [
+      "self"
+    ],
+    "format": [
+      "self",
+      "text"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "PIIReplacer": {
+    "__init__": [
+      "self",
+      "regex",
+      "replacements",
+      "validator"
+    ],
+    "replace": [
+      "self",
+      "text"
+    ]
+  },
+  "public_ip_validator": [
+    "ip",
+    "public_only"
+  ],
+  "PIIFormatter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "remove_emails",
+      "remove_ips",
+      "only_remove_public_ips",
+      "email_replacement",
+      "ip_replacement"
+    ],
+    "format": [
+      "self",
+      "text"
+    ]
+  },
+  "SymbolLinesFormatter": {
+    "name": [],
+    "__init__": [
+      "self",
+      "symbols_to_remove",
+      "replace_char"
+    ],
+    "format": [
+      "self",
+      "text"
+    ]
+  },
+  "CCNetPerplexityStats": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "model_dataset",
+      "language",
+      "histogram_round_digits",
+      "groups_to_compute",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_short_sentence_ratio": [
+    "sentences",
+    "threshold"
+  ],
+  "get_long_sentence_ratio": [
+    "sentences",
+    "threshold"
+  ],
+  "SentenceStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "short_sentence_max_chars_threshold",
+      "long_sentence_max_chars_threshold",
+      "language",
+      "histogram_round_digits",
+      "groups_to_compute",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "LangStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "language",
+      "groups_to_compute",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "BaseStats": {
+    "type": [],
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "groups_to_compute",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ],
+    "get_kv": [
+      "self",
+      "doc",
+      "value",
+      "group_name"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "TokenStats": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "tokenizer_name_or_path",
+      "groups_to_compute",
+      "histogram_rounding",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_short_paragraph_ratio": [
+    "paragraphs",
+    "threshold"
+  ],
+  "get_long_paragraph_ratio": [
+    "paragraphs",
+    "threshold"
+  ],
+  "ParagraphStats": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "short_paragraph_max_chars_threshold",
+      "long_paragraph_max_chars_threshold",
+      "ignore_empty_paragraphs",
+      "histogram_round_digits",
+      "groups_to_compute",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_short_word_ratio": [
+    "words",
+    "threshold"
+  ],
+  "get_long_word_ratio": [
+    "words",
+    "threshold"
+  ],
+  "WordStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "stop_words",
+      "short_word_max_chars_threshold",
+      "long_word_max_chars_threshold",
+      "language",
+      "groups_to_compute",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "ELIPSIS": [],
+  "DocStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "groups_to_compute",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "get_max_chars_per_line_ratio": [
+    "lines",
+    "chars"
+  ],
+  "get_min_chars_per_line_ratio": [
+    "lines",
+    "chars"
+  ],
+  "is_bullet_line": [
+    "line"
+  ],
+  "LineStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "max_k_chars_per_line_tresholds",
+      "min_k_chars_per_line_thresholds",
+      "groups_to_compute",
+      "ignore_empty_lines",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "GROUP": [],
+  "TopKConfig": {},
+  "DEFAULT_TOP_K_CONFIG": [],
+  "STAT_TYPE": [],
+  "STATS_MERGED_NAME": [],
+  "StatsMerger": {
+    "type": [],
+    "name": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "remove_input",
+      "top_k_config"
+    ],
+    "get_leaf_non_empty_folders": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "WordsContaminationStats": {
+    "name": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "words",
+      "norm_config",
+      "language",
+      "groups_to_compute",
+      "histogram_round_digits",
+      "top_k_config"
+    ],
+    "extract_stats": [
+      "self",
+      "doc"
+    ]
+  },
+  "format_time_remaining": [
+    "seconds"
+  ],
+  "format_completion_datetime": [
+    "timestamp"
+  ],
+  "repo_has_parquet_data": [
+    "repo_id"
+  ],
+  "count_documents_in_repo": [
+    "repo_id"
+  ],
+  "get_total_expected_documents": [
+    "dataset_name",
+    "split",
+    "config",
+    "max_examples"
+  ],
+  "calculate_eta": [
+    "completed",
+    "total",
+    "elapsed_time"
+  ],
+  "render_progress_bar": [
+    "completed",
+    "total",
+    "start_time",
+    "current_time"
+  ],
+  "create_progress_section_markdown": [
+    "completed",
+    "total",
+    "start_time",
+    "current_time"
+  ],
+  "InferenceProgressMonitor": {
+    "_is_job_running": [
+      "self",
+      "job_id"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "InferenceConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "InferenceRunner": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "rollout_fn",
+      "config",
+      "output_writer",
+      "shared_context",
+      "checkpoints_local_dir",
+      "records_per_chunk",
+      "metadata_key"
+    ],
+    "metrics_reporter": [
+      "self",
+      "interval"
+    ],
+    "_init_server": [
+      "self",
+      "rank"
+    ],
+    "_send_request": [
+      "self",
+      "server",
+      "payload",
+      "semaphore"
+    ],
+    "_cached_request": [
+      "self",
+      "payload",
+      "semaphore",
+      "server",
+      "doc_id",
+      "rollout_idx",
+      "chunk_index",
+      "request_counters"
+    ],
+    "_save_document": [
+      "self",
+      "document",
+      "output_writer_context",
+      "rank",
+      "chunk_index"
+    ],
+    "_async_data_gen": [
+      "self",
+      "sync_gen"
+    ],
+    "get_shared_context_cm": [
+      "self"
+    ],
+    "_handle_record": [
+      "self",
+      "doc",
+      "rank",
+      "chunk_index",
+      "rollout_fn",
+      "output_writer_context",
+      "server",
+      "semaphore"
+    ],
+    "run_async": [
+      "self",
+      "data_gen",
+      "rank"
+    ],
+    "_cleanup": [
+      "self",
+      "metrics_task",
+      "tasks_pool",
+      "delete_cache_file",
+      "timeout"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "MetricsKeeper": {
+    "__init__": [
+      "self",
+      "window"
+    ],
+    "reset": [
+      "self"
+    ],
+    "add_metrics": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "QueueSizesKeeper": {
+    "__init__": [
+      "self"
+    ],
+    "change_queues": [
+      "self",
+      "changes"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "InferenceResult": {},
+  "InferenceError": {
+    "__init__": [
+      "self",
+      "document",
+      "error",
+      "payload"
+    ]
+  },
+  "ServerError": {
+    "__init__": [
+      "self",
+      "error"
+    ]
+  },
+  "GenerateFunction": [],
+  "RolloutResult": [],
+  "RolloutFunction": {
+    "__call__": [
+      "self",
+      "document",
+      "generate"
+    ]
+  },
+  "_ensure_xxhash": [
+    "checkpoint_dir"
+  ],
+  "RequestCache": {
+    "__init__": [
+      "self",
+      "checkpoints_local_dir"
+    ],
+    "initialize": [
+      "self",
+      "rank"
+    ],
+    "close": [
+      "self",
+      "delete_file"
+    ],
+    "_load_cached_doc_ids": [
+      "self"
+    ],
+    "prepare_payload": [
+      "self",
+      "payload"
+    ],
+    "_writer_loop": [
+      "self"
+    ],
+    "flush": [
+      "self"
+    ],
+    "get_cached_response": [
+      "self",
+      "doc_id",
+      "rollout_idx"
+    ],
+    "store_result": [
+      "self",
+      "chunk_index",
+      "doc_id",
+      "rollout_idx",
+      "result"
+    ],
+    "store_error": [
+      "self",
+      "chunk_index",
+      "doc_id",
+      "rollout_idx",
+      "error_message"
+    ],
+    "drop_chunk": [
+      "self",
+      "chunk_index"
+    ],
+    "mark_document_complete": [
+      "self",
+      "doc_id"
+    ]
+  },
+  "CheckpointManager": {
+    "__init__": [
+      "self",
+      "checkpoints_local_dir",
+      "records_per_chunk",
+      "request_cache"
+    ],
+    "write_document": [
+      "self",
+      "document",
+      "rank",
+      "chunk_index",
+      "output_writer_context"
+    ],
+    "parse_existing_checkpoints": [
+      "self",
+      "rank",
+      "output_writer_context"
+    ],
+    "cleanup_last_chunk": [
+      "self",
+      "rank",
+      "chunk_index"
+    ],
+    "update_last_chunk_index": [
+      "self",
+      "rank"
+    ],
+    "chunk_index_gen": [
+      "self"
+    ]
+  },
+  "InferenceDatasetCardParams": {},
+  "InferenceDatasetCardGenerator": {
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "JobStats": {},
+  "load_job_stats": [
+    "stats_path",
+    "timeout"
+  ],
+  "fetch_source_dataset_metadata": [
+    "dataset_name"
+  ],
+  "_size_category": [
+    "num_examples"
+  ],
+  "_render_job_stats": [
+    "stats"
+  ],
+  "format_number": [
+    "n"
+  ],
+  "_format_block": [
+    "values",
+    "fallback_line"
+  ],
+  "_render_template": [
+    "context"
+  ],
+  "build_and_upload_dataset_card": [],
+  "WORKER_CHECK_INTERVAL_SECONDS": [],
+  "WORKER_CONNECTION_MAX_RETRIES": [],
+  "WORKER_CONNECTION_RETRY_DELAY": [],
+  "PROCESS_TIMEOUT": [],
+  "calculate_object_store_memory": [],
+  "_build_ray_head_start_command": [
+    "master_port",
+    "object_store_memory"
+  ],
+  "_count_alive_worker_nodes": [],
+  "_start_ray_head_node": [
+    "master_port",
+    "object_store_memory"
+  ],
+  "_wait_for_workers": [
+    "expected_workers"
+  ],
+  "init_ray_master": [
+    "master_port",
+    "expected_workers"
+  ],
+  "init_ray_worker": [
+    "master_ip",
+    "master_port",
+    "max_retries",
+    "retry_delay"
+  ],
+  "monitor_ray_cluster_health": [
+    "check_interval"
+  ],
+  "monitor_ray_workers": [
+    "expected_workers"
+  ],
+  "cleanup_ray": [],
+  "get_available_cpus_per_node": [],
+  "get_available_memory_per_node": [],
+  "get_available_gpus_per_node": [],
+  "get_node_rank": [],
+  "is_master_node": [],
+  "get_node_hosts": [],
+  "get_distributed_environment": [],
+  "get_master_node_host": [],
+  "VLLMServer": {
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "_start_vllm_task": [
+      "self"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "monitor_health": [
+      "self"
+    ],
+    "server_cleanup": [
+      "self"
+    ]
+  },
+  "SGLangServer": {
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "create_sglang_task": [
+      "self",
+      "n_nodes",
+      "node_rank",
+      "dist_init_addr"
+    ],
+    "monitor_health": [
+      "self"
+    ]
+  },
+  "DummyHandler": {
+    "do_POST": [
+      "self"
+    ],
+    "do_GET": [
+      "self"
+    ],
+    "log_message": [
+      "self",
+      "format"
+    ]
+  },
+  "DummyServer": {
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "monitor_health": [
+      "self"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "kill_server": [
+      "self"
+    ],
+    "server_cleanup": [
+      "self"
+    ]
+  },
+  "_raw_post": [
+    "url",
+    "json_data"
+  ],
+  "_find_available_port": [
+    "rank"
+  ],
+  "InferenceServer": {
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "_get_log_file_path": [
+      "self"
+    ],
+    "_should_log_to_file": [
+      "self"
+    ],
+    "_create_server_logger": [
+      "self"
+    ],
+    "server_logger": [
+      "self"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "monitor_health": [
+      "self"
+    ],
+    "get_base_url": [
+      "self"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "make_request": [
+      "self",
+      "payload"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "bg_start_server": [
+      "self",
+      "max_retries"
+    ],
+    "server_cleanup": [
+      "self"
+    ],
+    "_monitor_server": [
+      "self"
+    ],
+    "_wait_until_ready": [
+      "self",
+      "max_attempts",
+      "delay_sec"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "_make_request": [
+      "self",
+      "payload"
+    ]
+  },
+  "EndpointServer": {
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "monitor_health": [
+      "self"
+    ],
+    "_wait_until_ready": [
+      "self",
+      "max_attempts",
+      "delay_sec"
+    ],
+    "get_base_url": [
+      "self"
+    ],
+    "_make_request": [
+      "self",
+      "payload"
+    ]
+  },
+  "CustomServer": {
+    "__init__": [
+      "self",
+      "config",
+      "rank"
+    ],
+    "start_server": [
+      "self"
+    ],
+    "monitor_health": [
+      "self"
+    ]
+  },
+  "BaseExtractor": {
+    "type": [],
+    "__init__": [
+      "self",
+      "timeout"
+    ],
+    "extract": [
+      "self",
+      "text"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "ExtractorSandbox": {
+    "__init__": [
+      "self",
+      "timeout",
+      "warmup_text"
+    ],
+    "set_oom_score_adj": [
+      "self",
+      "score"
+    ],
+    "_cleanup_process": [
+      "self"
+    ],
+    "_worker": [
+      "self",
+      "conn",
+      "extract_fn"
+    ],
+    "process_document": [
+      "self",
+      "text",
+      "extract_fn"
+    ],
+    "_ensure_process": [
+      "self",
+      "extract_fn"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "Trafilatura": {
+    "name": [],
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "favour_precision",
+      "include_images",
+      "timeout",
+      "deduplicate"
+    ],
+    "extract": [
+      "self",
+      "text"
+    ]
+  },
+  "ReadabilityInscriptis": {
+    "_requires_dependencies": [],
+    "__init__": [
+      "self",
+      "max_new_lines",
+      "min_text_length",
+      "min_text_score",
+      "timeout"
+    ],
+    "extract": [
+      "self",
+      "text"
+    ]
+  },
+  "SHUFFLING_READ_BLOCK_SIZE": [],
+  "SHUFFLING_CACHE_TYPE": [],
+  "TokenizedFile": {
+    "__init__": [
+      "self",
+      "output_folder",
+      "filename",
+      "save_index",
+      "save_loss_metadata",
+      "upload_block_size",
+      "tokenizer_name_or_path",
+      "save_final_metadata",
+      "token_size"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "write_bytes": [
+      "self",
+      "tk_bytes",
+      "doc_ends"
+    ],
+    "write_loss_bytes": [
+      "self",
+      "l_bytes"
+    ],
+    "write": [
+      "self",
+      "tokens",
+      "loss_values"
+    ],
+    "copy": [
+      "self",
+      "save_filename",
+      "ordering",
+      "new_output_folder",
+      "rank",
+      "max_tokens_per_file",
+      "boundaries",
+      "sub_filename",
+      "save_index"
+    ],
+    "write_final_metadata": [
+      "self",
+      "token_count",
+      "filename"
+    ]
+  },
+  "get_output_filename": [
+    "save_filename",
+    "rank",
+    "name",
+    "sub_rank"
+  ],
+  "DocumentTokenizer": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "tokenizer_name_or_path",
+      "local_working_dir",
+      "save_filename",
+      "eos_token",
+      "save_index",
+      "save_loss_metadata",
+      "save_final_metadata",
+      "batch_size",
+      "max_tokens_per_file",
+      "seed",
+      "upload_block_size",
+      "shuffle_documents",
+      "shuffle_chunk_size"
+    ],
+    "get_loss_values": [
+      "self",
+      "document",
+      "encoded"
+    ],
+    "write_unshuffled": [
+      "self",
+      "data",
+      "filename"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "DocumentTokenizerMerger": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "save_filename",
+      "max_tokens_per_file",
+      "max_tokens",
+      "shuffle",
+      "shuffle_chunk_size",
+      "upload_block_size",
+      "seed",
+      "save_loss_metadata",
+      "save_final_metadata",
+      "progress"
+    ],
+    "get_ordering": [
+      "self",
+      "all_doc_ends"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "load_doc_ends": [
+    "file"
+  ],
+  "get_data_reader": [
+    "file",
+    "doc_ends",
+    "nb_bytes",
+    "start_e"
+  ],
+  "TokensCounter": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "tokenizer_name_or_path",
+      "count_eos_token",
+      "batch_size"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "LengthCounter": {
+    "name": [],
+    "type": [],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "DocumentTokenizerContextShuffler": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "input_folder",
+      "output_folder",
+      "window_size",
+      "seed",
+      "token_size"
+    ],
+    "get_ordering": [
+      "self",
+      "all_doc_ends"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "_INDEX_HEADER": [],
+  "MegatronTokenizedFile": {
+    "__init__": [
+      "self",
+      "output_folder",
+      "filename",
+      "upload_block_size",
+      "token_size"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_sequence_pointers": [
+      "self",
+      "sequence_lengths"
+    ],
+    "write": [
+      "self",
+      "tokens"
+    ]
+  },
+  "MegatronDocumentTokenizer": {
+    "name": [],
+    "type": [],
+    "__init__": [
+      "self",
+      "output_folder",
+      "save_filename",
+      "tokenizer_name_or_path",
+      "eos_token",
+      "batch_size",
+      "upload_block_size"
+    ],
+    "write_tokens": [
+      "self",
+      "data",
+      "filename"
+    ],
+    "run": [
+      "self",
+      "data",
+      "rank",
+      "world_size"
+    ]
+  },
+  "parser": [],
+  "RANK_FROM_LOG_FILENAME_REGEX": [],
+  "main": [],
+  "expand_path_pattern": [
+    "path_pattern"
+  ],
+  "find_valid_directories": [
+    "paths",
+    "invalid_dirs_cache"
+  ],
+  "get_job_status": [
+    "job_path",
+    "completed_jobs_cache"
+  ],
+  "create_display": [
+    "job_statuses",
+    "console",
+    "previous_state"
+  ],
+  "load_dataset_bytes": [
+    "file",
+    "doc_ends",
+    "bytes_per_value"
+  ],
+  "check_dataset": [
+    "input_folder",
+    "tokenizer",
+    "eos_token",
+    "chunk_size"
+  ],
+  "console": [],
+  "reader_class_from_name": [
+    "reader_type"
+  ],
+  "reader_factory": [
+    "data_folder",
+    "reader_type"
+  ],
+  "get_filter_expr": [
+    "text"
+  ]
+}

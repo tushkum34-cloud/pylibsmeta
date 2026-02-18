@@ -1,0 +1,2819 @@
+{
+  "ContextExtractor": {
+    "__init__": [
+      "self",
+      "repo_path"
+    ],
+    "_read_file_cached": [
+      "self",
+      "abs_path"
+    ],
+    "invalidate_cache": [
+      "self",
+      "file_path"
+    ],
+    "chunk_file_by_lines": [
+      "self",
+      "file_path",
+      "max_lines"
+    ],
+    "chunk_file_by_symbols": [
+      "self",
+      "file_path"
+    ],
+    "extract_context_around_line": [
+      "self",
+      "file_path",
+      "line"
+    ]
+  },
+  "LLMClientProtocol": {},
+  "logger": [],
+  "LLMError": {},
+  "SymbolNotFoundError": {},
+  "OpenAIConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "AnthropicConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "GoogleConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "OllamaConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "MAX_CODE_LENGTH_CHARS": [],
+  "MAX_FILE_SUMMARIZE_CHARS": [],
+  "OPENAI_MAX_PROMPT_TOKENS": [],
+  "_strip_thinking_tokens": [
+    "response"
+  ],
+  "Summarizer": {
+    "_get_tokenizer": [
+      "self",
+      "model_name"
+    ],
+    "_count_tokens": [
+      "self",
+      "text",
+      "model_name"
+    ],
+    "_count_openai_chat_tokens": [
+      "self",
+      "messages",
+      "model_name"
+    ],
+    "__init__": [
+      "self",
+      "repo",
+      "config",
+      "llm_client"
+    ],
+    "_get_llm_client": [
+      "self"
+    ],
+    "summarize_file": [
+      "self",
+      "file_path"
+    ],
+    "summarize_function": [
+      "self",
+      "file_path",
+      "function_name"
+    ],
+    "summarize_class": [
+      "self",
+      "file_path",
+      "class_name"
+    ]
+  },
+  "RepoMapper": {
+    "__init__": [
+      "self",
+      "repo_path"
+    ],
+    "_load_gitignore": [
+      "self"
+    ],
+    "_should_ignore": [
+      "self",
+      "file"
+    ],
+    "_subpaths_for_path": [
+      "self",
+      "rel_path"
+    ],
+    "_get_file_tree_rust": [
+      "self",
+      "start_dir",
+      "subpath"
+    ],
+    "_get_file_tree_python": [
+      "self",
+      "start_dir",
+      "subpath"
+    ],
+    "get_file_tree": [
+      "self",
+      "subpath"
+    ],
+    "scan_repo": [
+      "self"
+    ],
+    "_scan_file": [
+      "self",
+      "file"
+    ],
+    "_extract_symbols_from_file": [
+      "self",
+      "file"
+    ],
+    "extract_symbols": [
+      "self",
+      "file_path"
+    ],
+    "get_repo_map": [
+      "self"
+    ]
+  },
+  "ResearchResult": {},
+  "DeepResearch": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_init_llm_client": [
+      "self"
+    ],
+    "research": [
+      "self",
+      "query"
+    ]
+  },
+  "LanguagePlugin": {
+    "__init__": [
+      "self",
+      "name",
+      "extensions",
+      "query_files",
+      "query_dirs"
+    ]
+  },
+  "TreeSitterSymbolExtractor": {
+    "LANGUAGES": [],
+    "register_language": [
+      "cls",
+      "name",
+      "extensions",
+      "query_files",
+      "query_dirs"
+    ],
+    "extend_language": [
+      "cls",
+      "language",
+      "query_file"
+    ],
+    "get_parser": [
+      "cls",
+      "ext"
+    ],
+    "_load_query_files": [
+      "cls",
+      "lang_name"
+    ],
+    "get_query": [
+      "cls",
+      "ext"
+    ],
+    "list_supported_languages": [
+      "cls"
+    ],
+    "reset_plugins": [
+      "cls"
+    ],
+    "extract_symbols": [
+      "ext",
+      "source_code"
+    ]
+  },
+  "ChromaPackageSearch": {
+    "API_BASE_URL": [],
+    "DEFAULT_TIMEOUT": [],
+    "__init__": [
+      "self",
+      "api_key"
+    ],
+    "_get_headers": [
+      "self"
+    ],
+    "_call_mcp_tool": [
+      "self",
+      "tool_name",
+      "arguments"
+    ],
+    "grep": [
+      "self",
+      "package",
+      "pattern",
+      "max_results",
+      "file_pattern",
+      "case_sensitive",
+      "registry_name"
+    ],
+    "hybrid_search": [
+      "self",
+      "package",
+      "query",
+      "regex_filter",
+      "max_results",
+      "file_pattern",
+      "registry_name"
+    ],
+    "read_file": [
+      "self",
+      "package",
+      "file_path",
+      "start_line",
+      "end_line",
+      "filename_sha256",
+      "registry_name"
+    ],
+    "list_packages": [
+      "self"
+    ],
+    "get_package_info": [
+      "self",
+      "package"
+    ]
+  },
+  "MultiRepo": {
+    "__init__": [
+      "self",
+      "paths",
+      "names"
+    ],
+    "repos": [
+      "self"
+    ],
+    "names": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "name"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "query",
+      "file_pattern",
+      "max_results_per_repo"
+    ],
+    "search_semantic": [
+      "self",
+      "query",
+      "top_k",
+      "top_k_per_repo",
+      "embed_fn"
+    ],
+    "find_symbol": [
+      "self",
+      "symbol_name",
+      "symbol_type"
+    ],
+    "extract_all_symbols": [
+      "self",
+      "symbol_type"
+    ],
+    "audit_dependencies": [
+      "self"
+    ],
+    "summarize": [
+      "self"
+    ],
+    "index_all": [
+      "self",
+      "embed_fn"
+    ],
+    "get_file_content": [
+      "self",
+      "repo_name",
+      "file_path"
+    ]
+  },
+  "SearchOptions": {},
+  "CodeSearcher": {
+    "__init__": [
+      "self",
+      "repo_path"
+    ],
+    "_load_gitignore": [
+      "self"
+    ],
+    "_should_ignore": [
+      "self",
+      "file"
+    ],
+    "_has_ripgrep": [
+      "self"
+    ],
+    "_is_git_repository": [
+      "self"
+    ],
+    "_parse_ripgrep_json_messages": [
+      "self",
+      "stdout"
+    ],
+    "_extract_context_for_match": [
+      "self",
+      "messages",
+      "match_index",
+      "file_path",
+      "match_line_number",
+      "options"
+    ],
+    "_search_with_ripgrep": [
+      "self",
+      "query",
+      "file_pattern",
+      "options"
+    ],
+    "search_text": [
+      "self",
+      "query",
+      "file_pattern",
+      "options"
+    ]
+  },
+  "format_duration": [
+    "seconds"
+  ],
+  "format_size": [
+    "bytes_size"
+  ],
+  "validate_relative_path": [
+    "base_path",
+    "relative_path"
+  ],
+  "parse_git_url": [
+    "url"
+  ],
+  "truncate_text": [
+    "text",
+    "max_length"
+  ],
+  "LLMClientError": {},
+  "create_openai_client": [
+    "api_key",
+    "base_url"
+  ],
+  "create_anthropic_client": [
+    "api_key"
+  ],
+  "create_google_client": [
+    "api_key"
+  ],
+  "create_ollama_client": [
+    "base_url",
+    "model",
+    "session"
+  ],
+  "create_client_from_config": [
+    "config"
+  ],
+  "create_client_from_review_config": [
+    "llm_config",
+    "session"
+  ],
+  "__all__": [],
+  "get_tool_schemas": [],
+  "__author__": [],
+  "__version__": [],
+  "_get_version": [],
+  "version_callback": [
+    "value"
+  ],
+  "app": [],
+  "main": [
+    "version"
+  ],
+  "cache_command": [
+    "action",
+    "repo_path"
+  ],
+  "chunk_by_lines": [
+    "path",
+    "file_path",
+    "max_lines",
+    "output"
+  ],
+  "chunk_by_symbols": [
+    "path",
+    "file_path",
+    "output"
+  ],
+  "commit_changes": [
+    "config",
+    "model",
+    "dry_run"
+  ],
+  "extract_context": [
+    "path",
+    "file_path",
+    "line",
+    "output"
+  ],
+  "analyze_dependencies": [
+    "path",
+    "language",
+    "output",
+    "format",
+    "visualize",
+    "viz_format",
+    "cycles",
+    "llm_context",
+    "module",
+    "include_indirect",
+    "ref"
+  ],
+  "export_data": [
+    "path",
+    "data_type",
+    "output",
+    "symbol_name",
+    "symbol_type",
+    "ref"
+  ],
+  "file_content": [
+    "path",
+    "file_paths"
+  ],
+  "file_tree": [
+    "path",
+    "output",
+    "subpath",
+    "ref"
+  ],
+  "git_info": [
+    "path",
+    "output",
+    "ref"
+  ],
+  "grep_command": [
+    "path",
+    "pattern",
+    "case_sensitive",
+    "include",
+    "exclude",
+    "max_results",
+    "directory",
+    "include_hidden",
+    "output",
+    "ref"
+  ],
+  "index": [
+    "path",
+    "output"
+  ],
+  "review_pr": [
+    "init_config",
+    "target",
+    "staged",
+    "config",
+    "model",
+    "priority",
+    "profile",
+    "plain",
+    "dry_run",
+    "agentic",
+    "agentic_turns",
+    "repo_path"
+  ],
+  "review_cache": [
+    "action",
+    "max_size",
+    "config"
+  ],
+  "review_profile_command": [
+    "action",
+    "name",
+    "description",
+    "file",
+    "tags",
+    "target",
+    "format"
+  ],
+  "search_text": [
+    "path",
+    "query",
+    "pattern",
+    "output",
+    "ref"
+  ],
+  "serve": [
+    "host",
+    "port",
+    "reload"
+  ],
+  "summarize_pr": [
+    "pr_url",
+    "config",
+    "model",
+    "plain",
+    "output",
+    "update_pr_body",
+    "repo_path"
+  ],
+  "extract_symbols": [
+    "path",
+    "file_path",
+    "output",
+    "format",
+    "ref"
+  ],
+  "find_symbol_usages": [
+    "path",
+    "symbol_name",
+    "symbol_type",
+    "output",
+    "ref"
+  ],
+  "search_semantic": [
+    "path",
+    "query",
+    "top_k",
+    "output",
+    "embedding_model",
+    "chunk_by",
+    "build_index",
+    "persist_dir",
+    "format",
+    "ref"
+  ],
+  "package_search_grep_cmd": [
+    "package",
+    "pattern",
+    "max_results",
+    "file_pattern",
+    "case_sensitive",
+    "json_output",
+    "formatted"
+  ],
+  "package_search_hybrid_cmd": [
+    "package",
+    "query",
+    "regex_filter",
+    "max_results",
+    "file_pattern",
+    "json_output",
+    "formatted"
+  ],
+  "package_search_read_cmd": [
+    "package",
+    "file_path",
+    "start_line",
+    "end_line",
+    "json_output",
+    "plain"
+  ],
+  "handle_cli_error": [
+    "error",
+    "error_type",
+    "help_text"
+  ],
+  "multi_app": [],
+  "multi_search": [
+    "repos",
+    "query",
+    "pattern",
+    "max_per_repo",
+    "output"
+  ],
+  "multi_symbols": [
+    "repos",
+    "name",
+    "symbol_type",
+    "output"
+  ],
+  "multi_deps": [
+    "repos",
+    "output"
+  ],
+  "multi_summary": [
+    "repos",
+    "output"
+  ],
+  "FileAnalysisCache": {
+    "__init__": [
+      "self",
+      "repo_path",
+      "cache_dir",
+      "max_cache_size"
+    ],
+    "_load_cache": [
+      "self"
+    ],
+    "_evict_if_needed": [
+      "self"
+    ],
+    "_save_cache": [
+      "self"
+    ],
+    "_get_file_hash": [
+      "self",
+      "file_path"
+    ],
+    "_get_file_metadata": [
+      "self",
+      "file_path"
+    ],
+    "is_file_changed": [
+      "self",
+      "file_path"
+    ],
+    "get_cached_symbols": [
+      "self",
+      "file_path"
+    ],
+    "cache_symbols": [
+      "self",
+      "file_path",
+      "symbols"
+    ],
+    "invalidate_file": [
+      "self",
+      "file_path"
+    ],
+    "cleanup_stale_entries": [
+      "self"
+    ],
+    "get_cache_stats": [
+      "self"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "finalize": [
+      "self"
+    ]
+  },
+  "IncrementalAnalyzer": {
+    "__init__": [
+      "self",
+      "repo_path",
+      "cache_dir"
+    ],
+    "analyze_file": [
+      "self",
+      "file_path"
+    ],
+    "_extract_symbols_from_file": [
+      "self",
+      "file_path"
+    ],
+    "analyze_changed_files": [
+      "self",
+      "file_paths"
+    ],
+    "get_analysis_stats": [
+      "self"
+    ],
+    "cleanup_cache": [
+      "self"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "finalize": [
+      "self"
+    ]
+  },
+  "ASTPattern": {
+    "__init__": [
+      "self",
+      "pattern",
+      "mode"
+    ],
+    "_compile": [
+      "self"
+    ],
+    "matches": [
+      "self",
+      "node",
+      "source"
+    ],
+    "_matches_simple": [
+      "self",
+      "node",
+      "source"
+    ],
+    "_matches_pattern": [
+      "self",
+      "node",
+      "source"
+    ]
+  },
+  "ASTSearcher": {
+    "__init__": [
+      "self",
+      "repo_path"
+    ],
+    "search_pattern": [
+      "self",
+      "pattern",
+      "file_pattern",
+      "mode",
+      "max_results"
+    ],
+    "_get_matching_files": [
+      "self",
+      "pattern"
+    ],
+    "_search_file": [
+      "self",
+      "file_path",
+      "pattern"
+    ],
+    "_search_node": [
+      "self",
+      "node",
+      "source",
+      "pattern",
+      "file_path",
+      "matches"
+    ],
+    "_get_context": [
+      "self",
+      "node",
+      "source"
+    ]
+  },
+  "find_common_patterns": [
+    "repo_path"
+  ],
+  "OllamaClient": {
+    "__init__": [
+      "self",
+      "base_url",
+      "model",
+      "session"
+    ],
+    "generate": [
+      "self",
+      "prompt"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "ContextAssembler": {
+    "__init__": [
+      "self",
+      "repo"
+    ],
+    "add_diff": [
+      "self",
+      "diff"
+    ],
+    "add_file": [
+      "self",
+      "file_path"
+    ],
+    "add_search_results": [
+      "self",
+      "results"
+    ],
+    "format_context": [
+      "self"
+    ]
+  },
+  "_resolve_batch_size": [
+    "collection",
+    "default"
+  ],
+  "VectorDBBackend": {
+    "add": [
+      "self",
+      "embeddings",
+      "metadatas",
+      "ids"
+    ],
+    "query": [
+      "self",
+      "embedding",
+      "top_k"
+    ],
+    "persist": [
+      "self"
+    ],
+    "delete": [
+      "self",
+      "ids"
+    ],
+    "count": [
+      "self"
+    ]
+  },
+  "ChromaDBBackend": {
+    "__init__": [
+      "self",
+      "persist_dir",
+      "collection_name"
+    ],
+    "add": [
+      "self",
+      "embeddings",
+      "metadatas",
+      "ids"
+    ],
+    "query": [
+      "self",
+      "embedding",
+      "top_k"
+    ],
+    "persist": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "delete": [
+      "self",
+      "ids"
+    ],
+    "_reset_collection": [
+      "self"
+    ]
+  },
+  "ChromaCloudBackend": {
+    "__init__": [
+      "self",
+      "collection_name",
+      "api_key",
+      "tenant",
+      "database"
+    ],
+    "add": [
+      "self",
+      "embeddings",
+      "metadatas",
+      "ids"
+    ],
+    "query": [
+      "self",
+      "embedding",
+      "top_k"
+    ],
+    "persist": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "delete": [
+      "self",
+      "ids"
+    ]
+  },
+  "get_default_backend": [
+    "persist_dir",
+    "collection_name"
+  ],
+  "VectorSearcher": {
+    "__init__": [
+      "self",
+      "repo",
+      "embed_fn",
+      "backend",
+      "persist_dir"
+    ],
+    "build_index": [
+      "self",
+      "chunk_by",
+      "parallel",
+      "max_workers"
+    ],
+    "_batch_embed": [
+      "self",
+      "texts"
+    ],
+    "search": [
+      "self",
+      "query",
+      "top_k"
+    ]
+  },
+  "EmbedFn": [],
+  "_process_symbol_task": [
+    "path_str",
+    "symbol_info",
+    "summarizer_instance",
+    "embed_fn_instance",
+    "current_cache"
+  ],
+  "DocstringIndexer": {
+    "__init__": [
+      "self",
+      "repo",
+      "summarizer",
+      "embed_fn"
+    ],
+    "build": [
+      "self",
+      "force",
+      "level",
+      "file_extensions"
+    ],
+    "get_searcher": [
+      "self"
+    ]
+  },
+  "SummarySearcher": {
+    "__init__": [
+      "self",
+      "indexer"
+    ],
+    "search": [
+      "self",
+      "query",
+      "top_k"
+    ]
+  },
+  "DocumentationProvider": {
+    "search": [
+      "self",
+      "query"
+    ],
+    "fetch": [
+      "self",
+      "package_id"
+    ],
+    "parse_response": [
+      "self",
+      "text"
+    ]
+  },
+  "UpstashProvider": {
+    "API_BASE_URL": [],
+    "DEFAULT_TYPE": [],
+    "DEFAULT_TOKENS": [],
+    "MINIMUM_TOKENS": [],
+    "__init__": [
+      "self",
+      "api_key"
+    ],
+    "_generate_headers": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "query"
+    ],
+    "fetch": [
+      "self",
+      "package_id"
+    ],
+    "parse_response": [
+      "self",
+      "text"
+    ]
+  },
+  "DocumentationService": {
+    "__init__": [
+      "self",
+      "provider"
+    ],
+    "search_packages": [
+      "self",
+      "query"
+    ],
+    "get_documentation": [
+      "self",
+      "package_id"
+    ]
+  },
+  "default_service": [],
+  "Repository": {
+    "__init__": [
+      "self",
+      "path_or_url",
+      "github_token",
+      "cache_dir",
+      "ref"
+    ],
+    "_checkout_ref": [
+      "self",
+      "ref"
+    ],
+    "current_sha": [
+      "self"
+    ],
+    "current_sha_short": [
+      "self"
+    ],
+    "current_branch": [
+      "self"
+    ],
+    "remote_url": [
+      "self"
+    ],
+    "tags": [
+      "self"
+    ],
+    "branches": [
+      "self"
+    ],
+    "is_dirty": [
+      "self"
+    ],
+    "_git_command": [
+      "self",
+      "cmd"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "_clone_github_repo": [
+      "self",
+      "url",
+      "token",
+      "cache_dir",
+      "ref"
+    ],
+    "get_file_tree": [
+      "self",
+      "subpath"
+    ],
+    "extract_symbols": [
+      "self",
+      "file_path"
+    ],
+    "search_text": [
+      "self",
+      "query",
+      "file_pattern"
+    ],
+    "grep": [
+      "self",
+      "pattern"
+    ],
+    "get_code_searcher": [
+      "self"
+    ],
+    "chunk_file_by_lines": [
+      "self",
+      "file_path",
+      "max_lines"
+    ],
+    "chunk_file_by_symbols": [
+      "self",
+      "file_path"
+    ],
+    "extract_context_around_line": [
+      "self",
+      "file_path",
+      "line"
+    ],
+    "get_file_content": [
+      "self",
+      "file_path"
+    ],
+    "_get_single_file_content": [
+      "self",
+      "file_path"
+    ],
+    "_get_multiple_file_contents": [
+      "self",
+      "file_paths"
+    ],
+    "index": [
+      "self"
+    ],
+    "get_vector_searcher": [
+      "self",
+      "embed_fn",
+      "backend",
+      "persist_dir"
+    ],
+    "search_semantic": [
+      "self",
+      "query",
+      "top_k",
+      "embed_fn"
+    ],
+    "get_summarizer": [
+      "self",
+      "config"
+    ],
+    "get_context_assembler": [
+      "self"
+    ],
+    "get_dependency_analyzer": [
+      "self",
+      "language"
+    ],
+    "find_symbol_usages": [
+      "self",
+      "symbol_name",
+      "symbol_type"
+    ],
+    "write_index": [
+      "self",
+      "file_path"
+    ],
+    "write_symbols": [
+      "self",
+      "file_path",
+      "symbols"
+    ],
+    "write_file_tree": [
+      "self",
+      "file_path"
+    ],
+    "write_symbol_usages": [
+      "self",
+      "symbol_name",
+      "file_path",
+      "symbol_type"
+    ],
+    "get_abs_path": [
+      "self",
+      "relative_path"
+    ],
+    "_check_git_state_changed": [
+      "self"
+    ],
+    "_ensure_git_state_valid": [
+      "self"
+    ],
+    "_invalidate_caches": [
+      "self"
+    ],
+    "incremental_analyzer": [
+      "self"
+    ],
+    "finalize": [
+      "self"
+    ],
+    "extract_symbols_incremental": [
+      "self",
+      "file_paths"
+    ],
+    "get_incremental_stats": [
+      "self"
+    ],
+    "cleanup_incremental_cache": [
+      "self"
+    ],
+    "clear_incremental_cache": [
+      "self"
+    ],
+    "finalize_analysis": [
+      "self"
+    ],
+    "_perform_cache_cleanup": [
+      "cache_root_str",
+      "ttl_hours"
+    ]
+  },
+  "INVALID_PARAMS": [],
+  "INTERNAL_ERROR": [],
+  "MCPError": {
+    "__init__": [
+      "self",
+      "code",
+      "message"
+    ]
+  },
+  "OpenRepoParams": {},
+  "SearchParams": {},
+  "GrepParams": {},
+  "GetFileContentParams": {},
+  "GetMultipleFileContentsParams": {},
+  "ExtractSymbolsParams": {},
+  "FindSymbolUsagesParams": {},
+  "GetFileTreeParams": {},
+  "WarmCacheParams": {},
+  "GetSymbolCodeParams": {},
+  "GetCodeSummaryParams": {},
+  "GitInfoParams": {},
+  "ReviewDiffParams": {},
+  "GrepASTParams": {},
+  "KitServerLogic": {
+    "__init__": [
+      "self"
+    ],
+    "open_repository": [
+      "self",
+      "path_or_url",
+      "github_token",
+      "ref"
+    ],
+    "get_repo": [
+      "self",
+      "repo_id"
+    ],
+    "get_file_content": [
+      "self",
+      "repo_id",
+      "file_path"
+    ],
+    "get_multiple_file_contents": [
+      "self",
+      "repo_id",
+      "file_paths"
+    ],
+    "grep_code": [
+      "self",
+      "repo_id",
+      "pattern",
+      "case_sensitive",
+      "include_pattern",
+      "exclude_pattern",
+      "max_results",
+      "directory",
+      "include_hidden"
+    ],
+    "get_file_tree": [
+      "self",
+      "repo_id"
+    ],
+    "warm_cache": [
+      "self",
+      "repo_id",
+      "warm_file_tree",
+      "warm_symbols"
+    ],
+    "extract_symbols": [
+      "self",
+      "repo_id",
+      "file_path",
+      "symbol_type"
+    ],
+    "find_symbol_usages": [
+      "self",
+      "repo_id",
+      "symbol_name",
+      "symbol_type",
+      "file_path"
+    ],
+    "get_symbol_code": [
+      "self",
+      "repo_id",
+      "file_path",
+      "symbol_name"
+    ],
+    "get_code_summary": [
+      "self",
+      "repo_id",
+      "file_path",
+      "symbol_name"
+    ],
+    "get_git_info": [
+      "self",
+      "repo_id"
+    ],
+    "review_diff": [
+      "self",
+      "repo_id",
+      "diff_spec",
+      "priority_filter",
+      "max_files",
+      "model"
+    ],
+    "search_code": [
+      "self",
+      "repo_id",
+      "query",
+      "pattern"
+    ],
+    "grep_ast_async": [
+      "self",
+      "repo_id",
+      "pattern",
+      "mode",
+      "file_pattern",
+      "max_results"
+    ],
+    "_grep_ast_sync": [
+      "self",
+      "repo_path",
+      "pattern",
+      "file_pattern",
+      "mode",
+      "max_results"
+    ],
+    "grep_ast": [
+      "self",
+      "repo_id",
+      "pattern",
+      "mode",
+      "file_pattern",
+      "max_results"
+    ],
+    "list_prompts": [
+      "self"
+    ],
+    "get_prompt": [
+      "self",
+      "name",
+      "arguments"
+    ],
+    "list_tools": [
+      "self"
+    ]
+  },
+  "DeepResearchParams": {},
+  "PackageSearchGrepParams": {},
+  "PackageSearchHybridParams": {},
+  "PackageSearchReadFileParams": {},
+  "LocalDevServerLogic": {
+    "__init__": [
+      "self"
+    ],
+    "open_repository": [
+      "self",
+      "path_or_url",
+      "github_token",
+      "ref"
+    ],
+    "deep_research_package": [
+      "self",
+      "package_name",
+      "query"
+    ],
+    "_get_package_search": [
+      "self"
+    ],
+    "package_search_grep": [
+      "self",
+      "package",
+      "pattern",
+      "max_results",
+      "file_pattern",
+      "case_sensitive"
+    ],
+    "package_search_hybrid": [
+      "self",
+      "package",
+      "query",
+      "regex_filter",
+      "max_results",
+      "file_pattern"
+    ],
+    "package_search_read_file": [
+      "self",
+      "package",
+      "file_path",
+      "start_line",
+      "end_line",
+      "filename_sha256"
+    ],
+    "_internal_resolve_library_id": [
+      "self",
+      "query"
+    ],
+    "_internal_fetch_library_docs": [
+      "self",
+      "library_id",
+      "tokens",
+      "topic"
+    ],
+    "list_tools": [
+      "self"
+    ]
+  },
+  "AgenticPRReviewer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_get_available_tools": [
+      "self"
+    ],
+    "_execute_tool": [
+      "self",
+      "tool_name",
+      "parameters"
+    ],
+    "_get_relevant_chunks": [
+      "self",
+      "repo",
+      "parameters"
+    ],
+    "_batch_analyze_files": [
+      "self",
+      "repo",
+      "parameters"
+    ],
+    "_deep_code_analysis": [
+      "self",
+      "repo",
+      "parameters"
+    ],
+    "_analyze_cross_file_impact": [
+      "self",
+      "repo",
+      "parameters"
+    ],
+    "_run_agentic_analysis_anthropic": [
+      "self",
+      "initial_prompt"
+    ],
+    "_run_agentic_analysis_openai": [
+      "self",
+      "initial_prompt"
+    ],
+    "_run_agentic_analysis_google": [
+      "self",
+      "initial_prompt"
+    ],
+    "analyze_pr_agentic": [
+      "self",
+      "repo_path",
+      "pr_details",
+      "files"
+    ],
+    "post_pr_comment": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number",
+      "comment"
+    ],
+    "review_pr_agentic": [
+      "self",
+      "pr_input"
+    ],
+    "_generate_agentic_comment": [
+      "self",
+      "pr_details",
+      "files",
+      "analysis"
+    ],
+    "_get_kit_version": [
+      "self"
+    ]
+  },
+  "retry_with_backoff": [
+    "func",
+    "max_retries",
+    "base_delay",
+    "max_delay"
+  ],
+  "LocalChange": {},
+  "LocalDiffReviewer": {
+    "__init__": [
+      "self",
+      "config",
+      "repo_path"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "_validate_git_ref": [
+      "self",
+      "ref"
+    ],
+    "_validate_single_ref": [
+      "self",
+      "ref"
+    ],
+    "_run_git_command": [
+      "self"
+    ],
+    "_parse_diff_spec": [
+      "self",
+      "diff_spec"
+    ],
+    "_get_commit_info": [
+      "self",
+      "ref"
+    ],
+    "_get_diff": [
+      "self",
+      "base_ref",
+      "head_ref"
+    ],
+    "_get_changed_files": [
+      "self",
+      "base_ref",
+      "head_ref"
+    ],
+    "_prepare_local_change": [
+      "self",
+      "diff_spec"
+    ],
+    "_analyze_with_kit": [
+      "self",
+      "change"
+    ],
+    "_generate_review_prompt": [
+      "self",
+      "change",
+      "analysis"
+    ],
+    "_get_llm_review": [
+      "self",
+      "prompt"
+    ],
+    "_analyze_with_anthropic_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_openai_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_google_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_ollama_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_format_review_output": [
+      "self",
+      "review_text",
+      "change",
+      "cost"
+    ],
+    "_save_review": [
+      "self",
+      "review",
+      "change"
+    ],
+    "review": [
+      "self",
+      "diff_spec"
+    ]
+  },
+  "CommitMessageGenerator": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_staged_diff": [
+      "self"
+    ],
+    "get_staged_files": [
+      "self"
+    ],
+    "check_staged_changes": [
+      "self"
+    ],
+    "analyze_changes_for_commit": [
+      "self",
+      "repo_path"
+    ],
+    "_generate_with_anthropic": [
+      "self",
+      "prompt"
+    ],
+    "_generate_with_google": [
+      "self",
+      "prompt"
+    ],
+    "_generate_with_openai": [
+      "self",
+      "prompt"
+    ],
+    "_generate_with_ollama": [
+      "self",
+      "prompt"
+    ],
+    "commit_with_message": [
+      "self",
+      "message"
+    ],
+    "generate_and_commit": [
+      "self",
+      "repo_path"
+    ]
+  },
+  "PRSummarizer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "analyze_pr_for_summary": [
+      "self",
+      "repo_path",
+      "pr_details",
+      "files"
+    ],
+    "_analyze_with_anthropic_summary": [
+      "self",
+      "summary_prompt"
+    ],
+    "_analyze_with_google_summary": [
+      "self",
+      "summary_prompt"
+    ],
+    "_analyze_with_openai_summary": [
+      "self",
+      "summary_prompt"
+    ],
+    "_analyze_with_ollama_summary": [
+      "self",
+      "summary_prompt"
+    ],
+    "summarize_pr": [
+      "self",
+      "pr_input",
+      "update_body"
+    ],
+    "_generate_basic_summary": [
+      "self",
+      "pr_details",
+      "files"
+    ],
+    "update_pr_body": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number",
+      "summary"
+    ],
+    "_get_kit_version": [
+      "self"
+    ]
+  },
+  "RepoCache": {
+    "__init__": [
+      "self",
+      "config",
+      "quiet"
+    ],
+    "get_repo_path": [
+      "self",
+      "owner",
+      "repo",
+      "sha"
+    ],
+    "_is_cache_valid": [
+      "self",
+      "repo_path",
+      "target_sha"
+    ],
+    "_update_cache": [
+      "self",
+      "owner",
+      "repo",
+      "sha",
+      "repo_path"
+    ],
+    "_checkout_sha": [
+      "self",
+      "repo_path",
+      "sha"
+    ],
+    "_clone_to_temp": [
+      "self",
+      "owner",
+      "repo",
+      "sha"
+    ],
+    "cleanup_cache": [
+      "self",
+      "max_size_gb"
+    ],
+    "clear_cache": [
+      "self"
+    ]
+  },
+  "LineRefFixer": {
+    "REF_PATTERN": [],
+    "_build_valid_line_map": [
+      "cls",
+      "diff_text_or_parsed"
+    ],
+    "fix_comment": [
+      "cls",
+      "comment",
+      "diff_text",
+      "parsed_diff"
+    ]
+  },
+  "PRIORITY_SECTION_PATTERNS": [],
+  "MAJOR_SECTION_PATTERN": [],
+  "PRIORITY_HEADER_PATTERNS": [],
+  "MIN_MEANINGFUL_LENGTH": [],
+  "MAX_LINES": [],
+  "filter_review_by_priority": [
+    "review_text",
+    "allowed_priorities",
+    "max_review_size_mb"
+  ],
+  "_filter_priority_content": [
+    "review_text",
+    "allowed_priorities"
+  ],
+  "_is_priority_section_header": [
+    "line"
+  ],
+  "_is_major_section_header": [
+    "line"
+  ],
+  "_extract_priority_level": [
+    "line"
+  ],
+  "_has_priority_content_optimized": [
+    "lines",
+    "allowed_set"
+  ],
+  "_is_meaningful_content": [
+    "line"
+  ],
+  "_is_summary_or_recommendations_section": [
+    "line"
+  ],
+  "_should_filter_line_content": [
+    "line",
+    "allowed_priorities"
+  ],
+  "count_filtered_issues": [
+    "review_text",
+    "priority_filter"
+  ],
+  "TestResult": {},
+  "MatrixTestSuite": {},
+  "MatrixTester": {
+    "__init__": [
+      "self",
+      "base_config"
+    ],
+    "create_config": [
+      "self",
+      "provider",
+      "model"
+    ],
+    "run_single_test": [
+      "self",
+      "pr_url",
+      "mode",
+      "provider",
+      "model",
+      "display_name"
+    ],
+    "run_matrix_test": [
+      "self",
+      "pr_urls",
+      "include_opus_judging"
+    ],
+    "_run_opus_judging": [
+      "self"
+    ],
+    "_generate_analysis": [
+      "self"
+    ],
+    "_generate_recommendations": [
+      "self",
+      "successful",
+      "cost_analysis",
+      "quality_rankings"
+    ],
+    "save_results": [
+      "self",
+      "filepath"
+    ],
+    "load_results": [
+      "self",
+      "filepath"
+    ]
+  },
+  "ReviewProfile": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "ProfileManager": {
+    "__init__": [
+      "self",
+      "profiles_dir"
+    ],
+    "create_profile": [
+      "self",
+      "name",
+      "description",
+      "context",
+      "tags"
+    ],
+    "create_profile_from_file": [
+      "self",
+      "name",
+      "description",
+      "file_path",
+      "tags"
+    ],
+    "get_profile": [
+      "self",
+      "name"
+    ],
+    "list_profiles": [
+      "self"
+    ],
+    "update_profile": [
+      "self",
+      "name",
+      "description",
+      "context",
+      "tags"
+    ],
+    "delete_profile": [
+      "self",
+      "name"
+    ],
+    "copy_profile": [
+      "self",
+      "source_name",
+      "target_name"
+    ],
+    "export_profile": [
+      "self",
+      "name",
+      "output_path"
+    ],
+    "import_profile": [
+      "self",
+      "file_path",
+      "name"
+    ],
+    "_save_profile": [
+      "self",
+      "profile"
+    ]
+  },
+  "CostBreakdown": {
+    "__str__": [
+      "self"
+    ]
+  },
+  "CostTracker": {
+    "CACHE_TTL_SECONDS": [],
+    "HELICONE_API_URL": [],
+    "__init__": [
+      "self",
+      "custom_pricing"
+    ],
+    "reset": [
+      "self"
+    ],
+    "_fetch_pricing_with_cache": [
+      "cache_key"
+    ],
+    "_normalize_model_name": [
+      "model_name",
+      "provider"
+    ],
+    "_get_current_pricing": [
+      "self"
+    ],
+    "track_llm_usage": [
+      "self",
+      "provider",
+      "model",
+      "input_tokens",
+      "output_tokens"
+    ],
+    "_update_total": [
+      "self"
+    ],
+    "get_cost_summary": [
+      "self"
+    ],
+    "get_total_cost": [
+      "self"
+    ],
+    "extract_anthropic_usage": [
+      "self",
+      "response"
+    ],
+    "extract_openai_usage": [
+      "self",
+      "response"
+    ],
+    "get_available_models": [
+      "self"
+    ],
+    "get_all_model_names": [
+      "self"
+    ],
+    "_strip_model_prefix": [
+      "cls",
+      "model_name"
+    ],
+    "is_valid_model": [
+      "cls",
+      "model_name"
+    ],
+    "get_model_suggestions": [
+      "cls",
+      "invalid_model"
+    ]
+  },
+  "LLMProvider": {
+    "ANTHROPIC": [],
+    "OPENAI": [],
+    "OLLAMA": [],
+    "GOOGLE": []
+  },
+  "ReviewDepth": {
+    "QUICK": [],
+    "STANDARD": [],
+    "THOROUGH": []
+  },
+  "_detect_provider_from_model": [
+    "model_name"
+  ],
+  "_is_placeholder_token": [
+    "token"
+  ],
+  "GitHubConfig": {},
+  "LLMConfig": {},
+  "ReviewConfig": {
+    "from_file": [
+      "cls",
+      "config_path",
+      "profile",
+      "repo_path",
+      "model_hint"
+    ],
+    "create_default_config_file": [
+      "self",
+      "config_path"
+    ]
+  },
+  "PRReviewer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "post_pr_comment": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number",
+      "comment"
+    ],
+    "analyze_pr_with_kit": [
+      "self",
+      "repo_path",
+      "pr_details",
+      "files"
+    ],
+    "_analyze_with_anthropic_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_google_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_openai_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "_analyze_with_ollama_enhanced": [
+      "self",
+      "enhanced_prompt"
+    ],
+    "review_pr": [
+      "self",
+      "pr_input"
+    ],
+    "_generate_intelligent_comment": [
+      "self",
+      "pr_details",
+      "files",
+      "analysis"
+    ],
+    "_get_kit_version": [
+      "self"
+    ],
+    "get_parsed_diff": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number"
+    ],
+    "review_local_diff": [
+      "self",
+      "diff_spec",
+      "repo_path"
+    ],
+    "analyze_local_diff_with_kit": [
+      "self",
+      "repo_path",
+      "mock_pr_details",
+      "files",
+      "diff_content",
+      "parsed_diff"
+    ],
+    "_generate_local_diff_comment": [
+      "self",
+      "mock_pr_details",
+      "files",
+      "analysis",
+      "diff_spec"
+    ]
+  },
+  "FilePrioritizer": {
+    "basic_priority": [
+      "cls",
+      "files",
+      "max_files"
+    ],
+    "smart_priority": [
+      "cls",
+      "files",
+      "max_files"
+    ],
+    "get_analysis_summary": [
+      "cls",
+      "all_files",
+      "analyzed_files"
+    ],
+    "_is_analyzable_file": [
+      "cls",
+      "filename"
+    ],
+    "_file_importance_score": [
+      "cls",
+      "file_info"
+    ]
+  },
+  "BaseReviewer": {
+    "__init__": [
+      "self",
+      "config",
+      "user_agent"
+    ],
+    "parse_pr_url": [
+      "self",
+      "pr_input"
+    ],
+    "get_pr_details": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number"
+    ],
+    "get_pr_files": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number"
+    ],
+    "get_pr_diff": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number"
+    ],
+    "get_parsed_diff": [
+      "self",
+      "owner",
+      "repo",
+      "pr_number"
+    ],
+    "get_repo_for_analysis": [
+      "self",
+      "owner",
+      "repo",
+      "pr_details"
+    ]
+  },
+  "ValidationResult": {},
+  "ReviewValidator": {
+    "__init__": [
+      "self"
+    ],
+    "validate_review": [
+      "self",
+      "review_content",
+      "pr_diff",
+      "changed_files"
+    ],
+    "_count_file_references": [
+      "self",
+      "review",
+      "changed_files"
+    ],
+    "_count_line_references": [
+      "self",
+      "review"
+    ],
+    "_validate_line_references": [
+      "self",
+      "review",
+      "pr_diff"
+    ],
+    "_count_specific_issues": [
+      "self",
+      "review"
+    ],
+    "_count_vague_statements": [
+      "self",
+      "review"
+    ],
+    "_count_github_links": [
+      "self",
+      "review"
+    ],
+    "_validate_github_links": [
+      "self",
+      "review",
+      "changed_files"
+    ],
+    "_assess_code_relevance": [
+      "self",
+      "review",
+      "pr_diff"
+    ],
+    "_identify_major_changes": [
+      "self",
+      "pr_diff"
+    ],
+    "_assess_change_coverage": [
+      "self",
+      "review",
+      "major_changes"
+    ],
+    "_calculate_quality_score": [
+      "self",
+      "metrics",
+      "issues"
+    ]
+  },
+  "validate_review_quality": [
+    "review_content",
+    "pr_diff",
+    "changed_files"
+  ],
+  "DiffHunk": {
+    "get_new_line_number": [
+      "self",
+      "diff_line_offset"
+    ],
+    "contains_line_change": [
+      "self",
+      "content"
+    ]
+  },
+  "FileDiff": {
+    "find_line_for_content": [
+      "self",
+      "content"
+    ],
+    "get_changed_line_ranges": [
+      "self"
+    ]
+  },
+  "DiffParser": {
+    "parse_diff": [
+      "diff_content"
+    ],
+    "_parse_hunk_header": [
+      "header"
+    ],
+    "generate_line_number_context": [
+      "diff_files",
+      "owner",
+      "repo",
+      "sha"
+    ]
+  },
+  "Priority": {
+    "HIGH": [],
+    "MEDIUM": [],
+    "LOW": [],
+    "validate_priorities": [
+      "cls",
+      "priorities"
+    ]
+  },
+  "build_priority_instructions": [
+    "priority_filter"
+  ],
+  "get_recommendations_focus": [
+    "priority_filter"
+  ],
+  "AccuracyTester": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "test_pr_across_modes": [
+      "self",
+      "pr_url"
+    ],
+    "validate_existing_review": [
+      "self",
+      "pr_url",
+      "review_content"
+    ],
+    "regression_test": [
+      "self",
+      "pr_urls"
+    ]
+  },
+  "ALLOWED_REPO_PATTERNS": [],
+  "sanitize_url": [
+    "url"
+  ],
+  "matches_pattern": [
+    "url",
+    "pattern"
+  ],
+  "validate_repo_url": [
+    "url"
+  ],
+  "RepoIn": {},
+  "FilePathsIn": {},
+  "open_repo": [
+    "body"
+  ],
+  "get_file_tree": [
+    "repo_id"
+  ],
+  "get_file_content": [
+    "repo_id",
+    "file_path"
+  ],
+  "grep_text": [
+    "repo_id",
+    "pattern",
+    "case_sensitive",
+    "include_pattern",
+    "exclude_pattern",
+    "max_results",
+    "directory",
+    "include_hidden"
+  ],
+  "delete_repo": [
+    "repo_id"
+  ],
+  "get_full_index": [
+    "repo_id"
+  ],
+  "get_summary": [
+    "repo_id",
+    "file_path",
+    "symbol_name"
+  ],
+  "get_git_info": [
+    "repo_id"
+  ],
+  "get_multiple_file_contents": [
+    "repo_id",
+    "body"
+  ],
+  "_REGISTRY_DIR": [],
+  "_REGISTRY_FILE": [],
+  "_canonical": [
+    "value",
+    "ref"
+  ],
+  "path_to_id": [
+    "canonical_path"
+  ],
+  "PersistentRepoRegistry": {
+    "__init__": [
+      "self",
+      "max_cache_entries"
+    ],
+    "_load": [
+      "self"
+    ],
+    "_save": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "path_or_url",
+      "ref"
+    ],
+    "get_repo": [
+      "self",
+      "repo_id"
+    ],
+    "delete": [
+      "self",
+      "repo_id"
+    ]
+  },
+  "registry": [],
+  "TerraformDependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "_build_resource_maps": [
+      "self",
+      "file_path"
+    ],
+    "_build_resource_maps_from_parsed": [
+      "self",
+      "file_path",
+      "terraform_dict"
+    ],
+    "_process_file": [
+      "self",
+      "file_path"
+    ],
+    "_process_blocks": [
+      "self",
+      "terraform_dict",
+      "file_path"
+    ],
+    "_add_node": [
+      "self",
+      "node_id",
+      "node_category",
+      "node_type",
+      "node_name",
+      "file_path"
+    ],
+    "_find_dependencies": [
+      "self",
+      "source_id",
+      "config"
+    ],
+    "_find_string_dependencies": [
+      "self",
+      "source_id",
+      "value"
+    ],
+    "_find_reference_dependencies": [
+      "self",
+      "source_id",
+      "text"
+    ],
+    "_add_dependency": [
+      "self",
+      "source",
+      "target"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "_generate_dot_file": [
+      "self",
+      "graph"
+    ],
+    "_generate_graphml_file": [
+      "self",
+      "graph"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_resource_dependencies": [
+      "self",
+      "resource_id",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "resource_id",
+      "include_indirect"
+    ],
+    "get_resource_by_type": [
+      "self",
+      "resource_type"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ]
+  },
+  "DependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "_build_reverse_deps": [
+      "self"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ],
+    "get_for_language": [
+      "cls",
+      "repository",
+      "language"
+    ],
+    "analyze": [
+      "self",
+      "file_path",
+      "depth"
+    ]
+  },
+  "NODE_BUILTIN_MODULES": [],
+  "JavaScriptDependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "_parse_package_json": [
+      "self"
+    ],
+    "_extract_imports_from_file": [
+      "self",
+      "file_path"
+    ],
+    "_extract_imports_from_tree": [
+      "self",
+      "node",
+      "content"
+    ],
+    "_extract_imports_regex": [
+      "self",
+      "file_path"
+    ],
+    "_resolve_import": [
+      "self",
+      "import_source",
+      "from_file"
+    ],
+    "_build_file_map": [
+      "self",
+      "js_ts_files"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "_generate_dot_file": [
+      "self",
+      "graph"
+    ],
+    "_generate_graphml_file": [
+      "self",
+      "graph"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_module_dependencies": [
+      "self",
+      "module_path",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "module_path",
+      "include_indirect"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ],
+    "generate_dependency_report": [
+      "self",
+      "output_path"
+    ]
+  },
+  "GO_STDLIB_PACKAGES": [],
+  "GoDependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "_parse_go_mod": [
+      "self"
+    ],
+    "_extract_imports_from_file": [
+      "self",
+      "file_path"
+    ],
+    "_parse_import_spec": [
+      "self",
+      "node",
+      "content"
+    ],
+    "_extract_imports_regex": [
+      "self",
+      "file_path"
+    ],
+    "_get_package_name": [
+      "self",
+      "file_path"
+    ],
+    "_classify_import": [
+      "self",
+      "import_path"
+    ],
+    "_build_package_map": [
+      "self"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "_generate_dot_file": [
+      "self",
+      "graph"
+    ],
+    "_generate_graphml_file": [
+      "self",
+      "graph"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_package_dependencies": [
+      "self",
+      "package_path",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "package_path",
+      "include_indirect"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ]
+  },
+  "PythonDependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "_build_module_map": [
+      "self",
+      "python_files"
+    ],
+    "_process_file": [
+      "self",
+      "file_path"
+    ],
+    "_add_dependency": [
+      "self",
+      "source",
+      "target"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "_generate_dot_file": [
+      "self",
+      "graph"
+    ],
+    "_generate_graphml_file": [
+      "self",
+      "graph"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_module_dependencies": [
+      "self",
+      "module_name",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "module_name",
+      "include_indirect"
+    ],
+    "get_file_dependencies": [
+      "self",
+      "file_path"
+    ],
+    "generate_dependency_report": [
+      "self",
+      "output_path"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ]
+  },
+  "RUST_STD_CRATES": [],
+  "RustDependencyAnalyzer": {
+    "__init__": [
+      "self",
+      "repository"
+    ],
+    "_parse_cargo_toml": [
+      "self"
+    ],
+    "_parse_toml_file": [
+      "self",
+      "path"
+    ],
+    "_get_external_crates": [
+      "self"
+    ],
+    "_expand_glob_pattern": [
+      "self",
+      "pattern"
+    ],
+    "_parse_workspace": [
+      "self"
+    ],
+    "_extract_imports_from_file": [
+      "self",
+      "file_path"
+    ],
+    "_extract_imports_from_tree": [
+      "self",
+      "node",
+      "content"
+    ],
+    "_extract_imports_regex": [
+      "self",
+      "file_path"
+    ],
+    "_resolve_import": [
+      "self",
+      "import_path",
+      "import_type"
+    ],
+    "_build_file_map": [
+      "self",
+      "rust_files"
+    ],
+    "build_dependency_graph": [
+      "self"
+    ],
+    "export_dependency_graph": [
+      "self",
+      "output_format",
+      "output_path"
+    ],
+    "_generate_dot_file": [
+      "self",
+      "graph"
+    ],
+    "_generate_graphml_file": [
+      "self",
+      "graph"
+    ],
+    "find_cycles": [
+      "self"
+    ],
+    "get_dependencies": [
+      "self",
+      "item",
+      "include_indirect"
+    ],
+    "get_module_dependencies": [
+      "self",
+      "module_path",
+      "include_indirect"
+    ],
+    "get_dependents": [
+      "self",
+      "module_path",
+      "include_indirect"
+    ],
+    "visualize_dependencies": [
+      "self",
+      "output_path",
+      "format"
+    ],
+    "generate_llm_context": [
+      "self",
+      "max_tokens",
+      "output_format",
+      "output_path"
+    ],
+    "generate_dependency_report": [
+      "self",
+      "output_path"
+    ]
+  }
+}

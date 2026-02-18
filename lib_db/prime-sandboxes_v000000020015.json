@@ -1,0 +1,635 @@
+{
+  "GATEWAY_RETRYABLE_EXCEPTIONS": [],
+  "MAX_409_RETRIES": [],
+  "RETRY_409_BASE_DELAY": [],
+  "_gateway_retry": [],
+  "_ENV_VAR_PATTERN": [],
+  "_build_user_agent": [],
+  "_validate_env_key": [
+    "key"
+  ],
+  "_build_terminated_message": [
+    "command",
+    "ctx"
+  ],
+  "_raise_not_running_error": [
+    "sandbox_id",
+    "ctx",
+    "command",
+    "cause"
+  ],
+  "SandboxAuthCache": {
+    "__init__": [
+      "self",
+      "cache_file_path",
+      "client"
+    ],
+    "_load_cache": [
+      "self"
+    ],
+    "_save_cache": [
+      "self"
+    ],
+    "_save_cache_async": [
+      "self"
+    ],
+    "_check_cached_auth": [
+      "self",
+      "sandbox_id"
+    ],
+    "_check_cached_auth_async": [
+      "self",
+      "sandbox_id"
+    ],
+    "get_or_refresh": [
+      "self",
+      "sandbox_id"
+    ],
+    "get_or_refresh_async": [
+      "self",
+      "sandbox_id"
+    ],
+    "set": [
+      "self",
+      "sandbox_id",
+      "auth_info"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "_check_sandbox_statuses": [
+    "sandboxes",
+    "target_ids"
+  ],
+  "SandboxClient": {
+    "__init__": [
+      "self",
+      "api_client"
+    ],
+    "_gateway_post": [
+      "url",
+      "headers",
+      "timeout",
+      "json",
+      "files",
+      "params"
+    ],
+    "_gateway_get": [
+      "url",
+      "headers",
+      "params",
+      "timeout"
+    ],
+    "_is_sandbox_reachable": [
+      "self",
+      "sandbox_id",
+      "timeout"
+    ],
+    "_get_sandbox_error_context": [
+      "self",
+      "sandbox_id"
+    ],
+    "_should_retry_409": [
+      "self",
+      "sandbox_id",
+      "error",
+      "attempt",
+      "command"
+    ],
+    "clear_auth_cache": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "request"
+    ],
+    "list": [
+      "self",
+      "team_id",
+      "status",
+      "labels",
+      "page",
+      "per_page",
+      "exclude_terminated"
+    ],
+    "get": [
+      "self",
+      "sandbox_id"
+    ],
+    "delete": [
+      "self",
+      "sandbox_id"
+    ],
+    "bulk_delete": [
+      "self",
+      "sandbox_ids",
+      "labels"
+    ],
+    "get_logs": [
+      "self",
+      "sandbox_id"
+    ],
+    "execute_command": [
+      "self",
+      "sandbox_id",
+      "command",
+      "working_dir",
+      "env",
+      "timeout"
+    ],
+    "start_background_job": [
+      "self",
+      "sandbox_id",
+      "command",
+      "working_dir",
+      "env"
+    ],
+    "get_background_job": [
+      "self",
+      "sandbox_id",
+      "job"
+    ],
+    "wait_for_creation": [
+      "self",
+      "sandbox_id",
+      "max_attempts",
+      "stability_checks"
+    ],
+    "bulk_wait_for_creation": [
+      "self",
+      "sandbox_ids",
+      "max_attempts"
+    ],
+    "upload_file": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "local_file_path",
+      "timeout"
+    ],
+    "upload_bytes": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "file_bytes",
+      "filename",
+      "timeout"
+    ],
+    "download_file": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "local_file_path",
+      "timeout"
+    ],
+    "expose": [
+      "self",
+      "sandbox_id",
+      "port",
+      "name",
+      "protocol"
+    ],
+    "unexpose": [
+      "self",
+      "sandbox_id",
+      "exposure_id"
+    ],
+    "list_exposed_ports": [
+      "self",
+      "sandbox_id"
+    ],
+    "list_all_exposed_ports": [
+      "self"
+    ],
+    "create_ssh_session": [
+      "self",
+      "sandbox_id",
+      "ttl_seconds"
+    ],
+    "close_ssh_session": [
+      "self",
+      "sandbox_id",
+      "session_id"
+    ]
+  },
+  "AsyncSandboxClient": {
+    "__init__": [
+      "self",
+      "api_key",
+      "max_connections",
+      "max_keepalive_connections"
+    ],
+    "_get_gateway_client": [
+      "self"
+    ],
+    "_gateway_post": [
+      "self",
+      "url",
+      "headers",
+      "timeout",
+      "json",
+      "files",
+      "params"
+    ],
+    "_gateway_get": [
+      "self",
+      "url",
+      "headers",
+      "params",
+      "timeout"
+    ],
+    "_is_sandbox_reachable": [
+      "self",
+      "sandbox_id",
+      "timeout"
+    ],
+    "_get_sandbox_error_context": [
+      "self",
+      "sandbox_id"
+    ],
+    "_should_retry_409": [
+      "self",
+      "sandbox_id",
+      "error",
+      "attempt",
+      "command"
+    ],
+    "clear_auth_cache": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "request"
+    ],
+    "list": [
+      "self",
+      "team_id",
+      "status",
+      "labels",
+      "page",
+      "per_page",
+      "exclude_terminated"
+    ],
+    "get": [
+      "self",
+      "sandbox_id"
+    ],
+    "delete": [
+      "self",
+      "sandbox_id"
+    ],
+    "bulk_delete": [
+      "self",
+      "sandbox_ids",
+      "labels"
+    ],
+    "get_logs": [
+      "self",
+      "sandbox_id"
+    ],
+    "execute_command": [
+      "self",
+      "sandbox_id",
+      "command",
+      "working_dir",
+      "env",
+      "timeout"
+    ],
+    "start_background_job": [
+      "self",
+      "sandbox_id",
+      "command",
+      "working_dir",
+      "env"
+    ],
+    "get_background_job": [
+      "self",
+      "sandbox_id",
+      "job"
+    ],
+    "wait_for_creation": [
+      "self",
+      "sandbox_id",
+      "max_attempts",
+      "stability_checks"
+    ],
+    "bulk_wait_for_creation": [
+      "self",
+      "sandbox_ids",
+      "max_attempts"
+    ],
+    "upload_file": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "local_file_path",
+      "timeout"
+    ],
+    "upload_bytes": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "file_bytes",
+      "filename",
+      "timeout"
+    ],
+    "download_file": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "local_file_path",
+      "timeout"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "expose": [
+      "self",
+      "sandbox_id",
+      "port",
+      "name",
+      "protocol"
+    ],
+    "unexpose": [
+      "self",
+      "sandbox_id",
+      "exposure_id"
+    ],
+    "list_exposed_ports": [
+      "self",
+      "sandbox_id"
+    ],
+    "list_all_exposed_ports": [
+      "self"
+    ],
+    "create_ssh_session": [
+      "self",
+      "sandbox_id",
+      "ttl_seconds"
+    ],
+    "close_ssh_session": [
+      "self",
+      "sandbox_id",
+      "session_id"
+    ]
+  },
+  "TemplateClient": {
+    "__init__": [
+      "self",
+      "api_client"
+    ],
+    "list_registry_credentials": [
+      "self"
+    ],
+    "check_docker_image": [
+      "self",
+      "image",
+      "registry_credentials_id"
+    ]
+  },
+  "AsyncTemplateClient": {
+    "__init__": [
+      "self",
+      "api_client"
+    ],
+    "list_registry_credentials": [
+      "self"
+    ],
+    "check_docker_image": [
+      "self",
+      "image",
+      "registry_credentials_id"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "SandboxStatus": {
+    "PENDING": [],
+    "PROVISIONING": [],
+    "RUNNING": [],
+    "STOPPED": [],
+    "ERROR": [],
+    "TERMINATED": [],
+    "TIMEOUT": []
+  },
+  "AdvancedConfigs": {
+    "model_config": []
+  },
+  "Sandbox": {
+    "model_config": []
+  },
+  "SandboxListResponse": {
+    "model_config": []
+  },
+  "CreateSandboxRequest": {},
+  "UpdateSandboxRequest": {},
+  "CommandRequest": {},
+  "CommandResponse": {},
+  "FileUploadResponse": {},
+  "SandboxLogsResponse": {},
+  "BulkDeleteSandboxRequest": {},
+  "BulkDeleteSandboxResponse": {},
+  "RegistryCredentialSummary": {
+    "model_config": []
+  },
+  "DockerImageCheckResponse": {},
+  "ExposePortRequest": {},
+  "ExposedPort": {},
+  "ListExposedPortsResponse": {},
+  "SSHSession": {},
+  "BackgroundJob": {},
+  "BackgroundJobStatus": {},
+  "__version__": [],
+  "TimeoutError": [],
+  "__all__": [],
+  "SandboxNotRunningError": {
+    "__init__": [
+      "self",
+      "sandbox_id",
+      "status",
+      "error_type",
+      "command",
+      "message"
+    ]
+  },
+  "CommandTimeoutError": {
+    "__init__": [
+      "self",
+      "sandbox_id",
+      "command",
+      "timeout"
+    ]
+  },
+  "UploadTimeoutError": {
+    "__init__": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "timeout"
+    ]
+  },
+  "DownloadTimeoutError": {
+    "__init__": [
+      "self",
+      "sandbox_id",
+      "file_path",
+      "timeout"
+    ]
+  },
+  "SandboxOOMError": {},
+  "SandboxTimeoutError": {},
+  "SandboxImagePullError": {},
+  "RETRYABLE_EXCEPTIONS": [],
+  "_default_user_agent": [],
+  "APIError": {},
+  "UnauthorizedError": {},
+  "PaymentRequiredError": {},
+  "APITimeoutError": {},
+  "APIClient": {
+    "__init__": [
+      "self",
+      "api_key",
+      "require_auth",
+      "user_agent"
+    ],
+    "_check_auth_required": [
+      "self"
+    ],
+    "_request_with_retry": [
+      "self",
+      "method",
+      "url",
+      "params",
+      "json",
+      "timeout"
+    ],
+    "request": [
+      "self",
+      "method",
+      "endpoint",
+      "params",
+      "json",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "endpoint",
+      "params"
+    ],
+    "post": [
+      "self",
+      "endpoint",
+      "json"
+    ],
+    "patch": [
+      "self",
+      "endpoint",
+      "json"
+    ],
+    "delete": [
+      "self",
+      "endpoint"
+    ]
+  },
+  "AsyncAPIClient": {
+    "__init__": [
+      "self",
+      "api_key",
+      "require_auth",
+      "user_agent"
+    ],
+    "_check_auth_required": [
+      "self"
+    ],
+    "_request_with_retry": [
+      "self",
+      "method",
+      "url",
+      "params",
+      "json",
+      "timeout"
+    ],
+    "request": [
+      "self",
+      "method",
+      "endpoint",
+      "params",
+      "json",
+      "timeout"
+    ],
+    "get": [
+      "self",
+      "endpoint",
+      "params"
+    ],
+    "post": [
+      "self",
+      "endpoint",
+      "json"
+    ],
+    "patch": [
+      "self",
+      "endpoint",
+      "json"
+    ],
+    "delete": [
+      "self",
+      "endpoint"
+    ],
+    "aclose": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "Config": {
+    "__init__": [
+      "self"
+    ],
+    "_load_config": [
+      "self"
+    ],
+    "_strip_api_v1": [
+      "url"
+    ],
+    "api_key": [
+      "self"
+    ],
+    "team_id": [
+      "self"
+    ],
+    "user_id": [
+      "self"
+    ],
+    "base_url": [
+      "self"
+    ]
+  }
+}

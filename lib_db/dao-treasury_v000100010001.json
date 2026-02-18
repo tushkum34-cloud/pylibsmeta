@@ -1,0 +1,641 @@
+{
+  "TreasuryWallet": {
+    "__post_init__": [
+      "self"
+    ],
+    "check_membership": [
+      "address",
+      "block"
+    ],
+    "_start_block": [
+      "self"
+    ],
+    "_end_block": [
+      "self"
+    ],
+    "_get_instance": [
+      "address"
+    ]
+  },
+  "load_wallets_from_yaml": [
+    "path"
+  ],
+  "logger": [],
+  "parser": [],
+  "args": [],
+  "main": [],
+  "export": [
+    "args"
+  ],
+  "up": [],
+  "down": [],
+  "build": [],
+  "_print_notice": [
+    "doing",
+    "services"
+  ],
+  "_P": [],
+  "_T": [],
+  "ensure_containers": [
+    "fn"
+  ],
+  "_exec_command": [
+    "command"
+  ],
+  "_grafana_requested": [
+    "services"
+  ],
+  "_require_grafana_admin_env": [],
+  "_grafana_host_port": [],
+  "_wait_for_grafana_health": [
+    "port"
+  ],
+  "_validate_grafana_credentials": [
+    "user",
+    "password",
+    "port"
+  ],
+  "__all__": [],
+  "EventItem": [],
+  "POSTGRES_USER": [],
+  "POSTGRES_PASSWORD": [],
+  "POSTGRES_DB": [],
+  "POSTGRES_HOST": [],
+  "POSTGRES_PORT": [],
+  "_INSERT_THREAD": [],
+  "_SORT_THREAD": [],
+  "_EVENTS_THREADS": [],
+  "_SORT_SEMAPHORE": [],
+  "_UTC": [],
+  "db": [],
+  "BadToken": {},
+  "DbEntity": [],
+  "Chain": {
+    "_table_": [],
+    "chain_dbid": [],
+    "chain_name": [],
+    "chainid": [],
+    "addresses": [],
+    "tokens": [],
+    "treasury_txs": [],
+    "get_dbid": [
+      "chainid"
+    ],
+    "get_or_insert": [
+      "chainid"
+    ]
+  },
+  "Address": {
+    "_table_": [],
+    "address_id": [],
+    "chain": [],
+    "address": [],
+    "nickname": [],
+    "is_contract": [],
+    "token": [],
+    "treasury_tx_from": [],
+    "treasury_tx_to": [],
+    "streams_from": [],
+    "streams_to": [],
+    "streams": [],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [],
+    "contract": [
+      "self"
+    ],
+    "contract_coro": [
+      "self"
+    ],
+    "get_dbid": [
+      "address"
+    ],
+    "get_or_insert": [
+      "address"
+    ],
+    "set_nickname": [
+      "address",
+      "nickname"
+    ],
+    "set_nicknames": [
+      "nicknames"
+    ]
+  },
+  "_hex_to_string": [
+    "h"
+  ],
+  "Token": {
+    "_table_": [],
+    "token_id": [],
+    "chain": [],
+    "symbol": [],
+    "name": [],
+    "decimals": [],
+    "treasury_tx": [],
+    "address": [],
+    "streams": [],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [],
+    "contract": [
+      "self"
+    ],
+    "contract_coro": [
+      "self"
+    ],
+    "scale": [
+      "self"
+    ],
+    "scale_value": [
+      "self",
+      "value"
+    ],
+    "get_dbid": [
+      "address"
+    ],
+    "get_or_insert": [
+      "address"
+    ]
+  },
+  "TxGroup": {
+    "_table_": [],
+    "txgroup_id": [],
+    "name": [],
+    "treasury_tx": [],
+    "parent_txgroup": [],
+    "child_txgroups": [],
+    "streams": [],
+    "fullname": [
+      "self"
+    ],
+    "top_txgroup": [
+      "self"
+    ],
+    "get_dbid": [
+      "name",
+      "parent"
+    ],
+    "get_fullname": [
+      "dbid"
+    ],
+    "get_or_insert": [
+      "name",
+      "parent"
+    ]
+  },
+  "get_transaction": [
+    "txhash"
+  ],
+  "TreasuryTx": {
+    "_table_": [],
+    "treasury_tx_id": [],
+    "chain": [],
+    "timestamp": [],
+    "block": [],
+    "hash": [],
+    "log_index": [],
+    "token": [],
+    "from_address": [],
+    "to_address": [],
+    "amount": [],
+    "price": [],
+    "value_usd": [],
+    "gas_used": [],
+    "gas_price": [],
+    "txgroup": [],
+    "to_nickname": [
+      "self"
+    ],
+    "from_nickname": [
+      "self"
+    ],
+    "token_address": [
+      "self"
+    ],
+    "symbol": [
+      "self"
+    ],
+    "events": [
+      "self"
+    ],
+    "events_async": [
+      "self"
+    ],
+    "get_events": [
+      "self",
+      "event_name",
+      "sync"
+    ],
+    "_transaction": [
+      "self"
+    ],
+    "insert": [
+      "entry"
+    ],
+    "_set_txgroup": [
+      "self",
+      "txgroup_dbid"
+    ],
+    "__insert": [
+      "entry",
+      "ts"
+    ],
+    "__set_txgroup": [
+      "treasury_tx_dbid",
+      "txgroup_dbid"
+    ]
+  },
+  "refresh_matview": [
+    "name"
+  ],
+  "Stream": {
+    "_table_": [],
+    "stream_id": [],
+    "contract": [],
+    "start_block": [],
+    "end_block": [],
+    "token": [],
+    "from_address": [],
+    "to_address": [],
+    "reason": [],
+    "amount_per_second": [],
+    "status": [],
+    "txgroup": [],
+    "streamed_funds": [],
+    "scale": [],
+    "is_alive": [
+      "self"
+    ],
+    "amount_per_minute": [
+      "self"
+    ],
+    "amount_per_hour": [
+      "self"
+    ],
+    "amount_per_day": [
+      "self"
+    ],
+    "check_closed": [
+      "stream_id"
+    ],
+    "_get_start_and_end": [
+      "stream_dbid"
+    ],
+    "stop_stream": [
+      "self",
+      "block"
+    ],
+    "pause": [
+      "self"
+    ],
+    "_get_token_and_start_date": [
+      "stream_id"
+    ],
+    "stream_contract": [
+      "self"
+    ],
+    "start_date": [
+      "self"
+    ],
+    "amount_withdrawable": [
+      "self",
+      "block"
+    ],
+    "print": [
+      "self"
+    ]
+  },
+  "StreamedFunds": {
+    "_table_": [],
+    "date": [],
+    "stream": [],
+    "amount": [],
+    "price": [],
+    "value_usd": [],
+    "seconds_active": [],
+    "is_last_day": [],
+    "get_entity": [
+      "stream_id",
+      "date"
+    ],
+    "create_entity": [
+      "cls",
+      "stream_id",
+      "date",
+      "price",
+      "seconds_active",
+      "is_last_day"
+    ]
+  },
+  "init_db": [],
+  "set_address_nicknames_for_tokens": [],
+  "create_stream_ledger_matview": [],
+  "create_txgroup_hierarchy_matview": [],
+  "create_vesting_ledger_view": [],
+  "create_general_ledger_view": [],
+  "create_unsorted_txs_view": [],
+  "create_monthly_pnl_view": [],
+  "create_usdval_presum_matview": [],
+  "create_usdval_presum_revenue_matview": [],
+  "create_usdval_presum_expenses_matview": [],
+  "_validate_integrity_error": [
+    "entry",
+    "log_index"
+  ],
+  "_drop_shitcoin_txs": [],
+  "Wallet": [],
+  "wallet_types": [],
+  "TREASURY": [],
+  "Treasury": {
+    "__init__": [
+      "self",
+      "wallets",
+      "sort_rules",
+      "start_block",
+      "label",
+      "custom_buckets",
+      "asynchronous"
+    ],
+    "describe": [
+      "self",
+      "block"
+    ],
+    "txs": [
+      "self"
+    ],
+    "_insert_txs": [
+      "self",
+      "start_block",
+      "end_block"
+    ],
+    "_process_streams": [
+      "self"
+    ],
+    "populate_db": [
+      "self",
+      "start_block",
+      "end_block"
+    ]
+  },
+  "Networks": [],
+  "TopLevelCategory": [],
+  "TxGroupDbid": [],
+  "TxGroupName": [],
+  "SortFunction": [],
+  "SortRule": [],
+  "_factory": [],
+  "setup_address_nicknames_in_db": [],
+  "_generate_dates": [
+    "start",
+    "end",
+    "stop_at_today"
+  ],
+  "_StreamToStart": [],
+  "_get_streamToStart": [
+    "stream_id"
+  ],
+  "_get_start_timestamp": [
+    "stream_id",
+    "block"
+  ],
+  "_pause_stream": [
+    "stream_id"
+  ],
+  "_stop_stream": [
+    "stream_id",
+    "block"
+  ],
+  "_get_block_timestamp": [
+    "block"
+  ],
+  "LlamaPayProcessor": {
+    "__init__": [
+      "self"
+    ],
+    "_get_streams": [
+      "self"
+    ],
+    "_load_contract_events": [
+      "self",
+      "stream_contract"
+    ],
+    "_get_stream": [
+      "self",
+      "log"
+    ],
+    "streams_for_recipient": [
+      "self",
+      "recipient",
+      "at_block"
+    ],
+    "streams_for_token": [
+      "self",
+      "token",
+      "include_inactive"
+    ],
+    "process_streams": [
+      "self",
+      "run_forever"
+    ],
+    "process_stream": [
+      "self",
+      "stream_id",
+      "run_forever"
+    ],
+    "process_stream_for_date": [
+      "self",
+      "stream_id",
+      "date_obj"
+    ]
+  },
+  "revenue": [
+    "txgroup",
+    "networks"
+  ],
+  "cost_of_revenue": [
+    "txgroup",
+    "networks"
+  ],
+  "expense": [
+    "txgroup",
+    "networks"
+  ],
+  "other_income": [
+    "txgroup",
+    "networks"
+  ],
+  "other_expense": [
+    "txgroup",
+    "networks"
+  ],
+  "ignore": [
+    "txgroup",
+    "networks"
+  ],
+  "SortRuleFactory": {
+    "__init__": [
+      "self",
+      "txgroup",
+      "networks",
+      "rule_type"
+    ],
+    "__call__": [
+      "self",
+      "func",
+      "networks"
+    ],
+    "rule": [
+      "self"
+    ],
+    "match": [
+      "self",
+      "func"
+    ],
+    "__check_locked": [
+      "self"
+    ]
+  },
+  "_SortRule": {
+    "__post_init__": [
+      "self"
+    ],
+    "txgroup_dbid": [
+      "self"
+    ],
+    "match": [
+      "self",
+      "tx"
+    ]
+  },
+  "_InboundSortRule": {
+    "match": [
+      "self",
+      "tx"
+    ]
+  },
+  "_OutboundSortRule": {
+    "match": [
+      "self",
+      "tx"
+    ]
+  },
+  "RevenueSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "CostOfRevenueSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "ExpenseSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "OtherIncomeSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "OtherExpenseSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "IgnoreSortRule": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "TRule": [],
+  "Rules": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "__build_matchers": [
+      "self"
+    ],
+    "__build_matchers_for_all_groups": [
+      "self",
+      "match_rules_filename",
+      "matcher_cls"
+    ],
+    "__build_matchers_for_group": [
+      "self",
+      "top_level_name",
+      "rules",
+      "filename",
+      "matcher_cls"
+    ],
+    "__get_rule_file": [
+      "self",
+      "path",
+      "filename"
+    ]
+  },
+  "sort_basic": [
+    "entry"
+  ],
+  "sort_basic_entity": [
+    "tx"
+  ],
+  "sort_advanced": [
+    "entry"
+  ],
+  "_Matcher": {
+    "match": [
+      "cls",
+      "string"
+    ],
+    "__init__": [
+      "self",
+      "txgroup",
+      "validated_values"
+    ],
+    "__contains__": [
+      "self",
+      "string"
+    ],
+    "values": [
+      "self"
+    ]
+  },
+  "_HexStringMatcher": {
+    "_validate_hexstr": [
+      "cls",
+      "hexstr"
+    ]
+  },
+  "_AddressMatcher": {
+    "__init__": [
+      "self",
+      "txgroup",
+      "addresses"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "FromAddressMatcher": {},
+  "ToAddressMatcher": {},
+  "HashMatcher": {
+    "__init__": [
+      "self",
+      "txgroup",
+      "hashes"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "is_llamapay_stream_replenishment": [
+    "tx"
+  ]
+}

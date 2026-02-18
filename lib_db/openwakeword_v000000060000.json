@@ -1,0 +1,385 @@
+{
+  "VAD": {
+    "__init__": [
+      "self",
+      "model_path",
+      "n_threads"
+    ],
+    "reset_states": [
+      "self",
+      "batch_size"
+    ],
+    "predict": [
+      "self",
+      "x",
+      "frame_size"
+    ],
+    "__call__": [
+      "self",
+      "x",
+      "frame_size"
+    ]
+  },
+  "get_false_positives": [
+    "scores",
+    "threshold",
+    "grouping_window"
+  ],
+  "generate_roc_curve_fprs": [
+    "scores",
+    "n_points",
+    "time_per_prediction"
+  ],
+  "generate_roc_curve_tprs": [
+    "scores",
+    "n_points"
+  ],
+  "AudioFeatures": {
+    "__init__": [
+      "self",
+      "melspec_model_path",
+      "embedding_model_path",
+      "sr",
+      "ncpu",
+      "inference_framework",
+      "device"
+    ],
+    "reset": [
+      "self"
+    ],
+    "_get_melspectrogram": [
+      "self",
+      "x",
+      "melspec_transform"
+    ],
+    "_get_embeddings_from_melspec": [
+      "self",
+      "melspec"
+    ],
+    "_get_embeddings": [
+      "self",
+      "x",
+      "window_size",
+      "step_size"
+    ],
+    "get_embedding_shape": [
+      "self",
+      "audio_length",
+      "sr"
+    ],
+    "_get_melspectrogram_batch": [
+      "self",
+      "x",
+      "batch_size",
+      "ncpu"
+    ],
+    "_get_embeddings_batch": [
+      "self",
+      "x",
+      "batch_size",
+      "ncpu"
+    ],
+    "embed_clips": [
+      "self",
+      "x",
+      "batch_size",
+      "ncpu"
+    ],
+    "_streaming_melspectrogram": [
+      "self",
+      "n_samples"
+    ],
+    "_buffer_raw_data": [
+      "self",
+      "x"
+    ],
+    "_streaming_features": [
+      "self",
+      "x"
+    ],
+    "get_features": [
+      "self",
+      "n_feature_frames",
+      "start_ndx"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "bulk_predict": [
+    "file_paths",
+    "wakeword_models",
+    "prediction_function",
+    "ncpu",
+    "inference_framework"
+  ],
+  "compute_features_from_generator": [
+    "generator",
+    "n_total",
+    "clip_duration",
+    "output_file",
+    "device",
+    "ncpu"
+  ],
+  "download_file": [
+    "url",
+    "target_directory",
+    "file_size"
+  ],
+  "download_models": [
+    "model_names",
+    "target_directory"
+  ],
+  "re_arg": [
+    "kwarg_map"
+  ],
+  "__all__": [],
+  "FEATURE_MODELS": [],
+  "VAD_MODELS": [],
+  "MODELS": [],
+  "model_class_mappings": [],
+  "get_pretrained_model_paths": [
+    "inference_framework"
+  ],
+  "Model": {
+    "__init__": [
+      "self",
+      "n_classes",
+      "input_shape",
+      "model_type",
+      "layer_dim",
+      "n_blocks",
+      "seconds_per_example"
+    ],
+    "save_model": [
+      "self",
+      "output_path"
+    ],
+    "export_to_onnx": [
+      "self",
+      "output_path",
+      "class_mapping"
+    ],
+    "lr_warmup_cosine_decay": [
+      "self",
+      "global_step",
+      "warmup_steps",
+      "hold",
+      "total_steps",
+      "start_lr",
+      "target_lr"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "summary": [
+      "self"
+    ],
+    "average_models": [
+      "self",
+      "models"
+    ],
+    "_select_best_model": [
+      "self",
+      "false_positive_validate_data",
+      "val_set_hrs",
+      "max_fp_per_hour",
+      "min_recall"
+    ],
+    "auto_train": [
+      "self",
+      "X_train",
+      "X_val",
+      "false_positive_val_data",
+      "steps",
+      "max_negative_weight",
+      "target_fp_per_hour"
+    ],
+    "predict_on_features": [
+      "self",
+      "features",
+      "model"
+    ],
+    "predict_on_clips": [
+      "self",
+      "clips",
+      "model"
+    ],
+    "export_model": [
+      "self",
+      "model",
+      "model_name",
+      "output_dir"
+    ],
+    "train_model": [
+      "self",
+      "X",
+      "max_steps",
+      "warmup_steps",
+      "hold_steps",
+      "X_val",
+      "false_positive_val_data",
+      "positive_test_clips",
+      "negative_weight_schedule",
+      "val_steps",
+      "lr",
+      "val_set_hrs"
+    ]
+  },
+  "convert_onnx_to_tflite": [
+    "onnx_model_path",
+    "output_path"
+  ],
+  "get_reference_clip_features": [
+    "reference_clip",
+    "oww_model",
+    "model_name",
+    "threshold",
+    "N"
+  ],
+  "flatten_features": [
+    "x"
+  ],
+  "train_verifier_model": [
+    "features",
+    "labels"
+  ],
+  "train_custom_verifier": [
+    "positive_reference_clips",
+    "negative_reference_clips",
+    "output_path",
+    "model_name"
+  ],
+  "stack_clips": [
+    "audio_data",
+    "clip_size"
+  ],
+  "load_audio_clips": [
+    "files",
+    "clip_size"
+  ],
+  "_convert_clip": [
+    "input_file",
+    "output_file",
+    "backend"
+  ],
+  "convert_clips": [
+    "input_files",
+    "output_files",
+    "sr",
+    "ncpu",
+    "backend"
+  ],
+  "filter_audio_paths": [
+    "target_dirs",
+    "min_length_secs",
+    "max_length_secs",
+    "duration_method",
+    "glob_filter"
+  ],
+  "estimate_clip_duration": [
+    "audio_files",
+    "sizes"
+  ],
+  "estimate_mp3_duration": [
+    "fpath"
+  ],
+  "get_clip_duration": [
+    "clip"
+  ],
+  "get_wav_duration_from_filesize": [
+    "size",
+    "nbytes"
+  ],
+  "mix_clips_batch": [
+    "foreground_clips",
+    "background_clips",
+    "combined_size",
+    "labels",
+    "batch_size",
+    "snr_low",
+    "snr_high",
+    "start_index",
+    "foreground_durations",
+    "foreground_truncate_strategy",
+    "rirs",
+    "rir_probability",
+    "volume_augmentation",
+    "generated_noise_augmentation",
+    "shuffle",
+    "return_sequence_labels",
+    "return_background_clips",
+    "return_background_clips_delay",
+    "seed"
+  ],
+  "get_frame_labels": [
+    "combined_size",
+    "start",
+    "end",
+    "buffer"
+  ],
+  "mix_clip": [
+    "fg",
+    "bg",
+    "snr",
+    "start"
+  ],
+  "truncate_clip": [
+    "x",
+    "max_size",
+    "method"
+  ],
+  "apply_reverb": [
+    "x",
+    "rir_files"
+  ],
+  "augment_clips": [
+    "clip_paths",
+    "total_length",
+    "sr",
+    "batch_size",
+    "augmentation_probabilities",
+    "background_clip_paths",
+    "RIR_paths"
+  ],
+  "create_fixed_size_clip": [
+    "x",
+    "n_samples",
+    "sr",
+    "start",
+    "end_jitter"
+  ],
+  "mmap_batch_generator": {
+    "__init__": [
+      "self",
+      "data_files",
+      "label_files",
+      "batch_size",
+      "n_per_class",
+      "data_transform_funcs",
+      "label_transform_funcs"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "trim_mmap": [
+    "mmap_path"
+  ],
+  "generate_adversarial_texts": [
+    "input_text",
+    "N",
+    "include_partial_phrase",
+    "include_input_words"
+  ],
+  "phoneme_replacement": [
+    "input_chars",
+    "max_replace",
+    "replace_char"
+  ]
+}

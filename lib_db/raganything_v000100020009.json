@@ -1,0 +1,904 @@
+{
+  "MarkdownConfig": {},
+  "EnhancedMarkdownConverter": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_check_backends": [
+      "self"
+    ],
+    "_get_default_css": [
+      "self"
+    ],
+    "_process_markdown_content": [
+      "self",
+      "content"
+    ],
+    "convert_with_weasyprint": [
+      "self",
+      "markdown_content",
+      "output_path"
+    ],
+    "convert_with_pandoc": [
+      "self",
+      "markdown_content",
+      "output_path",
+      "use_system_pandoc"
+    ],
+    "convert_markdown_to_pdf": [
+      "self",
+      "markdown_content",
+      "output_path",
+      "method"
+    ],
+    "convert_file_to_pdf": [
+      "self",
+      "input_path",
+      "output_path",
+      "method"
+    ],
+    "get_backend_info": [
+      "self"
+    ],
+    "_get_recommended_backend": [
+      "self"
+    ]
+  },
+  "main": [],
+  "BatchMixin": {
+    "_ensure_lightrag_initialized": [
+      "self"
+    ],
+    "process_document_complete": [
+      "self",
+      "file_path"
+    ],
+    "process_folder_complete": [
+      "self",
+      "folder_path",
+      "output_dir",
+      "parse_method",
+      "display_stats",
+      "split_by_character",
+      "split_by_character_only",
+      "file_extensions",
+      "recursive",
+      "max_workers"
+    ],
+    "process_documents_batch": [
+      "self",
+      "file_paths",
+      "output_dir",
+      "parse_method",
+      "max_workers",
+      "recursive",
+      "show_progress"
+    ],
+    "process_documents_batch_async": [
+      "self",
+      "file_paths",
+      "output_dir",
+      "parse_method",
+      "max_workers",
+      "recursive",
+      "show_progress"
+    ],
+    "get_supported_file_extensions": [
+      "self"
+    ],
+    "filter_supported_files": [
+      "self",
+      "file_paths",
+      "recursive"
+    ],
+    "process_documents_with_rag_batch": [
+      "self",
+      "file_paths",
+      "output_dir",
+      "parse_method",
+      "max_workers",
+      "recursive",
+      "show_progress"
+    ]
+  },
+  "ContextConfig": {
+    "__post_init__": [
+      "self"
+    ]
+  },
+  "ContextExtractor": {
+    "__init__": [
+      "self",
+      "config",
+      "tokenizer"
+    ],
+    "extract_context": [
+      "self",
+      "content_source",
+      "current_item_info",
+      "content_format"
+    ],
+    "_extract_from_content_list": [
+      "self",
+      "content_list",
+      "current_item_info"
+    ],
+    "_extract_page_context": [
+      "self",
+      "content_list",
+      "current_item_info"
+    ],
+    "_extract_chunk_context": [
+      "self",
+      "content_list",
+      "current_item_info"
+    ],
+    "_extract_text_from_item": [
+      "self",
+      "item"
+    ],
+    "_extract_from_dict_source": [
+      "self",
+      "dict_source",
+      "current_item_info"
+    ],
+    "_extract_from_text_source": [
+      "self",
+      "text_source",
+      "current_item_info"
+    ],
+    "_extract_from_text_chunks": [
+      "self",
+      "text_chunks",
+      "current_item_info"
+    ],
+    "_truncate_context": [
+      "self",
+      "context"
+    ]
+  },
+  "BaseModalProcessor": {
+    "__init__": [
+      "self",
+      "lightrag",
+      "modal_caption_func",
+      "context_extractor"
+    ],
+    "set_content_source": [
+      "self",
+      "content_source",
+      "content_format"
+    ],
+    "_get_context_for_item": [
+      "self",
+      "item_info"
+    ],
+    "generate_description_only": [
+      "self",
+      "modal_content",
+      "content_type",
+      "item_info",
+      "entity_name"
+    ],
+    "_create_entity_and_chunk": [
+      "self",
+      "modal_chunk",
+      "entity_info",
+      "file_path",
+      "batch_mode",
+      "doc_id",
+      "chunk_order_index"
+    ],
+    "_robust_json_parse": [
+      "self",
+      "response"
+    ],
+    "_extract_all_json_candidates": [
+      "self",
+      "response"
+    ],
+    "_try_parse_json": [
+      "self",
+      "json_str"
+    ],
+    "_basic_json_cleanup": [
+      "self",
+      "json_str"
+    ],
+    "_progressive_quote_fix": [
+      "self",
+      "json_str"
+    ],
+    "_extract_fields_with_regex": [
+      "self",
+      "response"
+    ],
+    "_extract_json_from_response": [
+      "self",
+      "response"
+    ],
+    "_fix_json_escapes": [
+      "self",
+      "json_str"
+    ],
+    "_process_chunk_for_extraction": [
+      "self",
+      "chunk_id",
+      "modal_entity_name",
+      "batch_mode"
+    ]
+  },
+  "ImageModalProcessor": {
+    "__init__": [
+      "self",
+      "lightrag",
+      "modal_caption_func",
+      "context_extractor"
+    ],
+    "_encode_image_to_base64": [
+      "self",
+      "image_path"
+    ],
+    "generate_description_only": [
+      "self",
+      "modal_content",
+      "content_type",
+      "item_info",
+      "entity_name"
+    ],
+    "process_multimodal_content": [
+      "self",
+      "modal_content",
+      "content_type",
+      "file_path",
+      "entity_name",
+      "item_info",
+      "batch_mode",
+      "doc_id",
+      "chunk_order_index"
+    ],
+    "_parse_response": [
+      "self",
+      "response",
+      "entity_name"
+    ]
+  },
+  "TableModalProcessor": {
+    "generate_description_only": [
+      "self",
+      "modal_content",
+      "content_type",
+      "item_info",
+      "entity_name"
+    ],
+    "process_multimodal_content": [
+      "self",
+      "modal_content",
+      "content_type",
+      "file_path",
+      "entity_name",
+      "item_info",
+      "batch_mode",
+      "doc_id",
+      "chunk_order_index"
+    ],
+    "_parse_table_response": [
+      "self",
+      "response",
+      "entity_name"
+    ]
+  },
+  "EquationModalProcessor": {
+    "generate_description_only": [
+      "self",
+      "modal_content",
+      "content_type",
+      "item_info",
+      "entity_name"
+    ],
+    "process_multimodal_content": [
+      "self",
+      "modal_content",
+      "content_type",
+      "file_path",
+      "entity_name",
+      "item_info",
+      "batch_mode",
+      "doc_id",
+      "chunk_order_index"
+    ],
+    "_parse_equation_response": [
+      "self",
+      "response",
+      "entity_name"
+    ]
+  },
+  "GenericModalProcessor": {
+    "generate_description_only": [
+      "self",
+      "modal_content",
+      "content_type",
+      "item_info",
+      "entity_name"
+    ],
+    "process_multimodal_content": [
+      "self",
+      "modal_content",
+      "content_type",
+      "file_path",
+      "entity_name",
+      "item_info",
+      "batch_mode",
+      "doc_id",
+      "chunk_order_index"
+    ],
+    "_parse_generic_response": [
+      "self",
+      "response",
+      "entity_name",
+      "content_type"
+    ]
+  },
+  "T": [],
+  "MineruExecutionError": {
+    "__init__": [
+      "self",
+      "return_code",
+      "error_msg"
+    ]
+  },
+  "Parser": {
+    "OFFICE_FORMATS": [],
+    "IMAGE_FORMATS": [],
+    "TEXT_FORMATS": [],
+    "logger": [],
+    "__init__": [
+      "self"
+    ],
+    "convert_office_to_pdf": [
+      "cls",
+      "doc_path",
+      "output_dir"
+    ],
+    "convert_text_to_pdf": [
+      "cls",
+      "text_path",
+      "output_dir"
+    ],
+    "_process_inline_markdown": [
+      "cls",
+      "text"
+    ],
+    "parse_pdf": [
+      "self",
+      "pdf_path",
+      "output_dir",
+      "method",
+      "lang"
+    ],
+    "parse_image": [
+      "self",
+      "image_path",
+      "output_dir",
+      "lang"
+    ],
+    "parse_document": [
+      "self",
+      "file_path",
+      "method",
+      "output_dir",
+      "lang"
+    ],
+    "check_installation": [
+      "self"
+    ]
+  },
+  "MineruParser": {
+    "__slots__": [],
+    "logger": [],
+    "__init__": [
+      "self"
+    ],
+    "_run_mineru_command": [
+      "cls",
+      "input_path",
+      "output_dir",
+      "method",
+      "lang",
+      "backend",
+      "start_page",
+      "end_page",
+      "formula",
+      "table",
+      "device",
+      "source",
+      "vlm_url"
+    ],
+    "_read_output_files": [
+      "cls",
+      "output_dir",
+      "file_stem",
+      "method"
+    ],
+    "parse_pdf": [
+      "self",
+      "pdf_path",
+      "output_dir",
+      "method",
+      "lang"
+    ],
+    "parse_image": [
+      "self",
+      "image_path",
+      "output_dir",
+      "lang"
+    ],
+    "parse_office_doc": [
+      "self",
+      "doc_path",
+      "output_dir",
+      "lang"
+    ],
+    "parse_text_file": [
+      "self",
+      "text_path",
+      "output_dir",
+      "lang"
+    ],
+    "parse_document": [
+      "self",
+      "file_path",
+      "method",
+      "output_dir",
+      "lang"
+    ],
+    "check_installation": [
+      "self"
+    ]
+  },
+  "DoclingParser": {
+    "HTML_FORMATS": [],
+    "__init__": [
+      "self"
+    ],
+    "parse_pdf": [
+      "self",
+      "pdf_path",
+      "output_dir",
+      "method",
+      "lang"
+    ],
+    "parse_document": [
+      "self",
+      "file_path",
+      "method",
+      "output_dir",
+      "lang"
+    ],
+    "_run_docling_command": [
+      "self",
+      "input_path",
+      "output_dir",
+      "file_stem"
+    ],
+    "_read_output_files": [
+      "self",
+      "output_dir",
+      "file_stem"
+    ],
+    "read_from_block_recursive": [
+      "self",
+      "block",
+      "type",
+      "output_dir",
+      "cnt",
+      "num",
+      "docling_content"
+    ],
+    "read_from_block": [
+      "self",
+      "block",
+      "type",
+      "output_dir",
+      "cnt",
+      "num"
+    ],
+    "parse_office_doc": [
+      "self",
+      "doc_path",
+      "output_dir",
+      "lang"
+    ],
+    "parse_html": [
+      "self",
+      "html_path",
+      "output_dir",
+      "lang"
+    ],
+    "check_installation": [
+      "self"
+    ]
+  },
+  "DocStatus": {
+    "READY": [],
+    "HANDLING": [],
+    "PENDING": [],
+    "PROCESSING": [],
+    "PROCESSED": [],
+    "FAILED": []
+  },
+  "QueryMixin": {
+    "_generate_multimodal_cache_key": [
+      "self",
+      "query",
+      "multimodal_content",
+      "mode"
+    ],
+    "aquery": [
+      "self",
+      "query",
+      "mode",
+      "system_prompt"
+    ],
+    "aquery_with_multimodal": [
+      "self",
+      "query",
+      "multimodal_content",
+      "mode"
+    ],
+    "aquery_vlm_enhanced": [
+      "self",
+      "query",
+      "mode",
+      "system_prompt"
+    ],
+    "_process_multimodal_query_content": [
+      "self",
+      "base_query",
+      "multimodal_content"
+    ],
+    "_generate_query_content_description": [
+      "self",
+      "processor",
+      "content",
+      "content_type"
+    ],
+    "_describe_image_for_query": [
+      "self",
+      "processor",
+      "content"
+    ],
+    "_describe_table_for_query": [
+      "self",
+      "processor",
+      "content"
+    ],
+    "_describe_equation_for_query": [
+      "self",
+      "processor",
+      "content"
+    ],
+    "_describe_generic_for_query": [
+      "self",
+      "processor",
+      "content",
+      "content_type"
+    ],
+    "_process_image_paths_for_vlm": [
+      "self",
+      "prompt"
+    ],
+    "_build_vlm_messages_with_images": [
+      "self",
+      "enhanced_prompt",
+      "user_query",
+      "system_prompt"
+    ],
+    "_call_vlm_with_multimodal_content": [
+      "self",
+      "messages"
+    ],
+    "query": [
+      "self",
+      "query",
+      "mode"
+    ],
+    "query_with_multimodal": [
+      "self",
+      "query",
+      "multimodal_content",
+      "mode"
+    ]
+  },
+  "RAGAnything": {
+    "__post_init__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_create_context_config": [
+      "self"
+    ],
+    "_create_context_extractor": [
+      "self"
+    ],
+    "_initialize_processors": [
+      "self"
+    ],
+    "update_config": [
+      "self"
+    ],
+    "_ensure_lightrag_initialized": [
+      "self"
+    ],
+    "finalize_storages": [
+      "self"
+    ],
+    "check_parser_installation": [
+      "self"
+    ],
+    "verify_parser_installation_once": [
+      "self"
+    ],
+    "get_config_info": [
+      "self"
+    ],
+    "set_content_source_for_context": [
+      "self",
+      "content_source",
+      "content_format"
+    ],
+    "update_context_config": [
+      "self"
+    ],
+    "get_processor_info": [
+      "self"
+    ]
+  },
+  "separate_content": [
+    "content_list"
+  ],
+  "encode_image_to_base64": [
+    "image_path"
+  ],
+  "validate_image_file": [
+    "image_path",
+    "max_size_mb"
+  ],
+  "insert_text_content": [
+    "lightrag",
+    "input",
+    "split_by_character",
+    "split_by_character_only",
+    "ids",
+    "file_paths"
+  ],
+  "insert_text_content_with_multimodal_content": [
+    "lightrag",
+    "input",
+    "multimodal_content",
+    "split_by_character",
+    "split_by_character_only",
+    "ids",
+    "file_paths",
+    "scheme_name"
+  ],
+  "get_processor_for_type": [
+    "modal_processors",
+    "content_type"
+  ],
+  "get_processor_supports": [
+    "proc_type"
+  ],
+  "__version__": [],
+  "__author__": [],
+  "__url__": [],
+  "__all__": [],
+  "ProcessorMixin": {
+    "_get_file_reference": [
+      "self",
+      "file_path"
+    ],
+    "_generate_cache_key": [
+      "self",
+      "file_path",
+      "parse_method"
+    ],
+    "_generate_content_based_doc_id": [
+      "self",
+      "content_list"
+    ],
+    "_get_cached_result": [
+      "self",
+      "cache_key",
+      "file_path",
+      "parse_method"
+    ],
+    "_store_cached_result": [
+      "self",
+      "cache_key",
+      "content_list",
+      "doc_id",
+      "file_path",
+      "parse_method"
+    ],
+    "parse_document": [
+      "self",
+      "file_path",
+      "output_dir",
+      "parse_method",
+      "display_stats"
+    ],
+    "_process_multimodal_content": [
+      "self",
+      "multimodal_items",
+      "file_path",
+      "doc_id",
+      "pipeline_status",
+      "pipeline_status_lock"
+    ],
+    "_process_multimodal_content_individual": [
+      "self",
+      "multimodal_items",
+      "file_path",
+      "doc_id"
+    ],
+    "_process_multimodal_content_batch_type_aware": [
+      "self",
+      "multimodal_items",
+      "file_path",
+      "doc_id"
+    ],
+    "_convert_to_lightrag_chunks_type_aware": [
+      "self",
+      "multimodal_data_list",
+      "file_path",
+      "doc_id"
+    ],
+    "_apply_chunk_template": [
+      "self",
+      "content_type",
+      "original_item",
+      "description"
+    ],
+    "_store_chunks_to_lightrag_storage_type_aware": [
+      "self",
+      "chunks"
+    ],
+    "_store_multimodal_main_entities": [
+      "self",
+      "multimodal_data_list",
+      "lightrag_chunks",
+      "file_path",
+      "doc_id"
+    ],
+    "_store_multimodal_entities_to_full_entities": [
+      "self",
+      "entities_to_store",
+      "doc_id"
+    ],
+    "_batch_extract_entities_lightrag_style_type_aware": [
+      "self",
+      "lightrag_chunks"
+    ],
+    "_batch_add_belongs_to_relations_type_aware": [
+      "self",
+      "chunk_results",
+      "multimodal_data_list"
+    ],
+    "_batch_merge_lightrag_style_type_aware": [
+      "self",
+      "enhanced_chunk_results",
+      "file_path",
+      "doc_id"
+    ],
+    "_update_doc_status_with_chunks_type_aware": [
+      "self",
+      "doc_id",
+      "chunk_ids"
+    ],
+    "_mark_multimodal_processing_complete": [
+      "self",
+      "doc_id"
+    ],
+    "is_document_fully_processed": [
+      "self",
+      "doc_id"
+    ],
+    "get_document_processing_status": [
+      "self",
+      "doc_id"
+    ],
+    "process_document_complete": [
+      "self",
+      "file_path",
+      "output_dir",
+      "parse_method",
+      "display_stats",
+      "split_by_character",
+      "split_by_character_only",
+      "doc_id",
+      "file_name"
+    ],
+    "process_document_complete_lightrag_api": [
+      "self",
+      "file_path",
+      "output_dir",
+      "parse_method",
+      "display_stats",
+      "split_by_character",
+      "split_by_character_only",
+      "doc_id",
+      "scheme_name",
+      "parser"
+    ],
+    "insert_content_list": [
+      "self",
+      "content_list",
+      "file_path",
+      "split_by_character",
+      "split_by_character_only",
+      "doc_id",
+      "display_stats"
+    ]
+  },
+  "RAGAnythingConfig": {
+    "__post_init__": [
+      "self"
+    ],
+    "mineru_parse_method": [
+      "self",
+      "value"
+    ]
+  },
+  "BatchProcessingResult": {
+    "success_rate": [
+      "self"
+    ],
+    "summary": [
+      "self"
+    ]
+  },
+  "BatchParser": {
+    "__init__": [
+      "self",
+      "parser_type",
+      "max_workers",
+      "show_progress",
+      "timeout_per_file",
+      "skip_installation_check"
+    ],
+    "get_supported_extensions": [
+      "self"
+    ],
+    "filter_supported_files": [
+      "self",
+      "file_paths",
+      "recursive"
+    ],
+    "process_single_file": [
+      "self",
+      "file_path",
+      "output_dir",
+      "parse_method"
+    ],
+    "process_batch": [
+      "self",
+      "file_paths",
+      "output_dir",
+      "parse_method",
+      "recursive",
+      "dry_run"
+    ],
+    "process_batch_async": [
+      "self",
+      "file_paths",
+      "output_dir",
+      "parse_method",
+      "recursive",
+      "dry_run"
+    ]
+  }
+}

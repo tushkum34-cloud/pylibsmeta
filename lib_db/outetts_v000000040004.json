@@ -1,0 +1,2153 @@
+{
+  "Interface": [
+    "config"
+  ],
+  "__version__": [],
+  "base_path": [],
+  "WavEncoder": {
+    "__init__": [
+      "self",
+      "feature_extractor"
+    ],
+    "_create_config": [
+      "self"
+    ],
+    "save_pretrained": [
+      "self",
+      "save_directory"
+    ],
+    "from_pretrained": [
+      "cls",
+      "model_directory"
+    ],
+    "forward": [
+      "self",
+      "audio_input"
+    ]
+  },
+  "WavDecoder": {
+    "__init__": [
+      "self",
+      "backbone",
+      "head",
+      "codebook_weights"
+    ],
+    "_create_config": [
+      "self"
+    ],
+    "save_pretrained": [
+      "self",
+      "save_directory"
+    ],
+    "from_pretrained": [
+      "cls",
+      "model_directory"
+    ],
+    "codes_to_features": [
+      "self",
+      "codes"
+    ],
+    "forward": [
+      "self",
+      "features_input"
+    ]
+  },
+  "AudioCodec": {
+    "__init__": [
+      "self",
+      "device",
+      "model_path",
+      "load_decoder",
+      "load_encoder"
+    ],
+    "get_cache_dir": [
+      "self"
+    ],
+    "ensure_model_exists": [
+      "self"
+    ],
+    "load_encoder": [
+      "self"
+    ],
+    "load_decoder": [
+      "self"
+    ],
+    "convert_audio": [
+      "self",
+      "wav",
+      "sr",
+      "target_sr",
+      "target_channels"
+    ],
+    "convert_audio_tensor": [
+      "self",
+      "audio",
+      "sr"
+    ],
+    "load_audio": [
+      "self",
+      "path"
+    ],
+    "encode": [
+      "self",
+      "audio"
+    ],
+    "decode": [
+      "self",
+      "codes"
+    ],
+    "save_audio": [
+      "self",
+      "audio",
+      "path"
+    ]
+  },
+  "instantiate_class": [
+    "args",
+    "init"
+  ],
+  "WavTokenizer": {
+    "__init__": [
+      "self",
+      "feature_extractor",
+      "backbone",
+      "head",
+      "multiperioddisc",
+      "multiresddisc"
+    ],
+    "from_hparams0828": [
+      "cls",
+      "config_path"
+    ],
+    "from_pretrained0828": [
+      "self",
+      "config_path",
+      "model_path"
+    ],
+    "from_hparams0802": [
+      "cls",
+      "config_path"
+    ],
+    "from_pretrained0802": [
+      "self",
+      "config_path",
+      "model_path"
+    ],
+    "forward": [
+      "self",
+      "audio_input"
+    ],
+    "encode": [
+      "self",
+      "audio_input"
+    ],
+    "decode": [
+      "self",
+      "features_input"
+    ],
+    "codes_to_features": [
+      "self",
+      "codes"
+    ]
+  },
+  "MelSpecReconstructionLoss": {
+    "__init__": [
+      "self",
+      "sample_rate",
+      "n_fft",
+      "hop_length",
+      "n_mels"
+    ],
+    "forward": [
+      "self",
+      "y_hat",
+      "y"
+    ]
+  },
+  "GeneratorLoss": {
+    "forward": [
+      "self",
+      "disc_outputs"
+    ]
+  },
+  "DiscriminatorLoss": {
+    "forward": [
+      "self",
+      "disc_real_outputs",
+      "disc_generated_outputs"
+    ]
+  },
+  "FeatureMatchingLoss": {
+    "forward": [
+      "self",
+      "fmap_r",
+      "fmap_g"
+    ]
+  },
+  "DACGANLoss": {
+    "__init__": [
+      "self",
+      "discriminator"
+    ],
+    "forward": [
+      "self",
+      "fake",
+      "real"
+    ],
+    "discriminator_loss": [
+      "self",
+      "fake",
+      "real"
+    ],
+    "generator_loss": [
+      "self",
+      "fake",
+      "real"
+    ]
+  },
+  "nonlinearity": [
+    "x"
+  ],
+  "Normalize": [
+    "in_channels",
+    "num_groups"
+  ],
+  "ResnetBlock": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "temb"
+    ]
+  },
+  "AttnBlock": {
+    "__init__": [
+      "self",
+      "in_channels"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "make_attn": [
+    "in_channels",
+    "attn_type"
+  ],
+  "Backbone": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VocosBackbone": {
+    "__init__": [
+      "self",
+      "input_channels",
+      "dim",
+      "intermediate_dim",
+      "num_layers",
+      "layer_scale_init_value",
+      "adanorm_num_embeddings"
+    ],
+    "_init_weights": [
+      "self",
+      "m"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "bandwidth_id"
+    ]
+  },
+  "VocosResNetBackbone": {
+    "__init__": [
+      "self",
+      "input_channels",
+      "dim",
+      "num_blocks",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeatureExtractor": {
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "MelSpectrogramFeatures": {
+    "__init__": [
+      "self",
+      "sample_rate",
+      "n_fft",
+      "hop_length",
+      "n_mels",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "EncodecFeatures": {
+    "__init__": [
+      "self",
+      "encodec_model",
+      "bandwidths",
+      "train_codebooks",
+      "num_quantizers",
+      "dowmsamples",
+      "vq_bins",
+      "vq_kmeans"
+    ],
+    "forward": [
+      "self",
+      "audio",
+      "bandwidth_id"
+    ],
+    "infer": [
+      "self",
+      "audio",
+      "bandwidth_id"
+    ]
+  },
+  "save_figure_to_numpy": [
+    "fig"
+  ],
+  "plot_spectrogram_to_numpy": [
+    "spectrogram"
+  ],
+  "GradNormCallback": {
+    "on_after_backward": [
+      "self",
+      "trainer",
+      "model"
+    ]
+  },
+  "gradient_norm": [
+    "model",
+    "norm_type"
+  ],
+  "STFTParams": [],
+  "WNConv1d": [],
+  "WNConv2d": [],
+  "MPD": {
+    "__init__": [
+      "self",
+      "period"
+    ],
+    "pad_to_period": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MSD": {
+    "__init__": [
+      "self",
+      "rate",
+      "sample_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "BANDS": [],
+  "MRD": {
+    "__init__": [
+      "self",
+      "window_length",
+      "hop_factor",
+      "sample_rate",
+      "bands"
+    ],
+    "spectrogram": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DACDiscriminator": {
+    "__init__": [
+      "self",
+      "rates",
+      "periods",
+      "fft_sizes",
+      "sample_rate",
+      "bands"
+    ],
+    "preprocess": [
+      "self",
+      "y"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DataConfig": {},
+  "VocosDataModule": {
+    "__init__": [
+      "self",
+      "train_params",
+      "val_params"
+    ],
+    "_get_dataloder": [
+      "self",
+      "cfg",
+      "train"
+    ],
+    "train_dataloader": [
+      "self"
+    ],
+    "val_dataloader": [
+      "self"
+    ]
+  },
+  "VocosDataset": {
+    "__init__": [
+      "self",
+      "cfg",
+      "train"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "MultiPeriodDiscriminator": {
+    "__init__": [
+      "self",
+      "periods",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "y",
+      "y_hat",
+      "bandwidth_id"
+    ]
+  },
+  "DiscriminatorP": {
+    "__init__": [
+      "self",
+      "period",
+      "in_channels",
+      "kernel_size",
+      "stride",
+      "lrelu_slope",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "MultiResolutionDiscriminator": {
+    "__init__": [
+      "self",
+      "resolutions",
+      "num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "y",
+      "y_hat",
+      "bandwidth_id"
+    ]
+  },
+  "DiscriminatorR": {
+    "__init__": [
+      "self",
+      "resolution",
+      "channels",
+      "in_channels",
+      "num_embeddings",
+      "lrelu_slope"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ],
+    "spectrogram": [
+      "self",
+      "x"
+    ]
+  },
+  "ISTFT": {
+    "__init__": [
+      "self",
+      "n_fft",
+      "hop_length",
+      "win_length",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "spec"
+    ]
+  },
+  "MDCT": {
+    "__init__": [
+      "self",
+      "frame_len",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "audio"
+    ]
+  },
+  "IMDCT": {
+    "__init__": [
+      "self",
+      "frame_len",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "X"
+    ]
+  },
+  "VocosExp": {
+    "__init__": [
+      "self",
+      "feature_extractor",
+      "backbone",
+      "head",
+      "resume_config",
+      "resume_model",
+      "sample_rate",
+      "initial_learning_rate",
+      "num_warmup_steps",
+      "mel_loss_coeff",
+      "mrd_loss_coeff",
+      "pretrain_mel_steps",
+      "decay_mel_coeff",
+      "evaluate_utmos",
+      "evaluate_pesq",
+      "evaluate_periodicty",
+      "resume"
+    ],
+    "configure_optimizers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "audio_input"
+    ],
+    "training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "optimizer_idx"
+    ],
+    "on_validation_epoch_start": [
+      "self"
+    ],
+    "validation_step": [
+      "self",
+      "batch",
+      "batch_idx"
+    ],
+    "validation_epoch_end": [
+      "self",
+      "outputs"
+    ],
+    "global_step": [
+      "self"
+    ],
+    "on_train_batch_start": [
+      "self"
+    ],
+    "on_train_batch_end": [
+      "self"
+    ]
+  },
+  "FourierHead": {
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ISTFTHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "n_fft",
+      "hop_length",
+      "padding"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IMDCTSymExpHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "mdct_frame_len",
+      "padding",
+      "sample_rate",
+      "clip_audio"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "IMDCTCosHead": {
+    "__init__": [
+      "self",
+      "dim",
+      "mdct_frame_len",
+      "padding",
+      "clip_audio"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvNeXtBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "intermediate_dim",
+      "layer_scale_init_value",
+      "adanorm_num_embeddings"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "AdaLayerNorm": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond_embedding_id"
+    ]
+  },
+  "ResBlock1": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size",
+      "dilation",
+      "lrelu_slope",
+      "layer_scale_init_value"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "remove_weight_norm": [
+      "self"
+    ],
+    "get_padding": [
+      "kernel_size",
+      "dilation"
+    ]
+  },
+  "safe_log": [
+    "x",
+    "clip_val"
+  ],
+  "symlog": [
+    "x"
+  ],
+  "symexp": [
+    "x"
+  ],
+  "_linear_overlap_add": [
+    "frames",
+    "stride"
+  ],
+  "_get_checkpoint_url": [
+    "root_url",
+    "checkpoint"
+  ],
+  "_check_checksum": [
+    "path",
+    "checksum"
+  ],
+  "convert_audio": [
+    "wav",
+    "sr",
+    "target_sr",
+    "target_channels"
+  ],
+  "save_audio": [
+    "wav",
+    "path",
+    "sample_rate",
+    "rescale"
+  ],
+  "ROOT_URL": [],
+  "EncodedFrame": [],
+  "LMModel": {
+    "__init__": [
+      "self",
+      "n_q",
+      "card",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "indices",
+      "states",
+      "offset"
+    ]
+  },
+  "EncodecModel": {
+    "__init__": [
+      "self",
+      "encoder",
+      "decoder",
+      "quantizer",
+      "target_bandwidths",
+      "sample_rate",
+      "channels",
+      "normalize",
+      "segment",
+      "overlap",
+      "name"
+    ],
+    "segment_length": [
+      "self"
+    ],
+    "segment_stride": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "_encode_frame": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "encoded_frames"
+    ],
+    "_decode_frame": [
+      "self",
+      "encoded_frame"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "set_target_bandwidth": [
+      "self",
+      "bandwidth"
+    ],
+    "get_lm_model": [
+      "self"
+    ],
+    "_get_model": [
+      "target_bandwidths",
+      "sample_rate",
+      "channels",
+      "causal",
+      "model_norm",
+      "audio_normalize",
+      "segment",
+      "name"
+    ],
+    "_get_pretrained": [
+      "checkpoint_name",
+      "repository"
+    ],
+    "encodec_model_24khz": [
+      "pretrained",
+      "repository"
+    ],
+    "encodec_model_48khz": [
+      "pretrained",
+      "repository"
+    ]
+  },
+  "test": [],
+  "FeatureMapType": [],
+  "LogitsType": [],
+  "DiscriminatorOutput": [],
+  "get_2d_padding": [
+    "kernel_size",
+    "dilation"
+  ],
+  "DiscriminatorSTFT": {
+    "__init__": [
+      "self",
+      "filters",
+      "in_channels",
+      "out_channels",
+      "n_fft",
+      "hop_length",
+      "win_length",
+      "max_filters",
+      "filters_scale",
+      "kernel_size",
+      "dilations",
+      "stride",
+      "normalized",
+      "norm",
+      "activation",
+      "activation_params"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiScaleSTFTDiscriminator": {
+    "__init__": [
+      "self",
+      "filters",
+      "in_channels",
+      "out_channels",
+      "n_ffts",
+      "hop_lengths",
+      "win_lengths"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "rank": [],
+  "world_size": [],
+  "is_distributed": [],
+  "all_reduce": [
+    "tensor",
+    "op"
+  ],
+  "_is_complex_or_float": [
+    "tensor"
+  ],
+  "_check_number_of_params": [
+    "params"
+  ],
+  "broadcast_tensors": [
+    "tensors",
+    "src"
+  ],
+  "sync_buffer": [
+    "buffers",
+    "average"
+  ],
+  "sync_grad": [
+    "params"
+  ],
+  "average_metrics": [
+    "metrics",
+    "count"
+  ],
+  "default": [
+    "val",
+    "d"
+  ],
+  "ema_inplace": [
+    "moving_avg",
+    "new",
+    "decay"
+  ],
+  "laplace_smoothing": [
+    "x",
+    "n_categories",
+    "epsilon"
+  ],
+  "uniform_init": [],
+  "sample_vectors": [
+    "samples",
+    "num"
+  ],
+  "kmeans": [
+    "samples",
+    "num_clusters",
+    "num_iters"
+  ],
+  "EuclideanCodebook": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size",
+      "kmeans_init",
+      "kmeans_iters",
+      "decay",
+      "epsilon",
+      "threshold_ema_dead_code"
+    ],
+    "init_embed_": [
+      "self",
+      "data"
+    ],
+    "replace_": [
+      "self",
+      "samples",
+      "mask"
+    ],
+    "expire_codes_": [
+      "self",
+      "batch_samples"
+    ],
+    "preprocess": [
+      "self",
+      "x"
+    ],
+    "quantize": [
+      "self",
+      "x"
+    ],
+    "postprocess_emb": [
+      "self",
+      "embed_ind",
+      "shape"
+    ],
+    "dequantize": [
+      "self",
+      "embed_ind"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VectorQuantization": {
+    "__init__": [
+      "self",
+      "dim",
+      "codebook_size",
+      "codebook_dim",
+      "decay",
+      "epsilon",
+      "kmeans_init",
+      "kmeans_iters",
+      "threshold_ema_dead_code",
+      "commitment_weight"
+    ],
+    "codebook": [
+      "self"
+    ],
+    "encode": [
+      "self",
+      "x"
+    ],
+    "decode": [
+      "self",
+      "embed_ind"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ResidualVectorQuantization": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "n_q"
+    ],
+    "encode": [
+      "self",
+      "x",
+      "n_q"
+    ],
+    "decode": [
+      "self",
+      "q_indices"
+    ]
+  },
+  "LanguageVectorQuantization": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "n_q"
+    ],
+    "encode": [
+      "self",
+      "x",
+      "n_q"
+    ],
+    "decode": [
+      "self",
+      "q_indices"
+    ]
+  },
+  "build_stable_quantized_cdf": [
+    "pdf",
+    "total_range_bits",
+    "roundoff",
+    "min_range",
+    "check"
+  ],
+  "ArithmeticCoder": {
+    "__init__": [
+      "self",
+      "fo",
+      "total_range_bits"
+    ],
+    "delta": [
+      "self"
+    ],
+    "_flush_common_prefix": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "symbol",
+      "quantized_cdf"
+    ],
+    "flush": [
+      "self"
+    ]
+  },
+  "ArithmeticDecoder": {
+    "__init__": [
+      "self",
+      "fo",
+      "total_range_bits"
+    ],
+    "delta": [
+      "self"
+    ],
+    "_flush_common_prefix": [
+      "self"
+    ],
+    "pull": [
+      "self",
+      "quantized_cdf"
+    ]
+  },
+  "QuantizedResult": {},
+  "ResidualVectorQuantizer": {
+    "__init__": [
+      "self",
+      "dimension",
+      "n_q",
+      "bins",
+      "decay",
+      "kmeans_init",
+      "kmeans_iters",
+      "threshold_ema_dead_code"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "frame_rate",
+      "bandwidth"
+    ],
+    "infer": [
+      "self",
+      "x",
+      "frame_rate",
+      "bandwidth"
+    ],
+    "get_num_quantizers_for_bandwidth": [
+      "self",
+      "frame_rate",
+      "bandwidth"
+    ],
+    "get_bandwidth_per_quantizer": [
+      "self",
+      "frame_rate"
+    ],
+    "encode": [
+      "self",
+      "x",
+      "frame_rate",
+      "bandwidth"
+    ],
+    "decode": [
+      "self",
+      "codes"
+    ]
+  },
+  "ConvLayerNorm": {
+    "__init__": [
+      "self",
+      "normalized_shape"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "CONV_NORMALIZATIONS": [],
+  "apply_parametrization_norm": [
+    "module",
+    "norm"
+  ],
+  "get_norm_module": [
+    "module",
+    "causal",
+    "norm"
+  ],
+  "get_extra_padding_for_conv1d": [
+    "x",
+    "kernel_size",
+    "stride",
+    "padding_total"
+  ],
+  "pad_for_conv1d": [
+    "x",
+    "kernel_size",
+    "stride",
+    "padding_total"
+  ],
+  "pad1d": [
+    "x",
+    "paddings",
+    "mode",
+    "value"
+  ],
+  "unpad1d": [
+    "x",
+    "paddings"
+  ],
+  "NormConv1d": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NormConv2d": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NormConvTranspose1d": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "NormConvTranspose2d": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SConv1d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "dilation",
+      "groups",
+      "bias",
+      "causal",
+      "norm",
+      "norm_kwargs",
+      "pad_mode"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SConvTranspose1d": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "causal",
+      "norm",
+      "trim_right_ratio",
+      "norm_kwargs"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "create_sin_embedding": [
+    "positions",
+    "dim",
+    "max_period"
+  ],
+  "StreamingTransformerEncoderLayer": {
+    "forward": [
+      "self",
+      "x",
+      "x_past",
+      "past_context"
+    ],
+    "_sa_block": [
+      "self",
+      "x",
+      "x_past",
+      "past_context"
+    ]
+  },
+  "StreamingTransformerEncoder": {
+    "__init__": [
+      "self",
+      "dim",
+      "hidden_scale",
+      "num_heads",
+      "num_layers",
+      "max_period",
+      "past_context",
+      "gelu",
+      "norm_in",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "states",
+      "offset"
+    ]
+  },
+  "SLSTM": {
+    "__init__": [
+      "self",
+      "dimension",
+      "num_layers",
+      "skip"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SEANetResnetBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_sizes",
+      "dilations",
+      "activation",
+      "activation_params",
+      "norm",
+      "norm_params",
+      "causal",
+      "pad_mode",
+      "compress",
+      "true_skip"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SEANetEncoder": {
+    "__init__": [
+      "self",
+      "channels",
+      "dimension",
+      "n_filters",
+      "n_residual_layers",
+      "ratios",
+      "activation",
+      "activation_params",
+      "norm",
+      "norm_params",
+      "kernel_size",
+      "last_kernel_size",
+      "residual_kernel_size",
+      "dilation_base",
+      "causal",
+      "pad_mode",
+      "true_skip",
+      "compress",
+      "lstm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SEANetDecoder": {
+    "__init__": [
+      "self",
+      "channels",
+      "dimension",
+      "n_filters",
+      "n_residual_layers",
+      "ratios",
+      "activation",
+      "activation_params",
+      "final_activation",
+      "final_activation_params",
+      "norm",
+      "norm_params",
+      "kernel_size",
+      "last_kernel_size",
+      "residual_kernel_size",
+      "dilation_base",
+      "causal",
+      "pad_mode",
+      "true_skip",
+      "compress",
+      "lstm",
+      "trim_right_ratio"
+    ],
+    "forward": [
+      "self",
+      "z"
+    ]
+  },
+  "read_binary": [
+    "resource"
+  ],
+  "_blocks": [],
+  "anyascii": [
+    "string"
+  ],
+  "check_language": [
+    "text"
+  ],
+  "tokenize_text": [
+    "text"
+  ],
+  "count_words": [
+    "text"
+  ],
+  "split_into_sentences": [
+    "text"
+  ],
+  "chunk_text": [
+    "text",
+    "min_words",
+    "max_words"
+  ],
+  "get_cache_dir": [],
+  "get_punctuations": [],
+  "normalize_token_spacing": [
+    "text"
+  ],
+  "text_normalizations": [
+    "text"
+  ],
+  "get_words": [
+    "text"
+  ],
+  "transcribe_once": [
+    "audio_path",
+    "model",
+    "device",
+    "language"
+  ],
+  "transcribe_once_word_level": [
+    "audio_path",
+    "model",
+    "device",
+    "language"
+  ],
+  "process_audio_tensor": [
+    "audio",
+    "sample_rate",
+    "target_loudness",
+    "peak_limit",
+    "block_size"
+  ],
+  "DacInterface": {
+    "__init__": [
+      "self",
+      "device",
+      "model_path"
+    ],
+    "_get_model": [
+      "self"
+    ],
+    "convert_audio": [
+      "self",
+      "wav",
+      "sr",
+      "target_sr",
+      "target_channels"
+    ],
+    "convert_audio_tensor": [
+      "self",
+      "audio",
+      "sr"
+    ],
+    "load_audio": [
+      "self",
+      "path"
+    ],
+    "preprocess": [
+      "self",
+      "audio_data"
+    ],
+    "encode": [
+      "self",
+      "x",
+      "win_duration",
+      "verbose"
+    ],
+    "apply_fade": [
+      "self",
+      "audio"
+    ],
+    "decode": [
+      "self",
+      "codes",
+      "verbose",
+      "chunk_length"
+    ]
+  },
+  "get_recent_tokens": [
+    "prompt_tokens",
+    "output_tokens",
+    "window_size",
+    "vocab_size"
+  ],
+  "get_token_bin_counts_and_mask": [
+    "tokens",
+    "vocab_size",
+    "num_seqs"
+  ],
+  "apply_penalties": [
+    "logits",
+    "prompt_tokens_tensor",
+    "output_tokens_tensor",
+    "presence_penalties",
+    "frequency_penalties",
+    "repetition_penalties"
+  ],
+  "VLLMModelBatch": {
+    "__init__": [
+      "self",
+      "model_path",
+      "max_seq_length",
+      "additional_model_config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config",
+      "request_id",
+      "pbar",
+      "lock"
+    ],
+    "_generate_batch_async": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "Backend": {
+    "HF": [],
+    "LLAMACPP": [],
+    "EXL2": [],
+    "EXL2ASYNC": [],
+    "VLLM": [],
+    "LLAMACPP_SERVER": [],
+    "LLAMACPP_ASYNC_SERVER": []
+  },
+  "InterfaceVersion": {
+    "V1": [],
+    "V2": [],
+    "V3": []
+  },
+  "Models": {
+    "VERSION_0_1_SIZE_350M": [],
+    "VERSION_0_2_SIZE_500M": [],
+    "VERSION_0_3_SIZE_500M": [],
+    "VERSION_0_3_SIZE_1B": [],
+    "VERSION_1_0_SIZE_1B": [],
+    "VERSION_1_0_SIZE_0_6B": []
+  },
+  "GenerationType": {
+    "REGULAR": [],
+    "CHUNKED": [],
+    "GUIDED_WORDS": [],
+    "STREAM": [],
+    "BATCH": []
+  },
+  "LlamaCppQuantization": {
+    "FP16": [],
+    "Q8_0": [],
+    "Q6_K": [],
+    "Q5_K_S": [],
+    "Q5_K_M": [],
+    "Q5_1": [],
+    "Q5_0": [],
+    "Q4_K_S": [],
+    "Q4_K_M": [],
+    "Q4_1": [],
+    "Q4_0": [],
+    "Q3_K_S": [],
+    "Q3_K_M": [],
+    "Q3_K_L": [],
+    "Q2_K": []
+  },
+  "MODEL_INFO": [],
+  "LlamaCPPServerModel": {
+    "__init__": [
+      "self",
+      "model_path",
+      "n_gpu_layers",
+      "max_seq_length",
+      "additional_model_config",
+      "tokenizer"
+    ],
+    "generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate_stream": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "LlamaCPPServerAsyncModel": {
+    "__init__": [
+      "self",
+      "model_path",
+      "n_gpu_layers",
+      "max_seq_length",
+      "additional_model_config"
+    ],
+    "_ensure_session": [
+      "self"
+    ],
+    "_generate": [
+      "self",
+      "prompt",
+      "request_id",
+      "config",
+      "pbar",
+      "lock"
+    ],
+    "_generate_batch_async": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "CURRENT_VERSION": [],
+  "VERSION_0_3_7": [],
+  "GGUFModel": {
+    "__init__": [
+      "self",
+      "model_path",
+      "n_gpu_layers",
+      "max_seq_length",
+      "additional_model_config"
+    ],
+    "is_eog": [
+      "self"
+    ],
+    "generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate_stream": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "SamplerConfig": {},
+  "GenerationConfig": {},
+  "get_compatible_dtype": [],
+  "LoadAutoModel": {
+    "__init__": [
+      "self"
+    ],
+    "init_model": [
+      "self",
+      "model",
+      "backend",
+      "quantization"
+    ]
+  },
+  "ModelConfig": {
+    "__init__": [
+      "self",
+      "model_path",
+      "tokenizer_path",
+      "interface_version",
+      "backend",
+      "verbose",
+      "device",
+      "dtype",
+      "additional_model_config",
+      "audio_codec_path",
+      "max_seq_length",
+      "n_gpu_layers",
+      "exl2_cache_seq_multiply"
+    ],
+    "_init_functions": [
+      "self"
+    ],
+    "auto_config": [
+      "cls",
+      "model",
+      "backend",
+      "quantization"
+    ]
+  },
+  "RepetitionPenaltyLogitsProcessorPatch": {
+    "__init__": [
+      "self",
+      "penalty"
+    ],
+    "__call__": [
+      "self",
+      "input_ids",
+      "scores"
+    ]
+  },
+  "HFModel": {
+    "__init__": [
+      "self",
+      "model_path",
+      "device",
+      "dtype",
+      "additional_model_config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate_stream": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "EXL2Model": {
+    "__init__": [
+      "self",
+      "model_path",
+      "max_seq_length",
+      "additional_model_config"
+    ],
+    "generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate_stream": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "EXL2ModelAsync": {
+    "__init__": [
+      "self",
+      "model_path",
+      "max_seq_length",
+      "additional_model_config"
+    ],
+    "_create_generator": [
+      "self",
+      "additional_dynamic_generator_config"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "sampling_params",
+      "request_id",
+      "config",
+      "pbar",
+      "lock"
+    ],
+    "_generate_batch_async": [
+      "self",
+      "input_ids",
+      "sampling_params",
+      "config"
+    ],
+    "generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "InterfaceHF": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "prepare_prompt": [
+      "self",
+      "text",
+      "speaker"
+    ],
+    "get_audio": [
+      "self",
+      "tokens"
+    ],
+    "create_speaker": [
+      "self",
+      "audio_path",
+      "transcript",
+      "whisper_model",
+      "whisper_device"
+    ],
+    "save_speaker": [
+      "self",
+      "speaker",
+      "path"
+    ],
+    "load_speaker": [
+      "self",
+      "path"
+    ],
+    "decode_and_save_speaker": [
+      "self",
+      "speaker",
+      "path"
+    ],
+    "print_default_speakers": [
+      "self"
+    ],
+    "load_default_speaker": [
+      "self",
+      "name"
+    ],
+    "check_generation_max_length": [
+      "self",
+      "max_length"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "guided_words_generation": [
+      "self",
+      "config"
+    ],
+    "chunk_generation": [
+      "self",
+      "config"
+    ],
+    "regular_generation": [
+      "self",
+      "config"
+    ],
+    "batch_generation": [
+      "self",
+      "config"
+    ],
+    "_batch_check": [
+      "self",
+      "config"
+    ],
+    "generate": [
+      "self",
+      "config"
+    ]
+  },
+  "InterfaceLLAMACPP": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ]
+  },
+  "InterfaceEXL2": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "InterfaceEXL2Async": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "_generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "InterfaceVLLMBatch": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "_generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "InterfaceLlamaCPPServerAsyncBatch": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "_generate_batch": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "InterfaceLlamaCPPServer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "_prepare_prompt": [
+      "self",
+      "prompt"
+    ],
+    "_generate": [
+      "self",
+      "input_ids",
+      "config"
+    ]
+  },
+  "ModelOutput": {
+    "__init__": [
+      "self",
+      "audio",
+      "og_sr"
+    ],
+    "resample": [
+      "self",
+      "audio",
+      "og_sr",
+      "to_sr"
+    ],
+    "save": [
+      "self",
+      "path"
+    ],
+    "_sounddevice": [
+      "self"
+    ],
+    "_pygame": [
+      "self"
+    ],
+    "_invalid_backend": [
+      "self"
+    ],
+    "play": [
+      "self",
+      "backend"
+    ]
+  },
+  "CTCForcedAlignment": {
+    "__init__": [
+      "self",
+      "device"
+    ],
+    "process_text": [
+      "self",
+      "text"
+    ],
+    "_unflatten": [
+      "self",
+      "list_",
+      "lengths"
+    ],
+    "get_word": [
+      "self",
+      "waveform",
+      "spans",
+      "num_frames",
+      "transcript"
+    ],
+    "_extract_world_level": [
+      "self",
+      "aligned_tokens",
+      "alignment_scores",
+      "transcript"
+    ],
+    "_align": [
+      "self",
+      "emission",
+      "tokens"
+    ],
+    "align": [
+      "self",
+      "audio",
+      "transcript"
+    ],
+    "free": [
+      "self"
+    ]
+  },
+  "clean_dashes": [
+    "text"
+  ],
+  "create_speaker": [
+    "device",
+    "audio_codec",
+    "audio_path",
+    "transcript",
+    "whisper_model",
+    "whisper_device"
+  ],
+  "SpecialTokens": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "TextProcessor": {
+    "__init__": [
+      "self"
+    ],
+    "join_punctuation": [
+      "self",
+      "text",
+      "pun"
+    ],
+    "normalize_token_spacing": [
+      "self",
+      "text"
+    ],
+    "_process_text": [
+      "self",
+      "text"
+    ],
+    "process_text": [
+      "self",
+      "text"
+    ],
+    "process_text_clean_only": [
+      "self",
+      "text"
+    ],
+    "get_text": [
+      "self",
+      "data"
+    ]
+  },
+  "PromptProcessor": {
+    "__init__": [
+      "self",
+      "tokenizer_path"
+    ],
+    "get_audio_token_map": [
+      "self"
+    ],
+    "create_audio_prompt": [
+      "self",
+      "processed",
+      "speaker"
+    ],
+    "get_completion_prompt": [
+      "self",
+      "text",
+      "emotion",
+      "speaker"
+    ],
+    "get_training_prompt": [
+      "self",
+      "speaker"
+    ],
+    "extract_audio_from_tokens": [
+      "self",
+      "tokens"
+    ]
+  },
+  "calculate_pitch": [
+    "audio_tensor",
+    "sr",
+    "min_freq",
+    "max_freq",
+    "frame_length",
+    "hop_length",
+    "threshold"
+  ],
+  "extract_single_pitch_value": [
+    "audio_tensor",
+    "sr",
+    "min_freq",
+    "max_freq",
+    "frame_length",
+    "hop_length",
+    "threshold"
+  ],
+  "Features": {
+    "__init__": [
+      "self",
+      "device"
+    ],
+    "scale_values": [
+      "self",
+      "value"
+    ],
+    "features_to_tokens": [
+      "self",
+      "features"
+    ],
+    "validate_audio": [
+      "self",
+      "audio"
+    ],
+    "get_default_features": [
+      "self"
+    ],
+    "extract_audio_features": [
+      "self",
+      "audio",
+      "sr"
+    ]
+  },
+  "AudioProcessor": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "create_speaker_from_whisper": [
+      "self",
+      "audio",
+      "whisper_model",
+      "device"
+    ],
+    "create_speaker_from_dict": [
+      "self",
+      "data"
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "__path__": [],
+  "logger": [],
+  "DataService": {
+    "__init__": [
+      "self",
+      "cassandra_client"
+    ],
+    "execute_read_only_query": [
+      "self",
+      "keyspace_name",
+      "query"
+    ]
+  },
+  "SchemaService": {
+    "__init__": [
+      "self",
+      "cassandra_client"
+    ],
+    "list_keyspaces": [
+      "self"
+    ],
+    "list_tables": [
+      "self",
+      "keyspace_name"
+    ],
+    "describe_keyspace": [
+      "self",
+      "keyspace_name"
+    ],
+    "describe_table": [
+      "self",
+      "keyspace_name",
+      "table_name"
+    ]
+  },
+  "QueryAnalysisService": {
+    "__init__": [
+      "self",
+      "cassandra_client",
+      "schema_service"
+    ],
+    "analyze_query": [
+      "self",
+      "keyspace_name",
+      "query"
+    ],
+    "_normalize_query": [
+      "self",
+      "query"
+    ],
+    "_extract_table_name": [
+      "self",
+      "query"
+    ],
+    "_extract_where_conditions": [
+      "self",
+      "query"
+    ],
+    "_extract_partition_key_columns": [
+      "self",
+      "table_details"
+    ],
+    "_extract_clustering_columns": [
+      "self",
+      "table_details"
+    ],
+    "_check_partition_key_usage": [
+      "self",
+      "partition_key_columns",
+      "where_conditions"
+    ],
+    "_check_clustering_column_usage": [
+      "self",
+      "clustering_columns",
+      "where_conditions"
+    ],
+    "_check_secondary_index_usage": [
+      "self",
+      "table_details",
+      "where_conditions"
+    ],
+    "_generate_performance_assessment": [
+      "self",
+      "result",
+      "partition_key_columns",
+      "clustering_columns"
+    ]
+  },
+  "KeyspaceInfo": {},
+  "ColumnInfo": {},
+  "TableInfo": {},
+  "QueryResult": {},
+  "QueryAnalysisResult": {},
+  "SERVER_NAME": [],
+  "DEFAULT_LOG_LEVEL": [],
+  "LOG_FORMAT": [],
+  "CASSANDRA_DEFAULT_PORT": [],
+  "KEYSPACES_DEFAULT_PORT": [],
+  "CONNECTION_TIMEOUT": [],
+  "CONTROL_CONNECTION_TIMEOUT": [],
+  "PROTOCOL_VERSION": [],
+  "CERT_DIRECTORY": [],
+  "CERT_FILENAME": [],
+  "ENV_DIRECTORY": [],
+  "ENV_FILENAME": [],
+  "UNSAFE_OPERATIONS": [],
+  "MAX_DISPLAY_ROWS": [],
+  "__version__": [],
+  "UnifiedCassandraClient": {
+    "__init__": [
+      "self",
+      "database_config"
+    ],
+    "_create_cassandra_session": [
+      "self"
+    ],
+    "_create_keyspaces_session": [
+      "self"
+    ],
+    "_create_ssl_context_for_keyspaces": [
+      "self"
+    ],
+    "is_using_keyspaces": [
+      "self"
+    ],
+    "list_keyspaces": [
+      "self"
+    ],
+    "list_tables": [
+      "self",
+      "keyspace_name"
+    ],
+    "describe_keyspace": [
+      "self",
+      "keyspace_name"
+    ],
+    "describe_table": [
+      "self",
+      "keyspace_name",
+      "table_name"
+    ],
+    "execute_read_only_query": [
+      "self",
+      "query",
+      "params"
+    ],
+    "_add_keyspaces_context": [
+      "self",
+      "details"
+    ],
+    "_build_service_characteristics": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "home_dir": [],
+  "DatabaseConfig": {
+    "from_env": [
+      "cls"
+    ]
+  },
+  "AppConfig": {
+    "from_env": [
+      "cls"
+    ]
+  },
+  "build_list_keyspaces_context": [
+    "keyspaces"
+  ],
+  "build_list_tables_context": [
+    "keyspace_name",
+    "tables"
+  ],
+  "build_keyspace_details_context": [
+    "keyspace_details"
+  ],
+  "build_table_details_context": [
+    "table_details"
+  ],
+  "build_query_result_context": [
+    "query_results"
+  ],
+  "build_query_analysis_context": [
+    "analysis_result"
+  ],
+  "build_cassandra_knowledge": [],
+  "build_amazon_keyspaces_knowledge": [],
+  "dict_to_markdown": [
+    "data",
+    "level"
+  ],
+  "mcp": [],
+  "_proxy": [],
+  "get_proxy": [],
+  "list_keyspaces": [
+    "ctx"
+  ],
+  "list_tables": [
+    "keyspace",
+    "ctx"
+  ],
+  "describe_keyspace": [
+    "keyspace",
+    "ctx"
+  ],
+  "describe_table": [
+    "keyspace",
+    "table",
+    "ctx"
+  ],
+  "execute_query": [
+    "keyspace",
+    "query",
+    "ctx"
+  ],
+  "analyze_query_performance": [
+    "keyspace",
+    "query",
+    "ctx"
+  ],
+  "KeyspacesMcpStdioServer": {
+    "__init__": [
+      "self",
+      "data_service",
+      "query_analysis_service",
+      "schema_service"
+    ],
+    "handle_list_keyspaces": [
+      "self",
+      "ctx"
+    ],
+    "_handle_list_tables": [
+      "self",
+      "keyspace",
+      "ctx"
+    ],
+    "_handle_describe_keyspace": [
+      "self",
+      "keyspace",
+      "ctx"
+    ],
+    "_handle_describe_table": [
+      "self",
+      "keyspace",
+      "table",
+      "ctx"
+    ],
+    "_handle_execute_query": [
+      "self",
+      "keyspace",
+      "query",
+      "ctx"
+    ],
+    "_handle_analyze_query_performance": [
+      "self",
+      "keyspace",
+      "query",
+      "ctx"
+    ]
+  },
+  "main": []
+}
