@@ -1,0 +1,2200 @@
+{
+  "__all__": [],
+  "RemoteException": [],
+  "DeliveryFailed": [],
+  "TaskRejected": [],
+  "Communicator": [],
+  "plum_to_kiwi_future": [
+    "plum_future"
+  ],
+  "convert_to_comm": [
+    "callback",
+    "loop"
+  ],
+  "wrap_communicator": [
+    "communicator",
+    "loop"
+  ],
+  "LoopCommunicator": {
+    "__init__": [
+      "self",
+      "communicator",
+      "loop"
+    ],
+    "loop": [
+      "self"
+    ],
+    "add_rpc_subscriber": [
+      "self",
+      "subscriber",
+      "identifier"
+    ],
+    "remove_rpc_subscriber": [
+      "self",
+      "identifier"
+    ],
+    "add_task_subscriber": [
+      "self",
+      "subscriber",
+      "identifier"
+    ],
+    "remove_task_subscriber": [
+      "self",
+      "identifier"
+    ],
+    "add_broadcast_subscriber": [
+      "self",
+      "subscriber",
+      "identifier"
+    ],
+    "remove_broadcast_subscriber": [
+      "self",
+      "identifier"
+    ],
+    "task_send": [
+      "self",
+      "task",
+      "no_reply"
+    ],
+    "rpc_send": [
+      "self",
+      "recipient_id",
+      "msg"
+    ],
+    "broadcast_send": [
+      "self",
+      "body",
+      "sender",
+      "subject",
+      "correlation_id"
+    ],
+    "is_closed": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "ProcessResult": [],
+  "ProcessStatus": [],
+  "INTENT_KEY": [],
+  "MESSAGE_TEXT_KEY": [],
+  "FORCE_KILL_KEY": [],
+  "Intent": {},
+  "MessageType": [],
+  "MessageBuilder": {
+    "play": [
+      "cls",
+      "text"
+    ],
+    "pause": [
+      "cls",
+      "text"
+    ],
+    "kill": [
+      "cls",
+      "text",
+      "force_kill"
+    ],
+    "status": [
+      "cls",
+      "text"
+    ]
+  },
+  "TASK_KEY": [],
+  "TASK_ARGS": [],
+  "PERSIST_KEY": [],
+  "PROCESS_CLASS_KEY": [],
+  "ARGS_KEY": [],
+  "KWARGS_KEY": [],
+  "NOWAIT_KEY": [],
+  "PID_KEY": [],
+  "TAG_KEY": [],
+  "LAUNCH_TASK": [],
+  "CONTINUE_TASK": [],
+  "CREATE_TASK": [],
+  "LOGGER": [],
+  "create_launch_body": [
+    "process_class",
+    "init_args",
+    "init_kwargs",
+    "persist",
+    "loader",
+    "nowait"
+  ],
+  "create_continue_body": [
+    "pid",
+    "tag",
+    "nowait"
+  ],
+  "create_create_body": [
+    "process_class",
+    "init_args",
+    "init_kwargs",
+    "persist",
+    "loader"
+  ],
+  "RemoteProcessController": {
+    "__init__": [
+      "self",
+      "communicator"
+    ],
+    "get_status": [
+      "self",
+      "pid"
+    ],
+    "pause_process": [
+      "self",
+      "pid",
+      "msg_text"
+    ],
+    "play_process": [
+      "self",
+      "pid"
+    ],
+    "kill_process": [
+      "self",
+      "pid",
+      "msg_text",
+      "force_kill"
+    ],
+    "continue_process": [
+      "self",
+      "pid",
+      "tag",
+      "nowait",
+      "no_reply"
+    ],
+    "launch_process": [
+      "self",
+      "process_class",
+      "init_args",
+      "init_kwargs",
+      "persist",
+      "loader",
+      "nowait",
+      "no_reply"
+    ],
+    "execute_process": [
+      "self",
+      "process_class",
+      "init_args",
+      "init_kwargs",
+      "loader",
+      "nowait",
+      "no_reply"
+    ]
+  },
+  "RemoteProcessThreadController": {
+    "__init__": [
+      "self",
+      "communicator"
+    ],
+    "get_status": [
+      "self",
+      "pid"
+    ],
+    "pause_process": [
+      "self",
+      "pid",
+      "msg_text"
+    ],
+    "pause_all": [
+      "self",
+      "msg_text"
+    ],
+    "play_process": [
+      "self",
+      "pid"
+    ],
+    "play_all": [
+      "self"
+    ],
+    "kill_process": [
+      "self",
+      "pid",
+      "msg_text",
+      "force_kill"
+    ],
+    "kill_all": [
+      "self",
+      "msg_text"
+    ],
+    "continue_process": [
+      "self",
+      "pid",
+      "tag",
+      "nowait",
+      "no_reply"
+    ],
+    "launch_process": [
+      "self",
+      "process_class",
+      "init_args",
+      "init_kwargs",
+      "persist",
+      "loader",
+      "nowait",
+      "no_reply"
+    ],
+    "execute_process": [
+      "self",
+      "process_class",
+      "init_args",
+      "init_kwargs",
+      "loader",
+      "nowait",
+      "no_reply"
+    ],
+    "task_send": [
+      "self",
+      "message",
+      "no_reply"
+    ]
+  },
+  "ProcessLauncher": {
+    "__init__": [
+      "self",
+      "loop",
+      "persister",
+      "load_context",
+      "loader"
+    ],
+    "__call__": [
+      "self",
+      "communicator",
+      "task"
+    ],
+    "_launch": [
+      "self",
+      "_communicator",
+      "process_class",
+      "persist",
+      "nowait",
+      "init_args",
+      "init_kwargs"
+    ],
+    "_continue": [
+      "self",
+      "_communicator",
+      "pid",
+      "nowait",
+      "tag"
+    ],
+    "_create": [
+      "self",
+      "_communicator",
+      "process_class",
+      "persist",
+      "init_args",
+      "init_kwargs"
+    ]
+  },
+  "CancelledError": [],
+  "InvalidStateError": {},
+  "copy_future": [],
+  "chain": [],
+  "gather": [],
+  "Future": [],
+  "CancellableAction": {
+    "__init__": [
+      "self",
+      "action",
+      "cookie"
+    ],
+    "cookie": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "create_task": [
+    "coro",
+    "loop"
+  ],
+  "unwrap_kiwi_future": [
+    "future"
+  ],
+  "get_event_loop": [],
+  "set_event_loop": [],
+  "new_event_loop": [],
+  "PlumpyEventLoopPolicy": {
+    "get_event_loop": [
+      "self"
+    ]
+  },
+  "set_event_loop_policy": [],
+  "reset_event_loop_policy": [],
+  "run_until_complete": [
+    "future",
+    "loop"
+  ],
+  "ProcessCallback": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "process",
+      "callback",
+      "args",
+      "kwargs"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "cancelled": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "_done": [
+      "self"
+    ],
+    "_cleanup": [
+      "self"
+    ]
+  },
+  "protected": [
+    "check"
+  ],
+  "override": [
+    "check"
+  ],
+  "__NULL": {
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "NULL": [],
+  "_LOGGER": [],
+  "UNSPECIFIED": [],
+  "VALIDATOR_SIGNATURE_DEPRECATION_WARNING": [],
+  "VALIDATOR_TYPE": [],
+  "PortValidationError": {
+    "__init__": [
+      "self",
+      "message",
+      "port"
+    ],
+    "message": [
+      "self"
+    ],
+    "port": [
+      "self"
+    ]
+  },
+  "Port": {
+    "__init__": [
+      "self",
+      "name",
+      "valid_type",
+      "help",
+      "required",
+      "validator"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_description": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "valid_type": [
+      "self",
+      "valid_type"
+    ],
+    "help": [
+      "self",
+      "help"
+    ],
+    "required": [
+      "self",
+      "required"
+    ],
+    "validator": [
+      "self",
+      "validator"
+    ],
+    "validate": [
+      "self",
+      "value",
+      "breadcrumbs"
+    ]
+  },
+  "InputPort": {
+    "required_override": [
+      "required",
+      "default"
+    ],
+    "__init__": [
+      "self",
+      "name",
+      "valid_type",
+      "help",
+      "default",
+      "required",
+      "validator"
+    ],
+    "has_default": [
+      "self"
+    ],
+    "default": [
+      "self",
+      "default"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "OutputPort": {},
+  "PortNamespace": {
+    "NAMESPACE_SEPARATOR": [],
+    "__init__": [
+      "self",
+      "name",
+      "help",
+      "required",
+      "validator",
+      "valid_type",
+      "default",
+      "dynamic",
+      "populate_defaults"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "port"
+    ],
+    "ports": [
+      "self"
+    ],
+    "has_default": [
+      "self"
+    ],
+    "default": [
+      "self",
+      "default"
+    ],
+    "dynamic": [
+      "self",
+      "dynamic"
+    ],
+    "valid_type": [
+      "self",
+      "valid_type"
+    ],
+    "populate_defaults": [
+      "self",
+      "populate_defaults"
+    ],
+    "get_description": [
+      "self"
+    ],
+    "get_port": [
+      "self",
+      "name",
+      "create_dynamically"
+    ],
+    "create_port_namespace": [
+      "self",
+      "name"
+    ],
+    "absorb": [
+      "self",
+      "port_namespace",
+      "exclude",
+      "include",
+      "namespace_options"
+    ],
+    "project": [
+      "self",
+      "port_values"
+    ],
+    "validate": [
+      "self",
+      "port_values",
+      "breadcrumbs"
+    ],
+    "pre_process": [
+      "self",
+      "port_values"
+    ],
+    "validate_ports": [
+      "self",
+      "port_values",
+      "breadcrumbs"
+    ],
+    "validate_dynamic_ports": [
+      "self",
+      "port_values",
+      "breadcrumbs"
+    ],
+    "strip_namespace": [
+      "namespace",
+      "separator",
+      "rules"
+    ]
+  },
+  "breadcrumbs_to_port": [
+    "breadcrumbs"
+  ],
+  "SAVED_STATE_TYPE": [],
+  "PID_TYPE": [],
+  "Frozendict": {
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__contains__": [
+      "self",
+      "key"
+    ],
+    "copy": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "AttributesFrozendict": {
+    "__init__": [
+      "self"
+    ],
+    "__getattr__": [
+      "self",
+      "attr"
+    ],
+    "__dir__": [
+      "self"
+    ]
+  },
+  "AttributesDict": {
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "__delitem__": [
+      "self",
+      "item"
+    ],
+    "setdefault": [
+      "self",
+      "key",
+      "value"
+    ],
+    "get": [
+      "self"
+    ]
+  },
+  "load_function": [
+    "name",
+    "instance"
+  ],
+  "load_object": [
+    "fullname"
+  ],
+  "load_module": [
+    "fullname"
+  ],
+  "type_check": [
+    "obj",
+    "expected_type"
+  ],
+  "ensure_coroutine": [
+    "coro_or_fn"
+  ],
+  "is_mutable_property": [
+    "cls",
+    "attribute"
+  ],
+  "__version__": [],
+  "NullHandler": {
+    "emit": [
+      "self",
+      "record"
+    ]
+  },
+  "EventHelper": {
+    "__init__": [
+      "self",
+      "listener_type"
+    ],
+    "add_listener": [
+      "self",
+      "listener"
+    ],
+    "remove_listener": [
+      "self",
+      "listener"
+    ],
+    "remove_all_listeners": [
+      "self"
+    ],
+    "listeners": [
+      "self"
+    ],
+    "fire_event": [
+      "self",
+      "event_function"
+    ]
+  },
+  "KilledError": {},
+  "UnsuccessfulResult": {
+    "__init__": [
+      "self",
+      "result"
+    ]
+  },
+  "PersistenceError": {},
+  "ClosedError": {},
+  "ToContext": [],
+  "PREDICATE_TYPE": [],
+  "WC_COMMAND_TYPE": [],
+  "EXIT_CODE_TYPE": [],
+  "WorkChainSpec": {
+    "__init__": [
+      "self"
+    ],
+    "get_description": [
+      "self"
+    ],
+    "outline": [
+      "self"
+    ],
+    "get_outline": [
+      "self"
+    ]
+  },
+  "Waiting": {
+    "__init__": [
+      "self",
+      "process",
+      "done_callback",
+      "msg",
+      "awaiting"
+    ],
+    "enter": [
+      "self"
+    ],
+    "exit": [
+      "self"
+    ],
+    "_awaitable_done": [
+      "self",
+      "awaitable"
+    ]
+  },
+  "WorkChain": {
+    "_spec_class": [],
+    "_STEPPER_STATE": [],
+    "_CONTEXT": [],
+    "get_state_classes": [
+      "cls"
+    ],
+    "__init__": [
+      "self",
+      "inputs",
+      "pid",
+      "logger",
+      "loop",
+      "communicator"
+    ],
+    "spec": [
+      "cls"
+    ],
+    "on_create": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "to_context": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "_do_step": [
+      "self"
+    ]
+  },
+  "Stepper": {
+    "__init__": [
+      "self",
+      "workchain"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "_Instruction": {
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "_FunctionStepper": {
+    "__init__": [
+      "self",
+      "workchain",
+      "fn"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "step": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_FunctionCall": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "STEPPER_STATE": [],
+  "_BlockStepper": {
+    "__init__": [
+      "self",
+      "block",
+      "workchain"
+    ],
+    "step": [
+      "self"
+    ],
+    "next_instruction": [
+      "self"
+    ],
+    "finished": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_Block": {
+    "__init__": [
+      "self",
+      "instructions"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "_Conditional": {
+    "__init__": [
+      "self",
+      "parent",
+      "predicate",
+      "label"
+    ],
+    "body": [
+      "self"
+    ],
+    "predicate": [
+      "self"
+    ],
+    "is_true": [
+      "self",
+      "workflow"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_IfStepper": {
+    "__init__": [
+      "self",
+      "if_instruction",
+      "workchain"
+    ],
+    "step": [
+      "self"
+    ],
+    "finished": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_If": {
+    "__init__": [
+      "self",
+      "condition"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "elif_": [
+      "self",
+      "condition"
+    ],
+    "else_": [
+      "self"
+    ],
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "_WhileStepper": {
+    "__init__": [
+      "self",
+      "while_instruction",
+      "workchain"
+    ],
+    "step": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_While": {
+    "__init__": [
+      "self",
+      "predicate"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "_PropagateReturn": {
+    "__init__": [
+      "self",
+      "exit_code"
+    ]
+  },
+  "_ReturnStepper": {
+    "__init__": [
+      "self",
+      "return_instruction",
+      "workchain"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "_Return": {
+    "__init__": [
+      "self",
+      "exit_code"
+    ],
+    "__call__": [
+      "self",
+      "exit_code"
+    ],
+    "create_stepper": [
+      "self",
+      "workchain"
+    ],
+    "recreate_stepper": [
+      "self",
+      "saved_state",
+      "workchain"
+    ],
+    "get_description": [
+      "self"
+    ]
+  },
+  "if_": [
+    "condition"
+  ],
+  "while_": [
+    "condition"
+  ],
+  "return_": [],
+  "_ensure_instruction": [
+    "command"
+  ],
+  "ObjectLoader": {
+    "load_object": [
+      "self",
+      "identifier"
+    ],
+    "identify_object": [
+      "self",
+      "obj"
+    ]
+  },
+  "DefaultObjectLoader": {
+    "load_object": [
+      "self",
+      "identifier"
+    ],
+    "identify_object": [
+      "self",
+      "obj"
+    ]
+  },
+  "get_object_loader": [],
+  "set_object_loader": [
+    "loader"
+  ],
+  "T": [],
+  "BundleKeys": {
+    "INPUTS_RAW": [],
+    "INPUTS_PARSED": [],
+    "OUTPUTS": []
+  },
+  "ProcessStateMachineMeta": {},
+  "ensure_not_closed": [
+    "func"
+  ],
+  "Process": {
+    "_spec_class": [],
+    "_stepping": [],
+    "_closed": [],
+    "current": [
+      "cls"
+    ],
+    "get_states": [
+      "cls"
+    ],
+    "get_state_classes": [
+      "cls"
+    ],
+    "spec": [
+      "cls"
+    ],
+    "get_name": [
+      "cls"
+    ],
+    "define": [
+      "cls",
+      "_spec"
+    ],
+    "get_description": [
+      "cls"
+    ],
+    "recreate_from": [
+      "cls",
+      "saved_state",
+      "load_context"
+    ],
+    "__init__": [
+      "self",
+      "inputs",
+      "pid",
+      "logger",
+      "loop",
+      "communicator"
+    ],
+    "init": [
+      "self"
+    ],
+    "_setup_event_hooks": [
+      "self"
+    ],
+    "creation_time": [
+      "self"
+    ],
+    "pid": [
+      "self"
+    ],
+    "uuid": [
+      "self"
+    ],
+    "raw_inputs": [
+      "self"
+    ],
+    "inputs": [
+      "self"
+    ],
+    "outputs": [
+      "self"
+    ],
+    "logger": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "set_status": [
+      "self",
+      "status"
+    ],
+    "paused": [
+      "self"
+    ],
+    "future": [
+      "self"
+    ],
+    "launch": [
+      "self",
+      "process_class",
+      "inputs",
+      "pid",
+      "logger"
+    ],
+    "has_terminated": [
+      "self"
+    ],
+    "result": [
+      "self"
+    ],
+    "successful": [
+      "self"
+    ],
+    "is_successful": [
+      "self"
+    ],
+    "killed": [
+      "self"
+    ],
+    "killed_msg": [
+      "self"
+    ],
+    "exception": [
+      "self"
+    ],
+    "is_excepted": [
+      "self"
+    ],
+    "done": [
+      "self"
+    ],
+    "loop": [
+      "self"
+    ],
+    "call_soon": [
+      "self",
+      "callback"
+    ],
+    "callback_excepted": [
+      "self",
+      "_callback",
+      "exception",
+      "trace"
+    ],
+    "_process_scope": [
+      "self"
+    ],
+    "_run_task": [
+      "self",
+      "callback"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "add_process_listener": [
+      "self",
+      "listener"
+    ],
+    "remove_process_listener": [
+      "self",
+      "listener"
+    ],
+    "set_logger": [
+      "self",
+      "logger"
+    ],
+    "log_with_pid": [
+      "self",
+      "level",
+      "msg"
+    ],
+    "on_entering": [
+      "self",
+      "state"
+    ],
+    "on_entered": [
+      "self",
+      "from_state"
+    ],
+    "on_exiting": [
+      "self"
+    ],
+    "on_create": [
+      "self"
+    ],
+    "on_exit_running": [
+      "self"
+    ],
+    "on_exit_waiting": [
+      "self"
+    ],
+    "on_run": [
+      "self"
+    ],
+    "on_running": [
+      "self"
+    ],
+    "on_output_emitting": [
+      "self",
+      "output_port",
+      "value"
+    ],
+    "on_output_emitted": [
+      "self",
+      "output_port",
+      "value",
+      "dynamic"
+    ],
+    "on_wait": [
+      "self",
+      "awaitables"
+    ],
+    "on_waiting": [
+      "self"
+    ],
+    "on_pausing": [
+      "self",
+      "msg"
+    ],
+    "on_paused": [
+      "self",
+      "msg"
+    ],
+    "on_playing": [
+      "self"
+    ],
+    "on_finish": [
+      "self",
+      "result",
+      "successful"
+    ],
+    "on_finished": [
+      "self"
+    ],
+    "on_except": [
+      "self",
+      "exc_info"
+    ],
+    "on_excepted": [
+      "self"
+    ],
+    "on_kill": [
+      "self",
+      "msg"
+    ],
+    "on_killed": [
+      "self"
+    ],
+    "on_terminated": [
+      "self"
+    ],
+    "on_close": [
+      "self"
+    ],
+    "_fire_event": [
+      "self",
+      "evt"
+    ],
+    "message_receive": [
+      "self",
+      "_comm",
+      "msg"
+    ],
+    "broadcast_receive": [
+      "self",
+      "_comm",
+      "msg",
+      "sender",
+      "subject",
+      "correlation_id"
+    ],
+    "_schedule_rpc": [
+      "self",
+      "callback"
+    ],
+    "add_cleanup": [
+      "self",
+      "cleanup"
+    ],
+    "close": [
+      "self"
+    ],
+    "transition_failed": [
+      "self",
+      "initial_state",
+      "final_state",
+      "exception",
+      "trace"
+    ],
+    "pause": [
+      "self",
+      "msg_text"
+    ],
+    "_do_pause": [
+      "self",
+      "state_msg",
+      "next_state"
+    ],
+    "_create_interrupt_action": [
+      "self",
+      "exception"
+    ],
+    "_set_interrupt_action": [
+      "self",
+      "new_action"
+    ],
+    "_set_interrupt_action_from_exception": [
+      "self",
+      "interrupt_exception"
+    ],
+    "play": [
+      "self"
+    ],
+    "resume": [
+      "self"
+    ],
+    "fail": [
+      "self",
+      "exception",
+      "trace_back"
+    ],
+    "kill": [
+      "self",
+      "msg_text",
+      "force_kill"
+    ],
+    "is_killing": [
+      "self"
+    ],
+    "create_initial_state": [
+      "self"
+    ],
+    "recreate_state": [
+      "self",
+      "saved_state"
+    ],
+    "run": [
+      "self"
+    ],
+    "execute": [
+      "self"
+    ],
+    "step": [
+      "self"
+    ],
+    "step_until_terminated": [
+      "self"
+    ],
+    "out": [
+      "self",
+      "output_port",
+      "value"
+    ],
+    "encode_input_args": [
+      "self",
+      "inputs"
+    ],
+    "decode_input_args": [
+      "self",
+      "encoded"
+    ],
+    "get_status_info": [
+      "self",
+      "out_status_info"
+    ]
+  },
+  "Interruption": {},
+  "KillInterruption": {
+    "__init__": [
+      "self",
+      "msg_text",
+      "force_kill"
+    ]
+  },
+  "PauseInterruption": {
+    "__init__": [
+      "self",
+      "msg_text"
+    ]
+  },
+  "Command": {},
+  "Kill": {
+    "__init__": [
+      "self",
+      "msg"
+    ]
+  },
+  "Pause": {},
+  "Wait": {
+    "__init__": [
+      "self",
+      "continue_fn",
+      "msg",
+      "data"
+    ]
+  },
+  "Stop": {
+    "__init__": [
+      "self",
+      "result",
+      "successful"
+    ]
+  },
+  "Continue": {
+    "CONTINUE_FN": [],
+    "__init__": [
+      "self",
+      "continue_fn"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ]
+  },
+  "ProcessState": {
+    "CREATED": [],
+    "RUNNING": [],
+    "WAITING": [],
+    "FINISHED": [],
+    "EXCEPTED": [],
+    "KILLED": []
+  },
+  "State": {
+    "process": [
+      "self"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "interrupt": [
+      "self",
+      "reason"
+    ]
+  },
+  "Created": {
+    "LABEL": [],
+    "ALLOWED": [],
+    "RUN_FN": [],
+    "__init__": [
+      "self",
+      "process",
+      "run_fn"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "execute": [
+      "self"
+    ]
+  },
+  "Running": {
+    "LABEL": [],
+    "ALLOWED": [],
+    "RUN_FN": [],
+    "COMMAND": [],
+    "_run_handle": [],
+    "__init__": [
+      "self",
+      "process",
+      "run_fn"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "interrupt": [
+      "self",
+      "reason"
+    ],
+    "execute": [
+      "self"
+    ],
+    "_action_command": [
+      "self",
+      "command"
+    ]
+  },
+  "Excepted": {
+    "LABEL": [],
+    "EXC_VALUE": [],
+    "TRACEBACK": [],
+    "__init__": [
+      "self",
+      "process",
+      "exception",
+      "trace_back"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "get_exc_info": [
+      "self"
+    ]
+  },
+  "Finished": {
+    "LABEL": [],
+    "__init__": [
+      "self",
+      "process",
+      "result",
+      "successful"
+    ]
+  },
+  "Killed": {
+    "LABEL": [],
+    "__init__": [
+      "self",
+      "process",
+      "msg"
+    ]
+  },
+  "EXPOSED_TYPE": [],
+  "ProcessSpec": {
+    "PORT_NAMESPACE_TYPE": [],
+    "INPUT_PORT_TYPE": [],
+    "OUTPUT_PORT_TYPE": [],
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "namespace_separator": [
+      "self"
+    ],
+    "logger": [
+      "self"
+    ],
+    "seal": [
+      "self"
+    ],
+    "sealed": [
+      "self"
+    ],
+    "get_description": [
+      "self"
+    ],
+    "ports": [
+      "self"
+    ],
+    "inputs": [
+      "self"
+    ],
+    "outputs": [
+      "self"
+    ],
+    "_create_port": [
+      "self",
+      "port_namespace",
+      "port_class",
+      "name"
+    ],
+    "input": [
+      "self",
+      "name"
+    ],
+    "output": [
+      "self",
+      "name"
+    ],
+    "input_namespace": [
+      "self",
+      "name"
+    ],
+    "output_namespace": [
+      "self",
+      "name"
+    ],
+    "has_input": [
+      "self",
+      "name"
+    ],
+    "has_output": [
+      "self",
+      "name"
+    ],
+    "expose_inputs": [
+      "self",
+      "process_class",
+      "namespace",
+      "exclude",
+      "include",
+      "namespace_options"
+    ],
+    "expose_outputs": [
+      "self",
+      "process_class",
+      "namespace",
+      "exclude",
+      "include",
+      "namespace_options"
+    ],
+    "_expose_ports": [
+      "process_class",
+      "source",
+      "destination",
+      "expose_memory",
+      "namespace",
+      "exclude",
+      "include",
+      "namespace_options"
+    ]
+  },
+  "PersistedCheckpoint": [],
+  "uuid_representer": [
+    "dumper",
+    "data"
+  ],
+  "uuid_constructor": [
+    "loader",
+    "node"
+  ],
+  "Bundle": {
+    "__init__": [
+      "self",
+      "savable",
+      "save_context",
+      "dereference"
+    ],
+    "unbundle": [
+      "self",
+      "load_context"
+    ]
+  },
+  "_BUNDLE_TAG": [],
+  "_bundle_representer": [
+    "dumper",
+    "node"
+  ],
+  "_bundle_constructor": [
+    "loader",
+    "data"
+  ],
+  "Persister": {
+    "save_checkpoint": [
+      "self",
+      "process",
+      "tag"
+    ],
+    "load_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "get_checkpoints": [
+      "self"
+    ],
+    "get_process_checkpoints": [
+      "self",
+      "pid"
+    ],
+    "delete_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "delete_process_checkpoints": [
+      "self",
+      "pid"
+    ]
+  },
+  "PersistedPickle": [],
+  "_PICKLE_SUFFIX": [],
+  "PicklePersister": {
+    "__init__": [
+      "self",
+      "pickle_directory"
+    ],
+    "ensure_pickle_directory": [
+      "dirpath"
+    ],
+    "load_pickle": [
+      "filepath"
+    ],
+    "pickle_filename": [
+      "pid",
+      "tag"
+    ],
+    "_pickle_filepath": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "save_checkpoint": [
+      "self",
+      "process",
+      "tag"
+    ],
+    "load_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "get_checkpoints": [
+      "self"
+    ],
+    "get_process_checkpoints": [
+      "self",
+      "pid"
+    ],
+    "delete_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "delete_process_checkpoints": [
+      "self",
+      "pid"
+    ]
+  },
+  "InMemoryPersister": {
+    "__init__": [
+      "self",
+      "loader"
+    ],
+    "save_checkpoint": [
+      "self",
+      "process",
+      "tag"
+    ],
+    "load_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "get_checkpoints": [
+      "self"
+    ],
+    "get_process_checkpoints": [
+      "self",
+      "pid"
+    ],
+    "delete_checkpoint": [
+      "self",
+      "pid",
+      "tag"
+    ],
+    "delete_process_checkpoints": [
+      "self",
+      "pid"
+    ]
+  },
+  "SavableClsType": [],
+  "auto_persist": [],
+  "_ensure_object_loader": [
+    "context",
+    "saved_state"
+  ],
+  "LoadSaveContext": {
+    "__init__": [
+      "self",
+      "loader"
+    ],
+    "__getattr__": [
+      "self",
+      "item"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "copyextend": [
+      "self"
+    ]
+  },
+  "Savable": {
+    "_persist_configured": [],
+    "load": [
+      "saved_state",
+      "load_context"
+    ],
+    "auto_persist": [
+      "cls"
+    ],
+    "persist": [
+      "cls"
+    ],
+    "recreate_from": [
+      "cls",
+      "saved_state",
+      "load_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "save": [
+      "self",
+      "save_context"
+    ],
+    "save_members": [
+      "self",
+      "members",
+      "out_state"
+    ],
+    "load_members": [
+      "self",
+      "members",
+      "saved_state",
+      "load_context"
+    ],
+    "_ensure_persist_configured": [
+      "self"
+    ],
+    "set_custom_meta": [
+      "out_state",
+      "name",
+      "value"
+    ],
+    "get_custom_meta": [
+      "saved_state",
+      "name"
+    ],
+    "_get_create_meta": [
+      "out_state"
+    ],
+    "_set_class_name": [
+      "out_state",
+      "name"
+    ],
+    "_get_class_name": [
+      "saved_state"
+    ],
+    "_set_meta_type": [
+      "out_state",
+      "name",
+      "type_spec"
+    ],
+    "_get_meta_type": [
+      "saved_state",
+      "name"
+    ],
+    "_get_value": [
+      "self",
+      "saved_state",
+      "name",
+      "load_context"
+    ]
+  },
+  "SavableFuture": {
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "recreate_from": [
+      "cls",
+      "saved_state",
+      "load_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ]
+  },
+  "ProcessListener": {
+    "__init__": [
+      "self"
+    ],
+    "init": [
+      "self"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ],
+    "on_process_created": [
+      "self",
+      "process"
+    ],
+    "on_process_running": [
+      "self",
+      "process"
+    ],
+    "on_process_waiting": [
+      "self",
+      "process"
+    ],
+    "on_process_paused": [
+      "self",
+      "process"
+    ],
+    "on_process_played": [
+      "self",
+      "process"
+    ],
+    "on_output_emitted": [
+      "self",
+      "process",
+      "output_port",
+      "value",
+      "dynamic"
+    ],
+    "on_process_finished": [
+      "self",
+      "process",
+      "outputs"
+    ],
+    "on_process_excepted": [
+      "self",
+      "process",
+      "reason"
+    ],
+    "on_process_killed": [
+      "self",
+      "process",
+      "msg"
+    ]
+  },
+  "ContextMixin": {
+    "__init__": [
+      "self"
+    ],
+    "ctx": [
+      "self"
+    ],
+    "save_instance_state": [
+      "self",
+      "out_state",
+      "save_context"
+    ],
+    "load_instance_state": [
+      "self",
+      "saved_state",
+      "load_context"
+    ]
+  },
+  "super_check": [
+    "wrapped"
+  ],
+  "call_with_super_check": [
+    "wrapped"
+  ],
+  "LABEL_TYPE": [],
+  "EVENT_CALLBACK_TYPE": [],
+  "StateMachineError": {},
+  "StateEntryFailed": {
+    "__init__": [
+      "self",
+      "state"
+    ]
+  },
+  "EventError": {
+    "__init__": [
+      "self",
+      "evt",
+      "msg"
+    ]
+  },
+  "TransitionFailed": {
+    "__init__": [
+      "self",
+      "initial_state",
+      "final_state",
+      "traceback_str"
+    ],
+    "_format_msg": [
+      "self"
+    ]
+  },
+  "event": [
+    "from_states",
+    "to_states"
+  ],
+  "StateEventHook": {
+    "ENTERING_STATE": [],
+    "ENTERED_STATE": [],
+    "EXITING_STATE": []
+  },
+  "StateMachineMeta": {
+    "__call__": [
+      "cls"
+    ]
+  },
+  "StateMachine": {
+    "_transitioning": [],
+    "_transition_failing": [],
+    "get_states_map": [
+      "cls"
+    ],
+    "get_states": [
+      "cls"
+    ],
+    "initial_state_label": [
+      "cls"
+    ],
+    "get_state_class": [
+      "cls",
+      "label"
+    ],
+    "__ensure_built": [
+      "cls"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "init": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "create_initial_state": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "add_state_event_callback": [
+      "self",
+      "hook",
+      "callback"
+    ],
+    "remove_state_event_callback": [
+      "self",
+      "hook",
+      "callback"
+    ],
+    "_fire_state_event": [
+      "self",
+      "hook",
+      "state"
+    ],
+    "on_terminated": [
+      "self"
+    ],
+    "transition_to": [
+      "self",
+      "new_state"
+    ],
+    "transition_failed": [
+      "self",
+      "initial_state",
+      "final_state",
+      "exception",
+      "trace"
+    ],
+    "get_debug": [
+      "self"
+    ],
+    "set_debug": [
+      "self",
+      "enabled"
+    ],
+    "create_state": [
+      "self",
+      "state_label"
+    ],
+    "_exit_current_state": [
+      "self",
+      "next_state"
+    ],
+    "_enter_next_state": [
+      "self",
+      "next_state"
+    ],
+    "_create_state_instance": [
+      "self",
+      "state_cls"
+    ]
+  }
+}

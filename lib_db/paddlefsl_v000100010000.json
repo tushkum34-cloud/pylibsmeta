@@ -1,0 +1,980 @@
+{
+  "__version__": [],
+  "parser": [],
+  "args": [],
+  "set_seed": [
+    "seed"
+  ],
+  "transform_map": [],
+  "do_evaluate": [
+    "model",
+    "lan",
+    "tokenizer",
+    "data_loader",
+    "label_normalize_dict"
+  ],
+  "do_evaluate_chid": [
+    "model",
+    "lan",
+    "tokenizer",
+    "data_loader",
+    "label_normalize_dict"
+  ],
+  "do_train": [
+    "model_name",
+    "lan",
+    "task_name",
+    "save_dir",
+    "learning_rate",
+    "batch_size",
+    "data_path",
+    "max_seq_length",
+    "init_from_ckpt",
+    "warmup_proportion",
+    "weight_decay",
+    "epochs",
+    "device",
+    "seed",
+    "pattern_id"
+  ],
+  "run": [
+    "args",
+    "train_dataset",
+    "test_dataset",
+    "logger"
+  ],
+  "meta_training": [
+    "args",
+    "model_0",
+    "optimizer",
+    "criterion",
+    "train_dataset",
+    "epoch"
+  ],
+  "meta_testing": [
+    "args",
+    "model_0",
+    "criterion",
+    "test_dataset",
+    "epoch",
+    "best_auc",
+    "logger"
+  ],
+  "get_prediction": [
+    "model",
+    "data",
+    "train"
+  ],
+  "get_loss": [
+    "criterion",
+    "batch_data",
+    "pred_dict",
+    "train",
+    "flag"
+  ],
+  "adapt_gradient_descent": [
+    "model",
+    "lr",
+    "loss",
+    "approximate"
+  ],
+  "ContextAwareRelationNet": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "to_one_hot": [
+      "self",
+      "class_idx",
+      "num_classes"
+    ],
+    "forward": [
+      "self",
+      "s_data",
+      "q_data",
+      "s_label",
+      "q_pred_adj"
+    ],
+    "forward_query_loader": [
+      "self",
+      "s_data",
+      "q_loader",
+      "s_label",
+      "q_pred_adj"
+    ]
+  },
+  "get_prototypes": [
+    "support_embeddings",
+    "support_labels",
+    "ways",
+    "shots"
+  ],
+  "_get_prediction": [
+    "prototypes",
+    "query_embeddings",
+    "query_labels"
+  ],
+  "inner_adapt": [
+    "feature_model",
+    "head_layer",
+    "data",
+    "loss_fn",
+    "inner_lr",
+    "steps",
+    "approximate"
+  ],
+  "siamese_core": [
+    "support_embeddings",
+    "query_embeddings",
+    "support_labels",
+    "query_labels",
+    "ways"
+  ],
+  "_ordered_tensor": [
+    "embeddings",
+    "labels",
+    "ways"
+  ],
+  "get_adaptable_weights": [
+    "model",
+    "adapt_weight"
+  ],
+  "MLP": {
+    "__init__": [
+      "self",
+      "inp_dim",
+      "hidden_dim",
+      "num_layers",
+      "batch_norm",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "emb"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "num_heads",
+      "attention_dropout",
+      "projection_dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ContextMLP": {
+    "__init__": [
+      "self",
+      "inp_dim",
+      "hidden_dim",
+      "num_layers",
+      "pre_fc",
+      "batch_norm",
+      "dropout",
+      "ctx_head"
+    ],
+    "forward": [
+      "self",
+      "s_emb",
+      "q_emb"
+    ]
+  },
+  "NodeUpdateNetwork": {
+    "__init__": [
+      "self",
+      "inp_dim",
+      "out_dim",
+      "n_layer",
+      "edge_dim",
+      "batch_norm",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "node_feat",
+      "edge_feat"
+    ]
+  },
+  "EdgeUpdateNetwork": {
+    "__init__": [
+      "self",
+      "in_features",
+      "hidden_features",
+      "n_layer",
+      "top_k",
+      "edge_dim",
+      "batch_norm",
+      "dropout",
+      "adj_type",
+      "activation"
+    ],
+    "softmax_with_mask": [
+      "self",
+      "adj",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "node_feat",
+      "edge_feat"
+    ]
+  },
+  "TaskAwareRelation": {
+    "__init__": [
+      "self",
+      "inp_dim",
+      "hidden_dim",
+      "num_layers",
+      "edge_n_layer",
+      "num_class",
+      "res_alpha",
+      "top_k",
+      "node_concat",
+      "batch_norm",
+      "dropout",
+      "edge_dim",
+      "adj_type",
+      "activation",
+      "pre_dropout"
+    ],
+    "forward": [
+      "self",
+      "all_emb",
+      "q_emb",
+      "return_adj",
+      "return_emb"
+    ]
+  },
+  "ErnieForPretraining": {
+    "__init__": [
+      "self",
+      "ernie"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ],
+    "predict": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ]
+  },
+  "BertForPretraining": {
+    "__init__": [
+      "self",
+      "bert"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ],
+    "predict": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ]
+  },
+  "AlbertForPretraining": {
+    "__init__": [
+      "self",
+      "albert"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ],
+    "predict": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "attention_mask",
+      "masked_positions"
+    ]
+  },
+  "ErnieMLMCriterion": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "prediction_scores",
+      "masked_lm_labels",
+      "masked_lm_scale",
+      "weights"
+    ]
+  },
+  "__all__": [],
+  "ConvBlock": {
+    "init_weight_attr": [],
+    "init_bias_attr": [],
+    "norm_weight_attr": [],
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "pooling_size",
+      "stride_size"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "Conv": {
+    "init_weight_attr": [],
+    "init_bias_attr": [],
+    "__init__": [
+      "self",
+      "input_size",
+      "output_size",
+      "conv_channels",
+      "kernel_size",
+      "pooling"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "RCConv1D": {
+    "__init__": [
+      "self",
+      "max_len",
+      "embedding_size",
+      "hidden_size",
+      "output_size"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "RCPositionEmbedding": {
+    "__init__": [
+      "self",
+      "max_len",
+      "embedding_dim",
+      "position_embedding_dim"
+    ],
+    "forward": [
+      "self",
+      "rc_vector"
+    ]
+  },
+  "LinearBlock": {
+    "init_weight_attr": [],
+    "init_bias_attr": [],
+    "__init__": [
+      "self",
+      "input_size",
+      "output_size"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "_reshape_input": [
+    "prototypes",
+    "query_embeddings"
+  ],
+  "_reshape_output": [
+    "relation_score",
+    "ways"
+  ],
+  "ConvEmbedModel": {
+    "__init__": [
+      "self",
+      "input_size",
+      "num_filters"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ConvRelationModel": {
+    "init_weight_attr": [],
+    "init_bias_attr": [],
+    "__init__": [
+      "self",
+      "input_size",
+      "output_size",
+      "num_filters"
+    ],
+    "forward": [
+      "self",
+      "prototypes",
+      "query_embeddings"
+    ]
+  },
+  "All_Embedding": {
+    "__init__": [
+      "self",
+      "num_1",
+      "num_2",
+      "embed_dim"
+    ],
+    "forward": [
+      "self",
+      "features"
+    ]
+  },
+  "GIN": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "RCInitVector": {
+    "embedding_file_name": [],
+    "url_head": [],
+    "__init__": [
+      "self",
+      "corpus",
+      "embedding_dim",
+      "file_root"
+    ],
+    "_download_and_decompress": [
+      "self",
+      "corpus",
+      "embedding_dim",
+      "file_root"
+    ],
+    "_init_word_list": [
+      "self",
+      "vector_np"
+    ],
+    "get_idx_list_from_words": [
+      "self",
+      "words"
+    ],
+    "search_tokens": [
+      "self",
+      "tokens"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "tokens",
+      "head_position",
+      "tail_position",
+      "max_len"
+    ]
+  },
+  "TaskSet": {
+    "__init__": [
+      "self",
+      "label_names_data",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "label_to_name": [
+      "self",
+      "label"
+    ],
+    "transfer_backend": [
+      "self",
+      "target_backend"
+    ],
+    "_generate_label": [
+      "self",
+      "label_names_data"
+    ],
+    "_sample_support_query": [
+      "self"
+    ]
+  },
+  "Omniglot": {
+    "background_url": [],
+    "evaluation_url": [],
+    "background_md5": [],
+    "evaluation_md5": [],
+    "background_folder": [],
+    "evaluation_folder": [],
+    "__init__": [
+      "self",
+      "mode",
+      "image_size",
+      "root",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "class_num": [
+      "self",
+      "mode"
+    ],
+    "split_task": [
+      "self",
+      "shuffle",
+      "train_class_num",
+      "valid_class_num"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_and_download_file": [
+      "self"
+    ],
+    "_load_image_label": [
+      "self"
+    ],
+    "_get_image_by_name": [
+      "self",
+      "label_name",
+      "image_name",
+      "rotate_degree",
+      "backend"
+    ]
+  },
+  "CVDataset": {
+    "__init__": [
+      "self",
+      "module_name",
+      "mode",
+      "root",
+      "image_size",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ]
+  },
+  "MiniImageNet": {
+    "tar_url": [],
+    "tar_name": [],
+    "tar_md5": [],
+    "file_name": [],
+    "file_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_files": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ]
+  },
+  "NLPDataset": {
+    "__init__": [
+      "self",
+      "module_name",
+      "mode",
+      "root",
+      "max_len",
+      "backend",
+      "vector_initializer"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ]
+  },
+  "CifarFS": {
+    "zip_url": [],
+    "zip_name": [],
+    "zip_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "image_size",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_files": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ],
+    "_get_image_by_name": [
+      "self",
+      "label_name",
+      "image_name",
+      "backend"
+    ]
+  },
+  "mol_to_graph_data_obj_simple": [
+    "mol"
+  ],
+  "load_dataset": [
+    "dataset",
+    "type"
+  ],
+  "MoleculeDataset": {
+    "__init__": [
+      "self",
+      "root",
+      "transform",
+      "pre_transform",
+      "pre_filter",
+      "dataset",
+      "empty"
+    ],
+    "read": [
+      "self"
+    ],
+    "get_train_data_sample": [
+      "self",
+      "task",
+      "n_shot_train",
+      "n_query"
+    ],
+    "get_test_data_sample": [
+      "self",
+      "task",
+      "n_shot_test",
+      "n_query",
+      "update_step_test"
+    ],
+    "sample_meta_datasets": [
+      "self",
+      "dataset",
+      "task",
+      "n_shot",
+      "n_query"
+    ],
+    "sample_test_datasets": [
+      "self",
+      "dataset",
+      "task",
+      "n_shot",
+      "n_query",
+      "update_step"
+    ]
+  },
+  "_load_dataset": [
+    "input_path"
+  ],
+  "obatin_train_test_tasks": [
+    "dataset"
+  ],
+  "obtain_distr_list": [
+    "dataset"
+  ],
+  "sample_inds": [
+    "data",
+    "size"
+  ],
+  "sample_meta_datasets": [
+    "data",
+    "dataset",
+    "task",
+    "n_shot",
+    "n_query"
+  ],
+  "sample_test_datasets": [
+    "data",
+    "dataset",
+    "task",
+    "n_shot",
+    "n_query",
+    "update_step"
+  ],
+  "FewRel": {
+    "file_name": [],
+    "file_url": [],
+    "file_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "max_len",
+      "backend",
+      "vector_initializer"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "get_label_name": [
+      "self",
+      "label"
+    ],
+    "_check_and_download_file": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ],
+    "_transfer_list": [
+      "self"
+    ]
+  },
+  "CubFS": {
+    "zip_url": [],
+    "zip_name": [],
+    "zip_md5": [],
+    "file_name": [],
+    "file_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_files": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ]
+  },
+  "FC100": {
+    "zip_url": [],
+    "zip_name": [],
+    "zip_md5": [],
+    "file_name": [],
+    "file_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_files": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ]
+  },
+  "main": [
+    "file_name"
+  ],
+  "TieredImageNet": {
+    "tar_url": [],
+    "tar_name": [],
+    "tar_md5": [],
+    "image_file": [],
+    "image_md5": [],
+    "label_file": [],
+    "label_md5": [],
+    "__init__": [
+      "self",
+      "mode",
+      "root",
+      "transform",
+      "backend"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "sample_task_set": [
+      "self",
+      "ways",
+      "shots",
+      "query_num"
+    ],
+    "_check_files": [
+      "self"
+    ],
+    "_load_data": [
+      "self"
+    ]
+  },
+  "classification_acc": [
+    "predict",
+    "label"
+  ],
+  "_current_path": [],
+  "PACKAGE_HOME": [],
+  "DATA_HOME": [],
+  "process_root": [
+    "root",
+    "module_name"
+  ],
+  "download_url": [
+    "dir_name",
+    "url",
+    "md5"
+  ],
+  "check_file_exist": [
+    "dir_name",
+    "file_name",
+    "md5"
+  ],
+  "check_md5": [
+    "file_path",
+    "md5"
+  ],
+  "decompress": [
+    "file_path",
+    "dst_dir"
+  ],
+  "list_dir": [
+    "dir_name",
+    "prefix"
+  ],
+  "list_files": [
+    "root",
+    "suffix",
+    "prefix"
+  ],
+  "clear_file": [
+    "file_path"
+  ],
+  "get_info_str": [],
+  "print_training_info": [
+    "iteration",
+    "train_loss",
+    "train_acc",
+    "valid_loss",
+    "valid_acc",
+    "report_file",
+    "info"
+  ],
+  "_clone_ordered_dict": [
+    "ordered_dict",
+    "memo"
+  ],
+  "clone_model": [
+    "model",
+    "memo"
+  ],
+  "manual_gradient_descent": [
+    "model",
+    "lr",
+    "loss",
+    "approximate",
+    "memo"
+  ],
+  "count_model_params": [
+    "model"
+  ]
+}

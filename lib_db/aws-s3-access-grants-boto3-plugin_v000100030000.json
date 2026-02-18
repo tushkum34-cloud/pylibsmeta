@@ -1,0 +1,200 @@
+{
+  "S3AccessGrantsPlugin": {
+    "request": [],
+    "access_denied_cache": [],
+    "access_grants_cache": [],
+    "bucket_region_cache": [],
+    "client_dict": [],
+    "session_config": [],
+    "__init__": [
+      "self",
+      "s3_client",
+      "fallback_enabled",
+      "customer_session"
+    ],
+    "register": [
+      "self"
+    ],
+    "_get_access_grants_credentials": [
+      "self",
+      "operation_name",
+      "request"
+    ],
+    "_should_fallback_to_default_credentials_for_this_case": [
+      "self",
+      "e"
+    ],
+    "_get_s3_prefix": [
+      "self",
+      "operation_name",
+      "request"
+    ],
+    "_get_common_prefix_for_multiple_prefixes": [
+      "self",
+      "prefixes"
+    ],
+    "_get_s3_control_client_for_region": [
+      "self",
+      "bucket_name"
+    ],
+    "_get_value_from_cache": [
+      "self",
+      "cache_key",
+      "s3_control_client",
+      "requester_account_id"
+    ]
+  },
+  "initialize_client_plugin": [
+    "client"
+  ],
+  "is_valid_boto3_s3_client": [
+    "client"
+  ],
+  "IllegalArgumentException": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "UnsupportedOperationError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "_s3_operation_to_permission_map": [],
+  "get_permission_for_s3_operation": [
+    "operation"
+  ],
+  "DEFAULT_ACCESS_GRANTS_CACHE_SIZE": [],
+  "MAX_LIMIT_ACCESS_GRANTS_CACHE_SIZE": [],
+  "GET_DATA_ACCESS_DURATION": [],
+  "MAX_GET_DATA_ACCESS_DURATION": [],
+  "CACHE_EXPIRATION_TIME_PERCENTAGE": [],
+  "AccessGrantsCache": {
+    "access_grants_cache": [],
+    "account_id_resolver_cache": [],
+    "__init__": [
+      "self",
+      "cache_size",
+      "duration"
+    ],
+    "_search_credentials_at_prefix_level": [
+      "self",
+      "cache_key"
+    ],
+    "_search_credentials_at_character_level": [
+      "self",
+      "cache_key"
+    ],
+    "_get_credentials_from_service": [
+      "self",
+      "s3_control_client",
+      "cache_key",
+      "account_id"
+    ],
+    "_process_matched_target": [
+      "self",
+      "matched_grant_target"
+    ],
+    "get_credentials": [
+      "self",
+      "s3_control_client",
+      "cache_key",
+      "account_id",
+      "access_denied_cache"
+    ],
+    "_put_value_in_cache": [
+      "self",
+      "cache_key",
+      "value"
+    ],
+    "_get_value_from_cache": [
+      "self",
+      "cache_key"
+    ]
+  },
+  "DEFAULT_BUCKET_REGION_CACHE_SIZE": [],
+  "DEFAULT_BUCKET_REGION_CACHE_TTL": [],
+  "BucketRegionResolverCache": {
+    "bucket_region_resolver_cache": [],
+    "__init__": [
+      "self",
+      "cache_size",
+      "cache_ttl"
+    ],
+    "_resolve_from_service": [
+      "self",
+      "s3_client",
+      "bucket"
+    ],
+    "resolve": [
+      "self",
+      "s3_client",
+      "bucket"
+    ]
+  },
+  "CacheKey": {
+    "__init__": [
+      "self",
+      "credentials",
+      "permission",
+      "s3_prefix",
+      "cache_key"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "ACCESS_DENIED_CACHE_SIZE": [],
+  "ACCESS_DENIED_CACHE_TTL": [],
+  "AccessDeniedCache": {
+    "access_denied_cache": [],
+    "__init__": [
+      "self",
+      "cache_size",
+      "ttl"
+    ],
+    "put_value_in_cache": [
+      "self",
+      "key",
+      "value"
+    ],
+    "get_value_from_cache": [
+      "self",
+      "key"
+    ]
+  },
+  "DEFAULT_ACCOUNT_ID_CACHE_SIZE": [],
+  "DEFAULT_TTL": [],
+  "MAX_LIMIT_ACCOUNT_ID_CACHE_SIZE": [],
+  "MAX_LIMIT_TTL": [],
+  "AccountIdResolverCache": {
+    "account_id_resolver_cache": [],
+    "__init__": [
+      "self",
+      "cache_size",
+      "cache_ttl"
+    ],
+    "_get_bucket_name": [
+      "self",
+      "s3_prefix"
+    ],
+    "_resolve_from_service": [
+      "self",
+      "s3_control_client",
+      "account_id",
+      "s3_prefix"
+    ],
+    "resolve": [
+      "self",
+      "s3_control_client",
+      "requester_account_id",
+      "s3_prefix"
+    ]
+  }
+}

@@ -1,0 +1,1125 @@
+{
+  "OP_CODES": [],
+  "CODE_OPS": [],
+  "Script": {
+    "__init__": [
+      "self",
+      "script"
+    ],
+    "copy": [
+      "cls",
+      "script"
+    ],
+    "_op_push_data": [
+      "self",
+      "data"
+    ],
+    "_push_integer": [
+      "self",
+      "integer"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "to_hex": [
+      "self"
+    ],
+    "from_raw": [
+      "scriptrawhex",
+      "has_segwit"
+    ],
+    "get_script": [
+      "self"
+    ],
+    "to_p2sh_script_pub_key": [
+      "self"
+    ],
+    "to_p2wsh_script_pub_key": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "_other"
+    ]
+  },
+  "HDWallet": {
+    "__init__": [
+      "self",
+      "xprivate_key",
+      "path",
+      "mnemonic"
+    ],
+    "from_mnemonic": [
+      "cls",
+      "mnemonic"
+    ],
+    "from_xprivate_key": [
+      "cls",
+      "xprivate_key",
+      "path"
+    ],
+    "from_path": [
+      "self",
+      "path"
+    ],
+    "get_private_key": [
+      "self"
+    ]
+  },
+  "PSBTInput": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "PSBTOutput": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "PSBT": {
+    "MAGIC": [],
+    "VERSION": [],
+    "_safe_to_bytes": [
+      "self",
+      "obj"
+    ],
+    "_safe_serialize_transaction": [
+      "self",
+      "tx"
+    ],
+    "__init__": [
+      "self",
+      "unsigned_tx"
+    ],
+    "from_base64": [
+      "cls",
+      "psbt_str"
+    ],
+    "from_bytes": [
+      "cls",
+      "psbt_bytes"
+    ],
+    "to_base64": [
+      "self"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "add_input": [
+      "self",
+      "tx_input",
+      "psbt_input"
+    ],
+    "add_output": [
+      "self",
+      "tx_output",
+      "psbt_output"
+    ],
+    "sign": [
+      "self",
+      "private_key",
+      "input_index",
+      "sighash_type"
+    ],
+    "sign_input": [
+      "self",
+      "input_index",
+      "private_key",
+      "sighash_type"
+    ],
+    "_get_signature_for_input": [
+      "self",
+      "input_index",
+      "private_key",
+      "sighash_type"
+    ],
+    "_is_p2pkh_script": [
+      "self",
+      "script"
+    ],
+    "_is_p2wpkh_script": [
+      "self",
+      "script"
+    ],
+    "_is_p2tr_script": [
+      "self",
+      "script_pubkey"
+    ],
+    "_is_input_finalized": [
+      "self",
+      "psbt_input"
+    ],
+    "_apply_final_fields": [
+      "self",
+      "tx_input",
+      "input_data"
+    ],
+    "_validate_final_tx": [
+      "self",
+      "final_tx"
+    ],
+    "_serialize_transaction_without_witness": [
+      "self",
+      "tx"
+    ],
+    "combine": [
+      "self",
+      "other"
+    ],
+    "combine_psbts": [
+      "self",
+      "other_psbts"
+    ],
+    "finalize": [
+      "self",
+      "validate"
+    ],
+    "finalize_input": [
+      "self",
+      "input_index"
+    ],
+    "_finalize_input": [
+      "self",
+      "input_index"
+    ],
+    "_finalize_p2pkh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2wpkh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2sh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2sh_p2wpkh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2sh_p2wsh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2wsh": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_p2tr": [
+      "self",
+      "psbt_input"
+    ],
+    "_finalize_script": [
+      "self",
+      "psbt_input",
+      "script",
+      "is_witness"
+    ],
+    "_parse_global_section": [
+      "self",
+      "stream"
+    ],
+    "_parse_input_section": [
+      "self",
+      "stream",
+      "input_index"
+    ],
+    "_parse_output_section": [
+      "self",
+      "stream",
+      "output_index"
+    ],
+    "_serialize_global_section": [
+      "self",
+      "result"
+    ],
+    "_read_key_value_pair": [
+      "self",
+      "stream"
+    ],
+    "_serialize_input_section": [
+      "self",
+      "result",
+      "input_index"
+    ],
+    "_serialize_output_section": [
+      "self",
+      "result",
+      "output_index"
+    ],
+    "_write_key_value_pair": [
+      "self",
+      "result",
+      "key_type",
+      "key_data",
+      "value_data"
+    ]
+  },
+  "PrivateKey": {
+    "__init__": [
+      "self",
+      "wif",
+      "secret_exponent",
+      "b"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "from_wif": [
+      "cls",
+      "wif"
+    ],
+    "from_bytes": [
+      "cls",
+      "b"
+    ],
+    "_from_bytes": [
+      "self",
+      "b"
+    ],
+    "_from_wif": [
+      "self",
+      "wif"
+    ],
+    "to_wif": [
+      "self",
+      "compressed"
+    ],
+    "sign_message": [
+      "self",
+      "message",
+      "compressed"
+    ],
+    "sign_input": [
+      "self",
+      "tx",
+      "txin_index",
+      "script",
+      "sighash"
+    ],
+    "sign_segwit_input": [
+      "self",
+      "tx",
+      "txin_index",
+      "script",
+      "amount",
+      "sighash"
+    ],
+    "sign_taproot_input": [
+      "self",
+      "tx",
+      "txin_index",
+      "utxo_scripts",
+      "amounts",
+      "script_path",
+      "tapleaf_script",
+      "tapleaf_scripts",
+      "sighash",
+      "tweak"
+    ],
+    "_sign_input": [
+      "self",
+      "tx_digest",
+      "sighash"
+    ],
+    "_sign_taproot_input": [
+      "self",
+      "tx_digest",
+      "sighash",
+      "scripts",
+      "tweak"
+    ],
+    "get_public_key": [
+      "self"
+    ]
+  },
+  "PublicKey": {
+    "__init__": [
+      "self",
+      "hex_str",
+      "message",
+      "signature"
+    ],
+    "from_hex": [
+      "cls",
+      "hex_str"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "to_hex": [
+      "self",
+      "compressed"
+    ],
+    "to_x_only_hex": [
+      "self"
+    ],
+    "to_taproot_hex": [
+      "self",
+      "scripts"
+    ],
+    "is_y_even": [
+      "self"
+    ],
+    "from_message_signature": [
+      "cls",
+      "message",
+      "signature"
+    ],
+    "verify_message": [
+      "cls",
+      "address",
+      "signature",
+      "message"
+    ],
+    "verify": [
+      "self",
+      "signature",
+      "message"
+    ],
+    "_to_hash160": [
+      "self",
+      "compressed"
+    ],
+    "to_hash160": [
+      "self",
+      "compressed"
+    ],
+    "get_address": [
+      "self",
+      "compressed"
+    ],
+    "get_segwit_address": [
+      "self"
+    ],
+    "get_taproot_address": [
+      "self",
+      "scripts"
+    ]
+  },
+  "Address": {
+    "__init__": [
+      "self",
+      "address",
+      "hash160",
+      "script"
+    ],
+    "from_address": [
+      "cls",
+      "address"
+    ],
+    "from_hash160": [
+      "cls",
+      "hash160"
+    ],
+    "from_script": [
+      "cls",
+      "script"
+    ],
+    "_address_to_hash160": [
+      "self",
+      "address"
+    ],
+    "_script_to_hash160": [
+      "self",
+      "script"
+    ],
+    "_is_hash160_valid": [
+      "self",
+      "hash160"
+    ],
+    "_is_address_valid": [
+      "self",
+      "address"
+    ],
+    "to_hash160": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ],
+    "to_string": [
+      "self"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ]
+  },
+  "P2pkhAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "hash160"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ]
+  },
+  "P2shAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "hash160",
+      "script"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ]
+  },
+  "SegwitAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "witness_program",
+      "script",
+      "version"
+    ],
+    "from_address": [
+      "cls",
+      "address"
+    ],
+    "from_witness_program": [
+      "cls",
+      "witness_program"
+    ],
+    "from_script": [
+      "cls",
+      "script"
+    ],
+    "_address_to_hash": [
+      "self",
+      "address"
+    ],
+    "_script_to_hash": [
+      "self",
+      "script"
+    ],
+    "to_witness_program": [
+      "self"
+    ],
+    "to_string": [
+      "self"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ]
+  },
+  "P2wpkhAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "witness_program",
+      "version"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ]
+  },
+  "P2wshAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "witness_program",
+      "script",
+      "version"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ]
+  },
+  "P2trAddress": {
+    "__init__": [
+      "self",
+      "address",
+      "witness_program",
+      "version",
+      "is_odd"
+    ],
+    "to_script_pub_key": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ],
+    "is_odd": [
+      "self"
+    ]
+  },
+  "main": [],
+  "Secp256k1Params": {
+    "_p": [],
+    "_a": [],
+    "_b": [],
+    "_Gx": [],
+    "_Gy": [],
+    "_order": [],
+    "_field": [],
+    "_curve": [],
+    "_G": []
+  },
+  "ControlBlock": {
+    "__init__": [
+      "self",
+      "pubkey",
+      "scripts",
+      "index",
+      "is_odd"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "to_hex": [
+      "self"
+    ]
+  },
+  "_generate_merkle_path": [
+    "all_leafs",
+    "target_leaf_index"
+  ],
+  "get_tag_hashed_merkle_root": [
+    "scripts"
+  ],
+  "to_satoshis": [
+    "num"
+  ],
+  "prepend_compact_size": [
+    "data"
+  ],
+  "encode_varint": [
+    "i"
+  ],
+  "parse_compact_size": [
+    "data"
+  ],
+  "get_transaction_length": [
+    "data"
+  ],
+  "is_address_bech32": [
+    "address"
+  ],
+  "vi_to_int": [
+    "byteint"
+  ],
+  "add_magic_prefix": [
+    "message"
+  ],
+  "tagged_hash": [
+    "data",
+    "tag"
+  ],
+  "calculate_tweak": [
+    "pubkey",
+    "scripts"
+  ],
+  "tapleaf_tagged_hash": [
+    "script"
+  ],
+  "tapbranch_tagged_hash": [
+    "thashed_a",
+    "thashed_b"
+  ],
+  "negate_privkey": [
+    "key"
+  ],
+  "tweak_taproot_pubkey": [
+    "internal_pubkey",
+    "tweak"
+  ],
+  "tweak_taproot_privkey": [
+    "privkey",
+    "tweak"
+  ],
+  "b_to_h": [
+    "b"
+  ],
+  "h_to_b": [
+    "h"
+  ],
+  "h_to_i": [
+    "hex_str"
+  ],
+  "i_to_h64": [
+    "i"
+  ],
+  "b_to_i": [
+    "b"
+  ],
+  "i_to_b32": [
+    "i"
+  ],
+  "i_to_b": [
+    "i"
+  ],
+  "NETWORK": [],
+  "networks": [],
+  "setup": [
+    "network"
+  ],
+  "get_network": [],
+  "is_mainnet": [],
+  "is_testnet": [],
+  "is_testnet4": [],
+  "is_signet": [],
+  "is_regtest": [],
+  "__version__": [],
+  "DEBUG": [],
+  "p": [],
+  "n": [],
+  "G": [],
+  "Point": [],
+  "is_infinite": [
+    "P"
+  ],
+  "x": [
+    "P"
+  ],
+  "y": [
+    "P"
+  ],
+  "point_add": [
+    "P1",
+    "P2"
+  ],
+  "point_mul": [
+    "P",
+    "n"
+  ],
+  "bytes_from_int": [
+    "x"
+  ],
+  "bytes_from_point": [
+    "P"
+  ],
+  "xor_bytes": [
+    "b0",
+    "b1"
+  ],
+  "lift_x": [
+    "x"
+  ],
+  "int_from_bytes": [
+    "b"
+  ],
+  "hash_sha256": [
+    "b"
+  ],
+  "has_even_y": [
+    "P"
+  ],
+  "pubkey_gen": [
+    "seckey"
+  ],
+  "full_pubkey_gen": [
+    "seckey"
+  ],
+  "schnorr_sign": [
+    "msg",
+    "seckey",
+    "aux_rand"
+  ],
+  "schnorr_verify": [
+    "msg",
+    "pubkey",
+    "sig"
+  ],
+  "pretty": [
+    "v"
+  ],
+  "debug_print_vars": [],
+  "TxInput": {
+    "__init__": [
+      "self",
+      "txid",
+      "txout_index",
+      "script_sig",
+      "sequence"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "from_raw": [
+      "txinputrawhex",
+      "cursor",
+      "has_segwit"
+    ],
+    "copy": [
+      "cls",
+      "txin"
+    ]
+  },
+  "TxWitnessInput": {
+    "__init__": [
+      "self",
+      "stack"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "copy": [
+      "cls",
+      "txwin"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "TxOutput": {
+    "__init__": [
+      "self",
+      "amount",
+      "script_pubkey"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "from_raw": [
+      "txoutputrawhex",
+      "cursor",
+      "has_segwit"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "copy": [
+      "cls",
+      "txout"
+    ]
+  },
+  "Sequence": {
+    "__init__": [
+      "self",
+      "seq_type",
+      "value",
+      "is_type_block"
+    ],
+    "for_input_sequence": [
+      "self"
+    ],
+    "for_script": [
+      "self"
+    ]
+  },
+  "Locktime": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "for_transaction": [
+      "self"
+    ]
+  },
+  "Transaction": {
+    "__init__": [
+      "self",
+      "inputs",
+      "outputs",
+      "locktime",
+      "version",
+      "has_segwit",
+      "witnesses"
+    ],
+    "from_raw": [
+      "rawtxhex"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "copy": [
+      "cls",
+      "tx"
+    ],
+    "set_witness": [
+      "self",
+      "txin_index",
+      "witness"
+    ],
+    "get_transaction_digest": [
+      "self",
+      "txin_index",
+      "script",
+      "sighash"
+    ],
+    "get_transaction_segwit_digest": [
+      "self",
+      "txin_index",
+      "script",
+      "amount",
+      "sighash"
+    ],
+    "get_transaction_taproot_digest": [
+      "self",
+      "txin_index",
+      "script_pubkeys",
+      "amounts",
+      "ext_flag",
+      "script",
+      "leaf_ver",
+      "sighash"
+    ],
+    "to_bytes": [
+      "self",
+      "has_segwit"
+    ],
+    "get_txid": [
+      "self"
+    ],
+    "get_wtxid": [
+      "self"
+    ],
+    "_get_hash": [
+      "self"
+    ],
+    "get_size": [
+      "self"
+    ],
+    "get_vsize": [
+      "self"
+    ],
+    "to_hex": [
+      "self"
+    ],
+    "serialize": [
+      "self"
+    ]
+  },
+  "NodeProxy": {
+    "__init__": [
+      "self",
+      "rpcuser",
+      "rpcpassword",
+      "host",
+      "port"
+    ],
+    "get_proxy": [
+      "self"
+    ]
+  },
+  "NETWORK_DEFAULT_PORTS": [],
+  "NETWORK_WIF_PREFIXES": [],
+  "NETWORK_P2PKH_PREFIXES": [],
+  "NETWORK_P2SH_PREFIXES": [],
+  "NETWORK_SEGWIT_PREFIXES": [],
+  "P2PKH_ADDRESS": [],
+  "P2SH_ADDRESS": [],
+  "P2WPKH_ADDRESS_V0": [],
+  "P2WSH_ADDRESS_V0": [],
+  "P2TR_ADDRESS_V1": [],
+  "TAPROOT_SIGHASH_ALL": [],
+  "SIGHASH_ALL": [],
+  "SIGHASH_NONE": [],
+  "SIGHASH_SINGLE": [],
+  "SIGHASH_ANYONECANPAY": [],
+  "TYPE_ABSOLUTE_TIMELOCK": [],
+  "TYPE_RELATIVE_TIMELOCK": [],
+  "TYPE_REPLACE_BY_FEE": [],
+  "DEFAULT_TX_LOCKTIME": [],
+  "EMPTY_TX_SEQUENCE": [],
+  "FINAL_TX_SEQUENCE": [],
+  "DEFAULT_TX_SEQUENCE": [],
+  "ABSOLUTE_TIMELOCK_SEQUENCE": [],
+  "REPLACE_BY_FEE_SEQUENCE": [],
+  "LEAF_VERSION_TAPSCRIPT": [],
+  "DEFAULT_TX_VERSION": [],
+  "SATOSHIS_PER_BITCOIN": [],
+  "NEGATIVE_SATOSHI": [],
+  "HEADER_SIZE": [],
+  "BLOCK_MAGIC_NUMBER": [],
+  "Encoding": {
+    "BECH32": [],
+    "BECH32M": []
+  },
+  "CHARSET": [],
+  "BECH32M_CONST": [],
+  "bech32_polymod": [
+    "values"
+  ],
+  "bech32_hrp_expand": [
+    "hrp"
+  ],
+  "bech32_verify_checksum": [
+    "hrp",
+    "data"
+  ],
+  "bech32_create_checksum": [
+    "hrp",
+    "data",
+    "spec"
+  ],
+  "bech32_encode": [
+    "hrp",
+    "data",
+    "spec"
+  ],
+  "bech32_decode": [
+    "bech"
+  ],
+  "convertbits": [
+    "data",
+    "frombits",
+    "tobits",
+    "pad"
+  ],
+  "decode": [
+    "hrp",
+    "addr"
+  ],
+  "encode": [
+    "hrp",
+    "witver",
+    "witprog"
+  ],
+  "BlockHeader": {
+    "__init__": [
+      "self",
+      "version",
+      "previous_block_hash",
+      "merkle_root",
+      "timestamp",
+      "target_bits",
+      "nonce"
+    ],
+    "from_raw": [
+      "rawhexdata"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "get_version": [
+      "self"
+    ],
+    "get_previous_block_hash": [
+      "self"
+    ],
+    "get_merkle_root": [
+      "self"
+    ],
+    "get_timestamp": [
+      "self"
+    ],
+    "get_target_bits": [
+      "self"
+    ],
+    "get_nonce": [
+      "self"
+    ],
+    "format_timestamp": [
+      "self"
+    ],
+    "serialize_header": [
+      "self"
+    ],
+    "get_block_hash": [
+      "self"
+    ]
+  },
+  "Block": {
+    "__init__": [
+      "self",
+      "magic",
+      "block_size",
+      "header",
+      "transaction_count",
+      "transactions"
+    ],
+    "from_raw": [
+      "rawhexdata"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "get_magic_bytes": [
+      "self"
+    ],
+    "get_block_size": [
+      "self"
+    ],
+    "get_block_header": [
+      "self"
+    ],
+    "get_transactions": [
+      "self"
+    ],
+    "get_transactions_count": [
+      "self"
+    ],
+    "get_coinbase_transaction": [
+      "self"
+    ],
+    "get_block_reward": [
+      "self"
+    ],
+    "get_witness_transactions": [
+      "self"
+    ],
+    "get_legacy_transactions": [
+      "self"
+    ]
+  },
+  "ML": [],
+  "MR": [],
+  "RL": [],
+  "RR": [],
+  "KL": [],
+  "KR": [],
+  "fi": [
+    "x",
+    "y",
+    "z",
+    "i"
+  ],
+  "rol": [
+    "x",
+    "i"
+  ],
+  "compress": [
+    "h0",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "block"
+  ],
+  "ripemd160": [
+    "data"
+  ]
+}

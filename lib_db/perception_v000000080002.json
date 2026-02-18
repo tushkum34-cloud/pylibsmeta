@@ -1,0 +1,950 @@
+{
+  "LOGGER": [],
+  "DEFAULT_MAX_FEATURES": [],
+  "DEFAULT_OVERLAP": [],
+  "DEFAULT_MATCH_PCT": [],
+  "DEFAULT_INTERSECTION": [],
+  "DEFAULT_INLIERS": [],
+  "DEFAULT_MAX_SIZE": [],
+  "DEFAULT_MIN_FEATURES": [],
+  "DEFAULT_THRESHOLD": [],
+  "DEFAULT_SIFT_THRESHOLD": [],
+  "DEFAULT_AKAZE_THRESHOLD": [],
+  "DEFAULT_RATIO": [],
+  "DEFAULT_SIFT_RATIO": [],
+  "DEFAULT_AKAZE_RATIO": [],
+  "Descriptors": {},
+  "MatchStats": {},
+  "LocalHasher": {
+    "grayscale": [],
+    "__init__": [
+      "self",
+      "max_features",
+      "ratio",
+      "threshold",
+      "overlap",
+      "validation_match",
+      "validation_inliers",
+      "validation_intersection"
+    ],
+    "compute": [
+      "self",
+      "image"
+    ],
+    "validate_match": [
+      "self",
+      "descriptor1",
+      "descriptor2",
+      "minimum_match",
+      "minimum_intersection",
+      "minimum_inliers"
+    ]
+  },
+  "SIFT": {
+    "name": [],
+    "__init__": [
+      "self",
+      "max_features",
+      "ratio",
+      "threshold"
+    ]
+  },
+  "AKAZE": {
+    "name": [],
+    "__init__": [
+      "self",
+      "max_features",
+      "ratio",
+      "threshold"
+    ]
+  },
+  "load_and_preprocess": [
+    "filepath",
+    "max_size",
+    "grayscale"
+  ],
+  "generate_image_descriptors": [
+    "filepath",
+    "hasher",
+    "min_features",
+    "max_size"
+  ],
+  "build_reference_df": [
+    "filepaths",
+    "hasher",
+    "min_features",
+    "max_size",
+    "show_progress"
+  ],
+  "hasher_name": [
+    "df"
+  ],
+  "check_hasher": [
+    "df1",
+    "df2"
+  ],
+  "compute_pairs": [
+    "match_df",
+    "query_df",
+    "hasher",
+    "pct_probe",
+    "use_gpu",
+    "faiss_cache_path",
+    "show_progress"
+  ],
+  "compute_area": [
+    "box"
+  ],
+  "compute_intersection": [
+    "kps",
+    "filter_arr"
+  ],
+  "compute_minimum_intersection": [
+    "kp1",
+    "kp2",
+    "filter_arr1",
+    "filter_arr2"
+  ],
+  "deduplicate_sift_dfs": [],
+  "deduplicate_dfs": [
+    "match_df",
+    "query_df",
+    "coarse_pct_probe",
+    "max_workers",
+    "use_gpu",
+    "faiss_cache_path",
+    "verbose",
+    "hasher",
+    "show_progress"
+  ],
+  "deduplicate": [
+    "filepaths_or_reference_df",
+    "query_filepaths_or_df",
+    "max_features",
+    "min_features",
+    "max_size",
+    "hasher",
+    "show_progress"
+  ],
+  "flatten": [
+    "list_of_lists"
+  ],
+  "__version__": [],
+  "_multiple_hashes_for_ids": [
+    "hashes"
+  ],
+  "deduplicate_hashes": [
+    "hashes",
+    "threshold",
+    "hash_format",
+    "hasher",
+    "hash_length",
+    "hash_dtype",
+    "distance_metric",
+    "progress"
+  ],
+  "SaferMatcher": {
+    "__init__": [
+      "self",
+      "api_key",
+      "username",
+      "password",
+      "url",
+      "hasher",
+      "hasher_api_id",
+      "quality_threshold"
+    ],
+    "match": [
+      "self",
+      "images"
+    ]
+  },
+  "SIZES": [],
+  "get_low_detail_image": [],
+  "LOW_DETAIL_IMAGE": [],
+  "file_manager": [],
+  "DEFAULT_TEST_IMAGES": [],
+  "DEFAULT_TEST_LOGOS": [],
+  "DEFAULT_TEST_VIDEOS": [],
+  "test_opencv_hasher": [
+    "hasher",
+    "image1",
+    "image2"
+  ],
+  "hash_dicts_to_df": [
+    "hash_dicts",
+    "returns_multiple"
+  ],
+  "test_hasher_parallelization": [
+    "hasher",
+    "test_filepaths"
+  ],
+  "test_video_hasher_integrity": [
+    "hasher",
+    "test_videos"
+  ],
+  "test_image_hasher_integrity": [
+    "hasher",
+    "pil_opencv_threshold",
+    "transform_threshold",
+    "test_images",
+    "opencv_hasher"
+  ],
+  "log": [],
+  "create_mask": [
+    "transformed_guids",
+    "noop_guids"
+  ],
+  "compute_threshold_precision_recall": [
+    "pos",
+    "neg",
+    "precision_threshold"
+  ],
+  "Filterable": {
+    "__init__": [
+      "self",
+      "df"
+    ],
+    "categories": [
+      "self"
+    ],
+    "filter": [
+      "self"
+    ]
+  },
+  "Saveable": {
+    "load": [
+      "cls",
+      "path_to_zip_or_directory",
+      "storage_dir",
+      "verify_md5"
+    ],
+    "save": [
+      "self",
+      "path_to_zip_or_directory"
+    ]
+  },
+  "BenchmarkHashes": {
+    "expected_columns": [],
+    "__init__": [
+      "self",
+      "df"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__radd__": [
+      "self",
+      "other"
+    ],
+    "load": [
+      "cls",
+      "filepath"
+    ],
+    "save": [
+      "self",
+      "filepath"
+    ],
+    "compute_metrics": [
+      "self",
+      "custom_distance_metrics"
+    ],
+    "show_histograms": [
+      "self",
+      "grouping",
+      "precision_threshold"
+    ],
+    "compute_threshold_recall": [
+      "self",
+      "precision_threshold",
+      "grouping"
+    ]
+  },
+  "BenchmarkDataset": {
+    "expected_columns": [],
+    "from_tuples": [
+      "cls",
+      "files"
+    ],
+    "transform": [
+      "self",
+      "transforms",
+      "storage_dir",
+      "errors"
+    ]
+  },
+  "BenchmarkTransforms": {
+    "expected_columns": [],
+    "compute_hashes": [
+      "self",
+      "hashers",
+      "max_workers"
+    ]
+  },
+  "apply_watermark": [
+    "watermark",
+    "alpha",
+    "size"
+  ],
+  "_process_row": [
+    "row",
+    "hashers",
+    "framerates"
+  ],
+  "BenchmarkVideoDataset": {
+    "transform": [
+      "self",
+      "transforms",
+      "storage_dir",
+      "errors"
+    ]
+  },
+  "BenchmarkVideoTransforms": {
+    "expected_columns": [],
+    "compute_hashes": [
+      "self",
+      "hashers",
+      "max_workers"
+    ]
+  },
+  "__all__": [],
+  "probe": [
+    "filepath"
+  ],
+  "sanitize_output_filepath": [
+    "input_filepath",
+    "output_filepath",
+    "output_ext"
+  ],
+  "get_simple_transform": [
+    "width",
+    "height",
+    "pad",
+    "codec",
+    "clip_pct",
+    "clip_s",
+    "sar",
+    "fps",
+    "output_ext"
+  ],
+  "get_slideshow_transform": [
+    "frame_input_rate",
+    "frame_output_rate",
+    "max_frames",
+    "offset"
+  ],
+  "get_black_frame_padding_transform": [
+    "duration_s",
+    "duration_pct"
+  ],
+  "BenchmarkImageTransforms": {
+    "compute_hashes": [
+      "self",
+      "hashers",
+      "max_workers"
+    ]
+  },
+  "BenchmarkImageDataset": {
+    "deduplicate": [
+      "self",
+      "hasher",
+      "threshold",
+      "isometric"
+    ],
+    "transform": [
+      "self",
+      "transforms",
+      "storage_dir",
+      "errors"
+    ]
+  },
+  "QueryInput": {},
+  "QueryMatch": {},
+  "TuningFailure": {},
+  "QueryDecodingFailure": {},
+  "build_query": [
+    "table",
+    "ids",
+    "paramstyle",
+    "columns"
+  ],
+  "query_by_id": [
+    "con",
+    "table",
+    "ids",
+    "paramstyle",
+    "extra_columns"
+  ],
+  "ApproximateNearestNeighbors": {
+    "__init__": [
+      "self",
+      "con",
+      "table",
+      "paramstyle",
+      "index",
+      "hash_length",
+      "metadata_columns",
+      "dtype",
+      "distance_metric"
+    ],
+    "from_database": [
+      "cls",
+      "con",
+      "table",
+      "paramstyle",
+      "hash_length",
+      "ids_train",
+      "train_size",
+      "chunksize",
+      "metadata_columns",
+      "index",
+      "gpu",
+      "dtype",
+      "distance_metric"
+    ],
+    "query_by_id": [
+      "self",
+      "ids",
+      "include_metadata",
+      "include_hashes"
+    ],
+    "string_to_vector": [
+      "self",
+      "s",
+      "hash_format"
+    ],
+    "vector_to_string": [
+      "self",
+      "vector",
+      "hash_format"
+    ],
+    "search": [
+      "self",
+      "queries",
+      "threshold",
+      "threshold_func",
+      "hash_format",
+      "k"
+    ],
+    "tune": [
+      "self",
+      "n_query",
+      "min_recall",
+      "max_noise"
+    ],
+    "save": [
+      "self",
+      "filepath"
+    ],
+    "set_nprobe": [
+      "self",
+      "nprobe"
+    ],
+    "nlist": [
+      "self"
+    ],
+    "nprobe": [
+      "self"
+    ],
+    "ntotal": [
+      "self"
+    ]
+  },
+  "vizualize_pair": [
+    "features_1",
+    "features_2",
+    "ratio",
+    "match_metadata",
+    "local_path_col",
+    "sanitized",
+    "include_all_points",
+    "circle_size"
+  ],
+  "viz_match_data": [
+    "features_1",
+    "features_2",
+    "img1",
+    "img2",
+    "match_metadata",
+    "include_all_points",
+    "circle_size"
+  ],
+  "viz_brute_force": [
+    "features_1",
+    "features_2",
+    "img1",
+    "img2",
+    "ratio"
+  ],
+  "DEFAULT_PCT_PROBE": [],
+  "ClusterAssignment": {},
+  "build_index": [
+    "X",
+    "pct_probe",
+    "approximate",
+    "use_gpu"
+  ],
+  "compute_euclidean_pairwise_duplicates_approx": [
+    "X",
+    "counts",
+    "threshold",
+    "minimum_overlap",
+    "Y",
+    "y_counts",
+    "pct_probe",
+    "use_gpu",
+    "faiss_cache_path",
+    "show_progress"
+  ],
+  "pairs_to_clusters": [
+    "ids",
+    "pairs",
+    "strictness",
+    "max_clique_batch_size"
+  ],
+  "is_similarity_valid": [
+    "data",
+    "index"
+  ],
+  "similarity": [
+    "request"
+  ],
+  "get_logger": [
+    "name",
+    "log_level"
+  ],
+  "serve": [
+    "index",
+    "default_threshold",
+    "default_threshold_func",
+    "default_k",
+    "concurrency",
+    "log_level",
+    "host",
+    "port"
+  ],
+  "Hasher": {
+    "string_to_vector": [
+      "self",
+      "hash_string",
+      "hash_format"
+    ],
+    "vector_to_string": [
+      "self",
+      "vector",
+      "hash_format"
+    ],
+    "compute_distance": [
+      "self",
+      "hash1",
+      "hash2",
+      "hash_format"
+    ],
+    "_compute_distance": [
+      "self",
+      "vector1",
+      "vector2"
+    ],
+    "compute_parallel": [
+      "self",
+      "filepaths",
+      "progress",
+      "progress_desc",
+      "max_workers",
+      "isometric"
+    ]
+  },
+  "ImageHasher": {
+    "_compute": [
+      "self",
+      "image"
+    ],
+    "compute_isometric_from_hash": [
+      "self",
+      "hash_string_or_vector",
+      "hash_format"
+    ],
+    "compute_isometric": [
+      "self",
+      "image"
+    ],
+    "compute": [
+      "self",
+      "image",
+      "hash_format"
+    ],
+    "compute_with_quality": [
+      "self",
+      "image",
+      "hash_format"
+    ],
+    "_compute_with_quality": [
+      "self",
+      "image"
+    ]
+  },
+  "VideoHasher": {
+    "process_frame": [
+      "self",
+      "frame",
+      "frame_index",
+      "frame_timestamp",
+      "state"
+    ],
+    "hash_from_final_state": [
+      "self",
+      "state"
+    ],
+    "compute": [
+      "self",
+      "filepath",
+      "errors",
+      "hash_format",
+      "scenes"
+    ]
+  },
+  "ImageInputType": [],
+  "CUDA_CODECS": [],
+  "FramesWithIndexesAndTimestamps": [],
+  "get_ffprobe": [],
+  "get_ffmpeg": [],
+  "compute_quality": [
+    "image"
+  ],
+  "compute_md5": [
+    "filepath"
+  ],
+  "get_string_length": [
+    "hash_length",
+    "dtype",
+    "hash_format"
+  ],
+  "vector_to_string": [
+    "vector",
+    "dtype",
+    "hash_format"
+  ],
+  "string_to_vector": [
+    "hash_string",
+    "dtype",
+    "hash_length",
+    "hash_format",
+    "verify_length"
+  ],
+  "hex_to_b64": [
+    "hash_string",
+    "dtype",
+    "hash_length",
+    "verify_length"
+  ],
+  "b64_to_hex": [
+    "hash_string",
+    "dtype",
+    "hash_length",
+    "verify_length"
+  ],
+  "to_image_array": [
+    "image",
+    "require_color"
+  ],
+  "get_common_framerates": [
+    "id_rates"
+  ],
+  "get_isometric_transforms": [
+    "image",
+    "require_color"
+  ],
+  "get_isometric_dct_transforms": [
+    "dct"
+  ],
+  "read": [
+    "filepath_or_buffer",
+    "timeout"
+  ],
+  "_get_keyframes": [
+    "filepath"
+  ],
+  "get_video_properties": [
+    "filepath"
+  ],
+  "read_video_to_generator_ffmpeg": [
+    "filepath",
+    "frames_per_second",
+    "errors",
+    "max_duration",
+    "max_size",
+    "interp",
+    "frame_rounding",
+    "draw_timestamps",
+    "use_cuda"
+  ],
+  "read_video_to_generator": [
+    "filepath",
+    "frames_per_second",
+    "errors",
+    "max_duration",
+    "max_size"
+  ],
+  "read_video_into_queue": [],
+  "read_video": [
+    "filepath",
+    "frames_per_second",
+    "max_queue_size",
+    "use_queue",
+    "errors",
+    "use_ffmpeg"
+  ],
+  "compute_synchronized_video_hashes": [
+    "filepath",
+    "hashers",
+    "framerates",
+    "hash_format",
+    "use_queue"
+  ],
+  "unletterbox": [
+    "image",
+    "only_remove_black",
+    "min_fraction_meaningful_pixels"
+  ],
+  "unletterbox_crop": [
+    "image",
+    "min_fraction_meaningful_pixels"
+  ],
+  "TMKL2": {
+    "dtype": [],
+    "distance_metric": [],
+    "__init__": [
+      "self",
+      "frame_hasher",
+      "frames_per_second",
+      "normalization"
+    ],
+    "process_frame": [
+      "self",
+      "frame",
+      "frame_index",
+      "frame_timestamp",
+      "state"
+    ],
+    "hash_from_final_state": [
+      "self",
+      "state"
+    ],
+    "_compute_distance": [
+      "self",
+      "vector1",
+      "vector2"
+    ],
+    "_score_pair": [
+      "self",
+      "fv_a",
+      "fv_b",
+      "offsets",
+      "normalization"
+    ]
+  },
+  "TMKL1": {
+    "__init__": [
+      "self",
+      "frame_hasher",
+      "frames_per_second",
+      "dtype",
+      "distance_metric",
+      "norm",
+      "quality_threshold"
+    ],
+    "process_frame": [
+      "self",
+      "frame",
+      "frame_index",
+      "frame_timestamp",
+      "state"
+    ],
+    "hash_from_final_state": [
+      "self",
+      "state"
+    ]
+  },
+  "FramewiseHasher": {
+    "returns_multiple": [],
+    "__init__": [
+      "self",
+      "frame_hasher",
+      "interframe_threshold",
+      "frames_per_second",
+      "quality_threshold"
+    ],
+    "process_frame": [
+      "self",
+      "frame",
+      "frame_index",
+      "frame_timestamp",
+      "state"
+    ],
+    "compute_batches": [
+      "self",
+      "filepath",
+      "batch_size",
+      "errors",
+      "hash_format"
+    ],
+    "hash_from_final_state": [
+      "self",
+      "state"
+    ]
+  },
+  "AverageHash": {
+    "distance_metric": [],
+    "dtype": [],
+    "__init__": [
+      "self",
+      "hash_size"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ],
+    "_compute_isometric_from_hash": [
+      "self",
+      "vector"
+    ]
+  },
+  "DHash": {
+    "dtype": [],
+    "distance_metric": [],
+    "__init__": [
+      "self",
+      "hash_size"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  },
+  "PDQHash": {
+    "distance_metric": [],
+    "dtype": [],
+    "hash_length": [],
+    "_compute": [
+      "self",
+      "image"
+    ],
+    "_compute_with_quality": [
+      "self",
+      "image"
+    ],
+    "_compute_isometric": [
+      "self",
+      "image"
+    ]
+  },
+  "PDQHashF": {
+    "dtype": [],
+    "distance_metric": [],
+    "hash_length": [],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  },
+  "OpenCVHasher": {
+    "allow_parallel": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "MarrHildreth": {
+    "dtype": [],
+    "distance_metric": [],
+    "hash_length": [],
+    "__init__": [
+      "self"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  },
+  "ColorMoment": {
+    "dtype": [],
+    "distance_metric": [],
+    "hash_length": [],
+    "__init__": [
+      "self"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  },
+  "BlockMean": {
+    "dtype": [],
+    "distance_metric": [],
+    "hash_length": [],
+    "__init__": [
+      "self"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  },
+  "PHash": {
+    "distance_metric": [],
+    "dtype": [],
+    "__init__": [
+      "self",
+      "hash_size",
+      "highfreq_factor",
+      "exclude_first_term",
+      "freq_shift"
+    ],
+    "_compute_dct": [
+      "self",
+      "image"
+    ],
+    "_dct_to_hash": [
+      "self",
+      "dct"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ],
+    "_compute_isometric": [
+      "self",
+      "image"
+    ]
+  },
+  "PHashF": {
+    "dtype": [],
+    "distance_metric": [],
+    "_dct_to_hash": [
+      "self",
+      "dct"
+    ]
+  },
+  "PHashU8": {
+    "dtype": [],
+    "distance_metric": [],
+    "_dct_to_hash": [
+      "self",
+      "dct"
+    ]
+  },
+  "WaveletHash": {
+    "distance_metric": [],
+    "dtype": [],
+    "__init__": [
+      "self",
+      "hash_size",
+      "image_scale",
+      "mode"
+    ],
+    "_compute": [
+      "self",
+      "image"
+    ]
+  }
+}

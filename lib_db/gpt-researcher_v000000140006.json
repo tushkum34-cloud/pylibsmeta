@@ -1,0 +1,2663 @@
+{
+  "open_task": [],
+  "run_research_task": [
+    "query",
+    "websocket",
+    "stream_output",
+    "tone",
+    "headers"
+  ],
+  "main": [],
+  "__all__": [],
+  "chief_editor": [],
+  "graph": [],
+  "ResearchState": {},
+  "DraftState": {},
+  "sample_json": [],
+  "WriterAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "headers"
+    ],
+    "get_headers": [
+      "self",
+      "research_state"
+    ],
+    "write_sections": [
+      "self",
+      "research_state"
+    ],
+    "revise_headers": [
+      "self",
+      "task",
+      "headers"
+    ],
+    "run": [
+      "self",
+      "research_state"
+    ]
+  },
+  "ChiefEditorAgent": {
+    "__init__": [
+      "self",
+      "task",
+      "websocket",
+      "stream_output",
+      "tone",
+      "headers"
+    ],
+    "_generate_task_id": [
+      "self"
+    ],
+    "_create_output_directory": [
+      "self"
+    ],
+    "_initialize_agents": [
+      "self"
+    ],
+    "_create_workflow": [
+      "self",
+      "agents"
+    ],
+    "_add_workflow_edges": [
+      "self",
+      "workflow"
+    ],
+    "init_research_team": [
+      "self"
+    ],
+    "_log_research_start": [
+      "self"
+    ],
+    "run_research_task": [
+      "self",
+      "task_id"
+    ]
+  },
+  "EditorAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "tone",
+      "headers"
+    ],
+    "plan_research": [
+      "self",
+      "research_state"
+    ],
+    "run_parallel_research": [
+      "self",
+      "research_state"
+    ],
+    "_create_planning_prompt": [
+      "self",
+      "initial_research",
+      "include_human_feedback",
+      "human_feedback",
+      "max_sections"
+    ],
+    "_format_planning_instructions": [
+      "self",
+      "initial_research",
+      "include_human_feedback",
+      "human_feedback",
+      "max_sections"
+    ],
+    "_initialize_agents": [
+      "self"
+    ],
+    "_create_workflow": [
+      "self"
+    ],
+    "_log_parallel_research": [
+      "self",
+      "queries"
+    ],
+    "_create_task_input": [
+      "self",
+      "research_state",
+      "query",
+      "title"
+    ]
+  },
+  "HumanAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "headers"
+    ],
+    "review_plan": [
+      "self",
+      "research_state"
+    ]
+  },
+  "TEMPLATE": [],
+  "ReviewerAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "headers"
+    ],
+    "review_draft": [
+      "self",
+      "draft_state"
+    ],
+    "run": [
+      "self",
+      "draft_state"
+    ]
+  },
+  "ResearchAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "tone",
+      "headers"
+    ],
+    "research": [
+      "self",
+      "query",
+      "research_report",
+      "parent_query",
+      "verbose",
+      "source",
+      "tone",
+      "headers"
+    ],
+    "run_subtopic_research": [
+      "self",
+      "parent_query",
+      "subtopic",
+      "verbose",
+      "source",
+      "headers"
+    ],
+    "run_initial_research": [
+      "self",
+      "research_state"
+    ],
+    "run_depth_research": [
+      "self",
+      "draft_state"
+    ]
+  },
+  "sample_revision_notes": [],
+  "ReviserAgent": {
+    "__init__": [
+      "self",
+      "websocket",
+      "stream_output",
+      "headers"
+    ],
+    "revise_draft": [
+      "self",
+      "draft_state"
+    ],
+    "run": [
+      "self",
+      "draft_state"
+    ]
+  },
+  "PublisherAgent": {
+    "__init__": [
+      "self",
+      "output_dir",
+      "websocket",
+      "stream_output",
+      "headers"
+    ],
+    "publish_research_report": [
+      "self",
+      "research_state",
+      "publish_formats"
+    ],
+    "generate_layout": [
+      "self",
+      "research_state"
+    ],
+    "write_report_by_formats": [
+      "self",
+      "layout",
+      "publish_formats"
+    ],
+    "run": [
+      "self",
+      "research_state"
+    ]
+  },
+  "call_model": [
+    "prompt",
+    "model",
+    "response_format"
+  ],
+  "sanitize_filename": [
+    "filename"
+  ],
+  "AgentColor": {
+    "RESEARCHER": [],
+    "EDITOR": [],
+    "WRITER": [],
+    "PUBLISHER": [],
+    "REVIEWER": [],
+    "REVISOR": [],
+    "MASTER": []
+  },
+  "print_agent_output": [
+    "output",
+    "agent"
+  ],
+  "write_to_file": [
+    "filename",
+    "text"
+  ],
+  "write_text_to_md": [
+    "text",
+    "path"
+  ],
+  "write_md_to_pdf": [
+    "text",
+    "path"
+  ],
+  "write_md_to_word": [
+    "text",
+    "path"
+  ],
+  "T": [],
+  "R": [],
+  "map_with_progress": [
+    "fn",
+    "items"
+  ],
+  "required_env_vars": [],
+  "evaluate_single_query": [
+    "query",
+    "evaluator"
+  ],
+  "GRADER_TEMPLATE": [],
+  "CHOICE_LETTERS": [],
+  "CHOICE_STRINGS": [],
+  "CHOICE_LETTER_TO_STRING": [],
+  "SimpleQAEval": {
+    "__init__": [
+      "self",
+      "grader_model",
+      "num_examples"
+    ],
+    "evaluate_example": [
+      "self",
+      "example"
+    ],
+    "grade_response": [
+      "self",
+      "question",
+      "correct_answer",
+      "model_answer"
+    ]
+  },
+  "report_types": [],
+  "query": [],
+  "output_dir": [],
+  "test_gpt_researcher": [
+    "report_type"
+  ],
+  "run": [],
+  "logger": [],
+  "GITHUB_TOKEN": [],
+  "OPENAI_API_KEY": [],
+  "TAVILY_API_KEY": [],
+  "get_mcp_config": [],
+  "get_github_mcp_config": [],
+  "setup_environment": [],
+  "test_web_search_mcp": [],
+  "test_github_mcp": [],
+  "test_custom_logs_handler": [],
+  "test_content_update": [],
+  "essay": [],
+  "load_document": [],
+  "create_vectorstore": [
+    "documents"
+  ],
+  "test_gpt_researcher_with_vector_store": [],
+  "test_store_in_vector_store_web": [],
+  "test_store_in_vector_store_urls": [],
+  "test_store_in_vector_store_langchain_docs": [],
+  "test_store_in_vector_store_locals": [],
+  "test_store_in_vector_store_hybrids": [],
+  "test_llm": [
+    "llm"
+  ],
+  "TestWebSocket": {
+    "__init__": [
+      "self"
+    ],
+    "__bool__": [
+      "self"
+    ],
+    "accept": [
+      "self"
+    ],
+    "send_json": [
+      "self",
+      "event"
+    ]
+  },
+  "test_log_output_file": [],
+  "TestQuickSearch": {
+    "test_quick_search_no_summary": [
+      "self",
+      "mock_embeddings",
+      "mock_create_chat",
+      "mock_search"
+    ],
+    "test_quick_search_with_summary": [
+      "self",
+      "mock_embeddings",
+      "mock_create_chat",
+      "mock_search"
+    ]
+  },
+  "test_scrape_data_by_query": [],
+  "get_report": [
+    "query",
+    "report_type",
+    "sources"
+  ],
+  "pdf_loader": [],
+  "csv_loader": [],
+  "project_root": [],
+  "test_logs_creation": [],
+  "TestSecureFilename": {
+    "test_basic_filename": [
+      "self"
+    ],
+    "test_path_traversal_attacks": [
+      "self"
+    ],
+    "test_null_byte_injection": [
+      "self"
+    ],
+    "test_control_characters": [
+      "self"
+    ],
+    "test_unicode_normalization": [
+      "self"
+    ],
+    "test_drive_letters_windows": [
+      "self"
+    ],
+    "test_reserved_names_windows": [
+      "self"
+    ],
+    "test_empty_filename": [
+      "self"
+    ],
+    "test_filename_length_limit": [
+      "self"
+    ],
+    "test_leading_dots_spaces": [
+      "self"
+    ]
+  },
+  "TestValidateFilePath": {
+    "test_valid_path": [
+      "self"
+    ],
+    "test_path_traversal_blocked": [
+      "self"
+    ],
+    "test_symlink_traversal_blocked": [
+      "self"
+    ]
+  },
+  "TestHandleFileUpload": {
+    "mock_file": [
+      "self"
+    ],
+    "temp_doc_path": [
+      "self"
+    ],
+    "test_normal_file_upload": [
+      "self",
+      "mock_file",
+      "temp_doc_path"
+    ],
+    "test_malicious_filename_upload": [
+      "self",
+      "temp_doc_path"
+    ],
+    "test_empty_filename_upload": [
+      "self",
+      "temp_doc_path"
+    ],
+    "test_file_conflict_handling": [
+      "self",
+      "mock_file",
+      "temp_doc_path"
+    ]
+  },
+  "TestHandleFileDeletion": {
+    "temp_doc_path": [
+      "self"
+    ],
+    "test_normal_file_deletion": [
+      "self",
+      "temp_doc_path"
+    ],
+    "test_malicious_filename_deletion": [
+      "self",
+      "temp_doc_path"
+    ],
+    "test_nonexistent_file_deletion": [
+      "self",
+      "temp_doc_path"
+    ],
+    "test_directory_deletion_blocked": [
+      "self",
+      "temp_doc_path"
+    ]
+  },
+  "TestSecurityIntegration": {
+    "test_attack_vectors_blocked": [
+      "self"
+    ],
+    "test_legitimate_files_allowed": [
+      "self"
+    ]
+  },
+  "test_researcher_logging": [],
+  "PromptFamily": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "generate_mcp_tool_selection_prompt": [
+      "query",
+      "tools_info",
+      "max_tools"
+    ],
+    "generate_mcp_research_prompt": [
+      "query",
+      "selected_tools"
+    ],
+    "generate_image_analysis_prompt": [
+      "query",
+      "sections",
+      "max_images"
+    ],
+    "generate_image_prompt_enhancement": [
+      "base_prompt",
+      "section_content",
+      "research_topic"
+    ],
+    "generate_search_queries_prompt": [
+      "question",
+      "parent_query",
+      "report_type",
+      "max_iterations",
+      "context"
+    ],
+    "generate_report_prompt": [
+      "question",
+      "context",
+      "report_source",
+      "report_format",
+      "total_words",
+      "tone",
+      "language"
+    ],
+    "curate_sources": [
+      "query",
+      "sources",
+      "max_results"
+    ],
+    "generate_resource_report_prompt": [
+      "question",
+      "context",
+      "report_source",
+      "report_format",
+      "tone",
+      "total_words",
+      "language"
+    ],
+    "generate_custom_report_prompt": [
+      "query_prompt",
+      "context",
+      "report_source",
+      "report_format",
+      "tone",
+      "total_words",
+      "language"
+    ],
+    "generate_outline_report_prompt": [
+      "question",
+      "context",
+      "report_source",
+      "report_format",
+      "tone",
+      "total_words",
+      "language"
+    ],
+    "generate_deep_research_prompt": [
+      "question",
+      "context",
+      "report_source",
+      "report_format",
+      "tone",
+      "total_words",
+      "language"
+    ],
+    "auto_agent_instructions": [],
+    "generate_summary_prompt": [
+      "query",
+      "data"
+    ],
+    "generate_quick_summary_prompt": [
+      "query",
+      "context"
+    ],
+    "pretty_print_docs": [
+      "docs",
+      "top_n"
+    ],
+    "join_local_web_documents": [
+      "docs_context",
+      "web_context"
+    ],
+    "generate_subtopics_prompt": [],
+    "generate_subtopic_report_prompt": [
+      "current_subtopic",
+      "existing_headers",
+      "relevant_written_contents",
+      "main_topic",
+      "context",
+      "report_format",
+      "max_subsections",
+      "total_words",
+      "tone",
+      "language"
+    ],
+    "generate_draft_titles_prompt": [
+      "current_subtopic",
+      "main_topic",
+      "context",
+      "max_subsections"
+    ],
+    "generate_report_introduction": [
+      "question",
+      "research_summary",
+      "language",
+      "report_format"
+    ],
+    "generate_report_conclusion": [
+      "query",
+      "report_content",
+      "language",
+      "report_format"
+    ]
+  },
+  "GranitePromptFamily": {
+    "_get_granite_class": [
+      "self"
+    ],
+    "pretty_print_docs": [
+      "self"
+    ],
+    "join_local_web_documents": [
+      "self"
+    ]
+  },
+  "Granite3PromptFamily": {
+    "_DOCUMENTS_PREFIX": [],
+    "_DOCUMENTS_SUFFIX": [],
+    "pretty_print_docs": [
+      "cls",
+      "docs",
+      "top_n"
+    ],
+    "join_local_web_documents": [
+      "cls",
+      "docs_context",
+      "web_context"
+    ]
+  },
+  "Granite33PromptFamily": {
+    "_DOCUMENT_TEMPLATE": [],
+    "_get_content": [
+      "doc"
+    ],
+    "pretty_print_docs": [
+      "cls",
+      "docs",
+      "top_n"
+    ],
+    "join_local_web_documents": [
+      "cls",
+      "docs_context",
+      "web_context"
+    ]
+  },
+  "PROMPT_GENERATOR": [],
+  "report_type_mapping": [],
+  "get_prompt_by_report_type": [
+    "report_type",
+    "prompt_family"
+  ],
+  "prompt_family_mapping": [],
+  "get_prompt_family": [
+    "prompt_family_name",
+    "config"
+  ],
+  "GPTResearcher": {
+    "__init__": [
+      "self",
+      "query",
+      "report_type",
+      "report_format",
+      "report_source",
+      "tone",
+      "source_urls",
+      "document_urls",
+      "complement_source_urls",
+      "query_domains",
+      "documents",
+      "vector_store",
+      "vector_store_filter",
+      "config_path",
+      "websocket",
+      "agent",
+      "role",
+      "parent_query",
+      "subtopics",
+      "visited_urls",
+      "verbose",
+      "context",
+      "headers",
+      "max_subtopics",
+      "log_handler",
+      "prompt_family",
+      "mcp_configs",
+      "mcp_max_iterations",
+      "mcp_strategy"
+    ],
+    "_generate_research_id": [
+      "self"
+    ],
+    "_resolve_mcp_strategy": [
+      "self",
+      "mcp_strategy",
+      "mcp_max_iterations"
+    ],
+    "_process_mcp_configs": [
+      "self",
+      "mcp_configs"
+    ],
+    "_log_event": [
+      "self",
+      "event_type"
+    ],
+    "conduct_research": [
+      "self",
+      "on_progress"
+    ],
+    "_handle_deep_research": [
+      "self",
+      "on_progress"
+    ],
+    "write_report": [
+      "self",
+      "existing_headers",
+      "relevant_written_contents",
+      "ext_context",
+      "custom_prompt"
+    ],
+    "write_report_conclusion": [
+      "self",
+      "report_body"
+    ],
+    "write_introduction": [
+      "self"
+    ],
+    "quick_search": [
+      "self",
+      "query",
+      "query_domains",
+      "aggregated_summary"
+    ],
+    "get_subtopics": [
+      "self"
+    ],
+    "get_draft_section_titles": [
+      "self",
+      "current_subtopic"
+    ],
+    "get_similar_written_contents_by_draft_section_titles": [
+      "self",
+      "current_subtopic",
+      "draft_section_titles",
+      "written_contents",
+      "max_results"
+    ],
+    "get_research_images": [
+      "self",
+      "top_k"
+    ],
+    "add_research_images": [
+      "self",
+      "images"
+    ],
+    "get_research_sources": [
+      "self"
+    ],
+    "add_research_sources": [
+      "self",
+      "sources"
+    ],
+    "add_references": [
+      "self",
+      "report_markdown",
+      "visited_urls"
+    ],
+    "extract_headers": [
+      "self",
+      "markdown_text"
+    ],
+    "extract_sections": [
+      "self",
+      "markdown_text"
+    ],
+    "table_of_contents": [
+      "self",
+      "markdown_text"
+    ],
+    "get_source_urls": [
+      "self"
+    ],
+    "get_research_context": [
+      "self"
+    ],
+    "get_costs": [
+      "self"
+    ],
+    "set_verbose": [
+      "self",
+      "verbose"
+    ],
+    "add_costs": [
+      "self",
+      "cost"
+    ]
+  },
+  "MCPResearchSkill": {
+    "__init__": [
+      "self",
+      "cfg",
+      "researcher"
+    ],
+    "conduct_research_with_tools": [
+      "self",
+      "query",
+      "selected_tools"
+    ],
+    "_process_tool_result": [
+      "self",
+      "tool_name",
+      "result"
+    ]
+  },
+  "MCPToolSelector": {
+    "__init__": [
+      "self",
+      "cfg",
+      "researcher"
+    ],
+    "select_relevant_tools": [
+      "self",
+      "query",
+      "all_tools",
+      "max_tools"
+    ],
+    "_call_llm_for_tool_selection": [
+      "self",
+      "prompt"
+    ],
+    "_fallback_tool_selection": [
+      "self",
+      "all_tools",
+      "max_tools"
+    ]
+  },
+  "MCPClientManager": {
+    "__init__": [
+      "self",
+      "mcp_configs"
+    ],
+    "convert_configs_to_langchain_format": [
+      "self"
+    ],
+    "get_or_create_client": [
+      "self"
+    ],
+    "close_client": [
+      "self"
+    ],
+    "get_all_tools": [
+      "self"
+    ]
+  },
+  "MCPStreamer": {
+    "__init__": [
+      "self",
+      "websocket"
+    ],
+    "stream_log": [
+      "self",
+      "message",
+      "data"
+    ],
+    "stream_log_sync": [
+      "self",
+      "message",
+      "data"
+    ],
+    "stream_stage_start": [
+      "self",
+      "stage",
+      "description"
+    ],
+    "stream_stage_complete": [
+      "self",
+      "stage",
+      "result_count"
+    ],
+    "stream_tool_selection": [
+      "self",
+      "selected_count",
+      "total_count"
+    ],
+    "stream_tool_execution": [
+      "self",
+      "tool_name",
+      "step",
+      "total"
+    ],
+    "stream_research_results": [
+      "self",
+      "result_count",
+      "total_chars"
+    ],
+    "stream_error": [
+      "self",
+      "error_msg"
+    ],
+    "stream_warning": [
+      "self",
+      "warning_msg"
+    ],
+    "stream_info": [
+      "self",
+      "info_msg"
+    ]
+  },
+  "VectorstoreCompressor": {
+    "__init__": [
+      "self",
+      "vector_store",
+      "max_results",
+      "filter",
+      "prompt_family"
+    ],
+    "async_get_context": [
+      "self",
+      "query",
+      "max_results"
+    ]
+  },
+  "ContextCompressor": {
+    "__init__": [
+      "self",
+      "documents",
+      "embeddings",
+      "max_results",
+      "prompt_family"
+    ],
+    "__get_contextual_retriever": [
+      "self"
+    ],
+    "async_get_context": [
+      "self",
+      "query",
+      "max_results",
+      "cost_callback"
+    ]
+  },
+  "WrittenContentCompressor": {
+    "__init__": [
+      "self",
+      "documents",
+      "embeddings",
+      "similarity_threshold"
+    ],
+    "__get_contextual_retriever": [
+      "self"
+    ],
+    "__pretty_docs_list": [
+      "self",
+      "docs",
+      "top_n"
+    ],
+    "async_get_context": [
+      "self",
+      "query",
+      "max_results",
+      "cost_callback"
+    ]
+  },
+  "SearchAPIRetriever": {
+    "_get_relevant_documents": [
+      "self",
+      "query"
+    ]
+  },
+  "SectionRetriever": {
+    "_get_relevant_documents": [
+      "self",
+      "query"
+    ]
+  },
+  "stream_output": [
+    "type",
+    "content",
+    "output",
+    "websocket",
+    "output_log",
+    "metadata"
+  ],
+  "safe_send_json": [
+    "websocket",
+    "data"
+  ],
+  "calculate_cost": [
+    "prompt_tokens",
+    "completion_tokens",
+    "model"
+  ],
+  "format_token_count": [
+    "count"
+  ],
+  "update_cost": [
+    "prompt_tokens",
+    "completion_tokens",
+    "model",
+    "websocket"
+  ],
+  "create_cost_callback": [
+    "websocket"
+  ],
+  "scrape_urls": [
+    "urls",
+    "cfg",
+    "worker_pool"
+  ],
+  "filter_urls": [
+    "urls",
+    "config"
+  ],
+  "extract_main_content": [
+    "html_content"
+  ],
+  "process_scraped_data": [
+    "scraped_data",
+    "config"
+  ],
+  "get_search_results": [
+    "query",
+    "retriever",
+    "query_domains",
+    "researcher"
+  ],
+  "generate_sub_queries": [
+    "query",
+    "parent_query",
+    "report_type",
+    "context",
+    "cfg",
+    "cost_callback",
+    "prompt_family"
+  ],
+  "plan_research_outline": [
+    "query",
+    "search_results",
+    "agent_role_prompt",
+    "cfg",
+    "parent_query",
+    "report_type",
+    "cost_callback",
+    "retriever_names"
+  ],
+  "write_report_introduction": [
+    "query",
+    "context",
+    "agent_role_prompt",
+    "config",
+    "websocket",
+    "cost_callback",
+    "prompt_family"
+  ],
+  "write_conclusion": [
+    "query",
+    "context",
+    "agent_role_prompt",
+    "config",
+    "websocket",
+    "cost_callback",
+    "prompt_family"
+  ],
+  "summarize_url": [
+    "url",
+    "content",
+    "role",
+    "config",
+    "websocket",
+    "cost_callback"
+  ],
+  "generate_draft_section_titles": [
+    "query",
+    "current_subtopic",
+    "context",
+    "role",
+    "config",
+    "websocket",
+    "cost_callback",
+    "prompt_family"
+  ],
+  "generate_report": [
+    "query",
+    "context",
+    "agent_role_prompt",
+    "report_type",
+    "tone",
+    "report_source",
+    "websocket",
+    "cfg",
+    "main_topic",
+    "existing_headers",
+    "relevant_written_contents",
+    "cost_callback",
+    "custom_prompt",
+    "headers",
+    "prompt_family",
+    "available_images"
+  ],
+  "choose_agent": [
+    "query",
+    "cfg",
+    "parent_query",
+    "cost_callback",
+    "headers",
+    "prompt_family"
+  ],
+  "handle_json_error": [
+    "response"
+  ],
+  "extract_json_with_regex": [
+    "response"
+  ],
+  "extract_headers": [
+    "markdown_text"
+  ],
+  "extract_sections": [
+    "markdown_text"
+  ],
+  "table_of_contents": [
+    "markdown_text"
+  ],
+  "add_references": [
+    "report_markdown",
+    "visited_urls"
+  ],
+  "get_retriever": [
+    "retriever"
+  ],
+  "get_retrievers": [
+    "headers",
+    "cfg"
+  ],
+  "get_default_retriever": [],
+  "get_relevant_images": [
+    "soup",
+    "url"
+  ],
+  "parse_dimension": [
+    "value"
+  ],
+  "extract_title": [
+    "soup"
+  ],
+  "get_image_hash": [
+    "image_url"
+  ],
+  "clean_soup": [
+    "soup"
+  ],
+  "get_text_from_soup": [
+    "soup"
+  ],
+  "Scraper": {
+    "__init__": [
+      "self",
+      "urls",
+      "user_agent",
+      "scraper",
+      "worker_pool"
+    ],
+    "run": [
+      "self"
+    ],
+    "_check_pkg": [
+      "self",
+      "scrapper_name"
+    ],
+    "extract_data_from_url": [
+      "self",
+      "link",
+      "session"
+    ],
+    "get_scraper": [
+      "self",
+      "link"
+    ]
+  },
+  "TavilyExtract": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "FILE_DIR": [],
+  "BrowserScraper": {
+    "__init__": [
+      "self",
+      "url",
+      "session"
+    ],
+    "scrape": [
+      "self"
+    ],
+    "_import_selenium": [
+      "self"
+    ],
+    "setup_driver": [
+      "self"
+    ],
+    "_load_saved_cookies": [
+      "self"
+    ],
+    "_load_browser_cookies": [
+      "self"
+    ],
+    "_cleanup_cookie_file": [
+      "self"
+    ],
+    "_generate_random_string": [
+      "self",
+      "length"
+    ],
+    "_get_domain": [
+      "self"
+    ],
+    "_visit_google_and_save_cookies": [
+      "self"
+    ],
+    "scrape_text_with_selenium": [
+      "self"
+    ],
+    "_scroll_to_bottom": [
+      "self"
+    ],
+    "_scroll_to_percentage": [
+      "self",
+      "ratio"
+    ],
+    "_add_header": [
+      "self"
+    ]
+  },
+  "NoDriverScraper": {
+    "logger": [],
+    "max_browsers": [],
+    "browser_load_threshold": [],
+    "browsers_lock": [],
+    "get_domain": [
+      "url"
+    ],
+    "get_browser": [
+      "cls",
+      "headless"
+    ],
+    "release_browser": [
+      "cls",
+      "browser"
+    ],
+    "__init__": [
+      "self",
+      "url",
+      "session"
+    ],
+    "scrape_async": [
+      "self"
+    ]
+  },
+  "scrape_pdf_with_pymupdf": [
+    "url"
+  ],
+  "scrape_pdf_with_arxiv": [
+    "query"
+  ],
+  "extract_hyperlinks": [
+    "soup",
+    "base_url"
+  ],
+  "format_hyperlinks": [
+    "hyperlinks"
+  ],
+  "ArxivScraper": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "BeautifulSoupScraper": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "WebBaseLoaderScraper": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "FireCrawl": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "get_server_url": [
+      "self"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "PyMuPDFScraper": {
+    "__init__": [
+      "self",
+      "link",
+      "session"
+    ],
+    "is_url": [
+      "self"
+    ],
+    "scrape": [
+      "self"
+    ]
+  },
+  "LangChainDocumentLoader": {
+    "__init__": [
+      "self",
+      "documents"
+    ],
+    "load": [
+      "self",
+      "metadata_source_index"
+    ]
+  },
+  "DocumentLoader": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "load": [
+      "self"
+    ],
+    "_load_document": [
+      "self",
+      "file_path",
+      "file_extension"
+    ]
+  },
+  "AzureDocumentLoader": {
+    "__init__": [
+      "self",
+      "container_name",
+      "connection_string"
+    ],
+    "load": [
+      "self"
+    ]
+  },
+  "OnlineDocumentLoader": {
+    "__init__": [
+      "self",
+      "urls"
+    ],
+    "load": [
+      "self"
+    ],
+    "_download_and_process": [
+      "self",
+      "url"
+    ],
+    "_load_document": [
+      "self",
+      "file_path",
+      "file_extension"
+    ],
+    "_get_extension": [
+      "url"
+    ]
+  },
+  "Config": {
+    "CONFIG_DIR": [],
+    "__init__": [
+      "self",
+      "config_path"
+    ],
+    "_set_attributes": [
+      "self",
+      "config"
+    ],
+    "_set_embedding_attributes": [
+      "self"
+    ],
+    "_set_llm_attributes": [
+      "self"
+    ],
+    "_handle_deprecated_attributes": [
+      "self"
+    ],
+    "_set_doc_path": [
+      "self",
+      "config"
+    ],
+    "load_config": [
+      "cls",
+      "config_path"
+    ],
+    "list_available_configs": [
+      "cls"
+    ],
+    "parse_retrievers": [
+      "self",
+      "retriever_str"
+    ],
+    "parse_llm": [
+      "llm_str"
+    ],
+    "parse_reasoning_effort": [
+      "reasoning_effort_str"
+    ],
+    "parse_embedding": [
+      "embedding_str"
+    ],
+    "validate_doc_path": [
+      "self"
+    ],
+    "convert_env_value": [
+      "key",
+      "env_value",
+      "type_hint"
+    ],
+    "set_verbose": [
+      "self",
+      "verbose"
+    ],
+    "get_mcp_server_config": [
+      "self",
+      "name"
+    ]
+  },
+  "BaseConfig": {},
+  "TRACE_LOG_LEVEL": [],
+  "get_formatted_logger": [],
+  "ColourizedFormatter": {
+    "level_name_colors": [],
+    "__init__": [
+      "self",
+      "fmt",
+      "datefmt",
+      "style",
+      "use_colors"
+    ],
+    "color_level_name": [
+      "self",
+      "level_name",
+      "level_no"
+    ],
+    "should_use_colors": [
+      "self"
+    ],
+    "formatMessage": [
+      "self",
+      "record"
+    ]
+  },
+  "DefaultFormatter": {
+    "should_use_colors": [
+      "self"
+    ]
+  },
+  "WorkerPool": {
+    "__init__": [
+      "self",
+      "max_workers",
+      "rate_limit_delay"
+    ],
+    "throttle": [
+      "self"
+    ]
+  },
+  "ENCODING_MODEL": [],
+  "INPUT_COST_PER_TOKEN": [],
+  "OUTPUT_COST_PER_TOKEN": [],
+  "IMAGE_INFERENCE_COST": [],
+  "EMBEDDING_COST": [],
+  "estimate_llm_cost": [
+    "input_content",
+    "output_content"
+  ],
+  "estimate_embedding_cost": [
+    "model",
+    "docs"
+  ],
+  "GlobalRateLimiter": {
+    "__new__": [
+      "cls"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "get_lock": [
+      "cls"
+    ],
+    "configure": [
+      "self",
+      "rate_limit_delay"
+    ],
+    "wait_if_needed": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_global_rate_limiter": [],
+  "get_global_rate_limiter": [],
+  "get_llm": [
+    "llm_provider"
+  ],
+  "create_chat_completion": [
+    "messages",
+    "model",
+    "temperature",
+    "max_tokens",
+    "llm_provider",
+    "stream",
+    "websocket",
+    "llm_kwargs",
+    "cost_callback",
+    "reasoning_effort"
+  ],
+  "construct_subtopics": [
+    "task",
+    "data",
+    "config",
+    "subtopics",
+    "prompt_family"
+  ],
+  "ReportType": {
+    "ResearchReport": [],
+    "ResourceReport": [],
+    "OutlineReport": [],
+    "CustomReport": [],
+    "DetailedReport": [],
+    "SubtopicReport": [],
+    "DeepResearch": []
+  },
+  "ReportSource": {
+    "Web": [],
+    "Local": [],
+    "Azure": [],
+    "LangChainDocuments": [],
+    "LangChainVectorStore": [],
+    "Static": [],
+    "Hybrid": []
+  },
+  "Tone": {
+    "Objective": [],
+    "Formal": [],
+    "Analytical": [],
+    "Persuasive": [],
+    "Informative": [],
+    "Explanatory": [],
+    "Descriptive": [],
+    "Critical": [],
+    "Comparative": [],
+    "Speculative": [],
+    "Reflective": [],
+    "Narrative": [],
+    "Humorous": [],
+    "Optimistic": [],
+    "Pessimistic": [],
+    "Simple": [],
+    "Casual": []
+  },
+  "JSONResearchHandler": {
+    "__init__": [
+      "self",
+      "json_file"
+    ],
+    "log_event": [
+      "self",
+      "event_type",
+      "data"
+    ],
+    "update_content": [
+      "self",
+      "key",
+      "value"
+    ],
+    "_save_json": [
+      "self"
+    ]
+  },
+  "setup_research_logging": [],
+  "get_research_logger": [],
+  "get_json_handler": [],
+  "Subtopic": {},
+  "Subtopics": {},
+  "create_chat_completion_with_tools": [
+    "messages",
+    "tools",
+    "model",
+    "temperature",
+    "max_tokens",
+    "llm_provider",
+    "llm_kwargs",
+    "cost_callback",
+    "websocket"
+  ],
+  "create_search_tool": [
+    "search_function"
+  ],
+  "create_custom_tool": [
+    "name",
+    "description",
+    "function",
+    "parameter_schema"
+  ],
+  "get_available_providers_with_tools": [],
+  "supports_tools": [
+    "provider"
+  ],
+  "check_pkg": [
+    "pkg"
+  ],
+  "VALID_RETRIEVERS": [],
+  "get_all_retriever_names": [],
+  "MCPRetriever": {
+    "__init__": [
+      "self",
+      "query",
+      "headers",
+      "query_domains",
+      "websocket",
+      "researcher"
+    ],
+    "_get_mcp_configs": [
+      "self"
+    ],
+    "_get_config": [
+      "self"
+    ],
+    "search_async": [
+      "self",
+      "max_results"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ],
+    "_get_all_tools": [
+      "self"
+    ]
+  },
+  "SearchApiSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "Duckduckgo": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "ExaSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "_retrieve_api_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results",
+      "use_autoprompt",
+      "search_type"
+    ],
+    "find_similar": [
+      "self",
+      "url",
+      "exclude_source_domain"
+    ],
+    "get_contents": [
+      "self",
+      "ids"
+    ]
+  },
+  "ArxivSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "sort",
+      "query_domains"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "SerperSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains",
+      "country",
+      "language",
+      "time_range",
+      "exclude_sites"
+    ],
+    "_get_exclude_sites_from_env": [
+      "self"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "TavilySearch": {
+    "__init__": [
+      "self",
+      "query",
+      "headers",
+      "topic",
+      "query_domains"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "_search": [
+      "self",
+      "query",
+      "search_depth",
+      "topic",
+      "days",
+      "max_results",
+      "include_domains",
+      "exclude_domains",
+      "include_answer",
+      "include_raw_content",
+      "include_images",
+      "use_cache"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "GoogleSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "headers",
+      "query_domains"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "get_cx_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "PubMedCentralSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "_populate_params": [
+      "self"
+    ],
+    "_search_articles": [
+      "self",
+      "max_results"
+    ],
+    "_fetch_full_text": [
+      "self",
+      "article_id"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "SearxSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "get_searxng_url": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "SerpApiSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "BingSearch": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "get_api_key": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "SemanticScholarSearch": {
+    "BASE_URL": [],
+    "VALID_SORT_CRITERIA": [],
+    "__init__": [
+      "self",
+      "query",
+      "sort",
+      "query_domains"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "CustomRetriever": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "_populate_params": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "max_results"
+    ]
+  },
+  "VectorStoreWrapper": {
+    "__init__": [
+      "self",
+      "vector_store"
+    ],
+    "load": [
+      "self",
+      "documents"
+    ],
+    "_create_langchain_documents": [
+      "self",
+      "data"
+    ],
+    "_split_documents": [
+      "self",
+      "documents",
+      "chunk_size",
+      "chunk_overlap"
+    ],
+    "asimilarity_search": [
+      "self",
+      "query",
+      "k",
+      "filter"
+    ]
+  },
+  "OPENAI_EMBEDDING_MODEL": [],
+  "_SUPPORTED_PROVIDERS": [],
+  "Memory": {
+    "__init__": [
+      "self",
+      "embedding_provider",
+      "model"
+    ],
+    "get_embeddings": [
+      "self"
+    ]
+  },
+  "ReportGenerator": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "write_report": [
+      "self",
+      "existing_headers",
+      "relevant_written_contents",
+      "ext_context",
+      "custom_prompt",
+      "available_images"
+    ],
+    "write_report_conclusion": [
+      "self",
+      "report_content"
+    ],
+    "write_introduction": [
+      "self"
+    ],
+    "get_subtopics": [
+      "self"
+    ],
+    "get_draft_section_titles": [
+      "self",
+      "current_subtopic"
+    ]
+  },
+  "BrowserManager": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "browse_urls": [
+      "self",
+      "urls"
+    ],
+    "select_top_images": [
+      "self",
+      "images",
+      "k"
+    ]
+  },
+  "MAX_CONTEXT_WORDS": [],
+  "count_words": [
+    "text"
+  ],
+  "trim_context_to_word_limit": [
+    "context_list",
+    "max_words"
+  ],
+  "ResearchProgress": {
+    "__init__": [
+      "self",
+      "total_depth",
+      "total_breadth"
+    ]
+  },
+  "DeepResearchSkill": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "generate_search_queries": [
+      "self",
+      "query",
+      "num_queries"
+    ],
+    "generate_research_plan": [
+      "self",
+      "query",
+      "num_questions"
+    ],
+    "process_research_results": [
+      "self",
+      "query",
+      "context",
+      "num_learnings"
+    ],
+    "deep_research": [
+      "self",
+      "query",
+      "breadth",
+      "depth",
+      "learnings",
+      "citations",
+      "visited_urls",
+      "on_progress"
+    ],
+    "run": [
+      "self",
+      "on_progress"
+    ]
+  },
+  "ContextManager": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "get_similar_content_by_query": [
+      "self",
+      "query",
+      "pages"
+    ],
+    "get_similar_content_by_query_with_vectorstore": [
+      "self",
+      "query",
+      "filter"
+    ],
+    "get_similar_written_contents_by_draft_section_titles": [
+      "self",
+      "current_subtopic",
+      "draft_section_titles",
+      "written_contents",
+      "max_results"
+    ],
+    "__get_similar_written_contents_by_query": [
+      "self",
+      "query",
+      "written_contents",
+      "similarity_threshold",
+      "max_results"
+    ]
+  },
+  "SourceCurator": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "curate_sources": [
+      "self",
+      "source_data",
+      "max_results"
+    ]
+  },
+  "ResearchConductor": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "plan_research": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "conduct_research": [
+      "self"
+    ],
+    "_get_context_by_urls": [
+      "self",
+      "urls"
+    ],
+    "_get_context_by_vectorstore": [
+      "self",
+      "query",
+      "filter"
+    ],
+    "_get_context_by_web_search": [
+      "self",
+      "query",
+      "scraped_data",
+      "query_domains"
+    ],
+    "_get_mcp_strategy": [
+      "self"
+    ],
+    "_execute_mcp_research_for_queries": [
+      "self",
+      "queries",
+      "mcp_retrievers"
+    ],
+    "_process_sub_query": [
+      "self",
+      "sub_query",
+      "scraped_data",
+      "query_domains"
+    ],
+    "_execute_mcp_research": [
+      "self",
+      "retriever",
+      "query"
+    ],
+    "_combine_mcp_and_web_context": [
+      "self",
+      "mcp_context",
+      "web_context",
+      "sub_query"
+    ],
+    "_process_sub_query_with_vectorstore": [
+      "self",
+      "sub_query",
+      "filter"
+    ],
+    "_get_new_urls": [
+      "self",
+      "url_set_input"
+    ],
+    "_search_relevant_source_urls": [
+      "self",
+      "query",
+      "query_domains"
+    ],
+    "_scrape_data_by_urls": [
+      "self",
+      "sub_query",
+      "query_domains"
+    ],
+    "_search": [
+      "self",
+      "retriever",
+      "query"
+    ],
+    "_extract_content": [
+      "self",
+      "results"
+    ],
+    "_summarize_content": [
+      "self",
+      "query",
+      "content"
+    ],
+    "_update_search_progress": [
+      "self",
+      "current",
+      "total"
+    ]
+  },
+  "ImageGenerator": {
+    "__init__": [
+      "self",
+      "researcher"
+    ],
+    "_init_provider": [
+      "self"
+    ],
+    "is_enabled": [
+      "self"
+    ],
+    "plan_and_generate_images": [
+      "self",
+      "context",
+      "query",
+      "research_id"
+    ],
+    "_plan_image_concepts": [
+      "self",
+      "context",
+      "query"
+    ],
+    "analyze_report_for_images": [
+      "self",
+      "report",
+      "query"
+    ],
+    "_extract_sections": [
+      "self",
+      "report"
+    ],
+    "_build_analysis_prompt": [
+      "self",
+      "query",
+      "sections"
+    ],
+    "_parse_analysis_response": [
+      "self",
+      "response",
+      "sections"
+    ],
+    "generate_images_for_report": [
+      "self",
+      "report",
+      "query",
+      "research_id"
+    ],
+    "_embed_images_in_report": [
+      "self",
+      "report",
+      "images",
+      "suggestions"
+    ],
+    "get_generated_images": [
+      "self"
+    ],
+    "process_image_placeholders": [
+      "self",
+      "report",
+      "query",
+      "research_id"
+    ]
+  },
+  "NO_SUPPORT_TEMPERATURE_MODELS": [],
+  "SUPPORT_REASONING_EFFORT_MODELS": [],
+  "ReasoningEfforts": {
+    "High": [],
+    "Medium": [],
+    "Low": []
+  },
+  "ChatLogger": {
+    "__init__": [
+      "self",
+      "fname"
+    ],
+    "log_request": [
+      "self",
+      "messages",
+      "response"
+    ]
+  },
+  "GenericLLMProvider": {
+    "__init__": [
+      "self",
+      "llm",
+      "chat_log",
+      "verbose"
+    ],
+    "from_provider": [
+      "cls",
+      "provider",
+      "chat_log",
+      "verbose"
+    ],
+    "get_chat_response": [
+      "self",
+      "messages",
+      "stream",
+      "websocket"
+    ],
+    "stream_response": [
+      "self",
+      "messages",
+      "websocket"
+    ],
+    "_send_output": [
+      "self",
+      "content",
+      "websocket"
+    ]
+  },
+  "_check_pkg": [
+    "pkg"
+  ],
+  "ImageGeneratorProvider": {
+    "GEMINI_IMAGE_MODELS": [],
+    "IMAGEN_MODELS": [],
+    "DEFAULT_MODEL": [],
+    "__init__": [
+      "self",
+      "model_name",
+      "api_key",
+      "output_dir"
+    ],
+    "_ensure_client": [
+      "self"
+    ],
+    "_ensure_output_dir": [
+      "self",
+      "research_id"
+    ],
+    "_generate_image_filename": [
+      "self",
+      "prompt",
+      "index"
+    ],
+    "_crop_to_landscape": [
+      "self",
+      "image_bytes",
+      "target_ratio"
+    ],
+    "_build_enhanced_prompt": [
+      "self",
+      "prompt",
+      "context",
+      "style"
+    ],
+    "generate_image": [
+      "self",
+      "prompt",
+      "context",
+      "research_id",
+      "aspect_ratio",
+      "num_images",
+      "style"
+    ],
+    "_generate_with_gemini": [
+      "self",
+      "full_prompt",
+      "output_path",
+      "num_images",
+      "research_id",
+      "original_prompt"
+    ],
+    "_generate_with_imagen": [
+      "self",
+      "full_prompt",
+      "output_path",
+      "num_images",
+      "aspect_ratio",
+      "research_id"
+    ],
+    "_generate_alt_text": [
+      "self",
+      "prompt"
+    ],
+    "is_available": [
+      "self"
+    ],
+    "from_config": [
+      "cls",
+      "config"
+    ]
+  },
+  "_preprocess_images_for_pdf": [
+    "text"
+  ],
+  "backend_dir": [],
+  "BasicReport": {
+    "__init__": [
+      "self",
+      "query",
+      "query_domains",
+      "report_type",
+      "report_source",
+      "source_urls",
+      "document_urls",
+      "tone",
+      "config_path",
+      "websocket",
+      "headers",
+      "mcp_configs",
+      "mcp_strategy"
+    ],
+    "_generate_research_id": [
+      "self",
+      "query"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "DetailedReport": {
+    "__init__": [
+      "self",
+      "query",
+      "report_type",
+      "report_source",
+      "source_urls",
+      "document_urls",
+      "query_domains",
+      "config_path",
+      "tone",
+      "websocket",
+      "subtopics",
+      "headers",
+      "complement_source_urls",
+      "mcp_configs",
+      "mcp_strategy"
+    ],
+    "_generate_research_id": [
+      "self",
+      "query"
+    ],
+    "run": [
+      "self"
+    ],
+    "_initial_research": [
+      "self"
+    ],
+    "_get_all_subtopics": [
+      "self"
+    ],
+    "_generate_subtopic_reports": [
+      "self",
+      "subtopics"
+    ],
+    "_get_subtopic_report": [
+      "self",
+      "subtopic"
+    ],
+    "_construct_detailed_report": [
+      "self",
+      "introduction",
+      "report_body"
+    ]
+  },
+  "get_tools": [],
+  "ChatAgentWithMemory": {
+    "__init__": [
+      "self",
+      "report",
+      "config_path",
+      "headers",
+      "vector_store"
+    ],
+    "_setup_vector_store": [
+      "self"
+    ],
+    "_process_document": [
+      "self",
+      "report"
+    ],
+    "quick_search": [
+      "self",
+      "query"
+    ],
+    "process_chat_completion": [
+      "self",
+      "messages"
+    ],
+    "chat": [
+      "self",
+      "messages",
+      "websocket"
+    ],
+    "get_context": [
+      "self"
+    ]
+  },
+  "ReportStore": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "_ensure_parent_dir": [
+      "self"
+    ],
+    "_read_all_unlocked": [
+      "self"
+    ],
+    "_write_all_unlocked": [
+      "self",
+      "data"
+    ],
+    "list_reports": [
+      "self",
+      "report_ids"
+    ],
+    "get_report": [
+      "self",
+      "report_id"
+    ],
+    "upsert_report": [
+      "self",
+      "report_id",
+      "report"
+    ],
+    "delete_report": [
+      "self",
+      "report_id"
+    ]
+  },
+  "WebSocketManager": {
+    "__init__": [
+      "self"
+    ],
+    "start_sender": [
+      "self",
+      "websocket"
+    ],
+    "connect": [
+      "self",
+      "websocket"
+    ],
+    "disconnect": [
+      "self",
+      "websocket"
+    ],
+    "start_streaming": [
+      "self",
+      "task",
+      "report_type",
+      "report_source",
+      "source_urls",
+      "document_urls",
+      "tone",
+      "websocket",
+      "headers",
+      "query_domains",
+      "mcp_enabled",
+      "mcp_strategy",
+      "mcp_configs"
+    ]
+  },
+  "run_agent": [
+    "task",
+    "report_type",
+    "report_source",
+    "source_urls",
+    "document_urls",
+    "tone",
+    "websocket",
+    "stream_output",
+    "headers",
+    "query_domains",
+    "config_path",
+    "return_researcher",
+    "mcp_enabled",
+    "mcp_strategy",
+    "mcp_configs"
+  ],
+  "CustomLogsHandler": {
+    "__init__": [
+      "self",
+      "websocket",
+      "task"
+    ],
+    "send_json": [
+      "self",
+      "data"
+    ]
+  },
+  "Researcher": {
+    "__init__": [
+      "self",
+      "query",
+      "report_type"
+    ],
+    "research": [
+      "self"
+    ]
+  },
+  "handle_start_command": [
+    "websocket",
+    "data",
+    "manager"
+  ],
+  "handle_human_feedback": [
+    "data"
+  ],
+  "handle_chat_command": [
+    "websocket",
+    "data"
+  ],
+  "generate_report_files": [
+    "report",
+    "filename"
+  ],
+  "send_file_paths": [
+    "websocket",
+    "file_paths"
+  ],
+  "get_config_dict": [
+    "langchain_api_key",
+    "openai_api_key",
+    "tavily_api_key",
+    "google_api_key",
+    "google_cx_key",
+    "bing_api_key",
+    "searchapi_api_key",
+    "serpapi_api_key",
+    "serper_api_key",
+    "searx_url"
+  ],
+  "update_environment_variables": [
+    "config"
+  ],
+  "handle_file_upload": [
+    "file",
+    "DOC_PATH"
+  ],
+  "handle_file_deletion": [
+    "filename",
+    "DOC_PATH"
+  ],
+  "execute_multi_agents": [
+    "manager"
+  ],
+  "handle_websocket_communication": [
+    "websocket",
+    "manager"
+  ],
+  "extract_command_data": [
+    "json_data"
+  ],
+  "ResearchRequest": {},
+  "ChatRequest": {
+    "model_config": []
+  },
+  "lifespan": [
+    "app"
+  ],
+  "app": [],
+  "allowed_origins_env": [],
+  "ALLOWED_ORIGINS": [],
+  "frontend_dir": [],
+  "manager": [],
+  "report_store": [],
+  "DOC_PATH": [],
+  "serve_frontend": [],
+  "read_report": [
+    "request",
+    "research_id"
+  ],
+  "get_all_reports": [
+    "report_ids"
+  ],
+  "get_report_by_id": [
+    "research_id"
+  ],
+  "create_or_update_report": [
+    "request"
+  ],
+  "update_report": [
+    "research_id",
+    "request"
+  ],
+  "delete_report": [
+    "research_id"
+  ],
+  "get_report_chat": [
+    "research_id"
+  ],
+  "add_report_chat_message": [
+    "research_id",
+    "request"
+  ],
+  "write_report": [
+    "research_request",
+    "research_id"
+  ],
+  "list_files": [],
+  "run_multi_agents": [],
+  "upload_file": [
+    "file"
+  ],
+  "delete_file": [
+    "filename"
+  ],
+  "websocket_endpoint": [
+    "websocket"
+  ],
+  "chat": [
+    "chat_request"
+  ],
+  "research_report_chat": [
+    "research_id",
+    "request"
+  ]
+}

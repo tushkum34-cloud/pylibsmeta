@@ -1,0 +1,367 @@
+{
+  "logger": [],
+  "Frames": [],
+  "WordFrames": [],
+  "Beam": [],
+  "LMBeam": [],
+  "LMState": [],
+  "OutputBeam": [],
+  "OutputBeamMPSafe": [],
+  "LMScoreCacheKey": [],
+  "LMScoreCacheValue": [],
+  "FloatVar": [],
+  "Shape": [],
+  "_get_valid_pool": [
+    "pool"
+  ],
+  "_normalize_whitespace": [
+    "text"
+  ],
+  "_sort_and_trim_beams": [
+    "beams",
+    "beam_width"
+  ],
+  "_sum_log_scores": [
+    "s1",
+    "s2"
+  ],
+  "_log_softmax": [
+    "x",
+    "axis"
+  ],
+  "_merge_tokens": [
+    "token_1",
+    "token_2"
+  ],
+  "_merge_beams": [
+    "beams"
+  ],
+  "_prune_history": [
+    "beams",
+    "lm_order"
+  ],
+  "BeamSearchDecoderCTC": {
+    "_ALPHABET_SERIALIZED_FILENAME": [],
+    "_LANGUAGE_MODEL_SERIALIZED_DIRECTORY": [],
+    "__init__": [
+      "self",
+      "alphabet",
+      "language_model"
+    ],
+    "reset_params": [
+      "self",
+      "alpha",
+      "beta",
+      "unk_score_offset",
+      "lm_score_boundary"
+    ],
+    "clear_class_models": [
+      "cls"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "_language_model": [
+      "self"
+    ],
+    "_check_logits_dimension": [
+      "self",
+      "logits"
+    ],
+    "_get_lm_beams": [
+      "self",
+      "beams",
+      "hotword_scorer",
+      "cached_lm_scores",
+      "cached_partial_token_scores",
+      "is_eos"
+    ],
+    "_decode_logits": [
+      "self",
+      "logits",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "prune_history",
+      "hotword_scorer",
+      "lm_start_state"
+    ],
+    "decode_beams": [
+      "self",
+      "logits",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "prune_history",
+      "hotwords",
+      "hotword_weight",
+      "lm_start_state"
+    ],
+    "_decode_beams_mp_safe": [
+      "self",
+      "logits",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "prune_history",
+      "hotwords",
+      "hotword_weight"
+    ],
+    "decode_beams_batch": [
+      "self",
+      "pool",
+      "logits_list",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "prune_history",
+      "hotwords",
+      "hotword_weight"
+    ],
+    "decode": [
+      "self",
+      "logits",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "hotwords",
+      "hotword_weight",
+      "lm_start_state"
+    ],
+    "decode_batch": [
+      "self",
+      "pool",
+      "logits_list",
+      "beam_width",
+      "beam_prune_logp",
+      "token_min_logp",
+      "hotwords",
+      "hotword_weight"
+    ],
+    "save_to_dir": [
+      "self",
+      "filepath"
+    ],
+    "parse_directory_contents": [
+      "filepath"
+    ],
+    "load_from_dir": [
+      "cls",
+      "filepath",
+      "unigram_encoding"
+    ],
+    "load_from_hf_hub": [
+      "cls",
+      "model_id",
+      "cache_dir"
+    ]
+  },
+  "build_ctcdecoder": [
+    "labels",
+    "kenlm_model_path",
+    "unigrams",
+    "alpha",
+    "beta",
+    "unk_score_offset",
+    "lm_score_boundary"
+  ],
+  "BPE_TOKEN": [],
+  "UNK_TOKEN": [],
+  "UNK_BPE_TOKEN": [],
+  "SPECIAL_TOKEN_PTN": [],
+  "BLANK_TOKEN_PTN": [],
+  "UNK_TOKEN_PTN": [],
+  "_check_if_bpe": [
+    "labels"
+  ],
+  "_normalize_regular_alphabet": [
+    "labels"
+  ],
+  "_convert_bpe_token_style": [
+    "token"
+  ],
+  "_normalize_bpe_alphabet": [
+    "labels"
+  ],
+  "_verify_alphabet": [
+    "labels",
+    "is_bpe"
+  ],
+  "Alphabet": {
+    "__init__": [
+      "self",
+      "labels",
+      "is_bpe"
+    ],
+    "is_bpe": [
+      "self"
+    ],
+    "labels": [
+      "self"
+    ],
+    "build_alphabet": [
+      "cls",
+      "labels"
+    ],
+    "dumps": [
+      "self"
+    ],
+    "loads": [
+      "cls",
+      "s"
+    ]
+  },
+  "verify_alphabet_coverage": [
+    "alphabet",
+    "unigrams"
+  ],
+  "load_unigram_set_from_arpa": [
+    "arpa_path"
+  ],
+  "_prepare_unigram_set": [
+    "unigrams",
+    "kenlm_model"
+  ],
+  "_get_empty_lm_state": [],
+  "HotwordScorer": {
+    "__init__": [
+      "self",
+      "match_ptn",
+      "char_trie",
+      "weight"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "score": [
+      "self",
+      "text"
+    ],
+    "score_partial_token": [
+      "self",
+      "token"
+    ],
+    "build_scorer": [
+      "cls",
+      "hotwords",
+      "weight"
+    ]
+  },
+  "AbstractLanguageModel": {
+    "order": [
+      "self"
+    ],
+    "get_start_state": [
+      "self"
+    ],
+    "score_partial_token": [
+      "self",
+      "partial_token"
+    ],
+    "score": [
+      "self",
+      "prev_state",
+      "word",
+      "is_last_word"
+    ],
+    "save_to_dir": [
+      "self",
+      "filepath"
+    ],
+    "load_from_dir": [
+      "cls",
+      "filepath"
+    ],
+    "reset_params": [
+      "self"
+    ]
+  },
+  "LanguageModel": {
+    "JSON_ATTRS": [],
+    "_ATTRS_SERIALIZED_FILENAME": [],
+    "_UNIGRAMS_SERIALIZED_FILENAME": [],
+    "__init__": [
+      "self",
+      "kenlm_model",
+      "unigrams",
+      "alpha",
+      "beta",
+      "unk_score_offset",
+      "score_boundary"
+    ],
+    "reset_params": [
+      "self"
+    ],
+    "order": [
+      "self"
+    ],
+    "get_start_state": [
+      "self"
+    ],
+    "_get_raw_end_score": [
+      "self",
+      "start_state"
+    ],
+    "score_partial_token": [
+      "self",
+      "partial_token"
+    ],
+    "score": [
+      "self",
+      "prev_state",
+      "word",
+      "is_last_word"
+    ],
+    "serializable_attrs": [
+      "self"
+    ],
+    "save_to_dir": [
+      "self",
+      "filepath",
+      "unigram_encoding"
+    ],
+    "parse_directory_contents": [
+      "filepath"
+    ],
+    "load_from_dir": [
+      "cls",
+      "filepath",
+      "unigram_encoding"
+    ]
+  },
+  "MultiLanguageModel": {
+    "__init__": [
+      "self",
+      "language_models"
+    ],
+    "order": [
+      "self"
+    ],
+    "get_start_state": [
+      "self"
+    ],
+    "score_partial_token": [
+      "self",
+      "partial_token"
+    ],
+    "score": [
+      "self",
+      "prev_state",
+      "word",
+      "is_last_word"
+    ]
+  },
+  "DEFAULT_ALPHA": [],
+  "DEFAULT_BETA": [],
+  "DEFAULT_UNK_LOGP_OFFSET": [],
+  "DEFAULT_BEAM_WIDTH": [],
+  "DEFAULT_HOTWORD_WEIGHT": [],
+  "DEFAULT_PRUNE_LOGP": [],
+  "DEFAULT_PRUNE_BEAMS": [],
+  "DEFAULT_MIN_TOKEN_LOGP": [],
+  "DEFAULT_SCORE_LM_BOUNDARY": [],
+  "AVG_TOKEN_LEN": [],
+  "MIN_TOKEN_CLIP_P": [],
+  "LOG_BASE_CHANGE_FACTOR": []
+}

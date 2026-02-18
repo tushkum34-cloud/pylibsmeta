@@ -1,0 +1,8368 @@
+{
+  "__version__": [],
+  "FLAGS": [],
+  "main": [
+    "argv"
+  ],
+  "normalize_mesh": [
+    "mesh",
+    "in_place"
+  ],
+  "sample_mesh": [
+    "mesh"
+  ],
+  "get_interp_coefficients": [
+    "grid",
+    "pts",
+    "min_grid_value",
+    "max_grid_value"
+  ],
+  "regular_grid_interpolation": [
+    "grid",
+    "pts",
+    "min_grid_value",
+    "max_grid_value"
+  ],
+  "parse_param_file": [
+    "param_file"
+  ],
+  "RefinerEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "codelen",
+      "dim",
+      "out_features",
+      "num_filters",
+      "point_batch"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "_get_grid_points": [
+      "self",
+      "xmin",
+      "xmax",
+      "res"
+    ],
+    "eval_points": [
+      "self",
+      "lat",
+      "points"
+    ],
+    "eval_grid": [
+      "self",
+      "lat",
+      "xmin",
+      "xmax",
+      "res"
+    ]
+  },
+  "EncoderEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "in_grid_res",
+      "encoder_nf",
+      "codelen",
+      "grid_batch"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "eval_grid": [
+      "self",
+      "grid"
+    ]
+  },
+  "FullGridEncoderEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "in_grid_res",
+      "num_filters",
+      "codelen",
+      "grid_batch",
+      "gres",
+      "overlap"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "_batch_slice": [
+      "self",
+      "ary",
+      "start_ijk",
+      "w",
+      "batch_size"
+    ],
+    "eval_grid": [
+      "self",
+      "grid"
+    ]
+  },
+  "LIGEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "size",
+      "in_features",
+      "out_features",
+      "x_location_max",
+      "num_filters",
+      "min_grid_value",
+      "max_grid_value",
+      "net_type",
+      "method",
+      "point_batch",
+      "scope"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "_get_grid_points": [
+      "self",
+      "xmin",
+      "xmax",
+      "res"
+    ],
+    "eval_points": [
+      "self",
+      "latgrid",
+      "points"
+    ],
+    "eval_grid": [
+      "self",
+      "latgrid",
+      "xmin",
+      "xmax",
+      "res"
+    ],
+    "_get_var_mapping": [
+      "self",
+      "model"
+    ]
+  },
+  "UNetEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "in_grid_res",
+      "out_grid_res",
+      "num_filters",
+      "max_filters",
+      "out_features",
+      "sph_norm"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "eval_grid": [
+      "self",
+      "input_grid"
+    ]
+  },
+  "SparseLIGEvaluator": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "num_filters",
+      "codelen",
+      "origin",
+      "grid_shape",
+      "part_size",
+      "overlap",
+      "scope"
+    ],
+    "evaluate_feature_grid": [
+      "self",
+      "feature_grid",
+      "mask",
+      "res_per_part",
+      "conservative"
+    ]
+  },
+  "merge_meshes": [
+    "mesh_list"
+  ],
+  "average_onto_vertex": [
+    "mesh",
+    "per_face_attrib"
+  ],
+  "average_onto_face": [
+    "mesh",
+    "per_vert_attrib"
+  ],
+  "remove_backface": [
+    "mesh",
+    "pc",
+    "k",
+    "lap_iter",
+    "lap_val",
+    "area_threshold",
+    "verbose"
+  ],
+  "layers": [],
+  "LocalImplicitGrid": {
+    "__init__": [
+      "self",
+      "size",
+      "in_features",
+      "out_features",
+      "x_location_max",
+      "num_filters",
+      "net_type",
+      "method",
+      "interp",
+      "min_grid_value",
+      "max_grid_value",
+      "name"
+    ],
+    "call": [
+      "self",
+      "grid",
+      "pts",
+      "training"
+    ],
+    "_interp": [
+      "self",
+      "grid",
+      "pts"
+    ],
+    "_eval_net": [
+      "self",
+      "lat",
+      "weights",
+      "xloc",
+      "training"
+    ]
+  },
+  "ImNet": {
+    "__init__": [
+      "self",
+      "dim",
+      "in_features",
+      "out_features",
+      "num_filters",
+      "activation",
+      "name"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "ResBlock3D": {
+    "__init__": [
+      "self",
+      "neck_channels",
+      "out_channels",
+      "final_relu"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "UNet3D": {
+    "__init__": [
+      "self",
+      "in_grid_res",
+      "out_grid_res",
+      "num_filters",
+      "max_filters",
+      "out_features",
+      "name"
+    ],
+    "_create_layers": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "UNet3DOdd": {
+    "__init__": [
+      "self",
+      "in_grid_res",
+      "out_grid_res",
+      "num_filters",
+      "max_filters",
+      "out_features",
+      "name"
+    ],
+    "_create_layers": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "ModelG2G": {
+    "__init__": [
+      "self",
+      "in_grid_res",
+      "out_grid_res",
+      "num_filters",
+      "codelen",
+      "out_features",
+      "net_type",
+      "name"
+    ],
+    "call": [
+      "self",
+      "voxgrid",
+      "pts",
+      "training"
+    ]
+  },
+  "LIGOptimizer": {
+    "__init__": [
+      "self",
+      "ckpt",
+      "origin",
+      "grid_shape",
+      "part_size",
+      "occ_idx",
+      "indep_pt_loss",
+      "overlap",
+      "alpha_lat",
+      "npts",
+      "init_std",
+      "learning_rate",
+      "var_prefix",
+      "nows"
+    ],
+    "_load_params": [
+      "self",
+      "ckpt_dir"
+    ],
+    "_init_graph": [
+      "self"
+    ],
+    "_get_var_mapping": [
+      "self",
+      "model",
+      "scope"
+    ],
+    "_initialize_uninitialized": [
+      "self",
+      "sess"
+    ],
+    "optimize_feat_grid": [
+      "self",
+      "point_coords",
+      "point_vals",
+      "steps",
+      "print_every_n_steps"
+    ],
+    "feature_grid": [
+      "self"
+    ]
+  },
+  "occupancy_sparse_to_dense": [
+    "occ_idx",
+    "grid_shape"
+  ],
+  "get_in_out_from_samples": [
+    "mesh",
+    "npoints",
+    "sample_factor",
+    "std"
+  ],
+  "get_in_out_from_ray": [
+    "points_from_ray",
+    "sample_factor",
+    "std"
+  ],
+  "intrinsics_from_matrix": [
+    "int_mat"
+  ],
+  "encode_decoder_one_scene": [
+    "near_surface_samples",
+    "ckpt_dir",
+    "part_size",
+    "overlap",
+    "indep_pt_loss",
+    "xmin",
+    "xmax",
+    "res_per_part",
+    "npts",
+    "init_std",
+    "learning_rate",
+    "steps",
+    "nows",
+    "verbose"
+  ],
+  "GridEncoder": {
+    "__init__": [
+      "self",
+      "in_grid_res",
+      "num_filters",
+      "codelen",
+      "name"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "GridEncoderVAE": {
+    "__init__": [
+      "self",
+      "in_grid_res",
+      "num_filters",
+      "codelen",
+      "name"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "read_point_ply": [
+    "filename"
+  ],
+  "write_point_ply": [
+    "filename",
+    "v",
+    "n"
+  ],
+  "np_pad_points": [
+    "points",
+    "ntarget"
+  ],
+  "np_gather_ijk_index": [
+    "arr",
+    "index"
+  ],
+  "np_shifted_crop": [
+    "v",
+    "idx_grid",
+    "shift",
+    "crop_size",
+    "ntarget"
+  ],
+  "np_get_occupied_idx": [
+    "v",
+    "xmin",
+    "xmax",
+    "crop_size",
+    "ntarget",
+    "overlap",
+    "normalize_crops",
+    "return_shape",
+    "return_crop_point_idxs"
+  ],
+  "initializer": [],
+  "unet_3x_with_res_in_mid": [
+    "feat_in",
+    "out_filters",
+    "norm2d"
+  ],
+  "neural_voxel_renderer_plus": [
+    "voxels",
+    "rerendering",
+    "light_pos",
+    "size",
+    "norm2d",
+    "norm3d"
+  ],
+  "neural_voxel_renderer_plus_tf2": [
+    "size",
+    "norm2d",
+    "norm3d"
+  ],
+  "X_AXIS": [],
+  "Z_AXIS": [],
+  "PI": [],
+  "PI_2": [],
+  "ZERO": [],
+  "MIRROR_X_MATRIX": [],
+  "CUBE_BOX_DIM": [],
+  "OBJECT_BOTTOM": [],
+  "generate_ground_image": [
+    "height",
+    "width",
+    "focal",
+    "principal_point",
+    "camera_rotation_matrix",
+    "camera_translation_vector",
+    "ground_color"
+  ],
+  "sampling_points_to_voxel_index": [
+    "sampling_points",
+    "voxel_size"
+  ],
+  "sampling_points_from_3d_grid": [
+    "grid_size",
+    "dtype"
+  ],
+  "sampling_points_from_frustum": [
+    "height",
+    "width",
+    "focal",
+    "principal_point",
+    "depth_min",
+    "depth_max",
+    "frustum_size"
+  ],
+  "place_frustum_sampling_points_at_blender_camera": [
+    "sampling_points",
+    "camera_rotation_matrix",
+    "camera_translation_vector"
+  ],
+  "transform_volume": [
+    "voxels",
+    "transformation_matrix",
+    "voxel_size"
+  ],
+  "object_rotation_in_blender_world": [
+    "voxels",
+    "object_rotation"
+  ],
+  "render_voxels_from_blender_camera": [
+    "voxels",
+    "object_rotation",
+    "object_translation",
+    "height",
+    "width",
+    "focal",
+    "principal_point",
+    "camera_rotation_matrix",
+    "camera_translation_vector",
+    "frustum_size",
+    "absorption_factor",
+    "cell_size",
+    "depth_min",
+    "depth_max"
+  ],
+  "object_to_world": [
+    "voxels",
+    "euler_angles_x",
+    "euler_angles_y",
+    "translation_vector",
+    "target_volume_size"
+  ],
+  "rate": [],
+  "norm_layer": [
+    "tensor",
+    "normalization"
+  ],
+  "upconv": [
+    "tensor",
+    "nfilters",
+    "size",
+    "strides",
+    "alpha_lrelu",
+    "normalization"
+  ],
+  "conv_block_3d": [
+    "tensor",
+    "nfilters",
+    "size",
+    "strides",
+    "alpha_lrelu",
+    "normalization",
+    "relu"
+  ],
+  "conv_t_block_3d": [
+    "tensor",
+    "nfilters",
+    "size",
+    "strides",
+    "alpha_lrelu",
+    "normalization",
+    "relu"
+  ],
+  "conv_block_2d": [
+    "tensor",
+    "nfilters",
+    "size",
+    "strides",
+    "alpha_lrelu",
+    "normalization"
+  ],
+  "conv_t_block_2d": [
+    "tensor",
+    "nfilters",
+    "size",
+    "strides",
+    "alpha_lrelu",
+    "normalization"
+  ],
+  "residual_block_2d": [
+    "x",
+    "nfilters",
+    "strides",
+    "normalization"
+  ],
+  "residual_block_3d": [
+    "x",
+    "nfilters",
+    "strides",
+    "normalization"
+  ],
+  "decode_proto": [],
+  "voxel_proto_get": [
+    "element"
+  ],
+  "blender_sample_proto_get": [
+    "element"
+  ],
+  "_expand_tfrecords_pattern": [
+    "tfr_pattern"
+  ],
+  "tfrecords_to_dataset": [
+    "tfrecords_pattern",
+    "mapping_func",
+    "batch_size",
+    "buffer_size"
+  ],
+  "VOXEL_SIZE": [],
+  "IMAGE_SIZE": [],
+  "BLENDER_SCALE": [],
+  "DIAMETER": [],
+  "BACKGROUND_COLOR": [],
+  "DATASET_SIZE": [],
+  "flags": [],
+  "logging": [],
+  "build_eval_graph": [
+    "input_fn",
+    "model_fn",
+    "hparams"
+  ],
+  "evaluate": [
+    "hook_dict",
+    "ckpt",
+    "saver",
+    "best_iou",
+    "hparams"
+  ],
+  "get_model": [
+    "hparams"
+  ],
+  "nasa": [
+    "hparams"
+  ],
+  "model_dict": [],
+  "transform_points": [
+    "points",
+    "transform"
+  ],
+  "compute_l2_indicator_loss": [
+    "labels",
+    "predictions"
+  ],
+  "get_identity_transform": [
+    "n_translate",
+    "n_rotate",
+    "n_parts"
+  ],
+  "get_transform_matrix": [
+    "transform",
+    "trans_range",
+    "n_translate",
+    "n_rotate",
+    "n_dims"
+  ],
+  "nasa_indicator": [
+    "points",
+    "transform",
+    "joint",
+    "hparams",
+    "need_transformation",
+    "noise"
+  ],
+  "nasa_mlp": [
+    "points",
+    "hparams",
+    "dims",
+    "shared"
+  ],
+  "reduce_dimension": [
+    "x",
+    "n_parts"
+  ],
+  "tfd": [],
+  "define_flags": [],
+  "gen_mesh": [
+    "sess",
+    "feed_dict",
+    "latent_holder",
+    "point_holder",
+    "latent",
+    "occ",
+    "batch_val",
+    "hparams",
+    "idx"
+  ],
+  "save_mesh": [
+    "sess",
+    "feed_dict",
+    "latent_holder",
+    "point_holder",
+    "latent",
+    "occ",
+    "batch_val",
+    "hparams",
+    "pth"
+  ],
+  "save_pointcloud": [
+    "data",
+    "hparams",
+    "pth"
+  ],
+  "amass_name_helper": [
+    "name"
+  ],
+  "make_summary_feed_dict": [
+    "iou_hook",
+    "iou",
+    "best_hook",
+    "best_iou"
+  ],
+  "parse_global_step": [
+    "ckpt"
+  ],
+  "compute_iou": [
+    "sess",
+    "feed_dict",
+    "latent_holder",
+    "point_holder",
+    "latent",
+    "occ",
+    "point",
+    "label",
+    "hparams"
+  ],
+  "compute_glue_loss": [
+    "connect",
+    "end_pts",
+    "inv_transforms",
+    "inv_first_frame_trans",
+    "joints",
+    "hparams"
+  ],
+  "vanilla_theta_gradient": [
+    "model_fn",
+    "batch_holder",
+    "hparams"
+  ],
+  "reparam_theta_gradient": [
+    "model_fn",
+    "batch_holder",
+    "hparams"
+  ],
+  "optimize_theta": [
+    "feed_dict",
+    "loss",
+    "reset_op",
+    "train_op",
+    "rec_loss",
+    "glue_loss",
+    "sess",
+    "k",
+    "hparams"
+  ],
+  "get_dataset": [
+    "split",
+    "hparams"
+  ],
+  "amass": [
+    "split",
+    "hparams"
+  ],
+  "dataset_dict": [],
+  "pi": [],
+  "match_intermediate_batch_dimensions": [
+    "tensor1",
+    "tensor2"
+  ],
+  "change_coordinate_system": [
+    "points3d",
+    "rotations",
+    "scale",
+    "name"
+  ],
+  "get_distances_between_points": [
+    "ray_points3d",
+    "last_bin_width"
+  ],
+  "_move_in_front_of_camera": [
+    "points3d",
+    "rotation_matrix",
+    "translation_vector"
+  ],
+  "camera_rays_from_extrinsics": [
+    "rays",
+    "rotation_matrix",
+    "translation_vector"
+  ],
+  "camera_rays_from_transformation_matrix": [
+    "rays",
+    "transform_matrix"
+  ],
+  "l2_loss": [
+    "prediction",
+    "target",
+    "weights"
+  ],
+  "l2_loss_distrib": [
+    "prediction",
+    "target",
+    "global_batch_size",
+    "weights"
+  ],
+  "DATASETDIR": [],
+  "load_synthetic_nerf_dataset": [
+    "dataset_dir",
+    "dataset_name",
+    "split",
+    "scale",
+    "batch_size",
+    "shuffle"
+  ],
+  "_bytes_feature": [
+    "value"
+  ],
+  "_float_feature": [
+    "value"
+  ],
+  "_int64_feature": [
+    "value"
+  ],
+  "load_srn_sample": [
+    "path_to_srn",
+    "category",
+    "split",
+    "shape_name",
+    "view_id"
+  ],
+  "set_srn_sample_proto": [
+    "shape_name",
+    "shape_id",
+    "view",
+    "image",
+    "focal",
+    "principal_point",
+    "rotation_matrix",
+    "translation_vector",
+    "w2v_alpha",
+    "w2v_beta"
+  ],
+  "get_srn_sample_proto": [
+    "element"
+  ],
+  "load_srn_dataset": [
+    "tfrecords_dir",
+    "batch_size",
+    "seed",
+    "buffer_size",
+    "drop_remainder"
+  ],
+  "NeRF": {
+    "__init__": [
+      "self",
+      "ray_samples_coarse",
+      "ray_samples_fine",
+      "near",
+      "far",
+      "n_freq_posenc_xyz",
+      "n_freq_posenc_dir",
+      "scene_bbox",
+      "n_filters",
+      "white_background",
+      "coarse_sampling_strategy"
+    ],
+    "init_coarse_and_fine_models": [
+      "self"
+    ],
+    "init_optimizer": [
+      "self",
+      "learning_rate",
+      "decay_steps",
+      "decay_rate",
+      "staircase"
+    ],
+    "init_checkpoint": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint"
+    ],
+    "load_checkpoint": [
+      "self",
+      "checkpoint"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "prepare_positional_encoding": [
+      "self",
+      "ray_points",
+      "ray_dirs"
+    ],
+    "render_network_output": [
+      "self",
+      "rgb_density",
+      "ray_points"
+    ],
+    "inference": [
+      "self",
+      "r_org",
+      "r_dir"
+    ],
+    "train_step": [
+      "self",
+      "r_org",
+      "r_dir",
+      "gt_rgb"
+    ]
+  },
+  "dense_block": [
+    "tensor",
+    "n_filters",
+    "n_layers",
+    "activation",
+    "seed"
+  ],
+  "concat_block": [
+    "tensor",
+    "n_filters",
+    "n_layers",
+    "activation",
+    "seed"
+  ],
+  "ModelTest": {
+    "test_model_training": [
+      "self"
+    ]
+  },
+  "get_mask_voxels": [
+    "shape",
+    "dtype"
+  ],
+  "inflate_voxels": [
+    "voxels",
+    "kernel_size"
+  ],
+  "ray_sample_voxel_grid": [
+    "ray_points",
+    "voxels",
+    "w2v_alpha",
+    "w2v_beta"
+  ],
+  "optimize_for_mask": [
+    "geometry_network",
+    "mask",
+    "focal",
+    "principal_point",
+    "rotation_matrix",
+    "translation_vector",
+    "w2v_alpha",
+    "w2v_beta",
+    "density",
+    "mirror_weight",
+    "near",
+    "far",
+    "n_samples",
+    "learning_rate_network",
+    "learning_rate_code",
+    "n_rays",
+    "n_iter",
+    "opt_mode",
+    "nearest_train_shape",
+    "ray_sampling_strategy",
+    "verbose_steps"
+  ],
+  "GeometryNetwork": {
+    "__init__": [
+      "self",
+      "num_latent_codes",
+      "latent_code_dim",
+      "fc_channels",
+      "fc_activation",
+      "conv_size",
+      "norm3d",
+      "bce_gamma",
+      "proj_weight",
+      "mirror_weight"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "init_model": [
+      "self"
+    ],
+    "init_optimizer": [
+      "self",
+      "learning_rate_network",
+      "learning_rate_codes"
+    ],
+    "init_checkpoint": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint"
+    ],
+    "load_checkpoint": [
+      "self",
+      "checkpoint"
+    ],
+    "reset_models": [
+      "self"
+    ]
+  },
+  "OptimizationTest": {
+    "test_optimization": [
+      "self"
+    ]
+  },
+  "AppearanceNetwork": {
+    "__init__": [
+      "self",
+      "ray_samples_coarse",
+      "ray_samples_fine",
+      "near",
+      "far",
+      "n_freq_posenc_xyz",
+      "n_freq_posenc_dir",
+      "scene_bbox",
+      "n_filters",
+      "num_latent_codes",
+      "latent_code_dim",
+      "white_background",
+      "coarse_sampling_strategy"
+    ],
+    "init_model_and_codes": [
+      "self"
+    ],
+    "init_optimizer": [
+      "self",
+      "learning_rate_network",
+      "learning_rate_latent",
+      "decay_steps",
+      "decay_rate",
+      "staircase"
+    ],
+    "init_checkpoint": [
+      "self",
+      "checkpoint_dir",
+      "checkpoint"
+    ],
+    "load_checkpoint": [
+      "self",
+      "checkpoint"
+    ],
+    "reset_models": [
+      "self"
+    ],
+    "get_model": [
+      "self"
+    ],
+    "prepare_positional_encoding": [
+      "self",
+      "ray_points",
+      "ray_dirs"
+    ],
+    "render_network_output": [
+      "self",
+      "rgb_density",
+      "ray_points"
+    ],
+    "inference": [
+      "self",
+      "r_org",
+      "r_dir",
+      "latent_code",
+      "voxels",
+      "w2v_alpha",
+      "w2v_beta",
+      "near",
+      "far"
+    ],
+    "train_step": [
+      "self",
+      "r_org",
+      "r_dir",
+      "shape_index",
+      "voxels",
+      "w2v_alpha",
+      "w2v_beta",
+      "gt_rgb"
+    ]
+  },
+  "numpy_include_dir": [],
+  "mise_module": [],
+  "ext_modules": [],
+  "keras": [],
+  "MultiConvexNet": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "compute_loss": [
+      "self",
+      "batch",
+      "training",
+      "optimizer"
+    ],
+    "encode": [
+      "self",
+      "img",
+      "training"
+    ],
+    "decode": [
+      "self",
+      "params",
+      "points",
+      "training"
+    ],
+    "_split_params": [
+      "self",
+      "params"
+    ],
+    "_compute_sample_loss": [
+      "self",
+      "gt",
+      "output"
+    ],
+    "_compute_bbx_loss": [
+      "self",
+      "trans",
+      "pts",
+      "gt"
+    ],
+    "_compute_overlap_loss": [
+      "self",
+      "overlap"
+    ],
+    "_compute_balance_loss": [
+      "self",
+      "indicas",
+      "labels"
+    ]
+  },
+  "MultiConvexUnit": {
+    "__init__": [
+      "self",
+      "dims",
+      "n_parts",
+      "sharpness"
+    ],
+    "call": [
+      "self",
+      "x",
+      "translations",
+      "blend_terms",
+      "points"
+    ],
+    "_compute_sdf": [
+      "self",
+      "x",
+      "translations",
+      "blend_terms",
+      "points"
+    ]
+  },
+  "Decoder": {
+    "__init__": [
+      "self",
+      "dims"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "Resnet18": {
+    "__init__": [
+      "self",
+      "feature_dims"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "ResLayer": {
+    "__init__": [
+      "self",
+      "block",
+      "inplanes",
+      "planes",
+      "blocks",
+      "stride"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "BasicBlock": {
+    "__init__": [
+      "self",
+      "planes",
+      "stride",
+      "downsample"
+    ],
+    "call": [
+      "self",
+      "x",
+      "training"
+    ]
+  },
+  "Stats": [],
+  "SYSNET_CLASSES": [],
+  "mesh_name_helper": [
+    "name"
+  ],
+  "extract_mesh": [
+    "input_val",
+    "params",
+    "indicators",
+    "input_holder",
+    "params_holder",
+    "points_holder",
+    "sess",
+    "args"
+  ],
+  "transform_mesh": [
+    "mesh",
+    "name",
+    "trans_dir"
+  ],
+  "distance_field_helper": [
+    "source",
+    "target"
+  ],
+  "compute_surface_metrics": [
+    "mesh",
+    "name",
+    "mesh_dir"
+  ],
+  "init_stats": [],
+  "update_stats": [
+    "example_stats",
+    "name",
+    "shapenet_stats"
+  ],
+  "average_stats": [
+    "shapenet_stats"
+  ],
+  "write_stats": [
+    "stats",
+    "eval_dir",
+    "step"
+  ],
+  "shapenet": [
+    "split",
+    "args"
+  ],
+  "ArgumentParser": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "name",
+      "default"
+    ],
+    "parse_args": [
+      "self",
+      "args",
+      "namespace"
+    ]
+  },
+  "assert_gpu_available": [],
+  "set_tensorflow_log_level": [
+    "level"
+  ],
+  "summary_command": [
+    "parser",
+    "flags",
+    "log_to_file",
+    "log_to_summary"
+  ],
+  "setup_tensorboard": [
+    "flags"
+  ],
+  "handle_keyboard_interrupt": [
+    "flags"
+  ],
+  "TrainTest": {
+    "test_train": [
+      "self"
+    ]
+  },
+  "jitter": [
+    "points",
+    "stddev",
+    "clip"
+  ],
+  "rotate": [
+    "points"
+  ],
+  "parser": [],
+  "model": [],
+  "wrapped_tf_function": [
+    "points",
+    "label"
+  ],
+  "train": [
+    "example"
+  ],
+  "num_examples": [],
+  "ds_train": [],
+  "ds_test": [],
+  "centernet_proto_get": [
+    "serialized"
+  ],
+  "decode_bytes": [
+    "serialized"
+  ],
+  "fix_rotation": [
+    "rotation_y",
+    "object_class"
+  ],
+  "fix_rotation_matrix": [
+    "rotation_matrix",
+    "object_class"
+  ],
+  "decode_bytes_multiple": [
+    "serialized"
+  ],
+  "decode_bytes_multiple_scannet": [
+    "serialized"
+  ],
+  "WarmupDelayedCosineDecay": {
+    "__init__": [
+      "self",
+      "initial_learning_rate",
+      "constant_learning_rate",
+      "end_learning_rate",
+      "warmup_steps",
+      "start_decay_step",
+      "decay_steps",
+      "name"
+    ],
+    "__call__": [
+      "self",
+      "step"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "RegL1Loss": {
+    "__init__": [
+      "self",
+      "reduce_batch",
+      "sparse"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "CollisionLoss": {
+    "__init__": [
+      "self",
+      "reduce_batch",
+      "return_values",
+      "tol"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "SparseFocalLoss": {
+    "__init__": [
+      "self",
+      "reduce_batch",
+      "gamma",
+      "alpha"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "FocalLoss": {
+    "__init__": [
+      "self",
+      "reduce_batch"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "CrossEntropyLoss": {
+    "__init__": [
+      "self",
+      "reduce_batch",
+      "label_smoothing",
+      "soft_shape_labels"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "HuberLoss": {
+    "__init__": [
+      "self",
+      "reduce_batch",
+      "order"
+    ],
+    "__call__": [
+      "self",
+      "prediction",
+      "gt",
+      "sample"
+    ]
+  },
+  "Logger": {
+    "__init__": [
+      "self",
+      "logdir",
+      "name",
+      "xmanager_work_unit",
+      "xmanager_metric",
+      "save_loss_tensorboard_frequency",
+      "print_loss_frequency"
+    ],
+    "record_scalar": [
+      "self",
+      "name",
+      "scalar",
+      "step"
+    ],
+    "record_dictionary_scalars": [
+      "self",
+      "prefix",
+      "scalar_dict",
+      "step"
+    ],
+    "record_losses": [
+      "self",
+      "prefix",
+      "losses",
+      "step"
+    ],
+    "record_losses_epoch": [
+      "self",
+      "prefix",
+      "step"
+    ],
+    "reset_losses": [
+      "self"
+    ]
+  },
+  "ShapeAccuracyMetric": {
+    "__init__": [
+      "self",
+      "k"
+    ],
+    "update": [
+      "self",
+      "sparse_labels",
+      "predicted_probabilities",
+      "sample_weights"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "get_2d_bounding_box_iou": [
+    "box1",
+    "box2"
+  ],
+  "get_3d_bounding_box_iou": [
+    "box1",
+    "box2"
+  ],
+  "IoUMetric": {
+    "__init__": [
+      "self",
+      "max_num_classes",
+      "resolution",
+      "tol",
+      "slave",
+      "path"
+    ],
+    "update": [
+      "self",
+      "labeled_sdfs",
+      "labeled_classes",
+      "labeled_poses",
+      "predicted_sdfs",
+      "predicted_classes",
+      "predicted_poses"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "CollisionMetric": {
+    "__init__": [
+      "self",
+      "max_num_classes",
+      "resolution",
+      "tol",
+      "slave",
+      "path"
+    ],
+    "update": [
+      "self",
+      "labeled_sdfs",
+      "labeled_classes",
+      "labeled_poses",
+      "predicted_sdfs",
+      "predicted_classes",
+      "predicted_poses"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "BoxIoUMetric": {
+    "__init__": [
+      "self",
+      "t",
+      "threed"
+    ],
+    "update": [
+      "self",
+      "scene_id",
+      "labeled_boxes",
+      "labeled_classes",
+      "predicted_boxes",
+      "predicted_classes",
+      "confidences"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "_get_iou_main": [
+      "self",
+      "get_iou_func",
+      "args"
+    ],
+    "_voc_ap": [
+      "self",
+      "rec",
+      "prec"
+    ],
+    "_eval_detections_per_class": [
+      "self",
+      "pred",
+      "gt",
+      "ovthresh"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "Evaluator": {
+    "__init__": [
+      "self",
+      "metrics",
+      "split",
+      "shapenet_dir"
+    ],
+    "add_detections": [
+      "self",
+      "sample",
+      "detections"
+    ],
+    "evaluate": [
+      "self"
+    ],
+    "reset_metrics": [
+      "self"
+    ]
+  },
+  "expand_rio_pattern": [
+    "rio_pattern"
+  ],
+  "tfrecords_to_dataset_tf2": [
+    "tfrecords_pattern",
+    "mapping_func",
+    "batch_size",
+    "buffer_size",
+    "shuffle"
+  ],
+  "gaussian_blur": [
+    "img",
+    "sigma"
+  ],
+  "euler_from_rotation_matrix": [
+    "matrix",
+    "axis"
+  ],
+  "compute_dot": [
+    "image_size",
+    "intrinsics",
+    "extrinsics",
+    "axis",
+    "image_intersection"
+  ],
+  "get_next_sample_dataset": [
+    "dataset_iter"
+  ],
+  "get_devices": [
+    "gpu_ids"
+  ],
+  "using_multigpu": [],
+  "compute_batch_size": [
+    "tensor_dict"
+  ],
+  "plot_to_image": [
+    "figure"
+  ],
+  "resize_heatmap": [
+    "centers",
+    "color",
+    "stride"
+  ],
+  "plot_heatmaps": [
+    "image",
+    "detections",
+    "figsize"
+  ],
+  "draw_coordinate_frame": [
+    "camera_intrinsic",
+    "pose_world2camera",
+    "dot"
+  ],
+  "plot_gt_boxes_2d": [
+    "sample",
+    "shape_pointclouds",
+    "figsize"
+  ],
+  "show_sdf": [
+    "sdf",
+    "figsize",
+    "resolution"
+  ],
+  "plot_gt_boxes_3d": [
+    "sample",
+    "shape_pointclouds",
+    "figsize"
+  ],
+  "CLASSES": [],
+  "plot_boxes_2d": [
+    "image",
+    "sample",
+    "predictions",
+    "projection",
+    "groundtruth",
+    "figsize",
+    "class_id_to_name"
+  ],
+  "plot_boxes_3d": [
+    "image",
+    "sample",
+    "predictions",
+    "figsize",
+    "groundtruth",
+    "class_id_to_name"
+  ],
+  "plot_detections": [
+    "image",
+    "intrinsics",
+    "pose_world2camera",
+    "detections",
+    "labels",
+    "figsize"
+  ],
+  "plot_all_heatmaps": [
+    "image",
+    "detections",
+    "figsize",
+    "num_classes"
+  ],
+  "plot_gt_heatmaps": [
+    "image",
+    "heatmaps",
+    "num_classes"
+  ],
+  "draw_bounding_box_3d": [
+    "size",
+    "pose",
+    "camera_intrinsic",
+    "world2camera",
+    "linestyle",
+    "color",
+    "linewidth"
+  ],
+  "plot_prediction": [
+    "inputs",
+    "outputs",
+    "figsize",
+    "batch_id",
+    "plot_2d"
+  ],
+  "matrix_from_angle": [
+    "angle",
+    "axis"
+  ],
+  "save_for_blender": [
+    "detections",
+    "sample",
+    "log_dir",
+    "dict_clusters",
+    "shape_pointclouds",
+    "class_id_to_name"
+  ],
+  "obj_read_for_gl": [
+    "filename",
+    "texture_size"
+  ],
+  "plot_labeled_2d_boxes": [
+    "sample",
+    "batch_id"
+  ],
+  "get_affine_transform": [
+    "center",
+    "scale",
+    "rot",
+    "output_size",
+    "inverse"
+  ],
+  "get_3rd_point": [
+    "point_1",
+    "point_2"
+  ],
+  "get_dir": [
+    "point",
+    "rot_rad"
+  ],
+  "transform_predictions": [
+    "points",
+    "center",
+    "scale",
+    "output_size"
+  ],
+  "tf_data_augmentation": [],
+  "LIGHTING_EIGVAL": [],
+  "LIGHTING_EIGVEC": [],
+  "bgr_to_rgb": [
+    "image"
+  ],
+  "rgb_to_bgr": [
+    "image"
+  ],
+  "brightness": [
+    "image",
+    "variance"
+  ],
+  "contrast": [
+    "image",
+    "image_grayscale_mean",
+    "variance"
+  ],
+  "saturation": [
+    "image",
+    "image_grayscale",
+    "variance"
+  ],
+  "lighting": [
+    "image",
+    "alpha_std",
+    "eigval",
+    "eigvec"
+  ],
+  "color_augmentations": [
+    "image",
+    "variance"
+  ],
+  "subtract_mean_and_normalize": [
+    "image",
+    "means",
+    "std",
+    "random"
+  ],
+  "_get_image_border": [
+    "border",
+    "size"
+  ],
+  "compute_image_size_affine_transform": [
+    "original_image_size",
+    "input_image_size",
+    "padding_keep_size",
+    "random",
+    "random_side_scale_range"
+  ],
+  "affine_transform": [
+    "image",
+    "original_image_size",
+    "bounding_boxes",
+    "instance_masks",
+    "image_size",
+    "padding_keep_size",
+    "transform_gt_annotations",
+    "random",
+    "random_side_scale_range",
+    "random_flip_probability"
+  ],
+  "affine_transform_image_np": [
+    "image",
+    "center",
+    "side_size",
+    "input_size",
+    "interpolation_mode"
+  ],
+  "_affine_transform_points_np": [
+    "bounding_boxes",
+    "original_image_size",
+    "center",
+    "side_size",
+    "output_size",
+    "flip"
+  ],
+  "transform_points_np": [
+    "points",
+    "center",
+    "scale",
+    "output_size",
+    "inverse"
+  ],
+  "TransformsFactory": {
+    "__int__": [
+      "self"
+    ],
+    "get_transform_group": [
+      "name",
+      "params"
+    ]
+  },
+  "preprocess": [
+    "tensor_dict",
+    "preprocess_options",
+    "func_arg_map",
+    "preprocess_vars_cache"
+  ],
+  "_smallest_positive_root": [
+    "a",
+    "b",
+    "c"
+  ],
+  "_max_distance_for_overlap": [
+    "height",
+    "width",
+    "min_iou"
+  ],
+  "valid_bounding_boxes_mask": [
+    "boxes",
+    "height",
+    "width",
+    "tolerance_pixels"
+  ],
+  "assign_center_targets": [
+    "gt_box_batch",
+    "gt_class_batch",
+    "gt_num_boxes_batch",
+    "image_size",
+    "stride",
+    "num_classes",
+    "gt_weights_batch",
+    "min_overlap"
+  ],
+  "assign_offset_targets": [
+    "gt_box_batch",
+    "gt_num_boxes_batch",
+    "stride",
+    "image_size"
+  ],
+  "assign_width_height_targets": [
+    "gt_box_batch",
+    "gt_num_boxes_batch",
+    "stride",
+    "image_size"
+  ],
+  "assign_center_indices_targets": [
+    "gt_box_batch",
+    "gt_num_boxes_batch",
+    "stride",
+    "image_size"
+  ],
+  "assign_valid_boxes_mask_targets": [
+    "gt_box_batch",
+    "gt_num_boxes_batch",
+    "image_size",
+    "stride"
+  ],
+  "InputDownsampleBlock": {
+    "__init__": [
+      "self",
+      "input_shape",
+      "out_dims",
+      "norm_type",
+      "kernel_regularizer"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "EncoderDecoderBlock": {
+    "__init__": [
+      "self",
+      "depth",
+      "features_dims",
+      "blocks_per_stage",
+      "norm_type",
+      "kernel_regularizer"
+    ],
+    "make_encoder_hourglass_block": [
+      "out_dim",
+      "norm_type",
+      "kernel_regularizer",
+      "num_blocks",
+      "do_stride"
+    ],
+    "make_decoder_hourglass_block": [
+      "in_dim",
+      "out_dim",
+      "norm_type",
+      "kernel_regularizer",
+      "num_blocks"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "Head": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "dim",
+      "norm_type",
+      "kernel_regularizer",
+      "name",
+      "return_features"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ClassificationHead": {
+    "__init__": [
+      "self",
+      "norm_type",
+      "kernel_regularizer",
+      "channels_per_block",
+      "num_classes",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "Hourglass": {
+    "__init__": [
+      "self",
+      "input_shape",
+      "heads",
+      "features_dims",
+      "number_hourglasses",
+      "depth",
+      "blocks_per_stage",
+      "kernel_regularization",
+      "return_output_features",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs",
+      "training",
+      "mask"
+    ]
+  },
+  "_top_scores_heatmaps": [
+    "centers",
+    "k"
+  ],
+  "_get_offsets": [
+    "offset",
+    "topk_inds"
+  ],
+  "hourglass_104": [],
+  "IdentityLayer": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "SkipConvolution": {
+    "__init__": [
+      "self",
+      "out_dim",
+      "stride",
+      "norm_type",
+      "kernel_regularizer",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ConvolutionalBlock": {
+    "__init__": [
+      "self",
+      "kernel_size",
+      "out_dim",
+      "norm_type",
+      "kernel_regularizer",
+      "stride",
+      "input_shape",
+      "padding",
+      "relu",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "ResidualBlock": {
+    "__init__": [
+      "self",
+      "out_dim",
+      "norm_type",
+      "kernel_regularizer",
+      "skip",
+      "kernel_size",
+      "stride",
+      "padding",
+      "name"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "NormType": {
+    "__init__": [
+      "self",
+      "norm_name",
+      "norm_params"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "Regularization": {
+    "__init__": [
+      "self",
+      "regularization_name",
+      "wd"
+    ],
+    "__call__": [
+      "self"
+    ]
+  },
+  "CenterNetVID": {
+    "__init__": [
+      "self",
+      "network",
+      "heads_losses",
+      "optimizer",
+      "get_k_predictions_test",
+      "score_threshold",
+      "pretrained_checkpoint_dir",
+      "remove_pretrained_heads",
+      "input_shape",
+      "layers_to_train",
+      "clip_norm",
+      "shape_centers",
+      "shape_sdfs",
+      "beta",
+      "shape_pointclouds",
+      "dict_clusters",
+      "rotation_svd"
+    ],
+    "_get_ckpt_dir": [
+      "path"
+    ],
+    "_get_tmp_name": [
+      "length"
+    ],
+    "load_ckpt": [
+      "self",
+      "checkpoint_dir_or_checkpoint_file_path",
+      "network_no_heads"
+    ],
+    "_compute_loss": [
+      "outputs",
+      "sample",
+      "losses",
+      "num_samples"
+    ],
+    "merge_per_head_losses": [
+      "total_loss",
+      "new_loss"
+    ],
+    "recover_sample_dimensions": [
+      "outputs",
+      "sample_shape"
+    ],
+    "compute_loss": [
+      "self",
+      "sample",
+      "normalized_sample",
+      "outputs"
+    ],
+    "more_things": [
+      "self",
+      "output",
+      "sample",
+      "training",
+      "apply_sigmoid"
+    ],
+    "test_sample": [
+      "self",
+      "sample",
+      "compute_loss",
+      "training"
+    ],
+    "train_sample": [
+      "self",
+      "sample"
+    ],
+    "nms": [
+      "centers"
+    ],
+    "_top_scores_heatmaps": [
+      "centers",
+      "k"
+    ],
+    "_get_offsets": [
+      "offset",
+      "topk_inds"
+    ],
+    "_get_width_height": [
+      "width_height",
+      "topk_inds"
+    ],
+    "group_detections": [
+      "xs",
+      "ys",
+      "scores",
+      "classes",
+      "width_height"
+    ],
+    "transform_and_group_detections_per_class": [
+      "detections",
+      "metadata",
+      "num_classes"
+    ],
+    "transform_detections": [
+      "self",
+      "detections",
+      "metadata"
+    ],
+    "postprocess_sample2": [
+      "self",
+      "input_image_size",
+      "sample",
+      "output",
+      "apply_sigmoid"
+    ]
+  },
+  "SingleObjectModel": {
+    "__init__": [
+      "self",
+      "is_training",
+      "output_dimension"
+    ],
+    "compute_loss": [
+      "self",
+      "inputs",
+      "outputs",
+      "global_batch_size"
+    ],
+    "train_sample": [
+      "self",
+      "sample",
+      "optimizer",
+      "global_batch_size"
+    ],
+    "decode_batch": [
+      "batch",
+      "inputs"
+    ],
+    "decode_predictions": [
+      "predictions",
+      "inputs",
+      "outputs"
+    ]
+  },
+  "softargmax": [
+    "y",
+    "voxels",
+    "beta"
+  ],
+  "SoftArgMax": {
+    "__init__": [
+      "self",
+      "beta",
+      "voxels",
+      "voxel_size"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "get_heatmap_values": [
+    "heatmap",
+    "indices"
+  ],
+  "assemble_pose": [
+    "rotations_3d",
+    "translations_3d",
+    "sizes_3d"
+  ],
+  "transform_pointcloud": [
+    "pointclouds",
+    "sizes_3d",
+    "rotations_3d",
+    "translations_3d",
+    "inverse"
+  ],
+  "decode_box_3d": [
+    "output",
+    "indices",
+    "rotation_svd"
+  ],
+  "LOG_DIR": [],
+  "TFRECORDS_DIR": [],
+  "SHAPENET_DIR": [],
+  "get_shapes": [
+    "scannet"
+  ],
+  "get_soft_shape_labels": [
+    "sdfs"
+  ],
+  "get_learning_rate_fn": [],
+  "get_evaluator": [],
+  "_train_epoch": [
+    "epoch",
+    "model",
+    "dataset",
+    "logger",
+    "number_of_steps_previous_epochs",
+    "max_num_steps_epoch",
+    "input_image_size"
+  ],
+  "_val_epoch": [
+    "name",
+    "model",
+    "dataset",
+    "input_image_size",
+    "epoch",
+    "logger",
+    "number_of_steps_previous_epochs",
+    "evaluator",
+    "record_loss"
+  ],
+  "val": [
+    "gpu_ids",
+    "record_losses",
+    "split",
+    "part_id"
+  ],
+  "images_to_video": [
+    "input_dir",
+    "output_path",
+    "sequences",
+    "input_pattern",
+    "framerate"
+  ],
+  "chairs": [],
+  "triplets": [],
+  "path": [],
+  "count_objects": [],
+  "_InitializerCallable": [],
+  "_KerasInitializer": [],
+  "_KernelFanInScaler": {
+    "__init__": [
+      "self"
+    ],
+    "kernel": [
+      "self",
+      "kernel"
+    ],
+    "bias": [
+      "self",
+      "bias"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "FanInScaledDense": {},
+  "FanInScaledConv2D": {},
+  "PixelNormalization": {
+    "__init__": [
+      "self",
+      "axis",
+      "epsilon"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "TwoByTwoNearestNeighborUpSampling": {
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "Blur2D": {
+    "__init__": [
+      "self"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "LearnedConstant": {
+    "__init__": [
+      "self",
+      "shape"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "Noise": {
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "DemodulatedConvolution": {
+    "__init__": [
+      "self",
+      "filters",
+      "kernel_size",
+      "kernel_initializer",
+      "bias_initializer"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "CUSTOM_LAYERS": [],
+  "create_random_testcase": [
+    "shape"
+  ],
+  "MinibatchStandarddeviationTest": {
+    "test_zero_deviation": [
+      "self"
+    ],
+    "test_constant_samples": [
+      "self"
+    ],
+    "test_random": [
+      "self"
+    ],
+    "test_distributed_with_replica_ctx": [
+      "self"
+    ],
+    "test_distributed_without_replica_ctx": [
+      "self"
+    ],
+    "test_config": [
+      "self"
+    ],
+    "test_batch_axis_too_large": [
+      "self"
+    ],
+    "test_channel_axis_too_large": [
+      "self"
+    ],
+    "test_invalid_channel_axis_argument": [
+      "self"
+    ],
+    "test_invalid_batch_axis_argument": [
+      "self"
+    ],
+    "test_axis_indices": [
+      "self"
+    ],
+    "test_axis_specified_as_tuple": [
+      "self"
+    ]
+  },
+  "gradient_penalty_loss": [
+    "real_data",
+    "generated_data",
+    "discriminator",
+    "weight",
+    "eps",
+    "name_scope"
+  ],
+  "_sum_of_squares": [
+    "input_tensor"
+  ],
+  "r1_regularization": [
+    "real_data",
+    "discriminator",
+    "weight",
+    "name"
+  ],
+  "wasserstein_generator_loss": [
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "wasserstein_discriminator_loss": [
+    "discriminator_output_real_data",
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "wasserstein_hinge_generator_loss": [
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "wasserstein_hinge_discriminator_loss": [
+    "discriminator_output_real_data",
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "minimax_generator_loss": [
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "minimax_discriminator_loss": [
+    "discriminator_output_real_data",
+    "discriminator_output_generated_data",
+    "name"
+  ],
+  "_maybe_upsample_and_add_outputs": [
+    "current_level_output",
+    "previous_level_output",
+    "use_bilinear_upsampling"
+  ],
+  "get_noise_dimensions": [
+    "num_upsampling_blocks"
+  ],
+  "_create_noise_inputs": [
+    "num_upsampling_blocks"
+  ],
+  "create_synthesis_network": [
+    "latent_code_dimension",
+    "upsampling_blocks_num_channels",
+    "relu_leakiness",
+    "use_bilinear_upsampling",
+    "use_noise_inputs",
+    "name"
+  ],
+  "create_style_based_generator": [
+    "latent_code_dimension",
+    "upsampling_blocks_num_channels",
+    "relu_leakiness",
+    "use_bilinear_upsampling",
+    "normalize_latent_code",
+    "use_noise_inputs",
+    "name"
+  ],
+  "create_discriminator": [
+    "downsampling_blocks_num_channels",
+    "relu_leakiness",
+    "kernel_initializer",
+    "use_fan_in_scaled_kernels",
+    "use_antialiased_bilinear_downsampling",
+    "num_channels",
+    "name"
+  ],
+  "ArchitecturesProgressiveGanTest": {
+    "test_generator_output_size": [
+      "self",
+      "batch_size",
+      "normalize_latent_code"
+    ],
+    "test_generator_intermediate_outputs_shape": [
+      "self",
+      "batch_size"
+    ],
+    "test_cloning_generator": [
+      "self"
+    ],
+    "test_discriminator_output_size": [
+      "self",
+      "batch_size",
+      "use_fan_in_scaled_kernels",
+      "antialiased_bilinear_downsampling"
+    ],
+    "test_discriminator_intermediate_inputs_fit": [
+      "self",
+      "batch_size"
+    ]
+  },
+  "FanInScaledDenseTest": {
+    "test_kernel_shape_correct": [
+      "self"
+    ],
+    "test_kernel_has_correct_value": [
+      "self",
+      "kernel_multiplier"
+    ],
+    "test_bias_has_correct_value": [
+      "self",
+      "bias_multiplier"
+    ],
+    "test_config_contains_both_base_classes": [
+      "self"
+    ]
+  },
+  "FanInScaledConv2DTest": {
+    "test_kernel_shape_correct": [
+      "self"
+    ],
+    "test_kernel_has_correct_value": [
+      "self",
+      "kernel_multiplier"
+    ],
+    "test_bias_has_correct_value": [
+      "self",
+      "bias_multiplier"
+    ],
+    "test_config_contains_both_base_classes": [
+      "self"
+    ]
+  },
+  "PixelNormalizationTest": {
+    "test_output_is_normalized": [
+      "self",
+      "shape",
+      "axis"
+    ],
+    "config_contains_correct_axis": [
+      "self",
+      "axis"
+    ]
+  },
+  "Blur2DTest": {
+    "test_upsampling_blur_is_bilinear_upsampling": [
+      "self",
+      "shape"
+    ],
+    "test_blur_average_pooling_is_anti_aliased_bilinear_downsampling": [
+      "self",
+      "shape"
+    ]
+  },
+  "LearnedConstantTest": {
+    "test_output_shape_correct": [
+      "self",
+      "constant_shape",
+      "batch_size"
+    ],
+    "test_config_contains_correct_shape": [
+      "self",
+      "constant_shape"
+    ]
+  },
+  "NoiseTest": {
+    "test_output_shape_correct": [
+      "self",
+      "shape"
+    ],
+    "test_output_shape_correct_with_input_noise": [
+      "self",
+      "shape"
+    ],
+    "test_raises_with_wrong_number_of_inputs": [
+      "self"
+    ]
+  },
+  "DemodulatedConvolutionTest": {
+    "test_output_shape_correct": [
+      "self"
+    ],
+    "test_output_feature_map_has_correct_mean_and_stddev": [
+      "self"
+    ],
+    "test_config_contains_correct_entries": [
+      "self"
+    ]
+  },
+  "to_rgb": [
+    "input_tensor",
+    "kernel_initializer",
+    "name"
+  ],
+  "create_generator": [
+    "latent_code_dimension",
+    "upsampling_blocks_num_channels",
+    "relu_leakiness",
+    "kernel_initializer",
+    "use_pixel_normalization",
+    "use_batch_normalization",
+    "generate_intermediate_outputs",
+    "normalize_latent_code",
+    "name"
+  ],
+  "create_conv_layer": [
+    "use_fan_in_scaled_kernel",
+    "multiplier"
+  ],
+  "from_rgb": [
+    "input_tensor",
+    "use_fan_in_scaled_kernel",
+    "num_channels",
+    "kernel_initializer",
+    "relu_leakiness",
+    "name"
+  ],
+  "MiniBatchStandardDeviationBase": {
+    "__init__": [
+      "self"
+    ],
+    "_calculate_mean_feature_standard_deviation": [
+      "self",
+      "inputs",
+      "batch_axis"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ],
+    "get_config": [
+      "self"
+    ]
+  },
+  "SyncMiniBatchStandardDeviation": {
+    "_calculate_mean_feature_standard_deviation": [
+      "self",
+      "inputs",
+      "batch_axis"
+    ]
+  },
+  "MiniBatchStandardDeviation": {},
+  "ArchitecturesStyleGanV2Test": {
+    "test_generator_output_size": [
+      "self",
+      "batch_size",
+      "normalize_latent_code"
+    ],
+    "test_generator_output_size_with_noise_inputs": [
+      "self"
+    ],
+    "test_cloning_generator": [
+      "self"
+    ],
+    "test_discriminator_output_size": [
+      "self",
+      "batch_size",
+      "use_fan_in_scaled_kernels",
+      "antialiased_bilinear_downsampling"
+    ]
+  },
+  "apply_style_with_adain": [
+    "mapped_latent_code",
+    "input_tensor"
+  ],
+  "create_mapping_network": [
+    "latent_code_dimension",
+    "output_dimension",
+    "normalize_latent_code",
+    "relu_leakiness",
+    "num_layers",
+    "learning_rate_multiplier",
+    "name"
+  ],
+  "ArchitecturesStyleGanTest": {
+    "test_style_based_generator_output_size": [
+      "self",
+      "batch_size",
+      "normalize_latent_code"
+    ],
+    "test_style_based_generator_intermediate_outputs_shape": [
+      "self",
+      "batch_size"
+    ],
+    "test_cloning_style_based_generator": [
+      "self"
+    ],
+    "test_style_based_generator_mapping_outputs_shape": [
+      "self",
+      "batch_size"
+    ]
+  },
+  "ExponentialMovingAverageTest": {
+    "test_decay_one_values_are_from_initialization": [
+      "self"
+    ],
+    "test_decay_zero_returns_last_value": [
+      "self"
+    ],
+    "test_cross_replica_context_raises_error": [
+      "self"
+    ],
+    "test_mirrored_strategy_replica_context_runs": [
+      "self"
+    ]
+  },
+  "ExponentialMovingAverage": {
+    "__init__": [
+      "self",
+      "decay"
+    ],
+    "_ema_assign_fn": [
+      "self",
+      "variable",
+      "value"
+    ],
+    "_apply_values": [
+      "self",
+      "variables"
+    ],
+    "apply": [
+      "self",
+      "variables"
+    ]
+  },
+  "LossesTest": {
+    "test_gradient_penalty_shape_correct": [
+      "self"
+    ],
+    "test_gradient_penalty_shape_correct_sequence_input": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_positive": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_positive_for_sequence_input": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_jacobian_preset": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_sequence_input_jacobian_preset": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_lambda_for_zero_gradient": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_lambda_for_zero_gradient_sequence_input": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_with_wrong_input_types_raises": [
+      "self"
+    ],
+    "test_gradient_penalty_loss_with_unequal_number_of_elements_raises": [
+      "self"
+    ],
+    "test_r1_regularization_shape_correct": [
+      "self"
+    ],
+    "test_r1_regularization_shape_correct_sequence_input": [
+      "self"
+    ],
+    "test_r1_regularization_positive": [
+      "self"
+    ],
+    "test_r1_regularization_positive_for_sequence_input": [
+      "self"
+    ],
+    "test_r1_regularization_jacobian_random": [
+      "self"
+    ],
+    "test_r1_regulatization_sequence_input_jacobian_random": [
+      "self"
+    ],
+    "test_wasserstein_generator_loss_shape_correct": [
+      "self"
+    ],
+    "test_generator_loss_jacobian_preset": [
+      "self",
+      "loss_function",
+      "loss_input_value"
+    ],
+    "test_wasserstein_discriminator_loss_shape_correct": [
+      "self"
+    ],
+    "test_wasserstein_discriminator_loss_zero_with_same_input": [
+      "self"
+    ],
+    "test_discriminator_loss_jacobian_finite_preset": [
+      "self",
+      "loss_function",
+      "discriminator_value_real",
+      "discriminator_value_generated"
+    ],
+    "test_discriminator_loss_jacobian_correct_preset": [
+      "self",
+      "loss_function",
+      "discriminator_value_real",
+      "discriminator_value_generated"
+    ],
+    "test_wasserstein_hinge_generator_loss_shape_correct": [
+      "self"
+    ],
+    "test_wasserstein_hinge_discriminator_loss_shape_correct": [
+      "self"
+    ],
+    "test_wasserstein_hinge_discriminator_loss_correct_value": [
+      "self",
+      "real_data_input",
+      "generated_data_input",
+      "expected_loss_value"
+    ],
+    "test_minimax_generator_loss_shape_correct": [
+      "self"
+    ],
+    "test_minimax_discriminator_loss_shape_correct": [
+      "self"
+    ]
+  },
+  "RasterizationBackends": {
+    "OPENGL": [],
+    "CPU": []
+  },
+  "rasterize": [
+    "vertices",
+    "triangles",
+    "view_projection_matrices",
+    "image_size",
+    "enable_cull_face",
+    "num_layers",
+    "backend"
+  ],
+  "__all__": [],
+  "interpolate_vertex_attribute": [
+    "attribute",
+    "framebuffer",
+    "background_value"
+  ],
+  "splat_at_pixel_centers": [
+    "xyz_rgba"
+  ],
+  "rasterize_then_splat": [
+    "vertices",
+    "triangles",
+    "attributes",
+    "view_projection_matrix",
+    "image_size",
+    "shading_function",
+    "num_layers",
+    "return_extra_buffers",
+    "backend",
+    "name"
+  ],
+  "dim_value": [
+    "dim"
+  ],
+  "merge_batch_dims": [
+    "tensor",
+    "last_axis"
+  ],
+  "restore_batch_dims": [
+    "tensor",
+    "batch_shape"
+  ],
+  "transform_homogeneous": [
+    "matrices",
+    "vertices"
+  ],
+  "differentiable_barycentrics": [
+    "framebuffer",
+    "clip_space_vertices",
+    "triangles",
+    "use_vectorized_map"
+  ],
+  "normalized_pixel_coordinates": [
+    "image_width",
+    "image_height"
+  ],
+  "compute_triangle_matrices": [
+    "clip_space_vertices",
+    "triangles"
+  ],
+  "compute_barycentric_coordinates": [
+    "triangle_ids",
+    "triangle_matrices",
+    "px",
+    "py"
+  ],
+  "RasterizedAttribute": {
+    "__post_init__": [
+      "self"
+    ],
+    "is_multi_layer": [
+      "self"
+    ],
+    "layer": [
+      "self",
+      "index"
+    ]
+  },
+  "Framebuffer": {
+    "__post_init__": [
+      "self"
+    ],
+    "batch_size": [
+      "self"
+    ],
+    "is_multi_layer": [
+      "self"
+    ],
+    "num_layers": [
+      "self"
+    ],
+    "height": [
+      "self"
+    ],
+    "width": [
+      "self"
+    ],
+    "pixel_count": [
+      "self"
+    ],
+    "background_mask": [
+      "self"
+    ],
+    "layer": [
+      "self",
+      "index"
+    ]
+  },
+  "FaceCullingMode": {
+    "NONE": [],
+    "BACK": [],
+    "FRONT": []
+  },
+  "project": [
+    "point_3d",
+    "name"
+  ],
+  "ray": [
+    "point_2d",
+    "name"
+  ],
+  "unproject": [
+    "point_2d",
+    "depth",
+    "name"
+  ],
+  "distortion_factor": [
+    "squared_radius",
+    "distortion_coefficient",
+    "name"
+  ],
+  "undistortion_factor": [
+    "distorted_squared_radius",
+    "distortion_coefficient",
+    "num_iterations",
+    "name"
+  ],
+  "parameters_from_right_handed": [
+    "projection_matrix",
+    "name"
+  ],
+  "right_handed": [
+    "vertical_field_of_view",
+    "aspect_ratio",
+    "near",
+    "far",
+    "name"
+  ],
+  "matrix_from_intrinsics": [
+    "focal",
+    "principal_point",
+    "skew",
+    "name"
+  ],
+  "random_rays": [
+    "focal",
+    "principal_point",
+    "height",
+    "width",
+    "n_rays",
+    "margin",
+    "name"
+  ],
+  "random_patches": [
+    "focal",
+    "principal_point",
+    "height",
+    "width",
+    "patch_height",
+    "patch_width",
+    "scale",
+    "name"
+  ],
+  "RANDOM_TESTS_NUM_IMAGES": [],
+  "RANDOM_TESTS_HEIGHT": [],
+  "RANDOM_TESTS_WIDTH": [],
+  "RADII_SHAPE": [],
+  "COEFFICIENT_SHAPE": [],
+  "_get_random_radii": [],
+  "_get_zeros_radii": [],
+  "_get_ones_radii": [],
+  "_get_random_coefficient": [],
+  "_get_zeros_coefficient": [],
+  "_get_ones_coefficient": [],
+  "_make_shape_compatible": [
+    "coefficients"
+  ],
+  "QuadraticRadialDistortionTest": {
+    "test_distortion_factor_random_positive_distortion_coefficient": [
+      "self"
+    ],
+    "test_distortion_factor_preset_zero_distortion_coefficient": [
+      "self"
+    ],
+    "test_distortion_factor_random_negative_distortion_coefficient": [
+      "self"
+    ],
+    "test_distortion_factor_preset_zero_radius": [
+      "self"
+    ],
+    "test_both_negative_radius_exception_raised": [
+      "self",
+      "distortion_function"
+    ],
+    "test_undistortion_factor_random_positive_distortion_coefficient": [
+      "self",
+      "num_iterations",
+      "tolerance"
+    ],
+    "test_undistortion_factor_random_negative_distortion_coefficient": [
+      "self",
+      "num_iterations",
+      "tolerance"
+    ],
+    "test_undistortion_factor_zero_distortion_coefficient": [
+      "self"
+    ],
+    "test_distortion_factor_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_distortion_factor_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_undistortion_factor_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_undistortion_factor_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_both_radial_jacobian": [
+      "self",
+      "distortion_function"
+    ],
+    "test_both_distortion_coefficient_jacobian": [
+      "self",
+      "distortion_function"
+    ]
+  },
+  "OrthographicTest": {
+    "test_project_exception_not_exception_raised": [
+      "self"
+    ],
+    "test_project_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_project_jacobian_random": [
+      "self"
+    ],
+    "test_project_random": [
+      "self"
+    ],
+    "test_ray_exception_not_exception_raised": [
+      "self"
+    ],
+    "test_ray_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_ray_jacobian_random": [
+      "self"
+    ],
+    "test_ray_random": [
+      "self"
+    ],
+    "test_unproject_exception_not_raised": [
+      "self"
+    ],
+    "test_unproject_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_unproject_jacobian_random": [
+      "self"
+    ],
+    "test_unproject_random": [
+      "self"
+    ]
+  },
+  "PerspectiveTest": {
+    "test_parameters_from_right_handed_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_parameters_from_right_handed_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_parameters_from_right_handed_random": [
+      "self"
+    ],
+    "test_parameters_from_right_handed_jacobian_random": [
+      "self"
+    ],
+    "test_perspective_right_handed_preset": [
+      "self"
+    ],
+    "test_perspective_right_handed_exception_not_raised": [
+      "self"
+    ],
+    "test_perspective_right_handed_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_perspective_right_handed_valid_range_exception_raised": [
+      "self",
+      "vertical_field_of_view",
+      "aspect_ratio",
+      "near",
+      "far"
+    ],
+    "test_perspective_right_handed_cross_jacobian_preset": [
+      "self"
+    ],
+    "test_perspective_right_handed_cross_jacobian_random": [
+      "self"
+    ],
+    "test_intrinsics_from_matrix_exception_not_raised": [
+      "self"
+    ],
+    "test_intrinsics_from_matrix_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_intrinsics_from_matrix_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_intrinsics_from_matrix_to_intrinsics_random": [
+      "self"
+    ],
+    "test_matrix_from_intrinsics_exception_not_raised": [
+      "self"
+    ],
+    "test_matrix_from_intrinsics_exception_not_raised_when_skew_not_passed": [
+      "self"
+    ],
+    "test_matrix_from_intrinsics_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_matrix_from_intrinsics_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_matrix_from_intrinsics_to_matrix_random": [
+      "self"
+    ],
+    "test_project_exception_not_exception_raised": [
+      "self"
+    ],
+    "test_project_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_project_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_project_unproject_random": [
+      "self"
+    ],
+    "test_project_ray_random": [
+      "self"
+    ],
+    "test_ray_exception_exception_not_raised": [
+      "self"
+    ],
+    "test_ray_exception_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_ray_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_ray_project_random": [
+      "self"
+    ],
+    "test_unproject_exception_not_raised": [
+      "self"
+    ],
+    "test_unproject_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_unproject_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_unproject_project_random": [
+      "self"
+    ],
+    "test_unproject_ray_random": [
+      "self"
+    ],
+    "test_random_rays_exception_exception_not_raised": [
+      "self",
+      "height",
+      "width",
+      "n_rays"
+    ],
+    "test_random_rays_exception_exception_raised": [
+      "self",
+      "error_msg",
+      "height",
+      "width",
+      "n_rays"
+    ],
+    "test_random_patches_exception_exception_not_raised": [
+      "self",
+      "height",
+      "width",
+      "patch_height",
+      "patch_width"
+    ],
+    "test_random_patches_exception_exception_raised": [
+      "self",
+      "error_msg",
+      "height",
+      "width",
+      "patch_height",
+      "patch_width"
+    ],
+    "test_random_patches_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ]
+  },
+  "estimate_radiance": [
+    "point_light_radiance",
+    "point_light_position",
+    "surface_point_position",
+    "surface_point_normal",
+    "observation_point",
+    "brdf",
+    "name",
+    "reflected_light_fall_off"
+  ],
+  "fake_brdf": [
+    "incoming_light_direction",
+    "outgoing_light_direction",
+    "surface_point_normal"
+  ],
+  "returning_zeros_brdf": [
+    "incoming_light_direction",
+    "outgoing_light_direction",
+    "surface_point_normal"
+  ],
+  "random_tensor": [
+    "tensor_shape"
+  ],
+  "PointLightTest": {
+    "test_estimate_radiance_preset": [
+      "self",
+      "light_radiance",
+      "light_pos",
+      "observation_pos",
+      "expected_result",
+      "reflected_light_fall_off"
+    ],
+    "test_estimate_radiance_jacobian_random": [
+      "self"
+    ],
+    "test_estimate_radiance_jacobian_preset": [
+      "self"
+    ],
+    "test_estimate_radiance_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_estimate_radiance_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_estimate_radiance_value_exceptions_raised": [
+      "self"
+    ]
+  },
+  "GPURasterizationBackendTest": {
+    "setUp": [
+      "self"
+    ]
+  },
+  "RasterizationBackendTestBase": {
+    "IMAGE_WIDTH": [],
+    "IMAGE_HEIGHT": [],
+    "setUp": [
+      "self"
+    ],
+    "_create_placeholders": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_rasterizer_rasterize_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes",
+      "enable_cull_face"
+    ],
+    "test_rasterizer_return_correct_batch_shapes": [
+      "self",
+      "shapes",
+      "dtypes",
+      "enable_cull_face"
+    ],
+    "test_rasterizer_rasterize_exception_raised": [
+      "self",
+      "shapes",
+      "dtypes",
+      "backend"
+    ],
+    "test_rasterizer_all_vertices_visible": [
+      "self"
+    ],
+    "test_render_simple_triangle": [
+      "self"
+    ]
+  },
+  "make_perspective_matrix": [
+    "image_width",
+    "image_height"
+  ],
+  "make_look_at_matrix": [
+    "camera_origin",
+    "look_at_point"
+  ],
+  "get_identity_view_projection_matrix": [],
+  "compare_images": [
+    "test_case",
+    "baseline_image",
+    "image",
+    "max_outlier_fraction",
+    "pixel_error_threshold"
+  ],
+  "load_baseline_image": [
+    "filename",
+    "image_shape"
+  ],
+  "set_batch_shape": [
+    "tensor",
+    "batch_shape"
+  ],
+  "create_rasterizer_inputs": [
+    "batch_shape"
+  ],
+  "SplatWithOpenGLTest": {
+    "setUp": [
+      "self"
+    ]
+  },
+  "FramebufferTest": {
+    "test_initialize_rasterized_attribute_and_derivatives_with_wrong_rank": [
+      "self"
+    ],
+    "test_initialize_rasterized_attribute_with_wrong_rank": [
+      "self"
+    ],
+    "test_initialize_rasterized_attribute_with_wrong_shapes": [
+      "self"
+    ],
+    "test_initialize_framebuffer_with_wrong_rank": [
+      "self"
+    ],
+    "test_initialize_framebuffer_with_wrong_shapes": [
+      "self"
+    ]
+  },
+  "UtilsTest": {
+    "test_transform_homogeneous_shapes": [
+      "self",
+      "do_batched"
+    ]
+  },
+  "CPURasterizationBackendTest": {
+    "setUp": [
+      "self"
+    ]
+  },
+  "RasterizeTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_renders_colored_cube": [
+      "self",
+      "enable_cull_face"
+    ],
+    "test_renders_colored_cube_multilayer": [
+      "self",
+      "num_layers"
+    ]
+  },
+  "BarycentricsTest": {
+    "test_differentialbe_barycentrics_close_to_rasterizer": [
+      "self",
+      "rasterization_backend_type"
+    ]
+  },
+  "rasterize_image": [
+    "vertices",
+    "triangles",
+    "color",
+    "camera_matrix",
+    "image_width",
+    "image_height",
+    "backend"
+  ],
+  "SplatTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_batch_dimension_preserved": [
+      "self",
+      "batch_shape"
+    ],
+    "test_rasterizes_correct_shape": [
+      "self"
+    ],
+    "test_two_triangle_layers": [
+      "self"
+    ],
+    "test_optimize_single_triangle": [
+      "self"
+    ]
+  },
+  "map_texture": [
+    "uv_map",
+    "texture_image",
+    "tiling",
+    "interpolation_method",
+    "name"
+  ],
+  "MipmapTest": {
+    "test_map_texture_exception_not_raised": [
+      "self",
+      "tiling",
+      "num_mipmap_levels"
+    ],
+    "test_map_texture_interpolates_correctly_mipmap_images": [
+      "self",
+      "uv_map",
+      "mipmap_images_list",
+      "tiling",
+      "interpolated_gt"
+    ],
+    "test_map_texture_interpolates_correctly_texture_image": [
+      "self",
+      "uv_map",
+      "texture_image",
+      "num_mipmap_levels",
+      "tiling",
+      "interpolated_gt"
+    ]
+  },
+  "TextMapTest": {
+    "test_map_texture_exception_not_raised": [
+      "self",
+      "tiling"
+    ],
+    "test_map_texture_interpolates_correctly": [
+      "self",
+      "texture_image",
+      "u_map",
+      "v_map",
+      "interpolated_gt",
+      "tiling"
+    ]
+  },
+  "_brdf_normalization_factor": [
+    "shininess"
+  ],
+  "brdf": [
+    "direction_incoming_light",
+    "direction_outgoing_light",
+    "surface_normal",
+    "shininess",
+    "albedo",
+    "brdf_normalization",
+    "name"
+  ],
+  "PhongTest": {
+    "test_brdf_jacobian_random": [
+      "self"
+    ],
+    "test_brdf_jacobian_preset": [
+      "self"
+    ],
+    "test_brdf_random": [
+      "self",
+      "incoming_yz",
+      "outgoing_yz",
+      "ratio"
+    ],
+    "test_brdf_exceptions_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "LambertianTest": {
+    "test_brdf_jacobian_random": [
+      "self"
+    ],
+    "test_brdf_jacobian_preset": [
+      "self"
+    ],
+    "test_brdf_random": [
+      "self",
+      "incoming_yz",
+      "outgoing_yz",
+      "ratio"
+    ],
+    "test_brdf_exceptions_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "BlinnPhongTest": {
+    "test_brdf_jacobian_random": [
+      "self"
+    ],
+    "test_brdf_jacobian_preset": [
+      "self"
+    ],
+    "test_brdf_random": [
+      "self",
+      "incoming_yz",
+      "outgoing_yz",
+      "ratio"
+    ],
+    "test_brdf_exceptions_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_brdf_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "render": [
+    "voxels",
+    "absorption_factor",
+    "cell_size",
+    "axis",
+    "name"
+  ],
+  "compute_density": [
+    "density_values",
+    "distances",
+    "name"
+  ],
+  "compute_radiance": [
+    "rgba_values",
+    "distances",
+    "name"
+  ],
+  "AbsorptionTest": {
+    "test_render_shape_exception_not_raised": [
+      "self",
+      "axis"
+    ],
+    "test_render_shape_exception_raised": [
+      "self",
+      "error_msg",
+      "axis"
+    ],
+    "test_render_jacobian_random": [
+      "self"
+    ],
+    "test_render_preset": [
+      "self"
+    ]
+  },
+  "generate_random_test_ray_render": [],
+  "VolumetricTest": {
+    "test_render_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_render_shape_exception_raised": [
+      "self",
+      "error_msg",
+      "shape"
+    ],
+    "test_render_jacobian_random": [
+      "self"
+    ],
+    "test_render_preset": [
+      "self"
+    ]
+  },
+  "EmissionAbsorptionTest": {
+    "test_render_shape_exception_not_raised": [
+      "self",
+      "axis"
+    ],
+    "test_render_shape_exception_raised": [
+      "self",
+      "error_msg",
+      "axis"
+    ],
+    "test_render_jacobian_random": [
+      "self"
+    ],
+    "test_render_preset": [
+      "self"
+    ]
+  },
+  "RayDensityTest": {
+    "test_render_shape_exception_not_raised": [
+      "self"
+    ],
+    "test_render_shape_exception_raised": [
+      "self",
+      "error_msg",
+      "shape"
+    ],
+    "test_render_jacobian_random": [
+      "self"
+    ],
+    "test_render_preset": [
+      "self"
+    ]
+  },
+  "VisualHullTest": {
+    "test_render_shape_exception_not_raised": [
+      "self",
+      "axis"
+    ],
+    "test_render_shape_exception_raised": [
+      "self",
+      "error_msg",
+      "axis"
+    ],
+    "test_render_jacobian_random": [
+      "self"
+    ],
+    "test_render_preset": [
+      "self"
+    ]
+  },
+  "generate_random_test_voxels_render": [],
+  "generate_preset_test_voxels_visual_hull_render": [],
+  "generate_preset_test_voxels_absorption_render": [],
+  "generate_preset_test_voxels_emission_absorption_render": [],
+  "_dim_value": [
+    "dim"
+  ],
+  "vertex_shader": [],
+  "geometry_shader": [],
+  "fragment_shader": [],
+  "model_to_eye": [
+    "point_model_space",
+    "camera_position",
+    "look_at_point",
+    "up_vector",
+    "name"
+  ],
+  "eye_to_clip": [
+    "point_eye_space",
+    "vertical_field_of_view",
+    "aspect_ratio",
+    "near",
+    "far",
+    "name"
+  ],
+  "clip_to_ndc": [
+    "point_clip_space",
+    "name"
+  ],
+  "ndc_to_screen": [
+    "point_ndc_space",
+    "lower_left_corner",
+    "screen_dimensions",
+    "near",
+    "far",
+    "name"
+  ],
+  "model_to_screen": [
+    "point_model_space",
+    "model_to_eye_matrix",
+    "perspective_matrix",
+    "screen_dimensions",
+    "lower_left_corner",
+    "name"
+  ],
+  "perspective_correct_barycentrics": [
+    "triangle_vertices_model_space",
+    "pixel_position",
+    "model_to_eye_matrix",
+    "perspective_matrix",
+    "screen_dimensions",
+    "lower_left_corner",
+    "name"
+  ],
+  "interpolate_attributes": [
+    "attribute",
+    "barycentric",
+    "name"
+  ],
+  "perspective_correct_interpolation": [
+    "triangle_vertices_model_space",
+    "attribute",
+    "pixel_position",
+    "model_to_eye_matrix",
+    "perspective_matrix",
+    "screen_dimensions",
+    "lower_left_corner",
+    "name"
+  ],
+  "_IMAGE_HEIGHT": [],
+  "_IMAGE_WIDTH": [],
+  "_TRIANGLE_SIZE": [],
+  "_ENABLE_CULL_FACE": [],
+  "_NUM_LAYERS": [],
+  "_generate_vertices_and_view_matrices": [],
+  "_proxy_rasterize": [
+    "vertices",
+    "triangles",
+    "view_projection_matrices"
+  ],
+  "RasterizationBackendTest": {
+    "test_rasterize_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rasterize_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_rasterize_batch_vertices_only": [
+      "self"
+    ],
+    "test_rasterize_batch_view_only": [
+      "self"
+    ],
+    "test_rasterize_preset": [
+      "self"
+    ]
+  },
+  "test_vertex_shader": [],
+  "test_geometry_shader": [],
+  "test_fragment_shader": [],
+  "RasterizerOPTest": {
+    "test_rasterize": [
+      "self"
+    ],
+    "test_invalid_variable_inputs": [
+      "self",
+      "error_msg",
+      "variable_names",
+      "variable_kinds",
+      "variable_values",
+      "error_eager",
+      "error_graph_mode"
+    ]
+  },
+  "MathTest": {
+    "test_model_to_eye_preset": [
+      "self"
+    ],
+    "test_model_to_eye_exception_not_raised": [
+      "self"
+    ],
+    "test_model_to_eye_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_model_to_eye_jacobian_preset": [
+      "self"
+    ],
+    "test_model_to_eye_jacobian_random": [
+      "self"
+    ],
+    "test_eye_to_clip_preset": [
+      "self"
+    ],
+    "test_eye_to_clip_exception_not_raised": [
+      "self"
+    ],
+    "test_eye_to_clip_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_eye_to_clip_jacobian_preset": [
+      "self"
+    ],
+    "test_eye_to_clip_jacobian_random": [
+      "self"
+    ],
+    "test_clip_to_ndc_preset": [
+      "self"
+    ],
+    "test_clip_to_ndc_exception_not_raised": [
+      "self"
+    ],
+    "test_clip_to_ndc_exception_raised": [
+      "self"
+    ],
+    "test_clip_to_ndc_jacobian_preset": [
+      "self"
+    ],
+    "test_clip_to_ndc_jacobian_random": [
+      "self"
+    ],
+    "test_ndc_to_screen_preset": [
+      "self"
+    ],
+    "test_ndc_to_screen_exception_not_raised": [
+      "self"
+    ],
+    "test_ndc_to_screen_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_ndc_to_screen_exception_near_raised": [
+      "self"
+    ],
+    "test_ndc_to_screen_exception_far_raised": [
+      "self"
+    ],
+    "test_ndc_to_screen_exception_screen_dimensions_raised": [
+      "self"
+    ],
+    "test_ndc_to_screen_jacobian_preset": [
+      "self"
+    ],
+    "test_ndc_to_screen_jacobian_random": [
+      "self"
+    ],
+    "test_model_to_screen_preset": [
+      "self"
+    ],
+    "test_model_to_screen_exception_not_raised": [
+      "self"
+    ],
+    "test_model_to_screen_exception_raised": [
+      "self",
+      "error_msg",
+      "screen_dimensions",
+      "lower_left_corner"
+    ],
+    "test_model_to_screen_jacobian_preset": [
+      "self"
+    ],
+    "test_model_to_screen_jacobian_random": [
+      "self"
+    ],
+    "test_perspective_correct_interpolation_preset": [
+      "self"
+    ],
+    "test_perspective_correct_interpolation_jacobian_preset": [
+      "self"
+    ],
+    "test_perspective_correct_interpolation_jacobian_random": [
+      "self"
+    ],
+    "test_perspective_correct_barycentrics_not_raised": [
+      "self"
+    ],
+    "test_perspective_correct_barycentrics_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_perspective_correct_barycentrics_preset": [
+      "self"
+    ],
+    "test_perspective_correct_barycentrics_jacobian_random": [
+      "self"
+    ],
+    "test_interpolate_attributes_exception_not_raised": [
+      "self"
+    ],
+    "test_interpolate_attributes_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_interpolate_attributes_random": [
+      "self"
+    ],
+    "test_interpolate_attributes_jacobian_random": [
+      "self"
+    ]
+  },
+  "DATA_DIR": [],
+  "ModelNet40Test": {
+    "DATASET_CLASS": [],
+    "SPLITS": [],
+    "DL_EXTRACT_RESULT": [],
+    "EXAMPLE_DIR": []
+  },
+  "_URL": [],
+  "_CITATION": [],
+  "_DESCRIPTION": [],
+  "_LABELS": [],
+  "ModelNet40": {
+    "VERSION": [],
+    "load": [],
+    "_info": [
+      "self"
+    ],
+    "_split_generators": [
+      "self",
+      "download_manager"
+    ],
+    "_generate_examples": [
+      "self",
+      "filename_list_path"
+    ]
+  },
+  "_TAXONOMY_FILE_NAME": [],
+  "_SPLIT_FILE_URL": [],
+  "ShapenetConfig": {
+    "info": [
+      "self",
+      "dataset_builder"
+    ],
+    "split_generators": [
+      "self",
+      "dl_manager",
+      "dataset_builder"
+    ],
+    "generate_examples": [
+      "self"
+    ]
+  },
+  "MeshConfig": {
+    "_MODEL_SUBPATH": [],
+    "__init__": [
+      "self",
+      "model_subpath"
+    ],
+    "info": [
+      "self",
+      "dataset_builder"
+    ],
+    "split_generators": [
+      "self",
+      "dl_manager",
+      "dataset_builder"
+    ],
+    "generate_examples": [
+      "self",
+      "base_dir",
+      "models"
+    ]
+  },
+  "Shapenet": {
+    "BUILDER_CONFIGS": [],
+    "VERSION": [],
+    "load": [],
+    "MANUAL_DOWNLOAD_INSTRUCTIONS": [],
+    "_info": [
+      "self"
+    ],
+    "_split_generators": [
+      "self",
+      "dl_manager"
+    ],
+    "_generate_examples": [
+      "self"
+    ]
+  },
+  "_EXAMPLE_DIR": [],
+  "ShapenetTest": {
+    "DATASET_CLASS": [],
+    "SPLITS": [],
+    "DL_EXTRACT_RESULT": [],
+    "EXAMPLE_DIR": [],
+    "EXPECTED_ITEMS": [],
+    "test_dataset_items": [
+      "self"
+    ],
+    "_encode_synset": [
+      "self",
+      "builder",
+      "synset"
+    ]
+  },
+  "TriangleMesh": {
+    "__init__": [
+      "self"
+    ],
+    "encode_example": [
+      "self",
+      "path_or_trianglemesh"
+    ],
+    "_convert_to_trimesh_feature": [
+      "self",
+      "obj"
+    ],
+    "from_json_content": [
+      "cls",
+      "value"
+    ],
+    "to_json_content": [
+      "self"
+    ]
+  },
+  "CameraFeatureTest": {
+    "__get_camera_params": [
+      "self"
+    ],
+    "test_simple_camera": [
+      "self"
+    ],
+    "test_camera_with_aspect_ratio_and_skew": [
+      "self"
+    ],
+    "test_full_camera_calibration_matrix": [
+      "self"
+    ]
+  },
+  "Pose": {
+    "__init__": [
+      "self"
+    ],
+    "encode_example": [
+      "self",
+      "example_dict"
+    ],
+    "from_json_content": [
+      "cls",
+      "value"
+    ],
+    "to_json_content": [
+      "self"
+    ]
+  },
+  "Camera": {
+    "__init__": [
+      "self"
+    ],
+    "encode_example": [
+      "self",
+      "example_dict"
+    ],
+    "_create_rotation_from_look_at": [
+      "self",
+      "look_at",
+      "position",
+      "up"
+    ],
+    "_create_calibration_matrix": [
+      "self",
+      "f",
+      "optical_center",
+      "aspect_ratio",
+      "skew"
+    ],
+    "from_json_content": [
+      "cls",
+      "value"
+    ],
+    "to_json_content": [
+      "self"
+    ]
+  },
+  "VoxelGrid": {
+    "__init__": [
+      "self",
+      "shape"
+    ],
+    "encode_example": [
+      "self",
+      "example_data"
+    ],
+    "from_json_content": [
+      "cls",
+      "value"
+    ],
+    "to_json_content": [
+      "self"
+    ]
+  },
+  "_TEST_DATA_DIR": [],
+  "VoxelGridFeatureTest": {
+    "test_voxel": [
+      "self"
+    ]
+  },
+  "PoseFeatureTest": {
+    "test_pose_feature": [
+      "self"
+    ]
+  },
+  "TrimeshFeatureTest": {
+    "test_trimesh": [
+      "self"
+    ]
+  },
+  "Pix3dTest": {
+    "DATASET_CLASS": [],
+    "SPLITS": [],
+    "DL_EXTRACT_RESULT": [],
+    "EXAMPLE_DIR": [],
+    "MOCK_OUT_FORBIDDEN_OS_FUNCTIONS": [],
+    "setUp": [
+      "self"
+    ]
+  },
+  "Pix3d": {
+    "VERSION": [],
+    "TRAIN_SPLIT_IDX": [],
+    "TEST_SPLIT_IDX": [],
+    "CLASS_INDEX": [],
+    "_info": [
+      "self"
+    ],
+    "_split_generators": [
+      "self",
+      "dl_manager"
+    ],
+    "_generate_examples": [
+      "self",
+      "samples_directory",
+      "split_file"
+    ]
+  },
+  "_points_from_z_values": [
+    "ray_org",
+    "ray_dir",
+    "z_values"
+  ],
+  "sample_1d": [
+    "ray_org",
+    "ray_dir",
+    "near",
+    "far",
+    "n_samples",
+    "strategy",
+    "name"
+  ],
+  "sample_stratified_1d": [
+    "ray_org",
+    "ray_dir",
+    "near",
+    "far",
+    "n_samples",
+    "name"
+  ],
+  "sample_inverse_transform_stratified_1d": [
+    "ray_org",
+    "ray_dir",
+    "z_values_init",
+    "weights_init",
+    "n_samples",
+    "combine_z_values",
+    "name"
+  ],
+  "triangulate": [
+    "startpoints",
+    "endpoints",
+    "weights",
+    "name"
+  ],
+  "intersection_ray_sphere": [
+    "sphere_center",
+    "sphere_radius",
+    "ray",
+    "point_on_ray",
+    "name"
+  ],
+  "_grid": [
+    "starts",
+    "stops",
+    "nums"
+  ],
+  "generate": [
+    "starts",
+    "stops",
+    "nums",
+    "name"
+  ],
+  "normal": [
+    "v0",
+    "v1",
+    "v2",
+    "clockwise",
+    "normalize",
+    "name"
+  ],
+  "area": [
+    "v0",
+    "v1",
+    "v2",
+    "name"
+  ],
+  "distance_to_ray": [
+    "point",
+    "origin",
+    "direction",
+    "keepdims",
+    "name"
+  ],
+  "project_to_ray": [
+    "point",
+    "origin",
+    "direction",
+    "name"
+  ],
+  "RayTest": {
+    "_generate_random_example": [
+      "self"
+    ],
+    "test_stratified_sampling_exception_raised": [
+      "self",
+      "error_msg",
+      "n_samples",
+      "near",
+      "far"
+    ],
+    "test_sample_1d_exception_is_not_raised": [
+      "self",
+      "strategy",
+      "n_samples",
+      "near",
+      "far"
+    ],
+    "test_sample_1d_exception_raised": [
+      "self",
+      "error_msg",
+      "strategy",
+      "n_samples",
+      "near",
+      "far"
+    ],
+    "test_stratified_sampling_exception_is_not_raised": [
+      "self",
+      "n_samples",
+      "near",
+      "far"
+    ],
+    "test_inverse_transform_stratified_exception_raised": [
+      "self",
+      "error_msg",
+      "n_samples"
+    ],
+    "test_inverse_transform_stratified_exception_is_not_raised": [
+      "self",
+      "n_samples"
+    ],
+    "test_triangulate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_triangulate_exception_is_not_raised": [
+      "self"
+    ],
+    "test_triangulate_jacobian_is_correct": [
+      "self"
+    ],
+    "test_triangulate_jacobian_is_finite": [
+      "self"
+    ],
+    "test_triangulate_random": [
+      "self"
+    ],
+    "test_negative_weights_exception_raised": [
+      "self"
+    ],
+    "test_less_that_two_nonzero_weights_exception_raised": [
+      "self"
+    ],
+    "test_intersection_ray_sphere_shape_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_intersection_ray_sphere_shape_not_raised": [
+      "self"
+    ],
+    "test_intersection_ray_sphere_exception_raised": [
+      "self"
+    ],
+    "test_intersection_ray_sphere_jacobian_random": [
+      "self"
+    ],
+    "test_intersection_ray_sphere_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ]
+  },
+  "GridTest": {
+    "test_generate_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_generate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_generate_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_generate_random": [
+      "self"
+    ]
+  },
+  "TriangleTest": {
+    "test_normal_assert": [
+      "self",
+      "v0",
+      "v1",
+      "v2"
+    ],
+    "test_normal_exception_not_raised": [
+      "self"
+    ],
+    "test_normal_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_normal_jacobian_preset": [
+      "self"
+    ],
+    "test_normal_jacobian_random": [
+      "self"
+    ],
+    "test_normal_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_normal_random": [
+      "self",
+      "clockwise"
+    ],
+    "test_area_exception_not_raised": [
+      "self"
+    ],
+    "test_area_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_area_jacobian_preset": [
+      "self"
+    ],
+    "test_area_jacobian_random": [
+      "self"
+    ],
+    "test_area_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ]
+  },
+  "PointTest": {
+    "test_distance_to_ray_exception_not_raised": [
+      "self"
+    ],
+    "test_distance_to_ray_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_distance_to_ray_jacobian_random": [
+      "self"
+    ],
+    "test_distance_to_ray_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_distance_to_ray_random": [
+      "self"
+    ],
+    "test_project_to_ray_exception_not_raised": [
+      "self"
+    ],
+    "test_project_to_ray_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_project_to_ray_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_project_to_ray_jacobian_random": [
+      "self"
+    ],
+    "test_project_to_ray_random": [
+      "self"
+    ]
+  },
+  "extract_unique_edges_from_triangular_mesh": [
+    "faces",
+    "directed_edges"
+  ],
+  "get_degree_based_edge_weights": [
+    "edges",
+    "dtype"
+  ],
+  "gather_faces": [
+    "vertices",
+    "indices",
+    "name"
+  ],
+  "face_normals": [
+    "faces",
+    "clockwise",
+    "normalize",
+    "name"
+  ],
+  "vertex_normals": [
+    "vertices",
+    "indices",
+    "clockwise",
+    "name"
+  ],
+  "triangle_area": [
+    "vertex0",
+    "vertex1",
+    "vertex2",
+    "name"
+  ],
+  "_random_categorical_sample": [
+    "num_samples",
+    "weights",
+    "seed",
+    "stateless",
+    "name",
+    "sample_dtype"
+  ],
+  "generate_random_face_indices": [
+    "num_samples",
+    "face_weights",
+    "seed",
+    "stateless",
+    "name"
+  ],
+  "generate_random_barycentric_coordinates": [
+    "sample_shape",
+    "dtype",
+    "seed",
+    "stateless",
+    "name"
+  ],
+  "weighted_random_sample_triangle_mesh": [
+    "vertex_attributes",
+    "faces",
+    "num_samples",
+    "face_weights",
+    "seed",
+    "stateless",
+    "name"
+  ],
+  "area_weighted_random_sample_triangle_mesh": [
+    "vertex_attributes",
+    "faces",
+    "num_samples",
+    "vertex_positions",
+    "seed",
+    "stateless",
+    "name"
+  ],
+  "MeshTest": {
+    "test_gather_faces_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_gather_faces_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_gather_faces_jacobian_random": [
+      "self"
+    ],
+    "test_gather_faces_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_gather_faces_random": [
+      "self"
+    ],
+    "test_face_normals_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_face_normals_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_face_normals_jacobian_random": [
+      "self"
+    ],
+    "test_face_normals_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_face_normals_random": [
+      "self"
+    ],
+    "test_vertex_normals_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_vertex_normals_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_vertex_normals_jacobian_random": [
+      "self"
+    ],
+    "test_vertex_normals_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_vertex_normals_random": [
+      "self"
+    ]
+  },
+  "create_single_triangle_mesh": [],
+  "create_square_triangle_mesh": [],
+  "MeshSamplerTest": {
+    "setUp": [
+      "self"
+    ],
+    "compare_poisson_equivalence": [
+      "self",
+      "expected",
+      "actual"
+    ],
+    "test_random_face_indices_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_random_face_indices_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_negative_weights_random_face_indices_exception": [
+      "self"
+    ],
+    "test_random_face_indices": [
+      "self",
+      "face_weights",
+      "num_samples",
+      "expected"
+    ],
+    "test_random_barycentric_coordinates_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_random_barycentric_coordinates_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_random_barycentric_coordinates": [
+      "self",
+      "sample_shape"
+    ],
+    "test_weighted_sampler_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_weighted_sampler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_weighted_sampler_negative_weights": [
+      "self"
+    ],
+    "test_weighted_random_sample": [
+      "self"
+    ],
+    "test_weighted_sampler_jacobian_random": [
+      "self"
+    ],
+    "test_area_sampler_exception_not_raised": [
+      "self",
+      "shapes",
+      "dtypes"
+    ],
+    "test_area_sampler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_area_sampler_distribution": [
+      "self"
+    ],
+    "test_face_distribution": [
+      "self"
+    ],
+    "test_area_sampler_jacobian_random": [
+      "self"
+    ]
+  },
+  "_build_matrix_from_sines_and_cosines": [
+    "sin_angles",
+    "cos_angles"
+  ],
+  "assert_rotation_matrix_normalized": [
+    "matrix",
+    "eps",
+    "name"
+  ],
+  "from_axis_angle": [
+    "axis",
+    "angle",
+    "name"
+  ],
+  "from_euler": [
+    "angles",
+    "name"
+  ],
+  "from_euler_with_small_angles_approximation": [
+    "angles",
+    "name"
+  ],
+  "from_quaternion": [
+    "quaternion",
+    "name"
+  ],
+  "inverse": [
+    "matrix",
+    "name"
+  ],
+  "is_valid": [
+    "matrix",
+    "atol",
+    "name"
+  ],
+  "from_rotation_matrix": [
+    "rotation_matrix",
+    "name"
+  ],
+  "is_normalized": [
+    "axis",
+    "angle",
+    "atol",
+    "name"
+  ],
+  "_build_quaternion_from_sines_and_cosines": [
+    "sin_half_angles",
+    "cos_half_angles"
+  ],
+  "between_two_vectors_3d": [
+    "vector1",
+    "vector2",
+    "name"
+  ],
+  "conjugate": [
+    "quaternion",
+    "name"
+  ],
+  "normalize": [
+    "quaternion",
+    "eps",
+    "name"
+  ],
+  "multiply": [
+    "quaternion1",
+    "quaternion2",
+    "name"
+  ],
+  "normalized_random_uniform": [
+    "quaternion_shape",
+    "name"
+  ],
+  "normalized_random_uniform_initializer": [],
+  "relative_angle": [
+    "quaternion1",
+    "quaternion2",
+    "name"
+  ],
+  "norm": [
+    "dual_quaternion",
+    "name"
+  ],
+  "from_rotation_translation": [
+    "rotation_quaternion",
+    "translation_vector",
+    "name"
+  ],
+  "to_rotation_translation": [
+    "dual_quaternion",
+    "name"
+  ],
+  "from_axis_angle_translation": [
+    "axis",
+    "angle",
+    "translation_vector",
+    "name"
+  ],
+  "conjugate_dual": [
+    "dual_quaternion",
+    "name"
+  ],
+  "point_to_dual_quaternion": [
+    "point",
+    "name"
+  ],
+  "blend": [
+    "points",
+    "skinning_weights",
+    "bone_rotations",
+    "bone_translations",
+    "name"
+  ],
+  "RotationMatrix3dTest": {
+    "test_assert_rotation_matrix_normalized_passthrough": [
+      "self"
+    ],
+    "test_assert_rotation_matrix_normalized_preset": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_rotation_matrix_normalized_exception_not_raised": [
+      "self"
+    ],
+    "test_assert_rotation_matrix_normalized_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_axis_angle_exception_not_raised": [
+      "self"
+    ],
+    "test_from_axis_angle_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_axis_angle_normalized_preset": [
+      "self"
+    ],
+    "test_from_axis_angle_normalized_random": [
+      "self"
+    ],
+    "test_from_axis_angle_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_axis_angle_random": [
+      "self"
+    ],
+    "test_from_axis_angle_rotate_vector_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_euler_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_jacobian_preset": [
+      "self"
+    ],
+    "test_from_euler_jacobian_random": [
+      "self"
+    ],
+    "test_from_euler_normalized_preset": [
+      "self"
+    ],
+    "test_from_euler_normalized_random": [
+      "self"
+    ],
+    "test_from_euler_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_euler_random": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_with_small_angles_approximation_jacobian_random": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_random": [
+      "self"
+    ],
+    "test_from_quaternion_exception_not_raised": [
+      "self"
+    ],
+    "test_from_quaternion_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_quaternion_jacobian_preset": [
+      "self"
+    ],
+    "test_from_quaternion_jacobian_random": [
+      "self"
+    ],
+    "test_from_quaternion_normalized_preset": [
+      "self"
+    ],
+    "test_from_quaternion_normalized_random": [
+      "self"
+    ],
+    "test_from_quaternion_preset": [
+      "self"
+    ],
+    "test_from_quaternion_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_normalized_random": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ],
+    "test_is_valid_exception_not_raised": [
+      "self"
+    ],
+    "test_is_valid_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_is_valid_random": [
+      "self"
+    ],
+    "test_rotate_exception_not_raised": [
+      "self"
+    ],
+    "test_rotate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_jacobian_preset": [
+      "self"
+    ],
+    "test_rotate_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_vector_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_rotate_vs_rotate_quaternion_random": [
+      "self"
+    ]
+  },
+  "AxisAngleTest": {
+    "test_from_euler_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_jacobian_random": [
+      "self"
+    ],
+    "test_from_euler_random": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_normalized_preset": [
+      "self"
+    ],
+    "test_from_euler_normalized_random": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_random": [
+      "self"
+    ],
+    "test_from_quaternion_exception_not_raised": [
+      "self"
+    ],
+    "test_from_quaternion_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_quaternion_jacobian_random": [
+      "self"
+    ],
+    "test_from_quaternion_normalized_preset": [
+      "self"
+    ],
+    "test_from_quaternion_normalized_random": [
+      "self"
+    ],
+    "test_from_quaternion_preset": [
+      "self"
+    ],
+    "test_from_quaternion_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_exception_not_raised": [
+      "self"
+    ],
+    "test_from_rotation_matrix_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_rotation_matrix_jacobian_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_normalized_preset": [
+      "self"
+    ],
+    "test_from_rotation_matrix_normalized_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_normalized_random": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ],
+    "test_is_normalized_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_is_normalized_random": [
+      "self"
+    ],
+    "test_rotate_exception_not_raised": [
+      "self"
+    ],
+    "test_rotate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_jacobian_preset": [
+      "self"
+    ],
+    "test_rotate_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_random": [
+      "self"
+    ]
+  },
+  "EulerTest": {
+    "test_from_axis_angle_exception_not_raised": [
+      "self"
+    ],
+    "test_from_axis_angle_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_axis_angle_jacobian_preset": [
+      "self"
+    ],
+    "test_from_axis_angle_jacobian_random": [
+      "self"
+    ],
+    "test_from_axis_angle_random": [
+      "self"
+    ],
+    "test_from_axis_angle_preset": [
+      "self"
+    ],
+    "test_from_axis_angle_gimbal": [
+      "self",
+      "gimbal_configuration"
+    ],
+    "test_from_quaternion_exception_not_raised": [
+      "self"
+    ],
+    "test_from_quaternion_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_quaternion_jacobian_preset": [
+      "self"
+    ],
+    "test_from_quaternion_jacobian_random": [
+      "self"
+    ],
+    "test_from_quaternion_gimbal": [
+      "self",
+      "gimbal_configuration"
+    ],
+    "test_from_quaternion_preset": [
+      "self"
+    ],
+    "test_from_quaternion_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_exception_not_raised": [
+      "self"
+    ],
+    "test_from_rotation_matrix_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_rotation_matrix_jacobian_preset": [
+      "self"
+    ],
+    "test_from_rotation_matrix_jacobian_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_gimbal": [
+      "self"
+    ],
+    "test_from_rotation_matrix_preset": [
+      "self"
+    ],
+    "test_from_rotation_matrix_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_preset": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ]
+  },
+  "QuaternionTest": {
+    "test_between_two_vectors_3d_exception_not_raised": [
+      "self"
+    ],
+    "test_between_two_vectors_3d_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_between_two_vectors_3d_jacobian_random": [
+      "self"
+    ],
+    "test_between_two_vectors_3d_random": [
+      "self"
+    ],
+    "test_between_two_vectors_3d_that_are_the_same": [
+      "self"
+    ],
+    "test_between_two_vectors_3d_that_are_collinear": [
+      "self"
+    ],
+    "test_conjugate_exception_not_raised": [
+      "self"
+    ],
+    "test_conjugate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_conjugate_jacobian_preset": [
+      "self"
+    ],
+    "test_conjugate_jacobian_random": [
+      "self"
+    ],
+    "test_from_axis_angle_exception_not_raised": [
+      "self"
+    ],
+    "test_from_axis_angle_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_axis_angle_jacobian_preset": [
+      "self"
+    ],
+    "test_from_axis_angle_jacobian_random": [
+      "self"
+    ],
+    "test_from_axis_angle_normalized_random": [
+      "self"
+    ],
+    "test_from_axis_angle_random": [
+      "self"
+    ],
+    "test_from_euler_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_jacobian_preset": [
+      "self"
+    ],
+    "test_from_euler_jacobian_random": [
+      "self"
+    ],
+    "test_from_euler_normalized_random": [
+      "self"
+    ],
+    "test_from_euler_random": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_with_small_angles_approximation_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_rotation_matrix_not_raised": [
+      "self"
+    ],
+    "test_from_rotation_matrix_jacobian_preset": [
+      "self"
+    ],
+    "test_from_rotation_matrix_jacobian_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_normalized_random": [
+      "self"
+    ],
+    "test_from_rotation_matrix_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_rotation_matrix_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_normalized_random": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ],
+    "test_is_normalized_exception_not_raised": [
+      "self"
+    ],
+    "test_is_normalized_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_is_normalized_random": [
+      "self"
+    ],
+    "test_normalize_exception_not_raised": [
+      "self"
+    ],
+    "test_normalize_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_normalize_random": [
+      "self"
+    ],
+    "test_normalize_jacobian_preset": [
+      "self"
+    ],
+    "test_normalize_jacobian_random": [
+      "self"
+    ],
+    "test_multiply_exception_not_raised": [
+      "self"
+    ],
+    "test_multiply_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_multiply_jacobian_preset": [
+      "self"
+    ],
+    "test_multiply_jacobian_random": [
+      "self"
+    ],
+    "test_normalized_random_initializer_raised": [
+      "self"
+    ],
+    "test_normalized_random_uniform_initializer_is_normalized": [
+      "self"
+    ],
+    "test_normalized_random_uniform_is_normalized": [
+      "self"
+    ],
+    "test_rotate_exception_not_raised": [
+      "self"
+    ],
+    "test_rotate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_jacobian_preset": [
+      "self"
+    ],
+    "test_rotate_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_random": [
+      "self"
+    ],
+    "test_relative_angle": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_relative_angle_not_raised": [
+      "self"
+    ],
+    "test_relative_angle_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_valid_relative_angle_random": [
+      "self"
+    ],
+    "test_jacobian_relative_angle_random": [
+      "self"
+    ],
+    "test_jacobian_relative_angle_preset": [
+      "self"
+    ]
+  },
+  "ANGLE_0": [],
+  "ANGLE_45": [],
+  "ANGLE_90": [],
+  "ANGLE_180": [],
+  "AXIS_2D_0": [],
+  "AXIS_2D_X": [],
+  "AXIS_2D_Y": [],
+  "_rotation_2d_x": [
+    "angle"
+  ],
+  "MAT_2D_ID": [],
+  "MAT_2D_45": [],
+  "MAT_2D_90": [],
+  "MAT_2D_180": [],
+  "AXIS_3D_0": [],
+  "AXIS_3D_X": [],
+  "AXIS_3D_Y": [],
+  "AXIS_3D_Z": [],
+  "_axis_angle_to_quaternion": [
+    "axis",
+    "angle"
+  ],
+  "QUAT_ID": [],
+  "QUAT_X_45": [],
+  "QUAT_X_90": [],
+  "QUAT_X_180": [],
+  "QUAT_Y_45": [],
+  "QUAT_Y_90": [],
+  "QUAT_Y_180": [],
+  "QUAT_Z_45": [],
+  "QUAT_Z_90": [],
+  "QUAT_Z_180": [],
+  "_rotation_3d_x": [
+    "angle"
+  ],
+  "_rotation_3d_y": [
+    "angle"
+  ],
+  "_rotation_3d_z": [
+    "angle"
+  ],
+  "MAT_3D_ID": [],
+  "MAT_3D_X_45": [],
+  "MAT_3D_X_90": [],
+  "MAT_3D_X_180": [],
+  "MAT_3D_Y_45": [],
+  "MAT_3D_Y_90": [],
+  "MAT_3D_Y_180": [],
+  "MAT_3D_Z_45": [],
+  "MAT_3D_Z_90": [],
+  "MAT_3D_Z_180": [],
+  "RotationMatrixCommonTest": {
+    "test_is_valid_exception_not_raised": [
+      "self"
+    ],
+    "test_is_valid_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "DualQuaternionTest": {
+    "test_conjugate_exception_not_raised": [
+      "self"
+    ],
+    "test_conjugate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_conjugate_jacobian_preset": [
+      "self"
+    ],
+    "test_conjugate_jacobian_random": [
+      "self"
+    ],
+    "test_conjugate_preset": [
+      "self"
+    ],
+    "test_multiply_exception_not_raised": [
+      "self"
+    ],
+    "test_multiply_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_multiply_jacobian_preset": [
+      "self"
+    ],
+    "test_multiply_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ],
+    "test_norm_exception_not_raised": [
+      "self"
+    ],
+    "test_norm_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_norm_jacobian_preset": [
+      "self"
+    ],
+    "test_norm_jacobian_random": [
+      "self"
+    ],
+    "test_norm_correct_random": [
+      "self"
+    ],
+    "test_norm_correct_preset": [
+      "self"
+    ],
+    "test_norm_correct_preset_non_unit": [
+      "self"
+    ],
+    "test_is_normalized_exception_not_raised": [
+      "self"
+    ],
+    "test_is_normalized_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_is_normalized_random": [
+      "self"
+    ],
+    "test_from_rotation_translation_jacobian_random": [
+      "self"
+    ],
+    "test_from_rotation_translation_normalized_random": [
+      "self"
+    ],
+    "test_from_rotation_translation_random": [
+      "self"
+    ],
+    "test_to_rotation_translation_jacobian_preset": [
+      "self"
+    ],
+    "test_to_rotation_translation_jacobian_random": [
+      "self"
+    ],
+    "test_to_rotation_translation_random": [
+      "self"
+    ],
+    "test_from_axis_angle_translation_normalized_random": [
+      "self"
+    ],
+    "test_from_axis_angle_translation_random": [
+      "self"
+    ],
+    "test_conjugate_dual_exception_not_raised": [
+      "self"
+    ],
+    "test_conjugate_dual_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_conjugate_dual_jacobian_preset": [
+      "self"
+    ],
+    "test_conjugate_dual_jacobian_random": [
+      "self"
+    ],
+    "test_conjugate_dual_preset": [
+      "self"
+    ],
+    "test_point_to_dual_quaternion_dual_exception_not_raised": [
+      "self"
+    ],
+    "test_point_to_dual_quaternion_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_point_to_dual_quaternion_preset": [
+      "self"
+    ]
+  },
+  "RotationMatrix2dTest": {
+    "test_from_euler_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_jacobian_preset": [
+      "self"
+    ],
+    "test_from_euler_jacobian_random": [
+      "self"
+    ],
+    "test_from_euler_normalized_preset": [
+      "self"
+    ],
+    "test_from_euler_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_not_raised": [
+      "self"
+    ],
+    "test_from_euler_with_small_angles_approximation_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_from_euler_with_small_angles_approximation_random": [
+      "self"
+    ],
+    "test_inverse_exception_not_raised": [
+      "self"
+    ],
+    "test_inverse_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_jacobian_preset": [
+      "self"
+    ],
+    "test_inverse_jacobian_random": [
+      "self"
+    ],
+    "test_inverse_random": [
+      "self"
+    ],
+    "test_is_valid_exception_not_raised": [
+      "self"
+    ],
+    "test_is_valid_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_exception_not_raised": [
+      "self"
+    ],
+    "test_rotate_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_jacobian_preset": [
+      "self"
+    ],
+    "test_rotate_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ]
+  },
+  "LookAtTest": {
+    "test_look_at_right_handed_preset": [
+      "self"
+    ],
+    "test_look_at_right_handed_exception_not_raised": [
+      "self"
+    ],
+    "test_look_at_right_handed_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_look_at_right_handed_jacobian_preset": [
+      "self"
+    ],
+    "test_look_at_right_handed_jacobian_random": [
+      "self"
+    ]
+  },
+  "LinearBlendSkinningTest": {
+    "test_blend_exception_not_raised": [
+      "self"
+    ],
+    "test_blend_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_blend_jacobian_random": [
+      "self"
+    ],
+    "test_blend_preset": [
+      "self"
+    ]
+  },
+  "generate_preset_test_euler_angles": [
+    "dimensions"
+  ],
+  "generate_preset_test_translations": [
+    "dimensions"
+  ],
+  "generate_preset_test_rotation_matrices_3d": [],
+  "generate_preset_test_rotation_matrices_2d": [],
+  "generate_preset_test_axis_angle": [],
+  "generate_preset_test_quaternions": [],
+  "generate_preset_test_dual_quaternions": [],
+  "generate_random_test_euler_angles_translations": [
+    "dimensions",
+    "min_angle",
+    "max_angle",
+    "min_translation",
+    "max_translation"
+  ],
+  "generate_random_test_dual_quaternions": [],
+  "generate_random_test_euler_angles": [
+    "dimensions",
+    "min_angle",
+    "max_angle"
+  ],
+  "generate_random_test_quaternions": [
+    "tensor_shape"
+  ],
+  "generate_random_test_axis_angle": [],
+  "generate_random_test_rotation_matrix_3d": [],
+  "generate_random_test_rotation_matrix_2d": [],
+  "generate_random_test_lbs_blend": [],
+  "generate_preset_test_lbs_blend": [],
+  "generate_random_test_axis_angle_translation": [],
+  "generate_random_test_points": [],
+  "_is_dynamic_shape": [
+    "tensors"
+  ],
+  "check_valid_graph_convolution_input": [
+    "data",
+    "neighbors",
+    "sizes"
+  ],
+  "check_valid_graph_pooling_input": [
+    "data",
+    "pool_map",
+    "sizes"
+  ],
+  "check_valid_graph_unpooling_input": [
+    "data",
+    "pool_map",
+    "sizes"
+  ],
+  "flatten_batch_to_2d": [
+    "data",
+    "sizes",
+    "name"
+  ],
+  "unflatten_2d_to_batch": [
+    "data",
+    "sizes",
+    "max_rows",
+    "name"
+  ],
+  "convert_to_block_diag_2d": [
+    "data",
+    "sizes",
+    "validate_indices",
+    "name"
+  ],
+  "feature_steered_convolution": [
+    "data",
+    "neighbors",
+    "sizes",
+    "var_u",
+    "var_v",
+    "var_c",
+    "var_w",
+    "var_b",
+    "name"
+  ],
+  "edge_convolution_template": [
+    "data",
+    "neighbors",
+    "sizes",
+    "edge_function",
+    "reduction",
+    "edge_function_kwargs",
+    "name"
+  ],
+  "pool": [
+    "data",
+    "pool_map",
+    "sizes",
+    "algorithm",
+    "name"
+  ],
+  "unpool": [
+    "data",
+    "pool_map",
+    "sizes",
+    "name"
+  ],
+  "upsample_transposed_convolution": [
+    "data",
+    "pool_map",
+    "sizes",
+    "kernel_size",
+    "transposed_convolution_op",
+    "name"
+  ],
+  "_dense_to_sparse": [
+    "data"
+  ],
+  "_dummy_data": [
+    "batch_size",
+    "num_vertices",
+    "num_channels"
+  ],
+  "_dummy_variables": [
+    "in_channels",
+    "out_channels",
+    "num_weight_matrices"
+  ],
+  "_random_data": [
+    "batch_size",
+    "num_vertices",
+    "num_channels",
+    "padding",
+    "only_self_edges",
+    "data_type",
+    "neighbors_type",
+    "sizes_type"
+  ],
+  "_random_variables": [
+    "in_channels",
+    "out_channels",
+    "num_weight_matrices",
+    "dtype"
+  ],
+  "GraphConvolutionTestFeatureSteeredConvolutionTests": {
+    "test_feature_steered_convolution_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "neighbors_type",
+      "sizes_type",
+      "var_type"
+    ],
+    "test_feature_steered_convolution_exception_not_raised_types": [
+      "self",
+      "data_type",
+      "neighbors_type",
+      "sizes_type",
+      "var_type"
+    ],
+    "test_feature_steered_convolution_exception_raised_shapes": [
+      "self"
+    ],
+    "test_feature_steered_convolution_output_shape": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "num_weight_matrices"
+    ],
+    "test_feature_steered_convolution_only_self_edges": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "num_weight_matrices"
+    ],
+    "test_feature_steered_convolution_padding_preset": [
+      "self",
+      "data",
+      "neighbors",
+      "u",
+      "v",
+      "c",
+      "w",
+      "b",
+      "expected"
+    ],
+    "test_feature_steered_convolution_padding_random": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "num_weight_matrices"
+    ],
+    "test_feature_steered_convolution_jacobian_random": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "num_weight_matrices",
+      "padding"
+    ],
+    "test_feature_steered_convolution_jacobian_preset": [
+      "self",
+      "num_vertices",
+      "num_channels",
+      "data_multiplier"
+    ]
+  },
+  "EdgeConvolutionTemplateTests": {
+    "_zeros": [
+      "self",
+      "vertex_features",
+      "_",
+      "out_dimensions"
+    ],
+    "_pass_through": [
+      "self",
+      "_",
+      "neighbor_features"
+    ],
+    "_circular_2d_data": [
+      "self",
+      "num_vertices",
+      "include_normals"
+    ],
+    "_edge_curvature_2d": [
+      "self",
+      "vertex_features",
+      "neighbor_features"
+    ],
+    "test_edge_convolution_template_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "neighbors_type",
+      "sizes_type"
+    ],
+    "test_edge_convolution_template_exception_not_raised_types": [
+      "self",
+      "data_type",
+      "neighbors_type",
+      "sizes_type"
+    ],
+    "test_edge_convolution_template_exception_raised_shapes": [
+      "self"
+    ],
+    "test_edge_convolution_template_exception_raised_reduction": [
+      "self",
+      "reduction"
+    ],
+    "test_edge_convolution_template_output_shape": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "reduction"
+    ],
+    "test_edge_convolution_template_zero_neighbors": [
+      "self"
+    ],
+    "test_edge_convolution_template_jacobian_random": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "padding",
+      "reduction"
+    ],
+    "test_edge_convolution_template_preset_max": [
+      "self"
+    ],
+    "test_edge_convolution_template_jacobian_preset": [
+      "self",
+      "num_vertices",
+      "num_channels",
+      "data_multiplier",
+      "reduction"
+    ],
+    "test_edge_convolution_template_laplacian_smoothing": [
+      "self"
+    ],
+    "test_edge_convolution_template_curvature": [
+      "self"
+    ]
+  },
+  "_batch_sparse_eye": [
+    "batch_shape",
+    "num_vertices",
+    "dtype"
+  ],
+  "GraphPoolingTestPoolTests": {
+    "test_pool_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "pool_map_type",
+      "sizes_type"
+    ],
+    "test_pool_exception_raised_shapes": [
+      "self",
+      "err_msg",
+      "data_shape",
+      "pool_map_shape",
+      "sizes_shape"
+    ],
+    "test_pool_exception_raised_algorithm": [
+      "self"
+    ],
+    "test_pool_identity": [
+      "self",
+      "batch_shape",
+      "num_vertices",
+      "num_features",
+      "data_type"
+    ],
+    "test_pool_preset_padded": [
+      "self"
+    ],
+    "test_pool_preset": [
+      "self"
+    ],
+    "test_pool_random": [
+      "self",
+      "num_input_vertices",
+      "num_output_vertices",
+      "num_features"
+    ],
+    "test_pool_jacobian": [
+      "self"
+    ]
+  },
+  "GraphPoolingTestUnpoolTests": {
+    "test_unpool_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "pool_map_type",
+      "sizes_type"
+    ],
+    "test_unpool_exception_raised_shapes": [
+      "self",
+      "err_msg",
+      "data_shape",
+      "pool_map_shape",
+      "sizes_shape"
+    ],
+    "test_unpool_identity": [
+      "self",
+      "batch_shape",
+      "num_vertices",
+      "num_features",
+      "data_type"
+    ],
+    "test_unpool_preset_padded": [
+      "self"
+    ],
+    "test_unpool_random": [
+      "self",
+      "num_vertices",
+      "num_features"
+    ],
+    "test_unpool_jacobian_random": [
+      "self"
+    ]
+  },
+  "GraphPoolingUpsampleTransposeConvolutionTests": {
+    "test_upsample_transposed_convolution_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "pool_map_type",
+      "sizes_type"
+    ],
+    "test_upsample_transposed_convolution_exception_raised_shapes": [
+      "self",
+      "err_msg",
+      "data_shape",
+      "pool_map_shape",
+      "sizes_shape"
+    ],
+    "test_upsample_transposed_convolution_exception_raised_callable": [
+      "self"
+    ],
+    "test_upsample_transposed_convolution_zero_kernel": [
+      "self",
+      "num_vertices",
+      "num_features",
+      "kernel_size",
+      "data_type"
+    ],
+    "test_upsample_transposed_convolution_selector_kernel_random": [
+      "self",
+      "num_vertices",
+      "num_features",
+      "kernel_size",
+      "kernel_index",
+      "feature1_index",
+      "feature2_index"
+    ],
+    "test_upsample_transposed_convolution_preset_padded": [
+      "self"
+    ],
+    "test_upsample_transposed_convolution_jacobian_random": [
+      "self"
+    ],
+    "test_upsample_transposed_convolution_jacobian_random_padding": [
+      "self"
+    ]
+  },
+  "UtilsCheckValidGraphConvolutionInputTests": {
+    "_create_default_tensors_from_shapes": [
+      "self",
+      "shapes"
+    ],
+    "test_check_valid_graph_convolution_input_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "neighbors_type",
+      "sizes_type"
+    ],
+    "test_check_valid_graph_convolution_input_exception_not_raised_types": [
+      "self",
+      "data_type",
+      "neighbors_type",
+      "sizes_type"
+    ],
+    "test_check_valid_graph_convolution_input_exception_not_raised_shapes": [
+      "self"
+    ],
+    "test_check_valid_graph_convolution_input_exception_not_raised_dynshapes": [
+      "self"
+    ],
+    "test_check_valid_graph_convolution_dynamic_input_sparse_exception_raised": [
+      "self"
+    ],
+    "test_check_valid_graph_convolution_input_exception_raised_shapes": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "UtilsCheckValidGraphPoolingInputTests": {
+    "test_check_valid_graph_pooling_exception_raised_types": [
+      "self",
+      "err_msg",
+      "data_type",
+      "pool_map_type",
+      "sizes_type"
+    ],
+    "test_check_valid_graph_pooling_exception_not_raised_types": [
+      "self",
+      "data_type",
+      "pool_map_type",
+      "sizes_type"
+    ],
+    "test_check_valid_graph_pooling_exception_not_raised_shapes": [
+      "self",
+      "data_shape",
+      "pool_map_shape",
+      "sizes"
+    ],
+    "test_check_valid_graph_pooling_exception_not_raised_dynamic_shapes": [
+      "self"
+    ],
+    "test_check_graph_pooling_input_sparse_exception_raised": [
+      "self"
+    ],
+    "test_check_valid_graph_pooling_exception_raised_shapes": [
+      "self",
+      "err_msg",
+      "data_shape",
+      "pool_map_shape",
+      "sizes"
+    ]
+  },
+  "UtilsFlattenBatchTo2dTests": {
+    "test_input_rank_exception_raised": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_exception_raised_types": [
+      "self"
+    ],
+    "test_check_flatten_batch_to_2d_exception_not_raised_dynamic_shapes": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_flatten_batch_to_2d_random": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_zero_sizes": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_unflatten_different_feature_dims": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_jacobian_random": [
+      "self"
+    ],
+    "test_flatten_batch_to_2d_unflatten_types": [
+      "self",
+      "dtype"
+    ]
+  },
+  "UtilsUnflatten2dToBatchTest": {
+    "test_input_rank_exception_raised": [
+      "self"
+    ],
+    "test_input_type_exception_raised": [
+      "self"
+    ],
+    "test_unflatten_batch_to_2d_random": [
+      "self",
+      "sizes",
+      "max_rows",
+      "num_features"
+    ],
+    "test_unflatten_batch_to_2d_preset": [
+      "self"
+    ],
+    "test_unflatten_batch_to_2d_jacobian_random": [
+      "self",
+      "sizes",
+      "max_rows",
+      "num_features"
+    ],
+    "test_unflatten_batch_to_2d_types": [
+      "self",
+      "dtype"
+    ]
+  },
+  "UtilsConvertToBlockDiag2dTests": {
+    "_validate_sizes": [
+      "self",
+      "block_diag_tensor",
+      "sizes"
+    ],
+    "test_convert_to_block_diag_2d_exception_raised_types": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_exception_raised_ranks": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_exception_raised_sizes": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_random": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_no_padding": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_validate_indices": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_large_sizes": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_batch_shapes": [
+      "self"
+    ],
+    "test_convert_to_block_diag_2d_jacobian_random": [
+      "self"
+    ]
+  },
+  "energy": [
+    "vertices_rest_pose",
+    "vertices_deformed_pose",
+    "quaternions",
+    "edges",
+    "vertex_weight",
+    "edge_weight",
+    "conformal_energy",
+    "aggregate_loss",
+    "name"
+  ],
+  "AsConformalAsPossibleTest": {
+    "test_energy_identity": [
+      "self"
+    ],
+    "test_energy_jacobian_random": [
+      "self"
+    ],
+    "test_energy_not_raised": [
+      "self"
+    ],
+    "test_energy_preset": [
+      "self"
+    ],
+    "test_energy_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "_random_tensor": [
+    "tensor_shape"
+  ],
+  "_random_tensor_shape": [],
+  "_random_point_sets": [],
+  "ChamferDistanceTest": {
+    "test_evaluate_preset": [
+      "self",
+      "point_set_a",
+      "point_set_b",
+      "expected_distance"
+    ],
+    "test_chamfer_distance_evaluate_jacobian": [
+      "self"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "HausdorffDistanceTest": {
+    "test_evaluate_preset": [
+      "self",
+      "point_set_a",
+      "point_set_b",
+      "expected_distance"
+    ],
+    "test_hausdorff_distance_evaluate_jacobian": [
+      "self"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "feature_steered_convolution_layer": [
+    "data",
+    "neighbors",
+    "sizes",
+    "translation_invariant",
+    "num_weight_matrices",
+    "num_output_channels",
+    "initializer",
+    "name",
+    "var_name"
+  ],
+  "FeatureSteeredConvolutionKerasLayer": {
+    "__init__": [
+      "self",
+      "translation_invariant",
+      "num_weight_matrices",
+      "num_output_channels",
+      "initializer",
+      "name"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "DynamicGraphConvolutionKerasLayer": {
+    "__init__": [
+      "self",
+      "num_output_channels",
+      "reduction",
+      "activation",
+      "use_bias",
+      "kernel_initializer",
+      "bias_initializer",
+      "kernel_regularizer",
+      "bias_regularizer",
+      "activity_regularizer",
+      "kernel_constraint",
+      "bias_constraint",
+      "name"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs"
+    ]
+  },
+  "PointNetConv2Layer": {
+    "__init__": [
+      "self",
+      "channels",
+      "momentum"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs",
+      "training"
+    ]
+  },
+  "PointNetDenseLayer": {
+    "__init__": [
+      "self",
+      "channels",
+      "momentum"
+    ],
+    "build": [
+      "self",
+      "input_shape"
+    ],
+    "call": [
+      "self",
+      "inputs",
+      "training"
+    ]
+  },
+  "VanillaEncoder": {
+    "__init__": [
+      "self",
+      "momentum"
+    ],
+    "call": [
+      "self",
+      "inputs",
+      "training"
+    ]
+  },
+  "PointNetVanillaClassifier": {
+    "__init__": [
+      "self",
+      "num_classes",
+      "momentum",
+      "dropout_rate"
+    ],
+    "call": [
+      "self",
+      "points",
+      "training"
+    ],
+    "loss": [
+      "labels",
+      "logits"
+    ]
+  },
+  "GraphConvolutionTestFeatureSteeredConvolutionLayerTests": {
+    "test_feature_steered_convolution_layer_exception_not_raised_shapes": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "num_weight_matrices",
+      "translation_invariant"
+    ],
+    "test_feature_steered_convolution_layer_initializer": [
+      "self"
+    ],
+    "test_feature_steered_convolution_layer_training": [
+      "self"
+    ]
+  },
+  "GraphConvolutionTestDynamicGraphConvolutionKerasLayerTests": {
+    "test_dynamic_graph_convolution_keras_layer_exception_not_raised_shapes": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "reduction"
+    ],
+    "test_dynamic_graph_convolution_keras_layer_zero_kernel": [
+      "self",
+      "batch_size",
+      "num_vertices",
+      "in_channels",
+      "out_channels",
+      "reduction"
+    ],
+    "test_dynamic_graph_convolution_keras_layer_duplicate_features": [
+      "self",
+      "num_vertices",
+      "in_channels",
+      "out_channels"
+    ],
+    "test_dynamic_graph_convolution_keras_layer_training": [
+      "self",
+      "reduction"
+    ]
+  },
+  "RandomForwardExecutionTest": {
+    "test_conv2": [
+      "self",
+      "input_shape",
+      "channels",
+      "momentum",
+      "training"
+    ],
+    "test_dense": [
+      "self",
+      "input_shape",
+      "channels",
+      "momentum",
+      "training"
+    ],
+    "test_vanilla_encoder": [
+      "self",
+      "input_shape",
+      "momentum",
+      "training"
+    ],
+    "test_classification_head": [
+      "self",
+      "input_shape",
+      "num_classes",
+      "momentum",
+      "training"
+    ],
+    "test_vanilla_classifier": [
+      "self",
+      "input_shape",
+      "num_classes",
+      "training"
+    ]
+  },
+  "_cast_to_int": [
+    "prediction"
+  ],
+  "random_tensor_shape": [],
+  "RecallTest": {
+    "test_evaluate_preset": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "expected_recall"
+    ],
+    "test_evaluate_preset_multiclass": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "classes",
+      "reduce_average",
+      "expected_recall"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "binary_precision_function": [
+    "ground_truth",
+    "predictions"
+  ],
+  "binary_recall_function": [
+    "ground_truth",
+    "predictions"
+  ],
+  "FscoreTest": {
+    "test_evaluate_preset": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "expected_fscore"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "PrecisionTest": {
+    "test_evaluate_preset": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "expected_precision"
+    ],
+    "test_evaluate_preset_multiclass": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "classes",
+      "reduce_average",
+      "expected_precision"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "IntersectionOverUnionTest": {
+    "test_evaluate_preset": [
+      "self",
+      "ground_truth",
+      "predictions",
+      "expected_iou"
+    ],
+    "test_evaluate_invalid_argument_exception_raised": [
+      "self",
+      "error_msg",
+      "ground_truth",
+      "predictions",
+      "grid_size"
+    ],
+    "test_evaluate_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_evaluate_shape_exception_not_raised": [
+      "self"
+    ]
+  },
+  "DEFAULT_IO_PARAMS": [],
+  "adjacency_from_edges": [
+    "edges",
+    "weights",
+    "num_edges",
+    "num_vertices"
+  ],
+  "get_weighted_edges": [
+    "faces",
+    "self_edges"
+  ],
+  "_tfrecords_to_dataset": [
+    "tfrecords",
+    "parallel_threads",
+    "shuffle",
+    "repeat",
+    "sloppy",
+    "max_readers"
+  ],
+  "_parse_tfex_proto": [
+    "example_proto"
+  ],
+  "_parse_mesh_data": [
+    "mesh_data",
+    "mean_center"
+  ],
+  "create_dataset_from_tfrecords": [
+    "tfrecords",
+    "params"
+  ],
+  "create_input_from_dataset": [
+    "dataset_fn",
+    "files",
+    "io_params"
+  ],
+  "_triangular_mesh_to_three_geometry": [
+    "vertices",
+    "faces",
+    "vertex_colors"
+  ],
+  "build_context": [],
+  "build_perspective_camera": [
+    "field_of_view",
+    "aspect_ratio",
+    "near_plane",
+    "far_plane",
+    "position",
+    "enable_zoom"
+  ],
+  "triangular_mesh_renderer": [
+    "meshes",
+    "lights",
+    "camera",
+    "width",
+    "height",
+    "clear_color"
+  ],
+  "SEGMENTATION_COLORMAP": [],
+  "Viewer": {
+    "_mesh_from_data": [
+      "self",
+      "data"
+    ],
+    "__init__": [
+      "self",
+      "source_mesh_data"
+    ]
+  },
+  "vertices": [],
+  "faces": [],
+  "mesh": [],
+  "_np_to_exr": [],
+  "_exr_to_np": [],
+  "channels_to_ndarray": [
+    "exr",
+    "channel_names"
+  ],
+  "read_exr": [
+    "filename",
+    "channel_names"
+  ],
+  "write_exr": [
+    "filename",
+    "values",
+    "channel_names"
+  ],
+  "GFileResolver": {
+    "__init__": [
+      "self",
+      "path"
+    ],
+    "get": [
+      "self",
+      "name"
+    ]
+  },
+  "load": [
+    "file_obj",
+    "file_type"
+  ],
+  "_WriteMixedDatatypesExr": [
+    "filename"
+  ],
+  "_MakeTestImage": [
+    "num_channels",
+    "datatype"
+  ],
+  "ExrTest": {
+    "test_write_read_roundtrip": [
+      "self",
+      "num_channels",
+      "datatype",
+      "pass_channels"
+    ],
+    "test_reading_mixed_datatypes_fails": [
+      "self"
+    ],
+    "test_writing_with_array_channel_name_mismatch_fails": [
+      "self"
+    ],
+    "test_writing_unsupported_numpy_type_fails": [
+      "self"
+    ],
+    "test_reading_unknown_exr_type_fails": [
+      "self"
+    ]
+  },
+  "_downsample": [
+    "image",
+    "kernel"
+  ],
+  "_binomial_kernel": [
+    "num_channels",
+    "dtype"
+  ],
+  "_build_pyramid": [
+    "image",
+    "sampler",
+    "num_levels"
+  ],
+  "_split": [
+    "image",
+    "kernel"
+  ],
+  "_upsample": [
+    "image",
+    "kernel",
+    "output_shape"
+  ],
+  "downsample": [
+    "image",
+    "num_levels",
+    "name"
+  ],
+  "merge": [
+    "levels",
+    "name"
+  ],
+  "split": [
+    "image",
+    "num_levels",
+    "name"
+  ],
+  "upsample": [
+    "image",
+    "num_levels",
+    "name"
+  ],
+  "ResamplingType": {
+    "NEAREST": [],
+    "BILINEAR": []
+  },
+  "BorderType": {
+    "ZERO": [],
+    "DUPLICATE": []
+  },
+  "PixelType": {
+    "INTEGER": [],
+    "HALF_INTEGER": []
+  },
+  "sample": [
+    "image",
+    "warp",
+    "resampling_type",
+    "border_type",
+    "pixel_type",
+    "name"
+  ],
+  "perspective_transform": [
+    "image",
+    "transform_matrix",
+    "output_shape",
+    "resampling_type",
+    "border_type",
+    "pixel_type",
+    "name"
+  ],
+  "_shape": [
+    "batch_shape"
+  ],
+  "_quadratic_form": [
+    "matrix",
+    "vector"
+  ],
+  "_image_patches": [
+    "image",
+    "size"
+  ],
+  "_image_average": [
+    "image",
+    "size"
+  ],
+  "build_matrices": [
+    "image",
+    "size",
+    "eps",
+    "name"
+  ],
+  "linear_coefficients": [
+    "matte",
+    "pseudo_inverse",
+    "name"
+  ],
+  "loss": [
+    "matte",
+    "laplacian",
+    "name"
+  ],
+  "reconstruct": [
+    "image",
+    "coeff_mul",
+    "coeff_add",
+    "name"
+  ],
+  "_laplacian_matrix": [
+    "image",
+    "size",
+    "eps",
+    "name"
+  ],
+  "MattingTest": {
+    "test_build_matrices_jacobian_random": [
+      "self",
+      "size",
+      "channels"
+    ],
+    "test_build_matrices_laplacian_zero_rows_and_columns": [
+      "self",
+      "size",
+      "channels"
+    ],
+    "test_build_matrices_laplacian_versions": [
+      "self",
+      "size",
+      "channels"
+    ],
+    "test_build_matrices_not_raised": [
+      "self",
+      "size"
+    ],
+    "test_build_matrices_raised": [
+      "self",
+      "error_msg",
+      "size"
+    ],
+    "test_linear_coefficients_jacobian_random": [
+      "self",
+      "size"
+    ],
+    "test_linear_coefficients_not_raised": [
+      "self"
+    ],
+    "test_linear_coefficients_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_linear_coefficients_reconstruction_same_images": [
+      "self",
+      "size"
+    ],
+    "test_linear_coefficients_reconstruction_opposite_images": [
+      "self",
+      "size"
+    ],
+    "test_loss_jacobian_random": [
+      "self",
+      "size"
+    ],
+    "test_loss_not_raised": [
+      "self"
+    ],
+    "test_loss_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_loss_opposite_images": [
+      "self",
+      "size"
+    ],
+    "test_loss_same_images": [
+      "self",
+      "size"
+    ],
+    "test_loss_positive": [
+      "self",
+      "size"
+    ],
+    "test_reconstruct_jacobian_random": [
+      "self",
+      "channels"
+    ],
+    "test_reconstruct_not_raised": [
+      "self"
+    ],
+    "test_reconstruct_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "_NUM_LEVELS": [],
+  "PyramidTest": {
+    "test_downsample_exception_not_raised": [
+      "self"
+    ],
+    "test_downsample_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_downsample_jacobian_random": [
+      "self"
+    ],
+    "test_downsample_preset": [
+      "self",
+      "image_high",
+      "image_low"
+    ],
+    "test_upsample_exception_not_raised": [
+      "self"
+    ],
+    "test_upsample_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_upsample_jacobian_random": [
+      "self"
+    ],
+    "test_upsample_preset": [
+      "self",
+      "image_low",
+      "image_high"
+    ],
+    "test_merge_exception_not_raised": [
+      "self"
+    ],
+    "test_merge_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_merge_preset": [
+      "self",
+      "image",
+      "image_high",
+      "image_low"
+    ],
+    "test_split_exception_not_raised": [
+      "self"
+    ],
+    "test_split_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_split_jacobian_random": [
+      "self"
+    ],
+    "test_split_merge_random": [
+      "self",
+      "num_levels"
+    ],
+    "test_split_preset": [
+      "self",
+      "image",
+      "image_high",
+      "image_low"
+    ]
+  },
+  "TransformerTest": {
+    "test_perspective_transform_exception_not_raised": [
+      "self"
+    ],
+    "test_perspective_transform_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_perspective_transform_half_integer_centers_preset": [
+      "self",
+      "dtype",
+      "interpolation"
+    ],
+    "test_perspective_transform_integer_centers_preset": [
+      "self",
+      "dtype",
+      "interpolation"
+    ],
+    "test_perspective_transform_jacobian_random": [
+      "self"
+    ],
+    "test_sample_exception_not_raised": [
+      "self"
+    ],
+    "test_sample_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "_A": [],
+  "_PHI": [],
+  "_K0": [],
+  "_GAMMA": [],
+  "from_linear_rgb": [
+    "linear_rgb",
+    "name"
+  ],
+  "from_srgb": [
+    "srgb",
+    "name"
+  ],
+  "srgb_gamma": [],
+  "SrgbTest": {
+    "test_cycle_linear_rgb_srgb_linear_rgb_for_random_input": [
+      "self"
+    ],
+    "test_from_linear_rgb_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_linear_rgb_jacobian_random": [
+      "self"
+    ],
+    "test_from_linear_rgb_jacobian_preset": [
+      "self",
+      "inputs_init"
+    ],
+    "test_from_linear_rgb_exception_not_raised": [
+      "self"
+    ],
+    "test_from_linear_rgb_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "LinearRGBTest": {
+    "test_cycle_srgb_linear_rgb_srgb_for_random_input": [
+      "self"
+    ],
+    "test_from_srgb_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_from_srgb_jacobian_random": [
+      "self"
+    ],
+    "test_from_srgb_jacobian_preset": [
+      "self",
+      "inputs_init"
+    ],
+    "test_from_srgb_exception_not_raised": [
+      "self"
+    ],
+    "test_from_srgb_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "assert_no_infs_or_nans": [
+    "tensor",
+    "name"
+  ],
+  "assert_all_above": [
+    "vector",
+    "minval",
+    "open_bound",
+    "name"
+  ],
+  "assert_all_below": [
+    "vector",
+    "maxval",
+    "open_bound",
+    "name"
+  ],
+  "assert_all_in_range": [
+    "vector",
+    "minval",
+    "maxval",
+    "open_bounds",
+    "name"
+  ],
+  "assert_nonzero_norm": [
+    "vector",
+    "eps",
+    "name"
+  ],
+  "assert_normalized": [
+    "vector",
+    "order",
+    "axis",
+    "eps",
+    "name"
+  ],
+  "assert_at_least_k_non_zero_entries": [
+    "tensor",
+    "k",
+    "name"
+  ],
+  "assert_binary": [
+    "tensor",
+    "name"
+  ],
+  "select_eps_for_addition": [
+    "dtype"
+  ],
+  "select_eps_for_division": [
+    "dtype"
+  ],
+  "TFG_ADD_ASSERTS_TO_GRAPH": [],
+  "_max_error": [
+    "arrays1",
+    "arrays2"
+  ],
+  "TestCase": {
+    "setUp": [
+      "self"
+    ],
+    "_remove_dynamic_shapes": [
+      "self",
+      "shapes"
+    ],
+    "_compute_gradient_error": [
+      "self",
+      "x",
+      "y",
+      "x_init",
+      "delta"
+    ],
+    "_create_placeholders_from_shapes": [
+      "self",
+      "shapes",
+      "dtypes",
+      "sparse_tensors"
+    ],
+    "_tile_tensors": [
+      "self",
+      "tiling",
+      "tensors"
+    ],
+    "assert_exception_is_not_raised": [
+      "self",
+      "func",
+      "shapes",
+      "dtypes",
+      "sparse_tensors"
+    ],
+    "assert_exception_is_raised": [
+      "self",
+      "func",
+      "error_msg",
+      "shapes",
+      "dtypes",
+      "sparse_tensors"
+    ],
+    "assert_jacobian_is_correct": [
+      "self",
+      "x",
+      "x_init",
+      "y",
+      "atol",
+      "delta"
+    ],
+    "assert_jacobian_is_correct_fn": [
+      "self",
+      "f",
+      "x",
+      "atol",
+      "delta"
+    ],
+    "assert_jacobian_is_finite": [
+      "self",
+      "x",
+      "x_init",
+      "y"
+    ],
+    "assert_jacobian_is_finite_fn": [
+      "self",
+      "f",
+      "x"
+    ],
+    "assert_output_is_correct": [
+      "self",
+      "func",
+      "test_inputs",
+      "test_outputs",
+      "rtol",
+      "atol",
+      "tile"
+    ],
+    "assert_tf_lite_convertible": [
+      "self",
+      "func",
+      "shapes",
+      "dtypes",
+      "test_inputs"
+    ]
+  },
+  "_broadcast_shape_helper": [
+    "shape_x",
+    "shape_y"
+  ],
+  "is_broadcast_compatible": [
+    "shape_x",
+    "shape_y"
+  ],
+  "get_broadcasted_shape": [
+    "shape_x",
+    "shape_y"
+  ],
+  "_check_type": [
+    "variable",
+    "variable_name",
+    "expected_type"
+  ],
+  "_fix_axis_dim_pairs": [
+    "pairs",
+    "name"
+  ],
+  "_get_dim": [
+    "tensor",
+    "axis"
+  ],
+  "check_static": [
+    "tensor",
+    "has_rank",
+    "has_rank_greater_than",
+    "has_rank_less_than",
+    "has_dim_equals",
+    "has_dim_greater_than",
+    "has_dim_less_than",
+    "tensor_name"
+  ],
+  "_check_tensors": [
+    "tensors",
+    "tensors_name"
+  ],
+  "_check_tensor_axis_lists": [
+    "tensors",
+    "tensors_name",
+    "axes",
+    "axes_name"
+  ],
+  "_fix_axes": [
+    "tensors",
+    "axes",
+    "allow_negative"
+  ],
+  "_give_default_names": [
+    "list_of_objects",
+    "name"
+  ],
+  "_all_are_equal": [
+    "list_of_objects"
+  ],
+  "_raise_error": [
+    "tensor_names",
+    "batch_shapes"
+  ],
+  "compare_batch_dimensions": [
+    "tensors",
+    "last_axes",
+    "broadcast_compatible",
+    "initial_axes",
+    "tensor_names"
+  ],
+  "compare_dimensions": [
+    "tensors",
+    "axes",
+    "tensor_names"
+  ],
+  "is_static": [
+    "tensor_shape"
+  ],
+  "add_batch_dimensions": [
+    "tensor",
+    "tensor_name",
+    "batch_shape",
+    "last_axis"
+  ],
+  "Integer": [],
+  "Float": [],
+  "TensorLike": [],
+  "get_functions_and_classes": [],
+  "get_modules": [],
+  "nonzero_sign": [
+    "x",
+    "name"
+  ],
+  "safe_cospx_div_cosx": [
+    "theta",
+    "factor",
+    "eps",
+    "name"
+  ],
+  "safe_shrink": [
+    "vector",
+    "minval",
+    "maxval",
+    "open_bounds",
+    "eps",
+    "name"
+  ],
+  "safe_signed_div": [
+    "a",
+    "b",
+    "eps",
+    "name"
+  ],
+  "safe_sinpx_div_sinx": [
+    "theta",
+    "factor",
+    "eps",
+    "name"
+  ],
+  "safe_unsigned_div": [
+    "a",
+    "b",
+    "eps",
+    "name"
+  ],
+  "_import_tfg_docs": [],
+  "enable_tfg_doc_imports": [],
+  "TestCaseTest": {
+    "_dummy_tf_lite_compatible_function": [
+      "self",
+      "data"
+    ],
+    "_dummy_tf_lite_incompatible_function": [
+      "self",
+      "data"
+    ],
+    "test_assert_tf_lite_convertible_exception_not_raised": [
+      "self",
+      "test_inputs"
+    ],
+    "test_assert_tf_lite_convertible_exception_raised": [
+      "self",
+      "test_inputs"
+    ],
+    "_dummy_failing_function": [
+      "self",
+      "data"
+    ],
+    "test_assert_exception_is_not_raised_raises_exception": [
+      "self"
+    ]
+  },
+  "ShapeTest": {
+    "test_is_broadcast_compatible": [
+      "self",
+      "shape_x",
+      "shape_y",
+      "broadcastable"
+    ],
+    "test_get_broadcasted_shape": [
+      "self",
+      "shape_x",
+      "shape_y",
+      "broadcasted_shape"
+    ],
+    "test_check_static_raises_exceptions": [
+      "self",
+      "error_msg",
+      "has_rank",
+      "has_rank_greater_than",
+      "has_rank_less_than",
+      "has_dim_equals",
+      "has_dim_greater_than",
+      "has_dim_less_than"
+    ],
+    "test_check_static_raises_no_exceptions": [
+      "self",
+      "shapes",
+      "has_rank",
+      "has_rank_greater_than",
+      "has_rank_less_than",
+      "has_dim_equals"
+    ],
+    "test_compare_batch_dimensions_raises_exceptions": [
+      "self",
+      "error_msg",
+      "tensor_shapes",
+      "last_axes",
+      "broadcast_compatible"
+    ],
+    "test_compare_batch_dimensions_raises_no_exceptions": [
+      "self",
+      "tensor_shapes",
+      "last_axes",
+      "broadcast_compatible",
+      "initial_axes"
+    ],
+    "test_compare_dimensions_raises_exceptions": [
+      "self",
+      "error_msg",
+      "tensor_shapes",
+      "axes"
+    ],
+    "test_compare_dimensions_raises_no_exceptions": [
+      "self",
+      "tensor_shapes",
+      "axes"
+    ],
+    "test_is_static": [
+      "self",
+      "tensor_shape",
+      "is_static"
+    ]
+  },
+  "ExportAPITest": {
+    "test_get_functions_and_classes": [
+      "self"
+    ],
+    "test_get_modules": [
+      "self"
+    ]
+  },
+  "_pick_random_vector": [],
+  "SafeOpsTest": {
+    "test_safe_unsigned_div_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_unsigned_div_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_signed_div_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_signed_div_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_shrink_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_shrink_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_safe_sinpx_div_sinx": [
+      "self"
+    ],
+    "test_safe_cospx_div_cosx": [
+      "self"
+    ]
+  },
+  "AssertsTest": {
+    "test_assert_normalized_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_normalized_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_normalized_passthrough": [
+      "self"
+    ],
+    "test_assert_at_least_k_non_zero_entries_passthrough": [
+      "self"
+    ],
+    "test_assert_nonzero_norm_exception_not_raised": [
+      "self",
+      "value",
+      "dtype"
+    ],
+    "test_assert_nonzero_norm_exception_raised": [
+      "self",
+      "value",
+      "dtype"
+    ],
+    "test_assert_nonzero_norm_passthrough": [
+      "self"
+    ],
+    "test_assert_all_above_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_above_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_above_passthrough": [
+      "self"
+    ],
+    "test_assert_all_below_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_below_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_below_passthrough": [
+      "self"
+    ],
+    "test_assert_all_in_range_exception_not_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_in_range_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_all_in_range_passthrough": [
+      "self"
+    ],
+    "test_select_eps_for_division": [
+      "self",
+      "dtype"
+    ],
+    "test_select_eps_for_addition": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_no_infs_or_nans_passthrough": [
+      "self",
+      "value"
+    ],
+    "test_assert_no_infs_or_nans_raises_exception_for_nan": [
+      "self",
+      "value"
+    ],
+    "test_assert_binary_passthrough": [
+      "self"
+    ],
+    "test_assert_binary_exception_raised": [
+      "self",
+      "dtype"
+    ],
+    "test_assert_binary_exception_not_raised": [
+      "self",
+      "dtype"
+    ]
+  },
+  "cross": [
+    "vector1",
+    "vector2",
+    "axis",
+    "name"
+  ],
+  "dot": [
+    "vector1",
+    "vector2",
+    "axis",
+    "keepdims",
+    "name"
+  ],
+  "reflect": [
+    "vector",
+    "normal",
+    "axis",
+    "name"
+  ],
+  "positional_encoding": [
+    "features",
+    "num_frequencies",
+    "name"
+  ],
+  "regular_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "regular_inverse_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "uniform_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "stratified_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "logspace_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "base",
+    "name"
+  ],
+  "_log10": [
+    "x"
+  ],
+  "geomspace_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "stratified_geomspace_1d": [
+    "near",
+    "far",
+    "num_samples",
+    "name"
+  ],
+  "_normalize_pdf": [
+    "pdf",
+    "name"
+  ],
+  "_get_cdf": [
+    "pdf",
+    "name"
+  ],
+  "inverse_transform_sampling_1d": [
+    "bins",
+    "pdf",
+    "num_samples",
+    "name"
+  ],
+  "inverse_transform_stratified_1d": [
+    "bin_start",
+    "bin_width",
+    "pdf",
+    "num_samples",
+    "name"
+  ],
+  "cartesian_to_spherical_coordinates": [
+    "point_cartesian",
+    "eps",
+    "name"
+  ],
+  "_double_factorial_loop_body": [
+    "n",
+    "result",
+    "two"
+  ],
+  "_double_factorial_loop_condition": [
+    "n",
+    "result",
+    "two"
+  ],
+  "double_factorial": [
+    "n"
+  ],
+  "factorial": [
+    "n"
+  ],
+  "spherical_to_cartesian_coordinates": [
+    "point_spherical",
+    "name"
+  ],
+  "square_to_spherical_coordinates": [
+    "point_2d",
+    "name"
+  ],
+  "integration_product": [
+    "harmonics1",
+    "harmonics2",
+    "keepdims",
+    "name"
+  ],
+  "generate_l_m_permutations": [
+    "max_band",
+    "name"
+  ],
+  "generate_l_m_zonal": [
+    "max_band",
+    "name"
+  ],
+  "_evaluate_legendre_polynomial_pmm_eval": [
+    "m",
+    "x"
+  ],
+  "_evaluate_legendre_polynomial_loop_cond": [
+    "x",
+    "n",
+    "l",
+    "m",
+    "pmm",
+    "pmm1"
+  ],
+  "_evaluate_legendre_polynomial_loop_body": [
+    "x",
+    "n",
+    "l",
+    "m",
+    "pmm",
+    "pmm1"
+  ],
+  "_evaluate_legendre_polynomial_loop": [
+    "x",
+    "m",
+    "l",
+    "pmm",
+    "pmm1"
+  ],
+  "_evaluate_legendre_polynomial_branch": [
+    "l",
+    "m",
+    "x",
+    "pmm"
+  ],
+  "evaluate_legendre_polynomial": [
+    "degree_l",
+    "order_m",
+    "x"
+  ],
+  "_spherical_harmonics_normalization": [
+    "l",
+    "m",
+    "var_type"
+  ],
+  "_evaluate_spherical_harmonics_branch": [
+    "degree",
+    "order",
+    "theta",
+    "phi",
+    "sign_order",
+    "var_type"
+  ],
+  "evaluate_spherical_harmonics": [
+    "degree_l",
+    "order_m",
+    "theta",
+    "phi",
+    "name"
+  ],
+  "rotate_zonal_harmonics": [
+    "zonal_coeffs",
+    "theta",
+    "phi",
+    "name"
+  ],
+  "tile_zonal_coefficients": [
+    "coefficients",
+    "name"
+  ],
+  "SphericalHarmonicsTest": {
+    "test_evaluate_legendre_polynomial_preset": [
+      "self"
+    ],
+    "test_evaluate_legendre_polynomial_raised": [
+      "self",
+      "error_msg",
+      "degree_dtype",
+      "order_dtype"
+    ],
+    "test_evaluate_legendre_polynomial_exceptions_l_raised": [
+      "self"
+    ],
+    "test_evaluate_legendre_polynomial_exceptions_m_raised": [
+      "self"
+    ],
+    "test_evaluate_legendre_polynomial_exceptions_x_raised": [
+      "self"
+    ],
+    "test_evaluate_legendre_polynomial_jacobian_random": [
+      "self"
+    ],
+    "test_integration_product_not_raised": [
+      "self"
+    ],
+    "test_integration_product_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_generate_l_m_permutations_preset": [
+      "self"
+    ],
+    "test_generate_l_m_zonal_preset": [
+      "self"
+    ],
+    "test_spherical_harmonics_normalization_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_evaluate_spherical_harmonics_raised": [
+      "self",
+      "error_msg",
+      "degree_dtype",
+      "order_dtype"
+    ],
+    "test_evaluate_spherical_harmonics_exception_l_raised": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_exception_m_raised": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_exception_theta_raised": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_exception_phi_raised": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_not_raised": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_preset": [
+      "self"
+    ],
+    "test_evaluate_spherical_harmonics_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_zonal_harmonics_jacobian_random": [
+      "self"
+    ],
+    "test_rotate_zonal_harmonics_not_raised": [
+      "self"
+    ],
+    "test_rotate_zonal_harmonics_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_rotate_zonal_harmonics_random": [
+      "self"
+    ],
+    "test_tile_zonal_coefficients_jacobian_random": [
+      "self"
+    ],
+    "test_tile_zonal_coefficients_not_raised": [
+      "self"
+    ],
+    "test_tile_zonal_coefficients_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_tile_zonal_coefficients_preset": [
+      "self"
+    ]
+  },
+  "SamplingTest": {
+    "test_regular_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_regular_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_regular_inverse_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_regular_inverse_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_uniform_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_uniform_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_stratified_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_stratified_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_stratified_geomspace_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_stratified_geomspace_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_transform_sampling_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_inverse_transform_sampling_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_inverse_transform_stratified_1d_shape_exception_not_raised": [
+      "self",
+      "num_samples"
+    ],
+    "test_inverse_transform_stratified_1d_shape_exception_raised": [
+      "self",
+      "error_msg"
+    ]
+  },
+  "FeatureRepresentationTest": {
+    "test_random_rays_exception_exception_not_raised": [
+      "self",
+      "num_frequencies"
+    ]
+  },
+  "VectorTest": {
+    "test_cross_exception_not_raised": [
+      "self"
+    ],
+    "test_cross_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_cross_jacobian_preset": [
+      "self",
+      "u_init",
+      "v_init"
+    ],
+    "test_cross_jacobian_random": [
+      "self"
+    ],
+    "test_cross_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_cross_random": [
+      "self"
+    ],
+    "test_dot_exception_not_raised": [
+      "self"
+    ],
+    "test_dot_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_dot_jacobian_preset": [
+      "self",
+      "u_init",
+      "v_init"
+    ],
+    "test_dot_jacobian_random": [
+      "self"
+    ],
+    "test_dot_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_dot_random": [
+      "self"
+    ],
+    "test_reflect_exception_not_raised": [
+      "self"
+    ],
+    "test_reflect_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_reflect_jacobian_preset": [
+      "self",
+      "u_init",
+      "v_init"
+    ],
+    "test_reflect_jacobian_random": [
+      "self"
+    ],
+    "test_reflect_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_reflect_random": [
+      "self"
+    ]
+  },
+  "_values_and_jacobian": [
+    "residuals",
+    "variables"
+  ],
+  "minimize": [
+    "residuals",
+    "variables",
+    "max_iterations",
+    "regularizer",
+    "regularizer_multiplier",
+    "callback",
+    "name"
+  ],
+  "OptimizerTest": {
+    "test_minimize_not_raised": [
+      "self",
+      "max_iterations"
+    ],
+    "test_minimize_raised": [
+      "self",
+      "error_msg",
+      "max_iterations"
+    ],
+    "test_minimize_preset": [
+      "self",
+      "residuals",
+      "variables",
+      "max_iterations",
+      "final_objective_value",
+      "final_variables"
+    ],
+    "test_minimize_callback": [
+      "self"
+    ],
+    "test_minimize_ill_conditioned_not_raised": [
+      "self"
+    ],
+    "test_minimize_linear_residuals_random": [
+      "self"
+    ]
+  },
+  "Degree": {
+    "CONSTANT": [],
+    "LINEAR": [],
+    "QUADRATIC": [],
+    "CUBIC": [],
+    "QUARTIC": []
+  },
+  "_constant": [
+    "position"
+  ],
+  "_linear": [
+    "position"
+  ],
+  "_quadratic": [
+    "position"
+  ],
+  "_cubic": [
+    "position"
+  ],
+  "_quartic": [
+    "position"
+  ],
+  "knot_weights": [
+    "positions",
+    "num_knots",
+    "degree",
+    "cyclical",
+    "sparse_mode",
+    "name"
+  ],
+  "interpolate_with_weights": [
+    "knots",
+    "weights",
+    "name"
+  ],
+  "interpolate": [
+    "knots",
+    "positions",
+    "degree",
+    "cyclical",
+    "name"
+  ],
+  "InterpolationType": {
+    "VECTOR": [],
+    "QUATERNION": []
+  },
+  "_safe_dot": [
+    "vector1",
+    "vector2",
+    "eps"
+  ],
+  "quaternion_weights": [
+    "quaternion1",
+    "quaternion2",
+    "percent",
+    "eps",
+    "name"
+  ],
+  "vector_weights": [
+    "vector1",
+    "vector2",
+    "percent",
+    "eps",
+    "name"
+  ],
+  "get_barycentric_coordinates": [
+    "triangle_vertices",
+    "pixels",
+    "name"
+  ],
+  "BSplineTest": {
+    "test_constant_basis_boundary_values": [
+      "self",
+      "position",
+      "weights"
+    ],
+    "test_linear_basis_boundary_values": [
+      "self",
+      "position",
+      "weights"
+    ],
+    "test_quadratic_basis_boundary_values": [
+      "self",
+      "position",
+      "weights"
+    ],
+    "test_cubic_basis_boundary_values": [
+      "self",
+      "position",
+      "weights"
+    ],
+    "test_quartic_basis_boundary_values": [
+      "self",
+      "position",
+      "weights"
+    ],
+    "test_knot_weights_sparse_mode_preset": [
+      "self",
+      "positions",
+      "gt_weights",
+      "gt_shifts",
+      "degree",
+      "cyclical"
+    ],
+    "test_knot_weights_preset": [
+      "self",
+      "position",
+      "weights",
+      "degree"
+    ],
+    "test_full_degree_non_cyclical_knot_weights": [
+      "self",
+      "positions"
+    ],
+    "test_interpolate_with_weights_exception_is_raised": [
+      "self",
+      "error_msg",
+      "shapes"
+    ],
+    "test_interpolate_with_weights_preset": [
+      "self",
+      "positions",
+      "knots"
+    ],
+    "test_knot_weights_exception_is_not_raised": [
+      "self",
+      "positions_rank",
+      "dims"
+    ],
+    "test_knot_weights_exception_is_raised": [
+      "self",
+      "error_msg",
+      "num_knots",
+      "degree"
+    ],
+    "test_knot_weights_jacobian_is_correct": [
+      "self",
+      "num_knots",
+      "degree",
+      "cyclical"
+    ]
+  },
+  "_SQRT2_DIV2": [],
+  "SlerpTest": {
+    "_pick_random_quaternion": [
+      "self"
+    ],
+    "_quaternion_slerp_helper": [
+      "self",
+      "q1",
+      "q2",
+      "p"
+    ],
+    "_vector_slerp_helper": [
+      "self",
+      "q1",
+      "q2",
+      "p"
+    ],
+    "test_interpolate_raises_exceptions": [
+      "self"
+    ],
+    "test_interpolate_with_weights_quaternion_preset": [
+      "self"
+    ],
+    "test_interpolate_with_weights_vector_preset": [
+      "self"
+    ],
+    "test_quaternion_slerp_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_unnormalized_quaternion_weights_exception_raised": [
+      "self"
+    ],
+    "test_quaternion_weights_exception_not_raised": [
+      "self"
+    ],
+    "test_quaternion_weights_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_quaternion_weights_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_vector_weights_exception_not_raised": [
+      "self"
+    ],
+    "test_vector_weights_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_vector_slerp_preset": [
+      "self",
+      "test_inputs",
+      "test_outputs"
+    ],
+    "test_vector_weights_reduce_to_lerp_preset": [
+      "self"
+    ]
+  },
+  "WeightedTest": {
+    "_get_tensors_from_shapes": [
+      "self",
+      "num_points",
+      "dim_points",
+      "num_outputs",
+      "num_pts_to_interpolate"
+    ],
+    "test_interpolate_exception_not_raised": [
+      "self",
+      "dim_points",
+      "num_points",
+      "num_outputs",
+      "num_pts_to_interpolate"
+    ],
+    "test_interpolate_exception_raised": [
+      "self",
+      "error_msg",
+      "shapes"
+    ],
+    "test_interpolate_preset": [
+      "self",
+      "points",
+      "weights",
+      "indices",
+      "_",
+      "out"
+    ],
+    "test_interpolate_negative_weights_raised": [
+      "self",
+      "dim_points",
+      "num_points",
+      "num_outputs",
+      "num_pts_to_interpolate"
+    ],
+    "test_interp_unnormalizable_raised_": [
+      "self",
+      "points",
+      "weights",
+      "indices",
+      "_"
+    ],
+    "test_interpolate_jacobian_random": [
+      "self",
+      "dim_points",
+      "num_points",
+      "num_outputs",
+      "num_pts_to_interpolate"
+    ],
+    "test_get_barycentric_coordinates_exception_not_raised": [
+      "self"
+    ],
+    "test_get_barycentric_coordinates_exception_raised": [
+      "self",
+      "error_msg"
+    ],
+    "test_get_barycentric_coordinates_jacobian_random": [
+      "self"
+    ],
+    "test_get_barycentric_coordinates_normalized": [
+      "self"
+    ]
+  },
+  "_sampling_points_from_grid": [
+    "grid_size",
+    "dtype"
+  ],
+  "_transpose_last_two_dims": [
+    "sampling_points"
+  ],
+  "_sampling_points_in_volume": [
+    "sampling_points",
+    "voxel_size"
+  ],
+  "_get_random_voxel_grid": [
+    "voxel_size"
+  ],
+  "_get_random_sampling_points": [
+    "sampling_points_size",
+    "max_grid_dim"
+  ],
+  "_generate_voxels_horizontal_plane": [
+    "voxel_size"
+  ],
+  "_generate_voxels_vertical_plane": [
+    "voxel_size"
+  ],
+  "_generate_voxel_cube": [
+    "dims",
+    "plane_orientation"
+  ],
+  "TrilinearTest": {
+    "test_interpolate_exception_raised": [
+      "self",
+      "error_msg",
+      "shapes"
+    ],
+    "test_interpolate_exception_not_raised": [
+      "self"
+    ],
+    "test_interpolation_values_preset": [
+      "self"
+    ],
+    "test_interpolation_preset": [
+      "self"
+    ],
+    "test_interpolate_jacobian_random": [
+      "self",
+      "bsize",
+      "height",
+      "width",
+      "depth",
+      "channels"
+    ]
+  }
+}

@@ -1,0 +1,440 @@
+{
+  "__all__": [],
+  "zeropower_via_newtonschulz5": [
+    "G",
+    "steps"
+  ],
+  "Muon": {
+    "__init__": [
+      "self",
+      "lr",
+      "wd",
+      "muon_params",
+      "momentum",
+      "nesterov",
+      "ns_steps",
+      "adamw_params",
+      "adamw_betas",
+      "adamw_eps"
+    ],
+    "adjust_lr_for_muon": [
+      "self",
+      "lr",
+      "param_shape"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ]
+  },
+  "MuonOptimizerFactory": {
+    "__call__": [
+      "self",
+      "opt_model",
+      "training_args"
+    ]
+  },
+  "DistMuon": {
+    "__init__": [
+      "self",
+      "params",
+      "distributed_mesh",
+      "lr",
+      "mu",
+      "betas",
+      "weight_decay",
+      "epsilon",
+      "nesterov",
+      "adjust_lr",
+      "flatten"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ],
+    "_get_or_initialize_state": [
+      "self",
+      "param",
+      "algo"
+    ],
+    "_create_muon_tasks": [
+      "self",
+      "param_groups",
+      "algo_name"
+    ],
+    "_create_lion_tasks": [
+      "self",
+      "param_groups",
+      "algo_name"
+    ],
+    "_create_adamw_tasks": [
+      "self",
+      "param_groups",
+      "algo_name"
+    ]
+  },
+  "muon_update_batch_async": [
+    "X",
+    "G",
+    "M",
+    "lr",
+    "momentum",
+    "weight_decay",
+    "epsilon",
+    "nesterov",
+    "flatten",
+    "adjust_lr",
+    "device_rank",
+    "world_size",
+    "shard_dim",
+    "process_group",
+    "newton_schulz_func"
+  ],
+  "adamw_update_foreach_async": [
+    "X",
+    "G",
+    "M",
+    "V",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay",
+    "step",
+    "epsilon"
+  ],
+  "lion_update_foreach_async": [
+    "X",
+    "G",
+    "M",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay"
+  ],
+  "muon_update_pre_orthogonalize": [
+    "G",
+    "M",
+    "momentum",
+    "nesterov"
+  ],
+  "muon_update_post_orthogonalize": [
+    "X",
+    "U",
+    "base_lr",
+    "adjusted_lr",
+    "weight_decay"
+  ],
+  "muon_update_newton_schulz": [
+    "X",
+    "newton_schulz_func",
+    "flatten",
+    "epsilon"
+  ],
+  "adjust_lr_rms_norm": [
+    "lr",
+    "param_shape",
+    "flatten"
+  ],
+  "adjust_lr_spectral_norm": [
+    "lr",
+    "param_shape",
+    "flatten"
+  ],
+  "DistMuonOptimizerFactory": {
+    "optim_cls": [],
+    "__call__": [
+      "self",
+      "opt_model",
+      "training_args"
+    ]
+  },
+  "DionOptimizerFactory": {
+    "optim_cls": [],
+    "mp_8bit": [],
+    "__call__": [
+      "self",
+      "opt_model",
+      "training_args",
+      "dion_lr",
+      "dion_mu"
+    ]
+  },
+  "Dion8bitOptimizerFactory": {
+    "mp_8bit": []
+  },
+  "to_local": [
+    "tensor"
+  ],
+  "dtensor_from_local": [
+    "tensor",
+    "ref"
+  ],
+  "create_param_batches": [
+    "params",
+    "batch_size"
+  ],
+  "pad_batch": [
+    "batch",
+    "batch_size"
+  ],
+  "AsyncTask": {
+    "__init__": [
+      "self",
+      "generator"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "AsyncRuntime": {
+    "__init__": [
+      "self",
+      "task_gen",
+      "max_concurrent_tasks"
+    ],
+    "_get_next_task": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "adamw_update": [
+    "X",
+    "G",
+    "M",
+    "V",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay",
+    "step",
+    "epsilon"
+  ],
+  "lion_update": [
+    "X",
+    "G",
+    "M",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay"
+  ],
+  "adamw_update_foreach": [
+    "X",
+    "G",
+    "M",
+    "V",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay",
+    "step",
+    "epsilon"
+  ],
+  "lion_update_foreach": [
+    "X",
+    "G",
+    "M",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay"
+  ],
+  "DionParamConfig": {
+    "compressed_all_reduce": []
+  },
+  "DionMixedPrecisionConfig": {},
+  "Dion": {
+    "__init__": [
+      "self",
+      "params",
+      "replicate_mesh",
+      "outer_shard_mesh",
+      "inner_shard_mesh",
+      "replicate_mesh_grad_sync",
+      "rank_fraction",
+      "rank_multiple_of",
+      "lr",
+      "mu",
+      "betas",
+      "weight_decay",
+      "epsilon",
+      "power_iters",
+      "qr_method",
+      "cqr_warmup_steps",
+      "rcqr_oversample",
+      "mixed_precision_config"
+    ],
+    "step": [
+      "self",
+      "closure"
+    ],
+    "synchronize_for_checkpoint": [
+      "self"
+    ],
+    "_create_dion_tasks": [
+      "self",
+      "param_groups"
+    ],
+    "_create_lion_tasks": [
+      "self",
+      "param_groups"
+    ],
+    "_create_adamw_tasks": [
+      "self",
+      "param_groups"
+    ],
+    "_get_or_initialize_state": [
+      "self",
+      "param",
+      "group"
+    ],
+    "_get_dion_param_config": [
+      "self",
+      "x"
+    ],
+    "_split_params_by_sharding": [
+      "self",
+      "params"
+    ],
+    "_init_opt_state_momentum": [
+      "self",
+      "param",
+      "state"
+    ],
+    "_init_opt_state_adam": [
+      "self",
+      "param",
+      "state"
+    ],
+    "_init_opt_state_dion": [
+      "self",
+      "param",
+      "state",
+      "rank_fraction",
+      "rank_multiple_of"
+    ],
+    "_replicate_mesh_broadcast": [
+      "self",
+      "tensor"
+    ]
+  },
+  "dion_update_ddp": [
+    "X",
+    "G",
+    "M",
+    "Q",
+    "lr",
+    "mu",
+    "weight_decay",
+    "epsilon",
+    "param_config",
+    "replicate_mesh",
+    "replicate_mesh_grad_sync",
+    "oversample"
+  ],
+  "dion_update_fsdp": [
+    "X",
+    "G",
+    "M",
+    "Q",
+    "lr",
+    "mu",
+    "weight_decay",
+    "epsilon",
+    "param_config",
+    "replicate_mesh",
+    "replicate_mesh_grad_sync",
+    "oversample"
+  ],
+  "dion_update_fsdp_tp": [
+    "X",
+    "G",
+    "M",
+    "Q",
+    "lr",
+    "mu",
+    "weight_decay",
+    "epsilon",
+    "param_config",
+    "replicate_mesh",
+    "replicate_mesh_grad_sync",
+    "oversample"
+  ],
+  "all_reduce_replicate_mesh": [
+    "G",
+    "replicate_mesh",
+    "return_dtensor",
+    "reduce_op"
+  ],
+  "tensor_list_to_batch": [
+    "M",
+    "Q",
+    "is_transposed"
+  ],
+  "generate_random_sketch_matrix": [
+    "P",
+    "oversample",
+    "shard_mesh_dim"
+  ],
+  "orthogonalize": [
+    "P",
+    "oversample"
+  ],
+  "distributed_orthogonalize": [
+    "P",
+    "oversample",
+    "shard_mesh_dim"
+  ],
+  "fix_all_zero_or_nan": [
+    "P",
+    "R",
+    "Q_init",
+    "B"
+  ],
+  "local_column_sum_sq": [
+    "X"
+  ],
+  "column_normalize": [
+    "X",
+    "full_column_sum_sq",
+    "epsilon"
+  ],
+  "foreach_baddbmm_": [
+    "X",
+    "A",
+    "B",
+    "alpha",
+    "beta",
+    "transpose"
+  ],
+  "update_Q_matrix_": [
+    "Q",
+    "Q_batch",
+    "Q_sharded_placements"
+  ],
+  "adamw_update_allreduce_grad": [
+    "X",
+    "G",
+    "M",
+    "V",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay",
+    "step",
+    "epsilon",
+    "replicate_mesh"
+  ],
+  "lion_update_allreduce_grad": [
+    "X",
+    "G",
+    "M",
+    "lr",
+    "beta1",
+    "beta2",
+    "weight_decay",
+    "replicate_mesh"
+  ]
+}

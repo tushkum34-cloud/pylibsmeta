@@ -1,0 +1,432 @@
+{
+  "BaseTransform": {
+    "identity_param": [],
+    "__init__": [
+      "self",
+      "name",
+      "params"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints"
+    ]
+  },
+  "ImageOnlyTransform": {
+    "apply_deaug_mask": [
+      "self",
+      "mask"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints"
+    ]
+  },
+  "DualTransform": {},
+  "Chain": {
+    "__init__": [
+      "self",
+      "functions"
+    ],
+    "__call__": [
+      "self",
+      "x"
+    ]
+  },
+  "Transformer": {
+    "__init__": [
+      "self",
+      "image_pipeline",
+      "mask_pipeline",
+      "label_pipeline",
+      "keypoints_pipeline"
+    ],
+    "augment_image": [
+      "self",
+      "image"
+    ],
+    "deaugment_mask": [
+      "self",
+      "mask"
+    ],
+    "deaugment_label": [
+      "self",
+      "label"
+    ],
+    "deaugment_keypoints": [
+      "self",
+      "keypoints"
+    ]
+  },
+  "Compose": {
+    "__init__": [
+      "self",
+      "transforms"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "Merger": {
+    "__init__": [
+      "self",
+      "type",
+      "n"
+    ],
+    "append": [
+      "self",
+      "x"
+    ],
+    "result": [
+      "self"
+    ]
+  },
+  "HorizontalFlip": {
+    "identity_param": [],
+    "__init__": [
+      "self"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "apply"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask",
+      "apply"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label",
+      "apply"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints",
+      "apply"
+    ]
+  },
+  "VerticalFlip": {
+    "identity_param": [],
+    "__init__": [
+      "self"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "apply"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask",
+      "apply"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label",
+      "apply"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints",
+      "apply"
+    ]
+  },
+  "Rotate90": {
+    "identity_param": [],
+    "__init__": [
+      "self",
+      "angles"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "angle"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask",
+      "angle"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label",
+      "angle"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints",
+      "angle"
+    ]
+  },
+  "Scale": {
+    "identity_param": [],
+    "__init__": [
+      "self",
+      "scales",
+      "interpolation",
+      "align_corners"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "scale"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask",
+      "scale"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label",
+      "scale"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints",
+      "scale"
+    ]
+  },
+  "Resize": {
+    "__init__": [
+      "self",
+      "sizes",
+      "original_size",
+      "interpolation",
+      "align_corners"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "size"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask",
+      "size"
+    ],
+    "apply_deaug_label": [
+      "self",
+      "label",
+      "size"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints",
+      "size"
+    ]
+  },
+  "Add": {
+    "identity_param": [],
+    "__init__": [
+      "self",
+      "values"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "value"
+    ]
+  },
+  "Multiply": {
+    "identity_param": [],
+    "__init__": [
+      "self",
+      "factors"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "factor"
+    ]
+  },
+  "FiveCrops": {
+    "__init__": [
+      "self",
+      "crop_height",
+      "crop_width"
+    ],
+    "apply_aug_image": [
+      "self",
+      "image",
+      "crop_fn"
+    ],
+    "apply_deaug_mask": [
+      "self",
+      "mask"
+    ],
+    "apply_deaug_keypoints": [
+      "self",
+      "keypoints"
+    ]
+  },
+  "SegmentationTTAWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "transforms",
+      "merge_mode",
+      "output_mask_key"
+    ],
+    "forward": [
+      "self",
+      "image"
+    ]
+  },
+  "ClassificationTTAWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "transforms",
+      "merge_mode",
+      "output_label_key"
+    ],
+    "forward": [
+      "self",
+      "image"
+    ]
+  },
+  "KeypointsTTAWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "transforms",
+      "merge_mode",
+      "output_keypoints_key",
+      "scaled"
+    ],
+    "forward": [
+      "self",
+      "image"
+    ]
+  },
+  "flip_transform": [],
+  "hflip_transform": [],
+  "vlip_transform": [],
+  "d4_transform": [],
+  "multiscale_transform": [
+    "scales",
+    "interpolation"
+  ],
+  "five_crop_transform": [
+    "crop_height",
+    "crop_width"
+  ],
+  "ten_crop_transform": [
+    "crop_height",
+    "crop_width"
+  ],
+  "VERSION": [],
+  "__version__": [],
+  "rot90": [
+    "x",
+    "k"
+  ],
+  "hflip": [
+    "x"
+  ],
+  "vflip": [
+    "x"
+  ],
+  "sum": [
+    "x1",
+    "x2"
+  ],
+  "add": [
+    "x",
+    "value"
+  ],
+  "max": [
+    "x1",
+    "x2"
+  ],
+  "min": [
+    "x1",
+    "x2"
+  ],
+  "multiply": [
+    "x",
+    "factor"
+  ],
+  "scale": [
+    "x",
+    "scale_factor",
+    "interpolation",
+    "align_corners"
+  ],
+  "resize": [
+    "x",
+    "size",
+    "interpolation",
+    "align_corners"
+  ],
+  "crop": [
+    "x",
+    "x_min",
+    "x_max",
+    "y_min",
+    "y_max"
+  ],
+  "crop_lt": [
+    "x",
+    "crop_h",
+    "crop_w"
+  ],
+  "crop_lb": [
+    "x",
+    "crop_h",
+    "crop_w"
+  ],
+  "crop_rt": [
+    "x",
+    "crop_h",
+    "crop_w"
+  ],
+  "crop_rb": [
+    "x",
+    "crop_h",
+    "crop_w"
+  ],
+  "center_crop": [
+    "x",
+    "crop_h",
+    "crop_w"
+  ],
+  "_disassemble_keypoints": [
+    "keypoints"
+  ],
+  "_assemble_keypoints": [
+    "x",
+    "y"
+  ],
+  "keypoints_hflip": [
+    "keypoints"
+  ],
+  "keypoints_vflip": [
+    "keypoints"
+  ],
+  "keypoints_rot90": [
+    "keypoints",
+    "k"
+  ]
+}

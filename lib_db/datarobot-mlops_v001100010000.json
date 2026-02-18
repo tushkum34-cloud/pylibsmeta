@@ -1,0 +1,2752 @@
+{
+  "logger": [],
+  "MLOpsLibMode": {
+    "EMBEDED_AGENT_MODE": [],
+    "DAEMON_AGENT_MODE": []
+  },
+  "MLOps": {
+    "__init__": [
+      "self"
+    ],
+    "_cleanup": [
+      "self"
+    ],
+    "_validate": [
+      "self"
+    ],
+    "_normalize_feature_names": [
+      "features_df"
+    ],
+    "_validate_input_positive_num": [
+      "num",
+      "field_name"
+    ],
+    "_validate_input_string": [
+      "string",
+      "field_name"
+    ],
+    "_get_id": [
+      "self",
+      "id_param",
+      "config_constant"
+    ],
+    "get_version": [],
+    "init": [
+      "self"
+    ],
+    "shutdown": [
+      "self",
+      "timeout_sec"
+    ],
+    "agent": [
+      "self",
+      "mlops_service_url",
+      "mlops_api_token",
+      "agent_jar_path",
+      "path_prefix",
+      "verify_ssl"
+    ],
+    "set_deployment_id": [
+      "self",
+      "deployment_id"
+    ],
+    "set_model_id": [
+      "self",
+      "model_id"
+    ],
+    "set_async_reporting": [
+      "self",
+      "async_reporting"
+    ],
+    "set_association_id_column_name": [
+      "self",
+      "association_id_column_name"
+    ],
+    "set_no_spooler": [
+      "self"
+    ],
+    "set_stdout_spooler": [
+      "self"
+    ],
+    "set_filesystem_spooler": [
+      "self",
+      "directory"
+    ],
+    "set_pubsub_spooler": [
+      "self",
+      "project_id",
+      "topic_name"
+    ],
+    "set_sqs_spooler": [
+      "self",
+      "queue"
+    ],
+    "set_rabbitmq_spooler": [
+      "self",
+      "queue_url",
+      "queue_name",
+      "ca_certificate_path",
+      "certificate_path",
+      "keyfile_path",
+      "tls_version"
+    ],
+    "set_kafka_spooler": [
+      "self",
+      "topic_name",
+      "bootstrap_servers"
+    ],
+    "set_api_spooler": [
+      "self",
+      "mlops_service_url",
+      "mlops_api_token"
+    ],
+    "set_channel_config": [
+      "self",
+      "channel_config",
+      "record_delimiter",
+      "key_value_separator"
+    ],
+    "set_feature_data_rows_in_one_message": [
+      "self",
+      "rows"
+    ],
+    "set_feature_types": [
+      "self",
+      "feature_types"
+    ],
+    "set_feature_types_filename": [
+      "self",
+      "feature_type_filename"
+    ],
+    "set_feature_types_json": [
+      "self",
+      "feature_type_json"
+    ],
+    "set_segment_attributes": [
+      "self",
+      "segment_attributes_column"
+    ],
+    "set_prediction_timestamp_column": [
+      "self",
+      "prediction_timestamp_column_name",
+      "prediction_timestamp_column_format"
+    ],
+    "set_auto_sampling_percentage": [
+      "self",
+      "auto_sampling_pct"
+    ],
+    "set_histogram_bin_count": [
+      "self",
+      "histogram_bin_count"
+    ],
+    "set_distinct_category_count": [
+      "self",
+      "distinct_category_count"
+    ],
+    "set_aggregation_max_records": [
+      "self",
+      "aggregation_max_records"
+    ],
+    "set_segment_value_per_attribute_count": [
+      "self",
+      "segment_value_per_attribute_count"
+    ],
+    "report_deployment_stats": [
+      "self",
+      "num_predictions",
+      "execution_time_ms",
+      "user_error",
+      "system_error",
+      "deployment_id",
+      "model_id",
+      "batch_id"
+    ],
+    "report_predictions_data": [
+      "self",
+      "features_df",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "deployment_id",
+      "model_id",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking",
+      "batch_id"
+    ],
+    "_get_association_id_column_name": [
+      "self",
+      "association_id_column_name"
+    ],
+    "_divide_predictions": [
+      "self",
+      "predictions",
+      "raw_df"
+    ],
+    "report_aggregated_predictions_data": [
+      "self",
+      "features_df",
+      "predictions",
+      "class_names",
+      "deployment_id",
+      "model_id",
+      "batch_id",
+      "sampling_pct",
+      "association_id_column_name"
+    ],
+    "report_raw_time_series_predictions_data": [
+      "self",
+      "features_df",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "request_parameters",
+      "forecast_distance",
+      "row_index",
+      "partition",
+      "series_id",
+      "deployment_id",
+      "model_id",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking"
+    ],
+    "report_event": [
+      "self",
+      "event",
+      "deployment_id"
+    ],
+    "send_ping_to_agent": [
+      "self",
+      "message"
+    ],
+    "report_deployment_metric": [
+      "self",
+      "metric_id",
+      "value",
+      "timestamp",
+      "deployment_id",
+      "model_id"
+    ],
+    "report_model_metric": [
+      "self",
+      "metric_id",
+      "value",
+      "timestamp",
+      "deployment_id",
+      "model_id"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ]
+  },
+  "EVENT_MESSAGE_MAX_LENGTH": [],
+  "EventType": {
+    "PRED_REQUEST_FAILED": [],
+    "DEP_ACCURACY_GREEN": [],
+    "DEP_ACCURACY_RED": [],
+    "DEP_ACCURACY_YELLOW": [],
+    "DEP_DRIFT_GREEN": [],
+    "DEP_DRIFT_RED": [],
+    "DEP_DRIFT_YELLOW": [],
+    "DEP_MODEL_REPLACED": [],
+    "DEP_SERVICE_GREEN": [],
+    "DEP_SERVICE_RED": [],
+    "DEP_SERVICE_YELLOW": [],
+    "EXTERNAL_NAN_PREDICTIONS": []
+  },
+  "Event": {
+    "__init__": [
+      "self",
+      "event_type",
+      "message",
+      "entity_id",
+      "org_id",
+      "data"
+    ],
+    "get_event_type": [
+      "self"
+    ],
+    "get_message": [
+      "self"
+    ],
+    "get_entity_id": [
+      "self"
+    ],
+    "get_org_id": [
+      "self"
+    ],
+    "get_data": [
+      "self"
+    ],
+    "get_timestamp": [
+      "self"
+    ],
+    "is_entity_a_deployment": [],
+    "set_entity_id": [
+      "self",
+      "entity_id"
+    ]
+  },
+  "ExternalNaNPredictionsEvent": {
+    "__init__": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "nan_prediction_indices"
+    ]
+  },
+  "estimate_metric_size": [
+    "metric"
+  ],
+  "SerializationConstants": {},
+  "GeneralStats": {
+    "__init__": [
+      "self",
+      "model_id",
+      "timestamp",
+      "batch_id"
+    ],
+    "to_dr_timestamp": [
+      "ts"
+    ],
+    "get_model_id": [
+      "self"
+    ],
+    "get_timestamp": [
+      "self"
+    ],
+    "get_batch_id": [
+      "self"
+    ]
+  },
+  "DeploymentStats": {
+    "__init__": [
+      "self",
+      "num_predictions",
+      "execution_time",
+      "user_error",
+      "system_error"
+    ],
+    "get_num_predictions": [
+      "self"
+    ],
+    "get_execution_time": [
+      "self"
+    ],
+    "get_user_error": [
+      "self"
+    ],
+    "get_system_error": [
+      "self"
+    ]
+  },
+  "CustomMetric": {
+    "__init__": [
+      "self",
+      "metric_id",
+      "values",
+      "timestamps"
+    ],
+    "get_nr_rows": [
+      "self"
+    ],
+    "get_metric_id": [
+      "self"
+    ],
+    "get_values": [
+      "self"
+    ],
+    "get_timestamps": [
+      "self"
+    ]
+  },
+  "PredictionsStats": {
+    "__init__": [
+      "self",
+      "predictions",
+      "class_names",
+      "association_ids"
+    ],
+    "get_predictions": [
+      "self"
+    ],
+    "get_class_names": [
+      "self"
+    ],
+    "get_association_ids": [
+      "self"
+    ]
+  },
+  "FeatureDataStats": {
+    "__init__": [
+      "self",
+      "feature_data"
+    ],
+    "get_feature_data": [
+      "self"
+    ]
+  },
+  "PredictionsData": {
+    "__init__": [
+      "self",
+      "feature_data",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "request_parameters",
+      "forecast_distance",
+      "row_index",
+      "partition",
+      "series_id",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking"
+    ],
+    "get_num_rows": [
+      "self"
+    ],
+    "get_num_prediction_rows": [
+      "self"
+    ],
+    "get_num_feature_rows": [
+      "self"
+    ],
+    "get_predictions": [
+      "self"
+    ],
+    "get_class_names": [
+      "self"
+    ],
+    "get_association_ids": [
+      "self"
+    ],
+    "has_feature_data": [
+      "self"
+    ],
+    "get_feature_data_df": [
+      "self"
+    ],
+    "get_request_parameters": [
+      "self"
+    ],
+    "get_forecast_distance": [
+      "self"
+    ],
+    "get_row_index": [
+      "self"
+    ],
+    "get_partition": [
+      "self"
+    ],
+    "get_series_id": [
+      "self"
+    ],
+    "skip_drift_tracking": [
+      "self"
+    ],
+    "skip_accuracy_tracking": [
+      "self"
+    ]
+  },
+  "AggregatedStats": {
+    "__init__": [
+      "self",
+      "numeric_aggregate_map",
+      "categorical_aggregate_map",
+      "prediction_aggregate_map",
+      "segment_attributes_aggregated_stats",
+      "class_names"
+    ],
+    "get_numeric_aggregate_map": [
+      "self"
+    ],
+    "get_categorical_aggregate_maps": [
+      "self"
+    ],
+    "get_prediction_aggregate_map": [
+      "self"
+    ],
+    "get_segment_attributes_aggregated_stats": [
+      "self"
+    ],
+    "get_class_names": [
+      "self"
+    ]
+  },
+  "StatsContainer": {
+    "to_iterable": [
+      "self"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "to_api_payload": [
+      "self"
+    ],
+    "serialize": [
+      "self",
+      "data_format",
+      "api_format"
+    ],
+    "serialize_iterable": [
+      "self",
+      "data_format",
+      "stat_iterable"
+    ]
+  },
+  "DeploymentStatsContainer": {
+    "__init__": [
+      "self",
+      "general_stats",
+      "deployment_stats"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "to_api_payload": [
+      "self"
+    ]
+  },
+  "CustomMetricContainer": {
+    "METRIC_ID_FIELD_NAME": [],
+    "METRIC_VALUE_FIELD_NAME": [],
+    "TIMESTAMP_FIELD_NAME": [],
+    "BUCKETS_FIELD_NAME": [],
+    "__init__": [
+      "self",
+      "general_stats",
+      "custom_metric",
+      "api_format"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "get_num_rows": [
+      "self"
+    ],
+    "get_metric_id": [
+      "self"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "iterable_to_api_payload": [
+      "payload"
+    ],
+    "to_api_payload": [
+      "self"
+    ]
+  },
+  "PredictionsDataContainer": {
+    "__init__": [
+      "self",
+      "general_stats",
+      "predictions_data",
+      "api_format"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "get_num_rows": [
+      "self"
+    ],
+    "get_num_prediction_rows": [
+      "self"
+    ],
+    "get_num_feature_rows": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "_feature_dict_to_api_list": [
+      "features_dict"
+    ],
+    "_feature_dataframe_to_feature_dict": [
+      "self",
+      "feature_dataframe"
+    ],
+    "_adjust_time_series": [
+      "iterable_input"
+    ],
+    "_adjust_skip_tracking": [
+      "data_payload"
+    ],
+    "to_api_payload": [
+      "self"
+    ],
+    "iterable_to_api_payload": [
+      "payload"
+    ]
+  },
+  "AggregatedStatsContainer": {
+    "__init__": [
+      "self",
+      "general_stats",
+      "aggregated_stats",
+      "api_format"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "to_api_payload": [
+      "self"
+    ]
+  },
+  "EventContainer": {
+    "__init__": [
+      "self",
+      "event"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "to_api_payload": [
+      "self"
+    ]
+  },
+  "serialize_predictions_data_container_list": [
+    "predictions_data_container_list",
+    "skip_drift_tracking",
+    "skip_accuracy_tracking"
+  ],
+  "AggregationHelper": {
+    "build_aggregated_stats": [
+      "aggregated_output",
+      "class_names"
+    ],
+    "aggregated_stat_to_dict": [
+      "aggregated_stat"
+    ],
+    "convert_stats_to_dict": [
+      "aggregated_stats"
+    ],
+    "convert_predictions_stats_to_dict": [
+      "prediction_stats",
+      "class_names"
+    ],
+    "convert_segments_attributes_stats_to_dict": [
+      "segment_attributes_stats",
+      "class_names"
+    ],
+    "dict_to_histogram": [
+      "histogram"
+    ],
+    "convert_stat_format": [
+      "stat"
+    ],
+    "convert_to_numeric_stat": [
+      "feature_name",
+      "stat"
+    ],
+    "convert_to_category_stat": [
+      "feature_name",
+      "stat"
+    ],
+    "convert_aggregated_stats_features_to_dr_format": [
+      "numeric_stat",
+      "category_stat"
+    ],
+    "convert_aggregated_stats_predictions_to_dr_format": [
+      "prediction_stats"
+    ],
+    "convert_aggregated_stats_segment_attr_to_dr_format": [
+      "segment_attributes_stats"
+    ],
+    "validate_feature_types": [
+      "feature_types"
+    ],
+    "convert_feature_format": [
+      "feature"
+    ],
+    "convert_dict_to_feature_types": [
+      "feature_types"
+    ]
+  },
+  "PingMsgContainer": {
+    "__init__": [
+      "self",
+      "general_stats",
+      "ping_msg"
+    ],
+    "to_iterable": [
+      "self"
+    ],
+    "to_api_payload": [
+      "self"
+    ],
+    "get_estimate_size": [
+      "self"
+    ],
+    "data_type": [
+      "self"
+    ]
+  },
+  "Model": {
+    "DEFAULT_ASYNC_REPORTING": [],
+    "MAX_TS_PREDICTIONS": [],
+    "MAX_TS_FEATURE_ROWS": [],
+    "REQUEST_PARAMETERS_MAPPING": [],
+    "DEFAULT_AGGREGATION_HISTOGRAM_BIN_COUNT": [],
+    "DEFAULT_AGGREGATION_DISTINCT_CATEGORY_COUNT": [],
+    "DEFAULT_SEGMENT_VALUE_ATTR_COUNT": [],
+    "__init__": [
+      "self",
+      "feature_types"
+    ],
+    "_init_aggregation_params": [
+      "self",
+      "feature_types"
+    ],
+    "shutdown": [
+      "self",
+      "timeout_sec"
+    ],
+    "_validate_input_association_ids": [
+      "self",
+      "predictions",
+      "association_ids"
+    ],
+    "_validate_input_features_and_predictions": [
+      "self",
+      "feature_data_df",
+      "predictions"
+    ],
+    "_validate_predictions": [
+      "self",
+      "predictions",
+      "class_names"
+    ],
+    "_report_stats": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "stats_serializer"
+    ],
+    "get_stats_counters": [
+      "self"
+    ],
+    "_get_general_stats": [
+      "model_id",
+      "batch_id"
+    ],
+    "report_deployment_stats": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "num_predictions",
+      "user_error",
+      "system_error",
+      "execution_time_ms",
+      "batch_id"
+    ],
+    "report_custom_metric": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "metric_id",
+      "value",
+      "timestamp"
+    ],
+    "report_predictions_data": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "features_df",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking",
+      "batch_id"
+    ],
+    "_validate_and_copy_feature_predictions": [
+      "self",
+      "features_df",
+      "predictions",
+      "class_names",
+      "association_ids"
+    ],
+    "report_aggregated_predictions_data": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "features_df",
+      "predictions",
+      "class_names",
+      "batch_id"
+    ],
+    "_process_data_for_aggregation_with_prediction_timestamp": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "features_df",
+      "predictions_df",
+      "class_names",
+      "batch_id"
+    ],
+    "_convert_predictions_to_df": [
+      "predictions",
+      "class_names"
+    ],
+    "_aggregate_stats": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "feature_data_df",
+      "predictions_df",
+      "class_names",
+      "timestamp",
+      "batch_id"
+    ],
+    "_report_aggregated_stats": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "aggregated_out",
+      "class_names",
+      "timestamp",
+      "batch_id"
+    ],
+    "_get_num_rows": [
+      "feature_data_df",
+      "predictions_df"
+    ],
+    "report_raw_time_series_predictions_data": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "features_df",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "request_parameters",
+      "forecast_distance",
+      "row_index",
+      "partition",
+      "series_id",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking"
+    ],
+    "_deep_copy_reporting_data": [
+      "self",
+      "features_df",
+      "predictions",
+      "association_ids",
+      "forecast_distance",
+      "row_index",
+      "partition",
+      "series_id",
+      "class_names",
+      "request_parameters"
+    ],
+    "_remove_nans": [
+      "nan_prediction_indexes",
+      "reporting_data"
+    ],
+    "report_event": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "event"
+    ],
+    "send_ping_to_agent": [
+      "self",
+      "message"
+    ],
+    "_report_metric": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "feature_data",
+      "predictions",
+      "association_ids",
+      "class_names",
+      "request_parameters",
+      "forecast_distance",
+      "row_index",
+      "partition",
+      "series_id",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking",
+      "batch_id"
+    ],
+    "_validate_time_series_prediction_report": [
+      "self",
+      "predictions",
+      "forecast_distance",
+      "row_index",
+      "partition"
+    ],
+    "_validate_parameter": [
+      "predictions",
+      "parameter",
+      "param_name",
+      "expected_type"
+    ],
+    "_validate_series_id": [
+      "self",
+      "predictions",
+      "series_id"
+    ],
+    "_update_request_parameters": [
+      "self",
+      "request_parameters"
+    ],
+    "_build_feature_types_from_vars": [
+      "self",
+      "features_types_filename",
+      "features_types_json"
+    ],
+    "_report_external_nan_predictions_event": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "nan_prediction_indexes"
+    ]
+  },
+  "json_loads": [
+    "data"
+  ],
+  "API_TOKEN": [],
+  "MLOPS_URL": [],
+  "VERIFY_SSL": [],
+  "STAT_PATH": [],
+  "SPOOLER_DIR": [],
+  "CHANNEL_CONF": [],
+  "AGENT_CONFIG_FILE": [],
+  "LOG4J2_PROPERTIES_FILE": [],
+  "log_level": [],
+  "AGENT_ENTRY_POINT_CLASS": [],
+  "MLOPS_URL_DEFAULT": [],
+  "CLEAN_SHUTDOWN_MESSAGE": [],
+  "Agent": {
+    "__init__": [
+      "self",
+      "datarobot_url",
+      "token",
+      "agent_jar_path",
+      "path_prefix",
+      "verify_ssl"
+    ],
+    "_mlops_share_path": [],
+    "validate_and_init_config": [
+      "self"
+    ],
+    "_set_path_prefix": [
+      "self"
+    ],
+    "_validate_and_set_jar_path": [
+      "self"
+    ],
+    "_set_config_path": [
+      "self"
+    ],
+    "_validate_and_set_log4j2_config": [
+      "self"
+    ],
+    "_validate_and_set_java_path": [
+      "self"
+    ],
+    "_validate_and_set_spooler": [
+      "self"
+    ],
+    "_get_fs_spool_channel_conf": [
+      "self"
+    ],
+    "_get_rabbitmq_spool_channel_conf": [
+      "self"
+    ],
+    "_get_sqs_spool_channel_conf": [
+      "self"
+    ],
+    "_get_pubsub_spool_channel_conf": [
+      "self"
+    ],
+    "_get_kafka_spool_channel_conf": [
+      "self"
+    ],
+    "_update_agent_config": [
+      "self"
+    ],
+    "_init_process": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "force_flag"
+    ],
+    "_ensure_gateway_server_is_up_and_running": [
+      "self",
+      "port",
+      "timeout"
+    ],
+    "_ensure_mlops_agent_is_up_and_running": [
+      "self",
+      "timeout"
+    ],
+    "_get_agent_version": [
+      "self"
+    ],
+    "_ensure_mlops_agent_is_compatible": [
+      "self"
+    ],
+    "connect_to_gateway": [
+      "self",
+      "gateway_port"
+    ],
+    "_stats_get_sum_key_values": [
+      "stats_dict"
+    ],
+    "cleanup": [
+      "self",
+      "message"
+    ],
+    "wait_for_stats_sent_to_mmm": [
+      "self",
+      "submitted_stats",
+      "timeout"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "Constants": {
+    "OFFICIAL_NAME": [],
+    "MLOPS_VERSION": [],
+    "ACTUALS_ASSOCIATION_ID_KEY": [],
+    "ACTUALS_WAS_ACTED_ON_KEY": [],
+    "ACTUALS_TIMESTAMP_KEY": [],
+    "ACTUALS_VALUE_KEY": [],
+    "ACTUALS_LIST_KEY": []
+  },
+  "build_datarobot_url": [
+    "host_base_url"
+  ],
+  "DataRobotEndpointPrefix": {
+    "DEPLOYMENT": [],
+    "EVENTS": []
+  },
+  "DataRobotEndpoint": {
+    "API_VERSION": [],
+    "PREDICTION_REQUESTS_FROM_JSON": [],
+    "PREDICTION_INPUT_FROM_JSON": [],
+    "PREDICTION_STATS_FROM_JSON": [],
+    "ACTUALS_FROM_JSON": [],
+    "CUSTOM_METRICS": [],
+    "FROM_JSON": []
+  },
+  "DataRobotUrlBuilder": {
+    "__init__": [
+      "self",
+      "service_url"
+    ],
+    "report_deployment_stats": [
+      "self",
+      "deployment_id"
+    ],
+    "report_prediction_data": [
+      "self",
+      "deployment_id"
+    ],
+    "report_aggregated_prediction_data": [
+      "self",
+      "deployment_id"
+    ],
+    "report_actuals": [
+      "self",
+      "deployment_id"
+    ],
+    "report_custom_metrics": [
+      "self",
+      "deployment_id",
+      "metrics_id"
+    ],
+    "report_event": [
+      "self"
+    ]
+  },
+  "sanitize_name": [
+    "name"
+  ],
+  "NameSanitizer": {
+    "__init__": [
+      "self",
+      "source_names"
+    ],
+    "_check_unnamed_columns": [
+      "self"
+    ],
+    "_check_duplicates": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "original_column"
+    ],
+    "get_mapping": [
+      "self"
+    ]
+  },
+  "get_predictions": [
+    "df",
+    "predictions",
+    "target_col",
+    "prediction_cols",
+    "class_names"
+  ],
+  "MAX_HASH": [],
+  "_get_hash": [
+    "association_id"
+  ],
+  "_should_be_sampled": [
+    "association_id",
+    "fraction"
+  ],
+  "sample_dataframe": [
+    "df",
+    "association_id_column_name",
+    "sampling_percentage"
+  ],
+  "validate_sampling_percentage": [
+    "auto_sampling_pct"
+  ],
+  "get_sampling_pct": [
+    "lib_sampling_pct",
+    "current_sampling_pct"
+  ],
+  "DRCommonException": {},
+  "DRConfigKeyNotFound": {},
+  "DRConfigKeyAlreadyAssigned": {},
+  "DRUnsupportedType": {},
+  "DRInvalidValue": {},
+  "DRVarNotFound": {},
+  "DRAlreadyInitialized": {},
+  "DRApiException": {},
+  "DRSpoolerException": {},
+  "DRNotFoundException": {},
+  "ColumnNameError": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "format_args": [
+      "cls",
+      "error_args"
+    ]
+  },
+  "AmbiguousColumnNameError": {
+    "message": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "UnnamedColumnError": {
+    "message": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "ColumnOnlyContainsSpacesError": {
+    "message": [],
+    "__init__": [
+      "self"
+    ]
+  },
+  "__instances": [],
+  "singleton": [
+    "cls"
+  ],
+  "DEFAULT_PREDICTIONS_DATA_MAX_LINES_PER_CHUNK": [],
+  "DEFAULT_PREDICTIONS_DATA_MAX_CHUNKS": [],
+  "__prioritized_config": [],
+  "ConfigKey": [],
+  "renameMap": [],
+  "spoolerRemap": [],
+  "get_new_name": [
+    "name"
+  ],
+  "get_old_name": [
+    "name"
+  ],
+  "get_config": [
+    "config_key"
+  ],
+  "get_config_default": [
+    "config_key",
+    "default_val"
+  ],
+  "set_config": [
+    "config_key",
+    "value"
+  ],
+  "clear_config": [],
+  "dump_config": [],
+  "_parse_config_str": [
+    "settings_str",
+    "record_delimiter",
+    "key_value_separator"
+  ],
+  "set_channel_config_from_str": [
+    "output_settings",
+    "record_delimiter",
+    "key_value_separator"
+  ],
+  "set_config_safely": [
+    "config_key",
+    "value"
+  ],
+  "ConfigKeys": {
+    "MLOPS_FEATURE_DATA_ROWS_IN_ONE_MESSAGE_STR": [],
+    "MLOPS_CUSTOM_METRIC_ROWS_IN_ONE_MESSAGE_STR": []
+  },
+  "ConfigConstants": {
+    "MLOPS_SERVICE_URL": [],
+    "MLOPS_API_TOKEN": [],
+    "MLOPS_MONITORING_AGENT_JAR_PATH": [],
+    "MLOPS_VERIFY_SSL": [],
+    "MLOPS_MAX_FEATURES_TO_MONITOR": [],
+    "MLOPS_SAMPLES_GROUP_SIZE_FOR_MLOPS_API_ENDPOINT": [],
+    "MLOPS_MAX_GROUPS_FOR_MLOPS_API_ENDPOINT": [],
+    "MLOPS_MAX_ROWS_FOR_MLOPS_API_ENDPOINT": [],
+    "DEPLOYMENT_ID": [],
+    "MODEL_ID": [],
+    "ASSOCIATION_ID_COLUMN_NAME": [],
+    "FEATURE_TYPES_FILENAME": [],
+    "FEATURE_TYPES_JSON": [],
+    "ASYNC_REPORTING": [],
+    "REPORT_QUEUE_NUM_LISTS": [],
+    "REPORT_QUEUE_LIST_SIZE": [],
+    "REPORT_QUEUE_MAX_SIZE": [],
+    "TIMEOUT_PROCESS_QUEUE_MS": [],
+    "SPOOLER_TYPE": [],
+    "SPOOLER_ACTION": [],
+    "SPOOLER_CHECKSUM": [],
+    "FEATURE_DATA_ROWS_IN_ONE_MESSAGE": [],
+    "CUSTOM_METRIC_ROWS_IN_ONE_MESSAGE": [],
+    "PREDICTIONS_DATA_MAX_CHUNKS": [],
+    "PREDICTIONS_DATA_MAX_LINES_PER_CHUNK": [],
+    "SPOOLER_DATA_FORMAT": [],
+    "SPOOLER_DEQUEUE_ACK_RECORDS": [],
+    "SPOOLER_DEQUEUE_MAX_RECORDS_PER_CALL": [],
+    "SPOOLER_CONFIG_RECORD_DELIMITER": [],
+    "SPOOLER_CONFIG_KEY_VALUE_SEPARATOR": [],
+    "FILESYSTEM_DIRECTORY": [],
+    "FILESYSTEM_MAX_FILE_SIZE": [],
+    "FILESYSTEM_MAX_NUM_FILES": [],
+    "FILESYSTEM_ACK_DEADLINE_STR": [],
+    "SQS_QUEUE_URL": [],
+    "SQS_QUEUE_NAME": [],
+    "RABBITMQ_QUEUE_URL": [],
+    "RABBITMQ_QUEUE_NAME": [],
+    "RABBITMQ_SSL_CERTIFICATE_PATH": [],
+    "RABBITMQ_SSL_KEYFILE_PATH": [],
+    "RABBITMQ_SSL_CA_CERTIFICATE_PATH": [],
+    "RABBITMQ_SSL_TLS_VERSION": [],
+    "PUBSUB_PROJECT_ID": [],
+    "PUBSUB_TOPIC_NAME": [],
+    "PUBSUB_MAX_FLUSH_SECONDS": [],
+    "PUBSUB_SUBSCRIPTION_NAME": [],
+    "PUBSUB_ACK_DEADLINE_SECONDS": [],
+    "PUBSUB_MAX_WAIT_FOR_PENDING_MESSAGES_SECONDS": [],
+    "PUBSUB_MAX_PENDING_MESSAGES": [],
+    "MEMORY_MAX_QUEUE_SIZE": [],
+    "MEMORY_MAX_MESSAGE_SIZE": [],
+    "ASYNC_MEMORY_URL": [],
+    "ASYNC_MEMORY_ENQUEUE_DELAY_MS": [],
+    "ASYNC_MEMORY_DEQUEUE_DELAY_MS": [],
+    "API_MAX_MESSAGE_SIZE": [],
+    "API_POST_TIMEOUT_SECONDS": [],
+    "API_HTTP_RETRY": [],
+    "API_HTTP_RETRY_WAIT_SECONDS": [],
+    "KAFKA_TOPIC_NAME": [],
+    "KAFKA_BOOTSTRAP_SERVERS": [],
+    "KAFKA_MAX_FLUSH_MS": [],
+    "KAFKA_BUFFER_MAX_KB": [],
+    "KAFKA_CONSUMER_GROUP_ID": [],
+    "KAFKA_CONSUMER_POLL_TIMEOUT_MS": [],
+    "KAFKA_CONSUMER_MAX_NUM_MESSAGES": [],
+    "KAFKA_AUTO_RELEASE_OFFSET": [],
+    "KAFKA_MESSAGE_BYTE_SIZE_LIMIT": [],
+    "KAFKA_ACK_DEADLINE_STR": [],
+    "KAFKA_REQUEST_TIMEOUT_MS": [],
+    "KAFKA_SESSION_TIMEOUT_MS": [],
+    "KAFKA_DELIVERY_TIMEOUT_MS": [],
+    "KAFKA_SOCKET_TIMEOUT_MS": [],
+    "KAFKA_METADATA_MAX_AGE_MS": [],
+    "KAFKA_LINGER_MS": [],
+    "KAFKA_SECURITY_PROTOCOL": [],
+    "KAFKA_SSL_CA_LOCATION": [],
+    "KAFKA_SSL_KEY_LOCATION": [],
+    "KAFKA_SSL_KEY_PASSWORD": [],
+    "KAFKA_SASL_MECHANISM": [],
+    "KAFKA_SASL_USERNAME": [],
+    "KAFKA_SASL_PASSWORD": [],
+    "KAFKA_SASL_OAUTHBEARER_CONFIG": [],
+    "KAFKA_SOCKET_KEEPALIVE": [],
+    "STATS_AGGREGATION_HISTOGRAM_BIN_COUNT": [],
+    "STATS_AGGREGATION_DISTINCT_CATEGORY_COUNT": [],
+    "STATS_AGGREGATION_SEGMENT_VALUE_COUNT": [],
+    "STATS_AGGREGATION_SEGMENT_ATTRIBUTES": [],
+    "STATS_AGGREGATION_PREDICTION_TS_COLUMN_NAME": [],
+    "STATS_AGGREGATION_PREDICTION_TS_COLUMN_FORMAT": [],
+    "STATS_AGGREGATION_AUTO_SAMPLING_PERCENTAGE": [],
+    "get_config_key": [
+      "name"
+    ],
+    "all": [
+      "cls"
+    ]
+  },
+  "str2bool": [
+    "s"
+  ],
+  "camelize": [
+    "snake_str"
+  ],
+  "EnumOrdinal": {
+    "ordinal": [
+      "self"
+    ],
+    "from_ordinal": [
+      "cls",
+      "ordinal"
+    ],
+    "from_name": [
+      "cls",
+      "name"
+    ]
+  },
+  "SpoolerType": {
+    "STDOUT": [],
+    "FILESYSTEM": [],
+    "NONE": [],
+    "INVALID": [],
+    "SQS": [],
+    "RABBITMQ": [],
+    "PUBSUB": [],
+    "MEMORY": [],
+    "ASYNC_MEMORY": [],
+    "KAFKA": [],
+    "API": []
+  },
+  "DataFormat": {
+    "BYTE_ARRAY": [],
+    "JSON": [],
+    "INVALID": []
+  },
+  "DataType": {
+    "INVALID": [],
+    "FEATURE_DRIFT": [],
+    "TARGET_DRIFT": [],
+    "DEPLOYMENT_STATS": [],
+    "FEATURE_DATA": [],
+    "PREDICTIONS_STATS_SC_CLASSIFICATION": [],
+    "PREDICTIONS_STATS_SC_REGRESSION": [],
+    "PREDICTIONS_DATA": [],
+    "EVENT": [],
+    "ACTUALS_DATA": [],
+    "PREDICTION_STATS": [],
+    "CUSTOM_METRIC": [],
+    "PING_MSG": []
+  },
+  "PredictionType": {
+    "REGRESSION": [],
+    "CLASSIFICATION": []
+  },
+  "SQSQueueType": {
+    "STANDARD": [],
+    "FIFO": []
+  },
+  "MLOpsSpoolAction": {
+    "ENQUEUE": [],
+    "DEQUEUE": [],
+    "ENQUEUE_DEQUEUE": []
+  },
+  "HTTPStatus": {
+    "OK": [],
+    "ACCEPTED": [],
+    "NO_CONTENT": [],
+    "SEE_OTHER": [],
+    "NOT_FOUND": [],
+    "GONE": [],
+    "IN_USE": [],
+    "TOO_MANY_REQUESTS": [],
+    "INTERNAL_SERVER_ERROR": [],
+    "BAD_GATEWAY": [],
+    "SERVICE_UNAVAIL": [],
+    "GATEWAY_TIMEOUT": []
+  },
+  "DataRobotAppVersion": {
+    "__init__": [
+      "self",
+      "string_version",
+      "major",
+      "minor",
+      "patch",
+      "suffix"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "major": [
+      "self"
+    ],
+    "minor": [
+      "self"
+    ],
+    "patch": [
+      "self"
+    ],
+    "suffix": [
+      "self"
+    ],
+    "is_newer_or_equal": [
+      "self",
+      "datarobot_app_compare_version"
+    ]
+  },
+  "ApiSync": {
+    "AUTHORIZATION_TOKEN_PREFIX": [],
+    "DEFAULT_HTTP_RETRIES": [],
+    "DEFAULT_HTTP_TIMEOUT_SECONDS": [],
+    "DEFAULT_API_RETRY_WAIT_SECONDS": [],
+    "__init__": [
+      "self"
+    ],
+    "post_message": [
+      "self",
+      "url",
+      "serialized_payload"
+    ]
+  },
+  "DRMLOpsConnectedException": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "agg_stats_data_keys": [],
+  "predictions_data_keys": [],
+  "common_fields_keys": [],
+  "custom_metric_keys": [],
+  "DATAROBOT_APP_VERSION_WITH_SKIP_AGGREGATION_SUPPORT": [],
+  "ApiLimits": {
+    "DATA_REPORTING_MAX_CHUNKS": [],
+    "DATA_REPORTING_MAX_LINES_PER_CHUNK": [],
+    "DATA_REPORTING_MAX_ROWS_PER_API_CALL": [],
+    "ACTUALS_REPORTING_MAX_LINES": [],
+    "CUSTOM_METRICS_REPORTING_MAX_LINES": []
+  },
+  "ReportingApiClient": {
+    "AUTHORIZATION_TOKEN_PREFIX": [],
+    "RESPONSE_STATUS_KEY": [],
+    "RESPONSE_FULL_API_VERSION": [],
+    "RESPONSE_API_MAJOR_VERSION": [],
+    "RESPONSE_API_MINOR_VERSION": [],
+    "RESPONSE_LOCATION_KEY": [],
+    "ASYNC_STATUS_ACTIVE": [],
+    "ASYNC_STATUS_ERROR": [],
+    "ASYNC_STATUS_ABORT": [],
+    "ASYNC_STATUS_INITIALIZED": [],
+    "ASYNC_STATUS_RUNNING": [],
+    "ASYNC_WAIT_SLEEP_TIME": [],
+    "__init__": [
+      "self",
+      "service_url",
+      "api_key",
+      "verify",
+      "dry_run",
+      "datarobot_app_version"
+    ],
+    "is_api_version_older_than": [
+      "self",
+      "reference_major_version",
+      "reference_minor_version"
+    ],
+    "api_version_smaller_than": [
+      "self",
+      "major",
+      "minor"
+    ],
+    "update_api_version": [
+      "self"
+    ],
+    "update_datarobot_app_version": [
+      "self"
+    ],
+    "_session": [
+      "self"
+    ],
+    "_validate_col_exists": [
+      "df",
+      "col_name"
+    ],
+    "_get_correct_actual_value": [
+      "value",
+      "deployment_type"
+    ],
+    "_get_correct_flag_value": [
+      "value_str"
+    ],
+    "post_message": [
+      "self",
+      "url",
+      "serialized_payload"
+    ],
+    "_build_deployment_stats_container": [
+      "self",
+      "model_id",
+      "timestamp",
+      "num_predictions",
+      "execution_time_ms",
+      "batch_id",
+      "user_error",
+      "system_error"
+    ],
+    "report_deployment_stats": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "num_predictions",
+      "execution_time_ms",
+      "timestamp",
+      "dry_run",
+      "batch_id",
+      "user_error",
+      "system_error"
+    ],
+    "_build_prediction_data_container_list": [
+      "self",
+      "model_id",
+      "data",
+      "association_ids",
+      "assoc_id",
+      "predictions",
+      "target_col",
+      "prediction_cols",
+      "class_names",
+      "timestamp",
+      "batch_id"
+    ],
+    "report_prediction_data": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "data",
+      "association_ids",
+      "assoc_id_col",
+      "predictions",
+      "target_col",
+      "prediction_cols",
+      "class_names",
+      "timestamp",
+      "skip_drift_tracking",
+      "skip_accuracy_tracking",
+      "batch_id",
+      "dry_run"
+    ],
+    "_build_aggregated_stats_container": [
+      "self",
+      "model_id",
+      "numeric_aggregate_map",
+      "categorical_aggregate_map",
+      "prediction_aggregate_map",
+      "segment_attributes_aggregated_stats",
+      "class_names",
+      "timestamp",
+      "batch_id"
+    ],
+    "report_aggregated_prediction_data": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "payload",
+      "batch_id",
+      "dry_run"
+    ],
+    "_get_correct_custom_metrics_timestamp": [
+      "self",
+      "x",
+      "timestamp_format"
+    ],
+    "_build_custom_metric_container": [
+      "self",
+      "model_id",
+      "custom_metric_id",
+      "values",
+      "timestamps"
+    ],
+    "submit_custom_metrics_from_dataframe": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "custom_metric_id",
+      "input_df",
+      "timestamp_col",
+      "value_col",
+      "timestamp_format",
+      "dry_run",
+      "progress_callback"
+    ],
+    "report_custom_metrics": [
+      "self",
+      "deployment_id",
+      "model_id",
+      "custom_metric_id",
+      "buckets",
+      "dry_run"
+    ],
+    "_get_url_request_response": [
+      "self",
+      "url",
+      "allow_redirects",
+      "params"
+    ],
+    "_wait_for_async_completion": [
+      "self",
+      "async_location",
+      "max_wait"
+    ],
+    "submit_actuals": [
+      "self",
+      "deployment_id",
+      "actuals",
+      "wait_for_result",
+      "timeout"
+    ],
+    "submit_actuals_from_dataframe": [
+      "self",
+      "deployment_id",
+      "deployment_type",
+      "dataframe",
+      "assoc_id_col",
+      "actual_value_col",
+      "was_act_on_col",
+      "timestamp_col",
+      "progress_callback",
+      "dry_run"
+    ],
+    "report_actuals_data": [
+      "self",
+      "deployment_id",
+      "actuals",
+      "dry_run"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "FSRecordSpooler": {
+    "DEFAULT_MAX_FILE_SIZE": [],
+    "DEFAULT_MAX_NUM_FILES": [],
+    "DEFAULT_FS_SPOOLER_MESSAGE_SIZE_LIMIT_IN_BYTES": [],
+    "LAST_RECORD_DELIMITER": [],
+    "MAGIC_NUMBER_RECORD": [],
+    "FS_SPOOLER_FILENAME": [],
+    "FS_SPOOLER_VERSION": [],
+    "PACK_FORMAT_INTEGER": [],
+    "LAST_RECORD_DELIMITER_SIZE_BYTES": [],
+    "MAGIC_RECORD_DELIMITER_SIZE_BYTES": [],
+    "PACK_FORMAT_CHECKSUM_RECORD": [],
+    "CHECKSUM_RECORD_SIZE_BYTES": [],
+    "PACK_FORMAT_VERSION_AND_RECORD_LEN": [],
+    "VERSION_AND_RECORD_LEN_SIZE_BYTES": [],
+    "DEFAULT_DEQUEUE_SPOOL_META_FILENAME": [],
+    "DEFAULT_FILESYSTEM_ACK_RETRY": [],
+    "DEFAULT_FILESYSTEM_ACK_DEADLINE_SEC": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "_validate_dequeue_format": [
+      "data_format"
+    ],
+    "key_modification_time": [
+      "x"
+    ],
+    "_spool_file_index_get": [
+      "spool_filepath"
+    ],
+    "_load_meta_file_for_dequeue": [
+      "self"
+    ],
+    "_dequeue_end_of_file_reached": [
+      "self",
+      "last_spool_file"
+    ],
+    "_dequeue_delete_spool_file": [
+      "self",
+      "spool_file"
+    ],
+    "_load_dequeue_spool_file_list": [
+      "self"
+    ],
+    "_print_dequeue_counters": [
+      "self"
+    ],
+    "_get_next_spool_file_to_dequeue": [
+      "self"
+    ],
+    "_check_and_create_lock_for_dequeue": [
+      "self"
+    ],
+    "_get_current_enqueue_pointer": [
+      "self"
+    ],
+    "_verify_enqueue_pointer_ahead_of_dequeue_pointer": [
+      "self"
+    ],
+    "_init_dequeue": [
+      "self"
+    ],
+    "_init_enqueue": [
+      "self"
+    ],
+    "_get_data_format_of_spool_file": [
+      "self",
+      "spool_filepath",
+      "default"
+    ],
+    "_init_enqueue_json": [
+      "self",
+      "enqueue_filepath"
+    ],
+    "_init_enqueue_binary": [
+      "self",
+      "enqueue_filepath"
+    ],
+    "_file_has_last_record_delimiter": [
+      "filename"
+    ],
+    "_get_files_total_size": [
+      "list_of_files"
+    ],
+    "_read_spool_dir": [
+      "self"
+    ],
+    "_close_current_enqueue": [
+      "self",
+      "filename",
+      "format"
+    ],
+    "_remove_dequeue_lock_file": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "_close_enqueue_file": [
+      "self"
+    ],
+    "_close_current_and_request_new_enqueue_file": [
+      "self"
+    ],
+    "_request_new_enqueue_file": [
+      "self"
+    ],
+    "_enqueue_check_spooler_has_enough_space": [
+      "self",
+      "bytes_to_write_size"
+    ],
+    "_check_enqueue_file_has_enough_space": [
+      "self",
+      "bytes_to_write_size"
+    ],
+    "_enqueue_write_end_of_file_delimiter": [
+      "self"
+    ],
+    "_enqueue_write_data": [
+      "self",
+      "buf"
+    ],
+    "enqueue_single_record": [
+      "self",
+      "record"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "ack_records": [
+      "self",
+      "records_id_list"
+    ],
+    "commit_next_valid_offset": [
+      "self"
+    ],
+    "_dequeue_metafile_update": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ],
+    "empty": [
+      "self"
+    ],
+    "dequeue": [
+      "self"
+    ]
+  },
+  "MetaFile": {
+    "__init__": [
+      "self",
+      "meta_filename"
+    ],
+    "get_last_spool_file_name": [
+      "self"
+    ],
+    "get_offset": [
+      "self"
+    ],
+    "_serialize": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "filename",
+      "offset"
+    ]
+  },
+  "FSRecord": {
+    "__init__": [
+      "self",
+      "offset",
+      "record"
+    ]
+  },
+  "OffsetMeta": {
+    "__init__": [
+      "self",
+      "partition",
+      "offset",
+      "record_id"
+    ],
+    "inc_retry_counter": [
+      "self"
+    ],
+    "set_timestamp": [
+      "self",
+      "timestamp"
+    ],
+    "get_offset": [
+      "self"
+    ],
+    "get_partition": [
+      "self"
+    ],
+    "get_record_id": [
+      "self"
+    ],
+    "ack": [
+      "self"
+    ],
+    "is_ack_or_retry_exceed_limit": [
+      "self",
+      "max_retry"
+    ],
+    "is_expired": [
+      "self",
+      "ack_deadline_ms"
+    ]
+  },
+  "SpoolerOffsetManager": {
+    "DEFAULT_PARTITION": [],
+    "__init__": [
+      "self",
+      "clear_record_timeout_sec",
+      "max_retry"
+    ],
+    "set_last_committed_offset": [
+      "self",
+      "offset_meta"
+    ],
+    "clear_records_processed": [
+      "self"
+    ],
+    "find_next_offsets": [
+      "self"
+    ],
+    "find_next_offset_single_partition": [
+      "self"
+    ],
+    "find_next_expired_offset": [
+      "self",
+      "ack_deadline_ms",
+      "partition"
+    ],
+    "ack_record": [
+      "self",
+      "offset",
+      "partition"
+    ],
+    "track_offset_record": [
+      "self",
+      "offset",
+      "record_id",
+      "partition"
+    ],
+    "is_record_processed": [
+      "self",
+      "record_id"
+    ]
+  },
+  "SQSRecordSpooler": {
+    "DEFAULT_MESSAGE_GROUP_ID": [],
+    "FIFO_SUFFIX": [],
+    "SQS_MAX_MESSAGE_SIZE": [],
+    "SQS_DEFAULT_MESSAGE_GROUP": [],
+    "SQS_DEFAULT_MAX_NUMBER_OF_MESSAGES": [],
+    "__init__": [
+      "self",
+      "sqs_client"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "_validate_url": [
+      "url"
+    ],
+    "_send_sqs_batch": [
+      "self",
+      "entries"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "ack_records": [
+      "self",
+      "record_id_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "_delete_message": [
+      "self",
+      "entries"
+    ],
+    "empty": [
+      "self"
+    ],
+    "delete_queue": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "suppress": [
+    "exception_type"
+  ],
+  "KafkaConf": {
+    "BOOTSTRAP_SERVERS": [],
+    "REQUEST_TIMEOUT": [],
+    "SESSION_TIMEOUT": [],
+    "DELIVERY_TIMEOUT": [],
+    "LINGER": [],
+    "SECURITY_PROTOCOL": [],
+    "SSL_CA_LOCATION": [],
+    "SSL_KEY_LOCATION": [],
+    "SSL_KEY_PASSWORD": [],
+    "SASL_MECHANISM": [],
+    "SASL_USERNAME": [],
+    "SASL_PASSWORD": [],
+    "SASL_OAUTHBEARER_CONFIG": [],
+    "OAUTH_CALLBACK": [],
+    "GROUP_ID": [],
+    "AUTO_OFFSET_RESET": [],
+    "ENABLE_AUTO_COMMIT": [],
+    "QUEUE_BUFFERING_MAX": [],
+    "SOCKET_TIMEOUT": [],
+    "METADATA_MAX_AGE": [],
+    "SOCKET_KEEPALIVE": []
+  },
+  "KafkaRecordSpooler": {
+    "DEFAULT_KAFKA_MESSAGE_BYTE_SIZE_LIMIT": [],
+    "DEFAULT_KAFKA_CONSUMER_POLL_TIMEOUT_MS": [],
+    "DEFAULT_KAFKA_CONSUMER_MAX_NUM_MESSAGES": [],
+    "KAFKA_DEFAULT_ACK_RETRY": [],
+    "KAFKA_DEFAULT_ACK_DEADLINE": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "_gen_kafka_client_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "empty": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "_publish_single_record": [
+      "self",
+      "record"
+    ],
+    "commit_next_valid_offset": [
+      "self"
+    ],
+    "ack_records": [
+      "self",
+      "records_id_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "_read_single_message": [
+      "self",
+      "msg"
+    ],
+    "_delivery_status_callback": [
+      "self",
+      "err",
+      "msg"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "AzureActiveDirectoryOauthBearer": {
+    "AAD_TENANT_ID": [],
+    "AAD_CLIENT_ID": [],
+    "AAD_CLIENT_SECRET": [],
+    "__init__": [
+      "self",
+      "scopes",
+      "tenant_id",
+      "client_id",
+      "client_secret"
+    ],
+    "from_config_str": [
+      "cls",
+      "bootstrap_servers",
+      "config_string"
+    ],
+    "__call__": [
+      "self",
+      "_config"
+    ]
+  },
+  "AsyncMemoryRecordSpooler": {
+    "DEFAULT_MAX_QUEUE_SIZE": [],
+    "MAX_RECORDS_TO_DEQUEUE": [],
+    "DEFAULT_QUEUE_OPERATION_TIMEOUT": [],
+    "DEFAULT_SERVER_TIMEOUT_SEC": [],
+    "DEFAULT_URL": [],
+    "DEFAULT_START_AS_SERVER": [],
+    "__init__": [
+      "self",
+      "start_as_server"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "server_process": [
+      "self",
+      "queue",
+      "queue_size",
+      "ready_event"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "enqueue_single_message": [
+      "self",
+      "message_json"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "dequeue_single_message": [
+      "self"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "StdoutRecordSpooler": {
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "RabbitMQRecordSpooler": {
+    "RABBITMQ_MAX_RECORDS_TO_DEQUEUE": [],
+    "RABBITMQ_MESSAGE_SIZE_LIMIT_IN_BYTE": [],
+    "DEFAULT_PUBLISH_ATTEMPTS": [],
+    "DEFAULT_PUBLISH_INTERVAL": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "close": [
+      "self"
+    ],
+    "reconnect": [
+      "self"
+    ],
+    "_validate_url": [
+      "url"
+    ],
+    "_convert_tls_version": [
+      "tls_version_str"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "publish_single_message": [
+      "self",
+      "message"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "empty": [
+      "self"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "ack_records": [
+      "self",
+      "records_id_list"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "RecordSpooler": {
+    "__metaclass__": [],
+    "BYTES_PER_ROW_OF_DATA": [],
+    "BYTES_PER_CUSTOM_METRIC_ROW": [],
+    "JSON_DATA_FORMAT_STR": [],
+    "BINARY_DATA_FORMAT_STR": [],
+    "DEFAULT_DEQUEUE_ACK_RECORDS": [],
+    "DEFAULT_CONSUMER_MAX_FETCH_BEFORE_SET_EMPTY": [],
+    "__init__": [
+      "self"
+    ],
+    "_update_empty_count": [
+      "self",
+      "count"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_spooler_data_format": [
+      "self"
+    ],
+    "get_type": [
+      "self"
+    ],
+    "submit": [
+      "self",
+      "record_list"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "get_feature_data_rows_in_a_message": [
+      "self"
+    ],
+    "get_max_feature_data_rows_per_chunk": [
+      "self"
+    ],
+    "get_custom_metric_rows_in_a_message": [
+      "self"
+    ],
+    "get_missing_config": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ],
+    "_add_pending_record": [
+      "self",
+      "record_id",
+      "record"
+    ],
+    "ack_records": [
+      "self",
+      "records_id_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ]
+  },
+  "futures": [],
+  "published_messages": [],
+  "PubSubRecordSpooler": {
+    "PUBSUB_MESSAGE_SIZE_LIMIT_IN_BYTE": [],
+    "PUBSUB_DEFAULT_MAX_RECORDS_TO_DEQUEUE": [],
+    "PUBSUB_DEFAULT_ACK_DEADLINE_SECONDS": [],
+    "PUBSUB_DEFAULT_SLEEP_TIME": [],
+    "PUBSUB_DEFAULT_MAX_PENDING_MESSAGES": [],
+    "PUBSUB_DEFAULT_MAX_WAIT_FOR_PENDING_MESSAGES_SECONDS": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "delete_subscription": [
+      "self"
+    ],
+    "delete_topic": [
+      "self"
+    ],
+    "empty": [
+      "self"
+    ],
+    "ack_records": [
+      "self",
+      "records_id_list"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "publish_single_record": [
+      "self",
+      "record"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "_get_callback": [
+    "future",
+    "data"
+  ],
+  "MemoryRecordSpooler": {
+    "__instance": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "enqueue_single_message": [
+      "self",
+      "message_json"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "dequeue_single_message": [
+      "self"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "RecordSpoolerFactory": {
+    "create": [
+      "self",
+      "spooler_type"
+    ],
+    "get_current_configured_spooler": [
+      "self"
+    ]
+  },
+  "ApiRecordSpooler": {
+    "DEFAULT_MAX_MESSAGE_SIZE": [],
+    "__init__": [
+      "self"
+    ],
+    "get_type": [],
+    "get_required_config": [
+      "self"
+    ],
+    "get_optional_config": [
+      "self"
+    ],
+    "get_message_byte_size_limit": [
+      "self"
+    ],
+    "set_config": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "action"
+    ],
+    "enqueue": [
+      "self",
+      "record_list"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__dict__": [
+      "self"
+    ]
+  },
+  "MLOPS_RECORD_VERSION": [],
+  "SERIALIZE_FORMAT_RECORD_HEADER": [],
+  "DESERIALIZE_FORMAT_STRING_LEN": [],
+  "DESERIALIZE_FORMAT_STRING": [],
+  "DESERIALIZE_FORMAT_DATA_INFO": [],
+  "uuid4_fast": [],
+  "RecordHeader": {
+    "__init__": [
+      "self",
+      "deployment_id",
+      "data_type",
+      "data_format",
+      "data_len",
+      "version",
+      "language",
+      "lib_version",
+      "reserved"
+    ],
+    "serialize": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "equals": [
+      "self",
+      "obj"
+    ],
+    "__eq__": [
+      "self",
+      "obj"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "_get_string": [
+      "cls",
+      "byte_array",
+      "offset"
+    ],
+    "deserialize": [
+      "cls",
+      "byte_array"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "get_deployment_id": [
+      "self"
+    ],
+    "get_data_type": [
+      "self"
+    ],
+    "get_data_format": [
+      "self"
+    ],
+    "get_data_len": [
+      "self"
+    ],
+    "get_version": [
+      "self"
+    ],
+    "get_language": [
+      "self"
+    ],
+    "get_lib_version": [
+      "self"
+    ],
+    "get_reserved": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Record": {
+    "__init__": [
+      "self",
+      "deployment_id",
+      "data_type",
+      "data_format",
+      "payload",
+      "version",
+      "language",
+      "lib_version",
+      "reserved"
+    ],
+    "serialize": [
+      "self"
+    ],
+    "_serialize_improved": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "equals": [
+      "self",
+      "obj"
+    ],
+    "__eq__": [
+      "self",
+      "obj"
+    ],
+    "deserialize": [
+      "cls",
+      "byte_array"
+    ],
+    "from_json": [
+      "cls",
+      "content"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "get_deployment_id": [
+      "self"
+    ],
+    "get_reserved": [
+      "self"
+    ],
+    "get_payload": [
+      "self"
+    ],
+    "get_data_type": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "OutputChannelQueue": {
+    "__metaclass__": [],
+    "TIMESTAMP": [],
+    "MODEL_ID": [],
+    "BATCH_ID": [],
+    "FEATURES": [],
+    "PREDICTIONS": [],
+    "ASSOCIATION_IDS": [],
+    "CLASS_NAMES": [],
+    "FORECAST": [],
+    "ROW_INDEX": [],
+    "PARTITION_FIELD": [],
+    "SERIES_ID": [],
+    "REQUEST_PARAMS": [],
+    "SKIP_DRIFT": [],
+    "SKIP_ACCURACY": [],
+    "METRIC_ID": [],
+    "BUCKETS": [],
+    "VALUE": [],
+    "shutdown": [
+      "self",
+      "timeout_sec",
+      "final_shutdown"
+    ],
+    "submit": [
+      "self",
+      "record",
+      "deployment_id"
+    ],
+    "get_queue_size_bytes": [
+      "self"
+    ],
+    "extract_prediction_data_range": [
+      "self",
+      "data_input",
+      "start_index",
+      "end_index"
+    ],
+    "split_prediction_data_and_create_records": [
+      "self",
+      "output_channel",
+      "deployment_id",
+      "stats_serializer",
+      "data_format",
+      "api_format"
+    ],
+    "extract_custom_metric_range": [
+      "self",
+      "custom_metric",
+      "start_index",
+      "end_index",
+      "api_format"
+    ],
+    "split_custom_metric_and_create_records": [
+      "self",
+      "output_channel",
+      "deployment_id",
+      "stats_serializer",
+      "data_format",
+      "api_format"
+    ],
+    "create_record_list": [
+      "self",
+      "output_channel",
+      "deployment_id",
+      "stats_serializer"
+    ]
+  },
+  "OutputChannelQueueSync": {
+    "get_queue_size_bytes": [
+      "self"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "submit": [
+      "self",
+      "stats_serializer",
+      "deployment_id"
+    ]
+  },
+  "OutputChannelQueueAsync": {
+    "DEFAULT_REPORT_QUEUE_MAX_SIZE": [],
+    "DEFAULT_TIMEOUT_PROCESS_QUEUE_MS": [],
+    "DEFAULT_QUEUE_OPERATION_TIMEOUT_SEC": [],
+    "DEFAULT_WORKER_TIMEOUT_SEC": [],
+    "__init__": [
+      "self"
+    ],
+    "get_queue_size_bytes": [
+      "self"
+    ],
+    "shutdown": [
+      "self",
+      "timeout_sec",
+      "final_shutdown"
+    ],
+    "process_records": [
+      "self",
+      "worker_queue",
+      "queue_size",
+      "ready_event"
+    ],
+    "submit": [
+      "self",
+      "stats_serializer",
+      "deployment_id"
+    ]
+  }
+}

@@ -1,0 +1,1543 @@
+{
+  "logger": [],
+  "listen_to_F5TTS": [
+    "text",
+    "server_ip",
+    "server_port"
+  ],
+  "F5TTS": {
+    "__init__": [
+      "self",
+      "model",
+      "ckpt_file",
+      "vocab_file",
+      "ode_method",
+      "use_ema",
+      "vocoder_local_path",
+      "device",
+      "hf_cache_dir"
+    ],
+    "transcribe": [
+      "self",
+      "ref_audio",
+      "language"
+    ],
+    "export_wav": [
+      "self",
+      "wav",
+      "file_wave",
+      "remove_silence"
+    ],
+    "export_spectrogram": [
+      "self",
+      "spec",
+      "file_spec"
+    ],
+    "infer": [
+      "self",
+      "ref_file",
+      "ref_text",
+      "gen_text",
+      "show_info",
+      "progress",
+      "target_rms",
+      "cross_fade_duration",
+      "sway_sampling_coef",
+      "cfg_strength",
+      "nfe_step",
+      "speed",
+      "fix_duration",
+      "remove_silence",
+      "file_wave",
+      "file_spec",
+      "seed"
+    ]
+  },
+  "AudioFileWriterThread": {
+    "__init__": [
+      "self",
+      "output_file",
+      "sampling_rate"
+    ],
+    "run": [
+      "self"
+    ],
+    "add_chunk": [
+      "self",
+      "chunk"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "TTSStreamingProcessor": {
+    "__init__": [
+      "self",
+      "model",
+      "ckpt_file",
+      "vocab_file",
+      "ref_audio",
+      "ref_text",
+      "device",
+      "dtype"
+    ],
+    "load_ema_model": [
+      "self",
+      "ckpt_file",
+      "vocab_file",
+      "dtype"
+    ],
+    "load_vocoder_model": [
+      "self"
+    ],
+    "update_reference": [
+      "self",
+      "ref_audio",
+      "ref_text"
+    ],
+    "_warm_up": [
+      "self"
+    ],
+    "generate_stream": [
+      "self",
+      "text",
+      "conn"
+    ]
+  },
+  "handle_client": [
+    "conn",
+    "processor"
+  ],
+  "start_server": [
+    "host",
+    "port",
+    "processor"
+  ],
+  "get_seedtts_testset_metainfo": [
+    "metalst"
+  ],
+  "get_librispeech_test_clean_metainfo": [
+    "metalst",
+    "librispeech_test_clean_path"
+  ],
+  "padded_mel_batch": [
+    "ref_mels"
+  ],
+  "get_inference_prompt": [
+    "metainfo",
+    "speed",
+    "tokenizer",
+    "polyphone",
+    "target_sample_rate",
+    "n_fft",
+    "win_length",
+    "n_mel_channels",
+    "hop_length",
+    "mel_spec_type",
+    "target_rms",
+    "use_truth_duration",
+    "infer_batch_size",
+    "num_buckets",
+    "min_secs",
+    "max_secs"
+  ],
+  "get_seed_tts_test": [
+    "metalst",
+    "gen_wav_dir",
+    "gpus"
+  ],
+  "get_librispeech_test": [
+    "metalst",
+    "gen_wav_dir",
+    "gpus",
+    "librispeech_test_clean_path",
+    "eval_ground_truth"
+  ],
+  "load_asr_model": [
+    "lang",
+    "ckpt_dir"
+  ],
+  "run_asr_wer": [
+    "args"
+  ],
+  "run_sim": [
+    "args"
+  ],
+  "rel_path": [],
+  "get_args": [],
+  "parse_gpu_nums": [
+    "gpu_nums_str"
+  ],
+  "main": [],
+  "accelerator": [],
+  "device": [],
+  "use_ema": [],
+  "target_rms": [],
+  "Res2Conv1dReluBn": {
+    "__init__": [
+      "self",
+      "channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "bias",
+      "scale"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Conv1dReluBn": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "bias"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SE_Connect": {
+    "__init__": [
+      "self",
+      "channels",
+      "se_bottleneck_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SE_Res2Block": {
+    "__init__": [
+      "self",
+      "in_channels",
+      "out_channels",
+      "kernel_size",
+      "stride",
+      "padding",
+      "dilation",
+      "scale",
+      "se_bottleneck_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AttentiveStatsPool": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "attention_channels",
+      "global_context_att"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ECAPA_TDNN": {
+    "__init__": [
+      "self",
+      "feat_dim",
+      "channels",
+      "emb_dim",
+      "global_context_att",
+      "feat_type",
+      "sr",
+      "feature_selection",
+      "update_extract",
+      "config_path"
+    ],
+    "get_feat_num": [
+      "self"
+    ],
+    "get_feat": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ECAPA_TDNN_SMALL": [
+    "feat_dim",
+    "emb_dim",
+    "feat_type",
+    "sr",
+    "feature_selection",
+    "update_extract",
+    "config_path"
+  ],
+  "target_sample_rate": [],
+  "n_mel_channels": [],
+  "hop_length": [],
+  "win_length": [],
+  "n_fft": [],
+  "mel_spec_type": [],
+  "parse_args": [],
+  "training_process": [],
+  "system": [],
+  "python_executable": [],
+  "tts_api": [],
+  "last_checkpoint": [],
+  "last_device": [],
+  "last_ema": [],
+  "path_data": [],
+  "path_project_ckpts": [],
+  "file_train": [],
+  "save_settings": [
+    "project_name",
+    "exp_name",
+    "learning_rate",
+    "batch_size_per_gpu",
+    "batch_size_type",
+    "max_samples",
+    "grad_accumulation_steps",
+    "max_grad_norm",
+    "epochs",
+    "num_warmup_updates",
+    "save_per_updates",
+    "keep_last_n_checkpoints",
+    "last_per_updates",
+    "finetune",
+    "file_checkpoint_train",
+    "tokenizer_type",
+    "tokenizer_file",
+    "mixed_precision",
+    "logger",
+    "ch_8bit_adam"
+  ],
+  "load_settings": [
+    "project_name"
+  ],
+  "get_audio_duration": [
+    "audio_path"
+  ],
+  "Slicer": {
+    "__init__": [
+      "self",
+      "sr",
+      "threshold",
+      "min_length",
+      "min_interval",
+      "hop_size",
+      "max_sil_kept"
+    ],
+    "_apply_slice": [
+      "self",
+      "waveform",
+      "begin",
+      "end"
+    ],
+    "slice": [
+      "self",
+      "waveform"
+    ]
+  },
+  "terminate_process_tree": [
+    "pid",
+    "including_parent"
+  ],
+  "terminate_process": [
+    "pid"
+  ],
+  "start_training": [
+    "dataset_name",
+    "exp_name",
+    "learning_rate",
+    "batch_size_per_gpu",
+    "batch_size_type",
+    "max_samples",
+    "grad_accumulation_steps",
+    "max_grad_norm",
+    "epochs",
+    "num_warmup_updates",
+    "save_per_updates",
+    "keep_last_n_checkpoints",
+    "last_per_updates",
+    "finetune",
+    "file_checkpoint_train",
+    "tokenizer_type",
+    "tokenizer_file",
+    "mixed_precision",
+    "stream",
+    "logger",
+    "ch_8bit_adam"
+  ],
+  "stop_training": [],
+  "get_list_projects": [],
+  "create_data_project": [
+    "name",
+    "tokenizer_type"
+  ],
+  "transcribe_all": [
+    "name_project",
+    "audio_files",
+    "language",
+    "user",
+    "progress"
+  ],
+  "format_seconds_to_hms": [
+    "seconds"
+  ],
+  "get_correct_audio_path": [
+    "audio_input",
+    "base_path",
+    "supported_formats"
+  ],
+  "create_metadata": [
+    "name_project",
+    "ch_tokenizer",
+    "progress"
+  ],
+  "check_user": [
+    "value"
+  ],
+  "calculate_train": [
+    "name_project",
+    "epochs",
+    "learning_rate",
+    "batch_size_per_gpu",
+    "batch_size_type",
+    "max_samples",
+    "num_warmup_updates",
+    "finetune"
+  ],
+  "prune_checkpoint": [
+    "checkpoint_path",
+    "new_checkpoint_path",
+    "save_ema",
+    "safetensors"
+  ],
+  "expand_model_embeddings": [
+    "ckpt_path",
+    "new_ckpt_path",
+    "num_new_tokens"
+  ],
+  "vocab_count": [
+    "text"
+  ],
+  "vocab_extend": [
+    "project_name",
+    "symbols",
+    "model_type"
+  ],
+  "vocab_check": [
+    "project_name",
+    "tokenizer_type"
+  ],
+  "get_random_sample_prepare": [
+    "project_name"
+  ],
+  "get_random_sample_transcribe": [
+    "project_name"
+  ],
+  "get_random_sample_infer": [
+    "project_name"
+  ],
+  "infer": [
+    "project",
+    "file_checkpoint",
+    "exp_name",
+    "ref_text",
+    "ref_audio",
+    "gen_text",
+    "nfe_step",
+    "use_ema",
+    "speed",
+    "seed",
+    "remove_silence"
+  ],
+  "check_finetune": [
+    "finetune"
+  ],
+  "get_checkpoints_project": [
+    "project_name",
+    "is_gradio"
+  ],
+  "get_audio_project": [
+    "project_name",
+    "is_gradio"
+  ],
+  "get_gpu_stats": [],
+  "get_cpu_stats": [],
+  "get_combined_stats": [],
+  "get_audio_select": [
+    "file_sample"
+  ],
+  "PRETRAINED_VOCAB_PATH": [],
+  "BATCH_SIZE": [],
+  "MAX_WORKERS": [],
+  "THREAD_NAME_PREFIX": [],
+  "CHUNK_SIZE": [],
+  "executor": [],
+  "is_csv_wavs_format": [
+    "input_path"
+  ],
+  "graceful_exit": [],
+  "process_audio_file": [
+    "audio_path",
+    "text",
+    "polyphone"
+  ],
+  "batch_convert_texts": [
+    "texts",
+    "polyphone",
+    "batch_size"
+  ],
+  "prepare_csv_wavs_dir": [
+    "input_path",
+    "num_workers"
+  ],
+  "read_audio_text_pairs": [
+    "csv_file_path"
+  ],
+  "save_prepped_dataset": [
+    "out_dir",
+    "result",
+    "duration_list",
+    "text_vocab_set",
+    "is_finetune"
+  ],
+  "prepare_and_save_set": [
+    "inp_dir",
+    "out_dir",
+    "is_finetune",
+    "num_workers"
+  ],
+  "cli": [],
+  "deal_with_sub_path_files": [
+    "dataset_path",
+    "sub_path"
+  ],
+  "deal_with_audio_dir": [
+    "audio_dir"
+  ],
+  "out_zh": [],
+  "zh_filters": [],
+  "out_en": [],
+  "en_filters": [],
+  "process_audio_directory": [
+    "audio_dir"
+  ],
+  "write_triton_stats": [
+    "stats",
+    "summary_file"
+  ],
+  "load_audio": [
+    "wav_path",
+    "target_sample_rate"
+  ],
+  "send": [
+    "manifest_item_list",
+    "name",
+    "triton_client",
+    "protocol_client",
+    "log_interval",
+    "model_name",
+    "padding_duration",
+    "audio_save_dir",
+    "save_sample_rate"
+  ],
+  "load_manifests": [
+    "manifest_path"
+  ],
+  "split_data": [
+    "data",
+    "k"
+  ],
+  "data_collator": [
+    "batch",
+    "vocab_char_map",
+    "device",
+    "use_perf"
+  ],
+  "init_distributed": [],
+  "load_vocoder": [
+    "vocoder_name",
+    "is_local",
+    "local_path",
+    "device",
+    "hf_cache_dir",
+    "vocoder_trt_engine_path"
+  ],
+  "VocosTensorRT": {
+    "__init__": [
+      "self",
+      "engine_path",
+      "stream"
+    ],
+    "decode": [
+      "self",
+      "mels"
+    ]
+  },
+  "prepare_request": [
+    "waveform",
+    "reference_text",
+    "target_text",
+    "sample_rate",
+    "audio_save_dir"
+  ],
+  "__all__": [],
+  "MODEL_MAP": [],
+  "current_file_path": [],
+  "parent_dir": [],
+  "InputEmbedding": {
+    "__init__": [
+      "self",
+      "mel_dim",
+      "text_dim",
+      "out_dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond",
+      "mask"
+    ]
+  },
+  "FeedForward": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_out",
+      "mult",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaLayerNormZero": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "emb"
+    ]
+  },
+  "AdaLayerNormZero_Final": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "emb"
+    ]
+  },
+  "ConvPositionEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "kernel_size",
+      "groups"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "processor",
+      "dim",
+      "heads",
+      "dim_head",
+      "dropout",
+      "context_dim",
+      "context_pre_only"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "rope_cos",
+      "rope_sin",
+      "input_lengths",
+      "mask",
+      "c",
+      "scale",
+      "rope",
+      "c_rope"
+    ]
+  },
+  "rotate_every_two_3dim": [
+    "tensor"
+  ],
+  "apply_rotary_pos_emb_3dim": [
+    "x",
+    "rope_cos",
+    "rope_sin",
+    "pe_attn_head"
+  ],
+  "AttnProcessor": {
+    "__init__": [
+      "self",
+      "pe_attn_head"
+    ],
+    "__call__": [
+      "self",
+      "attn",
+      "x",
+      "rope_cos",
+      "rope_sin",
+      "input_lengths",
+      "scale",
+      "rope",
+      "mask"
+    ]
+  },
+  "DiTBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "dim_head",
+      "ff_mult",
+      "dropout",
+      "pe_attn_head"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "t",
+      "rope_cos",
+      "rope_sin",
+      "input_lengths",
+      "scale",
+      "rope",
+      "mask"
+    ]
+  },
+  "TimestepEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "freq_embed_dim",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "timestep"
+    ]
+  },
+  "remove_tensor_padding": [
+    "input_tensor",
+    "input_tensor_lengths"
+  ],
+  "TextEmbedding": {
+    "__init__": [
+      "self",
+      "text_num_embeds",
+      "text_dim",
+      "mask_padding",
+      "conv_layers",
+      "conv_mult",
+      "precompute_max_pos"
+    ],
+    "forward": [
+      "self",
+      "text",
+      "seq_len",
+      "drop_text"
+    ]
+  },
+  "GRN": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConvNeXtV2Block": {
+    "__init__": [
+      "self",
+      "dim",
+      "intermediate_dim",
+      "dilation"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "precompute_freqs_cis": [
+    "dim",
+    "end",
+    "theta",
+    "theta_rescale_factor"
+  ],
+  "get_text_embed_dict": [
+    "ckpt_path",
+    "use_ema"
+  ],
+  "get_tokenizer": [
+    "vocab_file_path"
+  ],
+  "convert_char_to_pinyin": [
+    "reference_target_texts_list",
+    "polyphone"
+  ],
+  "list_str_to_idx": [
+    "text",
+    "vocab_char_map",
+    "padding_value"
+  ],
+  "TritonPythonModel": {
+    "initialize": [
+      "self",
+      "args"
+    ],
+    "get_vocos_mel_spectrogram": [
+      "self",
+      "waveform"
+    ],
+    "forward_vocoder": [
+      "self",
+      "mel"
+    ],
+    "execute": [
+      "self",
+      "requests"
+    ]
+  },
+  "opset_version": [],
+  "ISTFTHead": {
+    "__init__": [
+      "self",
+      "n_fft",
+      "hop_length"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "VocosVocoder": {
+    "__init__": [
+      "self",
+      "vocos_vocoder"
+    ],
+    "forward": [
+      "self",
+      "mel"
+    ]
+  },
+  "export_VocosVocoder": [
+    "vocos_vocoder",
+    "output_path",
+    "verbose"
+  ],
+  "support_clp_op": [],
+  "STFT": {
+    "__init__": [
+      "self",
+      "win_len",
+      "win_hop",
+      "fft_len",
+      "enframe_mode",
+      "win_type",
+      "win_sqrt",
+      "pad_center"
+    ],
+    "__init_kernel__": [
+      "self"
+    ],
+    "is_perfect": [
+      "self"
+    ],
+    "transform": [
+      "self",
+      "inputs",
+      "return_type"
+    ],
+    "inverse": [
+      "self",
+      "input1",
+      "input2",
+      "input_type"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ]
+  },
+  "split_q_tp": [
+    "v",
+    "n_head",
+    "n_hidden",
+    "tensor_parallel",
+    "rank"
+  ],
+  "split_q_bias_tp": [
+    "v",
+    "n_head",
+    "n_hidden",
+    "tensor_parallel",
+    "rank"
+  ],
+  "parse_arguments": [],
+  "convert_pytorch_dit_to_trtllm_weight": [
+    "args",
+    "mapping",
+    "dtype",
+    "use_ema"
+  ],
+  "save_config": [
+    "args"
+  ],
+  "covert_and_save": [
+    "args",
+    "rank"
+  ],
+  "execute": [
+    "workers",
+    "func",
+    "args"
+  ],
+  "total_hours": [],
+  "mel_hop_length": [],
+  "mel_sampling_rate": [],
+  "wanted_max_updates": [],
+  "gpus": [],
+  "frames_per_gpu": [],
+  "grad_accum": [],
+  "mini_batch_frames": [],
+  "mini_batch_hours": [],
+  "updates_per_epoch": [],
+  "epochs": [],
+  "transformer": [],
+  "model": [],
+  "duration": [],
+  "frame_length": [],
+  "text_length": [],
+  "train_dataset": [],
+  "sampler": [],
+  "batch_size_per_gpu": [],
+  "max_samples_per_gpu": [],
+  "max_updates": [],
+  "batch_sampler": [],
+  "gpu_decorator": [
+    "func"
+  ],
+  "DEFAULT_TTS_MODEL": [],
+  "tts_model_choice": [],
+  "DEFAULT_TTS_MODEL_CFG": [],
+  "vocoder": [],
+  "load_f5tts": [],
+  "load_e2tts": [],
+  "load_custom": [
+    "ckpt_path",
+    "vocab_path",
+    "model_cfg"
+  ],
+  "F5TTS_ema_model": [],
+  "E2TTS_ema_model": [],
+  "chat_model_state": [],
+  "chat_tokenizer_state": [],
+  "chat_model_inference": [
+    "messages",
+    "model",
+    "tokenizer"
+  ],
+  "load_text_from_file": [
+    "file"
+  ],
+  "parse_speechtypes_text": [
+    "gen_text"
+  ],
+  "parser": [],
+  "args": [],
+  "config": [],
+  "ckpt_file": [],
+  "vocab_file": [],
+  "ref_audio": [],
+  "ref_text": [],
+  "gen_text": [],
+  "gen_file": [],
+  "output_dir": [],
+  "output_file": [],
+  "save_chunk": [],
+  "use_legacy_text": [],
+  "remove_silence": [],
+  "load_vocoder_from_local": [],
+  "vocoder_name": [],
+  "cross_fade_duration": [],
+  "nfe_step": [],
+  "cfg_strength": [],
+  "sway_sampling_coef": [],
+  "speed": [],
+  "fix_duration": [],
+  "wave_path": [],
+  "model_cfg": [],
+  "model_cls": [],
+  "model_arc": [],
+  "ema_model": [],
+  "_ref_audio_cache": [],
+  "_ref_text_cache": [],
+  "tempfile_kwargs": [],
+  "ode_method": [],
+  "chunk_text": [
+    "text",
+    "max_chars"
+  ],
+  "asr_pipe": [],
+  "initialize_asr_pipeline": [
+    "device",
+    "dtype"
+  ],
+  "transcribe": [
+    "ref_audio",
+    "language"
+  ],
+  "load_checkpoint": [
+    "model",
+    "ckpt_path",
+    "device",
+    "dtype",
+    "use_ema"
+  ],
+  "load_model": [
+    "model_cls",
+    "model_cfg",
+    "ckpt_path",
+    "mel_spec_type",
+    "vocab_file",
+    "ode_method",
+    "use_ema",
+    "device"
+  ],
+  "remove_silence_edges": [
+    "audio",
+    "silence_threshold"
+  ],
+  "preprocess_ref_audio_text": [
+    "ref_audio_orig",
+    "ref_text",
+    "show_info"
+  ],
+  "infer_process": [
+    "ref_audio",
+    "ref_text",
+    "gen_text",
+    "model_obj",
+    "vocoder",
+    "mel_spec_type",
+    "show_info",
+    "progress",
+    "target_rms",
+    "cross_fade_duration",
+    "nfe_step",
+    "cfg_strength",
+    "sway_sampling_coef",
+    "speed",
+    "fix_duration",
+    "device"
+  ],
+  "infer_batch_process": [
+    "ref_audio",
+    "ref_text",
+    "gen_text_batches",
+    "model_obj",
+    "vocoder",
+    "mel_spec_type",
+    "progress",
+    "target_rms",
+    "cross_fade_duration",
+    "nfe_step",
+    "cfg_strength",
+    "sway_sampling_coef",
+    "speed",
+    "fix_duration",
+    "device",
+    "streaming",
+    "chunk_size"
+  ],
+  "remove_silence_for_generated_wav": [
+    "filename"
+  ],
+  "save_spectrogram": [
+    "spectrogram",
+    "path"
+  ],
+  "seed": [],
+  "exp_name": [],
+  "ckpt_step": [],
+  "dataset_name": [],
+  "tokenizer": [],
+  "ckpt_path": [],
+  "audio_to_edit": [],
+  "origin_text": [],
+  "target_text": [],
+  "parts_to_edit": [],
+  "local": [],
+  "dtype": [],
+  "rms": [],
+  "audio": [],
+  "offset_frame": [],
+  "mel_cond": [],
+  "edit_mask": [],
+  "fix_dur_list": [],
+  "text_list": [],
+  "Trainer": {
+    "__init__": [
+      "self",
+      "model",
+      "epochs",
+      "learning_rate",
+      "num_warmup_updates",
+      "save_per_updates",
+      "keep_last_n_checkpoints",
+      "checkpoint_path",
+      "batch_size_per_gpu",
+      "batch_size_type",
+      "max_samples",
+      "grad_accumulation_steps",
+      "max_grad_norm",
+      "noise_scheduler",
+      "duration_predictor",
+      "logger",
+      "wandb_project",
+      "wandb_run_name",
+      "wandb_resume_id",
+      "log_samples",
+      "last_per_updates",
+      "accelerate_kwargs",
+      "ema_kwargs",
+      "bnb_optimizer",
+      "mel_spec_type",
+      "is_local_vocoder",
+      "local_vocoder_path",
+      "model_cfg_dict"
+    ],
+    "is_main": [
+      "self"
+    ],
+    "save_checkpoint": [
+      "self",
+      "update",
+      "last"
+    ],
+    "load_checkpoint": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "train_dataset",
+      "num_workers",
+      "resumable_with_seed"
+    ]
+  },
+  "CFM": {
+    "__init__": [
+      "self",
+      "transformer",
+      "sigma",
+      "odeint_kwargs",
+      "audio_drop_prob",
+      "cond_drop_prob",
+      "num_channels",
+      "mel_spec_module",
+      "mel_spec_kwargs",
+      "frac_lengths_mask",
+      "vocab_char_map"
+    ],
+    "device": [
+      "self"
+    ],
+    "sample": [
+      "self",
+      "cond",
+      "text",
+      "duration"
+    ],
+    "forward": [
+      "self",
+      "inp",
+      "text"
+    ]
+  },
+  "seed_everything": [
+    "seed"
+  ],
+  "exists": [
+    "v"
+  ],
+  "default": [
+    "v",
+    "d"
+  ],
+  "is_package_available": [
+    "package_name"
+  ],
+  "lens_to_mask": [
+    "t",
+    "length"
+  ],
+  "mask_from_start_end_indices": [
+    "seq_len",
+    "start",
+    "end"
+  ],
+  "mask_from_frac_lengths": [
+    "seq_len",
+    "frac_lengths"
+  ],
+  "maybe_masked_mean": [
+    "t",
+    "mask"
+  ],
+  "list_str_to_tensor": [
+    "text",
+    "padding_value"
+  ],
+  "repetition_found": [
+    "text",
+    "length",
+    "tolerance"
+  ],
+  "get_epss_timesteps": [
+    "n",
+    "device",
+    "dtype"
+  ],
+  "HFDataset": {
+    "__init__": [
+      "self",
+      "hf_dataset",
+      "target_sample_rate",
+      "n_mel_channels",
+      "hop_length",
+      "n_fft",
+      "win_length",
+      "mel_spec_type"
+    ],
+    "get_frame_len": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "CustomDataset": {
+    "__init__": [
+      "self",
+      "custom_dataset",
+      "durations",
+      "target_sample_rate",
+      "hop_length",
+      "n_mel_channels",
+      "n_fft",
+      "win_length",
+      "mel_spec_type",
+      "preprocessed_mel",
+      "mel_spec_module"
+    ],
+    "get_frame_len": [
+      "self",
+      "index"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "DynamicBatchSampler": {
+    "__init__": [
+      "self",
+      "sampler",
+      "frames_threshold",
+      "max_samples",
+      "random_seed",
+      "drop_residual"
+    ],
+    "set_epoch": [
+      "self",
+      "epoch"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "load_dataset": [
+    "dataset_name",
+    "tokenizer",
+    "dataset_type",
+    "audio_type",
+    "mel_spec_module",
+    "mel_spec_kwargs"
+  ],
+  "collate_fn": [
+    "batch"
+  ],
+  "mel_basis_cache": [],
+  "hann_window_cache": [],
+  "get_bigvgan_mel_spectrogram": [
+    "waveform",
+    "n_fft",
+    "n_mel_channels",
+    "target_sample_rate",
+    "hop_length",
+    "win_length",
+    "fmin",
+    "fmax",
+    "center"
+  ],
+  "get_vocos_mel_spectrogram": [
+    "waveform",
+    "n_fft",
+    "n_mel_channels",
+    "target_sample_rate",
+    "hop_length",
+    "win_length"
+  ],
+  "MelSpec": {
+    "__init__": [
+      "self",
+      "n_fft",
+      "hop_length",
+      "win_length",
+      "n_mel_channels",
+      "target_sample_rate",
+      "mel_spec_type"
+    ],
+    "forward": [
+      "self",
+      "wav"
+    ]
+  },
+  "SinusPositionEmbedding": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "scale"
+    ]
+  },
+  "get_pos_embed_indices": [
+    "start",
+    "length",
+    "max_pos",
+    "scale"
+  ],
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "AdaLayerNorm": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "emb"
+    ]
+  },
+  "AdaLayerNorm_Final": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "emb"
+    ]
+  },
+  "JointAttnProcessor": {
+    "__init__": [
+      "self"
+    ],
+    "__call__": [
+      "self",
+      "attn",
+      "x",
+      "c",
+      "mask",
+      "rope",
+      "c_rope"
+    ]
+  },
+  "MMDiTBlock": {
+    "__init__": [
+      "self",
+      "dim",
+      "heads",
+      "dim_head",
+      "ff_mult",
+      "dropout",
+      "context_dim",
+      "context_pre_only",
+      "qk_norm"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "c",
+      "t",
+      "mask",
+      "rope",
+      "c_rope"
+    ]
+  },
+  "DiT": {
+    "__init__": [
+      "self"
+    ],
+    "initialize_weights": [
+      "self"
+    ],
+    "ckpt_wrapper": [
+      "self",
+      "module"
+    ],
+    "get_input_embed": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "drop_audio_cond",
+      "drop_text",
+      "cache",
+      "audio_mask"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "time",
+      "mask",
+      "drop_audio_cond",
+      "drop_text",
+      "cfg_infer",
+      "cache"
+    ]
+  },
+  "UNetT": {
+    "__init__": [
+      "self"
+    ],
+    "get_input_embed": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "drop_audio_cond",
+      "drop_text",
+      "cache"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "time",
+      "mask",
+      "drop_audio_cond",
+      "drop_text",
+      "cfg_infer",
+      "cache"
+    ]
+  },
+  "AudioEmbedding": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "out_dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond",
+      "drop_audio_cond"
+    ]
+  },
+  "MMDiT": {
+    "__init__": [
+      "self"
+    ],
+    "initialize_weights": [
+      "self"
+    ],
+    "ckpt_wrapper": [
+      "self",
+      "module"
+    ],
+    "get_input_embed": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "drop_audio_cond",
+      "drop_text",
+      "cache"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "cond",
+      "text",
+      "time",
+      "mask",
+      "drop_audio_cond",
+      "drop_text",
+      "cfg_infer",
+      "cache"
+    ]
+  }
+}

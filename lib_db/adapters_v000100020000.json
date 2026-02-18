@@ -1,0 +1,5556 @@
+{
+  "AdapterArguments": {},
+  "setup_adapter_training": [
+    "model",
+    "adapter_args",
+    "adapter_name",
+    "adapter_config_kwargs",
+    "adapter_load_kwargs"
+  ],
+  "logger": [],
+  "InvertibleAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "add_invertible_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "_average_invertible_adapter": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "delete_invertible_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "get_invertible_adapter": [
+      "self"
+    ],
+    "enable_invertible_adapters": [
+      "self",
+      "adapter_names"
+    ],
+    "invertible_adapters_forward": [
+      "self",
+      "hidden_states",
+      "rev"
+    ],
+    "_get_active_setup": [
+      "self"
+    ]
+  },
+  "InvertibleAdaptersWrapperMixin": {
+    "invertible_adapters_base_name": [],
+    "invertible_adapters_base": [
+      "self"
+    ],
+    "invertible_adapters": [
+      "self"
+    ],
+    "add_invertible_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "_average_invertible_adapter": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "delete_invertible_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "get_invertible_adapter": [
+      "self"
+    ],
+    "enable_invertible_adapters": [
+      "self",
+      "adapter_names"
+    ],
+    "invertible_adapters_forward": [
+      "self",
+      "hidden_states",
+      "rev"
+    ]
+  },
+  "EmbeddingAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "load_embeddings": [
+      "self",
+      "path",
+      "name"
+    ],
+    "add_embeddings": [
+      "self",
+      "name",
+      "tokenizer",
+      "reference_embedding",
+      "reference_tokenizer",
+      "embedding_dim"
+    ],
+    "delete_embeddings": [
+      "self",
+      "name"
+    ],
+    "save_embeddings": [
+      "self",
+      "path",
+      "name",
+      "tokenizer"
+    ],
+    "set_active_embeddings": [
+      "self",
+      "name"
+    ],
+    "active_embeddings": [
+      "self"
+    ]
+  },
+  "EmbeddingAdaptersWrapperMixin": {
+    "load_embeddings": [
+      "self",
+      "path",
+      "name"
+    ],
+    "add_embeddings": [
+      "self",
+      "name",
+      "tokenizer",
+      "reference_embedding",
+      "reference_tokenizer"
+    ],
+    "delete_embeddings": [
+      "self",
+      "name"
+    ],
+    "save_embeddings": [
+      "self",
+      "path",
+      "name",
+      "tokenizer"
+    ],
+    "set_active_embeddings": [
+      "self",
+      "name"
+    ],
+    "active_embeddings": [
+      "self"
+    ],
+    "loaded_embeddings": [
+      "self"
+    ]
+  },
+  "ModelAdaptersMixin": {
+    "add_base_adapters": [],
+    "support_lora_delta_w_svd": [],
+    "support_prompt_tuning": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_link_prefix_to_pool": [
+      "self",
+      "layer"
+    ],
+    "_add_tied_weights_keys": [
+      "self"
+    ],
+    "model_name": [
+      "self"
+    ],
+    "_init_adapters_submodules": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_default_init_adapter_methods": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "supports_adapter": [
+      "self",
+      "type_or_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "apply_to_adapter_layers": [
+      "self",
+      "fn"
+    ],
+    "apply_to_basemodel_childs": [
+      "self",
+      "fn"
+    ],
+    "train_adapter": [
+      "self",
+      "adapter_setup",
+      "train_embeddings"
+    ],
+    "train_adapter_fusion": [
+      "self",
+      "adapter_setup",
+      "unfreeze_adapters"
+    ],
+    "has_adapters": [
+      "self"
+    ],
+    "has_parallel_adapters": [
+      "self"
+    ],
+    "active_adapters": [
+      "self",
+      "adapter_setup"
+    ],
+    "set_shared_parameters": [
+      "self",
+      "param"
+    ],
+    "set_active_adapters": [
+      "self",
+      "adapter_setup",
+      "skip_layers"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "config",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "_add_adapter_weights": [
+      "self",
+      "adapter_name"
+    ],
+    "share_parameters": [
+      "self",
+      "adapter_names",
+      "name",
+      "reference_adapter_name"
+    ],
+    "unshare_parameters": [
+      "self",
+      "adapter_names",
+      "name"
+    ],
+    "add_adapter_fusion": [
+      "self",
+      "adapter_names",
+      "config",
+      "name",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "delete_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "delete_adapter_fusion": [
+      "self",
+      "adapter_names"
+    ],
+    "save_adapter": [
+      "self",
+      "save_directory",
+      "adapter_name",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "save_adapter_fusion": [
+      "self",
+      "save_directory",
+      "adapter_names",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "load_adapter": [
+      "self",
+      "adapter_name_or_path",
+      "config",
+      "version",
+      "model_name",
+      "load_as",
+      "custom_weights_loaders",
+      "leave_out",
+      "id2label",
+      "set_active",
+      "use_safetensors"
+    ],
+    "load_adapter_fusion": [
+      "self",
+      "adapter_fusion_name_or_path",
+      "load_as",
+      "custom_weights_loaders",
+      "set_active",
+      "use_safetensors"
+    ],
+    "_save_adapter_setup_config": [
+      "self",
+      "save_directory",
+      "adapter_setup",
+      "head_setup"
+    ],
+    "_load_adapter_setup_config": [
+      "self",
+      "load_directory"
+    ],
+    "_save_adapter_setup_weights": [
+      "self",
+      "save_directory",
+      "adapter_setup",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "_load_adapter_setup_weights": [
+      "self",
+      "load_directory",
+      "adapter_setup",
+      "custom_weights_loaders",
+      "set_active",
+      "use_safetensors"
+    ],
+    "save_adapter_setup": [
+      "self",
+      "save_directory",
+      "adapter_setup",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "load_adapter_setup": [
+      "self",
+      "adapter_setup_name_or_path",
+      "version",
+      "custom_weights_loaders",
+      "set_active",
+      "use_safetensors"
+    ],
+    "save_all_adapters": [
+      "self",
+      "save_directory",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "save_all_adapter_fusions": [
+      "self",
+      "save_directory",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "freeze_model": [
+      "self",
+      "freeze"
+    ],
+    "forward_context": [
+      "self",
+      "context"
+    ],
+    "get_fusion_regularization_loss": [
+      "self"
+    ],
+    "get_adapter": [
+      "self",
+      "name"
+    ],
+    "adapter_to": [
+      "self",
+      "name",
+      "device",
+      "dtype"
+    ],
+    "adapter_fusion_to": [
+      "self",
+      "adapter_names",
+      "device",
+      "dtype"
+    ],
+    "adapter_summary": [
+      "self",
+      "as_dict"
+    ],
+    "_average_shared_parameters": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "_pre_average_adapter_checks": [
+      "self",
+      "adapter_name",
+      "adapter_list",
+      "combine_strategy",
+      "valid_combination_strategies",
+      "is_head"
+    ],
+    "average_adapter": [
+      "self",
+      "adapter_name",
+      "adapter_list",
+      "weights",
+      "combine_strategy",
+      "normalize_weights",
+      "overwrite_ok",
+      "set_active",
+      "svd_rank"
+    ],
+    "eject_prefix_tuning": [
+      "self",
+      "name"
+    ],
+    "merge_adapter": [
+      "self",
+      "name"
+    ],
+    "reset_adapter": [
+      "self"
+    ],
+    "_prepare_encoder_decoder_kwargs_for_generation": [
+      "self",
+      "inputs_tensor",
+      "model_kwargs",
+      "model_input_name",
+      "generation_config"
+    ],
+    "_prepare_model_inputs": [
+      "self"
+    ],
+    "save_pretrained": [
+      "self",
+      "save_directory"
+    ],
+    "gradient_checkpointing_enable": [
+      "self",
+      "gradient_checkpointing_kwargs"
+    ]
+  },
+  "ModelBaseAdaptersMixin": {
+    "add_base_adapters": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "get_layer": [
+      "self",
+      "idx"
+    ],
+    "iter_attentions": [
+      "self"
+    ],
+    "iter_layer_ffns": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "ModelUsingSubmodelsAdaptersMixin": {
+    "init_submodels": [
+      "self"
+    ],
+    "_init_adapters_submodules": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_default_init_adapter_methods": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "ModelWithHeadsAdaptersMixin": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "config",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "delete_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "train_adapter": [
+      "self",
+      "adapter_setup",
+      "train_embeddings"
+    ],
+    "train_adapter_fusion": [
+      "self",
+      "adapter_setup",
+      "unfreeze_adapters"
+    ],
+    "average_head": [
+      "self",
+      "head_name",
+      "head_list",
+      "weights",
+      "normalize_weights",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "save_head": [
+      "self",
+      "save_directory",
+      "head_name",
+      "use_safetensors"
+    ],
+    "load_head": [
+      "self",
+      "save_directory",
+      "load_as",
+      "id2label",
+      "use_safetensors"
+    ],
+    "save_adapter": [
+      "self",
+      "save_directory",
+      "adapter_name",
+      "with_head",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "load_adapter": [
+      "self",
+      "adapter_name_or_path",
+      "config",
+      "version",
+      "model_name",
+      "load_as",
+      "with_head",
+      "custom_weights_loaders",
+      "leave_out",
+      "id2label",
+      "set_active",
+      "use_safetensors"
+    ],
+    "save_all_adapters": [
+      "self",
+      "save_directory",
+      "with_head",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "save_adapter_fusion": [
+      "self",
+      "save_directory",
+      "adapter_names",
+      "meta_dict",
+      "custom_weights_loaders",
+      "with_head",
+      "use_safetensors"
+    ],
+    "load_adapter_fusion": [
+      "self",
+      "adapter_fusion_name_or_path",
+      "load_as",
+      "custom_weights_loaders",
+      "set_active",
+      "with_head",
+      "use_safetensors"
+    ],
+    "save_adapter_setup": [
+      "self",
+      "save_directory",
+      "adapter_setup",
+      "head_setup",
+      "meta_dict",
+      "custom_weights_loaders",
+      "use_safetensors"
+    ],
+    "load_adapter_setup": [
+      "self",
+      "adapter_setup_name_or_path",
+      "version",
+      "custom_weights_loaders",
+      "set_active",
+      "use_safetensors"
+    ],
+    "save_all_heads": [
+      "self",
+      "save_directory",
+      "use_safetensors"
+    ],
+    "get_labels": [
+      "self"
+    ],
+    "get_labels_dict": [
+      "self"
+    ],
+    "get_adapter": [
+      "self",
+      "name"
+    ],
+    "freeze_embeddings": [
+      "self",
+      "freeze"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "AdapterMethod": {
+    "bottleneck": [],
+    "prefix_tuning": [],
+    "lora": [],
+    "prompt_tuning": [],
+    "reft": [],
+    "invertible": [],
+    "get_from_config": [
+      "config"
+    ]
+  },
+  "AdapterModelInterface": {
+    "to_dict": [
+      "self"
+    ],
+    "__post_init__": [
+      "self"
+    ],
+    "_save": [
+      "self",
+      "save_directory",
+      "model_config"
+    ],
+    "_load": [
+      "cls",
+      "path_or_repo_id"
+    ]
+  },
+  "AdapterTrainer": {
+    "__init__": [
+      "self",
+      "model",
+      "args",
+      "data_collator",
+      "train_dataset",
+      "eval_dataset",
+      "tokenizer",
+      "processing_class",
+      "model_init",
+      "compute_metrics",
+      "callbacks",
+      "optimizers",
+      "preprocess_logits_for_metrics",
+      "adapter_names"
+    ],
+    "create_optimizer": [
+      "self"
+    ],
+    "_save": [
+      "self",
+      "output_dir",
+      "state_dict"
+    ],
+    "_load_from_checkpoint": [
+      "self",
+      "resume_from_checkpoint"
+    ],
+    "_load_adapters": [
+      "self",
+      "resume_from_checkpoint"
+    ],
+    "_load_adapter_fusions": [
+      "self",
+      "resume_from_checkpoint"
+    ],
+    "_load_heads": [
+      "self",
+      "resume_from_checkpoint"
+    ],
+    "_load_best_model": [
+      "self"
+    ]
+  },
+  "AdapterTrainerCallback": {
+    "__init__": [
+      "self",
+      "trainer"
+    ],
+    "on_train_begin": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ],
+    "on_step_end": [
+      "self",
+      "args",
+      "state",
+      "control"
+    ]
+  },
+  "Seq2SeqAdapterTrainer": {},
+  "WeightsLoaderHelper": {
+    "__init__": [
+      "self",
+      "model",
+      "weights_name",
+      "config_name",
+      "use_safetensors",
+      "safe_weights_name"
+    ],
+    "state_dict": [
+      "self",
+      "filter_func"
+    ],
+    "rename_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "save_weights_config": [
+      "self",
+      "save_directory",
+      "config",
+      "meta_dict"
+    ],
+    "save_weights": [
+      "self",
+      "save_directory",
+      "filter_func"
+    ],
+    "load_weights_config": [
+      "self",
+      "save_directory"
+    ],
+    "_load_module_state_dict": [
+      "module",
+      "state_dict",
+      "start_prefix"
+    ],
+    "load_weights": [
+      "self",
+      "save_directory",
+      "filter_func",
+      "rename_func",
+      "loading_info",
+      "in_base_model"
+    ],
+    "load_weights_from_state_dict": [
+      "self",
+      "state_dict",
+      "filter_func",
+      "rename_func",
+      "loading_info",
+      "in_base_model",
+      "start_prefix"
+    ]
+  },
+  "WeightsLoader": {
+    "__init__": [
+      "self",
+      "model",
+      "weights_name",
+      "config_name",
+      "use_safetensors",
+      "safe_weights_name"
+    ],
+    "filter_func": [
+      "self",
+      "name"
+    ],
+    "rename_func": [
+      "self",
+      "old_name",
+      "new_name"
+    ],
+    "save": [
+      "self",
+      "save_directory",
+      "name"
+    ],
+    "load": [
+      "self",
+      "save_directory",
+      "load_as",
+      "loading_info"
+    ]
+  },
+  "AdapterLoader": {
+    "__init__": [
+      "self",
+      "model",
+      "adapter_type",
+      "use_safetensors"
+    ],
+    "filter_func": [
+      "self",
+      "adapter_name"
+    ],
+    "legacy_weights_mapping": [],
+    "_rename_legacy_weights": [
+      "self",
+      "k"
+    ],
+    "_fix_backward_compat": [
+      "self",
+      "config"
+    ],
+    "_fix_legacy_config": [
+      "self",
+      "adapter_name",
+      "missing_keys"
+    ],
+    "rename_func": [
+      "self",
+      "old_name",
+      "new_name"
+    ],
+    "save_to_state_dict": [
+      "self",
+      "name"
+    ],
+    "save": [
+      "self",
+      "save_directory",
+      "name",
+      "meta_dict"
+    ],
+    "load_from_state_dict": [
+      "self",
+      "state_dict",
+      "name",
+      "load_as",
+      "loading_info",
+      "start_prefix"
+    ],
+    "load": [
+      "self",
+      "adapter_name_or_path",
+      "config",
+      "version",
+      "model_name",
+      "load_as",
+      "loading_info",
+      "leave_out",
+      "set_active"
+    ]
+  },
+  "AdapterFusionLoader": {
+    "__init__": [
+      "self",
+      "model",
+      "error_on_missing",
+      "use_safetensors"
+    ],
+    "filter_func": [
+      "self",
+      "adapter_fusion_name"
+    ],
+    "rename_func": [
+      "self",
+      "old_name",
+      "new_name"
+    ],
+    "save_to_state_dict": [
+      "self",
+      "name"
+    ],
+    "save": [
+      "self",
+      "save_directory",
+      "name",
+      "meta_dict"
+    ],
+    "load_from_state_dict": [
+      "self",
+      "state_dict",
+      "name",
+      "load_as",
+      "loading_info",
+      "start_prefix"
+    ],
+    "load": [
+      "self",
+      "save_directory",
+      "load_as",
+      "loading_info"
+    ]
+  },
+  "PredictionHeadLoader": {
+    "__init__": [
+      "self",
+      "model",
+      "error_on_missing",
+      "convert_to_flex_head",
+      "use_safetensors"
+    ],
+    "filter_func": [
+      "self",
+      "head_name"
+    ],
+    "rename_func": [
+      "self",
+      "old_name",
+      "new_name"
+    ],
+    "save": [
+      "self",
+      "save_directory",
+      "name"
+    ],
+    "load": [
+      "self",
+      "save_directory",
+      "load_as",
+      "loading_info"
+    ],
+    "convert_static_to_flex_head": [
+      "self",
+      "state_dict",
+      "load_as"
+    ]
+  },
+  "DEFAULT_TEXT": [],
+  "ADAPTER_CARD_TEMPLATE": [],
+  "PushAdapterToHubMixin": {
+    "_save_adapter_card": [
+      "self",
+      "save_directory",
+      "adapter_name",
+      "adapter_repo_name",
+      "datasets_tag",
+      "tags",
+      "language",
+      "license",
+      "metrics",
+      "load_fn"
+    ],
+    "push_adapter_to_hub": [
+      "self",
+      "repo_id",
+      "adapter_name",
+      "datasets_tag",
+      "local_path",
+      "commit_message",
+      "private",
+      "token",
+      "overwrite_adapter_card",
+      "create_pr",
+      "revision",
+      "commit_description",
+      "adapter_card_kwargs"
+    ],
+    "push_adapter_setup_to_hub": [
+      "self",
+      "repo_id",
+      "adapter_setup",
+      "head_setup",
+      "datasets_tag",
+      "local_path",
+      "commit_message",
+      "private",
+      "token",
+      "overwrite_adapter_card",
+      "create_pr",
+      "revision",
+      "commit_description",
+      "adapter_card_kwargs"
+    ]
+  },
+  "CONFIG_NAME": [],
+  "WEIGHTS_NAME": [],
+  "SAFE_WEIGHTS_NAME": [],
+  "HEAD_CONFIG_NAME": [],
+  "HEAD_WEIGHTS_NAME": [],
+  "SAFE_HEAD_WEIGHTS_NAME": [],
+  "ADAPTERFUSION_CONFIG_NAME": [],
+  "ADAPTERFUSION_WEIGHTS_NAME": [],
+  "SAFE_ADAPTERFUSION_WEIGHTS_NAME": [],
+  "EMBEDDING_FILE": [],
+  "TOKENIZER_PATH": [],
+  "SETUP_CONFIG_NAME": [],
+  "INTERFACE_CONFIG_NAME": [],
+  "ADAPTER_HUB_URL": [],
+  "ADAPTER_HUB_INDEX_FILE": [],
+  "ADAPTER_HUB_CONFIG_FILE": [],
+  "ADAPTER_HUB_ALL_FILE": [],
+  "ADAPTER_HUB_ADAPTER_ENTRY_JSON": [],
+  "torch_cache_home": [],
+  "ADAPTER_CACHE": [],
+  "ADAPTER_CONFIG_HASH_IGNORE": [],
+  "ACTIVATION_RENAME": [],
+  "ADAPTER_CONFIG_HASH_IGNORE_DEFAULT": [],
+  "ADAPTER_CONFIG_STRING_PATTERN": [],
+  "AdapterType": {
+    "text_task": [],
+    "text_lang": [],
+    "has": [
+      "cls",
+      "value"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "AdapterInfo": {},
+  "_minimize_dict": [
+    "d"
+  ],
+  "get_adapter_config_hash": [
+    "config",
+    "length",
+    "ignore_params"
+  ],
+  "inherit_doc": [
+    "cls"
+  ],
+  "multigetattr": [
+    "o",
+    "name",
+    "default"
+  ],
+  "multihasattr": [
+    "o",
+    "name"
+  ],
+  "multisetattr": [
+    "o",
+    "name",
+    "value"
+  ],
+  "urljoin": [],
+  "remote_file_exists": [
+    "url"
+  ],
+  "url_to_filename": [
+    "url",
+    "etag"
+  ],
+  "get_from_cache": [
+    "url",
+    "cache_dir",
+    "force_download",
+    "proxies",
+    "etag_timeout",
+    "resume_download",
+    "user_agent",
+    "use_auth_token",
+    "local_files_only"
+  ],
+  "download_cached": [
+    "url",
+    "checksum",
+    "checksum_algo",
+    "cache_dir",
+    "force_extract"
+  ],
+  "parse_adapter_config_string": [
+    "config_string"
+  ],
+  "resolve_adapter_config": [
+    "config",
+    "local_map"
+  ],
+  "_split_identifier": [
+    "identifier"
+  ],
+  "_dict_extract": [
+    "d",
+    "primary_key",
+    "secondary_key"
+  ],
+  "find_in_index": [
+    "identifier",
+    "model_name",
+    "adapter_config",
+    "strict",
+    "index_file"
+  ],
+  "_get_matching_version": [
+    "config_entry",
+    "org"
+  ],
+  "pull_from_hub": [
+    "specifier",
+    "model_name",
+    "adapter_config",
+    "version",
+    "strict"
+  ],
+  "pull_from_hf_model_hub": [
+    "specifier",
+    "version"
+  ],
+  "resolve_adapter_path": [
+    "adapter_name_or_path",
+    "model_name",
+    "adapter_config",
+    "version",
+    "do_exists_check"
+  ],
+  "list_adapters": [
+    "model_name"
+  ],
+  "get_adapter_info": [
+    "adapter_id"
+  ],
+  "prefix_attention_mask": [
+    "attention_mask",
+    "dim",
+    "prefix_value"
+  ],
+  "patch_forward": [
+    "module"
+  ],
+  "__version__": [],
+  "_import_structure": [],
+  "AdapterCompositionBlock": {
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "o"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "first": [
+      "self"
+    ],
+    "last": [
+      "self"
+    ],
+    "parallel_channels": [
+      "self"
+    ],
+    "flatten": [
+      "self"
+    ],
+    "_get_save_kwargs": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "Parallel": {
+    "__init__": [
+      "self"
+    ],
+    "parallel_channels": [
+      "self"
+    ]
+  },
+  "Stack": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "Fuse": {
+    "__init__": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ]
+  },
+  "Split": {
+    "__init__": [
+      "self"
+    ],
+    "_get_save_kwargs": [
+      "self"
+    ]
+  },
+  "BatchSplit": {
+    "__init__": [
+      "self"
+    ],
+    "_get_save_kwargs": [
+      "self"
+    ]
+  },
+  "MultiTask": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "Average": {
+    "__init__": [
+      "self"
+    ],
+    "_get_save_kwargs": [
+      "self"
+    ]
+  },
+  "ALLOWED_NESTINGS": [],
+  "SUPPORTED_MODELS": [],
+  "validate_composition": [
+    "adapter_composition",
+    "level",
+    "model_type"
+  ],
+  "parse_composition": [
+    "adapter_composition",
+    "level",
+    "model_type"
+  ],
+  "parse_heads_from_composition": [
+    "adapter_composition",
+    "reference_heads"
+  ],
+  "adjust_tensors_for_parallel": [
+    "hidden_states"
+  ],
+  "adjust_tensors_for_parallel_": [
+    "hidden_states"
+  ],
+  "match_attn_matrices_for_parallel": [
+    "query",
+    "key",
+    "value"
+  ],
+  "AdapterSetup": {
+    "storage": [],
+    "__init__": [
+      "self",
+      "adapter_setup",
+      "head_setup",
+      "ignore_empty"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "get_contexts": [
+      "cls"
+    ],
+    "get_context": [
+      "cls"
+    ],
+    "get_context_adapter_setup": [
+      "cls"
+    ],
+    "get_context_head_setup": [
+      "cls"
+    ]
+  },
+  "ForwardContext": {
+    "storage": [],
+    "context_args": [],
+    "context_attributes": [],
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "type",
+      "value",
+      "traceback"
+    ],
+    "_call_forward": [
+      "self",
+      "model",
+      "f"
+    ],
+    "add_context_args_in_signature": [
+      "cls",
+      "f"
+    ],
+    "wrap_base": [
+      "cls",
+      "f"
+    ],
+    "wrap": [
+      "cls",
+      "f"
+    ],
+    "get_contexts": [
+      "cls"
+    ],
+    "get_context": [
+      "cls"
+    ]
+  },
+  "STATIC_TO_FLEX_HEAD_MAP": [],
+  "_regex_list_rename_func": [
+    "k",
+    "rename_list"
+  ],
+  "get_head_config_and_rename_list": [
+    "model_class_name",
+    "head_name",
+    "label2id",
+    "num_labels",
+    "return_rename_func"
+  ],
+  "TaskSpecificSingularValue": {
+    "__init__": [
+      "self",
+      "rank",
+      "dtype"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "TaskSpecificLinear": {
+    "__init__": [
+      "self",
+      "rank",
+      "dtype"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "TASK_SPECIFIC_MATRIX_CLS": [],
+  "LoRA": {
+    "sharable_parameters": [],
+    "__init__": [
+      "self",
+      "lora_A_shape",
+      "lora_B_shape",
+      "config",
+      "gating_heads",
+      "name"
+    ],
+    "delta_w": [
+      "self"
+    ],
+    "com": [
+      "self",
+      "weights",
+      "added",
+      "scaling"
+    ],
+    "com_inv": [
+      "self",
+      "weights",
+      "added"
+    ],
+    "get_parameters": [
+      "self",
+      "parameters_names"
+    ],
+    "set_parameters": [
+      "self",
+      "parameters"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_input"
+    ]
+  },
+  "MTLLoRA": {
+    "__init__": [
+      "self",
+      "lora_A_shape",
+      "lora_B_shape",
+      "config",
+      "gating_heads"
+    ],
+    "apply_weights": [
+      "self",
+      "hidden_states"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_input"
+    ]
+  },
+  "IA3": {
+    "__init__": [
+      "self",
+      "lora_A_shape",
+      "lora_B_shape",
+      "config",
+      "gating_heads",
+      "name"
+    ],
+    "delta_w": [
+      "self"
+    ],
+    "com": [
+      "self",
+      "weights",
+      "added",
+      "scaling"
+    ],
+    "com_inv": [
+      "self",
+      "weights",
+      "added"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_input"
+    ]
+  },
+  "Vera": {
+    "__init__": [
+      "self",
+      "lora_A_shape",
+      "lora_B_shape",
+      "config",
+      "gating_heads",
+      "name"
+    ],
+    "delta_w": [
+      "self"
+    ],
+    "com": [
+      "self",
+      "weights",
+      "added",
+      "scaling"
+    ],
+    "com_inv": [
+      "self",
+      "weights",
+      "added"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_input"
+    ]
+  },
+  "init_shared_vera_parameters": [
+    "lora_A_shape",
+    "lora_B_shape",
+    "adapter_config",
+    "device"
+  ],
+  "LoRALayer": {
+    "adapter_modules_name": [],
+    "__init__": [
+      "self",
+      "location_key",
+      "model_config",
+      "adapters_config"
+    ],
+    "get_n_heads": [
+      "self",
+      "lora"
+    ],
+    "_check_lora_location": [
+      "self",
+      "config"
+    ],
+    "_get_lora_shapes": [
+      "self",
+      "config"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "share_parameters": [
+      "self",
+      "name",
+      "adapter_names",
+      "reference_adapter_name"
+    ],
+    "unshare_parameters": [
+      "self",
+      "name"
+    ],
+    "delete_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "average_adapter": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy",
+      "svd_rank"
+    ],
+    "get_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "_average_adapter_lora_delta_w_svd": [
+      "self",
+      "input_adapters",
+      "avg_state_dict",
+      "svd_rank"
+    ],
+    "_copy_hooks_from": [
+      "self",
+      "module"
+    ]
+  },
+  "LoRAState": {},
+  "LoRALinear": {
+    "supported_compositions": [],
+    "allow_multi_parallelize": [],
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "location_key",
+      "model_config",
+      "adapters_config",
+      "attn_key",
+      "fan_in_fan_out",
+      "no_init_bias"
+    ],
+    "wrap": [
+      "cls",
+      "module",
+      "location_key",
+      "model_config",
+      "adapters_config",
+      "attn_key"
+    ],
+    "copy_from": [
+      "self",
+      "module"
+    ],
+    "_check_lora_location": [
+      "self",
+      "config"
+    ],
+    "_get_lora_shapes": [
+      "self",
+      "config"
+    ],
+    "maybe_t": [
+      "self",
+      "w"
+    ],
+    "merge_adapter": [
+      "self",
+      "name"
+    ],
+    "reset_adapter": [
+      "self"
+    ],
+    "vslice": [
+      "self",
+      "state",
+      "slice_obj"
+    ],
+    "pad_and_concat": [
+      "self",
+      "states"
+    ],
+    "repeat": [
+      "self",
+      "state",
+      "channels"
+    ],
+    "mean": [
+      "self",
+      "states",
+      "weights"
+    ],
+    "compose_single": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "forward": [
+      "self",
+      "input_states"
+    ]
+  },
+  "LoRALinearTorch": {},
+  "LoRAMergedLinear": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "location_key",
+      "model_config",
+      "adapters_config",
+      "fan_in_fan_out",
+      "no_init_bias"
+    ],
+    "wrap": [
+      "cls",
+      "module",
+      "location_key",
+      "model_config",
+      "adapters_config"
+    ],
+    "get_n_heads": [
+      "self",
+      "lora"
+    ],
+    "_get_lora_shapes": [
+      "self",
+      "config"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "pad": [
+      "self",
+      "x",
+      "lora",
+      "fill_value"
+    ],
+    "reset_adapter": [
+      "self"
+    ],
+    "_compute_adapted_weight": [
+      "self",
+      "name",
+      "lora"
+    ],
+    "merge_adapter": [
+      "self",
+      "name"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "init_lora": [
+    "model"
+  ],
+  "AdapterLayerBase": {
+    "adapter_modules_name": [],
+    "adapter_modules": [
+      "self"
+    ],
+    "layer_idx": [
+      "self",
+      "layer_idx"
+    ],
+    "get_active_setup": [
+      "self"
+    ],
+    "_store_gating_score": [
+      "self",
+      "adapter_name",
+      "gating_score"
+    ],
+    "_store_fusion_attentions": [
+      "self",
+      "fusion_name",
+      "attentions"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "average_adapter": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "delete_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "share_parameters": [
+      "self",
+      "name",
+      "adapter_names",
+      "reference_adapter_name"
+    ],
+    "unshare_parameters": [
+      "self",
+      "name"
+    ],
+    "add_fusion_layer": [
+      "self",
+      "adapter_names"
+    ],
+    "delete_fusion_layer": [
+      "self",
+      "adapter_names"
+    ],
+    "enable_adapters": [
+      "self",
+      "adapter_setup",
+      "unfreeze_adapters",
+      "unfreeze_fusion"
+    ],
+    "freeze_adapter": [
+      "self",
+      "adapter_name",
+      "freeze"
+    ],
+    "get_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "pre_save_adapters": [
+      "self"
+    ]
+  },
+  "ComposableAdapterLayerBase": {
+    "supported_compositions": [],
+    "allow_multi_parallelize": [],
+    "__init__": [
+      "self"
+    ],
+    "_init_mapping": [
+      "self"
+    ],
+    "_get_compose_func": [
+      "self",
+      "composition_type"
+    ],
+    "_bsz": [
+      "self",
+      "state"
+    ],
+    "pre_block": [
+      "self",
+      "adapter_setup",
+      "state"
+    ],
+    "vslice": [
+      "self",
+      "state",
+      "slice_obj"
+    ],
+    "pad_and_concat": [
+      "self",
+      "states"
+    ],
+    "repeat": [
+      "self",
+      "state",
+      "channels"
+    ],
+    "mean": [
+      "self",
+      "states",
+      "weights"
+    ],
+    "compose_single": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "check_composition_valid": [
+      "self",
+      "parent",
+      "child",
+      "lvl"
+    ],
+    "compose_stack": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_fuse": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_split": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_batch_split": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_multi_task": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_parallel": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_average": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose": [
+      "self",
+      "adapter_setup",
+      "state"
+    ]
+  },
+  "PromptTuning": {
+    "__init__": [
+      "self",
+      "adapter_name",
+      "prompt_tuning_config",
+      "model_config",
+      "base_model_embeddings"
+    ],
+    "_init_prompt_embedding": [
+      "self",
+      "base_model_embeddings"
+    ],
+    "forward": [
+      "self",
+      "embedded_input"
+    ]
+  },
+  "PromptTuningLayer": {
+    "adapter_modules_name": [],
+    "__init__": [
+      "self",
+      "model_config",
+      "adapters_config",
+      "base_model_embeddings"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "hook_fn": [
+    "model",
+    "module",
+    "args",
+    "embedding_output"
+  ],
+  "_attn_mask_hook_fn": [
+    "module",
+    "args"
+  ],
+  "init_prompt_tuning": [
+    "model"
+  ],
+  "fix_seed": [
+    "seed"
+  ],
+  "dequantize_bnb_weight": [
+    "weight",
+    "state"
+  ],
+  "PrefixTuning": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "n_heads",
+      "input_size",
+      "config",
+      "n_embd_per_head"
+    ],
+    "eject": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "batch_size"
+    ]
+  },
+  "FlatPrefixTuning": {
+    "__init__": [
+      "self",
+      "n_layers",
+      "n_heads",
+      "input_size",
+      "config",
+      "n_embd_per_head"
+    ],
+    "forward": [
+      "self",
+      "batch_size"
+    ]
+  },
+  "PrefixTuningGroup": {
+    "__init__": [
+      "self",
+      "module_configs",
+      "prefix_tuning_config"
+    ],
+    "eject": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "batch_size"
+    ]
+  },
+  "PrefixTuningPool": {
+    "__init__": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "indicate_prefix": [
+      "self",
+      "prefix_name",
+      "location_key"
+    ],
+    "confirm_prefix": [
+      "self",
+      "prefix_name"
+    ],
+    "average_prefix": [
+      "self",
+      "prefix_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "delete_prefix": [
+      "self",
+      "prefix_name"
+    ],
+    "enable_prefix": [
+      "self",
+      "prefix_name"
+    ],
+    "get_prefix": [
+      "self",
+      "prefix_name"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "PrefixTuningState": {},
+  "PrefixTuningLayer": {
+    "adapter_modules_name": [],
+    "supported_compositions": [],
+    "__init__": [
+      "self",
+      "location_key",
+      "model_config",
+      "adapters_config",
+      "add_model_type_to_key"
+    ],
+    "set_pool": [
+      "self",
+      "pool"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "average_adapter": [
+      "self",
+      "adapter_name",
+      "input_adapters",
+      "combine_strategy"
+    ],
+    "delete_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "enable_adapters": [
+      "self",
+      "adapter_setup",
+      "unfreeze_adapters",
+      "unfreeze_fusion"
+    ],
+    "freeze_adapter": [
+      "self",
+      "adapter_name",
+      "freeze"
+    ],
+    "get_adapter": [
+      "self",
+      "adapter_name"
+    ],
+    "vslice": [
+      "self",
+      "state",
+      "slice_obj"
+    ],
+    "pad_and_concat": [
+      "self",
+      "states"
+    ],
+    "repeat": [
+      "self",
+      "state",
+      "channels"
+    ],
+    "mean": [
+      "self",
+      "states",
+      "weights"
+    ],
+    "compose_single": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "forward": [
+      "self",
+      "key_states",
+      "value_states",
+      "residual_input",
+      "attention_mask",
+      "invert_mask"
+    ]
+  },
+  "METHOD_INIT_MAPPING": [],
+  "LAYER_HOOK_UNSUPPORTED": [],
+  "BottleneckState": {},
+  "BottleneckLayer": {
+    "adapter_modules_name": [],
+    "supported_compositions": [],
+    "__init__": [
+      "self",
+      "location_key",
+      "is_layer_hooked"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "add_fusion_layer": [
+      "self",
+      "adapter_names"
+    ],
+    "delete_fusion_layer": [
+      "self",
+      "adapter_names"
+    ],
+    "enable_adapters": [
+      "self",
+      "adapter_setup",
+      "unfreeze_adapters",
+      "unfreeze_fusion"
+    ],
+    "get_adapter_fusion": [
+      "self",
+      "adapter_names"
+    ],
+    "pre_block": [
+      "self",
+      "adapter_setup",
+      "state"
+    ],
+    "vslice": [
+      "self",
+      "state",
+      "slice_obj"
+    ],
+    "pad_and_concat": [
+      "self",
+      "states"
+    ],
+    "repeat": [
+      "self",
+      "state",
+      "channels"
+    ],
+    "mean": [
+      "self",
+      "states",
+      "weights"
+    ],
+    "compose_single": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_fuse": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "compose_split": [
+      "self",
+      "adapter_setup",
+      "state",
+      "lvl"
+    ],
+    "bottleneck_layer_forward": [
+      "self",
+      "hidden_states",
+      "residual_input",
+      "layer_norm"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "residual_input",
+      "layer_norm"
+    ]
+  },
+  "_residual_hook_fn": [
+    "location_key",
+    "module",
+    "args"
+  ],
+  "init_bottleneck": [
+    "model"
+  ],
+  "Activation_Function_Class": {
+    "__init__": [
+      "self",
+      "hidden_act"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Adapter": {
+    "__init__": [
+      "self",
+      "adapter_name",
+      "input_size",
+      "down_sample",
+      "config"
+    ],
+    "pre_forward": [
+      "self",
+      "hidden_states",
+      "input_tensor",
+      "layer_norm",
+      "fusion_config"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual_input",
+      "output_gating"
+    ],
+    "post_forward": [
+      "self",
+      "hidden_states",
+      "input_hidden_states",
+      "input_tensor",
+      "layer_norm"
+    ],
+    "init_bert_weights": [
+      "module"
+    ]
+  },
+  "ParallelAdapter": {
+    "__init__": [
+      "self",
+      "adapter_name",
+      "input_size",
+      "down_sample",
+      "config"
+    ],
+    "pre_forward": [
+      "self",
+      "hidden_states",
+      "input_tensor",
+      "layer_norm",
+      "fusion_config"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "residual_input",
+      "output_gating"
+    ],
+    "post_forward": [
+      "self",
+      "hidden_states",
+      "input_hidden_states",
+      "input_tensor",
+      "layer_norm"
+    ]
+  },
+  "BertFusion": {
+    "__init__": [
+      "self",
+      "config",
+      "dense_size",
+      "attention_probs_dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "residual",
+      "output_attentions"
+    ]
+  },
+  "get_subnet_constructor": [
+    "non_linearity",
+    "reduction_factor"
+  ],
+  "NICECouplingBlock": {
+    "__init__": [
+      "self",
+      "dims_in",
+      "dims_c",
+      "non_linearity",
+      "reduction_factor"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "c",
+      "rev"
+    ],
+    "jacobian": [
+      "self",
+      "x",
+      "rev"
+    ],
+    "output_dims": [
+      "self",
+      "input_dims"
+    ]
+  },
+  "GLOWCouplingBlock": {
+    "__init__": [
+      "self",
+      "dims_in",
+      "dims_c",
+      "non_linearity",
+      "reduction_factor",
+      "clamp"
+    ],
+    "e": [
+      "self",
+      "s"
+    ],
+    "log_e": [
+      "self",
+      "s"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "c",
+      "rev"
+    ],
+    "jacobian": [
+      "self",
+      "x",
+      "c",
+      "rev"
+    ],
+    "output_dims": [
+      "self",
+      "input_dims"
+    ]
+  },
+  "kronecker_product": [
+    "a",
+    "b"
+  ],
+  "PHMLayer": {
+    "__init__": [
+      "self",
+      "adapter_name",
+      "in_features",
+      "out_features",
+      "position",
+      "config"
+    ],
+    "_init_W": [
+      "self",
+      "W_left",
+      "W_right",
+      "W"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "set_phm_rule": [
+      "self",
+      "phm_rule",
+      "phm_rule_left",
+      "phm_rule_right"
+    ],
+    "set_W": [
+      "self",
+      "W",
+      "W_left",
+      "W_right"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "init_shared_parameters": [
+    "config",
+    "in_features",
+    "device"
+  ],
+  "init_W": [
+    "config",
+    "W_left",
+    "W_right",
+    "W"
+  ],
+  "ReftUnit": {
+    "__init__": [
+      "self",
+      "in_dim",
+      "r_dim",
+      "orthogonal",
+      "subtract_projection",
+      "non_linearity",
+      "dropout",
+      "init_weights_seed",
+      "dtype"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ReftModule": {
+    "__init__": [
+      "self",
+      "in_features",
+      "config"
+    ],
+    "_gather_adapted_states": [
+      "self",
+      "hidden_states"
+    ],
+    "_scatter_adapted_states": [
+      "self",
+      "hidden_states",
+      "adapted_states"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "ReftLayer": {
+    "adapter_modules_name": [],
+    "__init__": [
+      "self",
+      "location_key",
+      "model_config",
+      "adapters_config"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "forward": [
+      "self",
+      "hidden_states"
+    ],
+    "pre_save_adapters": [
+      "self"
+    ]
+  },
+  "init_reft": [
+    "model"
+  ],
+  "InvertibleAdapterLayer": {
+    "adapter_modules_name": [],
+    "__init__": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "add_adapter": [
+      "self",
+      "adapter_name",
+      "layer_idx"
+    ],
+    "get_invertible_adapter": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "rev"
+    ]
+  },
+  "inv_hook_fn": [
+    "model",
+    "module",
+    "args"
+  ],
+  "init_invertible_adapters": [
+    "model"
+  ],
+  "CUSTOM_INTERFACES": [],
+  "get_adapter_interface": [
+    "model_name"
+  ],
+  "SPECIAL_MODEL_TYPE_TO_MODULE_NAME": [],
+  "_INTERFACE_ERROR_TEMPLATE": [],
+  "get_module_name": [
+    "model_type"
+  ],
+  "replace_with_adapter_class": [
+    "module",
+    "modules_with_adapters"
+  ],
+  "init": [
+    "model",
+    "adapters_config",
+    "interface"
+  ],
+  "load_model": [
+    "model_name_or_path",
+    "model_class",
+    "interface"
+  ],
+  "_validate_interface_values": [
+    "base_model",
+    "interface"
+  ],
+  "CONFIG_CLASS_KEYS_MAPPING": [],
+  "SUBMODEL_NAMES": [],
+  "init_adapters_config": [
+    "model",
+    "model_config",
+    "adapters_config"
+  ],
+  "wrap_config": [
+    "config"
+  ],
+  "AdapterConfig": {
+    "__init__": [
+      "self"
+    ],
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ],
+    "__delattr__": [
+      "self",
+      "name"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "replace": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "config"
+    ],
+    "_get_config_class": [
+      "config_dict"
+    ],
+    "load": [
+      "cls",
+      "config",
+      "download_kwargs"
+    ]
+  },
+  "BnConfig": {
+    "__setattr__": [
+      "self",
+      "name",
+      "value"
+    ]
+  },
+  "SeqBnConfig": {},
+  "CompacterPlusPlusConfig": {},
+  "SeqBnInvConfig": {},
+  "DoubleSeqBnConfig": {},
+  "CompacterConfig": {},
+  "DoubleSeqBnInvConfig": {},
+  "ParBnConfig": {},
+  "AdapterPlusConfig": {},
+  "PrefixTuningConfig": {},
+  "PromptTuningConfig": {
+    "random_uniform_scale": []
+  },
+  "LoRAConfig": {},
+  "IA3Config": {},
+  "VeraConfig": {},
+  "MultiTaskConfig": {},
+  "MTLLoRAConfig": {},
+  "ReftConfig": {
+    "subtract_projection": []
+  },
+  "LoReftConfig": {},
+  "NoReftConfig": {},
+  "DiReftConfig": {
+    "subtract_projection": []
+  },
+  "ConfigUnion": {
+    "__init__": [
+      "self"
+    ],
+    "validate": [
+      "configs"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "replace": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "config"
+    ]
+  },
+  "MAMConfig": {
+    "__init__": [
+      "self",
+      "prefix_tuning",
+      "adapter"
+    ],
+    "prefix_tuning": [
+      "self"
+    ],
+    "adapter": [
+      "self"
+    ]
+  },
+  "UniPELTConfig": {
+    "__init__": [
+      "self",
+      "prefix_tuning",
+      "adapter",
+      "lora"
+    ]
+  },
+  "ADAPTER_CONFIG_MAP": [],
+  "DEFAULT_ADAPTER_CONFIG": [],
+  "AdapterFusionConfig": {
+    "load": [
+      "cls",
+      "config"
+    ]
+  },
+  "StaticAdapterFusionConfig": {},
+  "DynamicAdapterFusionConfig": {},
+  "ADAPTERFUSION_CONFIG_MAP": [],
+  "DEFAULT_ADAPTERFUSION_CONFIG": [],
+  "ModelAdaptersConfig": {
+    "__init__": [
+      "self"
+    ],
+    "__contains__": [
+      "self",
+      "item"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "adapter_name"
+    ],
+    "match": [
+      "self",
+      "adapter_name",
+      "config_type",
+      "layer_idx",
+      "location_key"
+    ],
+    "add": [
+      "self",
+      "adapter_name",
+      "config"
+    ],
+    "get_fusion": [
+      "self",
+      "fusion_name"
+    ],
+    "add_fusion": [
+      "self",
+      "adapter_names",
+      "config",
+      "fusion_name"
+    ],
+    "common_config_value": [
+      "self",
+      "adapter_names",
+      "attribute"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "build_full_config": [
+    "adapter_config",
+    "model_config",
+    "save_id2label"
+  ],
+  "MODEL_HEAD_MAP": [],
+  "ModelWithFlexibleHeadsAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "head_type": [
+      "head_type_str"
+    ],
+    "_init_head_modules": [
+      "self"
+    ],
+    "get_output_embeddings": [
+      "self"
+    ],
+    "set_output_embeddings": [
+      "self",
+      "new_embeddings"
+    ],
+    "tie_weights": [
+      "self"
+    ],
+    "_resize_token_embeddings": [
+      "self",
+      "new_num_tokens",
+      "pad_to_multiple_of",
+      "mean_resizing"
+    ],
+    "add_prediction_head_from_config": [
+      "self",
+      "head_name",
+      "config",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "get_prediction_heads_config": [
+      "self"
+    ],
+    "register_custom_head": [
+      "self",
+      "identifier",
+      "head"
+    ],
+    "active_head": [
+      "self",
+      "head_name_or_list"
+    ],
+    "set_active_adapters": [
+      "self",
+      "adapter_setup",
+      "skip_layers"
+    ],
+    "add_custom_head": [
+      "self",
+      "head_type",
+      "head_name",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "add_prediction_head": [
+      "self",
+      "head",
+      "overwrite_ok",
+      "set_active"
+    ],
+    "add_classification_head": [
+      "self",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "overwrite_ok",
+      "multilabel",
+      "id2label",
+      "use_pooler"
+    ],
+    "add_image_classification_head": [
+      "self",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "overwrite_ok",
+      "multilabel",
+      "id2label",
+      "use_pooler"
+    ],
+    "add_multiple_choice_head": [
+      "self",
+      "head_name",
+      "num_choices",
+      "layers",
+      "activation_function",
+      "overwrite_ok",
+      "id2label",
+      "use_pooler"
+    ],
+    "add_tagging_head": [
+      "self",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "overwrite_ok",
+      "id2label"
+    ],
+    "add_qa_head": [
+      "self",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "overwrite_ok",
+      "id2label"
+    ],
+    "add_dependency_parsing_head": [
+      "self",
+      "head_name",
+      "num_labels",
+      "overwrite_ok",
+      "id2label"
+    ],
+    "add_masked_lm_head": [
+      "self",
+      "head_name",
+      "activation_function",
+      "layers",
+      "overwrite_ok"
+    ],
+    "add_causal_lm_head": [
+      "self",
+      "head_name",
+      "activation_function",
+      "layers",
+      "overwrite_ok"
+    ],
+    "add_seq2seq_lm_head": [
+      "self",
+      "head_name",
+      "layers",
+      "overwrite_ok"
+    ],
+    "delete_head": [
+      "self",
+      "head_name"
+    ],
+    "_get_used_heads": [
+      "self",
+      "head_name"
+    ],
+    "forward_head": [
+      "self",
+      "all_outputs",
+      "head_name",
+      "cls_output",
+      "attention_mask",
+      "return_dict",
+      "context"
+    ],
+    "get_labels_dict": [
+      "self",
+      "head_name"
+    ],
+    "get_labels": [
+      "self",
+      "head_name"
+    ],
+    "adapter_to": [
+      "self",
+      "name",
+      "device",
+      "dtype"
+    ],
+    "_load_pretrained_model": [
+      "cls",
+      "model"
+    ]
+  },
+  "MultiHeadOutput": {
+    "logits": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "k"
+    ],
+    "__setitem__": [
+      "self",
+      "k",
+      "v"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "PredictionHead": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "_get_dropout_prob": [
+      "self",
+      "model_config"
+    ],
+    "build": [
+      "self",
+      "model"
+    ],
+    "get_output_embeddings": [
+      "self"
+    ],
+    "get_label_names": [
+      "self"
+    ],
+    "_get_cls_output": [
+      "self",
+      "outputs"
+    ]
+  },
+  "ClassificationHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "id2label",
+      "use_pooler",
+      "bias",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "MultiLabelClassificationHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "id2label",
+      "use_pooler",
+      "bias",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "MultipleChoiceHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_choices",
+      "layers",
+      "activation_function",
+      "id2label",
+      "use_pooler",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "TaggingHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "id2label",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "QuestionAnsweringHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "id2label",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ],
+    "get_label_names": [
+      "self"
+    ]
+  },
+  "ImageClassificationHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "layers",
+      "activation_function",
+      "multilabel",
+      "id2label",
+      "use_pooler",
+      "bias",
+      "dropout_prob"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "DependencyParsingOutput": {},
+  "Biaffine": {
+    "__init__": [
+      "self",
+      "n_in",
+      "n_out",
+      "bias_x",
+      "bias_y"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "init_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "y"
+    ]
+  },
+  "BiaffineParsingHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "num_labels",
+      "id2label"
+    ],
+    "build": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict",
+      "word_starts",
+      "labels_arcs",
+      "labels_rels"
+    ],
+    "_merge_subword_tokens": [
+      "self",
+      "subword_outputs",
+      "word_starts"
+    ],
+    "_get_loss": [
+      "self",
+      "arc_preds",
+      "rel_preds",
+      "labels_arc",
+      "labels_rel",
+      "loss_fn"
+    ]
+  },
+  "CausalLMHead": {
+    "_tied_weights_keys": [],
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "vocab_size",
+      "embedding_size",
+      "layers",
+      "activation_function",
+      "layer_norm",
+      "bias",
+      "shift_labels",
+      "dropout_prob"
+    ],
+    "build": [
+      "self",
+      "model"
+    ],
+    "get_output_embeddings": [
+      "self"
+    ],
+    "set_output_embeddings": [
+      "self",
+      "new_embeddings"
+    ],
+    "_create_model_output": [
+      "loss",
+      "logits",
+      "base_outputs"
+    ],
+    "forward": [
+      "self",
+      "outputs",
+      "cls_output",
+      "attention_mask",
+      "return_dict"
+    ]
+  },
+  "Seq2SeqLMHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "vocab_size",
+      "layers",
+      "activation_function",
+      "layer_norm",
+      "bias",
+      "shift_labels"
+    ],
+    "_create_model_output": [
+      "loss",
+      "logits",
+      "base_outputs"
+    ]
+  },
+  "BertStyleMaskedLMHead": {
+    "__init__": [
+      "self",
+      "model",
+      "head_name",
+      "vocab_size",
+      "embedding_size",
+      "layers",
+      "activation_function",
+      "layer_norm",
+      "bias",
+      "shift_labels"
+    ],
+    "_create_model_output": [
+      "loss",
+      "logits",
+      "base_outputs"
+    ]
+  },
+  "MODEL_MIXIN_MAPPING": [],
+  "ElectraAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "ElectraSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "ElectraSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "ElectraOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "GPT2AdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "past_key_values",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past"
+    ]
+  },
+  "GPT2AttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_past",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "use_cache",
+      "output_attentions"
+    ]
+  },
+  "GPT2BlockWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_past",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "use_cache",
+      "output_attentions"
+    ]
+  },
+  "GPT2AttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "GPT2DecoderBlockAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "GPT2ModelAdapterMixin": {
+    "support_prompt_tuning": [],
+    "support_lora_delta_w_svd": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "BertAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "BertSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "BertSdpaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "BertSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "BertOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "BertSelfAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BertSelfOutputAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BertOutputAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BertLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BertModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_set_layer_hook_for_parallel": [
+      "self",
+      "layer"
+    ],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "XLMRobertaAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "XLMRobertaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "XLMRobertaSdpaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "XLMRobertaSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "XLMRobertaOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "ViTAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "pixel_values",
+      "head_mask",
+      "output_attentions",
+      "output_hidden_states",
+      "interpolate_pos_encoding",
+      "return_dict",
+      "head",
+      "output_adapter_gating_scores",
+      "output_adapter_fusion_attentions"
+    ]
+  },
+  "ViTSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "ViTOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "ViTLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "ViTSelfAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "ViTIntermediateAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "ViTOutputAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "ViTLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "ViTModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "AlbertAdapterModel": {
+    "head_types": [],
+    "use_pooler": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ]
+  },
+  "AlbertAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "AlbertSdpaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "AlbertLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "output_attentions",
+      "output_hidden_states"
+    ]
+  },
+  "AlbertAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "AlbertEncoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "AlbertModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_set_layer_hook_for_parallel": [
+      "self",
+      "layer"
+    ],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "T5LayerFFWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "T5AttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "mask",
+      "key_value_states",
+      "position_bias",
+      "past_key_value",
+      "layer_head_mask",
+      "query_length",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "T5LayerSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "position_bias",
+      "layer_head_mask",
+      "past_key_value",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "T5LayerCrossAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "attention_mask",
+      "position_bias",
+      "layer_head_mask",
+      "past_key_value",
+      "use_cache",
+      "query_length",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "T5StackWithAdapters": {
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "inputs_embeds",
+      "head_mask",
+      "cross_attn_head_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "cache_position"
+    ]
+  },
+  "T5AdapterModel": {
+    "_tied_weights_keys": [],
+    "_keys_to_ignore_on_load_unexpected": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "past_key_values",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "labels",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "use_cache",
+      "encoder_outputs"
+    ],
+    "prepare_decoder_input_ids_from_labels": [
+      "self",
+      "labels"
+    ],
+    "_reorder_cache": [
+      "self",
+      "past",
+      "beam_idx"
+    ]
+  },
+  "T5AttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "T5SelfAttentionLayerAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "T5CrossAttentionLayerAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "T5FFLayerAdaptersMixin": {
+    "__init__": [
+      "self"
+    ],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "T5BlockAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "T5StackAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "embedding_output"
+    ]
+  },
+  "T5ModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "T5ForCondiditionalGenerationWithHeadsMixin": {
+    "forward": [
+      "self"
+    ]
+  },
+  "T5ForQuestionAnsweringWithHeadsMixin": {
+    "forward": [
+      "self"
+    ]
+  },
+  "XmodSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "XmodSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "XmodOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor",
+      "lang_ids"
+    ]
+  },
+  "XmodAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "lang_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "XmodModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_set_layer_hook_for_parallel": [
+      "self",
+      "layer"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ],
+    "set_default_language": [
+      "self",
+      "language"
+    ],
+    "freeze_embeddings_and_language_adapters": [
+      "self"
+    ]
+  },
+  "DebertaAdapterModel": {
+    "_keys_to_ignore_on_load_unexpected": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ]
+  },
+  "DebertaSelfAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "DebertaModelAdaptersMixin": {
+    "support_lora_delta_w_svd": []
+  },
+  "DebertaSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "DebertaOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "DebertaEmbeddingsWithAdapters": {
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "mask",
+      "inputs_embeds"
+    ]
+  },
+  "DisentangledSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "output_attentions",
+      "query_states",
+      "relative_pos",
+      "rel_embeddings"
+    ]
+  },
+  "MT5AdapterModel": {
+    "_tied_weights_keys": [],
+    "_keys_to_ignore_on_load_unexpected": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "past_key_values",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "labels",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "use_cache",
+      "encoder_outputs"
+    ],
+    "prepare_decoder_input_ids_from_labels": [
+      "self",
+      "labels"
+    ],
+    "_reorder_cache": [
+      "self",
+      "past",
+      "beam_idx"
+    ]
+  },
+  "MT5LayerFFWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "MT5AttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "mask",
+      "key_value_states",
+      "position_bias",
+      "past_key_value",
+      "layer_head_mask",
+      "query_length",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "MT5LayerSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "position_bias",
+      "layer_head_mask",
+      "past_key_value",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "MT5LayerCrossAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "attention_mask",
+      "position_bias",
+      "layer_head_mask",
+      "past_key_value",
+      "use_cache",
+      "query_length",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "MT5StackWithAdapters": {
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "inputs_embeds",
+      "head_mask",
+      "cross_attn_head_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "cache_position"
+    ]
+  },
+  "MultiHeadSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "DistilBertSdpaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "DistilBertFlashAttention2WithAdapters": {
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "TransformerBlockWithAdapters": {
+    "forward": [
+      "self",
+      "x",
+      "attn_mask",
+      "head_mask",
+      "output_attentions"
+    ]
+  },
+  "DistilBertAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_position_embeddings": [
+      "self"
+    ],
+    "resize_position_embeddings": [
+      "self",
+      "new_num_position_embeddings"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "DistilBertMultiHeadSelfAttentionMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "DistilBertTransfomerBlockAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "DistilBertTransformerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "DistilBertModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "BeitSelfAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BeitIntermediateAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BeitOutputAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BeitLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BeitModelAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "set_input_embeddings": [
+      "self",
+      "value"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "outputs"
+    ]
+  },
+  "BeitSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "head_mask",
+      "output_attentions",
+      "relative_position_bias",
+      "interpolate_pos_encoding",
+      "resolution"
+    ]
+  },
+  "BeitSdpaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "head_mask",
+      "output_attentions",
+      "relative_position_bias",
+      "interpolate_pos_encoding",
+      "resolution"
+    ]
+  },
+  "BeitLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "head_mask",
+      "output_attentions",
+      "relative_position_bias",
+      "interpolate_pos_encoding",
+      "resolution"
+    ]
+  },
+  "BeitAdapterModel": {
+    "head_types": [],
+    "use_pooler": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "enable_input_require_grads": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "pixel_values",
+      "bool_masked_pos",
+      "head_mask",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ]
+  },
+  "CLIPAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "causal_attention_mask",
+      "output_attentions"
+    ]
+  },
+  "CLIPFlashAttention2WithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "causal_attention_mask",
+      "output_attentions"
+    ]
+  },
+  "CLIPSdpaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "causal_attention_mask",
+      "output_attentions"
+    ]
+  },
+  "CLIPEncoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "causal_attention_mask",
+      "output_attentions"
+    ]
+  },
+  "CLIPAdapterModel": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "pixel_values",
+      "attention_mask",
+      "position_ids",
+      "return_loss",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ]
+  },
+  "CLIPAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "CLIPEncoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "CLIPEncoderAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_set_layer_hook_for_parallel": [
+      "self",
+      "layer"
+    ]
+  },
+  "CLIPTextTransformerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "CLIPTextModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "CLIPVisionModelAdaptersMixin": {
+    "support_prompt_tuning": [],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "CLIPModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "iter_layers": [
+      "self"
+    ],
+    "_init_adapters_submodules": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "_default_init_adapter_methods": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "RobertaAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "RobertaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "RobertaSdpaSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "RobertaSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "RobertaOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "MBartAttentionWithAdapters": {
+    "_shape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "MBartFlashAttention2WithAdapters": {
+    "_reshape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "MBartSdpaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "MBartEncoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "MBartDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "layer_head_mask",
+      "cross_attn_layer_head_mask",
+      "past_key_value",
+      "output_attentions",
+      "use_cache"
+    ]
+  },
+  "MBartAdapterModel": {
+    "_tied_weights_keys": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "past_key_values",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "decoder_input_ids",
+      "past",
+      "attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "use_cache",
+      "encoder_outputs"
+    ],
+    "prepare_decoder_input_ids_from_labels": [
+      "self",
+      "labels"
+    ],
+    "_reorder_cache": [
+      "past",
+      "beam_idx"
+    ]
+  },
+  "DebertaV2AdapterModel": {
+    "_keys_to_ignore_on_load_unexpected": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "inputs_embeds",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ]
+  },
+  "DebertaV2SelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "DebertaV2OutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "DebertaV2EmbeddingsWithAdapters": {
+    "forward": [
+      "self",
+      "input_ids",
+      "token_type_ids",
+      "position_ids",
+      "mask",
+      "inputs_embeds"
+    ]
+  },
+  "DebertaV2SelfAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "MistralAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "position_embeddings",
+      "attention_mask",
+      "past_key_value",
+      "cache_position"
+    ]
+  },
+  "MistralDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "position_ids",
+      "past_key_value",
+      "output_attentions",
+      "use_cache",
+      "cache_position",
+      "position_embeddings"
+    ]
+  },
+  "MistralAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "position_ids",
+      "past_key_values",
+      "inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past_key_values",
+      "attention_mask",
+      "inputs_embeds"
+    ]
+  },
+  "MistralAttentionMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "MistralDecoderLayerMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "MistralModelAdapterMixin": {
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "WhisperAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "WhisperEncoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "WhisperDecoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "WhisperEncoderAdaptersMixin": {},
+  "WhisperDecoderAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "encoder_hidden_states"
+    ]
+  },
+  "WhisperModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "WhisperDecoderWrapperAdaptersMixin": {
+    "iter_layers": [
+      "self"
+    ],
+    "get_input_embeddings": [
+      "self"
+    ]
+  },
+  "WhisperForAudioClassificationWithHeadsMixin": {
+    "forward": [
+      "self"
+    ]
+  },
+  "WhisperAdapterModel": {
+    "_tied_weights_keys": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "freeze_encoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_features",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "past_key_values",
+      "decoder_inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "decoder_input_ids",
+      "past_key_values",
+      "use_cache",
+      "encoder_outputs",
+      "attention_mask",
+      "decoder_attention_mask",
+      "cache_position"
+    ],
+    "_reorder_cache": [
+      "past_key_values",
+      "beam_idx"
+    ]
+  },
+  "WhisperAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "WhisperFlashAttention2WithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "WhisperSdpaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "WhisperEncoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "WhisperDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "layer_head_mask",
+      "cross_attn_layer_head_mask",
+      "past_key_value",
+      "output_attentions",
+      "use_cache",
+      "cache_position"
+    ]
+  },
+  "PLBartAdapterModel": {
+    "_tied_weights_keys": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "past_key_values",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "decoder_input_ids",
+      "past",
+      "attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "use_cache",
+      "encoder_outputs"
+    ],
+    "prepare_decoder_input_ids_from_labels": [
+      "self",
+      "labels"
+    ],
+    "_reorder_cache": [
+      "past",
+      "beam_idx"
+    ]
+  },
+  "PLBartAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "PLBartEncoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "PLBartDecoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "PLBartEncoderAdaptersMixin": {},
+  "PLBartDecoderAdaptersMixin": {
+    "forward": [
+      "self",
+      "input_ids",
+      "encoder_hidden_states"
+    ]
+  },
+  "PLBartModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "PLBartDecoderWrapperAdaptersMixin": {
+    "iter_layers": [
+      "self"
+    ],
+    "get_input_embeddings": [
+      "self"
+    ]
+  },
+  "PLBartAttentionWithAdapters": {
+    "_shape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "PLBartFlashAttention2WithAdapters": {
+    "_reshape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "PLBartSdpaAttentionWithAdapters": {
+    "_shape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "PLBartEncoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "PLBartDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "layer_head_mask",
+      "cross_attn_layer_head_mask",
+      "past_key_value",
+      "output_attentions",
+      "use_cache"
+    ]
+  },
+  "GPTJAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "past_key_values",
+      "attention_mask",
+      "token_type_ids",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past"
+    ]
+  },
+  "GPTJAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_past",
+      "attention_mask",
+      "position_ids",
+      "head_mask",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "GPTJBlockWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "layer_past",
+      "attention_mask",
+      "position_ids",
+      "head_mask",
+      "use_cache",
+      "output_attentions",
+      "cache_position"
+    ]
+  },
+  "GPTJAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "GPTJMLPAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "GPTJDecoderBlockAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "GPTJModelAdapterMixin": {
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "BartAttentionAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BartEncoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BartDecoderLayerAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "BartEncoderAdaptersMixin": {},
+  "BartDecoderAdaptersMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "encoder_hidden_states"
+    ]
+  },
+  "BartModelAdaptersMixin": {
+    "invertible_adapters_base_name": [],
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "BartDecoderWrapperAdaptersMixin": {
+    "iter_layers": [
+      "self"
+    ],
+    "get_input_embeddings": [
+      "self"
+    ]
+  },
+  "BartAdapterModel": {
+    "_tied_weights_keys": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_encoder": [
+      "self"
+    ],
+    "get_decoder": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "decoder_input_ids",
+      "decoder_attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "encoder_outputs",
+      "inputs_embeds",
+      "decoder_inputs_embeds",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "past_key_values",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "decoder_input_ids",
+      "past",
+      "attention_mask",
+      "head_mask",
+      "decoder_head_mask",
+      "cross_attn_head_mask",
+      "use_cache",
+      "encoder_outputs"
+    ],
+    "prepare_decoder_input_ids_from_labels": [
+      "self",
+      "labels"
+    ],
+    "_reorder_cache": [
+      "past",
+      "beam_idx"
+    ]
+  },
+  "BartAttentionWithAdapters": {
+    "_shape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "BartFlashAttention2WithAdapters": {
+    "_reshape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "BartSdpaAttentionWithAdapters": {
+    "_shape": [
+      "self",
+      "tensor",
+      "seq_len",
+      "bsz"
+    ],
+    "forward": [
+      "self",
+      "hidden_states",
+      "key_value_states",
+      "past_key_value",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "BartEncoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "layer_head_mask",
+      "output_attentions"
+    ]
+  },
+  "BartDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "layer_head_mask",
+      "cross_attn_layer_head_mask",
+      "past_key_value",
+      "output_attentions",
+      "use_cache"
+    ]
+  },
+  "ADAPTER_MODEL_MAPPING_NAMES": [],
+  "ADAPTER_MODEL_MAPPING": [],
+  "AutoAdapterModel": [],
+  "_LazyAdapterModelAutoMapping": {
+    "_load_attr_from_module": [
+      "self",
+      "model_type",
+      "attr"
+    ]
+  },
+  "EncoderDecoderModelWithAdapters": {},
+  "EncoderDecoderModelAdaptersMixin": {
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "init_submodels": [
+      "self"
+    ],
+    "iter_layers": [
+      "self"
+    ]
+  },
+  "BertGenerationSelfOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "BertGenerationSelfAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "head_mask",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_value",
+      "output_attentions"
+    ]
+  },
+  "BertGenerationOutputWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "input_tensor"
+    ]
+  },
+  "BertGenerationAdapterModel": {
+    "_keys_to_ignore_on_load_unexpected": [],
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "position_ids",
+      "head_mask",
+      "inputs_embeds",
+      "encoder_hidden_states",
+      "encoder_attention_mask",
+      "past_key_values",
+      "use_cache",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past",
+      "attention_mask"
+    ]
+  },
+  "LlamaAdapterModel": {
+    "head_types": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "forward": [
+      "self",
+      "input_ids",
+      "attention_mask",
+      "position_ids",
+      "past_key_values",
+      "inputs_embeds",
+      "use_cache",
+      "cache_position",
+      "output_attentions",
+      "output_hidden_states",
+      "return_dict",
+      "head"
+    ],
+    "prepare_inputs_for_generation": [
+      "self",
+      "input_ids",
+      "past_key_values",
+      "attention_mask",
+      "inputs_embeds"
+    ]
+  },
+  "LlamaAttentionWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "position_embeddings",
+      "attention_mask",
+      "past_key_value",
+      "cache_position"
+    ]
+  },
+  "LlamaDecoderLayerWithAdapters": {
+    "forward": [
+      "self",
+      "hidden_states",
+      "attention_mask",
+      "position_ids",
+      "past_key_value",
+      "output_attentions",
+      "use_cache",
+      "cache_position",
+      "position_embeddings"
+    ]
+  },
+  "LlamaAttentionMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "LlamaDecoderLayerMixin": {
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ]
+  },
+  "LlamaModelAdapterMixin": {
+    "support_prompt_tuning": [],
+    "init_adapters": [
+      "self",
+      "model_config",
+      "adapters_config"
+    ],
+    "iter_layers": [
+      "self"
+    ],
+    "post_embedding_forward": [
+      "self",
+      "module",
+      "args",
+      "embedding_output"
+    ]
+  },
+  "LlamaForQuestionAnsweringAdapterMixin": {
+    "base_model_prefix": []
+  }
+}

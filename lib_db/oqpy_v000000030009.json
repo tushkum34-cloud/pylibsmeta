@@ -1,0 +1,867 @@
+{
+  "__all__": [],
+  "port": [],
+  "waveform": [],
+  "frame": [],
+  "PortVar": {
+    "type_cls": [],
+    "__init__": [
+      "self",
+      "name"
+    ]
+  },
+  "WaveformVar": {
+    "type_cls": [],
+    "__init__": [
+      "self",
+      "init_expression",
+      "name"
+    ]
+  },
+  "FrameVar": {
+    "type_cls": [],
+    "__init__": [
+      "self",
+      "port",
+      "frequency",
+      "phase",
+      "name",
+      "needs_declaration",
+      "annotations"
+    ]
+  },
+  "ProgramState": {
+    "__init__": [
+      "self"
+    ],
+    "add_if_clause": [
+      "self",
+      "condition",
+      "if_clause"
+    ],
+    "add_else_clause": [
+      "self",
+      "else_clause"
+    ],
+    "finalize_if_clause": [
+      "self"
+    ],
+    "add_statement": [
+      "self",
+      "stmt"
+    ]
+  },
+  "Program": {
+    "DURATION_MAX_DIGITS": [],
+    "__init__": [
+      "self",
+      "version",
+      "simplify_constants"
+    ],
+    "__iadd__": [
+      "self",
+      "other"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "_state": [
+      "self"
+    ],
+    "frame_vars": [
+      "self"
+    ],
+    "waveform_vars": [
+      "self"
+    ],
+    "_push": [
+      "self"
+    ],
+    "_pop": [
+      "self"
+    ],
+    "_add_var": [
+      "self",
+      "var"
+    ],
+    "_mark_var_declared": [
+      "self",
+      "var"
+    ],
+    "autodeclare": [
+      "self",
+      "encal"
+    ],
+    "_add_statement": [
+      "self",
+      "stmt"
+    ],
+    "_add_subroutine": [
+      "self",
+      "name",
+      "stmt",
+      "needs_declaration"
+    ],
+    "_add_gate": [
+      "self",
+      "name",
+      "stmt",
+      "needs_declaration"
+    ],
+    "_add_defcal": [
+      "self",
+      "qubit_names",
+      "name",
+      "arguments",
+      "stmt"
+    ],
+    "_make_externs_statements": [
+      "self",
+      "auto_encal"
+    ],
+    "to_ast": [
+      "self",
+      "encal",
+      "include_externs",
+      "ignore_needs_declaration",
+      "encal_declarations"
+    ],
+    "to_qasm": [
+      "self",
+      "encal",
+      "include_externs",
+      "ignore_needs_declaration",
+      "encal_declarations"
+    ],
+    "declare": [
+      "self",
+      "variables",
+      "to_beginning",
+      "encal"
+    ],
+    "delay": [
+      "self",
+      "time",
+      "qubits_or_frames"
+    ],
+    "barrier": [
+      "self",
+      "qubits_or_frames"
+    ],
+    "function_call": [
+      "self",
+      "name",
+      "args",
+      "assigns_to"
+    ],
+    "play": [
+      "self",
+      "frame",
+      "waveform"
+    ],
+    "capture": [
+      "self",
+      "frame",
+      "kernel"
+    ],
+    "set_phase": [
+      "self",
+      "frame",
+      "phase"
+    ],
+    "shift_phase": [
+      "self",
+      "frame",
+      "phase"
+    ],
+    "set_frequency": [
+      "self",
+      "frame",
+      "freq"
+    ],
+    "shift_frequency": [
+      "self",
+      "frame",
+      "freq"
+    ],
+    "set_scale": [
+      "self",
+      "frame",
+      "scale"
+    ],
+    "shift_scale": [
+      "self",
+      "frame",
+      "scale"
+    ],
+    "returns": [
+      "self",
+      "expression"
+    ],
+    "_create_modifiers_ast": [
+      "self",
+      "control",
+      "neg_control",
+      "inv",
+      "exp"
+    ],
+    "gate": [
+      "self",
+      "qubits",
+      "name"
+    ],
+    "reset": [
+      "self",
+      "qubit"
+    ],
+    "measure": [
+      "self",
+      "qubit",
+      "output_location"
+    ],
+    "pragma": [
+      "self",
+      "command"
+    ],
+    "include": [
+      "self",
+      "path"
+    ],
+    "_do_assignment": [
+      "self",
+      "var",
+      "op",
+      "value"
+    ],
+    "do_expression": [
+      "self",
+      "expression"
+    ],
+    "set": [
+      "self",
+      "var",
+      "value"
+    ],
+    "increment": [
+      "self",
+      "var",
+      "value"
+    ],
+    "decrement": [
+      "self",
+      "var",
+      "value"
+    ],
+    "mod_equals": [
+      "self",
+      "var",
+      "value"
+    ],
+    "annotate": [
+      "self",
+      "keyword",
+      "command"
+    ]
+  },
+  "MergeCalStatementsPass": {
+    "visit_Program": [
+      "self",
+      "node",
+      "context"
+    ],
+    "visit_ForInLoop": [
+      "self",
+      "node",
+      "context"
+    ],
+    "visit_WhileLoop": [
+      "self",
+      "node",
+      "context"
+    ],
+    "visit_BranchingStatement": [
+      "self",
+      "node",
+      "context"
+    ],
+    "visit_CalibrationStatement": [
+      "self",
+      "node",
+      "context"
+    ],
+    "visit_SubroutineDefinition": [
+      "self",
+      "node",
+      "context"
+    ],
+    "process_statement_list": [
+      "self",
+      "statements"
+    ]
+  },
+  "Box": [
+    "program",
+    "duration"
+  ],
+  "make_duration": [
+    "time"
+  ],
+  "convert_float_to_duration": [
+    "time",
+    "require_nonnegative"
+  ],
+  "convert_duration_to_float": [
+    "value"
+  ],
+  "OQDurationLiteral": {
+    "__init__": [
+      "self",
+      "duration_seconds"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "OQPyExpression": {
+    "to_ast": [
+      "self",
+      "program"
+    ],
+    "_to_binary": [
+      "op_name",
+      "first",
+      "second",
+      "result_type"
+    ],
+    "_to_unary": [
+      "op_name",
+      "exp"
+    ],
+    "__pos__": [
+      "self"
+    ],
+    "__neg__": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "__radd__": [
+      "self",
+      "other"
+    ],
+    "__sub__": [
+      "self",
+      "other"
+    ],
+    "__rsub__": [
+      "self",
+      "other"
+    ],
+    "__mod__": [
+      "self",
+      "other"
+    ],
+    "__rmod__": [
+      "self",
+      "other"
+    ],
+    "__mul__": [
+      "self",
+      "other"
+    ],
+    "__rmul__": [
+      "self",
+      "other"
+    ],
+    "__truediv__": [
+      "self",
+      "other"
+    ],
+    "__rtruediv__": [
+      "self",
+      "other"
+    ],
+    "__pow__": [
+      "self",
+      "other"
+    ],
+    "__rpow__": [
+      "self",
+      "other"
+    ],
+    "__lshift__": [
+      "self",
+      "other"
+    ],
+    "__rlshift__": [
+      "self",
+      "other"
+    ],
+    "__rshift__": [
+      "self",
+      "other"
+    ],
+    "__rrshift__": [
+      "self",
+      "other"
+    ],
+    "__and__": [
+      "self",
+      "other"
+    ],
+    "__rand__": [
+      "self",
+      "other"
+    ],
+    "__or__": [
+      "self",
+      "other"
+    ],
+    "__ror__": [
+      "self",
+      "other"
+    ],
+    "__xor__": [
+      "self",
+      "other"
+    ],
+    "__rxor__": [
+      "self",
+      "other"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__gt__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__ge__": [
+      "self",
+      "other"
+    ],
+    "__le__": [
+      "self",
+      "other"
+    ],
+    "__invert__": [
+      "self"
+    ],
+    "__bool__": [
+      "self"
+    ],
+    "_expr_matches": [
+      "self",
+      "other"
+    ]
+  },
+  "_get_type": [
+    "val"
+  ],
+  "compute_product_types": [
+    "left",
+    "right"
+  ],
+  "compute_quotient_types": [
+    "left",
+    "right"
+  ],
+  "logical_and": [
+    "first",
+    "second"
+  ],
+  "logical_or": [
+    "first",
+    "second"
+  ],
+  "expr_matches": [
+    "a",
+    "b"
+  ],
+  "ExpressionConvertible": {
+    "_to_oqpy_expression": [
+      "self"
+    ]
+  },
+  "CachedExpressionConvertible": {
+    "_to_cached_oqpy_expression": [
+      "self"
+    ]
+  },
+  "OQPyUnaryExpression": {
+    "__init__": [
+      "self",
+      "op",
+      "exp"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "OQPyBinaryExpression": {
+    "__init__": [
+      "self",
+      "op",
+      "lhs",
+      "rhs",
+      "ast_type"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "Var": {
+    "__init__": [
+      "self",
+      "name",
+      "needs_declaration"
+    ],
+    "_var_matches": [
+      "self",
+      "other"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ],
+    "make_declaration_statement": [
+      "self",
+      "program"
+    ]
+  },
+  "HasToAst": {
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "AstConvertible": [],
+  "to_ast": [
+    "program",
+    "item"
+  ],
+  "optional_ast": [
+    "program",
+    "item"
+  ],
+  "map_to_ast": [
+    "program",
+    "items"
+  ],
+  "make_annotations": [
+    "vals"
+  ],
+  "detect_and_convert_constants": [
+    "val",
+    "program"
+  ],
+  "Qubit": {
+    "__init__": [
+      "self",
+      "name",
+      "size",
+      "needs_declaration",
+      "annotations"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "to_ast": [
+      "self",
+      "prog"
+    ],
+    "make_declaration_statement": [
+      "self",
+      "program"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "PhysicalQubits": {
+    "__class_getitem__": [
+      "cls",
+      "item"
+    ]
+  },
+  "IndexedQubitArray": {
+    "__init__": [
+      "self",
+      "collection",
+      "index"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "gate": [
+    "program",
+    "qubits",
+    "name",
+    "arguments",
+    "declare_here"
+  ],
+  "defcal": [
+    "program",
+    "qubits",
+    "name",
+    "arguments",
+    "return_type"
+  ],
+  "Cal": [
+    "program"
+  ],
+  "ClassicalVarT": [],
+  "If": [
+    "program",
+    "condition"
+  ],
+  "Else": [
+    "program"
+  ],
+  "ForIn": [
+    "program",
+    "iterator",
+    "identifier_name",
+    "identifier_type"
+  ],
+  "Range": {
+    "__init__": [
+      "self",
+      "start",
+      "stop",
+      "step"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "While": [
+    "program",
+    "condition"
+  ],
+  "__version__": [],
+  "int_": [
+    "size"
+  ],
+  "uint_": [
+    "size"
+  ],
+  "float_": [
+    "size"
+  ],
+  "angle_": [
+    "size"
+  ],
+  "complex_": [
+    "size"
+  ],
+  "bit_": [
+    "size"
+  ],
+  "arrayreference_": [
+    "dtype",
+    "dims"
+  ],
+  "duration": [],
+  "stretch": [],
+  "bool_": [],
+  "bit": [],
+  "bit8": [],
+  "int32": [],
+  "int64": [],
+  "uint32": [],
+  "uint64": [],
+  "float32": [],
+  "float64": [],
+  "complex64": [],
+  "complex128": [],
+  "angle32": [],
+  "convert_range": [
+    "program",
+    "item"
+  ],
+  "Identifier": {
+    "__init__": [
+      "self",
+      "name",
+      "ast_type"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "pi": [],
+  "_ClassicalVar": {
+    "__init__": [
+      "self",
+      "init_expression",
+      "name",
+      "needs_declaration",
+      "annotations"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ],
+    "make_declaration_statement": [
+      "self",
+      "program"
+    ]
+  },
+  "BoolVar": {
+    "type_cls": []
+  },
+  "_SizedVar": {
+    "__class_getitem__": [
+      "cls",
+      "item"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "_validate_getitem_index": [
+      "self",
+      "index"
+    ]
+  },
+  "_SizedVarT": [],
+  "IntVar": {
+    "type_cls": [],
+    "default_size": []
+  },
+  "UintVar": {
+    "type_cls": [],
+    "default_size": []
+  },
+  "FloatVar": {
+    "type_cls": [],
+    "default_size": []
+  },
+  "AngleVar": {
+    "type_cls": [],
+    "default_size": []
+  },
+  "BitVar": {
+    "type_cls": [],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "ComplexVar": {
+    "type_cls": [],
+    "__class_getitem__": [
+      "cls",
+      "item"
+    ],
+    "__init__": [
+      "self",
+      "init_expression"
+    ]
+  },
+  "DurationVar": {
+    "type_cls": [],
+    "__init__": [
+      "self",
+      "init_expression",
+      "name"
+    ]
+  },
+  "StretchVar": {
+    "type_cls": []
+  },
+  "AllowedArrayTypes": [],
+  "ArrayVar": {
+    "type_cls": [],
+    "__class_getitem__": [
+      "cls",
+      "item"
+    ],
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ]
+  },
+  "OQIndexExpression": {
+    "__init__": [
+      "self",
+      "collection",
+      "index",
+      "type_"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "OQFunctionCall": {
+    "__init__": [
+      "self",
+      "identifier",
+      "args",
+      "return_type",
+      "extern_decl",
+      "subroutine_decl"
+    ],
+    "to_ast": [
+      "self",
+      "program"
+    ]
+  },
+  "SubroutineParams": [],
+  "FnType": [],
+  "OQPyArgument": {
+    "unzip": [
+      "self"
+    ]
+  },
+  "enable_decorator_arguments": [
+    "f"
+  ],
+  "subroutine": [
+    "func",
+    "annotations"
+  ],
+  "declare_extern": [
+    "name",
+    "args",
+    "return_type",
+    "annotations"
+  ],
+  "declare_waveform_generator": [
+    "name",
+    "argtypes",
+    "annotations"
+  ]
+}

@@ -1,0 +1,616 @@
+{
+  "log": [],
+  "entry_source": [],
+  "CORE_DEPS": [],
+  "get_archive": [
+    "config"
+  ],
+  "provision": [
+    "config",
+    "session_factory"
+  ],
+  "SplunkHecDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "get_splunk_payloads": [
+      "self",
+      "msg",
+      "msg_timestamp"
+    ],
+    "get_splunk_events": [
+      "self",
+      "msg"
+    ],
+    "_prune_log_message": [
+      "self",
+      "msg"
+    ],
+    "deliver_splunk_messages": [
+      "self",
+      "payloads"
+    ],
+    "_try_send": [
+      "self",
+      "payload"
+    ],
+    "_send_splunk": [
+      "self",
+      "payload"
+    ],
+    "tags_for_resource": [
+      "self",
+      "res"
+    ],
+    "_splunk_indices_for_message": [
+      "msg"
+    ]
+  },
+  "DataDogDelivery": {
+    "DATADOG_API_KEY": [],
+    "DATADOG_APPLICATION_KEY": [],
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "get_datadog_message_packages": [
+      "self",
+      "sqs_message"
+    ],
+    "deliver_datadog_messages": [
+      "self",
+      "datadog_message_packages",
+      "sqs_message"
+    ],
+    "_get_metric_value": [
+      "metric_config",
+      "tags"
+    ],
+    "_get_metrics_config_to_resources_map": [
+      "sqs_message"
+    ]
+  },
+  "logger": [],
+  "MailerTester": {
+    "__init__": [
+      "self",
+      "config",
+      "raw",
+      "msg_file",
+      "msg_plain",
+      "json_dump_file"
+    ],
+    "run": [
+      "self",
+      "dry_run",
+      "print_only"
+    ]
+  },
+  "setup_parser": [],
+  "session_factory": [
+    "config"
+  ],
+  "mimic_sqs": [
+    "region",
+    "policy_file",
+    "policy_name",
+    "notify_index",
+    "output_dir"
+  ],
+  "main": [],
+  "GraphDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "send_message": [
+      "self",
+      "emails_to_mimetext_map"
+    ],
+    "get_token": [
+      "self",
+      "url",
+      "client_id",
+      "client_secret"
+    ]
+  },
+  "MessageTargetMixin": {
+    "handle_targets": [
+      "self",
+      "message",
+      "sent_timestamp",
+      "email_delivery",
+      "sns_delivery"
+    ]
+  },
+  "Providers": {
+    "AWS": [],
+    "Azure": [],
+    "GCP": []
+  },
+  "get_processor": [
+    "mailer_config",
+    "logger"
+  ],
+  "get_jinja_env": [
+    "template_folders"
+  ],
+  "get_rendered_jinja": [
+    "target",
+    "sqs_message",
+    "resources",
+    "logger",
+    "specified_template",
+    "default_template",
+    "template_folders"
+  ],
+  "get_resource_tag_targets": [
+    "resource",
+    "target_tag_keys"
+  ],
+  "get_message_subject": [
+    "sqs_message"
+  ],
+  "setup_defaults": [
+    "config"
+  ],
+  "date_time_format": [
+    "utc_str",
+    "tz_str",
+    "format"
+  ],
+  "get_date_time_delta": [
+    "delta"
+  ],
+  "get_date_age": [
+    "date",
+    "unit"
+  ],
+  "format_struct": [
+    "evt"
+  ],
+  "get_resource_tag_value": [
+    "resource",
+    "k"
+  ],
+  "strip_prefix": [
+    "value",
+    "prefix"
+  ],
+  "resource_format": [
+    "resource",
+    "resource_type"
+  ],
+  "get_provider": [
+    "mailer_config"
+  ],
+  "kms_decrypt": [
+    "config",
+    "logger",
+    "session",
+    "encrypted_field"
+  ],
+  "decrypt": [
+    "config",
+    "logger",
+    "session",
+    "encrypted_field"
+  ],
+  "get_aws_username_from_event": [
+    "logger",
+    "event"
+  ],
+  "unique": [
+    "seq"
+  ],
+  "AZURE_KV_SECRET_SCHEMA": [],
+  "GCP_SECRET_SCHEMA": [],
+  "SECURED_STRING_SCHEMA": [],
+  "CONFIG_SCHEMA": [],
+  "get_logger": [
+    "debug"
+  ],
+  "get_and_validate_mailer_config": [
+    "args"
+  ],
+  "get_c7n_mailer_parser": [],
+  "run_mailer_in_parallel": [
+    "processor",
+    "max_num_processes"
+  ],
+  "PRIORITIES": [],
+  "is_email": [
+    "target"
+  ],
+  "priority_header_is_valid": [
+    "priority_header",
+    "logger"
+  ],
+  "set_mimetext_headers": [
+    "message",
+    "subject",
+    "from_addr",
+    "to_addrs",
+    "cc_addrs",
+    "additional_headers",
+    "priority",
+    "logger"
+  ],
+  "get_mimetext_message": [
+    "config",
+    "logger",
+    "message",
+    "resources",
+    "to_addrs"
+  ],
+  "EmailDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "get_ses_session": [
+      "self"
+    ],
+    "get_ldap_connection": [
+      "self"
+    ],
+    "get_valid_emails_from_list": [
+      "self",
+      "targets"
+    ],
+    "get_event_owner_email": [
+      "self",
+      "targets",
+      "event"
+    ],
+    "get_ldap_emails_from_resource": [
+      "self",
+      "sqs_message",
+      "resource"
+    ],
+    "get_resource_owner_emails_from_resource": [
+      "self",
+      "sqs_message",
+      "resource"
+    ],
+    "get_account_emails": [
+      "self",
+      "sqs_message"
+    ],
+    "get_emails_to_resources_map": [
+      "self",
+      "sqs_message"
+    ],
+    "get_emails_to_mimetext_map": [
+      "self",
+      "sqs_message"
+    ],
+    "send_c7n_email": [
+      "self",
+      "sqs_message"
+    ]
+  },
+  "SlackDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "logger",
+      "email_handler"
+    ],
+    "cache_factory": [
+      "self",
+      "config",
+      "type"
+    ],
+    "get_to_addrs_slack_messages_map": [
+      "self",
+      "sqs_message"
+    ],
+    "slack_handler": [
+      "self",
+      "sqs_message",
+      "slack_messages"
+    ],
+    "retrieve_user_im": [
+      "self",
+      "email_addresses"
+    ],
+    "send_slack_msg": [
+      "self",
+      "key",
+      "message_payload"
+    ]
+  },
+  "config_setup": [
+    "config"
+  ],
+  "start_c7n_mailer": [
+    "logger",
+    "config",
+    "parallel"
+  ],
+  "SnsDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "deliver_sns_messages": [
+      "self",
+      "packaged_sns_messages",
+      "sqs_message"
+    ],
+    "get_valid_sns_from_list": [
+      "self",
+      "possible_sns_values"
+    ],
+    "get_sns_message_package": [
+      "self",
+      "sqs_message",
+      "policy_sns_address",
+      "subject",
+      "resources"
+    ],
+    "get_sns_message_packages": [
+      "self",
+      "sqs_message"
+    ],
+    "get_sns_addrs_to_resources_map": [
+      "self",
+      "sqs_message"
+    ],
+    "target_is_sns": [
+      "self",
+      "target"
+    ],
+    "deliver_sns_message": [
+      "self",
+      "topic",
+      "subject",
+      "rendered_jinja_body",
+      "sqs_message"
+    ]
+  },
+  "SmtpDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "send_message": [
+      "self",
+      "message",
+      "to_addrs"
+    ]
+  },
+  "LdapLookup": {
+    "__init__": [
+      "self",
+      "config",
+      "logger"
+    ],
+    "get_redis_connection": [
+      "self",
+      "redis_host",
+      "redis_port"
+    ],
+    "get_connection": [
+      "self",
+      "ldap_uri",
+      "ldap_bind_user",
+      "ldap_bind_password"
+    ],
+    "search_ldap": [
+      "self",
+      "base_dn",
+      "ldap_filter",
+      "attributes"
+    ],
+    "get_email_to_addrs_from_uid": [
+      "self",
+      "uid",
+      "manager"
+    ],
+    "get_metadata_from_dn": [
+      "self",
+      "user_dn"
+    ],
+    "get_dict_from_ldap_object": [
+      "self",
+      "ldap_user_object"
+    ],
+    "get_metadata_from_uid": [
+      "self",
+      "uid"
+    ]
+  },
+  "LocalSqlite": {
+    "__init__": [
+      "self",
+      "local_filename",
+      "logger"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ]
+  },
+  "Redis": {
+    "__init__": [
+      "self",
+      "redis_host",
+      "redis_port",
+      "db"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ]
+  },
+  "DATA_MESSAGE": [],
+  "MailerSqsQueueIterator": {
+    "msg_attributes": [],
+    "__init__": [
+      "self",
+      "aws_sqs",
+      "queue_url",
+      "logger",
+      "limit",
+      "timeout"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "next": [],
+    "ack": [
+      "self",
+      "m"
+    ]
+  },
+  "MailerSqsQueueProcessor": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger",
+      "max_num_processes"
+    ],
+    "run": [
+      "self",
+      "parallel"
+    ],
+    "process_sqs_message": [
+      "self",
+      "encoded_sqs_message"
+    ]
+  },
+  "cache_path": [],
+  "get_mailer_requirements": [],
+  "build_function_package": [
+    "config",
+    "function_name",
+    "sub_id"
+  ],
+  "azure_decrypt": [
+    "config",
+    "logger",
+    "session",
+    "encrypted_field"
+  ],
+  "MailerAzureQueueProcessor": {
+    "__init__": [
+      "self",
+      "config",
+      "logger",
+      "session",
+      "max_num_processes"
+    ],
+    "run": [
+      "self",
+      "parallel"
+    ],
+    "process_azure_queue_message": [
+      "self",
+      "encoded_azure_queue_message",
+      "timestamp"
+    ],
+    "_deliver_email": [
+      "self",
+      "queue_message"
+    ]
+  },
+  "SendGridDelivery": {
+    "__init__": [
+      "self",
+      "config",
+      "session",
+      "logger"
+    ],
+    "get_to_addrs_sendgrid_messages_map": [
+      "self",
+      "queue_message"
+    ],
+    "get_emails_to_resources_map": [
+      "self",
+      "queue_message"
+    ],
+    "sendgrid_handler": [
+      "self",
+      "queue_message",
+      "emails_to_mimetext_map"
+    ],
+    "_construct_mail_from_mimetext": [
+      "message",
+      "to_address"
+    ]
+  },
+  "CACHE": [],
+  "gcp_decrypt": [
+    "config",
+    "logger",
+    "encrypted_field",
+    "client"
+  ],
+  "MAX_MESSAGES": [],
+  "MailerGcpQueueProcessor": {
+    "__init__": [
+      "self",
+      "config",
+      "logger",
+      "session"
+    ],
+    "run": [
+      "self"
+    ],
+    "process_message": [
+      "self",
+      "encoded_gcp_pubsub_message",
+      "publish_date"
+    ],
+    "receive_messages": [
+      "self"
+    ],
+    "ack_message": [
+      "self",
+      "ack_id"
+    ],
+    "nack_message": [
+      "self",
+      "ack_id"
+    ],
+    "ack_messages": [
+      "self",
+      "discard_datetime"
+    ],
+    "unpack_to_dict": [
+      "encoded_gcp_pubsub_message"
+    ]
+  }
+}

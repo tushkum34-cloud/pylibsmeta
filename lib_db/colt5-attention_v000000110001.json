@@ -1,0 +1,369 @@
+{
+  "TopkReturn": [],
+  "topk": [
+    "x",
+    "k",
+    "coor_descent_k_ratio",
+    "n_iters",
+    "eps",
+    "eps_init",
+    "eps_decay",
+    "mask",
+    "fused",
+    "non_differentiable"
+  ],
+  "exists": [
+    "val"
+  ],
+  "default": [
+    "val",
+    "d"
+  ],
+  "log": [
+    "t",
+    "eps"
+  ],
+  "coor_descent": [
+    "s"
+  ],
+  "Config": [],
+  "once": [
+    "fn"
+  ],
+  "print_once": [],
+  "Attend": {
+    "__init__": [
+      "self",
+      "dropout",
+      "causal",
+      "use_flash"
+    ],
+    "get_mask": [
+      "self",
+      "n",
+      "device"
+    ],
+    "flash_attn": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k",
+      "v",
+      "mask"
+    ]
+  },
+  "calc_num_warps": [
+    "block_size"
+  ],
+  "pack_one": [
+    "t",
+    "pattern"
+  ],
+  "unpack_one": [
+    "t",
+    "ps",
+    "pattern"
+  ],
+  "num_to_groups": [
+    "num",
+    "groups"
+  ],
+  "coor_descent_kernel_forward": [
+    "a_ptr",
+    "b_ptr",
+    "input_ptr",
+    "mask_ptr",
+    "k_ptr",
+    "a_iter_stride",
+    "b_row_stride",
+    "b_iter_stride",
+    "input_row_stride",
+    "mask_row_stride",
+    "n_iters",
+    "current_eps",
+    "eps_decay",
+    "eps",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "coor_descent_kernel_backward": [
+    "dk_ptr",
+    "input_ptr",
+    "a_ptr",
+    "b_ptr",
+    "mask_ptr",
+    "ds_ptr",
+    "db_ptr",
+    "k_ptr",
+    "last_da_ptr",
+    "input_row_stride",
+    "b_row_stride",
+    "mask_row_stride",
+    "ds_row_stride",
+    "db_row_stride",
+    "n_iters",
+    "eps_init",
+    "eps_decay",
+    "eps",
+    "n_cols",
+    "BLOCK_SIZE"
+  ],
+  "_coor_descent": {
+    "forward": [
+      "ctx",
+      "x",
+      "n_iters",
+      "k",
+      "eps",
+      "eps_init",
+      "eps_decay",
+      "mask",
+      "checkpoint_segments"
+    ],
+    "backward": [
+      "ctx",
+      "grad_probs"
+    ]
+  },
+  "triton_coor_descent": [
+    "s"
+  ],
+  "pair": [
+    "t"
+  ],
+  "posemb_sincos_2d": [
+    "patches",
+    "temperature",
+    "dtype"
+  ],
+  "Transformer": {
+    "__init__": [
+      "self",
+      "dim",
+      "depth",
+      "attn_num_heavy_tokens_q",
+      "attn_num_heavy_tokens_kv",
+      "attn_light_dim_head",
+      "attn_light_heads",
+      "attn_light_window_size",
+      "attn_heavy_dim_head",
+      "attn_heavy_heads",
+      "ff_num_heavy_tokens",
+      "ff_light_mult",
+      "ff_heavy_mult",
+      "router_straight_through",
+      "router_kwargs",
+      "router_use_triton",
+      "flash_attn",
+      "attn_num_routed_kv"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConditionalRoutedViT": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "img"
+    ]
+  },
+  "divisible_by": [
+    "numer",
+    "denom"
+  ],
+  "pad_to_multiple": [
+    "tensor",
+    "multiple",
+    "dim",
+    "value"
+  ],
+  "batched_gather": [
+    "x",
+    "indices"
+  ],
+  "identity": [
+    "t"
+  ],
+  "l2norm": [
+    "t"
+  ],
+  "create_batch_range": [
+    "t",
+    "right_pad_dims"
+  ],
+  "RotaryEmbedding": {
+    "__init__": [
+      "self",
+      "dim",
+      "theta"
+    ],
+    "device": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "seq_len"
+    ]
+  },
+  "rotate_half": [
+    "x"
+  ],
+  "apply_rotary_pos_emb": [
+    "pos",
+    "t"
+  ],
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeedForward": [
+    "dim",
+    "mult"
+  ],
+  "SelfAttention": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "heads",
+      "use_flash",
+      "prenorm"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Attention": {
+    "__init__": [
+      "self",
+      "dim",
+      "dim_head",
+      "heads",
+      "multiply_keys_by_score",
+      "use_flash"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "context",
+      "mask",
+      "normalized_scores_kv",
+      "normalized_scores_q",
+      "rotary_emb"
+    ]
+  },
+  "RouterReturn": [],
+  "CoordinateDescentRouter": {
+    "__init__": [
+      "self",
+      "dim",
+      "straight_through",
+      "n_iters",
+      "fetch_k_ratio",
+      "eps",
+      "eps_decay",
+      "eps_init",
+      "num_routing_tokens",
+      "learned_routing_tokens",
+      "use_triton",
+      "cosine_sim_routing",
+      "cosine_sim_scale",
+      "route_block_size",
+      "triton_checkpoint_segments"
+    ],
+    "route_back": [
+      "self",
+      "src",
+      "routed_tokens",
+      "indices"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConditionalRoutedFeedForward": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "num_heavy_tokens"
+    ]
+  },
+  "ConditionalRoutedAttention": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConditionalRoutedImageAttention": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConditionalRoutedAutoregressiveAttention": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ConditionalRoutedCrossAttention": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "context"
+    ]
+  },
+  "ConditionalRoutedTransformerBlock": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "num_heavy_attn_tokens_q",
+      "num_heavy_attn_tokens_kv",
+      "num_heavy_ff_tokens"
+    ]
+  }
+}

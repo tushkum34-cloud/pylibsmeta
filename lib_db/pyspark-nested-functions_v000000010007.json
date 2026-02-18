@@ -1,0 +1,612 @@
+{
+  "string": [],
+  "log": [],
+  "flatten_schema": [
+    "schema",
+    "parent",
+    "separator",
+    "include_parent_as_field"
+  ],
+  "__find_string_for_schema": [
+    "parent",
+    "field",
+    "separator",
+    "include_parent"
+  ],
+  "__concat_with_parent": [
+    "parent",
+    "field",
+    "separator"
+  ],
+  "SparkSchemaUtility": {
+    "flatten_schema_include_parents_fields": [
+      "schema"
+    ],
+    "flatten_schema": [
+      "schema"
+    ],
+    "does_column_exist": [
+      "schema",
+      "column"
+    ],
+    "parents_for_field": [
+      "field"
+    ],
+    "parent_child_elements": [
+      "column",
+      "raise_exception_if_no_parent"
+    ],
+    "__get_schema_for_field": [
+      "schema",
+      "col"
+    ],
+    "__get_type_for_field": [
+      "schema",
+      "field"
+    ],
+    "is_array": [
+      "schema",
+      "field"
+    ],
+    "is_struct": [
+      "schema",
+      "field"
+    ],
+    "schema_for_field": [
+      "schema",
+      "field"
+    ],
+    "__schema_for_field_rec": [
+      "schema",
+      "field"
+    ]
+  },
+  "distinct": [
+    "sequence"
+  ],
+  "flatten": [
+    "t"
+  ],
+  "binary_generalization": [
+    "df",
+    "field"
+  ],
+  "__binary_generalize": [
+    "primitive_column"
+  ],
+  "str_regx_extract": [
+    "df",
+    "field",
+    "pattern",
+    "group_index_to_extract"
+  ],
+  "__extract": [
+    "primitive_value",
+    "pattern",
+    "group_index_to_extract"
+  ],
+  "df_filter": [
+    "df",
+    "predicate"
+  ],
+  "apply_terminal_operation": [
+    "df",
+    "field",
+    "f"
+  ],
+  "apply_terminal_operation_with_predicate": [
+    "df",
+    "field",
+    "f",
+    "predicate_key",
+    "predicate_value"
+  ],
+  "LambdaBasedTerminalOperation": {
+    "__init__": [
+      "self",
+      "column",
+      "f"
+    ],
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ]
+  },
+  "LambdaBasedTerminalOperationPredicate": {
+    "__init__": [
+      "self",
+      "column",
+      "f",
+      "predicate_key",
+      "predicate_value"
+    ],
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ]
+  },
+  "drop": [
+    "df",
+    "fields_to_drop"
+  ],
+  "DropProcessor": {
+    "schema_util": [],
+    "__init__": [
+      "self",
+      "fields_to_drop"
+    ],
+    "is_field_or_ancestor_in_fields_to_drop": [
+      "field",
+      "fields_to_drop"
+    ],
+    "consolidate_fields_to_drop": [
+      "cls",
+      "dataframe_schema",
+      "fields_to_drop"
+    ],
+    "process": [
+      "self",
+      "df"
+    ],
+    "_process_field_with": [
+      "self",
+      "schema",
+      "current_column_name",
+      "next",
+      "previous",
+      "current_column"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ]
+  },
+  "redact": [
+    "df",
+    "field"
+  ],
+  "MIN_SHORT_VALUE": [],
+  "MIN_INTEGER_VALUE": [],
+  "MIN_BYTE_VALUE": [],
+  "DEFAULT_DECIMAL_TYPE": [],
+  "column_name_with_dedicated_field_type": [
+    "fieldType"
+  ],
+  "RedactProcessor": {
+    "__init__": [
+      "self",
+      "column_to_process"
+    ],
+    "process": [
+      "self",
+      "df"
+    ],
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ]
+  },
+  "fillna": [
+    "df",
+    "value",
+    "subset"
+  ],
+  "__col_name_can_be_filled_with_value": [
+    "schema",
+    "col_name",
+    "value"
+  ],
+  "FillNaProcessor": {
+    "__init__": [
+      "self",
+      "column_to_process",
+      "value"
+    ],
+    "__coalesce": [
+      "self",
+      "primitive_value"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ]
+  },
+  "str_concat": [
+    "df",
+    "field",
+    "str_to_add"
+  ],
+  "__str_concat": [
+    "primitive_value",
+    "value_to_add"
+  ],
+  "LambdaBasedAddOperation": {
+    "__init__": [
+      "self",
+      "column_to_process",
+      "new_column_name",
+      "f"
+    ],
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ]
+  },
+  "add_nested_field": [
+    "df",
+    "column_to_process",
+    "new_column_name",
+    "f"
+  ],
+  "rename": [
+    "df",
+    "rename_func"
+  ],
+  "rename_with_strategy": [
+    "df",
+    "rename_func"
+  ],
+  "rename_to_parquet_compliant": [
+    "df"
+  ],
+  "FieldRenameProcessor": {
+    "__init__": [
+      "self",
+      "rename_strategy"
+    ],
+    "process": [
+      "self",
+      "df"
+    ]
+  },
+  "FieldRenameFunc": {
+    "convert_field_name": [
+      "self",
+      "old_field_name"
+    ]
+  },
+  "RenameLambda": {
+    "__init__": [
+      "self",
+      "rename_func"
+    ],
+    "convert_field_name": [
+      "self",
+      "old_field_name"
+    ]
+  },
+  "SchemaRenamer": {
+    "rename_fields": [
+      "self",
+      "dataTypeArg",
+      "field_rename_func"
+    ],
+    "__update_field_name": [
+      "self",
+      "field",
+      "rename_func"
+    ]
+  },
+  "ParquetComplianceFn": {
+    "convert_field_name": [
+      "self",
+      "old_field_name"
+    ]
+  },
+  "format_date": [
+    "df",
+    "field",
+    "current_date_format",
+    "target_date_format"
+  ],
+  "format_date_with_predicate": [
+    "df",
+    "field",
+    "current_date_format",
+    "target_date_format",
+    "predicate_key",
+    "predicate_value"
+  ],
+  "__format_date": [
+    "primitive_column",
+    "current_date_format",
+    "target_date_format"
+  ],
+  "expr": [
+    "df",
+    "field",
+    "expr"
+  ],
+  "ExprProcessor": {
+    "__init__": [
+      "self",
+      "column_to_process",
+      "param_expr",
+      "new_column_name"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "expression": [
+      "self"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ]
+  },
+  "duplicate": [
+    "df",
+    "column_to_duplicate",
+    "duplicated_column_name"
+  ],
+  "DuplicateProcessor": {
+    "__init__": [
+      "self",
+      "column_to_duplicate",
+      "duplicated_column_name"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ]
+  },
+  "truncate": [
+    "df",
+    "field",
+    "character_size"
+  ],
+  "__truncate": [
+    "primitive_value",
+    "character_size"
+  ],
+  "DEFAULT_SALT_SEPARATOR": [],
+  "DEFAULT_SALT_VALUE": [],
+  "hash_field": [
+    "df",
+    "field",
+    "num_bits"
+  ],
+  "hash_field_with_salt": [
+    "df",
+    "field",
+    "salt",
+    "separator",
+    "num_bits"
+  ],
+  "hash_field_with_predicate": [
+    "df",
+    "field",
+    "predicate_key",
+    "predicate_value",
+    "num_bits"
+  ],
+  "__apply_hash": [
+    "c",
+    "num_bits"
+  ],
+  "nullify": [
+    "df",
+    "field"
+  ],
+  "nullify_with_predicate": [
+    "df",
+    "field",
+    "predicate_key",
+    "predicate_value"
+  ],
+  "__nullify": [],
+  "whitelist": [
+    "df",
+    "fields"
+  ],
+  "WhitelistProcessor": {
+    "schema_util": [],
+    "__init__": [
+      "self",
+      "whitelist_fields"
+    ],
+    "process": [
+      "self",
+      "df"
+    ],
+    "find_fields_to_drop": [
+      "flattened_fields",
+      "whitelist_fields"
+    ],
+    "is_field_or_ancestor_in_whitelist_fields": [
+      "field",
+      "whitelist_fields"
+    ],
+    "no_fields_to_select": [
+      "cls",
+      "df",
+      "whitelist_fields"
+    ]
+  },
+  "filter_only_parents_fields": [
+    "fields"
+  ],
+  "__replace_elements_with_roots": [
+    "fields",
+    "roots"
+  ],
+  "__replace_elements_with_root": [
+    "fields",
+    "root"
+  ],
+  "AddOperationProcessor": {
+    "__init__": [
+      "self",
+      "column_to_process",
+      "new_column_name"
+    ],
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ]
+  },
+  "TerminalOperationProcessorWithPredicate": {
+    "__init__": [
+      "self",
+      "column_to_process",
+      "p"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_complex_transformation": [
+      "self",
+      "current_column",
+      "current_column_name",
+      "fieldType"
+    ]
+  },
+  "PredicateProcessorParameters": {},
+  "TerminalOperationProcessor": {
+    "transform_primitive": [
+      "self",
+      "primitive_value",
+      "fieldType"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ],
+    "apply_complex_transformation": [
+      "self",
+      "current_column",
+      "current_column_name",
+      "fieldType"
+    ]
+  },
+  "CoreProcessor": {
+    "process": [
+      "self",
+      "df"
+    ]
+  },
+  "AnyLevelCoreProcessor": {
+    "__init__": [
+      "self",
+      "column_to_process"
+    ],
+    "process": [
+      "self",
+      "df"
+    ],
+    "apply_terminal_operation_on_root_level": [
+      "self",
+      "df",
+      "column_name"
+    ],
+    "apply_terminal_operation_on_structure": [
+      "self",
+      "schema",
+      "column",
+      "column_name",
+      "previous"
+    ],
+    "_process_field_with": [
+      "self",
+      "schema",
+      "current_column_name",
+      "next",
+      "previous",
+      "current_column"
+    ],
+    "_process_field_recursive": [
+      "self",
+      "schema",
+      "current_column_name",
+      "next",
+      "previous",
+      "current_column"
+    ],
+    "__next_column": [
+      "self",
+      "current_column",
+      "current_column_name"
+    ],
+    "__is_root_level_transformation": [
+      "column"
+    ],
+    "__parse_head_tail": [
+      "param"
+    ],
+    "__fill_null_struct_with_null_fields": [
+      "column",
+      "column_name",
+      "dataframe_schema"
+    ]
+  },
+  "VALID_FIELD_NAME_PATTERN": [],
+  "validate_field_name_or_throw": [
+    "field"
+  ],
+  "field_is_valid": [
+    "field"
+  ],
+  "validate_regexp_or_throw": [
+    "pattern"
+  ],
+  "regexp_is_valid": [
+    "pattern"
+  ]
+}

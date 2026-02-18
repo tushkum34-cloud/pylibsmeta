@@ -1,0 +1,920 @@
+{
+  "logger": [],
+  "WebsocketClosedException": {},
+  "FailedSendingMessageException": {},
+  "send_transport_message": [
+    "msg",
+    "ws",
+    "websocket_closed_callback"
+  ],
+  "formatted_bytes": [
+    "message"
+  ],
+  "parse_transport_msg": [
+    "message"
+  ],
+  "PROTOCOL_VERSION": [],
+  "ServerTransport": {
+    "__init__": [
+      "self",
+      "transport_id",
+      "transport_options"
+    ],
+    "_close_all_sessions": [
+      "self"
+    ],
+    "handshake_to_get_session": [
+      "self",
+      "websocket"
+    ],
+    "close": [
+      "self"
+    ],
+    "_get_or_create_session": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "websocket"
+    ],
+    "_send_handshake_response": [
+      "self",
+      "request_message",
+      "handshake_status",
+      "websocket"
+    ],
+    "_establish_handshake": [
+      "self",
+      "request_message",
+      "websocket"
+    ],
+    "_delete_session": [
+      "self",
+      "session"
+    ]
+  },
+  "ClientTransport": {
+    "__init__": [
+      "self",
+      "uri_and_metadata_factory",
+      "client_id",
+      "server_id",
+      "transport_options"
+    ],
+    "_close_all_sessions": [
+      "self"
+    ],
+    "generate_nanoid": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "get_or_create_session": [
+      "self"
+    ],
+    "_get_existing_session": [
+      "self"
+    ],
+    "_establish_new_connection": [
+      "self",
+      "old_session"
+    ],
+    "_create_new_session": [
+      "self"
+    ],
+    "_retry_connection": [
+      "self"
+    ],
+    "_send_handshake_request": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "handshake_metadata",
+      "websocket",
+      "expected_session_state"
+    ],
+    "_get_handshake_response_msg": [
+      "self",
+      "websocket"
+    ],
+    "_establish_handshake": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "handshake_metadata",
+      "websocket",
+      "old_session"
+    ],
+    "_delete_session": [
+      "self",
+      "session"
+    ]
+  },
+  "WsState": {
+    "OPEN": [],
+    "CLOSING": [],
+    "CLOSED": []
+  },
+  "WebsocketWrapper": {
+    "__init__": [
+      "self",
+      "ws"
+    ],
+    "is_open": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "STREAM_CLOSED_BIT": [],
+  "ClientSession": {
+    "__init__": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "websocket",
+      "transport_options",
+      "close_session_callback",
+      "retry_connection_callback"
+    ],
+    "replace_with_new_websocket": [
+      "self",
+      "new_ws"
+    ],
+    "start_serve_responses": [
+      "self"
+    ],
+    "serve": [
+      "self"
+    ],
+    "_handle_messages_from_ws": [
+      "self"
+    ],
+    "send_rpc": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "request",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer",
+      "span",
+      "timeout"
+    ],
+    "send_upload": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "init",
+      "request",
+      "init_serializer",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer",
+      "span"
+    ],
+    "send_subscription": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "request",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer",
+      "span"
+    ],
+    "send_stream": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "init",
+      "request",
+      "init_serializer",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer",
+      "span"
+    ],
+    "send_close_stream": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "stream_id",
+      "extra_control_flags"
+    ]
+  },
+  "InvalidMessageException": {},
+  "OutOfOrderMessageException": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "SessionStateMismatchException": {},
+  "IgnoreMessage": {},
+  "SeqManager": {
+    "__init__": [
+      "self"
+    ],
+    "get_seq_and_increment": [
+      "self"
+    ],
+    "increment_seq": [
+      "self"
+    ],
+    "get_seq": [
+      "self"
+    ],
+    "get_ack": [
+      "self"
+    ],
+    "check_seq_and_update": [
+      "self",
+      "msg"
+    ]
+  },
+  "trace_propagator": [],
+  "trace_setter": [],
+  "ServerSession": {
+    "__init__": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "websocket",
+      "transport_options",
+      "handlers",
+      "close_session_callback",
+      "retry_connection_callback"
+    ],
+    "serve": [
+      "self"
+    ],
+    "_handle_messages_from_ws": [
+      "self",
+      "tg"
+    ],
+    "_open_stream_and_call_handler": [
+      "self",
+      "msg",
+      "tg"
+    ],
+    "_send_responses_from_output_stream": [
+      "self",
+      "stream_id",
+      "output",
+      "is_streaming_output"
+    ]
+  },
+  "ERROR_CODE_STREAM_CLOSED": [],
+  "ERROR_HANDSHAKE": [],
+  "ERROR_SESSION": [],
+  "ERROR_CODE_UNCAUGHT_ERROR": [],
+  "ERROR_CODE_INVALID_REQUEST": [],
+  "ERROR_CODE_CANCEL": [],
+  "SYNTHETIC_ERROR_CODE_SESSION_CLOSED": [],
+  "ERROR_CODE_UNKNOWN": [],
+  "ERROR_CODE_SESSION_STATE_MISMATCH": [],
+  "RiverError": {},
+  "RiverErrorTypeAdapter": [],
+  "RiverException": {
+    "__init__": [
+      "self",
+      "code",
+      "message"
+    ]
+  },
+  "RiverServiceException": {
+    "__init__": [
+      "self",
+      "code",
+      "message",
+      "service",
+      "procedure",
+      "underlying_error"
+    ]
+  },
+  "UncaughtErrorRiverServiceException": {},
+  "InvalidRequestRiverServiceException": {},
+  "CancelRiverServiceException": {},
+  "StreamClosedRiverServiceException": {},
+  "SessionClosedRiverServiceException": {
+    "__init__": [
+      "self",
+      "message",
+      "streamId"
+    ]
+  },
+  "exception_from_message": [
+    "code"
+  ],
+  "stringify_exception": [
+    "e",
+    "limit"
+  ],
+  "InitType": [],
+  "RequestType": [],
+  "ResponseType": [],
+  "ErrorType": [],
+  "GenericRpcHandlerBuilder": [],
+  "ACK_BIT_TYPE": [],
+  "STREAM_OPEN_BIT_TYPE": [],
+  "SESSION_MISMATCH_CODE": [],
+  "ExpectedSessionState": {},
+  "ControlMessageHandshakeRequest": {},
+  "HandShakeStatus": {},
+  "ControlMessageHandshakeResponse": {},
+  "PropagationContext": {},
+  "TransportMessage": {
+    "model_config": []
+  },
+  "TransportMessageTracingSetter": {
+    "set": [
+      "self",
+      "carrier",
+      "key",
+      "value"
+    ]
+  },
+  "GrpcContext": {
+    "__init__": [
+      "self",
+      "peer"
+    ],
+    "abort": [
+      "self",
+      "code",
+      "details",
+      "trailing_metadata"
+    ],
+    "auth_context": [
+      "self"
+    ],
+    "disable_next_message_compression": [
+      "self"
+    ],
+    "invocation_metadata": [
+      "self"
+    ],
+    "peer": [
+      "self"
+    ],
+    "peer_identities": [
+      "self"
+    ],
+    "peer_identity_key": [
+      "self"
+    ],
+    "read": [
+      "self"
+    ],
+    "send_initial_metadata": [
+      "self",
+      "initial_metadata"
+    ],
+    "set_code": [
+      "self",
+      "code"
+    ],
+    "set_compression": [
+      "self",
+      "compression"
+    ],
+    "set_details": [
+      "self",
+      "details"
+    ],
+    "set_trailing_metadata": [
+      "self",
+      "trailing_metadata"
+    ],
+    "write": [
+      "self",
+      "message"
+    ]
+  },
+  "get_response_or_error_payload": [
+    "response",
+    "response_serializer"
+  ],
+  "rpc_method_handler": [
+    "method",
+    "request_deserializer",
+    "response_serializer"
+  ],
+  "subscription_method_handler": [
+    "method",
+    "request_deserializer",
+    "response_serializer"
+  ],
+  "upload_method_handler": [
+    "method",
+    "request_deserializer",
+    "response_serializer"
+  ],
+  "stream_method_handler": [
+    "method",
+    "request_deserializer",
+    "response_serializer"
+  ],
+  "MAX_MESSAGE_BUFFER_SIZE": [],
+  "ConnectionRetryOptions": {},
+  "TransportOptions": {
+    "websocket_disconnect_grace_ms": [
+      "self"
+    ],
+    "create_from_env": [
+      "cls"
+    ]
+  },
+  "HandshakeMetadataType": [],
+  "UriAndMetadata": {},
+  "BackgroundTaskManager": {
+    "__init__": [
+      "self"
+    ],
+    "cancel_all_tasks": [
+      "self"
+    ],
+    "cancel_task": [
+      "task_to_remove",
+      "background_tasks"
+    ],
+    "_task_done_callback": [
+      "self",
+      "task_to_remove",
+      "background_tasks"
+    ],
+    "create_task": [
+      "self",
+      "fn",
+      "tg"
+    ]
+  },
+  "__all__": [],
+  "MessageBufferClosedError": {},
+  "MessageBuffer": {
+    "__init__": [
+      "self",
+      "max_num_messages"
+    ],
+    "has_capacity": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "message"
+    ],
+    "get_next_sent_seq": [
+      "self"
+    ],
+    "peek": [
+      "self"
+    ],
+    "remove_old_messages": [
+      "self",
+      "min_seq"
+    ],
+    "block_until_message_available": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "tracer": [],
+  "RiverUnknownValue": {},
+  "RiverUnknownError": {},
+  "translate_unknown_value": [
+    "value",
+    "handler",
+    "info"
+  ],
+  "translate_unknown_error": [
+    "value",
+    "handler",
+    "info"
+  ],
+  "Client": {
+    "__init__": [
+      "self",
+      "uri_and_metadata_factory",
+      "client_id",
+      "server_id",
+      "transport_options"
+    ],
+    "close": [
+      "self"
+    ],
+    "ensure_connected": [
+      "self"
+    ],
+    "send_rpc": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "request",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer",
+      "timeout"
+    ],
+    "send_upload": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "init",
+      "request",
+      "init_serializer",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer"
+    ],
+    "send_subscription": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "request",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer"
+    ],
+    "send_stream": [
+      "self",
+      "service_name",
+      "procedure_name",
+      "init",
+      "request",
+      "init_serializer",
+      "request_serializer",
+      "response_deserializer",
+      "error_deserializer"
+    ]
+  },
+  "_SpanHandle": {
+    "set_status": [
+      "self",
+      "status",
+      "description"
+    ]
+  },
+  "_trace_procedure": [
+    "procedure_type",
+    "service_name",
+    "procedure_name"
+  ],
+  "_record_river_error": [
+    "span_handle",
+    "error"
+  ],
+  "BudgetExhaustedException": {
+    "__init__": [
+      "self",
+      "code",
+      "message",
+      "client_id"
+    ]
+  },
+  "RateLimiter": {
+    "start_restoring_budget": [
+      "self",
+      "user"
+    ],
+    "get_backoff_ms": [
+      "self",
+      "user"
+    ],
+    "has_budget": [
+      "self",
+      "user"
+    ],
+    "consume_budget": [
+      "self",
+      "user"
+    ]
+  },
+  "LeakyBucketRateLimit": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "get_backoff_ms": [
+      "self",
+      "user"
+    ],
+    "get_budget_consumed": [
+      "self",
+      "user"
+    ],
+    "has_budget": [
+      "self",
+      "user"
+    ],
+    "consume_budget": [
+      "self",
+      "user"
+    ],
+    "start_restoring_budget": [
+      "self",
+      "user"
+    ],
+    "restore_budget": [
+      "self",
+      "user"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "Server": {
+    "__init__": [
+      "self",
+      "server_id",
+      "transport_options"
+    ],
+    "close": [
+      "self"
+    ],
+    "add_rpc_handlers": [
+      "self",
+      "rpc_handlers"
+    ],
+    "_handshake_to_get_session": [
+      "self",
+      "websocket"
+    ],
+    "serve": [
+      "self",
+      "websocket"
+    ]
+  },
+  "Session": {
+    "__init__": [
+      "self",
+      "transport_id",
+      "to_id",
+      "session_id",
+      "websocket",
+      "transport_options",
+      "close_session_callback",
+      "retry_connection_callback"
+    ],
+    "_setup_heartbeats_task": [
+      "self",
+      "do_close_websocket"
+    ],
+    "is_session_open": [
+      "self"
+    ],
+    "is_websocket_open": [
+      "self"
+    ],
+    "_begin_close_session_countdown": [
+      "self"
+    ],
+    "replace_with_new_websocket": [
+      "self",
+      "new_ws"
+    ],
+    "_get_current_time": [
+      "self"
+    ],
+    "_reset_session_close_countdown": [
+      "self"
+    ],
+    "get_next_expected_seq": [
+      "self"
+    ],
+    "get_next_sent_seq": [
+      "self"
+    ],
+    "get_next_expected_ack": [
+      "self"
+    ],
+    "send_message": [
+      "self",
+      "stream_id",
+      "payload",
+      "control_flags",
+      "service_name",
+      "procedure_name",
+      "span"
+    ],
+    "close_websocket": [
+      "self",
+      "ws_wrapper",
+      "should_retry"
+    ],
+    "_should_abort_streams_after_transport_failure": [
+      "self"
+    ],
+    "_abort_all_streams": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "check_to_close_session": [
+    "transport_id",
+    "close_session_check_interval_ms",
+    "get_state",
+    "get_current_time",
+    "get_close_session_after_time_secs",
+    "do_close"
+  ],
+  "setup_heartbeat": [
+    "session_id",
+    "heartbeat_ms",
+    "heartbeats_until_dead",
+    "get_state",
+    "get_closing_grace_period",
+    "close_websocket",
+    "send_message",
+    "increment_and_get_heartbeat_misses"
+  ],
+  "to_camel_case": [
+    "snake_str"
+  ],
+  "first_letter_uppercase": [
+    "s"
+  ],
+  "field_type_name": [
+    "field"
+  ],
+  "message_type": [
+    "module_name",
+    "m",
+    "sender"
+  ],
+  "generate_river_schema": [
+    "module_name",
+    "fds"
+  ],
+  "proto_to_river_schema_codegen": [
+    "proto_path",
+    "target_directory"
+  ],
+  "reindent": [
+    "prefix",
+    "code"
+  ],
+  "SPECIAL_CHARS": [],
+  "ModuleName": [],
+  "ClassName": [],
+  "FileContents": [],
+  "HandshakeType": [],
+  "RenderedPath": [],
+  "TypeName": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "LiteralType": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "NoneTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "DictTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "ListTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "LiteralTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "UnionTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "OpenUnionTypeExpr": {
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ]
+  },
+  "TypeExpression": [],
+  "_flatten_nested_unions": [
+    "value"
+  ],
+  "normalize_special_chars": [
+    "value"
+  ],
+  "render_type_expr": [
+    "value"
+  ],
+  "render_literal_type": [
+    "value"
+  ],
+  "extract_inner_type": [
+    "value"
+  ],
+  "ensure_literal_type": [
+    "value"
+  ],
+  "get_encoder_name": [
+    "field"
+  ],
+  "get_decoder_name": [
+    "field"
+  ],
+  "message_decoder": [
+    "module_name",
+    "m"
+  ],
+  "message_encoder": [
+    "module_name",
+    "m"
+  ],
+  "generate_river_module": [
+    "module_name",
+    "pb_module_name",
+    "fds"
+  ],
+  "proto_to_river_server_codegen": [
+    "module_name",
+    "proto_path",
+    "target_directory"
+  ],
+  "main": []
+}

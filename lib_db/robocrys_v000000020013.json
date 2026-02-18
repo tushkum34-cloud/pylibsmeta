@@ -1,0 +1,610 @@
+{
+  "__all__": [],
+  "__author__": [],
+  "__maintainer__": [],
+  "__email__": [],
+  "__date__": [],
+  "robocrystallographer": [
+    "structure",
+    "condenser_kwargs",
+    "describer_kwargs"
+  ],
+  "_get_parser": [],
+  "main": [],
+  "BaseAdapter": {
+    "__init__": [
+      "self",
+      "condensed_structure"
+    ],
+    "get_distance_details": [
+      "self",
+      "from_site",
+      "to_sites"
+    ],
+    "get_angle_details": [
+      "self",
+      "from_site",
+      "to_sites",
+      "connectivity"
+    ],
+    "mineral": [
+      "self"
+    ],
+    "formula": [
+      "self"
+    ],
+    "spg_symbol": [
+      "self"
+    ],
+    "crystal_system": [
+      "self"
+    ],
+    "dimensionality": [
+      "self"
+    ],
+    "sites": [
+      "self"
+    ],
+    "distances": [
+      "self"
+    ],
+    "angles": [
+      "self"
+    ],
+    "components": [
+      "self"
+    ],
+    "component_makeup": [
+      "self"
+    ],
+    "is_vdw_heterostructure": [
+      "self"
+    ]
+  },
+  "ComponentDetails": [],
+  "ComponentGroup": [],
+  "SiteGroup": [],
+  "NeighborSiteDetails": [],
+  "NextNeighborSiteDetails": [],
+  "DescriptionAdapter": {
+    "__init__": [
+      "self",
+      "condensed_structure",
+      "use_iupac_ordering"
+    ],
+    "get_nearest_neighbor_details": [
+      "self",
+      "site_index",
+      "group"
+    ],
+    "get_next_nearest_neighbor_details": [
+      "self",
+      "site_index",
+      "group"
+    ],
+    "get_component_details": [
+      "self"
+    ],
+    "get_component_groups": [
+      "self"
+    ],
+    "get_component_site_groups": [
+      "self",
+      "component_index"
+    ],
+    "get_sym_label": [
+      "self",
+      "site_indices"
+    ],
+    "_site_order": [
+      "self",
+      "s"
+    ]
+  },
+  "_component_order": [
+    "c"
+  ],
+  "en": [],
+  "StructureDescriber": {
+    "__init__": [
+      "self",
+      "describe_mineral",
+      "describe_component_makeup",
+      "describe_components",
+      "describe_symmetry_labels",
+      "describe_oxidation_states",
+      "describe_bond_lengths",
+      "bond_length_decimal_places",
+      "distorted_tol",
+      "only_describe_cation_polyhedra_connectivity",
+      "only_describe_bonds_once",
+      "fmt",
+      "return_parts"
+    ],
+    "describe": [
+      "self",
+      "condensed_structure"
+    ],
+    "get_mineral_description": [
+      "self"
+    ],
+    "get_component_makeup_summary": [
+      "self"
+    ],
+    "get_all_component_descriptions": [
+      "self"
+    ],
+    "get_component_description": [
+      "self",
+      "component_index",
+      "single_component"
+    ],
+    "get_site_description": [
+      "self",
+      "site_index"
+    ],
+    "_get_poly_site_description": [
+      "self",
+      "site_index"
+    ],
+    "_get_nearest_neighbor_description": [
+      "self",
+      "site_index"
+    ],
+    "_get_nearest_neighbor_bond_length_descriptions": [
+      "self",
+      "site_index"
+    ],
+    "get_bond_length_description": [
+      "self",
+      "from_site",
+      "to_sites"
+    ],
+    "get_octahedral_tilt_description": [
+      "self",
+      "site_index"
+    ],
+    "_filter_seen_bonds": [
+      "self",
+      "from_site",
+      "to_sites"
+    ],
+    "_rounded_bond_lengths": [
+      "self",
+      "data"
+    ],
+    "_distance_to_string": [
+      "self",
+      "distance"
+    ],
+    "_distance_range_to_string": [
+      "self",
+      "dist_a",
+      "dist_b"
+    ],
+    "_rounded_angles": [
+      "self",
+      "data"
+    ],
+    "_angle_to_string": [
+      "self",
+      "angle"
+    ],
+    "_angle_range_to_string": [
+      "self",
+      "angle_a",
+      "angle_b"
+    ]
+  },
+  "get_mineral_name": [
+    "mineral_dict"
+  ],
+  "_mineral_db_file": [],
+  "load_mineral_db_file": [
+    "min_db_path"
+  ],
+  "MineralMatcher": {
+    "__init__": [
+      "self",
+      "initial_ltol",
+      "initial_stol",
+      "initial_angle_tol",
+      "use_fingerprint_matching",
+      "fingerprint_distance_cutoff",
+      "mineral_db"
+    ],
+    "get_best_mineral_name": [
+      "self",
+      "structure"
+    ],
+    "get_aflow_matches": [
+      "self",
+      "structure"
+    ],
+    "get_fingerprint_matches": [
+      "self",
+      "structure",
+      "max_n_matches",
+      "match_n_sp",
+      "mineral_name_constraint"
+    ],
+    "_set_distance_matrix": [
+      "self",
+      "structure"
+    ]
+  },
+  "_get_row_data": [
+    "row"
+  ],
+  "ReducedAflowPrototypeMatcher": {
+    "__init__": [
+      "self",
+      "initial_ltol",
+      "initial_stol",
+      "initial_angle_tol",
+      "mineral_db"
+    ],
+    "_match_prototype": [
+      "self",
+      "structure_matcher",
+      "s"
+    ]
+  },
+  "SiteAnalyzer": {
+    "__init__": [
+      "self",
+      "bonded_structure",
+      "use_symmetry_equivalent_sites",
+      "symprec",
+      "minimum_geometry_op",
+      "use_iupac_formula"
+    ],
+    "get_site_geometry": [
+      "self",
+      "site_index"
+    ],
+    "get_nearest_neighbors": [
+      "self",
+      "site_index",
+      "inc_inequivalent_site_index"
+    ],
+    "get_next_nearest_neighbors": [
+      "self",
+      "site_index",
+      "inc_inequivalent_site_index"
+    ],
+    "get_site_summary": [
+      "self",
+      "site_index"
+    ],
+    "get_bond_distance_summary": [
+      "self",
+      "site_index"
+    ],
+    "get_connectivity_angle_summary": [
+      "self",
+      "site_index"
+    ],
+    "get_nnn_distance_summary": [
+      "self",
+      "site_index"
+    ],
+    "get_all_site_summaries": [
+      "self"
+    ],
+    "get_all_bond_distance_summaries": [
+      "self"
+    ],
+    "get_all_connectivity_angle_summaries": [
+      "self"
+    ],
+    "get_all_nnn_distance_summaries": [
+      "self"
+    ],
+    "get_inequivalent_site_indices": [
+      "self",
+      "site_indices"
+    ],
+    "_calculate_equivalent_sites": [
+      "self",
+      "likeness_tol",
+      "bond_dist_tol",
+      "bond_angle_tol"
+    ],
+    "_calculate_symmetry_labels": [
+      "self",
+      "sym_equivalent_atoms"
+    ],
+    "_get_poly_formula": [
+      "self",
+      "geometry",
+      "nn_sites",
+      "nnn_sites"
+    ]
+  },
+  "geometries_match": [
+    "geometry_a",
+    "geometry_b",
+    "likeness_tol"
+  ],
+  "nn_summaries_match": [
+    "nn_sites_a",
+    "nn_sites_b",
+    "bond_dist_tol",
+    "match_bond_dists"
+  ],
+  "nnn_summaries_match": [
+    "nnn_sites_a",
+    "nnn_sites_b",
+    "likeness_tol",
+    "bond_angle_tol",
+    "match_bond_angles"
+  ],
+  "MoleculeNamer": {
+    "name_sources": [],
+    "__init__": [
+      "self",
+      "use_online_pubchem",
+      "name_preference"
+    ],
+    "get_name_from_molecule_graph": [
+      "self",
+      "molecule_graph"
+    ],
+    "get_name_from_pubchem": [
+      "self",
+      "smiles"
+    ],
+    "molecule_graph_to_smiles": [
+      "molecule_graph"
+    ],
+    "_process_match": [
+      "self",
+      "smiles",
+      "match"
+    ]
+  },
+  "get_structure_inequiv_components": [
+    "components",
+    "use_structure_graph",
+    "fingerprint_tol"
+  ],
+  "components_are_isomorphic": [
+    "component_a",
+    "component_b",
+    "use_weights"
+  ],
+  "get_sym_inequiv_components": [
+    "components",
+    "spg_analyzer"
+  ],
+  "get_formula_inequiv_components": [
+    "components",
+    "use_iupac_formula",
+    "use_common_formulas"
+  ],
+  "filter_molecular_components": [
+    "components"
+  ],
+  "get_reconstructed_structure": [
+    "components",
+    "simplify_molecules"
+  ],
+  "get_component_formula_and_factor": [
+    "component",
+    "use_iupac_formula",
+    "use_common_formulas"
+  ],
+  "get_component_formula": [
+    "component",
+    "use_iupac_formula",
+    "use_common_formulas"
+  ],
+  "get_formula_from_components": [
+    "components",
+    "molecules_first",
+    "use_iupac_formula",
+    "use_common_formulas"
+  ],
+  "components_are_vdw_heterostructure": [
+    "components"
+  ],
+  "get_vdw_heterostructure_information": [
+    "components",
+    "use_iupac_formula",
+    "use_common_formulas",
+    "inc_ordered_components",
+    "inc_intercalants"
+  ],
+  "StructureCondenser": {
+    "__init__": [
+      "self",
+      "use_conventional_cell",
+      "near_neighbors",
+      "mineral_matcher",
+      "use_symmetry_equivalent_sites",
+      "symprec",
+      "simplify_molecules",
+      "use_iupac_formula",
+      "use_common_formulas"
+    ],
+    "condense_structure": [
+      "self",
+      "structure"
+    ],
+    "_condense_mineral": [
+      "self",
+      "structure",
+      "components"
+    ],
+    "_condense_formula": [
+      "self",
+      "structure",
+      "components"
+    ],
+    "_condense_components": [
+      "self",
+      "components",
+      "spacegroup_analyzer",
+      "site_analyzer"
+    ]
+  },
+  "get_site_fingerprints": [
+    "structure",
+    "as_dict",
+    "preset"
+  ],
+  "get_structure_fingerprint": [
+    "structure",
+    "preset",
+    "stats",
+    "prototype_match"
+  ],
+  "get_fingerprint_distance": [
+    "structure_a",
+    "structure_b"
+  ],
+  "_geometries": [],
+  "_dimensionalities": [],
+  "_dimensionality_sets": [],
+  "_molecules": [],
+  "_connectivities": [],
+  "_cns": [],
+  "RobocrysFeaturizer": {
+    "__init__": [
+      "self",
+      "condenser_kwargs",
+      "distorted_tol"
+    ],
+    "featurize": [
+      "self",
+      "s"
+    ],
+    "feature_labels": [
+      "self"
+    ],
+    "citations": [
+      "self"
+    ],
+    "implementors": [
+      "self"
+    ]
+  },
+  "FeaturizerAdapter": {
+    "__init__": [
+      "self",
+      "condensed_structure",
+      "distorted_tol"
+    ],
+    "component_dimensionalities": [
+      "self"
+    ],
+    "contains_named_molecule": [
+      "self"
+    ],
+    "contains_polyhedra": [
+      "self"
+    ],
+    "is_intercalated": [
+      "self"
+    ],
+    "is_interpenetrated": [
+      "self"
+    ],
+    "contains_corner_sharing_polyhedra": [
+      "self"
+    ],
+    "contains_edge_sharing_polyhedra": [
+      "self"
+    ],
+    "contains_face_sharing_polyhedra": [
+      "self"
+    ],
+    "frac_sites_polyhedra": [
+      "self"
+    ],
+    "average_corner_sharing_octahedral_tilt_angle": [
+      "self"
+    ],
+    "average_coordination_number": [
+      "self"
+    ],
+    "average_cation_coordination_number": [
+      "self"
+    ],
+    "average_anion_coordination_number": [
+      "self"
+    ],
+    "contains_molecule": [
+      "self",
+      "molecule_name"
+    ],
+    "is_dimensionality": [
+      "self",
+      "dimensionalities"
+    ],
+    "contains_geometry_type": [
+      "self",
+      "geometry",
+      "distorted"
+    ],
+    "contains_connected_geometry": [
+      "self",
+      "connectivity",
+      "geometry"
+    ],
+    "frac_site_geometry": [
+      "self",
+      "geometry"
+    ],
+    "frac_sites_n_coordinate": [
+      "self",
+      "num_neighbors"
+    ],
+    "all_bond_lengths": [
+      "self"
+    ]
+  },
+  "_get_common_formulas": [],
+  "get_el": [
+    "obj"
+  ],
+  "get_formatted_el": [
+    "element",
+    "sym_label",
+    "use_oxi_state",
+    "use_sym_label",
+    "fmt"
+  ],
+  "superscript_number": [
+    "string"
+  ],
+  "unicodeify_spacegroup": [
+    "spacegroup_symbol"
+  ],
+  "htmlify_spacegroup": [
+    "spacegroup_symbol"
+  ],
+  "defaultdict_to_dict": [
+    "dictionary"
+  ],
+  "load_condensed_structure_json": [
+    "filename"
+  ],
+  "TEST_DIR": [],
+  "TEST_FILES_DIR": [],
+  "RobocrysTest": {
+    "_structures_dir": [],
+    "_condensed_structures_dir": [],
+    "_test_structures": [],
+    "_test_condensed_structures": [],
+    "get_structure": [
+      "cls",
+      "name"
+    ],
+    "get_condensed_structure": [
+      "cls",
+      "name"
+    ]
+  }
+}

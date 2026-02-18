@@ -1,0 +1,2624 @@
+{
+  "package_version": [],
+  "package_version_path": [],
+  "this_directory": [],
+  "Classification": [],
+  "SECONDS_PER_DAY": [],
+  "assert_valid_sha256": [
+    "sha256"
+  ],
+  "SubmissionException": {},
+  "SubmissionClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "filestore",
+      "config",
+      "redis",
+      "identify"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "rescan": [
+      "self",
+      "submission",
+      "results",
+      "file_infos",
+      "file_tree",
+      "errors",
+      "rescan_services",
+      "to_ingest"
+    ],
+    "submit": [
+      "self",
+      "submission_obj",
+      "local_files",
+      "completed_queue",
+      "expiry",
+      "allow_description_overwrite"
+    ],
+    "_ready_file": [
+      "self",
+      "local_path",
+      "expiry",
+      "classification"
+    ],
+    "send_bundle_to_dispatch": [
+      "self",
+      "submission_obj",
+      "completed_queue"
+    ]
+  },
+  "CLASSIFICATION": [],
+  "InvalidSafehash": {},
+  "SafelistClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "config"
+    ],
+    "_preprocess_object": [
+      "self",
+      "data"
+    ],
+    "add_update": [
+      "self",
+      "safelist_object",
+      "user"
+    ],
+    "add_update_many": [
+      "self",
+      "list_of_safelist_objects"
+    ],
+    "exists": [
+      "self",
+      "qhash"
+    ],
+    "get_safelisted_tags": [
+      "self",
+      "tag_types"
+    ],
+    "get_safelisted_signatures": [
+      "self"
+    ],
+    "_merge_hashes": [
+      "new",
+      "old"
+    ]
+  },
+  "PAUSABLE_COMPONENTS": [],
+  "normalize_hashlist_item": [
+    "tag_type",
+    "tag_value"
+  ],
+  "CHUNK_SIZE": [],
+  "InvalidBadhash": {},
+  "BadlistClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "config"
+    ],
+    "_preprocess_object": [
+      "self",
+      "data"
+    ],
+    "add_update": [
+      "self",
+      "badlist_object",
+      "user"
+    ],
+    "add_update_many": [
+      "self",
+      "list_of_badlist_objects"
+    ],
+    "exists": [
+      "self",
+      "qhash"
+    ],
+    "exists_tags": [
+      "self",
+      "tag_map"
+    ],
+    "find_similar_tlsh": [
+      "self",
+      "tlsh"
+    ],
+    "find_similar_ssdeep": [
+      "self",
+      "ssdeep"
+    ],
+    "_merge_hashes": [
+      "new",
+      "old"
+    ]
+  },
+  "SHUTDOWN_SECONDS_LIMIT": [],
+  "HEARTBEAT_TIME_LIMIT": [],
+  "ServerBase": {
+    "__init__": [
+      "self",
+      "component_name",
+      "logger",
+      "shutdown_timeout",
+      "config"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "_exc_type",
+      "_exc_val",
+      "_exc_tb"
+    ],
+    "__stop": [
+      "self"
+    ],
+    "interrupt_handler": [
+      "self",
+      "signum",
+      "stack_frame"
+    ],
+    "raising_join": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "sleep": [
+      "self",
+      "timeout"
+    ],
+    "serve_forever": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "heartbeat": [
+      "self",
+      "timestamp"
+    ],
+    "sleep_with_heartbeat": [
+      "self",
+      "duration"
+    ]
+  },
+  "ServiceStage": {
+    "Off": [],
+    "Update": [],
+    "Running": [],
+    "Paused": []
+  },
+  "get_service_stage_hash": [
+    "redis"
+  ],
+  "CoreBase": {
+    "__init__": [
+      "self",
+      "component_name",
+      "logger",
+      "shutdown_timeout",
+      "config",
+      "datastore",
+      "redis",
+      "redis_persist"
+    ],
+    "_get_services": [
+      "self"
+    ],
+    "_handle_status_change": [
+      "self",
+      "status"
+    ],
+    "get_service_stage": [
+      "self",
+      "service_name",
+      "default"
+    ]
+  },
+  "ThreadedCoreBase": {
+    "__init__": [
+      "self",
+      "component_name",
+      "logger",
+      "shutdown_timeout",
+      "config",
+      "datastore",
+      "redis",
+      "redis_persist"
+    ],
+    "stop": [
+      "self"
+    ],
+    "sleep": [
+      "self",
+      "timeout"
+    ],
+    "log_crashes": [
+      "self",
+      "fn"
+    ],
+    "maintain_threads": [
+      "self",
+      "expected_threads"
+    ]
+  },
+  "DEFAULT_DELIMITER": [],
+  "SignatureClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "config",
+      "classification_replace_map"
+    ],
+    "_get_signature_delimiters": [
+      "self"
+    ],
+    "_get_signature_delimiter": [
+      "self",
+      "update_config"
+    ],
+    "_update_classification": [
+      "self",
+      "signature"
+    ],
+    "add_update": [
+      "self",
+      "data",
+      "dedup_name"
+    ],
+    "add_update_many": [
+      "self",
+      "source",
+      "sig_type",
+      "data",
+      "dedup_name"
+    ],
+    "change_status": [
+      "self",
+      "signature_id",
+      "status",
+      "user"
+    ],
+    "download": [
+      "self",
+      "query",
+      "access"
+    ],
+    "update_available": [
+      "self",
+      "since",
+      "sig_type"
+    ]
+  },
+  "TaskingClientException": {},
+  "ServiceMissingException": {},
+  "TaskingClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "filestore",
+      "config",
+      "redis",
+      "redis_persist",
+      "identify",
+      "register_only"
+    ],
+    "reload_heuristics": [
+      "self",
+      "data"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "upload_file": [
+      "self",
+      "file_path",
+      "classification",
+      "ttl",
+      "is_section_image",
+      "is_supplementary",
+      "expected_sha256"
+    ],
+    "register_service": [
+      "self",
+      "service_data",
+      "log_prefix"
+    ],
+    "get_task": [
+      "self",
+      "client_id",
+      "service_name",
+      "service_version",
+      "service_tool_version",
+      "metric_factory",
+      "status_expiry",
+      "timeout"
+    ],
+    "task_finished": [
+      "self",
+      "service_task",
+      "client_id",
+      "service_name",
+      "metric_factory"
+    ],
+    "_handle_task_result": [
+      "self",
+      "exec_time",
+      "task",
+      "result",
+      "client_id",
+      "service_name",
+      "freshen",
+      "metric_factory"
+    ],
+    "_handle_task_error": [
+      "self",
+      "exec_time",
+      "task",
+      "error",
+      "client_id",
+      "service_name",
+      "metric_factory"
+    ]
+  },
+  "WorkflowManager": {
+    "__init__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "get_last_reporting_ts": [
+      "self",
+      "p_start_ts"
+    ],
+    "try_run": [
+      "self",
+      "run_once"
+    ]
+  },
+  "METRICS_QUEUE": [],
+  "NON_AGGREGATED": [],
+  "NON_AGGREGATED_COUNTERS": [],
+  "METRICSTORE_ROOT_CA_PATH": [],
+  "METRICSTORE_VERIFY_CERTS": [],
+  "cleanup_metrics": [
+    "input_dict"
+  ],
+  "StatisticsAggregator": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "_heuristics_stats": [
+      "self"
+    ],
+    "_signature_stats": [
+      "self"
+    ],
+    "_aggregated_statistics": [
+      "self"
+    ]
+  },
+  "MetricsServer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "_create_aggregated_metrics": [
+      "self"
+    ]
+  },
+  "HeartbeatManager": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "_call_interval": [
+      "self",
+      "name",
+      "method"
+    ],
+    "_fetch_shards": [
+      "self"
+    ],
+    "_fetch_retrohunt": [
+      "self"
+    ],
+    "_export_hearbeats": [
+      "self"
+    ]
+  },
+  "STATUS_QUEUE": [],
+  "get_working_and_idle": [
+    "redis",
+    "current_service"
+  ],
+  "HeartbeatFormatter": {
+    "__init__": [
+      "self",
+      "sender",
+      "log",
+      "config",
+      "redis"
+    ],
+    "_reload_expiry_queues": [
+      "self"
+    ],
+    "send_heartbeat": [
+      "self",
+      "m_type",
+      "m_name",
+      "m_data",
+      "instances"
+    ]
+  },
+  "ESMetricsServer": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_node_metrics": [
+      "self"
+    ],
+    "get_cluster_metrics": [
+      "self"
+    ],
+    "get_index_metrics": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "MAX_RETRY_BACKOFF": [],
+  "ilm_policy_exists": [
+    "es",
+    "name"
+  ],
+  "create_ilm_policy": [
+    "es",
+    "name",
+    "archive_config"
+  ],
+  "ensure_indexes": [
+    "log",
+    "es",
+    "config",
+    "indexes",
+    "datastream_enabled"
+  ],
+  "with_retries": [
+    "log",
+    "func"
+  ],
+  "SubmissionNotFound": {},
+  "Archiver": {
+    "__init__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "run_once": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "file_delete_worker": [
+    "logger",
+    "filestore_urls",
+    "file_batch",
+    "archive_filestore_urls"
+  ],
+  "ActionSignature": [],
+  "_file_delete_worker": [
+    "logger",
+    "delete_action",
+    "file_batch"
+  ],
+  "ExpiryManager": {
+    "__init__": [
+      "self",
+      "redis_persist",
+      "datastore",
+      "filestore",
+      "config",
+      "classification"
+    ],
+    "expiry_size": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "log_errors": [
+      "self",
+      "function"
+    ],
+    "filestore_delete": [
+      "self",
+      "file_batch",
+      "_"
+    ],
+    "cachestore_delete": [
+      "self",
+      "file_batch",
+      "_"
+    ],
+    "_finish_delete": [
+      "self",
+      "collection",
+      "task",
+      "expire_only"
+    ],
+    "_simple_delete": [
+      "self",
+      "collection",
+      "delete_query",
+      "number_to_delete"
+    ],
+    "_cleanup_canceled_submission": [
+      "self",
+      "sid"
+    ],
+    "_process_chunk": [
+      "self",
+      "collection",
+      "start",
+      "end",
+      "final_date",
+      "number_to_delete"
+    ],
+    "feed_expiry_jobs": [
+      "self",
+      "collection",
+      "start",
+      "jobs",
+      "pool"
+    ],
+    "_get_final_date": [
+      "self"
+    ],
+    "_get_next_chunk": [
+      "self",
+      "collection",
+      "start",
+      "final_date"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "clean_deleted_submissions": [
+      "self",
+      "pool"
+    ],
+    "run_collection": [
+      "self",
+      "pool",
+      "collection"
+    ]
+  },
+  "CACHE_LEN": [],
+  "CACHE_EXPIRY_RATE": [],
+  "action_queue_map": [],
+  "config": [],
+  "URI_ODM": [],
+  "DOMAIN_ODM": [],
+  "IP_ODM": [],
+  "SUMMARY_TYPE_MAP": [],
+  "AL_RESULT_KEYS": [],
+  "VERDICT_RANK_MAP": [],
+  "TAG_MAP": [],
+  "AV_TO_BEAVIOR": [],
+  "AlertMissingError": {},
+  "SubmissionNotFinalized": {},
+  "service_name_from_key": [
+    "key"
+  ],
+  "get_submission_record": [
+    "counter",
+    "datastore",
+    "sid"
+  ],
+  "get_summary": [
+    "datastore",
+    "srecord",
+    "user_classification",
+    "logger"
+  ],
+  "generate_alert_id": [
+    "logger",
+    "alert_data"
+  ],
+  "parse_submission_record": [
+    "counter",
+    "datastore",
+    "alert_data",
+    "logger",
+    "user_classification"
+  ],
+  "AL_FIELDS": [],
+  "create_or_update_alert": [
+    "datastore",
+    "logger",
+    "alert",
+    "counter"
+  ],
+  "save_alert": [
+    "datastore",
+    "counter",
+    "logger",
+    "alert"
+  ],
+  "get_alert_update_parts": [
+    "counter",
+    "datastore",
+    "alert_data",
+    "logger",
+    "user_classification"
+  ],
+  "process_alert_message": [
+    "counter",
+    "datastore",
+    "logger",
+    "alert_data"
+  ],
+  "ALERT_QUEUE_NAME": [],
+  "ALERT_RETRY_QUEUE_NAME": [],
+  "MAX_RETRIES": [],
+  "SUBMISSION_RETRY_SEC": [],
+  "Alerter": {
+    "__init__": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "run_once": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "CONFIG_PATH": [],
+  "INPUT_TYPES": [],
+  "ReplayBase": {
+    "__init__": [
+      "self",
+      "component_name"
+    ],
+    "stop": [
+      "self"
+    ],
+    "sleep": [
+      "self",
+      "timeout"
+    ],
+    "log_crashes": [
+      "self",
+      "fn"
+    ],
+    "maintain_threads": [
+      "self",
+      "expected_threads"
+    ]
+  },
+  "EMPTY_WAIT_TIME": [],
+  "REPLAY_REQUESTED": [],
+  "REPLAY_PENDING": [],
+  "REPLAY_DONE": [],
+  "ClientBase": {
+    "__init__": [
+      "self",
+      "log",
+      "lookback_time",
+      "alert_fqs",
+      "badlist_fqs",
+      "safelist_fqs",
+      "signature_fqs",
+      "submission_fqs",
+      "workflow_fqs"
+    ],
+    "_put_checkpoint": [
+      "self"
+    ],
+    "_get_checkpoint": [
+      "self"
+    ],
+    "_get_next_object_ids": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "fl",
+      "sort"
+    ],
+    "_get_next_alert_ids": [
+      "self",
+      "query",
+      "filter_queries"
+    ],
+    "_get_next_submission_ids": [
+      "self",
+      "query",
+      "filter_queries"
+    ],
+    "_set_bulk_object_pending": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "max_docs"
+    ],
+    "_set_bulk_alert_pending": [
+      "self",
+      "query",
+      "filter_queries",
+      "max_docs"
+    ],
+    "_set_bulk_submission_pending": [
+      "self",
+      "query",
+      "filter_queries",
+      "max_docs"
+    ],
+    "_stream_objects": [
+      "self",
+      "collection",
+      "query",
+      "fl",
+      "filter_queries"
+    ],
+    "_stream_alert_ids": [
+      "self",
+      "query"
+    ],
+    "_stream_submission_ids": [
+      "self",
+      "query"
+    ],
+    "create_al_bundle": [
+      "self",
+      "id",
+      "bundle_path",
+      "use_alert"
+    ],
+    "create_alert_bundle": [
+      "self",
+      "alert_id",
+      "bundle_path"
+    ],
+    "create_submission_bundle": [
+      "self",
+      "sid",
+      "bundle_path"
+    ],
+    "load_bundle": [
+      "self"
+    ],
+    "load_json": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "set_single_object_complete": [
+      "self",
+      "collection",
+      "id"
+    ],
+    "set_single_alert_complete": [
+      "self",
+      "alert_id"
+    ],
+    "set_single_submission_complete": [
+      "self",
+      "sid"
+    ],
+    "setup_alert_input_queue": [
+      "self",
+      "once"
+    ],
+    "setup_submission_input_queue": [
+      "self",
+      "once"
+    ],
+    "_setup_checkpoint_based_input_queue": [
+      "self",
+      "collection",
+      "id_field",
+      "date_field",
+      "once"
+    ],
+    "setup_badlist_input_queue": [
+      "self",
+      "once"
+    ],
+    "setup_safelist_input_queue": [
+      "self",
+      "once"
+    ],
+    "setup_signature_input_queue": [
+      "self",
+      "once"
+    ],
+    "setup_workflow_input_queue": [
+      "self",
+      "once"
+    ],
+    "_query": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "rows",
+      "track_total_hits"
+    ],
+    "query_alerts": [
+      "self",
+      "query",
+      "track_total_hits"
+    ],
+    "get_next_message": [
+      "self",
+      "message_type"
+    ],
+    "get_next_alert": [
+      "self"
+    ],
+    "get_next_badlist": [
+      "self"
+    ],
+    "get_next_file": [
+      "self"
+    ],
+    "get_next_safelist": [
+      "self"
+    ],
+    "get_next_signature": [
+      "self"
+    ],
+    "get_next_submission": [
+      "self"
+    ],
+    "get_next_workflow": [
+      "self"
+    ],
+    "put_message": [
+      "self",
+      "message_type",
+      "message"
+    ],
+    "put_alert": [
+      "self",
+      "alert"
+    ],
+    "put_badlist": [
+      "self",
+      "badlist"
+    ],
+    "put_file": [
+      "self",
+      "path"
+    ],
+    "put_safelist": [
+      "self",
+      "safelist"
+    ],
+    "put_submission": [
+      "self",
+      "submission"
+    ],
+    "put_workflow": [
+      "self",
+      "workflow"
+    ]
+  },
+  "APIClient": {
+    "__init__": [
+      "self",
+      "log",
+      "host",
+      "user",
+      "apikey",
+      "verify"
+    ],
+    "_put_checkpoint": [
+      "self",
+      "collection",
+      "checkpoint"
+    ],
+    "_get_checkpoint": [
+      "self",
+      "collection"
+    ],
+    "_get_next_object_ids": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "fl",
+      "sort"
+    ],
+    "_set_bulk_object_pending": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "max_docs"
+    ],
+    "_stream_objects": [
+      "self",
+      "collection",
+      "query",
+      "fl",
+      "filter_queries"
+    ],
+    "create_al_bundle": [
+      "self",
+      "id",
+      "bundle_path",
+      "use_alert"
+    ],
+    "load_bundle": [
+      "self",
+      "bundle_path",
+      "min_classification",
+      "rescan_services",
+      "exist_ok",
+      "reclassification"
+    ],
+    "load_json": [
+      "self",
+      "file_path",
+      "reclassification"
+    ],
+    "set_single_object_complete": [
+      "self",
+      "collection",
+      "id"
+    ],
+    "_query": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "rows",
+      "track_total_hits"
+    ],
+    "get_next_message": [
+      "self",
+      "message_type"
+    ],
+    "put_message": [
+      "self",
+      "message_type",
+      "message"
+    ]
+  },
+  "DirectClient": {
+    "__init__": [
+      "self",
+      "log"
+    ],
+    "_query": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "rows",
+      "track_total_hits"
+    ],
+    "_put_checkpoint": [
+      "self",
+      "collection",
+      "checkpoint"
+    ],
+    "_get_checkpoint": [
+      "self",
+      "collection"
+    ],
+    "_get_next_object_ids": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "fl",
+      "sort"
+    ],
+    "_set_bulk_object_pending": [
+      "self",
+      "collection",
+      "query",
+      "filter_queries",
+      "max_docs"
+    ],
+    "_stream_objects": [
+      "self",
+      "collection",
+      "query",
+      "fl",
+      "filter_queries"
+    ],
+    "create_al_bundle": [
+      "self",
+      "id",
+      "bundle_path",
+      "use_alert"
+    ],
+    "load_bundle": [
+      "self",
+      "bundle_path",
+      "min_classification",
+      "rescan_services",
+      "exist_ok",
+      "reclassification"
+    ],
+    "load_json": [
+      "self",
+      "file_path",
+      "reclassification"
+    ],
+    "set_single_object_complete": [
+      "self",
+      "collection",
+      "id"
+    ],
+    "get_next_message": [
+      "self",
+      "message_type"
+    ],
+    "put_message": [
+      "self",
+      "message_type",
+      "message"
+    ]
+  },
+  "ReplayLoaderWorker": {
+    "__init__": [
+      "self"
+    ],
+    "process_file": [
+      "self",
+      "once"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "ReplayLoader": {
+    "__init__": [
+      "self"
+    ],
+    "load_files": [
+      "self",
+      "once"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "REPLAY_BATCH_SIZE": [],
+  "ReplayCreatorWorker": {
+    "__init__": [
+      "self"
+    ],
+    "process_alert": [
+      "self",
+      "once"
+    ],
+    "process_submission": [
+      "self",
+      "once"
+    ],
+    "_process_json_exports": [
+      "self",
+      "collection",
+      "id_field",
+      "date_field",
+      "once"
+    ],
+    "process_badlist": [
+      "self",
+      "once"
+    ],
+    "process_safelist": [
+      "self",
+      "once"
+    ],
+    "process_signature": [
+      "self",
+      "once"
+    ],
+    "process_workflow": [
+      "self",
+      "once"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "ReplayCreator": {
+    "__init__": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "Row": [],
+  "Collection": {
+    "__init__": [
+      "self",
+      "period",
+      "ttl"
+    ],
+    "update": [
+      "self",
+      "service",
+      "host",
+      "busy_seconds",
+      "throughput"
+    ],
+    "read": [
+      "self",
+      "service"
+    ]
+  },
+  "APM_SPAN_TYPE": [],
+  "SERVICE_SYNC_INTERVAL": [],
+  "SCALE_INTERVAL": [],
+  "METRIC_SYNC_INTERVAL": [],
+  "CONTAINER_EVENTS_LOG_INTERVAL": [],
+  "HEARTBEAT_INTERVAL": [],
+  "MAX_CONTAINER_ALLOCATION": [],
+  "KUBERNETES_AL_CONFIG": [],
+  "HOSTNAME": [],
+  "RELEASE_NAME": [],
+  "NAMESPACE": [],
+  "CLASSIFICATION_HOST_PATH": [],
+  "DOCKER_CONFIGURATION_PATH": [],
+  "DOCKER_CONFIGURATION_VOLUME": [],
+  "SERVICE_API_HOST": [],
+  "SERVICE_API_KEY": [],
+  "INTERNAL_ENCRYPT": [],
+  "apm_span": [
+    "client",
+    "span_name"
+  ],
+  "Pool": {
+    "__init__": [
+      "self",
+      "size"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "finish": [
+      "self"
+    ],
+    "call": [
+      "self",
+      "fn"
+    ]
+  },
+  "ServiceProfile": {
+    "__init__": [
+      "self",
+      "name",
+      "container_config",
+      "config_blob",
+      "min_instances",
+      "max_instances",
+      "growth",
+      "shrink",
+      "backlog",
+      "queue",
+      "shutdown_seconds",
+      "dependency_blobs",
+      "privileged"
+    ],
+    "cpu": [
+      "self"
+    ],
+    "ram": [
+      "self"
+    ],
+    "instance_limit": [
+      "self"
+    ],
+    "max_instances": [
+      "self",
+      "value"
+    ],
+    "min_instances": [
+      "self",
+      "value"
+    ],
+    "update": [
+      "self",
+      "delta",
+      "instances",
+      "backlog",
+      "duty_cycle"
+    ],
+    "__deepcopy__": [
+      "self",
+      "memodict"
+    ]
+  },
+  "ScalerServer": {
+    "__init__": [
+      "self",
+      "config",
+      "datastore",
+      "redis",
+      "redis_persist"
+    ],
+    "log_crashes": [
+      "self",
+      "fn"
+    ],
+    "add_service": [
+      "self",
+      "profile"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_handle_service_change_event": [
+      "self",
+      "data"
+    ],
+    "sync_services": [
+      "self"
+    ],
+    "_sync_service": [
+      "self",
+      "service"
+    ],
+    "stop_service": [
+      "self",
+      "name",
+      "current_stage"
+    ],
+    "get_cpu_overallocation": [
+      "self"
+    ],
+    "get_memory_overallocation": [
+      "self"
+    ],
+    "update_scaling": [
+      "self"
+    ],
+    "get_cpu_info": [
+      "self",
+      "overallocation"
+    ],
+    "get_memory_info": [
+      "self",
+      "overallocation"
+    ],
+    "sync_metrics": [
+      "self"
+    ],
+    "_timeout_kill": [
+      "self",
+      "service",
+      "container"
+    ],
+    "process_timeouts": [
+      "self"
+    ],
+    "export_metrics": [
+      "self"
+    ],
+    "log_container_events": [
+      "self"
+    ]
+  },
+  "ServiceControlError": {
+    "__init__": [
+      "self",
+      "message",
+      "service_name"
+    ]
+  },
+  "ControllerInterface": {
+    "add_profile": [
+      "self",
+      "profile",
+      "scale"
+    ],
+    "memory_info": [
+      "self"
+    ],
+    "cpu_info": [
+      "self"
+    ],
+    "free_cpu": [
+      "self"
+    ],
+    "free_memory": [
+      "self"
+    ],
+    "get_target": [
+      "self",
+      "service_name"
+    ],
+    "get_targets": [
+      "self"
+    ],
+    "set_target": [
+      "self",
+      "service_name",
+      "target"
+    ],
+    "restart": [
+      "self",
+      "service"
+    ],
+    "get_running_container_names": [
+      "self"
+    ],
+    "new_events": [
+      "self"
+    ],
+    "stateful_container_key": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "change_key"
+    ],
+    "start_stateful_container": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "labels",
+      "change_key"
+    ],
+    "stop_containers": [
+      "self",
+      "labels"
+    ],
+    "prepare_network": [
+      "self",
+      "service_name",
+      "internet",
+      "dependency_internet"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "INHERITED_VARIABLES": [],
+  "NETWORK_REFRESH_INTERVAL": [],
+  "CHANGE_KEY_NAME": [],
+  "AL_CORE_NETWORK": [],
+  "COMPOSE_PROJECT": [],
+  "COPY_LABELS": [],
+  "SERVICE_LIVENESS_PERIOD": [],
+  "SERVICE_LIVENESS_TIMEOUT": [],
+  "DockerController": {
+    "__init__": [
+      "self",
+      "logger",
+      "prefix",
+      "labels",
+      "log_level",
+      "core_env"
+    ],
+    "find_service_server": [
+      "self"
+    ],
+    "_refresh_service_networks": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_flush_containers": [
+      "self"
+    ],
+    "add_profile": [
+      "self",
+      "profile",
+      "scale"
+    ],
+    "_connect_to_network": [
+      "self",
+      "container",
+      "network",
+      "aliases"
+    ],
+    "_start": [
+      "self",
+      "service_name"
+    ],
+    "_start_container": [
+      "self",
+      "service_name",
+      "name",
+      "labels",
+      "volumes",
+      "cfg",
+      "network",
+      "hostname",
+      "core_container"
+    ],
+    "_name_container": [
+      "self",
+      "service_name"
+    ],
+    "cpu_info": [
+      "self"
+    ],
+    "memory_info": [
+      "self"
+    ],
+    "get_target": [
+      "self",
+      "service_name"
+    ],
+    "get_targets": [
+      "self"
+    ],
+    "get_unavailable": [
+      "self"
+    ],
+    "set_target": [
+      "self",
+      "service_name",
+      "target"
+    ],
+    "stop_container": [
+      "self",
+      "service_name",
+      "container_id"
+    ],
+    "restart": [
+      "self",
+      "service"
+    ],
+    "get_running_container_names": [
+      "self"
+    ],
+    "stateful_container_key": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "change_key"
+    ],
+    "start_stateful_container": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "labels",
+      "change_key"
+    ],
+    "stop_containers": [
+      "self",
+      "labels"
+    ],
+    "_get_network": [
+      "self",
+      "service_name"
+    ],
+    "prepare_network": [
+      "self",
+      "service_name"
+    ],
+    "_pull_image": [
+      "self",
+      "service"
+    ]
+  },
+  "API_TIMEOUT": [],
+  "WATCH_TIMEOUT": [],
+  "WATCH_API_TIMEOUT": [],
+  "DEV_MODE": [],
+  "CONTAINER_RESTART_THRESHOLD": [],
+  "UNPRIVILEGED_SERVICE_ACCOUNT_NAME": [],
+  "PRIVILEGED_SERVICE_ACCOUNT_NAME": [],
+  "CERTIFICATE_VALIDITY_PERIOD": [],
+  "RESTRICTED_POD_SECURITY_CONTEXT": [],
+  "AL_ROOT_CA": [],
+  "AL_ROOT_CA_PK": [],
+  "_exponents": [],
+  "CacheDict": {
+    "__init__": [
+      "self"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ]
+  },
+  "TypelessWatch": {
+    "get_return_type": [
+      "self",
+      "func"
+    ]
+  },
+  "median": [
+    "values"
+  ],
+  "mean": [
+    "values"
+  ],
+  "selector_to_list_filters": [
+    "selector"
+  ],
+  "selector_to_node_affinity": [
+    "selector"
+  ],
+  "get_resources": [
+    "container"
+  ],
+  "create_docker_auth_config": [
+    "image",
+    "username",
+    "password"
+  ],
+  "parse_memory": [
+    "string"
+  ],
+  "parse_cpu": [
+    "string"
+  ],
+  "KubernetesController": {
+    "__init__": [
+      "self",
+      "logger",
+      "namespace",
+      "prefix",
+      "priority",
+      "dependency_priority",
+      "cpu_reservation",
+      "linux_node_selector",
+      "labels",
+      "log_level",
+      "core_env",
+      "cluster_pod_list",
+      "enable_pod_security",
+      "default_service_tolerations",
+      "priv_labels"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_deployment_name": [
+      "self",
+      "service_name"
+    ],
+    "_dependency_name": [
+      "self",
+      "service_name",
+      "container_name"
+    ],
+    "add_config_mount": [
+      "self",
+      "name",
+      "config_map",
+      "key",
+      "target_path",
+      "read_only",
+      "core"
+    ],
+    "add_secret_mount": [
+      "self",
+      "name",
+      "secret_name",
+      "target_path",
+      "sub_path",
+      "read_only",
+      "core"
+    ],
+    "add_volume_mount": [
+      "self",
+      "name",
+      "target_path",
+      "read_only",
+      "core"
+    ],
+    "add_profile": [
+      "self",
+      "profile",
+      "scale"
+    ],
+    "_loop_forever": [
+      "self",
+      "function"
+    ],
+    "_monitor_node_pool": [
+      "self"
+    ],
+    "_monitor_pods": [
+      "self"
+    ],
+    "_monitor_quotas": [
+      "self"
+    ],
+    "_monitor_deployments": [
+      "self"
+    ],
+    "_get_pod_used_namespace_cpu": [
+      "self"
+    ],
+    "_get_pod_used_cpu": [
+      "self"
+    ],
+    "cpu_info": [
+      "self"
+    ],
+    "_get_pod_used_namespace_ram": [
+      "self"
+    ],
+    "_get_pod_used_ram": [
+      "self"
+    ],
+    "memory_info": [
+      "self"
+    ],
+    "_create_containers": [
+      "self",
+      "service_name",
+      "deployment_name",
+      "container_config",
+      "mounts",
+      "security_context",
+      "core_container"
+    ],
+    "_create_deployment": [
+      "self",
+      "service_name",
+      "deployment_name",
+      "docker_config",
+      "shutdown_seconds",
+      "scale",
+      "labels",
+      "volumes",
+      "mounts",
+      "core_mounts",
+      "change_key",
+      "high_priority",
+      "deployment_strategy",
+      "security_context"
+    ],
+    "get_target": [
+      "self",
+      "service_name"
+    ],
+    "get_targets": [
+      "self"
+    ],
+    "get_unavailable": [
+      "self"
+    ],
+    "set_target": [
+      "self",
+      "service_name",
+      "target"
+    ],
+    "stop_container": [
+      "self",
+      "service_name",
+      "container_id"
+    ],
+    "restart": [
+      "self",
+      "service"
+    ],
+    "get_running_container_names": [
+      "self"
+    ],
+    "new_events": [
+      "self"
+    ],
+    "stateful_container_key": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "change_key"
+    ],
+    "_get_volumes_mounts_strategy": [
+      "self",
+      "deployment_name",
+      "container_name",
+      "spec"
+    ],
+    "start_stateful_container": [
+      "self",
+      "service_name",
+      "container_name",
+      "spec",
+      "labels",
+      "change_key"
+    ],
+    "_ensure_pvc": [
+      "self",
+      "name",
+      "volume_spec",
+      "deployment_name"
+    ],
+    "stop_containers": [
+      "self",
+      "labels",
+      "fields",
+      "exact_label_match"
+    ],
+    "prepare_network": [
+      "self",
+      "service_name",
+      "internet",
+      "dependency_internet"
+    ],
+    "update_config_map": [
+      "self",
+      "data",
+      "name"
+    ]
+  },
+  "UPDATE_CHECK_INTERVAL": [],
+  "CONTAINER_CHECK_INTERVAL": [],
+  "AL_REGISTRATION_NETWORK": [],
+  "CONFIGURATION_HOST_PATH": [],
+  "CONFIGURATION_CONFIGMAP": [],
+  "RESTRICTED_POD_SECUTITY_CONTEXT": [],
+  "DockerUpdateInterface": {
+    "__init__": [
+      "self",
+      "logger",
+      "log_level"
+    ],
+    "external_network": [
+      "self"
+    ],
+    "launch": [
+      "self",
+      "name",
+      "docker_config",
+      "mounts",
+      "env",
+      "blocking"
+    ],
+    "cleanup_stale": [
+      "self"
+    ],
+    "restart": [
+      "self",
+      "service_name"
+    ]
+  },
+  "KubernetesUpdateInterface": {
+    "__init__": [
+      "self",
+      "logger",
+      "prefix",
+      "namespace",
+      "priority_class",
+      "extra_labels",
+      "linux_node_selector",
+      "log_level",
+      "default_service_tolerations",
+      "enable_pod_security"
+    ],
+    "launch": [
+      "self",
+      "name",
+      "docker_config",
+      "mounts",
+      "env",
+      "blocking"
+    ],
+    "cleanup_stale": [
+      "self"
+    ],
+    "restart": [
+      "self",
+      "service_name"
+    ]
+  },
+  "ServiceUpdater": {
+    "__init__": [
+      "self",
+      "redis_persist",
+      "redis",
+      "logger",
+      "datastore"
+    ],
+    "_handle_service_change_event": [
+      "self",
+      "data"
+    ],
+    "container_installs": [
+      "self"
+    ],
+    "container_updates": [
+      "self"
+    ],
+    "container_versions": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ]
+  },
+  "DEFAULT_DOCKER_REGISTRY": [],
+  "ContainerRegistry": {
+    "_get_proprietary_registry_tags": [
+      "self",
+      "server",
+      "image_name",
+      "auth",
+      "verify",
+      "proxies",
+      "token_server"
+    ],
+    "_perform_request": [
+      "self",
+      "url",
+      "headers",
+      "verify",
+      "proxies"
+    ]
+  },
+  "DockerRegistry": {
+    "_get_proprietary_registry_tags": [
+      "self",
+      "server",
+      "image_name",
+      "auth",
+      "verify",
+      "proxies",
+      "token_server"
+    ]
+  },
+  "AzureContainerRegistry": {
+    "_get_proprietary_registry_tags": [
+      "self",
+      "server",
+      "image_name",
+      "auth",
+      "verify",
+      "proxies",
+      "token_server"
+    ]
+  },
+  "GitHubContainerRegistry": {
+    "_get_proprietary_registry_tags": [
+      "self",
+      "server",
+      "image_name",
+      "auth",
+      "verify",
+      "proxies",
+      "token_server"
+    ]
+  },
+  "HarborRegistry": {
+    "_get_proprietary_registry_tags": [
+      "self",
+      "server",
+      "image_name",
+      "auth",
+      "verify",
+      "proxies",
+      "token_server"
+    ]
+  },
+  "REGISTRY_TYPE_MAPPING": [],
+  "get_registry_config": [
+    "docker_config",
+    "system_config"
+  ],
+  "get_latest_tag_for_service": [
+    "service_config",
+    "system_config",
+    "logger",
+    "prefix"
+  ],
+  "_get_dockerhub_tags": [
+    "image_name",
+    "update_channel",
+    "prefix",
+    "proxies",
+    "docker_registry",
+    "logger"
+  ],
+  "logger": [],
+  "stop_event": [],
+  "sigterm_handler": [
+    "_signum",
+    "_frame"
+  ],
+  "get_default_service_list": [
+    "srv_list",
+    "default_selection"
+  ],
+  "simplify_services": [
+    "services"
+  ],
+  "simplify_service_spec": [
+    "service_spec"
+  ],
+  "get_default_service_spec": [
+    "srv_list",
+    "user_default_values"
+  ],
+  "EmptyMetaException": {},
+  "NotJSONException": {},
+  "InvalidMessageException": {},
+  "PROFILE_CACHE_TIME": [],
+  "timed": [
+    "name",
+    "client"
+  ],
+  "FileProcessor": {
+    "last_stream_id_update": [],
+    "stream_id_lock": [],
+    "profile_lock": [],
+    "profile_check": [],
+    "settings_check": [],
+    "total_rounds": [],
+    "__init__": [
+      "self",
+      "worker_id",
+      "counter",
+      "redis",
+      "persistent_redis",
+      "config",
+      "safelist",
+      "department_map",
+      "stream_map",
+      "datastore",
+      "identifier",
+      "apm_client"
+    ],
+    "get_user": [
+      "self"
+    ],
+    "get_user_settings": [
+      "self"
+    ],
+    "prepare_settings": [
+      "self"
+    ],
+    "timed": [
+      "self",
+      "name"
+    ],
+    "get_stream": [
+      "self",
+      "stream_id"
+    ],
+    "client_info": [
+      "self",
+      "stream_id"
+    ],
+    "is_safelisted": [
+      "self",
+      "msg"
+    ],
+    "source_file_path": [
+      "self",
+      "sha256"
+    ],
+    "ingest": [
+      "self",
+      "msg",
+      "meta_path",
+      "temp_file",
+      "stream_classification"
+    ],
+    "process_file": [
+      "self",
+      "meta_path"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "main": [],
+  "run": [
+    "config",
+    "redis",
+    "persistent_redis"
+  ],
+  "MAX_QUEUE_LENGTH": [],
+  "VACUUM_BUFFER_NAME": [],
+  "heartbeat": [
+    "config"
+  ],
+  "_safelist": [],
+  "_operators": [],
+  "_transform": [
+    "condition"
+  ],
+  "_matches": [
+    "data",
+    "sigs"
+  ],
+  "_match": [
+    "cache",
+    "data",
+    "sig"
+  ],
+  "_call": [
+    "cache",
+    "data",
+    "func",
+    "key"
+  ],
+  "VacuumSafelist": {
+    "__init__": [
+      "self",
+      "data"
+    ],
+    "drop": [
+      "self",
+      "data"
+    ],
+    "optimize": [
+      "signatures"
+    ]
+  },
+  "Stream": [],
+  "StreamMap": {
+    "UPDATE_INTERVAL": [],
+    "load": [
+      "url",
+      "init"
+    ],
+    "__init__": [
+      "self",
+      "url",
+      "init"
+    ],
+    "_load_stream_map": [
+      "self"
+    ],
+    "_refresh_stream_map": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "stream_id"
+    ]
+  },
+  "DepartmentMap": {
+    "UPDATE_INTERVAL": [],
+    "load": [
+      "url",
+      "init"
+    ],
+    "__init__": [
+      "self",
+      "url",
+      "init"
+    ],
+    "_load_department_map": [
+      "self"
+    ],
+    "_refresh_department_map": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "ip"
+    ]
+  },
+  "SKIP_SERVICE_SETUP": [],
+  "Scheduler": {
+    "__init__": [
+      "self",
+      "datastore",
+      "config",
+      "redis"
+    ],
+    "build_schedule": [
+      "self",
+      "submission",
+      "file_type",
+      "file_depth",
+      "runtime_excluded",
+      "submitter_c12n"
+    ],
+    "expand_categories": [
+      "self",
+      "services"
+    ],
+    "categories": [
+      "self"
+    ],
+    "get_accessible_services": [
+      "self",
+      "user_c12n"
+    ],
+    "stage_index": [
+      "self",
+      "stage"
+    ],
+    "_get_services": [
+      "self"
+    ]
+  },
+  "MAX_CANCEL_RESPONSE_WAIT": [],
+  "weak_lru": [
+    "maxsize",
+    "typed"
+  ],
+  "RetryRequestWork": {},
+  "DispatchClient": {
+    "__init__": [
+      "self",
+      "datastore",
+      "redis",
+      "redis_persist",
+      "logger"
+    ],
+    "_get_queue_from_cache": [
+      "self",
+      "name"
+    ],
+    "_get_services": [
+      "self"
+    ],
+    "is_dispatcher": [
+      "self",
+      "dispatcher_id"
+    ],
+    "dispatch_bundle": [
+      "self",
+      "submission",
+      "results",
+      "file_infos",
+      "file_tree",
+      "errors",
+      "completed_queue"
+    ],
+    "dispatch_submission": [
+      "self",
+      "submission",
+      "completed_queue"
+    ],
+    "cancel_submission": [
+      "self",
+      "sid"
+    ],
+    "queued_submissions": [
+      "self"
+    ],
+    "outstanding_services": [
+      "self",
+      "sid"
+    ],
+    "request_work": [
+      "self",
+      "worker_id",
+      "service_name",
+      "service_version",
+      "timeout",
+      "blocking",
+      "low_priority"
+    ],
+    "_request_work": [
+      "self",
+      "worker_id",
+      "service_name",
+      "service_version",
+      "timeout",
+      "blocking",
+      "low_priority"
+    ],
+    "service_finished": [
+      "self",
+      "sid",
+      "result_key",
+      "result",
+      "temporary_data",
+      "version"
+    ],
+    "service_failed": [
+      "self",
+      "sid",
+      "error_key",
+      "error"
+    ],
+    "setup_watch_queue": [
+      "self",
+      "sid"
+    ],
+    "_get_watcher_list": [
+      "self",
+      "sid"
+    ]
+  },
+  "AL_SHUTDOWN_GRACE": [],
+  "AL_SHUTDOWN_QUIT": [],
+  "FINALIZING_WINDOW": [],
+  "RESULT_BATCH_SIZE": [],
+  "ERROR_BATCH_SIZE": [],
+  "DAY_IN_SECONDS": [],
+  "KeyType": {
+    "OVERWRITE": [],
+    "UNION": []
+  },
+  "Action": {
+    "start": [],
+    "result": [],
+    "dispatch_file": [],
+    "service_timeout": [],
+    "check_submission": [],
+    "bad_sid": []
+  },
+  "DispatchAction": {},
+  "DISPATCH_TASK_ASSIGNMENT": [],
+  "TASK_ASSIGNMENT_PATTERN": [],
+  "DISPATCH_START_EVENTS": [],
+  "DISPATCH_RESULT_QUEUE": [],
+  "DISPATCH_COMMAND_QUEUE": [],
+  "DISPATCH_DIRECTORY": [],
+  "DISPATCH_DIRECTORY_FINALIZE": [],
+  "BAD_SID_HASH": [],
+  "QUEUE_EXPIRY": [],
+  "SERVICE_VERSION_EXPIRY_TIME": [],
+  "GUARD_TIMEOUT": [],
+  "GLOBAL_TASK_CHECK_INTERVAL": [],
+  "TIMEOUT_EXTRA_TIME": [],
+  "TIMEOUT_TEST_INTERVAL": [],
+  "MAX_RESULT_BUFFER": [],
+  "RESULT_THREADS": [],
+  "FINALIZE_THREADS": [],
+  "SUBMISSION_TOTAL_TIMEOUT": [],
+  "Dispatcher": {
+    "__init__": [
+      "self",
+      "datastore",
+      "redis",
+      "redis_persist",
+      "logger",
+      "config",
+      "counter_name"
+    ],
+    "stop": [
+      "self"
+    ],
+    "try_run": [
+      "self"
+    ],
+    "timeout_backstop": [
+      "self"
+    ]
+  },
+  "COMPLETE_QUEUE_NAME": [],
+  "INGEST_QUEUE_NAME": [],
+  "drop_chance": [
+    "length",
+    "maximum"
+  ],
+  "_dup_prefix": [],
+  "_notification_queue_prefix": [],
+  "_max_retries": [],
+  "_retry_delay": [],
+  "_max_time": [],
+  "HOUR_IN_SECONDS": [],
+  "COMPLETE_THREADS": [],
+  "INGEST_THREADS": [],
+  "SUBMIT_THREADS": [],
+  "must_drop": [
+    "length",
+    "maximum"
+  ],
+  "IngestTask": {
+    "file_size": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "sha256": [
+      "self"
+    ],
+    "retries": [],
+    "failure": [],
+    "score": [],
+    "extended_scan": [],
+    "ingest_id": [],
+    "ingest_time": [],
+    "notify_time": [],
+    "to_ingest": []
+  },
+  "mock_time": [],
+  "test_collection": [],
+  "test_default_bucket_rates": [],
+  "client": [
+    "datastore_connection"
+  ],
+  "test_add_update_signature": [
+    "client"
+  ],
+  "test_add_update_signature_many": [
+    "client"
+  ],
+  "test_download_signatures": [
+    "client"
+  ],
+  "test_update_available": [
+    "client"
+  ],
+  "test_update_classification": [
+    "client"
+  ],
+  "add_hash_file": [],
+  "add_error_hash": [],
+  "update_hash": [],
+  "update_conflict_hash": [],
+  "source_hash": [],
+  "NSRL_SOURCE": [],
+  "NSRL2_SOURCE": [],
+  "ADMIN_SOURCE": [],
+  "USER_SOURCE": [],
+  "test_safelist_add_file": [
+    "client"
+  ],
+  "test_safelist_add_tag": [
+    "client"
+  ],
+  "test_safelist_add_signature": [
+    "client"
+  ],
+  "test_safelist_add_invalid": [
+    "client"
+  ],
+  "test_safelist_update": [
+    "client"
+  ],
+  "test_safelist_update_conflict": [
+    "client"
+  ],
+  "test_safelist_tag_normalization": [
+    "client"
+  ],
+  "manager": [
+    "datastore_connection"
+  ],
+  "test_workflow": [
+    "manager",
+    "datastore_connection"
+  ],
+  "test_register_service": [
+    "datastore_connection"
+  ],
+  "test_service_update": [
+    "datastore_connection"
+  ],
+  "NUM_ALERTS": [],
+  "NUM_BADLIST_ITEMS": [],
+  "NUM_SAFELIST_ITEMS": [],
+  "NUM_SIGNATURES": [],
+  "NUM_SUBMISSIONS": [],
+  "NUM_WORKFLOWS": [],
+  "all_alerts": [],
+  "all_submissions": [],
+  "data_collections": [],
+  "DATA_COLLECTION_NAMES": [],
+  "fs": [
+    "config"
+  ],
+  "recursive_extend": [
+    "d",
+    "u"
+  ],
+  "datastore": [
+    "request",
+    "datastore_connection",
+    "fs"
+  ],
+  "creator": [],
+  "creator_worker": [],
+  "loader": [],
+  "loader_worker": [],
+  "test_replay_single_alert": [
+    "config",
+    "datastore",
+    "creator",
+    "creator_worker",
+    "loader",
+    "loader_worker"
+  ],
+  "test_replay_single_submission": [
+    "config",
+    "datastore",
+    "creator",
+    "creator_worker",
+    "loader",
+    "loader_worker"
+  ],
+  "test_replay_single_data_collection": [
+    "datastore",
+    "creator",
+    "creator_worker",
+    "loader",
+    "loader_worker",
+    "collection"
+  ],
+  "test_create_single_alert": [
+    "config",
+    "datastore"
+  ],
+  "test_update_single_alert": [
+    "config",
+    "datastore",
+    "delete_original"
+  ],
+  "test_update_expired_alert": [
+    "config",
+    "datastore"
+  ],
+  "test_crawler": [
+    "config",
+    "redis_connection"
+  ],
+  "test_worker": [
+    "config",
+    "redis_connection"
+  ],
+  "MAX_OBJECTS": [],
+  "MIN_OBJECTS": [],
+  "expiry_collections_len": [],
+  "archive_collections_len": [],
+  "purge_data": [
+    "datastore_connection"
+  ],
+  "ds_expiry": [
+    "request",
+    "datastore_connection"
+  ],
+  "FakeCounter": {
+    "__init__": [
+      "self"
+    ],
+    "increment": [
+      "self",
+      "name",
+      "increment_by"
+    ],
+    "get": [
+      "self",
+      "name"
+    ]
+  },
+  "test_expire_all": [
+    "config",
+    "ds_expiry",
+    "filestore"
+  ],
+  "BAD_SOURCE": [],
+  "BAD2_SOURCE": [],
+  "test_badlist_add_file": [
+    "client"
+  ],
+  "test_badlist_add_tag": [
+    "client"
+  ],
+  "test_badlist_add_invalid": [
+    "client"
+  ],
+  "test_badlist_update": [
+    "client"
+  ],
+  "test_badlist_update_conflict": [
+    "client"
+  ],
+  "test_badlist_tag_normalization": [
+    "client"
+  ],
+  "redis": [
+    "redis_connection"
+  ],
+  "dummy_service": [
+    "name",
+    "stage",
+    "category",
+    "accepts",
+    "rejects",
+    "docid",
+    "extra_data",
+    "monitored_keys"
+  ],
+  "FakeDatastore": {
+    "__init__": [
+      "self"
+    ],
+    "stream_search": [
+      "self"
+    ],
+    "list_all_services": [
+      "self",
+      "full"
+    ]
+  },
+  "submission": [
+    "selected",
+    "excluded"
+  ],
+  "scheduler": [
+    "redis"
+  ],
+  "test_schedule_simple": [
+    "scheduler"
+  ],
+  "test_schedule_no_excludes": [
+    "scheduler"
+  ],
+  "test_schedule_all_defaults_word": [
+    "scheduler"
+  ],
+  "test_schedule_all_defaults_zip": [
+    "scheduler"
+  ],
+  "test_schedule_service_safelist": [
+    "scheduler"
+  ]
+}

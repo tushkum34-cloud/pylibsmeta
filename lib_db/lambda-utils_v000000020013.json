@@ -1,0 +1,402 @@
+{
+  "requirements": [],
+  "test_requirements": [],
+  "__author__": [],
+  "__email__": [],
+  "__version__": [],
+  "LambdaProcessor": {
+    "__init__": [
+      "self",
+      "response_handler",
+      "loggers"
+    ],
+    "on_init": [
+      "self",
+      "function"
+    ],
+    "on_execution": [
+      "self",
+      "event"
+    ],
+    "on_response": [
+      "self",
+      "response"
+    ],
+    "on_exception": [
+      "self",
+      "ex"
+    ],
+    "__call__": [
+      "self",
+      "function"
+    ],
+    "seconds_until_timeout": [
+      "self",
+      "context"
+    ],
+    "wrapped_function": [
+      "self",
+      "event",
+      "context"
+    ]
+  },
+  "BaseResponseHandler": {
+    "on_execution": [
+      "self",
+      "event"
+    ],
+    "on_exception": [
+      "self",
+      "ex"
+    ],
+    "on_response": [
+      "self",
+      "response"
+    ]
+  },
+  "ApiGateway": {
+    "on_execution": [
+      "self",
+      "event"
+    ],
+    "on_exception": [
+      "self",
+      "ex"
+    ]
+  },
+  "http_response": [
+    "body",
+    "status",
+    "headers"
+  ],
+  "json_http_response": [
+    "body",
+    "status",
+    "headers"
+  ],
+  "redirect_to": [
+    "url",
+    "status"
+  ],
+  "extract_body": [
+    "event"
+  ],
+  "FAILED": [],
+  "SUCCESS": [],
+  "Cloudformation": {
+    "on_execution": [
+      "self",
+      "event"
+    ],
+    "on_exception": [
+      "self",
+      "ex"
+    ]
+  },
+  "send_signal": [
+    "event",
+    "response_status",
+    "reason",
+    "response_data"
+  ],
+  "BaseLogger": {
+    "on_init": [
+      "self",
+      "function"
+    ],
+    "on_execution": [
+      "self",
+      "event"
+    ]
+  },
+  "Sentry": {
+    "client": [],
+    "on_init": [
+      "self",
+      "function"
+    ],
+    "on_execution": [
+      "self",
+      "event"
+    ],
+    "add_user_context": [
+      "self",
+      "event"
+    ],
+    "add_x_ray_tags": [
+      "self",
+      "event"
+    ]
+  },
+  "test_name": [
+    "request"
+  ],
+  "unique_id": [],
+  "random_string": [],
+  "region": [
+    "request"
+  ],
+  "account_id": [],
+  "stack_name": [
+    "test_name",
+    "random_string"
+  ],
+  "lambda_name": [],
+  "lambda_arn": [
+    "region",
+    "account_id",
+    "lambda_name"
+  ],
+  "Context": {
+    "__init__": [
+      "self",
+      "milliseconds"
+    ],
+    "get_remaining_time_in_millis": [
+      "self"
+    ]
+  },
+  "event": [],
+  "response": [],
+  "exception": [],
+  "TestWrappedFunction": {
+    "test_calls_on_execution": [
+      "self",
+      "on_execution_mock",
+      "event"
+    ],
+    "test_calls_on_response": [
+      "self",
+      "on_response_mock",
+      "response"
+    ],
+    "test_calls_on_exception_on_timeout": [
+      "self",
+      "on_exception_mock"
+    ],
+    "test_calls_on_exception_on_exception": [
+      "self",
+      "on_exception_mock"
+    ]
+  },
+  "TestOnFunctions": {
+    "test_on_init_triggers_loggers": [
+      "self"
+    ],
+    "test_on_execution_triggers_loggers": [
+      "self",
+      "event"
+    ],
+    "test_on_execution_triggers_response_handler": [
+      "self",
+      "event"
+    ],
+    "test_on_execution_logging_event": [
+      "self",
+      "debug_mock",
+      "event"
+    ],
+    "test_on_response_returns_value": [
+      "self",
+      "response"
+    ],
+    "test_on_response_logging_response": [
+      "self",
+      "debug_mock",
+      "response"
+    ],
+    "test_on_exception_logging_exception": [
+      "self",
+      "exception_mock"
+    ],
+    "test_on_exception_forward_exception": [
+      "self",
+      "on_exception_mock",
+      "exception"
+    ]
+  },
+  "TestSecondsUntilTimeout": {
+    "test_returns_seconds": [
+      "self"
+    ]
+  },
+  "TestApiGateway": {
+    "test_on_execution_calls_extract_body": [
+      "self",
+      "extract_body_mock"
+    ],
+    "test_on_execution_calls_with_none_event": [
+      "self"
+    ],
+    "test_on_timeout_exception": [
+      "self"
+    ],
+    "test_on_unexpected_exception": [
+      "self"
+    ],
+    "test_on_exception_calls_logging_exception": [
+      "self",
+      "exception_mock"
+    ]
+  },
+  "TestExtractBody": {
+    "test_returns_none_for_missing_content_headers": [
+      "self"
+    ],
+    "test_recognizes_content_type_header_in_lower_case": [
+      "self"
+    ],
+    "test_recognizes_content_type_header_in_upper_case": [
+      "self"
+    ],
+    "test_returns_empty_dict_for_missing_body_with_json": [
+      "self"
+    ],
+    "test_returns_empty_dict_for_empty_body_with_json": [
+      "self"
+    ],
+    "test_returns_empty_dict_for_missing_body_with_x_www_form_urlencoded": [
+      "self"
+    ],
+    "test_returns_empty_dict_for_empty_body_with_x_www_form_urlencoded": [
+      "self"
+    ],
+    "test_returns_dict_for_valid_json_body": [
+      "self"
+    ],
+    "test_returns_dict_for_valid_x_www_form_urlencoded_body": [
+      "self"
+    ]
+  },
+  "TestHttpResponse": {
+    "test_returns_200_http_status_code_as_default": [
+      "self"
+    ],
+    "test_returns_string_as_default_body": [
+      "self"
+    ],
+    "test_returns_default_headers": [
+      "self"
+    ],
+    "test_merges_additional_headers_with_default_headers": [
+      "self"
+    ],
+    "test_allows_to_overwrite_default_headers": [
+      "self"
+    ]
+  },
+  "TestJsonHttpResponse": {
+    "test_encodes_dict_body_as_valid_json": [
+      "self"
+    ],
+    "test_passes_status_argument_on_to_http_response": [
+      "self"
+    ],
+    "test_passes_headers_argument_on_to_http_response": [
+      "self"
+    ]
+  },
+  "TestRedirectTo": {
+    "test_redirect_to_with_defaults": [
+      "self"
+    ],
+    "test_redirect_to_with_a_custom_status": [
+      "self"
+    ]
+  },
+  "sns_event": [
+    "event"
+  ],
+  "TestCloudformation": {
+    "test_on_execution_store_event": [
+      "self",
+      "event"
+    ],
+    "test_on_exception_calls_logging_exception": [
+      "self",
+      "send_signal_mock",
+      "exception_mock",
+      "event"
+    ],
+    "test_on_exception_failed_signal_is_send": [
+      "self",
+      "send_signal_mock",
+      "event"
+    ],
+    "test_on_exception_failed_signal_is_send_from_sns_event": [
+      "self",
+      "build_opener_mock",
+      "http_handler_mock",
+      "request_mock",
+      "event",
+      "sns_event"
+    ]
+  },
+  "TestSendSignal": {
+    "test_send_signal": [
+      "self",
+      "build_opener",
+      "event"
+    ],
+    "test_send_signal_non_serializable_reason": [
+      "self",
+      "build_opener",
+      "event"
+    ]
+  },
+  "x_amzn_trace_id": [],
+  "TestSentry": {
+    "test_on_call_initialize_sentry_as_logger": [
+      "self"
+    ],
+    "test_on_execution": [
+      "self",
+      "x_ray_mock",
+      "user_context_mock",
+      "event"
+    ],
+    "test_add_user_context_set_client_context": [
+      "self",
+      "client_mock",
+      "event"
+    ],
+    "test_add_user_context_with_none_event": [
+      "self",
+      "debug_mock",
+      "event"
+    ],
+    "test_add_x_ray_tags_adds_requester_trace_id": [
+      "self",
+      "client_mock",
+      "event",
+      "x_amzn_trace_id"
+    ],
+    "test_add_x_ray_tags_adds_lambda_trace_id": [
+      "self",
+      "client_mock"
+    ],
+    "test_add_x_ray_tags_with_none_event": [
+      "self",
+      "client_mock"
+    ]
+  },
+  "cwd": [],
+  "project_root": [],
+  "extensions": [],
+  "templates_path": [],
+  "source_suffix": [],
+  "master_doc": [],
+  "project": [],
+  "copyright": [],
+  "version": [],
+  "release": [],
+  "exclude_patterns": [],
+  "pygments_style": [],
+  "html_theme": [],
+  "html_static_path": [],
+  "htmlhelp_basename": [],
+  "latex_elements": [],
+  "latex_documents": [],
+  "man_pages": [],
+  "texinfo_documents": []
+}

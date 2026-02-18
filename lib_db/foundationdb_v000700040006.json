@@ -1,0 +1,1393 @@
+{
+  "_tenant_map_prefix": [],
+  "_check_tenant_existence": [
+    "tr",
+    "key",
+    "existence_check_marker",
+    "force_maybe_commited"
+  ],
+  "_create_tenant_impl": [
+    "tr",
+    "tenant_name",
+    "existence_check_marker",
+    "force_existence_check_maybe_committed"
+  ],
+  "_delete_tenant_impl": [
+    "tr",
+    "tenant_name",
+    "existence_check_marker",
+    "force_existence_check_maybe_committed"
+  ],
+  "FDBTenantList": {
+    "__init__": [
+      "self",
+      "rangeresult"
+    ],
+    "to_list": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "_list_tenants_impl": [
+    "tr",
+    "begin",
+    "end",
+    "limit"
+  ],
+  "create_tenant": [
+    "db_or_tr",
+    "tenant_name"
+  ],
+  "delete_tenant": [
+    "db_or_tr",
+    "tenant_name"
+  ],
+  "list_tenants": [
+    "db_or_tr",
+    "begin",
+    "end",
+    "limit"
+  ],
+  "_network_thread": [],
+  "_network_thread_reentrant_lock": [],
+  "_open_file": [],
+  "_thread_local_storage": [],
+  "_NetworkOptions": {
+    "__init__": [
+      "self",
+      "parent"
+    ]
+  },
+  "_ErrorPredicates": {
+    "__init__": [
+      "self",
+      "parent"
+    ]
+  },
+  "_DatabaseOptions": {
+    "__init__": [
+      "self",
+      "db"
+    ]
+  },
+  "_TransactionOptions": {
+    "__init__": [
+      "self",
+      "tr"
+    ]
+  },
+  "remove_prefix": [
+    "text",
+    "prefix"
+  ],
+  "option_wrap": [
+    "code"
+  ],
+  "option_wrap_string": [
+    "code"
+  ],
+  "option_wrap_bytes": [
+    "code"
+  ],
+  "option_wrap_int": [
+    "code"
+  ],
+  "pred_wrap": [
+    "code"
+  ],
+  "operation_wrap": [
+    "code"
+  ],
+  "fill_options": [
+    "scope",
+    "predicates"
+  ],
+  "add_operation": [
+    "fname",
+    "v"
+  ],
+  "fill_operations": [],
+  "options": [],
+  "predicates": [],
+  "_set_option": [
+    "option",
+    "param",
+    "length"
+  ],
+  "_error_predicate": [
+    "predicate",
+    "error_code"
+  ],
+  "StreamingMode": {},
+  "ConflictRangeType": {},
+  "make_enum": [
+    "scope"
+  ],
+  "transactional": [],
+  "FDBError": {
+    "__init__": [
+      "self",
+      "code"
+    ],
+    "description": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_FDBBase": {},
+  "FDBRange": {
+    "__init__": [
+      "self",
+      "tr",
+      "begin",
+      "end",
+      "limit",
+      "reverse",
+      "streaming_mode"
+    ],
+    "to_list": [
+      "self"
+    ],
+    "__iter__": [
+      "self",
+      "mode"
+    ]
+  },
+  "TransactionRead": {
+    "__init__": [
+      "self",
+      "tpointer",
+      "db",
+      "snapshot"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "get_read_version": [
+      "self"
+    ],
+    "get": [
+      "self",
+      "key"
+    ],
+    "get_key": [
+      "self",
+      "key_selector"
+    ],
+    "_get_range": [
+      "self",
+      "begin",
+      "end",
+      "limit",
+      "streaming_mode",
+      "iteration",
+      "reverse"
+    ],
+    "_to_selector": [
+      "self",
+      "key_or_selector"
+    ],
+    "get_range": [
+      "self",
+      "begin",
+      "end",
+      "limit",
+      "reverse",
+      "streaming_mode"
+    ],
+    "get_range_startswith": [
+      "self",
+      "prefix"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "get_estimated_range_size_bytes": [
+      "self",
+      "begin_key",
+      "end_key"
+    ],
+    "get_range_split_points": [
+      "self",
+      "begin_key",
+      "end_key",
+      "chunk_size"
+    ]
+  },
+  "Transaction": {
+    "__init__": [
+      "self",
+      "tpointer",
+      "db"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "set_read_version": [
+      "self",
+      "version"
+    ],
+    "_set_option": [
+      "self",
+      "option",
+      "param",
+      "length"
+    ],
+    "_atomic_operation": [
+      "self",
+      "opcode",
+      "key",
+      "param"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ],
+    "clear": [
+      "self",
+      "key"
+    ],
+    "clear_range": [
+      "self",
+      "begin",
+      "end"
+    ],
+    "clear_range_startswith": [
+      "self",
+      "prefix"
+    ],
+    "watch": [
+      "self",
+      "key"
+    ],
+    "add_read_conflict_range": [
+      "self",
+      "begin",
+      "end"
+    ],
+    "add_read_conflict_key": [
+      "self",
+      "key"
+    ],
+    "add_write_conflict_range": [
+      "self",
+      "begin",
+      "end"
+    ],
+    "add_write_conflict_key": [
+      "self",
+      "key"
+    ],
+    "commit": [
+      "self"
+    ],
+    "get_committed_version": [
+      "self"
+    ],
+    "get_approximate_size": [
+      "self"
+    ],
+    "get_versionstamp": [
+      "self"
+    ],
+    "on_error": [
+      "self",
+      "error"
+    ],
+    "reset": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__delitem__": [
+      "self",
+      "key"
+    ]
+  },
+  "Future": {
+    "Event": [],
+    "_state": [],
+    "__init__": [
+      "self",
+      "fpointer"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "_release_memory": [
+      "self"
+    ],
+    "wait": [
+      "self"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "block_until_ready": [
+      "self"
+    ],
+    "on_ready": [
+      "self",
+      "callback"
+    ],
+    "wait_for_any": [],
+    "cancelled": [
+      "self"
+    ],
+    "done": [],
+    "result": [
+      "self"
+    ],
+    "exception": [
+      "self"
+    ],
+    "add_done_callback": [
+      "self",
+      "fn"
+    ],
+    "remove_done_callback": [
+      "self",
+      "fn"
+    ]
+  },
+  "FutureVoid": {
+    "wait": [
+      "self"
+    ]
+  },
+  "FutureInt64": {
+    "wait": [
+      "self"
+    ]
+  },
+  "FutureUInt64": {
+    "wait": [
+      "self"
+    ]
+  },
+  "FutureKeyValueArray": {
+    "wait": [
+      "self"
+    ]
+  },
+  "FutureKeyArray": {
+    "wait": [
+      "self"
+    ]
+  },
+  "FutureStringArray": {
+    "wait": [
+      "self"
+    ]
+  },
+  "replaceable_property": {
+    "__get__": [
+      "self",
+      "obj",
+      "cls"
+    ],
+    "__init__": [
+      "self",
+      "method"
+    ]
+  },
+  "LazyFuture": {
+    "__init__": [
+      "self"
+    ],
+    "wait": [
+      "self"
+    ],
+    "_getter": [
+      "self"
+    ],
+    "value": [
+      "self"
+    ]
+  },
+  "_super": [],
+  "FutureString": {
+    "__init__": [
+      "self"
+    ],
+    "getclass": [
+      "self"
+    ],
+    "__class__": [],
+    "as_foundationdb_key": [
+      "self"
+    ],
+    "as_foundationdb_value": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__bytes__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__add__": [
+      "self",
+      "rhs"
+    ],
+    "__radd__": [
+      "self",
+      "lhs"
+    ],
+    "__mul__": [
+      "self",
+      "rhs"
+    ],
+    "__rmul__": [
+      "self",
+      "lhs"
+    ],
+    "__lt__": [
+      "self",
+      "rhs"
+    ],
+    "__le__": [
+      "self",
+      "rhs"
+    ],
+    "__gt__": [
+      "self",
+      "rhs"
+    ],
+    "__ge__": [
+      "self",
+      "rhs"
+    ],
+    "__eq__": [
+      "self",
+      "rhs"
+    ],
+    "__ne__": [
+      "self",
+      "rhs"
+    ],
+    "__nonzero__": [
+      "self"
+    ],
+    "__int__": [
+      "self"
+    ]
+  },
+  "makewrapper": [
+    "func"
+  ],
+  "Value": {
+    "_getter": [
+      "self"
+    ],
+    "present": [
+      "self"
+    ]
+  },
+  "Key": {
+    "_getter": [
+      "self"
+    ]
+  },
+  "FormerFuture": {
+    "wait": [
+      "self"
+    ],
+    "is_ready": [
+      "self"
+    ],
+    "block_until_ready": [
+      "self"
+    ],
+    "on_ready": [
+      "self",
+      "callback"
+    ]
+  },
+  "_TransactionCreator": {
+    "get": [
+      "self",
+      "key"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "get_key": [
+      "self",
+      "key_selector"
+    ],
+    "get_range": [
+      "self",
+      "begin",
+      "end",
+      "limit",
+      "reverse",
+      "streaming_mode"
+    ],
+    "get_range_startswith": [
+      "self",
+      "prefix"
+    ],
+    "set": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "clear": [
+      "self",
+      "key"
+    ],
+    "clear_range": [
+      "self",
+      "begin",
+      "end"
+    ],
+    "__delitem__": [
+      "self",
+      "key_or_slice"
+    ],
+    "clear_range_startswith": [
+      "self",
+      "prefix"
+    ],
+    "get_and_watch": [
+      "self",
+      "key"
+    ],
+    "set_and_watch": [
+      "self",
+      "key",
+      "value"
+    ],
+    "clear_and_watch": [
+      "self",
+      "key"
+    ],
+    "create_transaction": [
+      "self"
+    ],
+    "_atomic_operation": [
+      "self",
+      "opcode",
+      "key",
+      "param"
+    ],
+    "__creator_getitem": [
+      "tr",
+      "key"
+    ],
+    "__creator_get_key": [
+      "tr",
+      "key_selector"
+    ],
+    "__creator_get_range": [
+      "tr",
+      "begin",
+      "end",
+      "limit",
+      "reverse",
+      "streaming_mode"
+    ],
+    "__creator_get_range_startswith": [
+      "tr",
+      "prefix"
+    ],
+    "__creator_setitem": [
+      "tr",
+      "key",
+      "value"
+    ],
+    "__creator_clear_range_startswith": [
+      "tr",
+      "prefix"
+    ],
+    "__creator_get_and_watch": [
+      "tr",
+      "key"
+    ],
+    "__creator_set_and_watch": [
+      "tr",
+      "key",
+      "value"
+    ],
+    "__creator_clear_and_watch": [
+      "tr",
+      "key"
+    ],
+    "__creator_delitem": [
+      "tr",
+      "key_or_slice"
+    ],
+    "__creator_atomic_operation": [
+      "tr",
+      "opcode",
+      "key",
+      "param"
+    ],
+    "declare_asynchronous_transactions": []
+  },
+  "process_tenant_name": [
+    "name"
+  ],
+  "Database": {
+    "__init__": [
+      "self",
+      "dpointer"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_set_option": [
+      "self",
+      "option",
+      "param",
+      "length"
+    ],
+    "open_tenant": [
+      "self",
+      "name"
+    ],
+    "create_transaction": [
+      "self"
+    ],
+    "get_client_status": [
+      "self"
+    ]
+  },
+  "Tenant": {
+    "__init__": [
+      "self",
+      "tpointer"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "create_transaction": [
+      "self"
+    ],
+    "get_id": [
+      "self"
+    ],
+    "list_blobbified_ranges": [
+      "self",
+      "begin",
+      "end",
+      "limit"
+    ]
+  },
+  "Cluster": {
+    "__init__": [
+      "self",
+      "cluster_file"
+    ],
+    "open_database": [
+      "self",
+      "name"
+    ]
+  },
+  "create_database": [
+    "cluster_file"
+  ],
+  "create_cluster": [
+    "cluster_file"
+  ],
+  "KeySelector": {
+    "__init__": [
+      "self",
+      "key",
+      "or_equal",
+      "offset"
+    ],
+    "__add__": [
+      "self",
+      "offset"
+    ],
+    "__sub__": [
+      "self",
+      "offset"
+    ],
+    "last_less_than": [
+      "cls",
+      "key"
+    ],
+    "last_less_or_equal": [
+      "cls",
+      "key"
+    ],
+    "first_greater_than": [
+      "cls",
+      "key"
+    ],
+    "first_greater_or_equal": [
+      "cls",
+      "key"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "KVIter": {
+    "__init__": [
+      "self",
+      "obj"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "next": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "KeyValueStruct": {
+    "_fields_": [],
+    "_pack_": []
+  },
+  "KeyStruct": {
+    "_fields_": [],
+    "_pack_": []
+  },
+  "KeyValue": {
+    "__init__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ]
+  },
+  "check_error_code": [
+    "code",
+    "func",
+    "arguments"
+  ],
+  "this_dir": [],
+  "read_pth_file": [],
+  "keyToBytes": [
+    "k"
+  ],
+  "valueToBytes": [
+    "v"
+  ],
+  "paramToBytes": [
+    "v"
+  ],
+  "optionalParamToBytes": [
+    "v"
+  ],
+  "_CBFUNC": [],
+  "init_c_api": [],
+  "init": [
+    "event_model"
+  ],
+  "init_v13": [
+    "local_address",
+    "event_model"
+  ],
+  "open_databases": [],
+  "cacheLock": [],
+  "open": [
+    "cluster_file",
+    "event_model"
+  ],
+  "open_v609": [
+    "cluster_file",
+    "database_name",
+    "event_model"
+  ],
+  "open_v13": [
+    "cluster_id_path",
+    "database_name",
+    "local_address",
+    "event_model"
+  ],
+  "_stop_on_exit": [],
+  "strinc": [
+    "key"
+  ],
+  "AllocatorTransactionState": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "HighContentionAllocator": {
+    "__init__": [
+      "self",
+      "subspace"
+    ],
+    "allocate": [
+      "self",
+      "tr"
+    ],
+    "_window_size": [
+      "self",
+      "start"
+    ]
+  },
+  "Directory": {
+    "__init__": [
+      "self",
+      "directory_layer",
+      "path",
+      "layer"
+    ],
+    "create_or_open": [
+      "self",
+      "tr",
+      "path",
+      "layer"
+    ],
+    "open": [
+      "self",
+      "tr",
+      "path",
+      "layer"
+    ],
+    "create": [
+      "self",
+      "tr",
+      "path",
+      "layer",
+      "prefix"
+    ],
+    "list": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "move": [
+      "self",
+      "tr",
+      "old_path",
+      "new_path"
+    ],
+    "move_to": [
+      "self",
+      "tr",
+      "new_absolute_path"
+    ],
+    "remove": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "remove_if_exists": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "exists": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "get_layer": [
+      "self"
+    ],
+    "get_path": [
+      "self"
+    ],
+    "_tuplify_path": [
+      "self",
+      "path"
+    ],
+    "_partition_subpath": [
+      "self",
+      "path",
+      "directory_layer"
+    ],
+    "_get_layer_for_path": [
+      "self",
+      "path"
+    ]
+  },
+  "DirectoryLayer": {
+    "__init__": [
+      "self",
+      "node_subspace",
+      "content_subspace",
+      "allow_manual_prefixes"
+    ],
+    "create_or_open": [
+      "self",
+      "tr",
+      "path",
+      "layer"
+    ],
+    "_create_or_open_internal": [
+      "self",
+      "tr",
+      "path",
+      "layer",
+      "prefix",
+      "allow_create",
+      "allow_open"
+    ],
+    "open": [
+      "self",
+      "tr",
+      "path",
+      "layer"
+    ],
+    "create": [
+      "self",
+      "tr",
+      "path",
+      "layer",
+      "prefix"
+    ],
+    "move_to": [
+      "self",
+      "tr",
+      "new_absolute_path"
+    ],
+    "move": [
+      "self",
+      "tr",
+      "old_path",
+      "new_path"
+    ],
+    "remove": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "remove_if_exists": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "_remove_internal": [
+      "self",
+      "tr",
+      "path",
+      "fail_on_nonexistent"
+    ],
+    "list": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "exists": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "SUBDIRS": [],
+    "VERSION": [],
+    "_check_version": [
+      "self",
+      "tr",
+      "write_access"
+    ],
+    "_initialize_directory": [
+      "self",
+      "tr"
+    ],
+    "_node_containing_key": [
+      "self",
+      "tr",
+      "key"
+    ],
+    "_node_with_prefix": [
+      "self",
+      "prefix"
+    ],
+    "_contents_of_node": [
+      "self",
+      "node",
+      "path",
+      "layer"
+    ],
+    "_find": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "_subdir_names_and_nodes": [
+      "self",
+      "tr",
+      "node"
+    ],
+    "_remove_from_parent": [
+      "self",
+      "tr",
+      "path"
+    ],
+    "_remove_recursive": [
+      "self",
+      "tr",
+      "node"
+    ],
+    "_is_prefix_free": [
+      "self",
+      "tr",
+      "prefix"
+    ],
+    "_is_prefix_empty": [
+      "self",
+      "tr",
+      "prefix"
+    ]
+  },
+  "_to_unicode_path": [
+    "path"
+  ],
+  "directory": [],
+  "DirectorySubspace": {
+    "__init__": [
+      "self",
+      "path",
+      "prefix",
+      "directory_layer",
+      "layer"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "DirectoryPartition": {
+    "__init__": [
+      "self",
+      "path",
+      "prefix",
+      "parent_directory_layer"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "name"
+    ],
+    "key": [
+      "self"
+    ],
+    "pack": [
+      "self",
+      "t"
+    ],
+    "unpack": [
+      "self",
+      "key"
+    ],
+    "range": [
+      "self",
+      "t"
+    ],
+    "contains": [
+      "self",
+      "key"
+    ],
+    "as_foundationdb_key": [
+      "self"
+    ],
+    "subspace": [
+      "self",
+      "tuple"
+    ],
+    "_get_layer_for_path": [
+      "self",
+      "path"
+    ]
+  },
+  "_Node": {
+    "__init__": [
+      "self",
+      "subspace",
+      "path",
+      "target_path"
+    ],
+    "exists": [
+      "self"
+    ],
+    "prefetch_metadata": [
+      "self",
+      "tr"
+    ],
+    "layer": [
+      "self",
+      "tr"
+    ],
+    "is_in_partition": [
+      "self",
+      "tr",
+      "include_empty_subpath"
+    ],
+    "get_partition_subpath": [
+      "self"
+    ],
+    "get_contents": [
+      "self",
+      "directory_layer",
+      "tr"
+    ]
+  },
+  "Subspace": {
+    "__init__": [
+      "self",
+      "prefixTuple",
+      "rawPrefix"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "name"
+    ],
+    "key": [
+      "self"
+    ],
+    "pack": [
+      "self",
+      "t"
+    ],
+    "pack_with_versionstamp": [
+      "self",
+      "t"
+    ],
+    "unpack": [
+      "self",
+      "key"
+    ],
+    "range": [
+      "self",
+      "t"
+    ],
+    "contains": [
+      "self",
+      "key"
+    ],
+    "as_foundationdb_key": [
+      "self"
+    ],
+    "subspace": [
+      "self",
+      "tuple"
+    ]
+  },
+  "NetworkOption": [],
+  "DatabaseOption": [],
+  "TransactionOption": [],
+  "MutationType": [],
+  "ErrorPredicate": [],
+  "__version__": [],
+  "LATEST_API_VERSION": [],
+  "_add_symbols": [
+    "module",
+    "symbols"
+  ],
+  "is_api_version_selected": [],
+  "get_api_version": [],
+  "api_version": [
+    "ver"
+  ],
+  "_get_boundary_keys": [
+    "db_or_tr",
+    "begin",
+    "end"
+  ],
+  "get_boundary_keys": [
+    "db_or_tr",
+    "begin",
+    "end"
+  ],
+  "get_addresses_for_key": [
+    "tr",
+    "key"
+  ],
+  "FDB_VERSION": [],
+  "_size_limits": [],
+  "int2byte": [],
+  "NULL_CODE": [],
+  "BYTES_CODE": [],
+  "STRING_CODE": [],
+  "NESTED_CODE": [],
+  "INT_ZERO_CODE": [],
+  "POS_INT_END": [],
+  "NEG_INT_START": [],
+  "FLOAT_CODE": [],
+  "DOUBLE_CODE": [],
+  "FALSE_CODE": [],
+  "TRUE_CODE": [],
+  "UUID_CODE": [],
+  "VERSIONSTAMP_CODE": [],
+  "_find_terminator": [
+    "v",
+    "pos"
+  ],
+  "_float_adjust": [
+    "v",
+    "encode"
+  ],
+  "SingleFloat": {
+    "__init__": [
+      "self",
+      "value"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__nonzero__": [
+      "self"
+    ]
+  },
+  "Versionstamp": {
+    "LENGTH": [],
+    "_TR_VERSION_LEN": [],
+    "_MAX_USER_VERSION": [],
+    "_UNSET_TR_VERSION": [],
+    "_STRUCT_FORMAT_STRING": [],
+    "validate_tr_version": [
+      "cls",
+      "tr_version"
+    ],
+    "validate_user_version": [
+      "cls",
+      "user_version"
+    ],
+    "__init__": [
+      "self",
+      "tr_version",
+      "user_version"
+    ],
+    "incomplete": [
+      "user_version"
+    ],
+    "from_bytes": [
+      "cls",
+      "v",
+      "start"
+    ],
+    "is_complete": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "completed": [
+      "self",
+      "new_tr_version"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__lt__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__nonzero__": [
+      "self"
+    ]
+  },
+  "_decode": [
+    "v",
+    "pos"
+  ],
+  "_reduce_children": [
+    "child_values"
+  ],
+  "_bit_length": [
+    "x"
+  ],
+  "_encode": [
+    "value",
+    "nested"
+  ],
+  "_pack_maybe_with_versionstamp": [
+    "t",
+    "prefix"
+  ],
+  "pack": [
+    "t",
+    "prefix"
+  ],
+  "pack_with_versionstamp": [
+    "t",
+    "prefix"
+  ],
+  "unpack": [
+    "key",
+    "prefix_len"
+  ],
+  "has_incomplete_versionstamp": [
+    "t"
+  ],
+  "_range": [],
+  "range": [
+    "t"
+  ],
+  "_code_for": [
+    "value"
+  ],
+  "_compare_floats": [
+    "f1",
+    "f2"
+  ],
+  "_compare_values": [
+    "value1",
+    "value2"
+  ],
+  "compare": [
+    "t1",
+    "t2"
+  ]
+}

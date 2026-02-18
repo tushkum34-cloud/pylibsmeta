@@ -1,0 +1,1229 @@
+{
+  "PLUGIN_SETTINGS": [],
+  "post_migrate_create_statuses": [
+    "sender"
+  ],
+  "AutonomousSystemFilterSet": {
+    "q": [],
+    "autonomous_system_range": [],
+    "filter_present_in_asn_range": [
+      "self",
+      "queryset",
+      "name",
+      "value"
+    ]
+  },
+  "AutonomousSystemRangeFilterSet": {
+    "q": []
+  },
+  "BGPRoutingInstanceFilterSet": {
+    "q": [],
+    "autonomous_system": [],
+    "device_id": [],
+    "device": []
+  },
+  "PeerGroupFilterSet": {
+    "q": [],
+    "autonomous_system": [],
+    "routing_instance": [],
+    "device": [],
+    "device_id": []
+  },
+  "PeerGroupTemplateFilterSet": {
+    "q": [],
+    "autonomous_system": []
+  },
+  "PeerEndpointFilterSet": {
+    "q": [],
+    "device": [],
+    "device_id": [],
+    "autonomous_system": [],
+    "peer_group": []
+  },
+  "PeeringFilterSet": {
+    "q": [],
+    "device": [],
+    "device_id": [],
+    "device_role": [],
+    "peer_endpoint_role": []
+  },
+  "AddressFamilyFilterSet": {
+    "q": [],
+    "afi_safi": [],
+    "routing_instance": [],
+    "vrf": []
+  },
+  "PeerGroupAddressFamilyFilterSet": {
+    "q": [],
+    "afi_safi": [],
+    "peer_group": []
+  },
+  "PeerEndpointAddressFamilyFilterSet": {
+    "q": [],
+    "afi_safi": [],
+    "peer_endpoint": []
+  },
+  "rgetattr": [
+    "obj",
+    "attr"
+  ],
+  "InheritanceMixin": {
+    "get_inherited_field": [
+      "self",
+      "field_name",
+      "inheritance_path"
+    ],
+    "get_fields": [
+      "self",
+      "include_inherited"
+    ],
+    "fields_inherited": [
+      "self"
+    ]
+  },
+  "BGPExtraAttributesMixin": {
+    "extra_attributes": [],
+    "get_extra_attributes_paths": [
+      "self"
+    ],
+    "extra_attributes_inherited": [
+      "self"
+    ]
+  },
+  "AutonomousSystem": {
+    "asn": [],
+    "description": [],
+    "provider": [],
+    "status": [],
+    "__str__": [
+      "self"
+    ],
+    "asn_asdot": [
+      "self"
+    ]
+  },
+  "AutonomousSystemRange": {
+    "name": [],
+    "asn_min": [],
+    "asn_max": [],
+    "description": [],
+    "tenant": [],
+    "__str__": [
+      "self"
+    ],
+    "clean": [
+      "self"
+    ],
+    "get_next_available_asn": [
+      "self"
+    ],
+    "asns": [
+      "self"
+    ]
+  },
+  "BGPRoutingInstance": {
+    "description": [],
+    "device": [],
+    "router_id": [],
+    "autonomous_system": [],
+    "status": [],
+    "__str__": [
+      "self"
+    ],
+    "clean": [
+      "self"
+    ]
+  },
+  "PeerGroupTemplate": {
+    "name": [],
+    "enabled": [],
+    "role": [],
+    "description": [],
+    "autonomous_system": [],
+    "secret": [],
+    "__str__": [
+      "self"
+    ]
+  },
+  "PeerGroup": {
+    "extra_attributes_inheritance": [],
+    "property_inheritance": [],
+    "name": [],
+    "peergroup_template": [],
+    "role": [],
+    "vrf": [],
+    "description": [],
+    "enabled": [],
+    "routing_instance": [],
+    "autonomous_system": [],
+    "source_ip": [],
+    "source_interface": [],
+    "secret": [],
+    "__str__": [
+      "self"
+    ],
+    "clean": [
+      "self"
+    ],
+    "validate_unique": [
+      "self",
+      "exclude"
+    ]
+  },
+  "PeerEndpoint": {
+    "natural_key_field_names": [],
+    "extra_attributes_inheritance": [],
+    "property_inheritance": [],
+    "description": [],
+    "role": [],
+    "enabled": [],
+    "routing_instance": [],
+    "autonomous_system": [],
+    "peer": [],
+    "peering": [],
+    "peer_group": [],
+    "source_ip": [],
+    "source_interface": [],
+    "get_local_ip_address": [
+      "self",
+      "return_inheritance"
+    ],
+    "local_ip": [
+      "self"
+    ],
+    "local_ip_address": [
+      "self"
+    ],
+    "device_or_provider": [
+      "self"
+    ],
+    "secret": [],
+    "__str__": [
+      "self"
+    ],
+    "clean": [
+      "self"
+    ]
+  },
+  "Peering": {
+    "status": [],
+    "natural_key_field_names": [],
+    "endpoint_a": [
+      "self"
+    ],
+    "endpoint_z": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "update_peers": [
+      "self"
+    ],
+    "validate_peers": [
+      "self"
+    ]
+  },
+  "AddressFamily": {
+    "extra_attributes_inheritance": [],
+    "natural_key_field_names": [],
+    "afi_safi": [],
+    "vrf": [],
+    "routing_instance": [],
+    "__str__": [
+      "self"
+    ],
+    "display": [
+      "self"
+    ],
+    "validate_unique": [
+      "self",
+      "exclude"
+    ]
+  },
+  "PeerGroupAddressFamily": {
+    "parent_address_family": [
+      "self"
+    ],
+    "extra_attributes_inheritance": [],
+    "property_inheritance": [],
+    "afi_safi": [],
+    "peer_group": [],
+    "import_policy": [],
+    "export_policy": [],
+    "multipath": [],
+    "csv_headers": [],
+    "to_csv": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "PeerEndpointAddressFamily": {
+    "parent_peer_group_address_family": [
+      "self"
+    ],
+    "parent_address_family": [
+      "self"
+    ],
+    "extra_attributes_inheritance": [],
+    "property_inheritance": [],
+    "afi_safi": [],
+    "peer_endpoint": [],
+    "import_policy": [],
+    "export_policy": [],
+    "multipath": [],
+    "csv_headers": [],
+    "to_csv": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "AutonomousSystemForm": {
+    "tags": [],
+    "provider": []
+  },
+  "AutonomousSystemFilterForm": {
+    "model": [],
+    "field_order": [],
+    "tag": []
+  },
+  "AutonomousSystemBulkEditForm": {
+    "pk": [],
+    "description": []
+  },
+  "AutonomousSystemRangeForm": {
+    "tags": [],
+    "tenant": []
+  },
+  "AutonomousSystemRangeFilterForm": {
+    "model": [],
+    "field_order": [],
+    "tag": []
+  },
+  "AutonomousSystemRangeBulkEditForm": {
+    "pk": [],
+    "description": []
+  },
+  "BGPRoutingInstanceForm": {
+    "__init__": [
+      "self"
+    ],
+    "device": [],
+    "autonomous_system": [],
+    "router_id": [],
+    "tags": [],
+    "peergroup_template": [],
+    "save": [
+      "self",
+      "commit"
+    ]
+  },
+  "BGPRoutingInstanceFilterForm": {
+    "q": [],
+    "model": [],
+    "device": [],
+    "autonomous_system": [],
+    "tag": [],
+    "field_order": []
+  },
+  "BGPRoutingInstanceBulkEditForm": {
+    "pk": [],
+    "description": []
+  },
+  "PeerGroupForm": {
+    "routing_instance": [],
+    "vrf": [],
+    "source_ip": [],
+    "source_interface": [],
+    "autonomous_system": [],
+    "peergroup_template": [],
+    "secret": [],
+    "tags": []
+  },
+  "PeerGroupBulkEditForm": {
+    "pk": [],
+    "description": []
+  },
+  "PeerGroupTemplateForm": {
+    "autonomous_system": [],
+    "secret": []
+  },
+  "PeerGroupTemplateBulkEditForm": {
+    "pk": [],
+    "description": []
+  },
+  "PeerGroupFilterForm": {
+    "model": [],
+    "q": [],
+    "enabled": [],
+    "autonomous_system": [],
+    "vrf": []
+  },
+  "PeerGroupTemplateFilterForm": {
+    "model": [],
+    "q": [],
+    "enabled": [],
+    "autonomous_system": []
+  },
+  "PeerEndpointForm": {
+    "__init__": [
+      "self"
+    ],
+    "routing_instance": [],
+    "autonomous_system": [],
+    "source_ip": [],
+    "source_interface": [],
+    "peer_group": [],
+    "secret": [],
+    "peering": [],
+    "tags": [],
+    "save": [
+      "self",
+      "commit"
+    ]
+  },
+  "PeerEndpointFilterForm": {
+    "model": [],
+    "tag": []
+  },
+  "PeerEndpointBulkEditForm": {
+    "pk": []
+  },
+  "PeeringForm": {},
+  "PeeringFilterForm": {
+    "model": [],
+    "field_order": [],
+    "device": [],
+    "device_role": [],
+    "peer_endpoint_role": []
+  },
+  "AddressFamilyForm": {
+    "routing_instance": [],
+    "afi_safi": [],
+    "vrf": []
+  },
+  "AddressFamilyBulkEditForm": {
+    "pk": []
+  },
+  "AddressFamilyFilterForm": {
+    "model": [],
+    "routing_instance": [],
+    "afi_safi": [],
+    "vrf": []
+  },
+  "PeerGroupAddressFamilyForm": {
+    "peer_group": [],
+    "afi_safi": [],
+    "multipath": []
+  },
+  "PeerGroupAddressFamilyBulkEditForm": {
+    "pk": [],
+    "import_policy": [],
+    "export_policy": [],
+    "multipath": []
+  },
+  "PeerGroupAddressFamilyFilterForm": {
+    "model": [],
+    "peer_group": [],
+    "afi_safi": []
+  },
+  "PeerEndpointAddressFamilyForm": {
+    "peer_endpoint": [],
+    "afi_safi": [],
+    "multipath": []
+  },
+  "PeerEndpointAddressFamilyBulkEditForm": {
+    "pk": [],
+    "import_policy": [],
+    "export_policy": [],
+    "multipath": []
+  },
+  "PeerEndpointAddressFamilyFilterForm": {
+    "model": [],
+    "peer_endpoint": [],
+    "afi_safi": []
+  },
+  "AFISAFIChoices": {
+    "AFI_IPV4_UNICAST": [],
+    "AFI_IPV4_LABELED_UNICAST": [],
+    "AFI_IPV4_MULTICAST": [],
+    "AFI_IPV6_UNICAST": [],
+    "AFI_IPV6_LABELED_UNICAST": [],
+    "AFI_IPV6_MULTICAST": [],
+    "AFI_IPV4_FLOWSPEC": [],
+    "AFI_IPV6_FLOWSPEC": [],
+    "AFI_VPNV4_UNICAST": [],
+    "AFI_VPNV4_MULTICAST": [],
+    "AFI_VPNV6_UNICAST": [],
+    "AFI_VPNV6_MULTICAST": [],
+    "AFI_L2_EVPN": [],
+    "AFI_L2_VPLS": [],
+    "CHOICES": []
+  },
+  "add_available_asns": [
+    "instance",
+    "asns"
+  ],
+  "ASN_LINK": [],
+  "AutonomousSystemTable": {
+    "pk": [],
+    "asn": [],
+    "provider": [],
+    "tags": [],
+    "actions": [],
+    "asn_asdot": []
+  },
+  "AutonomousSystemRangeTable": {
+    "pk": [],
+    "name": [],
+    "asn_min": [],
+    "asn_max": [],
+    "tenant": [],
+    "tags": [],
+    "actions": []
+  },
+  "BGPRoutingInstanceTable": {
+    "pk": [],
+    "routing_instance": [],
+    "device": [],
+    "autonomous_system": [],
+    "router_id": [],
+    "tags": [],
+    "actions": []
+  },
+  "PeerGroupTable": {
+    "pk": [],
+    "name": [],
+    "peergroup_template": [],
+    "routing_instance": [],
+    "vrf": [],
+    "enabled": [],
+    "role": [],
+    "autonomous_system": [],
+    "secret": [],
+    "source_ip": [],
+    "source_interface": [],
+    "tags": [],
+    "actions": []
+  },
+  "PeerGroupTemplateTable": {
+    "pk": [],
+    "name": [],
+    "enabled": [],
+    "role": [],
+    "autonomous_system": [],
+    "secret": [],
+    "actions": []
+  },
+  "PeerEndpointTable": {
+    "pk": [],
+    "id": [],
+    "routing_instance": [],
+    "role": [],
+    "source_ip": [],
+    "source_interface": [],
+    "local_ip": [],
+    "autonomous_system": [],
+    "peer": [],
+    "peering": [],
+    "vrf": [],
+    "peer_group": [],
+    "tags": []
+  },
+  "PeeringTable": {
+    "pk": [],
+    "peering": [],
+    "endpoint_a": [],
+    "endpoint_z": [],
+    "actions": []
+  },
+  "AddressFamilyTable": {
+    "pk": [],
+    "address_family": [],
+    "routing_instance": [],
+    "afi_safi": [],
+    "vrf": [],
+    "actions": []
+  },
+  "PeerGroupAddressFamilyTable": {
+    "pk": [],
+    "peer_group_address_family": [],
+    "peer_group": [],
+    "afi_safi": [],
+    "actions": []
+  },
+  "PeerEndpointAddressFamilyTable": {
+    "pk": [],
+    "peer_endpoint_address_family": [],
+    "peer_endpoint": [],
+    "afi_safi": [],
+    "actions": []
+  },
+  "__version__": [],
+  "NautobotBGPModelsConfig": {
+    "name": [],
+    "verbose_name": [],
+    "version": [],
+    "author": [],
+    "description": [],
+    "base_url": [],
+    "required_settings": [],
+    "default_settings": [],
+    "docs_view_name": [],
+    "searchable_models": [],
+    "ready": [
+      "self"
+    ]
+  },
+  "config": [],
+  "app_name": [],
+  "router": [],
+  "urlpatterns": [],
+  "DeviceContent": {
+    "model": [],
+    "object_detail_panels": []
+  },
+  "template_extensions": [],
+  "BGPObjectsFieldPanel": {
+    "render_value": [
+      "self",
+      "key",
+      "value",
+      "context"
+    ],
+    "render_key": [
+      "self",
+      "key",
+      "value",
+      "context"
+    ]
+  },
+  "extra_attributes_tab": [],
+  "AutonomousSystemUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "AutonomousSystemRangeUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": [],
+    "get_extra_context": [
+      "self",
+      "request",
+      "instance"
+    ]
+  },
+  "BGPRoutingInstanceUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeerGroupUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeerGroupTemplateUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeerEndpointUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeeringUIViewSet": {
+    "action_buttons": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": [],
+    "get_extra_context": [
+      "self",
+      "request",
+      "instance"
+    ]
+  },
+  "PeeringAddView": {
+    "queryset": [],
+    "template_name": [],
+    "post": [
+      "self",
+      "request"
+    ],
+    "get": [
+      "self",
+      "request"
+    ]
+  },
+  "AddressFamilyUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeerGroupAddressFamilyUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "PeerEndpointAddressFamilyUIViewSet": {
+    "bulk_update_form_class": [],
+    "filterset_class": [],
+    "filterset_form_class": [],
+    "form_class": [],
+    "lookup_field": [],
+    "queryset": [],
+    "serializer_class": [],
+    "table_class": [],
+    "object_detail_content": []
+  },
+  "menu_items": [],
+  "IPAddressFilterExtension": {
+    "model": [],
+    "filterset_fields": [],
+    "filterform_fields": []
+  },
+  "InterfaceFilterExtension": {
+    "model": [],
+    "filterset_fields": [],
+    "filterform_fields": []
+  },
+  "filter_extensions": [],
+  "AutonomousSystemTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_str": [
+      "self"
+    ],
+    "test_asdot": [
+      "self"
+    ]
+  },
+  "AutonomousSystemRangeTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_str": [
+      "self"
+    ],
+    "test_max_gt_min": [
+      "self"
+    ]
+  },
+  "BGPRoutingInstanceTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_str": [
+      "self"
+    ]
+  },
+  "PeerGroupTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_str": [
+      "self"
+    ]
+  },
+  "PeerEndpointTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_str": [
+      "self"
+    ],
+    "test_deleting_ip_address_protects_endpoint": [
+      "self"
+    ],
+    "test_mandatory_asn": [
+      "self"
+    ],
+    "test_deleting_peering_deletes_endpoints": [
+      "self"
+    ],
+    "test_route_instance_matches_interface": [
+      "self"
+    ],
+    "test_route_instance_duplicate_assignment": [
+      "self"
+    ],
+    "test_route_instance_vm_interface": [
+      "self"
+    ]
+  },
+  "PeeringTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_str": [
+      "self"
+    ],
+    "test_update_peers": [
+      "self"
+    ]
+  },
+  "AddressFamilyTestCase": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "test_str": [
+      "self"
+    ]
+  },
+  "_NAUTOBOT_VERSION": [],
+  "_FAILING_OBJECT_LIST_NAUTOBOT_VERSIONS": [],
+  "PeerGroupAddressFamilyTestCase": {
+    "model": [],
+    "allowed_number_of_tree_queries_per_view_type": [],
+    "_get_base_url": [
+      "self"
+    ],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_list_objects_with_permission": [
+      "self"
+    ]
+  },
+  "PeerEndpointAddressFamilyTestCase": {
+    "model": [],
+    "maxDiff": [],
+    "test_list_objects_with_permission": [
+      "self"
+    ],
+    "_get_base_url": [
+      "self"
+    ],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "AutonomousSystemFormTestCase": {
+    "form_class": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_valid_asn": [
+      "self"
+    ],
+    "test_invalid_asn": [
+      "self"
+    ],
+    "test_status_required": [
+      "self"
+    ]
+  },
+  "AutonomousSystemRangeFormTestCase": {
+    "form_class": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_valid_asnrange": [
+      "self"
+    ],
+    "test_invalid_asn": [
+      "self"
+    ],
+    "test_name_required": [
+      "self"
+    ]
+  },
+  "PeerGroupFormTestCase": {
+    "form_class": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_valid_form": [
+      "self"
+    ],
+    "test_source_interface": [
+      "self"
+    ],
+    "test_source_ip": [
+      "self"
+    ]
+  },
+  "PeerEndpointFormTestCase": {
+    "form_class": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_valid_form": [
+      "self"
+    ],
+    "test_set_peer": [
+      "self"
+    ]
+  },
+  "AddressFamilyFormTestCase": {
+    "form_class": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_valid_form": [
+      "self"
+    ]
+  },
+  "User": [],
+  "AutonomousSystemAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "bulk_update_data": [],
+    "choices_fields": [],
+    "validation_excluded_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "AutonomousSystemRangeAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "bulk_update_data": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "PeerGroupTemplateAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_peer_group_template_extra_attributes": [
+      "self"
+    ]
+  },
+  "BGPRoutingInstanceAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "bulk_update_data": [],
+    "choices_fields": [],
+    "validation_excluded_fields": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_bgp_routing_instance_extra_attributes": [
+      "self"
+    ],
+    "test_notes_url_on_object": [
+      "self"
+    ]
+  },
+  "PeerGroupAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "bulk_update_data": [],
+    "validation_excluded_fields": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_peergroup_inherits_extra_attributes": [
+      "self"
+    ],
+    "test_peergroup_owns_extra_attributes": [
+      "self"
+    ],
+    "test_notes_url_on_object": [
+      "self"
+    ]
+  },
+  "PeerEndpointAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "bulk_update_data": [],
+    "validation_excluded_fields": [],
+    "choices_fields": [],
+    "test_update_object": [
+      "self"
+    ],
+    "test_create_object": [
+      "self"
+    ],
+    "test_recreate_object_csv": [
+      "self"
+    ],
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_peerendpoint_inherits_extra_attributes": [
+      "self"
+    ],
+    "test_peerendpoint_owns_extra_attributes": [
+      "self"
+    ]
+  },
+  "PeeringAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "choices_fields": [],
+    "validation_excluded_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "AddressFamilyAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "PeerGroupAddressFamilyAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "PeerEndpointAddressFamilyAPITestCase": {
+    "model": [],
+    "view_namespace": [],
+    "choices_fields": [],
+    "setUpTestData": [
+      "cls"
+    ]
+  },
+  "AddAvailableAsns": {
+    "setUpTestData": [
+      "cls"
+    ],
+    "test_range_boundary": [
+      "self"
+    ],
+    "test_range_middle": [
+      "self"
+    ],
+    "test_range_empty": [
+      "self"
+    ]
+  },
+  "IncludeInheritedFilterBackend": {
+    "get_filterset_kwargs": [
+      "self",
+      "request",
+      "queryset",
+      "view"
+    ]
+  },
+  "BGPRoutingInstanceViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "AutonomousSystemViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "AutonomousSystemRangeViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "include_inherited": [],
+  "InheritableFieldsViewSetMixin": {
+    "list": [
+      "self",
+      "request"
+    ],
+    "retrieve": [
+      "self",
+      "request",
+      "pk"
+    ]
+  },
+  "PeerGroupViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filter_backends": [],
+    "filterset_class": []
+  },
+  "PeerGroupTemplateViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "PeerEndpointViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filter_backends": [],
+    "filterset_class": []
+  },
+  "PeeringViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "AddressFamilyViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "PeerGroupAddressFamilyViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "PeerEndpointAddressFamilyViewSet": {
+    "queryset": [],
+    "serializer_class": [],
+    "filterset_class": []
+  },
+  "AutonomousSystemSerializer": {
+    "url": []
+  },
+  "AutonomousSystemRangeSerializer": {
+    "url": []
+  },
+  "InheritableFieldsSerializerMixin": {
+    "to_representation": [
+      "self",
+      "instance"
+    ]
+  },
+  "ExtraAttributesSerializerMixin": {
+    "extra_attributes": [],
+    "to_representation": [
+      "self",
+      "instance"
+    ]
+  },
+  "PeerGroupTemplateSerializer": {},
+  "PeerGroupSerializer": {
+    "validate": [
+      "self",
+      "attrs"
+    ]
+  },
+  "PeerEndpointSerializer": {
+    "create": [
+      "self",
+      "validated_data"
+    ],
+    "update": [
+      "self",
+      "instance",
+      "validated_data"
+    ]
+  },
+  "BGPRoutingInstanceSerializer": {},
+  "PeeringSerializer": {},
+  "AddressFamilySerializer": {},
+  "PeerGroupAddressFamilySerializer": {
+    "url": []
+  },
+  "PeerEndpointAddressFamilySerializer": {
+    "url": []
+  },
+  "Command": {
+    "help": [],
+    "add_arguments": [
+      "self",
+      "parser"
+    ],
+    "_generate_static_data": [
+      "self",
+      "db"
+    ],
+    "handle": [
+      "self"
+    ]
+  },
+  "Migration": {
+    "dependencies": [],
+    "operations": []
+  },
+  "create_roles": [
+    "apps",
+    "schema_editor"
+  ],
+  "reverse_create_roles": [
+    "apps",
+    "schema_editor"
+  ],
+  "update_object_change_ct_for_replaced_role": [
+    "apps",
+    "schema"
+  ],
+  "reverse_update_object_change_ct_for_replaced_role": [
+    "apps",
+    "schema"
+  ]
+}

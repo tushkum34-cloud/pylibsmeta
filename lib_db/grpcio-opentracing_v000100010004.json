@@ -1,0 +1,478 @@
+{
+  "_OpenTracingServicerContext": {
+    "__init__": [
+      "self",
+      "servicer_context",
+      "active_span"
+    ],
+    "is_active": [
+      "self"
+    ],
+    "time_remaining": [
+      "self"
+    ],
+    "cancel": [
+      "self"
+    ],
+    "add_callback": [
+      "self"
+    ],
+    "invocation_metadata": [
+      "self"
+    ],
+    "peer": [
+      "self"
+    ],
+    "peer_identities": [
+      "self"
+    ],
+    "peer_identity_key": [
+      "self"
+    ],
+    "auth_context": [
+      "self"
+    ],
+    "send_initial_metadata": [
+      "self"
+    ],
+    "set_trailing_metadata": [
+      "self"
+    ],
+    "abort": [
+      "self"
+    ],
+    "abort_with_status": [
+      "self"
+    ],
+    "set_code": [
+      "self",
+      "code"
+    ],
+    "set_details": [
+      "self",
+      "details"
+    ],
+    "get_active_span": [
+      "self"
+    ]
+  },
+  "_add_peer_tags": [
+    "peer_str",
+    "tags"
+  ],
+  "_check_error_code": [
+    "span",
+    "servicer_context",
+    "rpc_info"
+  ],
+  "OpenTracingServerInterceptor": {
+    "__init__": [
+      "self",
+      "tracer",
+      "log_payloads",
+      "span_decorator"
+    ],
+    "_start_span": [
+      "self",
+      "servicer_context",
+      "method"
+    ],
+    "intercept_unary": [
+      "self",
+      "request",
+      "servicer_context",
+      "server_info",
+      "handler"
+    ],
+    "_intercept_server_stream": [
+      "self",
+      "request_or_iterator",
+      "servicer_context",
+      "server_info",
+      "handler"
+    ],
+    "intercept_stream": [
+      "self",
+      "request_or_iterator",
+      "servicer_context",
+      "server_info",
+      "handler"
+    ]
+  },
+  "RpcInfo": {
+    "__init__": [
+      "self",
+      "full_method",
+      "metadata",
+      "timeout",
+      "request",
+      "response",
+      "error"
+    ]
+  },
+  "get_method_type": [
+    "is_client_stream",
+    "is_server_stream"
+  ],
+  "get_deadline_millis": [
+    "timeout"
+  ],
+  "_RequestLoggingIterator": {
+    "__init__": [
+      "self",
+      "request_iterator",
+      "span"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "next": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "log_or_wrap_request_or_iterator": [
+    "span",
+    "is_client_stream",
+    "request_or_iterator"
+  ],
+  "_GuardedSpan": {
+    "__init__": [
+      "self",
+      "span"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "release": [
+      "self"
+    ]
+  },
+  "_inject_span_context": [
+    "tracer",
+    "span",
+    "metadata"
+  ],
+  "_make_future_done_callback": [
+    "span",
+    "rpc_info",
+    "log_payloads",
+    "span_decorator"
+  ],
+  "OpenTracingClientInterceptor": {
+    "__init__": [
+      "self",
+      "tracer",
+      "active_span_source",
+      "log_payloads",
+      "span_decorator"
+    ],
+    "_start_span": [
+      "self",
+      "method"
+    ],
+    "_trace_result": [
+      "self",
+      "guarded_span",
+      "rpc_info",
+      "result"
+    ],
+    "_start_guarded_span": [
+      "self"
+    ],
+    "intercept_unary": [
+      "self",
+      "request",
+      "metadata",
+      "client_info",
+      "invoker"
+    ],
+    "_intercept_server_stream": [
+      "self",
+      "request_or_iterator",
+      "metadata",
+      "client_info",
+      "invoker"
+    ],
+    "intercept_stream": [
+      "self",
+      "request_or_iterator",
+      "metadata",
+      "client_info",
+      "invoker"
+    ]
+  },
+  "ActiveSpanSource": {
+    "get_active_span": [
+      "self"
+    ]
+  },
+  "SpanDecorator": {
+    "__call__": [
+      "self",
+      "span",
+      "rpc_info"
+    ]
+  },
+  "open_tracing_client_interceptor": [
+    "tracer",
+    "active_span_source",
+    "log_payloads",
+    "span_decorator"
+  ],
+  "open_tracing_server_interceptor": [
+    "tracer",
+    "log_payloads",
+    "span_decorator"
+  ],
+  "__all__": [],
+  "UnaryClientInfo": {},
+  "StreamClientInfo": {},
+  "UnaryClientInterceptor": {
+    "intercept_unary": [
+      "self",
+      "request",
+      "metadata",
+      "client_info",
+      "invoker"
+    ]
+  },
+  "StreamClientInterceptor": {
+    "intercept_stream": [
+      "self",
+      "request_or_iterator",
+      "metadata",
+      "client_info",
+      "invoker"
+    ]
+  },
+  "intercept_channel": [
+    "channel"
+  ],
+  "UnaryServerInfo": {},
+  "StreamServerInfo": {},
+  "UnaryServerInterceptor": {
+    "intercept_unary": [
+      "self",
+      "request",
+      "servicer_context",
+      "server_info",
+      "handler"
+    ]
+  },
+  "StreamServerInterceptor": {
+    "intercept_stream": [
+      "self",
+      "request_or_iterator",
+      "servicer_context",
+      "server_info",
+      "handler"
+    ]
+  },
+  "intercept_server": [
+    "server"
+  ],
+  "_UnaryClientInfo": {},
+  "_StreamClientInfo": {},
+  "_InterceptorUnaryUnaryMultiCallable": {
+    "__init__": [
+      "self",
+      "method",
+      "base_callable",
+      "interceptor"
+    ],
+    "__call__": [
+      "self",
+      "request",
+      "timeout",
+      "metadata",
+      "credentials"
+    ],
+    "with_call": [
+      "self",
+      "request",
+      "timeout",
+      "metadata",
+      "credentials"
+    ],
+    "future": [
+      "self",
+      "request",
+      "timeout",
+      "metadata",
+      "credentials"
+    ]
+  },
+  "_InterceptorUnaryStreamMultiCallable": {
+    "__init__": [
+      "self",
+      "method",
+      "base_callable",
+      "interceptor"
+    ],
+    "__call__": [
+      "self",
+      "request",
+      "timeout",
+      "metadata",
+      "credentials"
+    ]
+  },
+  "_InterceptorStreamUnaryMultiCallable": {
+    "__init__": [
+      "self",
+      "method",
+      "base_callable",
+      "interceptor"
+    ],
+    "__call__": [
+      "self",
+      "request_iterator",
+      "timeout",
+      "metadata",
+      "credentials"
+    ],
+    "with_call": [
+      "self",
+      "request_iterator",
+      "timeout",
+      "metadata",
+      "credentials"
+    ],
+    "future": [
+      "self",
+      "request_iterator",
+      "timeout",
+      "metadata",
+      "credentials"
+    ]
+  },
+  "_InterceptorStreamStreamMultiCallable": {
+    "__init__": [
+      "self",
+      "method",
+      "base_callable",
+      "interceptor"
+    ],
+    "__call__": [
+      "self",
+      "request_iterator",
+      "timeout",
+      "metadata",
+      "credentials"
+    ]
+  },
+  "_InterceptorChannel": {
+    "__init__": [
+      "self",
+      "channel",
+      "interceptor"
+    ],
+    "subscribe": [
+      "self"
+    ],
+    "unsubscribe": [
+      "self"
+    ],
+    "unary_unary": [
+      "self",
+      "method",
+      "request_serializer",
+      "response_deserializer"
+    ],
+    "unary_stream": [
+      "self",
+      "method",
+      "request_serializer",
+      "response_deserializer"
+    ],
+    "stream_unary": [
+      "self",
+      "method",
+      "request_serializer",
+      "response_deserializer"
+    ],
+    "stream_stream": [
+      "self",
+      "method",
+      "request_serializer",
+      "response_deserializer"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_UnaryServerInfo": {},
+  "_StreamServerInfo": {},
+  "_InterceptorRpcMethodHandler": {
+    "__init__": [
+      "self",
+      "rpc_method_handler",
+      "method",
+      "interceptor"
+    ],
+    "request_streaming": [
+      "self"
+    ],
+    "response_streaming": [
+      "self"
+    ],
+    "request_deserializer": [
+      "self"
+    ],
+    "response_serializer": [
+      "self"
+    ],
+    "unary_unary": [
+      "self"
+    ],
+    "unary_stream": [
+      "self"
+    ],
+    "stream_unary": [
+      "self"
+    ],
+    "stream_stream": [
+      "self"
+    ]
+  },
+  "_InterceptorGenericRpcHandler": {
+    "__init__": [
+      "self",
+      "generic_rpc_handler",
+      "interceptor"
+    ],
+    "service": [
+      "self",
+      "handler_call_details"
+    ]
+  },
+  "_InterceptorServer": {
+    "__init__": [
+      "self",
+      "server",
+      "interceptor"
+    ],
+    "add_generic_rpc_handlers": [
+      "self",
+      "generic_rpc_handlers"
+    ],
+    "add_insecure_port": [
+      "self"
+    ],
+    "add_secure_port": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ]
+  }
+}

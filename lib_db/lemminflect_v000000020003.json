@@ -1,0 +1,781 @@
+{
+  "__version__": [],
+  "getAllLemmas": [
+    "word",
+    "upos"
+  ],
+  "getAllLemmasOOV": [
+    "word",
+    "upos"
+  ],
+  "getLemma": [
+    "word",
+    "upos",
+    "lemmatize_oov"
+  ],
+  "isTagBaseForm": [
+    "tag"
+  ],
+  "getAllInflections": [
+    "lemma",
+    "upos"
+  ],
+  "getAllInflectionsOOV": [
+    "lemma",
+    "upos"
+  ],
+  "getInflection": [
+    "lemma",
+    "tag",
+    "inflect_oov"
+  ],
+  "setUseInternalLemmatizer": [
+    "TF"
+  ],
+  "data_repo": [],
+  "proj_resources": [],
+  "gutenberg_dir": [],
+  "bwcorp_dir": [],
+  "unigrams_gb_all_fn": [],
+  "unigrams_gb_clean_fn": [],
+  "unigrams_bw_all_fn": [],
+  "unigrams_bw_clean_fn": [],
+  "unigrams_fn": [],
+  "english_dict_fn": [],
+  "lexicon_fn": [],
+  "ftable_fn": [],
+  "lemma_lu_fn": [],
+  "inflection_lu_fn": [],
+  "model_lemma_cl_fn": [],
+  "lemma_tcorp_fn": [],
+  "infl_tcorp_fn": [],
+  "model_lemma_fn": [],
+  "model_infl_fn": [],
+  "lemma_overrides_fn": [],
+  "infl_overrides_fn": [],
+  "acc_word_set_fn": [],
+  "acc_lemma_corp_fn": [],
+  "kinfer_type": [],
+  "InflectionLUCodec": {
+    "slex_dict": [],
+    "penn_dict": [],
+    "toString": [
+      "cls",
+      "word",
+      "category",
+      "forms_dict"
+    ],
+    "fromString": [
+      "cls",
+      "line"
+    ],
+    "load": [
+      "cls",
+      "fn"
+    ],
+    "updateForAuxMod": [
+      "d"
+    ]
+  },
+  "Entry": {
+    "__init__": [
+      "self",
+      "lemma",
+      "category",
+      "source"
+    ]
+  },
+  "InflTCorpFileCodec": {
+    "fromString": [
+      "line"
+    ],
+    "toString": [
+      "lemma",
+      "category",
+      "source"
+    ],
+    "load": [
+      "cls",
+      "fn"
+    ]
+  },
+  "LemmaTCorpFileCodec": {
+    "fromString": [
+      "line"
+    ],
+    "toString": [
+      "infl",
+      "category",
+      "source",
+      "lemma"
+    ],
+    "load": [
+      "cls",
+      "fn"
+    ]
+  },
+  "LemmaLUCodec": {
+    "fromString": [
+      "line"
+    ],
+    "toString": [
+      "word",
+      "category",
+      "forms"
+    ],
+    "load": [
+      "cls",
+      "fn"
+    ]
+  },
+  "FormsTable": {
+    "__init__": [
+      "self",
+      "table_fn"
+    ],
+    "_load": [
+      "table_fn"
+    ]
+  },
+  "OverridesCodec": {
+    "toString": [
+      "word_in",
+      "pos",
+      "word_out"
+    ],
+    "load": [
+      "fn"
+    ]
+  },
+  "loadNLTKCorpus": [
+    "corp_fn",
+    "max_chars"
+  ],
+  "is_ascii_regex": [],
+  "isASCIIWord": [
+    "word"
+  ],
+  "_Singleton": {
+    "_instances": [],
+    "__call__": [
+      "cls"
+    ]
+  },
+  "Singleton": {},
+  "Unigrams": {
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "getCount": [
+      "self",
+      "word",
+      "tag"
+    ],
+    "getCountForLemma": [
+      "self",
+      "word",
+      "category"
+    ],
+    "getCountForInflections": [
+      "self",
+      "word",
+      "category",
+      "infl_type"
+    ],
+    "save": [
+      "self",
+      "fn",
+      "min_count"
+    ],
+    "saveCounter": [
+      "fn",
+      "counter",
+      "min_count"
+    ],
+    "load": [
+      "fn"
+    ],
+    "convertToWordKey": [
+      "counter"
+    ]
+  },
+  "ProgressBar": {
+    "__init__": [
+      "self",
+      "end_val",
+      "bar_len"
+    ],
+    "update": [
+      "self",
+      "val"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "DataContainer": {
+    "__init__": [
+      "self",
+      "obj"
+    ],
+    "save": [
+      "self",
+      "filename"
+    ],
+    "load": [
+      "cls",
+      "filename"
+    ],
+    "_open": [
+      "filename",
+      "mode"
+    ]
+  },
+  "ModelLemma": {
+    "__init__": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "input_len",
+      "input_letters",
+      "output_rules"
+    ],
+    "train": [
+      "self",
+      "xdata",
+      "ydata",
+      "batch_size",
+      "nepochs"
+    ]
+  },
+  "ModelInfl": {
+    "__init__": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "input_len",
+      "input_letters",
+      "output_classes"
+    ],
+    "train": [
+      "self",
+      "xdata",
+      "ydata",
+      "batch_size",
+      "nepochs"
+    ]
+  },
+  "getKInferInstance": [
+    "kitype",
+    "model_fn"
+  ],
+  "KInfer": {
+    "__init__": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "in_vec"
+    ],
+    "getOutputEnum": [
+      "self"
+    ],
+    "_loadModelContainer": [
+      "self",
+      "fn"
+    ],
+    "_netOutToValue": [
+      "self",
+      "vec"
+    ]
+  },
+  "KInferWithKeras": {
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "run": [
+      "self",
+      "in_vec"
+    ],
+    "_load": [
+      "self",
+      "fn"
+    ]
+  },
+  "KInferWithNumpy": {
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "run": [
+      "self",
+      "in_vec"
+    ],
+    "_printModelData": [
+      "self"
+    ]
+  },
+  "flatten": [
+    "x"
+  ],
+  "relu": [
+    "x"
+  ],
+  "softmax": [
+    "x",
+    "axis"
+  ],
+  "applyActivation": [
+    "x",
+    "atype"
+  ],
+  "ModelInflInData": {
+    "WVEC_LEN": [],
+    "MAX_LETTER_IDX": [],
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "wordToVec": [
+      "cls",
+      "word",
+      "category"
+    ],
+    "getLetterClasses": []
+  },
+  "ModelLemmaInData": {
+    "WVEC_LEN": [],
+    "MAX_LETTER_IDX": [],
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "wordToVec": [
+      "cls",
+      "word",
+      "category"
+    ],
+    "getLetterClasses": []
+  },
+  "ModelLemmaClasses": {
+    "__init__": [
+      "self",
+      "fn"
+    ],
+    "getRuleIndex": [
+      "self",
+      "rule"
+    ],
+    "computeSuffixRule": [
+      "infl",
+      "lemma"
+    ],
+    "saveFromRuleTuples": [
+      "cls",
+      "fn",
+      "rules"
+    ],
+    "_load": [
+      "fn"
+    ],
+    "_tupleToCSV": [
+      "t"
+    ]
+  },
+  "limitTFMem": [
+    "pct_mem_res"
+  ],
+  "KerasModel": {
+    "__init__": [
+      "self"
+    ],
+    "load": [
+      "cls",
+      "filename"
+    ],
+    "save": [
+      "self",
+      "filename"
+    ],
+    "getInputShape": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "inputMat3D"
+    ]
+  },
+  "StandardVariant": {
+    "__init__": [
+      "self",
+      "vtype",
+      "isgroup",
+      "irreg"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "AuxModVariant": {
+    "__init__": [
+      "self",
+      "inflection",
+      "form",
+      "agreements",
+      "negative"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__ne__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SPECIALISTEntry": {
+    "__init__": [
+      "self"
+    ],
+    "getString": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "SPECIALISTExtractor": {
+    "__init__": [
+      "self",
+      "word_set_fn"
+    ],
+    "extract": [
+      "self",
+      "lexicon_fn"
+    ],
+    "_loadWordSet": [
+      "dict_fn"
+    ],
+    "_loadRawLexicon": [
+      "lexicon_fn"
+    ],
+    "_parseRecord": [
+      "self",
+      "record"
+    ],
+    "_extractKeyValue": [
+      "line"
+    ],
+    "_updateSPECIALISTEntry": [
+      "self",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateVerbCompl": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateNoun": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateAdverb": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateAdjective": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateTypes": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_addToFeatureList": [
+      "cls",
+      "entry",
+      "key",
+      "value"
+    ],
+    "_updateForVariants": [
+      "entry",
+      "value"
+    ],
+    "_updateForVariant": [
+      "entry",
+      "value"
+    ]
+  },
+  "SKey": {
+    "NOUN": [],
+    "ADJ": [],
+    "ADV": [],
+    "VERB": [],
+    "AUX": [],
+    "MODAL": [],
+    "PRON": [],
+    "DET": [],
+    "PREP": [],
+    "CONJ": [],
+    "COMPL": [],
+    "GENDER": [],
+    "STATIVE": [],
+    "PROPER": [],
+    "BROAD_NEG": [],
+    "INTERR": [],
+    "DEMONST": [],
+    "INTRAN": [],
+    "TRAN": [],
+    "DITRAN": [],
+    "LINK": [],
+    "CPLXTRAN": [],
+    "MOD_TYPE": [],
+    "POSITION": [],
+    "TYPE": [],
+    "IRREG": [],
+    "REG": [],
+    "REGD": [],
+    "GLREG": [],
+    "UNCOUNT": [],
+    "GCOUNT": [],
+    "METAREG": [],
+    "PLUR": [],
+    "SING": [],
+    "INV": [],
+    "INV_PERIPH": [],
+    "SINGULAR": [],
+    "PLURAL": [],
+    "INFINATIVE": [],
+    "THIRD_PRES": [],
+    "PAST": [],
+    "PAST_PART": [],
+    "PRES_PART": [],
+    "PRESENT": [],
+    "POSITIVE": [],
+    "COMPARATIVE": [],
+    "SUPERLATIVE": []
+  },
+  "Inflections": {
+    "DICT_UPOS_TYPES": [],
+    "__init__": [
+      "self",
+      "infl_lu_fn",
+      "overrides_fn"
+    ],
+    "setUseInternalLemmatizer": [
+      "self",
+      "TF"
+    ],
+    "isUsingInternalLemmatizer": [
+      "self"
+    ],
+    "getAllInflections": [
+      "self",
+      "lemma",
+      "upos"
+    ],
+    "getAllInflectionsOOV": [
+      "self",
+      "lemma",
+      "upos"
+    ],
+    "getInflection": [
+      "self",
+      "lemma",
+      "tag",
+      "inflect_oov"
+    ],
+    "_extractForm": [
+      "forms",
+      "tag"
+    ],
+    "spacyGetInfl": [
+      "self",
+      "token",
+      "tag",
+      "form_num",
+      "inflect_oov",
+      "on_empty_ret_word"
+    ],
+    "_getInflDict": [
+      "self"
+    ],
+    "_getOverridesDict": [
+      "self"
+    ],
+    "_getInflStyleModel": [
+      "self"
+    ]
+  },
+  "MorphologyStyleModel": {
+    "__init__": [
+      "self",
+      "kitype",
+      "model_fn"
+    ],
+    "getStyle": [
+      "self",
+      "lemma",
+      "upos"
+    ]
+  },
+  "InflectionRules": {
+    "morph": [
+      "cls",
+      "base",
+      "upos",
+      "infl_type"
+    ],
+    "buildRegVerb": [
+      "cls",
+      "base"
+    ],
+    "buildDoubledVerb": [
+      "cls",
+      "base"
+    ],
+    "buildRegAdjAdv": [
+      "cls",
+      "base"
+    ],
+    "buildDoubledAdjAdv": [
+      "cls",
+      "base"
+    ],
+    "buildRegNoun": [
+      "cls",
+      "base"
+    ],
+    "buildGrecNoun": [
+      "cls",
+      "base"
+    ]
+  },
+  "tagToUPos": [
+    "tag"
+  ],
+  "uposToTags": [
+    "upos"
+  ],
+  "categoryToUPos": [
+    "category"
+  ],
+  "uposToCategory": [
+    "upos"
+  ],
+  "slex_dict": [],
+  "catAndTypeToTag": [
+    "category",
+    "infl_type",
+    "is_proper"
+  ],
+  "pennTagAlts": [
+    "tag"
+  ],
+  "getCapsStyle": [
+    "word"
+  ],
+  "applyCapsStyle": [
+    "word",
+    "style"
+  ],
+  "applyCapsStyleToDict": [
+    "data",
+    "style"
+  ],
+  "Lemmatizer": {
+    "DICT_UPOS_TYPES": [],
+    "__init__": [
+      "self",
+      "lemma_lu_fn",
+      "overrides_fn"
+    ],
+    "getAllLemmas": [
+      "self",
+      "word",
+      "upos"
+    ],
+    "getAllLemmasOOV": [
+      "self",
+      "word",
+      "upos"
+    ],
+    "getLemma": [
+      "self",
+      "word",
+      "upos",
+      "lemmatize_oov"
+    ],
+    "isTagBaseForm": [
+      "tag"
+    ],
+    "spacyGetLemma": [
+      "self",
+      "token",
+      "form_num",
+      "lemmatize_oov",
+      "on_empty_ret_word"
+    ],
+    "_getLemmaDict": [
+      "self"
+    ],
+    "_getOverridesDict": [
+      "self"
+    ],
+    "_getOOVLemmatizer": [
+      "self"
+    ]
+  },
+  "LemmatizerRules": {
+    "__init__": [
+      "self",
+      "kitype",
+      "model_fn"
+    ],
+    "lemmatize": [
+      "self",
+      "word",
+      "upos"
+    ],
+    "_applyRule": [
+      "self",
+      "inflection",
+      "rnum"
+    ],
+    "_csvToTuple": [
+      "line"
+    ]
+  }
+}

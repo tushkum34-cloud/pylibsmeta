@@ -1,0 +1,2939 @@
+{
+  "torch_version": [],
+  "__version__": [],
+  "AvgNumNeighborsNorm": {
+    "__init__": [
+      "self",
+      "type_names",
+      "avg_num_neighbors"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "_model_metadata_from_config": [
+    "model_config"
+  ],
+  "GraphModel": {
+    "__init__": [
+      "self",
+      "model",
+      "model_config",
+      "model_input_fields"
+    ],
+    "metadata": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "InteractionBlock": {
+    "__init__": [
+      "self",
+      "irreps_in",
+      "irreps_out",
+      "radial_mlp_depth",
+      "radial_mlp_width",
+      "use_sc",
+      "is_first_layer",
+      "avg_num_neighbors",
+      "type_names"
+    ],
+    "_get_mliap_num_local": [
+      "self",
+      "data"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "GraphModuleMixin": {
+    "_init_irreps": [
+      "self",
+      "irreps_in",
+      "my_irreps_in",
+      "required_irreps_in",
+      "irreps_out"
+    ],
+    "_add_independent_irreps": [
+      "self",
+      "irreps"
+    ],
+    "_get_metadata_contributions": [
+      "self"
+    ],
+    "_make_tracing_inputs": [
+      "self",
+      "n"
+    ]
+  },
+  "SequentialGraphNetwork": {
+    "__init__": [
+      "self",
+      "modules"
+    ],
+    "append": [
+      "self",
+      "name",
+      "module"
+    ],
+    "insert": [
+      "self",
+      "name",
+      "module",
+      "after",
+      "before"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "GhostExchangeModule": {
+    "__init__": [
+      "self",
+      "field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data",
+      "ghost_included"
+    ]
+  },
+  "NoOpGhostExchangeModule": {
+    "forward": [
+      "self",
+      "data",
+      "ghost_included"
+    ],
+    "enable_LAMMPSMLIAPGhostExchange": [
+      "cls",
+      "model"
+    ]
+  },
+  "AtomwiseOperation": {
+    "__init__": [
+      "self",
+      "operation",
+      "field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "AtomwiseLinear": {
+    "__init__": [
+      "self",
+      "field",
+      "out_field",
+      "irreps_in",
+      "irreps_out"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "AtomwiseReduce": {
+    "__init__": [
+      "self",
+      "field",
+      "out_field",
+      "reduce",
+      "avg_num_atoms",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "PerTypeScaleShift": {
+    "__init__": [
+      "self",
+      "type_names",
+      "field",
+      "out_field",
+      "scales",
+      "shifts",
+      "scales_trainable",
+      "shifts_trainable",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ],
+    "modify_PerTypeScaleShift": [
+      "cls",
+      "model",
+      "scales",
+      "shifts",
+      "scales_trainable",
+      "shifts_trainable"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_format_type_vals": [
+    "vals",
+    "type_names",
+    "element_formatter"
+  ],
+  "nequip_tp_desc": [
+    "irreps1",
+    "irreps2",
+    "irreps3"
+  ],
+  "CuEquivarianceTensorProductScatter": {
+    "__init__": [
+      "self",
+      "feature_irreps_in",
+      "irreps_edge_attr",
+      "irreps_mid",
+      "instructions"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "edge_attr",
+      "edge_weight",
+      "edge_dst",
+      "edge_src"
+    ]
+  },
+  "_broadcast": [
+    "src",
+    "other",
+    "dim"
+  ],
+  "scatter": [
+    "src",
+    "index",
+    "dim",
+    "out",
+    "dim_size",
+    "reduce"
+  ],
+  "tp_path_exists": [
+    "irreps_in1",
+    "irreps_in2",
+    "ir_out"
+  ],
+  "with_edge_vectors_": [
+    "data",
+    "with_lengths",
+    "edge_index_field",
+    "edge_cell_shift_field",
+    "edge_vec_field",
+    "edge_len_field"
+  ],
+  "with_edge_type_": [
+    "data",
+    "edge_type_field"
+  ],
+  "_LJParam": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "param",
+      "index1",
+      "index2"
+    ]
+  },
+  "LennardJones": {
+    "__init__": [
+      "self",
+      "type_names",
+      "lj_sigma",
+      "lj_delta",
+      "lj_epsilon",
+      "lj_sigma_trainable",
+      "lj_delta_trainable",
+      "lj_epsilon_trainable",
+      "lj_exponent",
+      "lj_per_type",
+      "lj_style",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SimpleLennardJones": {
+    "__init__": [
+      "self",
+      "lj_sigma",
+      "lj_epsilon",
+      "lj_use_cutoff",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "_ZBL": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "Z",
+      "r",
+      "atom_types",
+      "edge_index",
+      "qqr2exesquare"
+    ]
+  },
+  "ZBL": {
+    "__init__": [
+      "self",
+      "type_names",
+      "chemical_species",
+      "units",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "__all__": [],
+  "ScalarMLP": {
+    "__init__": [
+      "self",
+      "output_dim",
+      "hidden_layers_depth",
+      "hidden_layers_width",
+      "nonlinearity",
+      "bias",
+      "forward_weight_init",
+      "init_mode",
+      "parametrization",
+      "field",
+      "out_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "ScalarMLPFunction": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "output_dim",
+      "hidden_layers_depth",
+      "hidden_layers_width",
+      "nonlinearity",
+      "bias",
+      "forward_weight_init",
+      "init_mode",
+      "parametrization"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "DeepLinearMLP": {
+    "__init__": [
+      "self",
+      "mlp"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "ScalarLinearLayer": {
+    "__init__": [
+      "self",
+      "in_features",
+      "out_features",
+      "alpha",
+      "bias",
+      "init_mode"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "LAMMPSMLIAPGhostExchangeOp": {
+    "forward": [
+      "ctx"
+    ],
+    "backward": [
+      "ctx",
+      "grad_output"
+    ]
+  },
+  "LAMMPSMLIAPGhostExchangeModule": {
+    "forward": [
+      "self",
+      "data",
+      "ghost_included"
+    ]
+  },
+  "shifted_softplus": [
+    "x"
+  ],
+  "ShiftedSoftplus": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "acts": [],
+  "ConvNetLayer": {
+    "__init__": [
+      "self",
+      "irreps_in",
+      "feature_irreps_hidden",
+      "convolution",
+      "convolution_kwargs",
+      "resnet",
+      "nonlinearity_type",
+      "nonlinearity_scalars",
+      "nonlinearity_gates"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "_list_to_dict": [
+    "keys",
+    "args"
+  ],
+  "_list_from_dict": [
+    "keys",
+    "data"
+  ],
+  "ListInputOutputWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "input_keys",
+      "output_keys"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "DictInputOutputWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "input_keys",
+      "output_keys"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "ListInputOutputStateDictWrapper": {
+    "__init__": [
+      "self",
+      "model",
+      "input_keys",
+      "output_keys",
+      "state_dict_keys"
+    ],
+    "forward": [
+      "self"
+    ]
+  },
+  "CompileGraphModel": {
+    "__init__": [
+      "self",
+      "model",
+      "model_config",
+      "model_input_fields"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ],
+    "_compiled_forward": [
+      "self",
+      "data"
+    ],
+    "_get_weights_buffers": [
+      "self"
+    ]
+  },
+  "TensorProductScatter": {
+    "__init__": [
+      "self",
+      "feature_irreps_in",
+      "irreps_edge_attr",
+      "irreps_mid",
+      "instructions"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "edge_attr",
+      "edge_weight",
+      "edge_dst",
+      "edge_src"
+    ],
+    "enable_OpenEquivariance": [
+      "cls",
+      "model"
+    ],
+    "enable_CuEquivariance": [
+      "cls",
+      "model"
+    ]
+  },
+  "PartialForceOutput": {
+    "__init__": [
+      "self",
+      "func",
+      "vectorize",
+      "vectorize_warnings"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "ForceStressOutput": {
+    "__init__": [
+      "self",
+      "func",
+      "do_derivatives"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ],
+    "enable_ForceStressOutput": [
+      "cls",
+      "model"
+    ],
+    "disable_ForceStressOutput": [
+      "cls",
+      "model"
+    ]
+  },
+  "Concat": {
+    "__init__": [
+      "self",
+      "in_fields",
+      "out_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "ApplyFactor": {
+    "__init__": [
+      "self",
+      "in_field",
+      "factor",
+      "out_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "SaveForOutput": {
+    "__init__": [
+      "self",
+      "field",
+      "out_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "OpenEquivarianceTensorProductScatter": {
+    "__init__": [
+      "self",
+      "feature_irreps_in",
+      "irreps_edge_attr",
+      "irreps_mid",
+      "instructions",
+      "use_opaque"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "edge_attr",
+      "edge_weight",
+      "edge_dst",
+      "edge_src"
+    ]
+  },
+  "model_modifier": [
+    "persistent",
+    "private",
+    "unsupported_devices",
+    "supported_compile_modes"
+  ],
+  "is_model_modifier": [
+    "func"
+  ],
+  "is_persistent_model_modifier": [
+    "func"
+  ],
+  "is_private_model_modifier": [
+    "func"
+  ],
+  "get_model_modifier_unsupported_devices": [
+    "func"
+  ],
+  "get_model_modifier_supported_compile_modes": [
+    "func"
+  ],
+  "replace_submodules": [
+    "model",
+    "target_cls",
+    "factory"
+  ],
+  "PolynomialCutoff": {
+    "__init__": [
+      "self",
+      "p"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "cutoff_partialdict_to_fulldict": [
+    "partial_dict",
+    "type_names",
+    "r_max"
+  ],
+  "cutoff_fulldict_to_tensor": [
+    "full_dict",
+    "type_names"
+  ],
+  "cutoff_tensor_to_str": [
+    "cutoff_tensor"
+  ],
+  "cutoff_str_to_fulldict": [
+    "cutoff_str",
+    "type_names"
+  ],
+  "cutoff_partialdict_to_tensor": [
+    "partial_dict",
+    "type_names",
+    "r_max"
+  ],
+  "cutoff_partialdict_to_str": [
+    "partial_dict",
+    "type_names",
+    "r_max"
+  ],
+  "EdgeLengthNormalizer": {
+    "__init__": [
+      "self",
+      "r_max",
+      "type_names",
+      "per_edge_type_cutoff",
+      "edge_type_field",
+      "norm_length_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "BesselEdgeLengthEncoding": {
+    "__init__": [
+      "self",
+      "cutoff",
+      "num_bessels",
+      "trainable",
+      "edge_invariant_field",
+      "norm_length_field",
+      "irreps_in"
+    ],
+    "extra_repr": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "SphericalHarmonicEdgeAttrs": {
+    "__init__": [
+      "self",
+      "irreps_edge_sh",
+      "edge_sh_normalization",
+      "edge_sh_normalize",
+      "irreps_in",
+      "out_field"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "AddRadialCutoffToData": {
+    "__init__": [
+      "self",
+      "cutoff",
+      "norm_length_field",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "NodeTypeEmbed": {
+    "__init__": [
+      "self",
+      "type_names",
+      "num_features",
+      "set_features",
+      "categorical_graph_field_embed",
+      "irreps_in"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "_GLOBAL_DTYPE": [],
+  "ModelDownloadInfo": {},
+  "ModelArtifact": {},
+  "ModelNotFoundError": {},
+  "NequIPNetAPIClient": {
+    "MODEL_ID_PATTERN": [],
+    "BASE_URL": [],
+    "__init__": [
+      "self",
+      "user_agent"
+    ],
+    "get_model_download_info": [
+      "self",
+      "model_id"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "logger": [],
+  "download_url": [
+    "url",
+    "folder",
+    "filename"
+  ],
+  "extract_zip": [
+    "path",
+    "folder"
+  ],
+  "extract_tar": [
+    "path",
+    "folder",
+    "mode"
+  ],
+  "get_project_root": [],
+  "RankedLogger": {
+    "__init__": [
+      "self",
+      "name",
+      "rank_zero_only",
+      "extra"
+    ],
+    "log": [
+      "self",
+      "level",
+      "msg",
+      "rank"
+    ]
+  },
+  "FLOAT_TOLERANCE": [],
+  "PERMUTATION_FLOAT_TOLERANCE": [],
+  "_inverse_permutation": [
+    "perm"
+  ],
+  "assert_permutation_equivariant": [
+    "func",
+    "data_in",
+    "tolerance",
+    "raise_error"
+  ],
+  "assert_AtomicData_equivariant": [
+    "func",
+    "data_in",
+    "permutation_tolerance",
+    "e3_tolerance"
+  ],
+  "_DEBUG_HOOKS": [],
+  "set_irreps_debug": [
+    "enabled"
+  ],
+  "override_irreps_debug": [
+    "enabled"
+  ],
+  "edgeset_from_AtomicDataDict": [
+    "data"
+  ],
+  "compare_neighborlists": [
+    "atoms_or_data",
+    "nl1",
+    "nl2"
+  ],
+  "_sanitize_int": [
+    "x",
+    "client"
+  ],
+  "int_div": [
+    "a",
+    "b"
+  ],
+  "int_mul": [
+    "a",
+    "b"
+  ],
+  "float_to_str": [
+    "x",
+    "fmt"
+  ],
+  "concat_lists": [
+    "list1",
+    "list2"
+  ],
+  "list_to_identity_dict": [
+    "x"
+  ],
+  "list_to_constant_dict": [
+    "keys",
+    "value"
+  ],
+  "big_dataset_stats": [
+    "name",
+    "cutoff_radius"
+  ],
+  "type_names_from_package": [
+    "package_path"
+  ],
+  "register_resolvers": [
+    "resolvers"
+  ],
+  "_register_default_resolvers": [],
+  "dtype_from_name": [
+    "name"
+  ],
+  "dtype_to_name": [
+    "name"
+  ],
+  "torch_default_dtype": [
+    "dtype"
+  ],
+  "floating_point_tolerance": [
+    "model_dtype"
+  ],
+  "_NUM_EVAL_TRIALS": [],
+  "_pt2_compile_error_message": [
+    "key",
+    "tol",
+    "err",
+    "absval",
+    "model_dtype"
+  ],
+  "_default_error_message": [
+    "key",
+    "tol",
+    "err",
+    "absval",
+    "model_dtype"
+  ],
+  "test_model_output_similarity_by_dtype": [
+    "model1",
+    "model2",
+    "data",
+    "model_dtype",
+    "fields",
+    "error_message"
+  ],
+  "fx_duck_shape": [
+    "enabled"
+  ],
+  "nequip_make_fx": [
+    "model",
+    "data",
+    "fields",
+    "extra_inputs",
+    "seed"
+  ],
+  "_nequip_make_fx": [
+    "model",
+    "inputs"
+  ],
+  "highlight_code_differences": [
+    "code1",
+    "code2"
+  ],
+  "check_make_fx_diff": [
+    "fx_model_1",
+    "fx_model_2",
+    "fields"
+  ],
+  "get_cache_dir": [],
+  "_compute_cache_key": [
+    "model_id",
+    "download_url"
+  ],
+  "_compute_file_hash": [
+    "file_path"
+  ],
+  "_get_metadata_path": [
+    "cache_dir",
+    "cache_key"
+  ],
+  "_get_model_path": [
+    "cache_dir",
+    "cache_key"
+  ],
+  "get_cached_model": [
+    "model_id",
+    "download_url"
+  ],
+  "cache_model": [
+    "model_id",
+    "download_url",
+    "download_fn"
+  ],
+  "_CONDITIONAL_TORCHSCRIPT_MODE": [],
+  "conditional_torchscript_mode": [
+    "enabled"
+  ],
+  "conditional_torchscript_jit": [
+    "module"
+  ],
+  "prepare_model_for_compile": [
+    "model",
+    "device"
+  ],
+  "aot_export_model": [
+    "model",
+    "device",
+    "input_fields",
+    "output_fields",
+    "data",
+    "batch_map",
+    "output_path",
+    "inductor_configs",
+    "constant_fold",
+    "seed"
+  ],
+  "_latest_global_config": [],
+  "_GLOBAL_STATE_INITIALIZED": [],
+  "get_latest_global_state": [
+    "only_metadata_related"
+  ],
+  "global_state_initialized": [],
+  "set_global_state": [
+    "allow_tf32",
+    "warn_on_override"
+  ],
+  "find_first_of_type": [
+    "m",
+    "kls"
+  ],
+  "BaseEnergyModelTests": {},
+  "model_dtype": [
+    "request"
+  ],
+  "default_dtype": [],
+  "BENCHMARK_ROOT": [],
+  "temp_data": [
+    "default_dtype"
+  ],
+  "CH3CHO": [
+    "CH3CHO_no_typemap"
+  ],
+  "CH3CHO_no_typemap": [
+    "default_dtype"
+  ],
+  "Cu_bulk": [
+    "default_dtype"
+  ],
+  "molecules": [
+    "default_dtype"
+  ],
+  "nequip_dataset": [
+    "molecules"
+  ],
+  "atomic_batch": [
+    "nequip_dataset"
+  ],
+  "diamond_carbon": [
+    "default_dtype"
+  ],
+  "_check_and_print": [
+    "retcode",
+    "encoding"
+  ],
+  "_training_session": [
+    "conffile",
+    "model_dtype",
+    "extra_train_from_save",
+    "model_config",
+    "training_module_override_dict"
+  ],
+  "CompilationTestsMixin": {
+    "nequip_compile_tol": [
+      "self",
+      "model_dtype"
+    ],
+    "nequip_compile_acceleration_modifiers": [
+      "self",
+      "request"
+    ],
+    "train_time_compile_acceleration_modifiers": [
+      "self",
+      "request"
+    ],
+    "test_nequip_compile": [
+      "self",
+      "fake_model_training_session",
+      "device",
+      "mode",
+      "nequip_compile_tol",
+      "nequip_compile_acceleration_modifiers"
+    ],
+    "compare_output_and_gradients": [
+      "self",
+      "modelA",
+      "modelB",
+      "model_test_data",
+      "tol",
+      "compare_outputs"
+    ],
+    "test_train_time_compile": [
+      "self",
+      "model",
+      "model_test_data",
+      "device",
+      "train_time_compile_acceleration_modifiers"
+    ]
+  },
+  "CONFTEST_PATH": [],
+  "validate_model_interface_contract": [
+    "model",
+    "test_structures",
+    "device",
+    "tol",
+    "dtype"
+  ],
+  "TorchSimIntegrationMixin": {
+    "torchsim_tol": [
+      "self",
+      "model_dtype"
+    ],
+    "torchsim_compiled_model": [
+      "self",
+      "request",
+      "fake_model_training_session",
+      "device",
+      "nequip_compile_acceleration_modifiers"
+    ],
+    "test_torchsim_model_interface_validation": [
+      "self",
+      "torchsim_compiled_model",
+      "device",
+      "fake_model_training_session",
+      "torchsim_tol"
+    ],
+    "test_torchsim_calculator_consistency": [
+      "self",
+      "torchsim_compiled_model",
+      "fake_model_training_session",
+      "device",
+      "torchsim_tol"
+    ],
+    "test_torchsim_batched_evaluation": [
+      "self",
+      "torchsim_compiled_model",
+      "fake_model_training_session",
+      "device",
+      "batch_size",
+      "torchsim_tol"
+    ]
+  },
+  "LAMMPS": [],
+  "LAMMPS_ENV_PREFIX": [],
+  "HAS_LAMMPS": [],
+  "HAS_KOKKOS": [],
+  "HAS_KOKKOS_CUDA": [],
+  "HAS_MLIAP": [],
+  "LAMMPSMLIAPIntegrationMixin": {
+    "mliap_tol": [
+      "self",
+      "model_dtype"
+    ],
+    "mliap_acceleration_modifiers": [
+      "self",
+      "request"
+    ],
+    "_prepare_mliap_model": [
+      "self",
+      "fake_model_training_session",
+      "compile",
+      "modifiers_str"
+    ],
+    "_run_lammps_mliap_test": [
+      "self",
+      "tmpdir",
+      "calc",
+      "config",
+      "mliap_path",
+      "model_dtype",
+      "mliap_tol"
+    ],
+    "test_mliap_integration": [
+      "self",
+      "fake_model_training_session",
+      "mliap_acceleration_modifiers",
+      "model_dtype",
+      "compile",
+      "mliap_tol"
+    ]
+  },
+  "BasicModelTestsMixin": {
+    "config": [
+      "self"
+    ],
+    "equivariance_tol": [
+      "self",
+      "model_dtype"
+    ],
+    "strict_locality": [
+      "self"
+    ],
+    "device": [
+      "self",
+      "request"
+    ],
+    "make_model": [
+      "model_config",
+      "device"
+    ],
+    "model": [
+      "self",
+      "config",
+      "device",
+      "model_dtype"
+    ],
+    "partial_model": [
+      "self",
+      "model",
+      "device"
+    ],
+    "model_test_data": [
+      "self",
+      "config",
+      "atomic_batch",
+      "diamond_carbon",
+      "device",
+      "request"
+    ],
+    "conffile": [
+      "self",
+      "request"
+    ],
+    "_update_config_recursively": [
+      "self",
+      "config",
+      "updates"
+    ],
+    "fake_model_training_session": [
+      "self",
+      "conffile",
+      "config",
+      "model_dtype",
+      "request"
+    ],
+    "test_init": [
+      "self",
+      "model"
+    ],
+    "test_model_repr": [
+      "self",
+      "model"
+    ],
+    "test_forward": [
+      "self",
+      "model",
+      "model_test_data"
+    ],
+    "test_wrapped_unwrapped": [
+      "self",
+      "model",
+      "device",
+      "Cu_bulk"
+    ],
+    "test_batch": [
+      "self",
+      "model",
+      "model_test_data"
+    ],
+    "test_equivariance": [
+      "self",
+      "model",
+      "model_test_data",
+      "device",
+      "equivariance_tol"
+    ]
+  },
+  "EnergyModelTestsMixin": {
+    "total_energy_keys": [
+      "self"
+    ],
+    "per_atom_energy_keys": [
+      "self"
+    ],
+    "force_keys": [
+      "self"
+    ],
+    "test_large_separation": [
+      "self",
+      "model",
+      "molecules",
+      "device"
+    ],
+    "test_cross_frame_grad": [
+      "self",
+      "model",
+      "device",
+      "nequip_dataset"
+    ],
+    "test_numeric_gradient": [
+      "self",
+      "model",
+      "atomic_batch",
+      "device"
+    ],
+    "test_partial_forces": [
+      "self",
+      "model",
+      "partial_model",
+      "atomic_batch",
+      "device",
+      "strict_locality"
+    ],
+    "test_numeric_gradient_partial": [
+      "self",
+      "partial_model",
+      "atomic_batch",
+      "device"
+    ],
+    "pair_force": [
+      "self",
+      "model",
+      "partial_model",
+      "device"
+    ],
+    "test_force_smoothness": [
+      "self",
+      "model",
+      "device",
+      "pair_force"
+    ],
+    "test_partial_force_smoothness": [
+      "self",
+      "model",
+      "device",
+      "pair_force"
+    ],
+    "test_isolated_atom_energies": [
+      "self",
+      "model",
+      "device"
+    ],
+    "test_embedding_cutoff": [
+      "self",
+      "model",
+      "device"
+    ]
+  },
+  "_DEFAULT_VERSION_CODES": [],
+  "get_current_code_versions": [
+    "verbose"
+  ],
+  "_ALL_PKGS": [],
+  "get_version_safe": [
+    "module_name"
+  ],
+  "_TORCH_VERSION": [],
+  "_TORCH_GE_2_4": [],
+  "_TORCH_GE_2_6": [],
+  "_TORCH_GE_2_7": [],
+  "_TORCH_GE_2_8": [],
+  "_TORCH_GE_2_9": [],
+  "check_pt2_compile_compatibility": [],
+  "NequIPTorchSimCalc": {
+    "__init__": [
+      "self",
+      "model",
+      "r_max",
+      "device",
+      "transforms",
+      "neighbor_list_backend",
+      "atomic_numbers",
+      "system_idx"
+    ],
+    "compute_forces": [
+      "self",
+      "value"
+    ],
+    "compute_stress": [
+      "self",
+      "value"
+    ],
+    "_handle_chemical_species_map": [
+      "cls",
+      "chemical_species_to_atom_type_map",
+      "type_names"
+    ],
+    "from_compiled_model": [
+      "cls",
+      "compile_path",
+      "device",
+      "chemical_species_to_atom_type_map"
+    ],
+    "_from_saved_model": [
+      "cls",
+      "model_path",
+      "device",
+      "chemical_species_to_atom_type_map"
+    ],
+    "setup_from_system_idx": [
+      "self",
+      "atomic_numbers",
+      "system_idx"
+    ],
+    "forward": [
+      "self",
+      "state"
+    ],
+    "save_extra_outputs": [
+      "self",
+      "out",
+      "results"
+    ]
+  },
+  "_basic_transforms": [
+    "metadata",
+    "r_max",
+    "type_names",
+    "chemical_species_to_atom_type_map",
+    "neighbor_list_backend"
+  ],
+  "main": [
+    "args"
+  ],
+  "NequIPLAMMPSMLIAPWrapper": {
+    "__init__": [
+      "self",
+      "model_path",
+      "model_key",
+      "modifiers",
+      "compile",
+      "tf32"
+    ],
+    "_load_model_from_bytes": [
+      "self"
+    ],
+    "_initialize_model": [
+      "self",
+      "lmp_data"
+    ],
+    "compute_forces": [
+      "self",
+      "lmp_data"
+    ],
+    "compute_descriptors": [
+      "self",
+      "lmp_data"
+    ],
+    "compute_gradients": [
+      "self",
+      "lmp_data"
+    ]
+  },
+  "_nl_fn": [
+    "pos",
+    "r_max",
+    "cell",
+    "pbc",
+    "NL"
+  ],
+  "compute_neighborlist_": [
+    "data",
+    "r_max"
+  ],
+  "Type": [],
+  "PBCType": [],
+  "_SPECIAL_IRREPS": [],
+  "_fix_irreps_dict": [
+    "d"
+  ],
+  "_irreps_compatible": [
+    "ir1",
+    "ir2"
+  ],
+  "to_": [
+    "data",
+    "device"
+  ],
+  "batched_from_list": [
+    "data_list"
+  ],
+  "frame_from_batched": [
+    "batched_data",
+    "index"
+  ],
+  "without_nodes": [
+    "data",
+    "which_nodes"
+  ],
+  "num_frames": [
+    "data"
+  ],
+  "num_nodes": [
+    "data"
+  ],
+  "num_edges": [
+    "data"
+  ],
+  "with_batch_": [
+    "data"
+  ],
+  "PartialSampler": {
+    "__init__": [
+      "self",
+      "data_source",
+      "shuffle",
+      "num_samples_per_epoch",
+      "generator"
+    ],
+    "num_samples_total": [
+      "self"
+    ],
+    "step_epoch": [
+      "self",
+      "epoch"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "BaseModifier": {
+    "__init__": [
+      "self",
+      "field"
+    ],
+    "_func": [
+      "self",
+      "data"
+    ],
+    "__call__": [
+      "self",
+      "data1",
+      "data2"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ]
+  },
+  "PerAtomModifier": {
+    "__init__": [
+      "self",
+      "field",
+      "factor"
+    ],
+    "_func": [
+      "self",
+      "data"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "EdgeLengths": {
+    "__init__": [
+      "self"
+    ],
+    "_func": [
+      "self",
+      "data"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ]
+  },
+  "NumNeighbors": {
+    "__init__": [
+      "self"
+    ],
+    "_func": [
+      "self",
+      "data"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ]
+  },
+  "_MeanX": {
+    "__init__": [
+      "self",
+      "modifier"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ]
+  },
+  "Mean": {
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "MeanAbsolute": {
+    "__init__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "RootMeanSquare": {
+    "__init__": [
+      "self"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "StandardDeviation": {
+    "__init__": [
+      "self",
+      "squared",
+      "unbiased"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Max": {
+    "__init__": [
+      "self",
+      "abs"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Min": {
+    "__init__": [
+      "self",
+      "abs"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Count": {
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "from_ase": [
+    "atoms",
+    "key_mapping",
+    "include_keys",
+    "exclude_keys"
+  ],
+  "to_ase": [
+    "data",
+    "chemical_symbols",
+    "extra_fields"
+  ],
+  "chemical_symbols": [],
+  "chemical_symbols_to_atomic_numbers_dict": [],
+  "register_fields": [
+    "graph_fields",
+    "node_fields",
+    "edge_fields",
+    "long_fields",
+    "cartesian_tensor_fields"
+  ],
+  "deregister_fields": [],
+  "_register_field_prefix": [
+    "prefix"
+  ],
+  "get_field_type": [
+    "field",
+    "error_on_unregistered"
+  ],
+  "get_dynamic_shapes": [
+    "input_fields",
+    "batch_map"
+  ],
+  "ABBREV": [],
+  "DataStatisticsManager": {
+    "__init__": [
+      "self",
+      "metrics",
+      "dataloader_kwargs",
+      "type_names"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ],
+    "compute": [
+      "self"
+    ],
+    "reset": [
+      "self"
+    ],
+    "get_statistics": [
+      "self",
+      "data_source"
+    ]
+  },
+  "CommonDataStatisticsManager": [
+    "dataloader_kwargs",
+    "type_names"
+  ],
+  "EnergyOnlyDataStatisticsManager": [
+    "dataloader_kwargs",
+    "type_names"
+  ],
+  "from_dict": [
+    "data"
+  ],
+  "HDF5Dataset": {
+    "__init__": [
+      "self",
+      "file_name",
+      "transforms",
+      "key_mapping"
+    ],
+    "setup_index": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ],
+    "_get_data": [
+      "self",
+      "idx"
+    ]
+  },
+  "ASEDataset": {
+    "__init__": [
+      "self",
+      "file_path",
+      "transforms",
+      "ase_args",
+      "include_keys",
+      "exclude_keys",
+      "key_mapping"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ]
+  },
+  "SubsetByRandomSlice": {
+    "__init__": [
+      "self",
+      "dataset",
+      "start",
+      "length",
+      "seed"
+    ]
+  },
+  "RandomSplitAndIndexDataset": [
+    "dataset",
+    "split_dict",
+    "dataset_key",
+    "seed"
+  ],
+  "NPZDataset": {
+    "__init__": [
+      "self",
+      "file_path",
+      "transforms",
+      "key_mapping"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ]
+  },
+  "AtomicDataset": {
+    "__init__": [
+      "self",
+      "transforms"
+    ],
+    "__getitem__": [
+      "self",
+      "index"
+    ],
+    "__getitems__": [
+      "self",
+      "indices"
+    ],
+    "_transform": [
+      "self",
+      "x"
+    ],
+    "num_atoms": [
+      "self",
+      "indices"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ]
+  },
+  "EMTTestDataset": {
+    "__init__": [
+      "self",
+      "transforms",
+      "supercell",
+      "sigma",
+      "element",
+      "num_frames",
+      "seed"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ]
+  },
+  "LMDBTestDataset": {
+    "__init__": [
+      "self",
+      "file_path",
+      "transforms",
+      "supercell",
+      "sigma",
+      "element",
+      "num_frames",
+      "seed"
+    ]
+  },
+  "LMDBMetadataSpec": {},
+  "NequIPLMDBDataset": {
+    "__init__": [
+      "self",
+      "file_path",
+      "transforms",
+      "exclude_keys"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_get_env": [
+      "self"
+    ],
+    "_get_length": [
+      "self"
+    ],
+    "_get_data_list": [
+      "self",
+      "indices"
+    ],
+    "save_from_iterator": [
+      "cls",
+      "file_path",
+      "iterator",
+      "map_size",
+      "write_frequency",
+      "extra_metadata"
+    ],
+    "_metadata": [
+      "self"
+    ],
+    "get_metadata": [
+      "self",
+      "attr",
+      "idx"
+    ]
+  },
+  "sGDML_CCSD_DataModule": {
+    "DATASET_MAP": [],
+    "URL_DICT": [],
+    "__init__": [
+      "self",
+      "dataset",
+      "data_source_dir",
+      "transforms",
+      "seed",
+      "train_val_split",
+      "trainval_test_subset"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "_URL_3BPA": [],
+  "test_set_names": [],
+  "NequIP3BPADataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "transforms",
+      "train_val_split",
+      "data_source_dir",
+      "train_set",
+      "test_sets"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "_URLS": [],
+  "SAMD23DataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "transforms",
+      "data_source_dir",
+      "system",
+      "include_ood"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "_URL_TRAIN": [],
+  "_URL_VAL": [],
+  "_URL_TEST": [],
+  "COLLDataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "transforms",
+      "data_source_dir"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "ASEDataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "train_file_path",
+      "val_file_path",
+      "test_file_path",
+      "predict_file_path",
+      "split_dataset",
+      "transforms",
+      "ase_args",
+      "include_keys",
+      "exclude_keys",
+      "key_mapping"
+    ]
+  },
+  "NequIPDataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "train_dataset",
+      "val_dataset",
+      "test_dataset",
+      "predict_dataset",
+      "split_dataset",
+      "train_dataloader",
+      "val_dataloader",
+      "test_dataloader",
+      "predict_dataloader",
+      "stats_manager"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "setup": [
+      "self",
+      "stage"
+    ],
+    "teardown": [
+      "self",
+      "stage"
+    ],
+    "train_dataloader": [
+      "self"
+    ],
+    "val_dataloader": [
+      "self"
+    ],
+    "test_dataloader": [
+      "self"
+    ],
+    "predict_dataloader": [
+      "self"
+    ],
+    "_maybe_load_dataloader_state_dict": [
+      "self",
+      "dloader",
+      "varname"
+    ],
+    "_get_dloader": [
+      "self",
+      "datasets",
+      "generator",
+      "dataloader_dict"
+    ],
+    "get_statistics": [
+      "self",
+      "dataset",
+      "dataset_idx"
+    ]
+  },
+  "_default_collate_fn_factory": [],
+  "_URL_TM23": [],
+  "supported_elements": [],
+  "TM23DataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "data_source_dir",
+      "element",
+      "transforms",
+      "train_val_split"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "KCALMOL_TO_EV": [],
+  "_kcalmol_to_ev": [
+    "data"
+  ],
+  "MD22DataModule": {
+    "dataset_map": [],
+    "url_dict": [],
+    "__init__": [
+      "self",
+      "dataset",
+      "data_source_dir",
+      "transforms",
+      "seed",
+      "train_val_split"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "rMD17DataModule": {
+    "DATASET_MAP": [],
+    "DATASET_URL": [],
+    "__init__": [
+      "self",
+      "dataset",
+      "data_source_dir",
+      "transforms",
+      "seed",
+      "train_val_test_split",
+      "subset_len"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "_URL_WATER": [],
+  "WaterDataModule": {
+    "__init__": [
+      "self",
+      "seed",
+      "transforms",
+      "data_source_dir",
+      "train_val_test_split"
+    ],
+    "prepare_data": [
+      "self"
+    ]
+  },
+  "NeighborListTransform": {
+    "__init__": [
+      "self",
+      "r_max",
+      "per_edge_type_cutoff",
+      "type_names"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "NeighborListPruneTransform": {
+    "__init__": [
+      "self",
+      "r_max",
+      "per_edge_type_cutoff",
+      "type_names"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "SortedNeighborListTransform": {
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "VirialToStressTransform": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "StressSignFlipTransform": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "AddNaNStressTransform": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "NonPeriodicCellTransform": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "ChemicalSpeciesToAtomTypeMapper": {
+    "__init__": [
+      "self",
+      "model_type_names",
+      "chemical_species_to_atom_type_map",
+      "chemical_symbols"
+    ],
+    "forward": [
+      "self",
+      "data"
+    ]
+  },
+  "NoseHoover": {
+    "__init__": [
+      "self",
+      "atoms",
+      "timestep",
+      "temperature",
+      "nvt_q",
+      "trajectory",
+      "logfile",
+      "loginterval",
+      "append_trajectory"
+    ],
+    "step": [
+      "self"
+    ]
+  },
+  "NequIPCalculator": {
+    "implemented_properties": [],
+    "_handle_chemical_species_map": [
+      "cls",
+      "chemical_species_to_atom_type_map",
+      "type_names"
+    ],
+    "__init__": [
+      "self",
+      "model",
+      "device",
+      "energy_units_to_eV",
+      "length_units_to_A",
+      "transforms"
+    ],
+    "from_compiled_model": [
+      "cls",
+      "compile_path",
+      "device",
+      "chemical_species_to_atom_type_map",
+      "chemical_symbols"
+    ],
+    "_from_saved_model": [
+      "cls",
+      "model_path",
+      "device",
+      "chemical_species_to_atom_type_map",
+      "allow_tf32",
+      "model_name"
+    ],
+    "calculate": [
+      "self",
+      "atoms",
+      "properties",
+      "system_changes"
+    ],
+    "save_extra_outputs": [
+      "self",
+      "out"
+    ]
+  },
+  "_create_neighbor_transform": [
+    "metadata",
+    "r_max",
+    "type_names"
+  ],
+  "MetricsManager": {
+    "__init__": [
+      "self",
+      "metrics",
+      "type_names"
+    ],
+    "forward": [
+      "self",
+      "preds",
+      "target",
+      "prefix",
+      "suffix"
+    ],
+    "compute": [
+      "self",
+      "prefix",
+      "suffix"
+    ],
+    "reset": [
+      "self"
+    ],
+    "set_coeffs": [
+      "self",
+      "coeff_dict"
+    ],
+    "get_extra_state": [
+      "self"
+    ],
+    "set_extra_state": [
+      "self",
+      "state"
+    ]
+  },
+  "EnergyForceLoss": [
+    "coeffs",
+    "per_atom_energy",
+    "type_names"
+  ],
+  "EnergyForceMetrics": [
+    "coeffs",
+    "type_names"
+  ],
+  "EnergyForceStressLoss": [
+    "coeffs",
+    "per_atom_energy",
+    "type_names",
+    "ignore_nan"
+  ],
+  "EnergyForceStressMetrics": [
+    "coeffs",
+    "type_names",
+    "ignore_nan"
+  ],
+  "EnergyOnlyLoss": [
+    "per_atom_energy",
+    "type_names"
+  ],
+  "EnergyOnlyMetrics": [
+    "coeffs",
+    "type_names"
+  ],
+  "MeanAbsoluteError": {
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "preds",
+      "target"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "MeanSquaredError": {
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "preds",
+      "target"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "RootMeanSquaredError": {
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "MaximumAbsoluteError": {
+    "__init__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "preds",
+      "target"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "HuberLoss": {
+    "__init__": [
+      "self",
+      "reduction",
+      "delta"
+    ],
+    "update": [
+      "self",
+      "preds",
+      "target"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "StratifiedHuberForceLoss": {
+    "__init__": [
+      "self",
+      "delta_dict",
+      "reduction"
+    ],
+    "update": [
+      "self",
+      "preds",
+      "target"
+    ],
+    "compute": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_SOLE_MODEL_KEY": [],
+  "NequIPLightningModule": {
+    "__init__": [
+      "self",
+      "model",
+      "optimizer",
+      "lr_scheduler",
+      "loss",
+      "train_metrics",
+      "val_metrics",
+      "test_metrics",
+      "num_datasets",
+      "info_dict"
+    ],
+    "_build_model": [
+      "self",
+      "model_config"
+    ],
+    "configure_optimizers": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "inputs"
+    ],
+    "evaluation_model": [
+      "self"
+    ],
+    "process_target": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "on_train_epoch_end": [
+      "self"
+    ],
+    "validation_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "on_validation_epoch_end": [
+      "self"
+    ],
+    "test_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "on_test_epoch_end": [
+      "self"
+    ]
+  },
+  "_default_param_group_factory": [
+    "model"
+  ],
+  "ConFIGLightningModule": {
+    "__init__": [
+      "self",
+      "gradient_clip_val",
+      "gradient_clip_algorithm",
+      "lsqr",
+      "norm_eps"
+    ],
+    "training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "_ConFIG_training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ],
+    "_ConFIG_backwards": [
+      "self",
+      "loss_dict"
+    ],
+    "on_validation_epoch_end": [
+      "self"
+    ]
+  },
+  "EMAConFIGLightningModule": {
+    "__init__": [
+      "self"
+    ],
+    "training_step": [
+      "self",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ]
+  },
+  "EMALightningModule": {
+    "__init__": [
+      "self",
+      "ema_decay"
+    ],
+    "optimizer_step": [
+      "self",
+      "epoch",
+      "batch_idx",
+      "optimizer",
+      "optimizer_closure"
+    ],
+    "_assert_ema_status_and_switch": [
+      "self",
+      "expect_ema_module_holds_ema_weights",
+      "evaluation_mode"
+    ],
+    "on_validation_start": [
+      "self"
+    ],
+    "on_validation_end": [
+      "self"
+    ],
+    "on_test_start": [
+      "self"
+    ],
+    "on_test_end": [
+      "self"
+    ],
+    "on_predict_start": [
+      "self"
+    ],
+    "on_predict_end": [
+      "self"
+    ],
+    "evaluation_model": [
+      "self"
+    ]
+  },
+  "EMAWeights": {
+    "__init__": [
+      "self",
+      "model",
+      "decay"
+    ],
+    "ema_weights": [
+      "self"
+    ],
+    "forward": [
+      "self"
+    ],
+    "swap_parameters": [
+      "self",
+      "model"
+    ],
+    "_swap_tensors": [
+      "self",
+      "tensor1",
+      "tensor2"
+    ],
+    "update_parameters": [
+      "self",
+      "model"
+    ],
+    "set_extra_state": [
+      "self",
+      "state"
+    ],
+    "get_extra_state": [
+      "self"
+    ]
+  },
+  "SimpleDDPStrategy": {
+    "configure_ddp": [
+      "self"
+    ],
+    "post_backward": [
+      "self",
+      "closure_loss"
+    ]
+  },
+  "ScheduleFreeLightningModule": {
+    "__init__": [
+      "self",
+      "optimizer"
+    ],
+    "on_save_checkpoint": [
+      "self",
+      "checkpoint"
+    ],
+    "on_load_checkpoint": [
+      "self",
+      "checkpoint"
+    ],
+    "evaluation_model": [
+      "self"
+    ],
+    "on_train_epoch_start": [
+      "self"
+    ],
+    "on_validation_epoch_start": [
+      "self"
+    ],
+    "on_test_epoch_start": [
+      "self"
+    ],
+    "on_predict_epoch_start": [
+      "self"
+    ]
+  },
+  "TF32Scheduler": {
+    "__init__": [
+      "self",
+      "schedule"
+    ],
+    "on_train_epoch_start": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "_set_tf32": [
+      "self",
+      "enabled",
+      "pl_module"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "LossCoefficientScheduler": {
+    "__init__": [
+      "self",
+      "schedule"
+    ],
+    "on_train_epoch_start": [
+      "self",
+      "trainer",
+      "pl_module"
+    ]
+  },
+  "LinearLossCoefficientScheduler": {
+    "__init__": [
+      "self",
+      "final_coeffs",
+      "transition_epochs",
+      "start_epoch"
+    ],
+    "on_train_epoch_start": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "state_key": [
+      "self"
+    ]
+  },
+  "TestTimeXYZFileWriter": {
+    "__init__": [
+      "self",
+      "out_file",
+      "output_fields_from_original_dataset",
+      "extra_fields",
+      "chemical_symbols"
+    ],
+    "on_test_batch_end": [
+      "self",
+      "trainer",
+      "pl_module",
+      "outputs",
+      "batch",
+      "batch_idx",
+      "dataloader_idx"
+    ]
+  },
+  "LossCoefficientMonitor": {
+    "__init__": [
+      "self",
+      "interval",
+      "frequency"
+    ],
+    "on_train_batch_end": [
+      "self",
+      "trainer",
+      "pl_module",
+      "outputs",
+      "batch",
+      "batch_idx"
+    ],
+    "on_train_epoch_end": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "_log_coefficients": [
+      "self",
+      "pl_module"
+    ]
+  },
+  "TrainingStatsMonitor": {
+    "__init__": [
+      "self",
+      "log_freq",
+      "log_weights",
+      "log_gradients",
+      "log_optimizer_states"
+    ],
+    "_should_log": [
+      "self"
+    ],
+    "_log_weight_stats": [
+      "self",
+      "pl_module"
+    ],
+    "_log_gradient_stats": [
+      "self",
+      "pl_module"
+    ],
+    "_log_optimizer_states": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "on_after_backward": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "on_before_optimizer_step": [
+      "self",
+      "trainer",
+      "pl_module",
+      "optimizer",
+      "optimizer_idx"
+    ]
+  },
+  "SoftAdapt": {
+    "__init__": [
+      "self",
+      "beta",
+      "interval",
+      "frequency",
+      "eps"
+    ],
+    "_softadapt_update": [
+      "self",
+      "new_losses",
+      "trainer",
+      "pl_module"
+    ],
+    "on_train_batch_start": [
+      "self",
+      "trainer",
+      "pl_module",
+      "batch",
+      "batch_idx"
+    ],
+    "on_train_epoch_start": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ]
+  },
+  "WandbWatch": {
+    "__init__": [
+      "self",
+      "log_freq",
+      "log",
+      "log_graph"
+    ],
+    "on_train_start": [
+      "self",
+      "trainer",
+      "pl_module"
+    ],
+    "on_train_end": [
+      "self",
+      "trainer",
+      "pl_module"
+    ]
+  },
+  "_CURRENT_NEQUIP_PACKAGE_VERSION": [],
+  "set_workflow_state": [
+    "state"
+  ],
+  "get_workflow_state": [],
+  "PAIR_NEQUIP_INPUTS": [],
+  "BATCH_INPUTS": [],
+  "LMP_OUTPUTS": [],
+  "ASE_OUTPUTS": [],
+  "single_frame_batch_map_settings": [
+    "batch_map"
+  ],
+  "single_frame_data_settings": [
+    "data"
+  ],
+  "batched_data_settings": [
+    "data"
+  ],
+  "PAIR_NEQUIP_TARGET": [],
+  "ASE_TARGET": [],
+  "BATCH_TARGET": [],
+  "COMPILE_TARGET_DICT": [],
+  "register_compile_targets": [
+    "target_dict"
+  ],
+  "_AOT_METADATA_KEY": [],
+  "_AOT_OUTPUT_PATH_KEY": [],
+  "_parse_bounds_to_Dim": [
+    "name",
+    "bounds_str"
+  ],
+  "_DEFAULT_MOCK_MODULES": [],
+  "register_libraries_as_external_for_packaging": [
+    "extern_modules",
+    "mock_modules"
+  ],
+  "_IS_BUILDING_MODEL": [],
+  "_EAGER_MODEL_KEY": [],
+  "_COMPILE_MODE_OPTIONS": [],
+  "_OVERRIDE_COMPILE_MODE": [],
+  "_CURRENT_COMPILE_MODE": [],
+  "override_model_compile_mode": [
+    "compile_mode"
+  ],
+  "get_current_compile_mode": [
+    "return_override"
+  ],
+  "model_builder": [
+    "func"
+  ],
+  "ZBLPairPotential": [
+    "r_max",
+    "type_names",
+    "chemical_species",
+    "units",
+    "polynomial_cutoff_p",
+    "per_edge_type_cutoff"
+  ],
+  "NequIPGNNModel": [
+    "num_layers",
+    "l_max",
+    "parity",
+    "num_features",
+    "type_embed_num_features",
+    "radial_mlp_depth",
+    "radial_mlp_width"
+  ],
+  "FullNequIPGNNModel": [
+    "r_max",
+    "type_names",
+    "radial_mlp_depth",
+    "radial_mlp_width",
+    "feature_irreps_hidden",
+    "irreps_edge_sh",
+    "type_embed_num_features",
+    "categorical_graph_field_embed",
+    "readout_mlp_hidden_layers_depth",
+    "readout_mlp_hidden_layers_width",
+    "readout_mlp_nonlinearity",
+    "per_edge_type_cutoff",
+    "num_bessels",
+    "bessel_trainable",
+    "polynomial_cutoff_p",
+    "avg_num_neighbors",
+    "per_type_energy_scales",
+    "per_type_energy_shifts",
+    "per_type_energy_scales_trainable",
+    "per_type_energy_shifts_trainable",
+    "pair_potential",
+    "do_derivatives",
+    "convnet_sc",
+    "learnable_shift",
+    "convnet_resnet",
+    "convnet_nonlinearity_type",
+    "convnet_nonlinearity_scalars",
+    "convnet_nonlinearity_gates"
+  ],
+  "_ONLY_APPLY_PERSISTENT": [],
+  "only_apply_persistent_modifiers": [
+    "persistent_only"
+  ],
+  "get_all_modifiers": [
+    "module",
+    "_all_modifiers"
+  ],
+  "modify": [
+    "model",
+    "modifiers"
+  ],
+  "_check_compile_mode": [
+    "compile_mode",
+    "client",
+    "exclude_keys"
+  ],
+  "_check_file_exists": [
+    "file_path",
+    "file_type"
+  ],
+  "_cpu_deserialize_if_no_cuda": [],
+  "_PACKAGE_TIME_SHARED_IMPORTER": [],
+  "_get_shared_importer": [],
+  "_get_package_metadata": [
+    "imp"
+  ],
+  "_suppress_package_importer_exporter_warnings": [],
+  "ModelFromPackage": [
+    "package_path",
+    "compile_mode"
+  ],
+  "data_dict_from_package": [
+    "package_path"
+  ],
+  "ModelTypeNamesFromPackage": [
+    "package_path"
+  ],
+  "ModelFromCheckpoint": [
+    "checkpoint_path",
+    "compile_mode"
+  ],
+  "data_dict_from_checkpoint": [
+    "ckpt_path"
+  ],
+  "_get_model_file_path": [
+    "input_path"
+  ],
+  "load_saved_model": [
+    "input_path",
+    "compile_mode",
+    "model_key",
+    "return_data_dict"
+  ],
+  "load_compiled_model": [
+    "compile_path",
+    "device",
+    "input_keys",
+    "output_keys"
+  ],
+  "load_aotinductor_model": [
+    "compile_path",
+    "device",
+    "input_keys",
+    "output_keys"
+  ],
+  "load_torchscript_model": [
+    "compile_path",
+    "device"
+  ],
+  "save_torchscript_model": [
+    "model",
+    "metadata",
+    "output_path",
+    "device"
+  ]
+}

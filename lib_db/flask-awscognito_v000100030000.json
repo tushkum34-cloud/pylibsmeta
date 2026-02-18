@@ -1,0 +1,209 @@
+{
+  "test_get_access_token": [
+    "app",
+    "cognito_service_test_factory",
+    "token_service_test_factory"
+  ],
+  "test_no_auth": [
+    "app",
+    "cognito_service_test_factory",
+    "token_service_test_factory",
+    "client",
+    "test_view"
+  ],
+  "test_no_auth_bad_token": [
+    "app",
+    "cognito_service_test_factory",
+    "token_service_test_factory",
+    "client",
+    "test_view"
+  ],
+  "test_auth": [
+    "app",
+    "cognito_service_test_factory",
+    "token_service_test_factory",
+    "client",
+    "test_view"
+  ],
+  "test_verify": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "region",
+    "jwks_endpoint_request"
+  ],
+  "test_base_url": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "user_pool_client_secret",
+    "region",
+    "domain"
+  ],
+  "test_sign_in_url": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "user_pool_client_secret",
+    "region",
+    "domain"
+  ],
+  "test_exchange_code_for_token": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "user_pool_client_secret",
+    "region",
+    "domain",
+    "token_endpoint_request"
+  ],
+  "set_env": [],
+  "user_pool_id": [],
+  "user_pool_client_id": [],
+  "user_pool_client_secret": [],
+  "domain": [],
+  "region": [],
+  "token_endpoint_request": [
+    "mocker"
+  ],
+  "jwks": [],
+  "jwks_endpoint_request": [
+    "mocker",
+    "jwks"
+  ],
+  "app": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "user_pool_client_secret",
+    "region",
+    "domain"
+  ],
+  "cognito_service_test_factory": [
+    "mocker"
+  ],
+  "token_service_test_factory": [
+    "mocker"
+  ],
+  "verify": [
+    "token"
+  ],
+  "test_view": [],
+  "AWSCognitoAuthentication": {
+    "__init__": [
+      "self",
+      "app",
+      "_token_service_factory",
+      "_cognito_service_factory",
+      "_jwk_keys",
+      "_access_token"
+    ],
+    "init_app": [
+      "self",
+      "app"
+    ],
+    "token_service": [
+      "self"
+    ],
+    "cognito_service": [
+      "self"
+    ],
+    "get_sign_in_url": [
+      "self"
+    ],
+    "get_access_token": [
+      "self",
+      "request_args"
+    ],
+    "authentication_required": [
+      "self",
+      "view"
+    ]
+  },
+  "extract_access_token": [
+    "request_headers"
+  ],
+  "get_state": [
+    "user_pool_id",
+    "user_pool_client_id"
+  ],
+  "FlaskAWSCognitoError": {},
+  "TokenVerifyError": {},
+  "CONTEXT_KEY_COGNITO_SERVICE": [],
+  "CONTEXT_KEY_TOKEN_SERVICE": [],
+  "CONFIG_KEY_POOL_ID": [],
+  "CONFIG_KEY_REGION": [],
+  "CONFIG_KEY_DOMAIN": [],
+  "CONFIG_KEY_POOL_CLIENT_ID": [],
+  "CONFIG_KEY_POOL_CLIENT_SECRET": [],
+  "CONFIG_KEY_REDIRECT_URL": [],
+  "HTTP_HEADER": [],
+  "TokenService": {
+    "__init__": [
+      "self",
+      "user_pool_id",
+      "user_pool_client_id",
+      "region",
+      "request_client",
+      "_jwk_keys"
+    ],
+    "_load_jwk_keys": [
+      "self"
+    ],
+    "_extract_headers": [
+      "token"
+    ],
+    "_find_pkey": [
+      "self",
+      "headers"
+    ],
+    "_verify_signature": [
+      "token",
+      "pkey_data"
+    ],
+    "_extract_claims": [
+      "token"
+    ],
+    "_check_expiration": [
+      "claims",
+      "current_time"
+    ],
+    "_check_audience": [
+      "self",
+      "claims"
+    ],
+    "verify": [
+      "self",
+      "token",
+      "current_time"
+    ]
+  },
+  "cognito_service_factory": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "user_pool_client_secret",
+    "redirect_url",
+    "region",
+    "domain"
+  ],
+  "token_service_factory": [
+    "user_pool_id",
+    "user_pool_client_id",
+    "region",
+    "_jwk_keys"
+  ],
+  "CognitoService": {
+    "__init__": [
+      "self",
+      "user_pool_id",
+      "user_pool_client_id",
+      "user_pool_client_secret",
+      "redirect_url",
+      "region",
+      "domain"
+    ],
+    "get_sign_in_url": [
+      "self"
+    ],
+    "exchange_code_for_token": [
+      "self",
+      "code",
+      "requests_client"
+    ]
+  }
+}

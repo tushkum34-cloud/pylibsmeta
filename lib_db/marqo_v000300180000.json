@@ -1,0 +1,707 @@
+{
+  "__minimum_supported_marqo_version__": [],
+  "supported_marqo_version": [],
+  "minimum_supported_marqo_version": [],
+  "MarqoCloudInstanceMappings": {
+    "__init__": [
+      "self",
+      "control_base_url",
+      "api_key",
+      "url_cache_duration"
+    ],
+    "get_control_base_url": [
+      "self",
+      "path"
+    ],
+    "get_index_base_url": [
+      "self",
+      "index_name"
+    ],
+    "is_remote": [
+      "self"
+    ],
+    "_refresh_urls_if_needed": [
+      "self",
+      "index_name"
+    ],
+    "_refresh_urls": [
+      "self",
+      "timeout"
+    ],
+    "index_http_error_handler": [
+      "self",
+      "index_name",
+      "http_status"
+    ],
+    "is_index_usage_allowed": [
+      "self",
+      "index_name"
+    ]
+  },
+  "mq_logger": [],
+  "formatter": [],
+  "ch": [],
+  "MarqoError": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "MarqoApiError": {
+    "__init__": [
+      "self",
+      "error",
+      "request"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "MarqoWebError": {
+    "__init__": [
+      "self",
+      "message",
+      "status_code",
+      "error_type",
+      "code",
+      "link"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "__InvalidRequestError": {
+    "__init__": [
+      "self",
+      "message"
+    ],
+    "error_type": []
+  },
+  "UnsupportedOperationError": {
+    "code": []
+  },
+  "IndexAlreadyExistsError": {
+    "code": [],
+    "status_code": []
+  },
+  "IndexNotFoundError": {
+    "code": [],
+    "status_code": []
+  },
+  "InvalidIndexNameError": {
+    "code": [],
+    "status_code": []
+  },
+  "InvalidDocumentIdError": {
+    "code": [],
+    "status_code": []
+  },
+  "InvalidFieldNameError": {
+    "code": [],
+    "status_code": []
+  },
+  "InvalidArgError": {
+    "code": [],
+    "status_code": []
+  },
+  "BadRequestError": {
+    "code": [],
+    "status_code": []
+  },
+  "DocumentNotFoundError": {
+    "code": [],
+    "status_code": []
+  },
+  "NonTensorIndexError": {
+    "code": [],
+    "status_code": []
+  },
+  "InternalError": {
+    "error_type": [],
+    "code": [],
+    "status_code": []
+  },
+  "BackendCommunicationError": {
+    "code": [],
+    "status_code": [],
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "BackendTimeoutError": {
+    "code": [],
+    "status_code": [],
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "MarqoCloudIndexNotReadyError": {
+    "code": [],
+    "status_code": [],
+    "__init__": [
+      "self",
+      "index_name"
+    ]
+  },
+  "MarqoCloudIndexNotFoundError": {
+    "code": [],
+    "status_code": [],
+    "__init__": [
+      "self",
+      "index_name"
+    ]
+  },
+  "Index": {
+    "__init__": [
+      "self",
+      "config",
+      "index_name",
+      "created_at",
+      "updated_at"
+    ],
+    "delete": [
+      "self",
+      "wait_for_readiness"
+    ],
+    "create": [
+      "config",
+      "index_name",
+      "type",
+      "settings_dict",
+      "treat_urls_and_pointers_as_images",
+      "treat_urls_and_pointers_as_media",
+      "filter_string_max_length",
+      "all_fields",
+      "tensor_fields",
+      "model",
+      "model_properties",
+      "normalize_embeddings",
+      "text_preprocessing",
+      "image_preprocessing",
+      "audio_preprocessing",
+      "video_preprocessing",
+      "vector_numeric_type",
+      "ann_parameters",
+      "inference_type",
+      "storage_class",
+      "number_of_shards",
+      "number_of_replicas",
+      "number_of_inferences",
+      "wait_for_readiness",
+      "text_chunk_prefix",
+      "text_query_prefix",
+      "collapse_fields"
+    ],
+    "get_status": [
+      "self"
+    ],
+    "search": [
+      "self",
+      "q",
+      "searchable_attributes",
+      "limit",
+      "offset",
+      "search_method",
+      "highlights",
+      "device",
+      "filter_string",
+      "show_highlights",
+      "reranker",
+      "image_download_headers",
+      "media_download_headers",
+      "attributes_to_retrieve",
+      "boost",
+      "context",
+      "score_modifiers",
+      "model_auth",
+      "ef_search",
+      "approximate",
+      "text_query_prefix",
+      "hybrid_parameters",
+      "rerank_depth",
+      "facets",
+      "track_total_hits",
+      "approximate_threshold",
+      "language",
+      "sort_by",
+      "relevance_cutoff",
+      "interpolation_method",
+      "collapse_fields"
+    ],
+    "recommend": [
+      "self",
+      "documents",
+      "tensor_fields",
+      "interpolation_method",
+      "exclude_input_documents",
+      "searchable_attributes",
+      "limit",
+      "offset",
+      "filter_string",
+      "show_highlights",
+      "reranker",
+      "attributes_to_retrieve",
+      "score_modifiers",
+      "ef_search",
+      "approximate",
+      "rerank_depth",
+      "allow_missing_documents",
+      "allow_missing_embeddings"
+    ],
+    "embed": [
+      "self",
+      "content",
+      "device",
+      "image_download_headers",
+      "media_download_headers",
+      "model_auth",
+      "content_type"
+    ],
+    "get_document": [
+      "self",
+      "document_id",
+      "expose_facets"
+    ],
+    "get_documents": [
+      "self",
+      "document_ids",
+      "expose_facets"
+    ],
+    "add_documents": [
+      "self",
+      "documents",
+      "client_batch_size",
+      "device",
+      "tensor_fields",
+      "use_existing_tensors",
+      "image_download_headers",
+      "media_download_headers",
+      "mappings",
+      "model_auth",
+      "text_chunk_prefix"
+    ],
+    "_add_docs_organiser": [
+      "self",
+      "documents",
+      "client_batch_size",
+      "device",
+      "tensor_fields",
+      "use_existing_tensors",
+      "image_download_headers",
+      "media_download_headers",
+      "mappings",
+      "model_auth",
+      "text_chunk_prefix"
+    ],
+    "update_documents": [
+      "self",
+      "documents",
+      "client_batch_size"
+    ],
+    "_update_documents": [
+      "self",
+      "documents"
+    ],
+    "_batch_update_documents": [
+      "self",
+      "documents",
+      "client_batch_size"
+    ],
+    "delete_documents": [
+      "self",
+      "ids"
+    ],
+    "get_stats": [
+      "self"
+    ],
+    "_maybe_datetime": [
+      "the_date"
+    ],
+    "_batch_request": [
+      "self",
+      "docs",
+      "base_path",
+      "query_str_params",
+      "base_body",
+      "verbose",
+      "batch_size"
+    ],
+    "get_settings": [
+      "self"
+    ],
+    "health": [
+      "self"
+    ],
+    "get_loaded_models": [
+      "self"
+    ],
+    "get_cuda_info": [
+      "self"
+    ],
+    "get_cpu_info": [
+      "self"
+    ],
+    "get_marqo": [
+      "self"
+    ],
+    "eject_model": [
+      "self",
+      "model_name",
+      "model_device"
+    ],
+    "_marqo_minimum_supported_version_check": [
+      "self"
+    ]
+  },
+  "CLOUD_INDEX_NAME_HTTP_HEADER": [],
+  "HTTP_OPERATIONS": [],
+  "session": [],
+  "OPERATION_MAPPING": [],
+  "HttpRequests": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_operation": [
+      "self",
+      "method"
+    ],
+    "_construct_path": [
+      "self",
+      "path",
+      "index_name"
+    ],
+    "send_request": [
+      "self",
+      "http_operation",
+      "path",
+      "body",
+      "content_type",
+      "index_name"
+    ],
+    "get": [
+      "self",
+      "path",
+      "body",
+      "index_name"
+    ],
+    "post": [
+      "self",
+      "path",
+      "body",
+      "content_type",
+      "index_name"
+    ],
+    "put": [
+      "self",
+      "path",
+      "body",
+      "content_type",
+      "index_name"
+    ],
+    "delete": [
+      "self",
+      "path",
+      "body",
+      "index_name"
+    ],
+    "patch": [
+      "self",
+      "path",
+      "body",
+      "index_name"
+    ],
+    "__to_json": [
+      "request"
+    ],
+    "_validate": [
+      "request"
+    ]
+  },
+  "convert_to_marqo_error_and_raise": [
+    "response",
+    "err"
+  ],
+  "DefaultInstanceMappings": {
+    "__init__": [
+      "self",
+      "url",
+      "main_user",
+      "main_password"
+    ],
+    "get_index_base_url": [
+      "self",
+      "index_name"
+    ],
+    "get_control_base_url": [
+      "self",
+      "path"
+    ],
+    "is_remote": [
+      "self"
+    ],
+    "is_index_usage_allowed": [
+      "self",
+      "index_name"
+    ],
+    "index_http_error_handler": [
+      "self",
+      "index_name",
+      "http_status"
+    ]
+  },
+  "construct_authorized_url": [
+    "url_base",
+    "username",
+    "password"
+  ],
+  "translate_device_string_for_url": [
+    "device"
+  ],
+  "convert_list_to_query_params": [
+    "query_param",
+    "x"
+  ],
+  "convert_dict_to_url_params": [
+    "d"
+  ],
+  "set_log_level": [
+    "level"
+  ],
+  "Client": {
+    "__init__": [
+      "self",
+      "url",
+      "instance_mappings",
+      "main_user",
+      "main_password",
+      "return_telemetry",
+      "api_key"
+    ],
+    "_is_cloud_api_endpoint": [
+      "cls",
+      "url"
+    ],
+    "create_index": [
+      "self",
+      "index_name",
+      "type",
+      "settings_dict",
+      "treat_urls_and_pointers_as_images",
+      "treat_urls_and_pointers_as_media",
+      "filter_string_max_length",
+      "all_fields",
+      "tensor_fields",
+      "model",
+      "model_properties",
+      "normalize_embeddings",
+      "text_preprocessing",
+      "image_preprocessing",
+      "audio_preprocessing",
+      "video_preprocessing",
+      "vector_numeric_type",
+      "ann_parameters",
+      "wait_for_readiness",
+      "inference_type",
+      "storage_class",
+      "number_of_shards",
+      "number_of_replicas",
+      "number_of_inferences",
+      "text_query_prefix",
+      "text_chunk_prefix"
+    ],
+    "delete_index": [
+      "self",
+      "index_name",
+      "wait_for_readiness"
+    ],
+    "get_index": [
+      "self",
+      "index_name"
+    ],
+    "index": [
+      "self",
+      "index_name"
+    ],
+    "get_indexes": [
+      "self"
+    ],
+    "bulk_search": [
+      "self",
+      "queries",
+      "device"
+    ],
+    "_base64url_encode": [
+      "data"
+    ],
+    "raise_error_for_cloud": [
+      "function_name"
+    ],
+    "_validate_all_indexes_belong_to_the_same_cluster": [
+      "self",
+      "parsed_queries"
+    ]
+  },
+  "Config": {
+    "__init__": [
+      "self",
+      "instance_mappings",
+      "is_marqo_cloud",
+      "use_telemetry",
+      "timeout",
+      "api_key"
+    ]
+  },
+  "cloud_wait_for_index_status": [
+    "req",
+    "index_name",
+    "status"
+  ],
+  "SearchMethods": {
+    "LEXICAL": [],
+    "TENSOR": []
+  },
+  "Devices": {
+    "cpu": [],
+    "cuda": []
+  },
+  "IndexStatus": {
+    "READY": [],
+    "DELETED": [],
+    "MODIFYING": [],
+    "CREATING": [],
+    "DELETING": [],
+    "FAILED": []
+  },
+  "InterpolationMethod": {
+    "LERP": [],
+    "NLERP": [],
+    "SLERP": []
+  },
+  "EmbedContentType": {
+    "Query": [],
+    "Document": []
+  },
+  "InstanceMappings": {
+    "get_index_base_url": [
+      "self",
+      "index_name"
+    ],
+    "get_control_base_url": [
+      "self",
+      "path"
+    ],
+    "is_remote": [
+      "self"
+    ],
+    "is_index_usage_allowed": [
+      "self",
+      "index_name"
+    ],
+    "index_http_error_handler": [
+      "self",
+      "index_name",
+      "http_status"
+    ]
+  },
+  "CLOUD_AWS_API_ENDPOINT": [],
+  "CLOUD_GCP_API_ENDPOINT": [],
+  "CLOUD_API_ENDPOINTS": [],
+  "MarqoBaseModel": {},
+  "StrictBaseModel": {},
+  "ImmutableBaseModel": {},
+  "ImmutableStrictBaseModel": {},
+  "CloudIndexSettings": {},
+  "ListIndexesResponse": {},
+  "IndexStatusResponse": {},
+  "IndexType": {
+    "Structured": [],
+    "Unstructured": []
+  },
+  "FieldType": {
+    "Text": [],
+    "Bool": [],
+    "Int": [],
+    "Long": [],
+    "Float": [],
+    "Double": [],
+    "ArrayText": [],
+    "ArrayInt": [],
+    "ArrayLong": [],
+    "ArrayFloat": [],
+    "ArrayDouble": [],
+    "ImagePointer": [],
+    "VideoPointer": [],
+    "AudioPointer": [],
+    "MultimodalCombination": [],
+    "CustomVector": [],
+    "MapInt": [],
+    "MapLong": [],
+    "MapFloat": [],
+    "MapDouble": []
+  },
+  "VectorNumericType": {
+    "Float": [],
+    "Bfloat16": []
+  },
+  "FieldFeature": {
+    "LexicalSearch": [],
+    "ScoreModifier": [],
+    "Filter": []
+  },
+  "DistanceMetric": {
+    "Euclidean": [],
+    "Angular": [],
+    "DotProduct": [],
+    "PrenormalizedAnguar": [],
+    "Geodegrees": [],
+    "Hamming": []
+  },
+  "TextSplitMethod": {
+    "Character": [],
+    "Word": [],
+    "Sentence": [],
+    "Passage": []
+  },
+  "PatchMethod": {
+    "Simple": [],
+    "Frcnn": []
+  },
+  "HnswConfig": {},
+  "TextPreProcessing": {},
+  "ImagePreProcessing": {},
+  "VideoPreProcessing": {},
+  "AudioPreProcessing": {},
+  "Model": {},
+  "FieldRequest": {},
+  "AnnParameters": {},
+  "CollapseField": {},
+  "SearchBody": {},
+  "BulkSearchBody": {},
+  "BulkSearchQuery": {},
+  "RetrievalMethod": {
+    "Disjunction": [],
+    "Tensor": [],
+    "Lexical": []
+  },
+  "RankingMethod": {
+    "RRF": [],
+    "NormalizeLinear": [],
+    "Tensor": [],
+    "Lexical": []
+  },
+  "IndexSettings": {
+    "generate_request_body": [
+      "self"
+    ],
+    "check_settings_dict_compatibility": [
+      "cls",
+      "values"
+    ]
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "logger": [],
+  "StopEmulation": {},
+  "BreakpointHit": {
+    "__init__": [
+      "self",
+      "va",
+      "reason"
+    ]
+  },
+  "Hook": [],
+  "Monitor": {
+    "prehook": [
+      "self",
+      "emu",
+      "op",
+      "startpc"
+    ],
+    "posthook": [
+      "self",
+      "emu",
+      "op",
+      "endpc"
+    ],
+    "preblock": [
+      "self",
+      "emu",
+      "blockstart"
+    ],
+    "postblock": [
+      "self",
+      "emu",
+      "blockstart",
+      "blockend"
+    ],
+    "apicall": [
+      "self",
+      "emu",
+      "api",
+      "argv"
+    ],
+    "logAnomaly": [
+      "self",
+      "emu",
+      "pc",
+      "e"
+    ]
+  },
+  "UntilVAMonitor": {
+    "__init__": [
+      "self",
+      "va"
+    ],
+    "prehook": [
+      "self",
+      "emu",
+      "op",
+      "pc"
+    ]
+  },
+  "EmuHelperMixin": {
+    "readString": [
+      "self",
+      "va",
+      "maxlength"
+    ],
+    "getStackValue": [
+      "self",
+      "offset"
+    ],
+    "readStackMemory": [
+      "self",
+      "offset",
+      "length"
+    ],
+    "readStackString": [
+      "self",
+      "offset",
+      "maxlength"
+    ]
+  },
+  "EmulatorDriver": {
+    "__init__": [
+      "self",
+      "emu"
+    ],
+    "__getattr__": [
+      "self",
+      "name"
+    ],
+    "add_monitor": [
+      "self",
+      "mon"
+    ],
+    "remove_monitor": [
+      "self",
+      "mon"
+    ],
+    "add_hook": [
+      "self",
+      "hook"
+    ],
+    "remove_hook": [
+      "self",
+      "hook"
+    ],
+    "is_call": [
+      "op"
+    ],
+    "is_jmp": [
+      "op"
+    ],
+    "is_ret": [
+      "op"
+    ],
+    "is_function_or_tainted": [
+      "self",
+      "va"
+    ],
+    "get_calling_convention": [
+      "self",
+      "convname"
+    ],
+    "_handle_hook": [
+      "self"
+    ],
+    "handle_call": [
+      "self",
+      "op",
+      "avoid_calls"
+    ],
+    "handle_jmp": [
+      "self",
+      "op",
+      "avoid_calls"
+    ]
+  },
+  "DebuggerEmulatorDriver": {
+    "__init__": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "avoid_calls"
+    ],
+    "stepo": [
+      "self"
+    ],
+    "stepi": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "run_to_mnem": [
+      "self",
+      "mnems"
+    ],
+    "run_to_va": [
+      "self",
+      "va"
+    ]
+  },
+  "FullCoverageEmulatorDriver": {
+    "__init__": [
+      "self"
+    ],
+    "is_table": [
+      "self",
+      "op",
+      "xrefs"
+    ],
+    "is_conditional": [
+      "op"
+    ],
+    "get_branches": [
+      "self",
+      "op"
+    ],
+    "step": [
+      "self"
+    ],
+    "run": [
+      "self",
+      "va"
+    ]
+  },
+  "SinglePathEmulatorDriver": {
+    "__init__": [
+      "self"
+    ],
+    "run_to_va": [
+      "self",
+      "va",
+      "tova"
+    ]
+  },
+  "remove_default_viv_hooks": [
+    "emu",
+    "allow_list"
+  ],
+  "SHELLCODE_BASE": [],
+  "IncompatibleVivVersion": {},
+  "getVwFirstMeta": [
+    "vw"
+  ],
+  "getVwSampleMd5": [
+    "vw"
+  ],
+  "getVivisectLibraryVersion": [],
+  "setVwVivisectLibraryVersion": [
+    "vw"
+  ],
+  "getVwVivisectLibraryVersion": [
+    "vw"
+  ],
+  "assertVwMatchesVivisectLibrary": [
+    "vw"
+  ],
+  "loadWorkspaceFromViv": [
+    "vw",
+    "viv_file"
+  ],
+  "getWorkspace": [
+    "fp",
+    "analyze",
+    "reanalyze",
+    "verbose",
+    "should_save"
+  ],
+  "set_function_name": [
+    "vw",
+    "va",
+    "new_name"
+  ],
+  "get_function_name": [
+    "vw",
+    "va"
+  ],
+  "Function": {
+    "__init__": [
+      "self",
+      "vw",
+      "va"
+    ],
+    "basic_blocks": [
+      "self"
+    ],
+    "id": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__int__": [
+      "self"
+    ],
+    "name": [
+      "self",
+      "new_name"
+    ]
+  },
+  "BasicBlock": {
+    "__init__": [
+      "self",
+      "vw",
+      "va",
+      "size",
+      "fva"
+    ],
+    "instructions": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__int__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "one": [
+    "s"
+  ],
+  "InstructionFunctionIndex": {
+    "__init__": [
+      "self",
+      "vw"
+    ],
+    "_do_index": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ]
+  },
+  "getFunctionName": [
+    "vw",
+    "fva"
+  ],
+  "getFunctionCallingConvention": [
+    "vw",
+    "fva"
+  ],
+  "getFunctionArgs": [
+    "vw",
+    "fva"
+  ],
+  "getShellcodeWorkspaceFromFile": [
+    "filepath",
+    "arch",
+    "base",
+    "entry_point",
+    "analyze",
+    "should_save"
+  ],
+  "getShellcodeWorkspace": [
+    "buf",
+    "arch",
+    "base",
+    "entry_point",
+    "analyze",
+    "should_save",
+    "save_path"
+  ],
+  "saveWorkspaceToBytes": [
+    "vw"
+  ],
+  "loadWorkspaceFromBytes": [
+    "vw",
+    "buf"
+  ],
+  "getWorkspaceFromBytes": [
+    "buf",
+    "analyze"
+  ],
+  "getWorkspaceFromFile": [
+    "filepath",
+    "analyze"
+  ],
+  "get_prev_loc": [
+    "vw",
+    "va"
+  ],
+  "get_prev_opcode": [
+    "vw",
+    "va"
+  ],
+  "get_all_xrefs_from": [
+    "vw",
+    "va"
+  ],
+  "get_all_xrefs_to": [
+    "vw",
+    "va"
+  ],
+  "empty": [
+    "s"
+  ],
+  "CFG": {
+    "__init__": [
+      "self",
+      "func"
+    ],
+    "get_successor_basic_blocks": [
+      "self",
+      "bb"
+    ],
+    "get_predecessor_basic_blocks": [
+      "self",
+      "bb"
+    ],
+    "get_root_basic_blocks": [
+      "self"
+    ],
+    "get_leaf_basic_blocks": [
+      "self"
+    ]
+  },
+  "get_strings": [
+    "vw"
+  ],
+  "is_valid_address": [
+    "vw",
+    "va"
+  ],
+  "get_function_constants": [
+    "vw",
+    "fva"
+  ],
+  "get_section_data": [
+    "pe",
+    "section"
+  ],
+  "Debugger": {
+    "REGISTERS": [],
+    "__init__": [
+      "self",
+      "v"
+    ],
+    "__getattr__": [
+      "self",
+      "k"
+    ],
+    "__setattr__": [
+      "self",
+      "k",
+      "v"
+    ],
+    "write_memory": [
+      "self",
+      "va",
+      "buf"
+    ],
+    "read_memory": [
+      "self",
+      "va",
+      "size"
+    ],
+    "read_dword": [
+      "self",
+      "va"
+    ],
+    "write_dword": [
+      "self",
+      "va",
+      "v"
+    ],
+    "read_ascii": [
+      "self",
+      "va"
+    ],
+    "pop": [
+      "self"
+    ],
+    "push": [
+      "self",
+      "v"
+    ]
+  },
+  "readMemoryCurrentSection": [
+    "vw",
+    "va",
+    "size"
+  ],
+  "hexdump": {
+    "__init__": [
+      "self",
+      "buf",
+      "off"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "dump_emu_state": [
+    "emu"
+  ],
+  "requires_ida": [
+    "f"
+  ],
+  "is_x86": [],
+  "is_x64": [],
+  "is_exe": [],
+  "get_data": [
+    "start",
+    "size"
+  ],
+  "PAGE_SIZE": [],
+  "get_segment_data": [
+    "segstart"
+  ],
+  "get_exports": [],
+  "get_imports": [],
+  "get_import_thunk": [
+    "import_addr"
+  ],
+  "get_functions": [],
+  "loadWorkspaceFromIdb": [],
+  "_LIBRARY_META_KEY": [],
+  "timing": [
+    "msg"
+  ],
+  "is_library_function": [
+    "vw",
+    "va"
+  ],
+  "make_library_function": [
+    "vw",
+    "va"
+  ],
+  "add_function_flirt_match": [
+    "vw",
+    "va",
+    "name"
+  ],
+  "get_match_name": [
+    "match"
+  ],
+  "match_function_flirt_signatures": [
+    "matcher",
+    "vw",
+    "va",
+    "cache"
+  ],
+  "FlirtFunctionAnalyzer": {
+    "__init__": [
+      "self",
+      "matcher",
+      "name"
+    ],
+    "analyzeFunction": [
+      "self",
+      "vw",
+      "funcva"
+    ],
+    "__name__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "addFlirtFunctionAnalyzer": [
+    "vw",
+    "analyzer"
+  ],
+  "register_flirt_signature_analyzers": [
+    "vw",
+    "sigpaths"
+  ],
+  "load_flirt_signature": [
+    "path"
+  ],
+  "g_pp": [],
+  "CallArgumentMonitor": {
+    "__init__": [
+      "self",
+      "vw",
+      "target_fva"
+    ],
+    "apicall": [
+      "self",
+      "emu",
+      "op",
+      "pc",
+      "api",
+      "argv"
+    ],
+    "getCalls": [
+      "self"
+    ]
+  },
+  "emulate_function": [
+    "vw",
+    "fva",
+    "target_fva"
+  ],
+  "_main": [
+    "bin_path",
+    "ofva"
+  ],
+  "main": [],
+  "get_workspace": [
+    "path",
+    "sigpaths"
+  ],
+  "AMonitor": {
+    "__init__": [
+      "self",
+      "vw"
+    ],
+    "prehook": [
+      "self",
+      "emu",
+      "op",
+      "starteip"
+    ],
+    "apicall": [
+      "self",
+      "emu",
+      "op",
+      "pc",
+      "api",
+      "argv"
+    ]
+  }
+}

@@ -1,0 +1,871 @@
+{
+  "__all__": [],
+  "RandomNetworkDistillation": {
+    "__init__": [
+      "self",
+      "num_states",
+      "obs_groups",
+      "num_outputs",
+      "predictor_hidden_dims",
+      "target_hidden_dims",
+      "activation",
+      "weight",
+      "state_normalization",
+      "reward_normalization",
+      "device",
+      "weight_schedule"
+    ],
+    "get_intrinsic_reward": [
+      "self",
+      "obs"
+    ],
+    "forward": [
+      "self"
+    ],
+    "train": [
+      "self",
+      "mode"
+    ],
+    "eval": [
+      "self"
+    ],
+    "get_rnd_state": [
+      "self",
+      "obs"
+    ],
+    "update_normalization": [
+      "self",
+      "obs"
+    ],
+    "_constant_weight_schedule": [
+      "self",
+      "step"
+    ],
+    "_step_weight_schedule": [
+      "self",
+      "step",
+      "final_step",
+      "final_value"
+    ],
+    "_linear_weight_schedule": [
+      "self",
+      "step",
+      "initial_step",
+      "final_step",
+      "final_value"
+    ]
+  },
+  "resolve_rnd_config": [
+    "alg_cfg",
+    "obs",
+    "obs_groups",
+    "env"
+  ],
+  "resolve_symmetry_config": [
+    "alg_cfg",
+    "env"
+  ],
+  "VecEnv": {
+    "get_observations": [
+      "self"
+    ],
+    "step": [
+      "self",
+      "actions"
+    ]
+  },
+  "DistillationRunner": {
+    "learn": [
+      "self",
+      "num_learning_iterations",
+      "init_at_random_ep_len"
+    ]
+  },
+  "OnPolicyRunner": {
+    "__init__": [
+      "self",
+      "env",
+      "train_cfg",
+      "log_dir",
+      "device"
+    ],
+    "learn": [
+      "self",
+      "num_learning_iterations",
+      "init_at_random_ep_len"
+    ],
+    "save": [
+      "self",
+      "path",
+      "infos"
+    ],
+    "load": [
+      "self",
+      "path",
+      "load_cfg",
+      "strict",
+      "map_location"
+    ],
+    "get_inference_policy": [
+      "self",
+      "device"
+    ],
+    "export_policy_to_jit": [
+      "self",
+      "path",
+      "filename"
+    ],
+    "export_policy_to_onnx": [
+      "self",
+      "path",
+      "filename",
+      "verbose"
+    ],
+    "add_git_repo_to_log": [
+      "self",
+      "repo_file_path"
+    ],
+    "_configure_multi_gpu": [
+      "self"
+    ]
+  },
+  "Logger": {
+    "__init__": [
+      "self",
+      "log_dir",
+      "cfg",
+      "env_cfg",
+      "num_envs",
+      "is_distributed",
+      "gpu_world_size",
+      "gpu_global_rank",
+      "device"
+    ],
+    "init_logging_writer": [
+      "self"
+    ],
+    "process_env_step": [
+      "self",
+      "rewards",
+      "dones",
+      "extras",
+      "intrinsic_rewards"
+    ],
+    "log": [
+      "self",
+      "it",
+      "start_it",
+      "total_it",
+      "collect_time",
+      "learn_time",
+      "loss_dict",
+      "learning_rate",
+      "action_std",
+      "rnd_weight",
+      "print_minimal",
+      "width",
+      "pad"
+    ],
+    "save_model": [
+      "self",
+      "path",
+      "it"
+    ],
+    "stop_logging_writer": [
+      "self"
+    ],
+    "_store_code_state": [
+      "self"
+    ]
+  },
+  "get_param": [
+    "param",
+    "idx"
+  ],
+  "resolve_nn_activation": [
+    "act_name"
+  ],
+  "resolve_optimizer": [
+    "optimizer_name"
+  ],
+  "split_and_pad_trajectories": [
+    "tensor",
+    "dones"
+  ],
+  "unpad_trajectories": [
+    "trajectories",
+    "masks"
+  ],
+  "resolve_callable": [
+    "callable_or_name"
+  ],
+  "resolve_obs_groups": [
+    "obs",
+    "obs_groups",
+    "default_sets"
+  ],
+  "NeptuneSummaryWriter": {
+    "__init__": [
+      "self",
+      "log_dir",
+      "flush_secs",
+      "cfg"
+    ],
+    "store_config": [
+      "self",
+      "env_cfg",
+      "train_cfg"
+    ],
+    "add_scalar": [
+      "self",
+      "tag",
+      "scalar_value",
+      "global_step",
+      "walltime",
+      "new_style"
+    ],
+    "stop": [
+      "self"
+    ],
+    "save_model": [
+      "self",
+      "model_path",
+      "it"
+    ],
+    "save_file": [
+      "self",
+      "path"
+    ],
+    "_map_path": [
+      "self",
+      "path"
+    ]
+  },
+  "WandbSummaryWriter": {
+    "__init__": [
+      "self",
+      "log_dir",
+      "flush_secs",
+      "cfg"
+    ],
+    "store_config": [
+      "self",
+      "env_cfg",
+      "train_cfg"
+    ],
+    "add_scalar": [
+      "self",
+      "tag",
+      "scalar_value",
+      "global_step",
+      "walltime",
+      "new_style"
+    ],
+    "stop": [
+      "self"
+    ],
+    "save_model": [
+      "self",
+      "model_path",
+      "it"
+    ],
+    "save_file": [
+      "self",
+      "path"
+    ],
+    "save_video": [
+      "self",
+      "video",
+      "it"
+    ]
+  },
+  "RolloutStorage": {
+    "__init__": [
+      "self",
+      "training_type",
+      "num_envs",
+      "num_transitions_per_env",
+      "obs",
+      "actions_shape",
+      "device"
+    ],
+    "add_transition": [
+      "self",
+      "transition"
+    ],
+    "clear": [
+      "self"
+    ],
+    "generator": [
+      "self"
+    ],
+    "mini_batch_generator": [
+      "self",
+      "num_mini_batches",
+      "num_epochs"
+    ],
+    "recurrent_mini_batch_generator": [
+      "self",
+      "num_mini_batches",
+      "num_epochs"
+    ],
+    "_save_hidden_states": [
+      "self",
+      "hidden_states"
+    ]
+  },
+  "PPO": {
+    "__init__": [
+      "self",
+      "actor",
+      "critic",
+      "storage",
+      "num_learning_epochs",
+      "num_mini_batches",
+      "clip_param",
+      "gamma",
+      "lam",
+      "value_loss_coef",
+      "entropy_coef",
+      "learning_rate",
+      "max_grad_norm",
+      "optimizer",
+      "use_clipped_value_loss",
+      "schedule",
+      "desired_kl",
+      "normalize_advantage_per_mini_batch",
+      "device",
+      "rnd_cfg",
+      "symmetry_cfg",
+      "multi_gpu_cfg"
+    ],
+    "act": [
+      "self",
+      "obs"
+    ],
+    "process_env_step": [
+      "self",
+      "obs",
+      "rewards",
+      "dones",
+      "extras"
+    ],
+    "compute_returns": [
+      "self",
+      "obs"
+    ],
+    "update": [
+      "self"
+    ],
+    "train_mode": [
+      "self"
+    ],
+    "eval_mode": [
+      "self"
+    ],
+    "save": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "loaded_dict",
+      "load_cfg",
+      "strict"
+    ],
+    "get_policy": [
+      "self"
+    ],
+    "construct_algorithm": [
+      "obs",
+      "env",
+      "cfg",
+      "device"
+    ],
+    "broadcast_parameters": [
+      "self"
+    ],
+    "reduce_parameters": [
+      "self"
+    ]
+  },
+  "Distillation": {
+    "__init__": [
+      "self",
+      "student",
+      "teacher",
+      "storage",
+      "num_learning_epochs",
+      "gradient_length",
+      "learning_rate",
+      "max_grad_norm",
+      "loss_type",
+      "optimizer",
+      "device",
+      "multi_gpu_cfg"
+    ],
+    "act": [
+      "self",
+      "obs"
+    ],
+    "process_env_step": [
+      "self",
+      "obs",
+      "rewards",
+      "dones",
+      "extras"
+    ],
+    "compute_returns": [
+      "self",
+      "obs"
+    ],
+    "update": [
+      "self"
+    ],
+    "train_mode": [
+      "self"
+    ],
+    "eval_mode": [
+      "self"
+    ],
+    "save": [
+      "self"
+    ],
+    "load": [
+      "self",
+      "loaded_dict",
+      "load_cfg",
+      "strict"
+    ],
+    "get_policy": [
+      "self"
+    ],
+    "construct_algorithm": [
+      "obs",
+      "env",
+      "cfg",
+      "device"
+    ],
+    "broadcast_parameters": [
+      "self"
+    ],
+    "reduce_parameters": [
+      "self"
+    ]
+  },
+  "CNNModel": {
+    "__init__": [
+      "self",
+      "obs",
+      "obs_groups",
+      "obs_set",
+      "output_dim",
+      "cnn_cfg",
+      "cnns",
+      "hidden_dims",
+      "activation",
+      "obs_normalization",
+      "stochastic",
+      "init_noise_std",
+      "noise_std_type",
+      "state_dependent_std"
+    ],
+    "get_latent": [
+      "self",
+      "obs",
+      "masks",
+      "hidden_state"
+    ],
+    "as_jit": [
+      "self"
+    ],
+    "as_onnx": [
+      "self",
+      "verbose"
+    ],
+    "_get_obs_dim": [
+      "self",
+      "obs",
+      "obs_groups",
+      "obs_set"
+    ],
+    "_get_latent_dim": [
+      "self"
+    ]
+  },
+  "_TorchCNNModel": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "obs_1d",
+      "obs_2d"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_OnnxCNNModel": {
+    "__init__": [
+      "self",
+      "model",
+      "verbose"
+    ],
+    "forward": [
+      "self",
+      "obs_1d"
+    ],
+    "get_dummy_inputs": [
+      "self"
+    ],
+    "input_names": [
+      "self"
+    ],
+    "output_names": [
+      "self"
+    ]
+  },
+  "RNNModel": {
+    "__init__": [
+      "self",
+      "obs",
+      "obs_groups",
+      "obs_set",
+      "output_dim",
+      "hidden_dims",
+      "activation",
+      "obs_normalization",
+      "stochastic",
+      "init_noise_std",
+      "noise_std_type",
+      "state_dependent_std",
+      "rnn_type",
+      "rnn_hidden_dim",
+      "rnn_num_layers"
+    ],
+    "get_latent": [
+      "self",
+      "obs",
+      "masks",
+      "hidden_state"
+    ],
+    "get_hidden_state": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "dones",
+      "hidden_state"
+    ],
+    "detach_hidden_state": [
+      "self",
+      "dones"
+    ],
+    "as_jit": [
+      "self"
+    ],
+    "as_onnx": [
+      "self",
+      "verbose"
+    ],
+    "_get_latent_dim": [
+      "self"
+    ]
+  },
+  "_TorchGRUModel": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_TorchLSTMModel": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_OnnxRNNModel": {
+    "__init__": [
+      "self",
+      "model",
+      "verbose"
+    ],
+    "forward": [
+      "self",
+      "obs",
+      "h_in",
+      "c_in"
+    ],
+    "get_dummy_inputs": [
+      "self"
+    ],
+    "input_names": [
+      "self"
+    ],
+    "output_names": [
+      "self"
+    ]
+  },
+  "MLPModel": {
+    "__init__": [
+      "self",
+      "obs",
+      "obs_groups",
+      "obs_set",
+      "output_dim",
+      "hidden_dims",
+      "activation",
+      "obs_normalization",
+      "stochastic",
+      "init_noise_std",
+      "noise_std_type",
+      "state_dependent_std"
+    ],
+    "forward": [
+      "self",
+      "obs",
+      "masks",
+      "hidden_state",
+      "stochastic_output"
+    ],
+    "get_latent": [
+      "self",
+      "obs",
+      "masks",
+      "hidden_state"
+    ],
+    "get_hidden_state": [
+      "self"
+    ],
+    "reset": [
+      "self",
+      "dones",
+      "hidden_state"
+    ],
+    "detach_hidden_state": [
+      "self",
+      "dones"
+    ],
+    "output_mean": [
+      "self"
+    ],
+    "output_std": [
+      "self"
+    ],
+    "output_entropy": [
+      "self"
+    ],
+    "get_output_log_prob": [
+      "self",
+      "outputs"
+    ],
+    "as_jit": [
+      "self"
+    ],
+    "as_onnx": [
+      "self",
+      "verbose"
+    ],
+    "update_normalization": [
+      "self",
+      "obs"
+    ],
+    "_update_distribution": [
+      "self",
+      "obs"
+    ],
+    "_get_obs_dim": [
+      "self",
+      "obs",
+      "obs_groups",
+      "obs_set"
+    ],
+    "_get_latent_dim": [
+      "self"
+    ]
+  },
+  "_TorchMLPModel": {
+    "__init__": [
+      "self",
+      "model"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_OnnxMLPModel": {
+    "__init__": [
+      "self",
+      "model",
+      "verbose"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "get_dummy_inputs": [
+      "self"
+    ],
+    "input_names": [
+      "self"
+    ],
+    "output_names": [
+      "self"
+    ]
+  },
+  "MLP": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "output_dim",
+      "hidden_dims",
+      "activation",
+      "last_activation"
+    ],
+    "init_weights": [
+      "self",
+      "scales"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "EmpiricalNormalization": {
+    "__init__": [
+      "self",
+      "shape",
+      "eps",
+      "until"
+    ],
+    "mean": [
+      "self"
+    ],
+    "std": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "update": [
+      "self",
+      "x"
+    ],
+    "inverse": [
+      "self",
+      "y"
+    ]
+  },
+  "EmpiricalDiscountedVariationNormalization": {
+    "__init__": [
+      "self",
+      "shape",
+      "eps",
+      "gamma",
+      "until"
+    ],
+    "forward": [
+      "self",
+      "rew"
+    ]
+  },
+  "_DiscountedAverage": {
+    "__init__": [
+      "self",
+      "gamma"
+    ],
+    "update": [
+      "self",
+      "rew"
+    ]
+  },
+  "HiddenState": [],
+  "RNN": {
+    "__init__": [
+      "self",
+      "input_size",
+      "hidden_dim",
+      "num_layers",
+      "type"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "masks",
+      "hidden_state"
+    ],
+    "reset": [
+      "self",
+      "dones",
+      "hidden_state"
+    ],
+    "detach_hidden_state": [
+      "self",
+      "dones"
+    ]
+  },
+  "CNN": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "input_channels",
+      "output_channels",
+      "kernel_size",
+      "stride",
+      "dilation",
+      "padding",
+      "norm",
+      "activation",
+      "max_pool",
+      "global_pool",
+      "flatten"
+    ],
+    "output_channels": [
+      "self"
+    ],
+    "output_dim": [
+      "self"
+    ],
+    "init_weights": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_compute_padding": [
+    "input_hw",
+    "kernel",
+    "stride",
+    "dilation"
+  ],
+  "_compute_output_dim": [
+    "input_hw",
+    "kernel",
+    "stride",
+    "dilation",
+    "padding",
+    "is_max_pool"
+  ]
+}

@@ -1,0 +1,1178 @@
+{
+  "init_bert_params": [
+    "module"
+  ],
+  "DecoderLayer": {
+    "__init__": [
+      "self",
+      "args",
+      "depth",
+      "is_moe_layer",
+      "is_encoder_decoder"
+    ],
+    "build_ffn": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "build_self_attention": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "build_encoder_attention": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "residual_connection": [
+      "self",
+      "x",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "encoder_out",
+      "encoder_padding_mask",
+      "incremental_state",
+      "self_attn_mask",
+      "self_attn_padding_mask",
+      "self_attn_rel_pos",
+      "cross_attn_rel_pos",
+      "is_first_step"
+    ]
+  },
+  "Decoder": {
+    "__init__": [
+      "self",
+      "args",
+      "embed_tokens",
+      "embed_positions",
+      "output_projection",
+      "is_encoder_decoder"
+    ],
+    "build_output_projection": [
+      "self",
+      "args"
+    ],
+    "build_decoder_layer": [
+      "self",
+      "args",
+      "depth",
+      "is_moe_layer",
+      "is_encoder_decoder"
+    ],
+    "forward_embedding": [
+      "self",
+      "tokens",
+      "token_embedding",
+      "incremental_state"
+    ],
+    "is_first_step": [
+      "self",
+      "incremental_state"
+    ],
+    "forward": [
+      "self",
+      "prev_output_tokens",
+      "self_attn_padding_mask",
+      "encoder_out",
+      "incremental_state",
+      "features_only",
+      "return_all_hiddens",
+      "token_embeddings"
+    ],
+    "output_layer": [
+      "self",
+      "features"
+    ]
+  },
+  "EncoderConfig": {
+    "__init__": [
+      "self"
+    ],
+    "override": [
+      "self",
+      "args"
+    ]
+  },
+  "DecoderConfig": {
+    "__init__": [
+      "self"
+    ],
+    "override": [
+      "self",
+      "args"
+    ]
+  },
+  "EncoderDecoderConfig": {
+    "__init__": [
+      "self"
+    ],
+    "override": [
+      "self",
+      "args"
+    ]
+  },
+  "RetNetConfig": {
+    "__init__": [
+      "self"
+    ],
+    "override": [
+      "self",
+      "args"
+    ]
+  },
+  "EncoderLayer": {
+    "__init__": [
+      "self",
+      "args",
+      "depth",
+      "is_moe_layer",
+      "is_encoder_decoder"
+    ],
+    "build_ffn": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "build_self_attention": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "residual_connection": [
+      "self",
+      "x",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "encoder_padding_mask",
+      "attn_mask",
+      "rel_pos",
+      "multiway_split_position",
+      "incremental_state"
+    ]
+  },
+  "Encoder": {
+    "__init__": [
+      "self",
+      "args",
+      "embed_tokens",
+      "embed_positions",
+      "output_projection",
+      "is_encoder_decoder"
+    ],
+    "build_output_projection": [
+      "self",
+      "args"
+    ],
+    "build_encoder_layer": [
+      "self",
+      "args",
+      "depth",
+      "is_moe_layer",
+      "is_encoder_decoder"
+    ],
+    "forward_embedding": [
+      "self",
+      "src_tokens",
+      "token_embedding",
+      "positions"
+    ],
+    "forward": [
+      "self",
+      "src_tokens",
+      "encoder_padding_mask",
+      "attn_mask",
+      "return_all_hiddens",
+      "token_embeddings",
+      "multiway_split_position",
+      "features_only",
+      "incremental_state",
+      "positions"
+    ]
+  },
+  "EncoderDecoder": {
+    "__init__": [
+      "self",
+      "args",
+      "encoder_embed_tokens",
+      "encoder_embed_positions",
+      "decoder_embed_tokens",
+      "decoder_embed_positions",
+      "output_projection"
+    ],
+    "forward": [
+      "self",
+      "src_tokens",
+      "prev_output_tokens",
+      "return_all_hiddens",
+      "features_only"
+    ]
+  },
+  "RetNetRelPos": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "slen",
+      "activate_recurrent",
+      "chunkwise_recurrent"
+    ]
+  },
+  "RetNetDecoder": {
+    "__init__": [
+      "self",
+      "args",
+      "embed_tokens",
+      "output_projection"
+    ],
+    "build_output_projection": [
+      "self",
+      "args"
+    ],
+    "build_decoder_layer": [
+      "self",
+      "args",
+      "depth",
+      "is_moe_layer"
+    ],
+    "forward_embedding": [
+      "self",
+      "tokens",
+      "token_embedding",
+      "incremental_state"
+    ],
+    "is_first_step": [
+      "self",
+      "incremental_state"
+    ],
+    "forward": [
+      "self",
+      "prev_output_tokens",
+      "incremental_state",
+      "features_only",
+      "return_all_hiddens",
+      "token_embeddings"
+    ],
+    "output_layer": [
+      "self",
+      "features"
+    ]
+  },
+  "DropPath": {
+    "__init__": [
+      "self",
+      "drop_prob"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "extra_repr": [
+      "self"
+    ]
+  },
+  "VisionLanguageEmbedding": {
+    "__init__": [
+      "self",
+      "text_embed",
+      "vision_embed"
+    ],
+    "forward": [
+      "self",
+      "textual_tokens",
+      "visual_tokens"
+    ]
+  },
+  "VisionEmbedding": {
+    "__init__": [
+      "self",
+      "img_size",
+      "patch_size",
+      "in_chans",
+      "embed_dim",
+      "contain_mask_token",
+      "prepend_cls_token"
+    ],
+    "num_position_embeddings": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "masked_position"
+    ]
+  },
+  "TextEmbedding": {
+    "reset_parameters": [
+      "self"
+    ]
+  },
+  "PositionalEmbedding": {
+    "forward": [
+      "self",
+      "x",
+      "positions"
+    ]
+  },
+  "MultiwayWrapper": [
+    "args",
+    "module",
+    "dim"
+  ],
+  "set_split_position": [
+    "position"
+  ],
+  "MultiwayNetwork": {
+    "__init__": [
+      "self",
+      "module",
+      "dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MutliwayEmbedding": {
+    "__init__": [
+      "self",
+      "modules",
+      "dim"
+    ]
+  },
+  "RelativePositionBias": {
+    "__init__": [
+      "self",
+      "bidirectional",
+      "num_buckets",
+      "max_distance",
+      "n_heads"
+    ],
+    "_relative_position_bucket": [
+      "relative_position",
+      "bidirectional",
+      "num_buckets",
+      "max_distance"
+    ],
+    "compute_bias": [
+      "self",
+      "qlen",
+      "klen",
+      "step"
+    ],
+    "forward": [
+      "self",
+      "batch_size",
+      "qlen",
+      "klen",
+      "step"
+    ]
+  },
+  "GLU": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "ffn_dim",
+      "activation_fn",
+      "dropout",
+      "activation_dropout"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "RMSNorm": {
+    "__init__": [
+      "self",
+      "dim",
+      "eps",
+      "elementwise_affine"
+    ],
+    "_norm": [
+      "self",
+      "x"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "set_torch_seed": {
+    "__init__": [
+      "self",
+      "seed"
+    ],
+    "get_rng_state": [
+      "self"
+    ],
+    "set_rng_state": [
+      "self",
+      "state"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "make_experts": [
+    "args",
+    "embed_dim",
+    "expert_ffn_dim"
+  ],
+  "get_activation_fn": [
+    "activation"
+  ],
+  "FeedForwardNetwork": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "ffn_dim",
+      "activation_fn",
+      "dropout",
+      "activation_dropout",
+      "layernorm_eps",
+      "subln"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "MultiheadAttention": {
+    "__init__": [
+      "self",
+      "args",
+      "embed_dim",
+      "num_heads",
+      "dropout",
+      "self_attention",
+      "encoder_decoder_attention",
+      "subln"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "incremental_state",
+      "key_padding_mask",
+      "attn_mask",
+      "rel_pos",
+      "is_first_step"
+    ]
+  },
+  "rotate_every_two": [
+    "x"
+  ],
+  "duplicate_interleave": [
+    "m"
+  ],
+  "theta_shift": [
+    "x",
+    "sin",
+    "cos"
+  ],
+  "MultiScaleRetention": {
+    "__init__": [
+      "self",
+      "args",
+      "embed_dim",
+      "value_dim",
+      "num_heads",
+      "gate_fn"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "parallel_forward": [
+      "self",
+      "qr",
+      "kr",
+      "v",
+      "mask"
+    ],
+    "recurrent_forward": [
+      "self",
+      "qr",
+      "kr",
+      "v",
+      "decay",
+      "incremental_state"
+    ],
+    "chunk_recurrent_forward": [
+      "self",
+      "qr",
+      "kr",
+      "v",
+      "inner_mask"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "rel_pos",
+      "chunkwise_recurrent",
+      "incremental_state"
+    ]
+  },
+  "fixed_pos_embedding": [
+    "x"
+  ],
+  "apply_rotary_pos_emb": [
+    "x",
+    "sin",
+    "cos",
+    "scale"
+  ],
+  "XPOS": {
+    "__init__": [
+      "self",
+      "head_dim",
+      "scale_base"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "offset",
+      "downscale"
+    ]
+  },
+  "TEMPERATURE_FOR_L_UAX": [],
+  "EVAL_CAPACITY_TOKEN_FRACTION": [],
+  "SAMPLE_FRACTION": [],
+  "top1gating": [
+    "logits",
+    "input_mask",
+    "use_fp32",
+    "capacity_factor",
+    "eval_mode",
+    "moe_eval_capacity_token_fraction",
+    "use_xmoe",
+    "gate_obj"
+  ],
+  "Top1Gate": {
+    "__init__": [
+      "self",
+      "model_dim",
+      "num_experts",
+      "use_fp32",
+      "input_noise_type",
+      "capacity_factor",
+      "moe_eval_capacity_token_fraction",
+      "use_xmoe"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "mask"
+    ],
+    "_make_finite": [
+      "self",
+      "scores"
+    ],
+    "_get_gating_temperature": [
+      "self",
+      "eps"
+    ],
+    "_cosine": [
+      "self",
+      "mat1",
+      "mat2",
+      "eps"
+    ]
+  },
+  "gumbel_rsample": [
+    "shape",
+    "device"
+  ],
+  "one_hot": [
+    "indices",
+    "num_classes",
+    "unsqueeze_indices"
+  ],
+  "entropy": [
+    "probs"
+  ],
+  "top2gating": [
+    "logits",
+    "input_mask",
+    "use_fp32",
+    "second_expert_policy",
+    "normalize_gate_prob_before_dropping",
+    "eval_mode",
+    "moe_eval_capacity_token_fraction",
+    "batch_prioritized_routing"
+  ],
+  "Top2Gate": {
+    "__init__": [
+      "self",
+      "model_dim",
+      "num_experts",
+      "use_fp32",
+      "second_expert_policy",
+      "normalize_gate_prob_before_dropping",
+      "moe_eval_capacity_token_fraction",
+      "batch_prioritized_routing",
+      "use_xmoe"
+    ],
+    "forward": [
+      "self",
+      "input",
+      "mask"
+    ],
+    "_cosine": [
+      "self",
+      "mat1",
+      "mat2",
+      "eps"
+    ],
+    "_make_finite": [
+      "self",
+      "scores"
+    ]
+  },
+  "_find_my_group_index": [
+    "grouped_ranks"
+  ],
+  "get_moe_group": [
+    "moe_expert_count"
+  ],
+  "get_all2all_group": [
+    "moe_expert_count"
+  ],
+  "logger": [],
+  "_AllToAll": {
+    "forward": [
+      "ctx",
+      "group",
+      "input"
+    ],
+    "backward": [
+      "ctx"
+    ]
+  },
+  "MOELayer": {
+    "__init__": [
+      "self",
+      "gate",
+      "experts",
+      "args"
+    ],
+    "forward": [
+      "self"
+    ],
+    "prepare_for_inference_": [
+      "self"
+    ],
+    "all_to_all_wrapper": [
+      "self",
+      "input"
+    ],
+    "record_all_to_all_stats": [
+      "self"
+    ]
+  },
+  "BEiT3": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "textual_tokens",
+      "visual_tokens",
+      "text_padding_position",
+      "attn_mask",
+      "vision_masked_position",
+      "incremental_state",
+      "positions"
+    ]
+  },
+  "clip_grad_norm_": [
+    "params",
+    "max_norm",
+    "moe_expert_count",
+    "aggregate_norm_fn"
+  ],
+  "MaskedLMMoECrossEntropyCriterion": {
+    "compute_inner_loss": [
+      "self",
+      "model",
+      "sample",
+      "reduce"
+    ],
+    "reduce_metrics": [
+      "logging_outputs"
+    ]
+  },
+  "SAMPLE_BREAK_MODE_CHOICES": [],
+  "SHORTEN_METHOD_CHOICES": [],
+  "PretrainingConfig": {},
+  "PLMTask": {
+    "__init__": [
+      "self",
+      "cfg",
+      "dictionary",
+      "tokenizer"
+    ],
+    "setup_task": [
+      "cls",
+      "cfg"
+    ],
+    "load_dataset": [
+      "self",
+      "split",
+      "epoch",
+      "combine"
+    ],
+    "dataset": [
+      "self",
+      "split"
+    ],
+    "get_batch_iterator": [
+      "self",
+      "dataset",
+      "max_tokens",
+      "max_sentences",
+      "max_positions",
+      "ignore_invalid_inputs",
+      "required_batch_size_multiple",
+      "seed",
+      "num_shards",
+      "shard_id",
+      "num_workers",
+      "epoch",
+      "data_buffer_size",
+      "disable_iterator_cache"
+    ],
+    "source_dictionary": [
+      "self"
+    ],
+    "target_dictionary": [
+      "self"
+    ]
+  },
+  "TASK_DATACLASS_REGISTRY": [],
+  "TASK_REGISTRY": [],
+  "TASK_CLASS_NAMES": [],
+  "tasks_dir": [],
+  "MLMLoader": {
+    "__init__": [
+      "self",
+      "args",
+      "dataset",
+      "dictionary",
+      "tokenizer",
+      "max_tokens",
+      "max_sentences",
+      "max_positions",
+      "ignore_invalid_inputs",
+      "required_batch_size_multiple",
+      "seed",
+      "num_shards",
+      "shard_id"
+    ],
+    "_build_iter": [
+      "self"
+    ],
+    "_multilingual_tokenize": [
+      "self"
+    ],
+    "_tokenize": [
+      "self",
+      "data"
+    ],
+    "_batchify": [
+      "self",
+      "lines"
+    ],
+    "_prepare": [
+      "self",
+      "_random",
+      "doc"
+    ],
+    "_mask_lm": [
+      "self",
+      "_random",
+      "doc"
+    ],
+    "_span_corruption": [
+      "self",
+      "_random",
+      "doc"
+    ],
+    "_read_from_files": [
+      "self",
+      "source_file",
+      "source_lang"
+    ]
+  },
+  "apply_to_sample": [
+    "f",
+    "sample"
+  ],
+  "NativeCheckpointableIterator": {
+    "__init__": [
+      "self",
+      "iterable"
+    ],
+    "getstate": [
+      "self"
+    ],
+    "setstate": [
+      "self",
+      "checkpoint"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "WeightIterator": {
+    "__init__": [
+      "self",
+      "weights",
+      "seed"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "getstate": [
+      "self"
+    ],
+    "setstate": [
+      "self",
+      "checkpoint"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BaseBatchGen": {
+    "__init__": [
+      "self"
+    ],
+    "_build_iter": [
+      "self"
+    ],
+    "_move_to_tensor": [
+      "self",
+      "batch"
+    ],
+    "iterator": [
+      "self"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "setstate": [
+      "self",
+      "value"
+    ],
+    "getstate": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "next_epoch_itr": [
+      "self",
+      "shuffle",
+      "fix_batches_to_gpus",
+      "set_dataset_epoch"
+    ],
+    "end_of_epoch": [
+      "self"
+    ],
+    "state_dict": [
+      "self"
+    ],
+    "load_state_dict": [
+      "self",
+      "state_dict"
+    ],
+    "first_batch": [
+      "self"
+    ]
+  },
+  "DEFAULT_MAX_SOURCE_POSITIONS": [],
+  "DEFAULT_MAX_TARGET_POSITIONS": [],
+  "DEFAULT_MIN_PARAMS_TO_WRAP": [],
+  "TranslationModel": {
+    "__init__": [
+      "self",
+      "args",
+      "encoder",
+      "decoder"
+    ],
+    "add_args": [
+      "parser"
+    ],
+    "build_model": [
+      "cls",
+      "args",
+      "task"
+    ],
+    "build_embedding": [
+      "cls",
+      "args",
+      "dictionary",
+      "embed_dim",
+      "path"
+    ],
+    "build_encoder": [
+      "cls",
+      "args",
+      "embed_tokens",
+      "embed_positions",
+      "dictionary"
+    ],
+    "build_decoder": [
+      "cls",
+      "args",
+      "embed_tokens",
+      "embed_positions",
+      "output_projection",
+      "dictionary"
+    ],
+    "forward": [
+      "self",
+      "src_tokens",
+      "src_lengths",
+      "prev_output_tokens",
+      "return_all_hiddens",
+      "features_only"
+    ],
+    "get_normalized_probs": [
+      "self",
+      "net_output",
+      "log_probs",
+      "sample"
+    ]
+  },
+  "MTEncoder": {
+    "forward": [
+      "self",
+      "src_tokens"
+    ],
+    "reorder_encoder_out": [
+      "self",
+      "encoder_out",
+      "new_order"
+    ],
+    "max_positions": [
+      "self"
+    ]
+  },
+  "base_architecture": [
+    "args"
+  ],
+  "BertConfig": {},
+  "BertModel": {
+    "__init__": [
+      "self",
+      "args",
+      "encoder"
+    ],
+    "build_model": [
+      "cls",
+      "args",
+      "task"
+    ],
+    "build_embedding": [
+      "cls",
+      "args",
+      "dictionary",
+      "embed_dim",
+      "path"
+    ],
+    "build_lm_head": [
+      "cls",
+      "args",
+      "embed_dim",
+      "output_dim",
+      "activation_fn",
+      "weight"
+    ],
+    "output_layer": [
+      "self",
+      "features",
+      "masked_tokens"
+    ],
+    "register_classification_head": [
+      "self",
+      "name",
+      "num_classes",
+      "inner_dim"
+    ],
+    "register_question_answering_head": [
+      "self",
+      "name",
+      "num_classes"
+    ],
+    "upgrade_state_dict_named": [
+      "self",
+      "state_dict",
+      "name"
+    ],
+    "get_normalized_probs_scriptable": [
+      "self",
+      "net_output",
+      "log_probs",
+      "sample"
+    ],
+    "forward": [
+      "self",
+      "src_tokens",
+      "features_only",
+      "return_all_hiddens",
+      "classification_head_name",
+      "masked_tokens"
+    ]
+  },
+  "ClassificationHead": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "inner_dim",
+      "num_classes",
+      "activation_fn",
+      "pooler_dropout"
+    ],
+    "forward": [
+      "self",
+      "features"
+    ]
+  },
+  "LMHead": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "output_dim",
+      "activation_fn",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "features",
+      "masked_tokens"
+    ]
+  },
+  "base_unilm_architecture": [
+    "args"
+  ],
+  "LanguageConfig": {},
+  "LanguageModel": {
+    "__init__": [
+      "self",
+      "args",
+      "decoder"
+    ],
+    "build_model": [
+      "cls",
+      "args",
+      "task"
+    ],
+    "build_embedding": [
+      "cls",
+      "args",
+      "dictionary",
+      "embed_dim",
+      "path"
+    ]
+  },
+  "LMDecoder": {
+    "forward": [
+      "self",
+      "src_tokens"
+    ],
+    "max_positions": [
+      "self"
+    ],
+    "reorder_incremental_state_scripting": [
+      "self",
+      "incremental_state",
+      "new_order"
+    ]
+  },
+  "base_lm_architecture": [
+    "args"
+  ],
+  "MODEL_REGISTRY": [],
+  "MODEL_DATACLASS_REGISTRY": [],
+  "ARCH_MODEL_REGISTRY": [],
+  "ARCH_MODEL_NAME_REGISTRY": [],
+  "ARCH_MODEL_INV_REGISTRY": [],
+  "ARCH_CONFIG_REGISTRY": [],
+  "models_dir": [],
+  "RetNetLanguageModel": {
+    "__init__": [
+      "self",
+      "args",
+      "decoder"
+    ],
+    "build_model": [
+      "cls",
+      "args",
+      "task"
+    ],
+    "build_embedding": [
+      "cls",
+      "args",
+      "dictionary",
+      "embed_dim",
+      "path"
+    ]
+  },
+  "retnet_base_architecture": [
+    "args"
+  ],
+  "retnet_medium": [
+    "args"
+  ],
+  "retnet_xl": [
+    "args"
+  ],
+  "retnet_3b": [
+    "args"
+  ],
+  "retnet_7b": [
+    "args"
+  ],
+  "retnet_13b": [
+    "args"
+  ],
+  "retnet_65b": [
+    "args"
+  ]
+}

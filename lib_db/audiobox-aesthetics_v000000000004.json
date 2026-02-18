@@ -1,0 +1,353 @@
+{
+  "DEFAULT_HF_REPO": [],
+  "DEFAULT_CKPT_FNAME": [],
+  "DEFAULT_S3_URL": [],
+  "logging": [],
+  "download_file": [
+    "url",
+    "destination"
+  ],
+  "load_model": [
+    "checkpoint_pth"
+  ],
+  "parse_args": [],
+  "app": [],
+  "logger": [],
+  "Batch": [],
+  "AXES_NAME": [],
+  "read_wav": [
+    "meta"
+  ],
+  "make_inference_batch": [
+    "input_wavs",
+    "hop_size",
+    "window_size",
+    "sample_rate",
+    "pad_zero"
+  ],
+  "AesPredictor": {
+    "__post_init__": [
+      "self"
+    ],
+    "setup_model": [
+      "self"
+    ],
+    "audio_resample_mono": [
+      "self",
+      "data_list"
+    ],
+    "forward": [
+      "self",
+      "batch"
+    ]
+  },
+  "load_dataset": [
+    "path",
+    "start",
+    "end"
+  ],
+  "initialize_predictor": [
+    "ckpt"
+  ],
+  "main_predict": [
+    "input_file",
+    "ckpt",
+    "batch_size"
+  ],
+  "TransposeLast": {
+    "__init__": [
+      "self",
+      "deconstruct_idx"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Fp32LayerNorm": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "Fp32GroupNorm": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "GradMultiply": {
+    "forward": [
+      "ctx",
+      "x",
+      "scale"
+    ],
+    "backward": [
+      "ctx",
+      "grad"
+    ]
+  },
+  "SamePad": {
+    "__init__": [
+      "self",
+      "kernel_size",
+      "causal"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "Swish": {
+    "__init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GLU_Linear": {
+    "__init__": [
+      "self",
+      "input_dim",
+      "output_dim",
+      "glu_type",
+      "bias_in_glu"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "gelu_accurate": [
+    "x"
+  ],
+  "gelu": [
+    "x"
+  ],
+  "get_activation_fn": [
+    "activation"
+  ],
+  "init_bert_params": [
+    "module"
+  ],
+  "quant_noise": [
+    "module",
+    "p",
+    "block_size"
+  ],
+  "MultiheadAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "kdim",
+      "vdim",
+      "dropout",
+      "bias",
+      "add_bias_kv",
+      "add_zero_attn",
+      "self_attention",
+      "encoder_decoder_attention",
+      "q_noise",
+      "qn_block_size",
+      "has_relative_attention_bias",
+      "num_buckets",
+      "max_distance",
+      "gru_rel_pos",
+      "rescale_init"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "_relative_positions_bucket": [
+      "self",
+      "relative_positions",
+      "bidirectional"
+    ],
+    "compute_bias": [
+      "self",
+      "query_length",
+      "key_length"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "key_padding_mask",
+      "incremental_state",
+      "need_weights",
+      "static_kv",
+      "attn_mask",
+      "before_softmax",
+      "need_head_weights",
+      "position_bias"
+    ],
+    "_append_prev_key_padding_mask": [
+      "key_padding_mask",
+      "prev_key_padding_mask",
+      "batch_size",
+      "src_len",
+      "static_kv"
+    ],
+    "_get_input_buffer": [
+      "self",
+      "incremental_state"
+    ],
+    "_set_input_buffer": [
+      "self",
+      "incremental_state",
+      "buffer"
+    ],
+    "apply_sparse_mask": [
+      "self",
+      "attn_weights",
+      "tgt_len",
+      "src_len",
+      "bsz"
+    ]
+  },
+  "compute_mask_indices": [
+    "shape",
+    "padding_mask",
+    "mask_prob",
+    "mask_length",
+    "mask_type",
+    "mask_other",
+    "min_masks",
+    "no_overlap",
+    "min_space"
+  ],
+  "WavLMConfig": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "update": [
+      "self",
+      "cfg"
+    ]
+  },
+  "WavLM": {
+    "__init__": [
+      "self",
+      "cfg"
+    ],
+    "apply_mask": [
+      "self",
+      "x",
+      "padding_mask"
+    ],
+    "forward_padding_mask": [
+      "self",
+      "features",
+      "padding_mask"
+    ],
+    "extract_features": [
+      "self",
+      "source",
+      "padding_mask",
+      "mask",
+      "ret_conv",
+      "output_layer",
+      "ret_layer_results"
+    ]
+  },
+  "ConvFeatureExtractionModel": {
+    "__init__": [
+      "self",
+      "conv_layers",
+      "dropout",
+      "mode",
+      "conv_bias",
+      "conv_type"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask"
+    ]
+  },
+  "TransformerEncoder": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "padding_mask",
+      "streaming_mask",
+      "layer"
+    ],
+    "extract_features": [
+      "self",
+      "x",
+      "padding_mask",
+      "streaming_mask",
+      "tgt_layer"
+    ]
+  },
+  "TransformerSentenceEncoderLayer": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "ffn_embedding_dim",
+      "num_attention_heads",
+      "dropout",
+      "attention_dropout",
+      "activation_dropout",
+      "activation_fn",
+      "layer_norm_first",
+      "has_relative_attention_bias",
+      "num_buckets",
+      "max_distance",
+      "rescale_init",
+      "gru_rel_pos"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask",
+      "need_weights",
+      "pos_bias"
+    ]
+  },
+  "create_mlp_block": [
+    "input_dim",
+    "output_dim",
+    "num_layer",
+    "act_fn",
+    "layer_norm",
+    "dropout"
+  ],
+  "DEFAULT_AUDIO_CFG": [],
+  "Normalize": {
+    "transform": [
+      "self",
+      "x"
+    ],
+    "inverse": [
+      "self",
+      "x"
+    ]
+  },
+  "AesMultiOutput": {
+    "__post_init__": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "batch"
+    ]
+  }
+}

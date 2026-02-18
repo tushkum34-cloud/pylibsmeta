@@ -1,0 +1,462 @@
+{
+  "SerDe": {
+    "serialize": [
+      "self",
+      "entry"
+    ],
+    "deserialize": [
+      "self",
+      "data"
+    ]
+  },
+  "PickleSerDe": {
+    "__init__": [
+      "self",
+      "pickle_protocol"
+    ],
+    "deserialize": [
+      "self",
+      "data"
+    ],
+    "serialize": [
+      "self",
+      "entry"
+    ]
+  },
+  "JsonReversibleObject": [],
+  "JsonSerDe": {
+    "__init__": [
+      "self",
+      "string_encoding",
+      "value_to_reversible_repr",
+      "reversible_repr_to_value"
+    ],
+    "deserialize": [
+      "self",
+      "data"
+    ],
+    "serialize": [
+      "self",
+      "entry"
+    ]
+  },
+  "EncodingSerDe": {
+    "__init__": [
+      "self",
+      "serde",
+      "binary_encoding"
+    ],
+    "deserialize": [
+      "self",
+      "value"
+    ],
+    "serialize": [
+      "self",
+      "value"
+    ]
+  },
+  "InvalidationSupport": {
+    "__init__": [
+      "self"
+    ],
+    "_initialized": [
+      "self"
+    ],
+    "_initialize": [
+      "self",
+      "cache_storage",
+      "key_extractor",
+      "method_reference"
+    ],
+    "invalidate_for_arguments": [
+      "self",
+      "call_args",
+      "call_kwargs"
+    ]
+  },
+  "KeyExtractor": {
+    "format_key": [
+      "self",
+      "method_reference",
+      "call_args",
+      "call_kwargs"
+    ]
+  },
+  "EncodedMethodReferenceAndArgsKeyExtractor": {
+    "format_key": [
+      "self",
+      "method_reference",
+      "call_args",
+      "call_kwargs"
+    ]
+  },
+  "EncodedMethodNameAndArgsKeyExtractor": {
+    "__init__": [
+      "self",
+      "skip_first_arg_as_self"
+    ],
+    "format_key": [
+      "self",
+      "method_reference",
+      "call_args",
+      "call_kwargs"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "CacheKey": [],
+  "CachedValue": [],
+  "CacheEntry": {
+    "__init__": [
+      "self",
+      "created",
+      "update_after",
+      "expires_after",
+      "value"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "o"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "__version__": [],
+  "UpdateStatuses": {
+    "is_being_updated": [
+      "self",
+      "key"
+    ],
+    "mark_being_updated": [
+      "self",
+      "key"
+    ],
+    "mark_updated": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "mark_update_aborted": [
+      "self",
+      "key",
+      "exception"
+    ],
+    "await_updated": [
+      "self",
+      "key"
+    ]
+  },
+  "InMemoryLocks": {
+    "__init__": [
+      "self",
+      "update_lock_timeout"
+    ],
+    "is_being_updated": [
+      "self",
+      "key"
+    ],
+    "mark_being_updated": [
+      "self",
+      "key"
+    ],
+    "mark_updated": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "mark_update_aborted": [
+      "self",
+      "key",
+      "exception"
+    ],
+    "await_updated": [
+      "self",
+      "key"
+    ]
+  },
+  "CacheStorage": {
+    "get": [
+      "self",
+      "key"
+    ],
+    "offer": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "release": [
+      "self",
+      "key"
+    ]
+  },
+  "LocalInMemoryCacheStorage": {
+    "__init__": [
+      "self"
+    ],
+    "offer": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "release": [
+      "self",
+      "key"
+    ],
+    "get": [
+      "self",
+      "key"
+    ]
+  },
+  "CacheEntryBuilder": {
+    "build": [
+      "self",
+      "key",
+      "value"
+    ]
+  },
+  "ProvidedLifeSpanCacheEntryBuilder": {
+    "__init__": [
+      "self",
+      "update_after",
+      "expire_after"
+    ],
+    "update_timeouts": [
+      "self",
+      "update_after",
+      "expire_after"
+    ],
+    "build": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "memoize": [
+    "method",
+    "configuration",
+    "invalidation",
+    "update_statuses"
+  ],
+  "CachedMethodFailedException": {},
+  "ValueType": [],
+  "Postprocessing": {
+    "apply": [
+      "self",
+      "original"
+    ]
+  },
+  "NoPostprocessing": {
+    "apply": [
+      "self",
+      "original"
+    ]
+  },
+  "DeepcopyPostprocessing": {
+    "apply": [
+      "self",
+      "original"
+    ]
+  },
+  "EvictionStrategy": {
+    "mark_read": [
+      "self",
+      "key"
+    ],
+    "mark_written": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "mark_released": [
+      "self",
+      "key"
+    ],
+    "next_to_release": [
+      "self"
+    ]
+  },
+  "LeastRecentlyUpdatedEvictionStrategy": {
+    "__init__": [
+      "self",
+      "capacity"
+    ],
+    "mark_read": [
+      "self",
+      "key"
+    ],
+    "mark_released": [
+      "self",
+      "key"
+    ],
+    "mark_written": [
+      "self",
+      "key",
+      "entry"
+    ],
+    "next_to_release": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "NoEvictionStrategy": {
+    "mark_released": [
+      "self",
+      "key"
+    ],
+    "mark_read": [
+      "self",
+      "key"
+    ],
+    "next_to_release": [
+      "self"
+    ],
+    "mark_written": [
+      "self",
+      "key",
+      "entry"
+    ]
+  },
+  "NotConfiguredCacheCalledException": {},
+  "CacheConfiguration": {
+    "configured": [
+      "self"
+    ],
+    "method_timeout": [
+      "self"
+    ],
+    "entry_builder": [
+      "self"
+    ],
+    "key_extractor": [
+      "self"
+    ],
+    "storage": [
+      "self"
+    ],
+    "eviction_strategy": [
+      "self"
+    ],
+    "postprocessing": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MutableCacheConfiguration": {
+    "__init__": [
+      "self",
+      "configured",
+      "storage",
+      "key_extractor",
+      "eviction_strategy",
+      "entry_builder",
+      "postprocessing",
+      "method_timeout"
+    ],
+    "initialized_with": [
+      "configuration"
+    ],
+    "method_timeout": [
+      "self"
+    ],
+    "key_extractor": [
+      "self"
+    ],
+    "configured": [
+      "self"
+    ],
+    "storage": [
+      "self"
+    ],
+    "entry_builder": [
+      "self"
+    ],
+    "eviction_strategy": [
+      "self"
+    ],
+    "postprocessing": [
+      "self"
+    ],
+    "set_method_timeout": [
+      "self",
+      "value"
+    ],
+    "set_key_extractor": [
+      "self",
+      "value"
+    ],
+    "set_configured": [
+      "self",
+      "value"
+    ],
+    "set_storage": [
+      "self",
+      "value"
+    ],
+    "set_entry_builder": [
+      "self",
+      "value"
+    ],
+    "set_eviction_strategy": [
+      "self",
+      "value"
+    ],
+    "set_postprocessing": [
+      "self",
+      "value"
+    ]
+  },
+  "DefaultInMemoryCacheConfiguration": {
+    "__init__": [
+      "self",
+      "capacity",
+      "method_timeout",
+      "update_after",
+      "expire_after"
+    ],
+    "configured": [
+      "self"
+    ],
+    "method_timeout": [
+      "self"
+    ],
+    "storage": [
+      "self"
+    ],
+    "entry_builder": [
+      "self"
+    ],
+    "eviction_strategy": [
+      "self"
+    ],
+    "key_extractor": [
+      "self"
+    ],
+    "postprocessing": [
+      "self"
+    ]
+  }
+}

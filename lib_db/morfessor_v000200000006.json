@@ -1,0 +1,655 @@
+{
+  "_logger": [],
+  "_constructions_to_str": [
+    "constructions"
+  ],
+  "ConstrNode": [],
+  "BaselineModel": {
+    "penalty": [],
+    "__init__": [
+      "self",
+      "forcesplit_list",
+      "corpusweight",
+      "use_skips",
+      "nosplit_re"
+    ],
+    "set_corpus_weight_updater": [
+      "self",
+      "corpus_weight"
+    ],
+    "_check_segment_only": [
+      "self"
+    ],
+    "tokens": [
+      "self"
+    ],
+    "types": [
+      "self"
+    ],
+    "_add_compound": [
+      "self",
+      "compound",
+      "c"
+    ],
+    "_remove": [
+      "self",
+      "construction"
+    ],
+    "_random_split": [
+      "self",
+      "compound",
+      "threshold"
+    ],
+    "_set_compound_analysis": [
+      "self",
+      "compound",
+      "parts",
+      "ptype"
+    ],
+    "_update_annotation_choices": [
+      "self"
+    ],
+    "_best_analysis": [
+      "self",
+      "choices"
+    ],
+    "_force_split": [
+      "self",
+      "compound"
+    ],
+    "_test_skip": [
+      "self",
+      "construction"
+    ],
+    "_viterbi_optimize": [
+      "self",
+      "compound",
+      "addcount",
+      "maxlen"
+    ],
+    "_recursive_optimize": [
+      "self",
+      "compound"
+    ],
+    "_recursive_split": [
+      "self",
+      "construction"
+    ],
+    "_modify_construction_count": [
+      "self",
+      "construction",
+      "dcount"
+    ],
+    "_epoch_update": [
+      "self",
+      "epoch_num"
+    ],
+    "segmentation_to_splitloc": [
+      "constructions"
+    ],
+    "_splitloc_to_segmentation": [
+      "compound",
+      "splitloc"
+    ],
+    "_join_constructions": [
+      "constructions"
+    ],
+    "get_compounds": [
+      "self"
+    ],
+    "get_constructions": [
+      "self"
+    ],
+    "get_cost": [
+      "self"
+    ],
+    "get_segmentations": [
+      "self"
+    ],
+    "load_data": [
+      "self",
+      "data",
+      "freqthreshold",
+      "count_modifier",
+      "init_rand_split"
+    ],
+    "load_segmentations": [
+      "self",
+      "segmentations"
+    ],
+    "set_annotations": [
+      "self",
+      "annotations",
+      "annotatedcorpusweight"
+    ],
+    "segment": [
+      "self",
+      "compound"
+    ],
+    "train_batch": [
+      "self",
+      "algorithm",
+      "algorithm_params",
+      "finish_threshold",
+      "max_epochs"
+    ],
+    "train_online": [
+      "self",
+      "data",
+      "count_modifier",
+      "epoch_interval",
+      "algorithm",
+      "algorithm_params",
+      "init_rand_split",
+      "max_epochs"
+    ],
+    "viterbi_segment": [
+      "self",
+      "compound",
+      "addcount",
+      "maxlen"
+    ],
+    "forward_logprob": [
+      "self",
+      "compound"
+    ],
+    "viterbi_nbest": [
+      "self",
+      "compound",
+      "n",
+      "addcount",
+      "maxlen"
+    ],
+    "get_corpus_coding_weight": [
+      "self"
+    ],
+    "set_corpus_coding_weight": [
+      "self",
+      "weight"
+    ],
+    "make_segment_only": [
+      "self"
+    ],
+    "clear_segmentation": [
+      "self"
+    ]
+  },
+  "CorpusWeight": {
+    "move_direction": [
+      "cls",
+      "model",
+      "direction",
+      "epoch"
+    ]
+  },
+  "FixedCorpusWeight": {
+    "__init__": [
+      "self",
+      "weight"
+    ],
+    "update": [
+      "self",
+      "model",
+      "_"
+    ]
+  },
+  "AnnotationCorpusWeight": {
+    "__init__": [
+      "self",
+      "devel_set",
+      "threshold"
+    ],
+    "update": [
+      "self",
+      "model",
+      "epoch"
+    ],
+    "_boundary_recall": [
+      "cls",
+      "prediction",
+      "reference"
+    ],
+    "_bpr_evaluation": [
+      "cls",
+      "prediction",
+      "reference"
+    ],
+    "_estimate_segmentation_dir": [
+      "self",
+      "segments",
+      "annotations"
+    ]
+  },
+  "MorphLengthCorpusWeight": {
+    "__init__": [
+      "self",
+      "morph_lenght",
+      "threshold"
+    ],
+    "update": [
+      "self",
+      "model",
+      "epoch"
+    ],
+    "calc_morph_length": [
+      "cls",
+      "model"
+    ]
+  },
+  "NumMorphCorpusWeight": {
+    "__init__": [
+      "self",
+      "num_morph_types",
+      "threshold"
+    ],
+    "update": [
+      "self",
+      "model",
+      "epoch"
+    ]
+  },
+  "Encoding": {
+    "__init__": [
+      "self",
+      "weight"
+    ],
+    "_log2pi": [],
+    "types": [
+      "self"
+    ],
+    "_logfactorial": [
+      "cls",
+      "n"
+    ],
+    "frequency_distribution_cost": [
+      "self"
+    ],
+    "permutations_cost": [
+      "self"
+    ],
+    "update_count": [
+      "self",
+      "construction",
+      "old_count",
+      "new_count"
+    ],
+    "get_cost": [
+      "self"
+    ]
+  },
+  "CorpusEncoding": {
+    "__init__": [
+      "self",
+      "lexicon_encoding",
+      "weight"
+    ],
+    "types": [
+      "self"
+    ],
+    "frequency_distribution_cost": [
+      "self"
+    ],
+    "get_cost": [
+      "self"
+    ]
+  },
+  "AnnotatedCorpusEncoding": {
+    "__init__": [
+      "self",
+      "corpus_coding",
+      "weight",
+      "penalty"
+    ],
+    "set_constructions": [
+      "self",
+      "constructions"
+    ],
+    "set_count": [
+      "self",
+      "construction",
+      "count"
+    ],
+    "update_count": [
+      "self",
+      "construction",
+      "old_count",
+      "new_count"
+    ],
+    "update_weight": [
+      "self"
+    ],
+    "get_cost": [
+      "self"
+    ]
+  },
+  "LexiconEncoding": {
+    "__init__": [
+      "self"
+    ],
+    "types": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "construction"
+    ],
+    "remove": [
+      "self",
+      "construction"
+    ],
+    "get_codelength": [
+      "self",
+      "construction"
+    ]
+  },
+  "EvaluationConfig": [],
+  "FORMAT_STRINGS": [],
+  "_sample": [
+    "compound_list",
+    "size",
+    "seed"
+  ],
+  "MorfessorEvaluationResult": {
+    "print_functions": [],
+    "__init__": [
+      "self",
+      "meta_data"
+    ],
+    "__getitem__": [
+      "self",
+      "item"
+    ],
+    "add_data_point": [
+      "self",
+      "precision",
+      "recall",
+      "f_score",
+      "sample_size"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "_fill_cache": [
+      "self"
+    ],
+    "_get_cache": [
+      "self"
+    ],
+    "format": [
+      "self",
+      "format_string"
+    ]
+  },
+  "MorfessorEvaluation": {
+    "__init__": [
+      "self",
+      "reference_annotations"
+    ],
+    "_create_samples": [
+      "self",
+      "configuration"
+    ],
+    "get_samples": [
+      "self",
+      "configuration"
+    ],
+    "_evaluate": [
+      "self",
+      "prediction"
+    ],
+    "_segmentation_indices": [
+      "annotation"
+    ],
+    "evaluate_model": [
+      "self",
+      "model",
+      "configuration",
+      "meta_data"
+    ],
+    "evaluate_segmentation": [
+      "self",
+      "segmentation",
+      "configuration",
+      "meta_data"
+    ]
+  },
+  "WilcoxonSignedRank": {
+    "_wilcoxon": [
+      "d",
+      "method",
+      "correction"
+    ],
+    "_rankdata": [
+      "d"
+    ],
+    "_norm_cum_pdf": [
+      "z"
+    ],
+    "significance_test": [
+      "self",
+      "evaluations",
+      "val_property",
+      "name_property"
+    ],
+    "print_table": [
+      "results"
+    ]
+  },
+  "MorfessorException": {},
+  "ArgumentException": {},
+  "InvalidCategoryError": {
+    "__init__": [
+      "self",
+      "category"
+    ]
+  },
+  "InvalidOperationError": {
+    "__init__": [
+      "self",
+      "operation",
+      "function_name"
+    ]
+  },
+  "UnsupportedConfigurationError": {
+    "__init__": [
+      "self",
+      "reason"
+    ]
+  },
+  "SegmentOnlyModelException": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "PY3": [],
+  "_dummy_lru_cache": [],
+  "LOGPROB_ZERO": [],
+  "GENERATOR_DOT_FREQ": [],
+  "show_progress_bar": [],
+  "_progress": [
+    "iter_func"
+  ],
+  "Sparse": {
+    "__init__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ]
+  },
+  "ngrams": [
+    "sequence",
+    "n"
+  ],
+  "minargmin": [
+    "sequence"
+  ],
+  "zlog": [
+    "x"
+  ],
+  "_nt_zeros": [
+    "constructor",
+    "zero"
+  ],
+  "weighted_sample": [
+    "data",
+    "num_samples"
+  ],
+  "_generator_progress": [
+    "generator"
+  ],
+  "_is_string": [
+    "obj"
+  ],
+  "LRU_MAX_SIZE": [],
+  "get_default_argparser": [],
+  "initialize_logging": [
+    "args"
+  ],
+  "_viterbi_segment": [
+    "model",
+    "atoms",
+    "smooth",
+    "maxlen"
+  ],
+  "_viterbi_nbest": [
+    "model",
+    "atoms",
+    "nbest",
+    "smooth",
+    "maxlen"
+  ],
+  "main": [
+    "args"
+  ],
+  "get_evaluation_argparser": [],
+  "main_evaluation": [
+    "args"
+  ],
+  "__all__": [],
+  "__version__": [],
+  "__author__": [],
+  "__author_email__": [],
+  "get_version": [],
+  "MorfessorIO": {
+    "__init__": [
+      "self",
+      "encoding",
+      "construction_separator",
+      "comment_start",
+      "compound_separator",
+      "atom_separator",
+      "lowercase"
+    ],
+    "read_segmentation_file": [
+      "self",
+      "file_name",
+      "has_counts"
+    ],
+    "write_segmentation_file": [
+      "self",
+      "file_name",
+      "segmentations"
+    ],
+    "read_corpus_files": [
+      "self",
+      "file_names"
+    ],
+    "read_corpus_list_files": [
+      "self",
+      "file_names"
+    ],
+    "read_corpus_file": [
+      "self",
+      "file_name"
+    ],
+    "read_corpus_list_file": [
+      "self",
+      "file_name"
+    ],
+    "read_annotations_file": [
+      "self",
+      "file_name",
+      "construction_separator",
+      "analysis_sep"
+    ],
+    "write_lexicon_file": [
+      "self",
+      "file_name",
+      "lexicon"
+    ],
+    "read_binary_model_file": [
+      "self",
+      "file_name"
+    ],
+    "read_binary_file": [
+      "file_name"
+    ],
+    "write_binary_model_file": [
+      "self",
+      "file_name",
+      "model"
+    ],
+    "write_binary_file": [
+      "file_name",
+      "obj"
+    ],
+    "write_parameter_file": [
+      "self",
+      "file_name",
+      "params"
+    ],
+    "read_parameter_file": [
+      "self",
+      "file_name"
+    ],
+    "read_any_model": [
+      "self",
+      "file_name"
+    ],
+    "format_constructions": [
+      "self",
+      "constructions",
+      "csep",
+      "atom_sep"
+    ],
+    "_split_atoms": [
+      "self",
+      "construction"
+    ],
+    "_open_text_file_write": [
+      "self",
+      "file_name"
+    ],
+    "_open_text_file_read": [
+      "self",
+      "file_name"
+    ],
+    "_read_text_file": [
+      "self",
+      "file_name",
+      "raw"
+    ],
+    "_find_encoding": []
+  },
+  "TestWilcoxon": {
+    "setUp": [
+      "self"
+    ],
+    "test_norm_cum_pdf": [
+      "self"
+    ],
+    "test_accuracy_wilcoxon": [
+      "self"
+    ],
+    "test_wilcoxon_tie": [
+      "self"
+    ]
+  }
+}

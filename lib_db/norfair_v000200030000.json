@@ -1,0 +1,968 @@
+{
+  "FilterFactory": {
+    "create_filter": [
+      "self",
+      "initial_detection"
+    ]
+  },
+  "FilterPyKalmanFilterFactory": {
+    "__init__": [
+      "self",
+      "R",
+      "Q",
+      "P"
+    ],
+    "create_filter": [
+      "self",
+      "initial_detection"
+    ]
+  },
+  "NoFilter": {
+    "__init__": [
+      "self",
+      "dim_x",
+      "dim_z"
+    ],
+    "predict": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "detection_points_flatten",
+      "R",
+      "H"
+    ]
+  },
+  "NoFilterFactory": {
+    "create_filter": [
+      "self",
+      "initial_detection"
+    ]
+  },
+  "OptimizedKalmanFilter": {
+    "__init__": [
+      "self",
+      "dim_x",
+      "dim_z",
+      "pos_variance",
+      "pos_vel_covariance",
+      "vel_variance",
+      "q",
+      "r"
+    ],
+    "predict": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "detection_points_flatten",
+      "R",
+      "H"
+    ]
+  },
+  "OptimizedKalmanFilterFactory": {
+    "__init__": [
+      "self",
+      "R",
+      "Q",
+      "pos_variance",
+      "pos_vel_covariance",
+      "vel_variance"
+    ],
+    "create_filter": [
+      "self",
+      "initial_detection"
+    ]
+  },
+  "Video": {
+    "__init__": [
+      "self",
+      "camera",
+      "input_path",
+      "output_path",
+      "output_fps",
+      "label",
+      "output_fourcc",
+      "output_extension"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "_fail": [
+      "self",
+      "msg"
+    ],
+    "write": [
+      "self",
+      "frame"
+    ],
+    "show": [
+      "self",
+      "frame",
+      "downsample_ratio"
+    ],
+    "get_output_file_path": [
+      "self"
+    ],
+    "get_codec_fourcc": [
+      "self",
+      "filename"
+    ],
+    "abbreviate_description": [
+      "self",
+      "description"
+    ]
+  },
+  "VideoFromFrames": {
+    "__init__": [
+      "self",
+      "input_path",
+      "save_path",
+      "information_file",
+      "make_video"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "frame"
+    ]
+  },
+  "InformationFile": {
+    "__init__": [
+      "self",
+      "file_path"
+    ],
+    "search": [
+      "self",
+      "variable_name"
+    ]
+  },
+  "PredictionsTextFile": {
+    "__init__": [
+      "self",
+      "input_path",
+      "save_path",
+      "information_file"
+    ],
+    "update": [
+      "self",
+      "predictions",
+      "frame_number"
+    ]
+  },
+  "DetectionFileParser": {
+    "__init__": [
+      "self",
+      "input_path",
+      "information_file"
+    ],
+    "get_dets_from_frame": [
+      "self",
+      "frame_number"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ]
+  },
+  "Accumulators": {
+    "__init__": [
+      "self"
+    ],
+    "create_accumulator": [
+      "self",
+      "input_path",
+      "information_file"
+    ],
+    "update": [
+      "self",
+      "predictions"
+    ],
+    "compute_metrics": [
+      "self",
+      "metrics",
+      "generate_overall"
+    ],
+    "save_metrics": [
+      "self",
+      "save_path",
+      "file_name"
+    ],
+    "print_metrics": [
+      "self"
+    ]
+  },
+  "load_motchallenge": [
+    "matrix_data",
+    "min_confidence"
+  ],
+  "compare_dataframes": [
+    "gts",
+    "ts"
+  ],
+  "eval_motChallenge": [
+    "matrixes_predictions",
+    "paths",
+    "metrics",
+    "generate_overall"
+  ],
+  "Tracker": {
+    "__init__": [
+      "self",
+      "distance_function",
+      "distance_threshold",
+      "hit_counter_max",
+      "initialization_delay",
+      "pointwise_hit_counter_max",
+      "detection_threshold",
+      "filter_factory",
+      "past_detections_length",
+      "reid_distance_function",
+      "reid_distance_threshold",
+      "reid_hit_counter_max"
+    ],
+    "update": [
+      "self",
+      "detections",
+      "period",
+      "coord_transformations"
+    ],
+    "current_object_count": [
+      "self"
+    ],
+    "total_object_count": [
+      "self"
+    ],
+    "get_active_objects": [
+      "self"
+    ],
+    "_update_objects_in_place": [
+      "self",
+      "distance_function",
+      "distance_threshold",
+      "objects",
+      "candidates",
+      "period"
+    ],
+    "match_dets_and_objs": [
+      "self",
+      "distance_matrix",
+      "distance_threshold"
+    ]
+  },
+  "_TrackedObjectFactory": {
+    "global_count": [],
+    "__init__": [
+      "self"
+    ],
+    "create": [
+      "self",
+      "initial_detection",
+      "hit_counter_max",
+      "initialization_delay",
+      "pointwise_hit_counter_max",
+      "detection_threshold",
+      "period",
+      "filter_factory",
+      "past_detections_length",
+      "reid_hit_counter_max",
+      "coord_transformations"
+    ],
+    "get_initializing_id": [
+      "self"
+    ],
+    "get_ids": [
+      "self"
+    ]
+  },
+  "TrackedObject": {
+    "__init__": [
+      "self",
+      "obj_factory",
+      "initial_detection",
+      "hit_counter_max",
+      "initialization_delay",
+      "pointwise_hit_counter_max",
+      "detection_threshold",
+      "period",
+      "filter_factory",
+      "past_detections_length",
+      "reid_hit_counter_max",
+      "coord_transformations"
+    ],
+    "tracker_step": [
+      "self"
+    ],
+    "hit_counter_is_positive": [
+      "self"
+    ],
+    "reid_hit_counter_is_positive": [
+      "self"
+    ],
+    "estimate_velocity": [
+      "self"
+    ],
+    "estimate": [
+      "self"
+    ],
+    "get_estimate": [
+      "self",
+      "absolute"
+    ],
+    "live_points": [
+      "self"
+    ],
+    "hit": [
+      "self",
+      "detection",
+      "period"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_conditionally_add_to_past_detections": [
+      "self",
+      "detection"
+    ],
+    "merge": [
+      "self",
+      "tracked_object"
+    ],
+    "update_coordinate_transformation": [
+      "self",
+      "coordinate_transformation"
+    ],
+    "_acquire_ids": [
+      "self"
+    ]
+  },
+  "Detection": {
+    "__init__": [
+      "self",
+      "points",
+      "scores",
+      "data",
+      "label",
+      "embedding"
+    ],
+    "update_coordinate_transformation": [
+      "self",
+      "coordinate_transformation"
+    ]
+  },
+  "validate_points": [
+    "points"
+  ],
+  "raise_detection_error_message": [
+    "points"
+  ],
+  "print_objects_as_table": [
+    "tracked_objects"
+  ],
+  "get_terminal_size": [
+    "default"
+  ],
+  "get_cutout": [
+    "points",
+    "image"
+  ],
+  "DummyOpenCVImport": {
+    "__getattribute__": [
+      "self",
+      "name"
+    ]
+  },
+  "DummyMOTMetricsImport": {
+    "__getattribute__": [
+      "self",
+      "name"
+    ]
+  },
+  "warn_once": [
+    "message"
+  ],
+  "Distance": {
+    "get_distances": [
+      "self",
+      "objects",
+      "candidates"
+    ]
+  },
+  "ScalarDistance": {
+    "__init__": [
+      "self",
+      "distance_function"
+    ],
+    "get_distances": [
+      "self",
+      "objects",
+      "candidates"
+    ]
+  },
+  "VectorizedDistance": {
+    "__init__": [
+      "self",
+      "distance_function"
+    ],
+    "get_distances": [
+      "self",
+      "objects",
+      "candidates"
+    ],
+    "_compute_distance": [
+      "self",
+      "stacked_candidates",
+      "stacked_objects"
+    ]
+  },
+  "ScipyDistance": {
+    "__init__": [
+      "self",
+      "metric"
+    ]
+  },
+  "frobenius": [
+    "detection",
+    "tracked_object"
+  ],
+  "mean_euclidean": [
+    "detection",
+    "tracked_object"
+  ],
+  "mean_manhattan": [
+    "detection",
+    "tracked_object"
+  ],
+  "_boxes_area": [
+    "boxes"
+  ],
+  "_validate_bboxes": [
+    "bboxes"
+  ],
+  "iou": [
+    "candidates",
+    "objects"
+  ],
+  "iou_opt": [],
+  "_SCALAR_DISTANCE_FUNCTIONS": [],
+  "_VECTORIZED_DISTANCE_FUNCTIONS": [],
+  "_SCIPY_DISTANCE_FUNCTIONS": [],
+  "AVAILABLE_VECTORIZED_DISTANCES": [],
+  "get_distance_by_name": [
+    "name"
+  ],
+  "create_keypoints_voting_distance": [
+    "keypoint_distance_threshold",
+    "detection_threshold"
+  ],
+  "create_normalized_mean_euclidean_distance": [
+    "height",
+    "width"
+  ],
+  "__all__": [],
+  "CoordinatesTransformation": {
+    "abs_to_rel": [
+      "self",
+      "points"
+    ],
+    "rel_to_abs": [
+      "self",
+      "points"
+    ]
+  },
+  "TransformationGetter": {
+    "__call__": [
+      "self",
+      "curr_pts",
+      "prev_pts"
+    ]
+  },
+  "TranslationTransformation": {
+    "__init__": [
+      "self",
+      "movement_vector"
+    ],
+    "abs_to_rel": [
+      "self",
+      "points"
+    ],
+    "rel_to_abs": [
+      "self",
+      "points"
+    ]
+  },
+  "TranslationTransformationGetter": {
+    "__init__": [
+      "self",
+      "bin_size",
+      "proportion_points_used_threshold"
+    ],
+    "__call__": [
+      "self",
+      "curr_pts",
+      "prev_pts"
+    ]
+  },
+  "HomographyTransformation": {
+    "__init__": [
+      "self",
+      "homography_matrix"
+    ],
+    "abs_to_rel": [
+      "self",
+      "points"
+    ],
+    "rel_to_abs": [
+      "self",
+      "points"
+    ]
+  },
+  "HomographyTransformationGetter": {
+    "__init__": [
+      "self",
+      "method",
+      "ransac_reproj_threshold",
+      "max_iters",
+      "confidence",
+      "proportion_points_used_threshold"
+    ],
+    "__call__": [
+      "self",
+      "curr_pts",
+      "prev_pts"
+    ]
+  },
+  "_get_sparse_flow": [
+    "gray_next",
+    "gray_prvs",
+    "prev_pts",
+    "max_points",
+    "min_distance",
+    "block_size",
+    "mask",
+    "quality_level"
+  ],
+  "MotionEstimator": {
+    "__init__": [
+      "self",
+      "max_points",
+      "min_distance",
+      "block_size",
+      "transformations_getter",
+      "draw_flow",
+      "flow_color",
+      "quality_level"
+    ],
+    "update": [
+      "self",
+      "frame",
+      "mask"
+    ]
+  },
+  "ColorType": [],
+  "ColorLike": [],
+  "hex_to_bgr": [
+    "hex_value"
+  ],
+  "Color": {
+    "aliceblue": [],
+    "antiquewhite": [],
+    "aqua": [],
+    "aquamarine": [],
+    "azure": [],
+    "beige": [],
+    "bisque": [],
+    "black": [],
+    "blanchedalmond": [],
+    "blue": [],
+    "blueviolet": [],
+    "brown": [],
+    "burlywood": [],
+    "cadetblue": [],
+    "chartreuse": [],
+    "chocolate": [],
+    "coral": [],
+    "cornflowerblue": [],
+    "cornsilk": [],
+    "crimson": [],
+    "cyan": [],
+    "darkblue": [],
+    "darkcyan": [],
+    "darkgoldenrod": [],
+    "darkgray": [],
+    "darkgrey": [],
+    "darkgreen": [],
+    "darkkhaki": [],
+    "darkmagenta": [],
+    "darkolivegreen": [],
+    "darkorange": [],
+    "darkorchid": [],
+    "darkred": [],
+    "darksalmon": [],
+    "darkseagreen": [],
+    "darkslateblue": [],
+    "darkslategray": [],
+    "darkslategrey": [],
+    "darkturquoise": [],
+    "darkviolet": [],
+    "deeppink": [],
+    "deepskyblue": [],
+    "dimgray": [],
+    "dimgrey": [],
+    "dodgerblue": [],
+    "firebrick": [],
+    "floralwhite": [],
+    "forestgreen": [],
+    "fuchsia": [],
+    "gainsboro": [],
+    "ghostwhite": [],
+    "gold": [],
+    "goldenrod": [],
+    "gray": [],
+    "grey": [],
+    "green": [],
+    "greenyellow": [],
+    "honeydew": [],
+    "hotpink": [],
+    "indianred": [],
+    "indigo": [],
+    "ivory": [],
+    "khaki": [],
+    "lavender": [],
+    "lavenderblush": [],
+    "lawngreen": [],
+    "lemonchiffon": [],
+    "lightblue": [],
+    "lightcoral": [],
+    "lightcyan": [],
+    "lightgoldenrodyellow": [],
+    "lightgreen": [],
+    "lightgray": [],
+    "lightgrey": [],
+    "lightpink": [],
+    "lightsalmon": [],
+    "lightseagreen": [],
+    "lightskyblue": [],
+    "lightslategray": [],
+    "lightslategrey": [],
+    "lightsteelblue": [],
+    "lightyellow": [],
+    "lime": [],
+    "limegreen": [],
+    "linen": [],
+    "magenta": [],
+    "maroon": [],
+    "mediumaquamarine": [],
+    "mediumblue": [],
+    "mediumorchid": [],
+    "mediumpurple": [],
+    "mediumseagreen": [],
+    "mediumslateblue": [],
+    "mediumspringgreen": [],
+    "mediumturquoise": [],
+    "mediumvioletred": [],
+    "midnightblue": [],
+    "mintcream": [],
+    "mistyrose": [],
+    "moccasin": [],
+    "navajowhite": [],
+    "navy": [],
+    "oldlace": [],
+    "olive": [],
+    "olivedrab": [],
+    "orange": [],
+    "orangered": [],
+    "orchid": [],
+    "palegoldenrod": [],
+    "palegreen": [],
+    "paleturquoise": [],
+    "palevioletred": [],
+    "papayawhip": [],
+    "peachpuff": [],
+    "peru": [],
+    "pink": [],
+    "plum": [],
+    "powderblue": [],
+    "purple": [],
+    "rebeccapurple": [],
+    "red": [],
+    "rosybrown": [],
+    "royalblue": [],
+    "saddlebrown": [],
+    "salmon": [],
+    "sandybrown": [],
+    "seagreen": [],
+    "seashell": [],
+    "sienna": [],
+    "silver": [],
+    "skyblue": [],
+    "slateblue": [],
+    "slategray": [],
+    "slategrey": [],
+    "snow": [],
+    "springgreen": [],
+    "steelblue": [],
+    "tan": [],
+    "teal": [],
+    "thistle": [],
+    "tomato": [],
+    "turquoise": [],
+    "violet": [],
+    "wheat": [],
+    "white": [],
+    "whitesmoke": [],
+    "yellow": [],
+    "yellowgreen": [],
+    "tab1": [],
+    "tab2": [],
+    "tab3": [],
+    "tab4": [],
+    "tab5": [],
+    "tab6": [],
+    "tab7": [],
+    "tab8": [],
+    "tab9": [],
+    "tab10": [],
+    "tab11": [],
+    "tab12": [],
+    "tab13": [],
+    "tab14": [],
+    "tab15": [],
+    "tab16": [],
+    "tab17": [],
+    "tab18": [],
+    "tab19": [],
+    "tab20": [],
+    "cb1": [],
+    "cb2": [],
+    "cb3": [],
+    "cb4": [],
+    "cb5": [],
+    "cb6": [],
+    "cb7": [],
+    "cb8": [],
+    "cb9": [],
+    "cb10": []
+  },
+  "parse_color": [
+    "color_like"
+  ],
+  "PALETTES": [],
+  "Palette": {
+    "_colors": [],
+    "_default_color": [],
+    "set": [
+      "cls",
+      "palette"
+    ],
+    "set_default_color": [
+      "cls",
+      "color"
+    ],
+    "choose_color": [
+      "cls",
+      "hashable"
+    ]
+  },
+  "Drawer": {
+    "circle": [
+      "cls",
+      "frame",
+      "position",
+      "radius",
+      "thickness",
+      "color"
+    ],
+    "text": [
+      "cls",
+      "frame",
+      "text",
+      "position",
+      "size",
+      "color",
+      "thickness",
+      "shadow",
+      "shadow_color",
+      "shadow_offset"
+    ],
+    "rectangle": [
+      "cls",
+      "frame",
+      "points",
+      "color",
+      "thickness"
+    ],
+    "cross": [
+      "cls",
+      "frame",
+      "center",
+      "radius",
+      "color",
+      "thickness"
+    ],
+    "line": [
+      "cls",
+      "frame",
+      "start",
+      "end",
+      "color",
+      "thickness"
+    ],
+    "alpha_blend": [
+      "cls",
+      "frame1",
+      "frame2",
+      "alpha",
+      "beta",
+      "gamma"
+    ]
+  },
+  "Drawable": {
+    "__init__": [
+      "self",
+      "obj",
+      "points",
+      "id",
+      "label",
+      "scores",
+      "live_points"
+    ]
+  },
+  "_centroid": [
+    "tracked_points"
+  ],
+  "_build_text": [
+    "drawable",
+    "draw_labels",
+    "draw_ids",
+    "draw_scores"
+  ],
+  "FixedCamera": {
+    "__init__": [
+      "self",
+      "scale",
+      "attenuation"
+    ],
+    "adjust_frame": [
+      "self",
+      "frame",
+      "coord_transformation"
+    ]
+  },
+  "draw_points": [
+    "frame",
+    "drawables",
+    "radius",
+    "thickness",
+    "color",
+    "color_by_label",
+    "draw_labels",
+    "text_size",
+    "draw_ids",
+    "draw_points",
+    "text_thickness",
+    "text_color",
+    "hide_dead_points",
+    "detections",
+    "label_size",
+    "draw_scores"
+  ],
+  "_draw_points_alias": [],
+  "draw_tracked_objects": [
+    "frame",
+    "objects",
+    "radius",
+    "color",
+    "id_size",
+    "id_thickness",
+    "draw_points",
+    "color_by_label",
+    "draw_labels",
+    "label_size"
+  ],
+  "Paths": {
+    "__init__": [
+      "self",
+      "get_points_to_draw",
+      "thickness",
+      "color",
+      "radius",
+      "attenuation"
+    ],
+    "draw": [
+      "self",
+      "frame",
+      "tracked_objects"
+    ]
+  },
+  "AbsolutePaths": {
+    "__init__": [
+      "self",
+      "get_points_to_draw",
+      "thickness",
+      "color",
+      "radius",
+      "max_history"
+    ],
+    "draw": [
+      "self",
+      "frame",
+      "tracked_objects",
+      "coord_transform"
+    ]
+  },
+  "_get_grid": [
+    "size",
+    "w",
+    "h",
+    "polar"
+  ],
+  "draw_absolute_grid": [
+    "frame",
+    "coord_transformations",
+    "grid_size",
+    "radius",
+    "thickness",
+    "color",
+    "polar"
+  ],
+  "draw_boxes": [
+    "frame",
+    "drawables",
+    "color",
+    "thickness",
+    "random_color",
+    "color_by_label",
+    "draw_labels",
+    "text_size",
+    "draw_ids",
+    "text_color",
+    "text_thickness",
+    "draw_box",
+    "detections",
+    "line_color",
+    "line_width",
+    "label_size",
+    "draw_scores"
+  ],
+  "draw_tracked_boxes": [
+    "frame",
+    "objects",
+    "border_colors",
+    "border_width",
+    "id_size",
+    "id_thickness",
+    "draw_box",
+    "color_by_label",
+    "draw_labels",
+    "label_size",
+    "label_width"
+  ]
+}

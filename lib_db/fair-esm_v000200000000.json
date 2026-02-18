@@ -1,0 +1,1350 @@
+{
+  "version": [],
+  "RowSelfAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "dropout",
+      "max_tokens_per_msa"
+    ],
+    "align_scaling": [
+      "self",
+      "q"
+    ],
+    "_batched_forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ],
+    "compute_attention_weights": [
+      "self",
+      "x",
+      "scaling",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ],
+    "compute_attention_update": [
+      "self",
+      "x",
+      "attn_probs"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ]
+  },
+  "ColumnSelfAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "dropout",
+      "max_tokens_per_msa"
+    ],
+    "_batched_forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ],
+    "compute_attention_update": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask"
+    ]
+  },
+  "rotate_half": [
+    "x"
+  ],
+  "apply_rotary_pos_emb": [
+    "x",
+    "cos",
+    "sin"
+  ],
+  "RotaryEmbedding": {
+    "__init__": [
+      "self",
+      "dim"
+    ],
+    "_update_cos_sin_tables": [
+      "self",
+      "x",
+      "seq_dimension"
+    ],
+    "forward": [
+      "self",
+      "q",
+      "k"
+    ]
+  },
+  "_has_regression_weights": [
+    "model_name"
+  ],
+  "load_model_and_alphabet": [
+    "model_name"
+  ],
+  "load_hub_workaround": [
+    "url"
+  ],
+  "load_regression_hub": [
+    "model_name"
+  ],
+  "_download_model_and_regression_data": [
+    "model_name"
+  ],
+  "load_model_and_alphabet_hub": [
+    "model_name"
+  ],
+  "load_model_and_alphabet_local": [
+    "model_location"
+  ],
+  "has_emb_layer_norm_before": [
+    "model_state"
+  ],
+  "_load_model_and_alphabet_core_v1": [
+    "model_data"
+  ],
+  "_load_model_and_alphabet_core_v2": [
+    "model_data"
+  ],
+  "load_model_and_alphabet_core": [
+    "model_name",
+    "model_data",
+    "regression_data"
+  ],
+  "esm1_t34_670M_UR50S": [],
+  "esm1_t34_670M_UR50D": [],
+  "esm1_t34_670M_UR100": [],
+  "esm1_t12_85M_UR50S": [],
+  "esm1_t6_43M_UR50S": [],
+  "esm1b_t33_650M_UR50S": [],
+  "esm_msa1_t12_100M_UR50S": [],
+  "esm_msa1b_t12_100M_UR50S": [],
+  "esm1v_t33_650M_UR90S": [],
+  "esm1v_t33_650M_UR90S_1": [],
+  "esm1v_t33_650M_UR90S_2": [],
+  "esm1v_t33_650M_UR90S_3": [],
+  "esm1v_t33_650M_UR90S_4": [],
+  "esm1v_t33_650M_UR90S_5": [],
+  "esm_if1_gvp4_t16_142M_UR50": [],
+  "esm2_t6_8M_UR50D": [],
+  "esm2_t12_35M_UR50D": [],
+  "esm2_t30_150M_UR50D": [],
+  "esm2_t33_650M_UR50D": [],
+  "esm2_t36_3B_UR50D": [],
+  "esm2_t48_15B_UR50D": [],
+  "esmfold_v0": [],
+  "esmfold_v1": [],
+  "utils_softmax": [
+    "x",
+    "dim",
+    "onnx_trace"
+  ],
+  "FairseqIncrementalState": {
+    "__init__": [
+      "self"
+    ],
+    "init_incremental_state": [
+      "self"
+    ],
+    "_get_full_incremental_state_key": [
+      "self",
+      "key"
+    ],
+    "get_incremental_state": [
+      "self",
+      "incremental_state",
+      "key"
+    ],
+    "set_incremental_state": [
+      "self",
+      "incremental_state",
+      "key",
+      "value"
+    ]
+  },
+  "with_incremental_state": [
+    "cls"
+  ],
+  "MultiheadAttention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "kdim",
+      "vdim",
+      "dropout",
+      "bias",
+      "add_bias_kv",
+      "add_zero_attn",
+      "self_attention",
+      "encoder_decoder_attention",
+      "use_rotary_embeddings"
+    ],
+    "prepare_for_onnx_export_": [
+      "self"
+    ],
+    "reset_parameters": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "query",
+      "key",
+      "value",
+      "key_padding_mask",
+      "incremental_state",
+      "need_weights",
+      "static_kv",
+      "attn_mask",
+      "before_softmax",
+      "need_head_weights"
+    ],
+    "_append_prev_key_padding_mask": [
+      "key_padding_mask",
+      "prev_key_padding_mask",
+      "batch_size",
+      "src_len",
+      "static_kv"
+    ],
+    "reorder_incremental_state": [
+      "self",
+      "incremental_state",
+      "new_order"
+    ],
+    "_get_input_buffer": [
+      "self",
+      "incremental_state"
+    ],
+    "_set_input_buffer": [
+      "self",
+      "incremental_state",
+      "buffer"
+    ],
+    "apply_sparse_mask": [
+      "attn_weights",
+      "tgt_len",
+      "src_len",
+      "bsz"
+    ],
+    "upgrade_state_dict_named": [
+      "self",
+      "state_dict",
+      "name"
+    ]
+  },
+  "RawMSA": [],
+  "FastaBatchedDataset": {
+    "__init__": [
+      "self",
+      "sequence_labels",
+      "sequence_strs"
+    ],
+    "from_file": [
+      "cls",
+      "fasta_file"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ],
+    "get_batch_indices": [
+      "self",
+      "toks_per_batch",
+      "extra_toks_per_seq"
+    ]
+  },
+  "Alphabet": {
+    "__init__": [
+      "self",
+      "standard_toks",
+      "prepend_toks",
+      "append_toks",
+      "prepend_bos",
+      "append_eos",
+      "use_msa"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "get_idx": [
+      "self",
+      "tok"
+    ],
+    "get_tok": [
+      "self",
+      "ind"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "get_batch_converter": [
+      "self",
+      "truncation_seq_length"
+    ],
+    "from_architecture": [
+      "cls",
+      "name"
+    ],
+    "_tokenize": [
+      "self",
+      "text"
+    ],
+    "tokenize": [
+      "self",
+      "text"
+    ],
+    "encode": [
+      "self",
+      "text"
+    ]
+  },
+  "BatchConverter": {
+    "__init__": [
+      "self",
+      "alphabet",
+      "truncation_seq_length"
+    ],
+    "__call__": [
+      "self",
+      "raw_batch"
+    ]
+  },
+  "MSABatchConverter": {
+    "__call__": [
+      "self",
+      "inputs"
+    ]
+  },
+  "read_fasta": [
+    "path",
+    "keep_gaps",
+    "keep_insertions",
+    "to_upper"
+  ],
+  "read_alignment_lines": [
+    "lines",
+    "keep_gaps",
+    "keep_insertions",
+    "to_upper"
+  ],
+  "ESMStructuralSplitDataset": {
+    "base_folder": [],
+    "file_list": [],
+    "__init__": [
+      "self",
+      "split_level",
+      "cv_partition",
+      "split",
+      "root_path",
+      "download"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "_check_exists": [
+      "self"
+    ],
+    "download": [
+      "self"
+    ],
+    "__getitem__": [
+      "self",
+      "idx"
+    ]
+  },
+  "proteinseq_toks": [],
+  "gelu": [
+    "x"
+  ],
+  "symmetrize": [
+    "x"
+  ],
+  "apc": [
+    "x"
+  ],
+  "ESM1LayerNorm": {
+    "__init__": [
+      "self",
+      "hidden_size",
+      "eps",
+      "affine"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "TransformerLayer": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "ffn_embed_dim",
+      "attention_heads",
+      "add_bias_kv",
+      "use_esm1b_layer_norm",
+      "use_rotary_embeddings"
+    ],
+    "_init_submodules": [
+      "self",
+      "add_bias_kv",
+      "use_esm1b_layer_norm"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask",
+      "need_head_weights"
+    ]
+  },
+  "AxialTransformerLayer": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "ffn_embedding_dim",
+      "num_attention_heads",
+      "dropout",
+      "attention_dropout",
+      "activation_dropout",
+      "max_tokens_per_msa"
+    ],
+    "build_residual": [
+      "self",
+      "layer"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "self_attn_mask",
+      "self_attn_padding_mask",
+      "need_head_weights"
+    ]
+  },
+  "LearnedPositionalEmbedding": {
+    "__init__": [
+      "self",
+      "num_embeddings",
+      "embedding_dim",
+      "padding_idx"
+    ],
+    "forward": [
+      "self",
+      "input"
+    ]
+  },
+  "SinusoidalPositionalEmbedding": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "padding_idx",
+      "learned"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ],
+    "make_positions": [
+      "self",
+      "x"
+    ],
+    "get_embedding": [
+      "self",
+      "num_embeddings"
+    ]
+  },
+  "RobertaLMHead": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "output_dim",
+      "weight"
+    ],
+    "forward": [
+      "self",
+      "features"
+    ]
+  },
+  "ContactPredictionHead": {
+    "__init__": [
+      "self",
+      "in_features",
+      "prepend_bos",
+      "append_eos",
+      "bias",
+      "eos_idx"
+    ],
+    "forward": [
+      "self",
+      "tokens",
+      "attentions"
+    ]
+  },
+  "NormalizedResidualBlock": {
+    "__init__": [
+      "self",
+      "layer",
+      "embedding_dim",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "FeedForwardNetwork": {
+    "__init__": [
+      "self",
+      "embedding_dim",
+      "ffn_embedding_dim",
+      "activation_dropout",
+      "max_tokens_per_msa"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "StructureModuleConfig": {},
+  "FoldingTrunkConfig": {},
+  "get_axial_mask": [
+    "mask"
+  ],
+  "RelativePosition": {
+    "__init__": [
+      "self",
+      "bins",
+      "pairwise_state_dim"
+    ],
+    "forward": [
+      "self",
+      "residue_index",
+      "mask"
+    ]
+  },
+  "FoldingTrunk": {
+    "__init__": [
+      "self"
+    ],
+    "set_chunk_size": [
+      "self",
+      "chunk_size"
+    ],
+    "forward": [
+      "self",
+      "seq_feats",
+      "pair_feats",
+      "true_aa",
+      "residx",
+      "mask",
+      "no_recycles"
+    ],
+    "distogram": [
+      "coords",
+      "min_bin",
+      "max_bin",
+      "num_bins"
+    ]
+  },
+  "CategoricalMixture": {
+    "__init__": [
+      "self",
+      "param",
+      "bins",
+      "start",
+      "end"
+    ],
+    "log_prob": [
+      "self",
+      "true"
+    ],
+    "mean": [
+      "self"
+    ]
+  },
+  "categorical_lddt": [
+    "logits",
+    "bins"
+  ],
+  "TriangularSelfAttentionBlock": {
+    "__init__": [
+      "self",
+      "sequence_state_dim",
+      "pairwise_state_dim",
+      "sequence_head_width",
+      "pairwise_head_width",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "sequence_state",
+      "pairwise_state",
+      "mask",
+      "chunk_size"
+    ]
+  },
+  "_load_model": [
+    "model_name"
+  ],
+  "encode_sequence": [
+    "seq",
+    "residue_index_offset",
+    "chain_linker"
+  ],
+  "batch_encode_sequences": [
+    "sequences",
+    "residue_index_offset",
+    "chain_linker"
+  ],
+  "output_to_pdb": [
+    "output"
+  ],
+  "collate_dense_tensors": [
+    "samples",
+    "pad_v"
+  ],
+  "Attention": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "num_heads",
+      "head_width",
+      "gated"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "mask",
+      "bias",
+      "indices"
+    ]
+  },
+  "Dropout": {
+    "__init__": [
+      "self",
+      "r",
+      "batch_dim"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "SequenceToPair": {
+    "__init__": [
+      "self",
+      "sequence_state_dim",
+      "inner_dim",
+      "pairwise_state_dim"
+    ],
+    "forward": [
+      "self",
+      "sequence_state"
+    ]
+  },
+  "PairToSequence": {
+    "__init__": [
+      "self",
+      "pairwise_state_dim",
+      "num_heads"
+    ],
+    "forward": [
+      "self",
+      "pairwise_state"
+    ]
+  },
+  "ResidueMLP": {
+    "__init__": [
+      "self",
+      "embed_dim",
+      "inner_dim",
+      "norm",
+      "dropout"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "ESMFoldConfig": {},
+  "ESMFold": {
+    "__init__": [
+      "self",
+      "esmfold_config"
+    ],
+    "_af2_to_esm": [
+      "d"
+    ],
+    "_af2_idx_to_esm_idx": [
+      "self",
+      "aa",
+      "mask"
+    ],
+    "_compute_language_model_representations": [
+      "self",
+      "esmaa"
+    ],
+    "_mask_inputs_to_esm": [
+      "self",
+      "esmaa",
+      "pattern"
+    ],
+    "forward": [
+      "self",
+      "aa",
+      "mask",
+      "residx",
+      "masking_pattern",
+      "num_recycles"
+    ],
+    "infer": [
+      "self",
+      "sequences",
+      "residx",
+      "masking_pattern",
+      "num_recycles",
+      "residue_index_offset",
+      "chain_linker"
+    ],
+    "output_to_pdb": [
+      "self",
+      "output"
+    ],
+    "infer_pdbs": [
+      "self",
+      "seqs"
+    ],
+    "infer_pdb": [
+      "self",
+      "sequence"
+    ],
+    "set_chunk_size": [
+      "self",
+      "chunk_size"
+    ],
+    "device": [
+      "self"
+    ]
+  },
+  "flatten_graph": [
+    "node_embeddings",
+    "edge_embeddings",
+    "edge_index"
+  ],
+  "unflatten_graph": [
+    "node_embeddings",
+    "batch_size"
+  ],
+  "TransformerEncoderLayer": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "build_fc1": [
+      "self",
+      "input_dim",
+      "output_dim"
+    ],
+    "build_fc2": [
+      "self",
+      "input_dim",
+      "output_dim"
+    ],
+    "build_self_attention": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "residual_connection": [
+      "self",
+      "x",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "encoder_padding_mask",
+      "attn_mask"
+    ]
+  },
+  "TransformerDecoderLayer": {
+    "__init__": [
+      "self",
+      "args",
+      "no_encoder_attn",
+      "add_bias_kv",
+      "add_zero_attn"
+    ],
+    "build_fc1": [
+      "self",
+      "input_dim",
+      "output_dim"
+    ],
+    "build_fc2": [
+      "self",
+      "input_dim",
+      "output_dim"
+    ],
+    "build_self_attention": [
+      "self",
+      "embed_dim",
+      "args",
+      "add_bias_kv",
+      "add_zero_attn"
+    ],
+    "build_encoder_attention": [
+      "self",
+      "embed_dim",
+      "args"
+    ],
+    "residual_connection": [
+      "self",
+      "x",
+      "residual"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "encoder_out",
+      "encoder_padding_mask",
+      "incremental_state",
+      "prev_self_attn_state",
+      "prev_attn_state",
+      "self_attn_mask",
+      "self_attn_padding_mask",
+      "need_attn",
+      "need_head_weights"
+    ]
+  },
+  "tuple_size": [
+    "tp"
+  ],
+  "tuple_sum": [
+    "tp1",
+    "tp2"
+  ],
+  "tuple_cat": [],
+  "tuple_index": [
+    "x",
+    "idx"
+  ],
+  "randn": [
+    "n",
+    "dims",
+    "device"
+  ],
+  "_norm_no_nan": [
+    "x",
+    "axis",
+    "keepdims",
+    "eps",
+    "sqrt"
+  ],
+  "_split": [
+    "x",
+    "nv"
+  ],
+  "_merge": [
+    "s",
+    "v"
+  ],
+  "GVP": {
+    "__init__": [
+      "self",
+      "in_dims",
+      "out_dims",
+      "h_dim",
+      "vector_gate",
+      "activations",
+      "tuple_io",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "_VDropout": {
+    "__init__": [
+      "self",
+      "drop_rate"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "LayerNorm": {
+    "__init__": [
+      "self",
+      "dims",
+      "tuple_io",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x"
+    ]
+  },
+  "GVPConv": {
+    "__init__": [
+      "self",
+      "in_dims",
+      "out_dims",
+      "edge_dims",
+      "n_layers",
+      "vector_gate",
+      "module_list",
+      "aggr",
+      "eps",
+      "activations"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "edge_index",
+      "edge_attr"
+    ],
+    "message": [
+      "self",
+      "s_i",
+      "v_i",
+      "s_j",
+      "v_j",
+      "edge_attr"
+    ]
+  },
+  "GVPConvLayer": {
+    "__init__": [
+      "self",
+      "node_dims",
+      "edge_dims",
+      "vector_gate",
+      "n_message",
+      "n_feedforward",
+      "drop_rate",
+      "autoregressive",
+      "attention_heads",
+      "conv_activations",
+      "n_edge_gvps",
+      "layernorm",
+      "eps"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "edge_index",
+      "edge_attr",
+      "autoregressive_x",
+      "node_mask"
+    ]
+  },
+  "GVPInputFeaturizer": {
+    "get_node_features": [
+      "coords",
+      "coord_mask",
+      "with_coord_mask"
+    ],
+    "_orientations": [
+      "X"
+    ],
+    "_sidechains": [
+      "X"
+    ],
+    "_dihedrals": [
+      "X",
+      "eps"
+    ],
+    "_positional_embeddings": [
+      "edge_index",
+      "num_embeddings",
+      "num_positional_embeddings",
+      "period_range"
+    ],
+    "_dist": [
+      "X",
+      "coord_mask",
+      "padding_mask",
+      "top_k_neighbors",
+      "eps"
+    ]
+  },
+  "Normalize": {
+    "__init__": [
+      "self",
+      "features",
+      "epsilon"
+    ],
+    "forward": [
+      "self",
+      "x",
+      "dim"
+    ]
+  },
+  "DihedralFeatures": {
+    "__init__": [
+      "self",
+      "node_embed_dim"
+    ],
+    "forward": [
+      "self",
+      "X"
+    ],
+    "_dihedrals": [
+      "X",
+      "eps",
+      "return_angles"
+    ]
+  },
+  "GVPGraphEmbedding": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "coords",
+      "coord_mask",
+      "padding_mask",
+      "confidence"
+    ],
+    "get_edge_features": [
+      "self",
+      "coords",
+      "coord_mask",
+      "padding_mask"
+    ]
+  },
+  "load_structure": [
+    "fpath",
+    "chain"
+  ],
+  "extract_coords_from_structure": [
+    "structure"
+  ],
+  "load_coords": [
+    "fpath",
+    "chain"
+  ],
+  "get_atom_coords_residuewise": [
+    "atoms",
+    "struct"
+  ],
+  "get_sequence_loss": [
+    "model",
+    "alphabet",
+    "coords",
+    "seq"
+  ],
+  "score_sequence": [
+    "model",
+    "alphabet",
+    "coords",
+    "seq"
+  ],
+  "get_encoder_output": [
+    "model",
+    "alphabet",
+    "coords"
+  ],
+  "rotate": [
+    "v",
+    "R"
+  ],
+  "get_rotation_frames": [
+    "coords"
+  ],
+  "nan_to_num": [
+    "ts",
+    "val"
+  ],
+  "rbf": [
+    "values",
+    "v_min",
+    "v_max",
+    "n_bins"
+  ],
+  "norm": [
+    "tensor",
+    "dim",
+    "eps",
+    "keepdim"
+  ],
+  "normalize": [
+    "tensor",
+    "dim"
+  ],
+  "CoordBatchConverter": {
+    "__call__": [
+      "self",
+      "raw_batch",
+      "device"
+    ],
+    "from_lists": [
+      "self",
+      "coords_list",
+      "confidence_list",
+      "seq_list",
+      "device"
+    ],
+    "collate_dense_tensors": [
+      "samples",
+      "pad_v"
+    ]
+  },
+  "fill_with_neg_inf": [
+    "t"
+  ],
+  "TransformerDecoder": {
+    "__init__": [
+      "self",
+      "args",
+      "dictionary",
+      "embed_tokens"
+    ],
+    "build_output_projection": [
+      "self",
+      "args",
+      "dictionary"
+    ],
+    "build_decoder_layer": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "prev_output_tokens",
+      "encoder_out",
+      "incremental_state",
+      "features_only",
+      "return_all_hiddens"
+    ],
+    "extract_features": [
+      "self",
+      "prev_output_tokens",
+      "encoder_out",
+      "incremental_state"
+    ],
+    "output_layer": [
+      "self",
+      "features"
+    ],
+    "buffered_future_mask": [
+      "self",
+      "tensor"
+    ]
+  },
+  "GVPTransformerEncoder": {
+    "__init__": [
+      "self",
+      "args",
+      "dictionary",
+      "embed_tokens"
+    ],
+    "build_encoder_layer": [
+      "self",
+      "args"
+    ],
+    "forward_embedding": [
+      "self",
+      "coords",
+      "padding_mask",
+      "confidence"
+    ],
+    "forward": [
+      "self",
+      "coords",
+      "encoder_padding_mask",
+      "confidence",
+      "return_all_hiddens"
+    ]
+  },
+  "GVPEncoder": {
+    "__init__": [
+      "self",
+      "args"
+    ],
+    "forward": [
+      "self",
+      "coords",
+      "coord_mask",
+      "padding_mask",
+      "confidence"
+    ]
+  },
+  "extract_coords_from_complex": [
+    "structure"
+  ],
+  "load_complex_coords": [
+    "fpath",
+    "chains"
+  ],
+  "_concatenate_coords": [
+    "coords",
+    "target_chain_id",
+    "padding_length"
+  ],
+  "sample_sequence_in_complex": [
+    "model",
+    "coords",
+    "target_chain_id",
+    "temperature",
+    "padding_length"
+  ],
+  "score_sequence_in_complex": [
+    "model",
+    "alphabet",
+    "coords",
+    "target_chain_id",
+    "target_seq",
+    "padding_length"
+  ],
+  "get_encoder_output_for_complex": [
+    "model",
+    "alphabet",
+    "coords",
+    "target_chain_id"
+  ],
+  "GVPTransformerModel": {
+    "__init__": [
+      "self",
+      "args",
+      "alphabet"
+    ],
+    "build_encoder": [
+      "cls",
+      "args",
+      "src_dict",
+      "embed_tokens"
+    ],
+    "build_decoder": [
+      "cls",
+      "args",
+      "tgt_dict",
+      "embed_tokens"
+    ],
+    "build_embedding": [
+      "cls",
+      "args",
+      "dictionary",
+      "embed_dim"
+    ],
+    "forward": [
+      "self",
+      "coords",
+      "padding_mask",
+      "confidence",
+      "prev_output_tokens",
+      "return_all_hiddens",
+      "features_only"
+    ],
+    "sample": [
+      "self",
+      "coords",
+      "partial_seq",
+      "temperature",
+      "confidence"
+    ]
+  },
+  "ProteinBertModel": {
+    "add_args": [
+      "cls",
+      "parser"
+    ],
+    "__init__": [
+      "self",
+      "args",
+      "alphabet"
+    ],
+    "_init_submodules_common": [
+      "self"
+    ],
+    "_init_submodules_esm1b": [
+      "self"
+    ],
+    "_init_submodules_esm1": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "tokens",
+      "repr_layers",
+      "need_head_weights",
+      "return_contacts"
+    ],
+    "predict_contacts": [
+      "self",
+      "tokens"
+    ],
+    "num_layers": [
+      "self"
+    ]
+  },
+  "ESM2": {
+    "__init__": [
+      "self",
+      "num_layers",
+      "embed_dim",
+      "attention_heads",
+      "alphabet",
+      "token_dropout"
+    ],
+    "_init_submodules": [
+      "self"
+    ],
+    "forward": [
+      "self",
+      "tokens",
+      "repr_layers",
+      "need_head_weights",
+      "return_contacts"
+    ],
+    "predict_contacts": [
+      "self",
+      "tokens"
+    ]
+  },
+  "MSATransformer": {
+    "add_args": [
+      "cls",
+      "parser"
+    ],
+    "__init__": [
+      "self",
+      "args",
+      "alphabet"
+    ],
+    "forward": [
+      "self",
+      "tokens",
+      "repr_layers",
+      "need_head_weights",
+      "return_contacts"
+    ],
+    "predict_contacts": [
+      "self",
+      "tokens"
+    ],
+    "num_layers": [
+      "self"
+    ],
+    "max_tokens_per_msa_": [
+      "self",
+      "value"
+    ]
+  }
+}

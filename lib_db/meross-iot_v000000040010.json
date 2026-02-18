@@ -1,0 +1,2455 @@
+{
+  "SNIFF_LOG_FILE": [],
+  "formatter": [],
+  "l": [],
+  "file_handler": [],
+  "stream_handler": [],
+  "_print_welcom_message": [],
+  "_async_gather_http_client": [],
+  "_async_print_device_list": [
+    "client"
+  ],
+  "_async_select_device": [
+    "devices"
+  ],
+  "_async_collect_device_base_data": [
+    "client",
+    "selected_device"
+  ],
+  "_async_start_fake_device_sniffer": [
+    "cloud_credentials",
+    "selected_device",
+    "mac_address"
+  ],
+  "_start_app_sniffer": [
+    "cloud_credentials",
+    "selected_device"
+  ],
+  "_async_sniff": [
+    "device_sniffer",
+    "zip_obj",
+    "meross_manager",
+    "selected_device"
+  ],
+  "_main": [],
+  "main": [],
+  "_LOGGER": [],
+  "FakeDeviceSniffer": {
+    "__init__": [
+      "self",
+      "uuid",
+      "mac_address",
+      "meross_user_id",
+      "meross_cloud_key",
+      "mqtt_host",
+      "mqtt_port",
+      "logger"
+    ],
+    "async_start": [
+      "self",
+      "timeout"
+    ],
+    "async_stop": [
+      "self"
+    ],
+    "_on_connect": [
+      "self",
+      "client",
+      "userdata",
+      "flags",
+      "rc"
+    ],
+    "_on_subscribe": [
+      "self",
+      "client",
+      "userdata",
+      "mid",
+      "granted_qos"
+    ],
+    "_on_connection_fail": [
+      "self",
+      "client",
+      "userdata"
+    ],
+    "_on_disconnect": [
+      "self",
+      "client",
+      "userdata",
+      "rc"
+    ],
+    "_on_unsubscribe": [
+      "self",
+      "client",
+      "userdata",
+      "mid"
+    ],
+    "_on_message": [
+      "self",
+      "client",
+      "userdata",
+      "message"
+    ],
+    "async_wait_for_message": [
+      "self",
+      "valid_methods"
+    ]
+  },
+  "AppSniffer": {
+    "__init__": [
+      "self",
+      "logger",
+      "user_id",
+      "hashed_password",
+      "target_device_uuid",
+      "ca_cert",
+      "mqtt_host",
+      "mqtt_port"
+    ],
+    "_on_connect": [
+      "self",
+      "client",
+      "userdata",
+      "rc",
+      "other"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_on_subscribe": [
+      "self",
+      "client",
+      "userdata",
+      "mid",
+      "granted_qos"
+    ],
+    "_on_message": [
+      "self",
+      "client",
+      "userdata",
+      "msg"
+    ],
+    "_on_disconnect": [
+      "self",
+      "client",
+      "userdata",
+      "rc"
+    ],
+    "async_wait_push_notification": [
+      "self"
+    ]
+  },
+  "MixedQueue": {
+    "__init__": [
+      "self",
+      "loop"
+    ],
+    "sync_put_nowait": [
+      "self",
+      "item"
+    ],
+    "sync_put": [
+      "self",
+      "item"
+    ],
+    "sync_get": [
+      "self"
+    ],
+    "async_put_nowait": [
+      "self",
+      "item"
+    ],
+    "async_put": [
+      "self",
+      "item"
+    ],
+    "async_get": [
+      "self"
+    ]
+  },
+  "_SECRET": [],
+  "_LOGIN_URL": [],
+  "_LOG_URL": [],
+  "_DEV_LIST": [],
+  "_HUB_DUBDEV_LIST": [],
+  "_LOGOUT_URL": [],
+  "_MODULE_VERSION": [],
+  "_DEFAULT_UA_HEADER": [],
+  "_DEFAULT_APP_TYPE": [],
+  "_DEFAULT_LOG_IDENTIFIER": [],
+  "MerossHttpClient": {
+    "__init__": [
+      "self",
+      "cloud_credentials",
+      "http_proxy",
+      "ua_header",
+      "app_type",
+      "app_version",
+      "log_identifier"
+    ],
+    "stats": [
+      "self"
+    ],
+    "cloud_credentials": [
+      "self"
+    ],
+    "async_from_user_password": [
+      "cls",
+      "api_base_url",
+      "email",
+      "password",
+      "http_proxy",
+      "ua_header",
+      "app_type",
+      "app_version",
+      "log_identifier",
+      "auto_retry_on_bad_domain",
+      "mfa_code"
+    ],
+    "async_from_cloud_creds": [
+      "cls",
+      "creds",
+      "http_proxy",
+      "ua_header",
+      "app_type",
+      "app_version",
+      "log_identifier"
+    ],
+    "async_login": [
+      "cls",
+      "api_base_url",
+      "email",
+      "password",
+      "creds_env_var_name",
+      "http_proxy",
+      "ua_header",
+      "app_type",
+      "app_version",
+      "log_identifier",
+      "country_code",
+      "agree_to_terms",
+      "mfa_code",
+      "stats_counter",
+      "auto_retry_on_bad_domain"
+    ],
+    "_async_authenticated_post": [
+      "cls",
+      "url",
+      "params_data",
+      "cloud_creds",
+      "mask_params_in_log",
+      "http_proxy",
+      "app_type",
+      "app_version",
+      "ua_header",
+      "stats_counter"
+    ],
+    "async_logout": [
+      "self"
+    ],
+    "async_invalidate_credentials": [
+      "self",
+      "creds"
+    ],
+    "_async_log": [
+      "cls",
+      "creds",
+      "http_proxy",
+      "ua_header",
+      "app_type",
+      "app_version",
+      "log_identifier",
+      "stats_counter"
+    ],
+    "async_list_devices": [
+      "self"
+    ],
+    "async_list_hub_subdevices": [
+      "self",
+      "hub_id"
+    ],
+    "set_http_proxy": [
+      "self",
+      "proxy_url"
+    ]
+  },
+  "_encode_params": [
+    "parameters"
+  ],
+  "_generate_nonce": [
+    "length"
+  ],
+  "unauthenticated_command_executor": [
+    "func"
+  ],
+  "authenticated_command_executor": [
+    "method"
+  ],
+  "_KNOWN_DEV_TYPES_CLASSES": [],
+  "_ABILITY_MATRIX": [],
+  "_SUBDEVICE_MAPPING": [],
+  "_dynamic_types": [],
+  "_caclulate_device_type_name": [
+    "device_type",
+    "hardware_version",
+    "firmware_version"
+  ],
+  "_lookup_cached_type": [
+    "device_type",
+    "hardware_version",
+    "firmware_version"
+  ],
+  "_build_cached_type": [
+    "type_string",
+    "device_abilities",
+    "base_class"
+  ],
+  "build_meross_device_from_abilities": [
+    "http_device_info",
+    "device_abilities",
+    "manager"
+  ],
+  "build_meross_device_from_known_types": [
+    "http_device_info",
+    "manager"
+  ],
+  "build_meross_subdevice": [
+    "http_subdevice_info",
+    "hub_uuid",
+    "hub_reported_abilities",
+    "manager"
+  ],
+  "name": [],
+  "ErrorBudget": {
+    "__init__": [
+      "self",
+      "initial_budget",
+      "window_start"
+    ]
+  },
+  "ErrorBudgetManager": {
+    "__init__": [
+      "self",
+      "max_errors",
+      "time_window"
+    ],
+    "_get_update_budget_window": [
+      "self",
+      "device_uuid"
+    ],
+    "notify_error": [
+      "self",
+      "device_uuid"
+    ],
+    "is_out_of_budget": [
+      "self",
+      "device_uuid"
+    ]
+  },
+  "_CONNECTION_DROP_UPDATE_SCHEDULE_INTERVAL": [],
+  "T": [],
+  "ManagerPushNotificationHandlerType": [],
+  "_DEFAULT_HEADERS": [],
+  "_mqtt_key_from_domain_port": [
+    "domain",
+    "port"
+  ],
+  "TransportMode": {
+    "MQTT_ONLY": [],
+    "LAN_HTTP_FIRST": [],
+    "LAN_HTTP_FIRST_ONLY_GET": []
+  },
+  "MqttConnectionStatus": {
+    "DISCONNECTED": [],
+    "CONNECTING": [],
+    "CONNECTED": []
+  },
+  "MerossManager": {
+    "__init__": [
+      "self",
+      "http_client",
+      "auto_reconnect",
+      "loop",
+      "mqtt_override_server",
+      "auto_discovery_on_connection",
+      "mqtt_ssl_context"
+    ],
+    "auto_discovery_on_connection": [
+      "self",
+      "val"
+    ],
+    "default_transport_mode": [
+      "self",
+      "value"
+    ],
+    "_get_client_from_domain_port": [
+      "self",
+      "client"
+    ],
+    "_async_get_create_mqtt_client": [
+      "self",
+      "domain",
+      "port"
+    ],
+    "_new_mqtt_client": [
+      "self"
+    ],
+    "register_push_notification_handler_coroutine": [
+      "self",
+      "coro"
+    ],
+    "unregister_push_notification_handler_coroutine": [
+      "self",
+      "coro"
+    ],
+    "close": [
+      "self"
+    ],
+    "find_devices": [
+      "self",
+      "device_uuids",
+      "internal_ids",
+      "device_type",
+      "device_class",
+      "device_name",
+      "online_status"
+    ],
+    "async_device_discovery": [
+      "self",
+      "update_subdevice_status",
+      "meross_device_uuid",
+      "cached_http_device_list"
+    ],
+    "_async_enroll_new_http_subdev": [
+      "self",
+      "subdevice_info",
+      "hub",
+      "hub_reported_abilities"
+    ],
+    "async_init": [
+      "self"
+    ],
+    "_async_enroll_new_http_dev": [
+      "self",
+      "device_info"
+    ],
+    "_on_connect": [
+      "self",
+      "client",
+      "userdata",
+      "rc",
+      "other"
+    ],
+    "_on_disconnect": [
+      "self",
+      "client",
+      "userdata",
+      "rc"
+    ],
+    "_on_unsubscribe": [
+      "self"
+    ],
+    "_on_subscribe": [
+      "self",
+      "client",
+      "userdata",
+      "mid",
+      "granted_qos"
+    ],
+    "_update_and_send_push": [
+      "self",
+      "dev",
+      "old_status"
+    ],
+    "_on_message": [
+      "self",
+      "client",
+      "userdata",
+      "msg"
+    ],
+    "_async_dispatch_push_notification": [
+      "self",
+      "push_notification"
+    ],
+    "_async_handle_push_notification_post_dispatching": [
+      "self",
+      "push_notification"
+    ],
+    "_handle_and_dispatch_push_notification": [
+      "self",
+      "push_notification"
+    ],
+    "async_execute_cmd": [
+      "self",
+      "mqtt_hostname",
+      "mqtt_port",
+      "destination_device_uuid",
+      "method",
+      "namespace",
+      "payload",
+      "timeout",
+      "override_transport_mode"
+    ],
+    "_async_execute_cmd_http": [
+      "self",
+      "device_ip",
+      "destination_device_uuid",
+      "method",
+      "namespace",
+      "payload",
+      "timeout"
+    ],
+    "async_execute_cmd_client": [
+      "self",
+      "client",
+      "destination_device_uuid",
+      "method",
+      "namespace",
+      "payload",
+      "timeout"
+    ],
+    "_async_send_and_wait_ack": [
+      "self",
+      "client",
+      "future",
+      "target_device_uuid",
+      "message",
+      "timeout"
+    ],
+    "_notify_connection_drop": [
+      "self"
+    ],
+    "_build_mqtt_message": [
+      "self",
+      "method",
+      "namespace",
+      "payload",
+      "destination_device_uuid"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_type",
+      "proxy_addr",
+      "proxy_port"
+    ],
+    "dump_device_registry": [
+      "self",
+      "filename"
+    ],
+    "load_devices_from_dump": [
+      "self",
+      "filename"
+    ]
+  },
+  "DeviceRegistry": {
+    "__init__": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "dump_to_file": [
+      "self",
+      "filename"
+    ],
+    "load_from_dump": [
+      "self",
+      "filename",
+      "manager"
+    ],
+    "relinquish_device": [
+      "self",
+      "device_internal_id"
+    ],
+    "enroll_device": [
+      "self",
+      "device"
+    ],
+    "lookup_by_id": [
+      "self",
+      "device_id"
+    ],
+    "lookup_base_by_uuid": [
+      "self",
+      "device_uuid"
+    ],
+    "find_all_by": [
+      "self",
+      "device_uuids",
+      "internal_ids",
+      "device_type",
+      "device_class",
+      "device_name",
+      "online_status",
+      "exclude_classes"
+    ]
+  },
+  "_handle_future": [
+    "future",
+    "result",
+    "exception"
+  ],
+  "delayed_execution": [
+    "coro",
+    "delay",
+    "cancel_event"
+  ],
+  "_schedule_later": [
+    "coroutine",
+    "start_delay",
+    "loop"
+  ],
+  "DelayedCoroFutureHandler": {
+    "__init__": [
+      "self",
+      "future",
+      "coroutine",
+      "cancel_event"
+    ],
+    "ensure_canceled": [
+      "self"
+    ]
+  },
+  "extract_domain": [
+    "address"
+  ],
+  "extract_port": [
+    "address",
+    "default"
+  ],
+  "HttpRequestSample": {
+    "__init__": [
+      "self",
+      "method",
+      "url",
+      "http_response_code",
+      "api_response_code",
+      "timestamp"
+    ],
+    "method": [
+      "self"
+    ],
+    "url": [
+      "self"
+    ],
+    "http_response_code": [
+      "self"
+    ],
+    "api_response_code": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ]
+  },
+  "ApiCallSample": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "namespace",
+      "method",
+      "timestamp"
+    ],
+    "device_uuid": [
+      "self"
+    ],
+    "namespace": [
+      "self"
+    ],
+    "method": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ]
+  },
+  "HttpStat": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "sample"
+    ],
+    "total_calls": [
+      "self"
+    ],
+    "by_http_reponse_code": [
+      "self"
+    ],
+    "by_api_status_code": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ApiStat": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "sample"
+    ],
+    "total_calls": [
+      "self"
+    ],
+    "by_method_namespace": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "HttpStatsResult": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "sample"
+    ],
+    "global_stats": [
+      "self"
+    ],
+    "stats_by_url": [
+      "self",
+      "url"
+    ],
+    "device_stats": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "ApiStatsResult": {
+    "__init__": [
+      "self"
+    ],
+    "add": [
+      "self",
+      "sample"
+    ],
+    "global_stats": [
+      "self"
+    ],
+    "stats_by_uuid": [
+      "self",
+      "device_uuid"
+    ],
+    "device_stats": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "HttpStatsCounter": {
+    "__init__": [
+      "self",
+      "max_samples"
+    ],
+    "notify_http_request": [
+      "self",
+      "request_url",
+      "method",
+      "http_response_code",
+      "api_response_code"
+    ],
+    "_get_stats": [
+      "self",
+      "samples",
+      "time_window"
+    ],
+    "get_stats": [
+      "self",
+      "time_window"
+    ]
+  },
+  "ApiCounter": {
+    "__init__": [
+      "self",
+      "max_samples"
+    ],
+    "notify_api_call": [
+      "self",
+      "device_uuid",
+      "namespace",
+      "method"
+    ],
+    "notify_delayed_call": [
+      "self",
+      "device_uuid",
+      "namespace",
+      "method"
+    ],
+    "notify_dropped_call": [
+      "self",
+      "device_uuid",
+      "namespace",
+      "method"
+    ],
+    "_get_stats": [
+      "self",
+      "api_samples",
+      "time_window"
+    ],
+    "get_api_stats": [
+      "self",
+      "time_window"
+    ],
+    "get_delayed_api_stats": [
+      "self",
+      "time_window"
+    ],
+    "get_dropped_api_stats": [
+      "self",
+      "time_window"
+    ]
+  },
+  "rgb_to_int": [
+    "rgb"
+  ],
+  "int_to_rgb": [
+    "rgb"
+  ],
+  "build_device_request_topic": [
+    "client_uuid"
+  ],
+  "build_client_response_topic": [
+    "user_id",
+    "app_id"
+  ],
+  "build_client_user_topic": [
+    "user_id"
+  ],
+  "device_uuid_from_push_notification": [
+    "from_topic"
+  ],
+  "generate_client_and_app_id": [],
+  "generate_mqtt_password": [
+    "user_id",
+    "key"
+  ],
+  "verify_message_signature": [
+    "header",
+    "key"
+  ],
+  "current_version": [],
+  "BaseDevice": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "cached_http_info": [
+      "self"
+    ],
+    "lan_ip": [
+      "self"
+    ],
+    "mac_address": [
+      "self"
+    ],
+    "mqtt_host": [
+      "self"
+    ],
+    "mqtt_port": [
+      "self"
+    ],
+    "abilities": [
+      "self"
+    ],
+    "last_full_update_timestamp": [
+      "self"
+    ],
+    "check_full_update_done": [
+      "self"
+    ],
+    "register_push_notification_handler_coroutine": [
+      "self",
+      "coro"
+    ],
+    "unregister_push_notification_handler_coroutine": [
+      "self",
+      "coro"
+    ],
+    "_fire_push_notification_event": [
+      "self",
+      "namespace",
+      "data",
+      "device_internal_id"
+    ],
+    "internal_id": [
+      "self"
+    ],
+    "uuid": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ],
+    "type": [
+      "self"
+    ],
+    "firmware_version": [
+      "self"
+    ],
+    "hardware_version": [
+      "self"
+    ],
+    "online_status": [
+      "self"
+    ],
+    "channels": [
+      "self"
+    ],
+    "update_from_http_state": [
+      "self",
+      "hdevice"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_update": [
+      "self"
+    ],
+    "dismiss": [
+      "self"
+    ],
+    "default_command_timeout": [
+      "self",
+      "val"
+    ],
+    "_execute_command": [
+      "self",
+      "method",
+      "namespace",
+      "payload",
+      "timeout"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "_parse_channels": [
+      "channel_data"
+    ],
+    "lookup_channel": [
+      "self",
+      "channel_id_or_name"
+    ],
+    "support_encryption": [
+      "self"
+    ],
+    "is_encryption_key_set": [
+      "self"
+    ],
+    "set_encryption_key": [
+      "self"
+    ],
+    "encrypt": [
+      "self",
+      "message_data_bytes"
+    ],
+    "decrypt": [
+      "self",
+      "encrypted_message_bytes"
+    ]
+  },
+  "HubDevice": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "get_subdevices": [
+      "self"
+    ],
+    "get_subdevice": [
+      "self",
+      "subdevice_id"
+    ],
+    "register_subdevice": [
+      "self",
+      "subdevice"
+    ]
+  },
+  "GenericSubDevice": {
+    "__init__": [
+      "self",
+      "hubdevice_uuid",
+      "subdevice_id",
+      "manager"
+    ],
+    "_execute_command": [
+      "self",
+      "method",
+      "namespace",
+      "payload",
+      "timeout"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_get_battery_life": [
+      "self",
+      "timeout"
+    ],
+    "async_handle_subdevice_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "internal_id": [
+      "self"
+    ],
+    "subdevice_id": [
+      "self"
+    ],
+    "online_status": [
+      "self"
+    ],
+    "_prepare_push_notification_data": [
+      "self",
+      "data",
+      "filter_accessor"
+    ]
+  },
+  "ChannelInfo": {
+    "__init__": [
+      "self",
+      "index",
+      "name",
+      "channel_type",
+      "is_master_channel"
+    ],
+    "index": [
+      "self"
+    ],
+    "is_usb": [
+      "self"
+    ],
+    "is_master_channel": [
+      "self"
+    ],
+    "name": [
+      "self"
+    ]
+  },
+  "Ms100Sensor": {
+    "__init__": [
+      "self",
+      "hubdevice_uuid",
+      "subdevice_id",
+      "manager"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_subdevice_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "last_sampled_temperature": [
+      "self"
+    ],
+    "last_sampled_humidity": [
+      "self"
+    ],
+    "last_sampled_time": [
+      "self"
+    ],
+    "min_supported_temperature": [
+      "self"
+    ],
+    "max_supported_temperature": [
+      "self"
+    ]
+  },
+  "Mts100v3Valve": {
+    "__init__": [
+      "self",
+      "hubdevice_uuid",
+      "subdevice_id",
+      "manager"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_subdevice_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "is_on": [
+      "self"
+    ],
+    "async_turn_off": [
+      "self",
+      "timeout"
+    ],
+    "async_turn_on": [
+      "self",
+      "timeout"
+    ],
+    "async_toggle": [
+      "self",
+      "timeout"
+    ],
+    "last_sampled_temperature": [
+      "self"
+    ],
+    "async_get_temperature": [
+      "self",
+      "timeout"
+    ],
+    "last_sampled_time": [
+      "self"
+    ],
+    "mode": [
+      "self"
+    ],
+    "async_set_mode": [
+      "self",
+      "mode",
+      "timeout"
+    ],
+    "target_temperature": [
+      "self"
+    ],
+    "min_supported_temperature": [
+      "self"
+    ],
+    "max_supported_temperature": [
+      "self"
+    ],
+    "is_heating": [
+      "self"
+    ],
+    "is_window_open": [
+      "self"
+    ],
+    "get_preset_temperature": [
+      "self",
+      "preset"
+    ],
+    "get_supported_presets": [],
+    "async_set_preset_temperature": [
+      "self",
+      "preset",
+      "temperature",
+      "timeout"
+    ],
+    "async_set_target_temperature": [
+      "self",
+      "temperature",
+      "timeout"
+    ],
+    "async_get_adjust": [
+      "self",
+      "timeout"
+    ],
+    "adjust": [
+      "self"
+    ],
+    "async_set_adjust": [
+      "self",
+      "temperature",
+      "timeout"
+    ]
+  },
+  "Ms405Sensor": {
+    "__init__": [
+      "self",
+      "hubdevice_uuid",
+      "subdevice_id",
+      "manager",
+      "max_events_queue_len"
+    ],
+    "is_leaking": [
+      "self"
+    ],
+    "latest_sample_time": [
+      "self"
+    ],
+    "latest_detected_water_leak_ts": [
+      "self"
+    ],
+    "get_last_events": [
+      "self"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "_handle_water_leak_fresh_data": [
+      "self",
+      "leaking",
+      "timestamp"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_subdevice_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SprayMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_current_mode": [
+      "self",
+      "channel"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_set_mode": [
+      "self",
+      "mode",
+      "channel",
+      "timeout"
+    ]
+  },
+  "_MAX_ALARM_EVENTS_MEMORY": [],
+  "AlarmMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "last_events": [
+      "self"
+    ]
+  },
+  "RollerShutterTimerMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_open": [
+      "self",
+      "channel"
+    ],
+    "async_stop": [
+      "self",
+      "channel"
+    ],
+    "async_close": [
+      "self",
+      "channel"
+    ],
+    "_async_operate": [
+      "self",
+      "position",
+      "channel",
+      "timeout"
+    ],
+    "async_set_position": [
+      "self",
+      "position",
+      "channel",
+      "timeout"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_fetch_config": [
+      "self",
+      "timeout"
+    ],
+    "async_fetch_position": [
+      "self",
+      "timeout"
+    ],
+    "get_open_timer_duration_millis": [
+      "self",
+      "channel"
+    ],
+    "get_close_timer_duration_millis": [
+      "self",
+      "channel"
+    ],
+    "async_set_config": [
+      "self",
+      "open_timer_seconds",
+      "close_timer_seconds",
+      "channel",
+      "timeout"
+    ],
+    "get_status": [
+      "self",
+      "channel"
+    ],
+    "get_position": [
+      "self",
+      "channel"
+    ]
+  },
+  "HubMixn": {
+    "__PUSH_MAP": [],
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ]
+  },
+  "HubMs100Mixin": {
+    "__PUSH_MAP": [],
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ]
+  },
+  "HubMts100Mixin": {
+    "__PUSH_MAP": [],
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ]
+  },
+  "EncryptionAlg": {
+    "ECDHE256": []
+  },
+  "EncryptionSuiteMixin": {
+    "_DEFAULT_IV": [],
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "_pad_to_16_bytes": [
+      "self",
+      "data"
+    ],
+    "_ecdhe256_encrypt": [
+      "self",
+      "message_data_bytes",
+      "iv"
+    ],
+    "_ecdhe256_decrypt": [
+      "self",
+      "message_data_bytes",
+      "iv"
+    ],
+    "support_encryption": [
+      "self"
+    ],
+    "is_encryption_key_set": [
+      "self"
+    ],
+    "set_encryption_key": [
+      "self",
+      "uuid",
+      "mrskey",
+      "mac"
+    ],
+    "encrypt": [
+      "self",
+      "message_data_bytes"
+    ],
+    "decrypt": [
+      "self",
+      "encrypted_message_bytes"
+    ]
+  },
+  "_DATE_FORMAT": [],
+  "SystemRuntimeMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_update_runtime_info": [
+      "self",
+      "timeout"
+    ],
+    "cached_system_runtime_info": [
+      "self"
+    ],
+    "async_update": [
+      "self"
+    ]
+  },
+  "SystemAllMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_update": [
+      "self",
+      "timeout"
+    ]
+  },
+  "SystemOnlineMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ]
+  },
+  "SystemDndMixin": {
+    "async_get_dnd_mode": [
+      "self",
+      "timeout"
+    ],
+    "set_dnd_mode": [
+      "self",
+      "mode",
+      "timeout"
+    ]
+  },
+  "LightMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "_supports_mode": [
+      "self",
+      "mode",
+      "channel"
+    ],
+    "_update_channel_status": [
+      "self",
+      "channel",
+      "rgb",
+      "luminance",
+      "temperature",
+      "onoff"
+    ],
+    "async_set_light_color": [
+      "self",
+      "channel",
+      "onoff",
+      "rgb",
+      "luminance",
+      "temperature",
+      "timeout"
+    ],
+    "get_supports_rgb": [
+      "self",
+      "channel"
+    ],
+    "get_supports_luminance": [
+      "self",
+      "channel"
+    ],
+    "get_supports_temperature": [
+      "self",
+      "channel"
+    ],
+    "get_rgb_color": [
+      "self",
+      "channel"
+    ],
+    "get_luminance": [
+      "self",
+      "channel"
+    ],
+    "get_color_temperature": [
+      "self",
+      "channel"
+    ],
+    "get_light_is_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_off": [
+      "self",
+      "channel"
+    ]
+  },
+  "GarageOpenerMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_open": [
+      "self",
+      "channel"
+    ],
+    "async_close": [
+      "self",
+      "channel"
+    ],
+    "_async_operate": [
+      "self",
+      "state",
+      "channel",
+      "timeout"
+    ],
+    "get_is_open": [
+      "self",
+      "channel"
+    ],
+    "_get_default_channel_index": [
+      "self",
+      "channel"
+    ]
+  },
+  "ConsumptionXMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_get_daily_power_consumption": [
+      "self",
+      "channel",
+      "timeout"
+    ]
+  },
+  "ConsumptionMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_get_daily_power_consumption": [
+      "self",
+      "channel",
+      "timeout"
+    ]
+  },
+  "ElectricityMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_get_instant_metrics": [
+      "self",
+      "channel",
+      "timeout"
+    ],
+    "get_last_sample": [
+      "self",
+      "channel"
+    ]
+  },
+  "_THERMOSTAT_MIN_SETTABLE_TEMP": [],
+  "_THERMOSTAT_MAX_SETTABLE_TEMP": [],
+  "ThermostatState": {
+    "__init__": [
+      "self",
+      "state"
+    ],
+    "update": [
+      "self",
+      "state"
+    ],
+    "is_on": [
+      "self"
+    ],
+    "mode": [
+      "self"
+    ],
+    "workingMode": [
+      "self"
+    ],
+    "state": [
+      "self"
+    ],
+    "warning": [
+      "self"
+    ],
+    "target_temperature_celsius": [
+      "self"
+    ],
+    "min_temperature_celsius": [
+      "self"
+    ],
+    "max_temperature_celsius": [
+      "self"
+    ],
+    "current_temperature_celsius": [
+      "self"
+    ],
+    "heat_temperature_celsius": [
+      "self"
+    ],
+    "cool_temperature_celsius": [
+      "self"
+    ],
+    "eco_temperature_celsius": [
+      "self"
+    ],
+    "manual_temperature_celsius": [
+      "self"
+    ]
+  },
+  "ThermostatModeMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "_update_mode": [
+      "self",
+      "mode_data"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_thermostat_state": [
+      "self",
+      "channel"
+    ],
+    "_align_temp": [
+      "self",
+      "temperature",
+      "channel"
+    ],
+    "async_set_thermostat_config": [
+      "self",
+      "channel",
+      "mode",
+      "manual_temperature_celsius",
+      "heat_temperature_celsius",
+      "cool_temperature_celsius",
+      "eco_temperature_celsius",
+      "on_not_off",
+      "timeout"
+    ]
+  },
+  "ThermostatModeBMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "_update_mode": [
+      "self",
+      "mode_data"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_thermostat_state": [
+      "self",
+      "channel"
+    ],
+    "_align_temp": [
+      "self",
+      "temperature",
+      "channel"
+    ],
+    "async_set_thermostat_config": [
+      "self",
+      "channel",
+      "mode",
+      "target_temperature_celsius",
+      "on_not_off",
+      "timeout"
+    ]
+  },
+  "DiffuserLightMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_light_mode": [
+      "self",
+      "channel"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_light_brightness": [
+      "self",
+      "channel"
+    ],
+    "get_light_rgb_color": [
+      "self",
+      "channel"
+    ],
+    "async_set_light_mode": [
+      "self",
+      "channel",
+      "onoff",
+      "mode",
+      "brightness",
+      "rgb",
+      "timeout"
+    ],
+    "get_light_is_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_off": [
+      "self",
+      "channel"
+    ]
+  },
+  "DiffuserSprayMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "get_current_spray_mode": [
+      "self",
+      "channel"
+    ],
+    "async_set_spray_mode": [
+      "self",
+      "mode",
+      "channel",
+      "timeout"
+    ]
+  },
+  "ToggleXMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "is_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_off": [
+      "self",
+      "channel",
+      "timeout"
+    ],
+    "async_turn_on": [
+      "self",
+      "channel",
+      "timeout"
+    ],
+    "async_toggle": [
+      "self",
+      "channel"
+    ]
+  },
+  "ToggleMixin": {
+    "__init__": [
+      "self",
+      "device_uuid",
+      "manager"
+    ],
+    "async_handle_push_notification": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "async_handle_update": [
+      "self",
+      "namespace",
+      "data"
+    ],
+    "is_on": [
+      "self",
+      "channel"
+    ],
+    "async_turn_off": [
+      "self",
+      "channel",
+      "timeout"
+    ],
+    "async_turn_on": [
+      "self",
+      "channel",
+      "timeout"
+    ],
+    "async_toggle": [
+      "self",
+      "channel"
+    ]
+  },
+  "MerossCloudCreds": {
+    "__init__": [
+      "self",
+      "token",
+      "key",
+      "user_id",
+      "user_email",
+      "issued_on",
+      "domain",
+      "mqtt_domain"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "json_string"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "UnconnectedError": {},
+  "CommandTimeoutError": {
+    "__init__": [
+      "self",
+      "message",
+      "target_device_uuid",
+      "timeout"
+    ]
+  },
+  "MqttError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "CommandError": {
+    "__init__": [
+      "self",
+      "error_payload"
+    ]
+  },
+  "UnknownDeviceType": {},
+  "camel_pat": [],
+  "under_pat": [],
+  "_camel_to_underscore": [
+    "key"
+  ],
+  "_underscore_to_camel": [
+    "key"
+  ],
+  "BaseDictPayload": {
+    "__init__": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "json_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "RgbTuple": [],
+  "OnlineStatus": {
+    "NOT_ONLINE": [],
+    "ONLINE": [],
+    "OFFLINE": [],
+    "UNKNOWN": [],
+    "UPGRADING": []
+  },
+  "LightMode": {
+    "MODE_LUMINANCE": [],
+    "MODE_TEMPERATURE": [],
+    "MODE_RGB": [],
+    "MODE_RGB_LUMINANCE": [],
+    "MODE_TEMPERATURE_LUMINANCE": []
+  },
+  "SprayMode": {
+    "OFF": [],
+    "CONTINUOUS": [],
+    "INTERMITTENT": []
+  },
+  "DiffuserSprayMode": {
+    "LIGHT": [],
+    "STRONG": [],
+    "OFF": []
+  },
+  "DiffuserLightMode": {
+    "ROTATING_COLORS": [],
+    "FIXED_RGB": [],
+    "FIXED_LUMINANCE": []
+  },
+  "ThermostatV3Mode": {
+    "AUTO": [],
+    "COOL": [],
+    "CUSTOM": [],
+    "ECONOMY": [],
+    "HEAT": []
+  },
+  "ThermostatMode": {
+    "HEAT": [],
+    "COOL": [],
+    "ECONOMY": [],
+    "AUTO": [],
+    "MANUAL": []
+  },
+  "ThermostatWorkingMode": {
+    "HEAT": [],
+    "COOL": []
+  },
+  "ThermostatModeBState": {
+    "HEATING_COOLING": [],
+    "NOT_HEATING_COOLING": []
+  },
+  "RollerShutterState": {
+    "UNKNOWN": [],
+    "IDLE": [],
+    "OPENING": [],
+    "CLOSING": []
+  },
+  "DNDMode": {
+    "DND_DISABLED": [],
+    "DND_ENABLED": []
+  },
+  "Namespace": {
+    "SYSTEM_ALL": [],
+    "SYSTEM_ABILITY": [],
+    "SYSTEM_ONLINE": [],
+    "SYSTEM_REPORT": [],
+    "SYSTEM_DEBUG": [],
+    "SYSTEM_RUNTIME": [],
+    "SYSTEM_ENCRYPTION": [],
+    "SYSTEM_ENCRYPTION_ECDHE": [],
+    "CONTROL_BIND": [],
+    "CONTROL_UNBIND": [],
+    "CONTROL_TRIGGER": [],
+    "CONTROL_TRIGGERX": [],
+    "CONTROL_ALARM": [],
+    "CONFIG_WIFI_LIST": [],
+    "CONFIG_TRACE": [],
+    "SYSTEM_DND_MODE": [],
+    "CONTROL_TOGGLE": [],
+    "CONTROL_TOGGLEX": [],
+    "CONTROL_ELECTRICITY": [],
+    "CONTROL_CONSUMPTION": [],
+    "CONTROL_CONSUMPTIONX": [],
+    "CONTROL_LIGHT": [],
+    "GARAGE_DOOR_STATE": [],
+    "GARAGE_DOOR_MULTIPLECONFIG": [],
+    "ROLLER_SHUTTER_STATE": [],
+    "ROLLER_SHUTTER_POSITION": [],
+    "ROLLER_SHUTTER_CONFIG": [],
+    "CONTROL_SPRAY": [],
+    "SYSTEM_DIGEST_HUB": [],
+    "DIFFUSER_LIGHT": [],
+    "DIFFUSER_SPRAY": [],
+    "HUB_EXCEPTION": [],
+    "HUB_BATTERY": [],
+    "HUB_TOGGLEX": [],
+    "HUB_ONLINE": [],
+    "HUB_SUBDEVICELIST": [],
+    "HUB_SENSOR_ALL": [],
+    "HUB_SENSOR_TEMPHUM": [],
+    "HUB_SENSOR_ALERT": [],
+    "HUB_SENSOR_WATERLEAK": [],
+    "HUB_MTS100_ALL": [],
+    "HUB_MTS100_TEMPERATURE": [],
+    "HUB_MTS100_MODE": [],
+    "HUB_MTS100_ADJUST": [],
+    "CONTROL_THERMOSTAT_MODE": [],
+    "CONTROL_THERMOSTAT_WINDOWOPENED": [],
+    "CONTROL_THERMOSTAT_MODEB": []
+  },
+  "get_or_parse_namespace": [
+    "namespace"
+  ],
+  "DEFAULT_MQTT_HOST": [],
+  "DEFAULT_MQTT_PORT": [],
+  "DEFAULT_COMMAND_TIMEOUT": [],
+  "BatteryInfo": {
+    "__init__": [
+      "self",
+      "battery_charge",
+      "sample_ts"
+    ],
+    "remaining_charge": [
+      "self"
+    ],
+    "sampled_datetime": [
+      "self"
+    ]
+  },
+  "LightInfo": {
+    "__init__": [
+      "self",
+      "rgb",
+      "luminance",
+      "temperature",
+      "capacity",
+      "onoff"
+    ],
+    "rgb_tuple": [
+      "self"
+    ],
+    "rgb_int": [
+      "self"
+    ],
+    "luminance": [
+      "self"
+    ],
+    "temperature": [
+      "self"
+    ],
+    "is_on": [
+      "self"
+    ],
+    "update": [
+      "self",
+      "rgb",
+      "luminance",
+      "temperature",
+      "capacity",
+      "onoff"
+    ],
+    "_convert_rgb": [
+      "rgb"
+    ]
+  },
+  "PowerInfo": {
+    "__init__": [
+      "self",
+      "current_ampere",
+      "voltage_volts",
+      "power_watts",
+      "sample_timestamp"
+    ],
+    "power": [
+      "self"
+    ],
+    "voltage": [
+      "self"
+    ],
+    "current": [
+      "self"
+    ],
+    "sample_timestamp": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "HardwareInfo": {
+    "__init__": [
+      "self",
+      "version",
+      "uuid",
+      "type",
+      "sub_type",
+      "mac_address",
+      "chip_time"
+    ]
+  },
+  "FirmwareInfo": {
+    "__init__": [
+      "self",
+      "wifi_mac",
+      "version",
+      "user_id",
+      "server",
+      "port",
+      "inner_ip",
+      "compile_time"
+    ]
+  },
+  "TimeInfo": {
+    "__init__": [
+      "self",
+      "timezone",
+      "timestamp",
+      "time_rule"
+    ]
+  },
+  "_PUSH_NOTIFICATION_BINDING": [],
+  "parse_push_notification": [
+    "namespace",
+    "message_payload",
+    "originating_device_uuid"
+  ],
+  "AlarmPushNotification": {
+    "__init__": [
+      "self",
+      "originating_device_uuid",
+      "raw_data"
+    ],
+    "value": [
+      "self"
+    ],
+    "timestamp": [
+      "self"
+    ],
+    "channel": [
+      "self"
+    ],
+    "subdevice_id": [
+      "self"
+    ]
+  },
+  "WaterLeakPushNotification": {
+    "__init__": [
+      "self",
+      "originating_device_uuid",
+      "raw_data"
+    ],
+    "syncedTime": [
+      "self"
+    ],
+    "latestSampleTime": [
+      "self"
+    ],
+    "latestSampleIsLeak": [
+      "self"
+    ],
+    "subdevice_id": [
+      "self"
+    ]
+  },
+  "GenericPushNotification": {
+    "__init__": [
+      "self",
+      "namespace",
+      "originating_device_uuid",
+      "raw_data"
+    ]
+  },
+  "UnbindPushNotification": {
+    "__init__": [
+      "self",
+      "originating_device_uuid",
+      "raw_data"
+    ]
+  },
+  "BindPushNotification": {
+    "__init__": [
+      "self",
+      "originating_device_uuid",
+      "raw_data"
+    ],
+    "time": [
+      "self"
+    ],
+    "hwinfo": [
+      "self"
+    ],
+    "fwinfo": [
+      "self"
+    ]
+  },
+  "OnlinePushNotification": {
+    "__init__": [
+      "self",
+      "originating_device_uuid",
+      "raw_data"
+    ],
+    "status": [
+      "self"
+    ]
+  },
+  "AuthenticatedPostException": {},
+  "HttpApiError": {
+    "__init__": [
+      "self",
+      "error_code"
+    ],
+    "error_code": [
+      "self"
+    ]
+  },
+  "BadLoginException": {},
+  "MissingMFA": {},
+  "WrongMFA": {},
+  "BadDomainException": {
+    "__init__": [
+      "self",
+      "msg",
+      "api_domain",
+      "mqtt_domain"
+    ]
+  },
+  "UnauthorizedException": {},
+  "TokenExpiredException": {},
+  "TooManyTokensException": {},
+  "HttpDeviceInfo": {
+    "__init__": [
+      "self",
+      "uuid",
+      "online_status",
+      "dev_name",
+      "device_type",
+      "channels",
+      "fmware_version",
+      "hdware_version",
+      "domain",
+      "reserved_domain",
+      "sub_type",
+      "bind_time",
+      "skill_number",
+      "user_dev_icon",
+      "icon_type",
+      "region",
+      "dev_icon_id"
+    ],
+    "get_mqtt_host": [
+      "self"
+    ],
+    "get_mqtt_port": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "ErrorCodes": {
+    "CODE_NO_ERROR": [],
+    "CODE_MISSING_USER": [],
+    "CODE_MISSING_PASSWORD": [],
+    "CODE_UNEXISTING_ACCOUNT": [],
+    "CODE_DISABLED_OR_DELETED_ACCOUNT": [],
+    "CODE_WRONG_CREDENTIALS": [],
+    "CODE_INVALID_EMAIL": [],
+    "CODE_BAD_PASSWORD_FORMAT": [],
+    "USER_ALREADY_EXISTS": [],
+    "CODE_WRONG_EMAIL": [],
+    "SEND_EMAIL_FAILED": [],
+    "WRONG_TICKET": [],
+    "CODE_OVERDUE": [],
+    "WRONG_CODE": [],
+    "DUPLICATE_PASSWORD": [],
+    "SAME_EMAIL": [],
+    "CODE_TOKEN_INVALID": [],
+    "CODE_UNKNOWN_FAILURE_1021": [],
+    "CODE_TOKEN_ERROR": [],
+    "CODE_UNKNOWN_FAILURE_1023": [],
+    "CODE_UNKNOWN_FAILURE_1024": [],
+    "CODE_UNKNOWN_FAILURE_1025": [],
+    "CODE_UNKNOWN_FAILURE_1026": [],
+    "CODE_UNKNOWN_FAILURE_1027": [],
+    "REQUESTED_TOO_FREQUENTLY": [],
+    "CODE_REDIRECT_REGION": [],
+    "USER_NAME_NOT_MATCHING": [],
+    "WRONG_MFA_CODE": [],
+    "MFA_CODE_REQUIRED": [],
+    "OPERATION_IS_LOCKED": [],
+    "REPEAT_CHECK_IN": [],
+    "API_TOP_LIMIT_REACHED": [],
+    "RESOURCE_ACCESS_DENY": [],
+    "CODE_TOKEN_EXPIRED": [],
+    "SERVER_UNABLE_GEN_TOKEN": [],
+    "CODE_UNKNOWN_FAILURE_1202": [],
+    "CODE_UNKNOWN_FAILURE_1203": [],
+    "CODE_UNKNOWN_FAILURE_1204": [],
+    "CODE_UNKNOWN_FAILURE_1210": [],
+    "CODE_UNKNOWN_FAILURE_1211": [],
+    "CODE_UNKNOWN_FAILURE_1212": [],
+    "CODE_UNKNOWN_FAILURE_1213": [],
+    "CODE_UNKNOWN_FAILURE_1214": [],
+    "CODE_UNKNOWN_FAILURE_1215": [],
+    "CODE_UNKNOWN_FAILURE_1226": [],
+    "CODE_UNKNOWN_FAILURE_1227": [],
+    "CODE_UNKNOWN_FAILURE_1228": [],
+    "CODE_UNKNOWN_FAILURE_1229": [],
+    "CODE_UNKNOWN_FAILURE_1230": [],
+    "CODE_UNKNOWN_FAILURE_1231": [],
+    "CODE_UNKNOWN_FAILURE_1232": [],
+    "CODE_UNKNOWN_FAILURE_1233": [],
+    "CODE_MAX_CONTROL_BOARDS_REACHED": [],
+    "CODE_COMPATIBILE_MODE_HAVING": [],
+    "CODE_COMPATIBILE_MODE_NOT_HAVING": [],
+    "CODE_TOO_MANY_TOKENS": [],
+    "CODE_UNKNOWN_FAILURE_1400": [],
+    "CODE_UNKNOWN_FAILURE_1401": [],
+    "CODE_UNKNOWN_FAILURE_1402": [],
+    "CODE_UNKNOWN_FAILURE_1403": [],
+    "CODE_UNKNOWN_FAILURE_1500": [],
+    "CODE_UNKNOWN_FAILURE_1501": [],
+    "CODE_UNKNOWN_FAILURE_1502": [],
+    "CODE_UNKNOWN_FAILURE_1503": [],
+    "CODE_UNKNOWN_FAILURE_1504": [],
+    "CODE_UNKNOWN_FAILURE_1601": [],
+    "CODE_UNKNOWN_FAILURE_1602": [],
+    "CODE_UNKNOWN_FAILURE_1603": [],
+    "CODE_UNKNOWN_FAILURE_1604": [],
+    "CODE_UNKNOWN_FAILURE_1605": [],
+    "CODE_UNKNOWN_FAILURE_1700": [],
+    "CODE_UNSUPPORTED_TIMEZONE": [],
+    "CODE_GENERIC_ERROR": [],
+    "CODE_UNKNOWN_FAILURE_5001": [],
+    "CODE_UNKNOWN_FAILURE_5002": [],
+    "CODE_UNKNOWN_FAILURE_5003": [],
+    "CODE_UNKNOWN_FAILURE_5004": [],
+    "CODE_IR_DEVICE_BUSY": [],
+    "CODE_IR_RECORD_TIMEOUT": [],
+    "CODE_IR_RECORD_INVALID": [],
+    "SYSTEM_ERROR": [],
+    "UNKNOWN_ERROR": [],
+    "SERIALIZE_ERROR": [],
+    "HTTP_COMMON_ERROR": [],
+    "INVALID_PARAMETER": [],
+    "RESOURCE_DOES_NOT_EXIST": [],
+    "UNSUPPORTED": [],
+    "SEND_EMAIL_LIMIT": []
+  },
+  "HttpSubdeviceInfo": {
+    "__init__": [
+      "self",
+      "sub_device_id",
+      "sub_device_type",
+      "sub_device_name",
+      "sub_device_icon_id"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  }
+}

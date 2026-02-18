@@ -1,0 +1,862 @@
+{
+  "DISABLE_SSL_VERIFICATION_DEFAULT": [],
+  "__all__": [],
+  "BaseXrayDataProducer": {
+    "publish_test_execution": [
+      "self",
+      "import_test_exec"
+    ]
+  },
+  "XrayDataProducer": {
+    "RECORD_TYPE": [],
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id",
+      "producer_class"
+    ],
+    "publish_test_execution": [
+      "self",
+      "import_test_exec"
+    ]
+  },
+  "DummyXrayDataProducer": {
+    "publish_test_execution": [
+      "self",
+      "import_test_exec"
+    ]
+  },
+  "LocalXrayDataProducer": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "XrayDataProducerFactory": {
+    "create_producer": [
+      "cls",
+      "raise_on_connection_error"
+    ]
+  },
+  "NUM_CONNECTION_TRIES": [],
+  "CONNECTION_RETRY_DELAY": [],
+  "ConnectionError": {
+    "__init__": [
+      "self",
+      "inner"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "PikaChannel": {
+    "basic_publish": [
+      "self",
+      "exchange",
+      "routing_key",
+      "body",
+      "properties",
+      "mandatory"
+    ],
+    "queue_declare": [
+      "self",
+      "queue",
+      "passive",
+      "durable",
+      "exclusive",
+      "auto_delete",
+      "arguments",
+      "callback"
+    ]
+  },
+  "BaseProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ],
+    "_connect": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "channel": [
+      "self"
+    ],
+    "queue_declare": [
+      "self",
+      "queue"
+    ],
+    "publish": [
+      "self",
+      "exchange",
+      "routing_key",
+      "payload",
+      "persistent"
+    ]
+  },
+  "BlockingProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ],
+    "_connect": [
+      "self"
+    ],
+    "channel": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "__connect": [
+      "self"
+    ],
+    "queue_declare": [
+      "self",
+      "queue"
+    ],
+    "publish": [
+      "self",
+      "exchange",
+      "routing_key",
+      "payload",
+      "persistent"
+    ]
+  },
+  "MessageContainer": {
+    "__init__": [
+      "self",
+      "channel",
+      "basic_deliver",
+      "properties",
+      "body"
+    ]
+  },
+  "MessageHandlerError": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "ExceptionHandlingBehavior": {
+    "ACK": [],
+    "NACK": [],
+    "NONE": []
+  },
+  "AsyncConsumerBase": {
+    "__init__": [
+      "self",
+      "amqp_url",
+      "queue",
+      "message_handler",
+      "durable",
+      "exchange",
+      "exchange_type",
+      "routing_key",
+      "handler_exception_behavior",
+      "heartbeat"
+    ],
+    "consuming": [
+      "self"
+    ],
+    "sanitize_url_for_display": [
+      "cls",
+      "url"
+    ],
+    "connect": [
+      "self"
+    ],
+    "close_connection": [
+      "self"
+    ],
+    "on_connection_open": [
+      "self",
+      "_unused_connection"
+    ],
+    "on_connection_open_error": [
+      "self",
+      "_unused_connection",
+      "err"
+    ],
+    "on_connection_closed": [
+      "self",
+      "_unused_connection",
+      "reason"
+    ],
+    "reconnect": [
+      "self"
+    ],
+    "open_channel": [
+      "self"
+    ],
+    "on_channel_open": [
+      "self",
+      "channel"
+    ],
+    "add_on_channel_close_callback": [
+      "self"
+    ],
+    "on_channel_closed": [
+      "self",
+      "channel",
+      "reason"
+    ],
+    "setup_exchange": [
+      "self",
+      "exchange_name"
+    ],
+    "on_exchange_declareok": [
+      "self",
+      "_unused_frame",
+      "userdata"
+    ],
+    "setup_queue": [
+      "self",
+      "queue_name",
+      "durable"
+    ],
+    "on_queue_declareok": [
+      "self",
+      "_unused_frame",
+      "userdata"
+    ],
+    "on_bindok": [
+      "self",
+      "_unused_frame",
+      "userdata"
+    ],
+    "set_qos": [
+      "self"
+    ],
+    "on_basic_qos_ok": [
+      "self",
+      "_unused_frame"
+    ],
+    "start_consuming": [
+      "self"
+    ],
+    "add_on_cancel_callback": [
+      "self"
+    ],
+    "on_consumer_cancelled": [
+      "self",
+      "method_frame"
+    ],
+    "handle_message": [
+      "self",
+      "message"
+    ],
+    "on_message": [
+      "self",
+      "channel",
+      "basic_deliver",
+      "properties",
+      "body"
+    ],
+    "nack_message": [
+      "self",
+      "delivery_tag",
+      "requeue"
+    ],
+    "acknowledge_message": [
+      "self",
+      "delivery_tag"
+    ],
+    "stop_consuming": [
+      "self"
+    ],
+    "on_cancelok": [
+      "self",
+      "_unused_frame",
+      "userdata"
+    ],
+    "close_channel": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "stop": [
+      "self",
+      "force"
+    ]
+  },
+  "ReconnectingConsumer": {
+    "__init__": [
+      "self",
+      "amqp_url",
+      "queue",
+      "message_handler",
+      "durable",
+      "exchange",
+      "exchange_type",
+      "routing_key",
+      "heartbeat"
+    ],
+    "create_consumer": [
+      "self"
+    ],
+    "run": [
+      "self"
+    ],
+    "_maybe_reconnect": [
+      "self"
+    ],
+    "_get_reconnect_delay": [
+      "self"
+    ]
+  },
+  "LocalRaspiSqaTestResultConsumer": {
+    "__init__": [
+      "self",
+      "hostname",
+      "message_handler",
+      "username",
+      "password"
+    ]
+  },
+  "MESSAGE_QUEUE_SIZE_LIMIT": [],
+  "UbaiArtifactUploadRequestProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ],
+    "upload_artifact": [
+      "self",
+      "artifact_file",
+      "metadata",
+      "validate_metadata"
+    ],
+    "publish_artifact_upload_request": [
+      "self",
+      "artifact_request"
+    ],
+    "extract_payload": [
+      "artifact_file"
+    ],
+    "upload_artifact_direct": [
+      "name",
+      "extension",
+      "base64_content",
+      "metadata",
+      "validate_metadata",
+      "verify_ssl"
+    ]
+  },
+  "LocalUbaiArtifactUploadRequestProducer": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "classproperty": {
+    "__get__": [
+      "self",
+      "cls",
+      "owner"
+    ]
+  },
+  "Loggable": {
+    "LOG_DEBUG": [],
+    "LOG_INFO": [],
+    "LOG_WARNING": [],
+    "LOG_CRITICAL": [],
+    "logger": [
+      "cls"
+    ],
+    "set_log_level": [
+      "self",
+      "level"
+    ]
+  },
+  "configure_logger": [],
+  "get_logger": [
+    "name"
+  ],
+  "OpenTelemetryDataProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ],
+    "publish_telemetry_data": [
+      "self",
+      "data_type",
+      "telemetry_data",
+      "compression"
+    ],
+    "_publish_telemetry_data_payload": [
+      "self",
+      "telemetry_payload"
+    ]
+  },
+  "LocalOpenTelemetryDataProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ]
+  },
+  "DataLakeDataProducer": {
+    "__init__": [
+      "self",
+      "tenant_key",
+      "url",
+      "producer_app_id"
+    ],
+    "publish_data_lake_csv_file": [
+      "self",
+      "file_path",
+      "object_id"
+    ],
+    "publish_data_lake_csv": [
+      "self",
+      "csv_data",
+      "object_id"
+    ],
+    "publish_data_lake_json_file": [
+      "self",
+      "file_path",
+      "object_id"
+    ],
+    "publish_data_lake_json": [
+      "self",
+      "json_data",
+      "object_id"
+    ],
+    "publish_data_lake_ndjson_file": [
+      "self",
+      "file_path",
+      "object_id"
+    ],
+    "publish_data_lake_ndjson": [
+      "self",
+      "ndjson_data",
+      "object_id"
+    ],
+    "publish_data_lake_parquet_file": [
+      "self",
+      "file_path",
+      "object_id"
+    ],
+    "publish_data_lake_data": [
+      "self",
+      "data_format",
+      "data_lake_data",
+      "compression",
+      "object_id"
+    ],
+    "_publish_data_lake_data_payload": [
+      "self",
+      "data_lake_payload"
+    ],
+    "_serialize_data": [
+      "self",
+      "data_bytes"
+    ]
+  },
+  "DataLakeDataProducerFactory": {
+    "create_producer": [
+      "cls",
+      "tenant_key",
+      "url",
+      "producer_app_id"
+    ]
+  },
+  "BaseSqaTestResultProducer": {
+    "publish_test_result": [
+      "self",
+      "test_result"
+    ],
+    "publish_test_session_start": [
+      "self",
+      "test_session"
+    ],
+    "publish_test_session_stop": [
+      "self",
+      "test_session"
+    ],
+    "publish_app_build_result": [
+      "self",
+      "app_build_result"
+    ],
+    "publish_test_result_apps": [
+      "self",
+      "test_result_apps"
+    ]
+  },
+  "SqaTestResultProducer": {
+    "RECORD_TYPE": [],
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id",
+      "producer_class"
+    ],
+    "_publish_message": [
+      "self",
+      "queue_message"
+    ],
+    "publish_test_result": [
+      "self",
+      "test_result"
+    ],
+    "publish_test_session": [
+      "self",
+      "subtype",
+      "test_session"
+    ],
+    "publish_test_session_start": [
+      "self",
+      "test_session"
+    ],
+    "publish_test_session_stop": [
+      "self",
+      "test_session"
+    ],
+    "publish_app_build_result": [
+      "self",
+      "app_build_result"
+    ],
+    "publish_test_result_apps": [
+      "self",
+      "test_result_apps"
+    ]
+  },
+  "LocalSqaTestResultProducer": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "DummySqaTestResultProducer": {
+    "publish_test_result": [
+      "self",
+      "test_result"
+    ],
+    "publish_test_session_start": [
+      "self",
+      "test_session"
+    ],
+    "publish_test_session_stop": [
+      "self",
+      "test_session"
+    ],
+    "publish_app_build_result": [
+      "self",
+      "app_build_result"
+    ],
+    "publish_test_result_apps": [
+      "self",
+      "test_result_apps"
+    ]
+  },
+  "SqaTestResultProducerFactory": {
+    "create_producer": [
+      "cls",
+      "raise_on_connection_error",
+      "use_http_producer"
+    ]
+  },
+  "BaseTestRailDataProducer": {
+    "publish_add_test_result": [
+      "self",
+      "test_result"
+    ]
+  },
+  "TestRailDataProducer": {
+    "RECORD_TYPE": [],
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id",
+      "producer_class"
+    ],
+    "publish_add_test_result": [
+      "self",
+      "test_result"
+    ]
+  },
+  "LocalTestRailDataProducer": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "DummyTestRailDataProducer": {
+    "publish_add_test_result": [
+      "self",
+      "test_result"
+    ]
+  },
+  "TestRailDataProducerFactory": {
+    "create_producer": [
+      "cls",
+      "raise_on_connection_error"
+    ]
+  },
+  "DEFAULT_NUM_CONNECTION_RETRIES": [],
+  "DEFAULT_CONNECTION_RETRY_DELAY": [],
+  "UrlInfo": {},
+  "HTTPChannel": {
+    "__init__": [
+      "self",
+      "url",
+      "credentials",
+      "virtual_host",
+      "retries",
+      "retry_delay"
+    ],
+    "basic_properties_to_json": [
+      "cls",
+      "properties"
+    ],
+    "basic_publish": [
+      "self",
+      "exchange",
+      "routing_key",
+      "body",
+      "properties",
+      "mandatory"
+    ],
+    "queue_declare": [
+      "self",
+      "queue",
+      "passive",
+      "durable",
+      "exclusive",
+      "auto_delete",
+      "arguments",
+      "callback"
+    ]
+  },
+  "HTTPProducer": {
+    "__init__": [
+      "self",
+      "url_info",
+      "producer_app_id"
+    ],
+    "_connect": [
+      "self"
+    ],
+    "is_connected": [
+      "self"
+    ],
+    "channel": [
+      "self"
+    ]
+  },
+  "CompositeHTTPProducer": {
+    "__init__": [
+      "self",
+      "url",
+      "producer_app_id"
+    ],
+    "convert_amqp_url_to_http_url": [
+      "cls",
+      "amqp_url"
+    ],
+    "queue_declare": [
+      "self",
+      "queue"
+    ],
+    "publish": [
+      "self",
+      "exchange",
+      "routing_key",
+      "payload",
+      "persistent"
+    ]
+  },
+  "QUEUE_APP_ID": [],
+  "UTF_QUEUE_REGION_MAP": [],
+  "UTF_QUEUE_SERVER_PREFIX": [],
+  "UTF_QUEUE_SERVER_PATTERN": [],
+  "prepare_queue_central_url": [
+    "username",
+    "password",
+    "is_dev_queue"
+  ],
+  "get_closest_queue_region": [],
+  "get_queue_url_list": [
+    "original_url"
+  ],
+  "QUEUE_METRICS_EXPORTER_TYPE_NAME": [],
+  "QueueMetricsExporter": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "compression": [
+      "self"
+    ],
+    "get_reader": [
+      "self"
+    ],
+    "read_and_export": [
+      "self",
+      "timeout_millis"
+    ],
+    "encode_metrics": [
+      "self",
+      "metrics_data"
+    ],
+    "export": [
+      "self",
+      "metrics_data",
+      "timeout_millis"
+    ]
+  },
+  "QUEUE_SPAN_EXPORTER_TYPE_NAME": [],
+  "QueueSpanExporter": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "shutdown": [
+      "self"
+    ]
+  },
+  "ValidationErrorBase": {},
+  "SchemaValidationError": {
+    "__init__": [
+      "self",
+      "validation_error"
+    ]
+  },
+  "ValidationError": {
+    "__init__": [
+      "self",
+      "validation_error"
+    ]
+  },
+  "IS_PYDANTIC_V1": [],
+  "BaseModel": {
+    "__init__": [
+      "self",
+      "dict_"
+    ],
+    "validate_schema": [
+      "self"
+    ],
+    "as_dict": [
+      "self"
+    ]
+  },
+  "T": [],
+  "create_model_with_defaults": [
+    "model_type"
+  ],
+  "QueueMessageSchema": {
+    "__schema": [],
+    "get_schema": [
+      "cls"
+    ]
+  },
+  "Model": {},
+  "QueueRecord": {},
+  "DataLakeData": {},
+  "TelemetryData": {},
+  "ArtifactMetadata": {},
+  "ArtifactBuildMetadata": {},
+  "SqaAppBuildResult": {},
+  "SqaTestResult": {},
+  "SqaTestSession": {},
+  "LogEvent": {},
+  "ExceptionEvent": {},
+  "TestResultCustomProps": {},
+  "XrayInfo": {},
+  "XrayStep": {},
+  "XrayParameter": {},
+  "XrayCustomField": {},
+  "XrayIteration": {},
+  "XrayTestInfo": {},
+  "XrayTestExecUpdate": {},
+  "XrayImportTestExecution": {},
+  "SqaTestResultApps": {},
+  "QueueMessage": {},
+  "QueueMessageV1": {},
+  "ArtifactUploadRequest": {},
+  "TestRailResult": {},
+  "MULTIPART_SIZE_THRESHOLD": [],
+  "cli_entrypoint": [
+    "file_path",
+    "metadata",
+    "username",
+    "password",
+    "client_id",
+    "retries",
+    "queue"
+  ],
+  "cli": [
+    "file_path",
+    "metadata",
+    "username",
+    "password",
+    "client_id",
+    "retries",
+    "queue"
+  ],
+  "upload_artifact_through_queue": [
+    "url",
+    "client_id",
+    "file_path",
+    "metadata_dict"
+  ],
+  "upload_artifact_direct": [
+    "file_path",
+    "metadata_dict"
+  ],
+  "RetentionSpec": {},
+  "update_artifact_retention": [
+    "retention_specs",
+    "artifact_api"
+  ],
+  "find_all_artifacts": [
+    "search_opts"
+  ],
+  "telemetry_initialized": [],
+  "SERVICE_NAME": [],
+  "SILABS_NET_CA": [],
+  "LOCAL_CA_FILE_PATH": [],
+  "get_or_make_ca_file": [],
+  "setup_telemetry": [],
+  "copy_artifact": [
+    "artifact_id",
+    "name",
+    "extension",
+    "metadata_dict"
+  ],
+  "NUM_RETRIES": [],
+  "PublishTestResultsCommander": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "publish_test_results_through_queue": [
+    "url",
+    "data_type",
+    "data_dict"
+  ],
+  "normalize_to_json": [
+    "raw"
+  ],
+  "prepare_session_data": [
+    "data_dict"
+  ],
+  "publish_release_information": [
+    "username",
+    "password",
+    "data_dict"
+  ],
+  "update_artifacts_retention_days_to_keep_forever": [
+    "data_dict"
+  ]
+}

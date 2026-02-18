@@ -1,0 +1,978 @@
+{
+  "__version__": [],
+  "_layout_re": [],
+  "MinerUSamplingParams": {
+    "__init__": [
+      "self",
+      "temperature",
+      "top_p",
+      "top_k",
+      "presence_penalty",
+      "frequency_penalty",
+      "repetition_penalty",
+      "no_repeat_ngram_size",
+      "max_new_tokens"
+    ]
+  },
+  "_convert_bbox": [
+    "bbox"
+  ],
+  "_parse_angle": [
+    "tail"
+  ],
+  "MinerUClientHelper": {
+    "__init__": [
+      "self",
+      "backend",
+      "prompts",
+      "sampling_params",
+      "layout_image_size",
+      "min_image_edge",
+      "max_image_edge_ratio",
+      "simple_post_process",
+      "handle_equation_block",
+      "abandon_list",
+      "abandon_paratext",
+      "debug"
+    ],
+    "resize_by_need": [
+      "self",
+      "image"
+    ],
+    "prepare_for_layout": [
+      "self",
+      "image"
+    ],
+    "parse_layout_output": [
+      "self",
+      "output"
+    ],
+    "prepare_for_extract": [
+      "self",
+      "image",
+      "blocks",
+      "not_extract_list"
+    ],
+    "post_process": [
+      "self",
+      "blocks"
+    ],
+    "batch_prepare_for_layout": [
+      "self",
+      "executor",
+      "images"
+    ],
+    "batch_parse_layout_output": [
+      "self",
+      "executor",
+      "outputs"
+    ],
+    "batch_prepare_for_extract": [
+      "self",
+      "executor",
+      "images",
+      "blocks_list",
+      "not_extract_list"
+    ],
+    "batch_post_process": [
+      "self",
+      "executor",
+      "blocks_list"
+    ],
+    "aio_prepare_for_layout": [
+      "self",
+      "executor",
+      "image"
+    ],
+    "aio_parse_layout_output": [
+      "self",
+      "executor",
+      "output"
+    ],
+    "aio_prepare_for_extract": [
+      "self",
+      "executor",
+      "image",
+      "blocks",
+      "not_extract_list"
+    ],
+    "aio_post_process": [
+      "self",
+      "executor",
+      "blocks"
+    ]
+  },
+  "MinerUClient": {
+    "__init__": [
+      "self",
+      "backend",
+      "model_name",
+      "server_url",
+      "server_headers",
+      "model",
+      "processor",
+      "vllm_llm",
+      "vllm_async_llm",
+      "lmdeploy_engine",
+      "model_path",
+      "prompts",
+      "system_prompt",
+      "sampling_params",
+      "layout_image_size",
+      "min_image_edge",
+      "max_image_edge_ratio",
+      "simple_post_process",
+      "handle_equation_block",
+      "abandon_list",
+      "abandon_paratext",
+      "incremental_priority",
+      "max_concurrency",
+      "executor",
+      "batch_size",
+      "http_timeout",
+      "connect_timeout",
+      "max_connections",
+      "max_keepalive_connections",
+      "keepalive_expiry",
+      "use_tqdm",
+      "debug",
+      "max_retries",
+      "retry_backoff_factor"
+    ],
+    "layout_detect": [
+      "self",
+      "image",
+      "priority"
+    ],
+    "batch_layout_detect": [
+      "self",
+      "images",
+      "priority"
+    ],
+    "aio_layout_detect": [
+      "self",
+      "image",
+      "priority",
+      "semaphore"
+    ],
+    "aio_batch_layout_detect": [
+      "self",
+      "images",
+      "priority",
+      "semaphore"
+    ],
+    "content_extract": [
+      "self",
+      "image",
+      "type",
+      "priority"
+    ],
+    "batch_content_extract": [
+      "self",
+      "images",
+      "types",
+      "priority"
+    ],
+    "aio_content_extract": [
+      "self",
+      "image",
+      "type",
+      "priority",
+      "semaphore"
+    ],
+    "aio_batch_content_extract": [
+      "self",
+      "images",
+      "types",
+      "priority",
+      "semaphore"
+    ],
+    "two_step_extract": [
+      "self",
+      "image",
+      "priority",
+      "not_extract_list"
+    ],
+    "aio_two_step_extract": [
+      "self",
+      "image",
+      "priority",
+      "semaphore",
+      "not_extract_list"
+    ],
+    "concurrent_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list"
+    ],
+    "aio_concurrent_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list",
+      "semaphore"
+    ],
+    "stepping_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list"
+    ],
+    "aio_stepping_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list",
+      "semaphore"
+    ],
+    "batch_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list"
+    ],
+    "aio_batch_two_step_extract": [
+      "self",
+      "images",
+      "priority",
+      "not_extract_list",
+      "semaphore"
+    ]
+  },
+  "__lazy_attrs__": [],
+  "__getattr__": [
+    "name"
+  ],
+  "__all__": [],
+  "BlockType": {
+    "TEXT": [],
+    "TITLE": [],
+    "TABLE": [],
+    "IMAGE": [],
+    "CODE": [],
+    "ALGORITHM": [],
+    "HEADER": [],
+    "FOOTER": [],
+    "PAGE_NUMBER": [],
+    "PAGE_FOOTNOTE": [],
+    "ASIDE_TEXT": [],
+    "EQUATION": [],
+    "EQUATION_BLOCK": [],
+    "REF_TEXT": [],
+    "LIST": [],
+    "PHONETIC": [],
+    "TABLE_CAPTION": [],
+    "IMAGE_CAPTION": [],
+    "CODE_CAPTION": [],
+    "TABLE_FOOTNOTE": [],
+    "IMAGE_FOOTNOTE": [],
+    "UNKNOWN": []
+  },
+  "BLOCK_TYPES": [],
+  "ANGLE_OPTIONS": [],
+  "ContentBlock": {
+    "__init__": [
+      "self",
+      "type",
+      "bbox",
+      "angle",
+      "content"
+    ],
+    "type": [
+      "self",
+      "value"
+    ],
+    "bbox": [
+      "self",
+      "value"
+    ],
+    "angle": [
+      "self",
+      "value"
+    ],
+    "content": [
+      "self",
+      "value"
+    ]
+  },
+  "VllmEngineVlmClient": {
+    "__init__": [
+      "self",
+      "vllm_llm",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "batch_size",
+      "use_tqdm",
+      "debug"
+    ],
+    "build_messages": [
+      "self",
+      "prompt"
+    ],
+    "build_vllm_sampling_params": [
+      "self",
+      "sampling_params"
+    ],
+    "get_output_content": [
+      "self",
+      "output"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "_predict_one_batch": [
+      "self",
+      "image_objs",
+      "chat_prompts",
+      "vllm_sampling_params"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "MlxVlmClient": {
+    "__init__": [
+      "self",
+      "model",
+      "processor",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "batch_size",
+      "use_tqdm"
+    ],
+    "build_messages": [
+      "self",
+      "prompt"
+    ],
+    "build_generate_kwargs": [
+      "self",
+      "sampling_params"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "VllmAsyncEngineVlmClient": {
+    "__init__": [
+      "self",
+      "vllm_async_llm",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "max_concurrency",
+      "debug"
+    ],
+    "build_messages": [
+      "self",
+      "prompt"
+    ],
+    "build_vllm_sampling_params": [
+      "self",
+      "sampling_params"
+    ],
+    "get_output_content": [
+      "self",
+      "output"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "DEFAULT_SYSTEM_PROMPT": [],
+  "DEFAULT_USER_PROMPT": [],
+  "UnsupportedError": {},
+  "RequestError": {},
+  "ServerError": {},
+  "SamplingParams": {},
+  "VlmClient": {
+    "__init__": [
+      "self"
+    ],
+    "build_sampling_params": [
+      "self",
+      "sampling_params"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "new_vlm_client": [
+    "backend",
+    "model_name",
+    "server_url",
+    "server_headers",
+    "model",
+    "processor",
+    "lmdeploy_engine",
+    "vllm_llm",
+    "vllm_async_llm",
+    "prompt",
+    "system_prompt",
+    "sampling_params",
+    "text_before_image",
+    "allow_truncated_content",
+    "max_concurrency",
+    "batch_size",
+    "http_timeout",
+    "connect_timeout",
+    "max_connections",
+    "max_keepalive_connections",
+    "keepalive_expiry",
+    "use_tqdm",
+    "debug",
+    "max_retries",
+    "retry_backoff_factor"
+  ],
+  "LmdeployEngineVlmClient": {
+    "__init__": [
+      "self",
+      "lmdeploy_engine",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "batch_size",
+      "max_concurrency",
+      "use_tqdm",
+      "debug"
+    ],
+    "build_lmdeploy_generation_config": [
+      "self",
+      "sampling_params"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "_predict_one_batch": [
+      "self",
+      "image_objs",
+      "chat_prompts",
+      "gen_configs"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "T": [],
+  "_timeout": [],
+  "_file_exts": [],
+  "_data_uri_regex": [],
+  "load_resource": [
+    "uri"
+  ],
+  "aio_load_resource": [
+    "uri"
+  ],
+  "get_png_bytes": [
+    "image"
+  ],
+  "get_image_format": [
+    "image_bytes"
+  ],
+  "get_image_data_url": [
+    "image_bytes",
+    "image_format"
+  ],
+  "get_rgb_image": [
+    "image"
+  ],
+  "gather_tasks": [
+    "tasks",
+    "use_tqdm",
+    "tqdm_desc"
+  ],
+  "TransformersVlmClient": {
+    "__init__": [
+      "self",
+      "model",
+      "processor",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "batch_size",
+      "use_tqdm"
+    ],
+    "build_messages": [
+      "self",
+      "prompt"
+    ],
+    "build_generate_kwargs": [
+      "self",
+      "sampling_params"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "_predict_one_batch": [
+      "self",
+      "image_objs",
+      "chat_prompts",
+      "sampling_params"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ]
+  },
+  "_get_env": [
+    "key",
+    "default"
+  ],
+  "HTTPMethod": {
+    "HEAD": [],
+    "GET": [],
+    "PUT": [],
+    "DELETE": [],
+    "OPTIONS": [],
+    "TRACE": [],
+    "POST": []
+  },
+  "HttpVlmClient": {
+    "__init__": [
+      "self",
+      "model_name",
+      "server_url",
+      "server_headers",
+      "prompt",
+      "system_prompt",
+      "sampling_params",
+      "text_before_image",
+      "allow_truncated_content",
+      "max_concurrency",
+      "http_timeout",
+      "connect_timeout",
+      "max_connections",
+      "max_keepalive_connections",
+      "keepalive_expiry",
+      "debug",
+      "max_retries",
+      "retry_backoff_factor"
+    ],
+    "chat_url": [
+      "self"
+    ],
+    "_new_client": [
+      "self"
+    ],
+    "_new_aio_client": [
+      "self"
+    ],
+    "_aio_client": [
+      "self"
+    ],
+    "_get_base_url": [
+      "self",
+      "server_url"
+    ],
+    "_check_model_name": [
+      "self",
+      "base_url",
+      "model_name"
+    ],
+    "_get_model_name": [
+      "self",
+      "base_url"
+    ],
+    "build_request_body": [
+      "self",
+      "system_prompt",
+      "image",
+      "prompt",
+      "sampling_params",
+      "image_format",
+      "priority"
+    ],
+    "get_response_data": [
+      "self",
+      "response"
+    ],
+    "get_response_content": [
+      "self",
+      "response_data"
+    ],
+    "predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority"
+    ],
+    "stream_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "stream_test": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_predict": [
+      "self",
+      "image",
+      "prompt",
+      "sampling_params",
+      "priority"
+    ],
+    "aio_batch_predict": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore",
+      "use_tqdm",
+      "tqdm_desc"
+    ],
+    "aio_batch_predict_as_iter": [
+      "self",
+      "images",
+      "prompts",
+      "sampling_params",
+      "priority",
+      "semaphore"
+    ]
+  },
+  "_bbox_cover_ratio": [
+    "boxA",
+    "boxB"
+  ],
+  "_combined_equations": [
+    "equation_contents"
+  ],
+  "do_handle_equation_block": [
+    "blocks",
+    "debug"
+  ],
+  "try_fix_equation_eqqcolon": [
+    "latex",
+    "debug"
+  ],
+  "try_fix_equation_big": [
+    "latex",
+    "debug"
+  ],
+  "VALID_LEFT_TOKEN_LIST": [],
+  "VALID_RIGHT_TOKEN_LIST": [],
+  "LEFT_TOKEN_LIST": [],
+  "count_left": [
+    "latex"
+  ],
+  "RIGHT_TOKEN_LIST": [],
+  "count_right": [
+    "latex"
+  ],
+  "check_left_right": [
+    "latex"
+  ],
+  "check_align": [
+    "latex"
+  ],
+  "split_with_delimiters": [
+    "s"
+  ],
+  "split_with_left_right": [
+    "s"
+  ],
+  "tag_array": [
+    "node_list"
+  ],
+  "tag_element": [
+    "node_list",
+    "array_list"
+  ],
+  "is_pair_left_right": [
+    "token_l",
+    "token_r"
+  ],
+  "left_right_match": [
+    "span_list"
+  ],
+  "clean_span": [
+    "node_list",
+    "node_tag_list"
+  ],
+  "fix_left_right_mismatch": [
+    "latex"
+  ],
+  "try_match_equation_left_right": [
+    "latex",
+    "debug"
+  ],
+  "try_fix_unbalanced_braces": [
+    "latex_formula",
+    "debug"
+  ],
+  "PARATEXT_TYPES": [],
+  "_process_equation": [
+    "content",
+    "debug"
+  ],
+  "_add_equation_brackets": [
+    "content"
+  ],
+  "simple_process": [
+    "blocks"
+  ],
+  "post_process": [
+    "blocks",
+    "simple_post_process",
+    "handle_equation_block",
+    "abandon_list",
+    "abandon_paratext",
+    "debug"
+  ],
+  "try_fix_equation_double_subscript": [
+    "latex",
+    "debug"
+  ],
+  "TableCell": {
+    "from_dict_format": [
+      "cls",
+      "data"
+    ]
+  },
+  "TableData": {
+    "grid": [
+      "self"
+    ]
+  },
+  "OTSL_NL": [],
+  "OTSL_FCEL": [],
+  "OTSL_ECEL": [],
+  "OTSL_LCEL": [],
+  "OTSL_UCEL": [],
+  "OTSL_XCEL": [],
+  "otsl_extract_tokens_and_text": [
+    "s"
+  ],
+  "otsl_parse_texts": [
+    "texts",
+    "tokens"
+  ],
+  "export_to_html": [
+    "table_data"
+  ],
+  "convert_otsl_to_html": [
+    "otsl_content"
+  ],
+  "try_fix_equation_leq": [
+    "latex",
+    "debug"
+  ],
+  "VllmV0NoRepeatNGramLogitsProcessor": {
+    "__init__": [
+      "self",
+      "no_repeat_ngram_size"
+    ],
+    "__call__": [
+      "self",
+      "past_token_ids",
+      "logits"
+    ]
+  },
+  "_get_int_value": [
+    "extra_args",
+    "key"
+  ],
+  "VllmV1NoRepeatNGramLogitsProcessor": {
+    "__init__": [
+      "self",
+      "vllm_config",
+      "device",
+      "is_pin_memory"
+    ],
+    "is_argmax_invariant": [
+      "self"
+    ],
+    "update_state": [
+      "self",
+      "batch_update"
+    ],
+    "apply": [
+      "self",
+      "logits"
+    ]
+  }
+}

@@ -1,0 +1,470 @@
+{
+  "SourceConfiguration": {
+    "__init__": [
+      "self",
+      "drivername",
+      "host",
+      "port",
+      "database",
+      "username",
+      "password",
+      "create_if_missing"
+    ]
+  },
+  "TableConfiguration": {
+    "__init__": [
+      "self",
+      "name",
+      "define_table_f",
+      "create_if_missing",
+      "primary_key_columns",
+      "create_insert_f"
+    ]
+  },
+  "SqlAlchemyDB": {
+    "__init__": [
+      "self",
+      "source_config"
+    ],
+    "start_session": [
+      "self"
+    ],
+    "close_session": [
+      "self"
+    ],
+    "read": [
+      "self",
+      "table_name"
+    ],
+    "query": [
+      "self",
+      "table_name",
+      "query"
+    ],
+    "write_record": [
+      "self",
+      "table_config",
+      "record_dict"
+    ],
+    "_get_create_insert_f": [
+      "self",
+      "table_config"
+    ],
+    "_open_table_for_read": [
+      "self",
+      "name"
+    ],
+    "_open_table_for_write": [
+      "self",
+      "table_config",
+      "record"
+    ],
+    "_open_table": [
+      "self",
+      "name",
+      "get_table_f"
+    ],
+    "_get_table": [
+      "self",
+      "name",
+      "get_table_f"
+    ]
+  },
+  "SqlAlchemyDbException": {},
+  "_Table": {
+    "__init__": [
+      "self",
+      "table_class",
+      "name"
+    ],
+    "records": [
+      "self",
+      "session"
+    ],
+    "query_records": [
+      "self",
+      "session",
+      "query"
+    ],
+    "write_record": [
+      "self",
+      "session",
+      "create_insert_f",
+      "record_dict"
+    ],
+    "_to_db_record": [
+      "self",
+      "record_dict"
+    ],
+    "_from_db_record": [
+      "self",
+      "db_record",
+      "column_names"
+    ]
+  },
+  "load_table": [
+    "session",
+    "name"
+  ],
+  "create_table": [
+    "session",
+    "name",
+    "table_config",
+    "record"
+  ],
+  "create_table_class": [
+    "sqlalchemy_table"
+  ],
+  "_get_default_define_f": [
+    "record",
+    "name",
+    "primary_key_column_names",
+    "drivername"
+  ],
+  "_columns_from_sample_record": [
+    "record",
+    "primary_key_column_names",
+    "drivername"
+  ],
+  "create_insert": [
+    "table",
+    "record"
+  ],
+  "create_upsert_postgres": [
+    "table",
+    "record"
+  ],
+  "create_upsert_mysql": [
+    "table",
+    "record"
+  ],
+  "get_column_names_from_table": [
+    "table_class"
+  ],
+  "infer_db_type": [
+    "val",
+    "drivername"
+  ],
+  "VARCHAR_DEFAULT_COL_SIZE": [],
+  "_does_support_varchar": [
+    "drivername"
+  ],
+  "_is_number": [
+    "x"
+  ],
+  "PYTHON_TO_DB_TYPE": [],
+  "ReadFromDB": {
+    "__init__": [
+      "self",
+      "source_config",
+      "table_name",
+      "query"
+    ],
+    "expand": [
+      "self",
+      "pcoll"
+    ]
+  },
+  "_ReadFromRelationalDBFn": {
+    "process": [
+      "self",
+      "element"
+    ]
+  },
+  "Write": {
+    "__init__": [
+      "self",
+      "source_config",
+      "table_config"
+    ],
+    "expand": [
+      "self",
+      "pcoll"
+    ]
+  },
+  "_WriteToRelationalDBFn": {
+    "__init__": [
+      "self",
+      "source_config",
+      "table_config"
+    ],
+    "start_bundle": [
+      "self"
+    ],
+    "process": [
+      "self",
+      "element"
+    ],
+    "finish_bundle": [
+      "self"
+    ]
+  },
+  "Read": {
+    "__init__": [
+      "self",
+      "csv_path"
+    ],
+    "expand": [
+      "self",
+      "pcoll"
+    ]
+  },
+  "_CsvSource": {
+    "read_records": [
+      "self",
+      "file_name",
+      "range_tracker"
+    ]
+  },
+  "KafkaConsume": {
+    "__init__": [
+      "self",
+      "consumer_config",
+      "value_decoder"
+    ],
+    "expand": [
+      "self",
+      "pcoll"
+    ]
+  },
+  "_ConsumeKafkaTopic": {
+    "process": [
+      "self",
+      "consumer_args"
+    ]
+  },
+  "KafkaProduce": {
+    "__init__": [
+      "self",
+      "topic",
+      "servers"
+    ],
+    "expand": [
+      "self",
+      "pcoll"
+    ]
+  },
+  "_ProduceKafkaMessage": {
+    "__init__": [
+      "self",
+      "attributes"
+    ],
+    "start_bundle": [
+      "self"
+    ],
+    "finish_bundle": [
+      "self"
+    ],
+    "process": [
+      "self",
+      "element"
+    ]
+  },
+  "sort": [
+    "ls",
+    "key"
+  ],
+  "TestWriteTransform": {
+    "setUp": [
+      "self"
+    ],
+    "execute_pipeline": [
+      "self",
+      "source_config",
+      "table_config",
+      "records"
+    ],
+    "test_write": [
+      "self"
+    ],
+    "test_write_no_primary_key": [
+      "self"
+    ],
+    "test_write_to_user_defined_table": [
+      "self"
+    ],
+    "test_write_to_existing_table": [
+      "self"
+    ],
+    "test_auto_column_type_inference": [
+      "self"
+    ],
+    "test_write_to_postgres_with_upsert": [
+      "self"
+    ],
+    "test_write_to_mysql_with_upsert": [
+      "self"
+    ],
+    "evaluate_upsert": [
+      "self",
+      "source_config"
+    ],
+    "create_table": [
+      "self"
+    ],
+    "get_test_records_and_table_name": []
+  },
+  "TestDatabase": {
+    "__init__": [
+      "self",
+      "source_config"
+    ],
+    "init_db": [
+      "self"
+    ],
+    "destroy_db": [
+      "self"
+    ],
+    "create_table": [
+      "self",
+      "name",
+      "create_table_if_missing",
+      "define_table_f"
+    ],
+    "load_table_class": [
+      "self",
+      "table_name"
+    ],
+    "write_rows": [
+      "self",
+      "table_name",
+      "rows"
+    ],
+    "read_rows": [
+      "self",
+      "table_name"
+    ],
+    "session_scope": [
+      "self"
+    ]
+  },
+  "RelationalDBAPITest": {
+    "postgres_sqlite_str_value_to_expected_db_type": [],
+    "str_value_to_expected_db_type": [],
+    "other_types_values_to_db_type": [],
+    "validate_infer_db_type": [
+      "self",
+      "value_to_expected_db_type",
+      "drivername"
+    ],
+    "test_infer_db_type_postgres": [
+      "self"
+    ],
+    "test_infer_db_type_sqlite": [
+      "self"
+    ],
+    "test_infer_db_type_mysql": [
+      "self"
+    ]
+  },
+  "TestKafkaProduceTransform": {
+    "setUp": [
+      "self"
+    ],
+    "test_ProduceKafkaMessage": [
+      "self"
+    ]
+  },
+  "TestKafkaConsumeTransform": {
+    "setUp": [
+      "self"
+    ],
+    "test_ConsumeFromKafka": [
+      "self"
+    ]
+  },
+  "TestReadTransform": {
+    "setUp": [
+      "self"
+    ],
+    "test_ReadFromRelationalDB": [
+      "self"
+    ],
+    "test_QueryFromRelationalDB": [
+      "self"
+    ],
+    "create_and_populate_test_table": [
+      "self",
+      "n_rows"
+    ]
+  },
+  "TransformBaseTest": {
+    "postgres_instance": [],
+    "mysql_instance": [],
+    "postgres_source_config": [],
+    "mysql_source_config": [],
+    "source_config": [],
+    "setUpClass": [
+      "cls"
+    ],
+    "get_sqlite_source_config": [
+      "cls"
+    ],
+    "get_postgres_source_config": [
+      "cls"
+    ],
+    "connect_to_postgresql": [
+      "cls"
+    ],
+    "get_mysql_source_config": [
+      "cls"
+    ],
+    "connect_to_mysql": [
+      "cls"
+    ],
+    "tearDownClass": [
+      "cls"
+    ],
+    "configure_db": [
+      "source_config"
+    ],
+    "destroy_db": [
+      "db"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ]
+  },
+  "SelectFromNestedDict": {
+    "__init__": [
+      "self",
+      "keys",
+      "deepest_key_as_name"
+    ],
+    "process": [
+      "self",
+      "element"
+    ],
+    "_retrieve": [
+      "nested_keys",
+      "element"
+    ],
+    "_compile_keys": [
+      "keys",
+      "deepest_key_as_name"
+    ]
+  },
+  "AssignUniqueId": {
+    "__init__": [
+      "self",
+      "id_key"
+    ],
+    "process": [
+      "self",
+      "element"
+    ]
+  },
+  "ParseJson": {
+    "__init__": [
+      "self",
+      "only_keys"
+    ],
+    "process": [
+      "self",
+      "element"
+    ]
+  }
+}

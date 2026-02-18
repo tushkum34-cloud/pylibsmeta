@@ -1,0 +1,2710 @@
+{
+  "get_tasks": [
+    "fields",
+    "operator"
+  ],
+  "RequestGenerator": {
+    "__init__": [
+      "self",
+      "resource_info_provider",
+      "bucket_config"
+    ],
+    "get_register_connector_request": [
+      "self",
+      "config"
+    ],
+    "get_describe_connector_request": [
+      "self",
+      "config"
+    ],
+    "get_create_connector_profile_request": [
+      "self",
+      "config"
+    ],
+    "get_describe_connector_entity_request": [
+      "self",
+      "config"
+    ],
+    "get_list_connector_entities_request": [
+      "self",
+      "config"
+    ],
+    "get_destination_create_flow_request": [
+      "self",
+      "config",
+      "fields"
+    ],
+    "get_source_create_flow_request": [
+      "self",
+      "config"
+    ]
+  },
+  "ResourceInfoProvider": {
+    "versions": [],
+    "names": [],
+    "created_profiles": [],
+    "created_connectors": [],
+    "integ_connector": [],
+    "integ_profile": [],
+    "integ_flow": [],
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "get_api_for_profile_name": [
+      "self",
+      "profile_name",
+      "api_version"
+    ],
+    "get_version_for_profile": [
+      "self",
+      "profile_name"
+    ],
+    "get_connector_for_profile": [
+      "self",
+      "profile_name"
+    ],
+    "generate_resource_name": [
+      "self",
+      "name",
+      "resource_type"
+    ],
+    "generate_profile_name": [
+      "self",
+      "name"
+    ],
+    "generate_flow_name": [
+      "self",
+      "name"
+    ],
+    "generate_connector_name": [
+      "self",
+      "name"
+    ],
+    "get_connector_for_profile_name": [
+      "self",
+      "profile_name"
+    ],
+    "get_connector_name": [
+      "self",
+      "connector_name"
+    ],
+    "get_profile_name": [
+      "self",
+      "profile_name"
+    ],
+    "get_connector_name_if_created": [
+      "self",
+      "name"
+    ],
+    "get_profile_name_if_created": [
+      "self",
+      "name"
+    ],
+    "add_to_created_profiles": [
+      "self",
+      "name"
+    ],
+    "add_to_created_connectors": [
+      "self",
+      "name"
+    ]
+  },
+  "poll_for_execution_records_response": [
+    "flow_name",
+    "execution_id",
+    "max_poll_time",
+    "time_between_polls"
+  ],
+  "S3Helper": {
+    "__init__": [
+      "self",
+      "bucket_config"
+    ],
+    "upload_file": [
+      "self",
+      "file",
+      "file_name"
+    ]
+  },
+  "max_poll_time": [],
+  "AppflowTestCase": {
+    "setUpClass": [
+      "cls"
+    ],
+    "test_1_connector_register": [
+      "self"
+    ],
+    "test_2_profile_creation": [
+      "self"
+    ],
+    "test_3_list_entities": [
+      "self"
+    ],
+    "test_4_describe_entity": [
+      "self"
+    ],
+    "test_5_source_flow_execution": [
+      "self"
+    ],
+    "test_6_destination_flow_execution": [
+      "self"
+    ],
+    "tearDownClass": [
+      "cls"
+    ]
+  },
+  "SECRETS_MANAGER": [],
+  "APP_FLOW": [],
+  "S3": [],
+  "get_appflow": [],
+  "get_s3": [],
+  "get_secrets_manager": [],
+  "pattern": [],
+  "AuthenticationType": {
+    "OAUTH2": [],
+    "BASIC": [],
+    "API_KEY": [],
+    "CUSTOM": [],
+    "NO_AUTH": []
+  },
+  "CustomConnectorConfiguration": {
+    "__init__": [
+      "self",
+      "name",
+      "lambda_arn",
+      "validation_file_name"
+    ]
+  },
+  "CustomConnectorProfileConfiguration": {
+    "__init__": [
+      "self",
+      "authentication_type",
+      "name",
+      "connector_name",
+      "profile_properties",
+      "default_api_version",
+      "o_auth2_properties",
+      "secrets_manager_arn"
+    ]
+  },
+  "TestBucketConfiguration": {
+    "__init__": [
+      "self",
+      "bucket_name",
+      "bucket_prefix"
+    ]
+  },
+  "ListConnectorEntitiesTestConfiguration": {
+    "__init__": [
+      "self",
+      "validation_file_name",
+      "profile_name",
+      "api_version",
+      "test_name",
+      "entities_path"
+    ]
+  },
+  "DescribeConnectorEntityTestConfiguration": {
+    "__init__": [
+      "self",
+      "api_version",
+      "profile_name",
+      "test_name",
+      "validation_file_name",
+      "entity_name"
+    ]
+  },
+  "OnDemandFromS3TestConfiguration": {
+    "__init__": [
+      "self",
+      "flow_name",
+      "entity_name",
+      "write_operation_type",
+      "test_name",
+      "api_version",
+      "profile_name",
+      "id_field_names",
+      "source_data_file",
+      "data_generator_class_name",
+      "destination_runtime_properties",
+      "flow_timeout"
+    ]
+  },
+  "OnDemandToS3TestConfiguration": {
+    "__init__": [
+      "self",
+      "flow_name",
+      "entity_fields",
+      "entity_name",
+      "api_version",
+      "test_name",
+      "profile_name",
+      "query",
+      "source_runtime_properties",
+      "output_size",
+      "flow_timeout"
+    ]
+  },
+  "TestConfiguration": {
+    "__init__": [
+      "self",
+      "custom_connector_configurations",
+      "custom_connector_profile_configurations",
+      "test_bucket_configuration",
+      "list_connector_entities_test_configurations",
+      "describe_connector_entity_test_configurations",
+      "on_demand_from_s3_test_configurations",
+      "on_demand_to_s3_test_configurations",
+      "resource_prefix"
+    ]
+  },
+  "check_configuration_list": [
+    "param",
+    "name",
+    "func"
+  ],
+  "convert_keys": [
+    "param"
+  ],
+  "read_file_to_dict": [
+    "file_path"
+  ],
+  "read_file": [
+    "file_path"
+  ],
+  "get_configuration": [
+    "config"
+  ],
+  "InvalidFilterExpressionError": {},
+  "SyntaxErrorReporter": {
+    "__init__": [
+      "self"
+    ],
+    "syntaxError": [
+      "self",
+      "parser",
+      "offending_symbol",
+      "line",
+      "char_position_in_line",
+      "msg",
+      "e"
+    ]
+  },
+  "parse": [
+    "filter_expression"
+  ],
+  "serializedATN": [],
+  "CustomConnectorQueryFilterLexer": {
+    "atn": [],
+    "decisionsToDFA": [],
+    "AND": [],
+    "OR": [],
+    "NOT": [],
+    "TRUE": [],
+    "FALSE": [],
+    "GT": [],
+    "GE": [],
+    "LT": [],
+    "LE": [],
+    "EQ": [],
+    "NE": [],
+    "LIKE": [],
+    "BETWEEN": [],
+    "LPAREN": [],
+    "RPAREN": [],
+    "NULL": [],
+    "IN": [],
+    "COMMA": [],
+    "IDENTIFIER": [],
+    "DECIMAL": [],
+    "SINGLE_STRING": [],
+    "DOUBLE_STRING": [],
+    "EMPTY_SINGLE_STRING": [],
+    "EMPTY_DOUBLE_STRING": [],
+    "WS": [],
+    "DATE": [],
+    "DATETIME": [],
+    "channelNames": [],
+    "modeNames": [],
+    "literalNames": [],
+    "symbolicNames": [],
+    "ruleNames": [],
+    "grammarFileName": [],
+    "__init__": [
+      "self",
+      "input",
+      "output"
+    ]
+  },
+  "CustomConnectorQueryFilterParser": {
+    "grammarFileName": [],
+    "atn": [],
+    "decisionsToDFA": [],
+    "sharedContextCache": [],
+    "literalNames": [],
+    "symbolicNames": [],
+    "RULE_queryfilter": [],
+    "RULE_expression": [],
+    "RULE_gtComparator": [],
+    "RULE_geComparator": [],
+    "RULE_ltComparator": [],
+    "RULE_leComparator": [],
+    "RULE_eqComparator": [],
+    "RULE_neComparator": [],
+    "RULE_likeComparator": [],
+    "RULE_betweenComparator": [],
+    "RULE_andBinary": [],
+    "RULE_orBinary": [],
+    "RULE_boolean": [],
+    "RULE_identifier": [],
+    "RULE_inOperator": [],
+    "RULE_string": [],
+    "RULE_value": [],
+    "ruleNames": [],
+    "EOF": [],
+    "AND": [],
+    "OR": [],
+    "NOT": [],
+    "TRUE": [],
+    "FALSE": [],
+    "GT": [],
+    "GE": [],
+    "LT": [],
+    "LE": [],
+    "EQ": [],
+    "NE": [],
+    "LIKE": [],
+    "BETWEEN": [],
+    "LPAREN": [],
+    "RPAREN": [],
+    "NULL": [],
+    "IN": [],
+    "COMMA": [],
+    "IDENTIFIER": [],
+    "DECIMAL": [],
+    "SINGLE_STRING": [],
+    "DOUBLE_STRING": [],
+    "EMPTY_SINGLE_STRING": [],
+    "EMPTY_DOUBLE_STRING": [],
+    "WS": [],
+    "DATE": [],
+    "DATETIME": [],
+    "__init__": [
+      "self",
+      "input",
+      "output"
+    ],
+    "queryfilter": [
+      "self"
+    ],
+    "expression": [
+      "self",
+      "_p"
+    ],
+    "gtComparator": [
+      "self"
+    ],
+    "geComparator": [
+      "self"
+    ],
+    "ltComparator": [
+      "self"
+    ],
+    "leComparator": [
+      "self"
+    ],
+    "eqComparator": [
+      "self"
+    ],
+    "neComparator": [
+      "self"
+    ],
+    "likeComparator": [
+      "self"
+    ],
+    "betweenComparator": [
+      "self"
+    ],
+    "andBinary": [
+      "self"
+    ],
+    "orBinary": [
+      "self"
+    ],
+    "boolean": [
+      "self"
+    ],
+    "identifier": [
+      "self"
+    ],
+    "inOperator": [
+      "self"
+    ],
+    "string": [
+      "self"
+    ],
+    "value": [
+      "self"
+    ],
+    "sempred": [
+      "self",
+      "localctx",
+      "ruleIndex",
+      "predIndex"
+    ],
+    "expression_sempred": [
+      "self",
+      "localctx",
+      "predIndex"
+    ]
+  },
+  "CustomConnectorQueryFilterParserListener": {
+    "enterQueryfilter": [
+      "self",
+      "ctx"
+    ],
+    "exitQueryfilter": [
+      "self",
+      "ctx"
+    ],
+    "enterLesserThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitLesserThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterGreaterThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitGreaterThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterBooleanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitBooleanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterBooleanNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitBooleanNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterIdentifierExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitIdentifierExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterNotExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitNotExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterParenExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitParenExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterORBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitORBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterBetweenExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitBetweenExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterInExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitInExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterGreaterThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitGreaterThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterLikeComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitLikeComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterLesserThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitLesserThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterANDBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitANDBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterGtComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitGtComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterGeComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitGeComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterLtComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitLtComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterLeComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitLeComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterEqComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitEqComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterNeComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitNeComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterLikeComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitLikeComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterBetweenComparator": [
+      "self",
+      "ctx"
+    ],
+    "exitBetweenComparator": [
+      "self",
+      "ctx"
+    ],
+    "enterAndBinary": [
+      "self",
+      "ctx"
+    ],
+    "exitAndBinary": [
+      "self",
+      "ctx"
+    ],
+    "enterOrBinary": [
+      "self",
+      "ctx"
+    ],
+    "exitOrBinary": [
+      "self",
+      "ctx"
+    ],
+    "enterBoolean": [
+      "self",
+      "ctx"
+    ],
+    "exitBoolean": [
+      "self",
+      "ctx"
+    ],
+    "enterIdentifier": [
+      "self",
+      "ctx"
+    ],
+    "exitIdentifier": [
+      "self",
+      "ctx"
+    ],
+    "enterInOperator": [
+      "self",
+      "ctx"
+    ],
+    "exitInOperator": [
+      "self",
+      "ctx"
+    ],
+    "enterString": [
+      "self",
+      "ctx"
+    ],
+    "exitString": [
+      "self",
+      "ctx"
+    ],
+    "enterStringValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitStringValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterDecimalValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "exitDecimalValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "enterIsoDate": [
+      "self",
+      "ctx"
+    ],
+    "exitIsoDate": [
+      "self",
+      "ctx"
+    ],
+    "enterIsoDateTime": [
+      "self",
+      "ctx"
+    ],
+    "exitIsoDateTime": [
+      "self",
+      "ctx"
+    ]
+  },
+  "CustomConnectorQueryFilterParserVisitor": {
+    "visitQueryfilter": [
+      "self",
+      "ctx"
+    ],
+    "visitLesserThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGreaterThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitBooleanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitBooleanNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitIdentifierExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitNotExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitParenExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitORBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitBetweenExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitInExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGreaterThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitLikeComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitLesserThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitANDBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGtComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitGeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLtComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitEqComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitNeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLikeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitBetweenComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitAndBinary": [
+      "self",
+      "ctx"
+    ],
+    "visitOrBinary": [
+      "self",
+      "ctx"
+    ],
+    "visitBoolean": [
+      "self",
+      "ctx"
+    ],
+    "visitIdentifier": [
+      "self",
+      "ctx"
+    ],
+    "visitInOperator": [
+      "self",
+      "ctx"
+    ],
+    "visitString": [
+      "self",
+      "ctx"
+    ],
+    "visitStringValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitDecimalValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDate": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDateTime": [
+      "self",
+      "ctx"
+    ]
+  },
+  "CustomConnectorParseTreeTest": {
+    "_test_parse_tree_with_valid_filter_expression": [
+      "self",
+      "filter_expression"
+    ],
+    "_test_parse_tree_with_invalid_filter_expression": [
+      "self",
+      "filter_expression"
+    ],
+    "test_valid_expression_1": [
+      "self"
+    ],
+    "test_valid_expression_2": [
+      "self"
+    ],
+    "test_valid_expression_3": [
+      "self"
+    ],
+    "test_valid_expression_4": [
+      "self"
+    ],
+    "test_valid_expression_5": [
+      "self"
+    ],
+    "test_valid_expression_6": [
+      "self"
+    ],
+    "test_valid_expression_7": [
+      "self"
+    ],
+    "test_valid_expression_8": [
+      "self"
+    ],
+    "test_valid_expression_9": [
+      "self"
+    ],
+    "test_valid_expression_10": [
+      "self"
+    ],
+    "test_valid_expression_11": [
+      "self"
+    ],
+    "test_valid_expression_12": [
+      "self"
+    ],
+    "test_valid_expression_13": [
+      "self"
+    ],
+    "test_valid_expression_14": [
+      "self"
+    ],
+    "test_valid_expression_15": [
+      "self"
+    ],
+    "test_valid_expression_16": [
+      "self"
+    ],
+    "test_valid_expression_17": [
+      "self"
+    ],
+    "test_valid_expression_18": [
+      "self"
+    ],
+    "test_valid_expression_19": [
+      "self"
+    ],
+    "test_valid_expression_20": [
+      "self"
+    ],
+    "test_valid_expression_21": [
+      "self"
+    ],
+    "test_valid_expression_22": [
+      "self"
+    ],
+    "test_valid_expression_23": [
+      "self"
+    ],
+    "test_invalid_expression_1": [
+      "self"
+    ],
+    "test_invalid_expression_2": [
+      "self"
+    ],
+    "test_invalid_expression_3": [
+      "self"
+    ],
+    "test_invalid_expression_4": [
+      "self"
+    ],
+    "test_invalid_expression_5": [
+      "self"
+    ],
+    "test_invalid_expression_6": [
+      "self"
+    ],
+    "test_invalid_expression_7": [
+      "self"
+    ],
+    "test_invalid_expression_8": [
+      "self"
+    ],
+    "test_invalid_expression_9": [
+      "self"
+    ],
+    "test_invalid_expression_10": [
+      "self"
+    ],
+    "test_invalid_expression_11": [
+      "self"
+    ],
+    "test_invalid_expression_12": [
+      "self"
+    ],
+    "test_invalid_expression_13": [
+      "self"
+    ],
+    "test_invalid_expression_14": [
+      "self"
+    ],
+    "test_invalid_expression_15": [
+      "self"
+    ]
+  },
+  "TestVisitor": {
+    "__init__": [
+      "self"
+    ],
+    "visit": [
+      "self",
+      "tree"
+    ],
+    "visitLesserThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGreaterThanComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitIdentifierExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitNotExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitParenExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitORBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitBetweenExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitInExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGreaterThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitLikeComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitLesserThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitNotEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitANDBinaryExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitStringValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitDecimalValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDate": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDateTime": [
+      "self",
+      "ctx"
+    ]
+  },
+  "QueryFilterExpressionVisitorTest": {
+    "__init__": [
+      "self",
+      "method_name"
+    ],
+    "_test_count_of_expression_visited": [
+      "self",
+      "filter_expression",
+      "expected_count_of_expression_visited"
+    ],
+    "test_expressions_visited_1": [
+      "self"
+    ],
+    "test_expressions_visited_2": [
+      "self"
+    ],
+    "test_expressions_visited_3": [
+      "self"
+    ],
+    "test_expressions_visited_4": [
+      "self"
+    ],
+    "test_expressions_visited_5": [
+      "self"
+    ],
+    "test_expressions_visited_6": [
+      "self"
+    ],
+    "test_expressions_visited_7": [
+      "self"
+    ],
+    "test_expressions_visited_8": [
+      "self"
+    ],
+    "test_expressions_visited_9": [
+      "self"
+    ],
+    "test_expressions_visited_10": [
+      "self"
+    ],
+    "test_expressions_visited_11": [
+      "self"
+    ],
+    "test_expressions_visited_12": [
+      "self"
+    ],
+    "test_expressions_visited_13": [
+      "self"
+    ],
+    "test_expressions_visited_14": [
+      "self"
+    ],
+    "test_expressions_visited_15": [
+      "self"
+    ],
+    "test_expressions_visited_16": [
+      "self"
+    ],
+    "test_expressions_visited_17": [
+      "self"
+    ],
+    "test_expressions_visited_18": [
+      "self"
+    ],
+    "test_expressions_visited_19": [
+      "self"
+    ],
+    "test_expressions_visited_20": [
+      "self"
+    ]
+  },
+  "main": [],
+  "ValidationException": {
+    "__init__": [
+      "self",
+      "message"
+    ]
+  },
+  "reserved_keywords": [],
+  "validate_connector_configuration_response": [
+    "response"
+  ],
+  "check_for_reserved_keywords": [
+    "input_string"
+  ],
+  "validate_authentication_config": [
+    "auth_config"
+  ],
+  "validate_urls": [
+    "urls"
+  ],
+  "validate": [
+    "url"
+  ],
+  "ConnectorTestInvoker": {
+    "invoke_configuration_handler_tests": [
+      "self"
+    ],
+    "invoke_metadata_handler_tests": [
+      "self"
+    ],
+    "invoke_record_handler_tests": [
+      "self"
+    ]
+  },
+  "EVENT_TYPE": [],
+  "RUNTIME_SETTINGS": [],
+  "CONNECTOR_PROFILE": [],
+  "SOURCE": [],
+  "DESTINATION": [],
+  "CREDENTIALS": [],
+  "TEST_ENTITY_IDENTIFIER": [],
+  "ENTITY_IDENTIFIER": [],
+  "SELECTED_FIELD_NAMES": [],
+  "ID_FIELD_NAME": [],
+  "IDS": [],
+  "OPERATION": [],
+  "RECORDS": [],
+  "ID_FIELD_NAMES": [],
+  "ALL_OR_NONE": [],
+  "FILTER_EXPRESSION": [],
+  "API_VERSION": [],
+  "RETRIEVE_RECORD_CONFIGURATIONS": [],
+  "WRITE_RECORD_CONFIGURATIONS": [],
+  "QUERY_RECORD_CONFIGURATIONS": [],
+  "BaseConnectorTestInvoker": {
+    "__init__": [
+      "self",
+      "connector_handler",
+      "test_config"
+    ],
+    "invoke_configuration_handler_tests": [
+      "self"
+    ],
+    "invoke_metadata_handler_tests": [
+      "self"
+    ],
+    "invoke_record_handler_tests": [
+      "self"
+    ],
+    "__build_connector_runtime_settings_map": [
+      "self"
+    ],
+    "__build_connector_context": [
+      "self"
+    ],
+    "__build_test_config_connector_context": [
+      "self",
+      "entity_identifier"
+    ]
+  },
+  "LIST_ENTITIES_RESPONSE": [],
+  "DESCRIBE_ENTITY_RESPONSE": [],
+  "VALIDATE_CONNECTOR_RUNTIME_SETTINGS_RESPONSE": [],
+  "VALIDATE_CREDENTIALS_RESPONSE": [],
+  "DESCRIBE_CONNECTOR_CONFIGURATION_RESPONSE": [],
+  "RETRIEVE_DATA_RESPONSE": [],
+  "WRITE_DATA_RESPONSE": [],
+  "QUERY_DATA_RESPONSE": [],
+  "TYPE": [],
+  "ERROR_CODE": [],
+  "ERROR_MESSAGE": [],
+  "RETRY_AFTER_SECONDS": [],
+  "IS_SUCCESS": [],
+  "RECORD_ID": [],
+  "ERROR_DETAILS": [],
+  "ENTITIES": [],
+  "NEXT_TOKEN": [],
+  "CACHE_CONTROL": [],
+  "ENTITY_DEFINITION": [],
+  "IS_VALID": [],
+  "CONNECTOR_OWNER": [],
+  "CONNECTOR_NAME": [],
+  "CONNECTOR_VERSION": [],
+  "CONNECTOR_MODES": [],
+  "AUTHENTICATION_CONFIG": [],
+  "SUPPORTED_API_VERSIONS": [],
+  "CONNECTOR_RUNTIME_SETTING": [],
+  "LOGO_URL": [],
+  "OPERATORS_SUPPORTED": [],
+  "TRIGGER_FREQUENCIES_SUPPORTED": [],
+  "SUPPORTED_TRIGGER_TYPES": [],
+  "SUPPORTED_WRITE_OPERATIONS": [],
+  "WRITE_RECORD_RESULTS": [],
+  "ERRORS_BY_INPUT_FIELD": [],
+  "ALL_OPERATORS": [],
+  "ALL_TRIGGER_FREQUENCIES": [],
+  "ALL_WRITE_OPERATION_TYPES": [],
+  "ALL_TRIGGER_TYPES": [],
+  "ErrorCode": {
+    "InvalidArgument": [],
+    "InvalidCredentials": [],
+    "AccessDenied": [],
+    "RequestTimeout": [],
+    "RateLimitExceeded": [],
+    "ServiceUnavailable": [],
+    "ClientError": [],
+    "ServerError": [],
+    "UnknownError": [],
+    "PartialWriteFailure": [],
+    "ResourceNotFoundError": []
+  },
+  "ErrorDetails": {
+    "__init__": [
+      "self",
+      "error_code",
+      "error_message",
+      "retry_after_seconds"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "WriteRecordResult": {
+    "__init__": [
+      "self",
+      "is_success",
+      "record_id",
+      "error_message"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ListEntitiesResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details",
+      "entities",
+      "next_token",
+      "cache_control"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "DescribeEntityResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details",
+      "entity_definition",
+      "cache_control"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ValidateCredentialsResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "DescribeConnectorConfigurationResponse": {
+    "__init__": [
+      "self",
+      "connector_owner",
+      "connector_name",
+      "connector_version",
+      "connector_modes",
+      "supported_api_versions",
+      "is_success",
+      "operators_supported",
+      "trigger_frequencies_supported",
+      "supported_write_operations",
+      "supported_trigger_types",
+      "authentication_config",
+      "connector_runtime_setting",
+      "logo_url",
+      "error_details"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ValidateConnectorRuntimeSettingsResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "errors_by_input_field",
+      "error_details"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "RetrieveDataResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details",
+      "records"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "WriteDataResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details",
+      "write_record_results"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "QueryDataResponse": {
+    "__init__": [
+      "self",
+      "is_success",
+      "error_details",
+      "next_token",
+      "records"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CONNECTOR_CONTEXT": [],
+  "ENTITIES_PATH": [],
+  "MAX_RESULT": [],
+  "CONNECTOR_RUNTIME_SETTINGS": [],
+  "LOCALE": [],
+  "SCOPE": [],
+  "MAX_RESULTS": [],
+  "DEFAULT_MAX_RESULT": [],
+  "DEFAULT_LOCALE": [],
+  "DescribeEntityRequest": {
+    "__init__": [
+      "self",
+      "entity_identifier",
+      "connector_context"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "ListEntitiesRequest": {
+    "__init__": [
+      "self",
+      "connector_context",
+      "entities_path",
+      "next_token",
+      "max_result"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "ValidateCredentialsRequest": {
+    "__init__": [
+      "self",
+      "credentials",
+      "connector_runtime_settings"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "DescribeConnectorConfigurationRequest": {
+    "__init__": [
+      "self",
+      "locale"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "ValidateConnectorRuntimeSettingsRequest": {
+    "__init__": [
+      "self",
+      "scope",
+      "connector_runtime_settings"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "RetrieveDataRequest": {
+    "__init__": [
+      "self",
+      "entity_identifier",
+      "connector_context",
+      "selected_field_names",
+      "id_field_name",
+      "ids"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "WriteDataRequest": {
+    "__init__": [
+      "self",
+      "entity_identifier",
+      "connector_context",
+      "operation",
+      "id_field_names",
+      "records",
+      "all_or_none"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "QueryDataRequest": {
+    "__init__": [
+      "self",
+      "entity_identifier",
+      "connector_context",
+      "selected_field_names",
+      "filter_expression",
+      "next_token",
+      "max_results"
+    ],
+    "from_dict": [
+      "cls",
+      "request"
+    ]
+  },
+  "VALIDATE_CONNECTOR_RUNTIME_SETTINGS": [],
+  "VALIDATE_CREDENTIALS": [],
+  "DESCRIBE_CONNECTOR_CONFIGURATION": [],
+  "LIST_ENTITIES": [],
+  "DESCRIBE_ENTITY": [],
+  "RETRIEVE_DATA": [],
+  "WRITE_DATA": [],
+  "QUERY_DATA": [],
+  "BaseLambdaConnectorHandler": {
+    "__init__": [
+      "self",
+      "metadata_handler",
+      "record_handler",
+      "configuration_handler"
+    ],
+    "lambda_handler": [
+      "self",
+      "event",
+      "context"
+    ]
+  },
+  "MetadataHandler": {
+    "list_entities": [
+      "self",
+      "request"
+    ],
+    "describe_entity": [
+      "self",
+      "request"
+    ]
+  },
+  "ConfigurationHandler": {
+    "validate_connector_runtime_settings": [
+      "self",
+      "request"
+    ],
+    "validate_credentials": [
+      "self",
+      "request"
+    ],
+    "describe_connector_configuration": [
+      "self",
+      "request"
+    ]
+  },
+  "RecordHandler": {
+    "retrieve_data": [
+      "self",
+      "request"
+    ],
+    "write_data": [
+      "self",
+      "request"
+    ],
+    "query_data": [
+      "self",
+      "request"
+    ]
+  },
+  "TIME_TO_LIVE": [],
+  "TIME_TO_LIVE_UNIT": [],
+  "KEY": [],
+  "DATA_TYPE": [],
+  "REQUIRED": [],
+  "LABEL": [],
+  "DESCRIPTION": [],
+  "CONNECTOR_SUPPLIED_VALUE_OPTIONS": [],
+  "ConnectorRuntimeSettingDataType": {
+    "String": [],
+    "Date": [],
+    "DateTime": [],
+    "Long": [],
+    "Integer": [],
+    "Boolean": []
+  },
+  "ConnectorRuntimeSettingScope": {
+    "CONNECTOR_PROFILE": [],
+    "SOURCE": [],
+    "DESTINATION": [],
+    "SOURCE_AND_DESTINATION": []
+  },
+  "TimeUnit": {
+    "NANOSECONDS": [],
+    "MICROSECONDS": [],
+    "MILLISECONDS": [],
+    "SECONDS": [],
+    "MINUTES": [],
+    "HOURS": [],
+    "DAYS": []
+  },
+  "CacheControl": {
+    "__init__": [
+      "self",
+      "time_to_live",
+      "time_to_live_unit"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ConnectorRuntimeSetting": {
+    "__init__": [
+      "self",
+      "key",
+      "data_type",
+      "required",
+      "label",
+      "description",
+      "scope",
+      "connector_supplied_value_options"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "HAS_NESTED_ENTITIES": [],
+  "IS_WRITABLE": [],
+  "ENTITY": [],
+  "FIELDS": [],
+  "CUSTOM_PROPERTIES": [],
+  "Entity": {
+    "__init__": [
+      "self",
+      "entity_identifier",
+      "has_nested_entities",
+      "is_writable",
+      "label",
+      "description"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "entity"
+    ]
+  },
+  "EntityDefinition": {
+    "__init__": [
+      "self",
+      "entity",
+      "fields",
+      "custom_properties"
+    ],
+    "from_dict": [
+      "cls",
+      "definition"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ConnectorContext": {
+    "__init__": [
+      "self",
+      "api_version",
+      "connector_runtime_settings",
+      "entity_definition",
+      "credentials"
+    ],
+    "from_dict": [
+      "cls",
+      "context"
+    ]
+  },
+  "SENSITIVE_FIELD": [],
+  "CONNECTOR_SUPPLIED_VALUES": [],
+  "USERNAME": [],
+  "PASSWORD": [],
+  "API_KEY": [],
+  "SECRET_KEY": [],
+  "SECRET_ARN": [],
+  "ACCESS_TOKEN": [],
+  "REFRESH_TOKEN": [],
+  "O_AUTH_SCOPES": [],
+  "TOKEN_URL": [],
+  "AUTH_URL": [],
+  "REFRESH_URL": [],
+  "REDIRECT_URL": [],
+  "O_AUTH_2_GRANT_TYPES_SUPPORTED": [],
+  "DEFAULT_VALUES": [],
+  "AUTHENTICATION_TYPE": [],
+  "CUSTOM_CREDENTIALS": [],
+  "AUTH_PARAMETERS": [],
+  "O_AUTH_2_CUSTOM_PROPERTIES": [],
+  "BASIC_AUTH_CREDENTIALS": [],
+  "API_KEY_CREDENTIALS": [],
+  "O_AUTH_2_CREDENTIALS": [],
+  "CUSTOM_AUTH_CREDENTIALS": [],
+  "IS_BASIC_AUTH_SUPPORTED": [],
+  "IS_API_KEY_AUTH_SUPPORTED": [],
+  "IS_O_AUTH_2_SUPPORTED": [],
+  "IS_CUSTOM_AUTH_SUPPORTED": [],
+  "O_AUTH_2_DEFAULTS": [],
+  "CUSTOM_AUTH_CONFIG": [],
+  "O_AUTH_2_CONTENT_TYPE": [],
+  "O_AUTH_2_METHOD_TYPE": [],
+  "OAuth2CustomPropType": {
+    "TOKEN_URL": [],
+    "AUTH_URL": []
+  },
+  "AuthParameter": {
+    "__init__": [
+      "self",
+      "key",
+      "required",
+      "label",
+      "description",
+      "sensitive_field",
+      "connector_supplied_values"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Oauth2CustomParameter": {
+    "__init__": [
+      "self",
+      "key",
+      "required",
+      "label",
+      "description",
+      "type",
+      "sensitive_field",
+      "connector_supplied_values"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "BasicAuthCredentials": {
+    "__init__": [
+      "self",
+      "username",
+      "password"
+    ],
+    "from_dict": [
+      "cls",
+      "credentials"
+    ]
+  },
+  "ApiKeyCredentials": {
+    "__init__": [
+      "self",
+      "api_key",
+      "secret_key"
+    ],
+    "from_dict": [
+      "cls",
+      "credentials"
+    ]
+  },
+  "OAuth2Credentials": {
+    "__init__": [
+      "self",
+      "access_token",
+      "refresh_token"
+    ],
+    "from_dict": [
+      "cls",
+      "credentials"
+    ]
+  },
+  "OAuth2GrantType": {
+    "CLIENT_CREDENTIALS": [],
+    "AUTHORIZATION_CODE": []
+  },
+  "OAuth2ContentType": {
+    "URL_ENCODED": [],
+    "APPLICATION_JSON": []
+  },
+  "OAuth2MethodType": {
+    "HTTP_POST": [],
+    "HTTP_GET": []
+  },
+  "OAuth2Defaults": {
+    "__init__": [
+      "self",
+      "token_url",
+      "auth_url",
+      "o_auth_2_grant_types_supported",
+      "o_auth_scopes",
+      "o_auth_2_custom_parameters",
+      "o_auth_2_content_type",
+      "o_auth_2_method_type"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "CustomAuthCredentials": {
+    "__init__": [
+      "self",
+      "authentication_type",
+      "custom_credentials"
+    ],
+    "from_dict": [
+      "cls",
+      "credentials"
+    ]
+  },
+  "CustomAuthConfig": {
+    "__init__": [
+      "self",
+      "authentication_type",
+      "auth_parameters"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Credentials": {
+    "__init__": [
+      "self",
+      "secret_arn",
+      "authentication_type"
+    ],
+    "from_dict": [
+      "cls",
+      "credentials"
+    ]
+  },
+  "AuthenticationConfig": {
+    "__init__": [
+      "self",
+      "is_basic_auth_supported",
+      "is_api_key_auth_supported",
+      "is_oauth_2_supported",
+      "is_custom_auth_supported",
+      "o_auth_2_defaults",
+      "custom_auth_config"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ConnectorModes": {
+    "SOURCE": [],
+    "DESTINATION": []
+  },
+  "ConnectorOperator": {
+    "PROJECTION": [],
+    "LESS_THAN": [],
+    "GREATER_THAN": [],
+    "BETWEEN": [],
+    "LESS_THAN_OR_EQUAL_TO": [],
+    "GREATER_THAN_OR_EQUAL_TO": [],
+    "EQUAL_TO": [],
+    "CONTAINS": [],
+    "NOT_EQUAL_TO": [],
+    "ADDITION": [],
+    "SUBTRACTION": [],
+    "MULTIPLICATION": [],
+    "DIVISION": [],
+    "MASK_ALL": [],
+    "MASK_FIRST_N": [],
+    "MASK_LAST_N": [],
+    "VALIDATE_NON_NULL": [],
+    "VALIDATE_NON_ZERO": [],
+    "VALIDATE_NON_NEGATIVE": [],
+    "VALIDATE_NUMERIC": [],
+    "NO_OP": []
+  },
+  "TriggerFrequency": {
+    "BYMINUTE": [],
+    "HOURLY": [],
+    "DAILY": [],
+    "WEEKLY": [],
+    "MONTHLY": [],
+    "ONCE": []
+  },
+  "TriggerType": {
+    "SCHEDULED": [],
+    "ONDEMAND": []
+  },
+  "MIN_RANGE": [],
+  "MAX_RANGE": [],
+  "ALLOWED_LENGTH_RANGE": [],
+  "ALLOWED_VALUE_RANGE": [],
+  "ALLOWED_VALUES": [],
+  "ALLOWED_VALUES_REGEX_PATTERN": [],
+  "ALLOWED_DATE_FORMAT": [],
+  "IS_RETRIEVABLE": [],
+  "IS_NULLABLE": [],
+  "IS_QUERYABLE": [],
+  "IS_TIMESTAMP_FIELD_FOR_INCREMENTAL_QUERIES": [],
+  "IS_CREATABLE": [],
+  "IS_UPDATABLE": [],
+  "IS_UPSERTABLE": [],
+  "IS_DEFAULTED_ON_CREATE": [],
+  "FIELD_NAME": [],
+  "DATA_TYPE_LABEL": [],
+  "IS_PRIMARY_KEY": [],
+  "DEFAULT_VALUE": [],
+  "IS_DEPRECATED": [],
+  "CONSTRAINTS": [],
+  "READ_PROPERTIES": [],
+  "WRITE_PROPERTIES": [],
+  "FILTER_OPERATORS": [],
+  "FieldDataType": {
+    "String": [],
+    "Integer": [],
+    "Float": [],
+    "Double": [],
+    "Long": [],
+    "Short": [],
+    "BigInteger": [],
+    "BigDecimal": [],
+    "ByteArray": [],
+    "Boolean": [],
+    "Date": [],
+    "DateTime": [],
+    "Struct": [],
+    "Map": [],
+    "List": []
+  },
+  "RangeConstraint": {
+    "__init__": [
+      "self",
+      "min_range",
+      "max_range"
+    ],
+    "from_dict": [
+      "cls",
+      "constraint"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "FieldConstraints": {
+    "__init__": [
+      "self",
+      "allowed_length_range",
+      "allowed_value_range",
+      "allowed_values",
+      "allowed_values_regex_pattern",
+      "allowed_date_format"
+    ],
+    "from_dict": [
+      "cls",
+      "constraints"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "ReadOperationProperty": {
+    "__init__": [
+      "self",
+      "is_retrievable",
+      "is_nullable",
+      "is_queryable",
+      "is_timestamp_field_for_incremental_queries"
+    ],
+    "from_dict": [
+      "cls",
+      "properties"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "WriteOperationType": {
+    "INSERT": [],
+    "UPDATE": [],
+    "UPSERT": [],
+    "DELETE": []
+  },
+  "WriteOperationProperty": {
+    "__init__": [
+      "self",
+      "is_creatable",
+      "is_updatable",
+      "is_nullable",
+      "is_upsertable",
+      "is_defaulted_on_create",
+      "supported_write_operations"
+    ],
+    "from_dict": [
+      "cls",
+      "properties"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "FieldDefinition": {
+    "__init__": [
+      "self",
+      "field_name",
+      "data_type",
+      "data_type_label",
+      "label",
+      "description",
+      "is_primary_key",
+      "default_value",
+      "is_deprecated",
+      "constraints",
+      "read_properties",
+      "write_properties",
+      "filter_operators",
+      "custom_properties"
+    ],
+    "from_dict": [
+      "cls",
+      "definition"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "MetadataHandlerTests": {
+    "test_create_describe_entity_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_entity_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_describe_entity_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_entity_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_entity_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_describe_entity_response_without_required_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_list_entities_response_without_required_parameters": [
+      "self"
+    ]
+  },
+  "ConfigurationHandlerTests": {
+    "test_create_validate_credentials_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_credentials_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_validate_credentials_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_connector_configuration_request": [
+      "self"
+    ],
+    "test_create_describe_connector_configuration_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_validate_connector_runtime_settings_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_connector_runtime_settings_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_credentials_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_credentials_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_validate_credentials_response_without_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_connector_configuration_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_describe_connector_configuration_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_describe_connector_configuration_response_without_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_connector_runtime_settings_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_validate_connector_runtime_settings_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_validate_connector_runtime_settings_response_without_required_parameters": [
+      "self"
+    ]
+  },
+  "RecordHandlerTests": {
+    "test_create_retrieve_data_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_retrieve_data_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_retrieve_data_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_write_data_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_write_data_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_write_data_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_query_data_request_with_required_parameters": [
+      "self"
+    ],
+    "test_create_query_data_request_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_query_data_request_without_required_parameters": [
+      "self"
+    ],
+    "test_create_retrieve_data_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_retrieve_data_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_retrieve_data_response_without_required_parameters": [
+      "self"
+    ],
+    "test_create_write_data_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_write_data_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_write_data_response_without_required_parameters": [
+      "self"
+    ],
+    "test_create_query_data_response_with_required_parameters": [
+      "self"
+    ],
+    "test_create_query_data_response_with_optional_parameters": [
+      "self"
+    ],
+    "test_create_query_data_response_without_required_parameters": [
+      "self"
+    ]
+  },
+  "LOGGER": [],
+  "THE_KEY_FINGERPRINT": [],
+  "CHECKOUT_TYPE": [],
+  "MARKETPLACE_ENTITLEMENT_NAME": [],
+  "check_entitlement": [
+    "product_sku"
+  ],
+  "INSTANCE_URL_KEY": [],
+  "CONDITION_FORMAT": [],
+  "WHERE_AND": [],
+  "CLAUSE_STRING_FORMAT": [],
+  "WHERE_CLAUSE": [],
+  "FROM_CLAUSE": [],
+  "SELECT_CLAUSE": [],
+  "QueryObject": {
+    "__init__": [
+      "self",
+      "s_object",
+      "selected_field_names",
+      "filter_expression",
+      "id_field_name",
+      "fields",
+      "data_type",
+      "entity_definition"
+    ]
+  },
+  "build_query": [
+    "query_object"
+  ],
+  "add_or_conditions": [
+    "operator",
+    "conditions",
+    "variable",
+    "values",
+    "value_type"
+  ],
+  "add_condition": [
+    "operator",
+    "conditions",
+    "field_name",
+    "value",
+    "value_type"
+  ],
+  "format_quotes": [
+    "value_type",
+    "value"
+  ],
+  "translate_filter_expression": [
+    "filter_expression",
+    "entity_definition"
+  ],
+  "SPACE": [],
+  "DATE_TIME": [],
+  "DATE": [],
+  "STRING_TYPES": [],
+  "NON_STRING_TYPES": [],
+  "CONTAINS": [],
+  "LIKE": [],
+  "LOGICAL_AND": [],
+  "COMPARISON_LESSER": [],
+  "COMPARISON_GREATER": [],
+  "salesforce_datetime_format": [
+    "date_time"
+  ],
+  "format_value": [
+    "value",
+    "data_type",
+    "operator"
+  ],
+  "SalesforceQueryFilterExpressionVisitor": {
+    "__init__": [
+      "self",
+      "entity_definition"
+    ],
+    "visitBetweenExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitInExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGreaterThanEqualToComparatorExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitGtComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitGeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLtComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitEqComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitNeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitLikeComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitBetweenComparator": [
+      "self",
+      "ctx"
+    ],
+    "visitAndBinary": [
+      "self",
+      "ctx"
+    ],
+    "visitOrBinary": [
+      "self",
+      "ctx"
+    ],
+    "visitIdentifier": [
+      "self",
+      "ctx"
+    ],
+    "visitStringValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitDecimalValueExpression": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDate": [
+      "self",
+      "ctx"
+    ],
+    "visitIsoDateTime": [
+      "self",
+      "ctx"
+    ],
+    "get_result": [
+      "self"
+    ],
+    "get_field_data_type": [
+      "self",
+      "field_name"
+    ]
+  },
+  "HTTP_STATUS_CODE_RANGE": [],
+  "get_salesforce_client": [
+    "connector_context"
+  ],
+  "check_for_errors_in_salesforce_response": [
+    "response"
+  ],
+  "build_salesforce_request_uri": [
+    "connector_context",
+    "url_format",
+    "request_path"
+  ],
+  "get_access_token_from_secret": [
+    "secret_arn"
+  ],
+  "get_string_value": [
+    "response",
+    "field_name"
+  ],
+  "get_boolean_value": [
+    "response",
+    "field_name"
+  ],
+  "add_path": [
+    "url"
+  ],
+  "SALESFORCE_SOBJECTS_URL_FORMAT": [],
+  "SALESFORCE_SOBJECT_DESCRIBE_URL_FORMAT": [],
+  "SOBJECTS_KEY": [],
+  "OBJECT_DESCRIBE_KEY": [],
+  "CHILD_RELATIONSHIPS_KEY": [],
+  "HAS_SUBTYPES_KEY": [],
+  "NAME_KEY": [],
+  "FIELDS_KEY": [],
+  "TYPE_KEY": [],
+  "LABEL_KEY": [],
+  "FILTERABLE_KEY": [],
+  "EXTERNAL_ID_KEY": [],
+  "ID_LOOKUP_KEY": [],
+  "CREATEABLE_KEY": [],
+  "UPDATEABLE_KEY": [],
+  "NILLABLE_KEY": [],
+  "DEFAULTED_ON_CREATE_KEY": [],
+  "DEFAULT_VALUE_KEY": [],
+  "UNIQUE_KEY": [],
+  "parse_entities": [
+    "json_string"
+  ],
+  "build_entity": [
+    "field"
+  ],
+  "parse_entity_definition": [
+    "json_string"
+  ],
+  "build_field_definition": [
+    "field"
+  ],
+  "convert_data_type": [
+    "data_type_name"
+  ],
+  "SalesforceMetadataHandler": {
+    "list_entities": [
+      "self",
+      "request"
+    ],
+    "describe_entity": [
+      "self",
+      "request"
+    ]
+  },
+  "SalesforceLambdaHandler": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "salesforce_lambda_handler": [
+    "event",
+    "context"
+  ],
+  "CONNECTION_TIMEOUT_SECS": [],
+  "READ_TIMEOUT_SECS": [],
+  "SalesforceResponse": {
+    "__init__": [
+      "self",
+      "status_code",
+      "response",
+      "error_reason"
+    ]
+  },
+  "HttpsClient": {
+    "__init__": [
+      "self",
+      "access_token"
+    ],
+    "rest_get": [
+      "self",
+      "request_uri"
+    ],
+    "rest_post": [
+      "self",
+      "request_uri",
+      "post_data"
+    ],
+    "rest_patch": [
+      "self",
+      "request_uri",
+      "patch_data"
+    ],
+    "rest_put": [
+      "self",
+      "request_uri",
+      "put_data"
+    ],
+    "rest_delete": [
+      "self",
+      "request_uri"
+    ]
+  },
+  "SALESFORCE_OBJECT_API_FORMAT": [],
+  "SALESFORCE_QUERY_FORMAT": [],
+  "RECORDS_KEY": [],
+  "SUCCESS_KEY": [],
+  "ID_KEY": [],
+  "ERRORS_KEY": [],
+  "get_query_string": [
+    "query_object"
+  ],
+  "get_query_connector_response": [
+    "query_object",
+    "connector_context"
+  ],
+  "parse_query_response": [
+    "json_response"
+  ],
+  "parse_write_response": [
+    "json_response"
+  ],
+  "get_value_from_data": [
+    "record_json",
+    "key"
+  ],
+  "get_salesforce_write_response": [
+    "record",
+    "request"
+  ],
+  "SalesforceRecordHandler": {
+    "retrieve_data": [
+      "self",
+      "request"
+    ],
+    "write_data": [
+      "self",
+      "request"
+    ],
+    "query_data": [
+      "self",
+      "request"
+    ]
+  },
+  "validate_write_data_request": [
+    "request"
+  ],
+  "validate_credentials": [
+    "request"
+  ],
+  "validate_connector_runtime_settings": [
+    "request"
+  ],
+  "validate_request_connector_context": [
+    "request"
+  ],
+  "check_connector_context_errors": [
+    "connector_context"
+  ],
+  "check_credentials_input_errors": [
+    "credentials"
+  ],
+  "check_connector_runtime_settings_errors": [
+    "connector_runtime_settings"
+  ],
+  "API_VERSION_KEY": [],
+  "SalesforceConfigurationHandler": {
+    "validate_connector_runtime_settings": [
+      "self",
+      "request"
+    ],
+    "validate_credentials": [
+      "self",
+      "request"
+    ],
+    "describe_connector_configuration": [
+      "self",
+      "request"
+    ]
+  },
+  "SalesforceConfigurationHandlerTests": {
+    "test_validate_connector_runtime_settings_request_valid": [
+      "self"
+    ],
+    "test_validate_connector_runtime_settings_request_invalid": [
+      "self"
+    ],
+    "test_validate_credentials_request_success": [
+      "self",
+      "mock"
+    ],
+    "test_validate_credentials_request_failure": [
+      "self",
+      "mock"
+    ],
+    "test_validate_credentials_request_invalid": [
+      "self"
+    ],
+    "test_describe_connector_configuration_request": [
+      "self"
+    ]
+  },
+  "SalesforceRecordHandlerTests": {
+    "test_retrieve_data_request_success": [
+      "self",
+      "mock"
+    ],
+    "test_retrieve_data_request_no_matches": [
+      "self",
+      "mock"
+    ],
+    "test_retrieve_data_request_server_error": [
+      "self",
+      "mock"
+    ],
+    "test_retrieve_data_request_invalid_context": [
+      "self",
+      "mock"
+    ],
+    "test_write_data_request_success": [
+      "self",
+      "mock"
+    ],
+    "test_write_data_request_server_error": [
+      "self",
+      "mock"
+    ],
+    "test_write_data_request_invalid_context": [
+      "self",
+      "mock"
+    ],
+    "test_query_data_request_filter_expression": [
+      "self",
+      "mock"
+    ],
+    "test_query_data_request_no_filter_expression": [
+      "self",
+      "mock"
+    ],
+    "test_query_data_request_no_selected_fields": [
+      "self",
+      "mock"
+    ],
+    "test_query_data_request_server_error": [
+      "self",
+      "mock"
+    ],
+    "test_query_data_request_invalid_context": [
+      "self",
+      "mock"
+    ]
+  },
+  "SalesforceMetadataHandlerTests": {
+    "test_list_entities_request_success": [
+      "self",
+      "mock"
+    ],
+    "test_list_entities_request_no_path": [
+      "self",
+      "mock"
+    ],
+    "test_list_entities_request_no_sobjects": [
+      "self",
+      "mock"
+    ],
+    "test_list_entities_request_server_error": [
+      "self",
+      "mock"
+    ],
+    "test_list_entities_request_invalid_context": [
+      "self",
+      "mock"
+    ],
+    "test_describe_entity_request_success": [
+      "self",
+      "mock"
+    ],
+    "test_describe_entity_request_server_error": [
+      "self",
+      "mock"
+    ],
+    "test_describe_entity_request_invalid_context": [
+      "self",
+      "mock"
+    ]
+  },
+  "CREATED_DATE": [],
+  "UPDATED_DATE": [],
+  "ACCOUNT_NUMBER": [],
+  "ID": [],
+  "NAME": [],
+  "SalesforceQueryFilterExpressionVisitorTest": {
+    "_test_conversion_from_filter_expression_to_salesforce_query": [
+      "self",
+      "filter_expression",
+      "expected_salesforce_query_expression"
+    ],
+    "test_1": [
+      "self"
+    ],
+    "test_2": [
+      "self"
+    ],
+    "test_3": [
+      "self"
+    ],
+    "test_4": [
+      "self"
+    ],
+    "test_5": [
+      "self"
+    ],
+    "test_6": [
+      "self"
+    ],
+    "test_7": [
+      "self"
+    ],
+    "test_8": [
+      "self"
+    ],
+    "test_9": [
+      "self"
+    ],
+    "test_10": [
+      "self"
+    ],
+    "test_11": [
+      "self"
+    ],
+    "test_12": [
+      "self"
+    ]
+  },
+  "SalesTest": {},
+  "SalesForceTestData": {
+    "generate_data": [
+      "self"
+    ]
+  }
+}
