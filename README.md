@@ -1,35 +1,63 @@
 # pylibsmeta
-## 📦 PyPI Library Database Generator
 
-A fully automated PyPI package introspection engine that:
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue?logo=python" />
+  <img src="https://img.shields.io/badge/PyPI-Integrated-blue?logo=pypi" />
+  <img src="https://img.shields.io/badge/GitHub%20Actions-Automated-success?logo=githubactions" />
+  <img src="https://img.shields.io/badge/License-MIT-green" />
+  <img src="https://img.shields.io/badge/Scale-15k%2B%20Libraries-orange" />
+</p>
 
-- 🔍 Fetches latest versions from PyPI
-- 📦 Downloads packages (without installing)
-- 🌳 Parses Python source using AST
-- 🧠 Extracts:
-  - Functions
-  - Classes
-  - Methods
-  - Global variables
-- 🏷 Saves version-encoded structured JSON
-- 🤖 Fully automated via GitHub Actions
+<p align="center">
+  <b>Large-Scale Static Python Library Metadata Infrastructure</b><br>
+  Automated PyPI package introspection using AST parsing.<br>
+  Designed for AI autocomplete engines, IDE tooling, and static analysis systems.
+</p>
 
 ---
 
-## 🚀 What This Project Does
+## 🚀 Overview
+
+`pylibsmeta` is a fully automated Python ecosystem metadata generator.
+
+Instead of installing and executing packages, this project:
+
+- Fetches latest package versions from PyPI
+- Downloads source distributions
+- Parses Python files using AST
+- Extracts structured symbol metadata
+- Stores version-encoded JSON outputs
+- Runs entirely via GitHub Actions
+
+The result is a scalable, version-aware static metadata database for thousands of Python libraries.
+
+---
+
+## 🧠 Why This Exists
+
+Modern developer tooling requires:
+
+- Structured symbol data
+- Safe introspection (no execution)
+- Version-aware API tracking
+- Scalable automation
+
+Installing packages dynamically for introspection is slow and unsafe.
+
+`pylibsmeta` solves this using pure static AST parsing at scale.
+
+---
+
+## 🔍 What Gets Extracted
 
 For each PyPI package:
 
-1. Fetches latest version from:
-   https://pypi.org/pypi/<package>/json
+- Functions
+- Classes
+- Methods
+- Global variables
 
-2. Downloads package (no installation)
-
-3. Extracts source files
-
-4. Parses `.py` files using AST
-
-5. Generates structured JSON like:
+Example output:
 
 ```json
 {
@@ -41,21 +69,21 @@ For each PyPI package:
 }
 ```
 
-6. Saves file as:
+Each file is version encoded:
 
 ```
-libname_v000100020003.json
+1.2.3 → v000100020003
 ```
 
-Version format:
+Example:
 
 ```
-1.2.3  →  v000100020003
+requests_v000200310000.json
 ```
 
 ---
 
-## 📁 Output Structure
+## 📦 Output Structure
 
 ```
 lib_db/
@@ -66,41 +94,45 @@ lib_db/
 
 ---
 
-## ⚙️ Features
+## ⚙️ Core Features
 
 - ✅ Version encoding
-- ✅ Skip existing versions
-- ✅ Resume progress
-- ✅ 5-hour safe exit
-- ✅ GitHub automation
-- ✅ Handles 15,000+ packages
+- ✅ Skip already processed versions
+- ✅ Resume system via `progress.json`
+- ✅ 5-hour safe exit (GitHub Actions limit aware)
+- ✅ Fully automated update pipeline
+- ✅ Handles 15,000+ libraries
+- ✅ No package installation
+- ✅ No code execution
+- ✅ Pure static AST parsing
 
 ---
 
-## 🧠 How Resume System Works
+## 🔄 Resume System
 
-The script keeps track using:
-
-```
-progress.json
-```
+Designed for GitHub's 6-hour workflow limit.
 
 Each run:
-- Processes `n` packages
-- Saves progress
-- Stops safely before 6-hour GitHub limit
 
+1. Processes a batch of packages
+2. Saves progress
+3. Exits safely before timeout
+4. Resumes next scheduled run
+
+This enables large-scale processing across thousands of libraries.
 
 ---
 
-## 🤖 GitHub Workflow Automation
+## 🤖 Automation
 
-The workflow runs:
+GitHub Actions workflow supports:
 
-- Manually (workflow_dispatch)
-- Hourly (After every run to check for updates)
+- Manual trigger (`workflow_dispatch`)
+- Scheduled runs (cron)
+- Incremental version updates
+- Automated rebuilds
 
-You can modify schedule to hourly:
+Example hourly schedule:
 
 ```yaml
 schedule:
@@ -109,7 +141,7 @@ schedule:
 
 ---
 
-## 🛠 Setup
+## 🛠 Local Setup
 
 ### 1️⃣ Add package list
 
@@ -120,16 +152,15 @@ requests
 numpy
 fastapi
 django
-...
 ```
 
-### 2️⃣ Install requirements
+### 2️⃣ Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run locally
+### 3️⃣ Run generator
 
 ```
 python gen_libs.py
@@ -137,57 +168,77 @@ python gen_libs.py
 
 ---
 
-## 📊 Scale Capacity
+## 📊 Scale
 
-Designed to handle:
+Designed to support:
 
-- 100 packages per run
-- ~15,000 total packages
-- ~9,000 Available currently
-- Fully resumable
-- Safe for GitHub Actions limits
+- ~100 packages per run
+- ~15,000+ total packages
+- Fully resumable processing
+- Long-term incremental updates
 
----
-
-## 🧬 Future Improvements
-
-- Only rebuild if version changes
-- Parallel parsing
-- Gzip compressed JSON
-- Dedicated API over generated data
-- Store metadata (docstrings, annotations)
-- Multi-language support
-
----
-
-## 🛡 Safety
-
-- No package installation
-- No execution of package code
-- Pure static AST parsing
-- No dependency downloads
-
----
-
-## 📜 License
-
-MIT
+This is infrastructure-level metadata generation — not a one-off script.
 
 ---
 
 ## 💡 Use Cases
 
 - Offline AI autocomplete engines
-- Local code intelligence systems
-- Large-scale library metadata search
-- Static analysis datasets
+- Static LLM grounding datasets
+- IDE backend services
+- Library API indexing
+- Cross-version API comparison
+- Large-scale symbol search systems
 - Developer tooling backends
+
+---
+
+## 🔒 Safety
+
+- No `exec`
+- No `eval`
+- No runtime execution
+- No dependency installation
+- Pure source parsing via AST
+
+Safe for automation environments.
+
+---
+
+## 🧬 Roadmap
+
+### v1 (Current)
+- Function/class extraction
+- Version encoding
+- Automated scaling
+
+### v2 (Planned)
+- Type inference (basic)
+- Return value analysis
+- Symbol linking
+- Structured symbol graph
+- Docstring extraction
+- Cross-version API comparison
+- Compressed dataset builds
+- API layer for partial access
+
+---
+
+## 📜 License
+
+MIT License
 
 ---
 
 ## 🔥 Status
 
 Production-ready  
+Automated  
 Scales to thousands of libraries  
-Fully automated
+Continuously improving  
 
+---
+
+<p align="center">
+  Built for scalable developer tooling infrastructure.
+</p>
