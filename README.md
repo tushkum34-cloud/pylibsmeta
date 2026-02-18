@@ -104,7 +104,7 @@ lib_db/
 - ✅ Handles 15,000+ libraries
 - ✅ No package installation
 - ✅ No code execution
-- ✅ Pure static AST parsing
+- ✅ All public variables, functions, methods and classes parsing
 
 ---
 
