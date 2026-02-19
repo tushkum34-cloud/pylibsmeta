@@ -1,0 +1,2344 @@
+{
+  "LOG": [],
+  "TOOZ_BACKENDS_NAMESPACE": [],
+  "Characteristics": {
+    "DISTRIBUTED_ACROSS_THREADS": [],
+    "DISTRIBUTED_ACROSS_PROCESSES": [],
+    "DISTRIBUTED_ACROSS_HOSTS": [],
+    "NON_TIMEOUT_BASED": [],
+    "LINEARIZABLE": [],
+    "SEQUENTIAL": [],
+    "CAUSAL": [],
+    "SERIALIZABLE": [],
+    "SAME_VIEW_UNDER_PARTITIONS": [],
+    "SAME_VIEW_ACROSS_CLIENTS": []
+  },
+  "Hooks": {
+    "run": [
+      "self"
+    ]
+  },
+  "Event": {},
+  "MemberJoinedGroup": {
+    "__init__": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MemberLeftGroup": {
+    "__init__": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "LeaderElected": {
+    "__init__": [
+      "self",
+      "group_id",
+      "member_id"
+    ]
+  },
+  "Heart": {
+    "__init__": [
+      "self",
+      "driver",
+      "thread_cls",
+      "event_cls"
+    ],
+    "beats": [
+      "self"
+    ],
+    "is_alive": [
+      "self"
+    ],
+    "_beat_forever_until_stopped": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "thread_cls"
+    ],
+    "stop": [
+      "self"
+    ],
+    "wait": [
+      "self",
+      "timeout"
+    ]
+  },
+  "CoordinationDriver": {
+    "requires_beating": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_has_hooks_for_group": [
+      "self",
+      "group_id"
+    ],
+    "join_partitioned_group": [
+      "self",
+      "group_id",
+      "weight",
+      "partitions"
+    ],
+    "leave_partitioned_group": [
+      "self",
+      "partitioner"
+    ],
+    "run_watchers": [
+      "timeout"
+    ],
+    "run_elect_coordinator": [],
+    "watch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "watch_elected_as_leader": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "stand_down_group_leader": [
+      "group_id"
+    ],
+    "is_started": [
+      "self"
+    ],
+    "start": [
+      "self",
+      "start_heart"
+    ],
+    "_start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "create_group": [
+      "group_id"
+    ],
+    "get_groups": [],
+    "join_group": [
+      "group_id",
+      "capabilities"
+    ],
+    "join_group_create": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "group_id"
+    ],
+    "delete_group": [
+      "group_id"
+    ],
+    "get_members": [
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "group_id",
+      "member_id"
+    ],
+    "get_member_info": [
+      "group_id",
+      "member_id"
+    ],
+    "update_capabilities": [
+      "group_id",
+      "capabilities"
+    ],
+    "get_leader": [
+      "group_id"
+    ],
+    "get_lock": [
+      "name"
+    ],
+    "heartbeat": []
+  },
+  "CoordAsyncResult": {
+    "get": [
+      "self",
+      "timeout"
+    ],
+    "done": [
+      "self"
+    ]
+  },
+  "CoordinatorResult": {
+    "__init__": [
+      "self",
+      "fut",
+      "failure_translator"
+    ],
+    "get": [
+      "self",
+      "timeout"
+    ],
+    "done": [
+      "self"
+    ]
+  },
+  "CoordinationDriverWithExecutor": {
+    "EXCLUDE_OPTIONS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "start": [
+      "self",
+      "start_heart"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "CoordinationDriverCachedRunWatchers": {
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_init_watch_group": [
+      "self",
+      "group_id"
+    ],
+    "watch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "run_watchers": [
+      "self",
+      "timeout"
+    ]
+  },
+  "get_coordinator": [
+    "backend_url",
+    "member_id",
+    "characteristics"
+  ],
+  "ToozError": [],
+  "ToozDriverChosenPoorly": {},
+  "ToozConnectionError": {},
+  "OperationTimedOut": {},
+  "LockAcquireFailed": {},
+  "GroupNotCreated": {
+    "__init__": [
+      "self",
+      "group_id"
+    ]
+  },
+  "GroupAlreadyExist": {
+    "__init__": [
+      "self",
+      "group_id"
+    ]
+  },
+  "MemberAlreadyExist": {
+    "__init__": [
+      "self",
+      "group_id",
+      "member_id"
+    ]
+  },
+  "MemberNotJoined": {
+    "__init__": [
+      "self",
+      "group_id",
+      "member_id"
+    ]
+  },
+  "GroupNotEmpty": {
+    "__init__": [
+      "self",
+      "group_id"
+    ]
+  },
+  "WatchCallbackNotFound": {
+    "__init__": [
+      "self",
+      "group_id",
+      "callback"
+    ]
+  },
+  "SerializationError": [],
+  "Partitioner": {
+    "DEFAULT_PARTITION_NUMBER": [],
+    "__init__": [
+      "self",
+      "coordinator",
+      "group_id",
+      "partitions"
+    ],
+    "_on_member_join": [
+      "self",
+      "event"
+    ],
+    "_on_member_leave": [
+      "self",
+      "event"
+    ],
+    "_hash_object": [
+      "obj"
+    ],
+    "members_for_object": [
+      "self",
+      "obj",
+      "ignore_members",
+      "replicas"
+    ],
+    "belongs_to_member": [
+      "self",
+      "obj",
+      "member_id",
+      "ignore_members",
+      "replicas"
+    ],
+    "belongs_to_self": [
+      "self",
+      "obj",
+      "ignore_members",
+      "replicas"
+    ],
+    "stop": [
+      "self"
+    ]
+  },
+  "Base64LockEncoder": {
+    "__init__": [
+      "self",
+      "keyspace_url",
+      "prefix"
+    ],
+    "check_and_encode": [
+      "self",
+      "name"
+    ],
+    "encode": [
+      "self",
+      "name"
+    ]
+  },
+  "ProxyExecutor": {
+    "KIND_TO_FACTORY": [],
+    "DEFAULT_KIND": [],
+    "__init__": [
+      "self",
+      "driver_name",
+      "default_executor_factory"
+    ],
+    "build": [
+      "cls",
+      "driver_name",
+      "options"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "submit": [
+      "self",
+      "cb"
+    ]
+  },
+  "safe_abs_path": [
+    "rooted_at"
+  ],
+  "convert_blocking": [
+    "blocking",
+    "timeout"
+  ],
+  "collapse": [
+    "config",
+    "exclude",
+    "item_selector"
+  ],
+  "to_binary": [
+    "text",
+    "encoding"
+  ],
+  "dumps": [
+    "data",
+    "excp_cls"
+  ],
+  "loads": [
+    "blob",
+    "excp_cls"
+  ],
+  "millis_to_datetime": [
+    "milliseconds"
+  ],
+  "raise_with_cause": [
+    "exc_cls",
+    "message"
+  ],
+  "NotImplemented": {},
+  "_LockProxy": {
+    "__init__": [
+      "self",
+      "lock"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "Lock": {
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "name": [
+      "self"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "release": [
+      "self"
+    ],
+    "break_": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ]
+  },
+  "UnknownNode": {
+    "__init__": [
+      "self",
+      "node"
+    ]
+  },
+  "HashRing": {
+    "DEFAULT_PARTITION_NUMBER": [],
+    "DEFAULT_HASH_FUNCTION": [],
+    "__init__": [
+      "self",
+      "nodes",
+      "partitions",
+      "hash_function"
+    ],
+    "add_node": [
+      "self",
+      "node",
+      "weight"
+    ],
+    "add_nodes": [
+      "self",
+      "nodes",
+      "weight"
+    ],
+    "remove_node": [
+      "self",
+      "node"
+    ],
+    "_hash2int": [
+      "key"
+    ],
+    "_get_partition": [
+      "self",
+      "data"
+    ],
+    "_get_node": [
+      "self",
+      "partition"
+    ],
+    "get_nodes": [
+      "self",
+      "data",
+      "ignore_nodes",
+      "replicas"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "__len__": [
+      "self"
+    ]
+  },
+  "_default_wait": [],
+  "retry": [
+    "stop_max_delay"
+  ],
+  "TryAgain": [],
+  "_handle_failures": [
+    "n_tries"
+  ],
+  "RedisLock": {
+    "__init__": [
+      "self",
+      "coord",
+      "client",
+      "name",
+      "timeout"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "break_": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ]
+  },
+  "RedisDriver": {
+    "CHARACTERISTICS": [],
+    "MIN_VERSION": [],
+    "GROUP_EXISTS": [],
+    "GROUP_EXISTS_VALUE": [],
+    "DEFAULT_NAMESPACE": [],
+    "NAMESPACE_SEP": [],
+    "DEFAULT_ENCODING": [],
+    "CLIENT_ARGS": [],
+    "CLIENT_LIST_ARGS": [],
+    "CLIENT_BOOL_ARGS": [],
+    "CLIENT_INT_ARGS": [],
+    "CLIENT_FLOAT_ARGS": [],
+    "CLIENT_DEFAULT_SOCKET_TO": [],
+    "STILL_ALIVE": [],
+    "SCRIPTS": [],
+    "EXCLUDE_OPTIONS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_check_fetch_redis_version": [
+      "self",
+      "desired_version",
+      "not_existent"
+    ],
+    "namespace": [
+      "self"
+    ],
+    "running": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "_dumps": [],
+    "_loads": [],
+    "_parse_sentinel": [
+      "cls",
+      "sentinel"
+    ],
+    "_make_client": [
+      "cls",
+      "parsed_url",
+      "options",
+      "default_socket_timeout"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_encode_beat_id": [
+      "self",
+      "member_id"
+    ],
+    "_encode_member_id": [
+      "self",
+      "member_id"
+    ],
+    "_decode_member_id": [
+      "self",
+      "member_id"
+    ],
+    "_encode_group_leader": [
+      "self",
+      "group_id"
+    ],
+    "_encode_group_id": [
+      "self",
+      "group_id",
+      "apply_namespace"
+    ],
+    "_decode_group_id": [
+      "self",
+      "group_id"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "_submit": [
+      "self",
+      "cb"
+    ],
+    "_get_script": [
+      "self",
+      "script_key"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "update_capabilities": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "_destroy_group": [
+      "self",
+      "group_id"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "_get_leader_lock": [
+      "self",
+      "group_id"
+    ],
+    "run_elect_coordinator": [
+      "self"
+    ],
+    "run_watchers": [
+      "self",
+      "timeout"
+    ]
+  },
+  "RedisFutureResult": [],
+  "ZooKeeperLock": {
+    "__init__": [
+      "self",
+      "name",
+      "lock"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ]
+  },
+  "KazooDriver": {
+    "TOOZ_NAMESPACE": [],
+    "HANDLERS": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "_dumps": [
+      "data"
+    ],
+    "_loads": [
+      "blob"
+    ],
+    "_create_group_handler": [
+      "self",
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "_delete_group_handler": [
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "_join_group_handler": [
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id",
+      "member_id"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "_leave_group_handler": [
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id",
+      "member_id"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "_get_members_handler": [
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "_update_capabilities_handler": [
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id",
+      "member_id"
+    ],
+    "update_capabilities": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "_get_member_capabilities_handler": [
+      "cls",
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id",
+      "member_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "_get_member_info_handler": [
+      "cls",
+      "async_result",
+      "timeout",
+      "timeout_exception",
+      "group_id",
+      "member_id"
+    ],
+    "get_member_info": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "_get_groups_handler": [
+      "self",
+      "async_result",
+      "timeout",
+      "timeout_exception"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "_path_group": [
+      "self",
+      "group_id"
+    ],
+    "_path_member": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "_paths_join": [
+      "arg"
+    ],
+    "_make_client": [
+      "self",
+      "parsed_url",
+      "options"
+    ],
+    "stand_down_group_leader": [
+      "self",
+      "group_id"
+    ],
+    "_get_group_leader_lock": [
+      "self",
+      "group_id"
+    ],
+    "get_leader": [
+      "self",
+      "group_id"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "run_elect_coordinator": [
+      "self"
+    ],
+    "run_watchers": [
+      "self",
+      "timeout"
+    ]
+  },
+  "ZooAsyncResult": {
+    "__init__": [
+      "self",
+      "kazoo_async_result",
+      "handler"
+    ],
+    "get": [
+      "self",
+      "timeout"
+    ],
+    "done": [
+      "self"
+    ]
+  },
+  "_failure_translator": [],
+  "_translate_failures": [
+    "func"
+  ],
+  "ConsulLock": {
+    "__init__": [
+      "self",
+      "name",
+      "node",
+      "address",
+      "session_id",
+      "client",
+      "token"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ]
+  },
+  "ConsulDriver": {
+    "TOOZ_NAMESPACE": [],
+    "DEFAULT_TTL": [],
+    "DEFAULT_PORT": [],
+    "ACL_TOKEN": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "_get_lock": [
+      "self",
+      "real_name"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "_get_group_lock": [
+      "self",
+      "group_id"
+    ],
+    "_paths_join": [],
+    "_path_lock": [
+      "self",
+      "name"
+    ],
+    "_path_group_lock": [
+      "self",
+      "name"
+    ],
+    "_path_group": [
+      "self",
+      "group_id"
+    ],
+    "_path_member": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "_group_path_to_id": [
+      "self",
+      "base_path",
+      "group_path"
+    ],
+    "_get_group_members": [
+      "self",
+      "group_path"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "_destroy_group": [
+      "self",
+      "group_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "update_capabilities": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "watch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ]
+  },
+  "ConsulFutureResult": [],
+  "KubernetesLock": {
+    "__init__": [
+      "self",
+      "name",
+      "namespace",
+      "lock"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "expire"
+    ],
+    "release": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ]
+  },
+  "SherlockDriver": {
+    "K8S_NAMESPACE": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ]
+  },
+  "ftok": [
+    "name",
+    "project"
+  ],
+  "IPCLock": {
+    "_LOCK_PROJECT": [],
+    "__init__": [
+      "self",
+      "name"
+    ],
+    "break_": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ]
+  },
+  "IPCDriver": {
+    "CHARACTERISTICS": [],
+    "_SEGMENT_SIZE": [],
+    "_GROUP_LIST_KEY": [],
+    "_GROUP_PROJECT": [],
+    "_INTERNAL_LOCK_NAME": [],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "_read_group_list": [
+      "self"
+    ],
+    "_write_group_list": [
+      "self",
+      "group_list"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "watch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "_get_groups_handler": [
+      "self"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "get_lock": [
+      "name"
+    ]
+  },
+  "_DIAGNOSTICS_ATTRS": [],
+  "_format_exception": [
+    "e"
+  ],
+  "_translating_cursor": [
+    "conn"
+  ],
+  "PostgresLock": {
+    "__init__": [
+      "self",
+      "name",
+      "parsed_url",
+      "options"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "PostgresDriver": {
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "watch_join_group": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_join_group": [
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_leave_group": [
+      "group_id",
+      "callback"
+    ],
+    "watch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "get_connection": [
+      "parsed_url",
+      "options"
+    ]
+  },
+  "_encode": [
+    "data"
+  ],
+  "Etcd3Lock": {
+    "LOCK_PREFIX": [],
+    "__init__": [
+      "self",
+      "coord",
+      "name",
+      "timeout"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "break_": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ]
+  },
+  "Etcd3Driver": {
+    "DEFAULT_TIMEOUT": [],
+    "DEFAULT_HOST": [],
+    "DEFAULT_PORT": [],
+    "GROUP_PREFIX": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "_encode_group_id": [
+      "self",
+      "group_id"
+    ],
+    "_prefix_group": [
+      "self",
+      "group_id"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "_destroy_group": [
+      "self",
+      "group_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "update_capabilities": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "watch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ]
+  },
+  "_Barrier": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_convert_from_old_format": [
+    "data"
+  ],
+  "_lock_me": [
+    "lock"
+  ],
+  "FileLock": {
+    "__init__": [
+      "self",
+      "path",
+      "barrier",
+      "member_id"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "FileDriver": {
+    "CHARACTERISTICS": [],
+    "HASH_ROUTINE": [],
+    "_barriers": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_get_raw_lock": [
+      "cls",
+      "path",
+      "member_id"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "_make_filesystem_safe": [
+      "cls",
+      "item"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_update_group_metadata": [
+      "self",
+      "path",
+      "group_id"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "_SCHEMAS": [],
+    "_load_and_validate": [
+      "self",
+      "blob",
+      "schema_key"
+    ],
+    "_read_member_id": [
+      "self",
+      "path"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "_read_group_id": [
+      "self",
+      "path"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "watch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ]
+  },
+  "FileFutureResult": [],
+  "MemcachedLock": {
+    "_LOCK_PREFIX": [],
+    "__init__": [
+      "self",
+      "coord",
+      "name",
+      "timeout"
+    ],
+    "is_still_owner": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "break_": [
+      "self"
+    ],
+    "release": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "get_owner": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ]
+  },
+  "MemcachedDriver": {
+    "CHARACTERISTICS": [],
+    "GROUP_PREFIX": [],
+    "GROUP_LEADER_PREFIX": [],
+    "MEMBER_PREFIX": [],
+    "GROUP_LIST_KEY": [],
+    "DEFAULT_TIMEOUT": [],
+    "STILL_ALIVE": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_msgpack_serializer": [
+      "key",
+      "value"
+    ],
+    "_msgpack_deserializer": [
+      "key",
+      "value",
+      "flags"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "_encode_group_id": [
+      "self",
+      "group_id"
+    ],
+    "_encode_member_id": [
+      "self",
+      "member_id"
+    ],
+    "_encode_group_leader": [
+      "self",
+      "group_id"
+    ],
+    "_add_group_to_group_list": [
+      "self",
+      "group_id"
+    ],
+    "_remove_from_group_list": [
+      "self",
+      "group_id"
+    ],
+    "create_group": [
+      "self",
+      "group_id"
+    ],
+    "get_groups": [
+      "self"
+    ],
+    "join_group": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "leave_group": [
+      "self",
+      "group_id"
+    ],
+    "_destroy_group": [
+      "self",
+      "group_id"
+    ],
+    "delete_group": [
+      "self",
+      "group_id"
+    ],
+    "_get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_members": [
+      "self",
+      "group_id"
+    ],
+    "get_member_capabilities": [
+      "self",
+      "group_id",
+      "member_id"
+    ],
+    "update_capabilities": [
+      "self",
+      "group_id",
+      "capabilities"
+    ],
+    "get_leader": [
+      "self",
+      "group_id"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "_get_leader_lock": [
+      "self",
+      "group_id"
+    ],
+    "run_elect_coordinator": [
+      "self"
+    ],
+    "run_watchers": [
+      "self",
+      "timeout"
+    ]
+  },
+  "MemcachedFutureResult": [],
+  "MySQLLock": {
+    "MYSQL_DEFAULT_PORT": [],
+    "__init__": [
+      "self",
+      "name",
+      "parsed_url",
+      "options"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "MySQLDriver": {
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "_stop": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "watch_join_group": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_join_group": [
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_leave_group": [
+      "group_id",
+      "callback"
+    ],
+    "watch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "unwatch_elected_as_leader": [
+      "group_id",
+      "callback"
+    ],
+    "get_connection": [
+      "parsed_url",
+      "options",
+      "defer_connect"
+    ]
+  },
+  "_Client": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "protocol"
+    ],
+    "base_url": [
+      "self"
+    ],
+    "get_url": [
+      "self",
+      "path"
+    ],
+    "get": [
+      "self",
+      "url"
+    ],
+    "put": [
+      "self",
+      "url"
+    ],
+    "delete": [
+      "self",
+      "url"
+    ],
+    "self_stats": [
+      "self"
+    ]
+  },
+  "EtcdLock": {
+    "_TOOZ_LOCK_PREFIX": [],
+    "__init__": [
+      "self",
+      "lock_url",
+      "name",
+      "coord",
+      "client",
+      "ttl"
+    ],
+    "break_": [
+      "self"
+    ],
+    "acquire": [
+      "self",
+      "blocking",
+      "shared",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ],
+    "acquired": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ]
+  },
+  "EtcdDriver": {
+    "DEFAULT_TIMEOUT": [],
+    "DEFAULT_HOST": [],
+    "DEFAULT_PORT": [],
+    "lock_encoder_cls": [],
+    "CHARACTERISTICS": [],
+    "__init__": [
+      "self",
+      "member_id",
+      "parsed_url",
+      "options"
+    ],
+    "_start": [
+      "self"
+    ],
+    "get_lock": [
+      "self",
+      "name"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "watch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_join_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "watch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ],
+    "unwatch_leave_group": [
+      "self",
+      "group_id",
+      "callback"
+    ]
+  },
+  "TestProxyExecutor": {
+    "test_fetch_check_executor": [
+      "self"
+    ],
+    "test_fetch_default_executor": [
+      "self"
+    ],
+    "test_fetch_unknown_executor": [
+      "self"
+    ],
+    "test_no_submit_stopped": [
+      "self"
+    ]
+  },
+  "TestUtilsSafePath": {
+    "base": [],
+    "test_join": [
+      "self"
+    ],
+    "test_unsafe_join": [
+      "self"
+    ]
+  },
+  "TestUtilsCollapse": {
+    "test_bad_type": [
+      "self"
+    ],
+    "test_collapse_simple": [
+      "self"
+    ],
+    "test_collapse_exclusions": [
+      "self"
+    ],
+    "test_no_collapse": [
+      "self"
+    ],
+    "test_custom_selector": [
+      "self"
+    ],
+    "test_empty_lists": [
+      "self"
+    ]
+  },
+  "TestPartitioner": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_add_members": [
+      "self",
+      "number_of_members",
+      "weight"
+    ],
+    "_remove_members": [
+      "self",
+      "number_of_members"
+    ],
+    "test_join_partitioned_group": [
+      "self"
+    ],
+    "test_hashring_size": [
+      "self"
+    ],
+    "test_hashring_weight": [
+      "self"
+    ],
+    "test_stop": [
+      "self"
+    ],
+    "test_members_of_object_and_others": [
+      "self"
+    ]
+  },
+  "IPCTestPartitioner": {
+    "url": []
+  },
+  "FileTestPartitioner": {
+    "url": []
+  },
+  "TestSherlockDriver": {
+    "_create_coordinator": [
+      "self",
+      "url"
+    ],
+    "test_connect_k8s_driver": [
+      "self"
+    ],
+    "test_parsing_timeout_settings": [
+      "self",
+      "k8s_mock"
+    ],
+    "test_parsing_blocking_settings": [
+      "self",
+      "k8s_mock"
+    ],
+    "test_parsing_expire_settings": [
+      "self",
+      "conf_mock",
+      "k8s_mock"
+    ]
+  },
+  "get_random_uuid": [],
+  "_skip_decorator": [
+    "func"
+  ],
+  "SkipNotImplementedMeta": {
+    "__new__": [
+      "cls",
+      "name",
+      "bases",
+      "local"
+    ]
+  },
+  "TestWithCoordinator": {
+    "url": [],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ]
+  },
+  "try_to_lock_job": [
+    "name",
+    "coord",
+    "url",
+    "member_id"
+  ],
+  "TestAPI": {
+    "assertRaisesAny": [
+      "self",
+      "exc_classes",
+      "callable_obj"
+    ],
+    "test_connection_error_bad_host": [
+      "self"
+    ],
+    "test_stop_first": [
+      "self"
+    ],
+    "test_create_group": [
+      "self"
+    ],
+    "test_get_lock_release_broken": [
+      "self"
+    ],
+    "test_create_group_already_exist": [
+      "self"
+    ],
+    "test_get_groups": [
+      "self"
+    ],
+    "test_delete_group": [
+      "self"
+    ],
+    "test_delete_group_non_existent": [
+      "self"
+    ],
+    "test_delete_group_non_empty": [
+      "self"
+    ],
+    "test_join_group": [
+      "self"
+    ],
+    "test_join_nonexistent_group": [
+      "self"
+    ],
+    "test_join_group_create": [
+      "self"
+    ],
+    "test_join_group_with_member_id_already_exists": [
+      "self"
+    ],
+    "test_leave_group": [
+      "self"
+    ],
+    "test_leave_nonexistent_group": [
+      "self"
+    ],
+    "test_leave_group_not_joined_by_member": [
+      "self"
+    ],
+    "test_get_lock_twice_locked_one_released_two": [
+      "self"
+    ],
+    "test_get_members": [
+      "self"
+    ],
+    "test_get_member_capabilities": [
+      "self"
+    ],
+    "test_get_member_capabilities_complex": [
+      "self"
+    ],
+    "test_get_member_capabilities_nonexistent_group": [
+      "self"
+    ],
+    "test_get_member_capabilities_nonjoined_member": [
+      "self"
+    ],
+    "test_get_member_info": [
+      "self"
+    ],
+    "test_get_member_info_complex": [
+      "self"
+    ],
+    "test_get_member_info_nonexistent_group": [
+      "self"
+    ],
+    "test_get_member_info_nonjoined_member": [
+      "self"
+    ],
+    "test_update_capabilities": [
+      "self"
+    ],
+    "test_update_capabilities_with_group_id_nonexistent": [
+      "self"
+    ],
+    "test_heartbeat": [
+      "self"
+    ],
+    "test_heartbeat_loop": [
+      "self"
+    ],
+    "test_disconnect_leave_group": [
+      "self"
+    ],
+    "test_timeout": [
+      "self"
+    ],
+    "_set_event": [
+      "self",
+      "event"
+    ],
+    "test_watch_group_join": [
+      "self"
+    ],
+    "test_watch_leave_group": [
+      "self"
+    ],
+    "test_watch_join_group_disappear": [
+      "self"
+    ],
+    "test_watch_join_group_non_existent": [
+      "self"
+    ],
+    "test_watch_join_group_booted_out": [
+      "self"
+    ],
+    "test_watch_leave_group_non_existent": [
+      "self"
+    ],
+    "test_run_for_election": [
+      "self"
+    ],
+    "test_run_for_election_multiple_clients": [
+      "self"
+    ],
+    "test_get_leader": [
+      "self"
+    ],
+    "test_run_for_election_multiple_clients_stand_down": [
+      "self"
+    ],
+    "test_unwatch_elected_as_leader": [
+      "self"
+    ],
+    "test_unwatch_elected_as_leader_callback_not_found": [
+      "self"
+    ],
+    "test_unwatch_join_group_callback_not_found": [
+      "self"
+    ],
+    "test_unwatch_leave_group": [
+      "self"
+    ],
+    "test_unwatch_leave_group_callback_not_found": [
+      "self"
+    ],
+    "test_get_lock": [
+      "self"
+    ],
+    "test_heartbeat_lock_not_acquired": [
+      "self"
+    ],
+    "test_get_shared_lock": [
+      "self"
+    ],
+    "test_get_shared_lock_locking_same_lock_twice": [
+      "self"
+    ],
+    "test_get_shared_lock_locking_two_lock": [
+      "self"
+    ],
+    "test_get_lock_locking_shared_and_exclusive": [
+      "self"
+    ],
+    "test_get_lock_locking_exclusive_and_shared": [
+      "self"
+    ],
+    "test_get_lock_concurrency_locking_same_lock": [
+      "self"
+    ],
+    "_do_test_get_lock_concurrency_locking_two_lock": [
+      "self",
+      "executor",
+      "use_same_coord"
+    ],
+    "_do_test_get_lock_serial_locking_two_lock": [
+      "self",
+      "executor",
+      "use_same_coord"
+    ],
+    "test_get_lock_concurrency_locking_two_lock_process": [
+      "self"
+    ],
+    "test_get_lock_serial_locking_two_lock_process": [
+      "self"
+    ],
+    "test_get_lock_concurrency_locking_two_lock_thread1": [
+      "self"
+    ],
+    "test_get_lock_concurrency_locking_two_lock_thread2": [
+      "self"
+    ],
+    "test_get_lock_concurrency_locking2": [
+      "self"
+    ],
+    "test_get_lock_twice_locked_twice": [
+      "self"
+    ],
+    "test_get_lock_context_fails": [
+      "self"
+    ],
+    "test_get_lock_context_check_value": [
+      "self"
+    ],
+    "test_lock_context_manager_acquire_no_argument": [
+      "self"
+    ],
+    "test_lock_context_manager_acquire_argument_return_value": [
+      "self"
+    ],
+    "test_lock_context_manager_acquire_argument_release_within": [
+      "self"
+    ],
+    "test_lock_context_manager_acquire_argument": [
+      "self"
+    ],
+    "test_lock_context_manager_acquire_argument_timeout": [
+      "self"
+    ],
+    "test_get_lock_locked_twice": [
+      "self"
+    ],
+    "test_get_multiple_locks_with_same_coord": [
+      "self"
+    ],
+    "test_ensure_acquire_release_return": [
+      "self"
+    ],
+    "test_get_lock_multiple_coords": [
+      "self"
+    ],
+    "test_get_started_status": [
+      "self"
+    ],
+    "do_test_name_property": [
+      "self"
+    ],
+    "test_acquire_twice_no_deadlock_releasing": [
+      "self"
+    ]
+  },
+  "TestHook": {
+    "setUp": [
+      "self"
+    ],
+    "_trigger": [
+      "self"
+    ],
+    "test_register_hook": [
+      "self"
+    ],
+    "test_unregister_hook": [
+      "self"
+    ]
+  },
+  "HashRingTestCase": {
+    "test_hash2int_returns_int": [
+      "self",
+      "mock_md5"
+    ],
+    "test_create_ring": [
+      "self"
+    ],
+    "test_wrong_hash_function": [
+      "self"
+    ],
+    "test_add_node": [
+      "self"
+    ],
+    "test_add_node_bytes": [
+      "self"
+    ],
+    "test_add_node_unicode": [
+      "self"
+    ],
+    "test_add_node_weight": [
+      "self"
+    ],
+    "test_add_nodes_weight": [
+      "self"
+    ],
+    "test_remove_node": [
+      "self"
+    ],
+    "test_remove_node_bytes": [
+      "self"
+    ],
+    "test_remove_node_unknown": [
+      "self"
+    ],
+    "test_add_then_removenode": [
+      "self"
+    ],
+    "test_distribution_one_replica": [
+      "self"
+    ],
+    "test_distribution_more_replica": [
+      "self"
+    ],
+    "test_ignore_nodes": [
+      "self"
+    ],
+    "_compare_rings": [
+      "nodes",
+      "conductors",
+      "ring",
+      "new_conductors",
+      "new_ring"
+    ],
+    "test_rebalance_stability_join": [
+      "self"
+    ],
+    "test_rebalance_stability_leave": [
+      "self"
+    ],
+    "test_ignore_non_existent_node": [
+      "self"
+    ]
+  },
+  "TestPostgreSQLFailures": {
+    "FAKE_URL": [],
+    "_create_coordinator": [
+      "self"
+    ],
+    "test_connect_failure": [
+      "self",
+      "psycopg2_connector"
+    ],
+    "test_connect_failure_operational": [
+      "self",
+      "psycopg2_connector"
+    ],
+    "test_failure_acquire_lock": [
+      "self",
+      "psycopg2_connector"
+    ],
+    "test_failure_release_lock": [
+      "self",
+      "psycopg2_connector"
+    ]
+  },
+  "TestMySQLDriver": {
+    "_create_coordinator": [
+      "self",
+      "url"
+    ],
+    "test_connect_failure_invalid_hostname_provided": [
+      "self"
+    ],
+    "test_connect_failure_invalid_port_provided": [
+      "self"
+    ],
+    "test_connect_failure_invalid_hostname_and_port_provided": [
+      "self"
+    ],
+    "test_parsing_tls_settings": [
+      "self",
+      "sql_mock"
+    ],
+    "test_parsing_timeout_settings": [
+      "self",
+      "sql_mock"
+    ],
+    "test_parsing_blocking_settings": [
+      "self",
+      "sql_mock"
+    ]
+  },
+  "TestEtcd3Gw": {
+    "FAKE_MEMBER_ID": [],
+    "test_etcd3gw_client_init": [
+      "self",
+      "mock_etcd3gw_client",
+      "coord_url",
+      "protocol",
+      "host",
+      "port",
+      "ca_cert",
+      "cert_key",
+      "cert_cert",
+      "api_path",
+      "timeout"
+    ]
+  },
+  "TestFileDriver": {
+    "_FAKE_MEMBER_ID": [],
+    "test_base_dir": [
+      "self"
+    ],
+    "test_leftover_file": [
+      "self"
+    ]
+  },
+  "TestEtcd": {
+    "FAKE_URL": [],
+    "FAKE_MEMBER_ID": [],
+    "setUp": [
+      "self"
+    ],
+    "test_multiple_locks_etcd_wait_index": [
+      "self"
+    ]
+  },
+  "TestMemcacheDriverFailures": {
+    "FAKE_URL": [],
+    "test_client_failure_start": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_client_failure_join": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_client_failure_leave": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_client_failure_heartbeat": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_client_run_watchers_mixin": [
+      "self",
+      "mock_client_cls",
+      "mock_run_watchers"
+    ]
+  }
+}
