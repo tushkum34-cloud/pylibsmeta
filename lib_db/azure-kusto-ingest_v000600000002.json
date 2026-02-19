@@ -1,0 +1,693 @@
+{
+  "INGEST_PREFIX": [],
+  "PROTOCOL_SUFFIX": [],
+  "IngestionStatus": {
+    "QUEUED": [],
+    "SUCCESS": []
+  },
+  "IngestionResult": {
+    "__init__": [
+      "self",
+      "status",
+      "database",
+      "table",
+      "source_id",
+      "blob_uri"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "BaseIngestClient": {
+    "__init__": [
+      "self"
+    ],
+    "ingest_from_file": [
+      "self",
+      "file_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_stream": [
+      "self",
+      "stream_descriptor",
+      "ingestion_properties"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_url"
+    ],
+    "ingest_from_dataframe": [
+      "self",
+      "df",
+      "ingestion_properties",
+      "data_format"
+    ],
+    "_prepare_stream": [
+      "stream_descriptor",
+      "ingestion_properties"
+    ],
+    "_prepare_file": [
+      "file_descriptor",
+      "ingestion_properties"
+    ],
+    "_should_compress": [
+      "new_descriptor",
+      "ingestion_properties"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ],
+    "get_ingestion_endpoint": [
+      "cluster_url"
+    ],
+    "get_query_endpoint": [
+      "cluster_url"
+    ],
+    "is_reserved_hostname": [
+      "raw_uri"
+    ]
+  },
+  "IngestionBlobInfo": {
+    "__init__": [
+      "self",
+      "blob_descriptor",
+      "ingestion_properties",
+      "auth_context",
+      "application_for_tracing",
+      "client_version_for_tracing"
+    ],
+    "to_json": [
+      "self"
+    ]
+  },
+  "_convert_list_to_json": [
+    "array"
+  ],
+  "_convert_dict_to_json": [
+    "array"
+  ],
+  "_StorageAccountStats": {
+    "__init__": [
+      "self"
+    ],
+    "log_result": [
+      "self",
+      "success"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "_RankedStorageAccount": {
+    "__init__": [
+      "self",
+      "account_name",
+      "number_of_buckets",
+      "bucket_duration",
+      "time_provider"
+    ],
+    "log_result": [
+      "self",
+      "success"
+    ],
+    "get_account_name": [
+      "self"
+    ],
+    "get_rank": [
+      "self"
+    ],
+    "_adjust_for_time_passed": [
+      "self"
+    ]
+  },
+  "read_until_size_or_end": [
+    "stream",
+    "size"
+  ],
+  "ChainStream": {
+    "__init__": [
+      "self",
+      "streams"
+    ],
+    "readable": [
+      "self"
+    ],
+    "_read_next_chunk": [
+      "self",
+      "max_length"
+    ],
+    "readinto": [
+      "self",
+      "b"
+    ]
+  },
+  "chain_streams": [
+    "streams",
+    "buffer_size"
+  ],
+  "StatusMessage": {
+    "OperationId": [],
+    "Database": [],
+    "Table": [],
+    "IngestionSourceId": [],
+    "IngestionSourcePath": [],
+    "RootActivityId": [],
+    "_raw": [],
+    "__init__": [
+      "self",
+      "s"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "SuccessMessage": {
+    "SucceededOn": []
+  },
+  "FailureMessage": {
+    "FailedOn": [],
+    "Details": [],
+    "ErrorCode": [],
+    "FailureStatus": [],
+    "OriginatesFromUpdatePolicy": [],
+    "ShouldRetry": []
+  },
+  "KustoIngestStatusQueues": {
+    "__init__": [
+      "self",
+      "kusto_ingest_client"
+    ]
+  },
+  "_SHOW_VERSION": [],
+  "_SERVICE_TYPE_COLUMN_NAME": [],
+  "_ResourceUri": {
+    "__init__": [
+      "self",
+      "url"
+    ],
+    "account_uri": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "_IngestClientResources": {
+    "__init__": [
+      "self",
+      "secured_ready_for_aggregation_queues",
+      "failed_ingestions_queues",
+      "successful_ingestions_queues",
+      "containers",
+      "status_tables"
+    ],
+    "is_applicable": [
+      "self"
+    ]
+  },
+  "_ResourceManager": {
+    "__init__": [
+      "self",
+      "kusto_client"
+    ],
+    "close": [
+      "self"
+    ],
+    "__set_throttling_settings": [
+      "self",
+      "num_of_attempts",
+      "max_seconds_per_retry"
+    ],
+    "_refresh_ingest_client_resources": [
+      "self"
+    ],
+    "_get_resource_by_name": [
+      "self",
+      "table",
+      "resource_name"
+    ],
+    "_get_ingest_client_resources_from_service": [
+      "self"
+    ],
+    "_refresh_authorization_context": [
+      "self"
+    ],
+    "_get_authorization_context_from_service": [
+      "self"
+    ],
+    "_populate_ranked_storage_account_set": [
+      "self"
+    ],
+    "_group_resources_by_storage_account": [
+      "self",
+      "resources"
+    ],
+    "_get_shuffled_and_ranked_resources": [
+      "self",
+      "resources"
+    ],
+    "_shuffle_and_select_with_round_robin": [
+      "self",
+      "resources"
+    ],
+    "get_ingestion_queues": [
+      "self"
+    ],
+    "get_failed_ingestions_queues": [
+      "self"
+    ],
+    "get_successful_ingestions_queues": [
+      "self"
+    ],
+    "get_containers": [
+      "self"
+    ],
+    "get_ingestions_status_tables": [
+      "self"
+    ],
+    "get_authorization_context": [
+      "self"
+    ],
+    "retrieve_service_type": [
+      "self"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_url"
+    ],
+    "report_resource_usage_result": [
+      "self",
+      "storage_account_name",
+      "success_status"
+    ]
+  },
+  "ValidationOptions": {
+    "DoNotValidate": [],
+    "ValidateCsvInputConstantColumns": [],
+    "ValidateCsvInputColumnLevelOnly": []
+  },
+  "ValidationImplications": {
+    "Fail": [],
+    "BestEffort": []
+  },
+  "ValidationPolicy": {
+    "__init__": [
+      "self",
+      "validation_options",
+      "validation_implications"
+    ]
+  },
+  "ReportLevel": {
+    "FailuresOnly": [],
+    "DoNotReport": [],
+    "FailuresAndSuccesses": []
+  },
+  "ReportMethod": {
+    "Queue": []
+  },
+  "TransformationMethod": {
+    "NONE": [],
+    "PROPERTY_BAG_ARRAY_TO_DICTIONARY": [],
+    "SOURCE_LOCATION": [],
+    "SOURCE_LINE_NUMBER": [],
+    "GET_PATH_ELEMENT": [],
+    "UNKNOWN_ERROR": [],
+    "DATE_TIME_FROM_UNIX_SECONDS": [],
+    "DATE_TIME_FROM_UNIX_MILLISECONDS": [],
+    "DATE_TIME_FROM_UNIX_MICROSECONDS": [],
+    "DATE_TIME_FROM_UNIX_NANOSECONDS": []
+  },
+  "ColumnMapping": {
+    "PATH": [],
+    "TRANSFORMATION_METHOD": [],
+    "ORDINAL": [],
+    "CONST_VALUE": [],
+    "FIELD_NAME": [],
+    "CONSTANT_TRANSFORMATION_METHODS": [],
+    "__init__": [
+      "self",
+      "column_name",
+      "column_type",
+      "path",
+      "transform",
+      "ordinal",
+      "const_value",
+      "field",
+      "columns",
+      "storage_data_type"
+    ],
+    "is_valid": [
+      "self",
+      "kind"
+    ]
+  },
+  "IngestionProperties": {
+    "_DATABASE": [],
+    "_TABLE": [],
+    "__init__": [
+      "self",
+      "database",
+      "table",
+      "data_format",
+      "column_mappings",
+      "ingestion_mapping_kind",
+      "ingestion_mapping_reference",
+      "ingest_if_not_exists",
+      "ingest_by_tags",
+      "drop_by_tags",
+      "additional_tags",
+      "flush_immediately",
+      "ignore_first_record",
+      "report_level",
+      "report_method",
+      "validation_policy",
+      "additional_properties"
+    ],
+    "get_tracing_attributes": [
+      "self"
+    ]
+  },
+  "__all__": [],
+  "QueueDetails": {
+    "__init__": [
+      "self",
+      "name",
+      "service"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "StatusQueue": {
+    "__init__": [
+      "self",
+      "get_queues_func",
+      "message_cls"
+    ],
+    "_get_queues": [
+      "self"
+    ],
+    "is_empty": [
+      "self"
+    ],
+    "_deserialize_message": [
+      "self",
+      "m"
+    ],
+    "peek": [
+      "self",
+      "n",
+      "raw"
+    ],
+    "pop": [
+      "self",
+      "n",
+      "raw",
+      "delete"
+    ]
+  },
+  "_RankedStorageAccountSet": {
+    "__init__": [
+      "self",
+      "number_of_buckets",
+      "bucket_duration",
+      "tiers",
+      "time_provider"
+    ],
+    "add_account_result": [
+      "self",
+      "account_name",
+      "success"
+    ],
+    "add_storage_account": [
+      "self",
+      "account_name"
+    ],
+    "get_storage_account": [
+      "self",
+      "account_name"
+    ],
+    "get_ranked_shuffled_accounts": [
+      "self"
+    ]
+  },
+  "KustoMappingError": {},
+  "KustoDuplicateMappingError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "KustoMissingMappingError": {},
+  "KustoInvalidEndpointError": {
+    "__init__": [
+      "self",
+      "expected_service_type",
+      "actual_service_type",
+      "suggested_endpoint_url"
+    ]
+  },
+  "KustoQueueError": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "IngestTracingAttributes": {
+    "_BLOB_QUEUE_NAME": [],
+    "_SOURCE_ID": [],
+    "set_ingest_descriptor_attributes": [
+      "cls",
+      "descriptor",
+      "ingestion_properties"
+    ],
+    "create_enqueue_request_attributes": [
+      "cls",
+      "queue_name",
+      "source_id"
+    ]
+  },
+  "OptionalUUID": [],
+  "ensure_uuid": [
+    "maybe_uuid"
+  ],
+  "DescriptorBase": {
+    "_SOURCE_ID": [],
+    "get_tracing_attributes": [
+      "self"
+    ]
+  },
+  "FileDescriptor": {
+    "GZIP_MAX_DISK_SIZE_FOR_DETECTION": [],
+    "DEFAULT_COMPRESSION_RATIO": [],
+    "_FILE_PATH": [],
+    "__init__": [
+      "self",
+      "path",
+      "size",
+      "source_id"
+    ],
+    "size": [
+      "self",
+      "size"
+    ],
+    "_detect_size": [
+      "self"
+    ],
+    "is_compressed": [
+      "self"
+    ],
+    "open": [
+      "self",
+      "should_compress"
+    ],
+    "compress_stream": [
+      "self"
+    ],
+    "get_tracing_attributes": [
+      "self"
+    ],
+    "get_instance": [
+      "cls",
+      "file_descriptor"
+    ]
+  },
+  "BlobDescriptor": {
+    "_BLOB_URI": [],
+    "__init__": [
+      "self",
+      "path",
+      "size",
+      "source_id"
+    ],
+    "get_tracing_attributes": [
+      "self"
+    ],
+    "fill_size": [
+      "self"
+    ]
+  },
+  "StreamDescriptor": {
+    "_STREAM_NAME": [],
+    "__init__": [
+      "self",
+      "stream",
+      "source_id",
+      "is_compressed",
+      "stream_name",
+      "size"
+    ],
+    "compress_stream": [
+      "self"
+    ],
+    "from_file_descriptor": [
+      "file_descriptor"
+    ],
+    "get_instance": [
+      "cls",
+      "stream_descriptor"
+    ],
+    "get_tracing_attributes": [
+      "self"
+    ]
+  },
+  "QueuedIngestClient": {
+    "_INGEST_PREFIX": [],
+    "_SERVICE_CLIENT_TIMEOUT_SECONDS": [],
+    "_MAX_RETRIES": [],
+    "__init__": [
+      "self",
+      "kcsb",
+      "auto_correct_endpoint"
+    ],
+    "close": [
+      "self"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_url"
+    ],
+    "ingest_from_file": [
+      "self",
+      "file_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_stream": [
+      "self",
+      "stream_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_blob": [
+      "self",
+      "blob_descriptor",
+      "ingestion_properties"
+    ],
+    "_get_containers": [
+      "self"
+    ],
+    "upload_blob": [
+      "self",
+      "containers",
+      "descriptor",
+      "database",
+      "table",
+      "stream",
+      "proxy_dict",
+      "timeout",
+      "max_retries"
+    ]
+  },
+  "ManagedStreamingIngestClient": {
+    "MAX_STREAMING_SIZE_IN_BYTES": [],
+    "__init__": [
+      "self",
+      "engine_kcsb",
+      "dm_kcsb",
+      "auto_correct_endpoint"
+    ],
+    "close": [
+      "self"
+    ],
+    "_set_retry_settings": [
+      "self",
+      "max_seconds_per_retry",
+      "num_of_attempts"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_url"
+    ],
+    "ingest_from_file": [
+      "self",
+      "file_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_stream": [
+      "self",
+      "stream_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_blob": [
+      "self",
+      "blob_descriptor",
+      "ingestion_properties"
+    ],
+    "_stream_with_retries": [
+      "self",
+      "length",
+      "descriptor",
+      "props"
+    ],
+    "_get_request_id": [
+      "source_id",
+      "attempt"
+    ]
+  },
+  "KustoStreamingIngestClient": {
+    "__init__": [
+      "self",
+      "kcsb",
+      "auto_correct_endpoint"
+    ],
+    "close": [
+      "self"
+    ],
+    "set_proxy": [
+      "self",
+      "proxy_url"
+    ],
+    "ingest_from_file": [
+      "self",
+      "file_descriptor",
+      "ingestion_properties"
+    ],
+    "ingest_from_stream": [
+      "self",
+      "stream_descriptor",
+      "ingestion_properties"
+    ],
+    "_ingest_from_stream_with_client_request_id": [
+      "self",
+      "stream_descriptor",
+      "ingestion_properties",
+      "client_request_id"
+    ],
+    "ingest_from_blob": [
+      "self",
+      "blob_descriptor",
+      "ingestion_properties",
+      "client_request_id"
+    ]
+  },
+  "VERSION": []
+}
