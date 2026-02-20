@@ -1,0 +1,2547 @@
+{
+  "MCPAtlassianAuthenticationError": {},
+  "logging_level": [],
+  "logging_stream": [],
+  "logger": [],
+  "_watch_parent_exit": [
+    "stop_event"
+  ],
+  "_run_stdio_with_stdin_guard": [
+    "run_kwargs"
+  ],
+  "main": [
+    "verbose",
+    "env_file",
+    "oauth_setup",
+    "transport",
+    "stateless",
+    "port",
+    "host",
+    "path",
+    "confluence_url",
+    "confluence_username",
+    "confluence_token",
+    "confluence_personal_token",
+    "confluence_ssl_verify",
+    "confluence_spaces_filter",
+    "jira_url",
+    "jira_username",
+    "jira_token",
+    "jira_personal_token",
+    "jira_ssl_verify",
+    "jira_projects_filter",
+    "read_only",
+    "enabled_tools",
+    "oauth_client_id",
+    "oauth_client_secret",
+    "oauth_redirect_uri",
+    "oauth_scope",
+    "oauth_cloud_id",
+    "oauth_access_token"
+  ],
+  "__all__": [],
+  "JiraUserType": [],
+  "normalize_text": [
+    "text"
+  ],
+  "UsersMixin": {
+    "get_current_user_account_id": [
+      "self"
+    ],
+    "_get_account_id": [
+      "self",
+      "assignee"
+    ],
+    "_lookup_user_directly": [
+      "self",
+      "username"
+    ],
+    "_lookup_user_by_permissions": [
+      "self",
+      "username"
+    ],
+    "_determine_user_api_params": [
+      "self",
+      "identifier"
+    ],
+    "get_user_profile_by_identifier": [
+      "self",
+      "identifier"
+    ]
+  },
+  "MetricsMixin": {
+    "get_issue_dates": [
+      "self",
+      "issue_key",
+      "include_created",
+      "include_updated",
+      "include_due_date",
+      "include_resolution_date",
+      "include_status_changes",
+      "include_status_summary"
+    ],
+    "batch_get_issue_dates": [
+      "self",
+      "issue_keys",
+      "include_created",
+      "include_updated",
+      "include_due_date",
+      "include_resolution_date",
+      "include_status_changes",
+      "include_status_summary"
+    ],
+    "_parse_changelog_to_status_changes": [
+      "self",
+      "issue_key",
+      "changelogs",
+      "created_date"
+    ],
+    "_aggregate_status_times": [
+      "self",
+      "status_changes"
+    ],
+    "_calculate_duration_minutes": [
+      "self",
+      "start",
+      "end"
+    ],
+    "_format_duration": [
+      "self",
+      "minutes"
+    ]
+  },
+  "TransitionsMixin": {
+    "get_available_transitions": [
+      "self",
+      "issue_key"
+    ],
+    "get_transitions": [
+      "self",
+      "issue_key"
+    ],
+    "get_transitions_models": [
+      "self",
+      "issue_key"
+    ],
+    "transition_issue": [
+      "self",
+      "issue_key",
+      "transition_id",
+      "fields",
+      "comment"
+    ],
+    "_normalize_transition_id": [
+      "self",
+      "transition_id"
+    ],
+    "_sanitize_transition_fields": [
+      "self",
+      "fields"
+    ],
+    "_add_comment_to_transition_data": [
+      "self",
+      "transition_data",
+      "comment"
+    ]
+  },
+  "FormattingMixin": {
+    "__init__": [
+      "self"
+    ],
+    "markdown_to_jira": [
+      "self",
+      "markdown_text"
+    ],
+    "format_issue_content": [
+      "self",
+      "issue_key",
+      "issue",
+      "description",
+      "comments",
+      "created_date",
+      "epic_info"
+    ],
+    "create_issue_metadata": [
+      "self",
+      "issue_key",
+      "issue",
+      "comments",
+      "created_date",
+      "epic_info"
+    ],
+    "extract_epic_information": [
+      "self",
+      "issue"
+    ],
+    "sanitize_html": [
+      "self",
+      "html_content"
+    ],
+    "sanitize_transition_fields": [
+      "self",
+      "fields"
+    ],
+    "add_comment_to_transition_data": [
+      "self",
+      "transition_data",
+      "comment"
+    ]
+  },
+  "FormsApiMixin": {
+    "__init__": [
+      "self"
+    ],
+    "_make_forms_api_request": [
+      "self",
+      "method",
+      "endpoint",
+      "data"
+    ],
+    "get_issue_forms": [
+      "self",
+      "issue_key"
+    ],
+    "get_form_details": [
+      "self",
+      "issue_key",
+      "form_id"
+    ],
+    "update_form_answers": [
+      "self",
+      "issue_key",
+      "form_id",
+      "answers"
+    ],
+    "add_form_template": [
+      "self",
+      "issue_key",
+      "template_id"
+    ],
+    "delete_form": [
+      "self",
+      "issue_key",
+      "form_id"
+    ],
+    "get_form_attachments": [
+      "self",
+      "issue_key",
+      "form_id"
+    ]
+  },
+  "FieldsMixin": {
+    "get_fields": [
+      "self",
+      "refresh"
+    ],
+    "_generate_field_map": [
+      "self",
+      "force_regenerate"
+    ],
+    "get_field_id": [
+      "self",
+      "field_name",
+      "refresh"
+    ],
+    "get_field_by_id": [
+      "self",
+      "field_id",
+      "refresh"
+    ],
+    "get_custom_fields": [
+      "self",
+      "refresh"
+    ],
+    "get_required_fields": [
+      "self",
+      "issue_type",
+      "project_key"
+    ],
+    "get_field_ids_to_epic": [
+      "self"
+    ],
+    "_log_available_fields": [
+      "self",
+      "fields"
+    ],
+    "is_custom_field": [
+      "self",
+      "field_id"
+    ],
+    "format_field_value": [
+      "self",
+      "field_id",
+      "value"
+    ],
+    "_format_field_value_for_write": [
+      "self",
+      "field_id",
+      "value",
+      "field_definition"
+    ],
+    "_format_checklist_value": [
+      "value"
+    ],
+    "search_fields": [
+      "self",
+      "keyword",
+      "limit"
+    ]
+  },
+  "FormsMixin": {
+    "get_issue_forms": [
+      "self",
+      "issue_key"
+    ],
+    "get_form_details": [
+      "self",
+      "issue_key",
+      "form_id"
+    ],
+    "reopen_form": [
+      "self",
+      "issue_key",
+      "form_id"
+    ],
+    "submit_form": [
+      "self",
+      "issue_key",
+      "form_id"
+    ],
+    "update_form_field": [
+      "self",
+      "issue_key",
+      "field_id",
+      "field_value"
+    ]
+  },
+  "AttachmentsMixin": {
+    "download_attachment": [
+      "self",
+      "url",
+      "target_path"
+    ],
+    "fetch_attachment_content": [
+      "self",
+      "url"
+    ],
+    "get_issue_attachment_contents": [
+      "self",
+      "issue_key"
+    ],
+    "download_issue_attachments": [
+      "self",
+      "issue_key",
+      "target_dir"
+    ],
+    "upload_attachment": [
+      "self",
+      "issue_key",
+      "file_path"
+    ],
+    "upload_attachments": [
+      "self",
+      "issue_key",
+      "file_paths"
+    ]
+  },
+  "CommentsMixin": {
+    "get_issue_comments": [
+      "self",
+      "issue_key",
+      "limit"
+    ],
+    "add_comment": [
+      "self",
+      "issue_key",
+      "comment",
+      "visibility"
+    ],
+    "edit_comment": [
+      "self",
+      "issue_key",
+      "comment_id",
+      "comment",
+      "visibility"
+    ],
+    "_markdown_to_jira": [
+      "self",
+      "markdown_text"
+    ]
+  },
+  "DevelopmentMixin": {
+    "get_issue_development_info": [
+      "self",
+      "issue_key",
+      "application_type",
+      "data_type"
+    ],
+    "_fetch_dev_info_for_app_type": [
+      "self",
+      "issue_key",
+      "issue_id",
+      "application_type",
+      "data_type"
+    ],
+    "_parse_development_info": [
+      "self",
+      "response",
+      "issue_key"
+    ],
+    "get_issues_development_info": [
+      "self",
+      "issue_keys",
+      "application_type",
+      "data_type"
+    ]
+  },
+  "LinksMixin": {
+    "get_issue_link_types": [
+      "self"
+    ],
+    "create_issue_link": [
+      "self",
+      "data"
+    ],
+    "create_remote_issue_link": [
+      "self",
+      "issue_key",
+      "link_data"
+    ],
+    "remove_issue_link": [
+      "self",
+      "link_id"
+    ]
+  },
+  "ProjectsMixin": {
+    "get_all_projects": [
+      "self",
+      "include_archived"
+    ],
+    "get_project": [
+      "self",
+      "project_key"
+    ],
+    "get_project_model": [
+      "self",
+      "project_key"
+    ],
+    "project_exists": [
+      "self",
+      "project_key"
+    ],
+    "get_project_components": [
+      "self",
+      "project_key"
+    ],
+    "get_project_versions": [
+      "self",
+      "project_key"
+    ],
+    "get_project_roles": [
+      "self",
+      "project_key"
+    ],
+    "get_project_role_members": [
+      "self",
+      "project_key",
+      "role_id"
+    ],
+    "get_project_permission_scheme": [
+      "self",
+      "project_key"
+    ],
+    "get_project_notification_scheme": [
+      "self",
+      "project_key"
+    ],
+    "get_project_issue_types": [
+      "self",
+      "project_key"
+    ],
+    "get_project_issues_count": [
+      "self",
+      "project_key"
+    ],
+    "get_project_issues": [
+      "self",
+      "project_key",
+      "start",
+      "limit"
+    ],
+    "get_project_keys": [
+      "self"
+    ],
+    "get_project_leads": [
+      "self"
+    ],
+    "get_user_accessible_projects": [
+      "self",
+      "username"
+    ],
+    "create_project_version": [
+      "self",
+      "project_key",
+      "name",
+      "start_date",
+      "release_date",
+      "description"
+    ]
+  },
+  "AttachmentsOperationsProto": {
+    "upload_attachments": [
+      "self",
+      "issue_key",
+      "file_paths"
+    ]
+  },
+  "FormsOperationsProto": {
+    "get_issue_forms": [
+      "self",
+      "issue_key"
+    ],
+    "get_form_details": [
+      "self",
+      "issue_key",
+      "form_id"
+    ]
+  },
+  "IssueOperationsProto": {
+    "get_issue": [
+      "self",
+      "issue_key",
+      "expand",
+      "comment_limit",
+      "fields",
+      "properties",
+      "update_history"
+    ]
+  },
+  "SearchOperationsProto": {
+    "search_issues": [
+      "self",
+      "jql",
+      "fields",
+      "start",
+      "limit",
+      "expand",
+      "projects_filter"
+    ]
+  },
+  "EpicOperationsProto": {
+    "update_epic_fields": [
+      "self",
+      "issue_key",
+      "kwargs"
+    ],
+    "prepare_epic_fields": [
+      "self",
+      "fields",
+      "summary",
+      "kwargs",
+      "project_key"
+    ],
+    "_try_discover_fields_from_existing_epic": [
+      "self",
+      "field_ids"
+    ]
+  },
+  "FieldsOperationsProto": {
+    "_generate_field_map": [
+      "self",
+      "force_regenerate"
+    ],
+    "_format_field_value_for_write": [
+      "self",
+      "field_id",
+      "value",
+      "field_definition"
+    ],
+    "get_field_by_id": [
+      "self",
+      "field_id",
+      "refresh"
+    ],
+    "get_field_ids_to_epic": [
+      "self"
+    ],
+    "get_required_fields": [
+      "self",
+      "issue_type",
+      "project_key"
+    ]
+  },
+  "ProjectsOperationsProto": {
+    "get_project_issue_types": [
+      "self",
+      "project_key"
+    ]
+  },
+  "UsersOperationsProto": {
+    "_get_account_id": [
+      "self",
+      "assignee"
+    ]
+  },
+  "MetricsOperationsProto": {
+    "get_issue_dates": [
+      "self",
+      "issue_key",
+      "include_created",
+      "include_updated",
+      "include_due_date",
+      "include_resolution_date",
+      "include_status_changes",
+      "include_status_summary"
+    ]
+  },
+  "AVAILABLE_METRICS": [],
+  "IN_PROGRESS_CATEGORY_KEY": [],
+  "SLAMixin": {
+    "get_issue_sla": [
+      "self",
+      "issue_key",
+      "metrics",
+      "working_hours_only",
+      "include_raw_dates"
+    ],
+    "batch_get_issue_sla": [
+      "self",
+      "issue_keys",
+      "metrics",
+      "working_hours_only",
+      "include_raw_dates"
+    ],
+    "_get_sla_config": [
+      "self"
+    ],
+    "_get_sla_timezone": [
+      "self",
+      "sla_config"
+    ],
+    "_calculate_metrics": [
+      "self",
+      "issue_key",
+      "issue_dates",
+      "metrics",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_cycle_time": [
+      "self",
+      "issue_dates",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_lead_time": [
+      "self",
+      "issue_dates",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_time_in_status": [
+      "self",
+      "issue_dates",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_due_date_compliance": [
+      "self",
+      "issue_dates"
+    ],
+    "_get_status_category_map": [
+      "self"
+    ],
+    "_is_in_progress_status": [
+      "self",
+      "issue_key",
+      "status_name"
+    ],
+    "_calculate_resolution_time": [
+      "self",
+      "issue_key",
+      "issue_dates",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_first_response_time": [
+      "self",
+      "issue_dates",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_duration": [
+      "self",
+      "start",
+      "end",
+      "working_hours_only",
+      "sla_config"
+    ],
+    "_calculate_working_minutes": [
+      "self",
+      "start",
+      "end",
+      "sla_config"
+    ]
+  },
+  "EpicsMixin": {
+    "_try_discover_fields_from_existing_epic": [
+      "self",
+      "field_ids"
+    ],
+    "prepare_epic_fields": [
+      "self",
+      "fields",
+      "summary",
+      "kwargs",
+      "project_key"
+    ],
+    "_get_epic_name_field_id": [
+      "self",
+      "field_ids"
+    ],
+    "_get_epic_color_field_id": [
+      "self",
+      "field_ids"
+    ],
+    "link_issue_to_epic": [
+      "self",
+      "issue_key",
+      "epic_key"
+    ],
+    "get_epic_issues": [
+      "self",
+      "epic_key",
+      "start",
+      "limit"
+    ],
+    "_find_epic_link_field": [
+      "self",
+      "field_ids"
+    ],
+    "_find_sample_epic": [
+      "self"
+    ],
+    "_find_issues_linked_to_epic": [
+      "self",
+      "epic_key"
+    ],
+    "_get_epic_issues_by_jql": [
+      "self",
+      "epic_key",
+      "jql",
+      "start",
+      "limit"
+    ],
+    "update_epic_fields": [
+      "self",
+      "issue_key",
+      "kwargs"
+    ]
+  },
+  "BoardsMixin": {
+    "get_all_agile_boards": [
+      "self",
+      "board_name",
+      "project_key",
+      "board_type",
+      "start",
+      "limit"
+    ],
+    "get_all_agile_boards_model": [
+      "self",
+      "board_name",
+      "project_key",
+      "board_type",
+      "start",
+      "limit"
+    ]
+  },
+  "JiraClient": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_validate_authentication": [
+      "self"
+    ],
+    "_apply_custom_headers": [
+      "self"
+    ],
+    "_clean_text": [
+      "self",
+      "text"
+    ],
+    "_markdown_to_jira": [
+      "self",
+      "markdown_text"
+    ],
+    "get_paged": [
+      "self",
+      "method",
+      "url",
+      "params_or_json"
+    ],
+    "create_version": [
+      "self",
+      "project",
+      "name",
+      "start_date",
+      "release_date",
+      "description"
+    ]
+  },
+  "WorklogMixin": {
+    "_parse_time_spent": [
+      "self",
+      "time_spent"
+    ],
+    "add_worklog": [
+      "self",
+      "issue_key",
+      "time_spent",
+      "comment",
+      "started",
+      "original_estimate",
+      "remaining_estimate"
+    ],
+    "get_worklog": [
+      "self",
+      "issue_key"
+    ],
+    "get_worklog_models": [
+      "self",
+      "issue_key"
+    ],
+    "get_worklogs": [
+      "self",
+      "issue_key"
+    ]
+  },
+  "SearchMixin": {
+    "search_issues": [
+      "self",
+      "jql",
+      "fields",
+      "start",
+      "limit",
+      "expand",
+      "projects_filter"
+    ],
+    "get_board_issues": [
+      "self",
+      "board_id",
+      "jql",
+      "fields",
+      "start",
+      "limit",
+      "expand"
+    ],
+    "get_sprint_issues": [
+      "self",
+      "sprint_id",
+      "fields",
+      "start",
+      "limit"
+    ]
+  },
+  "FieldOptionsMixin": {
+    "get_field_contexts": [
+      "self",
+      "field_id"
+    ],
+    "get_field_options": [
+      "self",
+      "field_id",
+      "context_id",
+      "project_key",
+      "issue_type"
+    ],
+    "_get_field_options_cloud": [
+      "self",
+      "field_id",
+      "context_id"
+    ],
+    "_get_field_options_server": [
+      "self",
+      "field_id",
+      "project_key",
+      "issue_type"
+    ]
+  },
+  "T": [],
+  "handle_forms_http_error": [
+    "error",
+    "operation",
+    "resource_id"
+  ],
+  "convert_datetime_to_timestamp": [
+    "value",
+    "field_type"
+  ],
+  "SprintsMixin": {
+    "get_all_sprints_from_board": [
+      "self",
+      "board_id",
+      "state",
+      "start",
+      "limit"
+    ],
+    "get_all_sprints_from_board_model": [
+      "self",
+      "board_id",
+      "state",
+      "start",
+      "limit"
+    ],
+    "update_sprint": [
+      "self",
+      "sprint_id",
+      "sprint_name",
+      "state",
+      "start_date",
+      "end_date",
+      "goal"
+    ],
+    "create_sprint": [
+      "self",
+      "board_id",
+      "sprint_name",
+      "start_date",
+      "end_date",
+      "goal"
+    ]
+  },
+  "SLAConfig": {
+    "__post_init__": [
+      "self"
+    ],
+    "from_env": [
+      "cls"
+    ]
+  },
+  "JiraConfig": {
+    "is_cloud": [
+      "self"
+    ],
+    "verify_ssl": [
+      "self"
+    ],
+    "from_env": [
+      "cls"
+    ],
+    "is_auth_configured": [
+      "self"
+    ]
+  },
+  "JiraFetcher": {},
+  "IssuesMixin": {
+    "get_issue": [
+      "self",
+      "issue_key",
+      "expand",
+      "comment_limit",
+      "fields",
+      "properties",
+      "update_history"
+    ],
+    "_normalize_comment_limit": [
+      "self",
+      "comment_limit"
+    ],
+    "_get_issue_comments_if_needed": [
+      "self",
+      "issue_key",
+      "comment_limit"
+    ],
+    "_extract_epic_information": [
+      "self",
+      "issue"
+    ],
+    "_format_issue_content": [
+      "self",
+      "issue_key",
+      "issue",
+      "description",
+      "comments",
+      "created_date",
+      "epic_info"
+    ],
+    "_create_issue_metadata": [
+      "self",
+      "issue_key",
+      "issue",
+      "comments",
+      "created_date",
+      "epic_info"
+    ],
+    "create_issue": [
+      "self",
+      "project_key",
+      "summary",
+      "issue_type",
+      "description",
+      "assignee",
+      "components"
+    ],
+    "_is_epic_issue_type": [
+      "self",
+      "issue_type"
+    ],
+    "_find_epic_issue_type_id": [
+      "self",
+      "project_key"
+    ],
+    "_find_subtask_issue_type_id": [
+      "self",
+      "project_key"
+    ],
+    "_prepare_epic_fields": [
+      "self",
+      "fields",
+      "summary",
+      "kwargs"
+    ],
+    "_prepare_parent_fields": [
+      "self",
+      "fields",
+      "kwargs"
+    ],
+    "_add_assignee_to_fields": [
+      "self",
+      "fields",
+      "assignee"
+    ],
+    "_process_additional_fields": [
+      "self",
+      "fields",
+      "kwargs"
+    ],
+    "_handle_create_issue_error": [
+      "self",
+      "exception",
+      "issue_type"
+    ],
+    "update_issue": [
+      "self",
+      "issue_key",
+      "fields"
+    ],
+    "_update_issue_with_status": [
+      "self",
+      "issue_key",
+      "fields"
+    ],
+    "delete_issue": [
+      "self",
+      "issue_key"
+    ],
+    "_log_available_fields": [
+      "self",
+      "fields"
+    ],
+    "_process_field_for_epic_data": [
+      "self",
+      "field",
+      "field_ids"
+    ],
+    "_get_raw_transitions": [
+      "self",
+      "issue_key"
+    ],
+    "transition_issue": [
+      "self",
+      "issue_key",
+      "transition_id"
+    ],
+    "batch_create_issues": [
+      "self",
+      "issues",
+      "validate_only"
+    ],
+    "batch_get_changelogs": [
+      "self",
+      "issue_ids_or_keys",
+      "fields"
+    ]
+  },
+  "EMPTY_STRING": [],
+  "UNKNOWN": [],
+  "UNASSIGNED": [],
+  "NONE_VALUE": [],
+  "JIRA_DEFAULT_ID": [],
+  "JIRA_DEFAULT_KEY": [],
+  "JIRA_DEFAULT_STATUS": [],
+  "JIRA_DEFAULT_PRIORITY": [],
+  "JIRA_DEFAULT_ISSUE_TYPE": [],
+  "JIRA_DEFAULT_PROJECT": [],
+  "CONFLUENCE_DEFAULT_ID": [],
+  "CONFLUENCE_DEFAULT_SPACE": [],
+  "CONFLUENCE_DEFAULT_VERSION": [],
+  "DEFAULT_TIMESTAMP": [],
+  "ApiModel": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "TimestampMixin": {
+    "format_timestamp": [
+      "timestamp"
+    ],
+    "is_valid_timestamp": [
+      "timestamp"
+    ]
+  },
+  "StatusChangeEntry": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "StatusTimeSummary": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "IssueDatesResponse": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "IssueDatesBatchResponse": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "EPIC_NAME_PATTERNS": [],
+  "EPIC_LINK_PATTERNS": [],
+  "JiraIssue": {
+    "__getattribute__": [
+      "self",
+      "name"
+    ],
+    "page_content": [
+      "self"
+    ],
+    "_find_custom_field_in_api_response": [
+      "fields",
+      "name_patterns"
+    ],
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ],
+    "_process_custom_field_value": [
+      "self",
+      "field_value"
+    ],
+    "_find_custom_field_in_issue": [
+      "self",
+      "name",
+      "pattern"
+    ],
+    "_get_epic_name": [
+      "self"
+    ],
+    "_get_epic_link": [
+      "self"
+    ],
+    "_extract_issue_links": [
+      "fields"
+    ]
+  },
+  "JiraComment": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ProFormaFormState": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ]
+  },
+  "ProFormaFormField": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ]
+  },
+  "ProFormaForm": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "is_open": [
+      "self"
+    ],
+    "is_submitted": [
+      "self"
+    ]
+  },
+  "JiraProject": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraVersion": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraTransition": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "WorkingHoursConfig": {},
+  "CycleTimeMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "LeadTimeMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "TimeInStatusEntry": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "TimeInStatusMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "DueDateComplianceMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ResolutionTimeMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "FirstResponseTimeMetric": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "IssueSLAMetrics": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "IssueSLAResponse": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "IssueSLABatchResponse": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraIssueLinkType": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraLinkedIssueFields": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraLinkedIssue": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraIssueLink": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraUser": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraStatusCategory": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ]
+  },
+  "JiraStatus": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraIssueType": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraPriority": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraAttachment": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraTimetracking": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraResolution": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraChangelogItem": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraChangelog": {
+    "serialize_created": [
+      "self",
+      "value"
+    ],
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraWorklog": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraSearchResult": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "validate_search_result": [
+      "self"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraBoard": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "JiraSprint": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "FieldContext": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "FieldOption": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "adf_to_text": [
+    "adf_content"
+  ],
+  "ConfluenceSpace": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceComment": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "PageViews": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "PageViewsBatchResponse": {
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceUserSearchResult": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceUserSearchResults": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceUser": {
+    "name": [
+      "self"
+    ],
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceAttachment": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceLabel": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluenceSearchResult": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "validate_search_result": [
+      "self"
+    ]
+  },
+  "ConfluenceVersion": {
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "ConfluencePage": {
+    "page_content": [
+      "self"
+    ],
+    "from_api_response": [
+      "cls",
+      "data"
+    ],
+    "to_simplified_dict": [
+      "self"
+    ]
+  },
+  "_shutdown_event": [],
+  "setup_signal_handlers": [],
+  "ensure_clean_exit": [],
+  "is_atlassian_cloud_url": [
+    "url"
+  ],
+  "SSLIgnoreAdapter": {
+    "init_poolmanager": [
+      "self",
+      "connections",
+      "maxsize",
+      "block"
+    ],
+    "cert_verify": [
+      "self",
+      "conn",
+      "url",
+      "verify",
+      "cert"
+    ]
+  },
+  "configure_ssl_verification": [
+    "service_name",
+    "url",
+    "session",
+    "ssl_verify",
+    "client_cert",
+    "client_key",
+    "client_key_password"
+  ],
+  "is_env_truthy": [
+    "env_var_name",
+    "default"
+  ],
+  "is_env_extended_truthy": [
+    "env_var_name",
+    "default"
+  ],
+  "is_env_ssl_verify": [
+    "env_var_name",
+    "default"
+  ],
+  "get_custom_headers": [
+    "env_var_name"
+  ],
+  "get_available_services": [
+    "headers"
+  ],
+  "authorization_code": [],
+  "authorization_state": [],
+  "callback_received": [],
+  "callback_error": [],
+  "_sanitize_input": [
+    "user_input"
+  ],
+  "CallbackHandler": {
+    "do_GET": [
+      "self"
+    ],
+    "_send_response": [
+      "self",
+      "message",
+      "status"
+    ],
+    "log_message": [
+      "self",
+      "format"
+    ]
+  },
+  "start_callback_server": [
+    "port"
+  ],
+  "wait_for_callback": [
+    "timeout"
+  ],
+  "parse_redirect_uri": [
+    "redirect_uri"
+  ],
+  "OAuthSetupArgs": {},
+  "run_oauth_flow": [
+    "args"
+  ],
+  "_prompt_for_input": [
+    "prompt",
+    "env_var",
+    "is_secret"
+  ],
+  "run_oauth_setup": [],
+  "parse_date": [
+    "date_str"
+  ],
+  "TOKEN_URL": [],
+  "AUTHORIZE_URL": [],
+  "CLOUD_ID_URL": [],
+  "TOKEN_EXPIRY_MARGIN": [],
+  "HTTP_CONNECT_TIMEOUT": [],
+  "HTTP_READ_TIMEOUT": [],
+  "HTTP_TIMEOUT": [],
+  "KEYRING_SERVICE_NAME": [],
+  "OAuthConfig": {
+    "is_token_expired": [
+      "self"
+    ],
+    "get_authorization_url": [
+      "self",
+      "state"
+    ],
+    "exchange_code_for_tokens": [
+      "self",
+      "code"
+    ],
+    "refresh_access_token": [
+      "self"
+    ],
+    "ensure_valid_token": [
+      "self"
+    ],
+    "_get_cloud_id": [
+      "self"
+    ],
+    "_get_keyring_username": [
+      "self"
+    ],
+    "_save_tokens": [
+      "self"
+    ],
+    "_save_tokens_to_file": [
+      "self",
+      "token_data"
+    ],
+    "load_tokens": [
+      "client_id"
+    ],
+    "_load_tokens_from_file": [
+      "client_id"
+    ],
+    "from_env": [
+      "cls"
+    ]
+  },
+  "BYOAccessTokenOAuthConfig": {
+    "from_env": [
+      "cls"
+    ]
+  },
+  "get_oauth_config_from_env": [],
+  "configure_oauth_session": [
+    "session",
+    "oauth_config"
+  ],
+  "setup_logging": [
+    "level",
+    "stream"
+  ],
+  "mask_sensitive": [
+    "value",
+    "keep_chars"
+  ],
+  "get_masked_session_headers": [
+    "headers"
+  ],
+  "log_config_param": [
+    "logger",
+    "service",
+    "param",
+    "value",
+    "sensitive"
+  ],
+  "F": [],
+  "check_write_access": [
+    "func"
+  ],
+  "handle_atlassian_api_errors": [
+    "service_name"
+  ],
+  "is_read_only_mode": [],
+  "get_enabled_tools": [],
+  "should_include_tool": [
+    "tool_name",
+    "enabled_tools"
+  ],
+  "SpacesMixin": {
+    "get_spaces": [
+      "self",
+      "start",
+      "limit"
+    ],
+    "get_user_contributed_spaces": [
+      "self",
+      "limit"
+    ]
+  },
+  "extract_emoji_from_property": [
+    "value"
+  ],
+  "emoji_to_hex_id": [
+    "emoji"
+  ],
+  "quote_cql_identifier_if_needed": [
+    "identifier"
+  ],
+  "AnalyticsMixin": {
+    "get_page_views": [
+      "self",
+      "page_id",
+      "include_title"
+    ],
+    "_get_page_views_direct": [
+      "self",
+      "page_id"
+    ],
+    "batch_get_page_views": [
+      "self",
+      "page_ids",
+      "include_title"
+    ]
+  },
+  "RESERVED_CQL_WORDS": [],
+  "PagesMixin": {
+    "_v2_adapter": [
+      "self"
+    ],
+    "get_page_content": [
+      "self",
+      "page_id"
+    ],
+    "get_page_ancestors": [
+      "self",
+      "page_id"
+    ],
+    "_get_page_emoji": [
+      "self",
+      "page_id"
+    ],
+    "_set_single_property": [
+      "self",
+      "page_id",
+      "property_key",
+      "value"
+    ],
+    "_set_page_emoji": [
+      "self",
+      "page_id",
+      "emoji"
+    ],
+    "get_page_by_title": [
+      "self",
+      "space_key",
+      "title"
+    ],
+    "get_space_pages": [
+      "self",
+      "space_key",
+      "start",
+      "limit"
+    ],
+    "create_page": [
+      "self",
+      "space_key",
+      "title",
+      "body",
+      "parent_id"
+    ],
+    "update_page": [
+      "self",
+      "page_id",
+      "title",
+      "body"
+    ],
+    "get_page_children": [
+      "self",
+      "page_id",
+      "start",
+      "limit",
+      "expand"
+    ],
+    "delete_page": [
+      "self",
+      "page_id"
+    ],
+    "get_page_history": [
+      "self",
+      "page_id",
+      "version",
+      "convert_to_markdown"
+    ]
+  },
+  "ConfluenceClient": {
+    "__init__": [
+      "self",
+      "config"
+    ],
+    "_validate_authentication": [
+      "self"
+    ],
+    "_apply_custom_headers": [
+      "self"
+    ],
+    "_process_html_content": [
+      "self",
+      "html_content",
+      "space_key"
+    ]
+  },
+  "ConfluenceV2Adapter": {
+    "__init__": [
+      "self",
+      "session",
+      "base_url"
+    ],
+    "_get_space_id": [
+      "self",
+      "space_key"
+    ],
+    "create_page": [
+      "self",
+      "space_key",
+      "title",
+      "body",
+      "parent_id",
+      "representation",
+      "status"
+    ],
+    "_get_page_version": [
+      "self",
+      "page_id"
+    ],
+    "update_page": [
+      "self",
+      "page_id",
+      "title",
+      "body",
+      "representation",
+      "version_comment",
+      "status"
+    ],
+    "_get_space_key_from_id": [
+      "self",
+      "space_id"
+    ],
+    "get_page": [
+      "self",
+      "page_id",
+      "expand"
+    ],
+    "delete_page": [
+      "self",
+      "page_id"
+    ],
+    "_convert_v2_to_v1_format": [
+      "self",
+      "v2_response",
+      "space_key"
+    ],
+    "get_page_emoji": [
+      "self",
+      "page_id"
+    ],
+    "_set_page_property": [
+      "self",
+      "page_id",
+      "property_key",
+      "value"
+    ],
+    "set_page_emoji": [
+      "self",
+      "page_id",
+      "emoji"
+    ],
+    "_get_property": [
+      "self",
+      "page_id",
+      "property_key"
+    ],
+    "get_page_versions_list": [
+      "self",
+      "page_id"
+    ],
+    "get_page_by_version": [
+      "self",
+      "page_id",
+      "version",
+      "expand"
+    ],
+    "get_page_views": [
+      "self",
+      "page_id"
+    ],
+    "get_page_attachments": [
+      "self",
+      "page_id",
+      "start",
+      "limit",
+      "filename",
+      "media_type",
+      "sort"
+    ],
+    "get_attachment_by_id": [
+      "self",
+      "attachment_id"
+    ],
+    "delete_attachment": [
+      "self",
+      "attachment_id"
+    ],
+    "_convert_attachments_v2_to_v1": [
+      "self",
+      "v2_response"
+    ],
+    "_convert_single_attachment_v2_to_v1": [
+      "self",
+      "v2_attachment"
+    ]
+  },
+  "LabelsMixin": {
+    "get_page_labels": [
+      "self",
+      "page_id"
+    ],
+    "add_page_label": [
+      "self",
+      "page_id",
+      "name"
+    ]
+  },
+  "ConfluenceConfig": {
+    "is_cloud": [
+      "self"
+    ],
+    "verify_ssl": [
+      "self"
+    ],
+    "from_env": [
+      "cls"
+    ],
+    "is_auth_configured": [
+      "self"
+    ]
+  },
+  "ConfluenceFetcher": {},
+  "JiraPreprocessor": {
+    "VALID_JIRA_LANGUAGES": [],
+    "LANGUAGE_MAPPING": [],
+    "__init__": [
+      "self",
+      "base_url",
+      "disable_translation"
+    ],
+    "clean_jira_text": [
+      "self",
+      "text"
+    ],
+    "_process_mentions": [
+      "self",
+      "text",
+      "pattern"
+    ],
+    "_process_smart_links": [
+      "self",
+      "text"
+    ],
+    "jira_to_markdown": [
+      "self",
+      "input_text"
+    ],
+    "_normalize_code_language": [
+      "self",
+      "lang"
+    ],
+    "markdown_to_jira": [
+      "self",
+      "input_text"
+    ],
+    "_convert_jira_list_to_markdown": [
+      "self",
+      "match"
+    ]
+  },
+  "ConfluencePreprocessor": {
+    "__init__": [
+      "self",
+      "base_url"
+    ],
+    "markdown_to_confluence_storage": [
+      "self",
+      "markdown_content"
+    ]
+  },
+  "BasePreprocessor": {
+    "__init__": [
+      "self",
+      "base_url"
+    ],
+    "process_html_content": [
+      "self",
+      "html_content",
+      "space_key",
+      "confluence_client"
+    ],
+    "_process_user_mentions_in_soup": [
+      "self",
+      "soup",
+      "confluence_client"
+    ],
+    "_process_user_profile_macros_in_soup": [
+      "self",
+      "soup",
+      "confluence_client"
+    ],
+    "_replace_user_mention": [
+      "self",
+      "user_element",
+      "account_id",
+      "confluence_client"
+    ],
+    "_use_fallback_user_mention": [
+      "self",
+      "user_element",
+      "account_id"
+    ],
+    "_convert_html_to_markdown": [
+      "self",
+      "text"
+    ]
+  },
+  "MainAppContext": {},
+  "_create_user_config_for_fetcher": [
+    "base_config",
+    "auth_type",
+    "credentials",
+    "cloud_id"
+  ],
+  "get_jira_fetcher": [
+    "ctx"
+  ],
+  "get_confluence_fetcher": [
+    "ctx"
+  ],
+  "ISSUE_KEY_PATTERN": [],
+  "PROJECT_KEY_PATTERN": [],
+  "jira_mcp": [],
+  "_parse_additional_fields": [
+    "additional_fields"
+  ],
+  "get_user_profile": [
+    "ctx",
+    "user_identifier"
+  ],
+  "get_issue": [
+    "ctx",
+    "issue_key",
+    "fields",
+    "expand",
+    "comment_limit",
+    "properties",
+    "update_history"
+  ],
+  "search": [
+    "ctx",
+    "jql",
+    "fields",
+    "limit",
+    "start_at",
+    "projects_filter",
+    "expand"
+  ],
+  "search_fields": [
+    "ctx",
+    "keyword",
+    "limit",
+    "refresh"
+  ],
+  "get_field_options": [
+    "ctx",
+    "field_id",
+    "context_id",
+    "project_key",
+    "issue_type"
+  ],
+  "get_project_issues": [
+    "ctx",
+    "project_key",
+    "limit",
+    "start_at"
+  ],
+  "get_transitions": [
+    "ctx",
+    "issue_key"
+  ],
+  "get_worklog": [
+    "ctx",
+    "issue_key"
+  ],
+  "download_attachments": [
+    "ctx",
+    "issue_key"
+  ],
+  "get_agile_boards": [
+    "ctx",
+    "board_name",
+    "project_key",
+    "board_type",
+    "start_at",
+    "limit"
+  ],
+  "get_board_issues": [
+    "ctx",
+    "board_id",
+    "jql",
+    "fields",
+    "start_at",
+    "limit",
+    "expand"
+  ],
+  "get_sprints_from_board": [
+    "ctx",
+    "board_id",
+    "state",
+    "start_at",
+    "limit"
+  ],
+  "get_sprint_issues": [
+    "ctx",
+    "sprint_id",
+    "fields",
+    "start_at",
+    "limit"
+  ],
+  "get_link_types": [
+    "ctx"
+  ],
+  "create_issue": [
+    "ctx",
+    "project_key",
+    "summary",
+    "issue_type",
+    "assignee",
+    "description",
+    "components",
+    "additional_fields"
+  ],
+  "batch_create_issues": [
+    "ctx",
+    "issues",
+    "validate_only"
+  ],
+  "batch_get_changelogs": [
+    "ctx",
+    "issue_ids_or_keys",
+    "fields",
+    "limit"
+  ],
+  "update_issue": [
+    "ctx",
+    "issue_key",
+    "fields",
+    "additional_fields",
+    "components",
+    "attachments"
+  ],
+  "delete_issue": [
+    "ctx",
+    "issue_key"
+  ],
+  "add_comment": [
+    "ctx",
+    "issue_key",
+    "comment",
+    "visibility"
+  ],
+  "edit_comment": [
+    "ctx",
+    "issue_key",
+    "comment_id",
+    "comment",
+    "visibility"
+  ],
+  "add_worklog": [
+    "ctx",
+    "issue_key",
+    "time_spent",
+    "comment",
+    "started",
+    "original_estimate",
+    "remaining_estimate"
+  ],
+  "link_to_epic": [
+    "ctx",
+    "issue_key",
+    "epic_key"
+  ],
+  "create_issue_link": [
+    "ctx",
+    "link_type",
+    "inward_issue_key",
+    "outward_issue_key",
+    "comment",
+    "comment_visibility"
+  ],
+  "create_remote_issue_link": [
+    "ctx",
+    "issue_key",
+    "url",
+    "title",
+    "summary",
+    "relationship",
+    "icon_url"
+  ],
+  "remove_issue_link": [
+    "ctx",
+    "link_id"
+  ],
+  "transition_issue": [
+    "ctx",
+    "issue_key",
+    "transition_id",
+    "fields",
+    "comment"
+  ],
+  "create_sprint": [
+    "ctx",
+    "board_id",
+    "sprint_name",
+    "start_date",
+    "end_date",
+    "goal"
+  ],
+  "update_sprint": [
+    "ctx",
+    "sprint_id",
+    "sprint_name",
+    "state",
+    "start_date",
+    "end_date",
+    "goal"
+  ],
+  "get_project_versions": [
+    "ctx",
+    "project_key"
+  ],
+  "get_all_projects": [
+    "ctx",
+    "include_archived"
+  ],
+  "create_version": [
+    "ctx",
+    "project_key",
+    "name",
+    "start_date",
+    "release_date",
+    "description"
+  ],
+  "batch_create_versions": [
+    "ctx",
+    "project_key",
+    "versions"
+  ],
+  "get_issue_proforma_forms": [
+    "ctx",
+    "issue_key"
+  ],
+  "get_proforma_form_details": [
+    "ctx",
+    "issue_key",
+    "form_id"
+  ],
+  "update_proforma_form_answers": [
+    "ctx",
+    "issue_key",
+    "form_id",
+    "answers"
+  ],
+  "get_issue_dates": [
+    "ctx",
+    "issue_key",
+    "include_status_changes",
+    "include_status_summary"
+  ],
+  "get_issue_sla": [
+    "ctx",
+    "issue_key",
+    "metrics",
+    "working_hours_only",
+    "include_raw_dates"
+  ],
+  "get_issue_development_info": [
+    "ctx",
+    "issue_key",
+    "application_type",
+    "data_type"
+  ],
+  "get_issues_development_info": [
+    "ctx",
+    "issue_keys",
+    "application_type",
+    "data_type"
+  ],
+  "health_check": [
+    "request"
+  ],
+  "main_lifespan": [
+    "app"
+  ],
+  "AtlassianMCP": {
+    "_normalize_http_path": [
+      "path"
+    ],
+    "get_streamable_http_path": [
+      "self"
+    ],
+    "_list_tools_mcp": [
+      "self"
+    ],
+    "http_app": [
+      "self",
+      "path",
+      "middleware",
+      "json_response",
+      "stateless_http",
+      "transport",
+      "event_store",
+      "retry_interval"
+    ]
+  },
+  "UserTokenMiddleware": {
+    "__init__": [
+      "self",
+      "app",
+      "mcp_server_ref"
+    ],
+    "__call__": [
+      "self",
+      "scope",
+      "receive",
+      "send"
+    ],
+    "_send_json_error_response": [
+      "self",
+      "send",
+      "status_code",
+      "error_message"
+    ],
+    "_should_process_auth": [
+      "self",
+      "scope"
+    ],
+    "_process_authentication_headers": [
+      "self",
+      "scope"
+    ],
+    "_parse_auth_header": [
+      "self",
+      "auth_header",
+      "scope"
+    ]
+  },
+  "main_mcp": [],
+  "_health_check_route": [
+    "request"
+  ],
+  "_ATTACHMENT_MAX_BYTES": [],
+  "confluence_mcp": [],
+  "get_page": [
+    "ctx",
+    "page_id",
+    "title",
+    "space_key",
+    "include_metadata",
+    "convert_to_markdown"
+  ],
+  "get_page_children": [
+    "ctx",
+    "parent_id",
+    "expand",
+    "limit",
+    "include_content",
+    "convert_to_markdown",
+    "start",
+    "include_folders"
+  ],
+  "get_comments": [
+    "ctx",
+    "page_id"
+  ],
+  "get_labels": [
+    "ctx",
+    "page_id"
+  ],
+  "add_label": [
+    "ctx",
+    "page_id",
+    "name"
+  ],
+  "create_page": [
+    "ctx",
+    "space_key",
+    "title",
+    "content",
+    "parent_id",
+    "content_format",
+    "enable_heading_anchors",
+    "emoji"
+  ],
+  "update_page": [
+    "ctx",
+    "page_id",
+    "title",
+    "content",
+    "is_minor_edit",
+    "version_comment",
+    "parent_id",
+    "content_format",
+    "enable_heading_anchors",
+    "emoji"
+  ],
+  "delete_page": [
+    "ctx",
+    "page_id"
+  ],
+  "search_user": [
+    "ctx",
+    "query",
+    "limit"
+  ],
+  "get_page_history": [
+    "ctx",
+    "page_id",
+    "version",
+    "convert_to_markdown"
+  ],
+  "get_page_views": [
+    "ctx",
+    "page_id",
+    "include_title"
+  ],
+  "upload_attachment": [
+    "ctx",
+    "content_id",
+    "file_path",
+    "comment",
+    "minor_edit"
+  ],
+  "upload_attachments": [
+    "ctx",
+    "content_id",
+    "file_paths",
+    "comment",
+    "minor_edit"
+  ],
+  "get_attachments": [
+    "ctx",
+    "content_id",
+    "start",
+    "limit",
+    "filename",
+    "media_type"
+  ],
+  "download_attachment": [
+    "ctx",
+    "attachment_id"
+  ],
+  "download_content_attachments": [
+    "ctx",
+    "content_id"
+  ],
+  "delete_attachment": [
+    "ctx",
+    "attachment_id"
+  ]
+}
