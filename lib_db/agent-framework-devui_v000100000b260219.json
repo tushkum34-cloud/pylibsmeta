@@ -1,0 +1,874 @@
+{
+  "logger": [],
+  "extract_agent_metadata": [
+    "entity_object"
+  ],
+  "extract_executor_message_types": [
+    "executor"
+  ],
+  "_contains_chat_message": [
+    "type_hint"
+  ],
+  "select_primary_input_type": [
+    "message_types"
+  ],
+  "is_serialization_mixin": [
+    "cls"
+  ],
+  "_type_to_schema": [
+    "type_hint",
+    "field_name"
+  ],
+  "generate_schema_from_serialization_mixin": [
+    "cls"
+  ],
+  "generate_schema_from_dataclass": [
+    "cls"
+  ],
+  "extract_response_type_from_executor": [
+    "executor",
+    "request_type"
+  ],
+  "generate_input_schema": [
+    "input_type"
+  ],
+  "parse_input_for_type": [
+    "input_data",
+    "target_type"
+  ],
+  "_parse_string_input": [
+    "input_str",
+    "target_type"
+  ],
+  "_parse_dict_input": [
+    "input_dict",
+    "target_type"
+  ],
+  "setup_logging": [
+    "level"
+  ],
+  "create_cli_parser": [],
+  "get_version": [],
+  "validate_directory": [
+    "directory"
+  ],
+  "print_startup_info": [
+    "entities_dir",
+    "host",
+    "port",
+    "ui_enabled",
+    "reload",
+    "auth_token"
+  ],
+  "main": [],
+  "SessionData": [],
+  "RequestRecord": [],
+  "SessionSummary": [],
+  "SessionManager": {
+    "__init__": [
+      "self"
+    ],
+    "create_session": [
+      "self",
+      "session_id"
+    ],
+    "get_session": [
+      "self",
+      "session_id"
+    ],
+    "close_session": [
+      "self",
+      "session_id"
+    ],
+    "add_request_record": [
+      "self",
+      "session_id",
+      "entity_id",
+      "executor_name",
+      "request_input",
+      "model_id"
+    ],
+    "update_request_record": [
+      "self",
+      "session_id",
+      "request_id",
+      "updates"
+    ],
+    "get_session_history": [
+      "self",
+      "session_id"
+    ],
+    "get_active_sessions": [
+      "self"
+    ],
+    "cleanup_old_sessions": [
+      "self",
+      "max_age_hours"
+    ]
+  },
+  "SimpleTraceCollector": {
+    "__init__": [
+      "self",
+      "response_id",
+      "entity_id"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ],
+    "get_pending_events": [
+      "self"
+    ],
+    "_convert_span_to_trace_event": [
+      "self",
+      "span"
+    ]
+  },
+  "capture_traces": [
+    "response_id",
+    "entity_id"
+  ],
+  "MessageRole": [],
+  "CONVERSATION_ITEM_TYPE_CHECKPOINT": [],
+  "CONVERSATION_TYPE_CHECKPOINT_CONTAINER": [],
+  "ConversationStore": {
+    "create_conversation": [
+      "self",
+      "metadata",
+      "conversation_id"
+    ],
+    "get_conversation": [
+      "self",
+      "conversation_id"
+    ],
+    "update_conversation": [
+      "self",
+      "conversation_id",
+      "metadata"
+    ],
+    "delete_conversation": [
+      "self",
+      "conversation_id"
+    ],
+    "add_items": [
+      "self",
+      "conversation_id",
+      "items"
+    ],
+    "list_items": [
+      "self",
+      "conversation_id",
+      "limit",
+      "after",
+      "order"
+    ],
+    "get_item": [
+      "self",
+      "conversation_id",
+      "item_id"
+    ],
+    "get_session": [
+      "self",
+      "conversation_id"
+    ],
+    "list_conversations_by_metadata": [
+      "self",
+      "metadata_filter"
+    ],
+    "add_trace": [
+      "self",
+      "conversation_id",
+      "trace_event"
+    ],
+    "get_traces": [
+      "self",
+      "conversation_id"
+    ]
+  },
+  "InMemoryConversationStore": {
+    "__init__": [
+      "self"
+    ],
+    "create_conversation": [
+      "self",
+      "metadata",
+      "conversation_id"
+    ],
+    "get_conversation": [
+      "self",
+      "conversation_id"
+    ],
+    "update_conversation": [
+      "self",
+      "conversation_id",
+      "metadata"
+    ],
+    "delete_conversation": [
+      "self",
+      "conversation_id"
+    ],
+    "add_items": [
+      "self",
+      "conversation_id",
+      "items"
+    ],
+    "list_items": [
+      "self",
+      "conversation_id",
+      "limit",
+      "after",
+      "order"
+    ],
+    "get_item": [
+      "self",
+      "conversation_id",
+      "item_id"
+    ],
+    "get_session": [
+      "self",
+      "conversation_id"
+    ],
+    "add_trace": [
+      "self",
+      "conversation_id",
+      "trace_event"
+    ],
+    "get_traces": [
+      "self",
+      "conversation_id"
+    ],
+    "list_conversations_by_metadata": [
+      "self",
+      "metadata_filter"
+    ],
+    "_list_all_checkpoints": [
+      "checkpoint_storage"
+    ]
+  },
+  "CheckpointConversationManager": {
+    "__init__": [
+      "self",
+      "conversation_store"
+    ],
+    "get_checkpoint_storage": [
+      "self",
+      "conversation_id"
+    ]
+  },
+  "EntityDiscovery": {
+    "__init__": [
+      "self",
+      "entities_dir"
+    ],
+    "discover_entities": [
+      "self"
+    ],
+    "get_entity_info": [
+      "self",
+      "entity_id"
+    ],
+    "get_entity_object": [
+      "self",
+      "entity_id"
+    ],
+    "load_entity": [
+      "self",
+      "entity_id",
+      "checkpoint_manager"
+    ],
+    "_load_directory_entity": [
+      "self",
+      "entity_id",
+      "entity_info"
+    ],
+    "list_entities": [
+      "self"
+    ],
+    "get_cleanup_hooks": [
+      "self",
+      "entity_id"
+    ],
+    "invalidate_entity": [
+      "self",
+      "entity_id"
+    ],
+    "invalidate_all": [
+      "self"
+    ],
+    "register_entity": [
+      "self",
+      "entity_id",
+      "entity_info",
+      "entity_object"
+    ],
+    "create_entity_info_from_object": [
+      "self",
+      "entity_object",
+      "entity_type",
+      "source"
+    ],
+    "_scan_entities_directory": [
+      "self",
+      "entities_dir"
+    ],
+    "_looks_like_entity": [
+      "self",
+      "dir_path"
+    ],
+    "_detect_entity_type": [
+      "self",
+      "dir_path"
+    ],
+    "_check_deployment_support": [
+      "self",
+      "entity_path",
+      "source"
+    ],
+    "_register_sparse_entity": [
+      "self",
+      "dir_path"
+    ],
+    "_has_entity_exports": [
+      "self",
+      "file_path"
+    ],
+    "_register_sparse_file_entity": [
+      "self",
+      "file_path"
+    ],
+    "_load_env_for_entity": [
+      "self",
+      "entity_path"
+    ],
+    "_load_env_file": [
+      "self",
+      "env_path"
+    ],
+    "_load_module_from_pattern": [
+      "self",
+      "pattern"
+    ],
+    "_load_module_from_file": [
+      "self",
+      "file_path",
+      "module_name"
+    ],
+    "_find_entity_in_module": [
+      "self",
+      "module",
+      "entity_id",
+      "module_path"
+    ],
+    "_is_valid_entity": [
+      "self",
+      "obj",
+      "expected_type"
+    ],
+    "_is_valid_agent": [
+      "self",
+      "obj"
+    ],
+    "_is_valid_workflow": [
+      "self",
+      "obj"
+    ],
+    "_register_entity_from_object": [
+      "self",
+      "obj",
+      "obj_type",
+      "module_path",
+      "source"
+    ],
+    "_extract_tools_from_object": [
+      "self",
+      "obj",
+      "obj_type"
+    ],
+    "_generate_entity_id": [
+      "self",
+      "entity",
+      "entity_type",
+      "source"
+    ]
+  },
+  "DevServer": {
+    "__init__": [
+      "self",
+      "entities_dir",
+      "port",
+      "host",
+      "cors_origins",
+      "ui_enabled",
+      "mode"
+    ],
+    "_is_dev_mode": [
+      "self"
+    ],
+    "_format_error": [
+      "self",
+      "error",
+      "context"
+    ],
+    "_require_developer_mode": [
+      "self",
+      "feature"
+    ],
+    "_ensure_executor": [
+      "self"
+    ],
+    "_ensure_openai_executor": [
+      "self"
+    ],
+    "_cleanup_entities": [
+      "self"
+    ],
+    "create_app": [
+      "self"
+    ],
+    "_register_routes": [
+      "self",
+      "app"
+    ],
+    "_stream_execution": [
+      "self",
+      "executor",
+      "request"
+    ],
+    "_stream_openai_execution": [
+      "self",
+      "executor",
+      "request"
+    ],
+    "_stream_with_cancellation": [
+      "self",
+      "executor",
+      "request",
+      "response_id"
+    ],
+    "_mount_ui": [
+      "self",
+      "app"
+    ],
+    "register_entities": [
+      "self",
+      "entities"
+    ],
+    "get_app": [
+      "self"
+    ]
+  },
+  "DeploymentManager": {
+    "__init__": [
+      "self"
+    ],
+    "deploy": [
+      "self",
+      "config",
+      "entity_path"
+    ],
+    "_validate_prerequisites": [
+      "self"
+    ],
+    "_generate_dockerfile": [
+      "self",
+      "entity_path",
+      "config"
+    ],
+    "_discover_container_app_environment": [
+      "self",
+      "resource_group",
+      "region"
+    ],
+    "_deploy_to_azure": [
+      "self",
+      "config",
+      "entity_path",
+      "auth_token",
+      "event_queue"
+    ],
+    "_extract_fqdn_from_output": [
+      "self",
+      "output",
+      "app_name"
+    ],
+    "list_deployments": [
+      "self",
+      "entity_id"
+    ],
+    "get_deployment": [
+      "self",
+      "deployment_id"
+    ],
+    "delete_deployment": [
+      "self",
+      "deployment_id"
+    ]
+  },
+  "EventType": [],
+  "_serialize_content_recursive": [
+    "value"
+  ],
+  "MessageMapper": {
+    "__init__": [
+      "self",
+      "max_contexts"
+    ],
+    "convert_event": [
+      "self",
+      "raw_event",
+      "request"
+    ],
+    "aggregate_to_response": [
+      "self",
+      "events",
+      "request"
+    ],
+    "_get_or_create_context": [
+      "self",
+      "request"
+    ],
+    "_next_sequence": [
+      "self",
+      "context"
+    ],
+    "_serialize_value": [
+      "self",
+      "value"
+    ],
+    "_serialize_request_data": [
+      "self",
+      "request_data"
+    ],
+    "_convert_agent_update": [
+      "self",
+      "update",
+      "context"
+    ],
+    "_convert_agent_response": [
+      "self",
+      "response",
+      "context"
+    ],
+    "_convert_agent_lifecycle_event": [
+      "self",
+      "event",
+      "context"
+    ],
+    "_convert_workflow_event": [
+      "self",
+      "event",
+      "context"
+    ],
+    "_map_text_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_reasoning_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_function_call_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_get_active_function_call": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_function_result_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_error_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_usage_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_data_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_uri_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_hosted_file_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_hosted_vector_store_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_approval_request_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_map_approval_response_content": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_create_text_delta_event": [
+      "self",
+      "text",
+      "context"
+    ],
+    "_create_error_event": [
+      "self",
+      "message",
+      "context"
+    ],
+    "_create_unknown_event": [
+      "self",
+      "event_data",
+      "context"
+    ],
+    "_create_unknown_content_event": [
+      "self",
+      "content",
+      "context"
+    ],
+    "_create_error_response": [
+      "self",
+      "error_message",
+      "request"
+    ]
+  },
+  "register_cleanup": [
+    "entity"
+  ],
+  "_get_registered_cleanup_hooks": [
+    "entity"
+  ],
+  "serve": [
+    "entities",
+    "entities_dir",
+    "port",
+    "host",
+    "auto_open",
+    "cors_origins",
+    "ui_enabled",
+    "instrumentation_enabled",
+    "mode",
+    "auth_enabled",
+    "auth_token"
+  ],
+  "__all__": [],
+  "EntityNotFoundError": {},
+  "AgentFrameworkExecutor": {
+    "__init__": [
+      "self",
+      "entity_discovery",
+      "message_mapper",
+      "conversation_store"
+    ],
+    "_setup_instrumentation_provider": [
+      "self"
+    ],
+    "_setup_agent_framework_instrumentation": [
+      "self"
+    ],
+    "_ensure_mcp_connections": [
+      "self",
+      "agent"
+    ],
+    "discover_entities": [
+      "self"
+    ],
+    "get_entity_info": [
+      "self",
+      "entity_id"
+    ],
+    "execute_streaming": [
+      "self",
+      "request"
+    ],
+    "execute_sync": [
+      "self",
+      "request"
+    ],
+    "execute_entity": [
+      "self",
+      "entity_id",
+      "request"
+    ],
+    "_execute_agent": [
+      "self",
+      "agent",
+      "request",
+      "trace_collector"
+    ],
+    "_execute_workflow": [
+      "self",
+      "workflow",
+      "request",
+      "trace_collector"
+    ],
+    "_convert_input_to_chat_message": [
+      "self",
+      "input_data"
+    ],
+    "_convert_openai_input_to_chat_message": [
+      "self",
+      "input_items",
+      "Message",
+      "Role"
+    ],
+    "_extract_user_message_fallback": [
+      "self",
+      "input_data"
+    ],
+    "_is_openai_multimodal_format": [
+      "self",
+      "input_data"
+    ],
+    "_parse_workflow_input": [
+      "self",
+      "workflow",
+      "raw_input"
+    ],
+    "_get_start_executor_message_types": [
+      "self",
+      "workflow"
+    ],
+    "_extract_workflow_hil_responses": [
+      "self",
+      "input_data"
+    ],
+    "_get_or_create_conversation": [
+      "self",
+      "conversation_id",
+      "entity_id"
+    ],
+    "_parse_structured_workflow_input": [
+      "self",
+      "workflow",
+      "input_data"
+    ],
+    "_parse_raw_workflow_input": [
+      "self",
+      "workflow",
+      "raw_input"
+    ],
+    "_enrich_request_info_event_with_response_schema": [
+      "self",
+      "event",
+      "workflow"
+    ]
+  },
+  "AgentStartedEvent": {},
+  "AgentCompletedEvent": {},
+  "AgentFailedEvent": {},
+  "ExecutorActionItem": {},
+  "CustomResponseOutputItemAddedEvent": {},
+  "CustomResponseOutputItemDoneEvent": {},
+  "ResponseWorkflowEventComplete": {},
+  "ResponseTraceEventComplete": {},
+  "ResponseFunctionResultComplete": {},
+  "ResponseRequestInfoEvent": {},
+  "ResponseOutputImage": {},
+  "ResponseOutputFile": {},
+  "ResponseOutputData": {},
+  "AgentFrameworkExtraBody": {
+    "model_config": []
+  },
+  "AgentFrameworkRequest": {
+    "model_config": [],
+    "get_entity_id": [
+      "self"
+    ],
+    "_get_conversation_id": [
+      "self"
+    ],
+    "to_openai_params": [
+      "self"
+    ]
+  },
+  "ResponseTraceEvent": {},
+  "OpenAIError": {
+    "create": [
+      "cls",
+      "message",
+      "type",
+      "code"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ]
+  },
+  "MetaResponse": {},
+  "EnvVarRequirement": {},
+  "EntityInfo": {},
+  "DiscoveryResponse": {},
+  "DeploymentConfig": {
+    "validate_app_name": [
+      "cls",
+      "v"
+    ],
+    "validate_resource_group": [
+      "cls",
+      "v"
+    ],
+    "validate_region": [
+      "cls",
+      "v"
+    ],
+    "validate_entity_id": [
+      "cls",
+      "v"
+    ],
+    "validate_ui_mode": [
+      "cls",
+      "v"
+    ]
+  },
+  "DeploymentEvent": {},
+  "Deployment": {},
+  "OpenAIResponse": [],
+  "OpenAIExecutor": {
+    "__init__": [
+      "self",
+      "conversation_store"
+    ],
+    "is_configured": [
+      "self"
+    ],
+    "_get_client": [
+      "self"
+    ],
+    "execute_streaming": [
+      "self",
+      "request"
+    ],
+    "execute_sync": [
+      "self",
+      "request"
+    ],
+    "close": [
+      "self"
+    ]
+  }
+}
