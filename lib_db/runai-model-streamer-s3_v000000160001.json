@@ -1,0 +1,125 @@
+{
+  "AWS_CA_BUNDLE_ENV": [],
+  "RUNAI_STREAMER_S3_UNSIGNED_ENV_VAR": [],
+  "RUNAI_STREAMER_NO_BOTO3_SESSION_ENV_VAR": [],
+  "S3Credentials": {
+    "__init__": [
+      "self",
+      "access_key_id",
+      "secret_access_key",
+      "session_token",
+      "region_name",
+      "endpoint"
+    ]
+  },
+  "get_credentials": [
+    "credentials"
+  ],
+  "_env_without_unsigned": [],
+  "TestGetCredentialsUnsigned": {
+    "test_unsigned_returns_no_session": [
+      "self",
+      "mock_boto3"
+    ],
+    "test_unsigned_creates_no_session": [
+      "self",
+      "mock_boto3"
+    ],
+    "test_no_boto3_session_disabled_resolves_credentials": [
+      "self",
+      "mock_boto3"
+    ],
+    "test_no_boto3_session_default_returns_no_session": [
+      "self",
+      "mock_boto3"
+    ],
+    "test_no_boto3_session_enabled_returns_no_session": [
+      "self",
+      "mock_boto3"
+    ],
+    "test_default_returns_provided_credentials_unchanged": [
+      "self",
+      "mock_boto3"
+    ]
+  },
+  "_build_client_config": [],
+  "_build_s3_client": [
+    "credentials"
+  ],
+  "glob": [
+    "path",
+    "allow_pattern",
+    "credentials"
+  ],
+  "pull_files": [
+    "model_path",
+    "dst",
+    "allow_pattern",
+    "ignore_pattern",
+    "credentials"
+  ],
+  "list_files": [
+    "s3",
+    "path",
+    "allow_pattern",
+    "ignore_pattern",
+    "recursive"
+  ],
+  "_filter_allow": [
+    "paths",
+    "patterns"
+  ],
+  "_filter_ignore": [
+    "paths",
+    "patterns"
+  ],
+  "removeprefix": [
+    "s",
+    "prefix"
+  ],
+  "TestFiles": {
+    "test_filter_allow": [
+      "self"
+    ],
+    "test_filter_allow_full_path": [
+      "self"
+    ],
+    "test_filter_ignore": [
+      "self"
+    ],
+    "test_removeprefix": [
+      "self"
+    ],
+    "test_removeprefix_no": [
+      "self"
+    ]
+  },
+  "TestBuildClientConfig": {
+    "test_unsigned_enabled_when_one": [
+      "self"
+    ],
+    "test_unsigned_disabled_when_zero": [
+      "self"
+    ],
+    "test_unsigned_disabled_when_absent": [
+      "self"
+    ]
+  },
+  "TestBuildS3Client": {
+    "test_credentials_used_when_unsigned_disabled": [
+      "self",
+      "mock_get_credentials",
+      "mock_boto3"
+    ],
+    "test_credentials_used_when_unsigned_absent": [
+      "self",
+      "mock_get_credentials",
+      "mock_boto3"
+    ],
+    "test_credentials_not_used_when_unsigned_enabled": [
+      "self",
+      "mock_get_credentials",
+      "mock_boto3"
+    ]
+  }
+}

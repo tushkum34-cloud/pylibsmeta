@@ -1,0 +1,1075 @@
+{
+  "__all__": [],
+  "logger_level": [],
+  "GCS_PROTOCOL_PREFIX": [],
+  "S3_PROTOCOL_PREFIX": [],
+  "AZURE_PROTOCOL_PREFIX": [],
+  "DEFAULT_GCS_ENDPOINT_URL": [],
+  "AWS_ENDPOINT_URL_ENV": [],
+  "AWS_EC2_METADATA_DISABLED_ENV": [],
+  "DEFAULT_AWS_EC2_METADATA_DISABLED": [],
+  "get_s3_credentials_module": [],
+  "get_s3_files_module": [],
+  "get_gcs_files_module": [],
+  "get_azure_files_module": [],
+  "get_module": [
+    "main_module",
+    "module_name"
+  ],
+  "S3Credentials": {
+    "__init__": [
+      "self",
+      "access_key_id",
+      "secret_access_key",
+      "session_token",
+      "region_name",
+      "endpoint"
+    ]
+  },
+  "is_s3_path": [
+    "path"
+  ],
+  "is_gs_path": [
+    "path"
+  ],
+  "is_azure_path": [
+    "path"
+  ],
+  "s3_glob": [
+    "path",
+    "allow_pattern",
+    "s3_credentials"
+  ],
+  "s3_pull_files": [
+    "model_path",
+    "dst",
+    "allow_pattern",
+    "ignore_pattern",
+    "s3_credentials"
+  ],
+  "gcs_glob": [
+    "path",
+    "allow_pattern"
+  ],
+  "gcs_pull_files": [
+    "model_path",
+    "dst",
+    "allow_pattern",
+    "ignore_pattern",
+    "s3_credentials"
+  ],
+  "azure_glob": [
+    "path",
+    "allow_pattern"
+  ],
+  "azure_pull_files": [
+    "model_path",
+    "dst",
+    "allow_pattern",
+    "ignore_pattern"
+  ],
+  "filter_allow": [
+    "paths",
+    "patterns"
+  ],
+  "filter_ignore": [
+    "paths",
+    "patterns"
+  ],
+  "removeprefix": [
+    "s",
+    "prefix"
+  ],
+  "logger": [],
+  "_WorkUnit": {},
+  "partition_by_chunks": [
+    "file_stream_requests",
+    "n"
+  ],
+  "partition_by_files": [
+    "file_stream_requests",
+    "n"
+  ],
+  "get_partition_policy": [],
+  "partition": [
+    "file_stream_requests",
+    "n"
+  ],
+  "get_total_number_of_chunks": [
+    "partitions"
+  ],
+  "get_total_size_of_partition": [
+    "partition"
+  ],
+  "log_partition_info": [
+    "partitions"
+  ],
+  "RUNAI_STREAMER_CUDA_ALIGNMENT_ENV_VAR": [],
+  "DEFAULT_DIST_BUFFER_ALIGNMENT": [],
+  "MAX_DIST_BUFFER_ALIGNMENT": [],
+  "get_dist_buffer_alignment": [],
+  "aligned_offset": [
+    "base_ptr",
+    "current_offset",
+    "alignment"
+  ],
+  "DEFAULT_BROADCAST_TIMEOUT": [],
+  "DistributedStreamer": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "get_group_size": [
+      "self"
+    ],
+    "get_cuda_free_memory": [
+      "self"
+    ],
+    "set_is_distributed": [
+      "self",
+      "is_distributed",
+      "device"
+    ],
+    "stream_files": [
+      "self",
+      "file_stream_requests",
+      "credentials",
+      "device",
+      "is_distributed"
+    ],
+    "get_chunks": [
+      "self"
+    ]
+  },
+  "_distributedStreamerParams": {
+    "__init__": [
+      "self"
+    ],
+    "get_group_size": [
+      "self"
+    ],
+    "get_broadcast_timeout": [
+      "self"
+    ],
+    "find_local_ranks": [
+      "self"
+    ],
+    "set_params": [
+      "self",
+      "file_stream_requests"
+    ]
+  },
+  "_distributedStreamer": {
+    "__init__": [
+      "self",
+      "file_streamer"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "create_distribution_group": [
+      "self"
+    ],
+    "create_local_distribution_group": [
+      "self"
+    ],
+    "set_rank": [
+      "self"
+    ],
+    "stream_files": [
+      "self",
+      "file_stream_requests",
+      "credentials",
+      "device",
+      "params"
+    ],
+    "get_chunks": [
+      "self"
+    ],
+    "prefill": [
+      "self",
+      "chunk_gen",
+      "max_chunks_per_batch",
+      "buffer_bytesize",
+      "data_buffer",
+      "received_buffer",
+      "batch_metadata_tensor",
+      "received_metadata_tensor",
+      "leftover_chunk",
+      "alignment"
+    ],
+    "broadcast": [
+      "self",
+      "chunks_to_read",
+      "batch_metadata_tensor",
+      "received_metadata_tensor",
+      "data_buffer",
+      "received_buffer",
+      "chunk_count_in_batch",
+      "current_data_size"
+    ]
+  },
+  "TestPartitioning": {
+    "setUp": [
+      "self"
+    ],
+    "_get_partition_total_size": [
+      "self",
+      "partition"
+    ],
+    "_verify_all_chunks_present": [
+      "self",
+      "original_requests",
+      "partitions"
+    ],
+    "_verify_chunk_maps": [
+      "self",
+      "original_requests",
+      "partitions"
+    ],
+    "test_partition_by_files": [
+      "self"
+    ],
+    "test_partition_by_chunks": [
+      "self"
+    ],
+    "test_partition_by_chunks_with_zero_size_chunks": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ]
+  },
+  "TestDistributedStreamer": {
+    "setUpClass": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_prepare_file_requests": [
+      "self",
+      "file_specs"
+    ],
+    "test_1_success_data_correctness": [
+      "self"
+    ],
+    "test_1_success_empty_file_list": [
+      "self"
+    ],
+    "test_1_success_random_files": [
+      "self"
+    ],
+    "test_1_success_alignment": [
+      "self"
+    ],
+    "test_1_auto_mode_no_distributed_with_gloo": [
+      "self"
+    ],
+    "test_9_failure_on_one_rank": [
+      "self"
+    ],
+    "test_9_timeout_failure": [
+      "self"
+    ]
+  },
+  "StreamerPatcher": {
+    "__init__": [
+      "self",
+      "local_bucket_path"
+    ],
+    "convert_remote_path_to_local_path": [
+      "self",
+      "path"
+    ],
+    "convert_local_path_to_mocked_remote_path": [
+      "self",
+      "local_path_result",
+      "original_remote_path"
+    ],
+    "is_remote_path": [
+      "self",
+      "path"
+    ],
+    "shim_list_safetensors": [
+      "self",
+      "path",
+      "s3_credentials"
+    ],
+    "shim_pull_files": [
+      "self",
+      "model_path",
+      "dst",
+      "allow_pattern",
+      "ignore_pattern",
+      "s3_credentials"
+    ],
+    "create_mock_streamer": [
+      "self"
+    ]
+  },
+  "SAFETENSORS_DATA_OFFSETS_KEY": [],
+  "SAFETENSORS_NAME_KEY": [],
+  "SAFETENSORS_SHAPE_KEY": [],
+  "SAFETENSORS_DTYPE_KEY": [],
+  "SAFETENSORS_HEADER_BUFFER_SIZE": [],
+  "MAX_HEADER_SIZE": [],
+  "LITTLE_ENDIAN_LONG_LONG_STRUCT_FORMAT": [],
+  "get_safetensors_dtype_map": [],
+  "safetensors_to_torch_dtype": [],
+  "SafetensorsMetadata": {
+    "__init__": [
+      "self",
+      "blob",
+      "offset"
+    ],
+    "from_files": [
+      "fs",
+      "filenames",
+      "s3_credentials"
+    ]
+  },
+  "SafetensorMetadata": {
+    "__init__": [
+      "self",
+      "name",
+      "safetensorMetadata"
+    ],
+    "_validate_shape_consistency": [
+      "self"
+    ],
+    "get_bytesize": [
+      "self"
+    ],
+    "get_item_count": [
+      "self"
+    ],
+    "get_torch_dtype": [
+      "self"
+    ]
+  },
+  "Offsets": {
+    "__init__": [
+      "self",
+      "offsets"
+    ],
+    "get_diff": [
+      "self"
+    ]
+  },
+  "prepare_request": [
+    "fs",
+    "paths",
+    "s3_credentials"
+  ],
+  "create_torch_tensor": [
+    "buffer",
+    "tensor_metadata"
+  ],
+  "SAFETENSORS_PATTERN": [],
+  "list_safetensors": [
+    "path",
+    "s3_credentials"
+  ],
+  "pull_files": [
+    "model_path",
+    "dst",
+    "allow_pattern",
+    "ignore_pattern",
+    "s3_credentials"
+  ],
+  "ObjectStorageModel": {
+    "SENTINEL_NAME": [],
+    "__init__": [
+      "self",
+      "model_path",
+      "dst",
+      "s3_credentials"
+    ],
+    "pull_files": [
+      "self",
+      "allow_pattern",
+      "ignore_pattern"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_val",
+      "exc_tb"
+    ]
+  },
+  "SafetensorsStreamer": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "stream_file": [
+      "self",
+      "path",
+      "s3_credentials",
+      "device",
+      "is_distributed"
+    ],
+    "stream_files": [
+      "self",
+      "paths",
+      "s3_credentials",
+      "device",
+      "is_distributed"
+    ],
+    "get_tensors": [
+      "self"
+    ]
+  },
+  "HEADER_SIZE_FORMAT": [],
+  "TestSafetensorsStreamer": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "create_corrupted_safetensors": [
+      "self",
+      "filename",
+      "header_len_val",
+      "header_content",
+      "tensor_data"
+    ],
+    "test_valid_file": [
+      "self"
+    ],
+    "test_header_too_large": [
+      "self"
+    ],
+    "test_invalid_json": [
+      "self"
+    ],
+    "test_payload_inconsistency_shape_mismatch": [
+      "self"
+    ],
+    "test_overlapping_tensors": [
+      "self"
+    ],
+    "test_unknown_dtype": [
+      "self"
+    ],
+    "test_truncated_file_header": [
+      "self"
+    ],
+    "test_truncated_tensor_data": [
+      "self"
+    ],
+    "test_holes_between_tensors": [
+      "self"
+    ],
+    "test_unsorted_header_offsets_is_allowed": [
+      "self"
+    ]
+  },
+  "TestSafetensorsStreamerMock": {
+    "setUp": [
+      "self"
+    ],
+    "test_safetensors_streamer_S3_MOCK": [
+      "self",
+      "mock_streamer_class"
+    ],
+    "test_safetensors_streamer_GS_MOCK": [
+      "self",
+      "mock_streamer_class"
+    ],
+    "test_list_safetensors_S3_MOCK": [
+      "self",
+      "mock_list_safetensors"
+    ],
+    "test_list_safetensors_GS_MOCK": [
+      "self",
+      "mock_list_safetensors"
+    ],
+    "test_pull_files_S3_MOCK": [
+      "self",
+      "mock_pull_files"
+    ],
+    "test_pull_files_GS_MOCK": [
+      "self",
+      "mock_pull_files"
+    ],
+    "test_pull_files_GS_MOCK_No_Slash": [
+      "self",
+      "mock_pull_files"
+    ],
+    "test_pull_files_GS_MOCK_With_Allow_Pattern": [
+      "self",
+      "mock_pull_files"
+    ],
+    "test_pull_files_GS_MOCK_With_Ignore_Pattern": [
+      "self",
+      "mock_pull_files"
+    ]
+  },
+  "TestShimPullFiles": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_recursive_copy_success": [
+      "self"
+    ],
+    "test_allow_patterns": [
+      "self"
+    ],
+    "test_ignore_patterns": [
+      "self"
+    ],
+    "test_local_path_raises_error": [
+      "self"
+    ],
+    "test_no_matching_files": [
+      "self"
+    ]
+  },
+  "SOURCE_FILES": [],
+  "FAKE_MODEL_PATH": [],
+  "TestObjectStorageModel": {
+    "_create_source_dir": [],
+    "_fake_pull_files": [
+      "self",
+      "model_path",
+      "dst",
+      "allow_pattern",
+      "ignore_pattern",
+      "s3_credentials"
+    ],
+    "_slow_fake_pull_files": [
+      "self",
+      "model_path",
+      "dst",
+      "allow_pattern",
+      "ignore_pattern",
+      "s3_credentials"
+    ],
+    "_worker": [
+      "dst_dir",
+      "result_queue"
+    ],
+    "_run_concurrent": [
+      "self",
+      "num_processes"
+    ],
+    "dst_pre_exists": [],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_files_present_after_done": [
+      "self"
+    ],
+    "test_sentinel_written_after_done": [
+      "self"
+    ],
+    "test_sentinel_not_written_before_exit": [
+      "self"
+    ],
+    "test_second_call_skips_download": [
+      "self"
+    ],
+    "test_second_call_files_still_accessible": [
+      "self"
+    ],
+    "test_two_pull_files_calls_one_done": [
+      "self"
+    ],
+    "test_dst_trailing_slash_lock_outside_dst": [
+      "self"
+    ],
+    "test_stale_dst_cleaned_before_download": [
+      "self"
+    ],
+    "test_invalid_model_path_raises_before_lock": [
+      "self"
+    ],
+    "test_empty_download_raises_runtime_error": [
+      "self"
+    ],
+    "test_empty_download_releases_lock": [
+      "self"
+    ],
+    "test_del_releases_lock": [
+      "self"
+    ],
+    "test_del_idempotent_after_exit": [
+      "self"
+    ],
+    "test_sentinel_not_written_when_pull_raises": [
+      "self"
+    ],
+    "test_lock_released_when_pull_raises": [
+      "self"
+    ],
+    "test_retry_after_failed_download": [
+      "self"
+    ],
+    "test_model_path_normalised_to_trailing_slash": [
+      "self"
+    ],
+    "test_gs_path_accepted": [
+      "self"
+    ],
+    "test_azure_path_accepted": [
+      "self"
+    ],
+    "test_concurrent_all_processes_succeed": [
+      "self"
+    ],
+    "test_concurrent_only_one_process_downloads": [
+      "self"
+    ],
+    "test_concurrent_files_present_after_download": [
+      "self"
+    ],
+    "test_concurrent_sentinel_present_after_download": [
+      "self"
+    ],
+    "test_concurrent_lock_upgrade_no_deadlock": [
+      "self"
+    ]
+  },
+  "TestObjectStorageModelDstPreExists": {
+    "dst_pre_exists": []
+  },
+  "TestDistributedSafetensorsStreamer": {
+    "setUpClass": [
+      "cls"
+    ],
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "test_distributed_safetensors_streamer": [
+      "self"
+    ],
+    "test_non_distributed_safetensors_streamer": [
+      "self"
+    ]
+  },
+  "RUNAI_STREAMER_MEMORY_LIMIT_ENV_VAR_NAME": [],
+  "DEFAULT_MEMORY_LIMIT_STRING": [],
+  "RunaiStreamerMemoryLimitException": {},
+  "MemoryCapMode": {
+    "unlimited": [],
+    "limited": [],
+    "largest_chunk": []
+  },
+  "FileChunks": {
+    "__init__": [
+      "self",
+      "id",
+      "path",
+      "offset",
+      "chunks"
+    ],
+    "total_size": [
+      "self"
+    ],
+    "max_chunk_size": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "FilesRequest": {
+    "__init__": [
+      "self"
+    ],
+    "append": [
+      "self",
+      "file_chunks"
+    ]
+  },
+  "FilesRequestsIteratorWithBuffer": {
+    "__init__": [
+      "self",
+      "buffer_size",
+      "files_chunks"
+    ],
+    "get_global_file_and_chunk": [
+      "self",
+      "local_file_index",
+      "local_chunk_index"
+    ],
+    "next_request": [
+      "self"
+    ],
+    "with_memory_cap": [
+      "memory_mode",
+      "files_chunks",
+      "user_memory_limit"
+    ],
+    "with_memory_mode": [
+      "files_chunks"
+    ]
+  },
+  "FilesRequestsIterator": {
+    "__init__": [
+      "self",
+      "memory_limit",
+      "files_chunks"
+    ],
+    "get_global_file_and_chunk": [
+      "self",
+      "local_file_index",
+      "local_chunk_index"
+    ],
+    "next_request": [
+      "self"
+    ]
+  },
+  "FileChunksIterator": {
+    "__init__": [
+      "self",
+      "file_chunks"
+    ],
+    "is_finished": [
+      "self"
+    ],
+    "next_chunks": [
+      "self",
+      "size"
+    ]
+  },
+  "ChunksIterator": {
+    "__init__": [
+      "self",
+      "chunks"
+    ],
+    "is_finished": [
+      "self"
+    ],
+    "next_chunks": [
+      "self",
+      "size"
+    ]
+  },
+  "_get_memory_mode": [
+    "memory_limit"
+  ],
+  "s3_credentials_module": [],
+  "RunaiStreamerInvalidInputException": {},
+  "homogeneous_paths": [
+    "paths"
+  ],
+  "FileStreamer": {
+    "__init__": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc_value",
+      "traceback"
+    ],
+    "handle_object_store": [
+      "self",
+      "path",
+      "credentials"
+    ],
+    "list_files": [
+      "self",
+      "prefix",
+      "is_recursive",
+      "allow_patterns",
+      "ignore_patterns",
+      "credentials"
+    ],
+    "stream_files": [
+      "self",
+      "file_stream_requests",
+      "credentials",
+      "device"
+    ],
+    "get_chunks": [
+      "self"
+    ],
+    "request_ready_chunks": [
+      "self"
+    ]
+  },
+  "TestChunksIterator": {
+    "test_next_request_exact_limit": [
+      "self"
+    ],
+    "test_next_request_high_limit": [
+      "self"
+    ],
+    "test_next_request_low_limit": [
+      "self"
+    ],
+    "test_next_request_with_item_zero": [
+      "self"
+    ]
+  },
+  "TestFileChunksIterator": {
+    "test_next_request_exact_limit": [
+      "self"
+    ],
+    "test_next_request_offset_for_non_exact_memory_limit": [
+      "self"
+    ]
+  },
+  "TestFilesRequestsIterator": {
+    "test_next_request_single_file": [
+      "self"
+    ],
+    "test_next_request_multi_file": [
+      "self"
+    ],
+    "test_next_request_multi_file_block_on_file": [
+      "self"
+    ],
+    "test_get_global_file_and_chunk": [
+      "self"
+    ],
+    "test_file_chunks_zero_chunks": [
+      "self"
+    ],
+    "test_next_request_empty_file_first_does_not_terminate": [
+      "self"
+    ],
+    "test_next_request_empty_files_between_data_files": [
+      "self"
+    ]
+  },
+  "TestFilesRequestsIteratorWithBuffer": {
+    "test_memory_cap_unlimited": [
+      "self"
+    ],
+    "test_memory_cap_limited": [
+      "self"
+    ],
+    "test_memory_cap_largest_chunk": [
+      "self"
+    ],
+    "test_memory_cap_largest_chunk_multi_file": [
+      "self"
+    ],
+    "test_files_buffers": [
+      "self"
+    ],
+    "test_limited_memory_cap_and_smaller_chunks": [
+      "self"
+    ],
+    "test_files_buffers_as_big_buffer": [
+      "self"
+    ]
+  },
+  "_list_files_stub": [
+    "entries"
+  ],
+  "TestListFilesFilesystem": {
+    "setUp": [
+      "self"
+    ],
+    "tearDown": [
+      "self"
+    ],
+    "_write": [
+      "self",
+      "rel_path",
+      "content"
+    ],
+    "test_basic_listing": [
+      "self"
+    ],
+    "test_returns_correct_sizes": [
+      "self"
+    ],
+    "test_recursive": [
+      "self"
+    ],
+    "test_allow_pattern": [
+      "self"
+    ],
+    "test_ignore_pattern": [
+      "self"
+    ],
+    "test_empty_directory": [
+      "self"
+    ],
+    "test_nonexistent_path_raises": [
+      "self"
+    ],
+    "test_callback_exception_is_reraised": [
+      "self"
+    ]
+  },
+  "TestListFilesS3": {
+    "PREFIX": [],
+    "ENTRIES": [],
+    "test_basic_listing": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_is_recursive_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_allow_patterns_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_ignore_patterns_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_credentials_mapped_to_params": [
+      "self",
+      "mock_rlf",
+      "mock_s3_mod"
+    ],
+    "test_no_params_when_no_credentials_module": [
+      "self",
+      "mock_rlf"
+    ]
+  },
+  "TestListFilesGCS": {
+    "PREFIX": [],
+    "ENTRIES": [],
+    "test_basic_listing": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_is_recursive_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_allow_patterns_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_no_credentials_for_gcs": [
+      "self",
+      "mock_rlf"
+    ]
+  },
+  "TestListFilesAzure": {
+    "PREFIX": [],
+    "ENTRIES": [],
+    "test_basic_listing": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_is_recursive_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_ignore_patterns_passed": [
+      "self",
+      "mock_rlf"
+    ],
+    "test_no_credentials_for_azure": [
+      "self",
+      "mock_rlf"
+    ]
+  },
+  "TestBindings": {
+    "setUp": [
+      "self"
+    ],
+    "test_runai_library": [
+      "self"
+    ],
+    "test_min_memory_cap": [
+      "self",
+      "mock_get_memory_mode"
+    ],
+    "test_limited_memory_cap": [
+      "self",
+      "mock_get_memory_mode",
+      "mock_getenv"
+    ],
+    "tearDown": [
+      "self"
+    ]
+  },
+  "SUCCESS_ERROR_CODE": [],
+  "FINISHED_ERROR_CODE": [],
+  "runai_start": [],
+  "runai_end": [
+    "streamer"
+  ],
+  "runai_request": [
+    "streamer",
+    "paths",
+    "file_offsets",
+    "bytesizes",
+    "dsts",
+    "internal_sizes",
+    "s3_credentials"
+  ],
+  "runai_response": [
+    "streamer"
+  ],
+  "runai_response_str": [
+    "response_code"
+  ],
+  "runai_list_files": [
+    "prefix",
+    "callback",
+    "is_recursive",
+    "allow_patterns",
+    "ignore_patterns",
+    "params"
+  ],
+  "DEFAULT_STREAMER_LIBRARY": [],
+  "STREAMER_LIBRARY": [],
+  "t_streamer": [],
+  "LibstreamerDLLWrapper": {
+    "__init__": [
+      "self",
+      "library_path"
+    ]
+  },
+  "dll": []
+}
