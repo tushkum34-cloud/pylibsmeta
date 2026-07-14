@@ -1,0 +1,821 @@
+{
+  "__path__": [],
+  "__version__": [],
+  "MCP_SERVER_VERSION": [],
+  "mcp": [],
+  "main": [],
+  "get_aws_client": [
+    "service_name",
+    "region_name",
+    "profile_name"
+  ],
+  "remove_null_values": [
+    "d"
+  ],
+  "filter_by_prefixes": [
+    "strings",
+    "prefixes"
+  ],
+  "epoch_ms_to_utc_iso": [
+    "ms"
+  ],
+  "clean_up_pattern": [
+    "pattern_result"
+  ],
+  "PromQLInstantResult": {},
+  "PromQLRangeResult": {},
+  "PromQLSeriesResult": {},
+  "PromQLLabelsResult": {},
+  "PromQLLabelValuesResult": {},
+  "SERVICE_NAME": [],
+  "MAX_RETRIES": [],
+  "RETRY_DELAY": [],
+  "USER_AGENT": [],
+  "PromQLClient": {
+    "_get_base_url": [
+      "region"
+    ],
+    "make_request": [
+      "endpoint",
+      "params",
+      "region",
+      "profile_name"
+    ]
+  },
+  "CloudWatchMetricsTools": {
+    "__init__": [
+      "self"
+    ],
+    "_load_and_index_metadata": [
+      "self"
+    ],
+    "_lookup_metadata": [
+      "self",
+      "namespace",
+      "metric_name"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "get_metric_data": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "start_time",
+      "dimensions",
+      "end_time",
+      "statistic",
+      "target_datapoints",
+      "group_by_dimension",
+      "schema_dimension_keys",
+      "limit",
+      "sort_order",
+      "order_by_statistic",
+      "region",
+      "profile_name",
+      "queries"
+    ],
+    "_prepare_time_parameters": [
+      "self",
+      "start_time",
+      "end_time",
+      "target_datapoints"
+    ],
+    "_build_metrics_insights_query": [
+      "self",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "statistic",
+      "period",
+      "group_by_dimension",
+      "schema_dimension_keys",
+      "order_by_statistic",
+      "sort_order",
+      "limit"
+    ],
+    "_build_standard_metric_query": [
+      "self",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "statistic",
+      "period"
+    ],
+    "_process_metric_data_response": [
+      "self",
+      "response"
+    ],
+    "_map_to_metrics_insights_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_validate_metrics_insights_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_map_to_cloudwatch_statistic": [
+      "self",
+      "statistic"
+    ],
+    "_build_schema_string": [
+      "self",
+      "namespace",
+      "schema_dimension_keys"
+    ],
+    "_build_where_clause": [
+      "self",
+      "dimensions"
+    ],
+    "get_metric_metadata": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name"
+    ],
+    "get_recommended_metric_alarms": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "region",
+      "profile_name",
+      "statistic"
+    ],
+    "_alarm_matches_dimensions": [
+      "self",
+      "alarm_data",
+      "provided_dims"
+    ],
+    "_create_alarm_threshold": [
+      "self",
+      "threshold_data"
+    ],
+    "_parse_alarm_recommendation": [
+      "self",
+      "alarm_data"
+    ],
+    "_create_anomaly_detector_data": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions",
+      "seasonality"
+    ],
+    "_create_anomaly_detector_recommendation": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions",
+      "seasonality"
+    ],
+    "_parse_metric_dimensions": [
+      "self",
+      "alarm_data"
+    ],
+    "_parse_metric_data_response": [
+      "self",
+      "response",
+      "period_seconds"
+    ],
+    "_convert_query_input_to_aws": [
+      "self",
+      "query",
+      "default_period"
+    ],
+    "_paginate_get_metric_data": [
+      "self",
+      "cloudwatch_client"
+    ],
+    "_execute_queries_batch": [
+      "self",
+      "ctx",
+      "queries",
+      "start_time",
+      "end_time",
+      "target_datapoints",
+      "region",
+      "profile_name"
+    ],
+    "analyze_metric": [
+      "self",
+      "ctx",
+      "namespace",
+      "metric_name",
+      "dimensions",
+      "region",
+      "profile_name",
+      "statistic"
+    ],
+    "execute_promql_query": [
+      "self",
+      "ctx",
+      "query",
+      "time",
+      "region",
+      "profile_name"
+    ],
+    "execute_promql_range_query": [
+      "self",
+      "ctx",
+      "query",
+      "start",
+      "end",
+      "step",
+      "region",
+      "profile_name"
+    ],
+    "get_promql_label_values": [
+      "self",
+      "ctx",
+      "label_name",
+      "match",
+      "start",
+      "end",
+      "region",
+      "profile_name"
+    ],
+    "get_promql_series": [
+      "self",
+      "ctx",
+      "match",
+      "start",
+      "end",
+      "region",
+      "profile_name"
+    ],
+    "get_promql_labels": [
+      "self",
+      "ctx",
+      "match",
+      "start",
+      "end",
+      "region",
+      "profile_name"
+    ]
+  },
+  "logger": [],
+  "CloudFormationTemplateGenerator": {
+    "generate_metric_alarm_template": [
+      "self",
+      "alarm_data"
+    ],
+    "_is_anomaly_detection_alarm": [
+      "self",
+      "alarm_data"
+    ],
+    "_format_anomaly_detection_alarm_data": [
+      "self",
+      "alarm_data"
+    ],
+    "_generate_resource_key": [
+      "self",
+      "metric_name",
+      "namespace",
+      "dimensions"
+    ],
+    "_sanitize_resource_name": [
+      "self",
+      "name"
+    ]
+  },
+  "Trend": {
+    "POSITIVE": [],
+    "NEGATIVE": [],
+    "NONE": []
+  },
+  "SEASONALITY_ROUNDING_THRESHOLD": [],
+  "Seasonality": {
+    "NONE": [],
+    "FIFTEEN_MINUTES": [],
+    "ONE_HOUR": [],
+    "SIX_HOURS": [],
+    "ONE_DAY": [],
+    "ONE_WEEK": [],
+    "from_seconds": [
+      "cls",
+      "seconds"
+    ]
+  },
+  "DecompositionResult": {},
+  "SortOrder": {
+    "ASCENDING": [],
+    "DESCENDING": []
+  },
+  "Dimension": {},
+  "MetricDataPoint": {},
+  "MetricDataResult": {},
+  "GetMetricDataResponse": {},
+  "MetricMetadataIndexKey": {
+    "__init__": [
+      "self",
+      "namespace",
+      "metric_name"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "MetricMetadata": {},
+  "AlarmRecommendationThreshold": {},
+  "StaticAlarmThreshold": {},
+  "AnomalyDetectionAlarmThreshold": {
+    "validate_sensitivity": [
+      "cls",
+      "v"
+    ]
+  },
+  "AlarmRecommendationDimension": {},
+  "AlarmRecommendation": {
+    "serialize_model": [
+      "self"
+    ]
+  },
+  "MetricData": {
+    "validate_metric_data": [
+      "self"
+    ]
+  },
+  "AlarmRecommendationResult": {},
+  "MetricStatInput": {},
+  "MetricDataQueryInput": {
+    "validate_query_type": [
+      "self"
+    ]
+  },
+  "MetricDataDecomposer": {
+    "SEASONALITY_STRENGTH_THRESHOLD": [],
+    "STATISTICAL_SIGNIFICANCE_THRESHOLD": [],
+    "detect_seasonality_and_trend": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "density_ratio",
+      "publishing_period_seconds"
+    ],
+    "_interpolate_to_regular_grid": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "period_seconds"
+    ],
+    "_detect_strongest_seasonality": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "period_seconds"
+    ],
+    "_calculate_seasonal_strength": [
+      "self",
+      "values",
+      "seasonal_period"
+    ],
+    "_compute_trend": [
+      "self",
+      "values"
+    ]
+  },
+  "MetricAnalyzer": {
+    "__init__": [
+      "self"
+    ],
+    "analyze_metric_data": [
+      "self",
+      "metric_data"
+    ],
+    "_compute_seasonality_and_trend": [
+      "self",
+      "timestamps_ms",
+      "values",
+      "density_ratio",
+      "publishing_period_seconds"
+    ],
+    "_compute_publishing_period": [
+      "self",
+      "timestamps_ms"
+    ],
+    "_get_closest_cloudwatch_period": [
+      "self",
+      "period_seconds"
+    ],
+    "_compute_density_ratio": [
+      "self",
+      "timestamps_ms",
+      "publishing_period_seconds"
+    ],
+    "_compute_statistics": [
+      "self",
+      "values"
+    ]
+  },
+  "SECONDS_PER_MINUTE": [],
+  "MINUTES_PER_HOUR": [],
+  "HOURS_PER_DAY": [],
+  "DAYS_PER_WEEK": [],
+  "DEFAULT_ANALYSIS_PERIOD_MINUTES": [],
+  "COMPARISON_OPERATOR_ANOMALY": [],
+  "NUMERICAL_STABILITY_THRESHOLD": [],
+  "CloudWatchLogsTools": {
+    "__init__": [
+      "self"
+    ],
+    "_validate_log_group_parameters": [
+      "self",
+      "log_group_names",
+      "log_group_identifiers"
+    ],
+    "_convert_time_to_timestamp": [
+      "self",
+      "time_str"
+    ],
+    "_build_logs_query_params": [
+      "self",
+      "log_group_names",
+      "log_group_identifiers",
+      "start_time",
+      "end_time",
+      "query_string",
+      "limit"
+    ],
+    "_process_query_results": [
+      "self",
+      "response",
+      "query_id"
+    ],
+    "_poll_for_query_completion": [
+      "self",
+      "logs_client",
+      "query_id",
+      "max_timeout",
+      "ctx"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "describe_log_groups": [
+      "self",
+      "ctx",
+      "account_identifiers",
+      "include_linked_accounts",
+      "log_group_class",
+      "log_group_name_prefix",
+      "max_items",
+      "region",
+      "profile_name"
+    ],
+    "analyze_log_group": [
+      "self",
+      "ctx",
+      "log_group_arn",
+      "start_time",
+      "end_time",
+      "region",
+      "profile_name"
+    ],
+    "execute_log_insights_query": [
+      "self",
+      "ctx",
+      "log_group_names",
+      "log_group_identifiers",
+      "start_time",
+      "end_time",
+      "query_string",
+      "limit",
+      "max_timeout",
+      "region",
+      "profile_name"
+    ],
+    "get_logs_insight_query_results": [
+      "self",
+      "ctx",
+      "query_id",
+      "region",
+      "profile_name"
+    ],
+    "cancel_logs_insight_query": [
+      "self",
+      "ctx",
+      "query_id",
+      "region",
+      "profile_name"
+    ]
+  },
+  "LogGroupMetadata": {
+    "convert_to_iso8601": [
+      "cls",
+      "v"
+    ]
+  },
+  "SavedLogsInsightsQuery": {
+    "extract_prefixes": [
+      "cls",
+      "values"
+    ]
+  },
+  "LogsMetadata": {},
+  "LogAnomalyDetector": {},
+  "LogAnomaly": {
+    "convert_to_iso8601": [
+      "cls",
+      "v"
+    ],
+    "convert_histogram_to_iso8601": [
+      "cls",
+      "v"
+    ],
+    "convert_log_samples_to_iso8601": [
+      "cls",
+      "v"
+    ]
+  },
+  "LogAnomalyResults": {},
+  "LogsAnalysisResult": {},
+  "LogsQueryCancelResult": {},
+  "MAX_LOG_GROUPS_PER_QUERY": [],
+  "MAX_OUTPUT_RECORDS": [],
+  "MAX_RECHUNK_DEPTH": [],
+  "RETRY_BACKOFF_BASE": [],
+  "LARGE_RESULT_WARNING_THRESHOLD": [],
+  "_CONCURRENCY_PER_REGION": [],
+  "_POLL_INTERVAL": [],
+  "_START_QUERY_INTERVAL": [],
+  "MultiRegionQuerySummary": {},
+  "MultiRegionQueryResult": {},
+  "_RegionContext": {
+    "__init__": [
+      "self"
+    ],
+    "pace_start_query": [
+      "self"
+    ]
+  },
+  "_region_contexts_lock": [],
+  "_get_region_context": [
+    "region"
+  ],
+  "_chunk_list": [
+    "lst",
+    "size"
+  ],
+  "_convert_time": [
+    "time_str"
+  ],
+  "_start_and_poll": [
+    "region_ctx",
+    "logs_client",
+    "log_groups",
+    "start_ts",
+    "end_ts",
+    "query_string",
+    "limit",
+    "max_timeout"
+  ],
+  "_hit_output_limit": [
+    "result"
+  ],
+  "_is_splittable_failure": [
+    "result"
+  ],
+  "_annotate_rows": [
+    "rows",
+    "region",
+    "account",
+    "log_groups"
+  ],
+  "_run_chunk": [
+    "region_ctx",
+    "logs_client",
+    "log_groups",
+    "start_ts",
+    "end_ts",
+    "query_string",
+    "limit",
+    "max_timeout",
+    "summary",
+    "region",
+    "account",
+    "rechunk_depth"
+  ],
+  "execute_cwl_insights_batch": [
+    "ctx",
+    "log_group_names",
+    "regions",
+    "start_time",
+    "end_time",
+    "query_string",
+    "limit",
+    "max_timeout",
+    "account_label",
+    "profile_name"
+  ],
+  "FieldUsage": {
+    "__init__": [
+      "self"
+    ]
+  },
+  "_FILTER_EQUALITY_RE": [],
+  "_FILTER_AND_EQUALITY_RE": [],
+  "_FILTER_IN_RE": [],
+  "_FILTER_NON_EQUALITY_RE": [],
+  "_FIELDS_RE": [],
+  "_STATS_BY_RE": [],
+  "_SORT_RE": [],
+  "_SQL_WHERE_EQUALITY_RE": [],
+  "_SQL_WHERE_IN_RE": [],
+  "_SQL_WHERE_NON_EQ_RE": [],
+  "_SQL_SELECT_RE": [],
+  "_SQL_GROUP_BY_RE": [],
+  "_SQL_ORDER_BY_RE": [],
+  "_SQL_FILTERINDEX_RE": [],
+  "_PPL_WHERE_EQUALITY_RE": [],
+  "_PPL_WHERE_IN_RE": [],
+  "_PPL_WHERE_NON_EQ_RE": [],
+  "_RESERVED_KEYWORDS": [],
+  "_strip_comments": [
+    "query_string"
+  ],
+  "_strip_values": [
+    "query_string"
+  ],
+  "_extract_field_names": [
+    "text",
+    "language"
+  ],
+  "detect_language": [
+    "query_string"
+  ],
+  "_parse_sql_fields": [
+    "query_string"
+  ],
+  "_parse_ppl_fields": [
+    "query_string"
+  ],
+  "_parse_cwli_fields": [
+    "query_string"
+  ],
+  "parse_query_fields": [
+    "query_string",
+    "language"
+  ],
+  "QUERY_HISTORY_DAYS": [],
+  "TOP_N_FOR_CARDINALITY": [],
+  "CARDINALITY_SAMPLE_HOURS": [],
+  "FIELD_EXISTENCE_SAMPLE_HOURS": [],
+  "QUERY_TIMEOUT": [],
+  "W_FREQUENCY": [],
+  "W_FILTER_EQUALITY": [],
+  "W_RECENCY": [],
+  "W_SCAN_VOLUME": [],
+  "W_CARDINALITY": [],
+  "RECENCY_HALF_LIFE_DAYS": [],
+  "FieldScoreBreakdown": {},
+  "IndexRecommendation": {},
+  "AlreadyIndexedField": {},
+  "FieldNotFound": {},
+  "IndexRecommenderResult": {},
+  "AccountIndexRecommenderResult": {},
+  "recency_score": [
+    "epoch_seconds",
+    "now"
+  ],
+  "normalize": [
+    "value",
+    "max_value"
+  ],
+  "score_fields": [
+    "scorable",
+    "now_epoch",
+    "scan_vol_norm"
+  ],
+  "build_recommendations": [
+    "scored",
+    "cardinality_map"
+  ],
+  "score_fields_lightweight": [
+    "candidates",
+    "now_epoch"
+  ],
+  "_extract_log_group_name": [
+    "identifier"
+  ],
+  "_run_quick_query": [
+    "logs_client",
+    "log_group",
+    "query_string",
+    "hours",
+    "timeout"
+  ],
+  "_paginate_describe_queries": [
+    "logs_client",
+    "max_total"
+  ],
+  "_build_field_usage": [
+    "queries",
+    "now_epoch"
+  ],
+  "_analyze_log_group": [
+    "ctx",
+    "logs_client",
+    "log_group_identifier",
+    "queries",
+    "now_epoch"
+  ],
+  "_analyze_log_group_lightweight": [
+    "ctx",
+    "logs_client",
+    "log_group_identifier",
+    "queries",
+    "now_epoch",
+    "indexed_fields"
+  ],
+  "recommend_indexes_loggroup": [
+    "ctx",
+    "log_group_identifier",
+    "region",
+    "profile_name"
+  ],
+  "recommend_indexes_account": [
+    "ctx",
+    "region",
+    "profile_name",
+    "max_queries"
+  ],
+  "CloudWatchAlarmsTools": {
+    "__init__": [
+      "self"
+    ],
+    "register": [
+      "self",
+      "mcp"
+    ],
+    "get_active_alarms": [
+      "self",
+      "ctx",
+      "max_items",
+      "region",
+      "profile_name"
+    ],
+    "get_alarm_history": [
+      "self",
+      "ctx",
+      "alarm_name",
+      "start_time",
+      "end_time",
+      "history_item_type",
+      "max_items",
+      "include_component_alarms",
+      "region",
+      "profile_name"
+    ],
+    "_transform_metric_alarm": [
+      "self",
+      "alarm"
+    ],
+    "_transform_composite_alarm": [
+      "self",
+      "alarm"
+    ],
+    "_get_alarm_details": [
+      "self",
+      "cloudwatch_client",
+      "alarm_name"
+    ],
+    "_transform_history_item": [
+      "self",
+      "item"
+    ],
+    "_generate_time_range_suggestions": [
+      "self",
+      "history_items",
+      "alarm_details"
+    ],
+    "_handle_composite_alarm": [
+      "self",
+      "cloudwatch_client",
+      "alarm_details"
+    ],
+    "_parse_alarm_rule": [
+      "self",
+      "alarm_rule"
+    ]
+  },
+  "MetricAlarmSummary": {},
+  "CompositeAlarmSummary": {},
+  "ActiveAlarmsResponse": {},
+  "AlarmHistoryItem": {},
+  "AlarmDetails": {},
+  "TimeRangeSuggestion": {},
+  "AlarmHistoryResponse": {},
+  "CompositeAlarmComponentResponse": {}
+}
