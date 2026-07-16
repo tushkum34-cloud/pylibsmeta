@@ -1,0 +1,200 @@
+{
+  "__version__": [],
+  "_instruments": [],
+  "_semconv_status": [],
+  "_DB_DRIVER_ALIASES": [],
+  "_logger": [],
+  "ConnectionT": [],
+  "CursorT": [],
+  "trace_integration": [
+    "connect_module",
+    "connect_method_name",
+    "database_system",
+    "connection_attributes",
+    "tracer_provider",
+    "capture_parameters",
+    "enable_commenter",
+    "db_api_integration_factory",
+    "enable_attribute_commenter",
+    "commenter_options",
+    "meter_provider"
+  ],
+  "wrap_connect": [
+    "name",
+    "connect_module",
+    "connect_method_name",
+    "database_system",
+    "connection_attributes",
+    "version",
+    "tracer_provider",
+    "capture_parameters",
+    "enable_commenter",
+    "db_api_integration_factory",
+    "commenter_options",
+    "enable_attribute_commenter",
+    "meter_provider"
+  ],
+  "unwrap_connect": [
+    "connect_module",
+    "connect_method_name"
+  ],
+  "instrument_connection": [
+    "name",
+    "connection",
+    "database_system",
+    "connection_attributes",
+    "version",
+    "tracer_provider",
+    "capture_parameters",
+    "enable_commenter",
+    "commenter_options",
+    "connect_module",
+    "enable_attribute_commenter",
+    "db_api_integration_factory",
+    "meter_provider"
+  ],
+  "uninstrument_connection": [
+    "connection"
+  ],
+  "DatabaseApiIntegration": {
+    "__init__": [
+      "self",
+      "name",
+      "database_system",
+      "connection_attributes",
+      "version",
+      "tracer_provider",
+      "capture_parameters",
+      "enable_commenter",
+      "commenter_options",
+      "connect_module",
+      "enable_attribute_commenter",
+      "meter_provider"
+    ],
+    "_get_db_version": [
+      "self",
+      "db_driver"
+    ],
+    "calculate_commenter_data": [
+      "self"
+    ],
+    "wrapped_connection": [
+      "self",
+      "connect_method",
+      "args",
+      "kwargs"
+    ],
+    "get_connection_attributes": [
+      "self",
+      "connection"
+    ]
+  },
+  "TracedConnectionProxy": {
+    "__init__": [
+      "self",
+      "connection",
+      "db_api_integration"
+    ],
+    "__getattribute__": [
+      "self",
+      "name"
+    ],
+    "cursor": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "get_traced_connection_proxy": [
+    "connection",
+    "db_api_integration"
+  ],
+  "_t_string_to_str": [
+    "template"
+  ],
+  "CursorTracer": {
+    "__init__": [
+      "self",
+      "db_api_integration"
+    ],
+    "_capture_mysql_version": [
+      "self",
+      "cursor"
+    ],
+    "_get_commenter_data": [
+      "self"
+    ],
+    "_update_args_with_added_sql_comment": [
+      "self",
+      "args",
+      "cursor"
+    ],
+    "_populate_span": [
+      "self",
+      "span",
+      "cursor"
+    ],
+    "get_operation_name": [
+      "self",
+      "cursor",
+      "args"
+    ],
+    "get_statement": [
+      "self",
+      "cursor",
+      "args"
+    ],
+    "_get_metric_attributes": [
+      "self",
+      "operation_name",
+      "error"
+    ],
+    "_record_metrics": [
+      "self",
+      "cursor",
+      "operation_name",
+      "start_time",
+      "error"
+    ],
+    "traced_execution": [
+      "self",
+      "cursor",
+      "query_method"
+    ],
+    "traced_execution_async": [
+      "self",
+      "cursor",
+      "query_method"
+    ]
+  },
+  "TracedCursorProxy": {
+    "__init__": [
+      "self",
+      "cursor",
+      "db_api_integration"
+    ],
+    "execute": [
+      "self"
+    ],
+    "executemany": [
+      "self"
+    ],
+    "callproc": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ]
+  },
+  "get_traced_cursor_proxy": [
+    "cursor",
+    "db_api_integration"
+  ]
+}
