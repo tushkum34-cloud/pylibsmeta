@@ -1,0 +1,755 @@
+{
+  "logger": [],
+  "GET": [],
+  "POST": [],
+  "PUT": [],
+  "DELETE": [],
+  "PATCH": [],
+  "_UNSET": [],
+  "_wipe_data": [
+    "req",
+    "res",
+    "storage"
+  ],
+  "_health_check": [
+    "req",
+    "res",
+    "storage"
+  ],
+  "_json_api_routes": [
+    "prefix"
+  ],
+  "HANDLERS": [],
+  "_API": [],
+  "_API_OPT": [],
+  "_QUERY": [],
+  "_HTTP_VER": [],
+  "BATCH_HANDLERS": [],
+  "_parse_batch_item": [
+    "item"
+  ],
+  "_read_raw_data": [
+    "request_handler"
+  ],
+  "_decode_raw_data": [
+    "raw_data",
+    "request_handler"
+  ],
+  "_read_data": [
+    "request_handler",
+    "query"
+  ],
+  "Request": {
+    "__init__": [
+      "self",
+      "request_handler",
+      "method"
+    ],
+    "path": [
+      "self"
+    ],
+    "base_url": [
+      "self"
+    ],
+    "full_url": [
+      "self"
+    ],
+    "method": [
+      "self"
+    ],
+    "query": [
+      "self"
+    ],
+    "params": [
+      "self"
+    ],
+    "data": [
+      "self"
+    ],
+    "get_header": [
+      "self",
+      "key",
+      "default"
+    ],
+    "set_match": [
+      "self",
+      "match"
+    ]
+  },
+  "Response": {
+    "__init__": [
+      "self",
+      "handler"
+    ],
+    "write": [
+      "self",
+      "content"
+    ],
+    "write_file": [
+      "self",
+      "content",
+      "content_type"
+    ],
+    "json": [
+      "self",
+      "obj"
+    ],
+    "__setitem__": [
+      "self",
+      "key",
+      "value"
+    ],
+    "__getitem__": [
+      "self",
+      "key"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "Router": {
+    "__init__": [
+      "self",
+      "request_handler"
+    ],
+    "handle": [
+      "self",
+      "method"
+    ]
+  },
+  "RequestHandler": {
+    "__init__": [
+      "self",
+      "storage"
+    ],
+    "do_GET": [
+      "self"
+    ],
+    "do_POST": [
+      "self"
+    ],
+    "do_DELETE": [
+      "self"
+    ],
+    "do_PUT": [
+      "self"
+    ],
+    "do_PATCH": [
+      "self"
+    ],
+    "log_message": [
+      "self",
+      "format"
+    ]
+  },
+  "APIThread": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "storage"
+    ],
+    "run": [
+      "self"
+    ],
+    "join": [
+      "self",
+      "timeout"
+    ]
+  },
+  "Server": {
+    "__init__": [
+      "self",
+      "host",
+      "port",
+      "in_memory",
+      "default_bucket",
+      "data_dir",
+      "project_number"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "stop": [
+      "self"
+    ],
+    "wipe": [
+      "self",
+      "keep_buckets"
+    ],
+    "run": [
+      "self"
+    ]
+  },
+  "create_server": [
+    "host",
+    "port",
+    "in_memory",
+    "default_bucket",
+    "data_dir",
+    "project_number"
+  ],
+  "RESUMABLE_DIR": [],
+  "SOFT_DELETE_DIR": [],
+  "DEFAULT_SOFT_DELETE_RETENTION_SECONDS": [],
+  "_FileStore": {
+    "__init__": [
+      "self"
+    ],
+    "_norm": [
+      "path"
+    ],
+    "_disk_path": [
+      "self",
+      "rel"
+    ],
+    "makedirs": [
+      "self",
+      "rel"
+    ],
+    "write_bytes": [
+      "self",
+      "rel",
+      "content"
+    ],
+    "read_bytes": [
+      "self",
+      "rel"
+    ],
+    "exists_file": [
+      "self",
+      "rel"
+    ],
+    "remove_file": [
+      "self",
+      "rel"
+    ],
+    "remove_tree": [
+      "self",
+      "rel"
+    ],
+    "listdir": [
+      "self",
+      "rel"
+    ]
+  },
+  "Storage": {
+    "__init__": [
+      "self",
+      "use_memory_fs",
+      "data_dir",
+      "project_number"
+    ],
+    "_write_config_to_file": [
+      "self"
+    ],
+    "_read_config_from_file": [
+      "self"
+    ],
+    "_object_path": [
+      "self",
+      "bucket_name",
+      "file_name"
+    ],
+    "get_storage_base": [
+      "self"
+    ],
+    "get_bucket": [
+      "self",
+      "bucket_name"
+    ],
+    "_soft_delete_content_path": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "generation"
+    ],
+    "_bucket_soft_delete_retention_seconds": [
+      "self",
+      "bucket_name"
+    ],
+    "_list_soft_deleted_candidates": [
+      "self",
+      "bucket_name",
+      "prefix"
+    ],
+    "_list_live_candidates": [
+      "self",
+      "bucket_name",
+      "prefix"
+    ],
+    "_apply_list_delimiter": [
+      "self",
+      "candidates",
+      "prefix",
+      "delimiter",
+      "match_glob"
+    ],
+    "get_file_list": [
+      "self",
+      "bucket_name",
+      "prefix",
+      "delimiter",
+      "match_glob",
+      "soft_deleted"
+    ],
+    "create_bucket": [
+      "self",
+      "bucket_name",
+      "bucket_obj"
+    ],
+    "create_file": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "content",
+      "file_obj",
+      "file_id"
+    ],
+    "create_resumable_upload": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "file_obj"
+    ],
+    "get_resumable_byte_count": [
+      "self",
+      "file_id"
+    ],
+    "add_to_resumable_upload": [
+      "self",
+      "file_id",
+      "content",
+      "total_size",
+      "expected_start"
+    ],
+    "get_file_obj": [
+      "self",
+      "bucket_name",
+      "file_name"
+    ],
+    "get_resumable_file_obj": [
+      "self",
+      "file_id"
+    ],
+    "get_file": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "show_error"
+    ],
+    "delete_resumable_file_obj": [
+      "self",
+      "file_id"
+    ],
+    "delete_bucket": [
+      "self",
+      "bucket_name"
+    ],
+    "get_bucket_iam_policy": [
+      "self",
+      "bucket_name"
+    ],
+    "set_bucket_iam_policy": [
+      "self",
+      "bucket_name",
+      "policy"
+    ],
+    "_hard_delete_file": [
+      "self",
+      "bucket_name",
+      "file_name"
+    ],
+    "delete_file": [
+      "self",
+      "bucket_name",
+      "file_name"
+    ],
+    "get_soft_deleted_file_obj": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "generation"
+    ],
+    "get_soft_deleted_file": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "generation"
+    ],
+    "restore_soft_deleted_file": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "generation"
+    ],
+    "_parse_hard_delete_time": [
+      "self",
+      "hard"
+    ],
+    "_remove_soft_deleted_generation": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "generation"
+    ],
+    "_purge_expired_soft_deletes": [
+      "self",
+      "bucket_name"
+    ],
+    "_delete_file": [
+      "self",
+      "bucket_name",
+      "file_name"
+    ],
+    "_delete_dir": [
+      "self",
+      "path",
+      "force"
+    ],
+    "wipe": [
+      "self",
+      "keep_buckets"
+    ],
+    "patch_object": [
+      "self",
+      "bucket_name",
+      "file_name",
+      "file_obj"
+    ],
+    "safe_id": [
+      "file_id"
+    ]
+  },
+  "NotFound": {},
+  "Conflict": {},
+  "BadRequest": {},
+  "_split_brace_options": [
+    "inner"
+  ],
+  "expand_braces": [
+    "pattern"
+  ],
+  "_consume_character_class": [
+    "pattern",
+    "start"
+  ],
+  "_consume_star": [
+    "pattern",
+    "start"
+  ],
+  "_glob_to_regex": [
+    "pattern"
+  ],
+  "_compiled_patterns": [
+    "pattern"
+  ],
+  "gcs_glob_match": [
+    "pattern",
+    "name"
+  ],
+  "API_ENDPOINT": [],
+  "UPLOAD_API_ENDPOINT": [],
+  "BATCH_API_ENDPOINT": [],
+  "DOWNLOAD_API_ENDPOINT": [],
+  "STORAGE_BASE": [],
+  "STORAGE_DIR": [],
+  "DEFAULT_PROJECT_NUMBER": [],
+  "DEFAULT_PORT": [],
+  "DEFAULT_HOST": [],
+  "get_server": [
+    "host",
+    "port",
+    "memory",
+    "default_bucket",
+    "data_dir",
+    "project_number"
+  ],
+  "wipe": [
+    "data_dir",
+    "keep_buckets"
+  ],
+  "prepare_args_parser": [],
+  "main": [
+    "args",
+    "test_mode"
+  ],
+  "_WRITABLE_FIELDS": [],
+  "_HASH_HEADER": [],
+  "BAD_REQUEST": [],
+  "NOT_FOUND": [],
+  "MD5_CHECKSUM_ERROR": [],
+  "CRC32C_CHECKSUM_ERROR": [],
+  "GoogleHTTPStatus": {
+    "__new__": [
+      "cls",
+      "value",
+      "phrase",
+      "description"
+    ],
+    "RESUME_INCOMPLETE": []
+  },
+  "_handle_conflict": [
+    "response",
+    "err"
+  ],
+  "_crc32c": [
+    "content"
+  ],
+  "_md5": [
+    "content"
+  ],
+  "_checksums": [
+    "content",
+    "file_obj"
+  ],
+  "_patch_object": [
+    "obj",
+    "metadata"
+  ],
+  "_make_object_resource": [
+    "base_url",
+    "bucket_name",
+    "object_name",
+    "content_type",
+    "content_length",
+    "metadata"
+  ],
+  "_normalize_object_acl_entries": [
+    "bucket_name",
+    "object_id",
+    "entries"
+  ],
+  "_content_type_from_request": [
+    "request",
+    "default"
+  ],
+  "_media_upload": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_multipart_upload": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_create_resumable_upload": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_delete": [
+    "storage",
+    "bucket_name",
+    "object_id"
+  ],
+  "_patch": [
+    "storage",
+    "bucket_name",
+    "object_id",
+    "metadata"
+  ],
+  "xml_upload": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "insert": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_parse_resumable_content_range": [
+    "content_range"
+  ],
+  "_resumable_incomplete": [
+    "response",
+    "storage",
+    "upload_id",
+    "fallback_end"
+  ],
+  "_finalize_resumable_object": [
+    "response",
+    "storage",
+    "obj",
+    "data",
+    "upload_id"
+  ],
+  "_handle_resumable_status": [
+    "response",
+    "storage",
+    "upload_id",
+    "obj",
+    "total"
+  ],
+  "_handle_resumable_chunk": [
+    "response",
+    "storage",
+    "upload_id",
+    "chunk",
+    "parsed"
+  ],
+  "upload_partial": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "get": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "ls": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_copy": [
+    "base_url",
+    "storage",
+    "bucket_name",
+    "object_id",
+    "dest_bucket_name",
+    "dest_object_id"
+  ],
+  "copy": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "rewrite": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "compose": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "download": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "delete": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "restore": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "patch": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "acl_list": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_batch_write_json": [
+    "response",
+    "status_line",
+    "payload"
+  ],
+  "_batch_write_not_found": [
+    "response",
+    "bucket_name",
+    "object_id"
+  ],
+  "_batch_write_bad_request": [
+    "response",
+    "err"
+  ],
+  "_batch_patch": [
+    "request",
+    "item",
+    "storage",
+    "bucket_name",
+    "object_id",
+    "meta",
+    "response"
+  ],
+  "_batch_delete": [
+    "request",
+    "item",
+    "storage",
+    "bucket_name",
+    "object_id",
+    "meta",
+    "response"
+  ],
+  "_batch_post": [
+    "request",
+    "item",
+    "storage",
+    "bucket_name",
+    "object_id",
+    "meta",
+    "response"
+  ],
+  "_BATCH_METHOD_HANDLERS": [],
+  "batch": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "CONFLICT": [],
+  "_WRITABLE_BUCKET_FIELDS": [],
+  "_normalize_bucket_acl_entries": [
+    "bucket_name",
+    "entries",
+    "kind"
+  ],
+  "_make_bucket_resource": [
+    "bucket_name",
+    "project_number"
+  ],
+  "_patch_bucket": [
+    "bucket",
+    "metadata"
+  ],
+  "create_bucket": [
+    "name",
+    "storage"
+  ],
+  "default_object_acl_list": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "_default_iam_policy": [
+    "bucket_name"
+  ],
+  "_policy_response": [
+    "bucket_name",
+    "policy"
+  ],
+  "get_iam_policy": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "set_iam_policy": [
+    "request",
+    "response",
+    "storage"
+  ],
+  "test_iam_permissions": [
+    "request",
+    "response",
+    "storage"
+  ]
+}
