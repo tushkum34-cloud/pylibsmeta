@@ -1,0 +1,3088 @@
+{
+  "DictAnalyzerResult": {},
+  "RecognizerResult": {
+    "RECOGNIZER_NAME_KEY": [],
+    "RECOGNIZER_IDENTIFIER_KEY": [],
+    "IS_SCORE_ENHANCED_BY_CONTEXT_KEY": [],
+    "logger": [],
+    "__init__": [
+      "self",
+      "entity_type",
+      "start",
+      "end",
+      "score",
+      "analysis_explanation",
+      "recognition_metadata"
+    ],
+    "append_analysis_explanation_text": [
+      "self",
+      "text"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_json": [
+      "cls",
+      "data"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "intersects": [
+      "self",
+      "other"
+    ],
+    "contained_in": [
+      "self",
+      "other"
+    ],
+    "contains": [
+      "self",
+      "other"
+    ],
+    "equal_indices": [
+      "self",
+      "other"
+    ],
+    "__gt__": [
+      "self",
+      "other"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "has_conflict": [
+      "self",
+      "other"
+    ]
+  },
+  "AnalysisExplanation": {
+    "__init__": [
+      "self",
+      "recognizer",
+      "original_score",
+      "pattern_name",
+      "pattern",
+      "validation_result",
+      "textual_explanation",
+      "regex_flags"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "set_improved_score": [
+      "self",
+      "score"
+    ],
+    "set_supportive_context_word": [
+      "self",
+      "word"
+    ],
+    "append_textual_explanation_line": [
+      "self",
+      "text"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "validate_score_threshold": [
+    "threshold"
+  ],
+  "normalize_score_thresholds": [
+    "score_thresholds"
+  ],
+  "Pattern": {
+    "__init__": [
+      "self",
+      "name",
+      "regex",
+      "score"
+    ],
+    "__validate_regex": [
+      "pattern"
+    ],
+    "__validate_score": [
+      "score"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "pattern_dict"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "LocalRecognizer": {},
+  "logger": [],
+  "BatchAnalyzerEngine": {
+    "__init__": [
+      "self",
+      "analyzer_engine"
+    ],
+    "analyze_iterator": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process"
+    ],
+    "analyze_dict": [
+      "self",
+      "input_dict",
+      "language",
+      "keys_to_skip",
+      "batch_size",
+      "n_process"
+    ],
+    "_validate_types": [
+      "value_iterator"
+    ],
+    "_get_nested_keys_to_skip": [
+      "key",
+      "keys_to_skip"
+    ]
+  },
+  "AppTracer": {
+    "__init__": [
+      "self",
+      "enabled"
+    ],
+    "trace": [
+      "self",
+      "request_id",
+      "trace_data"
+    ]
+  },
+  "AnalyzerEngineProvider": {
+    "__init__": [
+      "self",
+      "analyzer_engine_conf_file",
+      "nlp_engine_conf_file",
+      "recognizer_registry_conf_file"
+    ],
+    "get_configuration": [
+      "self",
+      "conf_file"
+    ],
+    "create_engine": [
+      "self"
+    ],
+    "_load_recognizer_registry": [
+      "self",
+      "supported_languages",
+      "nlp_engine"
+    ],
+    "_load_nlp_engine": [
+      "self"
+    ],
+    "_get_full_conf_path": [
+      "default_conf_file"
+    ]
+  },
+  "LMRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entities",
+      "supported_language",
+      "name",
+      "version",
+      "model_id",
+      "temperature",
+      "min_score",
+      "labels_to_ignore",
+      "enable_generic_consolidation"
+    ],
+    "_call_llm": [
+      "self",
+      "text",
+      "entities"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "_filter_and_process_results": [
+      "self",
+      "results",
+      "requested_entities"
+    ],
+    "get_supported_entities": [
+      "self"
+    ]
+  },
+  "RemoteRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entities",
+      "name",
+      "supported_language",
+      "version",
+      "context"
+    ],
+    "load": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "get_supported_entities": [
+      "self"
+    ]
+  },
+  "AnalyzerRequest": {
+    "__init__": [
+      "self",
+      "req_data"
+    ]
+  },
+  "REGEX_TIMEOUT_SECONDS": [],
+  "AnalyzerEngine": {
+    "__init__": [
+      "self",
+      "registry",
+      "nlp_engine",
+      "app_tracer",
+      "log_decision_process",
+      "default_score_threshold",
+      "supported_languages",
+      "context_aware_enhancer"
+    ],
+    "get_recognizers": [
+      "self",
+      "language"
+    ],
+    "get_supported_entities": [
+      "self",
+      "language"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "language",
+      "entities",
+      "correlation_id",
+      "score_threshold",
+      "return_decision_process",
+      "ad_hoc_recognizers",
+      "context",
+      "allow_list",
+      "allow_list_match",
+      "regex_flags",
+      "nlp_artifacts"
+    ],
+    "_enhance_using_context": [
+      "self",
+      "text",
+      "raw_results",
+      "nlp_artifacts",
+      "recognizers",
+      "context"
+    ],
+    "__remove_low_scores": [
+      "self",
+      "results",
+      "score_threshold",
+      "recognizers"
+    ],
+    "__get_result_score_threshold": [
+      "self",
+      "result",
+      "recognizers_by_id"
+    ],
+    "_remove_allow_list": [
+      "results",
+      "allow_list",
+      "text",
+      "regex_flags",
+      "allow_list_match"
+    ],
+    "__add_recognizer_id_if_not_exists": [
+      "results",
+      "recognizer"
+    ],
+    "__remove_decision_process": [
+      "results"
+    ]
+  },
+  "PatternRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entity",
+      "name",
+      "supported_language",
+      "patterns",
+      "deny_list",
+      "context",
+      "deny_list_score",
+      "global_regex_flags",
+      "version",
+      "country_code"
+    ],
+    "load": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts",
+      "regex_flags"
+    ],
+    "_deny_list_to_regex": [
+      "self",
+      "deny_list"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "build_regex_explanation": [
+      "recognizer_name",
+      "pattern_name",
+      "pattern",
+      "original_score",
+      "validation_result",
+      "regex_flags"
+    ],
+    "__analyze_patterns": [
+      "self",
+      "text",
+      "flags"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "entity_recognizer_dict"
+    ]
+  },
+  "decision_process_logger": [],
+  "ch": [],
+  "formatter": [],
+  "__all__": [],
+  "EntityRecognizer": {
+    "MIN_SCORE": [],
+    "MAX_SCORE": [],
+    "__init__": [
+      "self",
+      "supported_entities",
+      "name",
+      "supported_language",
+      "version",
+      "context",
+      "country_code",
+      "score_thresholds"
+    ],
+    "score_thresholds": [
+      "self",
+      "value"
+    ],
+    "_resolve_country_code": [
+      "cls",
+      "passed"
+    ],
+    "country_code": [
+      "self"
+    ],
+    "is_country_specific": [
+      "self"
+    ],
+    "id": [
+      "self"
+    ],
+    "load": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "enhance_using_context": [
+      "self",
+      "text",
+      "raw_recognizer_results",
+      "other_raw_recognizer_results",
+      "nlp_artifacts",
+      "context"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "get_supported_language": [
+      "self"
+    ],
+    "get_version": [
+      "self"
+    ],
+    "to_dict": [
+      "self"
+    ],
+    "from_dict": [
+      "cls",
+      "entity_recognizer_dict"
+    ],
+    "remove_duplicates": [
+      "results"
+    ],
+    "sanitize_value": [
+      "text",
+      "replacement_pairs"
+    ]
+  },
+  "PREDEFINED_RECOGNIZERS": [],
+  "NLP_RECOGNIZERS": [],
+  "UrlRecognizer": {
+    "BASE_URL_REGEX": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "BECH32": [],
+  "BECH32M": [],
+  "CHARSET": [],
+  "BECH32M_CONST": [],
+  "CryptoRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__decode_base58": [
+      "bc"
+    ],
+    "bech32_polymod": [
+      "values"
+    ],
+    "bech32_hrp_expand": [
+      "hrp"
+    ],
+    "bech32_verify_checksum": [
+      "hrp",
+      "data"
+    ],
+    "bech32_decode": [
+      "bech"
+    ],
+    "validate_bech32_address": [
+      "address"
+    ]
+  },
+  "IbanRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "exact_match",
+      "bos_eos",
+      "regex_flags",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts",
+      "regex_flags"
+    ],
+    "__analyze_patterns": [
+      "self",
+      "text",
+      "flags"
+    ],
+    "__number_iban": [
+      "iban",
+      "letters"
+    ],
+    "__generate_iban_check_digits": [
+      "iban",
+      "letters"
+    ],
+    "__is_valid_format": [
+      "iban",
+      "bos_eos",
+      "flags"
+    ]
+  },
+  "EmailRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "IpRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "CC": [],
+  "CK": [],
+  "BOS": [],
+  "EOS": [],
+  "A": [],
+  "A2": [],
+  "A3": [],
+  "A4": [],
+  "C": [],
+  "C2": [],
+  "C3": [],
+  "C4": [],
+  "N": [],
+  "N2": [],
+  "N3": [],
+  "N4": [],
+  "regex_per_country": [],
+  "CreditCardRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__luhn_checksum": [
+      "sanitized_value"
+    ]
+  },
+  "DateRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "MacAddressRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "PhoneRecognizer": {
+    "SCORE": [],
+    "CONTEXT": [],
+    "DEFAULT_SUPPORTED_REGIONS": [],
+    "__init__": [
+      "self",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "supported_regions",
+      "leniency",
+      "name"
+    ],
+    "load": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "_get_recognizer_result": [
+      "self",
+      "match",
+      "text",
+      "region",
+      "nlp_artifacts"
+    ],
+    "_get_analysis_explanation": [
+      "self",
+      "region"
+    ]
+  },
+  "DEFAULT_EXTRACT_PARAMS": [],
+  "DEFAULT_LANGUAGE_MODEL_PARAMS": [],
+  "BasicLangExtractRecognizer": {
+    "DEFAULT_CONFIG_PATH": [],
+    "__init__": [
+      "self",
+      "config_path",
+      "supported_language",
+      "context",
+      "name"
+    ],
+    "_get_provider_params": [
+      "self"
+    ]
+  },
+  "LangExtractRecognizer": [],
+  "AZURE_OPENAI_DOCS_URL": [],
+  "AzureOpenAILangExtractRecognizer": {
+    "DEFAULT_API_VERSION": [],
+    "DEFAULT_CONFIG_PATH": [],
+    "__init__": [
+      "self",
+      "model_id",
+      "config_path",
+      "azure_endpoint",
+      "api_key",
+      "api_version",
+      "supported_language",
+      "name"
+    ],
+    "_validate_azure_endpoint": [
+      "self",
+      "azure_endpoint"
+    ],
+    "_get_provider_params": [
+      "self"
+    ]
+  },
+  "AzureHealthDeidRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entities",
+      "supported_language",
+      "client",
+      "name"
+    ],
+    "_get_supported_entities": [],
+    "get_supported_entities": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "_build_explanation": [
+      "entity_type"
+    ]
+  },
+  "AzureAILanguageRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entities",
+      "supported_language",
+      "ta_client",
+      "azure_ai_key",
+      "azure_ai_endpoint"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "__get_azure_ai_supported_entities": [],
+    "__authenticate_client": [
+      "key",
+      "endpoint"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "_build_explanation": [
+      "original_score",
+      "entity_type"
+    ]
+  },
+  "GLiNERRecognizer": {
+    "__init__": [
+      "self",
+      "supported_entities",
+      "name",
+      "supported_language",
+      "version",
+      "context",
+      "entity_mapping",
+      "model_name",
+      "flat_ner",
+      "multi_label",
+      "threshold",
+      "map_location",
+      "text_chunker",
+      "load_onnx_model",
+      "onnx_model_file"
+    ],
+    "load": [
+      "self"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "__create_input_labels": [
+      "self",
+      "entities"
+    ]
+  },
+  "HuggingFaceNerRecognizer": {
+    "DEFAULT_LABEL_MAPPING": [],
+    "DEFAULT_HF_TASK": [],
+    "__init__": [
+      "self",
+      "supported_entities",
+      "name",
+      "supported_language",
+      "version",
+      "context",
+      "model_name",
+      "label_mapping",
+      "threshold",
+      "aggregation_strategy",
+      "chunk_overlap",
+      "chunk_size",
+      "device",
+      "tokenizer_name",
+      "text_chunker",
+      "label_prefixes"
+    ],
+    "_parse_device": [
+      "self",
+      "device"
+    ],
+    "load": [
+      "self"
+    ],
+    "_normalize_label": [
+      "self",
+      "label"
+    ],
+    "_predict_chunk": [
+      "self",
+      "chunk_text"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ]
+  },
+  "MedicalNERRecognizer": {
+    "ENTITIES": [],
+    "__init__": [
+      "self",
+      "model_name",
+      "label_mapping",
+      "supported_entities",
+      "name",
+      "supported_language",
+      "aggregation_strategy",
+      "threshold",
+      "device",
+      "text_chunker"
+    ]
+  },
+  "SpacyRecognizer": {
+    "ENTITIES": [],
+    "DEFAULT_EXPLANATION": [],
+    "CHECK_LABEL_GROUPS": [],
+    "__init__": [
+      "self",
+      "supported_language",
+      "supported_entities",
+      "ner_strength",
+      "default_explanation",
+      "check_label_groups",
+      "context",
+      "name"
+    ],
+    "load": [
+      "self"
+    ],
+    "build_explanation": [
+      "self",
+      "original_score",
+      "explanation"
+    ],
+    "analyze": [
+      "self",
+      "text",
+      "entities",
+      "nlp_artifacts"
+    ],
+    "__check_label": [
+      "entity",
+      "label",
+      "check_label_groups"
+    ]
+  },
+  "StanzaRecognizer": {
+    "__init__": [
+      "self",
+      "name"
+    ]
+  },
+  "TransformersRecognizer": {
+    "ENTITIES": [],
+    "__init__": [
+      "self",
+      "name"
+    ]
+  },
+  "ThTninRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_validate_checksum": [
+      "self",
+      "tnin"
+    ]
+  },
+  "AuTfnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "AuAcnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "AuAbnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "AuMedicareRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "SgUenRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "UEN_FORMAT_A_WEIGHT": [],
+    "UEN_FORMAT_A_ALPHABET": [],
+    "UEN_FORMAT_B_WEIGHT": [],
+    "UEN_FORMAT_B_ALPHABET": [],
+    "UEN_FORMAT_C_WEIGHT": [],
+    "UEN_FORMAT_C_ALPHABET": [],
+    "UEN_FORMAT_C_PREFIX": [],
+    "UEN_FORMAT_C_ENTITY_TYPE": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "validate_uen_format_a": [
+      "uen"
+    ],
+    "validate_uen_format_b": [
+      "uen"
+    ],
+    "validate_uen_format_c": [
+      "uen"
+    ]
+  },
+  "SgFinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "KrBrnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_validate_checksum": [
+      "self",
+      "brn"
+    ]
+  },
+  "KrPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity"
+    ]
+  },
+  "KrRrnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_validate_region_code": [
+      "self",
+      "region_code"
+    ],
+    "_compute_checksum": [
+      "self",
+      "rn"
+    ],
+    "_validate_checksum": [
+      "self",
+      "rrn"
+    ]
+  },
+  "KrDriverLicenseRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "REGION_CODES": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "KrFrnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "_validate_checksum": [
+      "self",
+      "frn"
+    ]
+  },
+  "CaSinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_luhn_valid": [
+      "digits"
+    ]
+  },
+  "EsPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "EsNieRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "EsNifRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "AbaRoutingRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__checksum": [
+      "sanitized_value"
+    ]
+  },
+  "UsBankRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UsMbiRecognizer": {
+    "COUNTRY_CODE": [],
+    "VALID_LETTERS": [],
+    "VALID_ALPHANUMERIC": [],
+    "_NUM": [],
+    "_ALPHA": [],
+    "_ALPHANUM": [],
+    "_MBI_NO_DASH": [],
+    "_MBI_WITH_DASH": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity"
+    ]
+  },
+  "MedicalLicenseRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__luhn_checksum": [
+      "sanitized_value"
+    ]
+  },
+  "UsPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UsItinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UsLicenseRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UsNpiRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__npi_luhn_checksum": [
+      "sanitized_value"
+    ]
+  },
+  "UsSsnRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "InGstinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_sanitize_value": [
+      "self",
+      "text"
+    ],
+    "_validate_gstin": [
+      "self",
+      "gstin"
+    ],
+    "_validate_pan_format": [
+      "self",
+      "pan"
+    ]
+  },
+  "InPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "InPanRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ]
+  },
+  "InVehicleRegistrationRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "in_vehicle_foreign_mission_codes": [],
+    "in_vehicle_armed_forces_codes": [],
+    "in_vehicle_diplomatic_codes": [],
+    "in_vehicle_dist_an": [],
+    "in_vehicle_dist_ap": [],
+    "in_vehicle_dist_ar": [],
+    "in_vehicle_dist_as": [],
+    "in_vehicle_dist_br": [],
+    "in_vehicle_dist_cg": [],
+    "in_vehicle_dist_ch": [],
+    "in_vehicle_dist_dd": [],
+    "in_vehicle_dist_dn": [],
+    "in_vehicle_dist_dl": [],
+    "in_vehicle_dist_ga": [],
+    "in_vehicle_dist_gj": [],
+    "in_vehicle_dist_hp": [],
+    "in_vehicle_dist_hr": [],
+    "in_vehicle_dist_jh": [],
+    "in_vehicle_dist_jk": [],
+    "in_vehicle_dist_ka": [],
+    "in_vehicle_dist_kl": [],
+    "in_vehicle_dist_la": [],
+    "in_vehicle_dist_ld": [],
+    "in_vehicle_dist_mh": [],
+    "in_vehicle_dist_ml": [],
+    "in_vehicle_dist_mn": [],
+    "in_vehicle_dist_mp": [],
+    "in_vehicle_dist_mz": [],
+    "in_vehicle_dist_nl": [],
+    "in_vehicle_dist_od": [],
+    "in_vehicle_dist_or": [],
+    "in_vehicle_dist_pb": [],
+    "in_vehicle_dist_py": [],
+    "in_vehicle_dist_rj": [],
+    "in_vehicle_dist_sk": [],
+    "in_vehicle_dist_tn": [],
+    "in_vehicle_dist_tr": [],
+    "in_vehicle_dist_ts": [],
+    "in_vehicle_dist_uk": [],
+    "in_vehicle_dist_up": [],
+    "in_vehicle_dist_wb": [],
+    "in_union_territories": [],
+    "in_old_union_territories": [],
+    "in_states": [],
+    "in_old_states": [],
+    "in_non_standard_state_or_ut": [],
+    "state_rto_district_map": [],
+    "two_factor_registration_prefix": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__check_vehicle_registration": [
+      "self",
+      "sanitized_value"
+    ]
+  },
+  "InVoterRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "InAadhaarRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "utils": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__check_aadhaar": [
+      "self",
+      "sanitized_value"
+    ],
+    "_is_palindrome": [
+      "text",
+      "case_insensitive"
+    ],
+    "_is_verhoeff_number": [
+      "input_number"
+    ]
+  },
+  "NgVehicleRegistrationRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "NgNinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "__check_nin": [
+      "self",
+      "value"
+    ],
+    "_is_verhoeff_number": [
+      "value"
+    ]
+  },
+  "TrLicensePlateRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "TrNationalIdRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_validate_checksum": [
+      "self",
+      "tckn"
+    ]
+  },
+  "SeOrganisationsnummerRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "_numeric_part": [
+      "orgnr"
+    ],
+    "_is_luhn_valid": [
+      "number"
+    ],
+    "_has_valid_third_digit": [
+      "number"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "SePersonnummerRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "_numeric_part": [
+      "pnr"
+    ],
+    "_is_luhn_valid": [
+      "pnr"
+    ],
+    "_has_valid_date": [
+      "pnr"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeSocialSecurityRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeTaxIdRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeFuehrerscheinRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "DeVatIdRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "_NORMALIZATION_STRIP": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "strict_checksum",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeBsnrRecognizer": {
+    "COUNTRY_CODE": [],
+    "VALID_KV_CODES": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeHandelsregisterRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "DePlzRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "DePassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeLanrRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeHealthInsuranceRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "DeKfzRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "DeTaxNumberRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "DeIdCardRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "PhUmidRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "PhTinRecognizer": {
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "invalidate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_is_valid_tin": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "ItVatCodeRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name",
+      "version"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "ItDriverLicenseRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "ItFiscalCodeRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "ItIdentityCardRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "ItPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UkNinoRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UkPostcodeRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "NhsRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "UkPassportRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ]
+  },
+  "UkDrivingLicenceRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "UkVehicleRegistrationRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "replacement_pairs",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "FiPersonalIdentityCodeRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "ZaIdNumberRecognizer": {
+    "COUNTRY_CODE": [],
+    "ID_LENGTH": [],
+    "BIRTH_DATE_LENGTH": [],
+    "CITIZENSHIP_INDEX": [],
+    "LEGACY_RACE_INDEX": [],
+    "ALLOWED_CITIZENSHIP_VALUES": [],
+    "ALLOWED_LEGACY_RACE_VALUES": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ],
+    "_has_valid_birth_date": [
+      "date_part"
+    ],
+    "_is_luhn_valid": [
+      "value"
+    ]
+  },
+  "PlPeselRecognizer": {
+    "COUNTRY_CODE": [],
+    "PATTERNS": [],
+    "CONTEXT": [],
+    "__init__": [
+      "self",
+      "patterns",
+      "context",
+      "supported_language",
+      "supported_entity",
+      "name"
+    ],
+    "validate_result": [
+      "self",
+      "pattern_text"
+    ]
+  },
+  "ContextAwareEnhancer": {
+    "MIN_SCORE": [],
+    "MAX_SCORE": [],
+    "__init__": [
+      "self",
+      "context_similarity_factor",
+      "min_score_with_context_similarity",
+      "context_prefix_count",
+      "context_suffix_count"
+    ],
+    "enhance_using_context": [
+      "self",
+      "text",
+      "raw_results",
+      "nlp_artifacts",
+      "recognizers",
+      "context"
+    ]
+  },
+  "LemmaContextAwareEnhancer": {
+    "__init__": [
+      "self",
+      "context_similarity_factor",
+      "min_score_with_context_similarity",
+      "context_prefix_count",
+      "context_suffix_count",
+      "context_matching_mode"
+    ],
+    "enhance_using_context": [
+      "self",
+      "text",
+      "raw_results",
+      "nlp_artifacts",
+      "recognizers",
+      "context"
+    ],
+    "_find_supportive_word_in_context": [
+      "context_list",
+      "recognizer_context_list",
+      "matching_mode"
+    ],
+    "_extract_surrounding_words": [
+      "self",
+      "nlp_artifacts",
+      "word",
+      "start"
+    ],
+    "_find_index_of_match_token": [
+      "word",
+      "start",
+      "tokens",
+      "tokens_indices"
+    ],
+    "_add_n_words": [
+      "index",
+      "n_words",
+      "lemmas",
+      "lemmatized_filtered_keywords",
+      "is_backward"
+    ],
+    "_add_n_words_forward": [
+      "self",
+      "index",
+      "n_words",
+      "lemmas",
+      "lemmatized_filtered_keywords"
+    ],
+    "_add_n_words_backward": [
+      "self",
+      "index",
+      "n_words",
+      "lemmas",
+      "lemmatized_filtered_keywords"
+    ]
+  },
+  "CharacterBasedTextChunker": {
+    "__init__": [
+      "self",
+      "chunk_size",
+      "chunk_overlap",
+      "boundary_chars"
+    ],
+    "chunk_size": [
+      "self"
+    ],
+    "chunk_overlap": [
+      "self"
+    ],
+    "boundary_chars": [
+      "self"
+    ],
+    "chunk": [
+      "self",
+      "text"
+    ]
+  },
+  "TextChunkerProvider": {
+    "__init__": [
+      "self",
+      "chunker_configuration"
+    ],
+    "create_chunker": [
+      "self"
+    ]
+  },
+  "TextChunk": {},
+  "BaseTextChunker": {
+    "chunk": [
+      "self",
+      "text"
+    ],
+    "predict_with_chunking": [
+      "self",
+      "text",
+      "predict_func"
+    ],
+    "_process_chunks": [
+      "self",
+      "chunks",
+      "process_func"
+    ],
+    "deduplicate_overlapping_entities": [
+      "self",
+      "predictions",
+      "overlap_threshold"
+    ]
+  },
+  "PRESIDIO_DEVICE_ENV_VAR": [],
+  "_detector_instance": [],
+  "_lock": [],
+  "DeviceDetector": {
+    "__init__": [
+      "self"
+    ],
+    "_get_device_from_env": [
+      "self"
+    ],
+    "_detect": [
+      "self"
+    ],
+    "get_device": [
+      "self"
+    ]
+  },
+  "__getattr__": [
+    "name"
+  ],
+  "NlpEngineProvider": {
+    "__init__": [
+      "self",
+      "nlp_engines",
+      "conf_file",
+      "nlp_configuration"
+    ],
+    "_read_nlp_conf": [
+      "conf_file"
+    ],
+    "_get_full_conf_path": [
+      "default_conf_file"
+    ],
+    "create_engine": [
+      "self"
+    ]
+  },
+  "NoOpNlpEngine": {
+    "engine_name": [],
+    "is_available": [],
+    "__init__": [
+      "self",
+      "models"
+    ],
+    "load": [
+      "self"
+    ],
+    "_validate_models": [
+      "cls",
+      "models"
+    ],
+    "_validate_model_params": [
+      "cls",
+      "model"
+    ],
+    "is_loaded": [
+      "self"
+    ],
+    "process_text": [
+      "self",
+      "text",
+      "language"
+    ],
+    "process_batch": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process",
+      "as_tuples"
+    ],
+    "is_stopword": [
+      "self",
+      "word",
+      "language"
+    ],
+    "is_punct": [
+      "self",
+      "word",
+      "language"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "get_supported_languages": [
+      "self"
+    ],
+    "_validate_loaded_language": [
+      "self",
+      "language"
+    ],
+    "_validate_string": [
+      "value",
+      "parameter_name"
+    ],
+    "_create_empty_nlp_artifacts": [
+      "self",
+      "language"
+    ]
+  },
+  "SpacyNlpEngine": {
+    "engine_name": [],
+    "is_available": [],
+    "__init__": [
+      "self",
+      "models",
+      "ner_model_configuration"
+    ],
+    "_enable_gpu": [
+      "self"
+    ],
+    "load": [
+      "self"
+    ],
+    "_download_spacy_model_if_needed": [
+      "model_name"
+    ],
+    "_validate_model_params": [
+      "model"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "get_supported_languages": [
+      "self"
+    ],
+    "is_loaded": [
+      "self"
+    ],
+    "process_text": [
+      "self",
+      "text",
+      "language"
+    ],
+    "process_batch": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process",
+      "as_tuples"
+    ],
+    "is_stopword": [
+      "self",
+      "word",
+      "language"
+    ],
+    "is_punct": [
+      "self",
+      "word",
+      "language"
+    ],
+    "get_nlp": [
+      "self",
+      "language"
+    ],
+    "_doc_to_nlp_artifact": [
+      "self",
+      "doc",
+      "language"
+    ],
+    "_get_entities": [
+      "self",
+      "doc"
+    ],
+    "_get_scores_for_entities": [
+      "self",
+      "doc"
+    ],
+    "_get_updated_entities": [
+      "self",
+      "entities",
+      "scores"
+    ]
+  },
+  "DEFAULT_SLIM_MODELS": [],
+  "SlimSpacyNlpEngine": {
+    "engine_name": [],
+    "is_available": [],
+    "__init__": [
+      "self",
+      "models",
+      "supported_languages",
+      "auto_download",
+      "generic_tokenizer"
+    ],
+    "_models_from_languages": [
+      "self",
+      "languages",
+      "generic_tokenizer"
+    ],
+    "load": [
+      "self"
+    ],
+    "_download_spacy_model_if_needed": [
+      "model_name"
+    ],
+    "_validate_model_params": [
+      "model"
+    ],
+    "is_loaded": [
+      "self"
+    ],
+    "process_text": [
+      "self",
+      "text",
+      "language"
+    ],
+    "process_batch": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process",
+      "as_tuples"
+    ],
+    "is_stopword": [
+      "self",
+      "word",
+      "language"
+    ],
+    "is_punct": [
+      "self",
+      "word",
+      "language"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "get_supported_languages": [
+      "self"
+    ],
+    "_doc_to_nlp_artifact": [
+      "self",
+      "doc",
+      "language"
+    ]
+  },
+  "NlpEngine": {
+    "load": [
+      "self"
+    ],
+    "is_loaded": [
+      "self"
+    ],
+    "process_text": [
+      "self",
+      "text",
+      "language"
+    ],
+    "process_batch": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process"
+    ],
+    "is_stopword": [
+      "self",
+      "word",
+      "language"
+    ],
+    "is_punct": [
+      "self",
+      "word",
+      "language"
+    ],
+    "get_supported_entities": [
+      "self"
+    ],
+    "get_supported_languages": [
+      "self"
+    ]
+  },
+  "TransformersNlpEngine": {
+    "engine_name": [],
+    "is_available": [],
+    "__init__": [
+      "self",
+      "models",
+      "ner_model_configuration"
+    ],
+    "load": [
+      "self"
+    ],
+    "_validate_model_params": [
+      "model"
+    ],
+    "_get_entities": [
+      "self",
+      "doc"
+    ],
+    "_get_scores_for_entities": [
+      "self",
+      "doc"
+    ]
+  },
+  "NlpArtifacts": {
+    "__init__": [
+      "self",
+      "entities",
+      "tokens",
+      "tokens_indices",
+      "lemmas",
+      "nlp_engine",
+      "language",
+      "scores"
+    ],
+    "set_keywords": [
+      "nlp_engine",
+      "lemmas",
+      "language"
+    ],
+    "to_json": [
+      "self"
+    ]
+  },
+  "MODEL_TO_PRESIDIO_ENTITY_MAPPING": [],
+  "LOW_SCORE_ENTITY_NAMES": [],
+  "NerModelConfiguration": {
+    "model_config": [],
+    "validate_aggregation_strategy": [
+      "cls",
+      "agg_strategy"
+    ],
+    "validate_stride": [
+      "cls",
+      "stride"
+    ],
+    "validate_alignment_mode": [
+      "cls",
+      "alignment"
+    ],
+    "from_dict": [
+      "cls",
+      "ner_model_configuration_dict"
+    ],
+    "to_dict": [
+      "self"
+    ]
+  },
+  "StanzaNlpEngine": {
+    "engine_name": [],
+    "is_available": [],
+    "__init__": [
+      "self",
+      "models",
+      "ner_model_configuration",
+      "download_if_missing"
+    ],
+    "load": [
+      "self"
+    ],
+    "process_batch": [
+      "self",
+      "texts",
+      "language",
+      "batch_size",
+      "n_process",
+      "as_tuples"
+    ]
+  },
+  "load_pipeline": [
+    "name"
+  ],
+  "create_tokenizer": [
+    "lang",
+    "dir",
+    "package",
+    "processors",
+    "logging_level",
+    "verbose",
+    "device",
+    "kwargs"
+  ],
+  "StanzaTokenizer": {
+    "__init__": [
+      "self",
+      "snlp",
+      "vocab"
+    ],
+    "__call__": [
+      "self",
+      "text"
+    ],
+    "_convert_doc": [
+      "self",
+      "snlp_doc"
+    ],
+    "pipe": [
+      "self",
+      "texts"
+    ],
+    "__get_tokens_with_heads": [
+      "snlp_doc"
+    ],
+    "__get_words_and_spaces": [
+      "words",
+      "text"
+    ],
+    "token_vector": [
+      "self",
+      "token"
+    ],
+    "token_has_vector": [
+      "self",
+      "token"
+    ],
+    "_find_embeddings": [
+      "snlp"
+    ],
+    "to_bytes": [
+      "self"
+    ],
+    "from_bytes": [
+      "self",
+      "_bytes_data"
+    ],
+    "to_disk": [
+      "self",
+      "_path"
+    ],
+    "from_disk": [
+      "self",
+      "_path"
+    ]
+  },
+  "validate_language_codes": [
+    "languages"
+  ],
+  "ConfigurationValidator": {
+    "validate_language_codes": [
+      "languages"
+    ],
+    "validate_file_path": [
+      "file_path"
+    ],
+    "validate_score_threshold": [
+      "threshold"
+    ],
+    "validate_nlp_configuration": [
+      "config"
+    ],
+    "validate_recognizer_registry_configuration": [
+      "config"
+    ],
+    "_dump_recognizer_registry_configuration": [
+      "validated_config"
+    ],
+    "validate_analyzer_configuration": [
+      "config"
+    ]
+  },
+  "LanguageContextConfig": {
+    "validate_language_code": [
+      "cls",
+      "v"
+    ]
+  },
+  "BaseRecognizerConfig": {
+    "validate_single_language": [
+      "cls",
+      "v"
+    ],
+    "validate_language_configuration": [
+      "self"
+    ],
+    "validate_entity_configuration": [
+      "self"
+    ],
+    "validate_context_configuration": [
+      "self"
+    ]
+  },
+  "PredefinedRecognizerConfig": {
+    "validate_predefined_recognizer_exists": [
+      "self"
+    ]
+  },
+  "HuggingFaceRecognizerConfig": {
+    "model_config": [],
+    "model_dump": [
+      "self"
+    ]
+  },
+  "GLiNERRecognizerConfig": {
+    "model_config": [],
+    "validate_entity_mapping_and_supported_entities": [
+      "self"
+    ],
+    "model_dump": [
+      "self"
+    ]
+  },
+  "LangExtractRecognizerConfig": {
+    "model_config": [],
+    "model_dump": [
+      "self"
+    ]
+  },
+  "CustomRecognizerConfig": {
+    "model_config": [],
+    "check_predefined_name_conflict": [
+      "cls",
+      "data"
+    ],
+    "validate_country_code": [
+      "cls",
+      "value"
+    ],
+    "validate_patterns": [
+      "cls",
+      "patterns"
+    ],
+    "validate_patterns_or_deny_list": [
+      "self"
+    ]
+  },
+  "RecognizerRegistryConfig": {
+    "model_config": [],
+    "validate_language_codes": [
+      "cls",
+      "languages"
+    ],
+    "validate_languages_for_custom_recognizers": [
+      "self"
+    ],
+    "validate_recognizers_not_empty": [
+      "self"
+    ],
+    "parse_recognizers": [
+      "cls",
+      "recognizers"
+    ],
+    "__check_if_predefined": [
+      "cls",
+      "recognizer_name"
+    ],
+    "validate_language_presence": [
+      "self"
+    ]
+  },
+  "RecognizerRegistry": {
+    "__init__": [
+      "self",
+      "recognizers",
+      "global_regex_flags",
+      "supported_languages"
+    ],
+    "validate_nlp_engine_compatibility": [
+      "self",
+      "nlp_engine"
+    ],
+    "_create_nlp_recognizer": [
+      "self",
+      "nlp_engine",
+      "supported_language"
+    ],
+    "add_nlp_recognizer": [
+      "self",
+      "nlp_engine"
+    ],
+    "load_predefined_recognizers": [
+      "self",
+      "languages",
+      "nlp_engine",
+      "countries"
+    ],
+    "get_nlp_recognizer": [
+      "nlp_engine"
+    ],
+    "get_recognizers": [
+      "self",
+      "language",
+      "entities",
+      "all_fields",
+      "ad_hoc_recognizers"
+    ],
+    "get_country_codes": [
+      "self"
+    ],
+    "add_recognizer": [
+      "self",
+      "recognizer"
+    ],
+    "remove_recognizer": [
+      "self",
+      "recognizer_name",
+      "language"
+    ],
+    "add_pattern_recognizer_from_dict": [
+      "self",
+      "recognizer_dict"
+    ],
+    "add_recognizers_from_yaml": [
+      "self",
+      "yml_path"
+    ],
+    "__instantiate_recognizer": [
+      "self",
+      "recognizer_class",
+      "supported_language"
+    ],
+    "_get_supported_languages": [
+      "self"
+    ],
+    "get_supported_entities": [
+      "self",
+      "languages"
+    ]
+  },
+  "RecognizerRegistryProvider": {
+    "__init__": [
+      "self",
+      "conf_file",
+      "registry_configuration",
+      "nlp_engine"
+    ],
+    "create_recognizer_registry": [
+      "self"
+    ],
+    "__update_based_on_nlp_recognizer_conf": [
+      "self",
+      "recognizers",
+      "recognizers_conf",
+      "supported_languages"
+    ],
+    "__update_based_on_nlp_recognizer_conf_and_lang": [
+      "recognizers",
+      "nlp_engine",
+      "language"
+    ],
+    "__remove_disabled_nlp_recognizers": [
+      "recognizers",
+      "recognizers_conf",
+      "language"
+    ]
+  },
+  "PredefinedRecognizerNotFoundError": {},
+  "_COUNTRY_SPECIFIC_MODULE_SEGMENT": [],
+  "RecognizerListLoader": {
+    "_get_recognizer_items": [
+      "recognizer_conf"
+    ],
+    "is_recognizer_enabled": [
+      "recognizer_conf"
+    ],
+    "_get_recognizer_context": [
+      "recognizer"
+    ],
+    "_split_recognizers": [
+      "recognizers_conf"
+    ],
+    "_get_recognizer_languages": [
+      "recognizer_conf",
+      "supported_languages"
+    ],
+    "get_recognizer_name": [
+      "recognizer_conf"
+    ],
+    "_convert_supported_entities_to_entity": [
+      "conf"
+    ],
+    "_is_language_supported_globally": [
+      "recognizer",
+      "supported_languages"
+    ],
+    "_create_custom_recognizers": [
+      "recognizer_conf",
+      "supported_languages"
+    ],
+    "get_all_existing_recognizers": [
+      "cls"
+    ],
+    "get_existing_recognizer_cls": [
+      "recognizer_name"
+    ],
+    "_prepare_recognizer_kwargs": [
+      "recognizer_conf",
+      "language_conf",
+      "recognizer_cls"
+    ],
+    "get": [
+      "recognizers",
+      "supported_languages",
+      "global_regex_flags",
+      "supported_countries"
+    ],
+    "_filter_recognizer_fields": [
+      "recognizer_conf",
+      "to_exclude"
+    ],
+    "_normalize_countries": [
+      "countries"
+    ],
+    "_validate_yaml_country_code": [
+      "recognizer_conf",
+      "recognizer_cls",
+      "recognizer_name"
+    ],
+    "_get_recognizer_country": [
+      "recognizer"
+    ],
+    "filter_by_countries": [
+      "recognizers",
+      "countries"
+    ]
+  },
+  "RecognizerConfigurationLoader": {
+    "mandatory_keys": [],
+    "_merge_configuration": [
+      "registry_configuration",
+      "config_from_file"
+    ],
+    "get": [
+      "conf_file",
+      "registry_configuration"
+    ],
+    "_get_full_conf_path": [
+      "default_conf_file"
+    ]
+  },
+  "get_azure_credential": [],
+  "get_bearer_token_provider_for_scope": [
+    "scope",
+    "credential"
+  ],
+  "GENERIC_PII_ENTITY": [],
+  "filter_results_by_labels": [
+    "results",
+    "labels_to_ignore"
+  ],
+  "filter_results_by_score": [
+    "results",
+    "min_score"
+  ],
+  "filter_results_by_entities": [
+    "results",
+    "requested_entities"
+  ],
+  "validate_result_positions": [
+    "results"
+  ],
+  "consolidate_generic_entities": [
+    "results",
+    "supported_entities",
+    "generic_entities_logged"
+  ],
+  "skip_unmapped_entities": [
+    "results",
+    "supported_entities"
+  ],
+  "ensure_generic_entity_support": [
+    "supported_entities",
+    "enable_generic_consolidation"
+  ],
+  "get_conf_path": [
+    "filename",
+    "conf_subdir"
+  ],
+  "resolve_config_path": [
+    "config_path"
+  ],
+  "load_yaml_file": [
+    "filepath"
+  ],
+  "get_model_config": [
+    "config",
+    "provider_key"
+  ],
+  "validate_config_fields": [
+    "config",
+    "required_fields",
+    "config_name"
+  ],
+  "check_langextract_available": [],
+  "DEFAULT_ALIGNMENT_SCORES": [],
+  "extract_lm_config": [
+    "config"
+  ],
+  "get_supported_entities": [
+    "lm_config",
+    "langextract_config"
+  ],
+  "create_reverse_entity_mapping": [
+    "entity_mappings"
+  ],
+  "calculate_extraction_confidence": [
+    "extraction",
+    "alignment_scores"
+  ],
+  "convert_langextract_to_presidio_results": [
+    "langextract_result",
+    "entity_mappings",
+    "supported_entities",
+    "enable_generic_consolidation",
+    "recognizer_name",
+    "alignment_scores"
+  ],
+  "load_yaml_examples": [
+    "examples_file",
+    "conf_subdir"
+  ],
+  "convert_to_langextract_format": [
+    "examples_data"
+  ],
+  "load_file_from_conf": [
+    "filename",
+    "conf_subdir"
+  ],
+  "load_prompt_file": [
+    "prompt_file",
+    "conf_subdir"
+  ],
+  "render_jinja_template": [
+    "template_str"
+  ]
+}
