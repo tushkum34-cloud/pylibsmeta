@@ -1,0 +1,366 @@
+{
+  "__all__": [],
+  "__version__": [],
+  "Salt": {
+    "__init__": [
+      "self",
+      "salt"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__bytes__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ],
+    "create": [
+      "cls"
+    ]
+  },
+  "Nonce": {
+    "__init__": [
+      "self",
+      "nonce"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__add__": [
+      "self",
+      "other"
+    ],
+    "startswith": [
+      "self",
+      "other"
+    ],
+    "create": [
+      "cls"
+    ]
+  },
+  "ClientStage": {
+    "get_client_first": [],
+    "set_server_first": [],
+    "get_client_final": [],
+    "set_server_final": []
+  },
+  "ServerStage": {
+    "set_client_first": [],
+    "get_server_first": [],
+    "set_client_final": [],
+    "get_server_final": []
+  },
+  "_check_stage": [
+    "Stages",
+    "current_stage",
+    "next_stage"
+  ],
+  "MECHANISMS": [],
+  "CHANNEL_TYPES": [],
+  "MAX_ITERATION_COUNT": [],
+  "_make_cb_data": [
+    "name",
+    "ssl_socket"
+  ],
+  "make_channel_binding": [
+    "name",
+    "ssl_socket"
+  ],
+  "ScramMechanism": {
+    "MECH_LOOKUP": [],
+    "__init__": [
+      "self",
+      "mechanism"
+    ],
+    "make_auth_info": [
+      "self",
+      "password",
+      "iteration_count",
+      "salt"
+    ],
+    "make_server": [
+      "self",
+      "auth_fn",
+      "channel_binding",
+      "s_nonce"
+    ],
+    "parse_iteration_count": [
+      "self",
+      "i"
+    ]
+  },
+  "_make_auth_info": [
+    "hf",
+    "password",
+    "i",
+    "salt"
+  ],
+  "_validate_channel_binding": [
+    "channel_binding"
+  ],
+  "ScramClient": {
+    "__init__": [
+      "self",
+      "mechanisms",
+      "username",
+      "password",
+      "channel_binding",
+      "c_nonce"
+    ],
+    "_set_stage": [
+      "self",
+      "next_stage"
+    ],
+    "get_client_first": [
+      "self"
+    ],
+    "set_server_first": [
+      "self",
+      "message"
+    ],
+    "get_client_final": [
+      "self"
+    ],
+    "set_server_final": [
+      "self",
+      "message"
+    ]
+  },
+  "set_error": [
+    "f"
+  ],
+  "ScramServer": {
+    "__init__": [
+      "self",
+      "mechanism",
+      "auth_fn",
+      "channel_binding",
+      "s_nonce"
+    ],
+    "_set_mechanism": [
+      "self",
+      "mechanism"
+    ],
+    "_set_stage": [
+      "self",
+      "next_stage"
+    ],
+    "set_client_first": [
+      "self",
+      "client_first"
+    ],
+    "get_server_first": [
+      "self"
+    ],
+    "set_client_final": [
+      "self",
+      "client_final"
+    ],
+    "get_server_final": [
+      "self"
+    ]
+  },
+  "_make_auth_message": [
+    "client_first_bare",
+    "server_first",
+    "client_final_without_proof"
+  ],
+  "_make_salted_password": [
+    "hf",
+    "password",
+    "salt",
+    "iterations"
+  ],
+  "_c_key_stored_key_s_key": [
+    "hf",
+    "salted_password"
+  ],
+  "_check_client_key": [
+    "hf",
+    "stored_key",
+    "auth_msg",
+    "proof"
+  ],
+  "Gs2Header": {
+    "__init__": [
+      "self",
+      "gs2_char",
+      "cb_name"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__bytes__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "from_str": [
+      "cls",
+      "s"
+    ],
+    "from_binding": [
+      "cls",
+      "channel_binding",
+      "use_binding"
+    ]
+  },
+  "_make_cbind_input": [
+    "channel_binding",
+    "gs2_header"
+  ],
+  "_print_set": [
+    "s"
+  ],
+  "PROTO_ATTRS": [],
+  "_parse_message": [
+    "msg",
+    "desc"
+  ],
+  "Username": {
+    "__init__": [
+      "self",
+      "username"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "escape": [
+      "self"
+    ],
+    "from_escaped": [
+      "cls",
+      "username"
+    ]
+  },
+  "ESCAPE_EQUALS": [],
+  "ESCAPE_COMMA": [],
+  "_username_escape": [
+    "username"
+  ],
+  "_username_unescape": [
+    "username"
+  ],
+  "_get_client_first": [
+    "username",
+    "c_nonce",
+    "gs2_header"
+  ],
+  "_set_client_first": [
+    "client_first",
+    "s_nonce",
+    "channel_binding",
+    "use_binding",
+    "auth_fn"
+  ],
+  "_get_server_first": [
+    "nonce",
+    "salt",
+    "iterations"
+  ],
+  "_set_server_first": [
+    "server_first",
+    "c_nonce",
+    "min_iteration_count"
+  ],
+  "_get_client_final": [
+    "hf",
+    "password",
+    "salt",
+    "iterations",
+    "nonce",
+    "client_first_bare",
+    "server_first",
+    "channel_binding",
+    "gs2_header"
+  ],
+  "_set_client_final": [
+    "hf",
+    "client_final",
+    "nonce",
+    "stored_key",
+    "server_key",
+    "client_first_bare",
+    "server_first",
+    "channel_binding",
+    "gs2_header"
+  ],
+  "_get_server_final": [
+    "server_signature",
+    "error"
+  ],
+  "_set_server_final": [
+    "message",
+    "server_signature"
+  ],
+  "saslprep": [
+    "source"
+  ],
+  "SERVER_ERROR_INVALID_ENCODING": [],
+  "SERVER_ERROR_EXTENSIONS_NOT_SUPPORTED": [],
+  "SERVER_ERROR_INVALID_PROOF": [],
+  "SERVER_ERROR_CHANNEL_BINDINGS_DONT_MATCH": [],
+  "SERVER_ERROR_SERVER_DOES_SUPPORT_CHANNEL_BINDING": [],
+  "SERVER_ERROR_CHANNEL_BINDING_NOT_SUPPORTED": [],
+  "SERVER_ERROR_UNSUPPORTED_CHANNEL_BINDING_TYPE": [],
+  "SERVER_ERROR_UNKNOWN_USER": [],
+  "SERVER_ERROR_INVALID_USERNAME_ENCODING": [],
+  "SERVER_ERROR_NO_RESOURCES": [],
+  "SERVER_ERROR_OTHER_ERROR": [],
+  "ScramException": {
+    "__init__": [
+      "self",
+      "message",
+      "server_error"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "hmac": [
+    "hf",
+    "key",
+    "msg"
+  ],
+  "h": [
+    "hf",
+    "msg"
+  ],
+  "xor": [
+    "bytes1",
+    "bytes2"
+  ],
+  "b64enc": [
+    "binary"
+  ],
+  "b64dec": [
+    "string"
+  ],
+  "uenc": [
+    "string"
+  ],
+  "IterationCount": {
+    "__new__": [
+      "cls",
+      "value",
+      "minimum",
+      "maximum"
+    ]
+  }
+}
