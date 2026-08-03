@@ -1,0 +1,2848 @@
+{
+  "__all__": [],
+  "Judgeval": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "project_name",
+      "api_key",
+      "organization_id",
+      "api_url"
+    ],
+    "offline_tracer": [
+      "self"
+    ],
+    "query": [
+      "self",
+      "query"
+    ],
+    "present": [
+      "self",
+      "query"
+    ],
+    "_run_jql": [
+      "self",
+      "path",
+      "query",
+      "limit"
+    ],
+    "discover": [
+      "self",
+      "kind"
+    ],
+    "_require_jql_project_id": [
+      "self"
+    ],
+    "evaluation": [
+      "self"
+    ],
+    "offline_tests": [
+      "self"
+    ],
+    "datasets": [
+      "self"
+    ],
+    "prompts": [
+      "self"
+    ],
+    "agent_judges": [
+      "self"
+    ]
+  },
+  "JudgmentAPIError": {
+    "__init__": [
+      "self",
+      "status_code",
+      "detail",
+      "response"
+    ]
+  },
+  "JudgmentConflictError": {},
+  "JudgmentValidationError": {},
+  "map_judgment_api_error": [
+    "error",
+    "message"
+  ],
+  "JudgmentTestError": {},
+  "JudgmentRuntimeError": {},
+  "JudgmentProjectNotFoundError": {},
+  "InvalidJudgeModelError": {},
+  "AttributeKeys": {
+    "JUDGMENT_SPAN_KIND": [],
+    "JUDGMENT_INPUT": [],
+    "JUDGMENT_OUTPUT": [],
+    "JUDGMENT_OFFLINE_MODE": [],
+    "JUDGMENT_UPDATE_ID": [],
+    "JUDGMENT_CUSTOMER_ID": [],
+    "JUDGMENT_CUSTOMER_USER_ID": [],
+    "JUDGMENT_AGENT_ID": [],
+    "JUDGMENT_PARENT_AGENT_ID": [],
+    "JUDGMENT_AGENT_CLASS_NAME": [],
+    "JUDGMENT_AGENT_INSTANCE_NAME": [],
+    "JUDGMENT_IS_AGENT_ENTRY_POINT": [],
+    "JUDGMENT_CUMULATIVE_LLM_COST": [],
+    "JUDGMENT_STATE_BEFORE": [],
+    "JUDGMENT_STATE_AFTER": [],
+    "JUDGMENT_PENDING_TRACE_EVAL": [],
+    "JUDGMENT_USAGE_METADATA": [],
+    "JUDGMENT_LLM_PROVIDER": [],
+    "JUDGMENT_LLM_MODEL_NAME": [],
+    "JUDGMENT_USAGE_NON_CACHED_INPUT_TOKENS": [],
+    "JUDGMENT_USAGE_NON_CACHED_INPUT_IMAGE_TOKENS": [],
+    "JUDGMENT_USAGE_CACHE_CREATION_INPUT_TOKENS": [],
+    "JUDGMENT_USAGE_CACHE_READ_INPUT_TOKENS": [],
+    "JUDGMENT_USAGE_OUTPUT_TOKENS": [],
+    "JUDGMENT_USAGE_OUTPUT_IMAGE_TOKENS": [],
+    "JUDGMENT_USAGE_TOTAL_COST_USD": [],
+    "JUDGMENT_SESSION_ID": [],
+    "JUDGMENT_PROJECT_ID_OVERRIDE": [],
+    "JUDGMENT_LINK_SOURCE_TRACE_ID": [],
+    "JUDGMENT_LINK_SOURCE_SPAN_ID": [],
+    "JUDGMENT_LINK_TARGET_TRACE_ID": [],
+    "JUDGMENT_LINK_TARGET_SPAN_ID": [],
+    "GEN_AI_PROMPT": [],
+    "GEN_AI_COMPLETION": [],
+    "GEN_AI_REQUEST_MODEL": [],
+    "GEN_AI_RESPONSE_MODEL": [],
+    "GEN_AI_SYSTEM": [],
+    "GEN_AI_USAGE_INPUT_TOKENS": [],
+    "GEN_AI_USAGE_OUTPUT_TOKENS": [],
+    "GEN_AI_USAGE_CACHE_CREATION_INPUT_TOKENS": [],
+    "GEN_AI_USAGE_CACHE_READ_INPUT_TOKENS": [],
+    "GEN_AI_REQUEST_TEMPERATURE": [],
+    "GEN_AI_REQUEST_MAX_TOKENS": [],
+    "GEN_AI_RESPONSE_FINISH_REASONS": []
+  },
+  "InternalAttributeKeys": {
+    "DISABLE_PARTIAL_EMIT": [],
+    "CANCELLED": [],
+    "IS_CUSTOMER_CONTEXT_OWNER": [],
+    "PENDING_EVALS": [],
+    "PENDING_EVALS_COUNT": []
+  },
+  "ResourceKeys": {
+    "SERVICE_NAME": [],
+    "TELEMETRY_SDK_LANGUAGE": [],
+    "TELEMETRY_SDK_NAME": [],
+    "TELEMETRY_SDK_VERSION": [],
+    "JUDGMENT_PROJECT_ID": []
+  },
+  "JudgmentWarning": {},
+  "__version__": [],
+  "get_version": [],
+  "optional_env_var": [
+    "var_name",
+    "default"
+  ],
+  "optional_int_env_var": [
+    "var_name",
+    "default"
+  ],
+  "JUDGMENT_API_KEY": [],
+  "JUDGMENT_ORG_ID": [],
+  "JUDGMENT_API_URL": [],
+  "JUDGMENT_ENABLE_MONITORING": [],
+  "JUDGMENT_ENABLE_EVALUATIONS": [],
+  "JUDGMENT_S3_ACCESS_KEY_ID": [],
+  "JUDGMENT_S3_SECRET_ACCESS_KEY": [],
+  "JUDGMENT_S3_REGION_NAME": [],
+  "JUDGMENT_S3_BUCKET_NAME": [],
+  "JUDGMENT_S3_PREFIX": [],
+  "JUDGMENT_S3_ENDPOINT_URL": [],
+  "JUDGMENT_S3_SIGNATURE_VERSION": [],
+  "JUDGMENT_S3_ADDRESSING_STYLE": [],
+  "JUDGMENT_BG_WORKERS": [],
+  "JUDGMENT_BG_MAX_QUEUE": [],
+  "JUDGMENT_NO_COLOR": [],
+  "JUDGMENT_LOG_LEVEL": [],
+  "RESET": [],
+  "RED": [],
+  "YELLOW": [],
+  "BLUE": [],
+  "GRAY": [],
+  "ColorFormatter": {
+    "COLORS": [],
+    "__init__": [
+      "self",
+      "fmt",
+      "datefmt",
+      "use_color"
+    ],
+    "format": [
+      "self",
+      "record"
+    ]
+  },
+  "_parse_log_level": [
+    "level_str"
+  ],
+  "_setup_judgeval_logger": [],
+  "judgeval_logger": [],
+  "BackgroundQueue": {
+    "_lock": [],
+    "__init__": [
+      "self",
+      "workers",
+      "max_queue_size"
+    ],
+    "get_instance": [
+      "cls"
+    ],
+    "enqueue": [
+      "self",
+      "fn"
+    ],
+    "_on_done": [
+      "self",
+      "future"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_ms"
+    ],
+    "shutdown": [
+      "self",
+      "timeout_ms"
+    ]
+  },
+  "enqueue": [
+    "fn"
+  ],
+  "flush": [
+    "timeout_ms"
+  ],
+  "JUDGEVAL_TRACER_INSTRUMENTING_MODULE_NAME": [],
+  "APIScorerType": {
+    "PROMPT_SCORER": [],
+    "FAITHFULNESS": [],
+    "ANSWER_RELEVANCY": [],
+    "ANSWER_CORRECTNESS": [],
+    "INSTRUCTION_ADHERENCE": [],
+    "EXECUTION_ORDER": [],
+    "CUSTOM": [],
+    "__missing__": [
+      "cls",
+      "value"
+    ]
+  },
+  "expect_exists": [
+    "value",
+    "message",
+    "default"
+  ],
+  "expect_api_key": [
+    "api_key"
+  ],
+  "expect_organization_id": [
+    "organization_id"
+  ],
+  "expect_project_id": [
+    "project_id"
+  ],
+  "_model_dump": [
+    "model",
+    "mode"
+  ],
+  "json_encoder": [
+    "obj",
+    "custom_serializer"
+  ],
+  "_dump_base_model": [],
+  "_dump_dict": [],
+  "_dump_sequence": [],
+  "_dump_other": [],
+  "iso_format": [
+    "o"
+  ],
+  "decimal_encoder": [
+    "dec_value"
+  ],
+  "generate_encoders_by_class_tuples": [
+    "type_encoder_map"
+  ],
+  "encoders_by_class_tuples": [],
+  "safe_serialize": [
+    "obj"
+  ],
+  "serialize_attribute": [
+    "obj",
+    "serializer"
+  ],
+  "resolve_project_id": [
+    "client",
+    "project_name"
+  ],
+  "check_latest_version": [
+    "package_name"
+  ],
+  "url_for": [
+    "path",
+    "base"
+  ],
+  "T": [],
+  "D": [],
+  "P": [],
+  "dont_throw": [],
+  "debug_time": [
+    "func"
+  ],
+  "use_once": [
+    "func"
+  ],
+  "Y": [],
+  "Ctx": [],
+  "ImmCtx": [],
+  "_void_pre_hook": [
+    "ctx"
+  ],
+  "_void_yield_hook": [
+    "ctx",
+    "value"
+  ],
+  "_void_post_hook": [
+    "ctx"
+  ],
+  "_void_error_hook": [
+    "ctx",
+    "error"
+  ],
+  "_void_finally_hook": [
+    "ctx"
+  ],
+  "immutable_wrap_async_iterator": [],
+  "R": [],
+  "immutable_wrap_sync": [],
+  "mutable_wrap_async": [],
+  "mutable_wrap_sync": [],
+  "immutable_wrap_sync_iterator": [],
+  "immutable_wrap_async": [],
+  "identity_on_throw": [
+    "func"
+  ],
+  "_batch_examples": [
+    "examples",
+    "batch_size"
+  ],
+  "example_to_dataset_entry": [
+    "example"
+  ],
+  "example_from_dataset_entry": [
+    "entry"
+  ],
+  "DatasetInfo": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "DatasetVersion": {
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "Dataset": {
+    "_identifier": [
+      "self"
+    ],
+    "add_from_json": [
+      "self",
+      "file_path",
+      "batch_size"
+    ],
+    "add_from_yaml": [
+      "self",
+      "file_path",
+      "batch_size"
+    ],
+    "add_examples": [
+      "self",
+      "examples",
+      "batch_size"
+    ],
+    "versions": [
+      "self"
+    ],
+    "delete": [
+      "self"
+    ],
+    "save_as": [
+      "self",
+      "file_type",
+      "dir_path",
+      "save_name"
+    ],
+    "__iter__": [
+      "self"
+    ],
+    "__len__": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "display": [
+      "self",
+      "max_examples"
+    ]
+  },
+  "_TRACE_TYPE": [],
+  "DatasetColumnType": [],
+  "DatasetSchemaProperty": {},
+  "DatasetSchema": {},
+  "validate_dataset_schema": [
+    "schema"
+  ],
+  "_json_schema_type": [
+    "value"
+  ],
+  "infer_schema_from_examples": [
+    "examples"
+  ],
+  "DatasetFactory": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "get": [
+      "self",
+      "name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "schema",
+      "examples",
+      "overwrite"
+    ],
+    "list": [
+      "self"
+    ],
+    "versions": [
+      "self",
+      "name"
+    ],
+    "delete": [
+      "self",
+      "name"
+    ]
+  },
+  "TestConfig": {
+    "__test__": [],
+    "from_dict": [
+      "cls",
+      "data"
+    ]
+  },
+  "OfflineTestResult": {
+    "passed": [
+      "self"
+    ]
+  },
+  "_is_uuid": [
+    "value"
+  ],
+  "OfflineTestsFactory": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "create_config": [
+      "self",
+      "name",
+      "dataset",
+      "judges",
+      "description"
+    ],
+    "get_config": [
+      "self",
+      "test_config"
+    ],
+    "list_configs": [
+      "self",
+      "dataset_id"
+    ],
+    "delete_config": [
+      "self",
+      "test_config_id"
+    ],
+    "run": [
+      "self",
+      "test_config",
+      "agent_function",
+      "judge_versions",
+      "dataset_version",
+      "pass_condition_fn",
+      "assert_test",
+      "timeout_seconds",
+      "run_name",
+      "field_mapping"
+    ]
+  },
+  "AgentFunction": [],
+  "PassConditionFn": [],
+  "JudgeVersionPin": {},
+  "TERMINAL_STATUSES": [],
+  "EXAMPLES_PAGE_SIZE": [],
+  "ITEMS_PAGE_SIZE": [],
+  "normalize_judge_versions": [
+    "judge_versions"
+  ],
+  "build_agent_kwargs": [
+    "agent_function",
+    "data",
+    "field_mapping"
+  ],
+  "_parse_reason": [
+    "raw"
+  ],
+  "_reason_text": [
+    "raw"
+  ],
+  "OfflineTestRunner": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "resolve_dataset_version": [
+      "self",
+      "test_config",
+      "dataset_version"
+    ],
+    "fetch_examples": [
+      "self",
+      "test_config",
+      "version_number"
+    ],
+    "create_test_run": [
+      "self",
+      "test_config",
+      "dataset_version",
+      "judge_versions",
+      "source",
+      "agent_traces",
+      "name"
+    ],
+    "run_agent": [
+      "self",
+      "agent_function",
+      "examples",
+      "progress",
+      "field_mapping"
+    ],
+    "wait_for_completion": [
+      "self",
+      "test_run_id",
+      "timeout_seconds",
+      "progress"
+    ],
+    "fetch_items": [
+      "self",
+      "test_run_id"
+    ],
+    "build_results": [
+      "self",
+      "items",
+      "agent_traces",
+      "pass_condition_fn"
+    ],
+    "report_success": [
+      "self",
+      "test_run_id",
+      "prepared",
+      "items",
+      "results"
+    ],
+    "_patch_test_run_success": [
+      "self",
+      "test_run_id",
+      "successes"
+    ],
+    "run": [
+      "self",
+      "test_config",
+      "agent_function",
+      "judge_versions",
+      "dataset_version",
+      "pass_condition_fn",
+      "assert_test",
+      "timeout_seconds",
+      "run_name",
+      "field_mapping"
+    ],
+    "_assert_all_passed": [
+      "self",
+      "outcome"
+    ],
+    "_display_results": [
+      "self",
+      "console",
+      "status",
+      "results",
+      "ui_results_url"
+    ]
+  },
+  "app": [],
+  "scorer_app": [],
+  "load_otel_env": [
+    "ctx",
+    "project_name",
+    "api_key",
+    "organization_id"
+  ],
+  "upload": [
+    "entrypoint_path",
+    "project_name",
+    "requirements_file_path",
+    "included_files_paths",
+    "unique_name",
+    "bump_major",
+    "api_key",
+    "organization_id",
+    "yes"
+  ],
+  "init": [
+    "response_type",
+    "include_requirements",
+    "scorer_name",
+    "init_path",
+    "yes"
+  ],
+  "version": [],
+  "V2_SCORER_BASES": [],
+  "V3_SCORER_BASES": [],
+  "_parse_category_list": [
+    "node"
+  ],
+  "_extract_generic_arg": [
+    "node",
+    "tree"
+  ],
+  "_get_base_name": [
+    "node"
+  ],
+  "parse_judge": [
+    "tree"
+  ],
+  "_build_bundle": [
+    "entrypoint_path",
+    "included_files_paths",
+    "requirements_file_path"
+  ],
+  "upload_judge": [
+    "client",
+    "project_id",
+    "entrypoint_path",
+    "included_files_paths",
+    "requirements_file_path",
+    "unique_name",
+    "bump_major",
+    "project_name",
+    "yes"
+  ],
+  "DEFAULT_EXCLUDE_SPEC": [],
+  "_find_gitignore_path": [
+    "start_path"
+  ],
+  "TarFilter": {
+    "__init__": [
+      "self",
+      "common"
+    ],
+    "get_file_count": [
+      "self"
+    ],
+    "is_excluded_by_default": [
+      "self",
+      "path"
+    ],
+    "is_excluded_by_gitignore": [
+      "self",
+      "path"
+    ],
+    "__call__": [
+      "self",
+      "tarinfo"
+    ]
+  },
+  "_headers": [
+    "api_key",
+    "organization_id",
+    "is_multipart"
+  ],
+  "_handle_response": [
+    "r"
+  ],
+  "JudgmentSyncClient": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "base_url",
+      "api_key",
+      "organization_id"
+    ],
+    "_request": [
+      "self",
+      "method",
+      "url",
+      "payload",
+      "params"
+    ],
+    "_multipart_request": [
+      "self",
+      "method",
+      "url",
+      "payload",
+      "params"
+    ],
+    "post_projects_resolve": [
+      "self",
+      "payload"
+    ],
+    "post_projects": [
+      "self",
+      "payload"
+    ],
+    "delete_projects": [
+      "self",
+      "project_id"
+    ],
+    "post_projects_datasets": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_datasets": [
+      "self",
+      "project_id"
+    ],
+    "get_projects_datasets_by_dataset_identifier_versions": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_datasets_by_dataset_identifier_page": [
+      "self",
+      "project_id",
+      "dataset_identifier",
+      "version",
+      "limit",
+      "cursor_created_at",
+      "cursor_example_id"
+    ],
+    "post_projects_datasets_by_dataset_identifier_examples": [
+      "self",
+      "project_id",
+      "dataset_identifier",
+      "payload"
+    ],
+    "delete_projects_datasets_by_dataset_identifier": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_datasets_by_dataset_identifier": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_test_configs": [
+      "self",
+      "project_id",
+      "dataset_id"
+    ],
+    "post_projects_test_configs": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id"
+    ],
+    "patch_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id",
+      "payload"
+    ],
+    "delete_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id"
+    ],
+    "get_projects_test_runs": [
+      "self",
+      "project_id",
+      "test_config_id",
+      "dataset_id",
+      "status",
+      "limit"
+    ],
+    "post_projects_test_runs": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_test_runs_by_test_run_id": [
+      "self",
+      "project_id",
+      "test_run_id"
+    ],
+    "patch_projects_test_runs_by_test_run_id_status": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "payload"
+    ],
+    "patch_projects_test_runs_by_test_run_id_success": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "payload"
+    ],
+    "get_projects_test_runs_by_test_run_id_items": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "limit",
+      "cursor"
+    ],
+    "get_projects_test_runs_by_test_run_id_results": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "limit",
+      "cursor"
+    ],
+    "get_projects_test_runs_by_test_run_id_graph": [
+      "self",
+      "project_id",
+      "test_run_id"
+    ],
+    "get_projects_experiments_by_run_id": [
+      "self",
+      "project_id",
+      "run_id",
+      "limit",
+      "cursor"
+    ],
+    "post_projects_eval_results": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_results_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_evaluate_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_evaluate_traces": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_queue_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_queue_traces": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_prompts_by_name": [
+      "self",
+      "project_id",
+      "name",
+      "commit_id",
+      "tag"
+    ],
+    "post_projects_prompts": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_prompts_by_name_tags": [
+      "self",
+      "project_id",
+      "name",
+      "payload"
+    ],
+    "delete_projects_prompts_by_name_tags": [
+      "self",
+      "project_id",
+      "name",
+      "payload"
+    ],
+    "get_projects_prompts_by_name_versions": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "get_projects_scorers": [
+      "self",
+      "project_id",
+      "names",
+      "is_trace"
+    ],
+    "get_projects_scorers_by_name_exists": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "post_projects_scorers_custom": [
+      "self",
+      "project_id"
+    ],
+    "post_projects_scorers_custom_bundle": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_scorers_custom_by_name_exists": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "post_projects_traces_by_trace_id_tags": [
+      "self",
+      "project_id",
+      "trace_id",
+      "payload"
+    ],
+    "get_e2e_fetch_trace_by_project_name_by_trace_id": [
+      "self",
+      "project_name",
+      "trace_id"
+    ],
+    "get_e2e_traces_per_project": [
+      "self",
+      "project_id"
+    ],
+    "post_e2e_fetch_span_score": [
+      "self",
+      "payload"
+    ],
+    "post_projects_judges": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "patch_projects_judges_by_judge_id": [
+      "self",
+      "project_id",
+      "judge_id",
+      "payload"
+    ]
+  },
+  "JudgmentAsyncClient": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "base_url",
+      "api_key",
+      "organization_id"
+    ],
+    "_request": [
+      "self",
+      "method",
+      "url",
+      "payload",
+      "params"
+    ],
+    "_multipart_request": [
+      "self",
+      "method",
+      "url",
+      "payload",
+      "params"
+    ],
+    "post_projects_resolve": [
+      "self",
+      "payload"
+    ],
+    "post_projects": [
+      "self",
+      "payload"
+    ],
+    "delete_projects": [
+      "self",
+      "project_id"
+    ],
+    "post_projects_datasets": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_datasets": [
+      "self",
+      "project_id"
+    ],
+    "get_projects_datasets_by_dataset_identifier_versions": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_datasets_by_dataset_identifier_page": [
+      "self",
+      "project_id",
+      "dataset_identifier",
+      "version",
+      "limit",
+      "cursor_created_at",
+      "cursor_example_id"
+    ],
+    "post_projects_datasets_by_dataset_identifier_examples": [
+      "self",
+      "project_id",
+      "dataset_identifier",
+      "payload"
+    ],
+    "delete_projects_datasets_by_dataset_identifier": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_datasets_by_dataset_identifier": [
+      "self",
+      "project_id",
+      "dataset_identifier"
+    ],
+    "get_projects_test_configs": [
+      "self",
+      "project_id",
+      "dataset_id"
+    ],
+    "post_projects_test_configs": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id"
+    ],
+    "patch_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id",
+      "payload"
+    ],
+    "delete_projects_test_configs_by_test_config_id": [
+      "self",
+      "project_id",
+      "test_config_id"
+    ],
+    "get_projects_test_runs": [
+      "self",
+      "project_id",
+      "test_config_id",
+      "dataset_id",
+      "status",
+      "limit"
+    ],
+    "post_projects_test_runs": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_test_runs_by_test_run_id": [
+      "self",
+      "project_id",
+      "test_run_id"
+    ],
+    "patch_projects_test_runs_by_test_run_id_status": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "payload"
+    ],
+    "patch_projects_test_runs_by_test_run_id_success": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "payload"
+    ],
+    "get_projects_test_runs_by_test_run_id_items": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "limit",
+      "cursor"
+    ],
+    "get_projects_test_runs_by_test_run_id_results": [
+      "self",
+      "project_id",
+      "test_run_id",
+      "limit",
+      "cursor"
+    ],
+    "get_projects_test_runs_by_test_run_id_graph": [
+      "self",
+      "project_id",
+      "test_run_id"
+    ],
+    "get_projects_experiments_by_run_id": [
+      "self",
+      "project_id",
+      "run_id",
+      "limit",
+      "cursor"
+    ],
+    "post_projects_eval_results": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_results_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_evaluate_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_evaluate_traces": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_queue_examples": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_eval_queue_traces": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_prompts_by_name": [
+      "self",
+      "project_id",
+      "name",
+      "commit_id",
+      "tag"
+    ],
+    "post_projects_prompts": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "post_projects_prompts_by_name_tags": [
+      "self",
+      "project_id",
+      "name",
+      "payload"
+    ],
+    "delete_projects_prompts_by_name_tags": [
+      "self",
+      "project_id",
+      "name",
+      "payload"
+    ],
+    "get_projects_prompts_by_name_versions": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "get_projects_scorers": [
+      "self",
+      "project_id",
+      "names",
+      "is_trace"
+    ],
+    "get_projects_scorers_by_name_exists": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "post_projects_scorers_custom": [
+      "self",
+      "project_id"
+    ],
+    "post_projects_scorers_custom_bundle": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "get_projects_scorers_custom_by_name_exists": [
+      "self",
+      "project_id",
+      "name"
+    ],
+    "post_projects_traces_by_trace_id_tags": [
+      "self",
+      "project_id",
+      "trace_id",
+      "payload"
+    ],
+    "get_e2e_fetch_trace_by_project_name_by_trace_id": [
+      "self",
+      "project_name",
+      "trace_id"
+    ],
+    "get_e2e_traces_per_project": [
+      "self",
+      "project_id"
+    ],
+    "post_e2e_fetch_span_score": [
+      "self",
+      "payload"
+    ],
+    "post_projects_judges": [
+      "self",
+      "project_id",
+      "payload"
+    ],
+    "patch_projects_judges_by_judge_id": [
+      "self",
+      "project_id",
+      "judge_id",
+      "payload"
+    ]
+  },
+  "ScorerConfig": {},
+  "TraceEvaluationRun": {},
+  "E2EFetchSpanScoreRequest": {},
+  "CreateTestRunRequest": {},
+  "OfflineDatasetVersionsResponse": {},
+  "ApplyTestRunSuccessResponse": {},
+  "ExperimentScorer": {},
+  "OfflineTestsLocalScorerResult": {},
+  "AddToRunEvalQueueTracesResponse": {},
+  "CustomScorerExistsResponse": {},
+  "ScorerExistsResponse": {},
+  "UpdateTestConfigRequest": {},
+  "TestRunsResponse": {},
+  "DeleteTestConfigResponse": {},
+  "TagPromptRequest": {},
+  "OfflineTestsLogEvalResultsRequest": {},
+  "UploadCustomScorerResponse": {},
+  "TestRunItemsResponse": {},
+  "OfflineTestsLogEvalResultsExamplesResponse": {},
+  "UntagPromptResponse": {},
+  "TestRunGraphResponse": {},
+  "UpdateTestRunStatusRequest": {},
+  "DeleteOfflineDatasetResponse": {},
+  "Example": {},
+  "CreateOfflineDatasetRequest": {},
+  "OfflineTestsLogEvalResultsExamplesRequest": {},
+  "DeleteProjectResponse": {},
+  "CreateOfflineDatasetResponse": {},
+  "SDKCreateAgentJudgeRequest": {},
+  "FetchPromptScorersResponse": {},
+  "TraceSpan": {},
+  "WelcomeResponse": {},
+  "AddDatasetItemsResponse": {},
+  "GetPromptVersionsResponse": {},
+  "AddTraceTagsResponse": {},
+  "SDKUpdateAgentJudgeResponse": {},
+  "UploadCustomScorerBundleMetadata": {},
+  "PullAllOfflineDatasetsResponse": [],
+  "AddProjectRequest": {},
+  "InsertPromptResponse": {},
+  "ExampleScoringResult": {},
+  "ExperimentRunItem": {},
+  "InsertPromptRequest": {},
+  "TestRunResponse": {},
+  "TestConfigsResponse": {},
+  "PreparedTestRunResponse": {},
+  "ResolveProjectRequest": {},
+  "UploadCustomScorerBundleRequest": {},
+  "PromptCommitInfo": {},
+  "OfflineTestsLogEvalResultsResponse": {},
+  "TestConfigResponse": {},
+  "CreateTestConfigRequest": {},
+  "E2EFetchTraceResponse": [],
+  "FetchTestRunViaExperimentAliasResponse": {},
+  "InsertOfflineDatasetExamplesRequest": {},
+  "SDKCreateAgentJudgeResponse": {},
+  "PullOfflineDatasetResponse": {},
+  "AddProjectResponse": {},
+  "OfflineDatasetPageResponse": {},
+  "ResolveProjectResponse": {},
+  "BaseScorer": {},
+  "TraceScoringResult": {},
+  "PendingEvalPayload": {},
+  "ApplyTestRunSuccessRequest": {},
+  "E2EFetchSpanScoreResponse": [],
+  "ErrorResponse": {},
+  "AddTraceTagsRequest": {},
+  "UntagPromptRequest": {},
+  "PromptScorer": {},
+  "ExampleEvaluationRun": {},
+  "SDKUpdateAgentJudgeRequest": {},
+  "FetchPromptResponse": {},
+  "HealthResponse": {},
+  "AddToRunEvalQueueExamplesResponse": {},
+  "TagPromptResponse": {},
+  "ScoringResult": {},
+  "Judge": {
+    "score": [
+      "self",
+      "data"
+    ]
+  },
+  "PromptFactory": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "create": [
+      "self",
+      "name",
+      "prompt",
+      "tags"
+    ],
+    "get": [],
+    "tag": [
+      "self",
+      "name",
+      "commit_id",
+      "tags"
+    ],
+    "untag": [
+      "self",
+      "name",
+      "tags"
+    ],
+    "list": [
+      "self",
+      "name"
+    ]
+  },
+  "Prompt": {
+    "__post_init__": [
+      "self"
+    ],
+    "compile": [
+      "self"
+    ]
+  },
+  "wrap": [
+    "client"
+  ],
+  "_detect_provider": [
+    "client"
+  ],
+  "wrap_provider": [
+    "client"
+  ],
+  "ProviderType": {
+    "OPENAI": [],
+    "ANTHROPIC": [],
+    "TOGETHER": [],
+    "GOOGLE": [],
+    "DEFAULT": []
+  },
+  "wrap_messages_stream_sync": [
+    "client"
+  ],
+  "wrap_messages_stream_async": [
+    "client"
+  ],
+  "_extract_anthropic_content": [
+    "chunk"
+  ],
+  "_extract_anthropic_tokens": [
+    "usage"
+  ],
+  "_extract_anthropic_chunk_usage": [
+    "chunk"
+  ],
+  "wrap_messages_create_sync": [
+    "client"
+  ],
+  "_wrap_non_streaming_sync": [
+    "original_func"
+  ],
+  "_wrap_streaming_sync": [
+    "original_func"
+  ],
+  "wrap_messages_create_async": [
+    "client"
+  ],
+  "_wrap_non_streaming_async": [
+    "original_func"
+  ],
+  "_wrap_streaming_async": [
+    "original_func"
+  ],
+  "wrap_anthropic_client_sync": [
+    "client"
+  ],
+  "wrap_anthropic_client_async": [
+    "client"
+  ],
+  "wrap_anthropic_client": [
+    "client"
+  ],
+  "HAS_ANTHROPIC": [],
+  "_supports_stream_options": [],
+  "wrap_chat_completions_create_sync": [
+    "client"
+  ],
+  "wrap_chat_completions_create_async": [
+    "client"
+  ],
+  "wrap_openai_client_sync": [
+    "client"
+  ],
+  "wrap_openai_client_async": [
+    "client"
+  ],
+  "wrap_openai_client": [
+    "client"
+  ],
+  "wrap_beta_chat_completions_parse_sync": [
+    "client"
+  ],
+  "_wrap_beta_non_streaming_sync": [
+    "original_func"
+  ],
+  "wrap_beta_chat_completions_parse_async": [
+    "client"
+  ],
+  "_wrap_beta_non_streaming_async": [
+    "original_func"
+  ],
+  "HAS_OPENAI": [],
+  "_IMAGE_COMPLETED_TYPES": [],
+  "_set_image_usage": [
+    "span",
+    "usage_data"
+  ],
+  "_wrap_images_non_streaming_sync": [
+    "original_func"
+  ],
+  "_wrap_images_non_streaming_async": [
+    "original_func"
+  ],
+  "_wrap_images_streaming_sync": [
+    "original_func"
+  ],
+  "_wrap_images_streaming_async": [
+    "original_func"
+  ],
+  "wrap_images_generate_sync": [
+    "client"
+  ],
+  "wrap_images_generate_async": [
+    "client"
+  ],
+  "_CHAT_TOKEN_FIELDS": [],
+  "_RESPONSES_TOKEN_FIELDS": [],
+  "_set_usage_attributes": [
+    "span",
+    "prompt_tokens",
+    "completion_tokens",
+    "cache_read",
+    "total_tokens",
+    "usage_data"
+  ],
+  "_finalize_span": [
+    "context",
+    "error",
+    "token_fields"
+  ],
+  "_finalize_chat_span": [
+    "context",
+    "error"
+  ],
+  "_finalize_responses_span": [
+    "context",
+    "error"
+  ],
+  "_process_chat_chunk_dict": [
+    "context",
+    "data"
+  ],
+  "_process_chat_chunk": [
+    "context",
+    "chunk"
+  ],
+  "_process_chat_completion": [
+    "context",
+    "result"
+  ],
+  "_process_chat_json": [
+    "context",
+    "data"
+  ],
+  "wrap_chat_with_streaming_response_sync": [
+    "client"
+  ],
+  "wrap_chat_with_streaming_response_async": [
+    "client"
+  ],
+  "_process_responses_chunk_dict": [
+    "context",
+    "data"
+  ],
+  "_process_responses_chunk": [
+    "context",
+    "chunk"
+  ],
+  "_process_responses_completion": [
+    "context",
+    "result"
+  ],
+  "_process_responses_json": [
+    "context",
+    "data"
+  ],
+  "wrap_responses_with_streaming_response_sync": [
+    "client"
+  ],
+  "wrap_responses_with_streaming_response_async": [
+    "client"
+  ],
+  "wrap_responses_create_sync": [
+    "client"
+  ],
+  "_wrap_responses_non_streaming_sync": [
+    "original_func"
+  ],
+  "_wrap_responses_streaming_sync": [
+    "original_func"
+  ],
+  "wrap_responses_create_async": [
+    "client"
+  ],
+  "_wrap_responses_non_streaming_async": [
+    "original_func"
+  ],
+  "_wrap_responses_streaming_async": [
+    "original_func"
+  ],
+  "openai_tokens_converter": [
+    "prompt_tokens",
+    "completion_tokens",
+    "cache_read",
+    "cache_creation",
+    "input_image_tokens",
+    "output_image_tokens",
+    "total_tokens"
+  ],
+  "set_cost_attribute": [
+    "span",
+    "usage_data"
+  ],
+  "_extract_together_tokens": [
+    "usage"
+  ],
+  "wrap_together_client_sync": [
+    "client"
+  ],
+  "wrap_together_client_async": [
+    "client"
+  ],
+  "wrap_together_client": [
+    "client"
+  ],
+  "HAS_TOGETHER": [],
+  "_extract_google_tokens": [
+    "usage"
+  ],
+  "_format_google_output": [
+    "response"
+  ],
+  "wrap_generate_content_sync": [
+    "client"
+  ],
+  "wrap_google_client": [
+    "client"
+  ],
+  "HAS_GOOGLE_GENAI": [],
+  "Evaluation": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "run": [
+      "self",
+      "examples",
+      "scorers",
+      "eval_run_name",
+      "assert_test",
+      "timeout_seconds"
+    ]
+  },
+  "LocalEvaluatorRunner": {
+    "_build_payload": [
+      "self",
+      "eval_id",
+      "project_id",
+      "eval_run_name",
+      "created_at",
+      "examples",
+      "scorers"
+    ],
+    "_submit": [
+      "self",
+      "console",
+      "project_id",
+      "eval_id",
+      "examples",
+      "scorers",
+      "payload",
+      "progress"
+    ],
+    "_run_local_scorers": [
+      "self",
+      "examples",
+      "scorers"
+    ]
+  },
+  "S": [],
+  "_binary_label": [
+    "value"
+  ],
+  "_scorer_value": [
+    "scorer_dict"
+  ],
+  "EvaluatorRunner": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "_build_payload": [
+      "self",
+      "eval_id",
+      "project_id",
+      "eval_run_name",
+      "created_at",
+      "examples",
+      "scorers"
+    ],
+    "_submit": [
+      "self",
+      "console",
+      "project_id",
+      "eval_id",
+      "examples",
+      "scorers",
+      "payload",
+      "progress"
+    ],
+    "_poll": [
+      "self",
+      "console",
+      "project_id",
+      "eval_id",
+      "expected_count",
+      "timeout_seconds",
+      "progress"
+    ],
+    "_display_results": [
+      "self",
+      "console",
+      "examples",
+      "results_data",
+      "url",
+      "assert_test"
+    ],
+    "run": [
+      "self",
+      "examples",
+      "scorers",
+      "eval_run_name",
+      "assert_test",
+      "timeout_seconds"
+    ]
+  },
+  "EvaluationFactory": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "create": [
+      "self"
+    ]
+  },
+  "HostedEvaluatorRunner": {
+    "_build_payload": [
+      "self",
+      "eval_id",
+      "project_id",
+      "eval_run_name",
+      "created_at",
+      "examples",
+      "scorers"
+    ],
+    "_submit": [
+      "self",
+      "console",
+      "project_id",
+      "eval_id",
+      "examples",
+      "scorers",
+      "payload",
+      "progress"
+    ]
+  },
+  "JsonObject": [],
+  "Filter": [],
+  "Expr": [],
+  "Cmp": [],
+  "ChartType": [],
+  "PresentationField": [],
+  "HierarchyDepth": [],
+  "_compact": [
+    "values"
+  ],
+  "_node": [
+    "operation",
+    "values"
+  ],
+  "status": [
+    "value"
+  ],
+  "name": [
+    "value"
+  ],
+  "model": [
+    "value"
+  ],
+  "cost": [],
+  "duration": [],
+  "judge": [
+    "name",
+    "value"
+  ],
+  "judged": [],
+  "attr": [
+    "key",
+    "value",
+    "selector"
+  ],
+  "grep": [
+    "field",
+    "value"
+  ],
+  "rg": [
+    "field",
+    "pattern"
+  ],
+  "tokens": [
+    "field",
+    "words"
+  ],
+  "_compare": [
+    "op",
+    "field",
+    "value"
+  ],
+  "eq": [
+    "field",
+    "value"
+  ],
+  "ne": [
+    "field",
+    "value"
+  ],
+  "gt": [
+    "field",
+    "value"
+  ],
+  "gte": [
+    "field",
+    "value"
+  ],
+  "lt": [
+    "field",
+    "value"
+  ],
+  "lte": [
+    "field",
+    "value"
+  ],
+  "cited_by": [
+    "judge",
+    "value"
+  ],
+  "all_": [
+    "first"
+  ],
+  "any_": [
+    "first"
+  ],
+  "not_": [
+    "filter"
+  ],
+  "_quantify": [
+    "op",
+    "filter"
+  ],
+  "any_span": [
+    "filter"
+  ],
+  "every_span": [
+    "filter"
+  ],
+  "no_span": [
+    "filter"
+  ],
+  "any_trace": [
+    "filter"
+  ],
+  "every_trace": [
+    "filter"
+  ],
+  "no_trace": [
+    "filter"
+  ],
+  "descendant_of": [
+    "filter",
+    "depth"
+  ],
+  "ancestor_of": [
+    "filter",
+    "depth"
+  ],
+  "_over": [
+    "op",
+    "agg",
+    "cmp",
+    "value",
+    "where"
+  ],
+  "over_spans": [
+    "agg",
+    "cmp",
+    "value",
+    "where"
+  ],
+  "over_traces": [
+    "agg",
+    "cmp",
+    "value",
+    "where"
+  ],
+  "over_scores": [
+    "agg",
+    "cmp",
+    "value"
+  ],
+  "at_least": [
+    "k",
+    "of",
+    "where"
+  ],
+  "agg_expr": [
+    "func",
+    "field"
+  ],
+  "arith": [
+    "fn",
+    "left",
+    "right"
+  ],
+  "bucket": [
+    "field",
+    "every"
+  ],
+  "col": [
+    "name"
+  ],
+  "_chart": [
+    "query"
+  ],
+  "_table": [
+    "query"
+  ],
+  "QueryBuilder": {
+    "where": [
+      "self",
+      "filter"
+    ],
+    "last": [
+      "self",
+      "window"
+    ],
+    "since": [
+      "self",
+      "since"
+    ],
+    "between": [
+      "self",
+      "start",
+      "end"
+    ],
+    "pipe": [
+      "self"
+    ],
+    "rows": [
+      "self"
+    ],
+    "ids": [
+      "self"
+    ],
+    "count": [
+      "self",
+      "by"
+    ],
+    "recent": [
+      "self",
+      "n"
+    ],
+    "top": [
+      "self",
+      "n",
+      "by"
+    ],
+    "ranked": [
+      "self"
+    ],
+    "agg": [
+      "self",
+      "func",
+      "field",
+      "q"
+    ],
+    "trend": [
+      "self"
+    ],
+    "chart": [
+      "self"
+    ],
+    "table": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "_select": [
+      "self",
+      "select"
+    ],
+    "_replace": [
+      "self"
+    ]
+  },
+  "PipelineBuilder": {
+    "where": [
+      "self",
+      "filter"
+    ],
+    "pick": [
+      "self"
+    ],
+    "derive": [
+      "self",
+      "cols"
+    ],
+    "summarize": [
+      "self",
+      "aggs"
+    ],
+    "sort": [
+      "self",
+      "by"
+    ],
+    "take": [
+      "self",
+      "n",
+      "offset"
+    ],
+    "chart": [
+      "self"
+    ],
+    "table": [
+      "self"
+    ],
+    "to_json": [
+      "self"
+    ],
+    "_append": [
+      "self",
+      "stage"
+    ]
+  },
+  "_query": [
+    "source",
+    "filter"
+  ],
+  "traces": [
+    "filter"
+  ],
+  "spans": [
+    "filter"
+  ],
+  "sessions": [
+    "filter"
+  ],
+  "discovery": [
+    "kind"
+  ],
+  "QueryInput": [],
+  "to_json": [
+    "query"
+  ],
+  "all": [],
+  "any": [],
+  "JqlQueryResponse": {},
+  "JqlPresentationResponse": {},
+  "SUPPORTED_OPS": [],
+  "DiscoveryKind": [],
+  "AgentJudgeFactory": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "client",
+      "project_id",
+      "project_name"
+    ],
+    "create": [
+      "self"
+    ],
+    "update": [
+      "self"
+    ]
+  },
+  "ScoreType": [],
+  "AgentJudge": {},
+  "ScorerData": {
+    "to_dict": [
+      "self"
+    ]
+  },
+  "Trace": {},
+  "get_binary_scorer_template": [
+    "scorer_name"
+  ],
+  "get_categorical_scorer_template": [
+    "scorer_name"
+  ],
+  "get_numeric_scorer_template": [
+    "scorer_name"
+  ],
+  "TraceCustomScorer": {
+    "__init_subclass__": [
+      "cls"
+    ],
+    "score": [
+      "self",
+      "data"
+    ]
+  },
+  "ReturnType": [],
+  "Citation": {},
+  "Category": {},
+  "BaseResponse": {},
+  "BinaryResponse": {},
+  "CategoricalResponse": {
+    "__init_subclass__": [
+      "cls"
+    ],
+    "validate_value_in_categories": [
+      "self"
+    ]
+  },
+  "NumericResponse": {},
+  "ScorerResponse": [],
+  "ExampleCustomScorer": {
+    "__init_subclass__": [
+      "cls"
+    ],
+    "score": [
+      "self",
+      "data"
+    ]
+  },
+  "IsolatedRandomIdGenerator": {
+    "generate_span_id": [
+      "self"
+    ],
+    "generate_trace_id": [
+      "self"
+    ]
+  },
+  "Tracer": {
+    "__slots__": [],
+    "TRACER_NAME": [],
+    "__init__": [
+      "self",
+      "project_name",
+      "project_id",
+      "api_key",
+      "organization_id",
+      "api_url",
+      "environment",
+      "serializer",
+      "tracer_provider",
+      "enable_monitoring",
+      "client"
+    ],
+    "init": [
+      "cls",
+      "project_name",
+      "api_key",
+      "organization_id",
+      "api_url",
+      "environment",
+      "set_active",
+      "serializer",
+      "resource_attributes",
+      "sampler",
+      "span_limits",
+      "span_processors"
+    ],
+    "set_active": [
+      "self"
+    ],
+    "get_span_exporter": [
+      "self"
+    ],
+    "get_span_processor": [
+      "self"
+    ]
+  },
+  "TClient": [],
+  "C": [],
+  "LLMMetadata": {},
+  "BaseTracer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "project_name",
+      "project_id",
+      "api_key",
+      "organization_id",
+      "api_url",
+      "environment",
+      "serializer",
+      "tracer_provider",
+      "client"
+    ],
+    "get_span_processor": [
+      "self"
+    ],
+    "get_span_exporter": [
+      "self"
+    ],
+    "_get_proxy_provider": [],
+    "_get_serializer": [],
+    "_normalize_scoped_context_attributes": [],
+    "_get_current_trace_and_span_id": [],
+    "_emit_partial": [],
+    "get_current_span": [],
+    "force_flush": [
+      "timeout_millis"
+    ],
+    "shutdown": [
+      "timeout_millis"
+    ],
+    "registerOTELInstrumentation": [
+      "instrumentor"
+    ],
+    "getOTELTracer": [],
+    "start_span": [
+      "name",
+      "attributes"
+    ],
+    "_start_linked_trace_context": [
+      "name",
+      "attributes"
+    ],
+    "start_as_current_span": [
+      "name",
+      "attributes"
+    ],
+    "continue_trace": [
+      "carrier"
+    ],
+    "scoped_context": [],
+    "start_linked_trace": [
+      "name",
+      "attributes"
+    ],
+    "span": [
+      "span_name"
+    ],
+    "observe": [
+      "func",
+      "span_type",
+      "span_name",
+      "record_input",
+      "record_output",
+      "disable_generator_yield_span",
+      "fork"
+    ],
+    "wrap": [
+      "client"
+    ],
+    "set_span_kind": [
+      "kind"
+    ],
+    "set_llm_span": [],
+    "set_tool_span": [],
+    "set_general_span": [],
+    "set_attribute": [
+      "key",
+      "value"
+    ],
+    "set_attributes": [
+      "attributes"
+    ],
+    "set_input": [
+      "input_data"
+    ],
+    "set_output": [
+      "output_data"
+    ],
+    "recordLLMMetadata": [
+      "metadata"
+    ],
+    "_set_propagating_baggage_key": [
+      "key",
+      "value"
+    ],
+    "set_customer_id": [
+      "customer_id"
+    ],
+    "set_customer_user_id": [
+      "customer_user_id"
+    ],
+    "set_session_id": [
+      "session_id"
+    ],
+    "set_propagating_attribute": [
+      "key",
+      "value"
+    ],
+    "tag": [
+      "tags"
+    ],
+    "async_evaluate": [
+      "judge",
+      "example"
+    ]
+  },
+  "_format_inputs": [
+    "f",
+    "args",
+    "kwargs"
+  ],
+  "_ObservedGeneratorBase": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "generator",
+      "span",
+      "serializer",
+      "tracer",
+      "context",
+      "disable_generator_yield_span",
+      "on_finish"
+    ],
+    "_emit_yield_span": [
+      "self",
+      "item"
+    ],
+    "_record_error": [
+      "self",
+      "exc"
+    ],
+    "_finish": [
+      "self"
+    ],
+    "__del__": [
+      "self"
+    ]
+  },
+  "_ObservedSyncGenerator": {
+    "__slots__": [],
+    "__iter__": [
+      "self"
+    ],
+    "__next__": [
+      "self"
+    ],
+    "send": [
+      "self",
+      "value"
+    ],
+    "throw": [
+      "self",
+      "__typ",
+      "__val",
+      "__tb"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "_ObservedAsyncGenerator": {
+    "__slots__": [],
+    "_create_task": [
+      "self",
+      "coro"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__anext__": [
+      "self"
+    ],
+    "asend": [
+      "self",
+      "value"
+    ],
+    "athrow": [
+      "self",
+      "__typ",
+      "__val",
+      "__tb"
+    ],
+    "aclose": [
+      "self"
+    ]
+  },
+  "_Links": [],
+  "ProxyTracer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "provider"
+    ],
+    "start_span": [
+      "self",
+      "name",
+      "context",
+      "kind",
+      "attributes",
+      "links",
+      "start_time",
+      "record_exception",
+      "set_status_on_exception"
+    ],
+    "start_as_current_span": [
+      "self",
+      "name",
+      "context",
+      "kind",
+      "attributes",
+      "links",
+      "start_time",
+      "record_exception",
+      "set_status_on_exception",
+      "end_on_exit"
+    ]
+  },
+  "JudgmentTracerProvider": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "get_instance": [
+      "cls"
+    ],
+    "install_as_global_tracer_provider": [
+      "cls"
+    ],
+    "register": [
+      "self",
+      "tracer"
+    ],
+    "deregister": [
+      "self",
+      "tracer"
+    ],
+    "set_active": [
+      "self",
+      "tracer"
+    ],
+    "restore_active": [
+      "self",
+      "tracer"
+    ],
+    "get_active_tracer": [
+      "self"
+    ],
+    "get_current_context": [
+      "self"
+    ],
+    "get_current_span": [
+      "self"
+    ],
+    "has_active_root_span": [
+      "self"
+    ],
+    "_get_delegate_tracer": [
+      "self"
+    ],
+    "get_tracer": [
+      "self",
+      "instrumenting_module_name",
+      "instrumenting_library_version",
+      "schema_url",
+      "attributes"
+    ],
+    "add_span_processor": [
+      "self",
+      "span_processor"
+    ],
+    "add_instrumentation": [
+      "self",
+      "instrumentor"
+    ],
+    "use_span": [
+      "self",
+      "span",
+      "end_on_exit",
+      "record_exception",
+      "set_status_on_exception"
+    ],
+    "attach_context": [
+      "self",
+      "ctx"
+    ],
+    "detach_context": [
+      "self",
+      "token"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ],
+    "shutdown": [
+      "self"
+    ]
+  },
+  "OFFLINE_TRACES_PATH": [],
+  "OfflineTracer": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "project_name",
+      "project_id",
+      "api_key",
+      "organization_id",
+      "api_url",
+      "environment",
+      "serializer",
+      "tracer_provider",
+      "client",
+      "dataset",
+      "example_fields"
+    ],
+    "create": [
+      "cls",
+      "project_name",
+      "api_key",
+      "organization_id",
+      "api_url",
+      "environment",
+      "set_active",
+      "serializer",
+      "resource_attributes",
+      "sampler",
+      "span_limits",
+      "span_processors"
+    ],
+    "get_span_exporter": [
+      "self"
+    ],
+    "get_span_processor": [
+      "self"
+    ]
+  },
+  "_logger": [],
+  "_BAGGAGE_HEADER": [],
+  "_default_getter": [],
+  "_default_setter": [],
+  "_resolve_context": [
+    "context"
+  ],
+  "_format_baggage": [
+    "baggage_entries"
+  ],
+  "_extract_first_element": [
+    "items"
+  ],
+  "JudgmentBaggagePropagator": {
+    "_MAX_HEADER_LENGTH": [],
+    "_MAX_PAIR_LENGTH": [],
+    "_MAX_PAIRS": [],
+    "inject": [
+      "self",
+      "carrier",
+      "context",
+      "setter"
+    ],
+    "extract": [
+      "self",
+      "carrier",
+      "context",
+      "getter"
+    ],
+    "fields": [
+      "self"
+    ]
+  },
+  "_BAGGAGE_KEY": [],
+  "_KEY_PATTERN": [],
+  "_VALUE_PATTERN": [],
+  "_PROPERTY_PATTERN": [],
+  "_get_baggage_value": [
+    "context"
+  ],
+  "_is_valid_key": [
+    "name"
+  ],
+  "_is_valid_value": [
+    "value"
+  ],
+  "_is_valid_pair": [
+    "key",
+    "value"
+  ],
+  "get_all": [
+    "context"
+  ],
+  "get_baggage": [
+    "name",
+    "context"
+  ],
+  "set_baggage": [
+    "name",
+    "value",
+    "context"
+  ],
+  "remove_baggage": [
+    "name",
+    "context"
+  ],
+  "clear": [
+    "context"
+  ],
+  "JudgmentSpanExporter": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "endpoint",
+      "api_key",
+      "organization_id",
+      "project_id"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ]
+  },
+  "NoOpJudgmentSpanExporter": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "export": [
+      "self",
+      "spans"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ]
+  },
+  "LinkedTraceSpans": {},
+  "_noop_linked_trace_spans": [
+    "invocation_span"
+  ],
+  "start_linked_trace": [
+    "name",
+    "source_span",
+    "attributes"
+  ],
+  "JudgmentSpanProcessor": {
+    "__slots__": [],
+    "__init__": [],
+    "_cleanup_span_state": [
+      "self",
+      "span_key"
+    ],
+    "_register_span": [
+      "self",
+      "span"
+    ],
+    "state_set": [
+      "self",
+      "span_context",
+      "key",
+      "value"
+    ],
+    "state_get": [
+      "self",
+      "span_context",
+      "key",
+      "default"
+    ],
+    "state_incr": [
+      "self",
+      "span_context",
+      "key"
+    ],
+    "state_append": [
+      "self",
+      "span_context",
+      "key",
+      "item"
+    ],
+    "_emit_span": [
+      "self",
+      "span"
+    ],
+    "emit_partial": [
+      "self"
+    ],
+    "on_start": [
+      "self",
+      "span",
+      "parent_context"
+    ],
+    "on_end": [
+      "self",
+      "span"
+    ]
+  },
+  "NoOpJudgmentSpanProcessor": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "span_exporter": [
+      "self"
+    ],
+    "on_start": [
+      "self",
+      "span",
+      "parent_context"
+    ],
+    "on_end": [
+      "self",
+      "span"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ],
+    "emit_partial": [
+      "self"
+    ],
+    "state_set": [
+      "self",
+      "span_context",
+      "key",
+      "value"
+    ],
+    "state_get": [
+      "self",
+      "span_context",
+      "key",
+      "default"
+    ],
+    "state_incr": [
+      "self",
+      "span_context",
+      "key"
+    ],
+    "state_append": [
+      "self",
+      "span_context",
+      "key",
+      "item"
+    ]
+  },
+  "BaggageKeyPredicateT": [],
+  "JudgmentBaggageProcessor": {
+    "__init__": [
+      "self",
+      "baggage_key_predicate"
+    ],
+    "on_start": [
+      "self",
+      "span",
+      "parent_context"
+    ],
+    "on_end": [
+      "self",
+      "span"
+    ],
+    "shutdown": [
+      "self"
+    ],
+    "force_flush": [
+      "self",
+      "timeout_millis"
+    ]
+  },
+  "OfflineJudgmentSpanProcessor": {
+    "__slots__": [],
+    "__init__": [],
+    "_maybe_create_example": [
+      "self",
+      "span"
+    ],
+    "on_end": [
+      "self",
+      "span"
+    ]
+  },
+  "get_global_textmap": [],
+  "set_global_textmap": [
+    "propagator"
+  ],
+  "inject": [
+    "carrier",
+    "context",
+    "setter"
+  ],
+  "extract": [
+    "carrier",
+    "context",
+    "getter"
+  ],
+  "Openlit": {
+    "initialize": []
+  },
+  "TracingState": {},
+  "_ClientTracingState": {},
+  "ToolSpanTracker": {
+    "__init__": [
+      "self",
+      "state"
+    ],
+    "on_assistant_message": [
+      "self",
+      "message"
+    ],
+    "on_user_message": [
+      "self",
+      "message"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "LLMSpanTracker": {
+    "__init__": [
+      "self",
+      "query_start_time"
+    ],
+    "start_llm_span": [
+      "self",
+      "message",
+      "prompt",
+      "conversation_history"
+    ],
+    "mark_next_llm_start": [
+      "self"
+    ],
+    "log_usage": [
+      "self",
+      "usage_metrics"
+    ],
+    "cleanup": [
+      "self"
+    ]
+  },
+  "_process_message": [
+    "ctx",
+    "message"
+  ],
+  "_init_agent_span": [
+    "ctx",
+    "ts",
+    "prompt",
+    "start_time",
+    "span_name",
+    "conversation_history"
+  ],
+  "_yield_hook": [
+    "ctx",
+    "message"
+  ],
+  "_make_post_hook": [
+    "cs"
+  ],
+  "_error_hook": [
+    "ctx",
+    "error"
+  ],
+  "_make_finally_hook": [
+    "ts"
+  ],
+  "_make_query_pre_hook": [
+    "cs"
+  ],
+  "_create_client_wrapper_class": [
+    "original_client_class",
+    "state"
+  ],
+  "_wrap_query_function": [
+    "original_query_fn",
+    "state"
+  ],
+  "_serialize_content_blocks": [
+    "content"
+  ],
+  "_build_llm_input": [
+    "prompt",
+    "conversation_history"
+  ],
+  "_extract_usage_from_result_message": [
+    "result_message"
+  ],
+  "setup_claude_agent_sdk": [],
+  "Langgraph": {
+    "initialize": [
+      "otel_only"
+    ]
+  }
+}
