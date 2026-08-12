@@ -1,0 +1,445 @@
+{
+  "__version__": [],
+  "QUEUE_KEY_PREFIX": [],
+  "JOB_KEY_PREFIX": [],
+  "RESULT_KEY_PREFIX": [],
+  "PRIO_KEY_SUFFIX": [],
+  "AFFINITY_QUEUE_INFIX": [],
+  "enqueue": [
+    "redis",
+    "queue_name",
+    "callable",
+    "kwargs",
+    "job_id",
+    "job_ttl",
+    "result_ttl",
+    "encoding_name",
+    "affinity"
+  ],
+  "enqueue_priority": [
+    "redis",
+    "queue_name",
+    "callable",
+    "kwargs",
+    "job_id",
+    "job_ttl",
+    "result_ttl",
+    "encoding_name",
+    "priority",
+    "affinity"
+  ],
+  "store": [
+    "redis",
+    "callable",
+    "kwargs",
+    "job_id",
+    "job_ttl",
+    "result_ttl",
+    "encoding_name"
+  ],
+  "get_job": [
+    "redis",
+    "job_id"
+  ],
+  "cancel_job": [
+    "redis",
+    "job_id",
+    "expire_time"
+  ],
+  "_define_and_store_job": [],
+  "clean_affinity_sub_queues": [
+    "redis",
+    "base"
+  ],
+  "__all__": [],
+  "get_parser": [],
+  "get_redis": [
+    "url"
+  ],
+  "main": [
+    "argv"
+  ],
+  "NoSuchJob": {},
+  "DuplicateJob": {},
+  "InvalidStatus": {},
+  "AlreadyAcquired": {},
+  "AlreadyResulted": {},
+  "InvalidJob": {},
+  "MissingJobData": {},
+  "Retry": {},
+  "register_encoding": [
+    "name"
+  ],
+  "BaseEncoding": {
+    "encode": [
+      "self",
+      "value",
+      "failsafe"
+    ],
+    "decode": [
+      "self",
+      "value"
+    ]
+  },
+  "JSONEncoding": {
+    "__init_subclass__": [
+      "cls"
+    ],
+    "encode": [
+      "self",
+      "value",
+      "failsafe"
+    ],
+    "decode": [
+      "self",
+      "value"
+    ]
+  },
+  "TestJobRunner": {
+    "execute": [
+      "self"
+    ]
+  },
+  "run_synchronously": [
+    "job",
+    "replacement_callable",
+    "replacement_kwargs"
+  ],
+  "JobStatus": {
+    "NONE": [],
+    "ACQUIRED": [],
+    "SUCCESS": [],
+    "FAILED": [],
+    "CANCELLED": []
+  },
+  "JobRunner": {
+    "__init__": [
+      "self",
+      "worker",
+      "job"
+    ],
+    "acquire": [
+      "self"
+    ],
+    "get_acquisition_info": [
+      "self"
+    ],
+    "execute": [
+      "self"
+    ],
+    "verify_callable_name": [
+      "self",
+      "name"
+    ],
+    "get_callable": [
+      "self"
+    ],
+    "complete": [
+      "self",
+      "success",
+      "value",
+      "duration"
+    ],
+    "run": [
+      "self"
+    ],
+    "process_exception": [
+      "self",
+      "excinfo"
+    ]
+  },
+  "Worker": {
+    "queue_timeout": [],
+    "job_runner_class": [],
+    "affinity_window": [],
+    "affinity_max_specifiers": [],
+    "__init__": [
+      "self",
+      "redis",
+      "queues"
+    ],
+    "for_queue_names": [
+      "cls",
+      "redis",
+      "queue_names"
+    ],
+    "compute_id": [
+      "self"
+    ],
+    "get_current_warm_specifiers": [
+      "self"
+    ],
+    "get_blpop_keys": [
+      "self"
+    ],
+    "get_next_job": [
+      "self"
+    ],
+    "tick": [
+      "self"
+    ],
+    "loop": [
+      "self"
+    ],
+    "process_exception": [
+      "self",
+      "excinfo",
+      "context"
+    ]
+  },
+  "ADD_JOB_SCRIPT": [],
+  "PRIO_HASH_CLEANER_SCRIPT": [],
+  "PriorityQueue": {
+    "__init__": [
+      "self",
+      "redis",
+      "name"
+    ],
+    "prio_key": [
+      "self"
+    ],
+    "_get_clear_keys": [
+      "self"
+    ],
+    "add_job": [
+      "self",
+      "job"
+    ],
+    "add_job_to_pipeline": [
+      "self",
+      "pipeline",
+      "job"
+    ],
+    "dequeue_job": [
+      "self",
+      "job_id"
+    ],
+    "dequeue_affine_job": [
+      "self",
+      "job_id",
+      "affinity_keys"
+    ],
+    "clean_job": [
+      "self",
+      "job"
+    ],
+    "periodic_clean": [
+      "self"
+    ]
+  },
+  "Job": {
+    "__init__": [
+      "self",
+      "redis",
+      "id"
+    ],
+    "ensure_exists": [
+      "self"
+    ],
+    "ensure_enqueued": [
+      "self"
+    ],
+    "dequeue": [
+      "self"
+    ],
+    "cleanup": [
+      "self"
+    ],
+    "redis_key": [
+      "self"
+    ],
+    "result_redis_key": [
+      "self"
+    ],
+    "acquisition_info": [
+      "self"
+    ],
+    "affinity": [
+      "self"
+    ],
+    "_cache_affinity": [
+      "self",
+      "affinity_json"
+    ],
+    "has_finished": [
+      "self"
+    ],
+    "has_started": [
+      "self"
+    ],
+    "encoded_result": [
+      "self"
+    ],
+    "result": [
+      "self"
+    ],
+    "encoded_meta": [
+      "self"
+    ],
+    "meta": [
+      "self"
+    ],
+    "status": [
+      "self"
+    ],
+    "heartbeat": [
+      "self"
+    ],
+    "exists": [
+      "self"
+    ],
+    "result_ttl": [
+      "self"
+    ],
+    "duration": [
+      "self"
+    ],
+    "has_priority": [
+      "self"
+    ],
+    "priority": [
+      "self",
+      "new_priority"
+    ],
+    "queue_name": [
+      "self"
+    ],
+    "get_queue_name": [
+      "self"
+    ],
+    "kwargs": [
+      "self"
+    ],
+    "callable_name": [
+      "self"
+    ],
+    "encoding_name": [
+      "self"
+    ],
+    "_cached_encoding": [
+      "self"
+    ],
+    "get_encoding": [
+      "self"
+    ],
+    "get_queue": [
+      "self"
+    ],
+    "set_meta": [
+      "self",
+      "meta"
+    ],
+    "refresh_heartbeat": [
+      "self"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ]
+  },
+  "_decode_affinity": [
+    "affinity_json"
+  ],
+  "Queue": {
+    "__init__": [
+      "self",
+      "redis",
+      "name"
+    ],
+    "redis_key": [
+      "self"
+    ],
+    "length": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "_get_clear_keys": [
+      "self"
+    ],
+    "get_queue_index": [
+      "self",
+      "job"
+    ],
+    "ensure_enqueued": [
+      "self",
+      "job"
+    ],
+    "add_job": [
+      "self",
+      "job"
+    ],
+    "add_job_to_pipeline": [
+      "self",
+      "pipeline",
+      "job"
+    ],
+    "dequeue_job": [
+      "self",
+      "job_id"
+    ],
+    "dequeue_affine_job": [
+      "self",
+      "job_id",
+      "affinity_keys"
+    ]
+  },
+  "_current_jobs": [],
+  "import_by_string": [
+    "spec"
+  ],
+  "_set_current_job": [
+    "job"
+  ],
+  "get_current_job": [],
+  "consonants": [],
+  "vowels": [],
+  "get_random_pronounceable_string": [
+    "length"
+  ],
+  "__getattr__": [
+    "name"
+  ],
+  "read_list": [
+    "redis_conn",
+    "key"
+  ],
+  "normalize_affinity": [
+    "affinity"
+  ],
+  "get_affinity_sub_queue_names": [
+    "redis",
+    "base"
+  ],
+  "get_affinity_queue_name": [
+    "base",
+    "specifier"
+  ],
+  "get_affinity_sub_queue_key": [
+    "base",
+    "specifier"
+  ],
+  "glob_escape": [
+    "value"
+  ],
+  "affinity_queue_name_glob": [
+    "base"
+  ],
+  "_scan_decoded": [
+    "redis",
+    "match"
+  ],
+  "trim_phantom_ids": [
+    "redis",
+    "list_key"
+  ],
+  "ORPHANED_PRIO_CLEANER_SCRIPT": [],
+  "remove_orphaned_prio_hashes": [
+    "redis",
+    "base"
+  ]
+}
