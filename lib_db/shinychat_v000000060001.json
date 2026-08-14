@@ -1,0 +1,957 @@
+{
+  "__all__": [],
+  "HistoryInputIds": {
+    "for_chat": [
+      "cls",
+      "chat_id"
+    ],
+    "all_ids": [
+      "self"
+    ]
+  },
+  "HistoryOptions": {
+    "__init__": [
+      "self",
+      "restore_mode",
+      "store",
+      "scope",
+      "title",
+      "max_store_mb"
+    ]
+  },
+  "extend_record_linear": [
+    "record",
+    "turn_groups",
+    "ui_messages"
+  ],
+  "HistoryController": {
+    "__init__": [
+      "self"
+    ],
+    "_get_record": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "on_response": [
+      "self"
+    ],
+    "retitle": [
+      "self",
+      "turns"
+    ],
+    "cancel_pending": [
+      "self"
+    ],
+    "notify_settled": [
+      "self",
+      "restored"
+    ],
+    "_evict_one": [
+      "self",
+      "conv_id"
+    ],
+    "_evict_if_needed": [
+      "self"
+    ],
+    "save_current": [
+      "self"
+    ],
+    "_capture_app_state": [
+      "self",
+      "record"
+    ],
+    "_restore_app_state": [
+      "self",
+      "values"
+    ],
+    "switch_to": [
+      "self",
+      "conv_id"
+    ],
+    "new_chat": [
+      "self"
+    ],
+    "replay_ui": [
+      "self",
+      "record"
+    ],
+    "rename": [
+      "self",
+      "conv_id",
+      "title"
+    ],
+    "delete": [
+      "self",
+      "conv_id"
+    ],
+    "send_navigate": [
+      "self",
+      "url",
+      "active_id"
+    ],
+    "send_history_update": [
+      "self"
+    ]
+  },
+  "title_task_done": [
+    "task"
+  ],
+  "do_bookmark_with_cleanup": [
+    "bookmark",
+    "on_bookmarked"
+  ],
+  "ChatHistory": {
+    "__init__": [
+      "self",
+      "chat",
+      "config"
+    ],
+    "enable": [
+      "self"
+    ],
+    "on_save": [
+      "self",
+      "fn"
+    ],
+    "on_restore": [
+      "self",
+      "fn"
+    ],
+    "setup_greeting": [
+      "self",
+      "greeting"
+    ],
+    "_start": [
+      "self"
+    ]
+  },
+  "ChatClient": {
+    "__init__": [
+      "self"
+    ],
+    "value": [
+      "self"
+    ],
+    "set": [
+      "self",
+      "new_client"
+    ],
+    "_swap_client": [
+      "self",
+      "new_client"
+    ],
+    "clear": [
+      "self"
+    ]
+  },
+  "messages_to_turns": [
+    "messages"
+  ],
+  "resolve_greeting": [
+    "chat",
+    "greeting"
+  ],
+  "setup_greeting": [
+    "chat",
+    "greeting",
+    "session"
+  ],
+  "logger": [],
+  "_STATE_ID_RE": [],
+  "BookmarkDirFn": [],
+  "extract_state_id": [
+    "url"
+  ],
+  "global_save_dir_fn": [],
+  "global_restore_dir_fn": [],
+  "delete_bookmark_state": [
+    "state_id"
+  ],
+  "HISTORY_BOOKMARK_ID": [],
+  "ConversationPartition": {},
+  "ConversationStore": {
+    "list": [
+      "self",
+      "partition"
+    ],
+    "get": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "put": [
+      "self",
+      "partition",
+      "record"
+    ],
+    "delete": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "search": [
+      "self",
+      "partition",
+      "query"
+    ],
+    "total_size": [
+      "self",
+      "partition"
+    ]
+  },
+  "_WriteState": {},
+  "FileConversationStore": {
+    "__init__": [
+      "self",
+      "dir"
+    ],
+    "_ws_key": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "_get_or_init_write_state": [
+      "self",
+      "partition",
+      "conv_id",
+      "conv_dir"
+    ],
+    "list": [
+      "self",
+      "partition"
+    ],
+    "get": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "put": [
+      "self",
+      "partition",
+      "record"
+    ],
+    "delete": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "_partition_dir": [
+      "self",
+      "partition"
+    ]
+  },
+  "InMemoryConversationStore": {
+    "__init__": [
+      "self"
+    ],
+    "list": [
+      "self",
+      "partition"
+    ],
+    "get": [
+      "self",
+      "partition",
+      "conv_id"
+    ],
+    "put": [
+      "self",
+      "partition",
+      "record"
+    ],
+    "delete": [
+      "self",
+      "partition",
+      "conv_id"
+    ]
+  },
+  "auto_dev_memory_store": [],
+  "resolve_store": [
+    "store"
+  ],
+  "CONV_ID_RE": [],
+  "sanitize_scope": [
+    "scope"
+  ],
+  "safe_conv_path": [
+    "scope_dir",
+    "conv_id"
+  ],
+  "resolve_history_dir": [],
+  "UserInputValue": {},
+  "_": [
+    "value",
+    "_name",
+    "_session"
+  ],
+  "ClientWithTurns": {
+    "get_turns": [
+      "self"
+    ],
+    "set_turns": [
+      "self",
+      "turns"
+    ]
+  },
+  "TurnsAdapter": {
+    "__init__": [
+      "self",
+      "client"
+    ],
+    "_turns_client": [
+      "self"
+    ],
+    "get_turns_json": [
+      "self"
+    ],
+    "get_turns_grouped": [
+      "self"
+    ],
+    "set_turns_json": [
+      "self",
+      "turns"
+    ],
+    "client_info": [
+      "self"
+    ]
+  },
+  "_is_tool_result_turn": [
+    "turn"
+  ],
+  "_group_chatlas_turns": [
+    "turns"
+  ],
+  "as_turns_adapter": [
+    "client"
+  ],
+  "turn_fallback_markdown": [
+    "turn"
+  ],
+  "_AttachmentTypesJson": {},
+  "_load_attachment_types": [],
+  "_TYPES": [],
+  "Attachment": {
+    "__str__": [
+      "self"
+    ],
+    "from_path": [
+      "cls",
+      "path"
+    ],
+    "from_data": [
+      "cls",
+      "data",
+      "mime"
+    ],
+    "from_url": [
+      "cls",
+      "url"
+    ]
+  },
+  "DEFAULT_MAX_ATTACHMENT_SIZE": [],
+  "MAX_ATTACHMENT_SIZE_ENV_VAR": [],
+  "resolve_max_attachment_size": [],
+  "data_url_payload_size": [
+    "data_url"
+  ],
+  "attachment_payload_size": [
+    "att"
+  ],
+  "validate_attachment_payload_size": [
+    "attachments"
+  ],
+  "validate_attachment_types": [
+    "attachments"
+  ],
+  "validate_attachments": [
+    "attachments"
+  ],
+  "resolve_attachment_attrs": [
+    "allow_attachments"
+  ],
+  "is_text_type": [
+    "mime"
+  ],
+  "attachment_to_content": [
+    "att"
+  ],
+  "_require_data_url": [
+    "att"
+  ],
+  "decode_data_url": [
+    "data_url"
+  ],
+  "MISSING_TYPE": {},
+  "DEPRECATED_TYPE": {},
+  "CancelledError": [],
+  "rand_hex": [
+    "bytes"
+  ],
+  "drop_none": [
+    "x"
+  ],
+  "lists_to_tuples": [
+    "x"
+  ],
+  "private_random_id": [
+    "prefix",
+    "bytes"
+  ],
+  "private_seed": [],
+  "current_random_state": [],
+  "own_random_state": [],
+  "R": [],
+  "P": [],
+  "wrap_async": [
+    "fn"
+  ],
+  "is_async_callable": [
+    "obj"
+  ],
+  "wrap_async_iterable": [
+    "x"
+  ],
+  "MakeIterableAsync": {
+    "__init__": [
+      "self",
+      "iterable"
+    ],
+    "__aiter__": [
+      "self"
+    ],
+    "__anext__": [
+      "self"
+    ]
+  },
+  "segments_content": [
+    "segments"
+  ],
+  "segments_deps": [
+    "segments"
+  ],
+  "copy_segments": [
+    "segments"
+  ],
+  "has_mixed_content_types": [
+    "segments"
+  ],
+  "append_to_segments": [
+    "segments",
+    "content",
+    "content_type",
+    "deps"
+  ],
+  "serialize_segments": [
+    "segments",
+    "serialize_deps"
+  ],
+  "__version__": [],
+  "version": [],
+  "__version_tuple__": [],
+  "version_tuple": [],
+  "__commit_id__": [],
+  "commit_id": [],
+  "shinychat_dependency": [],
+  "Role": [],
+  "SerializedDep": [],
+  "ContentType": [],
+  "MessagePayloadSegment": {},
+  "MessagePayload": {},
+  "MessageAction": {},
+  "ChunkStartAction": {},
+  "ChunkAction": {},
+  "ChunkEndAction": {},
+  "ClearAction": {},
+  "UpdateInputAction": {},
+  "RemoveLoadingAction": {},
+  "UpdateCancelAction": {},
+  "UpdateUploadAction": {},
+  "HideToolRequestAction": {},
+  "GreetingOptions": {},
+  "GreetingAction": {},
+  "GreetingStartAction": {},
+  "GreetingChunkAction": {},
+  "GreetingEndAction": {},
+  "GreetingClearAction": {},
+  "SlashCommandDef": {},
+  "UpdateSlashCommandsAction": {},
+  "HistoryUpdateAction": {},
+  "HistoryNavigateAction": {},
+  "ChatAction": [],
+  "ShinyChatEnvelope": {},
+  "ChatMessageDict": {},
+  "ChatMessage": {
+    "__init__": [
+      "self",
+      "content",
+      "role",
+      "content_type",
+      "attachments"
+    ]
+  },
+  "ChatGreeting": {
+    "__init__": [
+      "self",
+      "content"
+    ]
+  },
+  "chat_greeting": [
+    "content"
+  ],
+  "_SegmentBase": {
+    "__str__": [
+      "self"
+    ],
+    "stringify": [
+      "content",
+      "content_type"
+    ]
+  },
+  "ContentSegment": {
+    "model_config": []
+  },
+  "StoredSegment": {},
+  "StoredMessage": {
+    "content": [
+      "self"
+    ],
+    "html_deps": [
+      "self"
+    ],
+    "wire_segments": [
+      "self"
+    ],
+    "from_chat_message": [
+      "cls",
+      "message",
+      "html_deps"
+    ]
+  },
+  "TitleSource": [],
+  "new_conversation_record": [],
+  "ConversationMeta": {},
+  "ConversationNode": {},
+  "MIN_SCHEMA_VERSION": [],
+  "MAX_SCHEMA_VERSION": [],
+  "UnsupportedSchemaVersionError": {
+    "__init__": [
+      "self",
+      "version"
+    ]
+  },
+  "check_schema_version": [
+    "version"
+  ],
+  "ConversationRecord": {
+    "meta": [
+      "self"
+    ],
+    "path_node_ids": [
+      "self"
+    ],
+    "path_turns": [
+      "self"
+    ],
+    "append_linear": [
+      "self",
+      "turns",
+      "ui"
+    ]
+  },
+  "new_conversation_id": [],
+  "utcnow": [],
+  "message_content": [
+    "message"
+  ],
+  "message_content_chunk": [
+    "chunk"
+  ],
+  "StreamingContentType": [],
+  "ContentMessage": {},
+  "isStreamingMessage": {},
+  "MarkdownStream": {
+    "__init__": [
+      "self",
+      "id"
+    ],
+    "stream": [
+      "self",
+      "content",
+      "clear"
+    ],
+    "latest_stream": [
+      "self"
+    ],
+    "get_latest_stream_result": [
+      "self"
+    ],
+    "clear": [
+      "self"
+    ],
+    "_streaming_dot": [
+      "self"
+    ],
+    "_send_content_message": [
+      "self",
+      "content",
+      "operation",
+      "html_deps"
+    ],
+    "_send_stream_message": [
+      "self",
+      "is_streaming"
+    ],
+    "_send_custom_message": [
+      "self",
+      "msg"
+    ],
+    "_raise_exception": [
+      "self",
+      "e"
+    ]
+  },
+  "ExpressMarkdownStream": {
+    "ui": [
+      "self"
+    ]
+  },
+  "output_markdown_stream": [
+    "id"
+  ],
+  "serialize_chatlas_turn": [
+    "turn"
+  ],
+  "TagNode": [],
+  "TagChild": [],
+  "ToolCardComponent": {
+    "model_config": [],
+    "_serialize_icon": [
+      "self",
+      "value"
+    ],
+    "_validate_icon": [
+      "cls",
+      "value"
+    ]
+  },
+  "ToolRequestComponent": {
+    "tagify": [
+      "self"
+    ]
+  },
+  "ValueType": [],
+  "is_content": [
+    "value"
+  ],
+  "is_content_extra": [
+    "value"
+  ],
+  "as_content_extra_item": [
+    "value"
+  ],
+  "as_content_extra_item_or_text": [
+    "value"
+  ],
+  "ToolResultComponent": {
+    "tagify": [
+      "self"
+    ]
+  },
+  "ToolResultDisplay": {
+    "model_config": [],
+    "_serialize_html_icon": [
+      "self",
+      "value"
+    ],
+    "_validate_html_icon": [
+      "cls",
+      "value"
+    ]
+  },
+  "tool_request_contents": [
+    "x"
+  ],
+  "tool_result_contents": [
+    "x"
+  ],
+  "get_tool_result_display": [
+    "x",
+    "request"
+  ],
+  "tool_result_display": [
+    "x",
+    "display"
+  ],
+  "is_legacy": [],
+  "tool_display_override": [],
+  "restore_rendered_html": [
+    "x"
+  ],
+  "_resolve_tagifiable": [
+    "content"
+  ],
+  "_has_react_attr": [
+    "child"
+  ],
+  "split_html_islands": [
+    "content"
+  ],
+  "TransformUserInput": [],
+  "TransformUserInputAsync": [],
+  "TransformAssistantResponse": [],
+  "TransformAssistantResponseAsync": [],
+  "TransformAssistantResponseChunk": [],
+  "TransformAssistantResponseChunkAsync": [],
+  "TransformAssistantResponseFunction": [],
+  "UserSubmitFunction0": [],
+  "UserSubmitFunction1": [],
+  "UserSubmitFunction2": [],
+  "UserSubmitFunction": [],
+  "SlashCommandRegistration": {},
+  "UserInput": {},
+  "ChunkOption": [],
+  "PendingMessage": [],
+  "Chat": {
+    "__init__": [
+      "self",
+      "id"
+    ],
+    "_setup_client": [
+      "self",
+      "client"
+    ],
+    "on_user_submit": [
+      "self",
+      "fn"
+    ],
+    "slash_command": [
+      "self",
+      "name",
+      "description",
+      "fn"
+    ],
+    "remove_slash_command": [
+      "self",
+      "name"
+    ],
+    "_remove_slash_command_fn": [
+      "self",
+      "name"
+    ],
+    "_raise_exception": [
+      "self",
+      "e"
+    ],
+    "messages": [
+      "self"
+    ],
+    "append_message": [
+      "self",
+      "message"
+    ],
+    "message_stream_context": [
+      "self"
+    ],
+    "_append_message_chunk": [
+      "self",
+      "message"
+    ],
+    "append_message_stream": [
+      "self",
+      "message"
+    ],
+    "latest_message_stream": [
+      "self"
+    ],
+    "_append_message_stream": [
+      "self",
+      "message",
+      "icon"
+    ],
+    "_flush_pending_messages": [
+      "self"
+    ],
+    "_send_append_message": [
+      "self",
+      "message",
+      "chunk",
+      "operation",
+      "icon"
+    ],
+    "_messages_for_bookmark": [
+      "self"
+    ],
+    "_restore_bookmark_message": [
+      "self",
+      "message_dict"
+    ],
+    "transform_user_input": [
+      "self"
+    ],
+    "transform_assistant_response": [
+      "self",
+      "fn"
+    ],
+    "_transform_message": [
+      "self",
+      "message",
+      "chunk",
+      "chunk_content"
+    ],
+    "_needs_transform": [
+      "self",
+      "message"
+    ],
+    "_serialize_html_deps": [
+      "self",
+      "deps"
+    ],
+    "_as_stored_message": [
+      "self",
+      "message"
+    ],
+    "_store_message": [
+      "self",
+      "message"
+    ],
+    "user_input": [
+      "self"
+    ],
+    "_user_input": [
+      "self"
+    ],
+    "_slash_command_input": [
+      "self"
+    ],
+    "update_user_input": [
+      "self"
+    ],
+    "set_user_message": [
+      "self",
+      "value"
+    ],
+    "clear_messages": [
+      "self"
+    ],
+    "get_greeting": [
+      "self"
+    ],
+    "set_greeting": [
+      "self",
+      "greeting"
+    ],
+    "destroy": [
+      "self"
+    ],
+    "_destroy_effects": [
+      "self"
+    ],
+    "_destroy_bookmarking": [
+      "self"
+    ],
+    "_remove_loading_message": [
+      "self"
+    ],
+    "_hide_tool_request": [
+      "self",
+      "request_id"
+    ],
+    "_send_action": [
+      "self",
+      "action",
+      "html_deps"
+    ],
+    "enable_bookmarking": []
+  },
+  "ChatExpress": {
+    "ui": [
+      "self"
+    ],
+    "enable_bookmarking": []
+  },
+  "_container_style": [
+    "width",
+    "height"
+  ],
+  "chat_ui": [
+    "id"
+  ],
+  "MessageStream": {
+    "__init__": [
+      "self",
+      "chat",
+      "stream_id"
+    ],
+    "replace": [
+      "self",
+      "message_chunk"
+    ],
+    "append": [
+      "self",
+      "message_chunk"
+    ]
+  },
+  "is_tool_result": [
+    "val"
+  ],
+  "TitleFn": [],
+  "TITLE_SYSTEM_PROMPT": [],
+  "MAX_TITLE_LEN": [],
+  "MAX_FALLBACK_LEN": [],
+  "generate_title": [
+    "title_fn",
+    "client",
+    "turns"
+  ],
+  "fallback_title": [
+    "turns"
+  ],
+  "chatlas_one_shot_title": [
+    "client",
+    "turns"
+  ],
+  "chatlas_is_installed": [],
+  "is_chatlas_chat_client": [
+    "client"
+  ],
+  "ClientWithState": {
+    "get_state": [
+      "self"
+    ],
+    "set_state": [
+      "self",
+      "state"
+    ]
+  },
+  "CancelCallback": [],
+  "BookmarkCancelCallback": {
+    "__init__": [
+      "self",
+      "cancel"
+    ],
+    "__call__": [
+      "self"
+    ],
+    "tagify": [
+      "self"
+    ]
+  },
+  "get_chatlas_state": [
+    "client"
+  ],
+  "set_chatlas_state": [
+    "client"
+  ],
+  "PatternStr": [],
+  "PatternOrStr": [],
+  "Timeout": [],
+  "UiBase": {
+    "__init__": [
+      "self",
+      "page"
+    ],
+    "expect": [
+      "self"
+    ]
+  }
+}
