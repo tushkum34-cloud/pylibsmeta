@@ -1,0 +1,1953 @@
+{
+  "ValidationError": {},
+  "relation_id_key": [
+    "rid"
+  ],
+  "relation_id_hex": [
+    "rid"
+  ],
+  "_TYPE_ONEOF_TO_NAME": [],
+  "get_type_name": [
+    "type_msg"
+  ],
+  "_VALUE_ONEOF_TO_TYPE_NAME": [],
+  "get_value_type_name": [
+    "value_msg"
+  ],
+  "build_debug_info": [
+    "debug_info"
+  ],
+  "proto_term_str": [
+    "term"
+  ],
+  "_format_value": [
+    "val"
+  ],
+  "unwrap_declaration": [
+    "decl"
+  ],
+  "unwrap_instruction": [
+    "instr"
+  ],
+  "unwrap_formula": [
+    "formula"
+  ],
+  "unwrap_construct": [
+    "construct"
+  ],
+  "unwrap_write": [
+    "write"
+  ],
+  "unwrap_read": [
+    "read"
+  ],
+  "unwrap_constraint": [
+    "constraint"
+  ],
+  "unwrap_data": [
+    "data"
+  ],
+  "_Unwrapper": [],
+  "_NodeSpans": {
+    "__slots__": [],
+    "__init__": [
+      "self"
+    ],
+    "record": [
+      "self",
+      "node",
+      "span"
+    ],
+    "get": [
+      "self",
+      "node_id"
+    ]
+  },
+  "_unwrap_oneof": [
+    "node"
+  ],
+  "_SpanNode": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "offset",
+      "span"
+    ],
+    "next_child": [
+      "self"
+    ],
+    "peek_child": [
+      "self"
+    ]
+  },
+  "_build_span_tree": [
+    "provenance"
+  ],
+  "_build_node_spans": [
+    "root",
+    "offset_provenance"
+  ],
+  "_walk_fields": [
+    "node",
+    "active",
+    "result"
+  ],
+  "_try_consume": [
+    "type_name",
+    "span_parent"
+  ],
+  "_walk_and_match": [
+    "node",
+    "span_parent",
+    "result"
+  ],
+  "ProtoVisitor": {
+    "__init__": [
+      "self",
+      "provenance",
+      "filename"
+    ],
+    "get_original_name": [
+      "self",
+      "rid"
+    ],
+    "_location_prefix": [
+      "self",
+      "node"
+    ],
+    "_resolve_visitor": [
+      "self",
+      "type_name"
+    ],
+    "visit": [
+      "self",
+      "node"
+    ],
+    "generic_visit": [
+      "self",
+      "node"
+    ]
+  },
+  "UnusedVariableVisitor": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "_declare_var": [
+      "self",
+      "var_name"
+    ],
+    "_mark_var_used": [
+      "self",
+      "var_name",
+      "node"
+    ],
+    "visit_Abstraction": [
+      "self",
+      "node"
+    ],
+    "visit_Var": [
+      "self",
+      "node"
+    ],
+    "visit_FunctionalDependency": [
+      "self",
+      "node"
+    ]
+  },
+  "ShadowedVariableFinder": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_Abstraction": [
+      "self",
+      "node"
+    ]
+  },
+  "DuplicateRelationIdFinder": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_Def": [
+      "self",
+      "node"
+    ],
+    "_check_relation_id": [
+      "self",
+      "rid",
+      "node"
+    ],
+    "visit_Fragment": [
+      "self",
+      "node"
+    ],
+    "visit_Epoch": [
+      "self",
+      "node"
+    ],
+    "visit_Algorithm": [
+      "self",
+      "node"
+    ]
+  },
+  "DuplicateFragmentDefinitionFinder": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_Epoch": [
+      "self",
+      "node"
+    ],
+    "visit_Define": [
+      "self",
+      "node"
+    ]
+  },
+  "AtomTypeChecker": {
+    "collect_global_defs": [
+      "txn"
+    ],
+    "get_relation_sig": [
+      "node"
+    ],
+    "get_relation_id": [
+      "node"
+    ],
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_Abstraction": [
+      "self",
+      "node"
+    ],
+    "visit_Loop": [
+      "self",
+      "node"
+    ],
+    "visit_Atom": [
+      "self",
+      "node"
+    ]
+  },
+  "LoopyBadBreakFinder": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_Loop": [
+      "self",
+      "node"
+    ]
+  },
+  "LoopyBadGlobalFinder": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "_ALGORITHM_INIT_TYPES": [],
+    "_LOOP_INSTR_TYPES": [],
+    "visit_Algorithm": [
+      "self",
+      "node"
+    ],
+    "visit_Loop": [
+      "self",
+      "node"
+    ]
+  },
+  "LoopyUpdatesShouldBeAtoms": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "_check_atom_body": [
+      "self",
+      "node",
+      "instr_type_name"
+    ],
+    "visit_Upsert": [
+      "self",
+      "node"
+    ],
+    "visit_MonoidDef": [
+      "self",
+      "node"
+    ],
+    "visit_MonusDef": [
+      "self",
+      "node"
+    ]
+  },
+  "CSVConfigChecker": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_ExportCSVConfig": [
+      "self",
+      "node"
+    ]
+  },
+  "FDVarsChecker": {
+    "__init__": [
+      "self",
+      "txn"
+    ],
+    "visit_FunctionalDependency": [
+      "self",
+      "node"
+    ]
+  },
+  "validate_proto": [
+    "txn",
+    "provenance",
+    "filename"
+  ],
+  "parse_input": [
+    "filename",
+    "validate"
+  ],
+  "output_path": [
+    "filename",
+    "ext"
+  ],
+  "serialize": [
+    "txn",
+    "fmt"
+  ],
+  "process_file": [
+    "filename",
+    "fmt",
+    "out",
+    "validate"
+  ],
+  "collect_input_files": [
+    "path"
+  ],
+  "get_package_version": [],
+  "main": [],
+  "ParseError": {},
+  "PrettyPrinter": {
+    "__init__": [
+      "self",
+      "io",
+      "max_width",
+      "print_symbolic_relation_ids"
+    ],
+    "indent_level": [
+      "self"
+    ],
+    "write": [
+      "self",
+      "s"
+    ],
+    "newline": [
+      "self"
+    ],
+    "indent": [
+      "self"
+    ],
+    "indent_sexp": [
+      "self"
+    ],
+    "dedent": [
+      "self"
+    ],
+    "_try_flat": [
+      "self",
+      "msg",
+      "pretty_fn"
+    ],
+    "get_output": [
+      "self"
+    ],
+    "format_decimal": [
+      "self",
+      "msg"
+    ],
+    "format_int128": [
+      "self",
+      "msg"
+    ],
+    "format_uint128": [
+      "self",
+      "msg"
+    ],
+    "fragment_id_to_string": [
+      "self",
+      "msg"
+    ],
+    "start_pretty_fragment": [
+      "self",
+      "msg"
+    ],
+    "relation_id_to_string": [
+      "self",
+      "msg"
+    ],
+    "relation_id_to_uint128": [
+      "self",
+      "msg"
+    ],
+    "format_float32_value": [
+      "v"
+    ],
+    "format_float32_literal": [
+      "v"
+    ],
+    "format_string_value": [
+      "self",
+      "s"
+    ],
+    "write_debug_info": [
+      "self"
+    ],
+    "deconstruct_relation_keys": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_load_errors_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_csv_data_columns_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_csv_data_relations_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_export_csv_output_location": [
+      "self",
+      "msg"
+    ],
+    "_make_value_int32": [
+      "self",
+      "v"
+    ],
+    "_make_value_int64": [
+      "self",
+      "v"
+    ],
+    "_make_value_float64": [
+      "self",
+      "v"
+    ],
+    "_make_value_string": [
+      "self",
+      "v"
+    ],
+    "_make_value_boolean": [
+      "self",
+      "v"
+    ],
+    "_make_value_uint128": [
+      "self",
+      "v"
+    ],
+    "deconstruct_configure": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_csv_config": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_csv_storage_integration_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_betree_info_config": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_export_csv_config": [
+      "self",
+      "msg"
+    ],
+    "mask_secret_value": [
+      "self",
+      "pair"
+    ],
+    "deconstruct_iceberg_catalog_config_scope_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_iceberg_data_from_snapshot_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_iceberg_data_to_snapshot_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_export_iceberg_config_optional": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_relation_id_string": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_relation_id_uint128": [
+      "self",
+      "msg"
+    ],
+    "deconstruct_bindings": [
+      "self",
+      "abs"
+    ],
+    "deconstruct_bindings_with_arity": [
+      "self",
+      "abs",
+      "value_arity"
+    ],
+    "pretty_transaction": [
+      "self",
+      "msg"
+    ],
+    "pretty_configure": [
+      "self",
+      "msg"
+    ],
+    "pretty_config_dict": [
+      "self",
+      "msg"
+    ],
+    "pretty_config_key_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_raw_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_raw_date": [
+      "self",
+      "msg"
+    ],
+    "pretty_raw_datetime": [
+      "self",
+      "msg"
+    ],
+    "pretty_boolean_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_sync": [
+      "self",
+      "msg"
+    ],
+    "pretty_fragment_id": [
+      "self",
+      "msg"
+    ],
+    "pretty_epoch": [
+      "self",
+      "msg"
+    ],
+    "pretty_epoch_writes": [
+      "self",
+      "msg"
+    ],
+    "pretty_write": [
+      "self",
+      "msg"
+    ],
+    "pretty_define": [
+      "self",
+      "msg"
+    ],
+    "pretty_fragment": [
+      "self",
+      "msg"
+    ],
+    "pretty_new_fragment_id": [
+      "self",
+      "msg"
+    ],
+    "pretty_declaration": [
+      "self",
+      "msg"
+    ],
+    "pretty_def": [
+      "self",
+      "msg"
+    ],
+    "pretty_relation_id": [
+      "self",
+      "msg"
+    ],
+    "pretty_abstraction": [
+      "self",
+      "msg"
+    ],
+    "pretty_bindings": [
+      "self",
+      "msg"
+    ],
+    "pretty_binding": [
+      "self",
+      "msg"
+    ],
+    "pretty_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_unspecified_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_string_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_int_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_float_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_uint128_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_int128_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_date_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_datetime_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_missing_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_decimal_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_boolean_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_int32_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_float32_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_uint32_type": [
+      "self",
+      "msg"
+    ],
+    "pretty_value_bindings": [
+      "self",
+      "msg"
+    ],
+    "pretty_formula": [
+      "self",
+      "msg"
+    ],
+    "pretty_true": [
+      "self",
+      "msg"
+    ],
+    "pretty_false": [
+      "self",
+      "msg"
+    ],
+    "pretty_exists": [
+      "self",
+      "msg"
+    ],
+    "pretty_reduce": [
+      "self",
+      "msg"
+    ],
+    "pretty_terms": [
+      "self",
+      "msg"
+    ],
+    "pretty_term": [
+      "self",
+      "msg"
+    ],
+    "pretty_var": [
+      "self",
+      "msg"
+    ],
+    "pretty_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_date": [
+      "self",
+      "msg"
+    ],
+    "pretty_datetime": [
+      "self",
+      "msg"
+    ],
+    "pretty_conjunction": [
+      "self",
+      "msg"
+    ],
+    "pretty_disjunction": [
+      "self",
+      "msg"
+    ],
+    "pretty_not": [
+      "self",
+      "msg"
+    ],
+    "pretty_ffi": [
+      "self",
+      "msg"
+    ],
+    "pretty_name": [
+      "self",
+      "msg"
+    ],
+    "pretty_ffi_args": [
+      "self",
+      "msg"
+    ],
+    "pretty_atom": [
+      "self",
+      "msg"
+    ],
+    "pretty_pragma": [
+      "self",
+      "msg"
+    ],
+    "pretty_primitive": [
+      "self",
+      "msg"
+    ],
+    "pretty_eq": [
+      "self",
+      "msg"
+    ],
+    "pretty_lt": [
+      "self",
+      "msg"
+    ],
+    "pretty_lt_eq": [
+      "self",
+      "msg"
+    ],
+    "pretty_gt": [
+      "self",
+      "msg"
+    ],
+    "pretty_gt_eq": [
+      "self",
+      "msg"
+    ],
+    "pretty_add": [
+      "self",
+      "msg"
+    ],
+    "pretty_minus": [
+      "self",
+      "msg"
+    ],
+    "pretty_multiply": [
+      "self",
+      "msg"
+    ],
+    "pretty_divide": [
+      "self",
+      "msg"
+    ],
+    "pretty_rel_term": [
+      "self",
+      "msg"
+    ],
+    "pretty_specialized_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_rel_atom": [
+      "self",
+      "msg"
+    ],
+    "pretty_cast": [
+      "self",
+      "msg"
+    ],
+    "pretty_attrs": [
+      "self",
+      "msg"
+    ],
+    "pretty_attribute": [
+      "self",
+      "msg"
+    ],
+    "pretty_algorithm": [
+      "self",
+      "msg"
+    ],
+    "pretty_script": [
+      "self",
+      "msg"
+    ],
+    "pretty_construct": [
+      "self",
+      "msg"
+    ],
+    "pretty_loop": [
+      "self",
+      "msg"
+    ],
+    "pretty_init": [
+      "self",
+      "msg"
+    ],
+    "pretty_instruction": [
+      "self",
+      "msg"
+    ],
+    "pretty_assign": [
+      "self",
+      "msg"
+    ],
+    "pretty_upsert": [
+      "self",
+      "msg"
+    ],
+    "pretty_abstraction_with_arity": [
+      "self",
+      "msg"
+    ],
+    "pretty_break": [
+      "self",
+      "msg"
+    ],
+    "pretty_monoid_def": [
+      "self",
+      "msg"
+    ],
+    "pretty_monoid": [
+      "self",
+      "msg"
+    ],
+    "pretty_or_monoid": [
+      "self",
+      "msg"
+    ],
+    "pretty_min_monoid": [
+      "self",
+      "msg"
+    ],
+    "pretty_max_monoid": [
+      "self",
+      "msg"
+    ],
+    "pretty_sum_monoid": [
+      "self",
+      "msg"
+    ],
+    "pretty_monus_def": [
+      "self",
+      "msg"
+    ],
+    "pretty_constraint": [
+      "self",
+      "msg"
+    ],
+    "pretty_functional_dependency_keys": [
+      "self",
+      "msg"
+    ],
+    "pretty_functional_dependency_values": [
+      "self",
+      "msg"
+    ],
+    "pretty_data": [
+      "self",
+      "msg"
+    ],
+    "pretty_edb": [
+      "self",
+      "msg"
+    ],
+    "pretty_edb_path": [
+      "self",
+      "msg"
+    ],
+    "pretty_edb_types": [
+      "self",
+      "msg"
+    ],
+    "pretty_betree_relation": [
+      "self",
+      "msg"
+    ],
+    "pretty_betree_info": [
+      "self",
+      "msg"
+    ],
+    "pretty_betree_info_key_types": [
+      "self",
+      "msg"
+    ],
+    "pretty_betree_info_value_types": [
+      "self",
+      "msg"
+    ],
+    "pretty_csv_data": [
+      "self",
+      "msg"
+    ],
+    "pretty_csvlocator": [
+      "self",
+      "msg"
+    ],
+    "pretty_csv_locator_paths": [
+      "self",
+      "msg"
+    ],
+    "pretty_csv_locator_inline_data": [
+      "self",
+      "msg"
+    ],
+    "pretty_csv_config": [
+      "self",
+      "msg"
+    ],
+    "pretty__storage_integration": [
+      "self",
+      "msg"
+    ],
+    "pretty_gnf_columns": [
+      "self",
+      "msg"
+    ],
+    "pretty_gnf_column": [
+      "self",
+      "msg"
+    ],
+    "pretty_gnf_column_path": [
+      "self",
+      "msg"
+    ],
+    "pretty_target_relations": [
+      "self",
+      "msg"
+    ],
+    "pretty_relation_keys": [
+      "self",
+      "msg"
+    ],
+    "pretty_named_column": [
+      "self",
+      "msg"
+    ],
+    "pretty_relation_body": [
+      "self",
+      "msg"
+    ],
+    "pretty_non_cdc_relations": [
+      "self",
+      "msg"
+    ],
+    "pretty_target_relation": [
+      "self",
+      "msg"
+    ],
+    "pretty_cdc_inserts": [
+      "self",
+      "msg"
+    ],
+    "pretty_cdc_deletes": [
+      "self",
+      "msg"
+    ],
+    "pretty_load_errors": [
+      "self",
+      "msg"
+    ],
+    "pretty_csv_asof": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_data": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_locator": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_locator_table_name": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_locator_namespace": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_locator_warehouse": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_catalog_config": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_catalog_uri": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_catalog_config_scope": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_properties": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_property_entry": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_auth_properties": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_masked_property_entry": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_from_snapshot": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_to_snapshot": [
+      "self",
+      "msg"
+    ],
+    "pretty_undefine": [
+      "self",
+      "msg"
+    ],
+    "pretty_context": [
+      "self",
+      "msg"
+    ],
+    "pretty_snapshot": [
+      "self",
+      "msg"
+    ],
+    "pretty_snapshot_mapping": [
+      "self",
+      "msg"
+    ],
+    "pretty_epoch_reads": [
+      "self",
+      "msg"
+    ],
+    "pretty_read": [
+      "self",
+      "msg"
+    ],
+    "pretty_demand": [
+      "self",
+      "msg"
+    ],
+    "pretty_output": [
+      "self",
+      "msg"
+    ],
+    "pretty_what_if": [
+      "self",
+      "msg"
+    ],
+    "pretty_abort": [
+      "self",
+      "msg"
+    ],
+    "pretty_export": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_config": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_output_location": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_source": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_column": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_path": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_columns_list": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_iceberg_config": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_iceberg_table_def": [
+      "self",
+      "msg"
+    ],
+    "pretty_iceberg_table_properties": [
+      "self",
+      "msg"
+    ],
+    "pretty_debug_info": [
+      "self",
+      "msg"
+    ],
+    "pretty_be_tree_config": [
+      "self",
+      "msg"
+    ],
+    "pretty_be_tree_locator": [
+      "self",
+      "msg"
+    ],
+    "pretty_cdc_targets": [
+      "self",
+      "msg"
+    ],
+    "pretty_decimal_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_functional_dependency": [
+      "self",
+      "msg"
+    ],
+    "pretty_int128_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_missing_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_plain_targets": [
+      "self",
+      "msg"
+    ],
+    "pretty_storage_integration": [
+      "self",
+      "msg"
+    ],
+    "pretty_u_int128_value": [
+      "self",
+      "msg"
+    ],
+    "pretty_export_csv_columns": [
+      "self",
+      "msg"
+    ],
+    "pretty_ivm_config": [
+      "self",
+      "msg"
+    ],
+    "pretty_maintenance_level": [
+      "self",
+      "x"
+    ],
+    "pprint_dispatch": [
+      "self",
+      "msg"
+    ]
+  },
+  "pretty": [
+    "msg",
+    "io",
+    "max_width"
+  ],
+  "pretty_debug": [
+    "msg",
+    "io",
+    "max_width"
+  ],
+  "Location": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "line",
+      "column",
+      "offset"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "Span": {
+    "__slots__": [],
+    "__init__": [
+      "self",
+      "start",
+      "stop",
+      "type_name"
+    ],
+    "__repr__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "other"
+    ],
+    "__hash__": [
+      "self"
+    ]
+  },
+  "Token": {
+    "__init__": [
+      "self",
+      "type",
+      "value",
+      "start_pos",
+      "end_pos"
+    ],
+    "pos": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "_WHITESPACE_RE": [],
+  "_COMMENT_RE": [],
+  "_TOKEN_SPECS": [],
+  "Lexer": {
+    "__init__": [
+      "self",
+      "input_str"
+    ],
+    "_tokenize": [
+      "self"
+    ],
+    "scan_symbol": [
+      "s"
+    ],
+    "scan_string": [
+      "s"
+    ],
+    "scan_int": [
+      "n"
+    ],
+    "scan_int32": [
+      "n"
+    ],
+    "scan_uint32": [
+      "n"
+    ],
+    "scan_float32": [
+      "f"
+    ],
+    "scan_float": [
+      "f"
+    ],
+    "scan_uint128": [
+      "u"
+    ],
+    "scan_int128": [
+      "u"
+    ],
+    "scan_decimal": [
+      "d"
+    ]
+  },
+  "_compute_line_starts": [
+    "text"
+  ],
+  "Parser": {
+    "__init__": [
+      "self",
+      "tokens",
+      "input_str"
+    ],
+    "_make_location": [
+      "self",
+      "offset"
+    ],
+    "span_start": [
+      "self"
+    ],
+    "record_span": [
+      "self",
+      "start_offset",
+      "type_name"
+    ],
+    "lookahead": [
+      "self",
+      "k"
+    ],
+    "consume_literal": [
+      "self",
+      "expected"
+    ],
+    "consume_terminal": [
+      "self",
+      "expected"
+    ],
+    "match_lookahead_literal": [
+      "self",
+      "literal",
+      "k"
+    ],
+    "match_lookahead_terminal": [
+      "self",
+      "terminal",
+      "k"
+    ],
+    "start_fragment": [
+      "self",
+      "fragment_id"
+    ],
+    "relation_id_from_string": [
+      "self",
+      "name"
+    ],
+    "construct_fragment": [
+      "self",
+      "fragment_id",
+      "declarations"
+    ],
+    "relation_id_to_string": [
+      "self",
+      "msg"
+    ],
+    "relation_id_to_uint128": [
+      "self",
+      "msg"
+    ],
+    "_extract_value_int32": [
+      "self",
+      "value",
+      "default"
+    ],
+    "_extract_value_int64": [
+      "self",
+      "value",
+      "default"
+    ],
+    "_extract_value_string": [
+      "self",
+      "value",
+      "default"
+    ],
+    "_extract_value_boolean": [
+      "self",
+      "value",
+      "default"
+    ],
+    "_extract_value_string_list": [
+      "self",
+      "value",
+      "default"
+    ],
+    "_try_extract_value_int64": [
+      "self",
+      "value"
+    ],
+    "_try_extract_value_float64": [
+      "self",
+      "value"
+    ],
+    "_try_extract_value_bytes": [
+      "self",
+      "value"
+    ],
+    "_try_extract_value_uint128": [
+      "self",
+      "value"
+    ],
+    "construct_non_cdc_relations": [
+      "self",
+      "targets"
+    ],
+    "construct_cdc_relations": [
+      "self",
+      "inserts",
+      "deletes"
+    ],
+    "construct_relations": [
+      "self",
+      "keys",
+      "body",
+      "load_errors_opt"
+    ],
+    "construct_csv_data": [
+      "self",
+      "locator",
+      "config",
+      "columns_opt",
+      "relations_opt",
+      "asof"
+    ],
+    "construct_csv_config": [
+      "self",
+      "config_dict",
+      "storage_integration_opt"
+    ],
+    "construct_csv_storage_integration": [
+      "self",
+      "storage_integration_opt"
+    ],
+    "construct_betree_info": [
+      "self",
+      "key_types",
+      "value_types",
+      "config_dict"
+    ],
+    "default_configure": [
+      "self"
+    ],
+    "construct_configure": [
+      "self",
+      "config_dict"
+    ],
+    "construct_export_csv_config": [
+      "self",
+      "path",
+      "columns",
+      "config_dict"
+    ],
+    "construct_export_csv_config_with_location": [
+      "self",
+      "location",
+      "csv_source",
+      "csv_config"
+    ],
+    "construct_iceberg_catalog_config": [
+      "self",
+      "catalog_uri",
+      "scope_opt",
+      "property_pairs",
+      "auth_property_pairs"
+    ],
+    "construct_iceberg_data": [
+      "self",
+      "locator",
+      "config",
+      "columns",
+      "from_snapshot_opt",
+      "to_snapshot_opt",
+      "returns_delta"
+    ],
+    "construct_export_iceberg_config_full": [
+      "self",
+      "locator",
+      "config",
+      "table_def",
+      "table_property_pairs",
+      "config_dict"
+    ],
+    "parse_transaction": [
+      "self"
+    ],
+    "parse_configure": [
+      "self"
+    ],
+    "parse_config_dict": [
+      "self"
+    ],
+    "parse_config_key_value": [
+      "self"
+    ],
+    "parse_raw_value": [
+      "self"
+    ],
+    "parse_raw_date": [
+      "self"
+    ],
+    "parse_raw_datetime": [
+      "self"
+    ],
+    "parse_boolean_value": [
+      "self"
+    ],
+    "parse_sync": [
+      "self"
+    ],
+    "parse_fragment_id": [
+      "self"
+    ],
+    "parse_epoch": [
+      "self"
+    ],
+    "parse_epoch_writes": [
+      "self"
+    ],
+    "parse_write": [
+      "self"
+    ],
+    "parse_define": [
+      "self"
+    ],
+    "parse_fragment": [
+      "self"
+    ],
+    "parse_new_fragment_id": [
+      "self"
+    ],
+    "parse_declaration": [
+      "self"
+    ],
+    "parse_def": [
+      "self"
+    ],
+    "parse_relation_id": [
+      "self"
+    ],
+    "parse_abstraction": [
+      "self"
+    ],
+    "parse_bindings": [
+      "self"
+    ],
+    "parse_binding": [
+      "self"
+    ],
+    "parse_type": [
+      "self"
+    ],
+    "parse_unspecified_type": [
+      "self"
+    ],
+    "parse_string_type": [
+      "self"
+    ],
+    "parse_int_type": [
+      "self"
+    ],
+    "parse_float_type": [
+      "self"
+    ],
+    "parse_uint128_type": [
+      "self"
+    ],
+    "parse_int128_type": [
+      "self"
+    ],
+    "parse_date_type": [
+      "self"
+    ],
+    "parse_datetime_type": [
+      "self"
+    ],
+    "parse_missing_type": [
+      "self"
+    ],
+    "parse_decimal_type": [
+      "self"
+    ],
+    "parse_boolean_type": [
+      "self"
+    ],
+    "parse_int32_type": [
+      "self"
+    ],
+    "parse_float32_type": [
+      "self"
+    ],
+    "parse_uint32_type": [
+      "self"
+    ],
+    "parse_value_bindings": [
+      "self"
+    ],
+    "parse_formula": [
+      "self"
+    ],
+    "parse_true": [
+      "self"
+    ],
+    "parse_false": [
+      "self"
+    ],
+    "parse_exists": [
+      "self"
+    ],
+    "parse_reduce": [
+      "self"
+    ],
+    "parse_terms": [
+      "self"
+    ],
+    "parse_term": [
+      "self"
+    ],
+    "parse_var": [
+      "self"
+    ],
+    "parse_value": [
+      "self"
+    ],
+    "parse_date": [
+      "self"
+    ],
+    "parse_datetime": [
+      "self"
+    ],
+    "parse_conjunction": [
+      "self"
+    ],
+    "parse_disjunction": [
+      "self"
+    ],
+    "parse_not": [
+      "self"
+    ],
+    "parse_ffi": [
+      "self"
+    ],
+    "parse_name": [
+      "self"
+    ],
+    "parse_ffi_args": [
+      "self"
+    ],
+    "parse_atom": [
+      "self"
+    ],
+    "parse_pragma": [
+      "self"
+    ],
+    "parse_primitive": [
+      "self"
+    ],
+    "parse_eq": [
+      "self"
+    ],
+    "parse_lt": [
+      "self"
+    ],
+    "parse_lt_eq": [
+      "self"
+    ],
+    "parse_gt": [
+      "self"
+    ],
+    "parse_gt_eq": [
+      "self"
+    ],
+    "parse_add": [
+      "self"
+    ],
+    "parse_minus": [
+      "self"
+    ],
+    "parse_multiply": [
+      "self"
+    ],
+    "parse_divide": [
+      "self"
+    ],
+    "parse_rel_term": [
+      "self"
+    ],
+    "parse_specialized_value": [
+      "self"
+    ],
+    "parse_rel_atom": [
+      "self"
+    ],
+    "parse_cast": [
+      "self"
+    ],
+    "parse_attrs": [
+      "self"
+    ],
+    "parse_attribute": [
+      "self"
+    ],
+    "parse_algorithm": [
+      "self"
+    ],
+    "parse_script": [
+      "self"
+    ],
+    "parse_construct": [
+      "self"
+    ],
+    "parse_loop": [
+      "self"
+    ],
+    "parse_init": [
+      "self"
+    ],
+    "parse_instruction": [
+      "self"
+    ],
+    "parse_assign": [
+      "self"
+    ],
+    "parse_upsert": [
+      "self"
+    ],
+    "parse_abstraction_with_arity": [
+      "self"
+    ],
+    "parse_break": [
+      "self"
+    ],
+    "parse_monoid_def": [
+      "self"
+    ],
+    "parse_monoid": [
+      "self"
+    ],
+    "parse_or_monoid": [
+      "self"
+    ],
+    "parse_min_monoid": [
+      "self"
+    ],
+    "parse_max_monoid": [
+      "self"
+    ],
+    "parse_sum_monoid": [
+      "self"
+    ],
+    "parse_monus_def": [
+      "self"
+    ],
+    "parse_constraint": [
+      "self"
+    ],
+    "parse_functional_dependency_keys": [
+      "self"
+    ],
+    "parse_functional_dependency_values": [
+      "self"
+    ],
+    "parse_data": [
+      "self"
+    ],
+    "parse_edb": [
+      "self"
+    ],
+    "parse_edb_path": [
+      "self"
+    ],
+    "parse_edb_types": [
+      "self"
+    ],
+    "parse_betree_relation": [
+      "self"
+    ],
+    "parse_betree_info": [
+      "self"
+    ],
+    "parse_betree_info_key_types": [
+      "self"
+    ],
+    "parse_betree_info_value_types": [
+      "self"
+    ],
+    "parse_csv_data": [
+      "self"
+    ],
+    "parse_csvlocator": [
+      "self"
+    ],
+    "parse_csv_locator_paths": [
+      "self"
+    ],
+    "parse_csv_locator_inline_data": [
+      "self"
+    ],
+    "parse_csv_config": [
+      "self"
+    ],
+    "parse__storage_integration": [
+      "self"
+    ],
+    "parse_gnf_columns": [
+      "self"
+    ],
+    "parse_gnf_column": [
+      "self"
+    ],
+    "parse_gnf_column_path": [
+      "self"
+    ],
+    "parse_target_relations": [
+      "self"
+    ],
+    "parse_relation_keys": [
+      "self"
+    ],
+    "parse_named_column": [
+      "self"
+    ],
+    "parse_relation_body": [
+      "self"
+    ],
+    "parse_non_cdc_relations": [
+      "self"
+    ],
+    "parse_target_relation": [
+      "self"
+    ],
+    "parse_cdc_inserts": [
+      "self"
+    ],
+    "parse_cdc_deletes": [
+      "self"
+    ],
+    "parse_load_errors": [
+      "self"
+    ],
+    "parse_csv_asof": [
+      "self"
+    ],
+    "parse_iceberg_data": [
+      "self"
+    ],
+    "parse_iceberg_locator": [
+      "self"
+    ],
+    "parse_iceberg_locator_table_name": [
+      "self"
+    ],
+    "parse_iceberg_locator_namespace": [
+      "self"
+    ],
+    "parse_iceberg_locator_warehouse": [
+      "self"
+    ],
+    "parse_iceberg_catalog_config": [
+      "self"
+    ],
+    "parse_iceberg_catalog_uri": [
+      "self"
+    ],
+    "parse_iceberg_catalog_config_scope": [
+      "self"
+    ],
+    "parse_iceberg_properties": [
+      "self"
+    ],
+    "parse_iceberg_property_entry": [
+      "self"
+    ],
+    "parse_iceberg_auth_properties": [
+      "self"
+    ],
+    "parse_iceberg_masked_property_entry": [
+      "self"
+    ],
+    "parse_iceberg_from_snapshot": [
+      "self"
+    ],
+    "parse_iceberg_to_snapshot": [
+      "self"
+    ],
+    "parse_undefine": [
+      "self"
+    ],
+    "parse_context": [
+      "self"
+    ],
+    "parse_snapshot": [
+      "self"
+    ],
+    "parse_snapshot_mapping": [
+      "self"
+    ],
+    "parse_epoch_reads": [
+      "self"
+    ],
+    "parse_read": [
+      "self"
+    ],
+    "parse_demand": [
+      "self"
+    ],
+    "parse_output": [
+      "self"
+    ],
+    "parse_what_if": [
+      "self"
+    ],
+    "parse_abort": [
+      "self"
+    ],
+    "parse_export": [
+      "self"
+    ],
+    "parse_export_csv_config": [
+      "self"
+    ],
+    "parse_export_csv_output_location": [
+      "self"
+    ],
+    "parse_export_csv_source": [
+      "self"
+    ],
+    "parse_export_csv_column": [
+      "self"
+    ],
+    "parse_export_csv_path": [
+      "self"
+    ],
+    "parse_export_csv_columns_list": [
+      "self"
+    ],
+    "parse_export_iceberg_config": [
+      "self"
+    ],
+    "parse_export_iceberg_table_def": [
+      "self"
+    ],
+    "parse_iceberg_table_properties": [
+      "self"
+    ]
+  },
+  "parse_transaction": [
+    "input_str"
+  ],
+  "parse_fragment": [
+    "input_str"
+  ],
+  "parse": [
+    "input_str"
+  ],
+  "_sym_db": [],
+  "DESCRIPTOR": [],
+  "_globals": []
+}
