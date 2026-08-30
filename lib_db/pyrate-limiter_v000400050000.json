@@ -1,0 +1,1090 @@
+{
+  "__all__": [],
+  "logger": [],
+  "AbstractClock": {
+    "now": [
+      "self"
+    ],
+    "_get_monotonic_ms": [],
+    "_get_wall_ms": []
+  },
+  "MonotonicClock": {
+    "now": [
+      "self"
+    ]
+  },
+  "WallClock": {
+    "now": [
+      "self"
+    ]
+  },
+  "MonotonicAsyncClock": {
+    "now": [
+      "self"
+    ]
+  },
+  "PostgresClock": {
+    "__init__": [
+      "self",
+      "pool"
+    ],
+    "now": [
+      "self"
+    ]
+  },
+  "validate_rate_list": [
+    "rates"
+  ],
+  "enforce_rate_list": [
+    "rates"
+  ],
+  "id_generator": [
+    "size"
+  ],
+  "dedicated_sqlite_clock_connection": [],
+  "create_sqlite_bucket": [
+    "rates",
+    "db_path",
+    "table_name",
+    "use_file_lock"
+  ],
+  "create_sqlite_limiter": [
+    "rate_per_duration",
+    "duration",
+    "db_path",
+    "table_name",
+    "buffer_ms",
+    "use_file_lock"
+  ],
+  "create_inmemory_limiter": [
+    "rate_per_duration",
+    "duration",
+    "buffer_ms"
+  ],
+  "create_token_bucket_limiter": [
+    "rate_per_duration",
+    "duration",
+    "burst",
+    "buffer_ms"
+  ],
+  "init_global_limiter": [
+    "bucket",
+    "buffer_ms"
+  ],
+  "ItemMapping": [],
+  "DecoratorWrapper": [],
+  "LockLike": {
+    "acquire": [
+      "self",
+      "blocking",
+      "timeout"
+    ],
+    "release": [
+      "self"
+    ]
+  },
+  "SingleBucketFactory": {
+    "__init__": [
+      "self",
+      "bucket",
+      "schedule_leak"
+    ],
+    "wrap_item": [
+      "self",
+      "name",
+      "weight"
+    ],
+    "get": [
+      "self",
+      "_"
+    ]
+  },
+  "combined_lock": [
+    "locks",
+    "blocking",
+    "timeout"
+  ],
+  "_plan_delay_step": [
+    "deadline",
+    "delay_ms"
+  ],
+  "Limiter": {
+    "__init__": [
+      "self",
+      "argument",
+      "buffer_ms"
+    ],
+    "buckets": [
+      "self"
+    ],
+    "dispose": [
+      "self",
+      "bucket"
+    ],
+    "_init_bucket_factory": [
+      "self",
+      "argument"
+    ],
+    "_delay_to_sleep_ms": [
+      "self",
+      "delay"
+    ],
+    "_delay_waiter": [
+      "self",
+      "bucket",
+      "item",
+      "blocking",
+      "_force_async",
+      "deadline"
+    ],
+    "handle_bucket_put": [
+      "self",
+      "bucket",
+      "item",
+      "blocking",
+      "_force_async",
+      "deadline"
+    ],
+    "_wait_after_async_put": [
+      "self",
+      "bucket",
+      "item",
+      "acquire",
+      "blocking",
+      "deadline"
+    ],
+    "_blocking_retry_sync": [
+      "self",
+      "bucket",
+      "item",
+      "wait_ms",
+      "blocking",
+      "deadline"
+    ],
+    "_get_async_lock": [
+      "self"
+    ],
+    "try_acquire": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout"
+    ],
+    "_acquire_async": [
+      "self",
+      "blocking",
+      "name",
+      "weight",
+      "timeout"
+    ],
+    "try_acquire_async": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout"
+    ],
+    "_acquire_co": [
+      "self",
+      "item",
+      "bucket"
+    ],
+    "_handle_async_result": [
+      "self",
+      "result",
+      "deadline"
+    ],
+    "_cleanup_awaitable": [
+      "self",
+      "awaitable"
+    ],
+    "_try_acquire": [
+      "self",
+      "name",
+      "weight",
+      "blocking",
+      "timeout",
+      "_force_async",
+      "_allow_async_result"
+    ],
+    "as_decorator": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ]
+  },
+  "StateStore": {
+    "check": [
+      "self",
+      "algorithm",
+      "rates",
+      "now",
+      "weight"
+    ],
+    "read": [
+      "self",
+      "algorithm",
+      "rates"
+    ],
+    "reset": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BucketAsyncWrapper": {
+    "is_async": [],
+    "__init__": [
+      "self",
+      "bucket"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "count": [
+      "self"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "waiting": [
+      "self",
+      "item"
+    ],
+    "now": [
+      "self"
+    ],
+    "failing_rate": [
+      "self"
+    ],
+    "_last_wait": [
+      "self"
+    ],
+    "_algorithm": [
+      "self"
+    ],
+    "rates": [
+      "self",
+      "value"
+    ]
+  },
+  "State": [],
+  "Decision": {
+    "allowed": [
+      "self"
+    ]
+  },
+  "Algorithm": {
+    "max_weight": [
+      "self",
+      "rate"
+    ]
+  },
+  "LogAlgorithm": {
+    "admit": [
+      "self",
+      "rates",
+      "counts",
+      "weight"
+    ],
+    "window_start": [
+      "self",
+      "rate",
+      "now"
+    ],
+    "retry_after": [
+      "self",
+      "rate",
+      "now",
+      "blocking_timestamp"
+    ],
+    "blocking_offset": [
+      "self",
+      "rate",
+      "weight"
+    ],
+    "leak_bound": [
+      "self",
+      "rates",
+      "now"
+    ],
+    "decide": [
+      "self",
+      "rates",
+      "counts",
+      "weight",
+      "now",
+      "peek_timestamp"
+    ]
+  },
+  "SlidingWindowLog": {
+    "admit": [
+      "self",
+      "rates",
+      "counts",
+      "weight"
+    ],
+    "window_start": [
+      "self",
+      "rate",
+      "now"
+    ],
+    "blocking_offset": [
+      "self",
+      "rate",
+      "weight"
+    ],
+    "retry_after": [
+      "self",
+      "rate",
+      "now",
+      "blocking_timestamp"
+    ]
+  },
+  "FixedWindow": {
+    "admit": [
+      "self",
+      "rates",
+      "counts",
+      "weight"
+    ],
+    "window_start": [
+      "self",
+      "rate",
+      "now"
+    ],
+    "retry_after": [
+      "self",
+      "rate",
+      "now",
+      "blocking_timestamp"
+    ]
+  },
+  "StateAlgorithm": {
+    "initial": [
+      "self",
+      "rates"
+    ],
+    "step": [
+      "self",
+      "rates",
+      "state",
+      "now",
+      "weight"
+    ],
+    "decode": [
+      "self",
+      "values"
+    ],
+    "consumed": [
+      "self",
+      "rates",
+      "state",
+      "now"
+    ],
+    "redis_script": [
+      "self"
+    ],
+    "redis_args": [
+      "self",
+      "rates"
+    ]
+  },
+  "GCRA": {
+    "_emission_us": [
+      "rate"
+    ],
+    "initial": [
+      "self",
+      "rates"
+    ],
+    "max_weight": [
+      "self",
+      "rate"
+    ],
+    "step": [
+      "self",
+      "rates",
+      "state",
+      "now",
+      "weight"
+    ],
+    "consumed": [
+      "self",
+      "rates",
+      "state",
+      "now"
+    ],
+    "decode": [
+      "self",
+      "values"
+    ],
+    "redis_script": [
+      "self"
+    ],
+    "redis_args": [
+      "self",
+      "rates"
+    ]
+  },
+  "TokenBucket": {},
+  "_GCRA_LUA": [],
+  "AbstractBucket": {
+    "rates": [
+      "self",
+      "value"
+    ],
+    "now": [
+      "self"
+    ],
+    "_record": [
+      "self",
+      "item",
+      "decision"
+    ],
+    "_recorded_wait": [
+      "self",
+      "item"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "put_decision": [
+      "self",
+      "item"
+    ],
+    "_decision": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "waiting": [
+      "self",
+      "item"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__enter__": [
+      "self"
+    ],
+    "__exit__": [
+      "self",
+      "exc_type",
+      "exc",
+      "tb"
+    ]
+  },
+  "Leaker": {
+    "name": [],
+    "__init__": [
+      "self",
+      "leak_interval"
+    ],
+    "register": [
+      "self",
+      "bucket"
+    ],
+    "deregister": [
+      "self",
+      "bucket_id"
+    ],
+    "_leak": [
+      "self",
+      "buckets"
+    ],
+    "leak_async": [
+      "self"
+    ],
+    "is_alive": [
+      "self"
+    ],
+    "_run": [
+      "self"
+    ],
+    "start": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "BucketFactory": {
+    "leak_interval": [
+      "self",
+      "value"
+    ],
+    "wrap_item": [
+      "self",
+      "name",
+      "weight"
+    ],
+    "get": [
+      "self",
+      "item"
+    ],
+    "create": [
+      "self",
+      "bucket_class"
+    ],
+    "schedule_leak": [
+      "self",
+      "new_bucket"
+    ],
+    "get_buckets": [
+      "self"
+    ],
+    "dispose": [
+      "self",
+      "bucket"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ]
+  },
+  "Duration": {
+    "SECOND": [],
+    "MINUTE": [],
+    "HOUR": [],
+    "DAY": [],
+    "WEEK": [],
+    "__mul__": [
+      "self",
+      "mutiplier"
+    ],
+    "__rmul__": [
+      "self",
+      "multiplier"
+    ],
+    "__add__": [
+      "self",
+      "another_duration"
+    ],
+    "__radd__": [
+      "self",
+      "another_duration"
+    ],
+    "__int__": [
+      "self"
+    ],
+    "__eq__": [
+      "self",
+      "duration"
+    ],
+    "readable": [
+      "value"
+    ]
+  },
+  "RateItem": {
+    "__init__": [
+      "self",
+      "name",
+      "timestamp",
+      "weight"
+    ],
+    "__str__": [
+      "self"
+    ]
+  },
+  "Rate": {
+    "__init__": [
+      "self",
+      "limit",
+      "interval",
+      "burst"
+    ],
+    "__str__": [
+      "self"
+    ],
+    "__repr__": [
+      "self"
+    ]
+  },
+  "RateLimiterTransport": {
+    "__init__": [
+      "self",
+      "limiter"
+    ],
+    "handle_request": [
+      "self",
+      "request"
+    ]
+  },
+  "AsyncRateLimiterTransport": {
+    "__init__": [
+      "self",
+      "limiter"
+    ],
+    "handle_async_request": [
+      "self",
+      "request"
+    ]
+  },
+  "RateLimitedRequestsSession": {
+    "__init__": [
+      "self",
+      "limiter",
+      "name"
+    ],
+    "request": [
+      "self",
+      "method",
+      "url"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "RateLimitedSession": {
+    "__init__": [
+      "self",
+      "limiter",
+      "name"
+    ],
+    "get": [
+      "self"
+    ],
+    "post": [
+      "self"
+    ],
+    "__aenter__": [
+      "self"
+    ],
+    "__aexit__": [
+      "self"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "LuaScript": {
+    "PUT_ITEM": []
+  },
+  "RedisBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "redis",
+      "bucket_key",
+      "script_hash",
+      "algorithm"
+    ],
+    "now": [
+      "self"
+    ],
+    "init": [
+      "cls",
+      "rates",
+      "redis",
+      "bucket_key",
+      "algorithm"
+    ],
+    "_check_and_insert": [
+      "self",
+      "item"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ]
+  },
+  "_by_timestamp": [],
+  "InMemoryBucket": {
+    "is_async": [],
+    "__init__": [
+      "self",
+      "rates",
+      "algorithm"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "_deny": [
+      "self",
+      "rate",
+      "item",
+      "length"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ]
+  },
+  "InMemoryStateStore": {
+    "is_async": [],
+    "__init__": [
+      "self"
+    ],
+    "check": [
+      "self",
+      "algorithm",
+      "rates",
+      "now",
+      "weight"
+    ],
+    "read": [
+      "self",
+      "algorithm",
+      "rates"
+    ],
+    "reset": [
+      "self"
+    ],
+    "__getstate__": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ]
+  },
+  "MultiprocessStateStore": {
+    "is_async": [],
+    "__init__": [
+      "self",
+      "values",
+      "lock"
+    ],
+    "init": [
+      "cls"
+    ],
+    "_load": [
+      "self",
+      "algorithm",
+      "rates"
+    ],
+    "check": [
+      "self",
+      "algorithm",
+      "rates",
+      "now",
+      "weight"
+    ],
+    "read": [
+      "self",
+      "algorithm",
+      "rates"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "StateBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "algorithm",
+      "store",
+      "clock"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "waiting": [
+      "self",
+      "item"
+    ],
+    "_replay": [
+      "self",
+      "state",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "close": [
+      "self"
+    ]
+  },
+  "RedisStateStore": {
+    "is_async": [],
+    "default_clock": [],
+    "__init__": [
+      "self",
+      "redis",
+      "key",
+      "ttl_ms"
+    ],
+    "_script": [
+      "self",
+      "algorithm"
+    ],
+    "_ttl_for": [
+      "self",
+      "rates"
+    ],
+    "check": [
+      "self",
+      "algorithm",
+      "rates",
+      "now",
+      "weight"
+    ],
+    "_decision": [
+      "rates",
+      "reply"
+    ],
+    "read": [
+      "self",
+      "algorithm",
+      "rates"
+    ],
+    "_parse": [
+      "algorithm",
+      "rates",
+      "stored"
+    ],
+    "reset": [
+      "self"
+    ]
+  },
+  "Queries": {
+    "CREATE_BUCKET_TABLE": [],
+    "CREATE_INDEX_ON_TIMESTAMP": [],
+    "COUNT_BEFORE_INSERT": [],
+    "PUT_ITEM": [],
+    "LEAK": [],
+    "COUNT_BEFORE_LEAK": [],
+    "FLUSH": [],
+    "DROP_TABLE": [],
+    "DROP_INDEX": [],
+    "COUNT_ALL": [],
+    "GET_ALL_ITEM": [],
+    "GET_FIRST_ITEM": [],
+    "GET_LAG": [],
+    "PEEK": []
+  },
+  "SQLiteBucket": {
+    "is_async": [],
+    "__init__": [
+      "self",
+      "rates",
+      "conn",
+      "table",
+      "lock",
+      "algorithm"
+    ],
+    "now": [
+      "self"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "_build_full_count_query": [
+      "self",
+      "current_timestamp"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "_peek_timestamp": [
+      "self",
+      "offset"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "close": [
+      "self"
+    ],
+    "init_from_file": [
+      "cls",
+      "rates",
+      "table",
+      "db_path",
+      "create_new_table",
+      "use_file_lock",
+      "algorithm"
+    ]
+  },
+  "SQLiteClock": {
+    "time_query": [],
+    "__init__": [
+      "self",
+      "conn"
+    ],
+    "default": [
+      "cls"
+    ],
+    "now": [
+      "self"
+    ]
+  },
+  "MultiprocessBucket": {
+    "__init__": [
+      "self",
+      "rates",
+      "items",
+      "mp_lock",
+      "algorithm"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "limiter_lock": [
+      "self"
+    ],
+    "__setstate__": [
+      "self",
+      "state"
+    ],
+    "init": [
+      "cls",
+      "rates",
+      "algorithm"
+    ]
+  },
+  "PostgresBucket": {
+    "is_async": [],
+    "__init__": [
+      "self",
+      "pool",
+      "table",
+      "rates",
+      "algorithm"
+    ],
+    "_get_conn": [
+      "self"
+    ],
+    "_create_table": [
+      "self"
+    ],
+    "put": [
+      "self",
+      "item"
+    ],
+    "leak": [
+      "self",
+      "current_timestamp"
+    ],
+    "flush": [
+      "self"
+    ],
+    "count": [
+      "self"
+    ],
+    "peek": [
+      "self",
+      "index"
+    ],
+    "close": [
+      "self"
+    ]
+  }
+}
