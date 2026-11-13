@@ -1,0 +1,1794 @@
+{
+  "GCPOptions": [],
+  "ElasticGoodputMonitor": {
+    "__init__": [
+      "self",
+      "job_name",
+      "logger_name",
+      "tensorboard_dir",
+      "upload_interval",
+      "monitoring_enabled",
+      "include_badput_breakdown",
+      "include_step_deviation",
+      "include_slice_efficiency",
+      "configured_ideal_step_time",
+      "step_deviation_interval_seconds",
+      "gcp_options",
+      "skip_final_flush",
+      "final_flush_timeout_seconds",
+      "gcs_sync_interval_seconds",
+      "cache_dir",
+      "max_logs_retention_period",
+      "read_overlap_seconds",
+      "read_lag_seconds"
+    ]
+  },
+  "_JOB_NAME": [],
+  "_LOGGER_NAME": [],
+  "_STEP": [],
+  "_EVENT_TYPE": [],
+  "_DIRECTORY": [],
+  "_WAIT_FOR_PREV_DURATION_SECS": [],
+  "_CHECKPOINTER_SAVE_DURATION_SECS": [],
+  "_CHECKPOINTER_RESTORE_DURATION_SECS": [],
+  "_GET_OLD_STEPS_DURATION_SECS": [],
+  "_CHECKPOINT_MANAGER_SAVE_DURATION_SECS": [],
+  "_CHECKPOINT_MANAGER_RESTORE_DURATION_SECS": [],
+  "_BROADCAST_DURATION_SECS": [],
+  "OPERATION_TYPE_SAVE": [],
+  "OPERATION_TYPE_RESTORE": [],
+  "OPERATION_TYPE_EMERGENCY_RESTORE": [],
+  "OPERATION_TYPE_LOCAL": [],
+  "OPERATION_TYPE_PERSISTENT": [],
+  "OPERATION_TYPE_PERSISTENT_AND_LOCAL": [],
+  "_CLOUD_LOGGING_PAGE_SIZE": [],
+  "SaveCheckpointManagerVerticalStepStats": {},
+  "RestoreCheckpointManagerVerticalStepStats": {},
+  "SaveProcessedStep": {},
+  "RestoreProcessedStep": {},
+  "CheckpointLoggerOptions": {},
+  "CheckpointBadputCalculator": {
+    "__init__": [
+      "self",
+      "options"
+    ],
+    "read_entries": [
+      "self"
+    ],
+    "_is_local_operation": [
+      "self",
+      "step_stats"
+    ],
+    "is_valid_save_stats": [
+      "self",
+      "step_stats",
+      "operation_type"
+    ],
+    "is_valid_restore_stats": [
+      "self",
+      "step_stats",
+      "operation_type"
+    ],
+    "_save_statistics": [
+      "self",
+      "processed_step_stats"
+    ],
+    "_get_duration_stat": [
+      "step_stats",
+      "key"
+    ],
+    "calculate_save_operation_checkpoint_manager_blocking_time": [
+      "self",
+      "operation_type"
+    ],
+    "_restore_statistics": [
+      "self",
+      "processed_step_stats"
+    ],
+    "calculate_restore_operation_checkpoint_manager_blocking_time": [
+      "self",
+      "operation_type"
+    ]
+  },
+  "StepInfo": [],
+  "GoodputInfo": [],
+  "_JOB_START_TIME": [],
+  "_JOB_END_TIME": [],
+  "_STEP_START_TIME": [],
+  "_LAST_ENTRY_TIMESTAMP": [],
+  "_LAST_ENTRY_ID": [],
+  "_RECENT_ENTRY_IDS": [],
+  "_RECENT_ENTRY_IDS_SINCE": [],
+  "logger": [],
+  "_parse_timestamp": [
+    "value"
+  ],
+  "_chronological": [
+    "entries"
+  ],
+  "GoodputCache": {
+    "__init__": [
+      "self",
+      "job_name",
+      "cache_dir",
+      "gcs_path",
+      "read_overlap_seconds"
+    ],
+    "_restore_from_gcs": [
+      "self"
+    ],
+    "_initialize_times_from_file": [
+      "self"
+    ],
+    "_initialize_metadata_from_file": [
+      "self"
+    ],
+    "update_step_info": [
+      "self",
+      "step_info"
+    ],
+    "update_cached_entries": [
+      "self",
+      "entries",
+      "last_entry_info",
+      "entry_ids"
+    ],
+    "_prune_recent_entry_ids": [
+      "self",
+      "cursor_ts",
+      "ids_known"
+    ],
+    "_update_times_from_new_entries": [
+      "self",
+      "new_entries"
+    ],
+    "update_last_entry_info": [
+      "self",
+      "last_entry_info"
+    ],
+    "update_goodput_info": [
+      "self",
+      "goodput_info"
+    ],
+    "get_cached_entries": [
+      "self"
+    ],
+    "get_step_entries": [
+      "self"
+    ],
+    "get_goodput_info": [
+      "self"
+    ],
+    "get_job_start_time": [
+      "self"
+    ],
+    "get_job_end_time": [
+      "self"
+    ],
+    "get_last_entry_info": [
+      "self"
+    ],
+    "get_recent_entry_ids": [
+      "self"
+    ],
+    "get_read_overlap_seconds": [
+      "self"
+    ],
+    "get_step_info": [
+      "self"
+    ],
+    "sync_to_gcs": [
+      "self"
+    ],
+    "clear_cache": [
+      "self"
+    ],
+    "is_cache_empty": [
+      "self"
+    ]
+  },
+  "BadputType": [],
+  "GCPMetrics": [],
+  "GoodputCalculator": [],
+  "IntervalMetricType": [],
+  "IntervalWorkloadMetricDetails": [],
+  "MetricType": [],
+  "MonitoringWindowType": [],
+  "ValueType": [],
+  "UnproductiveTimeDict": [],
+  "WorkloadMetricDetails": [],
+  "ACTIVITY_EXCLUSION_LIST": [],
+  "_TENSORBOARD_GCS_SUBDIR": [],
+  "_TENSORBOARD_GOODPUT_LABEL": [],
+  "_TENSORBOARD_BADPUT_LABEL": [],
+  "_TENSORBOARD_STEP_DEVIATION_LABEL": [],
+  "_PROCESS_TERMINATION_TIMEOUT_SECONDS": [],
+  "_JOB_END_POLL_INTERVAL_SECONDS": [],
+  "_query_and_upload_goodput_once": [
+    "calculator",
+    "summary_writer",
+    "metrics_sender",
+    "config",
+    "pid"
+  ],
+  "_wait_for_job_end_entry": [
+    "calculator",
+    "config",
+    "pid"
+  ],
+  "_goodput_worker": [
+    "config",
+    "termination_event",
+    "final_flush_event"
+  ],
+  "_query_and_upload_step_deviation_once": [
+    "calculator",
+    "summary_writer",
+    "metrics_sender",
+    "config",
+    "pid"
+  ],
+  "_step_deviation_worker": [
+    "config",
+    "termination_event",
+    "final_flush_event"
+  ],
+  "_rolling_window_worker": [
+    "config",
+    "termination_event",
+    "final_flush_event"
+  ],
+  "_run_with_timeout": [
+    "func",
+    "timeout_seconds",
+    "description"
+  ],
+  "_create_goodput_calculator": [
+    "config"
+  ],
+  "_create_gcp_metrics_sender": [
+    "config"
+  ],
+  "_create_tensorboard_writer": [
+    "config"
+  ],
+  "_log_tensorboard_scalars": [
+    "summary_writer",
+    "label_prefix",
+    "data",
+    "step"
+  ],
+  "_upload_goodput_metrics_to_tensorboard": [
+    "summary_writer",
+    "job_goodput",
+    "badput_breakdown",
+    "last_step",
+    "include_badput_breakdown"
+  ],
+  "_flatten_badput_dict": [
+    "badput_time_dict"
+  ],
+  "_upload_goodput_metrics_to_gcm": [
+    "metrics_sender",
+    "goodput_details",
+    "config"
+  ],
+  "_write_step_deviation_to_tensorboard": [
+    "summary_writer",
+    "step_deviation"
+  ],
+  "_send_step_deviation_metric_to_gcp": [
+    "metrics_sender",
+    "step_deviations",
+    "config"
+  ],
+  "_upload_interval_goodput_metrics_to_gcm": [
+    "metrics_sender",
+    "interval_metric_details",
+    "config"
+  ],
+  "GoodputMonitor": {
+    "__init__": [
+      "self",
+      "job_name",
+      "logger_name",
+      "tensorboard_dir",
+      "upload_interval",
+      "monitoring_enabled",
+      "pathway_enabled",
+      "include_badput_breakdown",
+      "include_step_deviation",
+      "configured_ideal_step_time",
+      "step_deviation_interval_seconds",
+      "gcp_options",
+      "skip_final_flush",
+      "final_flush_timeout_seconds",
+      "gcs_sync_interval_seconds",
+      "cache_dir",
+      "max_logs_retention_period"
+    ],
+    "__del__": [
+      "self"
+    ],
+    "_worker_join_timeout": [
+      "self",
+      "should_skip"
+    ],
+    "start_goodput_uploader": [
+      "self"
+    ],
+    "stop_goodput_uploader": [
+      "self",
+      "skip_final_flush"
+    ],
+    "_final_goodput_query_and_upload": [
+      "self"
+    ],
+    "start_step_deviation_uploader": [
+      "self"
+    ],
+    "stop_step_deviation_uploader": [
+      "self",
+      "skip_final_flush"
+    ],
+    "_final_step_deviation_query_and_upload": [
+      "self"
+    ],
+    "start_rolling_window_goodput_uploader": [
+      "self",
+      "rolling_windows_seconds"
+    ],
+    "stop_rolling_window_goodput_uploader": [
+      "self",
+      "skip_final_flush"
+    ],
+    "_final_rolling_window_goodput_query_and_upload": [
+      "self"
+    ]
+  },
+  "GoogleAPIError": [],
+  "Enum": [],
+  "_MS_PER_S": [],
+  "TimingEvent": {
+    "record": [
+      "self"
+    ],
+    "query": [
+      "self"
+    ],
+    "elapsed_time": [
+      "self",
+      "end"
+    ]
+  },
+  "StepStartRecorder": {
+    "record_step_start_time": [
+      "self",
+      "step",
+      "start_time"
+    ]
+  },
+  "StepClock": {
+    "__init__": [
+      "self",
+      "recorder",
+      "event_factory"
+    ],
+    "on_reference_point": [
+      "self"
+    ],
+    "on_step_start": [
+      "self",
+      "step",
+      "host_time"
+    ],
+    "on_step_end": [
+      "self",
+      "step"
+    ],
+    "poll": [
+      "self"
+    ],
+    "flush": [
+      "self",
+      "timeout_s"
+    ],
+    "completion_time": [
+      "self",
+      "step"
+    ],
+    "corrected_start": [
+      "self",
+      "host_start",
+      "last_issued_step"
+    ],
+    "pending": [
+      "self"
+    ],
+    "disabled": [
+      "self"
+    ],
+    "_maybe_adopt_anchor": [
+      "self"
+    ],
+    "_remember_completion": [
+      "self",
+      "step",
+      "done"
+    ],
+    "_record_start": [
+      "self",
+      "step",
+      "start"
+    ],
+    "_disable": [
+      "self",
+      "what",
+      "error"
+    ]
+  },
+  "_STEP_COUNT": [],
+  "_TPU_INIT_START_TIME": [],
+  "_TPU_INIT_END_TIME": [],
+  "_TRAINING_PREPARATION_START_TIME": [],
+  "_TRAINING_PREPARATION_END_TIME": [],
+  "_DATA_LOADING_START_TIME": [],
+  "_DATA_LOADING_END_TIME": [],
+  "GoodputExclusion": {
+    "_fetch_new_entries": [
+      "self",
+      "query_time"
+    ],
+    "_get_total_job_time": [
+      "self",
+      "query_time"
+    ],
+    "_get_job_badput_breakdown": [
+      "self",
+      "unproductive_time",
+      "total_time"
+    ],
+    "_extract_custom_sync_intervals": [
+      "self",
+      "entries"
+    ],
+    "_accumulate_unproductive_time": [
+      "self",
+      "source",
+      "target"
+    ],
+    "_sanitize_unproductive_times": [
+      "self",
+      "unproductive_time",
+      "total_time"
+    ],
+    "_compute_other_unproductive_time": [
+      "self",
+      "total_time",
+      "productive_time",
+      "unproductive_time"
+    ],
+    "get_job_goodput_with_exclusions": [
+      "self",
+      "exclusion_intervals",
+      "include_badput_breakdown",
+      "configured_ideal_step_time"
+    ],
+    "_calculate_adjusted_delta": [
+      "self",
+      "start",
+      "end",
+      "exclusion_intervals_ts"
+    ],
+    "_compute_step_info_with_exclusions": [
+      "self",
+      "adjusted_step_times_map",
+      "configured_ideal_step_time"
+    ],
+    "_get_exclusion_adjusted_metrics": [
+      "self",
+      "entries",
+      "exclusion_intervals_ts"
+    ],
+    "_process_segment_with_exclusions": [
+      "self",
+      "step_start_data",
+      "curr_step",
+      "entries",
+      "exclusion_intervals_ts"
+    ]
+  },
+  "_ACTIVE_SLICES": [],
+  "_TOTAL_SLICES": [],
+  "_AVAILABLE_SLICES": [],
+  "_ELASTIC_SLICE_COUNTS_TIMESTAMP": [],
+  "_ELASTIC_WAIT_EVENT_TYPE": [],
+  "_ELASTIC_WAIT_START_TIME": [],
+  "_ELASTIC_WAIT_END_TIME": [],
+  "_ELASTIC_REINIT_START_TIME": [],
+  "_ELASTIC_REINIT_END_TIME": [],
+  "GoodputRecorder": [],
+  "ElasticGoodputRecorder": {
+    "record_elastic_slice_counts": [
+      "self",
+      "active_slices",
+      "total_slices",
+      "available_slices",
+      "timestamp"
+    ],
+    "record_elastic_wait_start_time": [
+      "self",
+      "event_type",
+      "start_time"
+    ],
+    "record_elastic_wait_end_time": [
+      "self",
+      "event_type",
+      "end_time"
+    ],
+    "record_elastic_reinit_start_time": [
+      "self",
+      "start_time"
+    ],
+    "record_elastic_reinit_end_time": [
+      "self",
+      "end_time"
+    ]
+  },
+  "ElasticGoodputCalculator": {
+    "_extract_elastic_wait_intervals": [
+      "entries"
+    ],
+    "_extract_elastic_reinit_intervals": [
+      "entries"
+    ],
+    "_extract_init_intervals": [
+      "entries"
+    ],
+    "_extract_slice_count_entries": [
+      "entries"
+    ],
+    "_compute_time_weighted_efficiency": [
+      "slice_records",
+      "interval_start_ts",
+      "interval_end_ts"
+    ],
+    "_get_restart_event": [
+      "self",
+      "payload"
+    ],
+    "_get_current_productive_and_unproductive_time": [
+      "self",
+      "interval_query"
+    ],
+    "_get_job_badput_breakdown": [
+      "self",
+      "total_unproductive_time",
+      "total_job_time"
+    ],
+    "get_interval_metric_details": [
+      "self",
+      "interval_start",
+      "interval_end"
+    ],
+    "get_job_goodput_details": [
+      "self"
+    ]
+  },
+  "Retry": [],
+  "_TIMESTAMP_SUFFIXES": [],
+  "_METADATA_SERVER_URL": [],
+  "_METADATA_HEADERS": [],
+  "MACHINE_TYPE_TO_ACCELERATOR_TYPE_MAPPING": [],
+  "GoodputType": {
+    "TOTAL": []
+  },
+  "RestartType": {
+    "INFRA_RESTART": [],
+    "ELASTIC_SLICE_DOWN": [],
+    "ELASTIC_SCALE_UP": []
+  },
+  "ElasticWorkloadMetricDetails": {},
+  "ElasticIntervalWorkloadMetricDetails": {},
+  "_DEFAULT_RECENT_WINDOW_SIZE": [],
+  "_DEFAULT_BASELINE_WINDOW_SIZE": [],
+  "_DEFAULT_SPIKE_PERCENTILE": [],
+  "compute_percentile": [
+    "values",
+    "percentile"
+  ],
+  "compute_step_deviation_from_baseline": [
+    "step_time_deviation",
+    "mode",
+    "recent_window_size",
+    "baseline_window_size",
+    "spike_percentile"
+  ],
+  "compute_baseline_step_time": [
+    "step_times"
+  ],
+  "compute_ideal_step_time": [
+    "step_times",
+    "min_step_time"
+  ],
+  "get_anomalous_and_normal_step_times": [
+    "step_times"
+  ],
+  "get_extra_time_from_anomalous_steps": [
+    "step_times"
+  ],
+  "get_timestamp_from_log_entry": [
+    "entry"
+  ],
+  "get_gcp_metadata": [
+    "category",
+    "attribute",
+    "timeout",
+    "retries"
+  ],
+  "get_gcp_project_id": [],
+  "get_node_zone": [],
+  "get_accelerator_type": [],
+  "get_cluster_name": [],
+  "normalize_intervals": [
+    "intervals"
+  ],
+  "get_exclusion_overlap": [
+    "start",
+    "end",
+    "exclusions"
+  ],
+  "_CUSTOM_BADPUT_EVENT_TYPE": [],
+  "_CUSTOM_BADPUT_EVENT_START_TIME": [],
+  "_CUSTOM_BADPUT_EVENT_END_TIME": [],
+  "_STARTUP_COMPILATION_WINDOW": [],
+  "_CLOUD_LOGGING_DEFAULT_RETENTION": [],
+  "DEFAULT_READ_OVERLAP_SECONDS": [],
+  "DEFAULT_READ_LAG_SECONDS": [],
+  "_READ_OVERLAP_SECONDS_ENV": [],
+  "_READ_LAG_SECONDS_ENV": [],
+  "_seconds_from_env": [
+    "name",
+    "default"
+  ],
+  "_custom_sync_lookup": [
+    "intervals"
+  ],
+  "_CloudLogger": {
+    "__init__": [
+      "self",
+      "job_name",
+      "log_name",
+      "max_logs_retention_period"
+    ],
+    "write_cloud_logging_entry": [
+      "self",
+      "entry"
+    ],
+    "flush": [
+      "self",
+      "timeout_s"
+    ],
+    "_get_filter_msg": [
+      "self",
+      "start_time",
+      "end_time",
+      "last_entry_info"
+    ],
+    "_update_job_start_time": [
+      "self",
+      "entries"
+    ],
+    "read_cloud_logging_entries": [
+      "self",
+      "start_time",
+      "end_time",
+      "last_entry_info"
+    ],
+    "read_new_entries": [
+      "self",
+      "last_entry_info",
+      "end_time",
+      "overlap_seconds",
+      "known_entry_ids"
+    ]
+  },
+  "_log_entry": [
+    "payload",
+    "timestamp",
+    "insert_id"
+  ],
+  "CloudLoggerTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_init_captures_project_id": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_get_filter_msg": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_get_filter_msg_no_project": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_read_passes_filter_to_client": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_write_logs_entry": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_default_retention": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_custom_retention": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_calculator_passes_retention": [
+      "self",
+      "mock_client_cls"
+    ]
+  },
+  "CloudLoggerReadNewEntriesTest": {
+    "setUp": [
+      "self"
+    ],
+    "_make_logger": [
+      "self",
+      "mock_client_cls",
+      "entries"
+    ],
+    "_passed_filter": [
+      "self",
+      "logger"
+    ],
+    "test_overlap_window_has_no_insert_id_tiebreak": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_zero_overlap_keeps_insert_id_tiebreak": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_drops_known_ids_and_never_moves_cursor_backward": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_without_cursor_reads_retention_window": [
+      "self",
+      "mock_client_cls"
+    ]
+  },
+  "CloudLoggerAsyncWritesTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_handler_attached_with_propagate_false": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_write_drops_entries_for_other_job": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_forwards_to_handler": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_with_timeout_returns_true_when_handler_completes": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_with_timeout_gives_up_when_handler_blocks": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_without_timeout_blocks_until_handler_completes": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_two_instances_same_log_name_do_not_share_handlers": [
+      "self",
+      "mock_client_cls"
+    ]
+  },
+  "GoodputRecorderFlushTest": {
+    "test_flush_forwards_to_cloud_logger": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_forwards_timeout_and_result": [
+      "self",
+      "mock_client_cls"
+    ],
+    "test_flush_is_noop_when_logging_disabled": [
+      "self"
+    ]
+  },
+  "TimeRange": [],
+  "ExclusionUtilsTest": {
+    "setUp": [
+      "self"
+    ],
+    "_make_interval": [
+      "self",
+      "start_offset_sec",
+      "end_offset_sec"
+    ],
+    "test_normalize_intervals_basic_merge": [
+      "self"
+    ],
+    "test_normalize_intervals_nested": [
+      "self"
+    ],
+    "test_normalize_intervals_touching": [
+      "self"
+    ],
+    "test_normalize_intervals_disjoint": [
+      "self"
+    ],
+    "test_normalize_intervals_unordered": [
+      "self"
+    ],
+    "test_normalize_intervals_invalid": [
+      "self"
+    ],
+    "test_normalize_intervals_empty": [
+      "self"
+    ],
+    "test_normalize_intervals_all_invalid": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_full_coverage": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_partial_start": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_partial_end": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_multiple_disjoint": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_no_overlap": [
+      "self"
+    ],
+    "test_get_exclusion_overlap_float_precision": [
+      "self"
+    ]
+  },
+  "_CURSOR_TIME": [],
+  "_step_entry": [
+    "step",
+    "timestamp"
+  ],
+  "_write_timeline": [
+    "cache_dir",
+    "job_name",
+    "entries"
+  ],
+  "GoodputCacheTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_update_cached_entries": [
+      "self"
+    ],
+    "test_update_goodput_info": [
+      "self"
+    ],
+    "test_clear_cache": [
+      "self"
+    ],
+    "test_new_cache_resumes_from_local_files": [
+      "self"
+    ],
+    "test_new_cache_without_local_files_starts_empty": [
+      "self"
+    ],
+    "test_recent_entry_ids_are_pruned_to_overlap": [
+      "self"
+    ],
+    "test_metadata_round_trip": [
+      "self"
+    ],
+    "test_metadata_without_ids_caps_overlap": [
+      "self"
+    ],
+    "test_cached_entries_are_sorted_by_timestamp": [
+      "self"
+    ],
+    "test_timeline_without_metadata_is_cleared": [
+      "self"
+    ],
+    "test_is_cache_empty": [
+      "self"
+    ],
+    "test_get_step_info": [
+      "self"
+    ],
+    "test_update_job_start_time": [
+      "self"
+    ],
+    "test_update_job_end_time": [
+      "self"
+    ]
+  },
+  "MockSaveStepStatistics": {},
+  "MockRestoreStepStatistics": {},
+  "MockEmergencyRestoreStepStatistics": {},
+  "CheckpointBadputCalculatorTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_checkpoint_badput_calculator_persistent_save_operation": [
+      "self"
+    ],
+    "test_checkpoint_badput_calculator_local_save_operation": [
+      "self"
+    ],
+    "test_checkpoint_badput_calculator_persistent_restore_operation": [
+      "self"
+    ],
+    "test_checkpoint_badput_calculator_local_restore_operation": [
+      "self"
+    ]
+  },
+  "_to_aware": [
+    "dt"
+  ],
+  "MockCloudLogger": {
+    "__init__": [
+      "self",
+      "job_name",
+      "logger_name"
+    ],
+    "write_cloud_logging_entry": [
+      "self",
+      "entry"
+    ],
+    "read_cloud_logging_entries": [
+      "self",
+      "start_time",
+      "end_time",
+      "last_entry_info"
+    ],
+    "read_new_entries": [
+      "self",
+      "last_entry_info",
+      "end_time",
+      "overlap_seconds",
+      "known_entry_ids"
+    ]
+  },
+  "ElasticGoodputTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_record_elastic_slice_counts": [
+      "self"
+    ],
+    "test_record_elastic_slice_counts_no_timestamp": [
+      "self"
+    ],
+    "test_record_elastic_slice_counts_logging_disabled": [
+      "self"
+    ]
+  },
+  "ElasticGoodputCalculatorTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_compute_time_weighted_efficiency": [
+      "self"
+    ],
+    "test_get_current_productive_and_unproductive_time_elastic": [
+      "self"
+    ],
+    "test_get_job_goodput_details_elastic": [
+      "self"
+    ],
+    "test_elastic_sequential_restart_without_job_start_time": [
+      "self"
+    ],
+    "test_multi_worker_restore_inside_elastic_reinit": [
+      "self"
+    ],
+    "test_restore_inside_training_prep_inside_elastic_reinit": [
+      "self"
+    ]
+  },
+  "_cloud_goodput": [],
+  "_g3": [],
+  "_g3_testing": [],
+  "_g3_pybase": [],
+  "MagicMock": [],
+  "patch": [],
+  "_TEST_UPLOAD_INTERVAL": [],
+  "ElasticGoodputMonitorTests": {
+    "setUp": [
+      "self"
+    ],
+    "_create_timeseries": [
+      "self",
+      "metric_type",
+      "labels",
+      "value"
+    ],
+    "_compare_timeseries_ignore_time": [
+      "self",
+      "expected_ts",
+      "actual_ts"
+    ],
+    "_compare_calls_ignore_time_series": [
+      "self",
+      "expected_call",
+      "actual_call"
+    ],
+    "_setup_mock_elastic_goodput_monitor": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_elastic_goodput_monitor_init": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_elastic_goodput_monitor_passes_read_knobs": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_upload_goodput_metrics_to_gcm_elastic_badput": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_upload_goodput_metrics_to_gcm_slice_efficiency": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_upload_interval_goodput_metrics_to_gcm_slice_efficiency": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ]
+  },
+  "_FakeDevice": {
+    "__init__": [
+      "self",
+      "skew"
+    ],
+    "event": [
+      "self"
+    ]
+  },
+  "_FakeEvent": {
+    "__init__": [
+      "self",
+      "device"
+    ],
+    "record": [
+      "self"
+    ],
+    "query": [
+      "self"
+    ],
+    "elapsed_time": [
+      "self",
+      "end"
+    ]
+  },
+  "_FakeRecorder": {
+    "__init__": [
+      "self"
+    ],
+    "record_step_start_time": [
+      "self",
+      "step",
+      "start_time"
+    ]
+  },
+  "StepClockTest": {
+    "setUp": [
+      "self"
+    ],
+    "_issue": [
+      "self",
+      "step",
+      "finish",
+      "last_step",
+      "issued_at"
+    ],
+    "test_completions_become_next_step_starts": [
+      "self"
+    ],
+    "test_host_run_ahead_records_in_order_as_events_complete": [
+      "self"
+    ],
+    "test_sawtooth_host_timestamps_become_even_device_steps": [
+      "self"
+    ],
+    "test_reference_point_taken_while_busy_is_placed_at_first_complete_poll": [
+      "self"
+    ],
+    "test_reference_point_while_idle_uses_record_time": [
+      "self"
+    ],
+    "test_later_reference_point_bounds_device_clock_drift": [
+      "self"
+    ],
+    "test_last_step_records_no_phantom_step": [
+      "self"
+    ],
+    "test_corrected_start_moves_save_past_queued_compute": [
+      "self"
+    ],
+    "test_starts_never_go_backwards": [
+      "self"
+    ],
+    "test_non_lead_rank_records_events_but_no_starts": [
+      "self"
+    ],
+    "test_backend_error_disables_clock_and_backfills_pending_steps": [
+      "self"
+    ],
+    "test_flush_waits_for_pending_events_and_times_out": [
+      "self"
+    ],
+    "test_step_issued_after_device_finished_starts_at_host_issue_time": [
+      "self"
+    ],
+    "test_host_bound_run_uses_host_issue_times": [
+      "self"
+    ],
+    "test_logging_step_keeps_the_host_sync_gap": [
+      "self"
+    ],
+    "test_recorded_times_are_utc_datetimes": [
+      "self"
+    ]
+  },
+  "_TEST_JOB_START_TIME": [],
+  "_TEST_PROGRAM_STARTUP_TIME": [],
+  "_TEST_TPU_INIT_TIME": [],
+  "_TEST_TRAINING_PREPARATION_TIME": [],
+  "_TEST_DATA_LOADING_TIME": [],
+  "_TEST_STEP_START_TIME": [],
+  "_TEST_TOTAL_STEPS": [],
+  "_TEST_STEP_TIME": [],
+  "_TEST_JOB_END_TIME": [],
+  "_TEST_FIRST_STEP_EXTRA_TIME": [],
+  "_TEST_ANOMALOUS_STEP_TIME": [],
+  "_TEST_CUSTOM_BADPUT_TIME": [],
+  "GoodputTest": {
+    "setUp": [
+      "self"
+    ],
+    "_mock_sample_program": [
+      "self"
+    ],
+    "_mock_sample_program_with_badput": [
+      "self"
+    ],
+    "test_goodput_recorder": [
+      "self"
+    ],
+    "test_goodput_recorder_badput": [
+      "self"
+    ],
+    "test_goodput_calculator": [
+      "self"
+    ],
+    "test_has_job_end_entry": [
+      "self"
+    ],
+    "test_goodput_with_startup_badput": [
+      "self"
+    ]
+  },
+  "GoodputDisruptionCompleteRestartTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_goodput_calculator": [
+      "self"
+    ]
+  },
+  "GoodputDisruptionPartialRestartTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_goodput_calculator": [
+      "self"
+    ],
+    "test_goodput_with_startup_badput": [
+      "self"
+    ]
+  },
+  "GoodputPathwaysTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_goodput_with_anomalous_steps_single_disruption": [
+      "self"
+    ],
+    "test_goodput_with_anomalous_steps_multiple_disruptions": [
+      "self"
+    ]
+  },
+  "BadputTest": {
+    "setUp": [
+      "self"
+    ],
+    "test_tpu_init_recorder": [
+      "self"
+    ],
+    "test_training_prep_recorder": [
+      "self"
+    ],
+    "test_training_prep_recorder_no_timestamps": [
+      "self"
+    ],
+    "test_data_loading_recorder": [
+      "self"
+    ],
+    "test_data_loading_recorder_no_timestamps": [
+      "self"
+    ],
+    "test_badput_calculator_tpu_initialization": [
+      "self"
+    ],
+    "test_badput_calculator_training_preparation": [
+      "self"
+    ],
+    "test_badput_calculator_sync_data_loading": [
+      "self"
+    ],
+    "test_badput_calculator_async_data_loading": [
+      "self"
+    ],
+    "test_badput_calculator_program_startup": [
+      "self"
+    ],
+    "test_badput_calculator_program_startup_with_disruptions": [
+      "self"
+    ],
+    "test_badput_calculator_program_startup_delayed_compilation": [
+      "self"
+    ],
+    "test_badput_calculator_program_startup_multiple_slow_steps": [
+      "self"
+    ],
+    "_compute_startup_overhead": [
+      "self",
+      "step_times",
+      "min_step",
+      "prior_step_times"
+    ],
+    "test_compute_segment_startup_overhead_charges_all_anomalous_steps": [
+      "self"
+    ],
+    "test_compute_segment_startup_overhead_skips_non_anomalous_steps": [
+      "self"
+    ],
+    "test_compute_segment_startup_overhead_always_charges_slowest_step": [
+      "self"
+    ],
+    "test_compute_segment_startup_overhead_ignores_steps_after_window": [
+      "self"
+    ],
+    "test_compute_segment_startup_overhead_single_step_segment": [
+      "self"
+    ],
+    "test_badput_calculator_wasted_progress_and_disruptions": [
+      "self"
+    ],
+    "test_badput_calculator_jump_forward_rollback": [
+      "self"
+    ],
+    "test_badput_calculator_sequential_restart_deferred_credit": [
+      "self"
+    ],
+    "test_badput_calculator_unknown_badput": [
+      "self"
+    ],
+    "test_badput_calculator_checkpoint_badput": [
+      "self"
+    ],
+    "_record_training_prep_and_steps": [
+      "self",
+      "job_start_time"
+    ],
+    "_write_restore_entry": [
+      "self",
+      "start_time",
+      "duration_secs",
+      "include_manager_start_time"
+    ],
+    "_get_badput_breakdown_total": [
+      "self",
+      "goodput_pct",
+      "breakdown"
+    ],
+    "test_checkpoint_restore_inside_training_prep_not_double_counted": [
+      "self"
+    ],
+    "test_checkpoint_restore_outside_training_prep_unchanged": [
+      "self"
+    ],
+    "test_checkpoint_restore_partially_inside_training_prep": [
+      "self"
+    ],
+    "test_checkpoint_restore_without_start_time_keeps_training_prep": [
+      "self"
+    ],
+    "test_checkpoint_restore_multi_worker_inside_training_prep": [
+      "self"
+    ],
+    "test_extract_restore_intervals_separates_repeated_restores": [
+      "self"
+    ],
+    "test_goodput_badput_with_interval_query": [
+      "self"
+    ],
+    "_generate_step_start_times": [
+      "self",
+      "number_of_steps",
+      "start_time"
+    ],
+    "test_get_step_deviation": [
+      "self"
+    ],
+    "_record_steps_at": [
+      "self",
+      "t0",
+      "step_offsets"
+    ],
+    "_record_custom_badput_event": [
+      "self",
+      "t0",
+      "start_seconds",
+      "end_seconds"
+    ],
+    "test_get_step_times_excludes_custom_badput_event": [
+      "self"
+    ],
+    "test_get_step_times_ignores_partially_overlapping_custom_badput_event": [
+      "self"
+    ],
+    "test_get_step_times_excludes_custom_badput_event_and_checkpoint_save": [
+      "self"
+    ],
+    "test_get_step_deviation_excludes_custom_badput_event": [
+      "self"
+    ],
+    "test_get_step_deviation_sub_second_steps": [
+      "self"
+    ],
+    "test_badput_calculator_custom_sync_badput": [
+      "self"
+    ],
+    "test_badput_calculator_custom_sync_badput_in_last_step": [
+      "self"
+    ],
+    "test_goodput_with_disruption_and_caching": [
+      "self"
+    ],
+    "test_badput_calculator_infrastructure_badput_from_disruption": [
+      "self"
+    ]
+  },
+  "GoodputStepDeviationConcurrencyTest": {
+    "setUp": [
+      "self"
+    ],
+    "_mock_sample_program": [
+      "self"
+    ],
+    "test_concurrent_goodput_and_step_deviation": [
+      "self"
+    ]
+  },
+  "GoodputExclusionIntegrationTest": {
+    "setUp": [
+      "self"
+    ],
+    "_mock_sample_program_with_badput": [
+      "self",
+      "start_time"
+    ],
+    "test_basic_exclusion_reduces_productive_time": [
+      "self"
+    ],
+    "test_exclusion_masking_badput_event": [
+      "self"
+    ],
+    "test_exclusion_with_multiple_steps_and_badput": [
+      "self"
+    ],
+    "test_exclusion_during_disruption_recovery": [
+      "self"
+    ],
+    "test_exclusion_masking_training_prep": [
+      "self"
+    ],
+    "test_checkpoint_badput_skipped_for_uncompleted_step": [
+      "self"
+    ],
+    "test_checkpoint_save_on_compilation_step_not_double_subtracted": [
+      "self"
+    ],
+    "test_get_timestamp_from_log_entry_ignores_durations_and_nones": [
+      "self"
+    ],
+    "test_checkpoint_save_multi_worker_averaging_and_local_plus_persistent": [
+      "self"
+    ],
+    "test_multi_segment_rollback_to_earlier_step_than_previous_segment": [
+      "self"
+    ]
+  },
+  "LateEntriesTest": {
+    "setUp": [
+      "self"
+    ],
+    "_make_calculator": [
+      "self"
+    ],
+    "_step_time": [
+      "self",
+      "offset_seconds"
+    ],
+    "_record_steps": [
+      "self",
+      "steps_and_offsets"
+    ],
+    "_fetch": [
+      "self",
+      "calculator",
+      "query_time"
+    ],
+    "test_defaults": [
+      "self"
+    ],
+    "test_late_entry_is_read_once_and_cursor_does_not_move_backward": [
+      "self"
+    ],
+    "test_entries_inside_overlap_are_not_returned_twice": [
+      "self"
+    ],
+    "test_cached_entries_are_chronological_after_late_entries": [
+      "self"
+    ],
+    "test_timeline_without_cursor_is_read_again": [
+      "self"
+    ],
+    "test_read_lag_shifts_upper_bound": [
+      "self"
+    ],
+    "test_read_knobs_from_environment": [
+      "self"
+    ]
+  },
+  "CustomSyncLookupTest": {
+    "test_lookup_returns_intervals_inside_window_in_original_order": [
+      "self"
+    ],
+    "test_lookup_matches_linear_scan": [
+      "self"
+    ]
+  },
+  "GCPMetricsTest": {
+    "setUp": [
+      "self",
+      "mock_client"
+    ],
+    "test_create_time_series": [
+      "self"
+    ],
+    "test_send_metrics": [
+      "self",
+      "mock_time",
+      "mock_logger"
+    ],
+    "test_send_metrics_failure": [
+      "self",
+      "mock_logging_error"
+    ]
+  },
+  "GoodputUtilsTest": {
+    "test_gcp_options_defaults": [
+      "self"
+    ],
+    "test_gcp_options_initialization": [
+      "self"
+    ],
+    "test_get_cluster_name_success": [
+      "self",
+      "mock_get_metadata"
+    ],
+    "test_get_cluster_name_failure": [
+      "self",
+      "mock_get_metadata"
+    ],
+    "test_get_gcp_metadata_success": [
+      "self",
+      "mock_session_cls"
+    ],
+    "test_get_gcp_metadata_404": [
+      "self",
+      "mock_session_cls"
+    ],
+    "test_compute_baseline_step_time": [
+      "self"
+    ],
+    "test_compute_ideal_step_time_min_step_time": [
+      "self"
+    ]
+  },
+  "GoodputMonitorTests": {
+    "setUp": [
+      "self"
+    ],
+    "_create_timeseries": [
+      "self",
+      "metric_type",
+      "labels",
+      "value"
+    ],
+    "_compare_calls_ignore_time_series": [
+      "self",
+      "expected_call",
+      "actual_call"
+    ],
+    "_setup_mock_goodput_monitor": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_goodput_monitor_init": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_goodput_monitor_env_overrides": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_goodput_monitor_min_step_time": [
+      "self",
+      "mock_calculator_cls",
+      "mock_summary_writer"
+    ],
+    "test_cumulative_goodput_query_uses_configured_ideal_step_time": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_goodput_monitor_passes_read_knobs": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_multiprocess_goodput_monitor_start_and_stop": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_process",
+      "mock_event",
+      "mock_final_goodput_upload"
+    ],
+    "test_multiprocess_goodput_monitor_start_and_stop_skip_final_flush": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_process",
+      "mock_event",
+      "mock_final_goodput_upload"
+    ],
+    "test_multiprocess_goodput_monitor_stop_override_skip_final_flush": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_process",
+      "mock_event",
+      "mock_final_goodput_upload"
+    ],
+    "test_final_flush_timeout_defaults_to_process_termination_timeout": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_worker_join_timeout_uses_final_flush_timeout_when_flushing": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_stop_goodput_uploader_joins_with_custom_final_flush_timeout": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_process",
+      "mock_event",
+      "mock_final_goodput_upload"
+    ],
+    "test_run_with_timeout_none_blocks_until_done": [
+      "self"
+    ],
+    "test_run_with_timeout_completes_in_time": [
+      "self"
+    ],
+    "test_run_with_timeout_abandons_slow_func": [
+      "self"
+    ],
+    "test_goodput_worker_performs_warm_final_flush_when_requested": [
+      "self",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "test_goodput_worker_skips_final_flush_when_not_requested": [
+      "self",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "test_goodput_worker_notices_termination_promptly_during_long_interval": [
+      "self",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "_patch_monitoring_clock": [
+      "self"
+    ],
+    "test_goodput_worker_final_flush_waits_until_job_end_entry_is_readable": [
+      "self",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "test_goodput_worker_final_flush_stops_waiting_for_job_end_at_budget": [
+      "self",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "test_goodput_worker_final_flush_does_not_wait_for_job_end_by_default": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_create_calculator",
+      "mock_create_writer",
+      "mock_create_metrics_sender",
+      "mock_query_and_upload_once"
+    ],
+    "test_wait_for_job_end_seconds_is_clamped_to_final_flush_timeout": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer"
+    ],
+    "test_final_goodput_query_and_upload_waits_for_job_end_entry": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_create_writer"
+    ],
+    "test_goodput_monitor_stop_without_start_uses_timeout_bounded_cold_flush": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_final_goodput_upload"
+    ],
+    "test_goodput_monitor_start_goodput_uploader_success": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_goodput_to_tensorboard"
+    ],
+    "test_goodput_monitor_start_goodput_uploader_failure": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_goodput_to_tensorboard"
+    ],
+    "test_goodput_monitor_start_badput_uploader_success": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_badput_to_tensorboard"
+    ],
+    "test_goodput_monitor_start_step_deviation_uploader_success": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_step_deviation_to_tensorboard"
+    ],
+    "test_goodput_monitor_start_step_deviation_uploader_failure": [
+      "self",
+      "mock_logger_client",
+      "mock_summary_writer",
+      "mock_query_and_upload_step_deviation"
+    ],
+    "test_send_goodput_metrics_to_gcp_success": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_send_goodput_metrics_to_gcp_exception": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_send_goodput_metrics_to_gcp_exclusion": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_send_interval_goodput_metrics_to_gcp": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_send_goodput_metrics_custom_sync_events": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ],
+    "test_goodput_monitor_final_query_and_upload": [
+      "self",
+      "mock_final_goodput_query_and_upload",
+      "mock_final_step_deviation_query_and_upload",
+      "mock_final_interval_goodput_query_and_upload"
+    ],
+    "test_upload_goodput_metrics_includes_cluster_name": [
+      "self",
+      "mock_logging_client",
+      "mock_summary_writer",
+      "mock_metric_service_client"
+    ]
+  },
+  "get_project_id": [],
+  "load_intervals_from_json": [
+    "file_path"
+  ],
+  "analyze_run": [
+    "project_id",
+    "run_name",
+    "exclusions"
+  ],
+  "print_report": [
+    "run_name",
+    "gp",
+    "breakdown",
+    "step",
+    "excl_sec"
+  ],
+  "main": []
+}
